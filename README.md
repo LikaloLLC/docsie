@@ -1,5 +1,5 @@
-# docsie
-Docsie.io Website. Purpose of this repo is to host the static portion of Docsie.io
+# Docsie.io
+Purpose of this repo is to host the static portion of docsie.io
 
 We had a lot of problems hosting out static content on AWS infrastructure. From cryptic soft 404's on google bot to lag. 
 
