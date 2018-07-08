@@ -1,5 +1,12 @@
 # Docsie.io
-Purpose of this repo is to host the static portion of docsie.io
+## Purpose of this repo is to: 
+
+### Host the static portion of docsie.io
+### Serve as Tech Support and feature request hub for docsie.io
+### Serve as a live example of a Docsie.io project
+
+For any questions please contact support@likalo.com or open a ticket here
+
 
 We had a lot of problems hosting out static content on AWS infrastructure. From cryptic soft 404's on google bot to slow route and lag while connecting to Amazon network. Github pages solves that problems for us, as their network is uber fast.
 
