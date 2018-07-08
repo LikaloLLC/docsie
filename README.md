@@ -8,8 +8,7 @@
 
 For any questions please contact support@likalo.com or open a ticket here
 
-We used to have a support board/fFor any questions please contact support@likalo.com or open a ticket here
-orum, but we did not see it being used much. and we do not want to maintain unused infrastructure, so we are moving all our free support over to github.
+We used to have a support board/forum, but we did not see it being used much and we do not want to maintain unused infrastructure, so we are moving all our free support over to github.
 
 
 We also had a lot of problems hosting out static content on AWS infrastructure. From cryptic soft 404's on google bot to slow route and lag while connecting to Amazon network. Github pages solves that problems for us, as their network is uber fast.
