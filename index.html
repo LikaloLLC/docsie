@@ -85,6 +85,25 @@
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-116930058-3"></script>
   <script>function gtag() { dataLayer.push(arguments) } window.dataLayer = window.dataLayer || [], gtag("js", new Date), gtag("config", "UA - 116930058 - 3");</script>
 
+  <!-- Get current params, if any, at the docsie home page to append to signup-widget query params -->
+  <script>
+    function updateReqParams() {
+      // if there exists any query params in docsie home page
+      // append it form action url
+      if (window.location.search != "" && window.location.search != undefined && window.location.search != null) {
+        console.log("existing params", window.location.search);
+        // currently only handles one existing query params like ?ref=gm-1
+        var existingParamsArray = window.location.search.split("?")[1].split("=")
+        console.log(existingParamsArray);
+        var input = document.createElement("input");
+        input.setAttribute("type", "hidden");
+        input.setAttribute("name", existingParamsArray[0]);
+        input.setAttribute("value", existingParamsArray[1]);
+        document.getElementById("signup-widget-form").appendChild(input);
+        console.log("input tag appended", input);
+      }
+    }
+  </script>
 </head>
 
 <body class="pure" id="layout">
@@ -136,7 +155,14 @@
           <h1
             style=" width: 50%; min-width: 320px; margin: 0 auto 0.5em auto; color: #fff; background: #b50000; padding: 0.5em 0; font-weight: 400;">
             Create and Publish Dynamic Product Documentation</h1>
-          <div class="l-box" id="simpleRegistrationContainer"></div>
+          <!-- <div class="l-box" id="simpleRegistrationContainer"></div> -->
+          <form id="signup-widget-form" action="https://app.docsie.io/manager/" method="get">
+            <fieldset>
+              <legend>Subscribe to the Newsletter</legend>
+              <input type="email" name="email">
+              <button onclick="updateReqParams()">Ok</button>
+            </fieldset>
+          </form>
         </div>
       </div>
     </div>
