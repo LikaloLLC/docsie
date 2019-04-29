@@ -87,20 +87,53 @@
 
   <!-- Get current params, if any, at the docsie home page to append to signup-widget query params -->
   <script>
+
+    // for appending existing params, if any
     function updateReqParams() {
       // if there exists any query params in docsie home page
       // append it form action url
       if (window.location.search != "" && window.location.search != undefined && window.location.search != null) {
-        console.log("existing params", window.location.search);
-        // currently only handles one existing query params like ?ref=gm-1
-        var existingParamsArray = window.location.search.split("?")[1].split("=")
-        console.log(existingParamsArray);
-        var input = document.createElement("input");
-        input.setAttribute("type", "hidden");
-        input.setAttribute("name", existingParamsArray[0]);
-        input.setAttribute("value", existingParamsArray[1]);
-        document.getElementById("signup-widget-form").appendChild(input);
-        console.log("input tag appended", input);
+
+        var existingParamsArray = [], multipleParamsArray = [];
+
+        // get current url get-params
+        if (window.location.search.indexOf("&") != -1) {
+          multipleParamsArray = window.location.search.split("?")[1].split("&");
+          multipleParamsArray.forEach(function (item) {
+            var splitItem = item.split("=");
+            existingParamsArray.push(splitItem[0]);
+            existingParamsArray.push(splitItem[1]);
+          });
+        } else {
+          existingParamsArray = window.location.search.split("?")[1].split("=");
+        }
+
+        // create hidden input tags to append to form params
+        for (let i = 0; i < existingParamsArray.length; i++) {
+
+          // continue at odd i value
+          if (i != 0 && i % 2 != 0)
+            continue;
+
+          // break at existingParamsArray.length
+          if (i == existingParamsArray.length - 1)
+            break;
+
+          var input = document.createElement("input");
+          input.setAttribute("type", "hidden");
+          input.setAttribute("name", existingParamsArray[i]);
+          input.setAttribute("value", existingParamsArray[i + 1]);
+          document.getElementById("signup-widget-form").appendChild(input);
+        }
+      }
+    }
+
+    // for checking validity of email and enabling/disabling 'triangle' button
+    function setSubmit() {
+      if (document.getElementById("email").validity.valid == true) {
+        document.getElementById("signup-widget-submit").disabled = false;
+      } else {
+        document.getElementById("signup-widget-submit").disabled = true;
       }
     }
   </script>
@@ -155,14 +188,25 @@
           <h1
             style=" width: 50%; min-width: 320px; margin: 0 auto 0.5em auto; color: #fff; background: #b50000; padding: 0.5em 0; font-weight: 400;">
             Create and Publish Dynamic Product Documentation</h1>
-          <!-- <div class="l-box" id="simpleRegistrationContainer"></div> -->
-          <form id="signup-widget-form" action="https://app.docsie.io/manager/" method="get">
-            <fieldset>
-              <legend>Subscribe to the Newsletter</legend>
-              <input type="email" name="email">
-              <button onclick="updateReqParams()">Ok</button>
-            </fieldset>
-          </form>
+          <div class="l-box">
+            <div class="content-wrapper simple-registration pure-relative">
+              <form class="simple-registration-form pure-form pure-form-stacked box" id="signup-widget-form"
+                action="https://app.docsie.io/manager/" method="get">
+                <fieldset>
+                  <label for="email">To register, simply</label>
+                  <p class="pure-control-group pure-g">
+                    <input type="email" class="pure-u" placeholder="enter your email address" id="email" name="email"
+                      onkeyup="setSubmit()" required="">
+                    <button disabled="" id="signup-widget-submit" class="pure-button pure-button-primary" type="submit"
+                      aria-label="Submit registration request" onclick="updateReqParams()"><svg
+                        class="icon icon--triangle-right" viewBox="0 0 20 20" width="22" height="22">
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-triangle-right"></use>
+                      </svg></button></p><span class="pure-form-message">Easy Product Documentation • Dive in – it’s
+                    free.</span>
+                </fieldset>
+              </form>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -173,8 +217,9 @@
 
     <a style="text-decoration: none; display: flex; justify-content: center;"
       href="https://app.docsie.io/manager/"><span
-        style="color: white;border: 1px solid #b50000;background-color: #b50000;border-radius: 5px;padding: 15px;text-align: center;">Build your Library – Invite Your Team</span></a>
- 
+        style="color: white;border: 1px solid #b50000;background-color: #b50000;border-radius: 5px;padding: 15px;text-align: center;">Build
+        your Library – Invite Your Team</span></a>
+
     <footer class="footer l-box">
       <div class="pure-g pure-menu pure-menu-horizontal" style="text-align: center;">
         <ul class="pure-menu-list">
