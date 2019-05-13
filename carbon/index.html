@@ -64,7 +64,7 @@
     <script>function gtag() { dataLayer.push(arguments) } window.dataLayer = window.dataLayer || [], gtag("js", new Date), gtag("config","UA - 116930058 - 3");</script>
     
   </head>
-  <body class="pure" id="layout">
+  <body class="pure" id="layout" onload="updateParams()">
       
 <div id="container">
 <header class="header">
@@ -198,6 +198,30 @@ _atrk_opts = { atrk_acct:"zugkr1O7kI20L7", domain:"docsie.io",dynamic: true};
 </script>
 <noscript><img src="https://certify.alexametrics.com/atrk.gif?account=zugkr1O7kI20L7" style="display:none" height="1" width="1" alt="" /></noscript>
 <!-- End Alexa Certify Javascript -->  
-                                                                                                
+<!-- update url get params, if any-->
+<script>
+
+    // this function is triggered by onload on body tag 
+    // updates url params 
+    function updateParams() {
+
+      let hrefLinks = [];
+      // update href 
+      // if window.location.search != "", update this page's a href links with current params
+      if (window.location.search != "") {
+
+        hrefLinks = document.getElementsByClassName("pure-menu-link");
+
+        // iterate over hrefLinks and append current params
+        for (let i = 0; i < hrefLinks.length; i++) {
+
+          // append params
+          hrefLinks[i].href = hrefLinks[i].href + window.location.search;
+        }
+      } else {
+        // console.log("no additional params exist");
+      }
+    }
+  </script>                                                                                 
  </body>
 </html>

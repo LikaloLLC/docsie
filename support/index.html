@@ -60,7 +60,7 @@
       <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400&amp;subset=cyrillic,latin-ext"></noscript>
 
   </head>
-  <body class="pure" id="layout">
+  <body class="pure" id="layout" onload="updateParams()">
 
 <div id="container">
 
@@ -208,6 +208,32 @@ s1.setAttribute('crossorigin','*');
 s0.parentNode.insertBefore(s1,s0);
 })();
 </script>
+
+<!-- update url get params, if any-->
+<script>
+
+    // this function is triggered by onload on body tag 
+    // updates url params 
+    function updateParams() {
+
+      let hrefLinks = [];
+      // update href 
+      // if window.location.search != "", update this page's a href links with current params
+      if (window.location.search != "") {
+
+        hrefLinks = document.getElementsByClassName("pure-menu-link");
+
+        // iterate over hrefLinks and append current params
+        for (let i = 0; i < hrefLinks.length; i++) {
+
+          // append params
+          hrefLinks[i].href = hrefLinks[i].href + window.location.search;
+        }
+      } else {
+        // console.log("no additional params exist");
+      }
+    }
+  </script>
  </body>
 </html>
 
