@@ -47,7 +47,7 @@
 
   <link rel="dns-prefetch" href="https://www.googletagmanager.com">
   <link rel="preconnect" href="https://lib.docsie.io">
-  <link href="https://www.docsie.io/docsie.css" rel="stylesheet">
+  <link href="docsie.css" rel="stylesheet">
   <link media="all" href="https://lib.docsie.io/1.4.5/styles/pure.css" rel="stylesheet" />
   <link rel="preload" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400&amp;subset=cyrillic,latin-ext"
     as="style" onload="this.rel='stylesheet'">
@@ -135,7 +135,10 @@
         <div class="content-wrapper">
           <h1
             style=" min-width: 320px; margin: 0 auto 0.5em auto; color: #533333;  padding: 0.5em 0; font-weight: bold;">
-            Create and publish dynamic product documentation.</h1>
+            Create and publish <span
+     class="txt-rotate"
+     data-period="2000"
+     data-rotate='["dynamic"]'></span> product documentation.</h1>
 
                       <h3
             style=" width: 90%; min-width: 0px;     line-height: 1.4;  margin: 0 auto 0.0em auto; color: #533333;  padding: 0.0em 0; padding-bottom: 1.5em; font-weight: bold;">
@@ -266,6 +269,61 @@
         // console.log("no additional params exist");
       }
     }
+
+
+var TxtRotate = function(el, toRotate, period) {
+  this.toRotate = toRotate;
+  this.el = el;
+  this.loopNum = 0;
+  this.period = parseInt(period, 10) || 2000;
+  this.txt = '';
+  this.tick();
+  this.isDeleting = false;
+};
+
+TxtRotate.prototype.tick = function() {
+  var i = this.loopNum % this.toRotate.length;
+  var fullTxt = this.toRotate[i];
+
+  this.txt = fullTxt.substring(0, this.txt.length + 1);
+
+
+  this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+
+  var that = this;
+  var delta = 300 - Math.random() * 100;
+
+  if (this.isDeleting) { delta /= 2; }
+
+  if (!this.isDeleting && this.txt === fullTxt) {
+    delta = this.period;
+    this.isDeleting = true;
+  } else if (this.isDeleting && this.txt === '') {
+    this.isDeleting = false;
+    this.loopNum++;
+    delta = 500;
+  }
+
+  setTimeout(function() {
+    that.tick();
+  }, delta);
+};
+
+window.onload = function() {
+  var elements = document.getElementsByClassName('txt-rotate');
+  for (var i=0; i<elements.length; i++) {
+    var toRotate = elements[i].getAttribute('data-rotate');
+    var period = elements[i].getAttribute('data-period');
+    if (toRotate) {
+      new TxtRotate(elements[i], JSON.parse(toRotate), period);
+    }
+  }
+  // INJECT CSS
+  var css = document.createElement("style");
+  css.type = "text/css";
+  // css.innerHTML = ".txt-rotate > .wrap { border-right: 0.08em solid #666 }";
+  document.body.appendChild(css);
+};
   </script>
 
 </body>
