@@ -1,0 +1,570 @@
+/**
+* Docsie.io Pure documentation style
+*/
+
+$sm: 'screen and (min-width: 568px)'; // 568px
+$ism: 'screen and (max-width: 568px)'; // 568px
+$md: 'screen and (min-width: 768px)'; // 768px
+$lg: 'screen and (min-width: 1024px)'; // 1024px
+$xl: 'screen and (min-width: 1280px)'; // 1280px
+$xxl: 'screen and (min-width: 1600px)'; // 1600px
+$textColor: #111;
+$linkColor: #ff4141;
+$anchorColor: #999;
+// Buttons
+$buttonText: #ff4141;
+$buttonBackground: #fff;
+$buttonBorder: #ff4141;
+// Inputs
+$inputText: $textColor;
+$inputBackground: #fff;
+$inputBorder: #ff4141;
+// Code
+$codeText: #ddd;
+$codeBackground: #234;
+$codeBorder: transparent;
+// Quote
+$quoteBackground: #f0f8ff;
+// Table
+$dictDefinitionText: $textColor;
+$dictDefinitionBackground: $quoteBackground;
+$tableOddBorder: #fafbfe;
+$tableOddBackground: #fafbfe;
+$tableOddText: $textColor;
+$tableEvenBorder: #fafbfe;
+$tableEvenBackground: #fff;
+$tableEvenText: $textColor;
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans|IBM+Plex+Sans+Condensed:400i');
+// CSS
+#DOCSIE__ROOT {
+    font-family: 'IBM Plex Sans', sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.2rem;
+    color: $textColor;
+    article,
+    header,
+    nav {
+        display: block;
+    }
+    label {
+        display: inline-block;
+        margin-bottom: .5rem
+    }
+    input,
+    select,
+    button {
+        margin: 0;
+        text-rendering: auto;
+        color: initial;
+        font-size: inherit;
+        font-family: inherit;
+        line-height: inherit;
+        letter-spacing: normal;
+        word-spacing: normal;
+        text-transform: none;
+        text-indent: 0px;
+        text-shadow: none;
+        display: inline-block;
+        text-align: start;
+        cursor: pointer;
+    }
+    button {
+        display: inline-block;
+        font-weight: 400;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: middle;
+        user-select: none;
+        border: 1px solid transparent;
+        padding: .45rem .9rem;
+        font-size: .875rem;
+        line-height: 1.5;
+        border-radius: .15rem;
+        transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, -webkit-box-shadow .15s ease-in-out;
+        color: $buttonText;
+        background-color: $buttonBackground;
+        border-color: $buttonBorder;
+        &:hover {
+            color: $buttonText;
+            background-color: lighten( $buttonBackground, 30% );
+            border-color: lighten( $buttonBorder, 30% );
+        }
+        &:focus {
+            color: $buttonText;
+            background-color: lighten( $buttonBackground, 30% );
+            border-color: lighten( $buttonBorder, 30% );
+        }
+        &:disabled {
+            opacity: .65;
+            color: desaturate( $buttonText, 100% );
+            background-color: desaturate( $buttonBackground, 100% );
+            border-color: desaturate( $buttonBorder, 100% );
+        }
+    }
+    button,
+    input {
+        overflow: visible
+    }
+    button,
+    select {
+        text-transform: none
+    }
+    input {
+        display: block;
+        width: 100%;
+        padding: .45rem .9rem;
+        line-height: 1.5;
+        color: $inputText;
+        background-clip: padding-box;
+        border-radius: .25rem;
+        border: 1px solid;
+        height: auto;
+        background-color: $inputBackground;
+        border-color: $inputBorder;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+        &:-webkit-autofill {
+            background-color: rgb(250, 255, 189) !important;
+            background-image: none !important;
+            color: rgb(0, 0, 0) !important;
+        }
+    }
+    select {
+        display: block;
+        width: 100%;
+        height: auto;
+        padding: .45rem .9rem;
+        line-height: 1.5;
+        color: $inputText;
+        background-color: $inputBackground;
+        background-clip: padding-box;
+        border: 1px solid;
+        border-color: $inputBorder;
+        border-radius: .25rem;
+        outline-color: #727cf5;
+        transition: border-color .15s ease-in-out, -webkit-box-shadow .15s ease-in-out;
+        &:-webkit-autofill {
+            background-color: #fff !important;
+            background-image: none !important;
+            color: #6c757d !important;
+        }
+    }
+    svg {
+        fill: currentColor;
+        vertical-align: middle;
+        &:not(:root) {
+            overflow: hidden;
+        }
+    }
+    h1,
+    h2,
+    h3,
+    blockquote {
+        font-family: 'IBM Plex Sans Condensed', sans-serif;
+        color: $textColor;
+        margin: 5rem 0;
+        font-weight: 400;
+        line-height: 1.1;
+        color: inherit;
+    }
+    h1 {
+        font-size: 4rem
+    }
+    h2 {
+        font-size: 3rem
+    }
+    h3 {
+        font-size: 2rem;
+        margin: 1.25rem 0;
+    }
+    blockquote {
+        font-size: 1.8rem;
+        line-height: 1.5;
+      }
+    a {
+        color: $linkColor;
+        text-decoration: none;
+        background-color: transparent;
+        -webkit-text-decoration-skip: objects;
+        &:hover {
+            color: lighten($linkColor, 10%);
+            text-decoration: underline;
+        }
+        &:not([href]):not([tabindex]) {
+            color: inherit;
+            text-decoration: none
+        }
+        &:not([href]):not([tabindex]):focus,
+        a:not([href]):not([tabindex]):hover {
+            color: inherit;
+            text-decoration: none
+        }
+        &:not([href]):not([tabindex]):focus {
+            outline: 0
+        }
+    }
+    b, strong {
+        font-weight: bolder;
+    }
+    code {
+        font-size: 1em;
+        padding: 0 0.4em;
+    }
+    img {
+        vertical-align: middle;
+        border-style: none
+    }
+    figcaption,
+    figure {
+        margin: 0;
+    }
+    p {
+        margin-top: 1rem;
+        margin-bottom: 1rem
+    }
+    .pure-docsie {
+        .docsie-footer,
+        .pure-docsie-loader,
+        .docsie-search-form,
+        .docsie-search-results,
+        .docsie-header-conatiner,
+        .docsie-section-container {
+          margin: 0 auto;
+          max-width: 1200px;
+          width: 100%;
+          padding: 0 1em;
+          box-sizing: border-box;
+        }
+        .docsie-nav {
+          display: grid;
+          grid-template-columns: repeat(auto-fill, minmax(50%, 1fr));
+          grid-template-rows: auto;
+          grid-row-gap: 2em;
+          align-items: start;
+          height: 100vh;
+          position: sticky;
+          top: 0;
+          padding: 1.25rem 1em 0;
+          box-sizing: border-box;
+          min-width: 260px !important;
+          max-width: 400px;
+          .language-picker,
+          .version-picker {
+            margin: 0 !important;
+            border-radius: 2px;
+            height: 50px;
+            grid-column: span 2;
+          }
+          .language-picker {
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+            grid-column: span 1;
+            ~.version-picker {
+              border-top-left-radius: 0;
+              border-bottom-left-radius: 0;
+              border-left: none;
+              grid-column: span 1;
+            }
+          }
+            a {
+                color: $textColor;
+                text-decoration: none;
+
+                &.pure-link-active {
+                  border-left: 2px solid $linkColor;
+                  padding-left: 5px;
+                }
+            }
+            >ul {
+                position: static !important;
+                grid-column: span 2;
+                grid-row: 2;
+                max-height: 100%;
+                margin: 0 !important;
+                padding: 0 1em !important;
+                overflow-x: hidden !important;
+                overflow-y: auto !important;
+                >li {
+                    >ul {
+                        padding: 0 !important;
+                    }
+                    >a {
+                        font-size: 1.2em;
+                    }
+                }
+            }
+        }
+        .docsie-search {
+            .docsie-search-form {
+              float: none;
+              h3 {
+                position: relative;
+                flex-direction: row-reverse
+              }
+              .docsie-search-clear{
+                border-top-right-radius: 0;
+                border-bottom-right-radius: 0;
+                border-right: none
+              }
+              .docsie-search-button {
+                border-top-left-radius: 0;
+                border-bottom-left-radius: 0;
+                border-left: none
+              }
+                input[type=search],
+                .docsie-search-clear,
+                .docsie-search-button {
+                    height: 50px;
+                    display: inline;
+                    border-color: $buttonBorder;
+                }
+                input[type=search] {
+                    padding: 0 15px;
+                    border-radius: 0;
+                    outline: none;
+                    border-right: none;
+                    border-left: none;
+                    &:focus {
+                    }
+                    @media #{$lg} {
+                        padding: .45rem .9rem;
+                    }
+                    &::-ms-clear {  display: none; width : 0; height: 0; }
+                    &::-ms-reveal {  display: none; width : 0; height: 0; }
+                    &::-webkit-search-decoration,
+&::-webkit-search-cancel-button,
+&::-webkit-search-results-button,
+&::-webkit-search-results-decoration { display: none; }
+
+                }
+                .docsie-search-count {
+                  position: absolute;
+    right: 60px;
+    align-self: center;
+    font-size: 60%;
+    color: lighten($inputText, 30%)
+                }
+            }
+            .docsie-search-result {
+                margin-bottom: 1em;
+                padding-bottom: 1em;
+                border-bottom: 1px solid #eee;
+                mark {
+                    color: #373e42;
+                    font-weight: 600;
+                    background-color: transparent;
+                    border-bottom: 2px solid #373e42;
+                }
+                a {
+                    display: block;
+                    overflow: hidden;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                }
+            }
+        }
+        .docsie-doc {
+            min-width: unset !important;
+            padding: 0;
+            .docsie-subtitle {
+                font-size: 1.17em;
+                -webkit-margin-before: 1em;
+                -webkit-margin-after: 1em;
+                -webkit-margin-start: 0px;
+                -webkit-margin-end: 0px;
+                font-weight: lighter;
+                color: lighten(desaturate($textColor, 20%), 30%);
+            }
+            .docsie-content {
+                .docsie-section-container {
+                  @media #{$md} {
+                    display: grid;
+                    grid-column-gap: 60px;
+                    grid-template-columns: repeat(auto-fill, minmax(50%, 1fr));
+                    align-items: start;
+                  }
+                    .docsie-section-title,
+                    .docsie-blockquote {
+                      grid-column: span 2;
+                    }
+
+                    .docsie-blockquote {
+                      background: $quoteBackground;
+                      border-radius: 2px;
+                      margin: 2.5em 0;
+                    }
+
+                    .docsie-figure {
+                      align-self: center;
+                      margin: 0; padding: 0;
+                      @media #{$md} {
+                        grid-row: span 6;
+                        box-shadow: -2em 3em 4em -3em #14353e;
+                      }
+                    }
+                }
+                h2 {
+                    .docsie-section-anchor {
+                        transition: color 150ms;
+                        color: lighten($anchorColor, 30%);
+                        margin-right: 0;
+                        float: none;
+                        margin-left: 0.5em;
+                        &:hover {
+                            color: $anchorColor;
+                        }
+                    }
+                }
+                a {
+        &:only-child {
+          background: transparent url(/images/content/icon_word.gif) center right no-repeat;
+          padding-right: 18px;
+        }
+                }
+                strong {
+                    font-weight: 500;
+                    color: #0d2b3e;
+                }
+                code:not(.docsie-codeblock) {
+                    -webkit-box-sizing: border-box;
+                    -moz-box-sizing: border-box;
+                    box-sizing: border-box;
+                    display: inline-block;
+                    margin: 0 5px;
+                    padding: 0 5px;
+                    color: lighten($textColor, 20%);
+                    border-radius: 4px;
+                    border-left: 1px solid;
+                    border-right: 1px solid;
+                    border-color: $codeBackground;
+                    font-family: Source Code Pro, Menlo, monospace;
+                    font-size: 13px;
+                    line-height: 20px;
+                }
+                code.docsie-codeblock {
+                    font-family: Source Code Pro, Menlo, monospace;
+                    border: 1px solid $codeBorder;
+                    border-radius: 2px;
+                    color: $codeText;
+                    background: $codeBackground;
+                    overflow: hidden;
+                    grid-column: span 2;
+                    &:hover,
+                    &:focus {
+                      overflow: auto;
+                    }
+                }
+                figure {
+                    margin: 0;
+                    padding: 0;
+                    img {border-radius: 4px}
+                }
+                ul,
+                ol {
+                    color: #373e42;
+                }
+                ol {
+                    li>ol {
+                        list-style-type: lower-alpha;
+                        li>ol {
+                            list-style-type: lower-roman;
+                        }
+                    }
+                }
+                dl {
+                  @media #{$md} {
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    grid-column: span 2;
+                  }
+                  dt {
+                    display: inline-block;
+                    padding: 2px 8px;
+                    color: $dictDefinitionText;
+                    background-color: $dictDefinitionBackground;
+                    border-radius: 4px;
+                    @media #{$md} {
+                      display: block;
+                      border-radius: unset;
+                      margin: 0;
+                      padding: 0.8em 0;
+                      flex: 0 0 30%;
+                      text-align: right;
+                      border-bottom: 1px solid;
+                        background-color: $tableEvenBackground;
+                        border-color: $tableEvenBorder;
+                        text: $tableEvenText;
+                      &:nth-of-type(odd) {
+                        background-color: $tableOddBackground;
+                        border-color: $tableOddBorder;
+                        text: $tableOddText;
+                      }
+                      &:last-of-type {
+                        border-bottom: none;
+                      }
+                      >* {
+                        display: block;
+                      }
+                    }
+                  }
+                  dd {
+                    box-sizing: border-box;
+                    @media #{$md} {
+                      margin: 0;
+                      padding: 0.8em 0 0.8em 1.5em;
+                      flex: 0 0 70%;
+                      border-bottom: 1px solid;
+                        background-color: $tableEvenBackground;
+                        border-color: $tableEvenBorder;
+                        text: $tableEvenText;
+                      &:nth-of-type(odd) {
+                        background-color: $tableOddBackground;
+                        border-color: $tableOddBorder;
+                        text: $tableOddText;
+                      }
+                      &:last-of-type {
+                        border-bottom: none;
+                      }
+                    }
+                  }
+                }
+            }
+            .docsie-footer {
+                .docsie-footer-nav {
+                    @media #{$lg} {
+                        div {
+                            position: relative;
+                            svg {
+                                position: static;
+                            }
+                        }
+                        .docsie-footer-previous {
+                            svg {
+                                margin-left: 0
+                            }
+                        }
+                        .docsie-footer-next {
+                            svg {
+                                margin-right: 0
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+/*------------------------*/
+
+body {
+  margin: 0;
+}
+
