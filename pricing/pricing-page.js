@@ -27,11 +27,11 @@
 
       const rows = [];
 
-      console.log("props in simple plan tier", this.props);
+    //   console.log("props in simple plan tier", this.props);
 
       this.props.tiers.forEach((tier) => {
 
-        console.log("found tier is", tier);
+        // console.log("found tier is", tier);
 
           rows.push(
             <div key={tier.name} className="col-xs-12 col-sm-6 col-md-6 col-lg-6">
@@ -249,14 +249,14 @@ handleClick() {
 componentDidMount() {
 
 var mydata = data;
-console.log("./tiers.json mydata", mydata);    
+// console.log("./tiers.json mydata", mydata);    
 
 var mydata2 = data2;
-console.log("./plans_and/-features.json mydata2", mydata2);
+// console.log("./plans_and/-features.json mydata2", mydata2);
 
 // get this json for mobile responsive data
 var mydata3 = plans;
-console.log("plans in mydata3", mydata3);
+// console.log("plans in mydata3", mydata3);
 
 this.setState({
                 tiers: mydata.tiers,
@@ -372,7 +372,7 @@ render() {
                 </div>
 
                 <div className="simple-plan-container">
-                    <div className="container ">
+                    <div className="container" style={{maxWidth: '50%'}}>
                         <SimplePlanTier tiers={this.state.tiers} onClick={() => this.handleClick()} 
                             className="plan-tier"/>
                     </div>
