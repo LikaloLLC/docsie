@@ -1,4 +1,4 @@
-var data2 = {
+var plansAndFeatures = {
   "categories": [{
       "name":"Track & Crawl",
       "features": [{
