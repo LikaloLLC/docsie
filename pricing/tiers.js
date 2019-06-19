@@ -1,4 +1,4 @@
-data = {
+tiers = {
   "Banner":  "All features including the most advanced are forever free for open source projects, please contact us with your project details",
   "tiers": [
      {

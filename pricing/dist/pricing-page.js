@@ -8,27 +8,12 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-// import * as tiers from '../../../../forked-docsie-pricing-table/docsie-pricing-table/src/tiers.json';
-// import * as plans_and_features from '../../../../forked-docsie-pricing-table/docsie-pricing-table/src/tiers.json';
-
-// const tiers = require('./tiers.json');
-
-// "Import" the components from Reactstrap
-var _Reactstrap = Reactstrap,
-    Container = _Reactstrap.Container,
-    Button = _Reactstrap.Button,
-    Row = _Reactstrap.Row,
-    Col = _Reactstrap.Col;
 var _reactAccessibleAccor = reactAccessibleAccordion,
     Accordion = _reactAccessibleAccor.Accordion,
     AccordionItem = _reactAccessibleAccor.AccordionItem,
     AccordionItemHeading = _reactAccessibleAccor.AccordionItemHeading,
     AccordionItemPanel = _reactAccessibleAccor.AccordionItemPanel,
     AccordionItemButton = _reactAccessibleAccor.AccordionItemButton;
-var MediaQuery = MediaQuery.MediaQuery;
-
-
-var ReactTooltip = ReactTooltip;
 
 var SimplePlanTier = function (_React$Component) {
     _inherits(SimplePlanTier, _React$Component);
@@ -44,19 +29,11 @@ var SimplePlanTier = function (_React$Component) {
         value: function render() {
             var _this2 = this;
 
-            // console.log("props in SimplePlanTier", this.props);
-
             var rows = [];
-
-            //   console.log("props in simple plan tier", this.props);
 
             this.props.tiers.forEach(function (tier) {
 
-                // console.log("found tier is", tier);
-
-                rows.push(
-                // <div key={tier.name} className="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                React.createElement(
+                rows.push(React.createElement(
                     "div",
                     { key: tier.name, className: "pure-u-1-2" },
                     React.createElement(
@@ -129,7 +106,7 @@ var SimplePlanTier = function (_React$Component) {
                                             "div",
                                             { className: "cta-wrapper" },
                                             React.createElement(
-                                                Button,
+                                                "button",
                                                 { className: "sign-up-btn" },
                                                 React.createElement(
                                                     "a",
@@ -153,23 +130,10 @@ var SimplePlanTier = function (_React$Component) {
                 ));
             });
 
-            return (
-                // <div className="row">
-                //     {rows}
-                // </div>
-
-                React.createElement(
-                    "div",
-                    { className: "pure-g" },
-                    rows
-                )
-
-                // <div className="pure-g center-grid">
-                // <div className="pure-u-1-2"><p>Thirds</p></div>
-                // <div className="pure-u-1-2"><p>Thirds</p></div>
-                // <div className="pure-u-1-2"><p>Thirds</p></div>
-                // </div>
-
+            return React.createElement(
+                "div",
+                { className: "pure-g" },
+                rows
             );
         }
     }]);
@@ -178,10 +142,6 @@ var SimplePlanTier = function (_React$Component) {
 }(React.Component);
 
 ;
-
-// <FaInfoCircle data-tip={item.info}/></div>
-
-//                                 <ReactTooltip />
 
 var CategoryFeatures = function (_React$Component2) {
     _inherits(CategoryFeatures, _React$Component2);
@@ -324,7 +284,7 @@ var PlansAccordion = function (_React$Component3) {
                             plan.description
                         ),
                         React.createElement(
-                            Button,
+                            "button",
                             { className: "sign-up-btn-xs" },
                             React.createElement(
                                 "a",
@@ -377,8 +337,13 @@ var PricingPage = function (_React$Component4) {
         key: "handleClick",
         value: function handleClick() {
 
-            // console.log("about to hide simple plan tier and show detailed plan view");
             this.setState({ showDetailedPlanOveriew: !this.state.showDetailedPlanOveriew });
+        }
+    }, {
+        key: "mouseOver",
+        value: function mouseOver() {
+            console.log("Mouse over!!!");
+            // this.setState({flipped: true});
         }
 
         // get pricing page details from a remote page
@@ -444,20 +409,20 @@ var PricingPage = function (_React$Component4) {
         key: "componentDidMount",
         value: function componentDidMount() {
 
-            var mydata = data;
+            var teirsData = tiers;
             // console.log("./tiers.json mydata", mydata);    
 
-            var mydata2 = data2;
+            var plansAndFeaturesData = plansAndFeatures;
             // console.log("./plans_and/-features.json mydata2", mydata2);
 
             // get this json for mobile responsive data
-            var mydata3 = plans;
+            var plansData = plans;
             // console.log("plans in mydata3", mydata3);
 
             this.setState({
-                tiers: mydata.tiers,
-                categories: mydata2.categories,
-                plans: mydata3.plans
+                tiers: teirsData.tiers,
+                categories: plansAndFeaturesData.categories,
+                plans: plansData.plans
             });
         }
     }, {
@@ -471,11 +436,9 @@ var PricingPage = function (_React$Component4) {
 
             this.state.tiers.forEach(function (tier) {
 
-                detailRows.push(
-                //   <Col sm="2" key={tier.name} style={{ textAlign: 'center' }}>
-                React.createElement(
+                detailRows.push(React.createElement(
                     "div",
-                    { key: tier.name, className: "col-xs-12 col-sm-4 col-md-4 col-lg-4" },
+                    { key: tier.name, className: "pure-u-1-4 category-feature-head" },
                     React.createElement(
                         "h4",
                         { className: "pricing-name" },
@@ -503,56 +466,18 @@ var PricingPage = function (_React$Component4) {
                 ));
             });
 
-            // <FaInfoCircle data-tip={item.info}/>
-            //                             <ReactTooltip />
-
-            // <div className="tooltip-info">Hover over me
-            //                                 <span className="tooltiptext-info">Tooltip text</span>
-            //                             </div>
-
             this.state.categories.forEach(function (category, i) {
                 category.features.forEach(function (item, j) {
 
-                    categoryFeatures.push(
-                    //   <Container key={item.name}>
-
-                    //       { i!= 0 && j == 0 ?
-                    //       <h4 className="category-type-1">{category.name}</h4>
-                    //        : ''}
-
-                    //       <Row style={{ textAlign: 'center', textAlign: 'center', margin: 'auto' }}>
-                    //           <Col sm="2" className="category-feature">
-
-                    //               <div style={{display: 'inline-block'}}>{item.name}&nbsp;
-                    //                   <span className="tooltip-info"><i className="fa fa-info-circle" aria-hidden="true" data-tip={item.info}></i>
-                    //                       <span className="tooltiptext-info">{item.info}</span>
-                    //                   </span>
-                    //               </div>
-
-                    //           </Col>
-                    //           <Col sm="2" className="category-feature">
-                    //               <div>{item.values.Standard}</div>
-                    //           </Col>
-                    //           <Col sm="2" className="category-feature">
-                    //               <div>{item.values.Medium}</div>
-                    //           </Col>
-                    //           <Col sm="2" className="category-feature">
-                    //               <div>{item.values.Large}</div>
-                    //           </Col>
-                    //           <Col sm="2" className="category-feature">
-                    //               <div>{item.values.Premium}</div>
-                    //           </Col>
-                    //       </Row>
-                    //   </Container>
-                    React.createElement(
+                    categoryFeatures.push(React.createElement(
                         "div",
                         { key: item.name },
                         i != 0 && j == 0 ? React.createElement(
                             "div",
-                            { className: "row" },
+                            { className: "pure-g" },
                             React.createElement(
                                 "div",
-                                { className: "col-xs-12 col-sm-4 col-md-4 col-lg-4" },
+                                { className: "pure-u-1-4" },
                                 React.createElement(
                                     "h4",
                                     { style: { textAlign: 'center' } },
@@ -562,10 +487,10 @@ var PricingPage = function (_React$Component4) {
                         ) : '',
                         React.createElement(
                             "div",
-                            { className: "row" },
+                            { className: "pure-g" },
                             React.createElement(
                                 "div",
-                                { className: "col-xs-12 col-sm-4 col-md-4 col-lg-4 category-feature", style: { textAlign: 'center', margin: 'auto' } },
+                                { className: "pure-u-1-4", style: { textAlign: 'center' } },
                                 React.createElement(
                                     "div",
                                     { style: { display: 'inline-block' } },
@@ -573,8 +498,14 @@ var PricingPage = function (_React$Component4) {
                                     "\xA0",
                                     React.createElement(
                                         "span",
-                                        { className: "tooltip-info-dsk" },
-                                        React.createElement("i", { className: "fa fa-info-circle", "aria-hidden": "true", "data-tip": item.info }),
+                                        { className: "custom-info-icon", onMouseOver: function onMouseOver() {
+                                                return _this6.mouseOver();
+                                            }, "aria-hidden": "true", "data-tip": item.info },
+                                        React.createElement(
+                                            "p",
+                                            { style: { position: 'relative', bottom: '12px' } },
+                                            "i"
+                                        ),
                                         React.createElement(
                                             "span",
                                             { className: "tooltiptext-info-dsk" },
@@ -585,7 +516,7 @@ var PricingPage = function (_React$Component4) {
                             ),
                             React.createElement(
                                 "div",
-                                { className: "col-xs-12 col-sm-4 col-md-4 col-lg-4 category-feature" },
+                                { className: "pure-u-1-4 category-feature" },
                                 React.createElement(
                                     "div",
                                     null,
@@ -594,7 +525,7 @@ var PricingPage = function (_React$Component4) {
                             ),
                             React.createElement(
                                 "div",
-                                { className: "col-xs-12 col-sm-4 col-md-4 col-lg-4 category-feature" },
+                                { className: "pure-u-1-4 category-feature" },
                                 React.createElement(
                                     "div",
                                     null,
@@ -642,13 +573,13 @@ var PricingPage = function (_React$Component4) {
                         { className: "detail-plan-container" },
                         React.createElement(
                             "div",
-                            { className: "container", style: { background: '#f5505017' } },
+                            { style: { background: '#f5505017', width: '80%' } },
                             React.createElement(
                                 "div",
-                                { className: "row" },
+                                { className: "pure-g" },
                                 React.createElement(
                                     "div",
-                                    { className: "col-xs-12 col-sm-4 col-md-4 col-lg-4" },
+                                    { className: "pure-u-1-4" },
                                     React.createElement(
                                         "h4",
                                         { className: "category-type-main" },
@@ -660,7 +591,7 @@ var PricingPage = function (_React$Component4) {
                             categoryFeatures,
                             React.createElement("br", null),
                             React.createElement(
-                                Button,
+                                "button",
                                 { className: "sign-up-btn view-simple-tier-btn", onClick: function onClick() {
                                         return _this6.handleClick();
                                     } },
