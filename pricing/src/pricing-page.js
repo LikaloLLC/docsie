@@ -34,7 +34,8 @@
         // console.log("found tier is", tier);
 
           rows.push(
-            <div key={tier.name} className="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+            // <div key={tier.name} className="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+            <div key={tier.name} className="pure-u-1-2">
                   <div className="price-card">
                       <div className="pricing-panel-wrapper">
                           <div className="pricing-panel">
@@ -73,9 +74,19 @@
       });
 
       return (
-        <div className="row">
+        // <div className="row">
+        //     {rows}
+        // </div>
+
+        <div className="pure-g">
             {rows}
         </div>
+
+        // <div className="pure-g center-grid">
+        // <div className="pure-u-1-2"><p>Thirds</p></div>
+        // <div className="pure-u-1-2"><p>Thirds</p></div>
+        // <div className="pure-u-1-2"><p>Thirds</p></div>
+        // </div>
       );
 }
 };
@@ -375,12 +386,6 @@ render() {
                     <div className="container" style={{maxWidth: '50%'}}>
                         <SimplePlanTier tiers={this.state.tiers} onClick={() => this.handleClick()} 
                             className="plan-tier"/>
-                            ksndhjk
-                        <div className="pure-g center-grid plan-tier">
-                            <div className="pure-u-1-2"><p>Thirds</p></div>
-                            <div className="pure-u-1-2"><p>Thirds</p></div>
-                            <div className="pure-u-1-2"><p>Thirds</p></div>
-                        </div>
                     </div>
                 </div>
                 
