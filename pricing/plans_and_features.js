@@ -31,6 +31,49 @@ var plansAndFeatures = {
       // "Premium" : "400"
       },
       "info": "Category 2 info"
-    }]
-  }]
+    },
+    {
+      "name": "Category 2",
+      "values" : {
+      "Standard": "23",
+      "Medium":"14",
+      // "Large" : "5",
+      // "Premium" : "400"
+      },
+      "info": "Category 2 info"
+    },
+    {
+      "name": "Category 2",
+      "values" : {
+      "Standard": "23",
+      "Medium":"14",
+      // "Large" : "5",
+      // "Premium" : "400"
+      },
+      "info": "Category 2 info"
+    },
+    {
+      "name": "Category 2",
+      "values" : {
+      "Standard": "23",
+      "Medium":"14",
+      // "Large" : "5",
+      // "Premium" : "400"
+      },
+      "info": "Category 2 info"
+    },
+    {
+      "name": "Category 2",
+      "values" : {
+      "Standard": "23",
+      "Medium":"14",
+      // "Large" : "5",
+      // "Premium" : "400"
+      },
+      "info": "Category 2 info"
+    }
+    ]
+  },
+
+  ]
 }

@@ -553,7 +553,7 @@ var PricingPage = function (_React$Component4) {
                         { className: "simple-plan-container" },
                         React.createElement(
                             "div",
-                            { className: "container", style: { maxWidth: '50%' } },
+                            { className: "container", style: { maxWidth: '80%' } },
                             React.createElement(SimplePlanTier, { tiers: this.state.tiers, onClick: function onClick() {
                                     return _this6.handleClick();
                                 },
@@ -573,7 +573,7 @@ var PricingPage = function (_React$Component4) {
                         { className: "detail-plan-container" },
                         React.createElement(
                             "div",
-                            { style: { background: '#f5505017', width: '80%' } },
+                            { style: { background: '#ffff', width: '100%' } },
                             React.createElement(
                                 "div",
                                 { className: "pure-g" },
