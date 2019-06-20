@@ -128,8 +128,8 @@ class CategoryFeatures extends React.Component {
                             <div sm="2" className="category-feature-xs">
                                 <div>{item.values[val]}&nbsp;{item.name}&nbsp;
                                     <Tooltip message={item.info} position={'top'}>
-                                        <span className="custom-info-icon" aria-hidden="true" data-tip={item.info}>
-                                            <p style={{position: 'relative', bottom: '12px'}}>i</p>
+                                        <span className="custom-info-icon-xs" aria-hidden="true" data-tip={item.info}>
+                                            <p style={{position: 'relative', bottom: '15px'}}>i</p>
                                         </span>
                                     </Tooltip>
                                 </div>
@@ -331,12 +331,12 @@ class PricingPage extends React.Component {
                             </React.Fragment>
                             : ''}
                             <div className="pure-g" key={item.name}>
-                                <div className="pure-u-1-4 card category-feature" style={{ textAlign: 'center' }}>
+                                <div className="pure-u-1-4 card category-feature-name" style={{ textAlign: 'center' }}>
 
                                     <div  className="category-name">{item.name}&nbsp; 
                                     <Tooltip message={item.info} position={'top'}>
                                         <span className="custom-info-icon" aria-hidden="true" data-tip={item.info}>
-                                            <p style={{position: 'relative', bottom: '12px'}}>i</p>
+                                            <p style={{position: 'relative', bottom: '7px'}}>i</p>
                                         </span>
                                     </Tooltip>
                                     </div>

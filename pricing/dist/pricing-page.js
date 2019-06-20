@@ -252,10 +252,10 @@ var CategoryFeatures = function (_React$Component3) {
                                         { message: item.info, position: 'top' },
                                         React.createElement(
                                             'span',
-                                            { className: 'custom-info-icon', 'aria-hidden': 'true', 'data-tip': item.info },
+                                            { className: 'custom-info-icon-xs', 'aria-hidden': 'true', 'data-tip': item.info },
                                             React.createElement(
                                                 'p',
-                                                { style: { position: 'relative', bottom: '12px' } },
+                                                { style: { position: 'relative', bottom: '15px' } },
                                                 'i'
                                             )
                                         )
@@ -552,7 +552,7 @@ var PricingPage = function (_React$Component5) {
                             { className: 'pure-g', key: item.name },
                             React.createElement(
                                 'div',
-                                { className: 'pure-u-1-4 card category-feature', style: { textAlign: 'center' } },
+                                { className: 'pure-u-1-4 card category-feature-name', style: { textAlign: 'center' } },
                                 React.createElement(
                                     'div',
                                     { className: 'category-name' },
@@ -566,7 +566,7 @@ var PricingPage = function (_React$Component5) {
                                             { className: 'custom-info-icon', 'aria-hidden': 'true', 'data-tip': item.info },
                                             React.createElement(
                                                 'p',
-                                                { style: { position: 'relative', bottom: '12px' } },
+                                                { style: { position: 'relative', bottom: '7px' } },
                                                 'i'
                                             )
                                         )
