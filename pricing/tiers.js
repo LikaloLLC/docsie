@@ -3,10 +3,12 @@ tiers = {
   "tiers": [
      {
        "pricing": {
-         "monthly": {        "price": "99",
+         "monthly": {        "price": "999.00",
         "currency": "$"},
-         "yearly" : {        "price": "79.00",
-        "currency": "$"}
+         "yearly" : {        "price": "899.00",
+        "currency": "$",
+        "perAnnum": "8500",
+        "savedAmount": "1800"}
        },
         "name": "Entreprise",
         "order": 1,
@@ -18,10 +20,12 @@ tiers = {
       },
      {
       "pricing": {
-         "monthly": {        "price": "399.00",
+         "monthly": {        "price": "500.00",
         "currency": "$"},
-         "yearly" : {        "price": "300.00",
-        "currency": "$"}
+         "yearly" : {        "price": "450.00",
+        "currency": "$",
+        "perAnnum": "3000",
+        "savedAmount": "2000"}
        },
         "currency": "$",
         "frequency" : "year",
