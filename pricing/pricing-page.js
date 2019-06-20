@@ -5,6 +5,16 @@ const {
     AccordionItemPanel,
     AccordionItemButton } = reactAccessibleAccordion;
 
+    var teirsData = tiers;
+    // console.log("./tiers.json mydata", mydata);    
+
+    var plansAndFeaturesData = plansAndFeatures;
+    // console.log("./plans_and/-features.json mydata2", mydata2);
+
+    // get this json for mobile responsive data
+    var plansData = plans;
+    // console.log("plans in mydata3", mydata3);
+
     class Tooltip extends React.Component {
     constructor(props) {
         super(props)
@@ -49,12 +59,27 @@ const {
 
 class SimplePlanTier extends React.Component {
 
+    constructor (props) {
+        super(props);
+
+        this.state = {
+            tiers: teirsData.tiers,
+            showMonthlyPlan: true
+        };
+    }
+
+    yearlyToggle() {
+        console.log("in yearlyToggle func, this.state", this.state);
+        this.setState({
+            showMonthlyPlan: !this.state.showMonthlyPlan
+        })
+    }
 
     render() {
 
         const rows = [];
 
-        this.props.tiers.forEach((tier) => {
+        this.state.tiers.forEach((tier) => {
 
             rows.push(
                 <div key={tier.name} className="pure-u-1-2">
@@ -63,18 +88,37 @@ class SimplePlanTier extends React.Component {
                             <div className="pricing-panel">
                                 <div className="pricing-panel-header">
                                     <h6 className="pricing-panel-tier">{tier.name}</h6>
-                                    <h2 className="product-price product-price-lg">
-                                        <span className="currency">{tier.pricing.monthly.currency}</span>
-                                        <span className="price">{tier.pricing.monthly.price}</span>
-                                        <span className="period">/mo</span>
-                                    </h2>
-                                    <div className="pricing-panel-info">
-                                        <div className="text-yearly-color">
-                                            <p data-alt-text="$950 billed yearly<br />Save $238/year" className="year-pricing">
-                                                {tier.pricing.yearly.currency}{tier.pricing.yearly.price}/mo when you <a href="#" className="yearly"> pay yearly</a>
-                                            </p>
-                                        </div>
-                                    </div>
+                                    {   this.state.showMonthlyPlan ? 
+                                        <React.Fragment>
+                                            <h2 className="product-price product-price-lg">
+                                                <span className="currency">{tier.pricing.monthly.currency}</span>
+                                                <span className="price">{tier.pricing.monthly.price}</span>
+                                                <span className="period">/mo</span>
+                                            </h2>
+                                            <div className="pricing-panel-info">
+                                                <div className="text-yearly-color">
+                                                    <p data-alt-text="$950 billed yearly<br />Save $238/year" className="year-pricing">
+                                                        {tier.pricing.yearly.currency}{tier.pricing.yearly.price}/mo when you <div className="yearly" onClick={() => this.yearlyToggle()}> pay yearly</div>
+                                                    </p>
+                                                </div>
+                                            </div> 
+                                        </React.Fragment>
+                                            :
+                                        <React.Fragment>
+                                            <h2 className="product-price product-price-lg">
+                                                <span className="currency">{tier.pricing.yearly.currency}</span>
+                                                <span className="price">{tier.pricing.yearly.price}</span>
+                                                <span className="period">/mo</span>
+                                            </h2>
+                                            <div className="pricing-panel-info">
+                                                <div className="text-yearly-color">
+                                                    <p data-alt-text="$950 billed yearly<br />Save $238/year" className="year-pricing">
+                                                    ${tier.pricing.yearly.perAnnum} billed yearly<br />Save ${tier.pricing.yearly.savedAmount}/year
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </React.Fragment>
+                                    }
                                     <p></p>
                                     <p>{tier.description}</p>
                                     <p></p>
@@ -149,33 +193,70 @@ class CategoryFeatures extends React.Component {
 };
 
 class PlansAccordion extends React.Component {
+
+    constructor (props) {
+        super(props);
+
+        this.state = {
+            plans: plansData.plans,
+            showMonthlyPlan: true
+        };
+    }
+
+    yearlyToggle() {
+        console.log("in yearlyToggle func, this.state", this.state);
+        this.setState({
+            showMonthlyPlan: !this.state.showMonthlyPlan
+        })
+    }
+
     render() {
 
         let plansAccordion = [];
 
-        this.props.plans.forEach((plan) => {
+        this.state.plans.forEach((plan) => {
 
             plansAccordion.push(
                 <AccordionItem key={plan.name}>
-                    <AccordionItemHeading>
-                        <AccordionItemButton>
-                            <span className="plan-name">{plan.name}</span>
-                            {/* <span>{plan.monthly_price}</span> */}
-                            <h2 className="product-price product-price-sm">
-                                <span className="currency" data-alt-text="$">$</span>
-                                <span className="price" data-alt-text="79">99</span>
-                                <span className="period">/mo</span>
-                            </h2>
-                        </AccordionItemButton>
-                    </AccordionItemHeading>
-                    <AccordionItemPanel style={{ background: '#f5505017', textAlign: 'center' }}>
-                        <p className="text-light-gray">{plan.yearly_price} when you pay yearly</p>
-                        <p>{plan.description}</p>
-                        <button className="sign-up-btn-xs">
-                            <a href={plan.call_to_action.url} className="action-link">{plan.call_to_action.text}</a>
-                        </button>
-                        <CategoryFeatures categories={plan.categories} />
-                    </AccordionItemPanel>
+                    {   this.state.showMonthlyPlan ? 
+                            <React.Fragment>
+                                <AccordionItemHeading>
+                                    <AccordionItemButton>
+                                        <span className="plan-name">{plan.name}</span>
+                                        <h2 className="product-price product-price-sm">
+                                            <span className="currency" data-alt-text="$">$</span>
+                                            <span className="price" data-alt-text="79">{plan.monthly_price}</span>
+                                            <span className="period">/mo</span>
+                                        </h2>
+                                    </AccordionItemButton>
+                                </AccordionItemHeading>
+                                <AccordionItemPanel style={{ background: '#f5505017', textAlign: 'center' }}>
+                                    <p className="text-light-gray">{plan.yearly_price} when you <div className="yearly" onClick={() => this.yearlyToggle()}> pay yearly</div></p>
+                                    <p>{plan.description}</p>
+                                    <button className="sign-up-btn-xs">
+                                        <a href={plan.call_to_action.url} className="action-link">{plan.call_to_action.text}</a>
+                                    </button>
+                                    <CategoryFeatures categories={plan.categories} />
+                                </AccordionItemPanel>
+                            </React.Fragment>
+                        :
+                            <React.Fragment>
+                                <AccordionItemHeading>
+                                    <AccordionItemButton>
+                                        <span className="plan-name">{plan.name}</span>
+                                        <h2 className="product-price product-price-sm">
+                                            <span className="currency" data-alt-text="$">$</span>
+                                            <span className="price" data-alt-text="79">{plan.yearly_price}</span>
+                                            <span className="period">/mo</span>
+                                        </h2>
+                                    </AccordionItemButton>
+                                </AccordionItemHeading>
+                                <AccordionItemPanel style={{ background: '#f5505017', textAlign: 'center' }}>
+                                    ${plan.yearly.perAnnum} billed yearly<br />Save ${plan.yearly.savedAmount}/year
+                                    <CategoryFeatures categories={plan.categories} />
+                                </AccordionItemPanel>
+                            </React.Fragment>
+                    }
                     <br />
                 </AccordionItem>
             );
@@ -275,16 +356,6 @@ class PricingPage extends React.Component {
     // get pricing page details from a remote page
     componentDidMount() {
 
-        var teirsData = tiers;
-        // console.log("./tiers.json mydata", mydata);    
-
-        var plansAndFeaturesData = plansAndFeatures;
-        // console.log("./plans_and/-features.json mydata2", mydata2);
-
-        // get this json for mobile responsive data
-        var plansData = plans;
-        // console.log("plans in mydata3", mydata3);
-
         this.setState({
             tiers: teirsData.tiers,
             categories: plansAndFeaturesData.categories,
@@ -380,7 +451,7 @@ class PricingPage extends React.Component {
 
                         <div className="simple-plan-container">
                             <div className="container" style={{ maxWidth: '80%' }}>
-                                <SimplePlanTier tiers={this.state.tiers} onClick={() => this.handleClick()}
+                                <SimplePlanTier onClick={() => this.handleClick()}
                                     className="plan-tier" />
                             </div>
                         </div>

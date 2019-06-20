@@ -1,8 +1,10 @@
 let plans = {
   "plans": [{
     "name": "Standard",
-    "monthly_price": "$99/mo",
-    "yearly_price": "$900",
+    "monthly_price": "99",
+    "yearly_price": "89",
+    "perAnnum": "8000",
+    "savedAmount": "1600",
     "description": "Awesome stuff",
     "call_to_action" : {"text":"Sign-up Now!",
                         "url": "signup.com?utm=3423"
@@ -36,8 +38,10 @@ let plans = {
     }]
   }, {
     "name": "StartUp",
-    "monthly_price": "$39/mo",
-    "yearly_price": "$500",
+    "monthly_price": "39",
+    "yearly_price": "29",
+    "perAnnum": "55",
+    "savedAmount": "5",
     "description": "Awesome stuff",
     "call_to_action" : {"text":"Sign-up Now!",
                         "url": "signup.com?utm=3423"
