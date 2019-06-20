@@ -75,5 +75,20 @@ var plansAndFeatures = {
     ]
   },
 
+  ],
+  "tierActions": [
+    {
+      "label" : {
+                  "name": "Standard",
+                  "text":"Standard Sign-up Now!",
+                  "url": "signup.com?utm=3423"
+                }
+    }, {
+      "label": {
+                  "name": "Medium",
+                  "text":" Medium Sign-up Now!",
+                  "url": "signup.com?utm=3423"
+                }
+    }
   ]
 }
