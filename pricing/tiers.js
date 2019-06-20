@@ -8,49 +8,49 @@ tiers = {
          "yearly" : {        "price": "79.00",
         "currency": "$"}
        },
-        "name": "Standard",
+        "name": "Entreprise",
         "order": 1,
         "icon" : "www.docsie.io/icon.png",
-        "description": "Awesome stuff.",
+        "description": "Need",
         "call_to_action" : {"text":"Sign-up Now!",
                             "url": "signup.com?utm=3423"},
        "popular": "True"
       },
      {
       "pricing": {
-         "monthly": {        "price": "1.00",
+         "monthly": {        "price": "399.00",
         "currency": "$"},
-         "yearly" : {        "price": "1.00",
+         "yearly" : {        "price": "300.00",
         "currency": "$"}
        },
         "currency": "$",
-        "frequency" : "month",
-        "name": "Start-Up",
+        "frequency" : "year",
+        "name": "Business",
         "icon" : "www.docsie.io/icon.png",
         "order": 2,
-        "description": "This tier has all the tools needed for a small-size start-up",
+        "description": "Proffesional features and colloaboration for your growing business",
         "call_to_action" : {"text":"Try it Free!",
                             "url": "try-it-free-url"}
       },
-    // {
-    //   "pricing": {
-    //      "monthly": {        "price": "1.00",
-    //     "currency": "$"},
-    //      "yearly" : {        "price": "1.00",
-    //     "currency": "$"}
-    //    },
-    //     "currency": "",
-    //     "comment" : "",
-    //     "name": "Growth",
-    //     "icon" : "www.docsie.io/icon.png",
-    //     "order": 3,
-    //     "description": "Professional Product Documentation Tools for a Growing Businesses",
-    //     "features": [
+    {
+      "pricing": {
+         "monthly": {        "price": "10.00",
+        "currency": "$"},
+         "yearly" : {        "price": "100.00",
+        "currency": "$"}
+       },
+        "currency": "",
+        "comment" : "",
+        "name": "Start-up",
+        "icon" : "www.docsie.io/icon.png",
+        "order": 3,
+        "description": "Professional product documentation tools for an up-and-coming start-up",
+        "features": [
 
-    //     ],
-    //     "call_to_action" : {"text":"Contact Us",
-    //       "url": "contact-us-url"}
-    //   },
+        ],
+        "call_to_action" : {"text":"Contact Us",
+          "url": "contact-us-url"}
+      }
     // {
     //   "pricing": {
     //      "monthly": {        "price": "5.00",
