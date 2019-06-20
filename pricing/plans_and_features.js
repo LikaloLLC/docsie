@@ -31,6 +31,64 @@ var plansAndFeatures = {
       // "Premium" : "400"
       },
       "info": "Category 2 info"
-    }]
-  }]
+    },
+    {
+      "name": "Category 2",
+      "values" : {
+      "Standard": "23",
+      "Medium":"14",
+      // "Large" : "5",
+      // "Premium" : "400"
+      },
+      "info": "Category 2 info"
+    },
+    {
+      "name": "Category 2",
+      "values" : {
+      "Standard": "23",
+      "Medium":"14",
+      // "Large" : "5",
+      // "Premium" : "400"
+      },
+      "info": "Category 2 info"
+    },
+    {
+      "name": "Category 2",
+      "values" : {
+      "Standard": "23",
+      "Medium":"14",
+      // "Large" : "5",
+      // "Premium" : "400"
+      },
+      "info": "Category 2 info"
+    },
+    {
+      "name": "Category 2",
+      "values" : {
+      "Standard": "23",
+      "Medium":"14",
+      // "Large" : "5",
+      // "Premium" : "400"
+      },
+      "info": "Category 2 info"
+    }
+    ]
+  },
+
+  ],
+  "tierActions": [
+    {
+      "label" : {
+                  "name": "Standard",
+                  "text":"Standard Sign-up Now!",
+                  "url": "signup.com?utm=3423"
+                }
+    }, {
+      "label": {
+                  "name": "Medium",
+                  "text":" Medium Sign-up Now!",
+                  "url": "signup.com?utm=3423"
+                }
+    }
+  ]
 }

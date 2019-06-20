@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -15,8 +15,68 @@ var _reactAccessibleAccor = reactAccessibleAccordion,
     AccordionItemPanel = _reactAccessibleAccor.AccordionItemPanel,
     AccordionItemButton = _reactAccessibleAccor.AccordionItemButton;
 
-var SimplePlanTier = function (_React$Component) {
-    _inherits(SimplePlanTier, _React$Component);
+var Tooltip = function (_React$Component) {
+    _inherits(Tooltip, _React$Component);
+
+    function Tooltip(props) {
+        _classCallCheck(this, Tooltip);
+
+        var _this = _possibleConstructorReturn(this, (Tooltip.__proto__ || Object.getPrototypeOf(Tooltip)).call(this, props));
+
+        _this.state = {
+            displayTooltip: false
+        };
+        _this.hideTooltip = _this.hideTooltip.bind(_this);
+        _this.showTooltip = _this.showTooltip.bind(_this);
+        return _this;
+    }
+
+    _createClass(Tooltip, [{
+        key: 'hideTooltip',
+        value: function hideTooltip() {
+            this.setState({ displayTooltip: false });
+        }
+    }, {
+        key: 'showTooltip',
+        value: function showTooltip() {
+            this.setState({ displayTooltip: true });
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+            var message = this.props.message;
+            var position = this.props.position;
+            return React.createElement(
+                'span',
+                { className: 'tooltip',
+                    onMouseLeave: this.hideTooltip
+                },
+                this.state.displayTooltip && React.createElement(
+                    'div',
+                    { className: 'tooltip-bubble tooltip-' + position },
+                    React.createElement(
+                        'div',
+                        { className: 'tooltip-message' },
+                        message
+                    )
+                ),
+                React.createElement(
+                    'span',
+                    {
+                        className: 'tooltip-trigger',
+                        onMouseOver: this.showTooltip
+                    },
+                    this.props.children
+                )
+            );
+        }
+    }]);
+
+    return Tooltip;
+}(React.Component);
+
+var SimplePlanTier = function (_React$Component2) {
+    _inherits(SimplePlanTier, _React$Component2);
 
     function SimplePlanTier() {
         _classCallCheck(this, SimplePlanTier);
@@ -25,103 +85,103 @@ var SimplePlanTier = function (_React$Component) {
     }
 
     _createClass(SimplePlanTier, [{
-        key: "render",
+        key: 'render',
         value: function render() {
-            var _this2 = this;
+            var _this3 = this;
 
             var rows = [];
 
             this.props.tiers.forEach(function (tier) {
 
                 rows.push(React.createElement(
-                    "div",
-                    { key: tier.name, className: "pure-u-1-2" },
+                    'div',
+                    { key: tier.name, className: 'pure-u-1-2' },
                     React.createElement(
-                        "div",
-                        { className: "price-card" },
+                        'div',
+                        { className: 'price-card' },
                         React.createElement(
-                            "div",
-                            { className: "pricing-panel-wrapper" },
+                            'div',
+                            { className: 'pricing-panel-wrapper' },
                             React.createElement(
-                                "div",
-                                { className: "pricing-panel" },
+                                'div',
+                                { className: 'pricing-panel' },
                                 React.createElement(
-                                    "div",
-                                    { className: "pricing-panel-header" },
+                                    'div',
+                                    { className: 'pricing-panel-header' },
                                     React.createElement(
-                                        "h6",
-                                        { className: "pricing-panel-tier" },
+                                        'h6',
+                                        { className: 'pricing-panel-tier' },
                                         tier.name
                                     ),
                                     React.createElement(
-                                        "h2",
-                                        { className: "product-price product-price-lg" },
+                                        'h2',
+                                        { className: 'product-price product-price-lg' },
                                         React.createElement(
-                                            "span",
-                                            { className: "currency" },
+                                            'span',
+                                            { className: 'currency' },
                                             tier.pricing.monthly.currency
                                         ),
                                         React.createElement(
-                                            "span",
-                                            { className: "price" },
+                                            'span',
+                                            { className: 'price' },
                                             tier.pricing.monthly.price
                                         ),
                                         React.createElement(
-                                            "span",
-                                            { className: "period" },
-                                            "/mo"
+                                            'span',
+                                            { className: 'period' },
+                                            '/mo'
                                         )
                                     ),
                                     React.createElement(
-                                        "div",
-                                        { className: "pricing-panel-info" },
+                                        'div',
+                                        { className: 'pricing-panel-info' },
                                         React.createElement(
-                                            "div",
-                                            { className: "text-yearly-color" },
+                                            'div',
+                                            { className: 'text-yearly-color' },
                                             React.createElement(
-                                                "p",
-                                                { "data-alt-text": "$950 billed yearly<br />Save $238/year", className: "year-pricing" },
+                                                'p',
+                                                { 'data-alt-text': '$950 billed yearly<br />Save $238/year', className: 'year-pricing' },
                                                 tier.pricing.yearly.currency,
                                                 tier.pricing.yearly.price,
-                                                "/mo when you ",
+                                                '/mo when you ',
                                                 React.createElement(
-                                                    "a",
-                                                    { href: "#", className: "yearly" },
-                                                    " pay yearly"
+                                                    'a',
+                                                    { href: '#', className: 'yearly' },
+                                                    ' pay yearly'
                                                 )
                                             )
                                         )
                                     ),
-                                    React.createElement("p", null),
+                                    React.createElement('p', null),
                                     React.createElement(
-                                        "p",
+                                        'p',
                                         null,
                                         tier.description
                                     ),
-                                    React.createElement("p", null),
+                                    React.createElement('p', null)
+                                ),
+                                React.createElement(
+                                    'div',
+                                    { className: 'pricing-panel-footer' },
                                     React.createElement(
-                                        "div",
-                                        { className: "pricing-panel-footer" },
+                                        'div',
+                                        { className: 'cta-wrapper' },
                                         React.createElement(
-                                            "div",
-                                            { className: "cta-wrapper" },
+                                            'button',
+                                            { className: 'sign-up-btn' },
                                             React.createElement(
-                                                "button",
-                                                { className: "sign-up-btn" },
-                                                React.createElement(
-                                                    "a",
-                                                    { href: tier.call_to_action.url, className: "action-link-lg" },
-                                                    tier.call_to_action.text
-                                                )
+                                                'a',
+                                                { href: tier.call_to_action.url, className: 'action-link-lg' },
+                                                tier.call_to_action.text
                                             )
-                                        ),
-                                        React.createElement(
-                                            "p",
-                                            { className: "compare-plans", onClick: function onClick() {
-                                                    return _this2.props.onClick();
-                                                } },
-                                            "compare plans"
                                         )
+                                    ),
+                                    React.createElement(
+                                        'p',
+                                        { className: 'compare-plans', onClick: function onClick() {
+                                                return _this3.props.onClick();
+                                            } },
+                                        'compare plans'
                                     )
                                 )
                             )
@@ -131,8 +191,8 @@ var SimplePlanTier = function (_React$Component) {
             });
 
             return React.createElement(
-                "div",
-                { className: "pure-g" },
+                'div',
+                { className: 'pure-g' },
                 rows
             );
         }
@@ -143,8 +203,8 @@ var SimplePlanTier = function (_React$Component) {
 
 ;
 
-var CategoryFeatures = function (_React$Component2) {
-    _inherits(CategoryFeatures, _React$Component2);
+var CategoryFeatures = function (_React$Component3) {
+    _inherits(CategoryFeatures, _React$Component3);
 
     function CategoryFeatures() {
         _classCallCheck(this, CategoryFeatures);
@@ -153,7 +213,7 @@ var CategoryFeatures = function (_React$Component2) {
     }
 
     _createClass(CategoryFeatures, [{
-        key: "render",
+        key: 'render',
         value: function render() {
 
             var categoryFeatures = [];
@@ -167,34 +227,37 @@ var CategoryFeatures = function (_React$Component2) {
                 category.features.forEach(function (item, j) {
 
                     categoryFeatures.push(React.createElement(
-                        "div",
-                        { key: item.values[val], className: "plan-desc" },
+                        'div',
+                        { key: item.values[val], className: 'plan-desc' },
                         j == 0 ? React.createElement(
-                            "span",
+                            'span',
                             { style: { color: '#b50000bf', marginTop: '10px', fontWeight: 'bold' } },
                             category.name
                         ) : '',
                         React.createElement(
-                            "div",
-                            { className: "plan-desc-feature" },
+                            'div',
+                            { className: 'plan-desc-feature' },
                             React.createElement(
-                                "div",
-                                { sm: "2", className: "category-feature-xs" },
+                                'div',
+                                { sm: '2', className: 'category-feature-xs' },
                                 React.createElement(
-                                    "div",
+                                    'div',
                                     null,
                                     item.values[val],
-                                    "\xA0",
+                                    '\xA0',
                                     item.name,
-                                    "\xA0",
+                                    '\xA0',
                                     React.createElement(
-                                        "span",
-                                        { className: "tooltip-info" },
-                                        React.createElement("i", { className: "fa fa-info-circle", "aria-hidden": "true", "data-tip": item.info }),
+                                        Tooltip,
+                                        { message: item.info, position: 'top' },
                                         React.createElement(
-                                            "span",
-                                            { className: "tooltiptext-info" },
-                                            item.info
+                                            'span',
+                                            { className: 'custom-info-icon', 'aria-hidden': 'true', 'data-tip': item.info },
+                                            React.createElement(
+                                                'p',
+                                                { style: { position: 'relative', bottom: '12px' } },
+                                                'i'
+                                            )
                                         )
                                     )
                                 )
@@ -205,7 +268,7 @@ var CategoryFeatures = function (_React$Component2) {
             });
 
             return React.createElement(
-                "div",
+                'div',
                 null,
                 categoryFeatures
             );
@@ -217,8 +280,8 @@ var CategoryFeatures = function (_React$Component2) {
 
 ;
 
-var PlansAccordion = function (_React$Component3) {
-    _inherits(PlansAccordion, _React$Component3);
+var PlansAccordion = function (_React$Component4) {
+    _inherits(PlansAccordion, _React$Component4);
 
     function PlansAccordion() {
         _classCallCheck(this, PlansAccordion);
@@ -227,7 +290,7 @@ var PlansAccordion = function (_React$Component3) {
     }
 
     _createClass(PlansAccordion, [{
-        key: "render",
+        key: 'render',
         value: function render() {
 
             var plansAccordion = [];
@@ -244,27 +307,27 @@ var PlansAccordion = function (_React$Component3) {
                             AccordionItemButton,
                             null,
                             React.createElement(
-                                "span",
-                                { className: "plan-name" },
+                                'span',
+                                { className: 'plan-name' },
                                 plan.name
                             ),
                             React.createElement(
-                                "h2",
-                                { className: "product-price product-price-sm" },
+                                'h2',
+                                { className: 'product-price product-price-sm' },
                                 React.createElement(
-                                    "span",
-                                    { className: "currency", "data-alt-text": "$" },
-                                    "$"
+                                    'span',
+                                    { className: 'currency', 'data-alt-text': '$' },
+                                    '$'
                                 ),
                                 React.createElement(
-                                    "span",
-                                    { className: "price", "data-alt-text": "79" },
-                                    "99"
+                                    'span',
+                                    { className: 'price', 'data-alt-text': '79' },
+                                    '99'
                                 ),
                                 React.createElement(
-                                    "span",
-                                    { className: "period" },
-                                    "/mo"
+                                    'span',
+                                    { className: 'period' },
+                                    '/mo'
                                 )
                             )
                         )
@@ -273,33 +336,33 @@ var PlansAccordion = function (_React$Component3) {
                         AccordionItemPanel,
                         { style: { background: '#f5505017', textAlign: 'center' } },
                         React.createElement(
-                            "p",
-                            { className: "text-light-gray" },
+                            'p',
+                            { className: 'text-light-gray' },
                             plan.yearly_price,
-                            " when you pay yearly"
+                            ' when you pay yearly'
                         ),
                         React.createElement(
-                            "p",
+                            'p',
                             null,
                             plan.description
                         ),
                         React.createElement(
-                            "button",
-                            { className: "sign-up-btn-xs" },
+                            'button',
+                            { className: 'sign-up-btn-xs' },
                             React.createElement(
-                                "a",
-                                { href: plan.call_to_action.url, className: "action-link" },
+                                'a',
+                                { href: plan.call_to_action.url, className: 'action-link' },
                                 plan.call_to_action.text
                             )
                         ),
                         React.createElement(CategoryFeatures, { categories: plan.categories })
                     ),
-                    React.createElement("br", null)
+                    React.createElement('br', null)
                 ));
             });
 
             return React.createElement(
-                "div",
+                'div',
                 null,
                 React.createElement(
                     Accordion,
@@ -315,32 +378,32 @@ var PlansAccordion = function (_React$Component3) {
 
 ;
 
-var PricingPage = function (_React$Component4) {
-    _inherits(PricingPage, _React$Component4);
+var PricingPage = function (_React$Component5) {
+    _inherits(PricingPage, _React$Component5);
 
     function PricingPage(props) {
         _classCallCheck(this, PricingPage);
 
-        var _this5 = _possibleConstructorReturn(this, (PricingPage.__proto__ || Object.getPrototypeOf(PricingPage)).call(this, props));
+        var _this6 = _possibleConstructorReturn(this, (PricingPage.__proto__ || Object.getPrototypeOf(PricingPage)).call(this, props));
 
-        _this5.state = {
+        _this6.state = {
             showDetailedPlanOveriew: false,
             tiers: [],
             categories: [],
             plans: [],
             tooltipOpen: false
         };
-        return _this5;
+        return _this6;
     }
 
     _createClass(PricingPage, [{
-        key: "handleClick",
+        key: 'handleClick',
         value: function handleClick() {
 
             this.setState({ showDetailedPlanOveriew: !this.state.showDetailedPlanOveriew });
         }
     }, {
-        key: "mouseOver",
+        key: 'mouseOver',
         value: function mouseOver() {
             console.log("Mouse over!!!");
             // this.setState({flipped: true});
@@ -406,7 +469,7 @@ var PricingPage = function (_React$Component4) {
         // get pricing page details from a remote page
 
     }, {
-        key: "componentDidMount",
+        key: 'componentDidMount',
         value: function componentDidMount() {
 
             var teirsData = tiers;
@@ -422,45 +485,48 @@ var PricingPage = function (_React$Component4) {
             this.setState({
                 tiers: teirsData.tiers,
                 categories: plansAndFeaturesData.categories,
-                plans: plansData.plans
+                plans: plansData.plans,
+                tierActions: plansAndFeaturesData.tierActions
             });
         }
     }, {
-        key: "render",
+        key: 'render',
         value: function render() {
-            var _this6 = this;
+            var _this7 = this;
 
             var detailRows = [];
 
             var categoryFeatures = [];
 
+            var tierActions = [];
+
             this.state.tiers.forEach(function (tier) {
 
                 detailRows.push(React.createElement(
-                    "div",
-                    { key: tier.name, className: "pure-u-1-4 category-feature-head" },
+                    'div',
+                    { key: tier.name, className: 'pure-u-1-4 category-feature-head' },
                     React.createElement(
-                        "h4",
-                        { className: "pricing-name" },
+                        'h4',
+                        { className: 'pricing-name' },
                         tier.name
                     ),
                     React.createElement(
-                        "h2",
-                        { className: "product-price product-price-md" },
+                        'h2',
+                        { className: 'product-price product-price-md' },
                         React.createElement(
-                            "span",
-                            { className: "currency" },
+                            'span',
+                            { className: 'currency' },
                             tier.pricing.monthly.currency
                         ),
                         React.createElement(
-                            "span",
-                            { className: "price" },
+                            'span',
+                            { className: 'price' },
                             tier.pricing.monthly.price
                         ),
                         React.createElement(
-                            "span",
-                            { className: "period" },
-                            "/mo"
+                            'span',
+                            { className: 'period' },
+                            '/mo'
                         )
                     )
                 ));
@@ -470,64 +536,57 @@ var PricingPage = function (_React$Component4) {
                 category.features.forEach(function (item, j) {
 
                     categoryFeatures.push(React.createElement(
-                        "div",
-                        { key: item.name },
-                        i != 0 && j == 0 ? React.createElement(
-                            "div",
-                            { className: "pure-g" },
+                        React.Fragment,
+                        null,
+                        j == 0 ? React.createElement(
+                            React.Fragment,
+                            null,
                             React.createElement(
-                                "div",
-                                { className: "pure-u-1-4" },
-                                React.createElement(
-                                    "h4",
-                                    { style: { textAlign: 'center' } },
-                                    category.name
-                                )
+                                'h4',
+                                null,
+                                category.name
                             )
                         ) : '',
                         React.createElement(
-                            "div",
-                            { className: "pure-g" },
+                            'div',
+                            { className: 'pure-g', key: item.name },
                             React.createElement(
-                                "div",
-                                { className: "pure-u-1-4", style: { textAlign: 'center' } },
+                                'div',
+                                { className: 'pure-u-1-4 card category-feature', style: { textAlign: 'center' } },
                                 React.createElement(
-                                    "div",
-                                    { style: { display: 'inline-block' } },
+                                    'div',
+                                    { className: 'category-name' },
                                     item.name,
-                                    "\xA0",
+                                    '\xA0',
                                     React.createElement(
-                                        "span",
-                                        { className: "custom-info-icon", onMouseOver: function onMouseOver() {
-                                                return _this6.mouseOver();
-                                            }, "aria-hidden": "true", "data-tip": item.info },
+                                        Tooltip,
+                                        { message: item.info, position: 'top' },
                                         React.createElement(
-                                            "p",
-                                            { style: { position: 'relative', bottom: '12px' } },
-                                            "i"
-                                        ),
-                                        React.createElement(
-                                            "span",
-                                            { className: "tooltiptext-info-dsk" },
-                                            item.info
+                                            'span',
+                                            { className: 'custom-info-icon', 'aria-hidden': 'true', 'data-tip': item.info },
+                                            React.createElement(
+                                                'p',
+                                                { style: { position: 'relative', bottom: '12px' } },
+                                                'i'
+                                            )
                                         )
                                     )
                                 )
                             ),
                             React.createElement(
-                                "div",
-                                { className: "pure-u-1-4 category-feature" },
+                                'div',
+                                { className: 'pure-u-1-4 card category-feature' },
                                 React.createElement(
-                                    "div",
+                                    'div',
                                     null,
                                     item.values.Standard
                                 )
                             ),
                             React.createElement(
-                                "div",
-                                { className: "pure-u-1-4 category-feature" },
+                                'div',
+                                { className: 'pure-u-1-4 card category-feature' },
                                 React.createElement(
-                                    "div",
+                                    'div',
                                     null,
                                     item.values.Medium
                                 )
@@ -537,68 +596,94 @@ var PricingPage = function (_React$Component4) {
                 });
             });
 
+            if (this.state && this.state.tierActions) {
+                this.state.tierActions.forEach(function (tierAction) {
+
+                    tierActions.push(React.createElement(
+                        'div',
+                        { key: tierAction.label.name, className: 'pure-u-1-4', style: { textAlign: 'center' } },
+                        React.createElement(
+                            'button',
+                            { className: 'sign-up-btn' },
+                            React.createElement(
+                                'a',
+                                { href: tierAction.label.url, className: 'action-link-lg' },
+                                tierAction.label.text
+                            )
+                        )
+                    ));
+                });
+            }
+
             return React.createElement(
-                "div",
-                { className: "simple-detail-plan-tier-sm-md-lg" },
+                'div',
+                { className: 'simple-detail-plan-tier-sm-md-lg' },
                 !this.state.showDetailedPlanOveriew ? React.createElement(
-                    "div",
+                    React.Fragment,
                     null,
                     React.createElement(
-                        "div",
-                        { className: "accrd-view" },
-                        React.createElement(PlansAccordion, { plans: this.state.plans, className: "accordion-plan-tier" })
+                        'div',
+                        { className: 'accrd-view' },
+                        React.createElement(PlansAccordion, { plans: this.state.plans, className: 'accordion-plan-tier' })
                     ),
                     React.createElement(
-                        "div",
-                        { className: "simple-plan-container" },
+                        'div',
+                        { className: 'simple-plan-container' },
                         React.createElement(
-                            "div",
-                            { className: "container", style: { maxWidth: '50%' } },
+                            'div',
+                            { className: 'container', style: { maxWidth: '50%' } },
                             React.createElement(SimplePlanTier, { tiers: this.state.tiers, onClick: function onClick() {
-                                    return _this6.handleClick();
+                                    return _this7.handleClick();
                                 },
-                                className: "plan-tier" })
+                                className: 'plan-tier' })
                         )
                     )
                 ) : React.createElement(
-                    "div",
+                    React.Fragment,
                     null,
                     React.createElement(
-                        "div",
-                        { className: "accrd-view" },
-                        React.createElement(PlansAccordion, { plans: this.state.plans, className: "accordion-plan-tier" })
+                        'div',
+                        { className: 'accrd-view' },
+                        React.createElement(PlansAccordion, { plans: this.state.plans, className: 'accordion-plan-tier' })
                     ),
                     React.createElement(
-                        "div",
-                        { className: "detail-plan-container" },
+                        'div',
+                        { className: 'detail-plan-container' },
                         React.createElement(
-                            "div",
-                            { style: { background: '#f5505017', width: '80%' } },
+                            'div',
+                            { style: { background: '#fff', width: '80%' } },
                             React.createElement(
-                                "div",
-                                { className: "pure-g" },
+                                'div',
+                                { className: 'pure-g', style: { marginBottom: '-60px' } },
                                 React.createElement(
-                                    "div",
-                                    { className: "pure-u-1-4" },
-                                    React.createElement(
-                                        "h4",
-                                        { className: "category-type-main" },
-                                        this.state.categories[0].name
-                                    )
+                                    'div',
+                                    { 'class': 'pure-u-1-4' },
+                                    '\xA0'
                                 ),
                                 detailRows
                             ),
                             categoryFeatures,
-                            React.createElement("br", null),
+                            React.createElement('br', null),
                             React.createElement(
-                                "button",
-                                { className: "sign-up-btn view-simple-tier-btn", onClick: function onClick() {
-                                        return _this6.handleClick();
+                                'div',
+                                { className: 'pure-g' },
+                                React.createElement(
+                                    'div',
+                                    { 'class': 'pure-u-1-4', style: { textAlign: 'center' } },
+                                    '\xA0'
+                                ),
+                                tierActions
+                            ),
+                            React.createElement('br', null),
+                            React.createElement(
+                                'button',
+                                { className: 'sign-up-btn view-simple-tier-btn', onClick: function onClick() {
+                                        return _this7.handleClick();
                                     } },
                                 React.createElement(
-                                    "div",
-                                    { className: "action-link-lg view-simple-tier" },
-                                    "View Simple Plan Tier"
+                                    'div',
+                                    { className: 'action-link-lg view-simple-tier' },
+                                    'View Simple Plan Tier'
                                 )
                             )
                         )
@@ -617,7 +702,7 @@ var PricingPage = function (_React$Component4) {
 
 
 ReactDOM.render(React.createElement(
-    "div",
+    React.Fragment,
     null,
     React.createElement(PricingPage, null)
 ), document.getElementById('root'));
