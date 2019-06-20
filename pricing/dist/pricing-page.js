@@ -631,7 +631,7 @@ var PricingPage = function (_React$Component5) {
                         { className: 'simple-plan-container' },
                         React.createElement(
                             'div',
-                            { className: 'container', style: { maxWidth: '50%' } },
+                            { className: 'container', style: { maxWidth: '80%' } },
                             React.createElement(SimplePlanTier, { tiers: this.state.tiers, onClick: function onClick() {
                                     return _this7.handleClick();
                                 },

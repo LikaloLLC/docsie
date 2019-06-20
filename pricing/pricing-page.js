@@ -379,7 +379,7 @@ class PricingPage extends React.Component {
                         </div>
 
                         <div className="simple-plan-container">
-                            <div className="container" style={{ maxWidth: '50%' }}>
+                            <div className="container" style={{ maxWidth: '80%' }}>
                                 <SimplePlanTier tiers={this.state.tiers} onClick={() => this.handleClick()}
                                     className="plan-tier" />
                             </div>
