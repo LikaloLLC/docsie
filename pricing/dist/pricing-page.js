@@ -17,14 +17,11 @@ var _reactAccessibleAccor = reactAccessibleAccordion,
 
 
 var teirsData = tiers;
-// console.log("./tiers.json mydata", mydata);    
 
 var plansAndFeaturesData = plansAndFeatures;
-// console.log("./plans_and/-features.json mydata2", mydata2);
 
 // get this json for mobile responsive data
 var plansData = plans;
-// console.log("plans in mydata3", mydata3);
 
 var Tooltip = function (_React$Component) {
     _inherits(Tooltip, _React$Component);
@@ -157,7 +154,7 @@ var SimplePlanTier = function (_React$Component2) {
                                             React.createElement(
                                                 'span',
                                                 { className: 'period' },
-                                                '/mo'
+                                                tier.pricing.monthly.label
                                             )
                                         ),
                                         React.createElement(
@@ -171,13 +168,17 @@ var SimplePlanTier = function (_React$Component2) {
                                                     { 'data-alt-text': '$950 billed yearly<br />Save $238/year', className: 'year-pricing' },
                                                     tier.pricing.yearly.currency,
                                                     tier.pricing.yearly.price,
-                                                    '/mo when you ',
+                                                    tier.pricing.monthly.label,
+                                                    ' ',
+                                                    _this3.state.tiers[0].monthlyText,
+                                                    ' ',
                                                     React.createElement(
                                                         'div',
                                                         { className: 'yearly', onClick: function onClick() {
                                                                 return _this3.yearlyToggle();
                                                             } },
-                                                        ' pay yearly'
+                                                        ' ',
+                                                        _this3.state.tiers[0].payText
                                                     )
                                                 )
                                             )
@@ -201,7 +202,7 @@ var SimplePlanTier = function (_React$Component2) {
                                             React.createElement(
                                                 'span',
                                                 { className: 'period' },
-                                                '/mo'
+                                                tier.pricing.monthly.label
                                             )
                                         ),
                                         React.createElement(
@@ -213,13 +214,17 @@ var SimplePlanTier = function (_React$Component2) {
                                                 React.createElement(
                                                     'p',
                                                     { 'data-alt-text': '$950 billed yearly<br />Save $238/year', className: 'year-pricing' },
-                                                    '$',
+                                                    tier.pricing.yearly.currency,
                                                     tier.pricing.yearly.perAnnum,
-                                                    ' billed yearly',
+                                                    ' ',
+                                                    _this3.state.tiers[0].yearlyText1,
                                                     React.createElement('br', null),
-                                                    'Save $',
+                                                    ' ',
+                                                    _this3.state.tiers[0].yearlyText2,
+                                                    ' ',
+                                                    tier.pricing.yearly.currency,
                                                     tier.pricing.yearly.savedAmount,
-                                                    '/year'
+                                                    tier.pricing.yearly.label
                                                 )
                                             )
                                         )
@@ -253,7 +258,7 @@ var SimplePlanTier = function (_React$Component2) {
                                         { className: 'compare-plans', onClick: function onClick() {
                                                 return _this3.props.onClick();
                                             } },
-                                        'compare plans'
+                                        _this3.state.tiers[0].compareText
                                     )
                                 )
                             )
@@ -364,7 +369,8 @@ var PlansAccordion = function (_React$Component4) {
 
         _this5.state = {
             plans: plansData.plans,
-            showMonthlyPlan: true
+            showMonthlyPlan: true,
+            tiers: teirsData.tiers
         };
         return _this5;
     }
@@ -409,7 +415,7 @@ var PlansAccordion = function (_React$Component4) {
                                     React.createElement(
                                         'span',
                                         { className: 'currency', 'data-alt-text': '$' },
-                                        '$'
+                                        plan.monthly_currency
                                     ),
                                     React.createElement(
                                         'span',
@@ -419,7 +425,7 @@ var PlansAccordion = function (_React$Component4) {
                                     React.createElement(
                                         'span',
                                         { className: 'period' },
-                                        '/mo'
+                                        plan.monthly_label
                                     )
                                 )
                             )
@@ -431,13 +437,16 @@ var PlansAccordion = function (_React$Component4) {
                                 'p',
                                 { className: 'text-light-gray' },
                                 plan.yearly_price,
-                                ' when you ',
+                                ' ',
+                                _this6.state.tiers[0].monthlyText,
+                                ' ',
                                 React.createElement(
                                     'div',
                                     { className: 'yearly', onClick: function onClick() {
                                             return _this6.yearlyToggle();
                                         } },
-                                    ' pay yearly'
+                                    ' ',
+                                    _this6.state.tiers[0].payText
                                 )
                             ),
                             React.createElement(
@@ -476,7 +485,7 @@ var PlansAccordion = function (_React$Component4) {
                                     React.createElement(
                                         'span',
                                         { className: 'currency', 'data-alt-text': '$' },
-                                        '$'
+                                        plan.monthly_currency
                                     ),
                                     React.createElement(
                                         'span',
@@ -486,7 +495,7 @@ var PlansAccordion = function (_React$Component4) {
                                     React.createElement(
                                         'span',
                                         { className: 'period' },
-                                        '/mo'
+                                        plan.monthly_label
                                     )
                                 )
                             )
@@ -496,11 +505,15 @@ var PlansAccordion = function (_React$Component4) {
                             { style: { background: '#f5505017', textAlign: 'center' } },
                             '$',
                             plan.yearly.perAnnum,
-                            ' billed yearly',
+                            ' ',
+                            _this6.state.tiers[0].yearlyText1,
                             React.createElement('br', null),
-                            'Save $',
+                            ' ',
+                            _this6.state.tiers[0].yearlyText2,
+                            ' ',
+                            plan.monthly_price,
                             plan.yearly.savedAmount,
-                            '/year',
+                            plan.yearly_label,
                             React.createElement(CategoryFeatures, { categories: plan.categories })
                         )
                     ),
@@ -548,12 +561,6 @@ var PricingPage = function (_React$Component5) {
         value: function handleClick() {
 
             this.setState({ showDetailedPlanOveriew: !this.state.showDetailedPlanOveriew });
-        }
-    }, {
-        key: 'mouseOver',
-        value: function mouseOver() {
-            console.log("Mouse over!!!");
-            // this.setState({flipped: true});
         }
 
         // get pricing page details from a remote page
@@ -663,7 +670,7 @@ var PricingPage = function (_React$Component5) {
                         React.createElement(
                             'span',
                             { className: 'period' },
-                            '/mo'
+                            tier.pricing.monthly.label
                         )
                     )
                 ));
@@ -822,7 +829,7 @@ var PricingPage = function (_React$Component5) {
                                 React.createElement(
                                     'div',
                                     { className: 'action-link-lg view-simple-tier' },
-                                    'View Simple Plan Tier'
+                                    this.state.tiers[0].toggleText
                                 )
                             )
                         )

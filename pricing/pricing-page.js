@@ -6,14 +6,11 @@ const {
     AccordionItemButton } = reactAccessibleAccordion;
 
     var teirsData = tiers;
-    // console.log("./tiers.json mydata", mydata);    
 
     var plansAndFeaturesData = plansAndFeatures;
-    // console.log("./plans_and/-features.json mydata2", mydata2);
 
     // get this json for mobile responsive data
     var plansData = plans;
-    // console.log("plans in mydata3", mydata3);
 
     class Tooltip extends React.Component {
     constructor(props) {
@@ -93,12 +90,12 @@ class SimplePlanTier extends React.Component {
                                             <h2 className="product-price product-price-lg">
                                                 <span className="currency">{tier.pricing.monthly.currency}</span>
                                                 <span className="price">{tier.pricing.monthly.price}</span>
-                                                <span className="period">/mo</span>
+                                                <span className="period">{tier.pricing.monthly.label}</span>
                                             </h2>
                                             <div className="pricing-panel-info">
                                                 <div className="text-yearly-color">
                                                     <p data-alt-text="$950 billed yearly<br />Save $238/year" className="year-pricing">
-                                                        {tier.pricing.yearly.currency}{tier.pricing.yearly.price}/mo when you <div className="yearly" onClick={() => this.yearlyToggle()}> pay yearly</div>
+                                                        {tier.pricing.yearly.currency}{tier.pricing.yearly.price}{tier.pricing.monthly.label} {this.state.tiers[0].monthlyText} <div className="yearly" onClick={() => this.yearlyToggle()}> {this.state.tiers[0].payText}</div>
                                                     </p>
                                                 </div>
                                             </div> 
@@ -108,12 +105,12 @@ class SimplePlanTier extends React.Component {
                                             <h2 className="product-price product-price-lg">
                                                 <span className="currency">{tier.pricing.yearly.currency}</span>
                                                 <span className="price">{tier.pricing.yearly.price}</span>
-                                                <span className="period">/mo</span>
+                                                <span className="period">{tier.pricing.monthly.label}</span>
                                             </h2>
                                             <div className="pricing-panel-info">
                                                 <div className="text-yearly-color">
                                                     <p data-alt-text="$950 billed yearly<br />Save $238/year" className="year-pricing">
-                                                    ${tier.pricing.yearly.perAnnum} billed yearly<br />Save ${tier.pricing.yearly.savedAmount}/year
+                                                        {tier.pricing.yearly.currency}{tier.pricing.yearly.perAnnum} {this.state.tiers[0].yearlyText1}<br /> {this.state.tiers[0].yearlyText2} {tier.pricing.yearly.currency}{tier.pricing.yearly.savedAmount}{tier.pricing.yearly.label}
                                                     </p>
                                                 </div>
                                             </div>
@@ -129,8 +126,7 @@ class SimplePlanTier extends React.Component {
                                             <a href={tier.call_to_action.url} className="action-link-lg">{tier.call_to_action.text}</a>
                                         </button>
                                     </div>
-                                    <p className="compare-plans" onClick={() => this.props.onClick()}>compare plans</p>
-                                    {/* <p>Here is a <Tooltip message={'Hello, I am a super cool tooltip'} position={'top'}>tooltip</Tooltip> on top.</p> */}
+                                    <p className="compare-plans" onClick={() => this.props.onClick()}>{this.state.tiers[0].compareText}</p>
                                 </div>
                             </div>
                         </div>
@@ -203,7 +199,8 @@ class PlansAccordion extends React.Component {
 
         this.state = {
             plans: plansData.plans,
-            showMonthlyPlan: true
+            showMonthlyPlan: true,
+            tiers: teirsData.tiers,
         };
     }
 
@@ -228,14 +225,14 @@ class PlansAccordion extends React.Component {
                                     <AccordionItemButton>
                                         <span className="plan-name">{plan.name}</span>
                                         <h2 className="product-price product-price-sm">
-                                            <span className="currency" data-alt-text="$">$</span>
+                                            <span className="currency" data-alt-text="$">{plan.monthly_currency}</span>
                                             <span className="price" data-alt-text="79">{plan.monthly_price}</span>
-                                            <span className="period">/mo</span>
+                                            <span className="period">{plan.monthly_label}</span>
                                         </h2>
                                     </AccordionItemButton>
                                 </AccordionItemHeading>
                                 <AccordionItemPanel style={{ background: '#f5505017', textAlign: 'center' }}>
-                                    <p className="text-light-gray">{plan.yearly_price} when you <div className="yearly" onClick={() => this.yearlyToggle()}> pay yearly</div></p>
+                                    <p className="text-light-gray">{plan.yearly_price} {this.state.tiers[0].monthlyText} <div className="yearly" onClick={() => this.yearlyToggle()}> {this.state.tiers[0].payText}</div></p>
                                     <p>{plan.description}</p>
                                     <button className="sign-up-btn-xs">
                                         <a href={plan.call_to_action.url} className="action-link">{plan.call_to_action.text}</a>
@@ -249,14 +246,14 @@ class PlansAccordion extends React.Component {
                                     <AccordionItemButton>
                                         <span className="plan-name">{plan.name}</span>
                                         <h2 className="product-price product-price-sm">
-                                            <span className="currency" data-alt-text="$">$</span>
+                                            <span className="currency" data-alt-text="$">{plan.monthly_currency}</span>
                                             <span className="price" data-alt-text="79">{plan.yearly_price}</span>
-                                            <span className="period">/mo</span>
+                                            <span className="period">{plan.monthly_label}</span>
                                         </h2>
                                     </AccordionItemButton>
                                 </AccordionItemHeading>
                                 <AccordionItemPanel style={{ background: '#f5505017', textAlign: 'center' }}>
-                                    ${plan.yearly.perAnnum} billed yearly<br />Save ${plan.yearly.savedAmount}/year
+                                    ${plan.yearly.perAnnum} {this.state.tiers[0].yearlyText1}<br /> {this.state.tiers[0].yearlyText2} {plan.monthly_price}{plan.yearly.savedAmount}{plan.yearly_label}
                                     <CategoryFeatures categories={plan.categories} />
                                 </AccordionItemPanel>
                             </React.Fragment>
@@ -293,11 +290,6 @@ class PricingPage extends React.Component {
     handleClick() {
 
         this.setState({ showDetailedPlanOveriew: !this.state.showDetailedPlanOveriew });
-    }
-
-    mouseOver() {
-        console.log("Mouse over!!!");
-        // this.setState({flipped: true});
     }
 
     // get pricing page details from a remote page
@@ -384,7 +376,7 @@ class PricingPage extends React.Component {
                     <h2 className="product-price product-price-md">
                         <span className="currency">{tier.pricing.monthly.currency}</span>
                         <span className="price">{tier.pricing.monthly.price}</span>
-                        <span className="period">/mo</span>
+                        <span className="period">{tier.pricing.monthly.label}</span>
                     </h2>
                 </div>
             )
@@ -473,16 +465,7 @@ class PricingPage extends React.Component {
                         </div>
                         <div className="detail-plan-container">
 
-                            {/* <h4 className="category-type-main">{this.state.categories[0].name}</h4> */}
-
                             <div style={{ background: '#fff', width: '80%' }}>
-
-                                {/* <div className="row">
-                                    <div className="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-                                        <h4 className="category-type-main">{this.state.categories[0].name}</h4>
-                                    </div>
-                                    {detailRows}
-                                </div> */}
 
                                 <div className="pure-g" style={{marginBottom: '-60px'}}>
                                     
@@ -490,11 +473,6 @@ class PricingPage extends React.Component {
                                     
                                     {detailRows}
                                     
-                                    {/* <div className="pure-u-1-4"> */}
-
-                                    {/* <h4 className="category-type-main">{this.state.categories[0].name}</h4> */}
-                                    {/* </div> */}
-
                                 </div>
 
                                 {categoryFeatures}
@@ -510,7 +488,7 @@ class PricingPage extends React.Component {
                                 <br />
 
                                 <button className="sign-up-btn view-simple-tier-btn" onClick={() => this.handleClick()}>
-                                    <div className="action-link-lg view-simple-tier">View Simple Plan Tier</div>
+                                    <div className="action-link-lg view-simple-tier">{this.state.tiers[0].toggleText}</div>
                                 </button>
                             </div>
                         </div>

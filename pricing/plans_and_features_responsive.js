@@ -1,8 +1,11 @@
 let plans = {
   "plans": [{
     "name": "Standard",
+    "monthly_currency": "$",
     "monthly_price": "99",
+    "monthly_label": "/mo",
     "yearly_price": "89",
+    "yearly_label": "/year",
     "perAnnum": "8000",
     "savedAmount": "1600",
     "description": "Awesome stuff",
@@ -38,8 +41,11 @@ let plans = {
     }]
   }, {
     "name": "StartUp",
+    "monthly_currency": "$",
     "monthly_price": "39",
+    "monthly_label": "/mo",
     "yearly_price": "29",
+    "yearly_label": "/year",
     "perAnnum": "55",
     "savedAmount": "5",
     "description": "Awesome stuff",
