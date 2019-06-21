@@ -5,54 +5,54 @@ const {
     AccordionItemPanel,
     AccordionItemButton } = reactAccessibleAccordion;
 
-    var teirsData = tiers;
+var teirsData = tiers;
 
-    var plansAndFeaturesData = plansAndFeatures;
+var plansAndFeaturesData = plansAndFeatures;
 
-    // get this json for mobile responsive data
-    var plansData = plans;
+// get this json for mobile responsive data
+var plansData = plans;
 
-    class Tooltip extends React.Component {
-    constructor(props) {
+class Tooltip extends React.Component {
+    constructor (props) {
         super(props)
 
         this.state = {
-        displayTooltip: false
+            displayTooltip: false
         }
         this.hideTooltip = this.hideTooltip.bind(this)
         this.showTooltip = this.showTooltip.bind(this)
     }
 
-    hideTooltip () {
-        this.setState({displayTooltip: false})
-        
+    hideTooltip() {
+        this.setState({ displayTooltip: false })
+
     }
-    showTooltip () {
-        this.setState({displayTooltip: true})
+    showTooltip() {
+        this.setState({ displayTooltip: true })
     }
 
     render() {
         let message = this.props.message
         let position = this.props.position
         return (
-        <span className='tooltip'
-            onMouseLeave={this.hideTooltip}
+            <span className='tooltip'
+                onMouseLeave={this.hideTooltip}
             >
-            {this.state.displayTooltip &&
-            <div className={`tooltip-bubble tooltip-${position}`}>
-            <div className='tooltip-message'>{message}</div>
-            </div>
-            }
-            <span 
-            className='tooltip-trigger'
-            onMouseOver={this.showTooltip}
-            >
-            {this.props.children}
+                {this.state.displayTooltip &&
+                    <div className={`tooltip-bubble tooltip-${position}`}>
+                        <div className='tooltip-message'>{message}</div>
+                    </div>
+                }
+                <span
+                    className='tooltip-trigger'
+                    onMouseOver={this.showTooltip}
+                >
+                    {this.props.children}
+                </span>
             </span>
-        </span>
         )
     }
-    }
+}
 
 class SimplePlanTier extends React.Component {
 
@@ -85,7 +85,7 @@ class SimplePlanTier extends React.Component {
                             <div className="pricing-panel">
                                 <div className="pricing-panel-header">
                                     <h6 className="pricing-panel-tier">{tier.name}</h6>
-                                    {   this.state.showMonthlyPlan ? 
+                                    {this.state.showMonthlyPlan ?
                                         <React.Fragment>
                                             <h2 className="product-price product-price-lg">
                                                 <span className="currency">{tier.pricing.monthly.currency}</span>
@@ -98,9 +98,9 @@ class SimplePlanTier extends React.Component {
                                                         {tier.pricing.yearly.currency}{tier.pricing.yearly.price}{tier.pricing.monthly.label} {this.state.tiers[0].monthlyText} <div className="yearly" onClick={() => this.yearlyToggle()}> {this.state.tiers[0].payText}</div>
                                                     </p>
                                                 </div>
-                                            </div> 
+                                            </div>
                                         </React.Fragment>
-                                            :
+                                        :
                                         <React.Fragment>
                                             <h2 className="product-price product-price-lg">
                                                 <span className="currency">{tier.pricing.yearly.currency}</span>
@@ -170,9 +170,9 @@ class CategoryFeatures extends React.Component {
                                     <Tooltip message={item.info} position={'top'}>
                                         <span>
                                             <svg width="20px" height="20px" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-     
+
                                                 <path d="M12.13 11.59c-.16 1.25-1.78 2.53-3.03 2.57-2.93.04.79-4.7-.36-5.79.56-.21 1.88-.54 1.88.44 0 .82-.5 1.74-.74 2.51-1.22 3.84 2.25-.17 2.26-.14.02.03.02.17-.01.41-.05.36.03-.24 0 0zm-.57-5.92c0 1-2.2 1.48-2.2.36 0-1.03 2.2-1.49 2.2-.36z" />
-                                                    <circle cx="10" cy="10" r="9" fill="none" stroke="currentColor" stroke-width="1.1" />
+                                                <circle cx="10" cy="10" r="9" fill="none" stroke="currentColor" stroke-width="1.1" />
                                             </svg>
                                         </span>
                                     </Tooltip>
@@ -219,44 +219,44 @@ class PlansAccordion extends React.Component {
 
             plansAccordion.push(
                 <AccordionItem key={plan.name}>
-                    {   this.state.showMonthlyPlan ? 
-                            <React.Fragment>
-                                <AccordionItemHeading>
-                                    <AccordionItemButton>
-                                        <span className="plan-name">{plan.name}</span>
-                                        <h2 className="product-price product-price-sm">
-                                            <span className="currency" data-alt-text="$">{plan.monthly_currency}</span>
-                                            <span className="price" data-alt-text="79">{plan.monthly_price}</span>
-                                            <span className="period">{plan.monthly_label}</span>
-                                        </h2>
-                                    </AccordionItemButton>
-                                </AccordionItemHeading>
-                                <AccordionItemPanel style={{ background: '#f5505017', textAlign: 'center' }}>
-                                    <p className="text-light-gray">{plan.yearly_price} {this.state.tiers[0].monthlyText} <div className="yearly" onClick={() => this.yearlyToggle()}> {this.state.tiers[0].payText}</div></p>
-                                    <p>{plan.description}</p>
-                                    <button className="sign-up-btn-xs">
-                                        <a href={plan.call_to_action.url} className="action-link">{plan.call_to_action.text}</a>
-                                    </button>
-                                    <CategoryFeatures categories={plan.categories} />
-                                </AccordionItemPanel>
-                            </React.Fragment>
+                    {this.state.showMonthlyPlan ?
+                        <React.Fragment>
+                            <AccordionItemHeading>
+                                <AccordionItemButton>
+                                    <span className="plan-name">{plan.name}</span>
+                                    <h2 className="product-price product-price-sm">
+                                        <span className="currency" data-alt-text="$">{plan.monthly_currency}</span>
+                                        <span className="price" data-alt-text="79">{plan.monthly_price}</span>
+                                        <span className="period">{plan.monthly_label}</span>
+                                    </h2>
+                                </AccordionItemButton>
+                            </AccordionItemHeading>
+                            <AccordionItemPanel style={{ background: '#f5505017', textAlign: 'center' }}>
+                                <p className="text-light-gray">{plan.monthly_currency}{plan.yearly_price} {this.state.tiers[0].monthlyText} <div className="yearly" onClick={() => this.yearlyToggle()}> {this.state.tiers[0].payText}</div></p>
+                                <p>{plan.description}</p>
+                                <button className="sign-up-btn-xs">
+                                    <a href={plan.call_to_action.url} className="action-link">{plan.call_to_action.text}</a>
+                                </button>
+                                <CategoryFeatures categories={plan.categories} />
+                            </AccordionItemPanel>
+                        </React.Fragment>
                         :
-                            <React.Fragment>
-                                <AccordionItemHeading>
-                                    <AccordionItemButton>
-                                        <span className="plan-name">{plan.name}</span>
-                                        <h2 className="product-price product-price-sm">
-                                            <span className="currency" data-alt-text="$">{plan.monthly_currency}</span>
-                                            <span className="price" data-alt-text="79">{plan.yearly_price}</span>
-                                            <span className="period">{plan.monthly_label}</span>
-                                        </h2>
-                                    </AccordionItemButton>
-                                </AccordionItemHeading>
-                                <AccordionItemPanel style={{ background: '#f5505017', textAlign: 'center' }}>
-                                    ${plan.yearly.perAnnum} {this.state.tiers[0].yearlyText1}<br /> {this.state.tiers[0].yearlyText2} {plan.monthly_price}{plan.yearly.savedAmount}{plan.yearly_label}
-                                    <CategoryFeatures categories={plan.categories} />
-                                </AccordionItemPanel>
-                            </React.Fragment>
+                        <React.Fragment>
+                            <AccordionItemHeading>
+                                <AccordionItemButton>
+                                    <span className="plan-name">{plan.name}</span>
+                                    <h2 className="product-price product-price-sm">
+                                        <span className="currency" data-alt-text="$">{plan.monthly_currency}</span>
+                                        <span className="price" data-alt-text="79">{plan.yearly_price}</span>
+                                        <span className="period">{plan.monthly_label}</span>
+                                    </h2>
+                                </AccordionItemButton>
+                            </AccordionItemHeading>
+                            <AccordionItemPanel style={{ background: '#f5505017', textAlign: 'center' }}>
+                                ${plan.perAnnum} {this.state.tiers[0].yearlyText1}<br /> {this.state.tiers[0].yearlyText2} {plan.monthly_price}{plan.savedAmount}{plan.yearly_label}
+                                <CategoryFeatures categories={plan.categories} />
+                            </AccordionItemPanel>
+                        </React.Fragment>
                     }
                     <br />
                 </AccordionItem>
@@ -265,7 +265,7 @@ class PlansAccordion extends React.Component {
 
         return (
             <div>
-                <Accordion allowZeroExpanded={true}>
+                <Accordion allowMultipleExpanded={true}>
                     {plansAccordion}
                 </Accordion>
             </div>
@@ -366,7 +366,7 @@ class PricingPage extends React.Component {
 
         let categoryFeatures = [];
 
-        let tierActions = []; 
+        let tierActions = [];
 
         this.state.tiers.forEach((tier) => {
 
@@ -393,51 +393,51 @@ class PricingPage extends React.Component {
                         {j == 0 ?
                             <React.Fragment>
 
-                                    <h4>{category.name}</h4>
-                                    
+                                <h4>{category.name}</h4>
+
                             </React.Fragment>
                             : ''}
-                            <div className="pure-g" key={item.name}>
-                                <div className="pure-u-1-4 card category-feature-name" style={{ textAlign: 'center' }}>
+                        <div className="pure-g" key={item.name}>
+                            <div className="pure-u-1-4 card category-feature-name" style={{ textAlign: 'center' }}>
 
-                                    <div  className="category-name">{item.name}&nbsp; 
+                                <div className="category-name">{item.name}&nbsp;
                                     <Tooltip message={item.info} position={'top'}>
                                         <span>
                                             <svg width="20px" height="20px" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-     
+
                                                 <path d="M12.13 11.59c-.16 1.25-1.78 2.53-3.03 2.57-2.93.04.79-4.7-.36-5.79.56-.21 1.88-.54 1.88.44 0 .82-.5 1.74-.74 2.51-1.22 3.84 2.25-.17 2.26-.14.02.03.02.17-.01.41-.05.36.03-.24 0 0zm-.57-5.92c0 1-2.2 1.48-2.2.36 0-1.03 2.2-1.49 2.2-.36z" />
-                                                    <circle cx="10" cy="10" r="9" fill="none" stroke="currentColor" stroke-width="1.1" />
+                                                <circle cx="10" cy="10" r="9" fill="none" stroke="currentColor" stroke-width="1.1" />
                                             </svg>
                                         </span>
                                     </Tooltip>
-                                    </div>
                                 </div>
-                                <div className="pure-u-1-4 card category-feature">
-                                    <div>{item.values.Standard}</div>
-                                </div>
-                                <div className="pure-u-1-4 card category-feature">
-                                    <div>{item.values.Medium}</div>
-                                </div>
-
-
                             </div>
+                            <div className="pure-u-1-4 card category-feature">
+                                <div>{item.values.Standard}</div>
+                            </div>
+                            <div className="pure-u-1-4 card category-feature">
+                                <div>{item.values.Medium}</div>
+                            </div>
+
+
+                        </div>
                     </React.Fragment>
                 )
             })
         })
 
         if (this.state && this.state.tierActions) {
-        this.state.tierActions.forEach((tierAction) => {
+            this.state.tierActions.forEach((tierAction) => {
 
-            tierActions.push(
-                <div key={tierAction.label.name} className="pure-u-1-4"  style={{textAlign: 'center'}}>
-                    <button className="sign-up-btn">
-                        <a href={tierAction.label.url} className="action-link-lg">{tierAction.label.text}</a>
-                    </button>
-                </div>
-            )
-        });
-    }
+                tierActions.push(
+                    <div key={tierAction.label.name} className="pure-u-1-4" style={{ textAlign: 'center' }}>
+                        <button className="sign-up-btn">
+                            <a href={tierAction.label.url} className="action-link-lg">{tierAction.label.text}</a>
+                        </button>
+                    </div>
+                )
+            });
+        }
 
         return (
             <div className="simple-detail-plan-tier-sm-md-lg">
@@ -467,21 +467,21 @@ class PricingPage extends React.Component {
 
                             <div style={{ background: '#fff', width: '80%' }}>
 
-                                <div className="pure-g" style={{marginBottom: '-60px'}}>
-                                    
+                                <div className="pure-g" style={{ marginBottom: '-60px' }}>
+
                                     <div class="pure-u-1-4">&nbsp;</div>
-                                    
+
                                     {detailRows}
-                                    
+
                                 </div>
 
                                 {categoryFeatures}
 
                                 <br />
                                 <div className="pure-g">
-                                    
-                                    <div class="pure-u-1-4" style={{textAlign: 'center'}}>&nbsp;</div>
-                                    
+
+                                    <div class="pure-u-1-4" style={{ textAlign: 'center' }}>&nbsp;</div>
+
                                     {tierActions}
                                 </div>
 

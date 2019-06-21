@@ -18,13 +18,13 @@ let plans = {
         "features": [{
           "name": "Campaigns",
           "values" : {
-          "Standard": "5"
+          "Standard": "$5",
           },
           "info": "Campaigns info"
         }, {
           "name": "Campaigns2",
           "values" : {
-          "Standard": "52"
+          "Standard": "$52"
           },
           "info": "Campaigns2 info"
         }]
@@ -34,7 +34,7 @@ let plans = {
       "features": [{
         "name": "Category 2",
         "values" : {
-        "Standard": "23"
+        "Standard": "$23"
         },
         "info": "Category 2 info"
       }]
@@ -58,13 +58,13 @@ let plans = {
         "features": [{
           "name": "Campaigns",
           "values" : {
-          "StartUp": "5"
+          "StartUp": "$5"
           },
           "info": "startupc1 info"
         }, {
           "name": "Campaigns2",
           "values" : {
-          "StartUp": "52"
+          "StartUp": "$52"
           },
           "info": "startupc2 info"
         }]
@@ -74,7 +74,7 @@ let plans = {
       "features": [{
         "name": "Category 2",
         "values" : {
-        "StartUp": "23"
+        "StartUp": "$23"
         },
         "info": "Category 2 info"
       }]

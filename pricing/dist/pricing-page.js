@@ -333,7 +333,6 @@ var CategoryFeatures = function (_React$Component3) {
                                             React.createElement(
                                                 'svg',
                                                 { width: '20px', height: '20px', viewBox: '0 0 20 20', xmlns: 'http://www.w3.org/2000/svg' },
-                                                '\xA0',
                                                 React.createElement('path', { d: 'M12.13 11.59c-.16 1.25-1.78 2.53-3.03 2.57-2.93.04.79-4.7-.36-5.79.56-.21 1.88-.54 1.88.44 0 .82-.5 1.74-.74 2.51-1.22 3.84 2.25-.17 2.26-.14.02.03.02.17-.01.41-.05.36.03-.24 0 0zm-.57-5.92c0 1-2.2 1.48-2.2.36 0-1.03 2.2-1.49 2.2-.36z' }),
                                                 React.createElement('circle', { cx: '10', cy: '10', r: '9', fill: 'none', stroke: 'currentColor', 'stroke-width': '1.1' })
                                             )
@@ -436,6 +435,7 @@ var PlansAccordion = function (_React$Component4) {
                             React.createElement(
                                 'p',
                                 { className: 'text-light-gray' },
+                                plan.monthly_currency,
                                 plan.yearly_price,
                                 ' ',
                                 _this6.state.tiers[0].monthlyText,
@@ -504,7 +504,7 @@ var PlansAccordion = function (_React$Component4) {
                             AccordionItemPanel,
                             { style: { background: '#f5505017', textAlign: 'center' } },
                             '$',
-                            plan.yearly.perAnnum,
+                            plan.perAnnum,
                             ' ',
                             _this6.state.tiers[0].yearlyText1,
                             React.createElement('br', null),
@@ -512,7 +512,7 @@ var PlansAccordion = function (_React$Component4) {
                             _this6.state.tiers[0].yearlyText2,
                             ' ',
                             plan.monthly_price,
-                            plan.yearly.savedAmount,
+                            plan.savedAmount,
                             plan.yearly_label,
                             React.createElement(CategoryFeatures, { categories: plan.categories })
                         )
@@ -526,7 +526,7 @@ var PlansAccordion = function (_React$Component4) {
                 null,
                 React.createElement(
                     Accordion,
-                    { allowZeroExpanded: true },
+                    { allowMultipleExpanded: true },
                     plansAccordion
                 )
             );
@@ -711,7 +711,6 @@ var PricingPage = function (_React$Component5) {
                                             React.createElement(
                                                 'svg',
                                                 { width: '20px', height: '20px', viewBox: '0 0 20 20', xmlns: 'http://www.w3.org/2000/svg' },
-                                                '\xA0',
                                                 React.createElement('path', { d: 'M12.13 11.59c-.16 1.25-1.78 2.53-3.03 2.57-2.93.04.79-4.7-.36-5.79.56-.21 1.88-.54 1.88.44 0 .82-.5 1.74-.74 2.51-1.22 3.84 2.25-.17 2.26-.14.02.03.02.17-.01.41-.05.36.03-.24 0 0zm-.57-5.92c0 1-2.2 1.48-2.2.36 0-1.03 2.2-1.49 2.2-.36z' }),
                                                 React.createElement('circle', { cx: '10', cy: '10', r: '9', fill: 'none', stroke: 'currentColor', 'stroke-width': '1.1' })
                                             )
