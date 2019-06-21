@@ -4,8 +4,8 @@ var plansAndFeatures = {
       "features": [{
         "name": "Campaigns",
         "values" : {
-        "Standard": "5",
-        "Medium":"10",
+        "Entreprise": "e5",
+        "Business":"b10",
         // "Large" : "25",
         // "Premium" : "100"
         },
@@ -13,8 +13,8 @@ var plansAndFeatures = {
       }, {
         "name": "Campaigns2",
         "values" : {
-        "Standard": "52",
-        "Medium":"102",
+        "Entreprise": "e52",
+        "Business":"b102",
         // "Large" : "252",
         // "Premium" : "1002"
         },
@@ -23,50 +23,50 @@ var plansAndFeatures = {
   }, {
     "name":"Category 2 name",
     "features": [{
-      "name": "Category 2",
+      "name": "Category 2a",
       "values" : {
-      "Standard": "23",
-      "Medium":"14",
+      "Entreprise": "e23",
+      "Business":"b14",
       // "Large" : "5",
       // "Premium" : "400"
       },
       "info": "Category 2 info"
     },
     {
-      "name": "Category 2",
+      "name": "Category 2b",
       "values" : {
-      "Standard": "23",
-      "Medium":"14",
+      "Entreprise": "e76",
+      "Business":"b19",
       // "Large" : "5",
       // "Premium" : "400"
       },
       "info": "Category 2 info"
     },
     {
-      "name": "Category 2",
+      "name": "Category 2c",
       "values" : {
-      "Standard": "23",
-      "Medium":"14",
+      "Entreprise": "e56",
+      "Business":"b6",
       // "Large" : "5",
       // "Premium" : "400"
       },
       "info": "Category 2 info"
     },
     {
-      "name": "Category 2",
+      "name": "Category 2d",
       "values" : {
-      "Standard": "23",
-      "Medium":"14",
+      "Entreprise": "e3",
+      "Business":"b14",
       // "Large" : "5",
       // "Premium" : "400"
       },
       "info": "Category 2 info"
     },
     {
-      "name": "Category 2",
+      "name": "Category 2e",
       "values" : {
-      "Standard": "23",
-      "Medium":"14",
+      "Entreprise": "e2",
+      "Business":"b8",
       // "Large" : "5",
       // "Premium" : "400"
       },
@@ -79,14 +79,14 @@ var plansAndFeatures = {
   "tierActions": [
     {
       "label" : {
-                  "name": "Standard",
-                  "text":"Standard Sign-up Now!",
+                  "name": "Entreprise",
+                  "text":"Entreprise Sign-up Now!",
                   "url": "signup.com?utm=3423"
                 }
     }, {
       "label": {
-                  "name": "Medium",
-                  "text":" Medium Sign-up Now!",
+                  "name": "Business",
+                  "text": "Business Sign-up Now!",
                   "url": "signup.com?utm=3423"
                 }
     }
