@@ -526,7 +526,7 @@ var PlansAccordion = function (_React$Component4) {
                 null,
                 React.createElement(
                     Accordion,
-                    { allowMultipleExpanded: true },
+                    { allowZeroExpanded: true },
                     plansAccordion
                 )
             );

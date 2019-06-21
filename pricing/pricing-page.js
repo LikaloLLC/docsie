@@ -265,7 +265,7 @@ class PlansAccordion extends React.Component {
 
         return (
             <div>
-                <Accordion allowMultipleExpanded={true}>
+                <Accordion allowZeroExpanded={true}>
                     {plansAccordion}
                 </Accordion>
             </div>
