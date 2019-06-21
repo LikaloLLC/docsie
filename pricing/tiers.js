@@ -1,41 +1,63 @@
 tiers = {
-  "Banner":  "All features including the most advanced are forever free for open source projects, please contact us with your project details",
+  "Banner": "All features including the most advanced are forever free for open source projects, please contact us with your project details",
   "tiers": [
-     {
-       "pricing": {
-         "monthly": {        "price": "999.00",
-        "currency": "$"},
-         "yearly" : {        "price": "899.00",
-        "currency": "$",
-        "perAnnum": "8500",
-        "savedAmount": "1800"}
-       },
-        "name": "Entreprise",
-        "order": 1,
-        "icon" : "www.docsie.io/icon.png",
-        "description": "More features to accelerate your entreprise documentation",
-        "call_to_action" : {"text":"Sign-up Now!",
-                            "url": "signup.com?utm=3423"},
-       "popular": "True"
-      },
-     {
+    {
       "pricing": {
-         "monthly": {        "price": "500.00",
-        "currency": "$"},
-         "yearly" : {        "price": "450.00",
-        "currency": "$",
-        "perAnnum": "3000",
-        "savedAmount": "2000"}
-       },
-        "currency": "$",
-        "frequency" : "year",
-        "name": "Business",
-        "icon" : "www.docsie.io/icon.png",
-        "order": 2,
-        "description": "Proffesional features and colloaboration for your growing business",
-        "call_to_action" : {"text":"Try it Free!",
-                            "url": "try-it-free-url"}
+        "monthly": {
+          "price": "999.00",
+          "currency": "$",
+          "label": "/mo"
+        },
+        "yearly": {
+          "price": "899.00",
+          "currency": "$",
+          "perAnnum": "8500",
+          "savedAmount": "1800",
+          "label": "/year"
+        }
+      },
+      "name": "Entreprise",
+      "order": 1,
+      "icon": "www.docsie.io/icon.png",
+      "description": "More features to accelerate your entreprise documentation",
+      "call_to_action": {
+        "text": "Sign-up Now!",
+        "url": "signup.com?utm=3423"
+      },
+      "popular": "True",
+      "monthlyText": "when you",
+      "payText": "pay yearly",
+      "yearlyText1": "billed yearly",
+      "yearlyText2": "Save",
+      "compareText": "compare plans",
+      "toggleText": "View Simple Plan Tier"
+    },
+    {
+      "pricing": {
+        "monthly": {
+          "price": "500.00",
+          "currency": "$",
+          "label": "/mo"
+        },
+        "yearly": {
+          "price": "450.00",
+          "currency": "$",
+          "perAnnum": "3000",
+          "savedAmount": "2000",
+          "label": "/year"
+        }
+      },
+      "currency": "$",
+      "frequency": "year",
+      "name": "Business",
+      "icon": "www.docsie.io/icon.png",
+      "order": 2,
+      "description": "Proffesional features and colloaboration for your growing business",
+      "call_to_action": {
+        "text": "Try it Free!",
+        "url": "try-it-free-url"
       }
+    }
     // {
     //   "pricing": {
     //      "monthly": {        "price": "10.00",

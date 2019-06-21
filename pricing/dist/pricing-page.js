@@ -17,14 +17,11 @@ var _reactAccessibleAccor = reactAccessibleAccordion,
 
 
 var teirsData = tiers;
-// console.log("./tiers.json mydata", mydata);    
 
 var plansAndFeaturesData = plansAndFeatures;
-// console.log("./plans_and/-features.json mydata2", mydata2);
 
 // get this json for mobile responsive data
 var plansData = plans;
-// console.log("plans in mydata3", mydata3);
 
 var Tooltip = function (_React$Component) {
     _inherits(Tooltip, _React$Component);
@@ -157,7 +154,7 @@ var SimplePlanTier = function (_React$Component2) {
                                             React.createElement(
                                                 'span',
                                                 { className: 'period' },
-                                                '/mo'
+                                                tier.pricing.monthly.label
                                             )
                                         ),
                                         React.createElement(
@@ -171,13 +168,17 @@ var SimplePlanTier = function (_React$Component2) {
                                                     { 'data-alt-text': '$950 billed yearly<br />Save $238/year', className: 'year-pricing' },
                                                     tier.pricing.yearly.currency,
                                                     tier.pricing.yearly.price,
-                                                    '/mo when you ',
+                                                    tier.pricing.monthly.label,
+                                                    ' ',
+                                                    _this3.state.tiers[0].monthlyText,
+                                                    ' ',
                                                     React.createElement(
                                                         'div',
                                                         { className: 'yearly', onClick: function onClick() {
                                                                 return _this3.yearlyToggle();
                                                             } },
-                                                        ' pay yearly'
+                                                        ' ',
+                                                        _this3.state.tiers[0].payText
                                                     )
                                                 )
                                             )
@@ -201,7 +202,7 @@ var SimplePlanTier = function (_React$Component2) {
                                             React.createElement(
                                                 'span',
                                                 { className: 'period' },
-                                                '/mo'
+                                                tier.pricing.monthly.label
                                             )
                                         ),
                                         React.createElement(
@@ -213,13 +214,17 @@ var SimplePlanTier = function (_React$Component2) {
                                                 React.createElement(
                                                     'p',
                                                     { 'data-alt-text': '$950 billed yearly<br />Save $238/year', className: 'year-pricing' },
-                                                    '$',
+                                                    tier.pricing.yearly.currency,
                                                     tier.pricing.yearly.perAnnum,
-                                                    ' billed yearly',
+                                                    ' ',
+                                                    _this3.state.tiers[0].yearlyText1,
                                                     React.createElement('br', null),
-                                                    'Save $',
+                                                    ' ',
+                                                    _this3.state.tiers[0].yearlyText2,
+                                                    ' ',
+                                                    tier.pricing.yearly.currency,
                                                     tier.pricing.yearly.savedAmount,
-                                                    '/year'
+                                                    tier.pricing.yearly.label
                                                 )
                                             )
                                         )
@@ -253,7 +258,7 @@ var SimplePlanTier = function (_React$Component2) {
                                         { className: 'compare-plans', onClick: function onClick() {
                                                 return _this3.props.onClick();
                                             } },
-                                        'compare plans'
+                                        _this3.state.tiers[0].compareText
                                     )
                                 )
                             )
@@ -324,11 +329,12 @@ var CategoryFeatures = function (_React$Component3) {
                                         { message: item.info, position: 'top' },
                                         React.createElement(
                                             'span',
-                                            { className: 'custom-info-icon-xs', 'aria-hidden': 'true', 'data-tip': item.info },
+                                            null,
                                             React.createElement(
-                                                'p',
-                                                { style: { position: 'relative', bottom: '15px' } },
-                                                'i'
+                                                'svg',
+                                                { width: '20px', height: '20px', viewBox: '0 0 20 20', xmlns: 'http://www.w3.org/2000/svg' },
+                                                React.createElement('path', { d: 'M12.13 11.59c-.16 1.25-1.78 2.53-3.03 2.57-2.93.04.79-4.7-.36-5.79.56-.21 1.88-.54 1.88.44 0 .82-.5 1.74-.74 2.51-1.22 3.84 2.25-.17 2.26-.14.02.03.02.17-.01.41-.05.36.03-.24 0 0zm-.57-5.92c0 1-2.2 1.48-2.2.36 0-1.03 2.2-1.49 2.2-.36z' }),
+                                                React.createElement('circle', { cx: '10', cy: '10', r: '9', fill: 'none', stroke: 'currentColor', 'stroke-width': '1.1' })
                                             )
                                         )
                                     )
@@ -362,7 +368,8 @@ var PlansAccordion = function (_React$Component4) {
 
         _this5.state = {
             plans: plansData.plans,
-            showMonthlyPlan: true
+            showMonthlyPlan: true,
+            tiers: teirsData.tiers
         };
         return _this5;
     }
@@ -407,7 +414,7 @@ var PlansAccordion = function (_React$Component4) {
                                     React.createElement(
                                         'span',
                                         { className: 'currency', 'data-alt-text': '$' },
-                                        '$'
+                                        plan.monthly_currency
                                     ),
                                     React.createElement(
                                         'span',
@@ -417,7 +424,7 @@ var PlansAccordion = function (_React$Component4) {
                                     React.createElement(
                                         'span',
                                         { className: 'period' },
-                                        '/mo'
+                                        plan.monthly_label
                                     )
                                 )
                             )
@@ -428,14 +435,18 @@ var PlansAccordion = function (_React$Component4) {
                             React.createElement(
                                 'p',
                                 { className: 'text-light-gray' },
+                                plan.monthly_currency,
                                 plan.yearly_price,
-                                ' when you ',
+                                ' ',
+                                _this6.state.tiers[0].monthlyText,
+                                ' ',
                                 React.createElement(
                                     'div',
                                     { className: 'yearly', onClick: function onClick() {
                                             return _this6.yearlyToggle();
                                         } },
-                                    ' pay yearly'
+                                    ' ',
+                                    _this6.state.tiers[0].payText
                                 )
                             ),
                             React.createElement(
@@ -474,7 +485,7 @@ var PlansAccordion = function (_React$Component4) {
                                     React.createElement(
                                         'span',
                                         { className: 'currency', 'data-alt-text': '$' },
-                                        '$'
+                                        plan.monthly_currency
                                     ),
                                     React.createElement(
                                         'span',
@@ -484,7 +495,7 @@ var PlansAccordion = function (_React$Component4) {
                                     React.createElement(
                                         'span',
                                         { className: 'period' },
-                                        '/mo'
+                                        plan.monthly_label
                                     )
                                 )
                             )
@@ -493,12 +504,16 @@ var PlansAccordion = function (_React$Component4) {
                             AccordionItemPanel,
                             { style: { background: '#f5505017', textAlign: 'center' } },
                             '$',
-                            plan.yearly.perAnnum,
-                            ' billed yearly',
+                            plan.perAnnum,
+                            ' ',
+                            _this6.state.tiers[0].yearlyText1,
                             React.createElement('br', null),
-                            'Save $',
-                            plan.yearly.savedAmount,
-                            '/year',
+                            ' ',
+                            _this6.state.tiers[0].yearlyText2,
+                            ' ',
+                            plan.monthly_price,
+                            plan.savedAmount,
+                            plan.yearly_label,
                             React.createElement(CategoryFeatures, { categories: plan.categories })
                         )
                     ),
@@ -546,12 +561,6 @@ var PricingPage = function (_React$Component5) {
         value: function handleClick() {
 
             this.setState({ showDetailedPlanOveriew: !this.state.showDetailedPlanOveriew });
-        }
-    }, {
-        key: 'mouseOver',
-        value: function mouseOver() {
-            console.log("Mouse over!!!");
-            // this.setState({flipped: true});
         }
 
         // get pricing page details from a remote page
@@ -661,7 +670,7 @@ var PricingPage = function (_React$Component5) {
                         React.createElement(
                             'span',
                             { className: 'period' },
-                            '/mo'
+                            tier.pricing.monthly.label
                         )
                     )
                 ));
@@ -698,11 +707,12 @@ var PricingPage = function (_React$Component5) {
                                         { message: item.info, position: 'top' },
                                         React.createElement(
                                             'span',
-                                            { className: 'custom-info-icon', 'aria-hidden': 'true', 'data-tip': item.info },
+                                            null,
                                             React.createElement(
-                                                'p',
-                                                { style: { position: 'relative', bottom: '7px' } },
-                                                'i'
+                                                'svg',
+                                                { width: '20px', height: '20px', viewBox: '0 0 20 20', xmlns: 'http://www.w3.org/2000/svg' },
+                                                React.createElement('path', { d: 'M12.13 11.59c-.16 1.25-1.78 2.53-3.03 2.57-2.93.04.79-4.7-.36-5.79.56-.21 1.88-.54 1.88.44 0 .82-.5 1.74-.74 2.51-1.22 3.84 2.25-.17 2.26-.14.02.03.02.17-.01.41-.05.36.03-.24 0 0zm-.57-5.92c0 1-2.2 1.48-2.2.36 0-1.03 2.2-1.49 2.2-.36z' }),
+                                                React.createElement('circle', { cx: '10', cy: '10', r: '9', fill: 'none', stroke: 'currentColor', 'stroke-width': '1.1' })
                                             )
                                         )
                                     )
@@ -818,7 +828,7 @@ var PricingPage = function (_React$Component5) {
                                 React.createElement(
                                     'div',
                                     { className: 'action-link-lg view-simple-tier' },
-                                    'View Simple Plan Tier'
+                                    this.state.tiers[0].toggleText
                                 )
                             )
                         )
