@@ -4,12 +4,12 @@ tiers = {
     {
       "pricing": {
         "monthly": {
-          "price": "999.00",
+          "price": "2999.00",
           "currency": "$",
           "label": "/mo"
         },
         "yearly": {
-          "price": "899.00",
+          "price": "1899.00",
           "currency": "$",
           "perAnnum": "8500",
           "savedAmount": "1800",
