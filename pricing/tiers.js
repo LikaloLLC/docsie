@@ -15,7 +15,7 @@ tiers = {
           "currency": "$",
           "perAnnum": "8500",
           "savedAmount": "1800",
-          "label": "/year"
+          "label": "/user"
         }
       },
       "name": "Entreprise",
@@ -35,7 +35,7 @@ tiers = {
       "compareText": "compare plans",
       "showContact": "True",
       "contactFormText": "Get Started",
-      "toggleText": "View Simple Plan Tier"
+      "toggleText": "Back to simple plans"
     },
     {
       "pricing": {
