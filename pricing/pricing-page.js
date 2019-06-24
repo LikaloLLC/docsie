@@ -350,7 +350,7 @@ class PlansAccordion extends React.Component {
                                     </h2>
                                 </AccordionItemButton>
                             </AccordionItemHeading>
-                            <AccordionItemPanel style={{ background: '#f5505017', textAlign: 'center' }}>
+                            <AccordionItemPanel style={{ background: '#fff', textAlign: 'center' }}>
                                 {/* get this from tiers as well */}
                                 <p className="text-light-gray">{tier.pricing.monthly.currency}{tier.pricing.yearly.price} {this.state.tiers[0].monthlyText} <div className="yearly" onClick={() => this.yearlyToggle()}> {this.state.tiers[0].payText}</div></p>
                                 <p>{tier.description}</p>
@@ -374,7 +374,7 @@ class PlansAccordion extends React.Component {
                                     </h2>
                                 </AccordionItemButton>
                             </AccordionItemHeading>
-                            <AccordionItemPanel style={{ background: '#f5505017', textAlign: 'center' }}>
+                            <AccordionItemPanel style={{ background: '#fff', textAlign: 'center' }}>
                                 <p className="text-light-gray">{tier.pricing.monthly.currency}{tier.pricing.yearly.perAnnum} {this.state.tiers[0].yearlyText1}<br /> {this.state.tiers[0].yearlyText2} {tier.pricing.monthly.currency}{tier.pricing.yearly.savedAmount}{tier.pricing.yearly.label}</p>
                                 <p>{tier.description}</p>
                                 <button className="sign-up-btn-xs">
