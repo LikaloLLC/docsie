@@ -61,7 +61,9 @@ class SimplePlanTier extends React.Component {
             showMonthlyPlan: true,
             selectedOption: true,
             radio_btn_monthly_opt: teirsData.radio_btn_monthly_opt,
-            radio_btn_yearly_opt: teirsData.radio_btn_yearly_opt
+            radio_btn_yearly_opt: teirsData.radio_btn_yearly_opt,
+            showContactForm: false,
+            contactFormData: contactForm
         };
     }
 
@@ -70,6 +72,13 @@ class SimplePlanTier extends React.Component {
         this.setState({
             selectedOption: !this.state.selectedOption,
             showMonthlyPlan: !this.state.showMonthlyPlan
+        })
+    }
+
+    contactFormToggle() {
+        console.log("in contactFormToggle func, this.state", this.state);
+        this.setState({
+            showContactForm: !this.state.showContactForm
         })
     }
 
@@ -95,42 +104,51 @@ class SimplePlanTier extends React.Component {
                                 { (tier.popular && tier.popular == "True") ?
                                 <div class="pricing-panel-ribbon">
                                     <h5 class="featured-title">
-                                        Most Popular
+                                        {tier.popularInfoText}
                                     </h5>
                                 </div> : 
                                 <div style={{marginTop: '10%'}}></div>}
                                 <div className="pricing-panel-header" style={{border: '3px solid #ffb5b3', borderBottom: '0'}}>
                                     <h6 className="pricing-panel-tier" >{tier.name}</h6>
-                                    {this.state.showMonthlyPlan ?
-                                        <React.Fragment>
-                                            <h2 className="product-price product-price-lg">
-                                                <span className="currency">{tier.pricing.monthly.currency}</span>
-                                                <span className="price">{tier.pricing.monthly.price}</span>
-                                                <span className="period">{tier.pricing.monthly.label}</span>
-                                            </h2>
-                                            <div className="pricing-panel-info">
-                                                <div className="text-yearly-color">
-                                                    <p data-alt-text="$950 billed yearly<br />Save $238/year" className="year-pricing">
-                                                        {tier.pricing.yearly.currency}{tier.pricing.yearly.price}{tier.pricing.monthly.label} {this.state.tiers[0].monthlyText} <div className="yearly" onClick={() => this.yearlyToggle()}> {this.state.tiers[0].payText}</div>
-                                                    </p>
+                                    {(tier.showContact && tier.showContact == "True") ? 
+                                    <React.Fragment>
+                                        <button className="contact-us-btn" onClick={() => this.contactFormToggle()}>
+                                            <div className="contact-action-label">{tier.contactFormText}</div>
+                                        </button>
+                                    </React.Fragment>: 
+                                    <React.Fragment>
+                                        {this.state.showMonthlyPlan ?
+                                            <React.Fragment>
+                                                <h2 className="product-price product-price-lg">
+                                                    <span className="currency">{tier.pricing.monthly.currency}</span>
+                                                    <span className="price">{tier.pricing.monthly.price}</span>
+                                                    <span className="period">{tier.pricing.monthly.label}</span>
+                                                </h2>
+                                                <div className="pricing-panel-info">
+                                                    <div className="text-yearly-color">
+                                                        <p data-alt-text="$950 billed yearly<br />Save $238/year" className="year-pricing">
+                                                            {tier.pricing.yearly.currency}{tier.pricing.yearly.price}{tier.pricing.monthly.label} {this.state.tiers[0].monthlyText} <div className="yearly" onClick={() => this.yearlyToggle()}> {this.state.tiers[0].payText}</div>
+                                                        </p>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        </React.Fragment>
-                                        :
-                                        <React.Fragment>
-                                            <h2 className="product-price product-price-lg">
-                                                <span className="currency">{tier.pricing.yearly.currency}</span>
-                                                <span className="price">{tier.pricing.yearly.price}</span>
-                                                <span className="period">{tier.pricing.monthly.label}</span>
-                                            </h2>
-                                            <div className="pricing-panel-info">
-                                                <div className="text-yearly-color">
-                                                    <p data-alt-text="$950 billed yearly<br />Save $238/year" className="year-pricing">
-                                                        {tier.pricing.yearly.currency}{tier.pricing.yearly.perAnnum} {this.state.tiers[0].yearlyText1}<br /> {this.state.tiers[0].yearlyText2} {tier.pricing.yearly.currency}{tier.pricing.yearly.savedAmount}{tier.pricing.yearly.label}
-                                                    </p>
+                                            </React.Fragment>
+                                            :
+                                            <React.Fragment>
+                                                <h2 className="product-price product-price-lg">
+                                                    <span className="currency">{tier.pricing.yearly.currency}</span>
+                                                    <span className="price">{tier.pricing.yearly.price}</span>
+                                                    <span className="period">{tier.pricing.monthly.label}</span>
+                                                </h2>
+                                                <div className="pricing-panel-info">
+                                                    <div className="text-yearly-color">
+                                                        <p data-alt-text="$950 billed yearly<br />Save $238/year" className="year-pricing">
+                                                            {tier.pricing.yearly.currency}{tier.pricing.yearly.perAnnum} {this.state.tiers[0].yearlyText1}<br /> {this.state.tiers[0].yearlyText2} {tier.pricing.yearly.currency}{tier.pricing.yearly.savedAmount}{tier.pricing.yearly.label}
+                                                        </p>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        </React.Fragment>
+                                            </React.Fragment>
+                                        }
+                                    </React.Fragment>
                                     }
                                     <p></p>
                                     <p>{tier.description}</p>
@@ -152,28 +170,94 @@ class SimplePlanTier extends React.Component {
 
         });
 
-        return (
+        let offerOptions= [];
 
-        <React.Fragment>
-            <div className="pure-g">
-                <div className="pure-u-2-4 input-radio-plan">
-                    <input type="radio"
-                        value={true}
-                        checked={this.state.selectedOption == true}
-                        onChange={($event) => this.radioChange($event)} />&nbsp;<span>{this.state.radio_btn_monthly_opt}</span>
-                </div>
-                <div className="pure-u-2-4 input-radio-plan">
-                    <input type="radio"
-                        value={false}
-                        checked={this.state.selectedOption == false}
-                        onChange={($event) => this.radioChange($event)}/>&nbsp;<span style={{marginLeft: '5px'}}>{this.state.radio_btn_yearly_opt}</span>
-                </div>
-            </div>
-            <br />
-            <div className="pure-g">
-                {rows}
-            </div>
-        </React.Fragment>
+        this.state.contactFormData.offer_options.forEach((item) => {
+
+            offerOptions.push(
+                <React.Fragment>
+                    <input type="checkbox" name={item} value={item} />{item}<br />
+                </React.Fragment>
+            )
+        })
+    
+
+        return (
+            <React.Fragment>
+                { this.state.showContactForm ? 
+
+                    <React.Fragment>
+                        <div style={{ width: '920px' }}>
+                            <div  className="contact-form">
+                                <div className="pure-g">
+                                    <div className="pure-u-1">
+
+                                        <svg width="60px" height="60px" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M1.4 6.5L10 11l8.6-4.5" fill="none" stroke="currentColor" />
+                                            <path d="M1 4v12h18V4H1zm17 11H2V5h16v10z" />   
+                                        </svg>
+                                        <br />
+                                        {this.state.contactFormData.heading}
+                                    </div>
+                                </div>
+                                <div className="pure-g">
+                                    <div  className="pure-u-1">
+                                        {this.state.contactFormData.sub_info}
+                                    </div>
+                                </div>
+                                <br />
+                                <div className="pure-g">
+
+                                    <div className="pure-u-1-2 offer-options">
+                                        {offerOptions}
+                                    </div>
+
+                                    <div className="pure-u-1-2 text-area-option">
+                                    <input style={{width: '416px', border: '1px solid black'}} type="feature-req-email" placeholder="enter your email."
+                                        id="feature-req-email" name="feature-req-email" required="" />
+                                    <br />
+                                    <textarea style={{marginTop: '20px', border: '1px solid black'}} rows="6" cols="50" placeholder={this.state.contactFormData.place_holder}></textarea>
+                                    </div>
+                                </div>
+                                
+                                <br />
+
+                                <button className="contact-us-btn" style={{float: 'right'}}>
+                                {/* onClick={() => this.contactFormToggle()} */}
+                                    <div className="contact-action-label">{this.state.contactFormData.submitContactFormText}</div>
+                                </button>
+
+                                <button className="contact-us-btn" style={{float: 'left'}} onClick={() => this.contactFormToggle()}>
+                                    <div className="contact-action-label">{this.state.contactFormData.toggleContactFormText}</div>
+                                </button>
+                            </div>
+                        </div>
+                    </React.Fragment>
+                     : 
+                    <React.Fragment>
+                        <div style={{ maxWidth: '80%' }}>
+                            <div className="pure-g">
+                                <div className="pure-u-2-4 input-radio-plan">
+                                    <input type="radio"
+                                        value={true}
+                                        checked={this.state.selectedOption == true}
+                                        onChange={($event) => this.radioChange($event)} />&nbsp;<span>{this.state.radio_btn_monthly_opt}</span>
+                                </div>
+                                <div className="pure-u-2-4 input-radio-plan">
+                                    <input type="radio"
+                                        value={false}
+                                        checked={this.state.selectedOption == false}
+                                        onChange={($event) => this.radioChange($event)}/>&nbsp;<span style={{marginLeft: '5px'}}>{this.state.radio_btn_yearly_opt}</span>
+                                </div>
+                            </div>
+                            <br />
+                            <div className="pure-g">
+                                {rows}
+                            </div>
+                        </div>
+                    </React.Fragment>
+                }
+            </React.Fragment>   
         );
     }
 };
@@ -493,11 +577,8 @@ class PricingPage extends React.Component {
 
                         <div className="simple-plan-container">
 
-                            <div className="container" style={{ maxWidth: '80%' }}>
-
                                 <SimplePlanTier onClick={() => this.handleClick()}
                                     className="plan-tier" />
-                            </div>
                         </div>
 
                     </React.Fragment>

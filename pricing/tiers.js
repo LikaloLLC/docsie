@@ -27,11 +27,14 @@ tiers = {
         "url": "signup.com?utm=3423"
       },
       "popular": "True",
+      "popularInfoText": "Most Popular",
       "monthlyText": "when you",
       "payText": "pay yearly",
       "yearlyText1": "billed yearly",
       "yearlyText2": "Save",
       "compareText": "compare plans",
+      "showContact": "True",
+      "contactFormText": "Get Started",
       "toggleText": "View Simple Plan Tier"
     },
     {
