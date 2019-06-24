@@ -1,5 +1,7 @@
 tiers = {
   "Banner": "All features including the most advanced are forever free for open source projects, please contact us with your project details",
+  "radio_btn_monthly_opt": "Pay monthly",
+  "radio_btn_yearly_opt": "Pay yearly (Save 20%)",
   "tiers": [
     {
       "pricing": {

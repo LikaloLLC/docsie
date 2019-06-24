@@ -90,7 +90,10 @@ var SimplePlanTier = function (_React$Component2) {
 
         _this2.state = {
             tiers: teirsData.tiers,
-            showMonthlyPlan: true
+            showMonthlyPlan: true,
+            selectedOption: true,
+            radio_btn_monthly_opt: teirsData.radio_btn_monthly_opt,
+            radio_btn_yearly_opt: teirsData.radio_btn_yearly_opt
         };
         return _this2;
     }
@@ -100,6 +103,16 @@ var SimplePlanTier = function (_React$Component2) {
         value: function yearlyToggle() {
             console.log("in yearlyToggle func, this.state", this.state);
             this.setState({
+                selectedOption: !this.state.selectedOption,
+                showMonthlyPlan: !this.state.showMonthlyPlan
+            });
+        }
+    }, {
+        key: 'radioChange',
+        value: function radioChange(e) {
+            this.setState({
+                // selectedOption: e.currentTarget.value,
+                selectedOption: !this.state.selectedOption,
                 showMonthlyPlan: !this.state.showMonthlyPlan
             });
         }
@@ -124,9 +137,18 @@ var SimplePlanTier = function (_React$Component2) {
                             React.createElement(
                                 'div',
                                 { className: 'pricing-panel' },
+                                tier.popular && tier.popular == "True" ? React.createElement(
+                                    'div',
+                                    { 'class': 'pricing-panel-ribbon' },
+                                    React.createElement(
+                                        'h5',
+                                        { 'class': 'featured-title' },
+                                        'Most Popular'
+                                    )
+                                ) : React.createElement('div', { style: { marginTop: '10%' } }),
                                 React.createElement(
                                     'div',
-                                    { className: 'pricing-panel-header' },
+                                    { className: 'pricing-panel-header', style: { border: '3px solid #ffb5b3', borderBottom: '0' } },
                                     React.createElement(
                                         'h6',
                                         { className: 'pricing-panel-tier' },
@@ -236,7 +258,7 @@ var SimplePlanTier = function (_React$Component2) {
                                 ),
                                 React.createElement(
                                     'div',
-                                    { className: 'pricing-panel-footer' },
+                                    { className: 'pricing-panel-footer', style: { border: '3px solid #ffb5b3', borderTop: '0' } },
                                     React.createElement(
                                         'div',
                                         { className: 'cta-wrapper' },
@@ -265,9 +287,50 @@ var SimplePlanTier = function (_React$Component2) {
             });
 
             return React.createElement(
-                'div',
-                { className: 'pure-g' },
-                rows
+                React.Fragment,
+                null,
+                React.createElement(
+                    'div',
+                    { className: 'pure-g' },
+                    React.createElement(
+                        'div',
+                        { className: 'pure-u-2-4 input-radio-plan' },
+                        React.createElement('input', { type: 'radio',
+                            value: true,
+                            checked: this.state.selectedOption == true,
+                            onChange: function onChange($event) {
+                                return _this3.radioChange($event);
+                            } }),
+                        '\xA0',
+                        React.createElement(
+                            'span',
+                            null,
+                            this.state.radio_btn_monthly_opt
+                        )
+                    ),
+                    React.createElement(
+                        'div',
+                        { className: 'pure-u-2-4 input-radio-plan' },
+                        React.createElement('input', { type: 'radio',
+                            value: false,
+                            checked: this.state.selectedOption == false,
+                            onChange: function onChange($event) {
+                                return _this3.radioChange($event);
+                            } }),
+                        '\xA0',
+                        React.createElement(
+                            'span',
+                            { style: { marginLeft: '5px' } },
+                            this.state.radio_btn_yearly_opt
+                        )
+                    )
+                ),
+                React.createElement('br', null),
+                React.createElement(
+                    'div',
+                    { className: 'pure-g' },
+                    rows
+                )
             );
         }
     }]);
