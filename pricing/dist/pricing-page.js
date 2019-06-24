@@ -93,7 +93,9 @@ var SimplePlanTier = function (_React$Component2) {
             showMonthlyPlan: true,
             selectedOption: true,
             radio_btn_monthly_opt: teirsData.radio_btn_monthly_opt,
-            radio_btn_yearly_opt: teirsData.radio_btn_yearly_opt
+            radio_btn_yearly_opt: teirsData.radio_btn_yearly_opt,
+            showContactForm: false,
+            contactFormData: contactForm
         };
         return _this2;
     }
@@ -105,6 +107,14 @@ var SimplePlanTier = function (_React$Component2) {
             this.setState({
                 selectedOption: !this.state.selectedOption,
                 showMonthlyPlan: !this.state.showMonthlyPlan
+            });
+        }
+    }, {
+        key: 'contactFormToggle',
+        value: function contactFormToggle() {
+            console.log("in contactFormToggle func, this.state", this.state);
+            this.setState({
+                showContactForm: !this.state.showContactForm
             });
         }
     }, {
@@ -143,7 +153,7 @@ var SimplePlanTier = function (_React$Component2) {
                                     React.createElement(
                                         'h5',
                                         { 'class': 'featured-title' },
-                                        'Most Popular'
+                                        tier.popularInfoText
                                     )
                                 ) : React.createElement('div', { style: { marginTop: '10%' } }),
                                 React.createElement(
@@ -154,96 +164,114 @@ var SimplePlanTier = function (_React$Component2) {
                                         { className: 'pricing-panel-tier' },
                                         tier.name
                                     ),
-                                    _this3.state.showMonthlyPlan ? React.createElement(
+                                    tier.showContact && tier.showContact == "True" ? React.createElement(
                                         React.Fragment,
                                         null,
                                         React.createElement(
-                                            'h2',
-                                            { className: 'product-price product-price-lg' },
-                                            React.createElement(
-                                                'span',
-                                                { className: 'currency' },
-                                                tier.pricing.monthly.currency
-                                            ),
-                                            React.createElement(
-                                                'span',
-                                                { className: 'price' },
-                                                tier.pricing.monthly.price
-                                            ),
-                                            React.createElement(
-                                                'span',
-                                                { className: 'period' },
-                                                tier.pricing.monthly.label
-                                            )
-                                        ),
-                                        React.createElement(
-                                            'div',
-                                            { className: 'pricing-panel-info' },
+                                            'button',
+                                            { className: 'contact-us-btn', onClick: function onClick() {
+                                                    return _this3.contactFormToggle();
+                                                } },
                                             React.createElement(
                                                 'div',
-                                                { className: 'text-yearly-color' },
-                                                React.createElement(
-                                                    'p',
-                                                    { 'data-alt-text': '$950 billed yearly<br />Save $238/year', className: 'year-pricing' },
-                                                    tier.pricing.yearly.currency,
-                                                    tier.pricing.yearly.price,
-                                                    tier.pricing.monthly.label,
-                                                    ' ',
-                                                    _this3.state.tiers[0].monthlyText,
-                                                    ' ',
-                                                    React.createElement(
-                                                        'div',
-                                                        { className: 'yearly', onClick: function onClick() {
-                                                                return _this3.yearlyToggle();
-                                                            } },
-                                                        ' ',
-                                                        _this3.state.tiers[0].payText
-                                                    )
-                                                )
+                                                { className: 'contact-action-label' },
+                                                tier.contactFormText
                                             )
                                         )
                                     ) : React.createElement(
                                         React.Fragment,
                                         null,
-                                        React.createElement(
-                                            'h2',
-                                            { className: 'product-price product-price-lg' },
+                                        _this3.state.showMonthlyPlan ? React.createElement(
+                                            React.Fragment,
+                                            null,
                                             React.createElement(
-                                                'span',
-                                                { className: 'currency' },
-                                                tier.pricing.yearly.currency
+                                                'h2',
+                                                { className: 'product-price product-price-lg' },
+                                                React.createElement(
+                                                    'span',
+                                                    { className: 'currency' },
+                                                    tier.pricing.monthly.currency
+                                                ),
+                                                React.createElement(
+                                                    'span',
+                                                    { className: 'price' },
+                                                    tier.pricing.monthly.price
+                                                ),
+                                                React.createElement(
+                                                    'span',
+                                                    { className: 'period' },
+                                                    tier.pricing.monthly.label
+                                                )
                                             ),
-                                            React.createElement(
-                                                'span',
-                                                { className: 'price' },
-                                                tier.pricing.yearly.price
-                                            ),
-                                            React.createElement(
-                                                'span',
-                                                { className: 'period' },
-                                                tier.pricing.monthly.label
-                                            )
-                                        ),
-                                        React.createElement(
-                                            'div',
-                                            { className: 'pricing-panel-info' },
                                             React.createElement(
                                                 'div',
-                                                { className: 'text-yearly-color' },
+                                                { className: 'pricing-panel-info' },
                                                 React.createElement(
-                                                    'p',
-                                                    { 'data-alt-text': '$950 billed yearly<br />Save $238/year', className: 'year-pricing' },
-                                                    tier.pricing.yearly.currency,
-                                                    tier.pricing.yearly.perAnnum,
-                                                    ' ',
-                                                    _this3.state.tiers[0].yearlyText1,
-                                                    React.createElement('br', null),
-                                                    ' ',
-                                                    _this3.state.tiers[0].yearlyText2,
-                                                    ' ',
-                                                    tier.pricing.yearly.currency,
-                                                    tier.pricing.yearly.savedAmount,
-                                                    tier.pricing.yearly.label
+                                                    'div',
+                                                    { className: 'text-yearly-color' },
+                                                    React.createElement(
+                                                        'p',
+                                                        { 'data-alt-text': '$950 billed yearly<br />Save $238/year', className: 'year-pricing' },
+                                                        tier.pricing.yearly.currency,
+                                                        tier.pricing.yearly.price,
+                                                        tier.pricing.monthly.label,
+                                                        ' ',
+                                                        _this3.state.tiers[0].monthlyText,
+                                                        ' ',
+                                                        React.createElement(
+                                                            'div',
+                                                            { className: 'yearly', onClick: function onClick() {
+                                                                    return _this3.yearlyToggle();
+                                                                } },
+                                                            ' ',
+                                                            _this3.state.tiers[0].payText
+                                                        )
+                                                    )
+                                                )
+                                            )
+                                        ) : React.createElement(
+                                            React.Fragment,
+                                            null,
+                                            React.createElement(
+                                                'h2',
+                                                { className: 'product-price product-price-lg' },
+                                                React.createElement(
+                                                    'span',
+                                                    { className: 'currency' },
+                                                    tier.pricing.yearly.currency
+                                                ),
+                                                React.createElement(
+                                                    'span',
+                                                    { className: 'price' },
+                                                    tier.pricing.yearly.price
+                                                ),
+                                                React.createElement(
+                                                    'span',
+                                                    { className: 'period' },
+                                                    tier.pricing.monthly.label
+                                                )
+                                            ),
+                                            React.createElement(
+                                                'div',
+                                                { className: 'pricing-panel-info' },
+                                                React.createElement(
+                                                    'div',
+                                                    { className: 'text-yearly-color' },
+                                                    React.createElement(
+                                                        'p',
+                                                        { 'data-alt-text': '$950 billed yearly<br />Save $238/year', className: 'year-pricing' },
+                                                        tier.pricing.yearly.currency,
+                                                        tier.pricing.yearly.perAnnum,
+                                                        ' ',
+                                                        _this3.state.tiers[0].yearlyText1,
+                                                        React.createElement('br', null),
+                                                        ' ',
+                                                        _this3.state.tiers[0].yearlyText2,
+                                                        ' ',
+                                                        tier.pricing.yearly.currency,
+                                                        tier.pricing.yearly.savedAmount,
+                                                        tier.pricing.yearly.label
+                                                    )
                                                 )
                                             )
                                         )
@@ -286,50 +314,146 @@ var SimplePlanTier = function (_React$Component2) {
                 ));
             });
 
+            var offerOptions = [];
+
+            this.state.contactFormData.offer_options.forEach(function (item) {
+
+                offerOptions.push(React.createElement(
+                    React.Fragment,
+                    null,
+                    React.createElement('input', { type: 'checkbox', name: item, value: item }),
+                    item,
+                    React.createElement('br', null)
+                ));
+            });
+
             return React.createElement(
                 React.Fragment,
                 null,
-                React.createElement(
-                    'div',
-                    { className: 'pure-g' },
+                this.state.showContactForm ? React.createElement(
+                    React.Fragment,
+                    null,
                     React.createElement(
                         'div',
-                        { className: 'pure-u-2-4 input-radio-plan' },
-                        React.createElement('input', { type: 'radio',
-                            value: true,
-                            checked: this.state.selectedOption == true,
-                            onChange: function onChange($event) {
-                                return _this3.radioChange($event);
-                            } }),
-                        '\xA0',
+                        { style: { width: '920px' } },
                         React.createElement(
-                            'span',
-                            null,
-                            this.state.radio_btn_monthly_opt
-                        )
-                    ),
-                    React.createElement(
-                        'div',
-                        { className: 'pure-u-2-4 input-radio-plan' },
-                        React.createElement('input', { type: 'radio',
-                            value: false,
-                            checked: this.state.selectedOption == false,
-                            onChange: function onChange($event) {
-                                return _this3.radioChange($event);
-                            } }),
-                        '\xA0',
-                        React.createElement(
-                            'span',
-                            { style: { marginLeft: '5px' } },
-                            this.state.radio_btn_yearly_opt
+                            'div',
+                            { className: 'contact-form' },
+                            React.createElement(
+                                'div',
+                                { className: 'pure-g' },
+                                React.createElement(
+                                    'div',
+                                    { className: 'pure-u-1' },
+                                    React.createElement(
+                                        'svg',
+                                        { width: '60px', height: '60px', viewBox: '0 0 20 20', xmlns: 'http://www.w3.org/2000/svg' },
+                                        React.createElement('path', { d: 'M1.4 6.5L10 11l8.6-4.5', fill: 'none', stroke: 'currentColor' }),
+                                        React.createElement('path', { d: 'M1 4v12h18V4H1zm17 11H2V5h16v10z' })
+                                    ),
+                                    React.createElement('br', null),
+                                    this.state.contactFormData.heading
+                                )
+                            ),
+                            React.createElement(
+                                'div',
+                                { className: 'pure-g' },
+                                React.createElement(
+                                    'div',
+                                    { className: 'pure-u-1' },
+                                    this.state.contactFormData.sub_info
+                                )
+                            ),
+                            React.createElement('br', null),
+                            React.createElement(
+                                'div',
+                                { className: 'pure-g' },
+                                React.createElement(
+                                    'div',
+                                    { className: 'pure-u-1-2 offer-options' },
+                                    offerOptions
+                                ),
+                                React.createElement(
+                                    'div',
+                                    { className: 'pure-u-1-2 text-area-option' },
+                                    React.createElement('input', { style: { width: '416px', border: '1px solid black' }, type: 'feature-req-email', placeholder: 'enter your email.',
+                                        id: 'feature-req-email', name: 'feature-req-email', required: '' }),
+                                    React.createElement('br', null),
+                                    React.createElement('textarea', { style: { marginTop: '20px', border: '1px solid black' }, rows: '6', cols: '50', placeholder: this.state.contactFormData.place_holder })
+                                )
+                            ),
+                            React.createElement('br', null),
+                            React.createElement(
+                                'button',
+                                { className: 'contact-us-btn', style: { float: 'right' } },
+                                React.createElement(
+                                    'div',
+                                    { className: 'contact-action-label' },
+                                    this.state.contactFormData.submitContactFormText
+                                )
+                            ),
+                            React.createElement(
+                                'button',
+                                { className: 'contact-us-btn', style: { float: 'left' }, onClick: function onClick() {
+                                        return _this3.contactFormToggle();
+                                    } },
+                                React.createElement(
+                                    'div',
+                                    { className: 'contact-action-label' },
+                                    this.state.contactFormData.toggleContactFormText
+                                )
+                            )
                         )
                     )
-                ),
-                React.createElement('br', null),
-                React.createElement(
-                    'div',
-                    { className: 'pure-g' },
-                    rows
+                ) : React.createElement(
+                    React.Fragment,
+                    null,
+                    React.createElement(
+                        'div',
+                        { style: { maxWidth: '80%' } },
+                        React.createElement(
+                            'div',
+                            { className: 'pure-g' },
+                            React.createElement(
+                                'div',
+                                { className: 'pure-u-2-4 input-radio-plan' },
+                                React.createElement('input', { type: 'radio',
+                                    value: true,
+                                    checked: this.state.selectedOption == true,
+                                    onChange: function onChange($event) {
+                                        return _this3.radioChange($event);
+                                    } }),
+                                '\xA0',
+                                React.createElement(
+                                    'span',
+                                    null,
+                                    this.state.radio_btn_monthly_opt
+                                )
+                            ),
+                            React.createElement(
+                                'div',
+                                { className: 'pure-u-2-4 input-radio-plan' },
+                                React.createElement('input', { type: 'radio',
+                                    value: false,
+                                    checked: this.state.selectedOption == false,
+                                    onChange: function onChange($event) {
+                                        return _this3.radioChange($event);
+                                    } }),
+                                '\xA0',
+                                React.createElement(
+                                    'span',
+                                    { style: { marginLeft: '5px' } },
+                                    this.state.radio_btn_yearly_opt
+                                )
+                            )
+                        ),
+                        React.createElement('br', null),
+                        React.createElement(
+                            'div',
+                            { className: 'pure-g' },
+                            rows
+                        )
+                    )
                 )
             );
         }
@@ -854,14 +978,10 @@ var PricingPage = function (_React$Component5) {
                     React.createElement(
                         'div',
                         { className: 'simple-plan-container' },
-                        React.createElement(
-                            'div',
-                            { className: 'container', style: { maxWidth: '80%' } },
-                            React.createElement(SimplePlanTier, { onClick: function onClick() {
-                                    return _this9.handleClick();
-                                },
-                                className: 'plan-tier' })
-                        )
+                        React.createElement(SimplePlanTier, { onClick: function onClick() {
+                                return _this9.handleClick();
+                            },
+                            className: 'plan-tier' })
                     )
                 ) : React.createElement(
                     React.Fragment,
