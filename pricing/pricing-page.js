@@ -58,15 +58,27 @@ class SimplePlanTier extends React.Component {
 
         this.state = {
             tiers: teirsData.tiers,
-            showMonthlyPlan: true
+            showMonthlyPlan: true,
+            selectedOption: true,
+            radio_btn_monthly_opt: teirsData.radio_btn_monthly_opt,
+            radio_btn_yearly_opt: teirsData.radio_btn_yearly_opt
         };
     }
 
     yearlyToggle() {
         console.log("in yearlyToggle func, this.state", this.state);
         this.setState({
+            selectedOption: !this.state.selectedOption,
             showMonthlyPlan: !this.state.showMonthlyPlan
         })
+    }
+
+    radioChange(e) {
+        this.setState({
+            // selectedOption: e.currentTarget.value,
+            selectedOption: !this.state.selectedOption,
+            showMonthlyPlan: !this.state.showMonthlyPlan
+        });
     }
 
     render() {
@@ -80,8 +92,15 @@ class SimplePlanTier extends React.Component {
                     <div className="price-card">
                         <div className="pricing-panel-wrapper">
                             <div className="pricing-panel">
-                                <div className="pricing-panel-header">
-                                    <h6 className="pricing-panel-tier">{tier.name}</h6>
+                                { (tier.popular && tier.popular == "True") ?
+                                <div class="pricing-panel-ribbon">
+                                    <h5 class="featured-title">
+                                        Most Popular
+                                    </h5>
+                                </div> : 
+                                <div style={{marginTop: '10%'}}></div>}
+                                <div className="pricing-panel-header" style={{border: '3px solid #ffb5b3', borderBottom: '0'}}>
+                                    <h6 className="pricing-panel-tier" >{tier.name}</h6>
                                     {this.state.showMonthlyPlan ?
                                         <React.Fragment>
                                             <h2 className="product-price product-price-lg">
@@ -117,7 +136,7 @@ class SimplePlanTier extends React.Component {
                                     <p>{tier.description}</p>
                                     <p></p>
                                 </div>
-                                <div className="pricing-panel-footer">
+                                <div className="pricing-panel-footer" style={{border: '3px solid #ffb5b3', borderTop: '0'}}>
                                     <div className="cta-wrapper">
                                         <button className="sign-up-btn">
                                             <a href={tier.call_to_action.url} className="action-link-lg">{tier.call_to_action.text}</a>
@@ -135,9 +154,26 @@ class SimplePlanTier extends React.Component {
 
         return (
 
+        <React.Fragment>
+            <div className="pure-g">
+                <div className="pure-u-2-4 input-radio-plan">
+                    <input type="radio"
+                        value={true}
+                        checked={this.state.selectedOption == true}
+                        onChange={($event) => this.radioChange($event)} />&nbsp;<span>{this.state.radio_btn_monthly_opt}</span>
+                </div>
+                <div className="pure-u-2-4 input-radio-plan">
+                    <input type="radio"
+                        value={false}
+                        checked={this.state.selectedOption == false}
+                        onChange={($event) => this.radioChange($event)}/>&nbsp;<span style={{marginLeft: '5px'}}>{this.state.radio_btn_yearly_opt}</span>
+                </div>
+            </div>
+            <br />
             <div className="pure-g">
                 {rows}
             </div>
+        </React.Fragment>
         );
     }
 };
@@ -288,7 +324,7 @@ class PricingPage extends React.Component {
             showDetailedPlanOveriew: false,
             tiers: teirsData.tiers,
             categories: plansAndFeaturesData.categories,
-            tooltipOpen: false
+            tooltipOpen: false,
         };
     }
 
@@ -456,7 +492,9 @@ class PricingPage extends React.Component {
                         </div>
 
                         <div className="simple-plan-container">
+
                             <div className="container" style={{ maxWidth: '80%' }}>
+
                                 <SimplePlanTier onClick={() => this.handleClick()}
                                     className="plan-tier" />
                             </div>
