@@ -430,7 +430,7 @@ var PlansAccordion = function (_React$Component4) {
                         ),
                         React.createElement(
                             AccordionItemPanel,
-                            { style: { background: '#f5505017', textAlign: 'center' } },
+                            { style: { background: '#fff', textAlign: 'center' } },
                             React.createElement(
                                 'p',
                                 { className: 'text-light-gray' },
@@ -501,7 +501,7 @@ var PlansAccordion = function (_React$Component4) {
                         ),
                         React.createElement(
                             AccordionItemPanel,
-                            { style: { background: '#f5505017', textAlign: 'center' } },
+                            { style: { background: '#fff', textAlign: 'center' } },
                             React.createElement(
                                 'p',
                                 { className: 'text-light-gray' },
