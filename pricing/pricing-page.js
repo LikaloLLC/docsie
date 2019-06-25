@@ -51,43 +51,90 @@ class Tooltip extends React.Component {
     }
 }
 
+class ContactForm extends React.Component {
+
+    render() {
+        
+        let offerOptions= [];
+
+        this.props.contactFormData.offer_options.forEach((item) => {
+
+            offerOptions.push(
+                <React.Fragment>
+                    <input type="checkbox" name={item} value={item} />{item}<br />
+                </React.Fragment>
+            )
+        })
+
+        return (
+            
+            <React.Fragment>
+                <div>
+                    <div className="pricing-contact-form">
+                        <div className="pure-g">
+                            <div className="pure-u-1">
+
+                                <svg width="60px" height="60px" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M1.4 6.5L10 11l8.6-4.5" fill="none" stroke="currentColor" />
+                                    <path d="M1 4v12h18V4H1zm17 11H2V5h16v10z" />   
+                                </svg>
+                                <br />
+                                {this.props.contactFormData.heading}
+                            </div>
+                        </div>
+                        <div className="pure-g">
+                            <div  className="pure-u-1">
+                                {this.props.contactFormData.sub_info}
+                            </div>
+                        </div>
+                        <br />
+                        <div className="pure-g">
+
+                            <div className="pure-u-1-2 offer-options">
+                                {offerOptions}
+                            </div>
+
+                            <div className="pure-u-1-2 text-area-option">
+                            <input style={{width: '416px', border: '1px solid black'}} type="feature-req-email" placeholder="enter your email."
+                                id="feature-req-email" name="feature-req-email" required="" />
+                            <br />
+                            <textarea style={{marginTop: '20px', border: '1px solid black'}} rows="6" cols="50" placeholder={this.props.contactFormData.place_holder}></textarea>
+                            </div>
+                        </div>
+                        
+                        <br />
+
+                        <button className="contact-us-btn" style={{float: 'right'}}>
+                        {/* onClick={() => this.contactFormToggle()} */}
+                            <div className="contact-action-label">{this.props.contactFormData.submitContactFormText}</div>
+                        </button>
+
+                        <button className="contact-us-btn" style={{float: 'left'}} onClick={() => this.props.contactFormToggle()}>
+                            <div className="contact-action-label">{this.props.contactFormData.toggleContactFormText}</div>
+                        </button>
+                    </div>
+                </div>
+            </React.Fragment>
+        )
+    }
+}
+
 class SimplePlanTier extends React.Component {
 
     constructor (props) {
         super(props);
 
+        console.log("props in simplePlanTier", props);
+
         this.state = {
             tiers: teirsData.tiers,
-            showMonthlyPlan: true,
+            // showMonthlyPlan: true,
             selectedOption: true,
             radio_btn_monthly_opt: teirsData.radio_btn_monthly_opt,
             radio_btn_yearly_opt: teirsData.radio_btn_yearly_opt,
             showContactForm: false,
             contactFormData: contactForm
         };
-    }
-
-    yearlyToggle() {
-        console.log("in yearlyToggle func, this.state", this.state);
-        this.setState({
-            selectedOption: !this.state.selectedOption,
-            showMonthlyPlan: !this.state.showMonthlyPlan
-        })
-    }
-
-    contactFormToggle() {
-        console.log("in contactFormToggle func, this.state", this.state);
-        this.setState({
-            showContactForm: !this.state.showContactForm
-        })
-    }
-
-    radioChange(e) {
-        this.setState({
-            // selectedOption: e.currentTarget.value,
-            selectedOption: !this.state.selectedOption,
-            showMonthlyPlan: !this.state.showMonthlyPlan
-        });
     }
 
     render() {
@@ -112,12 +159,12 @@ class SimplePlanTier extends React.Component {
                                     <h6 className="pricing-panel-tier" >{tier.name}</h6>
                                     {(tier.showContact && tier.showContact == "True") ? 
                                     <React.Fragment>
-                                        <button className="contact-us-btn" onClick={() => this.contactFormToggle()}>
+                                        <button className="contact-us-btn" onClick={() => this.props.contactFormToggle()}>
                                             <div className="contact-action-label">{tier.contactFormText}</div>
                                         </button>
                                     </React.Fragment>: 
                                     <React.Fragment>
-                                        {this.state.showMonthlyPlan ?
+                                        {this.props.showMonthlyPlan ?
                                             <React.Fragment>
                                                 <h2 className="product-price product-price-lg">
                                                     <span className="currency">{tier.pricing.monthly.currency}</span>
@@ -127,7 +174,7 @@ class SimplePlanTier extends React.Component {
                                                 <div className="pricing-panel-info">
                                                     <div className="text-yearly-color">
                                                         <p data-alt-text="$950 billed yearly<br />Save $238/year" className="year-pricing">
-                                                            {tier.pricing.yearly.currency}{tier.pricing.yearly.price}{tier.pricing.monthly.label} {this.state.tiers[0].monthlyText} <div className="yearly" onClick={() => this.yearlyToggle()}> {this.state.tiers[0].payText}</div>
+                                                            {tier.pricing.yearly.currency}{tier.pricing.yearly.price}{tier.pricing.monthly.label} {this.state.tiers[0].monthlyText} <div className="yearly" onClick={() => this.props.yearlyToggle()}> {this.state.tiers[0].payText}</div>
                                                         </p>
                                                     </div>
                                                 </div>
@@ -151,7 +198,11 @@ class SimplePlanTier extends React.Component {
                                     </React.Fragment>
                                     }
                                     <p></p>
-                                    <p>{tier.description}</p>
+                                    {(tier.showContact && tier.showContact == "True") ?
+                                        <p style={{marginTop: '29.5%'}}>{tier.description}</p>
+                                        :
+                                        <p>{tier.description}</p>
+                                    }
                                     <p></p>
                                 </div>
                                 <div className="pricing-panel-footer" style={{border: '3px solid #ffb5b3', borderTop: '0'}}>
@@ -184,73 +235,13 @@ class SimplePlanTier extends React.Component {
 
         return (
             <React.Fragment>
-                { this.state.showContactForm ? 
-
-                    <React.Fragment>
-                        <div style={{ width: '920px' }}>
-                            <div  className="contact-form">
-                                <div className="pure-g">
-                                    <div className="pure-u-1">
-
-                                        <svg width="60px" height="60px" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M1.4 6.5L10 11l8.6-4.5" fill="none" stroke="currentColor" />
-                                            <path d="M1 4v12h18V4H1zm17 11H2V5h16v10z" />   
-                                        </svg>
-                                        <br />
-                                        {this.state.contactFormData.heading}
-                                    </div>
-                                </div>
-                                <div className="pure-g">
-                                    <div  className="pure-u-1">
-                                        {this.state.contactFormData.sub_info}
-                                    </div>
-                                </div>
-                                <br />
-                                <div className="pure-g">
-
-                                    <div className="pure-u-1-2 offer-options">
-                                        {offerOptions}
-                                    </div>
-
-                                    <div className="pure-u-1-2 text-area-option">
-                                    <input style={{width: '416px', border: '1px solid black'}} type="feature-req-email" placeholder="enter your email."
-                                        id="feature-req-email" name="feature-req-email" required="" />
-                                    <br />
-                                    <textarea style={{marginTop: '20px', border: '1px solid black'}} rows="6" cols="50" placeholder={this.state.contactFormData.place_holder}></textarea>
-                                    </div>
-                                </div>
-                                
-                                <br />
-
-                                <button className="contact-us-btn" style={{float: 'right'}}>
-                                {/* onClick={() => this.contactFormToggle()} */}
-                                    <div className="contact-action-label">{this.state.contactFormData.submitContactFormText}</div>
-                                </button>
-
-                                <button className="contact-us-btn" style={{float: 'left'}} onClick={() => this.contactFormToggle()}>
-                                    <div className="contact-action-label">{this.state.contactFormData.toggleContactFormText}</div>
-                                </button>
-                            </div>
-                        </div>
-                    </React.Fragment>
+                { this.props.showContactForm ? 
+                    <div className="contact-form-container">
+                        <ContactForm contactFormData={this.state.contactFormData} contactFormToggle={() => this.props.contactFormToggle()}/>
+                    </div>
                      : 
                     <React.Fragment>
                         <div style={{ maxWidth: '80%' }}>
-                            <div className="pure-g">
-                                <div className="pure-u-2-4 input-radio-plan">
-                                    <input type="radio"
-                                        value={true}
-                                        checked={this.state.selectedOption == true}
-                                        onChange={($event) => this.radioChange($event)} />&nbsp;<span>{this.state.radio_btn_monthly_opt}</span>
-                                </div>
-                                <div className="pure-u-2-4 input-radio-plan">
-                                    <input type="radio"
-                                        value={false}
-                                        checked={this.state.selectedOption == false}
-                                        onChange={($event) => this.radioChange($event)}/>&nbsp;<span style={{marginLeft: '5px'}}>{this.state.radio_btn_yearly_opt}</span>
-                                </div>
-                            </div>
-                            <br />
                             <div className="pure-g">
                                 {rows}
                             </div>
@@ -409,12 +400,41 @@ class PricingPage extends React.Component {
             tiers: teirsData.tiers,
             categories: plansAndFeaturesData.categories,
             tooltipOpen: false,
+            selectedOption: true,
+            radio_btn_monthly_opt: teirsData.radio_btn_monthly_opt,
+            radio_btn_yearly_opt: teirsData.radio_btn_yearly_opt,
+            showMonthlyPlan: true,
+            showContactForm: false,
+            contactFormData: contactForm
         };
     }
 
     handleClick() {
 
         this.setState({ showDetailedPlanOveriew: !this.state.showDetailedPlanOveriew });
+    }
+
+    radioChange(e) {
+        this.setState({
+            // selectedOption: e.currentTarget.value,
+            selectedOption: !this.state.selectedOption,
+            showMonthlyPlan: !this.state.showMonthlyPlan
+        });
+    }
+
+    yearlyToggle() {
+        console.log("in yearlyToggle func, this.state", this.state);
+        this.setState({
+            selectedOption: !this.state.selectedOption,
+            showMonthlyPlan: !this.state.showMonthlyPlan
+        })
+    }
+
+    contactFormToggle() {
+        console.log("in contactFormToggle func, this.state", this.state);
+        this.setState({
+            showContactForm: !this.state.showContactForm
+        })
     }
 
     // get pricing page details from a remote page
@@ -495,11 +515,51 @@ class PricingPage extends React.Component {
             detailRows.push(
                 <div key={tier.name} className="pure-u-1-4 category-feature-head">
                     <h4 className="pricing-name">{tier.name}</h4>
-                    <h2 className="product-price product-price-md">
+                    {(tier.showContact && tier.showContact == "True") ? 
+                        <React.Fragment>
+                            <button className="contact-us-btn-dtl" onClick={() => this.contactFormToggle()}>
+                                <div className="contact-action-label">{tier.contactFormText}</div>
+                            </button>
+                        </React.Fragment>: 
+                        <React.Fragment>
+                            {this.state.showMonthlyPlan ?
+                                <React.Fragment>
+                                    <h2 className="product-price product-price-md">
+                                        <span className="currency">{tier.pricing.monthly.currency}</span>
+                                        <span className="price">{tier.pricing.monthly.price}</span>
+                                        <span className="period">{tier.pricing.monthly.label}</span>
+                                    </h2>
+                                    {/* <div className="pricing-panel-info">
+                                        <div className="text-yearly-color">
+                                            <p data-alt-text="$950 billed yearly<br />Save $238/year" className="year-pricing">
+                                                {tier.pricing.yearly.currency}{tier.pricing.yearly.price}{tier.pricing.monthly.label} {this.state.tiers[0].monthlyText} <div className="yearly" onClick={() => this.yearlyToggle()}> {this.state.tiers[0].payText}</div>
+                                            </p>
+                                        </div>
+                                    </div> */}
+                                </React.Fragment>
+                                :
+                                <React.Fragment>
+                                    <h2 className="product-price product-price-md">
+                                        <span className="currency">{tier.pricing.yearly.currency}</span>
+                                        <span className="price">{tier.pricing.yearly.price}</span>
+                                        <span className="period">{tier.pricing.monthly.label}</span>
+                                    </h2>
+                                    {/* <div className="pricing-panel-info">
+                                        <div className="text-yearly-color">
+                                            <p data-alt-text="$950 billed yearly<br />Save $238/year" className="year-pricing">
+                                                {tier.pricing.yearly.currency}{tier.pricing.yearly.perAnnum} {this.state.tiers[0].yearlyText1}<br /> {this.state.tiers[0].yearlyText2} {tier.pricing.yearly.currency}{tier.pricing.yearly.savedAmount}{tier.pricing.yearly.label}
+                                            </p>
+                                        </div>
+                                    </div> */}
+                                </React.Fragment>
+                            }
+                        </React.Fragment>
+                    }
+                    {/* <h2 className="product-price product-price-md">
                         <span className="currency">{tier.pricing.monthly.currency}</span>
                         <span className="price">{tier.pricing.monthly.price}</span>
                         <span className="period">{tier.pricing.monthly.label}</span>
-                    </h2>
+                    </h2> */}
                 </div>
             )
         });
@@ -565,8 +625,37 @@ class PricingPage extends React.Component {
             });
         }
 
+        let offerOptions= [];
+
+        this.state.contactFormData.offer_options.forEach((item) => {
+
+            offerOptions.push(
+                <React.Fragment>
+                    <input type="checkbox" name={item} value={item} />{item}<br />
+                </React.Fragment>
+            )
+        })
+
         return (
             <div className="simple-detail-plan-tier-sm-md-lg">
+
+            { !this.state.showContactForm ? 
+                <div className="pure-g">
+                    <div className="pure-u-1-2 input-radio-plan input-radio-plan-monthly">
+                        <input type="radio"
+                            value={true}
+                            checked={this.state.selectedOption == true}
+                            onChange={($event) => this.radioChange($event)} />&nbsp;<span>{this.state.radio_btn_monthly_opt}</span>
+                    </div>
+                    <div className="pure-u-1-2 input-radio-plan input-radio-plan-yearly">
+                        <input type="radio"
+                            value={false}
+                            checked={this.state.selectedOption == false}
+                            onChange={($event) => this.radioChange($event)}/>&nbsp;<span style={{marginLeft: '5px'}}>{this.state.radio_btn_yearly_opt}</span>
+                    </div>
+                </div>  : '' }
+                <br />
+
                 {!this.state.showDetailedPlanOveriew
                     ?
                     <React.Fragment>
@@ -578,7 +667,7 @@ class PricingPage extends React.Component {
                         <div className="simple-plan-container">
 
                                 <SimplePlanTier onClick={() => this.handleClick()}
-                                    className="plan-tier" />
+                                    className="plan-tier" showMonthlyPlan={this.state.showMonthlyPlan} yearlyToggle={() => this.yearlyToggle()} contactFormToggle={() => this.contactFormToggle()} showContactForm={this.state.showContactForm}/>
                         </div>
 
                     </React.Fragment>
@@ -588,9 +677,16 @@ class PricingPage extends React.Component {
                         <div className="accrd-view">
                             <PlansAccordion className="accordion-plan-tier" />
                         </div>
-                        <div className="detail-plan-container">
+                        <React.Fragment>
+                        { this.state.showContactForm ? 
 
-                            <div style={{ background: '#fff', width: '80%' }}>
+                            <React.Fragment>
+                                <div className="contact-form-container">
+                                    <ContactForm contactFormData={this.state.contactFormData} contactFormToggle={() => this.contactFormToggle()}/>
+                                </div>
+                            </React.Fragment> :
+                            <React.Fragment>
+                            <div className="detail-plan-container">
 
                                 <div className="pure-g" style={{ marginBottom: '-60px' }}>
 
@@ -605,18 +701,21 @@ class PricingPage extends React.Component {
                                 <br />
                                 <div className="pure-g">
 
-                                    <div class="pure-u-1-4" style={{ textAlign: 'center' }}>&nbsp;</div>
-
+                                    <div class="pure-u-1-4">
+                                        <button className="sign-up-btn view-simple-tier-btn" onClick={() => this.handleClick()}>
+                                            <div className="view-simple-tier">{this.state.tiers[0].toggleText}</div>
+                                        </button>
+                                    </div>
                                     {tierActions}
+
                                 </div>
 
                                 <br />
 
-                                <button className="sign-up-btn view-simple-tier-btn" onClick={() => this.handleClick()}>
-                                    <div className="action-link-lg view-simple-tier">{this.state.tiers[0].toggleText}</div>
-                                </button>
                             </div>
-                        </div>
+                            </React.Fragment>
+                        }
+                            </React.Fragment>
                     </React.Fragment>
                 }
             </div>
