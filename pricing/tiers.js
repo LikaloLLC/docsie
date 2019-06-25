@@ -35,7 +35,7 @@ tiers = {
       "compareText": "compare plans",
       "showContact": "True",
       "contactFormText": "Get Started",
-      "toggleText": "View Simple Plan Tier"
+      "toggleText": "Show Plans"
     },
     {
       "pricing": {
