@@ -146,7 +146,7 @@ class SimplePlanTier extends React.Component {
             rows.push(
                 <div key={tier.name} className="pure-u-1-2">
                     <div className="price-card">
-                        <div className="pricing-panel-wrapper">
+                        <div className="pricing-panel-wrapper" style={{border: '3px solid #ffb5b3'}}>
                             <div className="pricing-panel">
                                 { (tier.popular && tier.popular == "True") ?
                                 <div class="pricing-panel-ribbon">
@@ -155,7 +155,7 @@ class SimplePlanTier extends React.Component {
                                     </h5>
                                 </div> : 
                                 <div style={{marginTop: '10%'}}></div>}
-                                <div className="pricing-panel-header" style={{border: '3px solid #ffb5b3', borderBottom: '0'}}>
+                                <div className={(tier.popular == "True") ? "pricing-panel-header popular-header" : "pricing-panel-header"}>
                                     <h6 className="pricing-panel-tier" >{tier.name}</h6>
                                     {(tier.showContact && tier.showContact == "True") ? 
                                     <React.Fragment>
@@ -205,13 +205,15 @@ class SimplePlanTier extends React.Component {
                                     }
                                     <p></p>
                                 </div>
-                                <div className="pricing-panel-footer" style={{border: '3px solid #ffb5b3', borderTop: '0'}}>
-                                    <div className="cta-wrapper">
-                                        <button className="sign-up-btn">
-                                            <a href={tier.call_to_action.url} className="action-link-lg">{tier.call_to_action.text}</a>
-                                        </button>
-                                    </div>
-                                    <p className="compare-plans" onClick={() => this.props.onClick()}>{this.state.tiers[0].compareText}</p>
+                                <div className="pricing-panel-footer">
+                                    {(tier.showContact && tier.showContact == "False") ?
+                                        <div className="cta-wrapper">
+                                            <button className="sign-up-btn">
+                                                <a href={tier.call_to_action.url} className="action-link-lg">{tier.call_to_action.text}</a>
+                                            </button>
+                                        </div> : '' 
+                                    }
+                                    <p className="compare-plans" style={{position: 'relative', bottom: '20px'}} onClick={() => this.props.onClick()}>{this.state.tiers[0].compareText}</p>
                                 </div>
                             </div>
                         </div>
@@ -701,9 +703,12 @@ class PricingPage extends React.Component {
                                 <br />
                                 <div className="pure-g">
 
-                                    <div class="pure-u-1-4">
-                                        <button className="sign-up-btn view-simple-tier-btn" onClick={() => this.handleClick()}>
-                                            <div className="view-simple-tier">{this.state.tiers[0].toggleText}</div>
+                                    <div class="pure-u-1-4" style={{ textAlign: 'center' }}>
+                                        <button className="back-to-plans-btn" onClick={() => this.handleClick()}>
+                                        <svg width="30px" height="30px" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M13 16l-6-6 6-6" fill="none" stroke="red" stroke-width="1.03"/>
+                                        </svg>
+                                        <a href="#" className="back-btn-action-link-lg-dtl">{this.state.tiers[0].toggleText}</a>
                                         </button>
                                     </div>
                                     {tierActions}

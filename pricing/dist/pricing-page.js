@@ -228,7 +228,7 @@ var SimplePlanTier = function (_React$Component3) {
                         { className: 'price-card' },
                         React.createElement(
                             'div',
-                            { className: 'pricing-panel-wrapper' },
+                            { className: 'pricing-panel-wrapper', style: { border: '3px solid #ffb5b3' } },
                             React.createElement(
                                 'div',
                                 { className: 'pricing-panel' },
@@ -243,7 +243,7 @@ var SimplePlanTier = function (_React$Component3) {
                                 ) : React.createElement('div', { style: { marginTop: '10%' } }),
                                 React.createElement(
                                     'div',
-                                    { className: 'pricing-panel-header', style: { border: '3px solid #ffb5b3', borderBottom: '0' } },
+                                    { className: tier.popular == "True" ? "pricing-panel-header popular-header" : "pricing-panel-header" },
                                     React.createElement(
                                         'h6',
                                         { className: 'pricing-panel-tier' },
@@ -375,8 +375,8 @@ var SimplePlanTier = function (_React$Component3) {
                                 ),
                                 React.createElement(
                                     'div',
-                                    { className: 'pricing-panel-footer', style: { border: '3px solid #ffb5b3', borderTop: '0' } },
-                                    React.createElement(
+                                    { className: 'pricing-panel-footer' },
+                                    tier.showContact && tier.showContact == "False" ? React.createElement(
                                         'div',
                                         { className: 'cta-wrapper' },
                                         React.createElement(
@@ -388,10 +388,10 @@ var SimplePlanTier = function (_React$Component3) {
                                                 tier.call_to_action.text
                                             )
                                         )
-                                    ),
+                                    ) : '',
                                     React.createElement(
                                         'p',
-                                        { className: 'compare-plans', onClick: function onClick() {
+                                        { className: 'compare-plans', style: { position: 'relative', bottom: '20px' }, onClick: function onClick() {
                                                 return _this5.props.onClick();
                                             } },
                                         _this5.state.tiers[0].compareText
@@ -1140,15 +1140,20 @@ var PricingPage = function (_React$Component6) {
                                     { className: 'pure-g' },
                                     React.createElement(
                                         'div',
-                                        { 'class': 'pure-u-1-4' },
+                                        { 'class': 'pure-u-1-4', style: { textAlign: 'center' } },
                                         React.createElement(
                                             'button',
-                                            { className: 'sign-up-btn view-simple-tier-btn', onClick: function onClick() {
+                                            { className: 'back-to-plans-btn', onClick: function onClick() {
                                                     return _this11.handleClick();
                                                 } },
                                             React.createElement(
-                                                'div',
-                                                { className: 'view-simple-tier' },
+                                                'svg',
+                                                { width: '30px', height: '30px', viewBox: '0 0 20 20', xmlns: 'http://www.w3.org/2000/svg' },
+                                                React.createElement('path', { d: 'M13 16l-6-6 6-6', fill: 'none', stroke: 'red', 'stroke-width': '1.03' })
+                                            ),
+                                            React.createElement(
+                                                'a',
+                                                { href: '#', className: 'back-btn-action-link-lg-dtl' },
                                                 this.state.tiers[0].toggleText
                                             )
                                         )

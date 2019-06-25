@@ -61,7 +61,8 @@ tiers = {
       "call_to_action": {
         "text": "Try it Free!",
         "url": "try-it-free-url"
-      }
+      },
+      "showContact": "False"
     }
     // {
     //   "pricing": {
