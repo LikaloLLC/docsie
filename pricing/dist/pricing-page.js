@@ -88,9 +88,11 @@ var SimplePlanTier = function (_React$Component2) {
 
         var _this2 = _possibleConstructorReturn(this, (SimplePlanTier.__proto__ || Object.getPrototypeOf(SimplePlanTier)).call(this, props));
 
+        console.log("props in simplePlanTier", props);
+
         _this2.state = {
             tiers: teirsData.tiers,
-            showMonthlyPlan: true,
+            // showMonthlyPlan: true,
             selectedOption: true,
             radio_btn_monthly_opt: teirsData.radio_btn_monthly_opt,
             radio_btn_yearly_opt: teirsData.radio_btn_yearly_opt,
@@ -100,33 +102,30 @@ var SimplePlanTier = function (_React$Component2) {
         return _this2;
     }
 
+    // yearlyToggle() {
+    //     console.log("in yearlyToggle func, this.state", this.state);
+    //     this.setState({
+    //         selectedOption: !this.state.selectedOption,
+    //         showMonthlyPlan: !this.state.showMonthlyPlan
+    //     })
+    // }
+
+    // contactFormToggle() {
+    //     console.log("in contactFormToggle func, this.state", this.state);
+    //     this.setState({
+    //         showContactForm: !this.state.showContactForm
+    //     })
+    // }
+
+    // radioChange(e) {
+    //     this.setState({
+    //         // selectedOption: e.currentTarget.value,
+    //         selectedOption: !this.state.selectedOption,
+    //         showMonthlyPlan: !this.state.showMonthlyPlan
+    //     });
+    // }
+
     _createClass(SimplePlanTier, [{
-        key: 'yearlyToggle',
-        value: function yearlyToggle() {
-            console.log("in yearlyToggle func, this.state", this.state);
-            this.setState({
-                selectedOption: !this.state.selectedOption,
-                showMonthlyPlan: !this.state.showMonthlyPlan
-            });
-        }
-    }, {
-        key: 'contactFormToggle',
-        value: function contactFormToggle() {
-            console.log("in contactFormToggle func, this.state", this.state);
-            this.setState({
-                showContactForm: !this.state.showContactForm
-            });
-        }
-    }, {
-        key: 'radioChange',
-        value: function radioChange(e) {
-            this.setState({
-                // selectedOption: e.currentTarget.value,
-                selectedOption: !this.state.selectedOption,
-                showMonthlyPlan: !this.state.showMonthlyPlan
-            });
-        }
-    }, {
         key: 'render',
         value: function render() {
             var _this3 = this;
@@ -170,7 +169,7 @@ var SimplePlanTier = function (_React$Component2) {
                                         React.createElement(
                                             'button',
                                             { className: 'contact-us-btn', onClick: function onClick() {
-                                                    return _this3.contactFormToggle();
+                                                    return _this3.props.contactFormToggle();
                                                 } },
                                             React.createElement(
                                                 'div',
@@ -181,7 +180,7 @@ var SimplePlanTier = function (_React$Component2) {
                                     ) : React.createElement(
                                         React.Fragment,
                                         null,
-                                        _this3.state.showMonthlyPlan ? React.createElement(
+                                        _this3.props.showMonthlyPlan ? React.createElement(
                                             React.Fragment,
                                             null,
                                             React.createElement(
@@ -221,7 +220,7 @@ var SimplePlanTier = function (_React$Component2) {
                                                         React.createElement(
                                                             'div',
                                                             { className: 'yearly', onClick: function onClick() {
-                                                                    return _this3.yearlyToggle();
+                                                                    return _this3.props.yearlyToggle();
                                                                 } },
                                                             ' ',
                                                             _this3.state.tiers[0].payText
@@ -330,7 +329,7 @@ var SimplePlanTier = function (_React$Component2) {
             return React.createElement(
                 React.Fragment,
                 null,
-                this.state.showContactForm ? React.createElement(
+                this.props.showContactForm ? React.createElement(
                     React.Fragment,
                     null,
                     React.createElement(
@@ -411,43 +410,6 @@ var SimplePlanTier = function (_React$Component2) {
                     React.createElement(
                         'div',
                         { style: { maxWidth: '80%' } },
-                        React.createElement(
-                            'div',
-                            { className: 'pure-g' },
-                            React.createElement(
-                                'div',
-                                { className: 'pure-u-2-4 input-radio-plan' },
-                                React.createElement('input', { type: 'radio',
-                                    value: true,
-                                    checked: this.state.selectedOption == true,
-                                    onChange: function onChange($event) {
-                                        return _this3.radioChange($event);
-                                    } }),
-                                '\xA0',
-                                React.createElement(
-                                    'span',
-                                    null,
-                                    this.state.radio_btn_monthly_opt
-                                )
-                            ),
-                            React.createElement(
-                                'div',
-                                { className: 'pure-u-2-4 input-radio-plan' },
-                                React.createElement('input', { type: 'radio',
-                                    value: false,
-                                    checked: this.state.selectedOption == false,
-                                    onChange: function onChange($event) {
-                                        return _this3.radioChange($event);
-                                    } }),
-                                '\xA0',
-                                React.createElement(
-                                    'span',
-                                    { style: { marginLeft: '5px' } },
-                                    this.state.radio_btn_yearly_opt
-                                )
-                            )
-                        ),
-                        React.createElement('br', null),
                         React.createElement(
                             'div',
                             { className: 'pure-g' },
@@ -754,7 +716,11 @@ var PricingPage = function (_React$Component5) {
             showDetailedPlanOveriew: false,
             tiers: teirsData.tiers,
             categories: plansAndFeaturesData.categories,
-            tooltipOpen: false
+            tooltipOpen: false,
+            selectedOption: true,
+            radio_btn_monthly_opt: teirsData.radio_btn_monthly_opt,
+            radio_btn_yearly_opt: teirsData.radio_btn_yearly_opt,
+            showMonthlyPlan: true
         };
         return _this8;
     }
@@ -764,6 +730,32 @@ var PricingPage = function (_React$Component5) {
         value: function handleClick() {
 
             this.setState({ showDetailedPlanOveriew: !this.state.showDetailedPlanOveriew });
+        }
+    }, {
+        key: 'radioChange',
+        value: function radioChange(e) {
+            this.setState({
+                // selectedOption: e.currentTarget.value,
+                selectedOption: !this.state.selectedOption,
+                showMonthlyPlan: !this.state.showMonthlyPlan
+            });
+        }
+    }, {
+        key: 'yearlyToggle',
+        value: function yearlyToggle() {
+            console.log("in yearlyToggle func, this.state", this.state);
+            this.setState({
+                selectedOption: !this.state.selectedOption,
+                showMonthlyPlan: !this.state.showMonthlyPlan
+            });
+        }
+    }, {
+        key: 'contactFormToggle',
+        value: function contactFormToggle() {
+            console.log("in contactFormToggle func, this.state", this.state);
+            this.setState({
+                showContactForm: !this.state.showContactForm
+            });
         }
 
         // get pricing page details from a remote page
@@ -854,23 +846,67 @@ var PricingPage = function (_React$Component5) {
                         { className: 'pricing-name' },
                         tier.name
                     ),
-                    React.createElement(
-                        'h2',
-                        { className: 'product-price product-price-md' },
+                    tier.showContact && tier.showContact == "True" ? React.createElement(
+                        React.Fragment,
+                        null,
                         React.createElement(
-                            'span',
-                            { className: 'currency' },
-                            tier.pricing.monthly.currency
-                        ),
-                        React.createElement(
-                            'span',
-                            { className: 'price' },
-                            tier.pricing.monthly.price
-                        ),
-                        React.createElement(
-                            'span',
-                            { className: 'period' },
-                            tier.pricing.monthly.label
+                            'button',
+                            { className: 'contact-us-btn', onClick: function onClick() {
+                                    return _this9.contactFormToggle();
+                                } },
+                            React.createElement(
+                                'div',
+                                { className: 'contact-action-label' },
+                                tier.contactFormText
+                            )
+                        )
+                    ) : React.createElement(
+                        React.Fragment,
+                        null,
+                        _this9.state.showMonthlyPlan ? React.createElement(
+                            React.Fragment,
+                            null,
+                            React.createElement(
+                                'h2',
+                                { className: 'product-price product-price-md' },
+                                React.createElement(
+                                    'span',
+                                    { className: 'currency' },
+                                    tier.pricing.monthly.currency
+                                ),
+                                React.createElement(
+                                    'span',
+                                    { className: 'price' },
+                                    tier.pricing.monthly.price
+                                ),
+                                React.createElement(
+                                    'span',
+                                    { className: 'period' },
+                                    tier.pricing.monthly.label
+                                )
+                            )
+                        ) : React.createElement(
+                            React.Fragment,
+                            null,
+                            React.createElement(
+                                'h2',
+                                { className: 'product-price product-price-md' },
+                                React.createElement(
+                                    'span',
+                                    { className: 'currency' },
+                                    tier.pricing.yearly.currency
+                                ),
+                                React.createElement(
+                                    'span',
+                                    { className: 'price' },
+                                    tier.pricing.yearly.price
+                                ),
+                                React.createElement(
+                                    'span',
+                                    { className: 'period' },
+                                    tier.pricing.monthly.label
+                                )
+                            )
                         )
                     )
                 ));
@@ -967,6 +1003,43 @@ var PricingPage = function (_React$Component5) {
             return React.createElement(
                 'div',
                 { className: 'simple-detail-plan-tier-sm-md-lg' },
+                React.createElement(
+                    'div',
+                    { className: 'pure-g' },
+                    React.createElement(
+                        'div',
+                        { className: 'pure-u-1-2 input-radio-plan' },
+                        React.createElement('input', { type: 'radio',
+                            value: true,
+                            checked: this.state.selectedOption == true,
+                            onChange: function onChange($event) {
+                                return _this9.radioChange($event);
+                            } }),
+                        '\xA0',
+                        React.createElement(
+                            'span',
+                            null,
+                            this.state.radio_btn_monthly_opt
+                        )
+                    ),
+                    React.createElement(
+                        'div',
+                        { className: 'pure-u-1-2 input-radio-plan' },
+                        React.createElement('input', { type: 'radio',
+                            value: false,
+                            checked: this.state.selectedOption == false,
+                            onChange: function onChange($event) {
+                                return _this9.radioChange($event);
+                            } }),
+                        '\xA0',
+                        React.createElement(
+                            'span',
+                            { style: { marginLeft: '5px' } },
+                            this.state.radio_btn_yearly_opt
+                        )
+                    )
+                ),
+                React.createElement('br', null),
                 !this.state.showDetailedPlanOveriew ? React.createElement(
                     React.Fragment,
                     null,
@@ -981,7 +1054,11 @@ var PricingPage = function (_React$Component5) {
                         React.createElement(SimplePlanTier, { onClick: function onClick() {
                                 return _this9.handleClick();
                             },
-                            className: 'plan-tier' })
+                            className: 'plan-tier', showMonthlyPlan: this.state.showMonthlyPlan, yearlyToggle: function yearlyToggle() {
+                                return _this9.yearlyToggle();
+                            }, contactFormToggle: function contactFormToggle() {
+                                return _this9.contactFormToggle();
+                            }, showContactForm: this.state.showContactForm })
                     )
                 ) : React.createElement(
                     React.Fragment,
