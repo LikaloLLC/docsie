@@ -101,8 +101,12 @@ var ContactForm = function (_React$Component2) {
                 offerOptions.push(React.createElement(
                     React.Fragment,
                     null,
-                    React.createElement('input', { type: 'checkbox', name: item, value: item }),
-                    item,
+                    React.createElement('input', { type: 'checkbox', style: { marginRight: '10px' }, name: item, value: item }),
+                    React.createElement(
+                        'span',
+                        { style: { fontSize: '14px' } },
+                        item
+                    ),
                     React.createElement('br', null)
                 ));
             });
@@ -112,10 +116,10 @@ var ContactForm = function (_React$Component2) {
                 null,
                 React.createElement(
                     'div',
-                    null,
+                    { className: 'contact-form-container' },
                     React.createElement(
                         'div',
-                        { className: 'pricing-contact-form' },
+                        { className: this.props.accordionView ? "pricing-contact-form-wdt" : "pricing-contact-form" },
                         React.createElement(
                             'div',
                             { className: 'pure-g' },
@@ -143,20 +147,276 @@ var ContactForm = function (_React$Component2) {
                         ),
                         React.createElement('br', null),
                         React.createElement(
-                            'div',
-                            { className: 'pure-g' },
-                            React.createElement(
-                                'div',
-                                { className: 'pure-u-1-2 offer-options' },
-                                offerOptions
-                            ),
-                            React.createElement(
-                                'div',
-                                { className: 'pure-u-1-2 text-area-option' },
-                                React.createElement('input', { style: { width: '416px', border: '1px solid black' }, type: 'feature-req-email', placeholder: 'enter your email.',
-                                    id: 'feature-req-email', name: 'feature-req-email', required: '' }),
+                            React.Fragment,
+                            null,
+                            this.props.accordionView ? React.createElement(
+                                React.Fragment,
+                                null,
+                                React.createElement(
+                                    'div',
+                                    { className: 'pure-g' },
+                                    React.createElement(
+                                        'div',
+                                        { className: 'pure-u-1 text-area-option' },
+                                        React.createElement(
+                                            'span',
+                                            { className: 'form-label' },
+                                            this.props.contactFormData.firstNameLabel
+                                        ),
+                                        React.createElement('br', null),
+                                        React.createElement('input', { className: this.props.accordionView ? "feature-req-email feature-req-email-wdt" : "feature-req-email", type: 'email', placeholder: 'enter your email.',
+                                            id: 'feature-req-email', name: 'feature-req-email', required: '' })
+                                    )
+                                ),
                                 React.createElement('br', null),
-                                React.createElement('textarea', { style: { marginTop: '20px', border: '1px solid black' }, rows: '6', cols: '50', placeholder: this.props.contactFormData.place_holder })
+                                React.createElement(
+                                    'div',
+                                    { className: 'pure-g' },
+                                    React.createElement(
+                                        'div',
+                                        { className: 'pure-u-1 text-area-option' },
+                                        React.createElement(
+                                            'span',
+                                            { className: 'form-label' },
+                                            this.props.contactFormData.lastNameLabel
+                                        ),
+                                        React.createElement('br', null),
+                                        React.createElement('input', { className: this.props.accordionView ? "feature-req-email feature-req-email-wdt" : "feature-req-email", type: 'email', placeholder: 'enter your email.',
+                                            id: 'feature-req-email', name: 'feature-req-email', required: '' })
+                                    )
+                                ),
+                                React.createElement('br', null),
+                                React.createElement(
+                                    'div',
+                                    { className: 'pure-g' },
+                                    React.createElement(
+                                        'div',
+                                        { className: 'pure-u-1 text-area-option' },
+                                        React.createElement(
+                                            'span',
+                                            { className: 'form-label' },
+                                            this.props.contactFormData.companyNameLabel
+                                        ),
+                                        React.createElement('br', null),
+                                        React.createElement('input', { className: this.props.accordionView ? "feature-req-email feature-req-email-wdt" : "feature-req-email", type: 'email', placeholder: 'enter your email.',
+                                            id: 'feature-req-email', name: 'feature-req-email', required: '' })
+                                    )
+                                ),
+                                React.createElement('br', null),
+                                React.createElement(
+                                    'div',
+                                    { className: 'pure-g' },
+                                    React.createElement(
+                                        'div',
+                                        { className: 'pure-u-1 text-area-option' },
+                                        React.createElement(
+                                            'span',
+                                            { className: 'form-label' },
+                                            this.props.contactFormData.businessEmailLabel
+                                        ),
+                                        React.createElement('br', null),
+                                        React.createElement('input', { className: this.props.accordionView ? "feature-req-email feature-req-email-wdt" : "feature-req-email", type: 'email', placeholder: 'enter your email.',
+                                            id: 'feature-req-email', name: 'feature-req-email', required: '' })
+                                    )
+                                ),
+                                React.createElement('br', null),
+                                React.createElement(
+                                    'div',
+                                    { className: 'pure-g' },
+                                    React.createElement(
+                                        'div',
+                                        { className: 'pure-u-1 text-area-option' },
+                                        React.createElement(
+                                            'span',
+                                            { className: 'form-label' },
+                                            this.props.contactFormData.jobTitleLabel
+                                        ),
+                                        React.createElement('br', null),
+                                        React.createElement('input', { className: this.props.accordionView ? "feature-req-email feature-req-email-wdt" : "feature-req-email", type: 'email', placeholder: 'enter your email.',
+                                            id: 'feature-req-email', name: 'feature-req-email', required: '' })
+                                    )
+                                ),
+                                React.createElement('br', null),
+                                React.createElement(
+                                    'div',
+                                    { className: 'pure-g' },
+                                    React.createElement(
+                                        'div',
+                                        { className: 'pure-u-1 text-area-option' },
+                                        React.createElement(
+                                            'span',
+                                            { className: 'form-label' },
+                                            this.props.contactFormData.industryLabel
+                                        ),
+                                        React.createElement('br', null),
+                                        React.createElement('input', { className: this.props.accordionView ? "feature-req-email feature-req-email-wdt" : "feature-req-email", type: 'email', placeholder: 'enter your email.',
+                                            id: 'feature-req-email', name: 'feature-req-email', required: '' })
+                                    )
+                                ),
+                                React.createElement(
+                                    'div',
+                                    { className: 'pure-g' },
+                                    React.createElement(
+                                        'div',
+                                        { className: 'pure-u-1 text-area-option' },
+                                        React.createElement(
+                                            'span',
+                                            { className: 'form-label' },
+                                            this.props.contactFormData.noOfEmployeesLabel
+                                        ),
+                                        React.createElement('br', null),
+                                        React.createElement('input', { className: this.props.accordionView ? "feature-req-email feature-req-email-wdt" : "feature-req-email", type: 'feature-req-email', placeholder: 'enter your email.',
+                                            id: 'feature-req-email', name: 'feature-req-email', required: '' })
+                                    )
+                                ),
+                                React.createElement(
+                                    'div',
+                                    { className: 'pure-g' },
+                                    React.createElement(
+                                        'div',
+                                        { className: 'pure-u-1 offer-options' },
+                                        offerOptions
+                                    )
+                                ),
+                                React.createElement(
+                                    'div',
+                                    { className: 'pure-g' },
+                                    React.createElement(
+                                        'div',
+                                        { className: 'pure-u-1 text-area-option' },
+                                        React.createElement('textarea', { className: this.props.accordionView ? "feature-req-ta feature-req-ta-wdt" : "feature-req-ta", rows: '6', cols: '50', placeholder: this.props.contactFormData.place_holder })
+                                    )
+                                )
+                            ) : React.createElement(
+                                React.Fragment,
+                                null,
+                                React.createElement(
+                                    'div',
+                                    { className: 'pure-g' },
+                                    React.createElement(
+                                        'div',
+                                        { className: 'pure-u-1-2 text-area-option' },
+                                        React.createElement(
+                                            'span',
+                                            { className: 'form-label' },
+                                            this.props.contactFormData.firstNameLabel
+                                        ),
+                                        React.createElement('br', null),
+                                        React.createElement('input', { style: { width: '416px', border: '1px solid black' }, type: 'feature-req-email', placeholder: 'enter your email.',
+                                            id: 'feature-req-email', name: 'feature-req-email', required: '' })
+                                    ),
+                                    React.createElement('br', null),
+                                    React.createElement(
+                                        'div',
+                                        { className: 'pure-u-1-2 text-area-option' },
+                                        React.createElement(
+                                            'span',
+                                            { className: 'form-label' },
+                                            this.props.contactFormData.lastNameLabel
+                                        ),
+                                        React.createElement('br', null),
+                                        React.createElement('input', { style: { width: '416px', border: '1px solid black' }, type: 'feature-req-email', placeholder: 'enter your email.',
+                                            id: 'feature-req-email', name: 'feature-req-email', required: '' })
+                                    ),
+                                    React.createElement('br', null)
+                                ),
+                                React.createElement(
+                                    'div',
+                                    { className: 'pure-g' },
+                                    React.createElement(
+                                        'div',
+                                        { className: 'pure-u-1-2 text-area-option' },
+                                        React.createElement(
+                                            'span',
+                                            { className: 'form-label' },
+                                            this.props.contactFormData.companyNameLabel
+                                        ),
+                                        React.createElement('br', null),
+                                        React.createElement('input', { style: { width: '416px', border: '1px solid black' }, type: 'feature-req-email', placeholder: 'enter your email.',
+                                            id: 'feature-req-email', name: 'feature-req-email', required: '' })
+                                    ),
+                                    React.createElement('br', null),
+                                    React.createElement(
+                                        'div',
+                                        { className: 'pure-u-1-2 text-area-option' },
+                                        React.createElement(
+                                            'span',
+                                            { className: 'form-label' },
+                                            this.props.contactFormData.businessEmailLabel
+                                        ),
+                                        React.createElement('br', null),
+                                        React.createElement('input', { style: { width: '416px', border: '1px solid black' }, type: 'feature-req-email', placeholder: 'enter your email.',
+                                            id: 'feature-req-email', name: 'feature-req-email', required: '' })
+                                    ),
+                                    React.createElement('br', null)
+                                ),
+                                React.createElement(
+                                    'div',
+                                    { className: 'pure-g' },
+                                    React.createElement(
+                                        'div',
+                                        { className: 'pure-u-1-2 text-area-option' },
+                                        React.createElement(
+                                            'span',
+                                            { className: 'form-label' },
+                                            this.props.contactFormData.jobTitleLabel
+                                        ),
+                                        React.createElement('br', null),
+                                        React.createElement('input', { style: { width: '416px', border: '1px solid black' }, type: 'feature-req-email', placeholder: 'enter your email.',
+                                            id: 'feature-req-email', name: 'feature-req-email', required: '' })
+                                    ),
+                                    React.createElement('br', null),
+                                    React.createElement(
+                                        'div',
+                                        { className: 'pure-u-1-2 text-area-option' },
+                                        React.createElement(
+                                            'span',
+                                            { className: 'form-label' },
+                                            this.props.contactFormData.industryLabel
+                                        ),
+                                        React.createElement('br', null),
+                                        React.createElement('input', { style: { width: '416px', border: '1px solid black' }, type: 'feature-req-email', placeholder: 'enter your email.',
+                                            id: 'feature-req-email', name: 'feature-req-email', required: '' })
+                                    ),
+                                    React.createElement('br', null)
+                                ),
+                                React.createElement(
+                                    'div',
+                                    { className: 'pure-g' },
+                                    React.createElement(
+                                        'div',
+                                        { className: 'pure-u-1 text-area-option' },
+                                        React.createElement(
+                                            'span',
+                                            { className: 'form-label' },
+                                            this.props.contactFormData.noOfEmployeesLabel
+                                        ),
+                                        React.createElement('br', null),
+                                        React.createElement('input', { style: { float: 'left', width: '416px', border: '1px solid black' }, type: 'feature-req-email', placeholder: 'enter your email.',
+                                            id: 'feature-req-email', name: 'feature-req-email', required: '' })
+                                    )
+                                ),
+                                React.createElement('br', null),
+                                React.createElement(
+                                    'div',
+                                    { className: 'pure-g' },
+                                    React.createElement(
+                                        'div',
+                                        { className: 'pure-u-1-2 offer-options' },
+                                        offerOptions
+                                    ),
+                                    React.createElement(
+                                        'div',
+                                        { className: 'pure-u-1-2 text-area-option' },
+                                        React.createElement(
+                                            'span',
+                                            { className: 'form-label-desc' },
+                                            this.props.contactFormData.featureDescriptionLabel
+                                        ),
+                                        React.createElement('textarea', { style: { border: '1px solid black' }, rows: '6', cols: '50', placeholder: this.props.contactFormData.place_holder })
+                                    ),
+                                    React.createElement('br', null)
+                                )
                             )
                         ),
                         React.createElement('br', null),
@@ -228,7 +488,7 @@ var SimplePlanTier = function (_React$Component3) {
                         { className: 'price-card' },
                         React.createElement(
                             'div',
-                            { className: 'pricing-panel-wrapper' },
+                            { className: 'pricing-panel-wrapper', style: { border: '3px solid #ffb5b3' } },
                             React.createElement(
                                 'div',
                                 { className: 'pricing-panel' },
@@ -243,7 +503,7 @@ var SimplePlanTier = function (_React$Component3) {
                                 ) : React.createElement('div', { style: { marginTop: '10%' } }),
                                 React.createElement(
                                     'div',
-                                    { className: 'pricing-panel-header', style: { border: '3px solid #ffb5b3', borderBottom: '0' } },
+                                    { className: tier.popular == "True" ? "pricing-panel-header popular-header" : "pricing-panel-header" },
                                     React.createElement(
                                         'h6',
                                         { className: 'pricing-panel-tier' },
@@ -375,8 +635,8 @@ var SimplePlanTier = function (_React$Component3) {
                                 ),
                                 React.createElement(
                                     'div',
-                                    { className: 'pricing-panel-footer', style: { border: '3px solid #ffb5b3', borderTop: '0' } },
-                                    React.createElement(
+                                    { className: 'pricing-panel-footer' },
+                                    tier.showContact && tier.showContact == "False" ? React.createElement(
                                         'div',
                                         { className: 'cta-wrapper' },
                                         React.createElement(
@@ -388,10 +648,10 @@ var SimplePlanTier = function (_React$Component3) {
                                                 tier.call_to_action.text
                                             )
                                         )
-                                    ),
+                                    ) : '',
                                     React.createElement(
                                         'p',
-                                        { className: 'compare-plans', onClick: function onClick() {
+                                        { className: 'compare-plans', style: { position: 'relative', bottom: '20px' }, onClick: function onClick() {
                                                 return _this5.props.onClick();
                                             } },
                                         _this5.state.tiers[0].compareText
@@ -403,18 +663,17 @@ var SimplePlanTier = function (_React$Component3) {
                 ));
             });
 
-            var offerOptions = [];
+            // let offerOptions= [];
 
-            this.state.contactFormData.offer_options.forEach(function (item) {
+            // this.state.contactFormData.offer_options.forEach((item) => {
 
-                offerOptions.push(React.createElement(
-                    React.Fragment,
-                    null,
-                    React.createElement('input', { type: 'checkbox', name: item, value: item }),
-                    item,
-                    React.createElement('br', null)
-                ));
-            });
+            //     offerOptions.push(
+            //         <React.Fragment>
+            //             <input type="checkbox" name={item} value={item} />{item}<br />
+            //         </React.Fragment>
+            //     )
+            // })
+
 
             return React.createElement(
                 React.Fragment,
@@ -424,7 +683,8 @@ var SimplePlanTier = function (_React$Component3) {
                     { className: 'contact-form-container' },
                     React.createElement(ContactForm, { contactFormData: this.state.contactFormData, contactFormToggle: function contactFormToggle() {
                             return _this5.props.contactFormToggle();
-                        } })
+                        },
+                        showContactForm: this.props.showContactForm })
                 ) : React.createElement(
                     React.Fragment,
                     null,
@@ -538,7 +798,8 @@ var PlansAccordion = function (_React$Component5) {
         _this8.state = {
             showMonthlyPlan: true,
             tiers: teirsData.tiers,
-            accordionPlans: plansAndFeatures
+            accordionPlans: plansAndFeatures,
+            contactFormData: contactForm
         };
         return _this8;
     }
@@ -558,12 +819,14 @@ var PlansAccordion = function (_React$Component5) {
 
             var plansAccordion = [];
 
-            this.state.tiers.forEach(function (tier, i) {
+            this.props.tiers.forEach(function (tier, i) {
+
+                console.log("this.props.showMonthlyPlan", _this9.props.showMonthlyPlan);
 
                 plansAccordion.push(React.createElement(
                     AccordionItem,
                     { key: tier.name },
-                    _this9.state.showMonthlyPlan ? React.createElement(
+                    React.createElement(
                         React.Fragment,
                         null,
                         React.createElement(
@@ -581,19 +844,49 @@ var PlansAccordion = function (_React$Component5) {
                                     'h2',
                                     { className: 'product-price product-price-sm' },
                                     React.createElement(
-                                        'span',
-                                        { className: 'currency', 'data-alt-text': '$' },
-                                        tier.pricing.monthly.currency
-                                    ),
-                                    React.createElement(
-                                        'span',
-                                        { className: 'price', 'data-alt-text': '79' },
-                                        tier.pricing.monthly.price
-                                    ),
-                                    React.createElement(
-                                        'span',
-                                        { className: 'period' },
-                                        tier.pricing.monthly.label
+                                        React.Fragment,
+                                        null,
+                                        tier.showContact && tier.showContact == "True" ? React.createElement(React.Fragment, null) : React.createElement(
+                                            React.Fragment,
+                                            null,
+                                            _this9.props.showMonthlyPlan ? React.createElement(
+                                                React.Fragment,
+                                                null,
+                                                React.createElement(
+                                                    'span',
+                                                    { className: 'currency', 'data-alt-text': '$' },
+                                                    tier.pricing.monthly.currency
+                                                ),
+                                                React.createElement(
+                                                    'span',
+                                                    { className: 'price', 'data-alt-text': '79' },
+                                                    tier.pricing.monthly.price
+                                                ),
+                                                React.createElement(
+                                                    'span',
+                                                    { className: 'period' },
+                                                    tier.pricing.monthly.label
+                                                )
+                                            ) : React.createElement(
+                                                React.Fragment,
+                                                null,
+                                                React.createElement(
+                                                    'span',
+                                                    { className: 'currency', 'data-alt-text': '$' },
+                                                    tier.pricing.yearly.currency
+                                                ),
+                                                React.createElement(
+                                                    'span',
+                                                    { className: 'price', 'data-alt-text': '79' },
+                                                    tier.pricing.yearly.price
+                                                ),
+                                                React.createElement(
+                                                    'span',
+                                                    { className: 'period' },
+                                                    tier.pricing.monthly.label
+                                                )
+                                            )
+                                        )
                                     )
                                 )
                             )
@@ -601,107 +894,70 @@ var PlansAccordion = function (_React$Component5) {
                         React.createElement(
                             AccordionItemPanel,
                             { style: { background: '#fff', textAlign: 'center' } },
-                            React.createElement(
-                                'p',
-                                { className: 'text-light-gray' },
-                                tier.pricing.monthly.currency,
-                                tier.pricing.yearly.price,
-                                ' ',
-                                _this9.state.tiers[0].monthlyText,
-                                ' ',
+                            tier.showContact && tier.showContact == "True" ? React.createElement(
+                                React.Fragment,
+                                null,
                                 React.createElement(
-                                    'div',
-                                    { className: 'yearly', onClick: function onClick() {
-                                            return _this9.yearlyToggle();
+                                    'button',
+                                    { className: 'contact-us-btn-xs', onClick: function onClick() {
+                                            return _this9.props.contactFormToggle();
                                         } },
-                                    ' ',
-                                    _this9.state.tiers[0].payText
-                                )
-                            ),
-                            React.createElement(
-                                'p',
-                                null,
-                                tier.description
-                            ),
-                            React.createElement(
-                                'button',
-                                { className: 'sign-up-btn-xs' },
-                                React.createElement(
-                                    'a',
-                                    { href: tier.call_to_action.url, className: 'action-link' },
-                                    tier.call_to_action.text
-                                )
-                            ),
-                            React.createElement(CategoryFeatures, { categories: _this9.state.accordionPlans.categories, plan_name: tier.name })
-                        )
-                    ) : React.createElement(
-                        React.Fragment,
-                        null,
-                        React.createElement(
-                            AccordionItemHeading,
-                            null,
-                            React.createElement(
-                                AccordionItemButton,
-                                null,
-                                React.createElement(
-                                    'span',
-                                    { className: 'plan-name' },
-                                    tier.name
-                                ),
-                                React.createElement(
-                                    'h2',
-                                    { className: 'product-price product-price-sm' },
                                     React.createElement(
-                                        'span',
-                                        { className: 'currency', 'data-alt-text': '$' },
-                                        tier.pricing.yearly.currency
-                                    ),
-                                    React.createElement(
-                                        'span',
-                                        { className: 'price', 'data-alt-text': '79' },
-                                        tier.pricing.yearly.price
-                                    ),
-                                    React.createElement(
-                                        'span',
-                                        { className: 'period' },
-                                        tier.pricing.monthly.label
+                                        'div',
+                                        { className: 'contact-action-label' },
+                                        tier.contactFormText
                                     )
                                 )
-                            )
-                        ),
-                        React.createElement(
-                            AccordionItemPanel,
-                            { style: { background: '#fff', textAlign: 'center' } },
-                            React.createElement(
-                                'p',
-                                { className: 'text-light-gray' },
-                                tier.pricing.monthly.currency,
-                                tier.pricing.yearly.perAnnum,
-                                ' ',
-                                _this9.state.tiers[0].yearlyText1,
-                                React.createElement('br', null),
-                                ' ',
-                                _this9.state.tiers[0].yearlyText2,
-                                ' ',
-                                tier.pricing.monthly.currency,
-                                tier.pricing.yearly.savedAmount,
-                                tier.pricing.yearly.label
-                            ),
-                            React.createElement(
-                                'p',
+                            ) : React.createElement(
+                                React.Fragment,
                                 null,
-                                tier.description
-                            ),
-                            React.createElement(
-                                'button',
-                                { className: 'sign-up-btn-xs' },
+                                _this9.props.showMonthlyPlan ? React.createElement(
+                                    'p',
+                                    { className: 'text-light-gray' },
+                                    tier.pricing.monthly.currency,
+                                    tier.pricing.yearly.price,
+                                    ' ',
+                                    _this9.props.tiers[0].monthlyText,
+                                    ' ',
+                                    React.createElement(
+                                        'div',
+                                        { className: 'yearly', onClick: function onClick() {
+                                                return _this9.props.yearlyToggle();
+                                            } },
+                                        ' ',
+                                        _this9.props.tiers[0].payText
+                                    )
+                                ) : React.createElement(
+                                    'p',
+                                    { className: 'text-light-gray' },
+                                    tier.pricing.monthly.currency,
+                                    tier.pricing.yearly.perAnnum,
+                                    ' ',
+                                    _this9.props.tiers[0].yearlyText1,
+                                    React.createElement('br', null),
+                                    ' ',
+                                    _this9.props.tiers[0].yearlyText2,
+                                    ' ',
+                                    tier.pricing.monthly.currency,
+                                    tier.pricing.yearly.savedAmount,
+                                    tier.pricing.yearly.label
+                                ),
                                 React.createElement(
-                                    'a',
-                                    { href: tier.call_to_action.url, className: 'action-link' },
-                                    tier.call_to_action.text
+                                    'p',
+                                    null,
+                                    tier.description
+                                ),
+                                React.createElement(
+                                    'button',
+                                    { className: 'sign-up-btn-xs' },
+                                    React.createElement(
+                                        'a',
+                                        { href: tier.call_to_action.url, className: 'action-link' },
+                                        tier.call_to_action.text
+                                    )
                                 )
                             ),
-                            React.createElement(CategoryFeatures, { categories: _this9.state.accordionPlans.categories, plan_name: tier.name })
+                            React.createElement(CategoryFeatures, { categories: _this9.props.accordionPlans.categories, plan_name: tier.name })
                         )
                     ),
                     React.createElement('br', null)
@@ -709,9 +965,15 @@ var PlansAccordion = function (_React$Component5) {
             });
 
             return React.createElement(
-                'div',
+                React.Fragment,
                 null,
-                React.createElement(
+                this.props.showContactForm ?
+                // <div className="contact-form-container">
+                React.createElement(ContactForm, { contactFormData: this.state.contactFormData, contactFormToggle: function contactFormToggle() {
+                        return _this9.props.contactFormToggle();
+                    }, accordionView: true })
+                // {/* </div> */}
+                : React.createElement(
                     Accordion,
                     { allowZeroExpanded: true },
                     plansAccordion
@@ -743,7 +1005,8 @@ var PricingPage = function (_React$Component6) {
             radio_btn_yearly_opt: teirsData.radio_btn_yearly_opt,
             showMonthlyPlan: true,
             showContactForm: false,
-            contactFormData: contactForm
+            contactFormData: contactForm,
+            accordionPlans: plansAndFeatures
         };
         return _this10;
     }
@@ -1082,7 +1345,17 @@ var PricingPage = function (_React$Component6) {
                     React.createElement(
                         'div',
                         { className: 'accrd-view' },
-                        React.createElement(PlansAccordion, { className: 'accordion-plan-tier' })
+                        React.createElement(PlansAccordion, { className: 'accordion-plan-tier', accordionPlans: this.state.accordionPlans,
+                            showMonthlyPlan: this.state.showMonthlyPlan,
+                            tiers: this.state.tiers,
+                            yearlyToggle: function yearlyToggle() {
+                                return _this11.yearlyToggle();
+                            },
+                            contactFormToggle: function contactFormToggle() {
+                                return _this11.contactFormToggle();
+                            },
+                            showContactForm: this.state.showContactForm
+                        })
                     ),
                     React.createElement(
                         'div',
@@ -1102,7 +1375,17 @@ var PricingPage = function (_React$Component6) {
                     React.createElement(
                         'div',
                         { className: 'accrd-view' },
-                        React.createElement(PlansAccordion, { className: 'accordion-plan-tier' })
+                        React.createElement(PlansAccordion, { className: 'accordion-plan-tier', accordionPlans: this.state.accordionPlans,
+                            showMonthlyPlan: this.state.showMonthlyPlan,
+                            tiers: this.state.tiers,
+                            yearlyToggle: function yearlyToggle() {
+                                return _this11.yearlyToggle();
+                            },
+                            contactFormToggle: function contactFormToggle() {
+                                return _this11.contactFormToggle();
+                            },
+                            showContactForm: this.state.showContactForm
+                        })
                     ),
                     React.createElement(
                         React.Fragment,
@@ -1140,15 +1423,20 @@ var PricingPage = function (_React$Component6) {
                                     { className: 'pure-g' },
                                     React.createElement(
                                         'div',
-                                        { 'class': 'pure-u-1-4' },
+                                        { 'class': 'pure-u-1-4', style: { textAlign: 'center' } },
                                         React.createElement(
                                             'button',
-                                            { className: 'sign-up-btn view-simple-tier-btn', onClick: function onClick() {
+                                            { className: 'back-to-plans-btn', onClick: function onClick() {
                                                     return _this11.handleClick();
                                                 } },
                                             React.createElement(
-                                                'div',
-                                                { className: 'view-simple-tier' },
+                                                'svg',
+                                                { width: '30px', height: '30px', viewBox: '0 0 20 20', xmlns: 'http://www.w3.org/2000/svg' },
+                                                React.createElement('path', { d: 'M13 16l-6-6 6-6', fill: 'none', stroke: 'red', 'stroke-width': '1.03' })
+                                            ),
+                                            React.createElement(
+                                                'a',
+                                                { href: '#', className: 'back-btn-action-link-lg-dtl' },
                                                 this.state.tiers[0].toggleText
                                             )
                                         )
