@@ -101,8 +101,12 @@ var ContactForm = function (_React$Component2) {
                 offerOptions.push(React.createElement(
                     React.Fragment,
                     null,
-                    React.createElement('input', { type: 'checkbox', name: item, value: item }),
-                    item,
+                    React.createElement('input', { type: 'checkbox', style: { marginRight: '10px' }, name: item, value: item }),
+                    React.createElement(
+                        'span',
+                        { style: { fontSize: '14px' } },
+                        item
+                    ),
                     React.createElement('br', null)
                 ));
             });
@@ -112,10 +116,10 @@ var ContactForm = function (_React$Component2) {
                 null,
                 React.createElement(
                     'div',
-                    null,
+                    { className: 'contact-form-container' },
                     React.createElement(
                         'div',
-                        { className: 'pricing-contact-form' },
+                        { className: this.props.accordionView ? "pricing-contact-form-wdt" : "pricing-contact-form" },
                         React.createElement(
                             'div',
                             { className: 'pure-g' },
@@ -143,20 +147,276 @@ var ContactForm = function (_React$Component2) {
                         ),
                         React.createElement('br', null),
                         React.createElement(
-                            'div',
-                            { className: 'pure-g' },
-                            React.createElement(
-                                'div',
-                                { className: 'pure-u-1-2 offer-options' },
-                                offerOptions
-                            ),
-                            React.createElement(
-                                'div',
-                                { className: 'pure-u-1-2 text-area-option' },
-                                React.createElement('input', { style: { width: '416px', border: '1px solid black' }, type: 'feature-req-email', placeholder: 'enter your email.',
-                                    id: 'feature-req-email', name: 'feature-req-email', required: '' }),
+                            React.Fragment,
+                            null,
+                            this.props.accordionView ? React.createElement(
+                                React.Fragment,
+                                null,
+                                React.createElement(
+                                    'div',
+                                    { className: 'pure-g' },
+                                    React.createElement(
+                                        'div',
+                                        { className: 'pure-u-1 text-area-option' },
+                                        React.createElement(
+                                            'span',
+                                            { className: 'form-label' },
+                                            this.props.contactFormData.firstNameLabel
+                                        ),
+                                        React.createElement('br', null),
+                                        React.createElement('input', { className: this.props.accordionView ? "feature-req-email feature-req-email-wdt" : "feature-req-email", type: 'email', placeholder: 'enter your email.',
+                                            id: 'feature-req-email', name: 'feature-req-email', required: '' })
+                                    )
+                                ),
                                 React.createElement('br', null),
-                                React.createElement('textarea', { style: { marginTop: '20px', border: '1px solid black' }, rows: '6', cols: '50', placeholder: this.props.contactFormData.place_holder })
+                                React.createElement(
+                                    'div',
+                                    { className: 'pure-g' },
+                                    React.createElement(
+                                        'div',
+                                        { className: 'pure-u-1 text-area-option' },
+                                        React.createElement(
+                                            'span',
+                                            { className: 'form-label' },
+                                            this.props.contactFormData.lastNameLabel
+                                        ),
+                                        React.createElement('br', null),
+                                        React.createElement('input', { className: this.props.accordionView ? "feature-req-email feature-req-email-wdt" : "feature-req-email", type: 'email', placeholder: 'enter your email.',
+                                            id: 'feature-req-email', name: 'feature-req-email', required: '' })
+                                    )
+                                ),
+                                React.createElement('br', null),
+                                React.createElement(
+                                    'div',
+                                    { className: 'pure-g' },
+                                    React.createElement(
+                                        'div',
+                                        { className: 'pure-u-1 text-area-option' },
+                                        React.createElement(
+                                            'span',
+                                            { className: 'form-label' },
+                                            this.props.contactFormData.companyNameLabel
+                                        ),
+                                        React.createElement('br', null),
+                                        React.createElement('input', { className: this.props.accordionView ? "feature-req-email feature-req-email-wdt" : "feature-req-email", type: 'email', placeholder: 'enter your email.',
+                                            id: 'feature-req-email', name: 'feature-req-email', required: '' })
+                                    )
+                                ),
+                                React.createElement('br', null),
+                                React.createElement(
+                                    'div',
+                                    { className: 'pure-g' },
+                                    React.createElement(
+                                        'div',
+                                        { className: 'pure-u-1 text-area-option' },
+                                        React.createElement(
+                                            'span',
+                                            { className: 'form-label' },
+                                            this.props.contactFormData.businessEmailLabel
+                                        ),
+                                        React.createElement('br', null),
+                                        React.createElement('input', { className: this.props.accordionView ? "feature-req-email feature-req-email-wdt" : "feature-req-email", type: 'email', placeholder: 'enter your email.',
+                                            id: 'feature-req-email', name: 'feature-req-email', required: '' })
+                                    )
+                                ),
+                                React.createElement('br', null),
+                                React.createElement(
+                                    'div',
+                                    { className: 'pure-g' },
+                                    React.createElement(
+                                        'div',
+                                        { className: 'pure-u-1 text-area-option' },
+                                        React.createElement(
+                                            'span',
+                                            { className: 'form-label' },
+                                            this.props.contactFormData.jobTitleLabel
+                                        ),
+                                        React.createElement('br', null),
+                                        React.createElement('input', { className: this.props.accordionView ? "feature-req-email feature-req-email-wdt" : "feature-req-email", type: 'email', placeholder: 'enter your email.',
+                                            id: 'feature-req-email', name: 'feature-req-email', required: '' })
+                                    )
+                                ),
+                                React.createElement('br', null),
+                                React.createElement(
+                                    'div',
+                                    { className: 'pure-g' },
+                                    React.createElement(
+                                        'div',
+                                        { className: 'pure-u-1 text-area-option' },
+                                        React.createElement(
+                                            'span',
+                                            { className: 'form-label' },
+                                            this.props.contactFormData.industryLabel
+                                        ),
+                                        React.createElement('br', null),
+                                        React.createElement('input', { className: this.props.accordionView ? "feature-req-email feature-req-email-wdt" : "feature-req-email", type: 'email', placeholder: 'enter your email.',
+                                            id: 'feature-req-email', name: 'feature-req-email', required: '' })
+                                    )
+                                ),
+                                React.createElement(
+                                    'div',
+                                    { className: 'pure-g' },
+                                    React.createElement(
+                                        'div',
+                                        { className: 'pure-u-1 text-area-option' },
+                                        React.createElement(
+                                            'span',
+                                            { className: 'form-label' },
+                                            this.props.contactFormData.noOfEmployeesLabel
+                                        ),
+                                        React.createElement('br', null),
+                                        React.createElement('input', { className: this.props.accordionView ? "feature-req-email feature-req-email-wdt" : "feature-req-email", type: 'feature-req-email', placeholder: 'enter your email.',
+                                            id: 'feature-req-email', name: 'feature-req-email', required: '' })
+                                    )
+                                ),
+                                React.createElement(
+                                    'div',
+                                    { className: 'pure-g' },
+                                    React.createElement(
+                                        'div',
+                                        { className: 'pure-u-1 offer-options' },
+                                        offerOptions
+                                    )
+                                ),
+                                React.createElement(
+                                    'div',
+                                    { className: 'pure-g' },
+                                    React.createElement(
+                                        'div',
+                                        { className: 'pure-u-1 text-area-option' },
+                                        React.createElement('textarea', { className: this.props.accordionView ? "feature-req-ta feature-req-ta-wdt" : "feature-req-ta", rows: '6', cols: '50', placeholder: this.props.contactFormData.place_holder })
+                                    )
+                                )
+                            ) : React.createElement(
+                                React.Fragment,
+                                null,
+                                React.createElement(
+                                    'div',
+                                    { className: 'pure-g' },
+                                    React.createElement(
+                                        'div',
+                                        { className: 'pure-u-1-2 text-area-option' },
+                                        React.createElement(
+                                            'span',
+                                            { className: 'form-label' },
+                                            this.props.contactFormData.firstNameLabel
+                                        ),
+                                        React.createElement('br', null),
+                                        React.createElement('input', { style: { width: '416px', border: '1px solid black' }, type: 'feature-req-email', placeholder: 'enter your email.',
+                                            id: 'feature-req-email', name: 'feature-req-email', required: '' })
+                                    ),
+                                    React.createElement('br', null),
+                                    React.createElement(
+                                        'div',
+                                        { className: 'pure-u-1-2 text-area-option' },
+                                        React.createElement(
+                                            'span',
+                                            { className: 'form-label' },
+                                            this.props.contactFormData.lastNameLabel
+                                        ),
+                                        React.createElement('br', null),
+                                        React.createElement('input', { style: { width: '416px', border: '1px solid black' }, type: 'feature-req-email', placeholder: 'enter your email.',
+                                            id: 'feature-req-email', name: 'feature-req-email', required: '' })
+                                    ),
+                                    React.createElement('br', null)
+                                ),
+                                React.createElement(
+                                    'div',
+                                    { className: 'pure-g' },
+                                    React.createElement(
+                                        'div',
+                                        { className: 'pure-u-1-2 text-area-option' },
+                                        React.createElement(
+                                            'span',
+                                            { className: 'form-label' },
+                                            this.props.contactFormData.companyNameLabel
+                                        ),
+                                        React.createElement('br', null),
+                                        React.createElement('input', { style: { width: '416px', border: '1px solid black' }, type: 'feature-req-email', placeholder: 'enter your email.',
+                                            id: 'feature-req-email', name: 'feature-req-email', required: '' })
+                                    ),
+                                    React.createElement('br', null),
+                                    React.createElement(
+                                        'div',
+                                        { className: 'pure-u-1-2 text-area-option' },
+                                        React.createElement(
+                                            'span',
+                                            { className: 'form-label' },
+                                            this.props.contactFormData.businessEmailLabel
+                                        ),
+                                        React.createElement('br', null),
+                                        React.createElement('input', { style: { width: '416px', border: '1px solid black' }, type: 'feature-req-email', placeholder: 'enter your email.',
+                                            id: 'feature-req-email', name: 'feature-req-email', required: '' })
+                                    ),
+                                    React.createElement('br', null)
+                                ),
+                                React.createElement(
+                                    'div',
+                                    { className: 'pure-g' },
+                                    React.createElement(
+                                        'div',
+                                        { className: 'pure-u-1-2 text-area-option' },
+                                        React.createElement(
+                                            'span',
+                                            { className: 'form-label' },
+                                            this.props.contactFormData.jobTitleLabel
+                                        ),
+                                        React.createElement('br', null),
+                                        React.createElement('input', { style: { width: '416px', border: '1px solid black' }, type: 'feature-req-email', placeholder: 'enter your email.',
+                                            id: 'feature-req-email', name: 'feature-req-email', required: '' })
+                                    ),
+                                    React.createElement('br', null),
+                                    React.createElement(
+                                        'div',
+                                        { className: 'pure-u-1-2 text-area-option' },
+                                        React.createElement(
+                                            'span',
+                                            { className: 'form-label' },
+                                            this.props.contactFormData.industryLabel
+                                        ),
+                                        React.createElement('br', null),
+                                        React.createElement('input', { style: { width: '416px', border: '1px solid black' }, type: 'feature-req-email', placeholder: 'enter your email.',
+                                            id: 'feature-req-email', name: 'feature-req-email', required: '' })
+                                    ),
+                                    React.createElement('br', null)
+                                ),
+                                React.createElement(
+                                    'div',
+                                    { className: 'pure-g' },
+                                    React.createElement(
+                                        'div',
+                                        { className: 'pure-u-1 text-area-option' },
+                                        React.createElement(
+                                            'span',
+                                            { className: 'form-label' },
+                                            this.props.contactFormData.noOfEmployeesLabel
+                                        ),
+                                        React.createElement('br', null),
+                                        React.createElement('input', { style: { float: 'left', width: '416px', border: '1px solid black' }, type: 'feature-req-email', placeholder: 'enter your email.',
+                                            id: 'feature-req-email', name: 'feature-req-email', required: '' })
+                                    )
+                                ),
+                                React.createElement('br', null),
+                                React.createElement(
+                                    'div',
+                                    { className: 'pure-g' },
+                                    React.createElement(
+                                        'div',
+                                        { className: 'pure-u-1-2 offer-options' },
+                                        offerOptions
+                                    ),
+                                    React.createElement(
+                                        'div',
+                                        { className: 'pure-u-1-2 text-area-option' },
+                                        React.createElement(
+                                            'span',
+                                            { className: 'form-label-desc' },
+                                            this.props.contactFormData.featureDescriptionLabel
+                                        ),
+                                        React.createElement('textarea', { style: { border: '1px solid black' }, rows: '6', cols: '50', placeholder: this.props.contactFormData.place_holder })
+                                    ),
+                                    React.createElement('br', null)
+                                )
                             )
                         ),
                         React.createElement('br', null),
@@ -403,18 +663,17 @@ var SimplePlanTier = function (_React$Component3) {
                 ));
             });
 
-            var offerOptions = [];
+            // let offerOptions= [];
 
-            this.state.contactFormData.offer_options.forEach(function (item) {
+            // this.state.contactFormData.offer_options.forEach((item) => {
 
-                offerOptions.push(React.createElement(
-                    React.Fragment,
-                    null,
-                    React.createElement('input', { type: 'checkbox', name: item, value: item }),
-                    item,
-                    React.createElement('br', null)
-                ));
-            });
+            //     offerOptions.push(
+            //         <React.Fragment>
+            //             <input type="checkbox" name={item} value={item} />{item}<br />
+            //         </React.Fragment>
+            //     )
+            // })
+
 
             return React.createElement(
                 React.Fragment,
@@ -424,7 +683,8 @@ var SimplePlanTier = function (_React$Component3) {
                     { className: 'contact-form-container' },
                     React.createElement(ContactForm, { contactFormData: this.state.contactFormData, contactFormToggle: function contactFormToggle() {
                             return _this5.props.contactFormToggle();
-                        } })
+                        },
+                        showContactForm: this.props.showContactForm })
                 ) : React.createElement(
                     React.Fragment,
                     null,
@@ -538,7 +798,8 @@ var PlansAccordion = function (_React$Component5) {
         _this8.state = {
             showMonthlyPlan: true,
             tiers: teirsData.tiers,
-            accordionPlans: plansAndFeatures
+            accordionPlans: plansAndFeatures,
+            contactFormData: contactForm
         };
         return _this8;
     }
@@ -574,58 +835,57 @@ var PlansAccordion = function (_React$Component5) {
                             React.createElement(
                                 AccordionItemButton,
                                 null,
-                                _this9.props.showMonthlyPlan ? React.createElement(
-                                    React.Fragment,
-                                    null,
+                                React.createElement(
+                                    'span',
+                                    { className: 'plan-name' },
+                                    tier.name
+                                ),
+                                React.createElement(
+                                    'h2',
+                                    { className: 'product-price product-price-sm' },
                                     React.createElement(
-                                        'span',
-                                        { className: 'plan-name' },
-                                        tier.name
-                                    ),
-                                    React.createElement(
-                                        'h2',
-                                        { className: 'product-price product-price-sm' },
-                                        React.createElement(
-                                            'span',
-                                            { className: 'currency', 'data-alt-text': '$' },
-                                            tier.pricing.monthly.currency
-                                        ),
-                                        React.createElement(
-                                            'span',
-                                            { className: 'price', 'data-alt-text': '79' },
-                                            tier.pricing.monthly.price
-                                        ),
-                                        React.createElement(
-                                            'span',
-                                            { className: 'period' },
-                                            tier.pricing.monthly.label
-                                        )
-                                    )
-                                ) : React.createElement(
-                                    React.Fragment,
-                                    null,
-                                    React.createElement(
-                                        'span',
-                                        { className: 'plan-name' },
-                                        tier.name
-                                    ),
-                                    React.createElement(
-                                        'h2',
-                                        { className: 'product-price product-price-sm' },
-                                        React.createElement(
-                                            'span',
-                                            { className: 'currency', 'data-alt-text': '$' },
-                                            tier.pricing.yearly.currency
-                                        ),
-                                        React.createElement(
-                                            'span',
-                                            { className: 'price', 'data-alt-text': '79' },
-                                            tier.pricing.yearly.price
-                                        ),
-                                        React.createElement(
-                                            'span',
-                                            { className: 'period' },
-                                            tier.pricing.monthly.label
+                                        React.Fragment,
+                                        null,
+                                        tier.showContact && tier.showContact == "True" ? React.createElement(React.Fragment, null) : React.createElement(
+                                            React.Fragment,
+                                            null,
+                                            _this9.props.showMonthlyPlan ? React.createElement(
+                                                React.Fragment,
+                                                null,
+                                                React.createElement(
+                                                    'span',
+                                                    { className: 'currency', 'data-alt-text': '$' },
+                                                    tier.pricing.monthly.currency
+                                                ),
+                                                React.createElement(
+                                                    'span',
+                                                    { className: 'price', 'data-alt-text': '79' },
+                                                    tier.pricing.monthly.price
+                                                ),
+                                                React.createElement(
+                                                    'span',
+                                                    { className: 'period' },
+                                                    tier.pricing.monthly.label
+                                                )
+                                            ) : React.createElement(
+                                                React.Fragment,
+                                                null,
+                                                React.createElement(
+                                                    'span',
+                                                    { className: 'currency', 'data-alt-text': '$' },
+                                                    tier.pricing.yearly.currency
+                                                ),
+                                                React.createElement(
+                                                    'span',
+                                                    { className: 'price', 'data-alt-text': '79' },
+                                                    tier.pricing.yearly.price
+                                                ),
+                                                React.createElement(
+                                                    'span',
+                                                    { className: 'period' },
+                                                    tier.pricing.monthly.label
+                                                )
+                                            )
                                         )
                                     )
                                 )
@@ -705,9 +965,15 @@ var PlansAccordion = function (_React$Component5) {
             });
 
             return React.createElement(
-                'div',
+                React.Fragment,
                 null,
-                React.createElement(
+                this.props.showContactForm ?
+                // <div className="contact-form-container">
+                React.createElement(ContactForm, { contactFormData: this.state.contactFormData, contactFormToggle: function contactFormToggle() {
+                        return _this9.props.contactFormToggle();
+                    }, accordionView: true })
+                // {/* </div> */}
+                : React.createElement(
                     Accordion,
                     { allowZeroExpanded: true },
                     plansAccordion
@@ -1084,7 +1350,12 @@ var PricingPage = function (_React$Component6) {
                             tiers: this.state.tiers,
                             yearlyToggle: function yearlyToggle() {
                                 return _this11.yearlyToggle();
-                            } })
+                            },
+                            contactFormToggle: function contactFormToggle() {
+                                return _this11.contactFormToggle();
+                            },
+                            showContactForm: this.state.showContactForm
+                        })
                     ),
                     React.createElement(
                         'div',
@@ -1109,7 +1380,12 @@ var PricingPage = function (_React$Component6) {
                             tiers: this.state.tiers,
                             yearlyToggle: function yearlyToggle() {
                                 return _this11.yearlyToggle();
-                            } })
+                            },
+                            contactFormToggle: function contactFormToggle() {
+                                return _this11.contactFormToggle();
+                            },
+                            showContactForm: this.state.showContactForm
+                        })
                     ),
                     React.createElement(
                         React.Fragment,

@@ -20,5 +20,13 @@ var contactForm = {
     "place_holder": "Make A Custom Feature Request",
     "contact_btn_text": "Request Information",
     "toggleContactFormText": "Go Back",
-    "submitContactFormText": "Submit"
+    "submitContactFormText": "Submit",
+    "firstNameLabel": "First Name",
+    "lastNameLabel": "Last Name",
+    "companyNameLabel": "Company Name",
+    "businessEmailLabel": "Business Email",
+    "jobTitleLabel": "Job Title",
+    "industryLabel": "Industry",
+    "noOfEmployeesLabel": "No. of employees",
+    "featureDescriptionLabel": "Description"
 }
