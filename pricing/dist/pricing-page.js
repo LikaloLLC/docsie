@@ -558,12 +558,14 @@ var PlansAccordion = function (_React$Component5) {
 
             var plansAccordion = [];
 
-            this.state.tiers.forEach(function (tier, i) {
+            this.props.tiers.forEach(function (tier, i) {
+
+                console.log("this.props.showMonthlyPlan", _this9.props.showMonthlyPlan);
 
                 plansAccordion.push(React.createElement(
                     AccordionItem,
                     { key: tier.name },
-                    _this9.state.showMonthlyPlan ? React.createElement(
+                    React.createElement(
                         React.Fragment,
                         null,
                         React.createElement(
@@ -572,28 +574,59 @@ var PlansAccordion = function (_React$Component5) {
                             React.createElement(
                                 AccordionItemButton,
                                 null,
-                                React.createElement(
-                                    'span',
-                                    { className: 'plan-name' },
-                                    tier.name
-                                ),
-                                React.createElement(
-                                    'h2',
-                                    { className: 'product-price product-price-sm' },
+                                _this9.props.showMonthlyPlan ? React.createElement(
+                                    React.Fragment,
+                                    null,
                                     React.createElement(
                                         'span',
-                                        { className: 'currency', 'data-alt-text': '$' },
-                                        tier.pricing.monthly.currency
+                                        { className: 'plan-name' },
+                                        tier.name
                                     ),
                                     React.createElement(
-                                        'span',
-                                        { className: 'price', 'data-alt-text': '79' },
-                                        tier.pricing.monthly.price
-                                    ),
+                                        'h2',
+                                        { className: 'product-price product-price-sm' },
+                                        React.createElement(
+                                            'span',
+                                            { className: 'currency', 'data-alt-text': '$' },
+                                            tier.pricing.monthly.currency
+                                        ),
+                                        React.createElement(
+                                            'span',
+                                            { className: 'price', 'data-alt-text': '79' },
+                                            tier.pricing.monthly.price
+                                        ),
+                                        React.createElement(
+                                            'span',
+                                            { className: 'period' },
+                                            tier.pricing.monthly.label
+                                        )
+                                    )
+                                ) : React.createElement(
+                                    React.Fragment,
+                                    null,
                                     React.createElement(
                                         'span',
-                                        { className: 'period' },
-                                        tier.pricing.monthly.label
+                                        { className: 'plan-name' },
+                                        tier.name
+                                    ),
+                                    React.createElement(
+                                        'h2',
+                                        { className: 'product-price product-price-sm' },
+                                        React.createElement(
+                                            'span',
+                                            { className: 'currency', 'data-alt-text': '$' },
+                                            tier.pricing.yearly.currency
+                                        ),
+                                        React.createElement(
+                                            'span',
+                                            { className: 'price', 'data-alt-text': '79' },
+                                            tier.pricing.yearly.price
+                                        ),
+                                        React.createElement(
+                                            'span',
+                                            { className: 'period' },
+                                            tier.pricing.monthly.label
+                                        )
                                     )
                                 )
                             )
@@ -601,107 +634,70 @@ var PlansAccordion = function (_React$Component5) {
                         React.createElement(
                             AccordionItemPanel,
                             { style: { background: '#fff', textAlign: 'center' } },
-                            React.createElement(
-                                'p',
-                                { className: 'text-light-gray' },
-                                tier.pricing.monthly.currency,
-                                tier.pricing.yearly.price,
-                                ' ',
-                                _this9.state.tiers[0].monthlyText,
-                                ' ',
+                            tier.showContact && tier.showContact == "True" ? React.createElement(
+                                React.Fragment,
+                                null,
                                 React.createElement(
-                                    'div',
-                                    { className: 'yearly', onClick: function onClick() {
-                                            return _this9.yearlyToggle();
+                                    'button',
+                                    { className: 'contact-us-btn-xs', onClick: function onClick() {
+                                            return _this9.props.contactFormToggle();
                                         } },
-                                    ' ',
-                                    _this9.state.tiers[0].payText
-                                )
-                            ),
-                            React.createElement(
-                                'p',
-                                null,
-                                tier.description
-                            ),
-                            React.createElement(
-                                'button',
-                                { className: 'sign-up-btn-xs' },
-                                React.createElement(
-                                    'a',
-                                    { href: tier.call_to_action.url, className: 'action-link' },
-                                    tier.call_to_action.text
-                                )
-                            ),
-                            React.createElement(CategoryFeatures, { categories: _this9.state.accordionPlans.categories, plan_name: tier.name })
-                        )
-                    ) : React.createElement(
-                        React.Fragment,
-                        null,
-                        React.createElement(
-                            AccordionItemHeading,
-                            null,
-                            React.createElement(
-                                AccordionItemButton,
-                                null,
-                                React.createElement(
-                                    'span',
-                                    { className: 'plan-name' },
-                                    tier.name
-                                ),
-                                React.createElement(
-                                    'h2',
-                                    { className: 'product-price product-price-sm' },
                                     React.createElement(
-                                        'span',
-                                        { className: 'currency', 'data-alt-text': '$' },
-                                        tier.pricing.yearly.currency
-                                    ),
-                                    React.createElement(
-                                        'span',
-                                        { className: 'price', 'data-alt-text': '79' },
-                                        tier.pricing.yearly.price
-                                    ),
-                                    React.createElement(
-                                        'span',
-                                        { className: 'period' },
-                                        tier.pricing.monthly.label
+                                        'div',
+                                        { className: 'contact-action-label' },
+                                        tier.contactFormText
                                     )
                                 )
-                            )
-                        ),
-                        React.createElement(
-                            AccordionItemPanel,
-                            { style: { background: '#fff', textAlign: 'center' } },
-                            React.createElement(
-                                'p',
-                                { className: 'text-light-gray' },
-                                tier.pricing.monthly.currency,
-                                tier.pricing.yearly.perAnnum,
-                                ' ',
-                                _this9.state.tiers[0].yearlyText1,
-                                React.createElement('br', null),
-                                ' ',
-                                _this9.state.tiers[0].yearlyText2,
-                                ' ',
-                                tier.pricing.monthly.currency,
-                                tier.pricing.yearly.savedAmount,
-                                tier.pricing.yearly.label
-                            ),
-                            React.createElement(
-                                'p',
+                            ) : React.createElement(
+                                React.Fragment,
                                 null,
-                                tier.description
-                            ),
-                            React.createElement(
-                                'button',
-                                { className: 'sign-up-btn-xs' },
+                                _this9.props.showMonthlyPlan ? React.createElement(
+                                    'p',
+                                    { className: 'text-light-gray' },
+                                    tier.pricing.monthly.currency,
+                                    tier.pricing.yearly.price,
+                                    ' ',
+                                    _this9.props.tiers[0].monthlyText,
+                                    ' ',
+                                    React.createElement(
+                                        'div',
+                                        { className: 'yearly', onClick: function onClick() {
+                                                return _this9.props.yearlyToggle();
+                                            } },
+                                        ' ',
+                                        _this9.props.tiers[0].payText
+                                    )
+                                ) : React.createElement(
+                                    'p',
+                                    { className: 'text-light-gray' },
+                                    tier.pricing.monthly.currency,
+                                    tier.pricing.yearly.perAnnum,
+                                    ' ',
+                                    _this9.props.tiers[0].yearlyText1,
+                                    React.createElement('br', null),
+                                    ' ',
+                                    _this9.props.tiers[0].yearlyText2,
+                                    ' ',
+                                    tier.pricing.monthly.currency,
+                                    tier.pricing.yearly.savedAmount,
+                                    tier.pricing.yearly.label
+                                ),
                                 React.createElement(
-                                    'a',
-                                    { href: tier.call_to_action.url, className: 'action-link' },
-                                    tier.call_to_action.text
+                                    'p',
+                                    null,
+                                    tier.description
+                                ),
+                                React.createElement(
+                                    'button',
+                                    { className: 'sign-up-btn-xs' },
+                                    React.createElement(
+                                        'a',
+                                        { href: tier.call_to_action.url, className: 'action-link' },
+                                        tier.call_to_action.text
+                                    )
                                 )
                             ),
-                            React.createElement(CategoryFeatures, { categories: _this9.state.accordionPlans.categories, plan_name: tier.name })
+                            React.createElement(CategoryFeatures, { categories: _this9.props.accordionPlans.categories, plan_name: tier.name })
                         )
                     ),
                     React.createElement('br', null)
@@ -743,7 +739,8 @@ var PricingPage = function (_React$Component6) {
             radio_btn_yearly_opt: teirsData.radio_btn_yearly_opt,
             showMonthlyPlan: true,
             showContactForm: false,
-            contactFormData: contactForm
+            contactFormData: contactForm,
+            accordionPlans: plansAndFeatures
         };
         return _this10;
     }
@@ -1082,7 +1079,12 @@ var PricingPage = function (_React$Component6) {
                     React.createElement(
                         'div',
                         { className: 'accrd-view' },
-                        React.createElement(PlansAccordion, { className: 'accordion-plan-tier' })
+                        React.createElement(PlansAccordion, { className: 'accordion-plan-tier', accordionPlans: this.state.accordionPlans,
+                            showMonthlyPlan: this.state.showMonthlyPlan,
+                            tiers: this.state.tiers,
+                            yearlyToggle: function yearlyToggle() {
+                                return _this11.yearlyToggle();
+                            } })
                     ),
                     React.createElement(
                         'div',
@@ -1102,7 +1104,12 @@ var PricingPage = function (_React$Component6) {
                     React.createElement(
                         'div',
                         { className: 'accrd-view' },
-                        React.createElement(PlansAccordion, { className: 'accordion-plan-tier' })
+                        React.createElement(PlansAccordion, { className: 'accordion-plan-tier', accordionPlans: this.state.accordionPlans,
+                            showMonthlyPlan: this.state.showMonthlyPlan,
+                            tiers: this.state.tiers,
+                            yearlyToggle: function yearlyToggle() {
+                                return _this11.yearlyToggle();
+                            } })
                     ),
                     React.createElement(
                         React.Fragment,

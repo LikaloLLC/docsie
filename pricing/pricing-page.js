@@ -326,57 +326,84 @@ class PlansAccordion extends React.Component {
 
         let plansAccordion = [];
 
-        this.state.tiers.forEach((tier, i) => {
+        this.props.tiers.forEach((tier, i) => {
+
+            console.log("this.props.showMonthlyPlan", this.props.showMonthlyPlan);
 
             plansAccordion.push(
                 <AccordionItem key={tier.name}>
-                    {this.state.showMonthlyPlan ?
+                    {/* {this.props.showMonthlyPlan ? */}
                         <React.Fragment>
                             <AccordionItemHeading>
                                 <AccordionItemButton>
                                     {/* get this data from tiers uusing index reference whilst iterating over plans_and_features */}
-                                    <span className="plan-name">{tier.name}</span>
-                                    <h2 className="product-price product-price-sm">
-                                        <span className="currency" data-alt-text="$">{tier.pricing.monthly.currency}</span>
-                                        <span className="price" data-alt-text="79">{tier.pricing.monthly.price}</span>
-                                        <span className="period">{tier.pricing.monthly.label}</span>
-                                    </h2>
+                                    {this.props.showMonthlyPlan ?
+                                        <React.Fragment>
+                                            <span className="plan-name">{tier.name}</span>
+                                            <h2 className="product-price product-price-sm">
+                                                <span className="currency" data-alt-text="$">{tier.pricing.monthly.currency}</span>
+                                                <span className="price" data-alt-text="79">{tier.pricing.monthly.price}</span>
+                                                <span className="period">{tier.pricing.monthly.label}</span>
+                                            </h2> 
+                                        </React.Fragment>: 
+                                        <React.Fragment>
+                                            <span className="plan-name">{tier.name}</span>
+                                            <h2 className="product-price product-price-sm">
+                                                <span className="currency" data-alt-text="$">{tier.pricing.yearly.currency}</span>
+                                                <span className="price" data-alt-text="79">{tier.pricing.yearly.price}</span>
+                                                <span className="period">{tier.pricing.monthly.label}</span>
+                                            </h2>
+                                        </React.Fragment>
+                                    }
                                 </AccordionItemButton>
                             </AccordionItemHeading>
                             <AccordionItemPanel style={{ background: '#fff', textAlign: 'center' }}>
-                                {/* get this from tiers as well */}
-                                <p className="text-light-gray">{tier.pricing.monthly.currency}{tier.pricing.yearly.price} {this.state.tiers[0].monthlyText} <div className="yearly" onClick={() => this.yearlyToggle()}> {this.state.tiers[0].payText}</div></p>
-                                <p>{tier.description}</p>
-                                <button className="sign-up-btn-xs">
-                                    <a href={tier.call_to_action.url} className="action-link">{tier.call_to_action.text}</a>
-                                </button>
+                                {(tier.showContact && tier.showContact == "True") ? 
+                                        <React.Fragment>
+                                            <button className="contact-us-btn-xs" onClick={() => this.props.contactFormToggle()}>
+                                                <div className="contact-action-label">{tier.contactFormText}</div>
+                                            </button>
+                                        </React.Fragment>: 
+                                    <React.Fragment>
+                                        {/* get this from tiers as well */}
+                                        {this.props.showMonthlyPlan ?
+                                            <p className="text-light-gray">{tier.pricing.monthly.currency}{tier.pricing.yearly.price} {this.props.tiers[0].monthlyText} <div className="yearly" onClick={() => this.props.yearlyToggle()}> {this.props.tiers[0].payText}</div></p> 
+                                            :
+                                            <p className="text-light-gray">{tier.pricing.monthly.currency}{tier.pricing.yearly.perAnnum} {this.props.tiers[0].yearlyText1}<br /> {this.props.tiers[0].yearlyText2} {tier.pricing.monthly.currency}{tier.pricing.yearly.savedAmount}{tier.pricing.yearly.label}</p>
+                                        }
+                                        <p>{tier.description}</p>
+                                        <button className="sign-up-btn-xs">
+                                            <a href={tier.call_to_action.url} className="action-link">{tier.call_to_action.text}</a>
+                                        </button>
+                                    </React.Fragment>
+                                }
                                 {/* get this from plans_and_features.js */}
-                                <CategoryFeatures categories={this.state.accordionPlans.categories} plan_name={tier.name} />
+                                <CategoryFeatures categories={this.props.accordionPlans.categories} plan_name={tier.name} />
                             </AccordionItemPanel>
                         </React.Fragment>
-                        :
+                        {/* :
                         <React.Fragment>
-                            <AccordionItemHeading>
-                                <AccordionItemButton>
-                                    {/* get this data from tiers uusing index reference whilst iterating over plans_and_features */}
-                                    <span className="plan-name">{tier.name}</span>
-                                    <h2 className="product-price product-price-sm">
-                                        <span className="currency" data-alt-text="$">{tier.pricing.yearly.currency}</span>
-                                        <span className="price" data-alt-text="79">{tier.pricing.yearly.price}</span>
-                                        <span className="period">{tier.pricing.monthly.label}</span>
-                                    </h2>
-                                </AccordionItemButton>
-                            </AccordionItemHeading>
-                            <AccordionItemPanel style={{ background: '#fff', textAlign: 'center' }}>
-                                <p className="text-light-gray">{tier.pricing.monthly.currency}{tier.pricing.yearly.perAnnum} {this.state.tiers[0].yearlyText1}<br /> {this.state.tiers[0].yearlyText2} {tier.pricing.monthly.currency}{tier.pricing.yearly.savedAmount}{tier.pricing.yearly.label}</p>
-                                <p>{tier.description}</p>
-                                <button className="sign-up-btn-xs">
-                                    <a href={tier.call_to_action.url} className="action-link">{tier.call_to_action.text}</a>
-                                </button>
-                                <CategoryFeatures categories={this.state.accordionPlans.categories} plan_name={tier.name} />
-                            </AccordionItemPanel>
-                        </React.Fragment> 
-                    }
+                        //     <AccordionItemHeading>
+                        //         <AccordionItemButton>
+                        //             {/* get this data from tiers uusing index reference whilst iterating over plans_and_features 
+                        //             <span className="plan-name">{tier.name}</span>
+                        //             <h2 className="product-price product-price-sm">
+                        //                 <span className="currency" data-alt-text="$">{tier.pricing.yearly.currency}</span>
+                        //                 <span className="price" data-alt-text="79">{tier.pricing.yearly.price}</span>
+                        //                 <span className="period">{tier.pricing.monthly.label}</span>
+                        //             </h2>
+                        //         </AccordionItemButton>
+                        //     </AccordionItemHeading>
+                        //     <AccordionItemPanel style={{ background: '#fff', textAlign: 'center' }}>
+                        //         <p className="text-light-gray">{tier.pricing.monthly.currency}{tier.pricing.yearly.perAnnum} {this.props.tiers[0].yearlyText1}<br /> {this.props.tiers[0].yearlyText2} {tier.pricing.monthly.currency}{tier.pricing.yearly.savedAmount}{tier.pricing.yearly.label}</p>
+                        //         <p>{tier.description}</p>
+                        //         <button className="sign-up-btn-xs">
+                        //             <a href={tier.call_to_action.url} className="action-link">{tier.call_to_action.text}</a>
+                        //         </button>
+                        //         <CategoryFeatures categories={this.props.accordionPlans.categories} plan_name={tier.name} />
+                        //     </AccordionItemPanel>
+                        // </React.Fragment>  */}
+                    
                     <br />
                 </AccordionItem>
             );
@@ -407,7 +434,8 @@ class PricingPage extends React.Component {
             radio_btn_yearly_opt: teirsData.radio_btn_yearly_opt,
             showMonthlyPlan: true,
             showContactForm: false,
-            contactFormData: contactForm
+            contactFormData: contactForm,
+            accordionPlans: plansAndFeatures
         };
     }
 
@@ -663,7 +691,10 @@ class PricingPage extends React.Component {
                     <React.Fragment>
 
                         <div className="accrd-view">
-                            <PlansAccordion className="accordion-plan-tier" />
+                            <PlansAccordion className="accordion-plan-tier" accordionPlans={this.state.accordionPlans} 
+                            showMonthlyPlan={this.state.showMonthlyPlan}
+                            tiers={this.state.tiers}
+                            yearlyToggle={() => this.yearlyToggle()}/>
                         </div>
 
                         <div className="simple-plan-container">
@@ -677,7 +708,10 @@ class PricingPage extends React.Component {
                     <React.Fragment>
 
                         <div className="accrd-view">
-                            <PlansAccordion className="accordion-plan-tier" />
+                            <PlansAccordion className="accordion-plan-tier" accordionPlans={this.state.accordionPlans} 
+                                showMonthlyPlan={this.state.showMonthlyPlan}
+                                tiers={this.state.tiers}
+                                yearlyToggle={() => this.yearlyToggle()}/>
                         </div>
                         <React.Fragment>
                         { this.state.showContactForm ? 
