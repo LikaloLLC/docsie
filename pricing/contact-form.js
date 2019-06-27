@@ -17,16 +17,22 @@ var contactForm = {
         "SLA / ToS modifications",
         "Translations"
     ],
-    "place_holder": "Make A Custom Feature Request",
+    "desc_place_holder": "Make A Custom Feature Request",
     "contact_btn_text": "Request Information",
     "toggleContactFormText": "Go Back",
     "submitContactFormText": "Submit",
     "firstNameLabel": "First Name",
+    "firstNamePH": "Enter Your First Name",
     "lastNameLabel": "Last Name",
+    "lastNamePH": "Enter Your Last Name",
     "companyNameLabel": "Company Name",
+    "companyNamePH": "Enter Your Company Name",
     "businessEmailLabel": "Business Email",
+    "businessEmailPH": "Enter your Business Email",
     "jobTitleLabel": "Job Title",
+    "jobTitlePH": "Enter Your Job Title",
     "industryLabel": "Industry",
     "noOfEmployeesLabel": "No. of employees",
-    "featureDescriptionLabel": "Description"
+    "featureDescriptionLabel": "Description",
+    "optionsRequiredMsg": "*Please select atleast one option"
 }
