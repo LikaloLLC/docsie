@@ -18,10 +18,10 @@ tiers = {
           "label": "/user"
         }
       },
-      "name": "Entreprise",
+      "name": "Enterprise",
       "order": 1,
       "icon": "www.docsie.io/icon.png",
-      "description": "More features to accelerate your entreprise documentation",
+      "description": "Powerful features to accelerate your enterprise documentation.",
       "call_to_action": {
         "text": "Sign-up Now!",
         "url": "signup.com?utm=3423"
@@ -57,50 +57,31 @@ tiers = {
       "name": "Business",
       "icon": "www.docsie.io/icon.png",
       "order": 2,
-      "description": "Proffesional features and colloaboration for your growing business",
+      "description": "Professional features and collaboration for your growing business.",
       "call_to_action": {
         "text": "Try it Free!",
-        "url": "try-it-free-url"
+        "url": "https://app.docsie.io/manager/?utm=business"
       },
       "showContact": "False"
-    }
-    // {
-    //   "pricing": {
-    //      "monthly": {        "price": "10.00",
-    //     "currency": "$"},
-    //      "yearly" : {        "price": "100.00",
-    //     "currency": "$"}
-    //    },
-    //     "currency": "",
-    //     "comment" : "",
-    //     "name": "Start-up",
-    //     "icon" : "www.docsie.io/icon.png",
-    //     "order": 3,
-    //     "description": "Professional product documentation tools for an up-and-coming start-up",
-    //     "features": [
-    //
-    //     ],
-    //     "call_to_action" : {"text":"Contact Us",
-    //       "url": "contact-us-url"}
-    //   }
-    // // {
-    //   "pricing": {
-    //      "monthly": {        "price": "5.00",
-    //     "currency": "$"},
-    //      "yearly" : {        "price": "4.00",
-    //     "currency": "$"}
-    //    },
-    //     "currency": "",
-    //     "comment" : "starting from",
-    //     "name": "Entreprise",
-    //     "icon" : "www.docsie.io/icon.png",
-    //     "order": 4,
-    //     "description": "Accelerate your Enterprise Product Documentation with Docsie",
-    //     "features": [
+    },
+     {
+       "pricing": {
+          "monthly": {        "price": "10.00",
+         "currency": "$"},
+          "yearly" : {        "price": "100.00",
+         "currency": "$"}
+        },
+         "currency": "",
+         "comment" : "",
+         "name": "Start-up",
+         "icon" : "www.docsie.io/icon.png",
+         "order": 3,
+         "description": "Professional product documentation tools for an up-and-coming start-up.",
+         "features": [
 
-    //     ],
-    //     "call_to_action" : {"text":"Contact Us",
-    //       "url": "contact-us-url"}
-    //   }
+         ],
+         "call_to_action" : {"text":"Sign-up Free!",
+           "url": "https://app.docsie.io/manager/?utm=start-up"}
+       }
   ]
 }
