@@ -4,18 +4,18 @@ var plansAndFeatures = {
       "features": [{
         "name": "Campaigns",
         "values" : {
-        "Entreprise": "e5",
+        "Enterprise": "e5",
         "Business":"b10",
-        // "Large" : "25",
+        "Start-up" : "su25",
         // "Premium" : "100"
         },
         "info": "Campaigns feature info"
       }, {
         "name": "Campaigns2",
         "values" : {
-        "Entreprise": "e52",
+        "Enterprise": "e52",
         "Business":"b102",
-        // "Large" : "252",
+        "Start-up" : "su252",
         // "Premium" : "1002"
         },
         "info": "Campaigns feature info 2"
@@ -25,9 +25,9 @@ var plansAndFeatures = {
     "features": [{
       "name": "Category 2a",
       "values" : {
-      "Entreprise": "e23",
+      "Enterprise": "e23",
       "Business":"b14",
-      // "Large" : "5",
+      "Start-up" : "su5",
       // "Premium" : "400"
       },
       "info": "Category 2 info"
@@ -35,9 +35,9 @@ var plansAndFeatures = {
     {
       "name": "Category 2b",
       "values" : {
-      "Entreprise": "e76",
+      "Enterprise": "e76",
       "Business":"b19",
-      // "Large" : "5",
+      "Start-up" : "su5",
       // "Premium" : "400"
       },
       "info": "Category 2 info"
@@ -45,9 +45,9 @@ var plansAndFeatures = {
     {
       "name": "Category 2c",
       "values" : {
-      "Entreprise": "e56",
+      "Enterprise": "e56",
       "Business":"b6",
-      // "Large" : "5",
+      "Start-up" : "su5",
       // "Premium" : "400"
       },
       "info": "Category 2 info"
@@ -55,9 +55,9 @@ var plansAndFeatures = {
     {
       "name": "Category 2d",
       "values" : {
-      "Entreprise": "e3",
+      "Enterprise": "e3",
       "Business":"b14",
-      // "Large" : "5",
+      "Start-up" : "su5",
       // "Premium" : "400"
       },
       "info": "Category 2 info"
@@ -65,9 +65,9 @@ var plansAndFeatures = {
     {
       "name": "Category 2e",
       "values" : {
-      "Entreprise": "e2",
+      "Enterprise": "e2",
       "Business":"b8",
-      // "Large" : "5",
+      "Start-up" : "su5",
       // "Premium" : "400"
       },
       "info": "Category 2 info"
@@ -87,6 +87,12 @@ var plansAndFeatures = {
       "label": {
                   "name": "Business",
                   "text": "Business Sign-up Now!",
+                  "url": "signup.com?utm=3423"
+                }
+    }, {
+      "label": {
+                  "name": "Start-up",
+                  "text": "Start-up Sign-up Now!",
                   "url": "signup.com?utm=3423"
                 }
     }
