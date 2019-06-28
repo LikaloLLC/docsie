@@ -70,7 +70,7 @@ class ContactForm extends React.Component {
         return (
             
             <React.Fragment>
-                <div className="contact-form-container">
+                <form action="" className="contact-form-container">
                 <div className={this.props.accordionView ? "pricing-contact-form-wdt" : "pricing-contact-form"}>
                     <div className="pure-g">
                         <div className="pure-u-1">
@@ -98,85 +98,106 @@ class ContactForm extends React.Component {
                             <div className="pure-g">
                                 <div className="pure-u-1 text-area-option">
                                     <span className="form-label">{this.props.contactFormData.firstNameLabel}</span><br/>
-                                    <input className={this.props.accordionView ? "feature-req-email feature-req-email-wdt" : "feature-req-email" } type="email" placeholder="enter your email."
-                                        id="feature-req-email" name="feature-req-email" required="" />
+                                    <input className={this.props.accordionView ? "contact-attr contact-attr-wdt " : "contact-attr" } type="text" placeholder={this.props.contactFormData.firstNamePH}
+                                        id="contact-attr" name="contact-attr" />
                                 </div>
                             </div>
                                 <br />
                             <div className="pure-g">
                                 <div className="pure-u-1 text-area-option">
                                     <span className="form-label">{this.props.contactFormData.lastNameLabel}</span><br/>
-                                    <input className={this.props.accordionView ? "feature-req-email feature-req-email-wdt" : "feature-req-email" } type="email" placeholder="enter your email."
-                                    id="feature-req-email" name="feature-req-email" required="" />
+                                    <input className={this.props.accordionView ? "contact-attr contact-attr-wdt " : "contact-attr" } type="text" placeholder={this.props.contactFormData.lastNamePH}
+                                    id="contact-attr" name="contact-attr" />
                                 </div>
                             </div>
                                 <br />
                             <div className="pure-g">
                                 <div className="pure-u-1 text-area-option">
                                     <span className="form-label">{this.props.contactFormData.companyNameLabel}</span><br/>
-                                    <input className={this.props.accordionView ? "feature-req-email feature-req-email-wdt" : "feature-req-email" } type="email" placeholder="enter your email."
-                                    id="feature-req-email" name="feature-req-email" required="" />
+                                    <input className={this.props.accordionView ? "contact-attr contact-attr-wdt " : "contact-attr" } type="text" placeholder={this.props.contactFormData.companyNamePH}
+                                    id="contact-attr" name="contact-attr" />
                                 </div>  
                             </div>
                                 <br />
                             <div className="pure-g">
                                 <div className="pure-u-1 text-area-option">
                                     <span className="form-label">{this.props.contactFormData.businessEmailLabel}</span><br/>
-                                    <input className={this.props.accordionView ? "feature-req-email feature-req-email-wdt" : "feature-req-email" } type="email" placeholder="enter your email."
-                                    id="feature-req-email" name="feature-req-email" required="" />
+                                    <input className={this.props.accordionView ? "contact-attr contact-attr-wdt " : "contact-attr" } type="email" placeholder={this.props.contactFormData.businessEmailPH}
+                                    id="contact-attr" name="contact-attr" required />
                                 </div>
                             </div>
                             <br />
                             <div className="pure-g">
                                 <div className="pure-u-1 text-area-option">
                                     <span className="form-label">{this.props.contactFormData.jobTitleLabel}</span><br/>
-                                    <input className={this.props.accordionView ? "feature-req-email feature-req-email-wdt" : "feature-req-email" } type="email" placeholder="enter your email."
-                                    id="feature-req-email" name="feature-req-email" required="" />
+                                    <input className={this.props.accordionView ? "contact-attr contact-attr-wdt " : "contact-attr" } type="text" placeholder={this.props.contactFormData.jobTitlePH}
+                                    id="contact-attr" name="contact-attr" />
                                 </div>
                             </div>
                             <br />
                             <div className="pure-g">
                                 <div className="pure-u-1 text-area-option">
                                     <span className="form-label">{this.props.contactFormData.industryLabel}</span><br/>
-                                    <input className={this.props.accordionView ? "feature-req-email feature-req-email-wdt" : "feature-req-email" } type="email" placeholder="enter your email."
-                                    id="feature-req-email" name="feature-req-email" required="" />
+                                    <input className={this.props.accordionView ? "contact-attr contact-attr-wdt " : "contact-attr" } type="text" placeholder="Enter Your Industry Type."
+                                    id="contact-attr" name="contact-attr" required />
                                 </div>
                             </div>
 
                             <div className="pure-g">
                                 <div className="pure-u-1 text-area-option">
                                     <span className="form-label">{this.props.contactFormData.noOfEmployeesLabel}</span><br/>
-                                    <input className={this.props.accordionView ? "feature-req-email feature-req-email-wdt" : "feature-req-email" } type="feature-req-email" placeholder="enter your email."
-                                    id="feature-req-email" name="feature-req-email" required="" />
+                                    <input className={this.props.accordionView ? "contact-attr contact-attr-wdt " : "contact-attr" } type="text" placeholder="Enter # of employees"
+                                    id="contact-attr" name="contact-attr" required />
                                 </div>
                             </div>
 
                             <div className="pure-g">
 
                                 <div className="pure-u-1 offer-options">
+                                    <span style={{color: 'red'}}>{this.props.contactFormData.optionsRequiredMsg}</span>
+                                        <br />
                                     {offerOptions}
                                 </div>
                             </div>
 
                             <div className="pure-g">
                                 <div className="pure-u-1 text-area-option">
-                                <textarea className={this.props.accordionView ? "feature-req-ta feature-req-ta-wdt" : "feature-req-ta" } rows="6" cols="50" placeholder={this.props.contactFormData.place_holder}></textarea>
+                                <textarea className={this.props.accordionView ? "contact-attr-ta contact-attr-ta-wdt" : "contact-attr-ta" } rows="6" cols="50" placeholder={this.props.contactFormData.desc_place_holder}></textarea>
                                 </div>
                             </div>
+
+                            <div className="pure-g">
+                                <div className="pure-u-1 accrd-actn-btn">
+                                    <button className="back-to-plans-btn-accrd" onClick={() => this.props.contactFormToggle()}>
+                                        <svg width="30px" height="30px" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M13 16l-6-6 6-6" fill="none" stroke="red" stroke-width="1.03"/>
+                                        </svg>
+                                        <a href="#" className="back-btn-action-link-lg-dtl">{this.props.contactFormData.toggleContactFormText}</a>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div className="pure-g">
+                                <div className="pure-u-1 accrd-actn-btn">
+                                    <input className="contact-us-btn" style={{ color: '#fff', fontSize: '18px', fontWeight: '700'}} type="submit" value="Submit" onClick={() => this.props.submitContactForm()}/>
+                                </div>
+                            </div>
+
+
                         </React.Fragment>
                         :
                         <React.Fragment>
                             <div className="pure-g">
                                 <div className="pure-u-1-2 text-area-option">
                                     <span className="form-label">{this.props.contactFormData.firstNameLabel}</span><br/>
-                                    <input style={{width: '416px', border: '1px solid black'}} type="feature-req-email" placeholder="enter your email."
-                                    id="feature-req-email" name="feature-req-email" required="" />
+                                    <input type="text"  placeholder={this.props.contactFormData.firstNamePH} className="contact-attr"
+                                    id="contact-attr" name="contact-attr" />
                                 </div>
                                 <br />
                                 <div className="pure-u-1-2 text-area-option">
                                     <span className="form-label">{this.props.contactFormData.lastNameLabel}</span><br/>
-                                    <input style={{width: '416px', border: '1px solid black'}} type="feature-req-email" placeholder="enter your email."
-                                    id="feature-req-email" name="feature-req-email" required="" />
+                                    <input type="text" placeholder={this.props.contactFormData.lastNamePH} className="contact-attr"
+                                    id="contact-attr" name="contact-attr" />
                                 </div>
                                 <br />
                             </div>
@@ -184,14 +205,14 @@ class ContactForm extends React.Component {
                             <div className="pure-g">
                                 <div className="pure-u-1-2 text-area-option">
                                     <span className="form-label">{this.props.contactFormData.companyNameLabel}</span><br/>
-                                    <input style={{width: '416px', border: '1px solid black'}} type="feature-req-email" placeholder="enter your email."
-                                    id="feature-req-email" name="feature-req-email" required="" />
+                                    <input type="text" placeholder={this.props.contactFormData.companyNamePH} className="contact-attr"
+                                    id="contact-attr" name="contact-attr" />
                                 </div>
                                 <br />
                                 <div className="pure-u-1-2 text-area-option">
                                     <span className="form-label">{this.props.contactFormData.businessEmailLabel}</span><br/>
-                                    <input style={{width: '416px', border: '1px solid black'}} type="feature-req-email" placeholder="enter your email."
-                                    id="feature-req-email" name="feature-req-email" required="" />
+                                    <input type="email" placeholder={this.props.contactFormData.businessEmailPH} className="contact-attr"
+                                    id="contact-attr" name="contact-attr" required />
                                 </div>
                                 <br />
                             </div>
@@ -199,14 +220,14 @@ class ContactForm extends React.Component {
                             <div className="pure-g">
                                 <div className="pure-u-1-2 text-area-option">
                                     <span className="form-label">{this.props.contactFormData.jobTitleLabel}</span><br/>
-                                    <input style={{width: '416px', border: '1px solid black'}} type="feature-req-email" placeholder="enter your email."
-                                    id="feature-req-email" name="feature-req-email" required="" />
+                                    <input type="text" placeholder={this.props.contactFormData.jobTitlePH} className="contact-attr"
+                                    id="contact-attr" name="contact-attr" />
                                 </div>
                                 <br />
                                 <div className="pure-u-1-2 text-area-option">
                                     <span className="form-label">{this.props.contactFormData.industryLabel}</span><br/>
-                                    <input style={{width: '416px', border: '1px solid black'}} type="feature-req-email" placeholder="enter your email."
-                                    id="feature-req-email" name="feature-req-email" required="" />
+                                    <input type="text" placeholder="enter your email." className="contact-attr"
+                                    id="contact-attr" name="contact-attr" />
                                 </div>
                                 <br />
                             </div>
@@ -214,18 +235,39 @@ class ContactForm extends React.Component {
                             <div className="pure-g">
                                 <div className="pure-u-1 text-area-option">
                                     <span className="form-label">{this.props.contactFormData.noOfEmployeesLabel}</span><br/>
-                                    <input style={{float: 'left', width: '416px', border: '1px solid black'}} type="feature-req-email" placeholder="enter your email."
-                                    id="feature-req-email" name="feature-req-email" required="" />
+                                    <input type="text" placeholder="enter your email."
+                                    className="contact-attr"
+                                    style={{float: 'left'}}
+                                    id="contact-attr" name="contact-attr"/>
                                 </div>
                             </div>
                             <br />
                             <div className="pure-g">
                                 <div className="pure-u-1-2 offer-options">
+                                    <span style={{color: 'red'}}>{this.props.contactFormData.optionsRequiredMsg}</span>
+                                    <br />
                                     {offerOptions}
                                 </div>
                                 <div className="pure-u-1-2 text-area-option">
                                     <span className="form-label-desc">{this.props.contactFormData.featureDescriptionLabel}</span>
-                                    <textarea style={{border: '1px solid black'}} rows="6" cols="50" placeholder={this.props.contactFormData.place_holder}></textarea>
+                                    <textarea style={{border: '1px solid #ddd'}} rows="6" cols="50" placeholder={this.props.contactFormData.desc_place_holder}></textarea>
+                                    {/* contact-us-btn */}
+                                    {/* float: 'left' */}
+                                    {/* float: 'right', */}
+
+                                    {/* <button className="contact-us-btn" style={{float: 'left', marginLeft: '4%'}} onClick={() => this.props.contactFormToggle()}>
+                                        <div className="contact-action-label">{this.props.contactFormData.toggleContactFormText}</div>
+                                    </button> */}
+                                    <div>
+                                        <button className="back-to-plans-btn" style={{cursor: 'pointer'}} onClick={() => this.props.contactFormToggle()}>
+                                            <svg width="30px" height="30px" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M13 16l-6-6 6-6" fill="none" stroke="red" stroke-width="1.03"/>
+                                            </svg>
+                                            <a href="#" className="back-btn-action-link-lg-dtl">{this.props.contactFormData.toggleContactFormText}</a>
+                                        </button>
+
+                                        <input className="contact-us-btn" style={{ color: '#fff', fontSize: '18px', fontWeight: '700'}} type="submit" value="Submit" onClick={() => this.props.submitContactForm()}/>
+                                    </div>
                                 </div>
                                 <br />
                             </div>
@@ -234,17 +276,8 @@ class ContactForm extends React.Component {
                     </React.Fragment>
                     
                     <br />
-
-                    <button className="contact-us-btn" style={{float: 'right'}}>
-                    {/* onClick={() => this.contactFormToggle()} */}
-                        <div className="contact-action-label">{this.props.contactFormData.submitContactFormText}</div>
-                    </button>
-
-                    <button className="contact-us-btn" style={{float: 'left'}} onClick={() => this.props.contactFormToggle()}>
-                        <div className="contact-action-label">{this.props.contactFormData.toggleContactFormText}</div>
-                    </button>
                 </div>
-                </div>
+                </form>
             </React.Fragment>
         )
     }
@@ -371,7 +404,7 @@ class SimplePlanTier extends React.Component {
                 { this.props.showContactForm ? 
                     <div className="contact-form-container">
                         <ContactForm contactFormData={this.state.contactFormData} contactFormToggle={() => this.props.contactFormToggle()} 
-                                     showContactForm={this.props.showContactForm}/>
+                                     showContactForm={this.props.showContactForm} submitContactForm={() => this.props.submitContactForm()}/>
                     </div>
                      : 
                     <React.Fragment>
@@ -556,7 +589,8 @@ class PlansAccordion extends React.Component {
             <React.Fragment>
                 { this.props.showContactForm ? 
                     // <div className="contact-form-container">
-                        <ContactForm contactFormData={this.state.contactFormData} contactFormToggle={() => this.props.contactFormToggle()} accordionView={true}/>
+                        <ContactForm contactFormData={this.state.contactFormData} contactFormToggle={() => this.props.contactFormToggle()} 
+                        submitContactForm={() => this.props.submitContactForm()} accordionView={true}/>
                     // {/* </div> */}
                      : 
                 <Accordion allowZeroExpanded={true}>
@@ -614,6 +648,10 @@ class PricingPage extends React.Component {
         this.setState({
             showContactForm: !this.state.showContactForm
         })
+    }
+
+    submitContactForm() {
+        console.log("submit form clicked");
     }
 
     // get pricing page details from a remote page
@@ -846,13 +884,18 @@ class PricingPage extends React.Component {
                                 yearlyToggle={() => this.yearlyToggle()}
                                 contactFormToggle={() => this.contactFormToggle()}
                                 showContactForm={this.state.showContactForm}
+                                submitContactForm={() => this.submitContactForm()}
                             />
                         </div>
 
                         <div className="simple-plan-container">
 
                                 <SimplePlanTier onClick={() => this.handleClick()}
-                                    className="plan-tier" showMonthlyPlan={this.state.showMonthlyPlan} yearlyToggle={() => this.yearlyToggle()} contactFormToggle={() => this.contactFormToggle()} showContactForm={this.state.showContactForm}/>
+                                    className="plan-tier" showMonthlyPlan={this.state.showMonthlyPlan} 
+                                    yearlyToggle={() => this.yearlyToggle()} 
+                                    contactFormToggle={() => this.contactFormToggle()} 
+                                    showContactForm={this.state.showContactForm}
+                                    submitContactForm={() => this.submitContactForm()}/>
                         </div>
 
                     </React.Fragment>
@@ -866,6 +909,7 @@ class PricingPage extends React.Component {
                                 yearlyToggle={() => this.yearlyToggle()}
                                 contactFormToggle={() => this.contactFormToggle()}
                                 showContactForm={this.state.showContactForm}
+                                submitContactForm={() => this.submitContactForm()}
                             />
                         </div>
                         <React.Fragment>
@@ -873,7 +917,9 @@ class PricingPage extends React.Component {
 
                             <React.Fragment>
                                 <div className="contact-form-container">
-                                    <ContactForm contactFormData={this.state.contactFormData} contactFormToggle={() => this.contactFormToggle()}/>
+                                    <ContactForm contactFormData={this.state.contactFormData} 
+                                        contactFormToggle={() => this.contactFormToggle()}
+                                        submitContactForm={() => this.submitContactForm()}/>
                                 </div>
                             </React.Fragment> :
                             <React.Fragment>
