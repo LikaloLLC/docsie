@@ -1264,6 +1264,10 @@ var PricingPage = function (_React$Component6) {
 
             var val2 = this.state.tiers[1].name;
 
+            var val3 = this.state.tiers[2].name;
+
+            console.log("val3", val3);
+
             this.state.categories.forEach(function (category, i) {
                 category.features.forEach(function (item, j) {
 
@@ -1322,6 +1326,15 @@ var PricingPage = function (_React$Component6) {
                                     'div',
                                     null,
                                     item.values[val2]
+                                )
+                            ),
+                            React.createElement(
+                                'div',
+                                { className: 'pure-u-1-4 card category-feature' },
+                                React.createElement(
+                                    'div',
+                                    null,
+                                    item.values[val3]
                                 )
                             )
                         )

@@ -81,7 +81,8 @@ tiers = {
 
          ],
          "call_to_action" : {"text":"Sign-up Free!",
-           "url": "https://app.docsie.io/manager/?utm=start-up"}
+           "url": "https://app.docsie.io/manager/?utm=start-up"},
+       "showContact": "False"
        }
   ]
 }

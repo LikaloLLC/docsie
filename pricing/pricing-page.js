@@ -785,6 +785,10 @@ class PricingPage extends React.Component {
 
         let val2 = this.state.tiers[1].name;
 
+        let val3 = this.state.tiers[2].name;
+
+        console.log("val3", val3);
+
         this.state.categories.forEach((category, i) => {
             category.features.forEach((item, j) => {
 
@@ -821,7 +825,9 @@ class PricingPage extends React.Component {
                             <div className="pure-u-1-4 card category-feature">
                                 <div>{item.values[val2]}</div>
                             </div>
-
+                            <div className="pure-u-1-4 card category-feature">
+                                <div>{item.values[val3]}</div>
+                            </div>
 
                         </div>
                     </React.Fragment>
