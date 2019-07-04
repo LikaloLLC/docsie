@@ -16,7 +16,7 @@ var plansAndFeatures = {
         "Enterprise": "e52",
         "Business":"b102",
         "Start-up" : "su252",
-        // "Premium" : "1002"
+        "Org" : "o6"
         },
         "info": "Campaigns feature info 2"
       }]
@@ -28,7 +28,7 @@ var plansAndFeatures = {
       "Enterprise": "e23",
       "Business":"b14",
       "Start-up" : "su5",
-      // "Premium" : "400"
+      "Org" : "o5"
       },
       "info": "Category 2 info"
     },
@@ -38,7 +38,7 @@ var plansAndFeatures = {
       "Enterprise": "e76",
       "Business":"b19",
       "Start-up" : "su5",
-      // "Premium" : "400"
+      "Org" : "o4"
       },
       "info": "Category 2 info"
     },
@@ -48,7 +48,7 @@ var plansAndFeatures = {
       "Enterprise": "e56",
       "Business":"b6",
       "Start-up" : "su5",
-      // "Premium" : "400"
+      "Org" : "o3"
       },
       "info": "Category 2 info"
     },
@@ -58,7 +58,7 @@ var plansAndFeatures = {
       "Enterprise": "e3",
       "Business":"b14",
       "Start-up" : "su5",
-      // "Premium" : "400"
+      "Org" : "o2"
       },
       "info": "Category 2 info"
     },
@@ -68,33 +68,11 @@ var plansAndFeatures = {
       "Enterprise": "e2",
       "Business":"b8",
       "Start-up" : "su5",
-      // "Premium" : "400"
+      "Org" : "o1"
       },
       "info": "Category 2 info"
     }
     ]
-  },
-
-  ],
-  "tierActions": [
-    {
-      "label" : {
-                  "name": "Entreprise",
-                  "text":"Entreprise Sign-up Now!",
-                  "url": "signup.com?utm=3423"
-                }
-    }, {
-      "label": {
-                  "name": "Business",
-                  "text": "Business Sign-up Now!",
-                  "url": "signup.com?utm=3423"
-                }
-    }, {
-      "label": {
-                  "name": "Start-up",
-                  "text": "Start-up Sign-up Now!",
-                  "url": "signup.com?utm=3423"
-                }
-    }
+  }
   ]
 }
