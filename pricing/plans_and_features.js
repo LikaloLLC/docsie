@@ -1,15 +1,15 @@
 var plansAndFeatures = {
   "categories": [{
-      "name":"Track & Crawl",
+      "name":"Docsie Data",
       "features": [{
-        "name": "Campaigns",
+        "name": "Max users per shelf",
         "values" : {
-        "Enterprise": "e5",
-        "Business":"b10",
-        "Start-up" : "su25",
+        "Enterprise": "Unlimited",
+        "Business":"Unlimited",
+        "Start-up" : "Unlimited",
         // "Premium" : "100"
         },
-        "info": "Campaigns feature info"
+        "info": "Total number of users allowed to collaborate on each shelf"
       }, {
         "name": "Campaigns2",
         "values" : {

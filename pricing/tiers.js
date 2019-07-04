@@ -40,16 +40,16 @@ tiers = {
     {
       "pricing": {
         "monthly": {
-          "price": "500.00",
+          "price": "7.00",
           "currency": "$",
-          "label": "/mo"
+          "label": "/user"
         },
         "yearly": {
-          "price": "450.00",
+          "price": "5.00",
           "currency": "$",
-          "perAnnum": "3000",
-          "savedAmount": "2000",
-          "label": "/year"
+          "perAnnum": "60",
+          "savedAmount": "24",
+          "label": "/user"
         }
       },
       "currency": "$",
