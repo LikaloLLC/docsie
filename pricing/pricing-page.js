@@ -25,8 +25,11 @@ class OfferOptions extends React.Component {
 
             offerOptions.push(
                 <React.Fragment>
-                    <input type={option.type} style={{ marginRight: '10px' }} name={option.type} value={option.type} />
-                    <span>{option.label}</span><br />
+                    {option.required ? 
+                        <input type={option.type} style={{ marginRight: '10px' }} name={option.value} value={option.value} onChange={() => this.props.handleInputChange(this.props.item, event)} required/> :
+                        <input type={option.type} style={{ marginRight: '10px' }} name={option.value} value={option.value} onChange={() => this.props.handleInputChange(this.props.item, event)} />
+                    }
+                    <span>{option.value}</span><br />
                     {/* style={{fontSize: '14px'}} */}
                 </React.Fragment>
             )
@@ -51,11 +54,20 @@ class SelectTag extends React.Component {
     render() {
 
         return (
-                <select className={this.props.accordionView ? "contact-attr contact-attr-wdt " : "contact-attr"}>
+            <React.Fragment>
+            {this.props.item.required ? 
+                <select className={this.props.accordionView ? "contact-attr contact-attr-wdt " : "contact-attr"} onChange={() => this.props.handleInputChange(this.props.item, event)} required>
+                    {this.props.item.options.map((opt) =>
+                        <option>{opt}</option>
+                    )}
+                </select> :
+                <select className={this.props.accordionView ? "contact-attr contact-attr-wdt " : "contact-attr"} onChange={() => this.props.handleInputChange(this.props.item, event)}>
                     {this.props.item.options.map((opt) =>
                         <option>{opt}</option>
                     )}
                 </select>
+            }
+            </React.Fragment>
         )
     }
 }
@@ -66,7 +78,76 @@ class ContactFormInputs extends React.Component {
     constructor (props) {
         super(props);
 
+        this.state = contactForm.formState;
+        
+
         console.log("props ibn ContactFormInputs", props);
+
+        console.log("this.state in contact form", this.state);
+    }
+
+    handleInputChange(item, event) {
+        console.log("selected item", item, "value in handleInputChange", event.target.value);
+
+        
+
+        // if offer_options are selected, multiple checked fields are pushed and set into state
+        if (item.type == "offer_options") {
+
+            let updatedOffrOpts = this.state[item.alias];
+
+            // if one of the offer options are checked, push only if index == -1 
+            if (event.target.checked == true) {
+
+                if (updatedOffrOpts.indexOf(event.target.value) == -1) {
+                    updatedOffrOpts.push(event.target.value);
+                }
+            } else {
+
+                // remove unchecked element from the array and set it into state
+                if (updatedOffrOpts.indexOf(event.target.value) != -1) {
+                    updatedOffrOpts.splice(updatedOffrOpts.indexOf(event.target.value), 1);
+                }
+            }
+
+            this.setState({
+                [item.alias]: updatedOffrOpts
+            }, function(){
+                console.log("state in handleInputChange callback", this.state); 
+            });
+
+        } else {
+
+            this.setState({
+                [item.alias]: event.target.value
+            }, function(){
+                console.log("state in handleInputChange callback", this.state); 
+            });
+        }
+    }
+
+    async submitContactForm() {
+
+        console.log("in submitForm func, state is::", this.state);
+
+        try {
+            // make post request with the state data
+            let response = await fetch('https://mywebsite.com/endpoint/', {
+                method: 'POST',
+                headers: {
+                    Accept: 'application/json',
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(this.state),
+            });
+
+            // get response from post request
+            let responseJson = await response.json();
+            
+            // TODO: show default docsie popup saying query posted successfully or something
+          } catch (error) {
+            console.error(error);
+          }
     }
 
     render() {
@@ -83,8 +164,13 @@ class ContactFormInputs extends React.Component {
                 contactFormInputs.push(
                     <div className="pure-u-xs-1 pure-u-sm-1-1 pure-u-md-1-1 pure-u-lg-1-3 pure-u-xl-1-3 contact-input">
                         <span className="form-label">{item.label}</span><br />
+                        {item.required ? 
                         <input className={this.props.accordionView ? "contact-attr contact-attr-wdt " : "contact-attr"} type={item.type} placeholder={item.placeholder}
-                            id="contact-attr" name="contact-attr" />
+                            id="contact-attr" name="contact-attr" onChange={() => this.handleInputChange(item, event)} required/> : 
+                        <input className={this.props.accordionView ? "contact-attr contact-attr-wdt " : "contact-attr"} type={item.type} placeholder={item.placeholder}
+                        id="contact-attr" name="contact-attr" onChange={() => this.handleInputChange(item, event)} />
+                        }
+                            
                     </div>
                 );
             }
@@ -96,7 +182,7 @@ class ContactFormInputs extends React.Component {
                         <span className="form-label">{item.label}</span><br />
                         {/* <input className={this.props.accordionView ? "contact-attr contact-attr-wdt " : "contact-attr"} type={item.type} placeholder={item.placeholder}
                             id="contact-attr" name="contact-attr" /> */}
-                            <SelectTag item={item} accordionView={this.props.accordionView} />
+                            <SelectTag item={item} accordionView={this.props.accordionView} handleInputChange={() => this.handleInputChange(item, event)} />
                     </div>
                 );
             }
@@ -110,7 +196,7 @@ class ContactFormInputs extends React.Component {
                     <div className="pure-u-xs-1 pure-u-sm-1-1 pure-u-md-1-1 pure-u-lg-1-3 pure-u-xl-1-3 offer-options">
                         <span style={{ color: 'red' }}>{item.optionsRequiredMsg}</span>
                         <br />
-                        <OfferOptions item={item} />
+                        <OfferOptions item={item} handleInputChange={() => this.handleInputChange(item, event)} />
                     </div>
                 )
             }
@@ -122,7 +208,9 @@ class ContactFormInputs extends React.Component {
                 contactFormInputs.push(
                     <div className="pure-u-xs-1 pure-u-sm-1-3 pure-u-md-1-3 pure-u-lg-1-3 pure-u-xl-1-3 contact-input">
                         <span className="form-label-desc">{item.label}</span>
-                        <textarea style={{ border: '1px solid #ddd', width: '89.5%', float: 'left' }} rows="5" cols="50" placeholder={item.placeholder}></textarea>
+                        {item.required ? 
+                        <textarea style={{ border: '1px solid #ddd', width: '89.5%', float: 'left' }} rows="5" cols="50" placeholder={item.placeholder} onChange={() => this.handleInputChange(item, event)} required></textarea> :
+                        <textarea style={{ border: '1px solid #ddd', width: '89.5%', float: 'left' }} rows="5" cols="50" placeholder={item.placeholder} onChange={() => this.handleInputChange(item, event)}></textarea> }
                     </div>
                 )
             }
@@ -143,7 +231,7 @@ class ContactFormInputs extends React.Component {
                                 {this.props.toggleContactFormText}
                             </div>
                         </button>
-                        <button className="ct-btn contact-us-btn-xs" style={{ color: '#fff', fontSize: '18px', fontWeight: '700' }} onClick={() => this.props.submitContactForm()}>{this.props.submitContactFormText}</button>
+                        <button className="ct-btn contact-us-btn-xs" style={{ color: '#fff', fontSize: '18px', fontWeight: '700' }} onClick={() => this.submitContactForm()}>{this.props.submitContactFormText}</button>
                     </div>
                     {/* <div className="pure-u-xs-1 pure-u-sm-1-2 pure-u-md-1-2 pure-u-lg-1-3 pure-u-xl-1-3 accrd-actn-btn">
                         <input className="contact-us-btn" style={{ color: '#fff', fontSize: '18px', fontWeight: '700'}} type="submit" value="Submit" onClick={() => this.props.submitContactForm()}/>
