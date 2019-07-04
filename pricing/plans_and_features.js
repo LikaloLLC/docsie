@@ -17,8 +17,7 @@ var plansAndFeatures = {
         "Business":"b102",
         "Start-up" : "su252",
         "Org" : "o6"
-        },
-        "info": "Campaigns feature info 2"
+        }
       }]
   }, {
     "name":"Category 2 name",

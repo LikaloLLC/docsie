@@ -623,15 +623,18 @@ class DetailedPlanTier extends React.Component {
                             <div className="pure-u-1-4 card category-feature-name" style={{ textAlign: 'center' }}>
 
                                 <div className="category-name">{item.name}&nbsp;
-                                    <Tooltip message={item.info} position={'top'}>
-                                        <span>
-                                            <svg width="20px" height="20px" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                { 
+                                    item.info ?
+                                        <Tooltip message={item.info} position={'top'}>
+                                            <span>
+                                                <svg width="20px" height="20px" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
 
-                                                <path d="M12.13 11.59c-.16 1.25-1.78 2.53-3.03 2.57-2.93.04.79-4.7-.36-5.79.56-.21 1.88-.54 1.88.44 0 .82-.5 1.74-.74 2.51-1.22 3.84 2.25-.17 2.26-.14.02.03.02.17-.01.41-.05.36.03-.24 0 0zm-.57-5.92c0 1-2.2 1.48-2.2.36 0-1.03 2.2-1.49 2.2-.36z" />
-                                                <circle cx="10" cy="10" r="9" fill="none" stroke="currentColor" stroke-width="1.1" />
-                                            </svg>
-                                        </span>
-                                    </Tooltip>
+                                                    <path d="M12.13 11.59c-.16 1.25-1.78 2.53-3.03 2.57-2.93.04.79-4.7-.36-5.79.56-.21 1.88-.54 1.88.44 0 .82-.5 1.74-.74 2.51-1.22 3.84 2.25-.17 2.26-.14.02.03.02.17-.01.41-.05.36.03-.24 0 0zm-.57-5.92c0 1-2.2 1.48-2.2.36 0-1.03 2.2-1.49 2.2-.36z" />
+                                                    <circle cx="10" cy="10" r="9" fill="none" stroke="currentColor" stroke-width="1.1" />
+                                                </svg>
+                                            </span>
+                                        </Tooltip> : '' 
+                                }
                                 </div>
                             </div>
                             {/* <div className="pure-u-1-4 card category-feature">
@@ -752,15 +755,18 @@ class CategoryFeatures extends React.Component {
                         <div className="plan-desc-feature">
                             <div sm="2" className="category-feature-xs">
                                 <div>{item.values[val]}&nbsp;{item.name}&nbsp;
-                                    <Tooltip message={item.info} position={'top'}>
-                                        <span>
-                                            <svg width="20px" height="20px" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                { 
+                                    item.info ?
+                                        <Tooltip message={item.info} position={'top'}>
+                                            <span>
+                                                <svg width="20px" height="20px" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
 
-                                                <path d="M12.13 11.59c-.16 1.25-1.78 2.53-3.03 2.57-2.93.04.79-4.7-.36-5.79.56-.21 1.88-.54 1.88.44 0 .82-.5 1.74-.74 2.51-1.22 3.84 2.25-.17 2.26-.14.02.03.02.17-.01.41-.05.36.03-.24 0 0zm-.57-5.92c0 1-2.2 1.48-2.2.36 0-1.03 2.2-1.49 2.2-.36z" />
-                                                <circle cx="10" cy="10" r="9" fill="none" stroke="currentColor" stroke-width="1.1" />
-                                            </svg>
-                                        </span>
-                                    </Tooltip>
+                                                    <path d="M12.13 11.59c-.16 1.25-1.78 2.53-3.03 2.57-2.93.04.79-4.7-.36-5.79.56-.21 1.88-.54 1.88.44 0 .82-.5 1.74-.74 2.51-1.22 3.84 2.25-.17 2.26-.14.02.03.02.17-.01.41-.05.36.03-.24 0 0zm-.57-5.92c0 1-2.2 1.48-2.2.36 0-1.03 2.2-1.49 2.2-.36z" />
+                                                    <circle cx="10" cy="10" r="9" fill="none" stroke="currentColor" stroke-width="1.1" />
+                                                </svg>
+                                            </span>
+                                        </Tooltip> : '' 
+                                }
                                 </div>
                             </div>
                         </div>
@@ -1038,131 +1044,6 @@ class PricingPage extends React.Component {
 
 
     render() {
-
-        let detailRows = [];
-
-        let categoryFeatures = [];
-
-        let tierActions = [];
-
-        this.state.tiers.forEach((tier) => {
-
-            detailRows.push(
-                <div key={tier.name} className="pure-u-1-4 category-feature-head">
-                    <h4 className="pricing-name">{tier.name}</h4>
-                    {(tier.showCallToAction && tier.showCallToAction == "True") ?
-                        <React.Fragment>
-                            <button className="contact-us-btn-dtl" onClick={() => this.contactFormToggle()}>
-                                <div className="contact-action-label">{tier.contactFormText}</div>
-                            </button>
-                        </React.Fragment> :
-                        <React.Fragment>
-                            {this.state.showMonthlyPlan ?
-                                <React.Fragment>
-                                    <h2 className="product-price product-price-md">
-                                        <span className="currency">{tier.pricing.monthly.currency}</span>
-                                        <span className="price">{tier.pricing.monthly.price}</span>
-                                        <span className="period">{tier.pricing.monthly.label}</span>
-                                    </h2>
-                                    {/* <div className="pricing-panel-info">
-                                        <div className="text-yearly-color">
-                                            <p data-alt-text="$950 billed yearly<br />Save $238/year" className="year-pricing">
-                                                {tier.pricing.yearly.currency}{tier.pricing.yearly.price}{tier.pricing.monthly.label} {this.state.tiers[0].monthlyText} <div className="yearly" onClick={() => this.yearlyToggle()}> {this.state.tiers[0].payText}</div>
-                                            </p>
-                                        </div>
-                                    </div> */}
-                                </React.Fragment>
-                                :
-                                <React.Fragment>
-                                    <h2 className="product-price product-price-md">
-                                        <span className="currency">{tier.pricing.yearly.currency}</span>
-                                        <span className="price">{tier.pricing.yearly.price}</span>
-                                        <span className="period">{tier.pricing.monthly.label}</span>
-                                    </h2>
-                                    {/* <div className="pricing-panel-info">
-                                        <div className="text-yearly-color">
-                                            <p data-alt-text="$950 billed yearly<br />Save $238/year" className="year-pricing">
-                                                {tier.pricing.yearly.currency}{tier.pricing.yearly.perAnnum} {this.state.tiers[0].yearlyText1}<br /> {this.state.tiers[0].yearlyText2} {tier.pricing.yearly.currency}{tier.pricing.yearly.savedAmount}{tier.pricing.yearly.label}
-                                            </p>
-                                        </div>
-                                    </div> */}
-                                </React.Fragment>
-                            }
-                        </React.Fragment>
-                    }
-                    {/* <h2 className="product-price product-price-md">
-                        <span className="currency">{tier.pricing.monthly.currency}</span>
-                        <span className="price">{tier.pricing.monthly.price}</span>
-                        <span className="period">{tier.pricing.monthly.label}</span>
-                    </h2> */}
-                </div>
-            )
-        });
-
-        this.state.categories.forEach((category, i) => {
-            category.features.forEach((item, j) => {
-
-                categoryFeatures.push(
-
-                    <React.Fragment>
-
-                        {/* {i != 0 && j == 0 ? */}
-                        {j == 0 ?
-                            <React.Fragment>
-
-                                <h4>{category.name}</h4>
-
-                            </React.Fragment>
-                            : ''}
-                        <div className="pure-g" key={item.name}>
-                            <div className="pure-u-1-4 card category-feature-name" style={{ textAlign: 'center' }}>
-
-                                <div className="category-name">{item.name}&nbsp;
-                                    <Tooltip message={item.info} position={'top'}>
-                                        <span>
-                                            <svg width="20px" height="20px" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-
-                                                <path d="M12.13 11.59c-.16 1.25-1.78 2.53-3.03 2.57-2.93.04.79-4.7-.36-5.79.56-.21 1.88-.54 1.88.44 0 .82-.5 1.74-.74 2.51-1.22 3.84 2.25-.17 2.26-.14.02.03.02.17-.01.41-.05.36.03-.24 0 0zm-.57-5.92c0 1-2.2 1.48-2.2.36 0-1.03 2.2-1.49 2.2-.36z" />
-                                                <circle cx="10" cy="10" r="9" fill="none" stroke="currentColor" stroke-width="1.1" />
-                                            </svg>
-                                        </span>
-                                    </Tooltip>
-                                </div>
-                            </div>
-                            {/* <div className="pure-u-1-4 card category-feature">
-                                <div>{item.values[val1]}</div>
-                            </div>
-                            <div className="pure-u-1-4 card category-feature">
-                                <div>{item.values[val2]}</div>
-                            </div>
-                            <div className="pure-u-1-4 card category-feature">
-                                <div>{item.values[val3]}</div>
-                            </div> */}
-
-                            {/* send tiers, item props and get each tier feature details */}
-                            <DetailCategoryFeatures tiers={this.state.tiers} item={item} />
-
-                        </div>
-                    </React.Fragment>
-                )
-            })
-        })
-
-        if (this.state && this.state.tierActions) {
-            this.state.tierActions.forEach((tierAction) => {
-
-                tierActions.push(
-                    // <div key={tierAction.label.name} className="pure-u-1-4 card category-feature" style={{ textAlign: 'center' }}>
-                    //     <button className="sign-up-btn" style={{ width: '100%', fontSize: '12px !important' }}>
-                    //         <a href={tierAction.label.url} className="action-link-lg-dtl" style={{fontSize: '12px !important'}}>{tierAction.label.text}</a>
-                    //     </button>
-                    // </div>
-                    <div className="pure-u-1-4 card-actn category-feature-actn">
-                        <button className="tier-actn"><a href={tierAction.label.url} className="tier-actn-link">{tierAction.label.text}</a></button>
-                    </div>
-                )
-            });
-        }
 
         return (
             <div className="simple-detail-plan-tier-sm-md-lg">

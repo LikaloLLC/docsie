@@ -931,7 +931,7 @@ var DetailedPlanTier = function (_React$Component8) {
                                     { className: 'category-name' },
                                     item.name,
                                     '\xA0',
-                                    React.createElement(
+                                    item.info ? React.createElement(
                                         Tooltip,
                                         { message: item.info, position: 'top' },
                                         React.createElement(
@@ -944,7 +944,7 @@ var DetailedPlanTier = function (_React$Component8) {
                                                 React.createElement('circle', { cx: '10', cy: '10', r: '9', fill: 'none', stroke: 'currentColor', 'stroke-width': '1.1' })
                                             )
                                         )
-                                    )
+                                    ) : ''
                                 )
                             ),
                             React.createElement(DetailCategoryFeatures, { tiers: _this14.props.tiers, item: item })
@@ -1093,7 +1093,7 @@ var CategoryFeatures = function (_React$Component9) {
                                     '\xA0',
                                     item.name,
                                     '\xA0',
-                                    React.createElement(
+                                    item.info ? React.createElement(
                                         Tooltip,
                                         { message: item.info, position: 'top' },
                                         React.createElement(
@@ -1106,7 +1106,7 @@ var CategoryFeatures = function (_React$Component9) {
                                                 React.createElement('circle', { cx: '10', cy: '10', r: '9', fill: 'none', stroke: 'currentColor', 'stroke-width': '1.1' })
                                             )
                                         )
-                                    )
+                                    ) : ''
                                 )
                             )
                         )
@@ -1470,161 +1470,6 @@ var PricingPage = function (_React$Component11) {
         key: 'render',
         value: function render() {
             var _this20 = this;
-
-            var detailRows = [];
-
-            var categoryFeatures = [];
-
-            var tierActions = [];
-
-            this.state.tiers.forEach(function (tier) {
-
-                detailRows.push(React.createElement(
-                    'div',
-                    { key: tier.name, className: 'pure-u-1-4 category-feature-head' },
-                    React.createElement(
-                        'h4',
-                        { className: 'pricing-name' },
-                        tier.name
-                    ),
-                    tier.showCallToAction && tier.showCallToAction == "True" ? React.createElement(
-                        React.Fragment,
-                        null,
-                        React.createElement(
-                            'button',
-                            { className: 'contact-us-btn-dtl', onClick: function onClick() {
-                                    return _this20.contactFormToggle();
-                                } },
-                            React.createElement(
-                                'div',
-                                { className: 'contact-action-label' },
-                                tier.contactFormText
-                            )
-                        )
-                    ) : React.createElement(
-                        React.Fragment,
-                        null,
-                        _this20.state.showMonthlyPlan ? React.createElement(
-                            React.Fragment,
-                            null,
-                            React.createElement(
-                                'h2',
-                                { className: 'product-price product-price-md' },
-                                React.createElement(
-                                    'span',
-                                    { className: 'currency' },
-                                    tier.pricing.monthly.currency
-                                ),
-                                React.createElement(
-                                    'span',
-                                    { className: 'price' },
-                                    tier.pricing.monthly.price
-                                ),
-                                React.createElement(
-                                    'span',
-                                    { className: 'period' },
-                                    tier.pricing.monthly.label
-                                )
-                            )
-                        ) : React.createElement(
-                            React.Fragment,
-                            null,
-                            React.createElement(
-                                'h2',
-                                { className: 'product-price product-price-md' },
-                                React.createElement(
-                                    'span',
-                                    { className: 'currency' },
-                                    tier.pricing.yearly.currency
-                                ),
-                                React.createElement(
-                                    'span',
-                                    { className: 'price' },
-                                    tier.pricing.yearly.price
-                                ),
-                                React.createElement(
-                                    'span',
-                                    { className: 'period' },
-                                    tier.pricing.monthly.label
-                                )
-                            )
-                        )
-                    )
-                ));
-            });
-
-            this.state.categories.forEach(function (category, i) {
-                category.features.forEach(function (item, j) {
-
-                    categoryFeatures.push(React.createElement(
-                        React.Fragment,
-                        null,
-                        j == 0 ? React.createElement(
-                            React.Fragment,
-                            null,
-                            React.createElement(
-                                'h4',
-                                null,
-                                category.name
-                            )
-                        ) : '',
-                        React.createElement(
-                            'div',
-                            { className: 'pure-g', key: item.name },
-                            React.createElement(
-                                'div',
-                                { className: 'pure-u-1-4 card category-feature-name', style: { textAlign: 'center' } },
-                                React.createElement(
-                                    'div',
-                                    { className: 'category-name' },
-                                    item.name,
-                                    '\xA0',
-                                    React.createElement(
-                                        Tooltip,
-                                        { message: item.info, position: 'top' },
-                                        React.createElement(
-                                            'span',
-                                            null,
-                                            React.createElement(
-                                                'svg',
-                                                { width: '20px', height: '20px', viewBox: '0 0 20 20', xmlns: 'http://www.w3.org/2000/svg' },
-                                                React.createElement('path', { d: 'M12.13 11.59c-.16 1.25-1.78 2.53-3.03 2.57-2.93.04.79-4.7-.36-5.79.56-.21 1.88-.54 1.88.44 0 .82-.5 1.74-.74 2.51-1.22 3.84 2.25-.17 2.26-.14.02.03.02.17-.01.41-.05.36.03-.24 0 0zm-.57-5.92c0 1-2.2 1.48-2.2.36 0-1.03 2.2-1.49 2.2-.36z' }),
-                                                React.createElement('circle', { cx: '10', cy: '10', r: '9', fill: 'none', stroke: 'currentColor', 'stroke-width': '1.1' })
-                                            )
-                                        )
-                                    )
-                                )
-                            ),
-                            React.createElement(DetailCategoryFeatures, { tiers: _this20.state.tiers, item: item })
-                        )
-                    ));
-                });
-            });
-
-            if (this.state && this.state.tierActions) {
-                this.state.tierActions.forEach(function (tierAction) {
-
-                    tierActions.push(
-                    // <div key={tierAction.label.name} className="pure-u-1-4 card category-feature" style={{ textAlign: 'center' }}>
-                    //     <button className="sign-up-btn" style={{ width: '100%', fontSize: '12px !important' }}>
-                    //         <a href={tierAction.label.url} className="action-link-lg-dtl" style={{fontSize: '12px !important'}}>{tierAction.label.text}</a>
-                    //     </button>
-                    // </div>
-                    React.createElement(
-                        'div',
-                        { className: 'pure-u-1-4 card-actn category-feature-actn' },
-                        React.createElement(
-                            'button',
-                            { className: 'tier-actn' },
-                            React.createElement(
-                                'a',
-                                { href: tierAction.label.url, className: 'tier-actn-link' },
-                                tierAction.label.text
-                            )
-                        )
-                    ));
-                });
-            }
 
             return React.createElement(
                 'div',
