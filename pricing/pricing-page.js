@@ -222,20 +222,20 @@ class ContactFormInputs extends React.Component {
                     {contactFormInputs}
                     {/* pure-u-xs-1 pure-u-sm-1-2 pure-u-md-1-2 pure-u-lg-1-3 pure-u-xl-1-3  */}
                     {/* <div className="contact-input"> */}
-                    <div className="pure-u-xs-1 pure-u-sm-1-1 pure-u-md-1-1 pure-u-lg-1-3 pure-u-xl-1-3 contact-input">
-                        <button className="ct-btn back-to-plans-btn-accrd" onClick={() => this.props.contactFormToggle()}>
-                            <div className="back-btn-action-link-lg-dtl">
-                                <svg width="30px" height="30px" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M13 16l-6-6 6-6" fill="none" stroke="red" stroke-width="1.03" />
-                                </svg>
-                                {this.props.toggleContactFormText}
-                            </div>
-                        </button>
-                        <button className="ct-btn contact-us-btn-xs" style={{ color: '#fff', fontSize: '18px', fontWeight: '700' }} onClick={() => this.submitContactForm()}>{this.props.submitContactFormText}</button>
-                    </div>
                     {/* <div className="pure-u-xs-1 pure-u-sm-1-2 pure-u-md-1-2 pure-u-lg-1-3 pure-u-xl-1-3 accrd-actn-btn">
                         <input className="contact-us-btn" style={{ color: '#fff', fontSize: '18px', fontWeight: '700'}} type="submit" value="Submit" onClick={() => this.props.submitContactForm()}/>
                     </div> */}
+                </div>
+                <div className="contact-input">
+                    <button className="ct-btn back-to-plans-btn-accrd" onClick={() => this.props.contactFormToggle()}>
+                        <div className="back-btn-action-link-lg-dtl">
+                            <svg width="30px" height="30px" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M13 16l-6-6 6-6" fill="none" stroke="red" stroke-width="1.03" />
+                            </svg>
+                            {this.props.toggleContactFormText}
+                        </div>
+                    </button>
+                    <button className="ct-btn contact-us-btn-xs" style={{ color: '#fff', fontSize: '18px', fontWeight: '700' }} onClick={() => this.submitContactForm()}>{this.props.submitContactFormText}</button>
                 </div>
             </React.Fragment>
         )

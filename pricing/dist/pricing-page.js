@@ -300,33 +300,33 @@ var ContactFormInputs = function (_React$Component3) {
                 React.createElement(
                     'div',
                     { className: 'pure-g-r' },
-                    contactFormInputs,
+                    contactFormInputs
+                ),
+                React.createElement(
+                    'div',
+                    { className: 'contact-input' },
                     React.createElement(
-                        'div',
-                        { className: 'pure-u-xs-1 pure-u-sm-1-1 pure-u-md-1-1 pure-u-lg-1-3 pure-u-xl-1-3 contact-input' },
+                        'button',
+                        { className: 'ct-btn back-to-plans-btn-accrd', onClick: function onClick() {
+                                return _this6.props.contactFormToggle();
+                            } },
                         React.createElement(
-                            'button',
-                            { className: 'ct-btn back-to-plans-btn-accrd', onClick: function onClick() {
-                                    return _this6.props.contactFormToggle();
-                                } },
+                            'div',
+                            { className: 'back-btn-action-link-lg-dtl' },
                             React.createElement(
-                                'div',
-                                { className: 'back-btn-action-link-lg-dtl' },
-                                React.createElement(
-                                    'svg',
-                                    { width: '30px', height: '30px', viewBox: '0 0 20 20', xmlns: 'http://www.w3.org/2000/svg' },
-                                    React.createElement('path', { d: 'M13 16l-6-6 6-6', fill: 'none', stroke: 'red', 'stroke-width': '1.03' })
-                                ),
-                                this.props.toggleContactFormText
-                            )
-                        ),
-                        React.createElement(
-                            'button',
-                            { className: 'ct-btn contact-us-btn-xs', style: { color: '#fff', fontSize: '18px', fontWeight: '700' }, onClick: function onClick() {
-                                    return _this6.submitContactForm();
-                                } },
-                            this.props.submitContactFormText
+                                'svg',
+                                { width: '30px', height: '30px', viewBox: '0 0 20 20', xmlns: 'http://www.w3.org/2000/svg' },
+                                React.createElement('path', { d: 'M13 16l-6-6 6-6', fill: 'none', stroke: 'red', 'stroke-width': '1.03' })
+                            ),
+                            this.props.toggleContactFormText
                         )
+                    ),
+                    React.createElement(
+                        'button',
+                        { className: 'ct-btn contact-us-btn-xs', style: { color: '#fff', fontSize: '18px', fontWeight: '700' }, onClick: function onClick() {
+                                return _this6.submitContactForm();
+                            } },
+                        this.props.submitContactFormText
                     )
                 )
             );
