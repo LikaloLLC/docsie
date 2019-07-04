@@ -9,6 +9,152 @@ var teirsData = tiers;
 
 var plansAndFeaturesData = plansAndFeatures;
 
+// used to show offer options in contact form
+class OfferOptions extends React.Component {
+    constructor (props) {
+        super(props);
+
+        console.log("props in OfferOptions", props);
+    }
+
+    render() {
+
+        let offerOptions = [];
+
+        this.props.item.offer_options.forEach((option) => {
+
+            offerOptions.push(
+                <React.Fragment>
+                    <input type={option.type} style={{ marginRight: '10px' }} name={option.type} value={option.type} />
+                    <span>{option.label}</span><br />
+                    {/* style={{fontSize: '14px'}} */}
+                </React.Fragment>
+            )
+        })
+
+        return (
+            <React.Fragment>
+                {offerOptions}
+            </React.Fragment>
+        )
+    }
+}
+
+class SelectTag extends React.Component {
+
+    constructor (props) {
+        super(props);
+
+        console.log("props in OfferOptions", props);
+    }
+
+    render() {
+
+        return (
+                <select className={this.props.accordionView ? "contact-attr contact-attr-wdt " : "contact-attr"}>
+                    {this.props.item.options.map((opt) =>
+                        <option>{opt}</option>
+                    )}
+                </select>
+        )
+    }
+}
+
+// handles dynamic json to configure contact form input
+class ContactFormInputs extends React.Component {
+
+    constructor (props) {
+        super(props);
+
+        console.log("props ibn ContactFormInputs", props);
+    }
+
+    render() {
+
+        let contactFormInputs = [];
+
+        this.props.formInputs.forEach((item, i) => {
+
+            console.log("item, i", item, i);
+            if (item.type == "text" || item.type == "number" || item.type == "radio") {
+
+                console.log("item.type is text");
+
+                contactFormInputs.push(
+                    <div className="pure-u-xs-1 pure-u-sm-1-1 pure-u-md-1-1 pure-u-lg-1-3 pure-u-xl-1-3 contact-input">
+                        <span className="form-label">{item.label}</span><br />
+                        <input className={this.props.accordionView ? "contact-attr contact-attr-wdt " : "contact-attr"} type={item.type} placeholder={item.placeholder}
+                            id="contact-attr" name="contact-attr" />
+                    </div>
+                );
+            }
+
+            // for dropdown
+            if (item.type == "dropdown" ) {
+                contactFormInputs.push(
+                    <div className="pure-u-xs-1 pure-u-sm-1-1 pure-u-md-1-1 pure-u-lg-1-3 pure-u-xl-1-3 contact-input">
+                        <span className="form-label">{item.label}</span><br />
+                        {/* <input className={this.props.accordionView ? "contact-attr contact-attr-wdt " : "contact-attr"} type={item.type} placeholder={item.placeholder}
+                            id="contact-attr" name="contact-attr" /> */}
+                            <SelectTag item={item} accordionView={this.props.accordionView} />
+                    </div>
+                );
+            }
+
+            // for checkbox group
+            if (item.type == "offer_options") {
+
+                console.log("item.type is offer_options");
+
+                contactFormInputs.push(
+                    <div className="pure-u-xs-1 pure-u-sm-1-1 pure-u-md-1-1 pure-u-lg-1-3 pure-u-xl-1-3 offer-options">
+                        <span style={{ color: 'red' }}>{item.optionsRequiredMsg}</span>
+                        <br />
+                        <OfferOptions item={item} />
+                    </div>
+                )
+            }
+
+            if (item.type == "text_area") {
+
+                console.log("item.type is text_area");
+
+                contactFormInputs.push(
+                    <div className="pure-u-xs-1 pure-u-sm-1-3 pure-u-md-1-3 pure-u-lg-1-3 pure-u-xl-1-3 contact-input">
+                        <span className="form-label-desc">{item.label}</span>
+                        <textarea style={{ border: '1px solid #ddd', width: '89.5%', float: 'left' }} rows="5" cols="50" placeholder={item.placeholder}></textarea>
+                    </div>
+                )
+            }
+        });
+
+        return (
+            <React.Fragment>
+                <div className="pure-g-r">
+                    {contactFormInputs}
+                    {/* pure-u-xs-1 pure-u-sm-1-2 pure-u-md-1-2 pure-u-lg-1-3 pure-u-xl-1-3  */}
+                    {/* <div className="contact-input"> */}
+                    <div className="pure-u-xs-1 pure-u-sm-1-1 pure-u-md-1-1 pure-u-lg-1-3 pure-u-xl-1-3 contact-input">
+                        <button className="ct-btn back-to-plans-btn-accrd" onClick={() => this.props.contactFormToggle()}>
+                            <div className="back-btn-action-link-lg-dtl">
+                                <svg width="30px" height="30px" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M13 16l-6-6 6-6" fill="none" stroke="red" stroke-width="1.03" />
+                                </svg>
+                                {this.props.toggleContactFormText}
+                            </div>
+                        </button>
+                        <button className="ct-btn contact-us-btn-xs" style={{ color: '#fff', fontSize: '18px', fontWeight: '700' }} onClick={() => this.props.submitContactForm()}>{this.props.submitContactFormText}</button>
+                    </div>
+                    {/* <div className="pure-u-xs-1 pure-u-sm-1-2 pure-u-md-1-2 pure-u-lg-1-3 pure-u-xl-1-3 accrd-actn-btn">
+                        <input className="contact-us-btn" style={{ color: '#fff', fontSize: '18px', fontWeight: '700'}} type="submit" value="Submit" onClick={() => this.props.submitContactForm()}/>
+                    </div> */}
+                </div>
+            </React.Fragment>
+        )
+    }
+}
+
+// tooltip class used in detail component
 class Tooltip extends React.Component {
     constructor (props) {
         super(props)
@@ -51,238 +197,100 @@ class Tooltip extends React.Component {
     }
 }
 
+// use this to show data about each tier in detailed view which also has tooltip for category feature
+class DetailCategoryFeatures extends React.Component {
+
+    constructor (props) {
+        super(props);
+    }
+
+    render() {
+
+        let val;
+
+        let detailCategoryFeatures = [];
+
+        for (let i = 0; i < this.props.tiers.length; i++) {
+
+            val = this.props.tiers[i].name;
+
+            detailCategoryFeatures.push(
+                <div className="pure-u-1-4 card category-feature">
+                    <div>{this.props.item.values[val]}</div>
+                </div>
+            )
+        }
+
+        return (
+            <React.Fragment>
+                {detailCategoryFeatures}
+            </React.Fragment>
+        )
+    }
+}
+
+// contact form 
 class ContactForm extends React.Component {
 
     render() {
-        
-        let offerOptions= [];
-
-        this.props.contactFormData.offer_options.forEach((item) => {
-
-            offerOptions.push(
-                <React.Fragment>
-                    <input type="checkbox" style={{marginRight: '10px'}} name={item} value={item} />
-                        <span style={{fontSize: '14px'}}>{item}</span><br />
-                </React.Fragment>
-            )
-        })
 
         return (
-            
+
             <React.Fragment>
                 <form action="" className="contact-form-container">
-                <div className={this.props.accordionView ? "pricing-contact-form-wdt" : "pricing-contact-form"}>
-                    <div className="pure-g">
-                        <div className="pure-u-1">
+                    <div className={this.props.accordionView ? "pricing-contact-form-wdt" : "pricing-contact-form"}>
+                        <div className="pure-g">
+                            <div className="pure-u-1">
 
-                            <svg width="60px" height="60px" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M1.4 6.5L10 11l8.6-4.5" fill="none" stroke="currentColor" />
-                                <path d="M1 4v12h18V4H1zm17 11H2V5h16v10z" />   
-                            </svg>
-                            <br />
-                            {this.props.contactFormData.heading}
+                                <svg width="60px" height="60px" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M1.4 6.5L10 11l8.6-4.5" fill="none" stroke="currentColor" />
+                                    <path d="M1 4v12h18V4H1zm17 11H2V5h16v10z" />
+                                </svg>
+                                <br />
+                                {this.props.contactFormData.heading}
+                            </div>
                         </div>
-                    </div>
-                    <div className="pure-g">
-                        <div  className="pure-u-1">
-                            {this.props.contactFormData.sub_info}
+                        <div className="pure-g">
+                            <div className="pure-u-1">
+                                {this.props.contactFormData.sub_info}
+                            </div>
                         </div>
+                        <br />
+
+                        {/* this.props.accordionView implies it is mobile viewport and show responsive contact form */}
+                        <React.Fragment>
+                            {this.props.accordionView ?
+                                <React.Fragment>
+
+                                    <ContactFormInputs formInputs={this.props.contactFormData.formInputs}
+                                        accordionView={this.props.accordionView}
+                                        contactFormToggle={() => this.props.contactFormToggle()}
+                                        toggleContactFormText={this.props.contactFormData.toggleContactFormText}
+                                        submitContactFormText={this.props.contactFormData.submitContactFormText} />
+
+                                </React.Fragment>
+                                :
+                                <React.Fragment>
+
+                                    <ContactFormInputs formInputs={this.props.contactFormData.formInputs}
+                                        accordionView={this.props.accordionView}
+                                        contactFormToggle={() => this.props.contactFormToggle()}
+                                        toggleContactFormText={this.props.contactFormData.toggleContactFormText}
+                                        submitContactFormText={this.props.contactFormData.submitContactFormText} />
+
+                                </React.Fragment>
+                            }
+                        </React.Fragment>
+
+                        <br />
                     </div>
-                    <br />
-
-                    {/* this.props.accordionView implies it is mobile viewport and show responsive contact form */}
-                    <React.Fragment>
-                    {this.props.accordionView ? 
-                        <React.Fragment>
-                            
-                            <div className="pure-g">
-                                <div className="pure-u-1 text-area-option">
-                                    <span className="form-label">{this.props.contactFormData.firstNameLabel}</span><br/>
-                                    <input className={this.props.accordionView ? "contact-attr contact-attr-wdt " : "contact-attr" } type="text" placeholder={this.props.contactFormData.firstNamePH}
-                                        id="contact-attr" name="contact-attr" />
-                                </div>
-                            </div>
-                                <br />
-                            <div className="pure-g">
-                                <div className="pure-u-1 text-area-option">
-                                    <span className="form-label">{this.props.contactFormData.lastNameLabel}</span><br/>
-                                    <input className={this.props.accordionView ? "contact-attr contact-attr-wdt " : "contact-attr" } type="text" placeholder={this.props.contactFormData.lastNamePH}
-                                    id="contact-attr" name="contact-attr" />
-                                </div>
-                            </div>
-                                <br />
-                            <div className="pure-g">
-                                <div className="pure-u-1 text-area-option">
-                                    <span className="form-label">{this.props.contactFormData.companyNameLabel}</span><br/>
-                                    <input className={this.props.accordionView ? "contact-attr contact-attr-wdt " : "contact-attr" } type="text" placeholder={this.props.contactFormData.companyNamePH}
-                                    id="contact-attr" name="contact-attr" />
-                                </div>  
-                            </div>
-                                <br />
-                            <div className="pure-g">
-                                <div className="pure-u-1 text-area-option">
-                                    <span className="form-label">{this.props.contactFormData.businessEmailLabel}</span><br/>
-                                    <input className={this.props.accordionView ? "contact-attr contact-attr-wdt " : "contact-attr" } type="email" placeholder={this.props.contactFormData.businessEmailPH}
-                                    id="contact-attr" name="contact-attr" required />
-                                </div>
-                            </div>
-                            <br />
-                            <div className="pure-g">
-                                <div className="pure-u-1 text-area-option">
-                                    <span className="form-label">{this.props.contactFormData.jobTitleLabel}</span><br/>
-                                    <input className={this.props.accordionView ? "contact-attr contact-attr-wdt " : "contact-attr" } type="text" placeholder={this.props.contactFormData.jobTitlePH}
-                                    id="contact-attr" name="contact-attr" />
-                                </div>
-                            </div>
-                            <br />
-                            <div className="pure-g">
-                                <div className="pure-u-1 text-area-option">
-                                    <span className="form-label">{this.props.contactFormData.industryLabel}</span><br/>
-                                    <input className={this.props.accordionView ? "contact-attr contact-attr-wdt " : "contact-attr" } type="text" placeholder="Enter Your Industry Type."
-                                    id="contact-attr" name="contact-attr" required />
-                                </div>
-                            </div>
-
-                            <div className="pure-g">
-                                <div className="pure-u-1 text-area-option">
-                                    <span className="form-label">{this.props.contactFormData.noOfEmployeesLabel}</span><br/>
-                                    <input className={this.props.accordionView ? "contact-attr contact-attr-wdt " : "contact-attr" } type="text" placeholder="Enter # of employees"
-                                    id="contact-attr" name="contact-attr" required />
-                                </div>
-                            </div>
-
-                            <div className="pure-g">
-
-                                <div className="pure-u-1 offer-options">
-                                    <span style={{color: 'red'}}>{this.props.contactFormData.optionsRequiredMsg}</span>
-                                        <br />
-                                    {offerOptions}
-                                </div>
-                            </div>
-
-                            <div className="pure-g">
-                                <div className="pure-u-1 text-area-option">
-                                <textarea className={this.props.accordionView ? "contact-attr-ta contact-attr-ta-wdt" : "contact-attr-ta" } rows="6" cols="50" placeholder={this.props.contactFormData.desc_place_holder}></textarea>
-                                </div>
-                            </div>
-
-                            <div className="pure-g">
-                                <div className="pure-u-1 accrd-actn-btn">
-                                    <button className="back-to-plans-btn-accrd" onClick={() => this.props.contactFormToggle()}>
-                                        <svg width="30px" height="30px" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M13 16l-6-6 6-6" fill="none" stroke="red" stroke-width="1.03"/>
-                                        </svg>
-                                        <a href="#" className="back-btn-action-link-lg-dtl">{this.props.contactFormData.toggleContactFormText}</a>
-                                    </button>
-                                </div>
-                            </div>
-
-                            <div className="pure-g">
-                                <div className="pure-u-1 accrd-actn-btn">
-                                    <input className="contact-us-btn" style={{ color: '#fff', fontSize: '18px', fontWeight: '700'}} type="submit" value="Submit" onClick={() => this.props.submitContactForm()}/>
-                                </div>
-                            </div>
-
-
-                        </React.Fragment>
-                        :
-                        <React.Fragment>
-                            <div className="pure-g">
-                                <div className="pure-u-1-2 text-area-option">
-                                    <span className="form-label">{this.props.contactFormData.firstNameLabel}</span><br/>
-                                    <input type="text"  placeholder={this.props.contactFormData.firstNamePH} className="contact-attr"
-                                    id="contact-attr" name="contact-attr" />
-                                </div>
-                                <br />
-                                <div className="pure-u-1-2 text-area-option">
-                                    <span className="form-label">{this.props.contactFormData.lastNameLabel}</span><br/>
-                                    <input type="text" placeholder={this.props.contactFormData.lastNamePH} className="contact-attr"
-                                    id="contact-attr" name="contact-attr" />
-                                </div>
-                                <br />
-                            </div>
-
-                            <div className="pure-g">
-                                <div className="pure-u-1-2 text-area-option">
-                                    <span className="form-label">{this.props.contactFormData.companyNameLabel}</span><br/>
-                                    <input type="text" placeholder={this.props.contactFormData.companyNamePH} className="contact-attr"
-                                    id="contact-attr" name="contact-attr" />
-                                </div>
-                                <br />
-                                <div className="pure-u-1-2 text-area-option">
-                                    <span className="form-label">{this.props.contactFormData.businessEmailLabel}</span><br/>
-                                    <input type="email" placeholder={this.props.contactFormData.businessEmailPH} className="contact-attr"
-                                    id="contact-attr" name="contact-attr" required />
-                                </div>
-                                <br />
-                            </div>
-
-                            <div className="pure-g">
-                                <div className="pure-u-1-2 text-area-option">
-                                    <span className="form-label">{this.props.contactFormData.jobTitleLabel}</span><br/>
-                                    <input type="text" placeholder={this.props.contactFormData.jobTitlePH} className="contact-attr"
-                                    id="contact-attr" name="contact-attr" />
-                                </div>
-                                <br />
-                                <div className="pure-u-1-2 text-area-option">
-                                    <span className="form-label">{this.props.contactFormData.industryLabel}</span><br/>
-                                    <input type="text" placeholder="enter your email." className="contact-attr"
-                                    id="contact-attr" name="contact-attr" />
-                                </div>
-                                <br />
-                            </div>
-
-                            <div className="pure-g">
-                                <div className="pure-u-1 text-area-option">
-                                    <span className="form-label">{this.props.contactFormData.noOfEmployeesLabel}</span><br/>
-                                    <input type="text" placeholder="enter your email."
-                                    className="contact-attr"
-                                    style={{float: 'left'}}
-                                    id="contact-attr" name="contact-attr"/>
-                                </div>
-                            </div>
-                            <br />
-                            <div className="pure-g">
-                                <div className="pure-u-1-2 offer-options">
-                                    <span style={{color: 'red'}}>{this.props.contactFormData.optionsRequiredMsg}</span>
-                                    <br />
-                                    {offerOptions}
-                                </div>
-                                <div className="pure-u-1-2 text-area-option">
-                                    <span className="form-label-desc">{this.props.contactFormData.featureDescriptionLabel}</span>
-                                    <textarea style={{border: '1px solid #ddd'}} rows="6" cols="50" placeholder={this.props.contactFormData.desc_place_holder}></textarea>
-                                    {/* contact-us-btn */}
-                                    {/* float: 'left' */}
-                                    {/* float: 'right', */}
-
-                                    {/* <button className="contact-us-btn" style={{float: 'left', marginLeft: '4%'}} onClick={() => this.props.contactFormToggle()}>
-                                        <div className="contact-action-label">{this.props.contactFormData.toggleContactFormText}</div>
-                                    </button> */}
-                                    <div>
-                                        <button className="back-to-plans-btn" style={{cursor: 'pointer'}} onClick={() => this.props.contactFormToggle()}>
-                                            <svg width="30px" height="30px" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M13 16l-6-6 6-6" fill="none" stroke="red" stroke-width="1.03"/>
-                                            </svg>
-                                            <a href="#" className="back-btn-action-link-lg-dtl">{this.props.contactFormData.toggleContactFormText}</a>
-                                        </button>
-
-                                        <input className="contact-us-btn" style={{ color: '#fff', fontSize: '18px', fontWeight: '700'}} type="submit" value="Submit" onClick={() => this.props.submitContactForm()}/>
-                                    </div>
-                                </div>
-                                <br />
-                            </div>
-                        </React.Fragment>
-                        }
-                    </React.Fragment>
-                    
-                    <br />
-                </div>
                 </form>
             </React.Fragment>
         )
     }
 }
 
+// simple plan tier
 class SimplePlanTier extends React.Component {
 
     constructor (props) {
@@ -296,6 +304,9 @@ class SimplePlanTier extends React.Component {
             selectedOption: true,
             radio_btn_monthly_opt: teirsData.radio_btn_monthly_opt,
             radio_btn_yearly_opt: teirsData.radio_btn_yearly_opt,
+            compareText: teirsData.compareText,
+            monthlyText: teirsData.monthlyText,
+            yearlyText: teirsData.yearlyText,
             showContactForm: false,
             contactFormData: contactForm
         };
@@ -310,74 +321,89 @@ class SimplePlanTier extends React.Component {
             rows.push(
                 <div key={tier.name} className="pure-u-1-2">
                     <div className="price-card">
-                        <div className="pricing-panel-wrapper" style={{border: '3px solid #ffb5b3'}}>
+                        <div className="pricing-panel-wrapper" style={{ border: '3px solid #ffb5b3' }}>
                             <div className="pricing-panel">
-                                { (tier.popular && tier.popular == "True") ?
-                                <div class="pricing-panel-ribbon">
-                                    <h5 class="featured-title">
-                                        {tier.popularInfoText}
-                                    </h5>
-                                </div> : 
-                                <div style={{marginTop: '10%'}}></div>}
-                                <div className={(tier.popular == "True") ? "pricing-panel-header popular-header" : "pricing-panel-header"}>
+                                {(tier.popular && tier.popular == "True") ?
+                                    <div class="pricing-panel-ribbon">
+                                        <h5 class="featured-title">
+                                            {tier.popularInfoText}
+                                        </h5>
+                                    </div> :
+                                    <div style={{ marginTop: '10%' }}></div>}
+                                {/* <div className={(tier.popular == "True") ? "pricing-panel-header popular-header" : "pricing-panel-header"}> */}
+                                <div className="pricing-panel-header">
                                     <h6 className="pricing-panel-tier" >{tier.name}</h6>
-                                    {(tier.showContact && tier.showContact == "True") ? 
-                                    <React.Fragment>
-                                        <button className="contact-us-btn" onClick={() => this.props.contactFormToggle()}>
-                                            <div className="contact-action-label">{tier.contactFormText}</div>
-                                        </button>
-                                    </React.Fragment>: 
-                                    <React.Fragment>
-                                        {this.props.showMonthlyPlan ?
-                                            <React.Fragment>
-                                                <h2 className="product-price product-price-lg">
-                                                    <span className="currency">{tier.pricing.monthly.currency}</span>
-                                                    <span className="price">{tier.pricing.monthly.price}</span>
-                                                    <span className="period">{tier.pricing.monthly.label}</span>
-                                                </h2>
-                                                <div className="pricing-panel-info">
-                                                    <div className="text-yearly-color">
-                                                        <p data-alt-text="$950 billed yearly<br />Save $238/year" className="year-pricing">
-                                                            {tier.pricing.yearly.currency}{tier.pricing.yearly.price}{tier.pricing.monthly.label} {this.state.tiers[0].monthlyText} <div className="yearly" onClick={() => this.props.yearlyToggle()}> {this.state.tiers[0].payText}</div>
-                                                        </p>
+                                    {(tier.showCallToAction && tier.showCallToAction == "True") ?
+                                        <React.Fragment>
+                                            {/* if  tier.call_to_action.type is CONTACT, add contactFormToggle func */}
+                                            {(tier.call_to_action.type == "contact") ?
+                                                // add contact page toggle if type is contact
+                                                <button className="contact-us-btn" onClick={() => this.props.contactFormToggle()}>
+                                                    {/* <div className="contact-action-label">{tier.contactFormText}</div> */}
+                                                    <span className="contact-action-label">{tier.call_to_action.text}</span>
+                                                </button>
+                                                :
+                                                <React.Fragment>
+                                                    {/* if tier.call_to_action.type is sign-up-free, call to action is of type link */}
+                                                {(tier.call_to_action.type == "link") ?
+                                                    <a href={tier.call_to_action.url} className="contact-us-btn">
+                                                        {/* <div className="contact-action-label">{tier.contactFormText}</div> */}
+                                                        <span className="contact-action-label">{tier.call_to_action.text}</span>
+                                                    </a> : '' }
+                                                </React.Fragment>
+                                            }
+                                        </React.Fragment> :
+                                        <React.Fragment>
+                                            {this.props.showMonthlyPlan ?
+                                                <React.Fragment>
+                                                    <h2 className="product-price product-price-lg">
+                                                        <span className="currency">{tier.pricing.monthly.currency}</span>
+                                                        <span className="price">{tier.pricing.monthly.price}</span>
+                                                        <span className="period">{tier.pricing.monthly.label}</span>
+                                                    </h2>
+                                                    <div className="pricing-panel-info">
+                                                        <div className="text-yearly-color">
+                                                            <p data-alt-text="$950 billed yearly<br />Save $238/year" className="year-pricing">
+                                                                {tier.pricing.yearly.currency}{tier.pricing.yearly.price}{tier.pricing.monthly.label} <div className="yearly" onClick={() => this.props.yearlyToggle()}> {this.state.monthlyText}</div>
+                                                            </p>
+                                                        </div>
                                                     </div>
-                                                </div>
-                                            </React.Fragment>
-                                            :
-                                            <React.Fragment>
-                                                <h2 className="product-price product-price-lg">
-                                                    <span className="currency">{tier.pricing.yearly.currency}</span>
-                                                    <span className="price">{tier.pricing.yearly.price}</span>
-                                                    <span className="period">{tier.pricing.monthly.label}</span>
-                                                </h2>
-                                                <div className="pricing-panel-info">
-                                                    <div className="text-yearly-color">
-                                                        <p data-alt-text="$950 billed yearly<br />Save $238/year" className="year-pricing">
-                                                            {tier.pricing.yearly.currency}{tier.pricing.yearly.perAnnum} {this.state.tiers[0].yearlyText1}<br /> {this.state.tiers[0].yearlyText2} {tier.pricing.yearly.currency}{tier.pricing.yearly.savedAmount}{tier.pricing.yearly.label}
-                                                        </p>
+                                                </React.Fragment>
+                                                :
+                                                <React.Fragment>
+                                                    <h2 className="product-price product-price-lg">
+                                                        <span className="currency">{tier.pricing.yearly.currency}</span>
+                                                        <span className="price">{tier.pricing.yearly.price}</span>
+                                                        <span className="period">{tier.pricing.monthly.label}</span>
+                                                    </h2>
+                                                    <div className="pricing-panel-info">
+                                                        <div className="text-yearly-color">
+                                                            <p data-alt-text="$950 billed yearly<br />Save $238/year" className="year-pricing">
+                                                                {tier.pricing.yearly.currency}{tier.pricing.yearly.perAnnum} {this.state.yearlyText} {tier.pricing.yearly.currency}{tier.pricing.yearly.savedAmount}{tier.pricing.yearly.label}
+                                                            </p>
+                                                        </div>
                                                     </div>
-                                                </div>
-                                            </React.Fragment>
-                                        }
-                                    </React.Fragment>
+                                                </React.Fragment>
+                                            }
+                                        </React.Fragment>
                                     }
                                     <p></p>
-                                    {(tier.showContact && tier.showContact == "True") ?
-                                        <p style={{marginTop: '29.5%'}}>{tier.description}</p>
+                                    {(tier.showCallToAction && tier.showCallToAction == "True") ?
+                                        <p style={{ marginTop: '29.5%' }}>{tier.description}</p>
                                         :
                                         <p>{tier.description}</p>
                                     }
                                     <p></p>
                                 </div>
                                 <div className="pricing-panel-footer">
-                                    {(tier.showContact && tier.showContact == "False") ?
+                                    {(tier.showCallToAction && tier.showCallToAction == "False") ?
                                         <div className="cta-wrapper">
-                                            <button className="sign-up-btn">
-                                                <a href={tier.call_to_action.url} className="action-link-lg">{tier.call_to_action.text}</a>
-                                            </button>
-                                        </div> : '' 
+                                            <a href={tier.call_to_action.url} className="sign-up-btn">
+                                                <div className="action-link-lg">{tier.call_to_action.text}</div>
+                                            </a>
+                                        </div> : <div style={{ marginTop: '60px' }}></div>
                                     }
-                                    <p className="compare-plans" style={{position: 'relative', bottom: '20px'}} onClick={() => this.props.onClick()}>{this.state.tiers[0].compareText}</p>
+                                    <p className="compare-plans" style={{ position: 'relative', bottom: '20px' }} onClick={() => this.props.onClick()}>{this.state.compareText}</p>
                                 </div>
                             </div>
                         </div>
@@ -387,26 +413,14 @@ class SimplePlanTier extends React.Component {
 
         });
 
-        // let offerOptions= [];
-
-        // this.state.contactFormData.offer_options.forEach((item) => {
-
-        //     offerOptions.push(
-        //         <React.Fragment>
-        //             <input type="checkbox" name={item} value={item} />{item}<br />
-        //         </React.Fragment>
-        //     )
-        // })
-    
-
         return (
             <React.Fragment>
-                { this.props.showContactForm ? 
-                    <div className="contact-form-container">
-                        <ContactForm contactFormData={this.state.contactFormData} contactFormToggle={() => this.props.contactFormToggle()} 
-                                     showContactForm={this.props.showContactForm} submitContactForm={() => this.props.submitContactForm()}/>
+                {this.props.showContactForm ?
+                    <div className="contact-form-container-smpl">
+                        <ContactForm contactFormData={this.state.contactFormData} contactFormToggle={() => this.props.contactFormToggle()}
+                            showContactForm={this.props.showContactForm} submitContactForm={() => this.props.submitContactForm()} />
                     </div>
-                     : 
+                    :
                     <React.Fragment>
                         <div style={{ maxWidth: '80%' }}>
                             <div className="pure-g">
@@ -415,11 +429,218 @@ class SimplePlanTier extends React.Component {
                         </div>
                     </React.Fragment>
                 }
-            </React.Fragment>   
+            </React.Fragment>
         );
     }
 };
 
+class DetailedPlanTier extends React.Component {
+
+    constructor (props) {
+        super(props);
+    }
+
+    render() {
+
+        let detailRows = [];
+
+        let categoryFeatures = [];
+
+        let tierActions = [];
+
+        this.props.tiers.forEach((tier) => {
+
+            detailRows.push(
+                <div key={tier.name} className="pure-u-1-4 category-feature-head">
+                    <h4 className="pricing-name">{tier.name}</h4>
+                    {(tier.showCallToAction && tier.showCallToAction == "True") ?
+                        <React.Fragment>
+                        {/* if  tier.call_to_action.type is CONTACT, add contactFormToggle func */}
+                        {(tier.call_to_action.type == "contact") ?
+                            // add contact page toggle if type is contact
+                            <button className="contact-us-btn-dtl" onClick={() => this.props.contactFormToggle()}>
+                                {/* <div className="contact-action-label">{tier.contactFormText}</div> */}
+                                <span className="contact-action-label">{tier.call_to_action.text}</span>
+                            </button>
+                            :
+                            <React.Fragment>
+                                {/* if tier.call_to_action.type is sign-up-free, call to action is of type link */}
+                            {(tier.call_to_action.type == "link") ?
+                                <a href={tier.call_to_action.url} className="contact-us-btn-dtl">
+                                    {/* <div className="contact-action-label">{tier.contactFormText}</div> */}
+                                    <span className="contact-action-label">{tier.call_to_action.text}</span>
+                                </a> : '' }
+                            </React.Fragment>
+                        }
+                    </React.Fragment> :
+                        <React.Fragment>
+                            {this.props.showMonthlyPlan ?
+                                <React.Fragment>
+                                    <h2 className="product-price product-price-md">
+                                        <span className="currency">{tier.pricing.monthly.currency}</span>
+                                        <span className="price">{tier.pricing.monthly.price}</span>
+                                        <span className="period">{tier.pricing.monthly.label}</span>
+                                    </h2>
+                                    {/* <div className="pricing-panel-info">
+                                        <div className="text-yearly-color">
+                                            <p data-alt-text="$950 billed yearly<br />Save $238/year" className="year-pricing">
+                                                {tier.pricing.yearly.currency}{tier.pricing.yearly.price}{tier.pricing.monthly.label} {this.state.tiers[0].monthlyText} <div className="yearly" onClick={() => this.yearlyToggle()}> {this.state.tiers[0].payText}</div>
+                                            </p>
+                                        </div>
+                                    </div> */}
+                                </React.Fragment>
+                                :
+                                <React.Fragment>
+                                    <h2 className="product-price product-price-md">
+                                        <span className="currency">{tier.pricing.yearly.currency}</span>
+                                        <span className="price">{tier.pricing.yearly.price}</span>
+                                        <span className="period">{tier.pricing.monthly.label}</span>
+                                    </h2>
+                                    {/* <div className="pricing-panel-info">
+                                        <div className="text-yearly-color">
+                                            <p data-alt-text="$950 billed yearly<br />Save $238/year" className="year-pricing">
+                                                {tier.pricing.yearly.currency}{tier.pricing.yearly.perAnnum} {this.state.tiers[0].yearlyText1}<br /> {this.state.tiers[0].yearlyText2} {tier.pricing.yearly.currency}{tier.pricing.yearly.savedAmount}{tier.pricing.yearly.label}
+                                            </p>
+                                        </div>
+                                    </div> */}
+                                </React.Fragment>
+                            }
+                        </React.Fragment>
+                    }
+                    {/* <h2 className="product-price product-price-md">
+                        <span className="currency">{tier.pricing.monthly.currency}</span>
+                        <span className="price">{tier.pricing.monthly.price}</span>
+                        <span className="period">{tier.pricing.monthly.label}</span>
+                    </h2> */}
+                </div>
+            )
+        });
+
+        this.props.categories.forEach((category, i) => {
+            category.features.forEach((item, j) => {
+
+                categoryFeatures.push(
+
+                    <React.Fragment>
+
+                        {/* {i != 0 && j == 0 ? */}
+                        {j == 0 ?
+                            <React.Fragment>
+
+                                <h4>{category.name}</h4>
+
+                            </React.Fragment>
+                            : ''}
+                        <div className="pure-g" key={item.name}>
+                            <div className="pure-u-1-4 card category-feature-name" style={{ textAlign: 'center' }}>
+
+                                <div className="category-name">{item.name}&nbsp;
+                                    <Tooltip message={item.info} position={'top'}>
+                                        <span>
+                                            <svg width="20px" height="20px" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+
+                                                <path d="M12.13 11.59c-.16 1.25-1.78 2.53-3.03 2.57-2.93.04.79-4.7-.36-5.79.56-.21 1.88-.54 1.88.44 0 .82-.5 1.74-.74 2.51-1.22 3.84 2.25-.17 2.26-.14.02.03.02.17-.01.41-.05.36.03-.24 0 0zm-.57-5.92c0 1-2.2 1.48-2.2.36 0-1.03 2.2-1.49 2.2-.36z" />
+                                                <circle cx="10" cy="10" r="9" fill="none" stroke="currentColor" stroke-width="1.1" />
+                                            </svg>
+                                        </span>
+                                    </Tooltip>
+                                </div>
+                            </div>
+                            {/* <div className="pure-u-1-4 card category-feature">
+                                <div>{item.values[val1]}</div>
+                            </div>
+                            <div className="pure-u-1-4 card category-feature">
+                                <div>{item.values[val2]}</div>
+                            </div>
+                            <div className="pure-u-1-4 card category-feature">
+                                <div>{item.values[val3]}</div>
+                            </div> */}
+
+                            {/* send tiers, item props and get each tier feature details */}
+                            <DetailCategoryFeatures tiers={this.props.tiers} item={item} />
+
+                        </div>
+                    </React.Fragment>
+                )
+            })
+        })
+
+        if (this.props && this.props.tierActions) {
+            this.props.tierActions.forEach((tierAction) => {
+
+                tierActions.push(
+                    // <div key={tierAction.label.name} className="pure-u-1-4 card category-feature" style={{ textAlign: 'center' }}>
+                    //     <button className="sign-up-btn" style={{ width: '100%', fontSize: '12px !important' }}>
+                    //         <a href={tierAction.label.url} className="action-link-lg-dtl" style={{fontSize: '12px !important'}}>{tierAction.label.text}</a>
+                    //     </button>
+                    // </div>
+                    <a href={tierAction.label.url} className="pure-u-1-4 card-actn category-feature-actn">
+                        <div className="tier-actn">
+                            {tierAction.label.text}
+                        </div>
+                    </a>
+                )
+            });
+        }
+
+        return (
+            <React.Fragment>
+                {this.props.showContactForm ?
+
+                    <React.Fragment>
+                        <div className="contact-form-container-smpl contact-form-container-dtl">
+                            <ContactForm contactFormData={this.props.contactFormData}
+                                contactFormToggle={() => this.props.contactFormToggle()}
+                                submitContactForm={() => this.props.submitContactForm()} />
+                        </div>
+                    </React.Fragment> :
+                    <React.Fragment>
+                        <div className="detail-plan-container">
+
+                            <div className="pure-g" style={{ marginBottom: '-60px' }}>
+
+                                <div class="pure-u-1-4">&nbsp;</div>
+
+                                {detailRows}
+
+                            </div>
+
+                            {categoryFeatures}
+
+                            <br />
+                            <div className="pure-g">
+
+                                <div class="pure-u-1-4 card-actn category-feature-actn" style={{ textAlign: 'center' }}>
+                                    {/* <button className="back-to-plans-btn" onClick={() => this.handleClick()}>
+                    <svg width="30px" height="30px" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M13 16l-6-6 6-6" fill="none" stroke="red" stroke-width="1.03"/>
+                    </svg>
+                    <a href="#" className="back-btn-action-link-lg-dtl">{this.state.tiers[0].toggleText}</a>
+                    </button> */}
+                                    <button className="tier-actn-bck" onClick={() => this.props.handleClick()}>
+                                        <span className="tier-actn-link">
+                                            <svg width="30px" height="30px" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M13 16l-6-6 6-6" fill="none" stroke="red" stroke-width="1.03" />
+                                            </svg>
+                                            {this.props.toggleText}
+                                        </span>
+                                    </button>
+                                </div>
+                                {tierActions}
+
+                            </div>
+
+                            <br />
+
+                        </div>
+                    </React.Fragment>
+                }
+            </React.Fragment>
+        )
+    }
+}
+
+// used in accordion description for category
 class CategoryFeatures extends React.Component {
     render() {
 
@@ -499,65 +720,79 @@ class PlansAccordion extends React.Component {
             plansAccordion.push(
                 <AccordionItem key={tier.name}>
                     {/* {this.props.showMonthlyPlan ? */}
-                        <React.Fragment>
-                            <AccordionItemHeading>
-                                <AccordionItemButton>
-                                    {/* get this data from tiers uusing index reference whilst iterating over plans_and_features */}
-                                            <span className="plan-name">{tier.name}</span>
-                                            
-                                            <h2 className="product-price product-price-sm">
-                                            
+                    <React.Fragment>
+                        <AccordionItemHeading>
+                            <AccordionItemButton>
+                                {/* get this data from tiers uusing index reference whilst iterating over plans_and_features */}
+                                <span className="plan-name">{tier.name}</span>
+
+                                <h2 className="product-price product-price-sm">
+
+                                    <React.Fragment>
+                                        {(tier.showCallToAction && tier.showCallToAction == "True") ?
                                             <React.Fragment>
-                                                {(tier.showContact && tier.showContact == "True") ? 
-                                                    <React.Fragment>
-                                                        {/* <button className="contact-us-btn-xs" onClick={() => this.props.contactFormToggle()}>
+                                                {/* <button className="contact-us-btn-xs" onClick={() => this.props.contactFormToggle()}>
                                                             <div className="contact-action-label">{tier.contactFormText}</div>
                                                         </button> */}
-                                                    </React.Fragment>: 
+                                            </React.Fragment> :
+                                            <React.Fragment>
+                                                {this.props.showMonthlyPlan ?
                                                     <React.Fragment>
-                                                        {this.props.showMonthlyPlan ?
-                                                        <React.Fragment>
-                                                            <span className="currency" data-alt-text="$">{tier.pricing.monthly.currency}</span>
-                                                            <span className="price" data-alt-text="79">{tier.pricing.monthly.price}</span>
-                                                            <span className="period">{tier.pricing.monthly.label}</span>
-                                                        </React.Fragment>: 
-                                                        <React.Fragment>
-                                                            <span className="currency" data-alt-text="$">{tier.pricing.yearly.currency}</span>
-                                                            <span className="price" data-alt-text="79">{tier.pricing.yearly.price}</span>
-                                                            <span className="period">{tier.pricing.monthly.label}</span>
-                                                        </React.Fragment>
-                                                        }
+                                                        <span className="currency" data-alt-text="$">{tier.pricing.monthly.currency}</span>
+                                                        <span className="price" data-alt-text="79">{tier.pricing.monthly.price}</span>
+                                                        <span className="period">{tier.pricing.monthly.label}</span>
+                                                    </React.Fragment> :
+                                                    <React.Fragment>
+                                                        <span className="currency" data-alt-text="$">{tier.pricing.yearly.currency}</span>
+                                                        <span className="price" data-alt-text="79">{tier.pricing.yearly.price}</span>
+                                                        <span className="period">{tier.pricing.monthly.label}</span>
                                                     </React.Fragment>
-                                            }
+                                                }
                                             </React.Fragment>
-                                            </h2>
-                                </AccordionItemButton>
-                            </AccordionItemHeading>
-                            <AccordionItemPanel style={{ background: '#fff', textAlign: 'center' }}>
-                                {(tier.showContact && tier.showContact == "True") ? 
-                                        <React.Fragment>
-                                            <button className="contact-us-btn-xs" onClick={() => this.props.contactFormToggle()}>
-                                                <div className="contact-action-label">{tier.contactFormText}</div>
-                                            </button>
-                                        </React.Fragment>: 
-                                    <React.Fragment>
-                                        {/* get this from tiers as well */}
-                                        {this.props.showMonthlyPlan ?
-                                            <p className="text-light-gray">{tier.pricing.monthly.currency}{tier.pricing.yearly.price} {this.props.tiers[0].monthlyText} <div className="yearly" onClick={() => this.props.yearlyToggle()}> {this.props.tiers[0].payText}</div></p> 
-                                            :
-                                            <p className="text-light-gray">{tier.pricing.monthly.currency}{tier.pricing.yearly.perAnnum} {this.props.tiers[0].yearlyText1}<br /> {this.props.tiers[0].yearlyText2} {tier.pricing.monthly.currency}{tier.pricing.yearly.savedAmount}{tier.pricing.yearly.label}</p>
                                         }
-                                        <p>{tier.description}</p>
-                                        <button className="sign-up-btn-xs">
-                                            <a href={tier.call_to_action.url} className="action-link">{tier.call_to_action.text}</a>
-                                        </button>
                                     </React.Fragment>
-                                }
-                                {/* get this from plans_and_features.js */}
-                                <CategoryFeatures categories={this.props.accordionPlans.categories} plan_name={tier.name} />
-                            </AccordionItemPanel>
-                        </React.Fragment>
-                        {/* :
+                                </h2>
+                            </AccordionItemButton>
+                        </AccordionItemHeading>
+                        <AccordionItemPanel style={{ background: '#fff', textAlign: 'center' }}>
+                        {(tier.showCallToAction && tier.showCallToAction == "True") ?
+                                <React.Fragment>
+                                    {/* if  tier.call_to_action.type is CONTACT, add contactFormToggle func */}
+                                    {(tier.call_to_action.type == "contact") ?
+                                        // add contact page toggle if type is contact
+                                        <button className="contact-us-btn" onClick={() => this.props.contactFormToggle()}>
+                                            {/* <div className="contact-action-label">{tier.contactFormText}</div> */}
+                                            <span className="contact-action-label">{tier.call_to_action.text}</span>
+                                        </button>
+                                        :
+                                        <React.Fragment>
+                                            {/* if tier.call_to_action.type is sign-up-free, call to action is of type link */}
+                                        {(tier.call_to_action.type == "link") ?
+                                            <a href={tier.call_to_action.url} className="contact-us-btn">
+                                                {/* <div className="contact-action-label">{tier.contactFormText}</div> */}
+                                                <span className="contact-action-label">{tier.call_to_action.text}</span>
+                                            </a> : '' }
+                                        </React.Fragment>
+                                    }
+                                </React.Fragment> :
+                                <React.Fragment>
+                                    {/* get this from tiers as well */}
+                                    {this.props.showMonthlyPlan ?
+                                        <p className="text-light-gray">{tier.pricing.monthly.currency}{tier.pricing.yearly.price} {this.props.tiers.monthlyText} <div className="yearly" onClick={() => this.props.yearlyToggle()}> {this.props.tiers.payText}</div></p>
+                                        :
+                                        <p className="text-light-gray">{tier.pricing.monthly.currency}{tier.pricing.yearly.perAnnum} {this.props.tiers.yearlyText1}<br /> {this.props.tiers.yearlyText2} {tier.pricing.monthly.currency}{tier.pricing.yearly.savedAmount}{tier.pricing.yearly.label}</p>
+                                    }
+                                    <p>{tier.description}</p>
+                                    <a href={tier.call_to_action.url} className="sign-up-btn-xs">
+                                        <span className="action-link">{tier.call_to_action.text}</span>
+                                    </a>
+                                </React.Fragment>
+                            }
+                            {/* get this from plans_and_features.js */}
+                            <CategoryFeatures categories={this.props.accordionPlans.categories} plan_name={tier.name} />
+                        </AccordionItemPanel>
+                    </React.Fragment>
+                    {/* :
                         <React.Fragment>
                         //     <AccordionItemHeading>
                         //         <AccordionItemButton>
@@ -579,7 +814,7 @@ class PlansAccordion extends React.Component {
                         //         <CategoryFeatures categories={this.props.accordionPlans.categories} plan_name={tier.name} />
                         //     </AccordionItemPanel>
                         // </React.Fragment>  */}
-                    
+
                     <br />
                 </AccordionItem>
             );
@@ -587,15 +822,15 @@ class PlansAccordion extends React.Component {
 
         return (
             <React.Fragment>
-                { this.props.showContactForm ? 
+                {this.props.showContactForm ?
                     // <div className="contact-form-container">
-                        <ContactForm contactFormData={this.state.contactFormData} contactFormToggle={() => this.props.contactFormToggle()} 
-                        submitContactForm={() => this.props.submitContactForm()} accordionView={true}/>
+                    <ContactForm contactFormData={this.state.contactFormData} contactFormToggle={() => this.props.contactFormToggle()}
+                        submitContactForm={() => this.props.submitContactForm()} accordionView={true} />
                     // {/* </div> */}
-                     : 
-                <Accordion allowZeroExpanded={true}>
-                    {plansAccordion}
-                </Accordion>
+                    :
+                    <Accordion allowZeroExpanded={true}>
+                        {plansAccordion}
+                    </Accordion>
                 }
             </React.Fragment>
         );
@@ -610,11 +845,13 @@ class PricingPage extends React.Component {
         this.state = {
             showDetailedPlanOveriew: false,
             tiers: teirsData.tiers,
+            tierActions: teirsData.tierActions,
             categories: plansAndFeaturesData.categories,
             tooltipOpen: false,
             selectedOption: true,
             radio_btn_monthly_opt: teirsData.radio_btn_monthly_opt,
             radio_btn_yearly_opt: teirsData.radio_btn_yearly_opt,
+            toggleText: teirsData.toggleText,
             showMonthlyPlan: true,
             showContactForm: false,
             contactFormData: contactForm,
@@ -711,13 +948,6 @@ class PricingPage extends React.Component {
     //         )
     // }
 
-    // get pricing page details from a remote page
-    componentDidMount() {
-
-        this.setState({
-            tierActions: plansAndFeaturesData.tierActions
-        });
-    }
 
     render() {
 
@@ -732,12 +962,12 @@ class PricingPage extends React.Component {
             detailRows.push(
                 <div key={tier.name} className="pure-u-1-4 category-feature-head">
                     <h4 className="pricing-name">{tier.name}</h4>
-                    {(tier.showContact && tier.showContact == "True") ? 
+                    {(tier.showCallToAction && tier.showCallToAction == "True") ?
                         <React.Fragment>
                             <button className="contact-us-btn-dtl" onClick={() => this.contactFormToggle()}>
                                 <div className="contact-action-label">{tier.contactFormText}</div>
                             </button>
-                        </React.Fragment>: 
+                        </React.Fragment> :
                         <React.Fragment>
                             {this.state.showMonthlyPlan ?
                                 <React.Fragment>
@@ -781,14 +1011,6 @@ class PricingPage extends React.Component {
             )
         });
 
-        let val1 = this.state.tiers[0].name;
-
-        let val2 = this.state.tiers[1].name;
-
-        let val3 = this.state.tiers[2].name;
-
-        console.log("val3", val3);
-
         this.state.categories.forEach((category, i) => {
             category.features.forEach((item, j) => {
 
@@ -819,7 +1041,7 @@ class PricingPage extends React.Component {
                                     </Tooltip>
                                 </div>
                             </div>
-                            <div className="pure-u-1-4 card category-feature">
+                            {/* <div className="pure-u-1-4 card category-feature">
                                 <div>{item.values[val1]}</div>
                             </div>
                             <div className="pure-u-1-4 card category-feature">
@@ -827,7 +1049,10 @@ class PricingPage extends React.Component {
                             </div>
                             <div className="pure-u-1-4 card category-feature">
                                 <div>{item.values[val3]}</div>
-                            </div>
+                            </div> */}
+
+                            {/* send tiers, item props and get each tier feature details */}
+                            <DetailCategoryFeatures tiers={this.state.tiers} item={item} />
 
                         </div>
                     </React.Fragment>
@@ -839,44 +1064,36 @@ class PricingPage extends React.Component {
             this.state.tierActions.forEach((tierAction) => {
 
                 tierActions.push(
-                    <div key={tierAction.label.name} className="pure-u-1-4" style={{ textAlign: 'center' }}>
-                        <button className="sign-up-btn" style={{ width: '100%', fontSize: '12px !important' }}>
-                            <a href={tierAction.label.url} className="action-link-lg-dtl" style={{fontSize: '12px !important'}}>{tierAction.label.text}</a>
-                        </button>
+                    // <div key={tierAction.label.name} className="pure-u-1-4 card category-feature" style={{ textAlign: 'center' }}>
+                    //     <button className="sign-up-btn" style={{ width: '100%', fontSize: '12px !important' }}>
+                    //         <a href={tierAction.label.url} className="action-link-lg-dtl" style={{fontSize: '12px !important'}}>{tierAction.label.text}</a>
+                    //     </button>
+                    // </div>
+                    <div className="pure-u-1-4 card-actn category-feature-actn">
+                        <button className="tier-actn"><a href={tierAction.label.url} className="tier-actn-link">{tierAction.label.text}</a></button>
                     </div>
                 )
             });
         }
 
-        let offerOptions= [];
-
-        this.state.contactFormData.offer_options.forEach((item) => {
-
-            offerOptions.push(
-                <React.Fragment>
-                    <input type="checkbox" name={item} value={item} />{item}<br />
-                </React.Fragment>
-            )
-        })
-
         return (
             <div className="simple-detail-plan-tier-sm-md-lg">
 
-            { !this.state.showContactForm ? 
-                <div className="pure-g">
-                    <div className="pure-u-1-2 input-radio-plan input-radio-plan-monthly">
-                        <input type="radio"
-                            value={true}
-                            checked={this.state.selectedOption == true}
-                            onChange={($event) => this.radioChange($event)} />&nbsp;<span>{this.state.radio_btn_monthly_opt}</span>
-                    </div>
-                    <div className="pure-u-1-2 input-radio-plan input-radio-plan-yearly">
-                        <input type="radio"
-                            value={false}
-                            checked={this.state.selectedOption == false}
-                            onChange={($event) => this.radioChange($event)}/>&nbsp;<span style={{marginLeft: '5px'}}>{this.state.radio_btn_yearly_opt}</span>
-                    </div>
-                </div>  : '' }
+                {!this.state.showContactForm ?
+                    <div className="pure-g">
+                        <div className="pure-u-1-2 input-radio-plan input-radio-plan-monthly">
+                            <input type="radio"
+                                value={true}
+                                checked={this.state.selectedOption == true}
+                                onChange={($event) => this.radioChange($event)} />&nbsp;<span>{this.state.radio_btn_monthly_opt}</span>
+                        </div>
+                        <div className="pure-u-1-2 input-radio-plan input-radio-plan-yearly">
+                            <input type="radio"
+                                value={false}
+                                checked={this.state.selectedOption == false}
+                                onChange={($event) => this.radioChange($event)} />&nbsp;<span style={{ marginLeft: '5px' }}>{this.state.radio_btn_yearly_opt}</span>
+                        </div>
+                    </div> : ''}
                 <br />
 
                 {!this.state.showDetailedPlanOveriew
@@ -884,7 +1101,7 @@ class PricingPage extends React.Component {
                     <React.Fragment>
 
                         <div className="accrd-view">
-                            <PlansAccordion className="accordion-plan-tier" accordionPlans={this.state.accordionPlans} 
+                            <PlansAccordion className="accordion-plan-tier" accordionPlans={this.state.accordionPlans}
                                 showMonthlyPlan={this.state.showMonthlyPlan}
                                 tiers={this.state.tiers}
                                 yearlyToggle={() => this.yearlyToggle()}
@@ -896,12 +1113,13 @@ class PricingPage extends React.Component {
 
                         <div className="simple-plan-container">
 
-                                <SimplePlanTier onClick={() => this.handleClick()}
-                                    className="plan-tier" showMonthlyPlan={this.state.showMonthlyPlan} 
-                                    yearlyToggle={() => this.yearlyToggle()} 
-                                    contactFormToggle={() => this.contactFormToggle()} 
-                                    showContactForm={this.state.showContactForm}
-                                    submitContactForm={() => this.submitContactForm()}/>
+                            <SimplePlanTier onClick={() => this.handleClick()}
+                                className="plan-tier" 
+                                showMonthlyPlan={this.state.showMonthlyPlan}
+                                yearlyToggle={() => this.yearlyToggle()}
+                                contactFormToggle={() => this.contactFormToggle()}
+                                showContactForm={this.state.showContactForm}
+                                submitContactForm={() => this.submitContactForm()} />
                         </div>
 
                     </React.Fragment>
@@ -909,7 +1127,7 @@ class PricingPage extends React.Component {
                     <React.Fragment>
 
                         <div className="accrd-view">
-                            <PlansAccordion className="accordion-plan-tier" accordionPlans={this.state.accordionPlans} 
+                            <PlansAccordion className="accordion-plan-tier" accordionPlans={this.state.accordionPlans}
                                 showMonthlyPlan={this.state.showMonthlyPlan}
                                 tiers={this.state.tiers}
                                 yearlyToggle={() => this.yearlyToggle()}
@@ -918,50 +1136,70 @@ class PricingPage extends React.Component {
                                 submitContactForm={() => this.submitContactForm()}
                             />
                         </div>
-                        <React.Fragment>
-                        { this.state.showContactForm ? 
+                        {/* <React.Fragment>
+                            {this.state.showContactForm ?
 
-                            <React.Fragment>
-                                <div className="contact-form-container">
-                                    <ContactForm contactFormData={this.state.contactFormData} 
-                                        contactFormToggle={() => this.contactFormToggle()}
-                                        submitContactForm={() => this.submitContactForm()}/>
-                                </div>
-                            </React.Fragment> :
-                            <React.Fragment>
-                            <div className="detail-plan-container">
+                                <React.Fragment>
+                                    <div className="detail-plan-container contact-form-container-dtl">
+                                        <ContactForm contactFormData={this.state.contactFormData}
+                                            contactFormToggle={() => this.contactFormToggle()}
+                                            submitContactForm={() => this.submitContactForm()} />
+                                    </div>
+                                </React.Fragment> :
+                                <React.Fragment>
+                                    <div className="detail-plan-container">
 
-                                <div className="pure-g" style={{ marginBottom: '-60px' }}>
+                                        <div className="pure-g" style={{ marginBottom: '-60px' }}>
 
-                                    <div class="pure-u-1-4">&nbsp;</div>
+                                            <div class="pure-u-1-4">&nbsp;</div>
 
-                                    {detailRows}
+                                            {detailRows}
 
-                                </div>
+                                        </div>
 
-                                {categoryFeatures}
+                                        {categoryFeatures}
 
-                                <br />
-                                <div className="pure-g">
+                                        <br />
+                                        <div className="pure-g">
 
-                                    <div class="pure-u-1-4" style={{ textAlign: 'center' }}>
-                                        <button className="back-to-plans-btn" onClick={() => this.handleClick()}>
+                                            <div class="pure-u-1-4 card-actn category-feature-actn" style={{ textAlign: 'center' }}>
+                                                {/* <button className="back-to-plans-btn" onClick={() => this.handleClick()}>
                                         <svg width="30px" height="30px" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M13 16l-6-6 6-6" fill="none" stroke="red" stroke-width="1.03"/>
                                         </svg>
                                         <a href="#" className="back-btn-action-link-lg-dtl">{this.state.tiers[0].toggleText}</a>
-                                        </button>
+                                        </button> */}
+                                                {/* <button className="tier-actn-bck" onClick={() => this.handleClick()}>
+                                                    <svg width="30px" height="30px" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M13 16l-6-6 6-6" fill="none" stroke="red" stroke-width="1.03" />
+                                                    </svg>
+                                                    <a href="#" className="tier-actn-link">{this.state.toggleText}</a></button>
+                                            </div>
+                                            {tierActions}
+
+                                        </div>
+
+                                        <br />
+
                                     </div>
-                                    {tierActions}
+                                </React.Fragment>
+                            }
+                        </React.Fragment>  */}
+                         <div className="simple-plan-container">
+                            <DetailedPlanTier 
+                                showMonthlyPlan={this.state.showMonthlyPlan}
+                                showContactForm={this.state.showContactForm}
+                                toggleText={this.state.toggleText}
+                                tiers={this.state.tiers}
+                                categories={this.state.categories}
+                                tierActions={this.state.tierActions}
+                                yearlyToggle={() => this.yearlyToggle()}
+                                contactFormToggle={() => this.contactFormToggle()}
+                                submitContactForm={() => this.submitContactForm()} 
+                                handleClick={() => this.handleClick()}
+                                contactFormData={this.state.contactFormData} />
+                        </div>
 
-                                </div>
-
-                                <br />
-
-                            </div>
-                            </React.Fragment>
-                        }
-                            </React.Fragment>
                     </React.Fragment>
                 }
             </div>
