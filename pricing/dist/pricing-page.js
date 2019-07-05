@@ -48,17 +48,33 @@ var OfferOptions = function (_React$Component) {
                 offerOptions.push(React.createElement(
                     React.Fragment,
                     null,
-                    option.required ? React.createElement('input', { type: option.type, style: { marginRight: '10px' }, name: option.value, value: option.value, onChange: function onChange() {
-                            return _this2.props.handleInputChange(_this2.props.item, event);
-                        }, required: true }) : React.createElement('input', { type: option.type, style: { marginRight: '10px' }, name: option.value, value: option.value, onChange: function onChange() {
-                            return _this2.props.handleInputChange(_this2.props.item, event);
-                        } }),
-                    React.createElement(
-                        'span',
+                    _this2.props.requiredFields.indexOf(option.alias) != -1 ? React.createElement(
+                        React.Fragment,
                         null,
-                        option.value
-                    ),
-                    React.createElement('br', null)
+                        React.createElement('input', { type: option.type, style: { marginRight: '10px' }, name: option.value, value: option.value, onChange: function onChange() {
+                                return _this2.props.handleInputChange(_this2.props.item, event);
+                            }, required: true }),
+                        ' ',
+                        React.createElement(
+                            'span',
+                            null,
+                            option.value,
+                            '*'
+                        ),
+                        React.createElement('br', null)
+                    ) : React.createElement(
+                        React.Fragment,
+                        null,
+                        React.createElement('input', { type: option.type, style: { marginRight: '10px' }, name: option.value, value: option.value, onChange: function onChange() {
+                                return _this2.props.handleInputChange(_this2.props.item, event);
+                            } }),
+                        React.createElement(
+                            'span',
+                            null,
+                            option.value
+                        ),
+                        React.createElement('br', null)
+                    )
                 ));
             });
 
@@ -93,30 +109,51 @@ var SelectTag = function (_React$Component2) {
             return React.createElement(
                 React.Fragment,
                 null,
-                this.props.item.required ? React.createElement(
-                    'select',
-                    { className: this.props.accordionView ? "contact-attr contact-attr-wdt " : "contact-attr", onChange: function onChange() {
-                            return _this4.props.handleInputChange(_this4.props.item, event);
-                        }, required: true },
-                    this.props.item.options.map(function (opt) {
-                        return React.createElement(
-                            'option',
-                            null,
-                            opt
-                        );
-                    })
+                this.props.requiredFields.indexOf(this.props.item.alias) != -1 ? React.createElement(
+                    React.Fragment,
+                    null,
+                    React.createElement(
+                        'span',
+                        { className: 'form-label' },
+                        this.props.item.label,
+                        '*'
+                    ),
+                    React.createElement('br', null),
+                    React.createElement(
+                        'select',
+                        { className: this.props.accordionView ? "contact-attr contact-attr-wdt " : "contact-attr", onChange: function onChange() {
+                                return _this4.props.handleInputChange(_this4.props.item, event);
+                            }, required: true },
+                        this.props.item.options.map(function (opt) {
+                            return React.createElement(
+                                'option',
+                                null,
+                                opt
+                            );
+                        })
+                    )
                 ) : React.createElement(
-                    'select',
-                    { className: this.props.accordionView ? "contact-attr contact-attr-wdt " : "contact-attr", onChange: function onChange() {
-                            return _this4.props.handleInputChange(_this4.props.item, event);
-                        } },
-                    this.props.item.options.map(function (opt) {
-                        return React.createElement(
-                            'option',
-                            null,
-                            opt
-                        );
-                    })
+                    React.Fragment,
+                    null,
+                    React.createElement(
+                        'span',
+                        { className: 'form-label' },
+                        this.props.item.label
+                    ),
+                    React.createElement('br', null),
+                    React.createElement(
+                        'select',
+                        { className: this.props.accordionView ? "contact-attr contact-attr-wdt " : "contact-attr", onChange: function onChange() {
+                                return _this4.props.handleInputChange(_this4.props.item, event);
+                            } },
+                        this.props.item.options.map(function (opt) {
+                            return React.createElement(
+                                'option',
+                                null,
+                                opt
+                            );
+                        })
+                    )
                 )
             );
         }
@@ -147,6 +184,8 @@ var ContactFormInputs = function (_React$Component3) {
     _createClass(ContactFormInputs, [{
         key: 'handleInputChange',
         value: function handleInputChange(item, event) {
+            var _this6 = this;
+
             console.log("selected item", item, "value in handleInputChange", event.target.value);
 
             // if offer_options are selected, multiple checked fields are pushed and set into state
@@ -177,6 +216,23 @@ var ContactFormInputs = function (_React$Component3) {
                     console.log("state in handleInputChange callback", this.state);
                 });
             }
+
+            // check if all the required fields are entered and enable submit  button
+            this.state.requiredFields.forEach(function (item) {
+
+                console.log("checking if value exists to remove disable option on button", _this6.state[item]);
+
+                // if value exists, set disabled state to false, else true 
+                // offer_options is an array
+                if (_this6.state[item] != "" && _this6.state[item] != undefined || _this6.state.offer_options.indexOf(item) != -1) {
+
+                    _this6.state.disabled = false;
+                } else {
+
+                    // this means one of the required fields is empty set disable to true for disabling button
+                    _this6.state.disabled = true;
+                }
+            });
         }
     }, {
         key: 'submitContactForm',
@@ -184,29 +240,53 @@ var ContactFormInputs = function (_React$Component3) {
 
             console.log("in submitForm func, state is::", this.state);
 
-            try {
-                // make post request with the state data
-                var response = await fetch('https://mywebsite.com/endpoint/', {
-                    method: 'POST',
-                    headers: {
-                        Accept: 'application/json',
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify(this.state)
-                });
+            // try {
+            //     // make post request with the state data
+            //     let response = await fetch(this.state.endPoint, {
+            //         method: 'POST',
+            //         headers: {
+            //             Accept: 'application/json',
+            //             'Content-Type': 'application/json',
+            //         },
+            //         body: JSON.stringify(this.state),
+            //     });
 
-                // get response from post request
-                var responseJson = await response.json();
+            //     // get response from post request
+            //     let responseJson = await response.json();
 
-                // TODO: show default docsie popup saying query posted successfully or something
-            } catch (error) {
-                console.error(error);
-            }
+            //     // TODO: show default docsie popup saying query posted successfully or something
+            //   } catch (error) {
+            //     console.error(error);
+            //   }
+
+            fetch(this.state.endPoint).then(function (res) {
+                return res.json();
+            }).then(function (result) {
+
+                console.log("result after contact submit api request");
+
+                // this.setState({
+                //     isLoaded: true,
+                //     items: result.items
+                // });
+            },
+            // Note: it's important to handle errors here
+            // instead of a catch() block so that we don't swallow
+            // exceptions from actual bugs in components.
+            function (error) {
+
+                console.log("error in submitting contact form");
+
+                // this.setState({
+                //     isLoaded: true,
+                //     error
+                // });
+            });
         }
     }, {
         key: 'render',
         value: function render() {
-            var _this6 = this;
+            var _this7 = this;
 
             var contactFormInputs = [];
 
@@ -220,19 +300,34 @@ var ContactFormInputs = function (_React$Component3) {
                     contactFormInputs.push(React.createElement(
                         'div',
                         { className: 'pure-u-xs-1 pure-u-sm-1-1 pure-u-md-1-1 pure-u-lg-1-3 pure-u-xl-1-3 contact-input' },
-                        React.createElement(
-                            'span',
-                            { className: 'form-label' },
-                            item.label
-                        ),
-                        React.createElement('br', null),
-                        item.required ? React.createElement('input', { className: _this6.props.accordionView ? "contact-attr contact-attr-wdt " : "contact-attr", type: item.type, placeholder: item.placeholder,
-                            id: 'contact-attr', name: 'contact-attr', onChange: function onChange() {
-                                return _this6.handleInputChange(item, event);
-                            }, required: true }) : React.createElement('input', { className: _this6.props.accordionView ? "contact-attr contact-attr-wdt " : "contact-attr", type: item.type, placeholder: item.placeholder,
-                            id: 'contact-attr', name: 'contact-attr', onChange: function onChange() {
-                                return _this6.handleInputChange(item, event);
-                            } })
+                        _this7.state.requiredFields.indexOf(item.alias) != -1 ? React.createElement(
+                            React.Fragment,
+                            null,
+                            React.createElement(
+                                'span',
+                                { className: 'form-label' },
+                                item.label,
+                                '*'
+                            ),
+                            React.createElement('br', null),
+                            React.createElement('input', { className: _this7.props.accordionView ? "contact-attr contact-attr-wdt " : "contact-attr", type: item.type, placeholder: item.placeholder,
+                                id: 'contact-attr', name: 'contact-attr', onChange: function onChange() {
+                                    return _this7.handleInputChange(item, event);
+                                }, required: true })
+                        ) : React.createElement(
+                            React.Fragment,
+                            null,
+                            React.createElement(
+                                'span',
+                                { className: 'form-label' },
+                                item.label
+                            ),
+                            React.createElement('br', null),
+                            React.createElement('input', { className: _this7.props.accordionView ? "contact-attr contact-attr-wdt " : "contact-attr", type: item.type, placeholder: item.placeholder,
+                                id: 'contact-attr', name: 'contact-attr', onChange: function onChange() {
+                                    return _this7.handleInputChange(item, event);
+                                } })
+                        )
                     ));
                 }
 
@@ -241,14 +336,8 @@ var ContactFormInputs = function (_React$Component3) {
                     contactFormInputs.push(React.createElement(
                         'div',
                         { className: 'pure-u-xs-1 pure-u-sm-1-1 pure-u-md-1-1 pure-u-lg-1-3 pure-u-xl-1-3 contact-input' },
-                        React.createElement(
-                            'span',
-                            { className: 'form-label' },
-                            item.label
-                        ),
-                        React.createElement('br', null),
-                        React.createElement(SelectTag, { item: item, accordionView: _this6.props.accordionView, handleInputChange: function handleInputChange() {
-                                return _this6.handleInputChange(item, event);
+                        React.createElement(SelectTag, { item: item, requiredFields: _this7.state.requiredFields, accordionView: _this7.props.accordionView, handleInputChange: function handleInputChange() {
+                                return _this7.handleInputChange(item, event);
                             } })
                     ));
                 }
@@ -267,8 +356,8 @@ var ContactFormInputs = function (_React$Component3) {
                             item.optionsRequiredMsg
                         ),
                         React.createElement('br', null),
-                        React.createElement(OfferOptions, { item: item, handleInputChange: function handleInputChange() {
-                                return _this6.handleInputChange(item, event);
+                        React.createElement(OfferOptions, { item: item, requiredFields: _this7.state.requiredFields, handleInputChange: function handleInputChange() {
+                                return _this7.handleInputChange(item, event);
                             } })
                     ));
                 }
@@ -280,16 +369,30 @@ var ContactFormInputs = function (_React$Component3) {
                     contactFormInputs.push(React.createElement(
                         'div',
                         { className: 'pure-u-xs-1 pure-u-sm-1-3 pure-u-md-1-3 pure-u-lg-1-3 pure-u-xl-1-3 contact-input' },
-                        React.createElement(
-                            'span',
-                            { className: 'form-label-desc' },
-                            item.label
-                        ),
-                        item.required ? React.createElement('textarea', { style: { border: '1px solid #ddd', width: '89.5%', float: 'left' }, rows: '5', cols: '50', placeholder: item.placeholder, onChange: function onChange() {
-                                return _this6.handleInputChange(item, event);
-                            }, required: true }) : React.createElement('textarea', { style: { border: '1px solid #ddd', width: '89.5%', float: 'left' }, rows: '5', cols: '50', placeholder: item.placeholder, onChange: function onChange() {
-                                return _this6.handleInputChange(item, event);
-                            } })
+                        _this7.state.requiredFields.indexOf(item.alias) != -1 ? React.createElement(
+                            React.Fragment,
+                            null,
+                            React.createElement(
+                                'span',
+                                { className: 'form-label-desc' },
+                                item.label,
+                                '*'
+                            ),
+                            React.createElement('textarea', { style: { border: '1px solid #ddd', width: '89.5%', float: 'left' }, rows: '5', cols: '50', placeholder: item.placeholder, onChange: function onChange() {
+                                    return _this7.handleInputChange(item, event);
+                                }, required: true })
+                        ) : React.createElement(
+                            React.Fragment,
+                            null,
+                            React.createElement(
+                                'span',
+                                { className: 'form-label-desc' },
+                                item.label
+                            ),
+                            React.createElement('textarea', { style: { border: '1px solid #ddd', width: '89.5%', float: 'left' }, rows: '5', cols: '50', placeholder: item.placeholder, onChange: function onChange() {
+                                    return _this7.handleInputChange(item, event);
+                                } })
+                        )
                     ));
                 }
             });
@@ -308,7 +411,7 @@ var ContactFormInputs = function (_React$Component3) {
                     React.createElement(
                         'button',
                         { className: 'ct-btn back-to-plans-btn-accrd', onClick: function onClick() {
-                                return _this6.props.contactFormToggle();
+                                return _this7.props.contactFormToggle();
                             } },
                         React.createElement(
                             'div',
@@ -323,8 +426,8 @@ var ContactFormInputs = function (_React$Component3) {
                     ),
                     React.createElement(
                         'button',
-                        { className: 'ct-btn contact-us-btn-xs', style: { color: '#fff', fontSize: '18px', fontWeight: '700' }, onClick: function onClick() {
-                                return _this6.submitContactForm();
+                        { className: 'ct-btn contact-us-btn-xs', style: { color: '#fff', fontSize: '18px', fontWeight: '700' }, disabled: this.state.disabled, onClick: function onClick() {
+                                return _this7.submitContactForm();
                             } },
                         this.props.submitContactFormText
                     )
@@ -345,14 +448,14 @@ var Tooltip = function (_React$Component4) {
     function Tooltip(props) {
         _classCallCheck(this, Tooltip);
 
-        var _this7 = _possibleConstructorReturn(this, (Tooltip.__proto__ || Object.getPrototypeOf(Tooltip)).call(this, props));
+        var _this8 = _possibleConstructorReturn(this, (Tooltip.__proto__ || Object.getPrototypeOf(Tooltip)).call(this, props));
 
-        _this7.state = {
+        _this8.state = {
             displayTooltip: false
         };
-        _this7.hideTooltip = _this7.hideTooltip.bind(_this7);
-        _this7.showTooltip = _this7.showTooltip.bind(_this7);
-        return _this7;
+        _this8.hideTooltip = _this8.hideTooltip.bind(_this8);
+        _this8.showTooltip = _this8.showTooltip.bind(_this8);
+        return _this8;
     }
 
     _createClass(Tooltip, [{
@@ -460,14 +563,14 @@ var ContactForm = function (_React$Component6) {
     _createClass(ContactForm, [{
         key: 'render',
         value: function render() {
-            var _this10 = this;
+            var _this11 = this;
 
             return React.createElement(
                 React.Fragment,
                 null,
                 React.createElement(
                     'form',
-                    { action: '', className: 'contact-form-container' },
+                    { className: 'contact-form-container' },
                     React.createElement(
                         'div',
                         { className: this.props.accordionView ? "pricing-contact-form-wdt" : "pricing-contact-form" },
@@ -506,7 +609,7 @@ var ContactForm = function (_React$Component6) {
                                 React.createElement(ContactFormInputs, { formInputs: this.props.contactFormData.formInputs,
                                     accordionView: this.props.accordionView,
                                     contactFormToggle: function contactFormToggle() {
-                                        return _this10.props.contactFormToggle();
+                                        return _this11.props.contactFormToggle();
                                     },
                                     toggleContactFormText: this.props.contactFormData.toggleContactFormText,
                                     submitContactFormText: this.props.contactFormData.submitContactFormText })
@@ -516,7 +619,7 @@ var ContactForm = function (_React$Component6) {
                                 React.createElement(ContactFormInputs, { formInputs: this.props.contactFormData.formInputs,
                                     accordionView: this.props.accordionView,
                                     contactFormToggle: function contactFormToggle() {
-                                        return _this10.props.contactFormToggle();
+                                        return _this11.props.contactFormToggle();
                                     },
                                     toggleContactFormText: this.props.contactFormData.toggleContactFormText,
                                     submitContactFormText: this.props.contactFormData.submitContactFormText })
@@ -541,11 +644,11 @@ var SimplePlanTier = function (_React$Component7) {
     function SimplePlanTier(props) {
         _classCallCheck(this, SimplePlanTier);
 
-        var _this11 = _possibleConstructorReturn(this, (SimplePlanTier.__proto__ || Object.getPrototypeOf(SimplePlanTier)).call(this, props));
+        var _this12 = _possibleConstructorReturn(this, (SimplePlanTier.__proto__ || Object.getPrototypeOf(SimplePlanTier)).call(this, props));
 
         console.log("props in simplePlanTier", props);
 
-        _this11.state = {
+        _this12.state = {
             tiers: teirsData.tiers,
             // showMonthlyPlan: true,
             selectedOption: true,
@@ -557,13 +660,13 @@ var SimplePlanTier = function (_React$Component7) {
             showContactForm: false,
             contactFormData: contactForm
         };
-        return _this11;
+        return _this12;
     }
 
     _createClass(SimplePlanTier, [{
         key: 'render',
         value: function render() {
-            var _this12 = this;
+            var _this13 = this;
 
             var rows = [];
 
@@ -606,7 +709,7 @@ var SimplePlanTier = function (_React$Component7) {
                                         React.createElement(
                                             'button',
                                             { className: 'contact-us-btn', onClick: function onClick() {
-                                                    return _this12.props.contactFormToggle();
+                                                    return _this13.props.contactFormToggle();
                                                 } },
                                             React.createElement(
                                                 'span',
@@ -629,7 +732,7 @@ var SimplePlanTier = function (_React$Component7) {
                                     ) : React.createElement(
                                         React.Fragment,
                                         null,
-                                        _this12.props.showMonthlyPlan ? React.createElement(
+                                        _this13.props.showMonthlyPlan ? React.createElement(
                                             React.Fragment,
                                             null,
                                             React.createElement(
@@ -667,10 +770,10 @@ var SimplePlanTier = function (_React$Component7) {
                                                         React.createElement(
                                                             'div',
                                                             { className: 'yearly', onClick: function onClick() {
-                                                                    return _this12.props.yearlyToggle();
+                                                                    return _this13.props.yearlyToggle();
                                                                 } },
                                                             ' ',
-                                                            _this12.state.monthlyText
+                                                            _this13.state.monthlyText
                                                         )
                                                     )
                                                 )
@@ -709,7 +812,7 @@ var SimplePlanTier = function (_React$Component7) {
                                                         tier.pricing.yearly.currency,
                                                         tier.pricing.yearly.perAnnum,
                                                         ' ',
-                                                        _this12.state.yearlyText,
+                                                        _this13.state.yearlyText,
                                                         ' ',
                                                         tier.pricing.yearly.currency,
                                                         tier.pricing.yearly.savedAmount,
@@ -750,9 +853,9 @@ var SimplePlanTier = function (_React$Component7) {
                                     React.createElement(
                                         'p',
                                         { className: 'compare-plans', style: { position: 'relative', bottom: '20px' }, onClick: function onClick() {
-                                                return _this12.props.onClick();
+                                                return _this13.props.onClick();
                                             } },
-                                        _this12.state.compareText
+                                        _this13.state.compareText
                                     )
                                 )
                             )
@@ -768,10 +871,10 @@ var SimplePlanTier = function (_React$Component7) {
                     'div',
                     { className: 'contact-form-container-smpl' },
                     React.createElement(ContactForm, { contactFormData: this.state.contactFormData, contactFormToggle: function contactFormToggle() {
-                            return _this12.props.contactFormToggle();
+                            return _this13.props.contactFormToggle();
                         },
                         showContactForm: this.props.showContactForm, submitContactForm: function submitContactForm() {
-                            return _this12.props.submitContactForm();
+                            return _this13.props.submitContactForm();
                         } })
                 ) : React.createElement(
                     React.Fragment,
@@ -807,7 +910,7 @@ var DetailedPlanTier = function (_React$Component8) {
     _createClass(DetailedPlanTier, [{
         key: 'render',
         value: function render() {
-            var _this14 = this;
+            var _this15 = this;
 
             var detailRows = [];
 
@@ -833,7 +936,7 @@ var DetailedPlanTier = function (_React$Component8) {
                         React.createElement(
                             'button',
                             { className: 'contact-us-btn-dtl', onClick: function onClick() {
-                                    return _this14.props.contactFormToggle();
+                                    return _this15.props.contactFormToggle();
                                 } },
                             React.createElement(
                                 'span',
@@ -856,7 +959,7 @@ var DetailedPlanTier = function (_React$Component8) {
                     ) : React.createElement(
                         React.Fragment,
                         null,
-                        _this14.props.showMonthlyPlan ? React.createElement(
+                        _this15.props.showMonthlyPlan ? React.createElement(
                             React.Fragment,
                             null,
                             React.createElement(
@@ -947,7 +1050,7 @@ var DetailedPlanTier = function (_React$Component8) {
                                     ) : ''
                                 )
                             ),
-                            React.createElement(DetailCategoryFeatures, { tiers: _this14.props.tiers, item: item })
+                            React.createElement(DetailCategoryFeatures, { tiers: _this15.props.tiers, item: item })
                         )
                     ));
                 });
@@ -985,10 +1088,10 @@ var DetailedPlanTier = function (_React$Component8) {
                         { className: 'contact-form-container-smpl contact-form-container-dtl' },
                         React.createElement(ContactForm, { contactFormData: this.props.contactFormData,
                             contactFormToggle: function contactFormToggle() {
-                                return _this14.props.contactFormToggle();
+                                return _this15.props.contactFormToggle();
                             },
                             submitContactForm: function submitContactForm() {
-                                return _this14.props.submitContactForm();
+                                return _this15.props.submitContactForm();
                             } })
                     )
                 ) : React.createElement(
@@ -1018,7 +1121,7 @@ var DetailedPlanTier = function (_React$Component8) {
                                 React.createElement(
                                     'button',
                                     { className: 'tier-actn-bck', onClick: function onClick() {
-                                            return _this14.props.handleClick();
+                                            return _this15.props.handleClick();
                                         } },
                                     React.createElement(
                                         'span',
@@ -1059,7 +1162,7 @@ var CategoryFeatures = function (_React$Component9) {
     _createClass(CategoryFeatures, [{
         key: 'render',
         value: function render() {
-            var _this16 = this;
+            var _this17 = this;
 
             var categoryFeatures = [];
 
@@ -1068,7 +1171,7 @@ var CategoryFeatures = function (_React$Component9) {
             this.props.categories.forEach(function (category, i) {
 
                 // get the tier name
-                val = _this16.props.plan_name;
+                val = _this17.props.plan_name;
 
                 category.features.forEach(function (item, j) {
 
@@ -1133,15 +1236,15 @@ var PlansAccordion = function (_React$Component10) {
     function PlansAccordion(props) {
         _classCallCheck(this, PlansAccordion);
 
-        var _this17 = _possibleConstructorReturn(this, (PlansAccordion.__proto__ || Object.getPrototypeOf(PlansAccordion)).call(this, props));
+        var _this18 = _possibleConstructorReturn(this, (PlansAccordion.__proto__ || Object.getPrototypeOf(PlansAccordion)).call(this, props));
 
-        _this17.state = {
+        _this18.state = {
             showMonthlyPlan: true,
             tiers: teirsData.tiers,
             accordionPlans: plansAndFeatures,
             contactFormData: contactForm
         };
-        return _this17;
+        return _this18;
     }
 
     _createClass(PlansAccordion, [{
@@ -1155,13 +1258,13 @@ var PlansAccordion = function (_React$Component10) {
     }, {
         key: 'render',
         value: function render() {
-            var _this18 = this;
+            var _this19 = this;
 
             var plansAccordion = [];
 
             this.props.tiers.forEach(function (tier, i) {
 
-                console.log("this.props.showMonthlyPlan", _this18.props.showMonthlyPlan);
+                console.log("this.props.showMonthlyPlan", _this19.props.showMonthlyPlan);
 
                 plansAccordion.push(React.createElement(
                     AccordionItem,
@@ -1189,7 +1292,7 @@ var PlansAccordion = function (_React$Component10) {
                                         tier.showCallToAction && tier.showCallToAction == "True" ? React.createElement(React.Fragment, null) : React.createElement(
                                             React.Fragment,
                                             null,
-                                            _this18.props.showMonthlyPlan ? React.createElement(
+                                            _this19.props.showMonthlyPlan ? React.createElement(
                                                 React.Fragment,
                                                 null,
                                                 React.createElement(
@@ -1242,7 +1345,7 @@ var PlansAccordion = function (_React$Component10) {
                                 React.createElement(
                                     'button',
                                     { className: 'contact-us-btn', onClick: function onClick() {
-                                            return _this18.props.contactFormToggle();
+                                            return _this19.props.contactFormToggle();
                                         } },
                                     React.createElement(
                                         'span',
@@ -1265,21 +1368,21 @@ var PlansAccordion = function (_React$Component10) {
                             ) : React.createElement(
                                 React.Fragment,
                                 null,
-                                _this18.props.showMonthlyPlan ? React.createElement(
+                                _this19.props.showMonthlyPlan ? React.createElement(
                                     'p',
                                     { className: 'text-light-gray' },
                                     tier.pricing.monthly.currency,
                                     tier.pricing.yearly.price,
                                     ' ',
-                                    _this18.props.tiers.monthlyText,
+                                    _this19.props.tiers.monthlyText,
                                     ' ',
                                     React.createElement(
                                         'div',
                                         { className: 'yearly', onClick: function onClick() {
-                                                return _this18.props.yearlyToggle();
+                                                return _this19.props.yearlyToggle();
                                             } },
                                         ' ',
-                                        _this18.props.tiers.payText
+                                        _this19.props.tiers.payText
                                     )
                                 ) : React.createElement(
                                     'p',
@@ -1287,10 +1390,10 @@ var PlansAccordion = function (_React$Component10) {
                                     tier.pricing.monthly.currency,
                                     tier.pricing.yearly.perAnnum,
                                     ' ',
-                                    _this18.props.tiers.yearlyText1,
+                                    _this19.props.tiers.yearlyText1,
                                     React.createElement('br', null),
                                     ' ',
-                                    _this18.props.tiers.yearlyText2,
+                                    _this19.props.tiers.yearlyText2,
                                     ' ',
                                     tier.pricing.monthly.currency,
                                     tier.pricing.yearly.savedAmount,
@@ -1311,7 +1414,7 @@ var PlansAccordion = function (_React$Component10) {
                                     )
                                 )
                             ),
-                            React.createElement(CategoryFeatures, { categories: _this18.props.accordionPlans.categories, plan_name: tier.name })
+                            React.createElement(CategoryFeatures, { categories: _this19.props.accordionPlans.categories, plan_name: tier.name })
                         )
                     ),
                     React.createElement('br', null)
@@ -1324,10 +1427,10 @@ var PlansAccordion = function (_React$Component10) {
                 this.props.showContactForm ?
                 // <div className="contact-form-container">
                 React.createElement(ContactForm, { contactFormData: this.state.contactFormData, contactFormToggle: function contactFormToggle() {
-                        return _this18.props.contactFormToggle();
+                        return _this19.props.contactFormToggle();
                     },
                     submitContactForm: function submitContactForm() {
-                        return _this18.props.submitContactForm();
+                        return _this19.props.submitContactForm();
                     }, accordionView: true })
                 // {/* </div> */}
                 : React.createElement(
@@ -1350,9 +1453,9 @@ var PricingPage = function (_React$Component11) {
     function PricingPage(props) {
         _classCallCheck(this, PricingPage);
 
-        var _this19 = _possibleConstructorReturn(this, (PricingPage.__proto__ || Object.getPrototypeOf(PricingPage)).call(this, props));
+        var _this20 = _possibleConstructorReturn(this, (PricingPage.__proto__ || Object.getPrototypeOf(PricingPage)).call(this, props));
 
-        _this19.state = {
+        _this20.state = {
             showDetailedPlanOveriew: false,
             tiers: teirsData.tiers,
             tierActions: teirsData.tierActions,
@@ -1367,7 +1470,7 @@ var PricingPage = function (_React$Component11) {
             contactFormData: contactForm,
             accordionPlans: plansAndFeatures
         };
-        return _this19;
+        return _this20;
     }
 
     _createClass(PricingPage, [{
@@ -1469,7 +1572,7 @@ var PricingPage = function (_React$Component11) {
     }, {
         key: 'render',
         value: function render() {
-            var _this20 = this;
+            var _this21 = this;
 
             return React.createElement(
                 'div',
@@ -1484,7 +1587,7 @@ var PricingPage = function (_React$Component11) {
                             value: true,
                             checked: this.state.selectedOption == true,
                             onChange: function onChange($event) {
-                                return _this20.radioChange($event);
+                                return _this21.radioChange($event);
                             } }),
                         '\xA0',
                         React.createElement(
@@ -1500,7 +1603,7 @@ var PricingPage = function (_React$Component11) {
                             value: false,
                             checked: this.state.selectedOption == false,
                             onChange: function onChange($event) {
-                                return _this20.radioChange($event);
+                                return _this21.radioChange($event);
                             } }),
                         '\xA0',
                         React.createElement(
@@ -1521,14 +1624,14 @@ var PricingPage = function (_React$Component11) {
                             showMonthlyPlan: this.state.showMonthlyPlan,
                             tiers: this.state.tiers,
                             yearlyToggle: function yearlyToggle() {
-                                return _this20.yearlyToggle();
+                                return _this21.yearlyToggle();
                             },
                             contactFormToggle: function contactFormToggle() {
-                                return _this20.contactFormToggle();
+                                return _this21.contactFormToggle();
                             },
                             showContactForm: this.state.showContactForm,
                             submitContactForm: function submitContactForm() {
-                                return _this20.submitContactForm();
+                                return _this21.submitContactForm();
                             }
                         })
                     ),
@@ -1536,19 +1639,19 @@ var PricingPage = function (_React$Component11) {
                         'div',
                         { className: 'simple-plan-container' },
                         React.createElement(SimplePlanTier, { onClick: function onClick() {
-                                return _this20.handleClick();
+                                return _this21.handleClick();
                             },
                             className: 'plan-tier',
                             showMonthlyPlan: this.state.showMonthlyPlan,
                             yearlyToggle: function yearlyToggle() {
-                                return _this20.yearlyToggle();
+                                return _this21.yearlyToggle();
                             },
                             contactFormToggle: function contactFormToggle() {
-                                return _this20.contactFormToggle();
+                                return _this21.contactFormToggle();
                             },
                             showContactForm: this.state.showContactForm,
                             submitContactForm: function submitContactForm() {
-                                return _this20.submitContactForm();
+                                return _this21.submitContactForm();
                             } })
                     )
                 ) : React.createElement(
@@ -1561,14 +1664,14 @@ var PricingPage = function (_React$Component11) {
                             showMonthlyPlan: this.state.showMonthlyPlan,
                             tiers: this.state.tiers,
                             yearlyToggle: function yearlyToggle() {
-                                return _this20.yearlyToggle();
+                                return _this21.yearlyToggle();
                             },
                             contactFormToggle: function contactFormToggle() {
-                                return _this20.contactFormToggle();
+                                return _this21.contactFormToggle();
                             },
                             showContactForm: this.state.showContactForm,
                             submitContactForm: function submitContactForm() {
-                                return _this20.submitContactForm();
+                                return _this21.submitContactForm();
                             }
                         })
                     ),
@@ -1583,16 +1686,16 @@ var PricingPage = function (_React$Component11) {
                             categories: this.state.categories,
                             tierActions: this.state.tierActions,
                             yearlyToggle: function yearlyToggle() {
-                                return _this20.yearlyToggle();
+                                return _this21.yearlyToggle();
                             },
                             contactFormToggle: function contactFormToggle() {
-                                return _this20.contactFormToggle();
+                                return _this21.contactFormToggle();
                             },
                             submitContactForm: function submitContactForm() {
-                                return _this20.submitContactForm();
+                                return _this21.submitContactForm();
                             },
                             handleClick: function handleClick() {
-                                return _this20.handleClick();
+                                return _this21.handleClick();
                             },
                             contactFormData: this.state.contactFormData })
                     )

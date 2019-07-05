@@ -8,8 +8,7 @@ var contactForm = {
             "label": "First Name",
             "alias": "firstName",
             "type": "text",
-            "placeholder": "enter your first name",
-            "required": true
+            "placeholder": "enter your first name"
         }, {
             "label": "Last Name",
             "alias": "lastName",
@@ -35,8 +34,7 @@ var contactForm = {
             "options": [
                 "opt1",
                 "opt2"
-            ],
-            // "required": true
+            ]
         },
         {
             "label": "Job Title",
@@ -55,43 +53,55 @@ var contactForm = {
             "type": "offer_options",
             "offer_options": [
                 {
+                    "alias": "Priority Support and SLA's",
                     "value": "Priority Support and SLA's",
-                    "type": "checkbox",
-                    "required": true
-                },{
+                    "type": "checkbox"
+                }, {
+                    "alias": "AI powered documentation",
                     "value": "AI powered documentation",
                     "type": "checkbox"
                 }, {
+                    "alias": "Single tenant options",
                     "value": "Single tenant options",
                     "type": "checkbox"
                 }, {
+                    "alias": "Customer success manager",
                     "value": "Customer success manager",
                     "type": "checkbox"
                 }, {
+                    "alias": "Private onboarding and training sessions",
                     "value": "Private onboarding and training sessions",
                     "type": "checkbox"
                 }, {
+                    "alias": "Private cloud options",
                     "value": "Private cloud options",
                     "type": "checkbox"
                 }, {
+                    "alias": "Comprehensive project metrics",
                     "value": "Comprehensive project metrics",
                     "type": "checkbox"
                 }, {
+                    "alias": "SAML-based single sign-on (SSO)",
                     "value": "SAML-based single sign-on (SSO)",
                     "type": "checkbox"
                 }, {
+                    "alias": "Combining multiple projects",
                     "value": "Combining multiple projects",
                     "type": "checkbox"
                 }, {
+                    "alias": "Customer OAuth 2 Login",
                     "value": "Customer OAuth 2 Login",
                     "type": "checkbox"
                 }, {
+                    "alias": "Vendor Security Forms",
                     "value": "Vendor Security Forms",
                     "type": "checkbox"
                 }, {
+                    "alias": "SLA / ToS modifications",
                     "value": "SLA / ToS modifications",
                     "type": "checkbox"
                 }, {
+                    "alias": "Translations",
                     "value": "Translations",
                     "type": "checkbox"
                 }
@@ -115,6 +125,16 @@ var contactForm = {
         "jobTitle": "",
         "employeesNumber": "",
         "offer_options": [],
-        "description": ""
-    }
-}
+        "description": "",
+        "requiredFields": [
+            "firstName",
+            "businessEmail",
+            "Priority Support and SLA's"
+        ],
+        // this is used to disable submit button
+        "disabled": true,
+        // use this for contact post request endpoint
+        "endPoint": "our-docsie-contact-endpoint"
+    },
+    
+} 
