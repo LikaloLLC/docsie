@@ -2,7 +2,7 @@ var plansAndFeatures = {
   "categories": [{
       "name":"Docsie Data",
       "features": [{
-        "name": "Max users per shelf",
+        "name": "Users",
         "values" : {
         "Enterprise": "Unlimited",
         "Business":"Unlimited",
@@ -10,16 +10,27 @@ var plansAndFeatures = {
         // "Premium" : "100"
         },
         "info": "Total number of users allowed to collaborate on each shelf"
-      }, {
-        "name": "Campaigns2",
+      },{
+        "name": "Shelves",
         "values" : {
-        "Enterprise": "e52",
-        "Business":"b102",
-        "Start-up" : "su252",
-        "Org" : "o6"
+        "Enterprise": "Unlimited",
+        "Business":"Unlimited",
+        "Start-up" : "Unlimited",
+        // "Premium" : "100"
         },
-        "info": "Campaigns feature info 2"
-      }]
+      },
+      {
+        "name": "Books per Shelf",
+        "values" : {
+        "Enterprise": "Unlimited",
+        "Business":"Unlimited",
+        "Start-up" : "7",
+        // "Premium" : "100"
+        },
+        "info": "Total number of users allowed to collaborate on each shelf"
+      }
+
+      ]
   }, {
     "name":"Category 2 name",
     "features": [{

@@ -5,19 +5,6 @@ var contactForm = {
     "submitContactFormText": "Submit Form",
     "formInputs": [
         {
-            "label": "First Name",
-            "type": "text",
-            "placeholder": "enter your first name"
-        }, {
-            "label": "Last Name",
-            "type": "text",
-            "placeholder": "enter your last name"
-        }, {
-            "label": "Company Name",
-            "type": "text",
-            "placeholder": "enter your company name"
-        }, 
-        {
             "label": "Business Email",
             "type": "text",
             "placeholder": "enter your business email"
@@ -27,19 +14,10 @@ var contactForm = {
             "type": "dropdown",
             "placeholder": "enter your industry",
             "options": [
-                "opt1",
-                "opt2"
+                "Technology",
+                "Other"
             ]
         },
-        {
-            "label": "Job Title",
-            "type": "text",
-            "placeholder": "enter your job title"
-        }, {
-            "label": "No. of employees",
-            "type": "number",
-            "placeholder": "enter # of employees"
-        }, 
         {
             "label": "I'm interested in...",
             "type": "offer_options",
@@ -79,9 +57,6 @@ var contactForm = {
                     "type": "checkbox"
                 }, {
                     "label": "SLA / ToS modifications",
-                    "type": "checkbox"
-                }, {
-                    "label": "Translations",
                     "type": "checkbox"
                 }
             ],
