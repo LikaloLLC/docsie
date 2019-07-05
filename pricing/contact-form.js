@@ -5,22 +5,6 @@ var contactForm = {
     "submitContactFormText": "Submit Form",
     "formInputs": [
         {
-            "label": "First Name",
-            "alias": "firstName",
-            "type": "text",
-            "placeholder": "enter your first name"
-        }, {
-            "label": "Last Name",
-            "alias": "lastName",
-            "type": "text",
-            "placeholder": "enter your last name"
-        }, {
-            "label": "Company Name",
-            "alias": "companyName",
-            "type": "text",
-            "placeholder": "enter your company name"
-        }, 
-        {
             "label": "Business Email",
             "alias": "businessEmail",
             "type": "email",
@@ -32,8 +16,8 @@ var contactForm = {
             "type": "dropdown",
             "placeholder": "enter your industry",
             "options": [
-                "opt1",
-                "opt2"
+                "Technology",
+                "Other"
             ]
         },
         {
@@ -122,13 +106,12 @@ var contactForm = {
         "lastName": "",
         "companyName": "",
         "businessEmail": "",
-        "industry": "", 
+        "industry": "",
         "jobTitle": "",
         "employeesNumber": "",
         "offer_options": [],
         "description": "",
         "requiredFields": [
-            "firstName",
             "businessEmail",
             "Priority Support and SLA's"
         ],

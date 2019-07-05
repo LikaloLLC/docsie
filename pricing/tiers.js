@@ -1,7 +1,7 @@
 tiers = {
   "Banner": "All features including the most advanced are forever free for open source projects, please contact us with your project details",
   "radio_btn_monthly_opt": "Pay monthly",
-  "radio_btn_yearly_opt": "Pay yearly (Save 20%)",
+  "radio_btn_yearly_opt": "Pay yearly (Save up to 30%)",
   "monthlyText": "when you pay yearly",
   "yearlyText": "billed yearly, Save",
   "compareText": "compare plans",
@@ -23,58 +23,32 @@ tiers = {
       // use the following for showing contact page 
       "showCallToAction": "True"
     },
-    {
-      "pricing": {
-        "monthly": {
-          "price": "500.00",
-          "currency": "$",
-          "label": "/mo"
-        },
-        "yearly": {
-          "price": "450.00",
-          "currency": "$",
-          "perAnnum": "3000",
-          "savedAmount": "2000",
-          "label": "/year"
-        }
-      },
-      "name": "Business",
-      "icon": "www.docsie.io/icon.png",
-      "order": 2,
-      "description": "Professional features and collaboration for your growing business.",
-      "call_to_action": {
-        "type": "pricing",
-        "text": "Try it Free!",
-        "url": "https://app.docsie.io/manager/?utm=business"
-      },
-      "showCallToAction": "False"
-    },
-    {
-      "pricing": {
-        "monthly": {
-          "price": "70.00",
-          "currency": "$",
-          "label": "/mo"
-        },
-        "yearly": {
-          "price": "250.00",
-          "currency": "$",
-          "perAnnum": "2400",
-          "savedAmount": "500",
-          "label": "/year"
-        }
-      },
-      "name": "Org",
-      "icon": "www.docsie.io/icon.png",
-      "order": 3,
-      "description": "Ord Ed description... Professional features and collaboration for your growing business.",
-      "call_to_action": {
-        "type": "pricing",
-        "text": "Try it Free!",
-        "url": "https://app.docsie.io/manager/?utm=business"
-      },
-      "showCallToAction": "False"
-    },
+    // {
+    //   "pricing": {
+    //     "monthly": {
+    //       "price": "7.00",
+    //       "currency": "$",
+    //       "label": "/user"
+    //     },
+    //     "yearly": {
+    //       "price": "5.00",
+    //       "currency": "$",
+    //       "perAnnum": "60",
+    //       "savedAmount": "24",
+    //       "label": "/user"
+    //     }
+    //   },
+    //   "name": "Business",
+    //   "icon": "www.docsie.io/icon.png",
+    //   "order": 2,
+    //   "description": "Professional features and collaboration for your growing business.",
+    //   "call_to_action": {
+    //     "type": "pricing",
+    //     "text": "Try it Free!",
+    //     "url": "https://app.docsie.io/manager/?utm=business"
+    //   },
+    //   "showCallToAction": "False"
+    // },
      {
          "name": "Start-up",
          "icon" : "www.docsie.io/icon.png",
@@ -96,20 +70,15 @@ tiers = {
                   "text":"Entreprise Sign-up Now!",
                   "url": "signup.com?utm=3423"
                 }
-    }, {
-      "label": {
-                  "name": "Business",
-                  "text": "Business Sign-up Now!",
-                  "url": "signup.com?utm=3423"
-                }
-    }, 
-    {
-      "label": {
-                  "name": "Org Ed",
-                  "text": "Org Sign-up Now!",
-                  "url": "signup.com?utm=3423"
-                }
-    },
+    }
+    // , {
+    //   "label": {
+    //               "name": "Business",
+    //               "text": "Business Sign-up Now!",
+    //               "url": "signup.com?utm=3423"
+    //             }
+    // }
+    ,
     {
       "label": {
                   "name": "Start-up",

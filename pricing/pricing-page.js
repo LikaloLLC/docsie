@@ -90,9 +90,10 @@ class ContactFormInputs extends React.Component {
 
         this.state = contactForm.formState;
         
-        this.state = Object.assign(this.state, {
-            emailValidity: false
-        })
+        // use this to show email validation err msg
+        // this.state = Object.assign(this.state, {
+        //     emailValidity: false
+        // })
 
         console.log("props ibn ContactFormInputs", props);
 
@@ -116,11 +117,11 @@ class ContactFormInputs extends React.Component {
             }
         })
 
-        var emailElem = document.getElementById('email');
+        // var emailElem = document.getElementById('email');
 
-        if (emailElem.validity.valid == false) {
-            disabledCount++;
-        }
+        // if (emailElem.validity.valid == false) {
+        //     disabledCount++;
+        // }
 
         if (disabledCount > 0) {
             // this.state.disabled = true;
@@ -140,8 +141,6 @@ class ContactFormInputs extends React.Component {
     handleInputChange(item, event) {
 
         console.log("selected item", item, "value in handleInputChange", event.target.value);
-
-        
 
         // if offer_options are selected, multiple checked fields are pushed and set into state
         if (item.type == "offer_options") {
@@ -361,7 +360,7 @@ class ContactFormInputs extends React.Component {
                 <div className="contact-input">
                     <button className="ct-btn back-to-plans-btn-accrd" onClick={() => this.props.contactFormToggle()}>
                         <div className="back-btn-action-link-lg-dtl">
-                            <svg width="30px" height="30px" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <svg className="ct-btn-svg" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M13 16l-6-6 6-6" fill="none" stroke="red" stroke-width="1.03" />
                             </svg>
                             {this.props.toggleContactFormText}
@@ -437,7 +436,7 @@ class DetailCategoryFeatures extends React.Component {
             detailCategoryFeatures.push(
                 <div className="pure-u-1-4 category-feature">
                     {this.props.item.values[val] ? 
-                        <svg class="c-check" width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="-255 347 100 100">
+                        <svg class="c-check" xmlns="http://www.w3.org/2000/svg" viewBox="-255 347 100 100">
                             <title></title>
                             <path d="M-217.1 431.8c-1 1.2-2.6 2.2-4 2.3-1.4.1-3-.8-4.3-1.9l-27.5-24.5 7.8-8.7 23.2 20.6 54.6-61.7 8.6 7.9-58.4 66z"></path>
                         </svg>: 
@@ -468,7 +467,7 @@ class ContactForm extends React.Component {
                         <div className="pure-g">
                             <div className="pure-u-1">
 
-                                <svg width="60px" height="60px" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <svg class="ct-frm-svg" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M1.4 6.5L10 11l8.6-4.5" fill="none" stroke="currentColor" />
                                     <path d="M1 4v12h18V4H1zm17 11H2V5h16v10z" />
                                 </svg>
@@ -753,7 +752,7 @@ class DetailedPlanTier extends React.Component {
                         {j == 0 ?
                             <React.Fragment>
 
-                                <h4>{category.name}jk</h4>
+                                <h4>{category.name}</h4>
 
                             </React.Fragment>
                             : ''}
@@ -765,7 +764,7 @@ class DetailedPlanTier extends React.Component {
                                     item.info ?
                                         <Tooltip message={item.info} position={'top'}>
                                             <span>
-                                                <svg width="20px" height="20px" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                                <svg class="ttp-svg" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
 
                                                     <path d="M12.13 11.59c-.16 1.25-1.78 2.53-3.03 2.57-2.93.04.79-4.7-.36-5.79.56-.21 1.88-.54 1.88.44 0 .82-.5 1.74-.74 2.51-1.22 3.84 2.25-.17 2.26-.14.02.03.02.17-.01.41-.05.36.03-.24 0 0zm-.57-5.92c0 1-2.2 1.48-2.2.36 0-1.03 2.2-1.49 2.2-.36z" />
                                                     <circle cx="10" cy="10" r="9" fill="none" stroke="currentColor" stroke-width="1.1" />
@@ -848,7 +847,7 @@ class DetailedPlanTier extends React.Component {
                     </button> */}
                                     <button className="tier-actn-bck" onClick={() => this.props.handleClick()}>
                                         <span className="tier-actn-link">
-                                            <svg width="30px" height="30px" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                            <svg class="bck-svg" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M13 16l-6-6 6-6" fill="none" stroke="red" stroke-width="1.03" />
                                             </svg>
                                             {this.props.toggleText}
@@ -897,7 +896,7 @@ class CategoryFeatures extends React.Component {
                                     item.info ?
                                         <Tooltip message={item.info} position={'top'}>
                                             <span>
-                                                <svg width="20px" height="20px" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                                <svg class="accrdn-ttp-svg" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
 
                                                     <path d="M12.13 11.59c-.16 1.25-1.78 2.53-3.03 2.57-2.93.04.79-4.7-.36-5.79.56-.21 1.88-.54 1.88.44 0 .82-.5 1.74-.74 2.51-1.22 3.84 2.25-.17 2.26-.14.02.03.02.17-.01.41-.05.36.03-.24 0 0zm-.57-5.92c0 1-2.2 1.48-2.2.36 0-1.03 2.2-1.49 2.2-.36z" />
                                                     <circle cx="10" cy="10" r="9" fill="none" stroke="currentColor" stroke-width="1.1" />
