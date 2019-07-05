@@ -23,32 +23,32 @@ tiers = {
       // use the following for showing contact page 
       "showCallToAction": "True"
     },
-    {
-      "pricing": {
-        "monthly": {
-          "price": "7.00",
-          "currency": "$",
-          "label": "/user"
-        },
-        "yearly": {
-          "price": "5.00",
-          "currency": "$",
-          "perAnnum": "60",
-          "savedAmount": "24",
-          "label": "/user"
-        }
-      },
-      "name": "Business",
-      "icon": "www.docsie.io/icon.png",
-      "order": 2,
-      "description": "Professional features and collaboration for your growing business.",
-      "call_to_action": {
-        "type": "pricing",
-        "text": "Try it Free!",
-        "url": "https://app.docsie.io/manager/?utm=business"
-      },
-      "showCallToAction": "False"
-    },
+    // {
+    //   "pricing": {
+    //     "monthly": {
+    //       "price": "7.00",
+    //       "currency": "$",
+    //       "label": "/user"
+    //     },
+    //     "yearly": {
+    //       "price": "5.00",
+    //       "currency": "$",
+    //       "perAnnum": "60",
+    //       "savedAmount": "24",
+    //       "label": "/user"
+    //     }
+    //   },
+    //   "name": "Business",
+    //   "icon": "www.docsie.io/icon.png",
+    //   "order": 2,
+    //   "description": "Professional features and collaboration for your growing business.",
+    //   "call_to_action": {
+    //     "type": "pricing",
+    //     "text": "Try it Free!",
+    //     "url": "https://app.docsie.io/manager/?utm=business"
+    //   },
+    //   "showCallToAction": "False"
+    // },
      {
          "name": "Start-up",
          "icon" : "www.docsie.io/icon.png",
@@ -70,13 +70,15 @@ tiers = {
                   "text":"Entreprise Sign-up Now!",
                   "url": "signup.com?utm=3423"
                 }
-    }, {
-      "label": {
-                  "name": "Business",
-                  "text": "Business Sign-up Now!",
-                  "url": "signup.com?utm=3423"
-                }
-    },
+    }
+    // , {
+    //   "label": {
+    //               "name": "Business",
+    //               "text": "Business Sign-up Now!",
+    //               "url": "signup.com?utm=3423"
+    //             }
+    // }
+    ,
     {
       "label": {
                   "name": "Start-up",
