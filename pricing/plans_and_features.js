@@ -435,7 +435,7 @@ var plansAndFeatures = {
         },{
             "name": "Priority support and custom support agreement",
             "values": {
-                "Enterprise": "Contact hello@docsie.io",
+                "Enterprise": "Contact us at hello@docsie.io",
                 "Business": "",
                 "Start-up": ""
             },
