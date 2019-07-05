@@ -90,10 +90,51 @@ class ContactFormInputs extends React.Component {
 
         this.state = contactForm.formState;
         
+        this.state = Object.assign(this.state, {
+            emailValidity: false
+        })
 
         console.log("props ibn ContactFormInputs", props);
 
         console.log("this.state in contact form", this.state);
+    }
+
+    setButtonDisability(item, event) {
+
+        let disabledCount = 0;
+        
+        // check if all the required fields are entered and enable submit  button
+        this.state.requiredFields.forEach((field) => {
+
+            console.log("checking if value exists to remove disable option on button", this.state[field]);
+
+            // if value exists, set disabled state to false, else true 
+            // offer_options is an array
+            if (this.state[field] == "" || this.state[field] == undefined && this.state.offer_options.indexOf(field) == -1) {
+
+                disabledCount++;
+            }
+        })
+
+        var emailElem = document.getElementById('email');
+
+        if (emailElem.validity.valid == false) {
+            disabledCount++;
+        }
+
+        if (disabledCount > 0) {
+            // this.state.disabled = true;
+            disabledCount = 0;
+
+            this.setState({
+                disabled: true
+            })
+        } else {
+            // this.state.disabled = false;
+            this.setState({
+                disabled: false
+            })
+        }
     }
 
     handleInputChange(item, event) {
@@ -124,7 +165,9 @@ class ContactFormInputs extends React.Component {
             this.setState({
                 [item.alias]: updatedOffrOpts
             }, function(){
+
                 console.log("state in handleInputChange callback", this.state); 
+                this.setButtonDisability(item, event);
             });
 
         } else {
@@ -132,76 +175,64 @@ class ContactFormInputs extends React.Component {
             this.setState({
                 [item.alias]: event.target.value
             }, function(){
+
                 console.log("state in handleInputChange callback", this.state); 
+                this.setButtonDisability(item, event);
             });
         }
-
-        // check if all the required fields are entered and enable submit  button
-        this.state.requiredFields.forEach((item) => {
-
-            console.log("checking if value exists to remove disable option on button", this.state[item]);
-
-            // if value exists, set disabled state to false, else true 
-            // offer_options is an array
-            if ((this.state[item] != "" && this.state[item] != undefined) || this.state.offer_options.indexOf(item) != -1) {
-
-                this.state.disabled = false;
-            } else {
-
-                // this means one of the required fields is empty set disable to true for disabling button
-                this.state.disabled = true;   
-            }
-        })
     }
 
-    async submitContactForm() {
+    submitContactForm() {
 
         console.log("in submitForm func, state is::", this.state);
 
-        // try {
-        //     // make post request with the state data
-        //     let response = await fetch(this.state.endPoint, {
-        //         method: 'POST',
-        //         headers: {
-        //             Accept: 'application/json',
-        //             'Content-Type': 'application/json',
-        //         },
-        //         body: JSON.stringify(this.state),
-        //     });
+        delete this.state.requiredFields;
 
-        //     // get response from post request
-        //     let responseJson = await response.json();
-            
-        //     // TODO: show default docsie popup saying query posted successfully or something
-        //   } catch (error) {
-        //     console.error(error);
-        //   }
+        // fetch(this.state.endPoint)
+        // .then(res => res.json())
+        // .then(
+        //     (result) => {
 
-        fetch(this.state.endPoint)
-        .then(res => res.json())
-        .then(
-            (result) => {
+        //         console.log("result after contact submit api request");
 
-                console.log("result after contact submit api request");
+        //     // this.setState({
+        //     //     isLoaded: true,
+        //     //     items: result.items
+        //     // });
+        //     },
+        //     // Note: it's important to handle errors here
+        //     // instead of a catch() block so that we don't swallow
+        //     // exceptions from actual bugs in components.
+        //     (error) => {
 
-            // this.setState({
-            //     isLoaded: true,
-            //     items: result.items
-            // });
-            },
-            // Note: it's important to handle errors here
-            // instead of a catch() block so that we don't swallow
-            // exceptions from actual bugs in components.
-            (error) => {
+        //         console.log("error in submitting contact form");
 
-                console.log("error in submitting contact form");
+        //     // this.setState({
+        //     //     isLoaded: true,
+        //     //     error
+        //     // });
+        //     }
+        // )
 
-            // this.setState({
-            //     isLoaded: true,
-            //     error
-            // });
+        fetch('https://jsonplaceholder.typicode.com/posts', {
+            method: 'POST',
+            body: JSON.stringify({
+            title: 'foo',
+            body: 'bar',
+            userId: 1
+            }),
+            headers: {
+            "Content-type": "application/json; charset=UTF-8"
             }
-        )
+        })
+        .then(response => response.json())
+        .then((result) => {
+
+            console.log("result after post request", result);
+        }, (error) => {
+
+            console.log("error in submitting contact form", error);
+        })
     }
 
     render() {
@@ -222,15 +253,49 @@ class ContactFormInputs extends React.Component {
                         <React.Fragment>
                             <span className="form-label">{item.label}*</span><br />
                             <input className={this.props.accordionView ? "contact-attr contact-attr-wdt " : "contact-attr"} type={item.type} placeholder={item.placeholder}
-                                id="contact-attr" name="contact-attr" onChange={() => this.handleInputChange(item, event)} required/>
+                                name="contact-attr" value={this.state[item.alias]} onChange={() => this.handleInputChange(item, event)} required/>
                         </React.Fragment> : 
                         <React.Fragment>
                             <span className="form-label">{item.label}</span><br />
                             <input className={this.props.accordionView ? "contact-attr contact-attr-wdt " : "contact-attr"} type={item.type} placeholder={item.placeholder}
-                            id="contact-attr" name="contact-attr" onChange={() => this.handleInputChange(item, event)} />
+                                name="contact-attr" value={this.state[item.alias]} onChange={() => this.handleInputChange(item, event)} />
                         </React.Fragment>
                         }
-                            
+                        {/* { (item.type=="email" && this.state.emailValidity == false) ? 
+                            <span className="alert-msg">
+                                {this.state.emailInValidMsg}
+                            </span> :
+                            '' 
+                        } */}
+                    </div>
+                );
+            }
+
+            if (item.type == "email") {
+
+                console.log("item.type is text");
+
+                contactFormInputs.push(
+                    <div className="pure-u-xs-1 pure-u-sm-1-1 pure-u-md-1-1 pure-u-lg-1-3 pure-u-xl-1-3 contact-input">
+                        
+                        {(this.state.requiredFields.indexOf(item.alias) != -1) ?
+                        <React.Fragment>
+                            <span className="form-label">{item.label}*</span><br />
+                            <input className={this.props.accordionView ? "contact-attr contact-attr-wdt " : "contact-attr"} type={item.type} placeholder={item.placeholder}
+                                id="email" name="contact-attr" value={this.state[item.alias]} onChange={() => this.handleInputChange(item, event)} required/>
+                        </React.Fragment> : 
+                        <React.Fragment>
+                            <span className="form-label">{item.label}</span><br />
+                            <input className={this.props.accordionView ? "contact-attr contact-attr-wdt " : "contact-attr"} type={item.type} placeholder={item.placeholder}
+                                id="email" name="contact-attr" value={this.state[item.alias]} onChange={() => this.handleInputChange(item, event)} />
+                        </React.Fragment>
+                        }
+                        {/* { (item.type=="email" && this.state.emailValidity == false) ? 
+                            <span className="alert-msg">
+                                {this.state.emailInValidMsg}
+                            </span> :
+                            '' 
+                        } */}
                     </div>
                 );
             }
@@ -370,8 +435,14 @@ class DetailCategoryFeatures extends React.Component {
             val = this.props.tiers[i].name;
 
             detailCategoryFeatures.push(
-                <div className="pure-u-1-4 card category-feature">
-                    <div>{this.props.item.values[val]}</div>
+                <div className="pure-u-1-4 category-feature">
+                    {this.props.item.values[val] ? 
+                        <svg class="c-check" width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="-255 347 100 100">
+                            <title></title>
+                            <path d="M-217.1 431.8c-1 1.2-2.6 2.2-4 2.3-1.4.1-3-.8-4.3-1.9l-27.5-24.5 7.8-8.7 23.2 20.6 54.6-61.7 8.6 7.9-58.4 66z"></path>
+                        </svg>: 
+                        ''
+                    }
                 </div>
             )
         }
@@ -682,7 +753,7 @@ class DetailedPlanTier extends React.Component {
                         {j == 0 ?
                             <React.Fragment>
 
-                                <h4>{category.name}</h4>
+                                <h4>{category.name}jk</h4>
 
                             </React.Fragment>
                             : ''}
