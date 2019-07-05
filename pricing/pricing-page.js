@@ -185,41 +185,19 @@ class ContactFormInputs extends React.Component {
 
         console.log("in submitForm func, state is::", this.state);
 
-        delete this.state.requiredFields;
+        let reqBody = Object.assign({}, this.state);
 
-        // fetch(this.state.endPoint)
-        // .then(res => res.json())
-        // .then(
-        //     (result) => {
+        delete reqBody.requiredFields;
 
-        //         console.log("result after contact submit api request");
+        delete reqBody.endPoint;
 
-        //     // this.setState({
-        //     //     isLoaded: true,
-        //     //     items: result.items
-        //     // });
-        //     },
-        //     // Note: it's important to handle errors here
-        //     // instead of a catch() block so that we don't swallow
-        //     // exceptions from actual bugs in components.
-        //     (error) => {
+        delete reqBody.disabled;
 
-        //         console.log("error in submitting contact form");
+        console.log("contact post request body", this.state);
 
-        //     // this.setState({
-        //     //     isLoaded: true,
-        //     //     error
-        //     // });
-        //     }
-        // )
-
-        fetch('https://jsonplaceholder.typicode.com/posts', {
+        fetch(this.state.endPoint, {
             method: 'POST',
-            body: JSON.stringify({
-            title: 'foo',
-            body: 'bar',
-            userId: 1
-            }),
+            body: JSON.stringify(reqBody),
             headers: {
             "Content-type": "application/json; charset=UTF-8"
             }
