@@ -25,8 +25,11 @@ class OfferOptions extends React.Component {
 
             offerOptions.push(
                 <React.Fragment>
-                    <input type={option.type} style={{ marginRight: '10px' }} name={option.type} value={option.type} />
-                    <span>{option.label}</span><br />
+                    {option.required ? 
+                        <input type={option.type} style={{ marginRight: '10px' }} name={option.value} value={option.value} onChange={() => this.props.handleInputChange(this.props.item, event)} required/> :
+                        <input type={option.type} style={{ marginRight: '10px' }} name={option.value} value={option.value} onChange={() => this.props.handleInputChange(this.props.item, event)} />
+                    }
+                    <span>{option.value}</span><br />
                     {/* style={{fontSize: '14px'}} */}
                 </React.Fragment>
             )
@@ -51,11 +54,20 @@ class SelectTag extends React.Component {
     render() {
 
         return (
-                <select className={this.props.accordionView ? "contact-attr contact-attr-wdt " : "contact-attr"}>
+            <React.Fragment>
+            {this.props.item.required ? 
+                <select className={this.props.accordionView ? "contact-attr contact-attr-wdt " : "contact-attr"} onChange={() => this.props.handleInputChange(this.props.item, event)} required>
+                    {this.props.item.options.map((opt) =>
+                        <option>{opt}</option>
+                    )}
+                </select> :
+                <select className={this.props.accordionView ? "contact-attr contact-attr-wdt " : "contact-attr"} onChange={() => this.props.handleInputChange(this.props.item, event)}>
                     {this.props.item.options.map((opt) =>
                         <option>{opt}</option>
                     )}
                 </select>
+            }
+            </React.Fragment>
         )
     }
 }
@@ -66,7 +78,76 @@ class ContactFormInputs extends React.Component {
     constructor (props) {
         super(props);
 
+        this.state = contactForm.formState;
+        
+
         console.log("props ibn ContactFormInputs", props);
+
+        console.log("this.state in contact form", this.state);
+    }
+
+    handleInputChange(item, event) {
+        console.log("selected item", item, "value in handleInputChange", event.target.value);
+
+        
+
+        // if offer_options are selected, multiple checked fields are pushed and set into state
+        if (item.type == "offer_options") {
+
+            let updatedOffrOpts = this.state[item.alias];
+
+            // if one of the offer options are checked, push only if index == -1 
+            if (event.target.checked == true) {
+
+                if (updatedOffrOpts.indexOf(event.target.value) == -1) {
+                    updatedOffrOpts.push(event.target.value);
+                }
+            } else {
+
+                // remove unchecked element from the array and set it into state
+                if (updatedOffrOpts.indexOf(event.target.value) != -1) {
+                    updatedOffrOpts.splice(updatedOffrOpts.indexOf(event.target.value), 1);
+                }
+            }
+
+            this.setState({
+                [item.alias]: updatedOffrOpts
+            }, function(){
+                console.log("state in handleInputChange callback", this.state); 
+            });
+
+        } else {
+
+            this.setState({
+                [item.alias]: event.target.value
+            }, function(){
+                console.log("state in handleInputChange callback", this.state); 
+            });
+        }
+    }
+
+    async submitContactForm() {
+
+        console.log("in submitForm func, state is::", this.state);
+
+        try {
+            // make post request with the state data
+            let response = await fetch('https://mywebsite.com/endpoint/', {
+                method: 'POST',
+                headers: {
+                    Accept: 'application/json',
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(this.state),
+            });
+
+            // get response from post request
+            let responseJson = await response.json();
+            
+            // TODO: show default docsie popup saying query posted successfully or something
+          } catch (error) {
+            console.error(error);
+          }
     }
 
     render() {
@@ -83,8 +164,13 @@ class ContactFormInputs extends React.Component {
                 contactFormInputs.push(
                     <div className="pure-u-xs-1 pure-u-sm-1-1 pure-u-md-1-1 pure-u-lg-1-3 pure-u-xl-1-3 contact-input">
                         <span className="form-label">{item.label}</span><br />
+                        {item.required ? 
                         <input className={this.props.accordionView ? "contact-attr contact-attr-wdt " : "contact-attr"} type={item.type} placeholder={item.placeholder}
-                            id="contact-attr" name="contact-attr" />
+                            id="contact-attr" name="contact-attr" onChange={() => this.handleInputChange(item, event)} required/> : 
+                        <input className={this.props.accordionView ? "contact-attr contact-attr-wdt " : "contact-attr"} type={item.type} placeholder={item.placeholder}
+                        id="contact-attr" name="contact-attr" onChange={() => this.handleInputChange(item, event)} />
+                        }
+                            
                     </div>
                 );
             }
@@ -96,7 +182,7 @@ class ContactFormInputs extends React.Component {
                         <span className="form-label">{item.label}</span><br />
                         {/* <input className={this.props.accordionView ? "contact-attr contact-attr-wdt " : "contact-attr"} type={item.type} placeholder={item.placeholder}
                             id="contact-attr" name="contact-attr" /> */}
-                            <SelectTag item={item} accordionView={this.props.accordionView} />
+                            <SelectTag item={item} accordionView={this.props.accordionView} handleInputChange={() => this.handleInputChange(item, event)} />
                     </div>
                 );
             }
@@ -110,7 +196,7 @@ class ContactFormInputs extends React.Component {
                     <div className="pure-u-xs-1 pure-u-sm-1-1 pure-u-md-1-1 pure-u-lg-1-3 pure-u-xl-1-3 offer-options">
                         <span style={{ color: 'red' }}>{item.optionsRequiredMsg}</span>
                         <br />
-                        <OfferOptions item={item} />
+                        <OfferOptions item={item} handleInputChange={() => this.handleInputChange(item, event)} />
                     </div>
                 )
             }
@@ -122,7 +208,9 @@ class ContactFormInputs extends React.Component {
                 contactFormInputs.push(
                     <div className="pure-u-xs-1 pure-u-sm-1-3 pure-u-md-1-3 pure-u-lg-1-3 pure-u-xl-1-3 contact-input">
                         <span className="form-label-desc">{item.label}</span>
-                        <textarea style={{ border: '1px solid #ddd', width: '89.5%', float: 'left' }} rows="5" cols="50" placeholder={item.placeholder}></textarea>
+                        {item.required ? 
+                        <textarea style={{ border: '1px solid #ddd', width: '89.5%', float: 'left' }} rows="5" cols="50" placeholder={item.placeholder} onChange={() => this.handleInputChange(item, event)} required></textarea> :
+                        <textarea style={{ border: '1px solid #ddd', width: '89.5%', float: 'left' }} rows="5" cols="50" placeholder={item.placeholder} onChange={() => this.handleInputChange(item, event)}></textarea> }
                     </div>
                 )
             }
@@ -134,20 +222,20 @@ class ContactFormInputs extends React.Component {
                     {contactFormInputs}
                     {/* pure-u-xs-1 pure-u-sm-1-2 pure-u-md-1-2 pure-u-lg-1-3 pure-u-xl-1-3  */}
                     {/* <div className="contact-input"> */}
-                    <div className="pure-u-xs-1 pure-u-sm-1-1 pure-u-md-1-1 pure-u-lg-1-3 pure-u-xl-1-3 contact-input">
-                        <button className="ct-btn back-to-plans-btn-accrd" onClick={() => this.props.contactFormToggle()}>
-                            <div className="back-btn-action-link-lg-dtl">
-                                <svg width="30px" height="30px" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M13 16l-6-6 6-6" fill="none" stroke="red" stroke-width="1.03" />
-                                </svg>
-                                {this.props.toggleContactFormText}
-                            </div>
-                        </button>
-                        <button className="ct-btn contact-us-btn-xs" style={{ color: '#fff', fontSize: '18px', fontWeight: '700' }} onClick={() => this.props.submitContactForm()}>{this.props.submitContactFormText}</button>
-                    </div>
                     {/* <div className="pure-u-xs-1 pure-u-sm-1-2 pure-u-md-1-2 pure-u-lg-1-3 pure-u-xl-1-3 accrd-actn-btn">
                         <input className="contact-us-btn" style={{ color: '#fff', fontSize: '18px', fontWeight: '700'}} type="submit" value="Submit" onClick={() => this.props.submitContactForm()}/>
                     </div> */}
+                </div>
+                <div className="contact-input">
+                    <button className="ct-btn back-to-plans-btn-accrd" onClick={() => this.props.contactFormToggle()}>
+                        <div className="back-btn-action-link-lg-dtl">
+                            <svg width="30px" height="30px" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M13 16l-6-6 6-6" fill="none" stroke="red" stroke-width="1.03" />
+                            </svg>
+                            {this.props.toggleContactFormText}
+                        </div>
+                    </button>
+                    <button className="ct-btn contact-us-btn-xs" style={{ color: '#fff', fontSize: '18px', fontWeight: '700' }} onClick={() => this.submitContactForm()}>{this.props.submitContactFormText}</button>
                 </div>
             </React.Fragment>
         )
@@ -535,15 +623,18 @@ class DetailedPlanTier extends React.Component {
                             <div className="pure-u-1-4 card category-feature-name" style={{ textAlign: 'center' }}>
 
                                 <div className="category-name">{item.name}&nbsp;
-                                    <Tooltip message={item.info} position={'top'}>
-                                        <span>
-                                            <svg width="20px" height="20px" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                { 
+                                    item.info ?
+                                        <Tooltip message={item.info} position={'top'}>
+                                            <span>
+                                                <svg width="20px" height="20px" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
 
-                                                <path d="M12.13 11.59c-.16 1.25-1.78 2.53-3.03 2.57-2.93.04.79-4.7-.36-5.79.56-.21 1.88-.54 1.88.44 0 .82-.5 1.74-.74 2.51-1.22 3.84 2.25-.17 2.26-.14.02.03.02.17-.01.41-.05.36.03-.24 0 0zm-.57-5.92c0 1-2.2 1.48-2.2.36 0-1.03 2.2-1.49 2.2-.36z" />
-                                                <circle cx="10" cy="10" r="9" fill="none" stroke="currentColor" stroke-width="1.1" />
-                                            </svg>
-                                        </span>
-                                    </Tooltip>
+                                                    <path d="M12.13 11.59c-.16 1.25-1.78 2.53-3.03 2.57-2.93.04.79-4.7-.36-5.79.56-.21 1.88-.54 1.88.44 0 .82-.5 1.74-.74 2.51-1.22 3.84 2.25-.17 2.26-.14.02.03.02.17-.01.41-.05.36.03-.24 0 0zm-.57-5.92c0 1-2.2 1.48-2.2.36 0-1.03 2.2-1.49 2.2-.36z" />
+                                                    <circle cx="10" cy="10" r="9" fill="none" stroke="currentColor" stroke-width="1.1" />
+                                                </svg>
+                                            </span>
+                                        </Tooltip> : '' 
+                                }
                                 </div>
                             </div>
                             {/* <div className="pure-u-1-4 card category-feature">
@@ -664,15 +755,18 @@ class CategoryFeatures extends React.Component {
                         <div className="plan-desc-feature">
                             <div sm="2" className="category-feature-xs">
                                 <div>{item.values[val]}&nbsp;{item.name}&nbsp;
-                                    <Tooltip message={item.info} position={'top'}>
-                                        <span>
-                                            <svg width="20px" height="20px" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                { 
+                                    item.info ?
+                                        <Tooltip message={item.info} position={'top'}>
+                                            <span>
+                                                <svg width="20px" height="20px" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
 
-                                                <path d="M12.13 11.59c-.16 1.25-1.78 2.53-3.03 2.57-2.93.04.79-4.7-.36-5.79.56-.21 1.88-.54 1.88.44 0 .82-.5 1.74-.74 2.51-1.22 3.84 2.25-.17 2.26-.14.02.03.02.17-.01.41-.05.36.03-.24 0 0zm-.57-5.92c0 1-2.2 1.48-2.2.36 0-1.03 2.2-1.49 2.2-.36z" />
-                                                <circle cx="10" cy="10" r="9" fill="none" stroke="currentColor" stroke-width="1.1" />
-                                            </svg>
-                                        </span>
-                                    </Tooltip>
+                                                    <path d="M12.13 11.59c-.16 1.25-1.78 2.53-3.03 2.57-2.93.04.79-4.7-.36-5.79.56-.21 1.88-.54 1.88.44 0 .82-.5 1.74-.74 2.51-1.22 3.84 2.25-.17 2.26-.14.02.03.02.17-.01.41-.05.36.03-.24 0 0zm-.57-5.92c0 1-2.2 1.48-2.2.36 0-1.03 2.2-1.49 2.2-.36z" />
+                                                    <circle cx="10" cy="10" r="9" fill="none" stroke="currentColor" stroke-width="1.1" />
+                                                </svg>
+                                            </span>
+                                        </Tooltip> : '' 
+                                }
                                 </div>
                             </div>
                         </div>
@@ -950,131 +1044,6 @@ class PricingPage extends React.Component {
 
 
     render() {
-
-        let detailRows = [];
-
-        let categoryFeatures = [];
-
-        let tierActions = [];
-
-        this.state.tiers.forEach((tier) => {
-
-            detailRows.push(
-                <div key={tier.name} className="pure-u-1-4 category-feature-head">
-                    <h4 className="pricing-name">{tier.name}</h4>
-                    {(tier.showCallToAction && tier.showCallToAction == "True") ?
-                        <React.Fragment>
-                            <button className="contact-us-btn-dtl" onClick={() => this.contactFormToggle()}>
-                                <div className="contact-action-label">{tier.contactFormText}</div>
-                            </button>
-                        </React.Fragment> :
-                        <React.Fragment>
-                            {this.state.showMonthlyPlan ?
-                                <React.Fragment>
-                                    <h2 className="product-price product-price-md">
-                                        <span className="currency">{tier.pricing.monthly.currency}</span>
-                                        <span className="price">{tier.pricing.monthly.price}</span>
-                                        <span className="period">{tier.pricing.monthly.label}</span>
-                                    </h2>
-                                    {/* <div className="pricing-panel-info">
-                                        <div className="text-yearly-color">
-                                            <p data-alt-text="$950 billed yearly<br />Save $238/year" className="year-pricing">
-                                                {tier.pricing.yearly.currency}{tier.pricing.yearly.price}{tier.pricing.monthly.label} {this.state.tiers[0].monthlyText} <div className="yearly" onClick={() => this.yearlyToggle()}> {this.state.tiers[0].payText}</div>
-                                            </p>
-                                        </div>
-                                    </div> */}
-                                </React.Fragment>
-                                :
-                                <React.Fragment>
-                                    <h2 className="product-price product-price-md">
-                                        <span className="currency">{tier.pricing.yearly.currency}</span>
-                                        <span className="price">{tier.pricing.yearly.price}</span>
-                                        <span className="period">{tier.pricing.monthly.label}</span>
-                                    </h2>
-                                    {/* <div className="pricing-panel-info">
-                                        <div className="text-yearly-color">
-                                            <p data-alt-text="$950 billed yearly<br />Save $238/year" className="year-pricing">
-                                                {tier.pricing.yearly.currency}{tier.pricing.yearly.perAnnum} {this.state.tiers[0].yearlyText1}<br /> {this.state.tiers[0].yearlyText2} {tier.pricing.yearly.currency}{tier.pricing.yearly.savedAmount}{tier.pricing.yearly.label}
-                                            </p>
-                                        </div>
-                                    </div> */}
-                                </React.Fragment>
-                            }
-                        </React.Fragment>
-                    }
-                    {/* <h2 className="product-price product-price-md">
-                        <span className="currency">{tier.pricing.monthly.currency}</span>
-                        <span className="price">{tier.pricing.monthly.price}</span>
-                        <span className="period">{tier.pricing.monthly.label}</span>
-                    </h2> */}
-                </div>
-            )
-        });
-
-        this.state.categories.forEach((category, i) => {
-            category.features.forEach((item, j) => {
-
-                categoryFeatures.push(
-
-                    <React.Fragment>
-
-                        {/* {i != 0 && j == 0 ? */}
-                        {j == 0 ?
-                            <React.Fragment>
-
-                                <h4>{category.name}</h4>
-
-                            </React.Fragment>
-                            : ''}
-                        <div className="pure-g" key={item.name}>
-                            <div className="pure-u-1-4 card category-feature-name" style={{ textAlign: 'center' }}>
-
-                                <div className="category-name">{item.name}&nbsp;
-                                    <Tooltip message={item.info} position={'top'}>
-                                        <span>
-                                            <svg width="20px" height="20px" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-
-                                                <path d="M12.13 11.59c-.16 1.25-1.78 2.53-3.03 2.57-2.93.04.79-4.7-.36-5.79.56-.21 1.88-.54 1.88.44 0 .82-.5 1.74-.74 2.51-1.22 3.84 2.25-.17 2.26-.14.02.03.02.17-.01.41-.05.36.03-.24 0 0zm-.57-5.92c0 1-2.2 1.48-2.2.36 0-1.03 2.2-1.49 2.2-.36z" />
-                                                <circle cx="10" cy="10" r="9" fill="none" stroke="currentColor" stroke-width="1.1" />
-                                            </svg>
-                                        </span>
-                                    </Tooltip>
-                                </div>
-                            </div>
-                            {/* <div className="pure-u-1-4 card category-feature">
-                                <div>{item.values[val1]}</div>
-                            </div>
-                            <div className="pure-u-1-4 card category-feature">
-                                <div>{item.values[val2]}</div>
-                            </div>
-                            <div className="pure-u-1-4 card category-feature">
-                                <div>{item.values[val3]}</div>
-                            </div> */}
-
-                            {/* send tiers, item props and get each tier feature details */}
-                            <DetailCategoryFeatures tiers={this.state.tiers} item={item} />
-
-                        </div>
-                    </React.Fragment>
-                )
-            })
-        })
-
-        if (this.state && this.state.tierActions) {
-            this.state.tierActions.forEach((tierAction) => {
-
-                tierActions.push(
-                    // <div key={tierAction.label.name} className="pure-u-1-4 card category-feature" style={{ textAlign: 'center' }}>
-                    //     <button className="sign-up-btn" style={{ width: '100%', fontSize: '12px !important' }}>
-                    //         <a href={tierAction.label.url} className="action-link-lg-dtl" style={{fontSize: '12px !important'}}>{tierAction.label.text}</a>
-                    //     </button>
-                    // </div>
-                    <div className="pure-u-1-4 card-actn category-feature-actn">
-                        <button className="tier-actn"><a href={tierAction.label.url} className="tier-actn-link">{tierAction.label.text}</a></button>
-                    </div>
-                )
-            });
-        }
 
         return (
             <div className="simple-detail-plan-tier-sm-md-lg">
