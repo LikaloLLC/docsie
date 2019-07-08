@@ -3,16 +3,24 @@ var contactForm = {
     "sub_info": "Let's tallk entreprise.",
     "toggleContactFormText": "Go Back",
     "submitContactFormText": "Submit Form",
+    "endPoint": "https://jsonplaceholder.typicode.com/posts",
+    "disabled": true,
     "formInputs": [
         {
             "label": "Business Email",
-            "alias": "businessEmail",
+            "alias": {
+                "label": "businessEmail",
+                "valueType": "string"
+            },
             "type": "email",
             "placeholder": "enter your business email"
         },
         {
             "label": "Industry",
-            "alias": "industry",
+            "alias": {
+                "label": "industry",
+                "valueType": "string"
+            },
             "type": "dropdown",
             "placeholder": "enter your industry",
             "options": [
@@ -22,18 +30,29 @@ var contactForm = {
         },
         {
             "label": "Job Title",
-            "alias": "jobTitle",
+            "alias": {
+                "label": "jobTitle",
+                "valueType": "string"
+            },
             "type": "text",
             "placeholder": "enter your job title"
         }, {
             "label": "No. of employees",
-            "alias": "employeesNumber",
+            "alias": {
+                "label": "employeesNumber",
+                "valueType": "number"
+            },
             "type": "number",
             "placeholder": "enter # of employees"
         }, 
         {
             "label": "I'm interested in...",
-            "alias": "offer_options",
+            "alias": {
+                "label": "off_options",
+                "valueType": "array",
+                "arrayType": "options"
+            },
+            // type and offer_options array belong to this options type, cannot be changed
             "type": "offer_options",
             "offer_options": [
                 {
@@ -45,80 +64,29 @@ var contactForm = {
                     "value": "AI powered documentation",
                     "type": "checkbox"
                 }
-                // , {
-                //     "alias": "Single tenant options",
-                //     "value": "Single tenant options",
-                //     "type": "checkbox"
-                // }, {
-                //     "alias": "Customer success manager",
-                //     "value": "Customer success manager",
-                //     "type": "checkbox"
-                // }, {
-                //     "alias": "Private onboarding and training sessions",
-                //     "value": "Private onboarding and training sessions",
-                //     "type": "checkbox"
-                // }, {
-                //     "alias": "Private cloud options",
-                //     "value": "Private cloud options",
-                //     "type": "checkbox"
-                // }, {
-                //     "alias": "Comprehensive project metrics",
-                //     "value": "Comprehensive project metrics",
-                //     "type": "checkbox"
-                // }, {
-                //     "alias": "SAML-based single sign-on (SSO)",
-                //     "value": "SAML-based single sign-on (SSO)",
-                //     "type": "checkbox"
-                // }, {
-                //     "alias": "Combining multiple projects",
-                //     "value": "Combining multiple projects",
-                //     "type": "checkbox"
-                // }, {
-                //     "alias": "Customer OAuth 2 Login",
-                //     "value": "Customer OAuth 2 Login",
-                //     "type": "checkbox"
-                // }, {
-                //     "alias": "Vendor Security Forms",
-                //     "value": "Vendor Security Forms",
-                //     "type": "checkbox"
-                // }, {
-                //     "alias": "SLA / ToS modifications",
-                //     "value": "SLA / ToS modifications",
-                //     "type": "checkbox"
-                // }, {
-                //     "alias": "Translations",
-                //     "value": "Translations",
-                //     "type": "checkbox"
-                // }
             ],
             "optionsRequiredMsg": "*Please select atleast one option"
         }, 
         {
             "label": "Description",
-            "alias": "description",
+            "alias": {
+                "label": "description",
+                "valueType": "string"
+            },
             "type": "text_area",
             "placeholder": "enter your description"
-        }
-    ],
-    // this is used to set form initial state, alias names are put in here
-    "formState": {
-        "firstName": "",
-        "lastName": "",
-        "companyName": "",
-        "businessEmail": "",
-        "industry": "",
-        "jobTitle": "",
-        "employeesNumber": "",
-        "offer_options": [],
-        "description": "",
-        "requiredFields": [
+        },
+        {
+            "label": "requiredFields",
+            "alias": {
+                "label": "requiredFields",
+                "valueType": "array",
+                "arrayType": "requiredFields"
+            },
+            "requiredFields": [
             "businessEmail",
             "Priority Support and SLA's"
-        ],
-        // this is used to disable submit button
-        "disabled": true,
-        // use this for contact post request endpoint
-        "endPoint": "https://jsonplaceholder.typicode.com/posts"
-    },
-    
+            ]
+        }
+    ]
 } 

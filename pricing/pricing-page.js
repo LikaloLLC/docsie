@@ -23,15 +23,19 @@ class OfferOptions extends React.Component {
 
         this.props.item.offer_options.forEach((option) => {
 
+            let ref = option.alias;
+
+            console.log("this", this, "this[ref]", this[ref]);
+
             offerOptions.push(
                 <React.Fragment>
                     {/* {option.required ?  */}
                     {(this.props.requiredFields.indexOf(option.alias) != -1) ?
                         <React.Fragment>
-                            <input type={option.type} style={{ marginRight: '10px' }} name={option.value} value={option.value} onChange={() => this.props.handleInputChange(this.props.item, event)} required/> <span>{option.value}*</span><br />
+                            <input type={option.type} className="offer-options" ref={this[ref]} name={option.alias} value={option.value} onChange={() => this.props.handleInputChange(this.props.item, event)} required/> <span>{option.value}*</span><br />
                         </React.Fragment>:
                         <React.Fragment>
-                            <input type={option.type} style={{ marginRight: '10px' }} name={option.value} value={option.value} onChange={() => this.props.handleInputChange(this.props.item, event)} /><span>{option.value}</span><br />
+                            <input type={option.type} className="offer-options" ref={ref} name={option.alias} value={option.value} onChange={() => this.props.handleInputChange(this.props.item, event)} /><span>{option.value}</span><br />
                         </React.Fragment>
                     }
                 </React.Fragment>
@@ -59,10 +63,10 @@ class SelectTag extends React.Component {
         return (
             <React.Fragment>
             {/* {this.props.item.required ?  */}
-            {(this.props.requiredFields.indexOf(this.props.item.alias) != -1) ?
+            {(this.props.requiredFields.indexOf(this.props.item.alias.label) != -1) ?
             <React.Fragment>
                 <span className="form-label">{this.props.item.label}*</span><br />
-                <select className={this.props.accordionView ? "contact-attr contact-attr-wdt " : "contact-attr"} onChange={() => this.props.handleInputChange(this.props.item, event)} required>
+                <select className={this.props.accordionView ? "contact-attr contact-attr-wdt " : "contact-attr"} name={this.props.item.alias.label} onChange={() => this.props.handleInputChange(this.props.item, event)} required>
                     {this.props.item.options.map((opt) =>
                         <option>{opt}</option>
                     )}
@@ -70,7 +74,7 @@ class SelectTag extends React.Component {
             </React.Fragment>   :
             <React.Fragment>
                 <span className="form-label">{this.props.item.label}</span><br />
-                <select className={this.props.accordionView ? "contact-attr contact-attr-wdt " : "contact-attr"} onChange={() => this.props.handleInputChange(this.props.item, event)}>
+                <select className={this.props.accordionView ? "contact-attr contact-attr-wdt " : "contact-attr"} name={this.props.item.alias.label} onChange={() => this.props.handleInputChange(this.props.item, event)}>
                     {this.props.item.options.map((opt) =>
                         <option>{opt}</option>
                     )}
@@ -88,12 +92,49 @@ class ContactFormInputs extends React.Component {
     constructor (props) {
         super(props);
 
-        this.state = contactForm.formState;
+        // this.state = contactForm.formState;
         
-        // use this to show email validation err msg
-        // this.state = Object.assign(this.state, {
-        //     emailValidity: false
-        // })
+        // this.state = Object.assign(this.state, {formInputs: contactForm.formInputs});
+
+        // create a ref to store the textInput DOM element
+        this.emailInput = React.createRef();
+
+        this.state = {};
+
+        contactForm.formInputs.forEach((item) => {
+
+            // create alias for offer_options
+            if (item.type=="offer_options") {
+
+                this.state = Object.assign(this.state, {"optionsAlias": item.alias.label})
+
+                item.offer_options.forEach((opt) => {
+
+                let ref = opt.alias;
+                
+                this[ref] = React.createRef(); 
+                });
+            }
+
+            // check alias type and set status based on that
+            if (item.alias) {
+                if ((item.alias.valueType).toLowerCase() == "string") {
+                    this.state[item.alias.label] = "";
+                } else if ((item.alias.valueType).toLowerCase() == "array") {
+                    if (item.alias.arrayType == "requiredFields")
+                        this.state[item.alias.label] = item[item.alias.label];
+                    else 
+                    this.state[item.alias.label] = [];
+                } else if ((item.alias.valueType).toLowerCase() == "number") {
+                    this.state[item.alias.label] = 0;
+                }
+            }
+        });
+
+        // set endpoint
+        this.state.endPoint = contactForm.endPoint;
+
+        this.state.disabled = contactForm.disabled;
 
         console.log("props ibn ContactFormInputs", props);
 
@@ -109,13 +150,23 @@ class ContactFormInputs extends React.Component {
 
             console.log("checking if value exists to remove disable option on button", this.state[field]);
 
+            // // if value exists, set disabled state to false, else true 
+            // // offer_options is an array
+            // if (this.state[field] == "" || this.state[field] == undefined || (typeof this.state[field] == "object" && this.state[field].indexOf(field) == -1)) {
+
+            //     disabledCount++;
+            // }
             // if value exists, set disabled state to false, else true 
             // offer_options is an array
-            if (this.state[field] == "" || this.state[field] == undefined && this.state.offer_options.indexOf(field) == -1) {
+            if (this.state[field] == "" || this.state[field] == undefined && this.state[this.state.optionsAlias].indexOf(field) == -1) {
 
                 disabledCount++;
             }
         })
+
+        if(this.emailInput.current.validity.valid == false) {
+            disabledCount++;
+        }
 
         // var emailElem = document.getElementById('email');
 
@@ -142,10 +193,12 @@ class ContactFormInputs extends React.Component {
 
         console.log("selected item", item, "value in handleInputChange", event.target.value);
 
+        console.log("this.emailInput", this.emailInput);
+
         // if offer_options are selected, multiple checked fields are pushed and set into state
         if (item.type == "offer_options") {
 
-            let updatedOffrOpts = this.state[item.alias];
+            let updatedOffrOpts = this.state[item.alias.label];
 
             // if one of the offer options are checked, push only if index == -1 
             if (event.target.checked == true) {
@@ -162,7 +215,7 @@ class ContactFormInputs extends React.Component {
             }
 
             this.setState({
-                [item.alias]: updatedOffrOpts
+                [item.alias.label]: updatedOffrOpts
             }, function(){
 
                 console.log("state in handleInputChange callback", this.state); 
@@ -172,7 +225,7 @@ class ContactFormInputs extends React.Component {
         } else {
 
             this.setState({
-                [item.alias]: event.target.value
+                [item.alias.label]: event.target.value
             }, function(){
 
                 console.log("state in handleInputChange callback", this.state); 
@@ -193,21 +246,45 @@ class ContactFormInputs extends React.Component {
 
         delete reqBody.disabled;
 
+        delete reqBody.formInputs;
+
+        delete reqBody.optionsAlias;
+
         console.log("contact post request body", this.state);
 
         fetch(this.state.endPoint, {
             method: 'POST',
-            body: JSON.stringify(reqBody),
             headers: {
-            "Content-type": "application/json; charset=UTF-8"
-            }
+                Accept: 'application/json',
+                "Content-type": "application/json; charset=UTF-8"
+            },
+            body: JSON.stringify(reqBody)
         })
         .then(response => response.json())
         .then((result) => {
-
+    
             console.log("result after post request", result);
-        }, (error) => {
 
+            // restore form to new one
+            this.setState(
+                contactForm.formState
+            )
+
+            // clear off selected checkboxes
+            this.state.formInputs.forEach((item) => {
+
+                // create alias for offer_options
+                if (item.type=="offer_options") {
+                    item.offer_options.forEach((opt) => {
+                        let ref = opt.alias;
+                
+                        console.log("this.ref]", this);
+                    });
+                }
+            });
+    
+        }, (error) => {
+    
             console.log("error in submitting contact form", error);
         })
     }
@@ -226,16 +303,16 @@ class ContactFormInputs extends React.Component {
                 contactFormInputs.push(
                     <div className="pure-u-xs-1 pure-u-sm-1-1 pure-u-md-1-1 pure-u-lg-1-3 pure-u-xl-1-3 contact-input">
                         
-                        {(this.state.requiredFields.indexOf(item.alias) != -1) ?
+                        {(this.state.requiredFields.indexOf(item.alias.label) != -1) ?
                         <React.Fragment>
                             <span className="form-label">{item.label}*</span><br />
                             <input className={this.props.accordionView ? "contact-attr contact-attr-wdt " : "contact-attr"} type={item.type} placeholder={item.placeholder}
-                                name="contact-attr" value={this.state[item.alias]} onChange={() => this.handleInputChange(item, event)} required/>
+                                name={item.alias.label} value={this.state[item.alias.label]} onChange={() => this.handleInputChange(item, event)} required/>
                         </React.Fragment> : 
                         <React.Fragment>
                             <span className="form-label">{item.label}</span><br />
                             <input className={this.props.accordionView ? "contact-attr contact-attr-wdt " : "contact-attr"} type={item.type} placeholder={item.placeholder}
-                                name="contact-attr" value={this.state[item.alias]} onChange={() => this.handleInputChange(item, event)} />
+                                name={item.alias.label} value={this.state[item.alias.label]} onChange={() => this.handleInputChange(item, event)} />
                         </React.Fragment>
                         }
                         {/* { (item.type=="email" && this.state.emailValidity == false) ? 
@@ -252,19 +329,21 @@ class ContactFormInputs extends React.Component {
 
                 console.log("item.type is text");
 
+                let emailVal = this.state[item.alias.label];
+
                 contactFormInputs.push(
                     <div className="pure-u-xs-1 pure-u-sm-1-1 pure-u-md-1-1 pure-u-lg-1-3 pure-u-xl-1-3 contact-input">
                         
-                        {(this.state.requiredFields.indexOf(item.alias) != -1) ?
+                        {(this.state.requiredFields.indexOf(item.alias.label) != -1) ?
                         <React.Fragment>
                             <span className="form-label">{item.label}*</span><br />
-                            <input className={this.props.accordionView ? "contact-attr contact-attr-wdt " : "contact-attr"} type={item.type} placeholder={item.placeholder}
-                                id="email" name="contact-attr" value={this.state[item.alias]} onChange={() => this.handleInputChange(item, event)} required/>
+                            <input className={this.props.accordionView ? "contact-attr contact-attr-wdt " : "contact-attr"} ref={this.emailInput} type={item.type} placeholder={item.placeholder}
+                                id="email" name={item.alias.label} value={emailVal} onChange={() => this.handleInputChange(item, event)} required/>
                         </React.Fragment> : 
                         <React.Fragment>
                             <span className="form-label">{item.label}</span><br />
-                            <input className={this.props.accordionView ? "contact-attr contact-attr-wdt " : "contact-attr"} type={item.type} placeholder={item.placeholder}
-                                id="email" name="contact-attr" value={this.state[item.alias]} onChange={() => this.handleInputChange(item, event)} />
+                            <input className={this.props.accordionView ? "contact-attr contact-attr-wdt " : "contact-attr"} ref={this.emailInput} type={item.type} placeholder={item.placeholder}
+                                id="email" name={item.alias} value={emailVal} onChange={() => this.handleInputChange(item, event)} />
                         </React.Fragment>
                         }
                         {/* { (item.type=="email" && this.state.emailValidity == false) ? 
@@ -296,7 +375,7 @@ class ContactFormInputs extends React.Component {
 
                 contactFormInputs.push(
                     <div className="pure-u-xs-1 pure-u-sm-1-1 pure-u-md-1-1 pure-u-lg-1-3 pure-u-xl-1-3 offer-options">
-                        <span style={{ color: 'red' }}>{item.optionsRequiredMsg}</span>
+                        <span class="optn-rqd-msg">{item.optionsRequiredMsg}</span>
                         <br />
                         <OfferOptions item={item} requiredFields={this.state.requiredFields} handleInputChange={() => this.handleInputChange(item, event)} />
                     </div>
@@ -310,14 +389,14 @@ class ContactFormInputs extends React.Component {
                 contactFormInputs.push(
                     <div className="pure-u-xs-1 pure-u-sm-1-3 pure-u-md-1-3 pure-u-lg-1-3 pure-u-xl-1-3 contact-input">
                         
-                        {(this.state.requiredFields.indexOf(item.alias) != -1) ?
+                        {(this.state.requiredFields.indexOf(item.alias.label) != -1) ?
                         <React.Fragment>
                             <span className="form-label-desc">{item.label}*</span>
-                            <textarea style={{ border: '1px solid #ddd', width: '89.5%', float: 'left' }} rows="5" cols="50" placeholder={item.placeholder} onChange={() => this.handleInputChange(item, event)} required></textarea>
+                            <textarea className="text-area-tg" rows="5" cols="50" placeholder={item.placeholder} onChange={() => this.handleInputChange(item, event)} required></textarea>
                         </React.Fragment> :
                         <React.Fragment>
                             <span className="form-label-desc">{item.label}</span>
-                            <textarea style={{ border: '1px solid #ddd', width: '89.5%', float: 'left' }} rows="5" cols="50" placeholder={item.placeholder} onChange={() => this.handleInputChange(item, event)}></textarea> 
+                            <textarea className="text-area-tg" rows="5" cols="50" placeholder={item.placeholder} onChange={() => this.handleInputChange(item, event)}></textarea> 
                         </React.Fragment>
                         }
                     </div>
@@ -344,7 +423,8 @@ class ContactFormInputs extends React.Component {
                             {this.props.toggleContactFormText}
                         </div>
                     </button>
-                    <button className="ct-btn contact-us-btn-xs" style={{ color: '#fff', fontSize: '18px', fontWeight: '700' }} disabled={this.state.disabled} onClick={() => this.submitContactForm()}>{this.props.submitContactFormText}</button>
+                    <button className="ct-btn contact-us-btn-xs ct-btn-2" disabled={this.state.disabled} onClick={() => this.submitContactForm()}>{this.props.submitContactFormText}</button>
+                    {/* <input type="submit" value="Submit"></input> */}
                 </div>
             </React.Fragment>
         )
@@ -413,12 +493,12 @@ class DetailCategoryFeatures extends React.Component {
 
             detailCategoryFeatures.push(
                 <div className="pure-u-1-4 category-feature">
-                    {this.props.item.values[val] ? 
+                    {(this.props.item.values[val]).toLowerCase() == "yes" ? 
                         <svg class="c-check" xmlns="http://www.w3.org/2000/svg" viewBox="-255 347 100 100">
                             <title></title>
                             <path d="M-217.1 431.8c-1 1.2-2.6 2.2-4 2.3-1.4.1-3-.8-4.3-1.9l-27.5-24.5 7.8-8.7 23.2 20.6 54.6-61.7 8.6 7.9-58.4 66z"></path>
                         </svg>: 
-                        ''
+                        this.props.item.values[val]
                     }
                 </div>
             )
@@ -435,12 +515,19 @@ class DetailCategoryFeatures extends React.Component {
 // contact form 
 class ContactForm extends React.Component {
 
+    constructor (props) {
+        super(props);
+
+        this.state = contactForm.formState;
+    }
+
     render() {
 
         return (
 
             <React.Fragment>
-                <form className="contact-form-container">
+                {/* <form className="contact-form-container" action={this.state.endPoint} method="post" target="_self"> */}
+                <div className="contact-form-container">
                     <div className={this.props.accordionView ? "pricing-contact-form-wdt" : "pricing-contact-form"}>
                         <div className="pure-g">
                             <div className="pure-u-1">
@@ -487,7 +574,7 @@ class ContactForm extends React.Component {
 
                         <br />
                     </div>
-                </form>
+                </div>
             </React.Fragment>
         )
     }
@@ -524,7 +611,7 @@ class SimplePlanTier extends React.Component {
             rows.push(
                 <div key={tier.name} className="pure-u-1-2">
                     <div className="price-card">
-                        <div className="pricing-panel-wrapper" style={{ border: '3px solid #ffb5b3' }}>
+                        <div className="pricing-panel-wrapper wrp-2">
                             <div className="pricing-panel">
                                 {(tier.popular && tier.popular == "True") ?
                                     <div class="pricing-panel-ribbon">
@@ -532,7 +619,7 @@ class SimplePlanTier extends React.Component {
                                             {tier.popularInfoText}
                                         </h5>
                                     </div> :
-                                    <div style={{ marginTop: '10%' }}></div>}
+                                    <div className="wrp-arnd"></div>}
                                 {/* <div className={(tier.popular == "True") ? "pricing-panel-header popular-header" : "pricing-panel-header"}> */}
                                 <div className="pricing-panel-header">
                                     <h6 className="pricing-panel-tier" >{tier.name}</h6>
@@ -592,7 +679,7 @@ class SimplePlanTier extends React.Component {
                                     }
                                     <p></p>
                                     {(tier.showCallToAction && tier.showCallToAction == "True") ?
-                                        <p style={{ marginTop: '29.5%' }}>{tier.description}</p>
+                                        <p className="desc-text">{tier.description}</p>
                                         :
                                         <p>{tier.description}</p>
                                     }
@@ -604,9 +691,9 @@ class SimplePlanTier extends React.Component {
                                             <a href={tier.call_to_action.url} className="sign-up-btn">
                                                 <div className="action-link-lg">{tier.call_to_action.text}</div>
                                             </a>
-                                        </div> : <div style={{ marginTop: '60px' }}></div>
+                                        </div> : <div className="ftr-wrp"></div>
                                     }
-                                    <p className="compare-plans" style={{ position: 'relative', bottom: '20px' }} onClick={() => this.props.onClick()}>{this.state.compareText}</p>
+                                    <p className="compare-plans pln" onClick={() => this.props.onClick()}>{this.state.compareText}</p>
                                 </div>
                             </div>
                         </div>
@@ -625,7 +712,7 @@ class SimplePlanTier extends React.Component {
                     </div>
                     :
                     <React.Fragment>
-                        <div style={{ maxWidth: '80%' }}>
+                        <div className="simple-pln-wrp">
                             <div className="pure-g">
                                 {rows}
                             </div>
@@ -735,7 +822,7 @@ class DetailedPlanTier extends React.Component {
                             </React.Fragment>
                             : ''}
                         <div className="pure-g" key={item.name}>
-                            <div className="pure-u-1-4 card category-feature-name" style={{ textAlign: 'center' }}>
+                            <div className="pure-u-1-4 card category-feature-name ctg-wrp">
 
                                 <div className="category-name">{item.name}&nbsp;
                                 { 
@@ -803,7 +890,7 @@ class DetailedPlanTier extends React.Component {
                     <React.Fragment>
                         <div className="detail-plan-container">
 
-                            <div className="pure-g" style={{ marginBottom: '-60px' }}>
+                            <div className="pure-g dtl-wrp">
 
                                 <div class="pure-u-1-4">&nbsp;</div>
 
@@ -816,7 +903,7 @@ class DetailedPlanTier extends React.Component {
                             <br />
                             <div className="pure-g">
 
-                                <div class="pure-u-1-4 card-actn category-feature-actn" style={{ textAlign: 'center' }}>
+                                <div class="pure-u-1-4 card-actn category-feature-actn ctg-wrp">
                                     {/* <button className="back-to-plans-btn" onClick={() => this.handleClick()}>
                     <svg width="30px" height="30px" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                         <path d="M13 16l-6-6 6-6" fill="none" stroke="red" stroke-width="1.03"/>
@@ -865,7 +952,7 @@ class CategoryFeatures extends React.Component {
                     <div key={item.values[val]} className="plan-desc">
 
                         {j == 0 ?
-                            <span style={{ color: '#b50000bf', marginTop: '10px', fontWeight: 'bold' }}>{category.name}</span>
+                            <span className="ctg-name-wrp">{category.name}</span>
                             : ''}
                         <div className="plan-desc-feature">
                             <div sm="2" className="category-feature-xs">
@@ -963,7 +1050,7 @@ class PlansAccordion extends React.Component {
                                 </h2>
                             </AccordionItemButton>
                         </AccordionItemHeading>
-                        <AccordionItemPanel style={{ background: '#fff', textAlign: 'center' }}>
+                        <AccordionItemPanel className="accrd-panel-wrp">
                         {(tier.showCallToAction && tier.showCallToAction == "True") ?
                                 <React.Fragment>
                                     {/* if  tier.call_to_action.type is CONTACT, add contactFormToggle func */}
@@ -1175,7 +1262,7 @@ class PricingPage extends React.Component {
                             <input type="radio"
                                 value={false}
                                 checked={this.state.selectedOption == false}
-                                onChange={($event) => this.radioChange($event)} />&nbsp;<span style={{ marginLeft: '5px' }}>{this.state.radio_btn_yearly_opt}</span>
+                                onChange={($event) => this.radioChange($event)} />&nbsp;<span className="radio-btn-wrp">{this.state.radio_btn_yearly_opt}</span>
                         </div>
                     </div> : ''}
                 <br />
