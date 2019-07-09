@@ -84,8 +84,8 @@ var contactForm = {
                 "arrayType": "requiredFields"
             },
             "requiredFields": [
-            "businessEmail",
-            "Priority Support and SLA's"
+            "email",
+            "options"
             ]
         }
     ]
