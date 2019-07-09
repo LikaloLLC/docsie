@@ -5,6 +5,9 @@ var contactForm = {
     "submitContactFormText": "Submit Form",
     "endPoint": "https://serverless.docsie.io/contact/MyResource",
     "disabled": true,
+    "submitRes": "Successfully Submitted",
+    "loadingMsg": "Sending, Please Wait...", // show this msg while getting response from API endpoitn
+    "notificationDuration": 6000, // in ms
     "formInputs": [
         {
             "label": "Business Email",
@@ -16,7 +19,8 @@ var contactForm = {
             "placeholder": "enter your business email"
         },
         {
-            "label": "Industry",
+            "label": "Department",
+            "selectMsg": "Select Department",
             "alias": {
                 "label": "department",
                 "valueType": "string"
@@ -83,6 +87,7 @@ var contactForm = {
                 "valueType": "array",
                 "arrayType": "requiredFields"
             },
+            // takes in alias.label values
             "requiredFields": [
             "email",
             "description"
