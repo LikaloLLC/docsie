@@ -3,7 +3,7 @@ var contactForm = {
     "sub_info": "Let's tallk entreprise.",
     "toggleContactFormText": "Go Back",
     "submitContactFormText": "Submit Form",
-    "endPoint": "https://jsonplaceholder.typicode.com/posts",
+    "endPoint": "https://serverless.docsie.io/contact/MyResource",
     "disabled": true,
     "formInputs": [
         {
