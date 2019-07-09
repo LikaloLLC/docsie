@@ -85,7 +85,7 @@ var contactForm = {
             },
             "requiredFields": [
             "email",
-            "options"
+            "description"
             ]
         }
     ]
