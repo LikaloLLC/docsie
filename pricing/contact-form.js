@@ -3,22 +3,26 @@ var contactForm = {
     "sub_info": "Let's tallk entreprise.",
     "toggleContactFormText": "Go Back",
     "submitContactFormText": "Submit Form",
-    "endPoint": "https://jsonplaceholder.typicode.com/posts",
+    "endPoint": "https://serverless.docsie.io/contact/MyResource",
     "disabled": true,
+    "submitRes": "Successfully Submitted",
+    "loadingMsg": "Sending, Please Wait...", // show this msg while getting response from API endpoitn
+    "notificationDuration": 6000, // in ms
     "formInputs": [
         {
             "label": "Business Email",
             "alias": {
-                "label": "businessEmail",
+                "label": "email",
                 "valueType": "string"
             },
             "type": "email",
             "placeholder": "enter your business email"
         },
         {
-            "label": "Industry",
+            "label": "Department",
+            "selectMsg": "Select Department",
             "alias": {
-                "label": "industry",
+                "label": "department",
                 "valueType": "string"
             },
             "type": "dropdown",
@@ -48,7 +52,7 @@ var contactForm = {
         {
             "label": "I'm interested in...",
             "alias": {
-                "label": "off_options",
+                "label": "options",
                 "valueType": "array",
                 "arrayType": "options"
             },
@@ -83,9 +87,11 @@ var contactForm = {
                 "valueType": "array",
                 "arrayType": "requiredFields"
             },
+            // takes in alias.label values
             "requiredFields": [
-            "businessEmail",
-            "Priority Support and SLA's"
+                "email",
+                "description",
+                "department"
             ]
         }
     ]

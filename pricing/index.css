@@ -1588,3 +1588,74 @@ font-weight: bolder;
 .radio-btn-wrp {
   margin-left: 5px;
 }
+
+article, aside, footer, header, nav, section {
+  display: block;
+}
+
+.pure .pure-notification-container {
+  position: fixed;
+  width: 320px;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  padding: 1em;
+  z-index: 1020;
+}
+
+.pure .pure-notification-container .pure-notification-message {
+  position: relative;
+  width: 100%;
+  margin-bottom: 1em;
+  background-color: #fff;
+  border-radius: 5px;
+  box-sizing: border-box;
+  box-shadow: 0 0 8px -4px #000;
+  padding: 24px;
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+}
+
+.pure .pure-notification-container .pure-notification-message>svg {
+	flex-grow: 0;
+	flex-shrink: 0;
+	margin-right: 1em
+}
+
+.pure .pure-notification-container .pure-notification-message.pure-notification-success {
+	color: green
+}
+
+.pure .pure-notification-container .pure-notification-message.pure-notification-error {
+	color: #ff4141
+}
+
+.pure .pure-notification-container .pure-notification-message .pure-notification-progress {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 0;
+  background-color: #ff4141;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in;
+  animation: pure-notification-progress;
+  /* animation-duration: 6000ms; */
+}
+
+/* 'pure-notification-progress' animation-duration and 'notification' animation duration should match */
+#notification {
+  animation: notification-animation 0s 0.01s forwards;
+  visibility: show;
+}
+
+@keyframes pure-notification-progress{from{width:0}to{width:100%}}
+
+.pure .pure-notification-container .pure-notification-message.pure-notification-success {
+  color: green;
+}
+
+@keyframes notification-animation {
+  to   { visibility: hidden; }
+}

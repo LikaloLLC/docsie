@@ -14,7 +14,7 @@ class OfferOptions extends React.Component {
     constructor (props) {
         super(props);
 
-        console.log("props in OfferOptions", props);
+        // // console.log("props in OfferOptions", props);
     }
 
     render() {
@@ -25,7 +25,7 @@ class OfferOptions extends React.Component {
 
             let ref = option.alias;
 
-            console.log("this", this, "this[ref]", this[ref]);
+            // // console.log("this", this, "this[ref]", this[ref]);
 
             offerOptions.push(
                 <React.Fragment>
@@ -55,7 +55,7 @@ class SelectTag extends React.Component {
     constructor (props) {
         super(props);
 
-        console.log("props in OfferOptions", props);
+        // // console.log("props in OfferOptions", props);
     }
 
     render() {
@@ -67,16 +67,18 @@ class SelectTag extends React.Component {
             <React.Fragment>
                 <span className="form-label">{this.props.item.label}*</span><br />
                 <select className={this.props.accordionView ? "contact-attr contact-attr-wdt " : "contact-attr"} name={this.props.item.alias.label} onChange={() => this.props.handleInputChange(this.props.item, event)} required>
+                    <option value="Select" selected="selected">{this.props.item.selectMsg}</option>
                     {this.props.item.options.map((opt) =>
-                        <option>{opt}</option>
+                        <option value={opt}>{opt}</option>
                     )}
                 </select>
             </React.Fragment>   :
             <React.Fragment>
                 <span className="form-label">{this.props.item.label}</span><br />
                 <select className={this.props.accordionView ? "contact-attr contact-attr-wdt " : "contact-attr"} name={this.props.item.alias.label} onChange={() => this.props.handleInputChange(this.props.item, event)}>
+                    <option value="Select" selected="selected">{this.props.item.selectMsg}</option>
                     {this.props.item.options.map((opt) =>
-                        <option>{opt}</option>
+                        <option value={opt}>{opt}</option>
                     )}
                 </select>
             </React.Fragment>
@@ -99,20 +101,76 @@ class ContactFormInputs extends React.Component {
         // create a ref to store the textInput DOM element
         this.emailInput = React.createRef();
 
+        this.taInput = React.createRef();
+
         this.state = {};
 
-        contactForm.formInputs.forEach((item) => {
+        // contactForm.formInputs.forEach((item) => {
+
+        //     // create alias for offer_options
+        //     if (item.type=="offer_options") {
+
+        //         this.state = Object.assign(this.state, {"optionsAlias": item.alias.label})
+
+        //         item.offer_options.forEach((opt) => {
+
+        //         let ref = opt.alias;
+                
+        //         this[ref] = React.createRef(); 
+        //         });
+        //     }
+
+        //     // check alias type and set status based on that
+        //     if (item.alias) {
+        //         if ((item.alias.valueType).toLowerCase() == "string") {
+        //             this.state[item.alias.label] = "";
+        //         } else if ((item.alias.valueType).toLowerCase() == "array") {
+        //             if (item.alias.arrayType == "requiredFields")
+        //                 this.state[item.alias.label] = item[item.alias.label];
+        //             else 
+        //             this.state[item.alias.label] = [];
+        //         } else if ((item.alias.valueType).toLowerCase() == "number") {
+        //             this.state[item.alias.label] = 0;
+        //         }
+        //     }
+        // });
+
+        // // set endpoint
+        // this.state.endPoint = contactForm.endPoint;
+
+        // this.state.disabled = contactForm.disabled;
+
+        // // console.log("props ibn ContactFormInputs", props);
+
+        // // console.log("this.state in contact form", this.state);
+
+        // set contact form initial state
+        this.setContactFormState(contactForm.formInputs);
+    }
+
+    // sets contact form state
+    setContactFormState(data, onSubmitRes, resData) {
+
+        data.forEach((item) => {
 
             // create alias for offer_options
             if (item.type=="offer_options") {
 
-                this.state = Object.assign(this.state, {"optionsAlias": item.alias.label})
+                    this.state = Object.assign(this.state, {"optionsAlias": item.alias.label})
 
-                item.offer_options.forEach((opt) => {
+                    item.offer_options.forEach((opt) => {
 
-                let ref = opt.alias;
-                
-                this[ref] = React.createRef(); 
+                    let ref = opt.alias;
+                    
+                    // let refObj = React.createRef();
+                    
+                    // clear off checkbox
+                    if (this[ref] && this[ref].current && this[ref].current.checked == true) {
+                        this[ref].current.checked = false;
+                    } else {
+
+                        this[ref] = React.createRef(); 
+                    }
                 });
             }
 
@@ -136,10 +194,54 @@ class ContactFormInputs extends React.Component {
 
         this.state.disabled = contactForm.disabled;
 
-        console.log("props ibn ContactFormInputs", props);
+        this.state.notificationDuration = contactForm.notificationDuration;
 
-        console.log("this.state in contact form", this.state);
-    }
+        this.state.submit = false;
+
+        if (onSubmitRes) {
+
+            // this is from successful contact api response
+            
+            this.state.submitRes = "";
+            this.state.submitRes = <li id="notification" className="pure-notification-message pure-notification-success" style={{animationDuration: '6000ms'}}>
+                                        <svg class="icon icon--check" viewBox="0 0 20 20" width="22" height="22" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M4 10l4 5 9-11" fill="none" stroke="currentColor" stroke-width="1.1"/>
+                                        </svg>
+                                    
+                                        <span>{contactForm.submitRes}</span><div role="presentation" className="pure-notification-progress" style={{animationDuration: '6000ms'}}></div>
+                                    </li>
+        } else if (resData) {
+           
+            // this is used to show err msg from backend
+            // get the keys of resData
+            let resDatakeys = Object.keys(resData);
+
+            let errNode = [];
+
+            for (let key in resDatakeys) {
+
+                errNode.push(
+                    <span>
+                        {key}: {resDatakeys[key]}
+                    </span>
+                )
+            }
+
+            this.state.submitRes = <li id="notification" className="pure-notification-message pure-notification-success" style={{animationDuration: '6000ms'}}>
+                                        <svg class="icon icon--check" viewBox="0 0 20 20" width="22" height="22" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M4 10l4 5 9-11" fill="none" stroke="currentColor" stroke-width="1.1"/>
+                                        </svg>
+                                    
+                                        <span>{errNode}</span><div role="presentation" className="pure-notification-progress" style={{animationDuration: '6000ms'}}></div>
+                                    </li>            
+
+        } else {
+            this.state.submitRes = "";
+        }
+        // // console.log("this.state in contact form", this.state);
+
+}
+
 
     setButtonDisability(item, event) {
 
@@ -148,7 +250,7 @@ class ContactFormInputs extends React.Component {
         // check if all the required fields are entered and enable submit  button
         this.state.requiredFields.forEach((field) => {
 
-            console.log("checking if value exists to remove disable option on button", this.state[field]);
+            // // console.log("checking if value exists to remove disable option on button", this.state[field]);
 
             // // if value exists, set disabled state to false, else true 
             // // offer_options is an array
@@ -158,7 +260,7 @@ class ContactFormInputs extends React.Component {
             // }
             // if value exists, set disabled state to false, else true 
             // offer_options is an array
-            if (this.state[field] == "" || this.state[field] == undefined && this.state[this.state.optionsAlias].indexOf(field) == -1) {
+            if (this.state[field] == "" || this.state[field] == undefined || this.state[field] == "Select" || this.state[this.state.optionsAlias].length == 0) {
 
                 disabledCount++;
             }
@@ -191,9 +293,9 @@ class ContactFormInputs extends React.Component {
 
     handleInputChange(item, event) {
 
-        console.log("selected item", item, "value in handleInputChange", event.target.value);
+        // // console.log("selected item", item, "value in handleInputChange", event.target.value);
 
-        console.log("this.emailInput", this.emailInput);
+        // // console.log("this.emailInput", this.emailInput);
 
         // if offer_options are selected, multiple checked fields are pushed and set into state
         if (item.type == "offer_options") {
@@ -218,7 +320,7 @@ class ContactFormInputs extends React.Component {
                 [item.alias.label]: updatedOffrOpts
             }, function(){
 
-                console.log("state in handleInputChange callback", this.state); 
+                // // console.log("state in handleInputChange callback", this.state); 
                 this.setButtonDisability(item, event);
             });
 
@@ -228,7 +330,7 @@ class ContactFormInputs extends React.Component {
                 [item.alias.label]: event.target.value
             }, function(){
 
-                console.log("state in handleInputChange callback", this.state); 
+                // // console.log("state in handleInputChange callback", this.state); 
                 this.setButtonDisability(item, event);
             });
         }
@@ -236,7 +338,7 @@ class ContactFormInputs extends React.Component {
 
     submitContactForm() {
 
-        console.log("in submitForm func, state is::", this.state);
+        // // console.log("in submitForm func, state is::", this.state);
 
         let reqBody = Object.assign({}, this.state);
 
@@ -250,38 +352,64 @@ class ContactFormInputs extends React.Component {
 
         delete reqBody.optionsAlias;
 
-        console.log("contact post request body", this.state);
+        delete reqBody.notificationDuration;
+
+        delete reqBody.submit;
+
+        delete reqBody.submitRes;
+
+        // // console.log("contact post request body", this.state);
+
+        let submitResNode =  <li id="notification" className="pure-notification-message pure-notification-success" style={{animationDuration: '6000ms'}}>
+                                <svg class="icon icon--check" viewBox="0 0 20 20" width="22" height="22" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M4 10l4 5 9-11" fill="none" stroke="currentColor" stroke-width="1.1"/>
+                                </svg>
+                            
+                                <span>{contactForm.loadingMsg}</span><div role="presentation" className="pure-notification-progress" style={{animationDuration: '6000ms'}}></div>
+                            </li>
+
+        // show loading msg on cclicking submit
+        this.setState({submitRes: submitResNode});
 
         fetch(this.state.endPoint, {
             method: 'POST',
             headers: {
-                Accept: 'application/json',
-                "Content-type": "application/json; charset=UTF-8"
+                "Content-type": "application/json;"
             },
             body: JSON.stringify(reqBody)
         })
         .then(response => response.json())
         .then((result) => {
     
-            console.log("result after post request", result);
+            // if (result.status == "ok") {
 
-            // restore form to new one
-            this.setState(
-                contactForm.formState
-            )
+                // console.log("result after post request", result);
 
-            // clear off selected checkboxes
-            this.state.formInputs.forEach((item) => {
+                // TODO: ADD ERROR HANDLING POPUP AS WELL BASED ON RESPONSE ENDPOINT
 
-                // create alias for offer_options
-                if (item.type=="offer_options") {
-                    item.offer_options.forEach((opt) => {
-                        let ref = opt.alias;
-                
-                        console.log("this.ref]", this);
-                    });
-                }
-            });
+                // clear off textarea using ref
+                // // console.log("this.taInput", this.taInput);
+                this.taInput.current.value = "";
+
+                // set contact form initial state
+                this.setContactFormState(contactForm.formInputs, true);
+
+                // restore form to initial state
+                this.setState(this.state);
+
+                setTimeout(
+                    function() {
+                        this.setState({submitRes: ""});
+                    }
+                    .bind(this),
+                    this.state.notificationDuration
+                );
+            // } 
+            // else {
+
+            //     // this implies there has been an error response from server, do not reset form but rather show err msg
+            //     this.setContactFormState(contactForm.formInputs, false, result);
+            // }
     
         }, (error) => {
     
@@ -295,10 +423,10 @@ class ContactFormInputs extends React.Component {
 
         this.props.formInputs.forEach((item, i) => {
 
-            console.log("item, i", item, i);
+            // console.log("item, i", item, i);
             if (item.type == "text" || item.type == "number" || item.type == "radio") {
 
-                console.log("item.type is text");
+                // console.log("item.type is text");
 
                 contactFormInputs.push(
                     <div className="pure-u-xs-1 pure-u-sm-1-1 pure-u-md-1-1 pure-u-lg-1-3 pure-u-xl-1-3 contact-input">
@@ -327,7 +455,7 @@ class ContactFormInputs extends React.Component {
 
             if (item.type == "email") {
 
-                console.log("item.type is text");
+                // console.log("item.type is text");
 
                 let emailVal = this.state[item.alias.label];
 
@@ -371,20 +499,45 @@ class ContactFormInputs extends React.Component {
             // for checkbox group
             if (item.type == "offer_options") {
 
-                console.log("item.type is offer_options");
+                // console.log("item.type is offer_options");
+
+
+                let offerOptions = [];
+
+                item.offer_options.forEach((option) => {
+
+                    let ref = option.alias;
+
+                    // console.log("this", this, "this[ref]", this[option.alias]);
+
+                    offerOptions.push(
+                        <React.Fragment>
+                            {/* {option.required ?  */}
+                            {(this.state.requiredFields.indexOf(option.alias) != -1) ?
+                                <React.Fragment>
+                                    <input type={option.type} className="offer-options" ref={this[ref]} name={option.alias} value={option.value} onChange={() => this.handleInputChange(item, event)} required/> <span>{option.value}*</span><br />
+                                </React.Fragment>:
+                                <React.Fragment>
+                                    <input type={option.type} className="offer-options" ref={this[ref]} name={option.alias} value={option.value} onChange={() => this.handleInputChange(item, event)} /><span>{option.value}</span><br />
+                                </React.Fragment>
+                            }
+                        </React.Fragment>
+                    )
+                })
 
                 contactFormInputs.push(
                     <div className="pure-u-xs-1 pure-u-sm-1-1 pure-u-md-1-1 pure-u-lg-1-3 pure-u-xl-1-3 offer-options">
                         <span class="optn-rqd-msg">{item.optionsRequiredMsg}</span>
                         <br />
-                        <OfferOptions item={item} requiredFields={this.state.requiredFields} handleInputChange={() => this.handleInputChange(item, event)} />
+                        {/* <OfferOptions item={item} requiredFields={this.state.requiredFields} handleInputChange={() => this.handleInputChange(item, event)} /> */}
+                        {offerOptions}
                     </div>
                 )
             }
 
             if (item.type == "text_area") {
 
-                console.log("item.type is text_area");
+                // console.log("item.type is text_area");
 
                 contactFormInputs.push(
                     <div className="pure-u-xs-1 pure-u-sm-1-3 pure-u-md-1-3 pure-u-lg-1-3 pure-u-xl-1-3 contact-input">
@@ -392,11 +545,11 @@ class ContactFormInputs extends React.Component {
                         {(this.state.requiredFields.indexOf(item.alias.label) != -1) ?
                         <React.Fragment>
                             <span className="form-label-desc">{item.label}*</span>
-                            <textarea className="text-area-tg" rows="5" cols="50" placeholder={item.placeholder} onChange={() => this.handleInputChange(item, event)} required></textarea>
+                            <textarea className="text-area-tg" rows="5" cols="50" ref={this.taInput} placeholder={item.placeholder} onChange={() => this.handleInputChange(item, event)} required></textarea>
                         </React.Fragment> :
                         <React.Fragment>
                             <span className="form-label-desc">{item.label}</span>
-                            <textarea className="text-area-tg" rows="5" cols="50" placeholder={item.placeholder} onChange={() => this.handleInputChange(item, event)}></textarea> 
+                            <textarea className="text-area-tg" rows="5" cols="50" ref={this.taInput} placeholder={item.placeholder} onChange={() => this.handleInputChange(item, event)}></textarea> 
                         </React.Fragment>
                         }
                     </div>
@@ -424,8 +577,15 @@ class ContactFormInputs extends React.Component {
                         </div>
                     </button>
                     <button className="ct-btn contact-us-btn-xs ct-btn-2" disabled={this.state.disabled} onClick={() => this.submitContactForm()}>{this.props.submitContactFormText}</button>
-                    {/* <input type="submit" value="Submit"></input> */}
+                    
                 </div>
+                <aside className="pure-notification-container">
+                        <ul>
+                            {this.state.submitRes ? 
+                            this.state.submitRes : ''
+                        }
+                        </ul>
+                    </aside>
             </React.Fragment>
         )
     }
@@ -586,7 +746,7 @@ class SimplePlanTier extends React.Component {
     constructor (props) {
         super(props);
 
-        console.log("props in simplePlanTier", props);
+        // console.log("props in simplePlanTier", props);
 
         this.state = {
             tiers: teirsData.tiers,
@@ -816,9 +976,9 @@ class DetailedPlanTier extends React.Component {
                         {/* {i != 0 && j == 0 ? */}
                         {j == 0 ?
                             <React.Fragment>
-
-                                <h4>{category.name}</h4>
-
+                                <div className="category-name-hdr">
+                                    <h4>{category.name}</h4>
+                                </div>
                             </React.Fragment>
                             : ''}
                         <div className="pure-g" key={item.name}>
@@ -999,7 +1159,7 @@ class PlansAccordion extends React.Component {
     }
 
     yearlyToggle() {
-        console.log("in yearlyToggle func, this.state", this.state);
+        // console.log("in yearlyToggle func, this.state", this.state);
         this.setState({
             showMonthlyPlan: !this.state.showMonthlyPlan
         })
@@ -1011,7 +1171,7 @@ class PlansAccordion extends React.Component {
 
         this.props.tiers.forEach((tier, i) => {
 
-            console.log("this.props.showMonthlyPlan", this.props.showMonthlyPlan);
+            // console.log("this.props.showMonthlyPlan", this.props.showMonthlyPlan);
 
             plansAccordion.push(
                 <AccordionItem key={tier.name}>
@@ -1169,7 +1329,7 @@ class PricingPage extends React.Component {
     }
 
     yearlyToggle() {
-        console.log("in yearlyToggle func, this.state", this.state);
+        // console.log("in yearlyToggle func, this.state", this.state);
         this.setState({
             selectedOption: !this.state.selectedOption,
             showMonthlyPlan: !this.state.showMonthlyPlan
@@ -1177,14 +1337,14 @@ class PricingPage extends React.Component {
     }
 
     contactFormToggle() {
-        console.log("in contactFormToggle func, this.state", this.state);
+        // console.log("in contactFormToggle func, this.state", this.state);
         this.setState({
             showContactForm: !this.state.showContactForm
         })
     }
 
     submitContactForm() {
-        console.log("submit form clicked");
+        // console.log("submit form clicked");
     }
 
     // get pricing page details from a remote page
@@ -1194,7 +1354,7 @@ class PricingPage extends React.Component {
     //         .then(
     //             (result) => {
 
-    //                 // console.log("result response for plans.json from docsie endpoint", result);
+    //                 // // console.log("result response for plans.json from docsie endpoint", result);
 
     //                 // this.setState({
     //                 //     // tiers: tiers.default.tiers,
@@ -1202,7 +1362,7 @@ class PricingPage extends React.Component {
     //                 //     // categories: result.categories
     //                 // });
 
-    //                 // console.log("result from fetch API in pricing page", result)
+    //                 // // console.log("result from fetch API in pricing page", result)
     //             },
     //             // Note: it's important to handle errors here
     //             // instead of a catch() block so that we don't swallow
@@ -1220,7 +1380,7 @@ class PricingPage extends React.Component {
     //         .then(
     //             (result) => {
 
-    //                 // console.log("result response for tiers.json from docsie endpoint", result);
+    //                 // // console.log("result response for tiers.json from docsie endpoint", result);
 
     //                 // this.setState({
     //                 //     tiers: tiers.default.tiers,
@@ -1228,7 +1388,7 @@ class PricingPage extends React.Component {
     //                 //     // tiers: result.tiers
     //                 // });
 
-    //                 // console.log("result from fetch API in pricing page", result);
+    //                 // // console.log("result from fetch API in pricing page", result);
 
 
     //             },
