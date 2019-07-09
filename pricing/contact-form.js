@@ -9,7 +9,7 @@ var contactForm = {
         {
             "label": "Business Email",
             "alias": {
-                "label": "businessEmail",
+                "label": "email",
                 "valueType": "string"
             },
             "type": "email",
@@ -18,7 +18,7 @@ var contactForm = {
         {
             "label": "Industry",
             "alias": {
-                "label": "industry",
+                "label": "department",
                 "valueType": "string"
             },
             "type": "dropdown",
@@ -48,7 +48,7 @@ var contactForm = {
         {
             "label": "I'm interested in...",
             "alias": {
-                "label": "off_options",
+                "label": "options",
                 "valueType": "array",
                 "arrayType": "options"
             },
