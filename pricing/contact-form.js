@@ -89,9 +89,8 @@ var contactForm = {
             },
             // takes in alias.label values
             "requiredFields": [
-                "email",
-                "description",
-                "department"
+            "email",
+            "description"
             ]
         }
     ]
