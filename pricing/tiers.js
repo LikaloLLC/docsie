@@ -15,7 +15,7 @@ tiers = {
       "call_to_action": {
         // use type to make contact page as call to action on click of this
         "type": "contact",
-        "text": "Get Started",
+        "text": "Talk to Us",
         "url": "#"
       },
       "popular": "True",
