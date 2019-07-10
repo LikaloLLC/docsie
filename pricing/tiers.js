@@ -68,7 +68,7 @@ tiers = {
     {
       "label" : {
                   "name": "Entreprise",
-                  "text":"Sign-up Now!",
+                  "text":"Talk to Us!",
                   "url": "signup.com?utm=3423"
                 }
     }
