@@ -658,7 +658,7 @@ class DetailCategoryFeatures extends React.Component {
                             <title></title>
                             <path d="M-217.1 431.8c-1 1.2-2.6 2.2-4 2.3-1.4.1-3-.8-4.3-1.9l-27.5-24.5 7.8-8.7 23.2 20.6 54.6-61.7 8.6 7.9-58.4 66z"></path>
                         </svg>: 
-                        this.props.item.values[val]
+                        <div className="category-name">{this.props.item.values[val]}</div>
                     }
                 </div>
             )
@@ -769,7 +769,7 @@ class SimplePlanTier extends React.Component {
         this.state.tiers.forEach((tier) => {
 
             rows.push(
-                <div key={tier.name} className="pure-u-1-2">
+                <div key={tier.name} className="pure-u-xs-1 pure-u-sm-1-3 pure-u-md-1-3 pure-u-lg-1-3 pure-u-xl-1-3">
                     <div className="price-card">
                         <div className="pricing-panel-wrapper wrp-2">
                             <div className="pricing-panel">
@@ -853,7 +853,7 @@ class SimplePlanTier extends React.Component {
                                             </a>
                                         </div> : <div className="ftr-wrp"></div>
                                     }
-                                    <p className="compare-plans pln" onClick={() => this.props.onClick()}>{this.state.compareText}</p>
+                                    <a href="#detail-plan-container" className="compare-plans pln" onClick={() => this.props.onClick()}>{this.state.compareText}</a>
                                 </div>
                             </div>
                         </div>
@@ -872,8 +872,8 @@ class SimplePlanTier extends React.Component {
                     </div>
                     :
                     <React.Fragment>
-                        <div className="simple-pln-wrp">
-                            <div className="pure-g">
+                        <div className="simple-plans-container">
+                            <div className="pure-g-r">
                                 {rows}
                             </div>
                         </div>
@@ -888,6 +888,10 @@ class DetailedPlanTier extends React.Component {
 
     constructor (props) {
         super(props);
+
+        this.state = {
+            plansAndFeaturesInfo: plansAndFeaturesData.plansAndFeaturesInfo
+        }
     }
 
     render() {
@@ -1041,18 +1045,27 @@ class DetailedPlanTier extends React.Component {
                 {this.props.showContactForm ?
 
                     <React.Fragment>
-                        <div className="contact-form-container-smpl contact-form-container-dtl">
+                        {/* <div className="contact-form-container-smpl contact-form-container-dtl">
                             <ContactForm contactFormData={this.props.contactFormData}
                                 contactFormToggle={() => this.props.contactFormToggle()}
                                 submitContactForm={() => this.props.submitContactForm()} />
-                        </div>
-                    </React.Fragment> :
+                        </div> */}
+                    </React.Fragment>
+                     :
                     <React.Fragment>
-                        <div className="detail-plan-container">
+                        <div id="detail-plan-container" className="detail-plan-container">
+
+                        <div className="detail-cmp-info">
+                            {this.state.plansAndFeaturesInfo ? this.state.plansAndFeaturesInfo:
+                                <React.Fragment>
+                                &nbsp;
+                                </React.Fragment>
+                            }
+                        </div>
 
                             <div className="pure-g dtl-wrp">
 
-                                <div class="pure-u-1-4">&nbsp;</div>
+                                <div class="pure-u-1-4 card category-feature-name ctg-wrp dtl-hdr">&nbsp;</div>
 
                                 {detailRows}
 
@@ -1063,21 +1076,22 @@ class DetailedPlanTier extends React.Component {
                             <br />
                             <div className="pure-g">
 
-                                <div class="pure-u-1-4 card-actn category-feature-actn ctg-wrp">
+                                <div class="pure-u-1-4 card category-feature-name ctg-wrp dtl-hdr">
                                     {/* <button className="back-to-plans-btn" onClick={() => this.handleClick()}>
                     <svg width="30px" height="30px" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                         <path d="M13 16l-6-6 6-6" fill="none" stroke="red" stroke-width="1.03"/>
                     </svg>
                     <a href="#" className="back-btn-action-link-lg-dtl">{this.state.tiers[0].toggleText}</a>
                     </button> */}
-                                    <button className="tier-actn-bck" onClick={() => this.props.handleClick()}>
+                                    {/* <button className="tier-actn-bck" onClick={() => this.props.handleClick()}>
                                         <span className="tier-actn-link">
                                             <svg class="bck-svg" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M13 16l-6-6 6-6" fill="none" stroke="red" stroke-width="1.03" />
                                             </svg>
                                             {this.props.toggleText}
                                         </span>
-                                    </button>
+                                    </button> */}
+                                    &nbsp;
                                 </div>
                                 {tierActions}
 
@@ -1299,7 +1313,7 @@ class PricingPage extends React.Component {
         super(props);
 
         this.state = {
-            showDetailedPlanOveriew: false,
+            // showDetailedPlanOveriew: false,
             tiers: teirsData.tiers,
             tierActions: teirsData.tierActions,
             categories: plansAndFeaturesData.categories,
@@ -1307,7 +1321,6 @@ class PricingPage extends React.Component {
             selectedOption: true,
             radio_btn_monthly_opt: teirsData.radio_btn_monthly_opt,
             radio_btn_yearly_opt: teirsData.radio_btn_yearly_opt,
-            toggleText: teirsData.toggleText,
             showMonthlyPlan: true,
             showContactForm: false,
             contactFormData: contactForm,
@@ -1317,7 +1330,7 @@ class PricingPage extends React.Component {
 
     handleClick() {
 
-        this.setState({ showDetailedPlanOveriew: !this.state.showDetailedPlanOveriew });
+        // this.setState({ showDetailedPlanOveriew: !this.state.showDetailedPlanOveriew });
     }
 
     radioChange(e) {
@@ -1427,8 +1440,8 @@ class PricingPage extends React.Component {
                     </div> : ''}
                 <br />
 
-                {!this.state.showDetailedPlanOveriew
-                    ?
+                {/* {!this.state.showDetailedPlanOveriew
+                    ? */}
                     <React.Fragment>
 
                         <div className="accrd-view">
@@ -1442,8 +1455,8 @@ class PricingPage extends React.Component {
                             />
                         </div>
 
-                        <div className="simple-plan-container">
-
+                        {/* <div className="pure-g"> */}
+                            {/* <div className="pure-u-1"> */}
                             <SimplePlanTier onClick={() => this.handleClick()}
                                 className="plan-tier" 
                                 showMonthlyPlan={this.state.showMonthlyPlan}
@@ -1451,10 +1464,25 @@ class PricingPage extends React.Component {
                                 contactFormToggle={() => this.contactFormToggle()}
                                 showContactForm={this.state.showContactForm}
                                 submitContactForm={() => this.submitContactForm()} />
-                        </div>
+                            {/* </div> */}
+                            {/* <div className="pure-u-1"> */}
+
+                            <DetailedPlanTier 
+                                showMonthlyPlan={this.state.showMonthlyPlan}
+                                showContactForm={this.state.showContactForm}
+                                tiers={this.state.tiers}
+                                categories={this.state.categories}
+                                tierActions={this.state.tierActions}
+                                yearlyToggle={() => this.yearlyToggle()}
+                                contactFormToggle={() => this.contactFormToggle()}
+                                submitContactForm={() => this.submitContactForm()} 
+                                handleClick={() => this.handleClick()}
+                                contactFormData={this.state.contactFormData} />     
+                            {/* </div> */}
+                        {/* </div> */}
 
                     </React.Fragment>
-                    :
+                    {/* :
                     <React.Fragment>
 
                         <div className="accrd-view">
@@ -1466,7 +1494,7 @@ class PricingPage extends React.Component {
                                 showContactForm={this.state.showContactForm}
                                 submitContactForm={() => this.submitContactForm()}
                             />
-                        </div>
+                        </div> */}
                         {/* <React.Fragment>
                             {this.state.showContactForm ?
 
@@ -1516,23 +1544,8 @@ class PricingPage extends React.Component {
                                 </React.Fragment>
                             }
                         </React.Fragment>  */}
-                         <div className="simple-plan-container">
-                            <DetailedPlanTier 
-                                showMonthlyPlan={this.state.showMonthlyPlan}
-                                showContactForm={this.state.showContactForm}
-                                toggleText={this.state.toggleText}
-                                tiers={this.state.tiers}
-                                categories={this.state.categories}
-                                tierActions={this.state.tierActions}
-                                yearlyToggle={() => this.yearlyToggle()}
-                                contactFormToggle={() => this.contactFormToggle()}
-                                submitContactForm={() => this.submitContactForm()} 
-                                handleClick={() => this.handleClick()}
-                                contactFormData={this.state.contactFormData} />
-                        </div>
-
-                    </React.Fragment>
-                }
+                    {/* </React.Fragment> */}
+                {/* // } */}
             </div>
 
 
