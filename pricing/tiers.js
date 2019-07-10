@@ -5,7 +5,7 @@ tiers = {
   "monthlyText": "when you pay yearly",
   "yearlyText": "billed yearly, Save",
   "compareText": "compare plans",
-  "toggleText": "Back to simple plans",
+  // "toggleText": "Back to simple plans",
   "tiers": [
     {
       "name": "Enterprise",
@@ -63,6 +63,7 @@ tiers = {
           "showCallToAction": "True"
       }
   ],
+  //  used in detail view
   "tierActions": [
     {
       "label" : {

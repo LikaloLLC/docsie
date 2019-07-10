@@ -868,7 +868,11 @@ var DetailCategoryFeatures = function (_React$Component5) {
                         { "class": "c-check", xmlns: "http://www.w3.org/2000/svg", viewBox: "-255 347 100 100" },
                         React.createElement("title", null),
                         React.createElement("path", { d: "M-217.1 431.8c-1 1.2-2.6 2.2-4 2.3-1.4.1-3-.8-4.3-1.9l-27.5-24.5 7.8-8.7 23.2 20.6 54.6-61.7 8.6 7.9-58.4 66z" })
-                    ) : this.props.item.values[val]
+                    ) : React.createElement(
+                        "div",
+                        { className: "category-name" },
+                        this.props.item.values[val]
+                    )
                 ));
             }
 
@@ -1012,7 +1016,7 @@ var SimplePlanTier = function (_React$Component7) {
 
                 rows.push(React.createElement(
                     "div",
-                    { key: tier.name, className: "pure-u-1-2" },
+                    { key: tier.name, className: "pure-u-xs-1 pure-u-sm-1-3 pure-u-md-1-3 pure-u-lg-1-3 pure-u-xl-1-3" },
                     React.createElement(
                         "div",
                         { className: "price-card" },
@@ -1189,8 +1193,8 @@ var SimplePlanTier = function (_React$Component7) {
                                         )
                                     ) : React.createElement("div", { className: "ftr-wrp" }),
                                     React.createElement(
-                                        "p",
-                                        { className: "compare-plans pln", onClick: function onClick() {
+                                        "a",
+                                        { href: "#detail-plan-container", className: "compare-plans pln", onClick: function onClick() {
                                                 return _this15.props.onClick();
                                             } },
                                         _this15.state.compareText
@@ -1219,10 +1223,10 @@ var SimplePlanTier = function (_React$Component7) {
                     null,
                     React.createElement(
                         "div",
-                        { className: "simple-pln-wrp" },
+                        { className: "simple-plans-container" },
                         React.createElement(
                             "div",
-                            { className: "pure-g" },
+                            { className: "pure-g-r" },
                             rows
                         )
                     )
@@ -1242,7 +1246,12 @@ var DetailedPlanTier = function (_React$Component8) {
     function DetailedPlanTier(props) {
         _classCallCheck(this, DetailedPlanTier);
 
-        return _possibleConstructorReturn(this, (DetailedPlanTier.__proto__ || Object.getPrototypeOf(DetailedPlanTier)).call(this, props));
+        var _this16 = _possibleConstructorReturn(this, (DetailedPlanTier.__proto__ || Object.getPrototypeOf(DetailedPlanTier)).call(this, props));
+
+        _this16.state = {
+            plansAndFeaturesInfo: plansAndFeaturesData.plansAndFeaturesInfo
+        };
+        return _this16;
     }
 
     _createClass(DetailedPlanTier, [{
@@ -1422,32 +1431,27 @@ var DetailedPlanTier = function (_React$Component8) {
             return React.createElement(
                 React.Fragment,
                 null,
-                this.props.showContactForm ? React.createElement(
+                this.props.showContactForm ? React.createElement(React.Fragment, null) : React.createElement(
                     React.Fragment,
                     null,
                     React.createElement(
                         "div",
-                        { className: "contact-form-container-smpl contact-form-container-dtl" },
-                        React.createElement(ContactForm, { contactFormData: this.props.contactFormData,
-                            contactFormToggle: function contactFormToggle() {
-                                return _this17.props.contactFormToggle();
-                            },
-                            submitContactForm: function submitContactForm() {
-                                return _this17.props.submitContactForm();
-                            } })
-                    )
-                ) : React.createElement(
-                    React.Fragment,
-                    null,
-                    React.createElement(
-                        "div",
-                        { className: "detail-plan-container" },
+                        { id: "detail-plan-container", className: "detail-plan-container" },
+                        React.createElement(
+                            "div",
+                            { className: "detail-cmp-info" },
+                            this.state.plansAndFeaturesInfo ? this.state.plansAndFeaturesInfo : React.createElement(
+                                React.Fragment,
+                                null,
+                                "\xA0"
+                            )
+                        ),
                         React.createElement(
                             "div",
                             { className: "pure-g dtl-wrp" },
                             React.createElement(
                                 "div",
-                                { "class": "pure-u-1-4" },
+                                { "class": "pure-u-1-4 card category-feature-name ctg-wrp dtl-hdr" },
                                 "\xA0"
                             ),
                             detailRows
@@ -1459,23 +1463,8 @@ var DetailedPlanTier = function (_React$Component8) {
                             { className: "pure-g" },
                             React.createElement(
                                 "div",
-                                { "class": "pure-u-1-4 card-actn category-feature-actn ctg-wrp" },
-                                React.createElement(
-                                    "button",
-                                    { className: "tier-actn-bck", onClick: function onClick() {
-                                            return _this17.props.handleClick();
-                                        } },
-                                    React.createElement(
-                                        "span",
-                                        { className: "tier-actn-link" },
-                                        React.createElement(
-                                            "svg",
-                                            { "class": "bck-svg", viewBox: "0 0 20 20", xmlns: "http://www.w3.org/2000/svg" },
-                                            React.createElement("path", { d: "M13 16l-6-6 6-6", fill: "none", stroke: "red", "stroke-width": "1.03" })
-                                        ),
-                                        this.props.toggleText
-                                    )
-                                )
+                                { "class": "pure-u-1-4 card category-feature-name ctg-wrp dtl-hdr" },
+                                "\xA0"
                             ),
                             tierActions
                         ),
@@ -1798,7 +1787,7 @@ var PricingPage = function (_React$Component11) {
         var _this22 = _possibleConstructorReturn(this, (PricingPage.__proto__ || Object.getPrototypeOf(PricingPage)).call(this, props));
 
         _this22.state = {
-            showDetailedPlanOveriew: false,
+            // showDetailedPlanOveriew: false,
             tiers: teirsData.tiers,
             tierActions: teirsData.tierActions,
             categories: plansAndFeaturesData.categories,
@@ -1806,7 +1795,6 @@ var PricingPage = function (_React$Component11) {
             selectedOption: true,
             radio_btn_monthly_opt: teirsData.radio_btn_monthly_opt,
             radio_btn_yearly_opt: teirsData.radio_btn_yearly_opt,
-            toggleText: teirsData.toggleText,
             showMonthlyPlan: true,
             showContactForm: false,
             contactFormData: contactForm,
@@ -1819,7 +1807,7 @@ var PricingPage = function (_React$Component11) {
         key: "handleClick",
         value: function handleClick() {
 
-            this.setState({ showDetailedPlanOveriew: !this.state.showDetailedPlanOveriew });
+            // this.setState({ showDetailedPlanOveriew: !this.state.showDetailedPlanOveriew });
         }
     }, {
         key: "radioChange",
@@ -1956,7 +1944,7 @@ var PricingPage = function (_React$Component11) {
                     )
                 ) : '',
                 React.createElement("br", null),
-                !this.state.showDetailedPlanOveriew ? React.createElement(
+                React.createElement(
                     React.Fragment,
                     null,
                     React.createElement(
@@ -1977,70 +1965,40 @@ var PricingPage = function (_React$Component11) {
                             }
                         })
                     ),
-                    React.createElement(
-                        "div",
-                        { className: "simple-plan-container" },
-                        React.createElement(SimplePlanTier, { onClick: function onClick() {
-                                return _this23.handleClick();
-                            },
-                            className: "plan-tier",
-                            showMonthlyPlan: this.state.showMonthlyPlan,
-                            yearlyToggle: function yearlyToggle() {
-                                return _this23.yearlyToggle();
-                            },
-                            contactFormToggle: function contactFormToggle() {
-                                return _this23.contactFormToggle();
-                            },
-                            showContactForm: this.state.showContactForm,
-                            submitContactForm: function submitContactForm() {
-                                return _this23.submitContactForm();
-                            } })
-                    )
-                ) : React.createElement(
-                    React.Fragment,
-                    null,
-                    React.createElement(
-                        "div",
-                        { className: "accrd-view" },
-                        React.createElement(PlansAccordion, { className: "accordion-plan-tier", accordionPlans: this.state.accordionPlans,
-                            showMonthlyPlan: this.state.showMonthlyPlan,
-                            tiers: this.state.tiers,
-                            yearlyToggle: function yearlyToggle() {
-                                return _this23.yearlyToggle();
-                            },
-                            contactFormToggle: function contactFormToggle() {
-                                return _this23.contactFormToggle();
-                            },
-                            showContactForm: this.state.showContactForm,
-                            submitContactForm: function submitContactForm() {
-                                return _this23.submitContactForm();
-                            }
-                        })
-                    ),
-                    React.createElement(
-                        "div",
-                        { className: "simple-plan-container" },
-                        React.createElement(DetailedPlanTier, {
-                            showMonthlyPlan: this.state.showMonthlyPlan,
-                            showContactForm: this.state.showContactForm,
-                            toggleText: this.state.toggleText,
-                            tiers: this.state.tiers,
-                            categories: this.state.categories,
-                            tierActions: this.state.tierActions,
-                            yearlyToggle: function yearlyToggle() {
-                                return _this23.yearlyToggle();
-                            },
-                            contactFormToggle: function contactFormToggle() {
-                                return _this23.contactFormToggle();
-                            },
-                            submitContactForm: function submitContactForm() {
-                                return _this23.submitContactForm();
-                            },
-                            handleClick: function handleClick() {
-                                return _this23.handleClick();
-                            },
-                            contactFormData: this.state.contactFormData })
-                    )
+                    React.createElement(SimplePlanTier, { onClick: function onClick() {
+                            return _this23.handleClick();
+                        },
+                        className: "plan-tier",
+                        showMonthlyPlan: this.state.showMonthlyPlan,
+                        yearlyToggle: function yearlyToggle() {
+                            return _this23.yearlyToggle();
+                        },
+                        contactFormToggle: function contactFormToggle() {
+                            return _this23.contactFormToggle();
+                        },
+                        showContactForm: this.state.showContactForm,
+                        submitContactForm: function submitContactForm() {
+                            return _this23.submitContactForm();
+                        } }),
+                    React.createElement(DetailedPlanTier, {
+                        showMonthlyPlan: this.state.showMonthlyPlan,
+                        showContactForm: this.state.showContactForm,
+                        tiers: this.state.tiers,
+                        categories: this.state.categories,
+                        tierActions: this.state.tierActions,
+                        yearlyToggle: function yearlyToggle() {
+                            return _this23.yearlyToggle();
+                        },
+                        contactFormToggle: function contactFormToggle() {
+                            return _this23.contactFormToggle();
+                        },
+                        submitContactForm: function submitContactForm() {
+                            return _this23.submitContactForm();
+                        },
+                        handleClick: function handleClick() {
+                            return _this23.handleClick();
+                        },
+                        contactFormData: this.state.contactFormData })
                 )
             );
         }
