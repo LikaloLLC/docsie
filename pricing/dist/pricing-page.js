@@ -912,7 +912,7 @@ var ContactForm = function (_React$Component6) {
                 null,
                 React.createElement(
                     "div",
-                    { className: "contact-form-container" },
+                    { id: "contact-form", className: "contact-form-container" },
                     React.createElement(
                         "div",
                         { className: this.props.accordionView ? "pricing-contact-form-wdt" : "pricing-contact-form" },
@@ -1407,26 +1407,60 @@ var DetailedPlanTier = function (_React$Component8) {
                 });
             });
 
-            if (this.props && this.props.tierActions) {
-                this.props.tierActions.forEach(function (tierAction) {
+            // if (this.props && this.props.tierActions) {
+            //     this.props.tierActions.forEach((tierAction) => {
 
-                    tierActions.push(
-                    // <div key={tierAction.label.name} className="pure-u-1-4 card category-feature" style={{ textAlign: 'center' }}>
-                    //     <button className="sign-up-btn" style={{ width: '100%', fontSize: '12px !important' }}>
-                    //         <a href={tierAction.label.url} className="action-link-lg-dtl" style={{fontSize: '12px !important'}}>{tierAction.label.text}</a>
-                    //     </button>
-                    // </div>
-                    React.createElement(
-                        "a",
-                        { href: tierAction.label.url, className: "pure-u-1-4 card-actn category-feature-actn" },
+            //         tierActions.push(
+            //             // <div key={tierAction.label.name} className="pure-u-1-4 card category-feature" style={{ textAlign: 'center' }}>
+            //             //     <button className="sign-up-btn" style={{ width: '100%', fontSize: '12px !important' }}>
+            //             //         <a href={tierAction.label.url} className="action-link-lg-dtl" style={{fontSize: '12px !important'}}>{tierAction.label.text}</a>
+            //             //     </button>
+            //             // </div>
+            //             <a href={tierAction.label.url} className="pure-u-1-4 card-actn category-feature-actn">
+            //                 <div className="tier-actn">
+            //                     {tierAction.label.text}
+            //                 </div>
+            //             </a>
+            //         )
+            //     });
+            // }
+
+            this.props.tiers.forEach(function (tier) {
+
+                tierActions.push(React.createElement(
+                    React.Fragment,
+                    null,
+                    tier.showCallToAction && tier.showCallToAction == "True" ? React.createElement(
+                        React.Fragment,
+                        null,
+                        tier.call_to_action.type == "contact" ?
+                        // add contact page toggle if type is contact
                         React.createElement(
-                            "div",
-                            { className: "tier-actn" },
-                            tierAction.label.text
+                            "a",
+                            { href: "#contact-form", className: "pure-u-1-4 card-actn category-feature-actn cta-dtl-wrp", onClick: function onClick() {
+                                    return _this17.props.contactFormToggle();
+                                } },
+                            React.createElement(
+                                "span",
+                                { className: "tier-actn" },
+                                tier.call_to_action.text
+                            )
+                        ) : React.createElement(
+                            React.Fragment,
+                            null,
+                            tier.call_to_action.type == "link" ? React.createElement(
+                                "a",
+                                { href: tier.call_to_action.url, className: "pure-u-1-4 card-actn category-feature-actn" },
+                                React.createElement(
+                                    "span",
+                                    { className: "tier-actn" },
+                                    tier.call_to_action.text
+                                )
+                            ) : ''
                         )
-                    ));
-                });
-            }
+                    ) : ''
+                ));
+            });
 
             return React.createElement(
                 React.Fragment,
@@ -1440,10 +1474,18 @@ var DetailedPlanTier = function (_React$Component8) {
                         React.createElement(
                             "div",
                             { className: "detail-cmp-info" },
-                            this.state.plansAndFeaturesInfo ? this.state.plansAndFeaturesInfo : React.createElement(
+                            this.state.plansAndFeaturesInfo ? React.createElement(
+                                "h1",
+                                null,
+                                this.state.plansAndFeaturesInfo
+                            ) : React.createElement(
                                 React.Fragment,
                                 null,
-                                "\xA0"
+                                React.createElement(
+                                    "h1",
+                                    null,
+                                    "\xA0"
+                                )
                             )
                         ),
                         React.createElement(
@@ -1509,7 +1551,7 @@ var CategoryFeatures = function (_React$Component9) {
                     categoryFeatures.push(React.createElement(
                         "div",
                         { key: item.values[val], className: "plan-desc" },
-                        j == 0 ? React.createElement(
+                        j == 0 && item.values[val] ? React.createElement(
                             "span",
                             { className: "ctg-name-wrp" },
                             category.name
@@ -1523,11 +1565,22 @@ var CategoryFeatures = function (_React$Component9) {
                                 React.createElement(
                                     "div",
                                     null,
-                                    item.values[val],
-                                    "\xA0",
-                                    item.name,
-                                    "\xA0",
-                                    item.info ? React.createElement(
+                                    item.values[val] && item.values[val].toLowerCase() != "yes" ? React.createElement(
+                                        "span",
+                                        null,
+                                        item.values[val],
+                                        "\xA0",
+                                        item.name,
+                                        "\xA0"
+                                    ) : item.values[val] && item.values[val].toLowerCase() == "yes" ? React.createElement(
+                                        "span",
+                                        null,
+                                        item.name,
+                                        "\xA0"
+                                    ) :
+                                    // <span>&nbsp;</span>    
+                                    '',
+                                    item.values[val] && item.info ? React.createElement(
                                         Tooltip,
                                         { message: item.info, position: 'top' },
                                         React.createElement(

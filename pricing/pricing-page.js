@@ -687,7 +687,7 @@ class ContactForm extends React.Component {
 
             <React.Fragment>
                 {/* <form className="contact-form-container" action={this.state.endPoint} method="post" target="_self"> */}
-                <div className="contact-form-container">
+                <div id="contact-form" className="contact-form-container">
                     <div className={this.props.accordionView ? "pricing-contact-form-wdt" : "pricing-contact-form"}>
                         <div className="pure-g">
                             <div className="pure-u-1">
@@ -1022,23 +1022,51 @@ class DetailedPlanTier extends React.Component {
             })
         })
 
-        if (this.props && this.props.tierActions) {
-            this.props.tierActions.forEach((tierAction) => {
+        // if (this.props && this.props.tierActions) {
+        //     this.props.tierActions.forEach((tierAction) => {
 
-                tierActions.push(
-                    // <div key={tierAction.label.name} className="pure-u-1-4 card category-feature" style={{ textAlign: 'center' }}>
-                    //     <button className="sign-up-btn" style={{ width: '100%', fontSize: '12px !important' }}>
-                    //         <a href={tierAction.label.url} className="action-link-lg-dtl" style={{fontSize: '12px !important'}}>{tierAction.label.text}</a>
-                    //     </button>
-                    // </div>
-                    <a href={tierAction.label.url} className="pure-u-1-4 card-actn category-feature-actn">
-                        <div className="tier-actn">
-                            {tierAction.label.text}
-                        </div>
-                    </a>
-                )
-            });
-        }
+        //         tierActions.push(
+        //             // <div key={tierAction.label.name} className="pure-u-1-4 card category-feature" style={{ textAlign: 'center' }}>
+        //             //     <button className="sign-up-btn" style={{ width: '100%', fontSize: '12px !important' }}>
+        //             //         <a href={tierAction.label.url} className="action-link-lg-dtl" style={{fontSize: '12px !important'}}>{tierAction.label.text}</a>
+        //             //     </button>
+        //             // </div>
+        //             <a href={tierAction.label.url} className="pure-u-1-4 card-actn category-feature-actn">
+        //                 <div className="tier-actn">
+        //                     {tierAction.label.text}
+        //                 </div>
+        //             </a>
+        //         )
+        //     });
+        // }
+
+        this.props.tiers.forEach((tier) => {
+
+            tierActions.push(
+                <React.Fragment>
+                    {(tier.showCallToAction && tier.showCallToAction == "True") ?
+
+                    <React.Fragment>
+                        {/* if  tier.call_to_action.type is CONTACT, add contactFormToggle func */}
+                        {(tier.call_to_action.type == "contact") ?
+                            // add contact page toggle if type is contact
+                            <a href="#contact-form" className="pure-u-1-4 card-actn category-feature-actn cta-dtl-wrp" onClick={() => this.props.contactFormToggle()}>
+                                {/* <div className="contact-action-label">{tier.contactFormText}</div> */}
+                                <span className="tier-actn">{tier.call_to_action.text}</span>
+                            </a>
+                            :
+                            <React.Fragment>
+                                {/* if tier.call_to_action.type is sign-up-free, call to action is of type link */}
+                            {(tier.call_to_action.type == "link") ?
+                                <a href={tier.call_to_action.url} className="pure-u-1-4 card-actn category-feature-actn">
+                                    {/* <div className="contact-action-label">{tier.contactFormText}</div> */}
+                                    <span className="tier-actn">{tier.call_to_action.text}</span>
+                                </a> : '' }
+                            </React.Fragment>
+                        }
+                    </React.Fragment>: ''}
+                </React.Fragment>)
+        });
 
         return (
             <React.Fragment>
@@ -1056,9 +1084,9 @@ class DetailedPlanTier extends React.Component {
                         <div id="detail-plan-container" className="detail-plan-container">
 
                         <div className="detail-cmp-info">
-                            {this.state.plansAndFeaturesInfo ? this.state.plansAndFeaturesInfo:
+                            {this.state.plansAndFeaturesInfo ? <h1>{this.state.plansAndFeaturesInfo}</h1>:
                                 <React.Fragment>
-                                &nbsp;
+                                <h1>&nbsp;</h1>
                                 </React.Fragment>
                             }
                         </div>
@@ -1125,14 +1153,23 @@ class CategoryFeatures extends React.Component {
                 categoryFeatures.push(
                     <div key={item.values[val]} className="plan-desc">
 
-                        {j == 0 ?
+                        {j == 0 && item.values[val] ?
                             <span className="ctg-name-wrp">{category.name}</span>
                             : ''}
                         <div className="plan-desc-feature">
                             <div sm="2" className="category-feature-xs">
-                                <div>{item.values[val]}&nbsp;{item.name}&nbsp;
+                                {/* if value is blank, do not show, */}
+                                {/* if value is yes show it */}
+                                {/* if value if custom text, it is as is */}
+                                <div>
+                                {item.values[val] && item.values[val].toLowerCase() != "yes" ? 
+                                    <span>{item.values[val]}&nbsp;{item.name}&nbsp;</span> : 
+                                    item.values[val] && item.values[val].toLowerCase() == "yes" ? <span>{item.name}&nbsp;</span> :
+                                    // <span>&nbsp;</span>    
+                                    ''
+                                }
                                 { 
-                                    item.info ?
+                                    item.values[val] && item.info ?
                                         <Tooltip message={item.info} position={'top'}>
                                             <span>
                                                 <svg class="accrdn-ttp-svg" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
