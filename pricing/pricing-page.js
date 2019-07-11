@@ -1389,6 +1389,7 @@ class PricingPage extends React.Component {
 
     contactFormToggle() {
         // console.log("in contactFormToggle func, this.state", this.state);
+        window.scrollTo(180, 180);
         this.setState({
             showContactForm: !this.state.showContactForm
         })
