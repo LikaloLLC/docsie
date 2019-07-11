@@ -41,15 +41,15 @@ var plansAndFeatures = {
                 "Business": "Yes",
                 "Start-up": ""
             },
-            "info": "Category 2 info"
+            // // "info": "Category 2 info"
         }, {
             "name": "Chat",
             "values": {
                 "Enterprise": "Yes",
                 "Business": "Yes",
-                "Start-up": "Yes"
+                "Start-up": ""
             },
-            "info": "Category 2 info"
+            // "info": "Category 2 info"
         }, {
             "name": "Permissions",
             "values": {
@@ -57,7 +57,7 @@ var plansAndFeatures = {
                 "Business": "Advanced",
                 "Start-up": "Basic"
             },
-            "info": "Category 2 info"
+            // "info": "Category 2 info"
         }, {
             "name": "Activity Notifications",
             "values": {
@@ -65,7 +65,7 @@ var plansAndFeatures = {
                 "Business": "Yes",
                 "Start-up": ""
             },
-            "info": "Category 2 info"
+            // "info": "Category 2 info"
         }
         ]
     }, {
@@ -77,7 +77,7 @@ var plansAndFeatures = {
                 "Business": "Yes",
                 "Start-up": "Yes"
             },
-            "info": "Category 2 info"
+            // "info": "Category 2 info"
         }, {
             "name": "Publish Shelf via Docsie Script",
             "values": {
@@ -85,7 +85,7 @@ var plansAndFeatures = {
                 "Business": "Yes",
                 "Start-up": ""
             },
-            "info": "Category 2 info"
+            // "info": "Category 2 info"
         }, {
             "name": "Publish on Docsie",
             "values": {
@@ -93,7 +93,7 @@ var plansAndFeatures = {
                 "Business": "Yes",
                 "Start-up": "Yes"
             },
-            "info": "Category 2 info"
+            // "info": "Category 2 info"
         }, {
             "name": "Custom Domain for Docs Published on Docsie",
             "values": {
@@ -101,7 +101,7 @@ var plansAndFeatures = {
                 "Business": "Yes",
                 "Start-up": ""
             },
-            "info": "Category 2 info"
+            // "info": "Category 2 info"
         }, {
             "name": "Google Analytics",
             "values": {
@@ -109,7 +109,7 @@ var plansAndFeatures = {
                 "Business": "Yes",
                 "Start-up": "Yes"
             },
-            "info": "Category 2 info"
+            // "info": "Category 2 info"
         }, {
             "name": "Custom Analytics",
             "values": {
@@ -117,7 +117,7 @@ var plansAndFeatures = {
                 "Business": "",
                 "Start-up": ""
             },
-            "info": "Category 2 info"
+            // "info": "Category 2 info"
         }]
     }, {
         "name": "Search and Reccomendations",
@@ -128,15 +128,15 @@ var plansAndFeatures = {
                 "Business": "Advanced",
                 "Start-up": "Basic"
             },
-            "info": "Category 2 info"
+            // "info": "Category 2 info"
         }, {
             "name": "Searchable Chat Messages",
             "values": {
                 "Enterprise": "Unlimited",
                 "Business": "Unlimited",
-                "Start-up": "10k of your most recent messages"
+                "Start-up": ""//10k of your most recent messages
             },
-            "info": "Category 2 info"
+            // "info": "Category 2 info"
         }, {
             "name": "Searchable Tags",
             "values": {
@@ -144,7 +144,7 @@ var plansAndFeatures = {
                 "Business": "Yes",
                 "Start-up": ""
             },
-            "info": "Category 2 info"
+            // "info": "Category 2 info"
         }, {
             "name": "Enterprise Search",
             "values": {
@@ -152,7 +152,7 @@ var plansAndFeatures = {
                 "Business": "",
                 "Start-up": ""
             },
-            "info": "Category 2 info"
+            // "info": "Category 2 info"
         }]
     }, {
         "name": "Advanced Features",
@@ -163,7 +163,7 @@ var plansAndFeatures = {
                 "Business": "Private Github,Gitlab Repository",
                 "Start-up": "Github Public Repository"
             },
-            "info": "Category 2 info"
+            // "info": "Category 2 info"
         },{
             "name": "AI powered Emotional Analysis",
             "values": {
@@ -171,7 +171,7 @@ var plansAndFeatures = {
                 "Business": "Yes",
                 "Start-up": ""
             },
-            "info": "Category 2 info"
+            // "info": "Category 2 info"
         },{
             "name": "AI powered translations",
             "values": {
@@ -179,7 +179,7 @@ var plansAndFeatures = {
                 "Business": "Yes",
                 "Start-up": ""
             },
-            "info": "Category 2 info"
+            // "info": "Category 2 info"
         },{
             "name": "Self-Learning Documentation",
             "values": {
@@ -187,7 +187,7 @@ var plansAndFeatures = {
                 "Business": "",
                 "Start-up": ""
             },
-            "info": "Category 2 info"
+            // "info": "Category 2 info"
         },]
     }, {
         "name": "Extensions",
@@ -198,7 +198,7 @@ var plansAndFeatures = {
                 "Business": "Premium",
                 "Start-up": "Free"
             },
-            "info": "Category 2 info"
+            // "info": "Category 2 info"
         },{
             "name": "Styles",
             "values": {
@@ -206,7 +206,7 @@ var plansAndFeatures = {
                 "Business": "Premium",
                 "Start-up": "Free"
             },
-            "info": "Category 2 info"
+            // "info": "Category 2 info"
         }]
     }, {
         "name": "Assets",
@@ -217,7 +217,7 @@ var plansAndFeatures = {
                 "Business": "Yes",
                 "Start-up": "Yes"
             },
-            "info": "Category 2 info"
+            // "info": "Category 2 info"
         },{
             "name": "Max image size",
             "values": {
@@ -225,7 +225,7 @@ var plansAndFeatures = {
                 "Business": "Unlimited",
                 "Start-up": "1mb"
             },
-            "info": "Category 2 info"
+            // "info": "Category 2 info"
         },{
             "name": "Mobile Asset Optimization",
             "values": {
@@ -233,7 +233,7 @@ var plansAndFeatures = {
                 "Business": "Yes",
                 "Start-up": ""
             },
-            "info": "Category 2 info"
+            // "info": "Category 2 info"
         },{
             "name": "Videos on Docsie CDN",
             "values": {
@@ -241,7 +241,7 @@ var plansAndFeatures = {
                 "Business": "",
                 "Start-up": ""
             },
-            "info": "Category 2 info"
+            // "info": "Category 2 info"
         },{
             "name": "Annotate Images in Docsie",
             "values": {
@@ -249,7 +249,7 @@ var plansAndFeatures = {
                 "Business": "Yes",
                 "Start-up": ""
             },
-            "info": "Category 2 info"
+            // "info": "Category 2 info"
         },{
             "name": "Unsplash Integration",
             "values": {
@@ -257,7 +257,7 @@ var plansAndFeatures = {
                 "Business": "Yes",
                 "Start-up": "Yes"
             },
-            "info": "Category 2 info"
+            // "info": "Category 2 info"
         },{
             "name": "Max Storage",
             "values": {
@@ -265,7 +265,7 @@ var plansAndFeatures = {
                 "Business": "10 GB per team member",
                 "Start-up": "5 GB"
             },
-            "info": "Category 2 info"
+            // "info": "Category 2 info"
         }]
     }, {
         "name": "Export",
@@ -276,7 +276,7 @@ var plansAndFeatures = {
                 "Business": "Yes",
                 "Start-up": "Yes"
             },
-            "info": "Category 2 info"
+            // "info": "Category 2 info"
         },{
             "name": "HTML",
             "values": {
@@ -284,7 +284,7 @@ var plansAndFeatures = {
                 "Business": "Yes",
                 "Start-up": "Yes"
             },
-            "info": "Category 2 info"
+            // "info": "Category 2 info"
         },{
             "name": "PDF",
             "values": {
@@ -292,7 +292,7 @@ var plansAndFeatures = {
                 "Business": "Yes",
                 "Start-up": ""
             },
-            "info": "Category 2 info"
+            // "info": "Category 2 info"
         },{
             "name": "Doc",
             "values": {
@@ -300,7 +300,7 @@ var plansAndFeatures = {
                 "Business": "Yes",
                 "Start-up": ""
             },
-            "info": "Category 2 info"
+            // "info": "Category 2 info"
         },]
     }, {
         "name": "Import",
@@ -311,7 +311,7 @@ var plansAndFeatures = {
                 "Business": "Yes",
                 "Start-up": "Yes"
             },
-            "info": "Category 2 info"
+            // "info": "Category 2 info"
         },{
             "name": "Import Doc",
             "values": {
@@ -319,7 +319,7 @@ var plansAndFeatures = {
                 "Business": "Yes",
                 "Start-up": ""
             },
-            "info": "Category 2 info"
+            // "info": "Category 2 info"
         },{
             "name": "Import PDF",
             "values": {
@@ -327,7 +327,7 @@ var plansAndFeatures = {
                 "Business": "Yes",
                 "Start-up": ""
             },
-            "info": "Category 2 info"
+            // "info": "Category 2 info"
         },{
             "name": "Scan into Docsie",
             "values": {
@@ -335,7 +335,7 @@ var plansAndFeatures = {
                 "Business": "",
                 "Start-up": ""
             },
-            "info": "Category 2 info"
+            // "info": "Category 2 info"
         },{
             "name": "Import Website into Docsie",
             "values": {
@@ -343,7 +343,7 @@ var plansAndFeatures = {
                 "Business": "Yes",
                 "Start-up": ""
             },
-            "info": "Category 2 info"
+            // "info": "Category 2 info"
         },{
             "name": "Import Webpage into Docsie",
             "values": {
@@ -351,7 +351,7 @@ var plansAndFeatures = {
                 "Business": "Yes",
                 "Start-up": "Yes"
             },
-            "info": "Category 2 info"
+            // "info": "Category 2 info"
         },]
     }, {
         "name": "Security and Administration",
@@ -362,7 +362,7 @@ var plansAndFeatures = {
                 "Business": "On Demand",
                 "Start-up": ""
             },
-            "info": "Category 2 info"
+            // "info": "Category 2 info"
         },{
             "name": "Two-factor authentication",
             "values": {
@@ -370,7 +370,7 @@ var plansAndFeatures = {
                 "Business": "Yes",
                 "Start-up": ""
             },
-            "info": "Category 2 info"
+            // "info": "Category 2 info"
         },{
             "name": "Oauth with Google",
             "values": {
@@ -378,7 +378,7 @@ var plansAndFeatures = {
                 "Business": "Yes",
                 "Start-up": ""
             },
-            "info": "Category 2 info"
+            // "info": "Category 2 info"
         },{
             "name": "SAML-based single sign-on (SSO)",
             "values": {
@@ -386,7 +386,7 @@ var plansAndFeatures = {
                 "Business": "",
                 "Start-up": ""
             },
-            "info": "Category 2 info"
+            // "info": "Category 2 info"
         }]
     }, {
         "name": "Compliance",
@@ -397,7 +397,7 @@ var plansAndFeatures = {
                 "Business": "",
                 "Start-up": ""
             },
-            "info": "Category 2 info"
+            // "info": "Category 2 info"
         },{
             "name": "Corporate Exports for all data",
             "values": {
@@ -405,7 +405,7 @@ var plansAndFeatures = {
                 "Business": "",
                 "Start-up": ""
             },
-            "info": "Category 2 info"
+            // "info": "Category 2 info"
         },]
     }, {
         "name": "Other Benefits",
@@ -416,7 +416,7 @@ var plansAndFeatures = {
                 "Business": "",
                 "Start-up": ""
             },
-            "info": "Category 2 info"
+            // "info": "Category 2 info"
         },{
             "name": "Own Docsie Instance",
             "values": {
@@ -424,7 +424,7 @@ var plansAndFeatures = {
                 "Business": "",
                 "Start-up": ""
             },
-            "info": "Category 2 info"
+            // "info": "Category 2 info"
         },{
             "name": "Support",
             "values": {
@@ -432,7 +432,7 @@ var plansAndFeatures = {
                 "Business": "Email",
                 "Start-up": "Community Support"
             },
-            "info": "Category 2 info"
+            // "info": "Category 2 info"
         },{
             "name": "Priority support and custom support agreement",
             "values": {
@@ -440,7 +440,7 @@ var plansAndFeatures = {
                 "Business": "",
                 "Start-up": ""
             },
-            "info": "Category 2 info"
+            // "info": "Category 2 info"
         },]
     }
     ]
