@@ -62,30 +62,5 @@ tiers = {
           },
           "showCallToAction": "True"
       }
-  ],
-  //  used in detail view
-  "tierActions": [
-    {
-      "label" : {
-                  "name": "Entreprise",
-                  "text":"Talk to Us!",
-                  "url": "signup.com?utm=3423"
-                }
-    }
-    // , {
-    //   "label": {
-    //               "name": "Business",
-    //               "text": "Business Sign-up Now!",
-    //               "url": "signup.com?utm=3423"
-    //             }
-    // }
-    ,
-    {
-      "label": {
-                  "name": "Start-up",
-                  "text": "Sign-up Now!",
-                  "url": "signup.com?utm=3423"
-                }
-    }
   ]
 }
