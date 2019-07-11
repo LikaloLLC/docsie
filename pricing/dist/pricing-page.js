@@ -1846,6 +1846,7 @@ var PricingPage = function (_React$Component11) {
             categories: plansAndFeaturesData.categories,
             tooltipOpen: false,
             selectedOption: true,
+            showRadioOptions: teirsData.show_radio_options,
             radio_btn_monthly_opt: teirsData.radio_btn_monthly_opt,
             radio_btn_yearly_opt: teirsData.radio_btn_yearly_opt,
             showMonthlyPlan: true,
@@ -1960,7 +1961,7 @@ var PricingPage = function (_React$Component11) {
             return React.createElement(
                 "div",
                 { className: "simple-detail-plan-tier-sm-md-lg" },
-                !this.state.showContactForm ? React.createElement(
+                !this.state.showContactForm && this.state.showRadioOptions ? React.createElement(
                     "div",
                     { className: "pure-g" },
                     React.createElement(

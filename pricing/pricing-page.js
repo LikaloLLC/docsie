@@ -1356,6 +1356,7 @@ class PricingPage extends React.Component {
             categories: plansAndFeaturesData.categories,
             tooltipOpen: false,
             selectedOption: true,
+            showRadioOptions: teirsData.show_radio_options,
             radio_btn_monthly_opt: teirsData.radio_btn_monthly_opt,
             radio_btn_yearly_opt: teirsData.radio_btn_yearly_opt,
             showMonthlyPlan: true,
@@ -1460,7 +1461,7 @@ class PricingPage extends React.Component {
         return (
             <div className="simple-detail-plan-tier-sm-md-lg">
 
-                {!this.state.showContactForm ?
+                {!this.state.showContactForm && this.state.showRadioOptions ?
                     <div className="pure-g">
                         <div className="pure-u-1-2 input-radio-plan input-radio-plan-monthly">
                             <input type="radio"
