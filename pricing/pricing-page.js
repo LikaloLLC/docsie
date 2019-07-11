@@ -1153,7 +1153,7 @@ class CategoryFeatures extends React.Component {
                 categoryFeatures.push(
                     <div key={item.values[val]} className="plan-desc">
 
-                        {j == 0 ?
+                        {j == 0 && item.values[val] ?
                             <span className="ctg-name-wrp">{category.name}</span>
                             : ''}
                         <div className="plan-desc-feature">
@@ -1165,10 +1165,11 @@ class CategoryFeatures extends React.Component {
                                 {item.values[val] && item.values[val].toLowerCase() != "yes" ? 
                                     <span>{item.values[val]}&nbsp;{item.name}&nbsp;</span> : 
                                     item.values[val] && item.values[val].toLowerCase() == "yes" ? <span>{item.name}&nbsp;</span> :
-                                    <span>&nbsp;</span>    
+                                    // <span>&nbsp;</span>    
+                                    ''
                                 }
                                 { 
-                                    item.info ?
+                                    item.values[val] && item.info ?
                                         <Tooltip message={item.info} position={'top'}>
                                             <span>
                                                 <svg class="accrdn-ttp-svg" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">

@@ -1551,7 +1551,7 @@ var CategoryFeatures = function (_React$Component9) {
                     categoryFeatures.push(React.createElement(
                         "div",
                         { key: item.values[val], className: "plan-desc" },
-                        j == 0 ? React.createElement(
+                        j == 0 && item.values[val] ? React.createElement(
                             "span",
                             { className: "ctg-name-wrp" },
                             category.name
@@ -1577,12 +1577,10 @@ var CategoryFeatures = function (_React$Component9) {
                                         null,
                                         item.name,
                                         "\xA0"
-                                    ) : React.createElement(
-                                        "span",
-                                        null,
-                                        "\xA0"
-                                    ),
-                                    item.info ? React.createElement(
+                                    ) :
+                                    // <span>&nbsp;</span>    
+                                    '',
+                                    item.values[val] && item.info ? React.createElement(
                                         Tooltip,
                                         { message: item.info, position: 'top' },
                                         React.createElement(
