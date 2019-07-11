@@ -1,5 +1,5 @@
 var plansAndFeatures = {
-    "plansAndFeaturesInfo": "Detailed Plans Information",
+    "plansAndFeaturesInfo": "Pick a plan that works for you! 😊",
     "categories": [{
         "name": "Docsie Data",
         "features": [{
