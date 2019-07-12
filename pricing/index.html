@@ -27,6 +27,9 @@
       href="https://fonts.googleapis.com/css?family=Open+Sans:300,400&amp;subset=cyrillic,latin-ext"></noscript>
 
 <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans+Condensed&display=swap" rel="stylesheet">
+  <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-firestore.js"></script>
+  
 </head>
 
 
@@ -490,6 +493,20 @@ _atrk_opts = { atrk_acct:"zugkr1O7kI20L7", domain:"docsie.io",dynamic: true};
         // console.log("no additional params exist");
       }
     }
+  
+ const firebase = require("firebase");
+// Required for side-effects
+require("firebase/firestore");
+  
+  // Initialize Cloud Firestore through Firebase
+firebase.initializeApp({
+  apiKey: 'AIzaSyAHAqdOtUkBaAJO7ptvXn8J9MHcgTCfPjI',
+  authDomain: 'https://docsie-plugins.firebaseio.com',
+  projectId: 'docsie-plugins'
+});
+
+var db = firebase.firestore();
+  
   </script>
 
 </html>
