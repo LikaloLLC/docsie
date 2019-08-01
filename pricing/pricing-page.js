@@ -769,7 +769,7 @@ class SimplePlanTier extends React.Component {
         this.state.tiers.forEach((tier) => {
 
             rows.push(
-                <div key={tier.name} className="pure-u-xs-1 pure-u-sm-1-3 pure-u-md-1-3 pure-u-lg-1-3 pure-u-xl-1-3">
+                <div key={tier.name} className="pure-u-xs-1 pure-u-sm-1-2 pure-u-md-1-3 pure-u-lg-1-3 pure-u-xl-1-3">
                     <div className="price-card">
                         <div className="pricing-panel-wrapper wrp-2">
                             <div className="pricing-panel">
