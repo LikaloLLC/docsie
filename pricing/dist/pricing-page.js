@@ -1016,7 +1016,7 @@ var SimplePlanTier = function (_React$Component7) {
 
                 rows.push(React.createElement(
                     "div",
-                    { key: tier.name, className: "pure-u-xs-1 pure-u-sm-1-3 pure-u-md-1-3 pure-u-lg-1-3 pure-u-xl-1-3" },
+                    { key: tier.name, className: "pure-u-xs-1 pure-u-sm-1-2 pure-u-md-1-3 pure-u-lg-1-3 pure-u-xl-1-3" },
                     React.createElement(
                         "div",
                         { className: "price-card" },
