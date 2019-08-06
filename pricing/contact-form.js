@@ -29,6 +29,9 @@ var contactForm = {
             "placeholder": "enter your industry",
             "options": [
                 "Technology",
+                "HR",
+                "Legal",
+                "R&D",
                 "Other"
             ]
         },
@@ -48,7 +51,7 @@ var contactForm = {
             },
             "type": "number",
             "placeholder": "enter # of employees"
-        }, 
+        },
         {
             "label": "I'm interested in...",
             "alias": {
@@ -70,7 +73,7 @@ var contactForm = {
                 }
             ],
             "optionsRequiredMsg": "*Please select atleast one option"
-        }, 
+        },
         {
             "label": "Description",
             "alias": {
@@ -94,4 +97,4 @@ var contactForm = {
             ]
         }
     ]
-} 
+}
