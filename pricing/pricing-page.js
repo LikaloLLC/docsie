@@ -60,6 +60,8 @@ class SelectTag extends React.Component {
 
     render() {
 
+        let selectedOption = "Technology";
+
         return (
             <React.Fragment>
             {/* {this.props.item.required ?  */}
@@ -76,9 +78,9 @@ class SelectTag extends React.Component {
             <React.Fragment>
                 <span className="form-label">{this.props.item.label}</span><br />
                 <select className={this.props.accordionView ? "contact-attr contact-attr-wdt " : "contact-attr"} name={this.props.item.alias.label} onChange={() => this.props.handleInputChange(this.props.item, event)}>
-                    <option value="Select" selected="selected">{this.props.item.selectMsg}</option>
+                    {/* <option value="Select" selected="selected">{this.props.item.selectMsg}</option> */}
                     {this.props.item.options.map((opt) =>
-                        <option value={opt}>{opt}</option>
+                        <option value={opt} selected={selectedOption == opt}>{opt}</option>
                     )}
                 </select>
             </React.Fragment>
@@ -370,6 +372,13 @@ class ContactFormInputs extends React.Component {
 
         // show loading msg on cclicking submit
         this.setState({submitRes: submitResNode});
+
+        // selected attribute doesn't bind, need to default department to "Technology"
+        if (!reqBody.department) {
+            reqBody.department = "Technology";
+        }
+
+        console.log("JSON.stringify(reqBody)", JSON.stringify(reqBody));
 
         fetch(this.state.endPoint, {
             method: 'POST',

@@ -108,6 +108,8 @@ var SelectTag = function (_React$Component2) {
         value: function render() {
             var _this4 = this;
 
+            var selectedOption = "Technology";
+
             return React.createElement(
                 React.Fragment,
                 null,
@@ -153,15 +155,10 @@ var SelectTag = function (_React$Component2) {
                         { className: this.props.accordionView ? "contact-attr contact-attr-wdt " : "contact-attr", name: this.props.item.alias.label, onChange: function onChange() {
                                 return _this4.props.handleInputChange(_this4.props.item, event);
                             } },
-                        React.createElement(
-                            "option",
-                            { value: "Select", selected: "selected" },
-                            this.props.item.selectMsg
-                        ),
                         this.props.item.options.map(function (opt) {
                             return React.createElement(
                                 "option",
-                                { value: opt },
+                                { value: opt, selected: selectedOption == opt },
                                 opt
                             );
                         })
@@ -487,6 +484,13 @@ var ContactFormInputs = function (_React$Component3) {
 
             // show loading msg on cclicking submit
             this.setState({ submitRes: submitResNode });
+
+            // selected attribute doesn't bind, need to default department to "Technology"
+            if (!reqBody.department) {
+                reqBody.department = "Technology";
+            }
+
+            console.log("JSON.stringify(reqBody)", JSON.stringify(reqBody));
 
             fetch(this.state.endPoint, {
                 method: 'POST',
