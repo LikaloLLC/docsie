@@ -954,7 +954,9 @@ template {
 .pure .pure-form fieldset {
     margin: 0;
     padding: 0.35em 0 0.75em;
-    border: 0
+    border: 0;
+    padding-bottom: 0px;
+    padding-top: 0px;
 }
 
 .pure .pure-form legend {
@@ -1539,7 +1541,8 @@ template {
 }
 
 .pure .pure-menu-disabled .pure-menu-link:hover {
-    background-color: transparent
+    background-color: transparent;
+    /* height: inherit; */
 }
 
 .pure .pure-menu-active > .pure-menu-link {
@@ -1547,7 +1550,8 @@ template {
 }
 
 .pure .pure-menu-link:hover, .pure .pure-menu-link:focus {
-    background-color: #eee
+    background-color: #eee;
+    /* height: inherit; */
 }
 
 .pure .pure-menu-selected .pure-menu-link {
@@ -1824,7 +1828,8 @@ template {
 }
 
 .pure header > .pure-menu .pure-menu-link:hover, .pure header > .pure-menu .pure-menu-link:focus {
-    background-color: #e8e2e8
+    background-color: #e8e2e8;
+    /* height: inherit; */
 }
 
 @media screen and (min-width: 568px) {
@@ -2238,10 +2243,91 @@ box-sizing: border-box;
 
 /* header sign up form */
 .header-sign-up {
-    position: relative !important;
-    bottom: 22px !important;
-    right: 10px;
-}    
+    padding: 0 !important;
+    position: relative;
+    bottom: 4px;
+}
+
+@media (min-width: 1050px) {
+    .header-sign-up {
+        display: block;
+    }
+}
+
+.start-free-trail {
+    border: 1px solid #b50000;
+    border-radius: 4px;
+    background: #b50000;
+    padding: 8px;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    position: relative;
+    bottom: 8px;
+}
+
+@media (min-width: 1050px) {
+    .start-free-trail {
+        display: none;
+        cursor: default !important;
+        pointer-events: none !important;
+    }
+}
+
+/* header dropdown changes */
+.drp-icon {
+    margin-bottom: 3px;
+  }
+  
+  .dropbtn {
+    cursor: pointer;
+    position: relative;
+    bottom: 2.2px;
+  }
+  
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown-content a:hover {background-color: #ddd;}
+  
+  .dropdown:hover .dropdown-content {display: block;}
+  
+  .pure-dropdown {
+    background-color: #fff;
+    border: 1px solid rgba(0,0,0,0.1);
+    box-shadow: 0 0.5em 1em rgba(0,0,0,0.2);
+    border-top: 2px solid #ff4141;
+    border-radius: 4px;
+    z-index: 1002;
+    /* padding: 1em; */
+  }
+  
+  .sub-item {
+    /* width: 100%; */
+  }
+
+  .dropdown-link-selected {
+    font-weight: bold !important;
+    color: #b50000 !important;
+  }
 
 /* ipad pro place holder change */
 @media (min-width: 1024px) {
