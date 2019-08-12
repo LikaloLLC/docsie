@@ -86,57 +86,8 @@
     <script>function gtag() { dataLayer.push(arguments) } window.dataLayer = window.dataLayer || [], gtag("js", new Date), gtag("config", "UA - 116930058 - 3");</script>
 
     <!-- Get current params, if any, at the docsie home page to append to signup-widget query params -->
-    <script>
-
-        // for appending existing params, if any
-        function updateReqParams() {
-            // if there exists any query params in docsie home page
-            // append it form action url
-            if (window.location.search != "" && window.location.search != undefined && window.location.search != null) {
-
-                var existingParamsArray = [], multipleParamsArray = [];
-
-                // get current url get-params
-                if (window.location.search.indexOf("&") != -1) {
-                    multipleParamsArray = window.location.search.split("?")[1].split("&");
-                    multipleParamsArray.forEach(function (item) {
-                        var splitItem = item.split("=");
-                        existingParamsArray.push(splitItem[0]);
-                        existingParamsArray.push(splitItem[1]);
-                    });
-                } else {
-                    existingParamsArray = window.location.search.split("?")[1].split("=");
-                }
-
-                // create hidden input tags to append to form params
-                for (let i = 0; i < existingParamsArray.length; i++) {
-
-                    // continue at odd i value
-                    if (i != 0 && i % 2 != 0)
-                        continue;
-
-                    // break at existingParamsArray.length
-                    if (i == existingParamsArray.length - 1)
-                        break;
-
-                    var input = document.createElement("input");
-                    input.setAttribute("type", "hidden");
-                    input.setAttribute("name", existingParamsArray[i]);
-                    input.setAttribute("value", existingParamsArray[i + 1]);
-                    document.getElementById("signup-widget-form").appendChild(input);
-                }
-            }
-        }
-
-        // for checking validity of email and enabling/disabling 'triangle' button
-        function setSubmit() {
-            if (document.getElementById("email").validity.valid == true) {
-                document.getElementById("signup-widget-submit").disabled = false;
-            } else {
-                document.getElementById("signup-widget-submit").disabled = true;
-            }
-        }
-    </script>
+    <!-- has email validation, onload func -->
+    <script type="text/javascript" src="https://www.docsie.io/load_functions.js"></script>
 </head>
 
 <body class="pure" id="layout" onload="updateParams()">
@@ -196,10 +147,10 @@
                                     <label for="email">To register, simply</label>
                                     <p class="pure-control-group pure-g">
                                         <input type="email" class="pure-u" placeholder="enter your email address"
-                                            id="email" name="email" onkeyup="setSubmit()" required="">
+                                            id="email" name="email" onkeyup="setSubmit('email', 'signup-widget-submit')" required="">
                                         <button id="signup-widget-submit" class="pure-button pure-button-primary"
                                             type="submit" aria-label="Submit registration request"
-                                            onclick="updateReqParams()"><svg class="icon icon--triangle-right"
+                                            onclick="updateReqParams()" disabled="true"><svg class="icon icon--triangle-right"
                                                 viewBox="0 0 20 20" width="22" height="22">
                                                 <use xmlns:xlink="http://www.w3.org/1999/xlink"
                                                     xlink:href="#icon-triangle-right"></use>
