@@ -24,7 +24,7 @@
 
 
         // for appending existing params, if any
-        function updateReqParams() {
+        function updateReqParams(formId) {
             // if there exists any query params in docsie home page
             // append it form action url
             if (window.location.search != "" && window.location.search != undefined && window.location.search != null) {
@@ -58,7 +58,7 @@
                     input.setAttribute("type", "hidden");
                     input.setAttribute("name", existingParamsArray[i]);
                     input.setAttribute("value", existingParamsArray[i + 1]);
-                    document.getElementById("signup-widget-form").appendChild(input);
+                    document.getElementById(formId).appendChild(input);
                 }
             }
         }
