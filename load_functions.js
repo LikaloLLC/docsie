@@ -74,15 +74,9 @@ function setSubmit(id1, id2) {
 }
 
 
-<script type="text/javascript">
-  (function() {
-    window._pa = window._pa || {};
 
-    var pa = document.createElement('script'); pa.type = 'text/javascript'; pa.async = true;
-    pa.src = ('https:' == document.location.protocol ? 'https:' : 'http:') + "//tag.marinsm.com/serve/5d54ce3419019cfe13000021.js";
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(pa, s);
-  })();
-</script>
+
+
 
 // check and set cookies for GDPR banner
 function setCookie(cname, cvalue) {
@@ -122,3 +116,11 @@ if (bannerSet) {
 
     document.getElementById("cookies-use-agreement").style.display = 'block';
 }
+
+(function() {
+window._pa = window._pa || {};
+
+var pa = document.createElement('script'); pa.type = 'text/javascript'; pa.async = true;
+pa.src = ('https:' == document.location.protocol ? 'https:' : 'http:') + "//tag.marinsm.com/serve/5d54ce3419019cfe13000021.js";
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(pa, s);
+})();
