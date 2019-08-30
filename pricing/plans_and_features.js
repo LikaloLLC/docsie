@@ -34,15 +34,7 @@ var plansAndFeatures = {
         ]
     }, {
         "name": "Collaboration",
-        "features": [{
-            "name": "Real-Time Collaboration",
-            "values": {
-                "Enterprise": "Yes",
-                "Business": "Yes",
-                "Start-up": "Yes"
-            },
-            // // "info": "Category 2 info"
-        }, {
+        "features": [ {
             "name": "Chat",
             "values": {
                 "Enterprise": "Yes",
