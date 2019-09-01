@@ -34,20 +34,12 @@ var plansAndFeatures = {
         ]
     }, {
         "name": "Collaboration",
-        "features": [{
-            "name": "Real-Time Collaboration",
-            "values": {
-                "Enterprise": "Yes",
-                "Business": "Yes",
-                "Start-up": ""
-            },
-            // // "info": "Category 2 info"
-        }, {
+        "features": [ {
             "name": "Chat",
             "values": {
                 "Enterprise": "Yes",
                 "Business": "Yes",
-                "Start-up": ""
+                "Start-up": "Yes"
             },
             // "info": "Category 2 info"
         }, {
@@ -86,7 +78,16 @@ var plansAndFeatures = {
                 "Start-up": ""
             },
             // "info": "Category 2 info"
-        }, {
+        },{
+            "name": "Password protected documentation",
+            "values": {
+                "Enterprise": "Yes",
+                "Business": "Yes",
+                "Start-up": "1 password per shelf"
+            },
+            // "info": "Category 2 info"
+        },
+             {
             "name": "Publish on Docsie",
             "values": {
                 "Enterprise": "Yes",
@@ -173,11 +174,11 @@ var plansAndFeatures = {
             },
             // "info": "Category 2 info"
         },{
-            "name": "AI powered translations",
+            "name": "Automated Translations",
             "values": {
                 "Enterprise": "Yes",
                 "Business": "Yes",
-                "Start-up": ""
+                "Start-up": "2 per day"
             },
             // "info": "Category 2 info"
         },{
