@@ -93,6 +93,8 @@ adroll_pix_id = "BWXONQKGSRDHBCVOPJUI7W";
     else { window.attachEvent('onload', _onload) }
 }());
 
+var bannerElement = document.getElementById("cookies-use-agreement");
+
 // check and set cookies for GDPR banner
 function setCookie(cname, cvalue) {
     // var d = new Date();
@@ -102,7 +104,8 @@ function setCookie(cname, cvalue) {
     document.cookie = cname + "=" + cvalue + ";" + expires;
 
     // hide banner upon accepting cookies agreement
-    document.getElementById("cookies-use-agreement").style.display = 'none';
+    if (bannerElement)
+    bannerElement.style.display = 'none';
 }
 
 // get cookie for a given name
@@ -126,8 +129,10 @@ let bannerSet = getCookie('ViewedCookiesUseAgreement');
 
 if (bannerSet) {
 
-    document.getElementById("cookies-use-agreement").style.display = 'none';
+    if (bannerElement)
+    bannerElement.style.display = 'none';
 } else {
 
-    document.getElementById("cookies-use-agreement").style.display = 'block';
+    if (bannerElement)
+    bannerElement.style.display = 'block';
 }
