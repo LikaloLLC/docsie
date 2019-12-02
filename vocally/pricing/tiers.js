@@ -46,7 +46,7 @@ tiers = {
       "call_to_action": {
         "type": "pricing",
         "text": "Try it Free!",
-        "url": "https://app.docsie.io/manager/?utm=Medium"
+        "url": "https://app.docsie.io/login/?dal=feedback&utm=Medium"
       },
       "showCallToAction": "False"
     },
@@ -73,7 +73,7 @@ tiers = {
             // use type to
             "type": "pricing",
             "text":"Sign-up Free!",
-            "url": "https://app.docsie.io/manager/?utm=Small"
+            "url": "https://app.docsie.io/login/?dal=feedback&utm=Small"
           },
           "showCallToAction": "False"
       }
