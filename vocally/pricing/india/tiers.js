@@ -27,15 +27,15 @@ tiers = {
     {
       "pricing": {
         "monthly": {
-          "price": "399.00",
-          "currency": "$",
+          "price": "28,000",
+          "currency": "₹",
           "label": "/month"
         },
         "yearly": {
-          "price": "329.00",
-          "currency": "$",
-          "perAnnum": "3900",
-          "savedAmount": "24",
+          "price": "23,000",
+          "currency": "₹",
+          "perAnnum": "283,248",
+          "savedAmount": "5000",
           "label": "/month"
         }
       },
@@ -53,15 +53,15 @@ tiers = {
     {
       "pricing": {
         "monthly": {
-          "price": "69.99",
-          "currency": "$",
+          "price": "5000",
+          "currency": "₹",
           "label": "/month"
         },
         "yearly": {
-          "price": "49.99",
-          "currency": "$",
-          "perAnnum": "599",
-          "savedAmount": "20",
+          "price": "3500",
+          "currency": "₹",
+          "perAnnum": "42,000",
+          "savedAmount": "1500",
           "label": "/month"
         }
       },
