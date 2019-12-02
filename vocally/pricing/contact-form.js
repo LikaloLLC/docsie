@@ -10,13 +10,13 @@ var contactForm = {
     "notificationDuration": 6000, // in ms
     "formInputs": [
         {
-            "label": "Medium Email",
+            "label": "Business Email",
             "alias": {
                 "label": "email",
                 "valueType": "string"
             },
             "type": "email",
-            "placeholder": "enter your Medium email"
+            "placeholder": "enter your Business email"
         },
         {
             "label": "Department",
@@ -67,8 +67,8 @@ var contactForm = {
                     "value": "Priority Support and SLA's",
                     "type": "checkbox"
                 }, {
-                    "alias": "AI powered documentation",
-                    "value": "AI powered documentation",
+                    "alias": "Unlimited Feedback Submissions",
+                    "value": "Unlimited Feedback Submissions",
                     "type": "checkbox"
                 }
             ],

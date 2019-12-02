@@ -15,7 +15,7 @@ tiers = {
       "description": "Unlimited Feedback Submissions",
       "call_to_action": {
         // use type to make contact page as call to action on click of this
-        "type": "pricing",
+        "type": "contact",
         "text": "Talk to Us",
         "url": "#"
       },
@@ -50,18 +50,32 @@ tiers = {
       },
       "showCallToAction": "False"
     },
-     {
+    {
+      "pricing": {
+        "monthly": {
+          "price": "69.99",
+          "currency": "$",
+          "label": "/month"
+        },
+        "yearly": {
+          "price": "49.99",
+          "currency": "$",
+          "perAnnum": "599",
+          "savedAmount": "20",
+          "label": "/month"
+        }
+      },
          "name": "Small",
          "icon" : "www.docsie.io/icon.png",
          "order": 4,
-         "description": "Professional product documentation tools for an up-and-coming Small.",
+         "description": "Up to 5000 feedbacks submited per month.",
          "call_to_action" : {
             // use type to
             "type": "pricing",
             "text":"Sign-up Free!",
             "url": "https://app.docsie.io/manager/?utm=Small"
           },
-          "showCallToAction": "True"
+          "showCallToAction": "False"
       }
   ]
 }
