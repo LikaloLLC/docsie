@@ -9,13 +9,13 @@ tiers = {
   // "toggleText": "Back to simple plans",
   "tiers": [
     {
-      "name": "Enterprise",
+      "name": "Large",
       "order": 1,
       "icon": "www.docsie.io/icon.png",
       "description": "Unlimited Feedback Submissions",
       "call_to_action": {
         // use type to make contact page as call to action on click of this
-        "type": "contact",
+        "type": "pricing",
         "text": "Talk to Us",
         "url": "#"
       },
@@ -39,27 +39,27 @@ tiers = {
           "label": "/month"
         }
       },
-      "name": "Large",
+      "name": "Medium",
       "icon": "www.docsie.io/icon.png",
       "order": 2,
       "description": "Up to 50,000 feedback submissions per month.",
       "call_to_action": {
         "type": "pricing",
         "text": "Try it Free!",
-        "url": "https://app.docsie.io/manager/?utm=Large"
+        "url": "https://app.docsie.io/manager/?utm=Medium"
       },
-      "showCallToAction": "True"
+      "showCallToAction": "False"
     },
      {
-         "name": "Start-up",
+         "name": "Small",
          "icon" : "www.docsie.io/icon.png",
          "order": 4,
-         "description": "Professional product documentation tools for an up-and-coming start-up.",
+         "description": "Professional product documentation tools for an up-and-coming Small.",
          "call_to_action" : {
             // use type to
-            "type": "link",
+            "type": "pricing",
             "text":"Sign-up Free!",
-            "url": "https://app.docsie.io/manager/?utm=start-up"
+            "url": "https://app.docsie.io/manager/?utm=Small"
           },
           "showCallToAction": "True"
       }

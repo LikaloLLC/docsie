@@ -1,5 +1,5 @@
 var contactForm = {
-    "heading": "Contact Enterprise Sales",
+    "heading": "Contact Large Sales",
     "sub_info": "Let's tallk entreprise.",
     "toggleContactFormText": "Go Back",
     "submitContactFormText": "Submit Form",
@@ -10,13 +10,13 @@ var contactForm = {
     "notificationDuration": 6000, // in ms
     "formInputs": [
         {
-            "label": "Large Email",
+            "label": "Medium Email",
             "alias": {
                 "label": "email",
                 "valueType": "string"
             },
             "type": "email",
-            "placeholder": "enter your Large email"
+            "placeholder": "enter your Medium email"
         },
         {
             "label": "Department",
