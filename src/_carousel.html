@@ -1,0 +1,37 @@
+<script type="text/javascript">
+  "use strict";
+  function Icon(a) {
+    var b = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : "inl";
+    return "<svg class=\"".concat(b, "\" width=\"22\" height=\"22\" viewBox=\"0 0 20 20\"><use xlink:href=\"#icon-").concat(a, "\" /></svg>");
+  }
+  function Rider(a) {
+    var b;
+    var c = Array.from(a.querySelectorAll("img"));
+    var d = Array.from(a.querySelectorAll("button"));
+    var e = a.querySelector("figcaption");
+
+    var f = function (f) {
+      b = f, c.forEach(function (a) {
+        return a.classList.remove("current");
+      }), d.forEach(function (a) {
+        return a.classList.remove("active");
+      }), d[f].classList.add("active"), c[f].classList.add("current"), e.innerHTML = c[f].alt, a.style.minHeight = c[f].offsetHeight + "px";
+    };
+
+    d.forEach(function Tooggler(a, b) {
+      var c = a.dataset["icon"];
+      c && (a.innerHTML = Icon(c, "i") + " " + a.innerHTML), a.addEventListener("click", function () {
+        return f(b);
+      });
+    }), function Nav() {
+      var d = document.createElement("button");
+      var e = document.createElement("button");
+      d.type = "left", d.classList.add("n-m", "h-lg"), d.innerHTML = Icon("chevron-left"), e.type = "right", e.classList.add("n-m", "h-lg"), e.innerHTML = Icon("chevron-right"), d.addEventListener("click", function () {
+        b -= 1, b < 0 && (b = c.length - 1), f(b);
+      }), e.addEventListener("click", function () {
+        b += 1, b === c.length && (b = 0), f(b);
+      }), a.appendChild(d), a.appendChild(e);
+    }(), f(0);
+  }
+  $await(".cr-ft", Rider);
+</script>

@@ -9,3 +9,16 @@
   </fieldset>
 </form>
 </script>
+<script type="text/javascript">
+  function InjectFRM(el) {
+    var tpl = document.getElementById("rg-frm");
+    if (tpl) {
+      var ctr = document.createElement("div");
+      ctr.classList.add("rg-ctr");
+      ctr.innerHTML = tpl.text;
+      el.appendChild(ctr);
+    }
+  }
+  $await(".docsie-header-conatiner", InjectFRM);
+  $await(".docsie-footer-nav", InjectFRM);
+</script>

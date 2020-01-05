@@ -1,0 +1,578 @@
+/**
+* Docsie.io Masonry documentation style
+*/
+
+$sm: 'screen and (min-width: 568px)'; // 568px
+$ism: 'screen and (max-width: 568px)'; // 568px
+$md: 'screen and (min-width: 768px)'; // 768px
+$lg: 'screen and (min-width: 1024px)'; // 1024px
+$xl: 'screen and (min-width: 1280px)'; // 1280px
+$xxl: 'screen and (min-width: 1600px)'; // 1600px
+$textColor: #3b454e;
+$linkColor: #3884ff;
+$anchorColor: $linkColor;
+$textActiveColor: $linkColor;
+// Buttons
+$buttonText: $linkColor;
+$buttonBackground: #fff;
+$buttonBorder: $linkColor;
+// Inputs
+$inputText: $textColor;
+$inputBackground: #fff;
+$inputBorder: #E6ECF1;
+// Code
+$codeText: #000;
+$codeBackground: #f5f7f9;
+$codeBorder: $linkColor;
+// Quote
+$quoteBackground: #f5f7f9;
+// Table
+$dictDefinitionText: $textColor;
+$dictDefinitionBackground: $quoteBackground;
+$tableBorder: #E6ECF1;
+$tableOddBorder: #fafbfe;
+$tableOddBackground: #fafbfe;
+$tableOddText: $textColor;
+$tableEvenBorder: #fafbfe;
+$tableEvenBackground: #fff;
+$tableEvenText: $textColor;
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Alata|IBM+Plex+Sans|IBM+Plex+Sans+Condensed:400i');
+html, body {
+  margin: 0; padding: 0;
+  scroll-behavior: smooth;
+}
+// CSS
+#DOCSIE__ROOT {
+    font-family: 'IBM Plex Sans', sans-serif;
+    line-height: 1.625;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    color: $textColor;
+    font-weight: 300;
+    font-size: 14px;
+    letter-spacing: normal;
+    @media #{$sm} {
+      font-size: 15px;
+    }
+    @media #{$lg} {
+      font-size: 16px;
+    }
+    article,
+    header,
+    nav {
+        display: block;
+    }
+    label {
+        display: inline-block;
+        margin-bottom: .5em
+    }
+    input,
+    select,
+    button {
+        margin: 0;
+        text-rendering: auto;
+        color: initial;
+        font-size: inherit;
+        font-family: inherit;
+        line-height: inherit;
+        letter-spacing: normal;
+        word-spacing: normal;
+        text-transform: none;
+        text-indent: 0px;
+        text-shadow: none;
+        display: inline-block;
+        text-align: start;
+        cursor: pointer;
+    }
+    button {
+        display: inline-block;
+        font-weight: 400;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: middle;
+        user-select: none;
+        border: 1px solid transparent;
+        padding: .45em .9em;
+        font-size: .875em;
+        line-height: 1.5;
+        transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, -webkit-box-shadow .15s ease-in-out;
+        color: $buttonText;
+        background-color: $buttonBackground;
+        border-color: $buttonBorder;
+        &:hover {
+            color: $buttonText;
+            background-color: lighten( $buttonBackground, 30% );
+            border-color: lighten( $buttonBorder, 30% );
+        }
+        &:focus {
+            color: $buttonText;
+            background-color: lighten( $buttonBackground, 30% );
+            border-color: lighten( $buttonBorder, 30% );
+        }
+        &:disabled {
+            opacity: .65;
+            color: desaturate( $buttonText, 100% );
+            background-color: desaturate( $buttonBackground, 100% );
+            border-color: desaturate( $buttonBorder, 100% );
+        }
+    }
+    button,
+    input {
+        overflow: visible
+    }
+    button,
+    select {
+        text-transform: none
+    }
+    input {
+        display: block;
+        width: 100%;
+        padding: .45em .9em;
+        line-height: 1.5;
+        color: $inputText;
+        background-clip: padding-box;
+        border-radius: 0;
+        border: 1px solid;
+        height: auto;
+        background-color: $inputBackground;
+        border-color: $inputBorder;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+        &:-webkit-autofill {
+            background-color: rgb(250, 255, 189) !important;
+            background-image: none !important;
+            color: rgb(0, 0, 0) !important;
+        }
+    }
+    select {
+        display: block;
+        width: 100%;
+        height: auto;
+        padding: .45em .9em;
+        line-height: 1.5;
+        color: $inputText;
+        background-color: $inputBackground;
+        background-image: url("data:image/jpeg;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAZ0lEQVQ4je3NMQ6CQBQG4U8WKL0KV7Oy2lhxEQqIBZfxQsZmTczG3SCxZKpX/DOPg7/S4IK2smnTpvmU3jzR447uixww4Zy2Ra5Ys0jAjFtNLEUClpJ8qkQihnQ/MG79nkfiHvHgB16RDgvkI1IiVwAAAABJRU5ErkJggg==");
+        background-repeat: no-repeat;
+        background-position: right 10px center;
+        border: 1px solid;
+        border-color: $inputBorder;
+        border-radius: 0;
+        transition: border-color .15s ease-in-out, -webkit-box-shadow .15s ease-in-out;
+        appearance: none;
+        -webkit-appearance: none;
+        &:-webkit-autofill {
+            background-color: #fff !important;
+            background-image: none !important;
+            color: #6c757d !important;
+        }
+    }
+    svg {
+        fill: currentColor;
+        vertical-align: middle;
+        &:not(:root) {
+            overflow: hidden;
+        }
+    }
+    h1,
+    h2,
+    h3 {
+        font-family: 'Alata', sans-serif;
+        color: $textColor;
+        font-weight: 600;
+        line-height: 1.1;
+        color: inherit;
+        letter-spacing: 0.02em;
+    }
+    h1 {
+      font-size: 2.4em;
+      margin-block-start: 0;
+      margin-block-end: 0.83em;
+      margin-top: 0.5em;
+      margin-bottom: 0.5em;
+      line-height: 1.2em;
+    }
+    h2 {
+        font-size: 1.8em;
+        margin: 2em 0 0.5em 0;
+    }
+    h3 {
+        font-size: 1.2em;
+        margin: 1.25em 0 0.5em 0;
+    }
+    a {
+        color: $linkColor;
+        text-decoration: none;
+        background-color: transparent;
+        -webkit-text-decoration-skip: objects;
+        &:hover {
+            color: lighten($linkColor, 10%);
+            text-decoration: underline;
+        }
+        &:not([href]):not([tabindex]) {
+            color: inherit;
+            text-decoration: none
+        }
+        &:not([href]):not([tabindex]):focus,
+        a:not([href]):not([tabindex]):hover {
+            color: inherit;
+            text-decoration: none
+        }
+        &:not([href]):not([tabindex]):focus {
+            outline: 0
+        }
+    }
+    b, strong {
+        font-weight: bolder;
+    }
+    code {
+        font-size: 1em;
+        padding: 0 0.4em;
+        letter-spacing: 0.04em;
+    }
+    code, blockquote, button {
+      border-radius: 2px;
+    }
+    img {
+        vertical-align: middle;
+        border-style: none
+    }
+    figcaption,
+    figure {
+        margin: 0;
+    }
+    p {
+        margin-top: 1em;
+        margin-bottom: 1em
+    }
+    .pure-docsie {
+        .docsie-footer,
+        .pure-docsie-loader,
+        .docsie-search-form,
+        .docsie-search-results,
+        .docsie-header-conatiner,
+        .docsie-section-container {
+          margin: 0 auto;
+          max-width: 1200px;
+          width: 100%;
+          padding: 0 1em;
+          box-sizing: border-box;
+        }
+        .docsie-nav {
+          display: flex;
+          flex-direction: column;
+          height: 100vh;
+          position: sticky;
+          top: 0;
+          padding: 0 1em;
+          box-sizing: border-box;
+          min-width: 260px !important;
+          width: 400px;
+          max-width: 400px;
+          &.expanded {
+            box-shadow: 0 0 0 999em rgba(0, 0, 0, 0.2);
+            z-index: 2;
+            @media #{$sm} {
+              box-shadow: none
+            }
+          }
+          .language-picker,
+          .version-picker {
+            margin: 0 !important;
+            border: none;
+            border-radius: 0;
+            height: 50px;
+            border-bottom: 2px solid #eee;
+            @media #{$sm} {
+              max-width: 280px;
+            }
+          }
+          .language-picker {
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+          }
+          .version-picker {
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+            border-left: none;
+          }
+            ul a {
+                display: block;
+                color: $textColor;
+                text-decoration: none;
+                
+                &.pure-link-active {
+                  color: $textActiveColor;
+                }
+            }
+            >ul {
+                position: static;
+                grid-column: span 2;
+                max-height: unset;
+                padding: 0 1em !important;
+                overflow-x: hidden !important;
+                overflow-y: auto !important;
+                >li {
+                    >ul {
+                        padding: 0 0 0 0.5em !important;
+                    }
+                    >a {
+                        font-size: 1.2em;
+                    }
+                }
+              &::-webkit-scrollbar {
+                width: 4px;
+                height: 4px;
+                display: none;
+              }
+              &::-webkit-scrollbar-track {
+                background: none;
+                border-width: 0;
+              }
+              &::-webkit-scrollbar-thumb {
+                background: rgba(0,0,0,.16);
+                transition: background 250ms ease;
+                border-radius: 2px;
+                -moz-transition: background 250ms ease;
+                -webkit-transition: background 250ms ease;
+              }
+              &::-webkit-scrollbar-button {
+                display: none;
+              }
+              &::-webkit-scrollbar-track-piece {
+                display: none;
+              }
+              &::-webkit-scrollbar-corner {
+                display: none;
+              }
+              &::-webkit-resizer {
+                display: none;
+              }
+              &:hover::-webkit-scrollbar {
+                display: initial;
+              }
+              &:hover::-webkit-scrollbar-thumb {
+                background: rgba(0,0,0,.16);
+              }
+            }
+        }
+        .docsie-doc {
+            max-width: 1040px;
+            min-width: unset !important;
+            padding: 0;
+            .docsie-header {
+              margin-bottom: 2.5em;
+              .docsie-title {
+                 color: darken($textColor, 10%);
+              }
+              .docsie-subtitle {
+                  font-size: 1.17em;
+                  -webkit-margin-before: 1em;
+                  -webkit-margin-after: 1em;
+                  -webkit-margin-start: 0px;
+                  -webkit-margin-end: 0px;
+                  color: lighten($textColor, 20%);
+              }
+            }
+            .docsie-content {
+                h2 {
+                    .docsie-section-anchor {
+                        transition: color 150ms;
+                        color: lighten($anchorColor, 20%);
+                        margin-right: 0;
+                        float: none;
+                        margin-left: 0.5em;
+                        &:hover {
+                            color: $anchorColor;
+                        }
+                    }
+                }
+                a {
+                }
+                strong {
+                    font-weight: 500;
+                    color: darken($textColor, 20%);
+                }
+                code:not(.docsie-codeblock) {
+                    -webkit-box-sizing: border-box;
+                    -moz-box-sizing: border-box;
+                    box-sizing: border-box;
+                    display: inline-block;
+                    margin: 0 5px;
+                    padding: 0 5px;
+                    color: $codeText;
+                    border-radius: 4px;
+                    font-family: Source Code Pro, Menlo, monospace;
+                    line-height: 20px;
+                    background: rgba(0,0,0,0.08);
+                    
+                }
+                code.docsie-codeblock {
+                    font-family: Source Code Pro, Menlo, monospace;
+                    margin: 2em 0;
+                    border-left: 4px solid $codeBorder;
+                    color: $codeText;
+                    background: $codeBackground;
+                    grid-column: span 2;
+                    &::-webkit-scrollbar {
+                      width: 4px;
+                      height: 4px;
+                    }
+                    &::-webkit-scrollbar-track {
+                      background: none;
+                      border-width: 0;
+                    }
+                    &::-webkit-scrollbar-thumb {
+                      background: rgba(0,0,0,.16);
+                      transition: background 250ms ease;
+                      border-radius: 2px;
+                      -moz-transition: background 250ms ease;
+                      -webkit-transition: background 250ms ease;
+                    }
+                    &::-webkit-scrollbar-button {
+                      display: none;
+                    }
+                    &::-webkit-scrollbar-track-piece {
+                      display: none;
+                    }
+                    &::-webkit-scrollbar-corner {
+                      display: none;
+                    }
+                    &::-webkit-resizer {
+                      display: none;
+                    }
+                    &:hover::-webkit-scrollbar {
+                      display: initial;
+                    }
+                    &:hover::-webkit-scrollbar-thumb {
+                      background: rgba(0,0,0,.16);
+                    }
+                }
+                figure {
+                    margin: 1.5em 0;
+                    padding: 0;
+                    img {border-radius: 4px}
+                }
+                blockquote {
+                  background-color: $quoteBackground;
+                  margin: 1em!important;
+                  padding: 1em 2em 1em 3.5em!important;
+                  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAARCAMAAADnhAzLAAAAJFBMVEUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACmWAJHAAAADHRSTlMABQcIen1/gIGcpa32hDmDAAAAPElEQVR42q2PxQHAMAgAL47sP2/d++WiOND8Q8P54OGqIfc5VH3cJ7hi9R1LcMx4UjT/IpL+VKB/FcbKDB91AuVmqU9qAAAAAElFTkSuQmCC");
+                  background-repeat: no-repeat;
+                  background-position: 1.4em 1.3em;
+                }
+                ul,
+                ol {
+                    color: #373e42;
+                }
+                ol {
+                    li>ol {
+                        list-style-type: lower-alpha;
+                        li>ol {
+                            list-style-type: lower-roman;
+                        }
+                    }
+                }
+                dl {
+                  @media #{$md} {
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    grid-column: span 2;
+                    margin: 2em 1em;
+                    border: 1px solid $tableBorder;
+                  }
+                  dt {
+                    display: inline-block;
+                    padding: 2px 8px;
+                    color: $dictDefinitionText;
+                    background-color: $dictDefinitionBackground;
+                    border-radius: 0;
+                    font-weight: 600;
+                    word-break: break-word;
+                    white-space: pre-wrap;
+                    &:after {
+                        content: ":";
+                        white-space: nowrap;
+                        margin-left: 5px;
+                    }
+                    @media #{$md} {
+                      display: block;
+                      border-radius: unset;
+                      margin: 0;
+                      padding: 0.8em 0 0.8em 0.8em;
+                      flex: 0 0 30%;
+                      text-align: right;
+                      box-sizing: border-box;
+                      border-bottom: 1px solid;
+                        background-color: $tableEvenBackground;
+                        border-color: $tableEvenBorder;
+                        text: $tableEvenText;
+                      &:nth-of-type(odd) {
+                        background-color: $tableOddBackground;
+                        border-color: $tableOddBorder;
+                        text: $tableOddText;
+                      }
+                      &:last-of-type {
+                        border-bottom: none;
+                      }
+                      >* {
+                        display: block;
+                      }
+                    }
+                  }
+                  dd {
+                    box-sizing: border-box;
+                    @media #{$md} {
+                      margin: 0;
+                      padding: 0.8em 0 0.8em 1.5em;
+                      flex: 0 0 70%;
+                      border-bottom: 1px solid;
+                        background-color: $tableEvenBackground;
+                        border-color: $tableEvenBorder;
+                        text: $tableEvenText;
+                      &:nth-of-type(odd) {
+                        background-color: $tableOddBackground;
+                        border-color: $tableOddBorder;
+                        text: $tableOddText;
+                      }
+                      &:last-of-type {
+                        border-bottom: none;
+                      }
+                    }
+                  }
+                }
+            }
+            .docsie-footer {
+              margin-top: 4em;
+              margin-bottom: 80px;
+              @media #{$lg} {
+                margin-bottom: 0;
+              }
+              border-top: 2px solid $tableBorder;
+                .docsie-footer-nav {
+                    @media #{$lg} {
+                        div {
+                            position: relative;
+                            svg {
+                                position: static;
+                            }
+                        }
+                        .docsie-footer-previous {
+                            svg {
+                                margin-left: 0
+                            }
+                        }
+                        .docsie-footer-next {
+                            svg {
+                                margin-right: 0
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -16,8 +16,9 @@
   <meta name="msapplication-TileColor" content="#B50000" />
   <meta name="msapplication-TileImage"
     content="https://d1iq6qzgppjlud.cloudfront.net/images/favicon/mstile-144x144.png" />
-  <meta name="msapplication-square310x310logo" content="https://d1iq6qzgppjlud.cloudfront.net/images/favicon/mstile-310x310.png" />
-    <link rel=" apple-touch-icon-precomposed" sizes="57x57"
+  <meta name="msapplication-square310x310logo"
+    content="https://d1iq6qzgppjlud.cloudfront.net/images/favicon/mstile-310x310.png" />
+  <link rel=" apple-touch-icon-precomposed" sizes="57x57"
     href="https://d1iq6qzgppjlud.cloudfront.net/images/favicon/apple-touch-icon-57x57.png" />
   <link rel="apple-touch-icon-precomposed" sizes="114x114"
     href="https://d1iq6qzgppjlud.cloudfront.net/images/favicon/apple-touch-icon-114x114.png" />
@@ -48,8 +49,10 @@
 
   <script type="text/javascript" async="" src="https://certify-js.alexametrics.com/atrk.js"></script>
 
-  <link rel="stylesheet" href='https://lib.docsie.io/index.css'>
+  <link rel="stylesheet" href='/style.css'>
   <!-- TODO: Missing CoffeeScript 2 -->
+  {% block styles %}
+  {% endblock styles %}
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-116930058-3"></script>
@@ -184,7 +187,7 @@
           <li>
             <a href="https://www.youtube.com/channel/UCnQm591jTzvHwb003Y8e1XA">Youtube</a>
           </li>
-            <li>
+          <li>
             <a href="/documentation/">Docs</a>
           </li>
           <li>
@@ -194,7 +197,7 @@
             <a href="/incident/">Status Page</a>
           </li>
         </ul>
-               <ul>
+        <ul>
           <li>
             <h4>Company:</h4>
           </li>
@@ -221,21 +224,6 @@
     </section>
   </footer>
   {% include '_icons.html' %}
-  {% include '_form.html' %}
-  <script type="application/javascript">//<![CDATA[
-    var VanillaRunOnDomReady=function(){function e(e,t="inl"){return`<svg class="${t}" width="22" height="22" viewBox="0 0 20 20"><use xlink:href="#icon-${e}" /></svg>`}function t(e){var t=e.currentTarget,n=document.getElementById(t.dataset.toggle);t.classList.toggle("active"),n.classList.toggle("active"),setTimeout(function(){var e,t;t=(e=n).getBoundingClientRect(),e.classList.remove("left","right"),t.left&&t.left<10&&e.classList.add("left"),t.right&&t.right>window.innerWidth&&e.classList.add("right")},1)}Array.from(document.querySelectorAll("[data-toggle]")).forEach(function(e){e.addEventListener("click",t)});var n=function(e,t){!function n(){var a=document.querySelector(e);a?t(a):setTimeout(n,300)}()};function a(e){var t=document.getElementById("rg-frm");if(t){var n=document.createElement("div");n.classList.add("rg-ctr"),n.innerHTML=t.text,e.appendChild(n)}}n(".docsie-header-conatiner",a),n(".docsie-footer-nav",a),n("#topNav",function(e){const t=Array.from(e.querySelectorAll("a:not([data-nomobile])")),n=document.createElement("button"),a=document.createElement("ul");a.classList.add("nv-m","ui-tgl"),t.forEach(e=>{const t=document.createElement("li");t.appendChild(e.cloneNode(!0)),a.appendChild(t)}),n.classList.add("m-tr"),n.innerHTML='<svg width="32" height="32" viewBox="0 0 20 20"><title>Menu</title><use xlink:href="#icon-menu" /></svg><svg width="24" height="24" viewBox="0 0 20 20"><title>Close</title><use xlink:href="#icon-close" /></svg>',n.addEventListener("click",()=>{n.classList.toggle("active"),a.classList.toggle("active")}),e.appendChild(n),e.appendChild(a)}),n(".cr-ft",function(t){let n;const a=Array.from(t.querySelectorAll("img")),i=Array.from(t.querySelectorAll("button")),c=t.querySelector("figcaption"),l=e=>{n=e,a.forEach(e=>e.classList.remove("current")),i.forEach(e=>e.classList.remove("active")),i[e].classList.add("active"),a[e].classList.add("current"),c.innerHTML=a[e].alt,t.style.minHeight=a[e].offsetHeight+"px"};i.forEach((t,n)=>{const a=t.dataset.icon;a&&(t.innerHTML=e(a,"i")+" "+t.innerHTML),t.addEventListener("click",()=>l(n))}),(()=>{const i=document.createElement("button"),c=document.createElement("button");i.type="left",i.classList.add("n-m","h-lg"),i.innerHTML=e("chevron-left"),c.type="right",c.classList.add("n-m","h-lg"),c.innerHTML=e("chevron-right"),i.addEventListener("click",()=>{(n-=1)<0&&(n=a.length-1),l(n)}),c.addEventListener("click",()=>{(n+=1)===a.length&&(n=0),l(n)}),t.appendChild(i),t.appendChild(c)})(),l(0)})},alreadyrunflag=0;if(document.addEventListener)document.addEventListener("DOMContentLoaded",function(){alreadyrunflag=1,VanillaRunOnDomReady()},!1);else if(document.all&&!window.opera){document.write('<script type="text/javascript" id="contentloadtag" defer="defer" src="javascript:void(0)"><\/script>');var contentloadtag=document.getElementById("contentloadtag");contentloadtag.onreadystatechange=function(){"complete"==this.readyState&&(alreadyrunflag=1,VanillaRunOnDomReady())}}window.onload=function(){setTimeout("if (!alreadyrunflag){VanillaRunOnDomReady}",0)};
-  //]]></script>
-  <script>
-    // tell the embed parent frame the height of the content
-    if (window.parent && window.parent.parent) {
-      window.parent.parent.postMessage(["resultsFrame", {
-        height: document.body.getBoundingClientRect().height,
-        slug: "f18jkquh"
-      }], "*")
-    }
-    // always overwrite window.name, in case users try to set it manually
-    window.name = "result"
-  </script>
   <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
   <!-- Start Alexa Certify Javascript -->
   <script type="text/javascript">
@@ -244,6 +232,39 @@
   </script>
   <noscript><img src="https://certify.alexametrics.com/atrk.gif?account=zugkr1O7kI20L7" style="display:none" height="1"
       width="1" alt="" /></noscript>
+  <script type="text/javascript">
+    "use strict";
+    function GenerateMobileMenu(a) {
+      var b = Array.from(a.querySelectorAll("a:not([data-nomobile])"));
+      var c = document.createElement("button");
+      var d = document.createElement("ul");
+      d.classList.add("nv-m", "ui-tgl"), b.forEach(function (a) {
+        var b = document.createElement("li");
+        b.appendChild(a.cloneNode(true)), d.appendChild(b);
+      }), c.classList.add("m-tr"), c.innerHTML = "<svg width=\"32\" height=\"32\" viewBox=\"0 0 20 20\"><title>Menu</title><use xlink:href=\"#icon-menu\" /></svg><svg width=\"24\" height=\"24\" viewBox=\"0 0 20 20\"><title>Close</title><use xlink:href=\"#icon-close\" /></svg>", c.addEventListener("click", function () {
+        c.classList.toggle("active"), d.classList.toggle("active");
+      }), a.appendChild(c), a.appendChild(d);
+    }
+    function BringIntoView(a) {
+      var b = a.getBoundingClientRect();
+      a.classList.remove("left", "right"), b.left && b.left < 10 && a.classList.add("left"), b.right && b.right > window.innerWidth && a.classList.add("right");
+    }
+    function Toggler(a) {
+      var b = a.currentTarget;
+      var c = document.getElementById(b.dataset.toggle);
+      b.classList.toggle("active"), c.classList.toggle("active"), setTimeout(function () {
+        BringIntoView(c);
+      }, 1);
+    }
+    var tgl = Array.from(document.querySelectorAll("[data-toggle]"));
+    tgl.forEach(function (a) {
+      a.addEventListener("click", Toggler);
+    });
+    var $await = function (a, b) { function c() { var d = document.querySelector(a); d ? b(d) : setTimeout(c, 300); } c(); };
+    $await("#topNav", GenerateMobileMenu);
+  </script>
+  {% block scripts %}
+  {% endblock scripts %}
   <!-- End Alexa Certify Javascript -->
 </body>
 
