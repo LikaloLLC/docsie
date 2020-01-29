@@ -182,6 +182,9 @@
           <!--<li>-->
             <!--<a href="/gather_feedback/">Gather Feedback</a>-->
           <!--</li>-->
+
+            <!-- <a href="/vocally/">Docsie Vocally</a>
+          </li> -->
         <!-- </ul>
         <ul>
           <li>
@@ -198,7 +201,7 @@
           <!--</li>-->
 
           <li>
-            <a href="/about/">Use Cases</a>
+            <a href="/about/">Other Use Cases</a>
           </li>
           <li>
             <a href="/features/">Dynamic Software Documentation</a>
@@ -282,6 +285,10 @@
   <symbol id="icon-chevron-right" viewBox="0 0 20 20">
     <path d="M7 4l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.03"></path>
   </symbol>
+  <symbol id="icon-checkmark" viewBox="0 0 20 20">
+    <rect width="20" height="20" rx="2" ry="2" fill="currentColor" opacity="0.1"></rect>
+    <polyline fill="none" stroke="currentColor" stroke-width="1.8" points="4,10 8,15 17,4"></polyline>
+  </symbol>
 </svg>
   <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
   <!-- Start Alexa Certify Javascript -->
@@ -322,6 +329,41 @@
     var $await = function (a, b) { function c() { var d = document.querySelector(a); d ? b(d) : setTimeout(c, 300); } c(); };
     $await("#topNav", GenerateMobileMenu);
   </script>
+  <div class="cookie-policy">
+  <aside tabindex="0" role="alertdialog" class="cookie-policy-alert" aria-labelledby="cookie-policy-title"
+    aria-describedby="cookie-policy-content">
+    <h1 id="cookie-policy-title" class="off-screen">
+      Cookie policy notification
+    </h1>
+    <span class="cookie-policy-content" id="cookie-policy-content" role="document" tabindex="0"> We use cookies to
+      improve your experience. By your continued use of
+      this site you accept such use.<br> This notice will disappear by
+      itself.
+      <button class="cookie-policy-close" aria-label="Close this cookie policy notification">Close</button>
+    </span>
+  </aside>
+</div>
+<script type="text/javascript">
+  "use strict";
+  function Policy(policy) {
+    var policyHide = 15000;
+
+    function hidePolicy() {
+      policy.style.display = "none";
+      localStorage.setItem("docsie-cookie-policy", true);
+    }
+    if (
+      !localStorage.getItem("docsie-cookie-policy")
+    ) {
+      policy
+        .querySelector(".cookie-policy-close")
+        .addEventListener("click", hidePolicy);
+      policy.style.display = "block";
+      setTimeout(hidePolicy, policyHide);
+    }
+  }
+  $await(".cookie-policy-alert", Policy);
+</script>
   
 <script async type="text/javascript" src="https://lib.docsie.io/1.4.9/service.js"
   data-docsie="live_pk_6Y24rR0t7GWA6yo6cdSwZ8q3:boo_KpYT9NCPid6kTfMCh,navigation:false,viewportWidth:100%"></script>
