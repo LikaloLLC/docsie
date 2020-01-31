@@ -242,7 +242,7 @@ body {
   }
 
   h2 {
-    font-size: 1.8em;
+    font-size: 1.5em;
     margin: 2em 0 0.5em 0;
   }
 
@@ -368,10 +368,19 @@ body {
         margin: 1em 0;
       }
 
+      ul {
+        font-size: 90%;
+      }
+
       ul a {
         display: block;
         color: $textColor;
         text-decoration: none;
+        margin-bottom: 0.3em;
+
+        &:hover {
+          text-decoration: underline;
+        }
 
         &.pure-link-active {
           color: $textActiveColor;
@@ -420,7 +429,7 @@ body {
       // max-width: 840px;
       // padding: 0;
       margin: 0 auto;
-      font-size: 1.3em;
+      // font-size: 1.3em;
       overflow: hidden;
 
       @media #{$sm} {
@@ -435,8 +444,10 @@ body {
       }
 
       .docsie-header {
-        text-align: center;
+        text-align: left;
         margin-bottom: 2.5em;
+        padding-bottom: 1em;
+        border-bottom: 2px solid #e6ecf1;
 
         @media #{$sm} {
           text-align: left;
@@ -529,11 +540,17 @@ body {
         }
 
         figure {
-          margin: 2em -1em;
+          margin: 4em -1em;
           padding: 0;
 
           img {
-            border-radius: 4px
+            border-radius: 0px;
+            @media #{$md} {
+              border-radius: 2px
+            }
+            @media #{$xl} {
+              border-radius: 4px
+            }
           }
 
           figcaption {
@@ -563,6 +580,7 @@ body {
         ul,
         ol {
           color: #373e42;
+          margin: 2em 0;
         }
 
         ol {
