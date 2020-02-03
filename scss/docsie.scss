@@ -37,7 +37,6 @@ $tableEvenBorder: #fafbfe;
 $tableEvenBackground: #fff;
 $tableEvenText: $textColor;
 // Fonts
-@import url('https://fonts.googleapis.com/css?family=Alata|IBM+Plex+Sans|IBM+Plex+Sans+Condensed:400i');
 
 html,
 body {
@@ -48,23 +47,13 @@ body {
 
 // CSS
 .docsie-root {
-  font-family: 'IBM Plex Sans', sans-serif;
   line-height: 1.625;
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
   color: $textColor;
   font-weight: 300;
-  font-size: 14px;
   letter-spacing: normal;
-
-  @media #{$sm} {
-    font-size: 15px;
-  }
-
-  @media #{$lg} {
-    font-size: 16px;
-  }
 
 // Scrollbar
 
@@ -236,7 +225,6 @@ body {
   h1,
   h2,
   h3 {
-    font-family: 'Alata', sans-serif;
     color: $textColor;
     font-weight: 600;
     line-height: 1.1;
@@ -254,7 +242,7 @@ body {
   }
 
   h2 {
-    font-size: 1.8em;
+    font-size: 1.5em;
     margin: 2em 0 0.5em 0;
   }
 
@@ -320,6 +308,10 @@ body {
   .pure-docsie-main {
     transition: transform 250ms;
 
+    >*:nth-child(2) {
+      max-width: 840px;
+    }
+
     .docsie-footer,
     .pure-docsie-loader,
     .docsie-search-form,
@@ -376,10 +368,19 @@ body {
         margin: 1em 0;
       }
 
+      ul {
+        font-size: 90%;
+      }
+
       ul a {
         display: block;
         color: $textColor;
         text-decoration: none;
+        margin-bottom: 0.3em;
+
+        &:hover {
+          text-decoration: underline;
+        }
 
         &.pure-link-active {
           color: $textActiveColor;
@@ -399,9 +400,10 @@ body {
           > a {
             font-weight: bold;
           }
-          // > ul {
-          //   margin-left: 10px;
-          // }
+          > ul {
+            margin-left: 0.2em;
+            margin-bottom: 1.5em;
+          }
         }
       }
 
@@ -424,10 +426,10 @@ body {
     }
 
     .docsie-doc {
-      max-width: 840px;
+      // max-width: 840px;
       // padding: 0;
       margin: 0 auto;
-      font-size: 1.3em;
+      // font-size: 1.3em;
       overflow: hidden;
 
       @media #{$sm} {
@@ -442,8 +444,10 @@ body {
       }
 
       .docsie-header {
-        text-align: center;
+        text-align: left;
         margin-bottom: 2.5em;
+        padding-bottom: 1em;
+        border-bottom: 2px solid #e6ecf1;
 
         @media #{$sm} {
           text-align: left;
@@ -536,11 +540,17 @@ body {
         }
 
         figure {
-          margin: 2em -1em;
+          margin: 4em -1em;
           padding: 0;
 
           img {
-            border-radius: 4px
+            border-radius: 0px;
+            @media #{$md} {
+              border-radius: 2px
+            }
+            @media #{$xl} {
+              border-radius: 4px
+            }
           }
 
           figcaption {
@@ -570,6 +580,7 @@ body {
         ul,
         ol {
           color: #373e42;
+          margin: 2em 0;
         }
 
         ol {
@@ -689,6 +700,9 @@ body {
               font-size: 1em;
             }
           }
+        }
+        .docsie-madewith {
+          display: none;
         }
       }
     }
