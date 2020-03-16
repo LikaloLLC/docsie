@@ -37,20 +37,23 @@
     <article class="docsie-doc">
       <header class="docsie-header" id="section-page-header">
         <div class="docsie-header-conatiner" role="presentation">
-          <h1 class="docsie-title">Product documentation - simplified.</h1>
-          <p class="docsie-subtitle">Docsie is a one of a kind self writing documentation service, that creates, translates and manages your product documentation for you.</p>
+          <h1 class="docsie-title">Get product docs done <br> <span
+     class="txt-rotate"
+     data-period="2000"
+     data-rotate='["fast","now","automatically"]'></span> </h1>
+          <p class="docsie-subtitle">One of a kind AI-enabled documentation writing service that creates, translates, and manages product documentation for you.</p>
         </div>
       </header>
       <div class="docsie-content">
         <section class="docsie-section docsie-grid accent4">
           <div class="docsie-section-container" role="presentation">
-            <h2 class="docsie-section-title " id="section-header-two-fuvns">Connect to a passionate community of technical writers and translators</h2>
+            <h2 class="docsie-section-title " id="section-header-two-fuvns">Connect to a passionate community of technical writers and translators empowered by a state of art AI.</h2>
             <div class="cr-ft">
               <figure class="ft-f">
                 <img src="https://appcdn2.docsie.io/assets/Organize-Documentation.png" alt="Effortlessly migrate over to Docsie" />
-                <img src="https://appcdn2.docsie.io/assets/Find-Everything-on-Shelves.png" alt="Self-writing, self-maintained documentation" />
-                  <img src="https://appcdn2.docsie.io/assets/Publish-to-Your-Website.png" alt="Bring your updated documentation to international markets faster" />
-                <img src="https://appcdn2.docsie.io/assets/Manage-Translations-and-Versions.png" alt="Reduce your technical writing and translation costs" />
+                <img src="https://appcdn2.docsie.io/assets/Find-Everything-on-Shelves.png" alt="Auto-written, auto-maintained documentation" />
+                  <img src="https://appcdn2.docsie.io/assets/Publish-to-Your-Website.png" alt="Bring up to date documentation to international markets faster" />
+                <img src="https://appcdn2.docsie.io/assets/Manage-Translations-and-Versions.png" alt="Reduce the cost of technical writing and translation" />
                 <figcaption></figcaption>
               </figure>
               <nav class="ft-n v-lg">
@@ -233,6 +236,67 @@
 </main>
 {% endblock content %}
 {% block scripts %}
+ <script>
+var TxtRotate = function(el, toRotate, period) {
+  this.toRotate = toRotate;
+  this.el = el;
+  this.loopNum = 0;
+  this.period = parseInt(period, 10) || 2000;
+  this.txt = '';
+  this.tick();
+  this.isDeleting = false;
+};
+
+TxtRotate.prototype.tick = function() {
+  var i = this.loopNum % this.toRotate.length;
+  var fullTxt = this.toRotate[i];
+
+  if (this.isDeleting) {
+    this.txt = fullTxt.substring(0, this.txt.length - 1);
+  } else {
+    this.txt = fullTxt.substring(0, this.txt.length + 1);
+  }
+
+  this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+
+  var that = this;
+  var delta = 300 - Math.random() * 100;
+
+  if (this.isDeleting) { delta /= 2; }
+
+  if (!this.isDeleting && this.txt === fullTxt) {
+    delta = this.period;
+    this.isDeleting = true;
+  } else if (this.isDeleting && this.txt === '') {
+    this.isDeleting = false;
+    this.loopNum++;
+    delta = 500;
+  }
+
+  setTimeout(function() {
+    that.tick();
+  }, delta);
+};
+
+window.onload = function() {
+  var elements = document.getElementsByClassName('txt-rotate');
+  for (var i=0; i<elements.length; i++) {
+    var toRotate = elements[i].getAttribute('data-rotate');
+    var period = elements[i].getAttribute('data-period');
+    if (toRotate) {
+      new TxtRotate(elements[i], JSON.parse(toRotate), period);
+    }
+  }
+  // INJECT CSS
+  var css = document.createElement("style");
+  css.type = "text/css";
+  css.innerHTML = ".txt-rotate > .wrap { border-right: 0.08em solid #666 }";
+  document.body.appendChild(css);
+};
+
+
+  </script>
+
 <script>window.pipedriveLeadboosterConfig = {base: 'leadbooster-chat.pipedrive.com',companyId: 7439277,playbookUuid: '502e0bf3-9f6d-43b6-8a74-cfddf7e5e541',version: 2};</script><script src="https://leadbooster-chat.pipedrive.com/assets/loader.js" async></script>
 
 {% include '_form.html' %}
