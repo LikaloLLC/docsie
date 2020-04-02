@@ -3757,9 +3757,12 @@ function InvalidMsg(textbox) {
         textbox.setCustomValidity(`Please include an '@' in the email address. '${textbox.value}' is missing an '@'.`);
     } else if (!textbox.value.split("@")[1]) {
         textbox.setCustomValidity(`Please enter a part following '@'. '${textbox.value}' is incomplete.`);
-    } else if (textbox.value.split("@")[1] && fedpArr.indexOf(textbox.value.split("@")[1]) != -1) {
-        textbox.setCustomValidity(`Please use your business email address to book a demo.`);
-    } else {
+    } 
+    // uncomment this to have business email validation check
+    // else if (textbox.value.split("@")[1] && fedpArr.indexOf(textbox.value.split("@")[1]) != -1) {
+    //     textbox.setCustomValidity(`Please use your business email address to book a demo.`);
+    // } 
+    else {
         textbox.setCustomValidity('');
     }
     return true;
