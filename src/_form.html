@@ -6,7 +6,7 @@
     <input class="ui-in" name="email" type="email" placeholder="Enter your email"
       oninvalid="InvalidMsg(this);"
       oninput="InvalidMsg(this);">
-    <button class="ui-bt ui-prime" type="submit" aria-label="Submit registration request">Request a Demo</button>
+    <button class="ui-bt ui-prime" type="submit" aria-label="Submit registration request">See It in Action</button>
     </div>
     <div class="rg-info">Already using Docsie? <a href="https://app.docsie.io/login/">Sign-in.</a></div>
   </fieldset>
@@ -20,8 +20,12 @@
       ctr.classList.add("rg-ctr");
       ctr.innerHTML = tpl.text;
       el.appendChild(ctr);
+      if (el.classList.contains("frm-gs") ) {
+        el.getElementsByTagName("button")[0].innerText = "Get Started";
+      }
     }
   }
   $await(".docsie-header-conatiner", InjectFRM);
   $await(".docsie-footer-nav", InjectFRM);
+  $await(".frm-gs", InjectFRM);
 </script>

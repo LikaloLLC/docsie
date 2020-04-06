@@ -183,6 +183,7 @@ mixpanel.init("e622f8176c93444016cc78076b0575fe");</script><!-- end Mixpanel -->
           </div>
         </li>
         <li class="v-sm"><a href="/support/">Support</a></li>
+        <li class="v-sm frm-gs"></li>
         <li class="v-sm"><a class="clr-a" href="https://app.docsie.io/login">Sign-in</a></li>
       </ul>
     </nav>
@@ -519,29 +520,13 @@ s.parentNode.insertBefore(b, s);})();
   src="https://www.facebook.com/tr?id=220552105379085&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Facebook Pixel Code -->
-<script>
-  // grabs the queryparams from url and converts query params to object
-  // generic function that returns value based on key provided as param to func
-  function getFromParams(key) {
-    var search = window.location.search.substring(1);
-    if (search) {
-    let obj = JSON.parse('{"' + decodeURI(search).replace(/"/g, '\\"').replace(/&/g, '","').replace(/=/g,'":"') + '"}')
-      if (obj[key]) {
-        return decodeURIComponent(obj[key]);
-      } else {
-        return {};
-      }
-    } else {
-      return {};
-    }
-  }
-</script>
 <!-- DO NOT MODIFY -->
 <!-- Quora Pixel Code (JS Helper) -->
 <script>
 !function(q,e,v,n,t,s){if(q.qp) return; n=q.qp=function(){n.qp?n.qp.apply(n,arguments):n.queue.push(arguments);}; n.queue=[];t=document.createElement(e);t.async=!0;t.src=v; s=document.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t,s);}(window, 'script', 'https://a.quora.com/qevents.js');
-qp('init', 'f54999afdfd5493b86821c53ba3f4546', getFromParams('invitee_email'));
+qp('init', 'f54999afdfd5493b86821c53ba3f4546');
 qp('track', 'ViewContent');
+
 </script>
 <noscript><img height="1" width="1" style="display:none" src="https://q.quora.com/_/ad/f54999afdfd5493b86821c53ba3f4546/pixel?tag=ViewContent&noscript=1"/></noscript>
 <script>qp('track', 'CompleteRegistration');</script>
@@ -557,7 +542,7 @@ qp('track', 'ViewContent');
     <input class="ui-in" name="email" type="email" placeholder="Enter your email"
       oninvalid="InvalidMsg(this);"
       oninput="InvalidMsg(this);">
-    <button class="ui-bt ui-prime" type="submit" aria-label="Submit registration request">Request a Demo</button>
+    <button class="ui-bt ui-prime" type="submit" aria-label="Submit registration request">See It in Action</button>
     </div>
     <div class="rg-info">Already using Docsie? <a href="https://app.docsie.io/login/">Sign-in.</a></div>
   </fieldset>
@@ -571,10 +556,14 @@ qp('track', 'ViewContent');
       ctr.classList.add("rg-ctr");
       ctr.innerHTML = tpl.text;
       el.appendChild(ctr);
+      if (el.classList.contains("frm-gs") ) {
+        el.getElementsByTagName("button")[0].innerText = "Get Started";
+      }
     }
   }
   $await(".docsie-header-conatiner", InjectFRM);
   $await(".docsie-footer-nav", InjectFRM);
+  $await(".frm-gs", InjectFRM);
 </script>-->
 
 <script type="text/javascript">
