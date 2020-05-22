@@ -3,6 +3,7 @@ $sm: 'screen and (min-width: 568px)'; // 568px
 $ism: 'screen and (max-width: 568px)'; // 568px
 $md: 'screen and (min-width: 768px)'; // 768px
 $lg: 'screen and (min-width: 1024px)'; // 1024px
+$ilg: 'screen and (max-width: 1023px)'; // 1024px
 $xl: 'screen and (min-width: 1280px)'; // 1280px
 $xxl: 'screen and (min-width: 1600px)'; // 1600px
 /* ---Colors--- */
@@ -74,6 +75,34 @@ $border: #d8d8d8;
         margin: 0 auto;
         margin-bottom: 1em;
       }
+      // collision-2020 releted
+      img.red-dot {
+        height: 8px;
+        width: 8px;
+        margin: 0 2% .2% 2%;
+      }
+      .cp-1 {
+        font-size: 0.9em;
+      }
+      .cp-2 {
+        font-size: 0.75em;
+      }
+      .validity-text {
+        font-size: 0.7em;
+        font-weight: 100;
+      }
+      .st-icons-container {
+        display: flex;
+        justify-content: center;
+        .st-el {
+          margin: 0 40px;
+        }
+        img.st-icon {
+          height: 80px;
+          width: 80px;
+          margin-bottom: 8px;
+        }
+      }
     }
   }
   .publish-header {
@@ -88,6 +117,27 @@ $border: #d8d8d8;
   }
   .sd-header {
     background-image: url(../assets/Collaboration-software-that-simplifies-the-way-you-create-documentation.svg);
+  }
+  .collision-2020-sd-header {
+    @media #{$ilg} {
+      background-image: url(../assets/collision_2020/mob-bg.svg);
+      background-size: 100%;
+      background-position: top;
+      .docsie-header-conatiner {
+        margin-top: 6%;
+      }
+    }
+    @media #{$lg} {
+      background-image: url(../assets/collision_2020/collision_2020-bg.svg);
+      .docsie-header-conatiner{
+        transform: scale(0.9);
+        margin-top: 2%;
+        h1.docsie-title {
+          font-size: 1.72em;
+          margin-top: 4.8%;
+        }
+      }
+    }
   }
   .dm-header {
     background-image: url(../assets/Easily_organize_documentation_with_books_and_shelves.svg);
