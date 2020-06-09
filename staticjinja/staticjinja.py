@@ -200,7 +200,15 @@ class Site(object):
             environment.globals.update(env_globals)
 
 
+
+        from babel.support import Translations
+
+        translations = Translations.load('locale', ['ja_JP'])
         environment.install_gettext_callables(gettext=gettext.gettext, ngettext=gettext.ngettext, newstyle=True)
+
+        environment.install_gettext_translations(translations)
+
+
         logger = logging.getLogger(__name__)
         logger.setLevel(logging.INFO)
         logger.addHandler(logging.StreamHandler())
