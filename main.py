@@ -16,9 +16,9 @@ if __name__ == "__main__":
     for loc in dirs:
         locale = loc.strip('locale/')
         if locale == 'ja_JP':
-            loc_name = 'jp'
+            loc_name = '/jp'
         else:
-            loc_name == locale
+            loc_name = '/' + locale
         site = Site.make_site(searchpath='./src', env_globals={"locale": loc_name},locale=locale, extensions=['jinja2.ext.i18n'])
 
         # enable automatic reloading
