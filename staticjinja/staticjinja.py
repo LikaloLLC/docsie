@@ -19,7 +19,7 @@ import gettext
 from jinja2 import Environment, FileSystemLoader
 
 from .reloader import Reloader
-
+from babel.support import Translations
 
 def _has_argument(func):
     """Test whether a function expects an argument.
@@ -111,6 +111,7 @@ class Site(object):
                   staticpaths=None,
                   filters=None,
                   env_globals=None,
+                  locale=None,
                   env_kwargs=None,
                   mergecontexts=False):
         """Create a :class:`Site <Site>` object.
@@ -200,18 +201,28 @@ class Site(object):
             environment.globals.update(env_globals)
 
 
-
-        from babel.support import Translations
-
-        translations = Translations.load('locale', ['ja_JP'])
         environment.install_gettext_callables(gettext=gettext.gettext, ngettext=gettext.ngettext, newstyle=True)
 
-        environment.install_gettext_translations(translations)
+        print(outpath)
 
+        if locale:
+            translations = Translations.load('locale', [locale])
+
+
+            environment.install_gettext_translations(translations)
+
+            if locale == 'ja_JP':
+                locale = 'jp'
+            outpath = './'+locale
+
+
+            print (outpath)
 
         logger = logging.getLogger(__name__)
         logger.setLevel(logging.INFO)
         logger.addHandler(logging.StreamHandler())
+
+
         return cls(environment,
                    searchpath=searchpath,
                    outpath=outpath,
@@ -259,6 +270,8 @@ class Site(object):
         :param template: the template to get the context for
         """
         context = {}
+
+
         for regex, context_generator in self.contexts:
             if re.match(regex, template.name):
                 if inspect.isfunction(context_generator):
