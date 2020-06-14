@@ -240,10 +240,10 @@
   <footer class="gn">
     <!-- Page Footer -->`
     <div id="ddfb-root"></div>
-    <div class="docsie-lang-picker-container"></div>
     <div class="lang-redirect-container"></div>
     <section class="ft-nav">
       <div class="logo-lang-container">
+        <div class="docsie-lang-picker-container"></div>
         <div class="nav-logo v-md">
           <svg class="lg" width="32" height="40" viewBox="0 0 48 48">
             <use xlink:href="#icon-docsie"></use>
@@ -579,47 +579,6 @@
     }
     // set active label
     document.getElementsByClassName("active-lp")[0].innerHTML = langObj.label;
-</script>
-  <script type="text/template" id="notify-tmp">
-    <div id="l-r-notification">
-    </div>
-</script>
-<script type="text/javascript">
-    let notifyMsg = "Would you like to view the page in ";
-    let labels = {
-        "en": {
-            label: 'English',
-            path: "/en"
-        },
-        "ja": {
-            label: '日本語',
-            path: "/jp"
-        }
-    }
-    function InjectFRM(el) {
-        var tpl = document.getElementById("notify-tmp");
-        if (tpl) {
-            var ctr = document.createElement("div");
-            ctr.classList.add("notify-container");
-            ctr.innerHTML = tpl.text;
-            el.appendChild(ctr);
-        }
-    }
-    // handle showing banner if the navigator.language is other than "English"
-    function showRedirectLangBanner() {
-        let userLocale = window.navigator.language;
-        userLocale = "ja";
-        let browserLangs = window.navigator.languages;
-        if (!userLocale.toLowerCase().includes("en")) {
-            $await(".lang-redirect-container", InjectFRM);
-            let localLabel = labels[userLocale] ? labels[userLocale] : labels["en"];
-            document.getElementById("l-r-notification").innerHTML = `<span>${notifyMsg}<a href='${localLabel.path}'>${localLabel.label} ?</a></span><span onclick="hideNotifier()"><svg width="24" height="24" viewBox="0 0 20 20"><title>Close</title><use xlink:href="#icon-close"></use></svg></span>`;
-        }
-    }
-    showRedirectLangBanner();
-    function hideNotifier() {
-        document.getElementsByClassName("lang-redirect-container")[0].style.display = "none";
-    }
 </script>
 
   
