@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-staticjinja watch --srcpath=./src
+python main.py watch --srcpath=./src
