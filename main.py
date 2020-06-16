@@ -14,7 +14,7 @@ if __name__ == "__main__":
     d = 'locale'
     dirs = [os.path.join(d, o) for o in os.listdir(d) if os.path.isdir(os.path.join(d,o))]
     for loc in dirs:
-        locale = loc.strip('locale/')
+        locale = loc.replace('locale/', '')
         if locale == 'ja_JP':
             loc_name = '/jp'
         else:
