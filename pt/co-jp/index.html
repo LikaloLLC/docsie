@@ -704,6 +704,14 @@
                         </svg>
                     </a>
                   </li>
+                  <li>
+                    <a data-language="pt" data-set-locale="pt" href="/pt" class="">
+                        <span>Português</span>
+                        <svg class="icon icon--check" viewBox="0 0 20 20" width="22" height="22">
+                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-checkmark"></use>
+                        </svg>
+                    </a>
+                  </li>
                 </ul>
               </div>
     
@@ -752,12 +760,79 @@
             path: "/jp"
         }
         document.querySelectorAll('[data-language="ja"]')[0].setAttribute("class", "selected");
-    } // else if (){} 
-    else {
+    } else if (baseUrl.includes("/pt")) {
+      langObj = {
+            label: "Português",
+            path: "/pt"
+        }
+        document.querySelectorAll('[data-language="pt"]')[0].setAttribute("class", "selected");
+    } else {
         document.querySelectorAll('[data-language="en"]')[0].setAttribute("class", "selected");
     }
     // set active label
     document.getElementsByClassName("active-lp")[0].innerHTML = langObj.label;
+</script>
+  <div class="lb-cookie-policy cookie-policy">
+    <aside tabindex="0" role="alertdialog" class="lb-cookie-policy-alert cookie-policy-alert " aria-labelledby="cookie-policy-title"
+      aria-describedby="cookie-policy-content">
+      <h1 id="cookie-policy-title" class="off-screen">
+        Language Redirect notification 
+      </h1>
+      <span class="cookie-policy-content" id="cookie-policy-content" role="document" tabindex="0">  Would you to view the page in <a href="/" id="docsie-locale-lang-path"></a>. 
+        <button class="cookie-policy-close lb-cookie-policy-close" aria-label="Close this cookie policy notification"> Fechar</button>
+      </span>
+    </aside>
+  </div>
+<script type="text/javascript">
+    // handle showing banner if the navigator.language is other than "English"
+    function showRedirectLangBanner(langBanner) {
+        let labels = {
+            "en": {
+                label: 'English',
+                path: "/"
+            },
+            "ja": {
+                label: '日本語',
+                path: "/jp"
+            },
+            "pt": {
+                label: 'Português',
+                path: "/pt"
+            }
+        }
+        let userLocale = window.navigator.language;
+        if (userLocale.toLowerCase().includes("pt")) {
+            // pt has 3 dialects 
+            // 1. "pt"; 2. "pt-BR"(Brazil); 3. "pt-PT"(Protugal)
+            userLocale = "pt";
+        } else if (userLocale.toLowerCase().includes("en")) {
+            userLocale = "en";
+        } else { 
+            // do nothing 
+        }
+        // userLocale = "pt"; // uncomment to test the banner visibility and functionality
+        function handleLangRedirect() {
+            sessionStorage.setItem("userLocale", userLocale);
+        }
+        function hidePolicy() {
+            langBanner.style.display = "none";
+        }
+        if (!userLocale.toLowerCase().includes("en") && Object.keys(labels[userLocale]).length > 0) {
+            let localLabel = labels[userLocale] ? labels[userLocale] : labels["en"];
+            let linkEl = document.getElementById("docsie-locale-lang-path");
+            linkEl.innerHTML = `${localLabel.label}`;
+            linkEl.setAttribute('href', `${localLabel.path}`);
+            linkEl.addEventListener("click", handleLangRedirect);
+            langBanner
+                .querySelector(".lb-cookie-policy-close")
+                .addEventListener("click", hidePolicy);
+            let baseUrl = window.location.href;
+            if (sessionStorage.getItem("userLocale") != userLocale) 
+                langBanner.style.display = "block";
+        }
+    }
+
+    $await(".lb-cookie-policy-alert", showRedirectLangBanner);
 </script>
 
   
