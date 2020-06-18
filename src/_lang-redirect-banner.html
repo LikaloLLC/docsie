@@ -4,7 +4,7 @@
       <h1 id="cookie-policy-title" class="off-screen">
        {% trans %} Language Redirect notification {% endtrans %}
       </h1>
-      <span class="cookie-policy-content" id="cookie-policy-content" role="document" tabindex="0"> {%trans%} Would you to view the page in <a href="/" id="docsie-locale-lang-path"></a>. {% endtrans %}
+      <span class="cookie-policy-content" id="cookie-policy-content" role="document" tabindex="0"> {%trans%} Would you to view the page in {% endtrans %}<a href="/" id="docsie-locale-lang-path"></a>.
         <button class="cookie-policy-close lb-cookie-policy-close" aria-label="Close this cookie policy notification"> {% trans %} Close {% endtrans %}</button>
       </span>
     </aside>
@@ -24,6 +24,18 @@
             "pt": {
                 label: 'Português',
                 path: "/pt"
+            },
+            "ko": {
+                label: '한국어',
+                path: '/ko'
+            },
+            "es": {
+                label: 'español',
+                path: '/es'
+            },
+            "fr":{
+                label: 'français',
+                path: '/fr'
             }
         }
         let userLocale = window.navigator.language;
@@ -33,10 +45,16 @@
             userLocale = "pt";
         } else if (userLocale.toLowerCase().includes("en")) {
             userLocale = "en";
+        } else if (userLocale.toLowerCase().includes("ko")) {
+            userLocale = "ko";
+        } else if (userLocale.toLowerCase().includes("es")) {
+            userLocale = "es";
+        } else if (userLocale.toLowerCase().includes("fr")) {
+            userLocale = "fr";
         } else { 
             // do nothing 
         }
-        // userLocale = "pt"; // uncomment to test the banner visibility and functionality
+        // userLocale = "ko"; // uncomment to test the banner visibility and functionality
         function handleLangRedirect() {
             sessionStorage.setItem("userLocale", userLocale);
         }
