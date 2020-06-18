@@ -19,6 +19,18 @@ if __name__=='__main__':
     if 'index.html' in f:
       site_map.append(site_path+'/'+f.replace(cwd+'/src/', '').replace('index.html',''))
 
+  d = 'locale'
+  dirs = [os.path.join(d, o) for o in os.listdir(d) if os.path.isdir(os.path.join(d, o))]
+  for loc in dirs:
+    locale = loc.replace('locale/', '')
+    if locale == 'ja_JP':
+      loc_name = '/jp'
+    else:
+      loc_name = '/' + locale
+    for f in flows:
+      if 'index.html' in f:
+        site_map.append(site_path + loc_name + '/'+ f.replace(cwd + '/src/', '').replace('index.html', ''))
+
   with open('sitemap/sitemap.txt', 'w') as f:
     for item in site_map:
       f.write("%s\n" % item)
