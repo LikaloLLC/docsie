@@ -568,6 +568,30 @@
                         </svg>
                     </a>
                   </li>
+                  <li>
+                    <a data-language="ko" data-set-locale="ko" href="/ko" class="">
+                        <span>한국어</span>
+                        <svg class="icon icon--check" viewBox="0 0 20 20" width="22" height="22">
+                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-checkmark"></use>
+                        </svg>
+                    </a>
+                  </li>
+                  <li>
+                    <a data-language="es" data-set-locale="es" href="/es" class="">
+                        <span>español</span>
+                        <svg class="icon icon--check" viewBox="0 0 20 20" width="22" height="22">
+                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-checkmark"></use>
+                        </svg>
+                    </a>
+                  </li>
+                  <li>
+                    <a data-language="fr" data-set-locale="fr" href="/fr" class="">
+                        <span>français</span>
+                        <svg class="icon icon--check" viewBox="0 0 20 20" width="22" height="22">
+                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-checkmark"></use>
+                        </svg>
+                    </a>
+                  </li>
                 </ul>
               </div>
     
@@ -576,57 +600,75 @@
         </div>
 </script>
 <script type="text/javascript">
-    var popupEl, globalPopupActive;
-    function popUp(e) {
-        e.stopPropagation();
-        popupEl = document.getElementsByClassName("languagePicker")[0];
-        globalPopupActive = document.getElementsByClassName("globalPopupActive")[0];
-        // show popup on click
-        if (popupEl) {
-            popupEl.style.display = "block";
-        }
-        // register a function to hide the popup when there is a click outside the popup
-        window.onclick = (e) => {
-            // check that your clicked
-            // element has no id=info
-            // and is not child of info
-            if (e.target != globalPopupActive && !globalPopupActive.contains(e.target)) {
-                popupEl.style.display = "none";
-            }
-        };
+  var popupEl, globalPopupActive;
+  function popUp(e) {
+    e.stopPropagation();
+    popupEl = document.getElementsByClassName("languagePicker")[0];
+    globalPopupActive = document.getElementsByClassName("globalPopupActive")[0];
+    // show popup on click
+    if (popupEl) {
+      popupEl.style.display = "block";
     }
-    function InjectFRM(el) {
-        var tpl = document.getElementById("l-p");
-        if (tpl) {
-            var ctr = document.createElement("article");
-            ctr.classList.add("globalFooterNav");
-            ctr.innerHTML = tpl.text;
-            el.appendChild(ctr);
-        }
-    }
-    $await(".docsie-lang-picker-container", InjectFRM);
-    let baseUrl = window.location.href;
-    let langObj = {
-        label: "English",
-        path: "/"
+    // register a function to hide the popup when there is a click outside the popup
+    window.onclick = (e) => {
+      // check that your clicked
+      // element has no id=info
+      // and is not child of info
+      if (e.target != globalPopupActive && !globalPopupActive.contains(e.target)) {
+        popupEl.style.display = "none";
+      }
     };
-    if (baseUrl.includes("/jp")) {
-        langObj = {
-            label: "日本語",
-            path: "/jp"
-        }
-        document.querySelectorAll('[data-language="ja"]')[0].setAttribute("class", "selected");
-    } else if (baseUrl.includes("/pt")) {
-      langObj = {
-            label: "Português",
-            path: "/pt"
-        }
-        document.querySelectorAll('[data-language="pt"]')[0].setAttribute("class", "selected");
-    } else {
-        document.querySelectorAll('[data-language="en"]')[0].setAttribute("class", "selected");
+  }
+  function InjectFRM(el) {
+    var tpl = document.getElementById("l-p");
+    if (tpl) {
+      var ctr = document.createElement("article");
+      ctr.classList.add("globalFooterNav");
+      ctr.innerHTML = tpl.text;
+      el.appendChild(ctr);
     }
-    // set active label
-    document.getElementsByClassName("active-lp")[0].innerHTML = langObj.label;
+  }
+  $await(".docsie-lang-picker-container", InjectFRM);
+  let baseUrl = window.location.href;
+  let langObj = {
+    label: "English",
+    path: "/"
+  };
+  if (baseUrl.includes("/jp")) {
+    langObj = {
+      label: "日本語",
+      path: "/jp"
+    }
+    document.querySelectorAll('[data-language="ja"]')[0].setAttribute("class", "selected");
+  } else if (baseUrl.includes("/pt")) {
+    langObj = {
+      label: "Português",
+      path: "/pt"
+    }
+    document.querySelectorAll('[data-language="pt"]')[0].setAttribute("class", "selected");
+  } else if (baseUrl.includes("/ko")) {
+    langObj = {
+      label: '한국어',
+      path: '/ko'
+    }
+    document.querySelectorAll('[data-language="ko"]')[0].setAttribute("class", "selected");
+  } else if (baseUrl.includes("/es")) {
+    langObj = {
+      label: 'español',
+      path: '/es'
+    }
+    document.querySelectorAll('[data-language="es"]')[0].setAttribute("class", "selected");
+  } else if (baseUrl.includes("/fr")) {
+    langObj = {
+      label: 'français',
+      path: '/fr'
+    }
+    document.querySelectorAll('[data-language="fr"]')[0].setAttribute("class", "selected");
+  } else {
+    document.querySelectorAll('[data-language="en"]')[0].setAttribute("class", "selected");
+  }
+  // set active label
+  document.getElementsByClassName("active-lp")[0].innerHTML = langObj.label;
 </script>
   <div class="lb-cookie-policy cookie-policy">
     <aside tabindex="0" role="alertdialog" class="lb-cookie-policy-alert cookie-policy-alert " aria-labelledby="cookie-policy-title"
@@ -634,7 +676,7 @@
       <h1 id="cookie-policy-title" class="off-screen">
         Language Redirect notification 
       </h1>
-      <span class="cookie-policy-content" id="cookie-policy-content" role="document" tabindex="0">  Would you to view the page in <a href="/" id="docsie-locale-lang-path"></a>. 
+      <span class="cookie-policy-content" id="cookie-policy-content" role="document" tabindex="0">  Would you to view the page in <a href="/" id="docsie-locale-lang-path"></a>.
         <button class="cookie-policy-close lb-cookie-policy-close" aria-label="Close this cookie policy notification">  Close </button>
       </span>
     </aside>
@@ -654,6 +696,18 @@
             "pt": {
                 label: 'Português',
                 path: "/pt"
+            },
+            "ko": {
+                label: '한국어',
+                path: '/ko'
+            },
+            "es": {
+                label: 'español',
+                path: '/es'
+            },
+            "fr":{
+                label: 'français',
+                path: '/fr'
             }
         }
         let userLocale = window.navigator.language;
@@ -663,10 +717,16 @@
             userLocale = "pt";
         } else if (userLocale.toLowerCase().includes("en")) {
             userLocale = "en";
+        } else if (userLocale.toLowerCase().includes("ko")) {
+            userLocale = "ko";
+        } else if (userLocale.toLowerCase().includes("es")) {
+            userLocale = "es";
+        } else if (userLocale.toLowerCase().includes("fr")) {
+            userLocale = "fr";
         } else { 
             // do nothing 
         }
-        // userLocale = "pt"; // uncomment to test the banner visibility and functionality
+        // userLocale = "ko"; // uncomment to test the banner visibility and functionality
         function handleLangRedirect() {
             sessionStorage.setItem("userLocale", userLocale);
         }
