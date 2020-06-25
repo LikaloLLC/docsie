@@ -652,7 +652,7 @@
                   </li>
                   <li>
                     <a data-language="es" data-set-locale="es" href="/es" class="">
-                        <span>español</span>
+                        <span>Español</span>
                         <svg class="icon icon--check" viewBox="0 0 20 20" width="22" height="22">
                             <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-checkmark"></use>
                         </svg>
@@ -660,7 +660,7 @@
                   </li>
                   <li>
                     <a data-language="fr" data-set-locale="fr" href="/fr" class="">
-                        <span>français</span>
+                        <span>Français</span>
                         <svg class="icon icon--check" viewBox="0 0 20 20" width="22" height="22">
                             <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-checkmark"></use>
                         </svg>
@@ -674,6 +674,32 @@
         </div>
 </script>
 <script type="text/javascript">
+  var labels = {
+    "en": {
+      label: 'English',
+      path: "/"
+    },
+    "ja": {
+      label: '日本語',
+      path: "/jp"
+    },
+    "pt": {
+      label: 'Português',
+      path: "/pt"
+    },
+    "ko": {
+      label: '한국어',
+      path: '/ko'
+    },
+    "es": {
+      label: 'Español',
+      path: '/es'
+    },
+    "fr": {
+      label: 'Français',
+      path: '/fr'
+    }
+  }
   var popupEl, globalPopupActive;
   function popUp(e) {
     e.stopPropagation();
@@ -704,39 +730,21 @@
   }
   $await(".docsie-lang-picker-container", InjectFRM);
   let baseUrl = window.location.href;
-  let langObj = {
-    label: "English",
-    path: "/"
-  };
+  let langObj = labels["en"];
   if (baseUrl.includes("/jp")) {
-    langObj = {
-      label: "日本語",
-      path: "/jp"
-    }
+    langObj = labels["ja"];
     document.querySelectorAll('[data-language="ja"]')[0].setAttribute("class", "selected");
   } else if (baseUrl.includes("/pt")) {
-    langObj = {
-      label: "Português",
-      path: "/pt"
-    }
+    langObj = labels["pt"];
     document.querySelectorAll('[data-language="pt"]')[0].setAttribute("class", "selected");
   } else if (baseUrl.includes("/ko")) {
-    langObj = {
-      label: '한국어',
-      path: '/ko'
-    }
+    langObj = labels["ko"];
     document.querySelectorAll('[data-language="ko"]')[0].setAttribute("class", "selected");
   } else if (baseUrl.includes("/es")) {
-    langObj = {
-      label: 'español',
-      path: '/es'
-    }
+    langObj = labels["es"];
     document.querySelectorAll('[data-language="es"]')[0].setAttribute("class", "selected");
   } else if (baseUrl.includes("/fr")) {
-    langObj = {
-      label: 'français',
-      path: '/fr'
-    }
+    langObj = labels["fr"];
     document.querySelectorAll('[data-language="fr"]')[0].setAttribute("class", "selected");
   } else {
     document.querySelectorAll('[data-language="en"]')[0].setAttribute("class", "selected");
@@ -758,32 +766,6 @@
 <script type="text/javascript">
     // handle showing banner if the navigator.language is other than "English"
     function showRedirectLangBanner(langBanner) {
-        let labels = {
-            "en": {
-                label: 'English',
-                path: "/"
-            },
-            "ja": {
-                label: '日本語',
-                path: "/jp"
-            },
-            "pt": {
-                label: 'Português',
-                path: "/pt"
-            },
-            "ko": {
-                label: '한국어',
-                path: '/ko'
-            },
-            "es": {
-                label: 'español',
-                path: '/es'
-            },
-            "fr":{
-                label: 'français',
-                path: '/fr'
-            }
-        }
         let userLocale = window.navigator.language;
         if (userLocale.toLowerCase().includes("pt")) {
             // pt has 3 dialects 
@@ -800,7 +782,7 @@
         } else { 
             // do nothing 
         }
-        // userLocale = "ko"; // uncomment to test the banner visibility and functionality
+        // userLocale = "fr"; // uncomment to test the banner visibility and functionality
         function handleLangRedirect() {
             sessionStorage.setItem("userLocale", userLocale);
         }
