@@ -12,32 +12,6 @@
 <script type="text/javascript">
     // handle showing banner if the navigator.language is other than "English"
     function showRedirectLangBanner(langBanner) {
-        let labels = {
-            "en": {
-                label: 'English',
-                path: "/"
-            },
-            "ja": {
-                label: '日本語',
-                path: "/jp"
-            },
-            "pt": {
-                label: 'Português',
-                path: "/pt"
-            },
-            "ko": {
-                label: '한국어',
-                path: '/ko'
-            },
-            "es": {
-                label: 'español',
-                path: '/es'
-            },
-            "fr":{
-                label: 'français',
-                path: '/fr'
-            }
-        }
         let userLocale = window.navigator.language;
         if (userLocale.toLowerCase().includes("pt")) {
             // pt has 3 dialects 
@@ -54,7 +28,7 @@
         } else { 
             // do nothing 
         }
-        // userLocale = "ko"; // uncomment to test the banner visibility and functionality
+        // userLocale = "fr"; // uncomment to test the banner visibility and functionality
         function handleLangRedirect() {
             sessionStorage.setItem("userLocale", userLocale);
         }
