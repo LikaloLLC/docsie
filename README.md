@@ -20,3 +20,7 @@ network issues or some other configuration issues with django. Either or, our st
 
 We see it as an alternative to AWS static site hosting and cloudflare. The site is mostly built with docsie and only uses a few
 react components for the dynamic functionality.
+
+pybabel init -d locale -l it -i locale/messages.pot
+pybabel compile -d locale -l it
+
