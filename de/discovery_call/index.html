@@ -646,7 +646,7 @@
       <h1 id="cookie-policy-title" class="off-screen">
         Language Redirect notification 
       </h1>
-      <span class="cookie-policy-content" id="cookie-policy-content" role="document" tabindex="0">  Would you to view the page in <a href="/" id="docsie-locale-lang-path"></a>.
+      <span class="cookie-policy-content" id="cookie-policy-content" role="document" tabindex="0">  Would you like to view this page in <a href="/" id="docsie-locale-lang-path"></a>.
         <button class="cookie-policy-close lb-cookie-policy-close" aria-label="Close this cookie policy notification">  Close </button>
       </span>
     </aside>
@@ -656,7 +656,7 @@
     function showRedirectLangBanner(langBanner) {
         let userLocale = window.navigator.language;
         if (userLocale.toLowerCase().includes("pt")) {
-            // pt has 3 dialects 
+            // pt has 3 dialects
             // 1. "pt"; 2. "pt-BR"(Brazil); 3. "pt-PT"(Protugal)
             userLocale = "pt";
         } else if (userLocale.toLowerCase().includes("en")) {
@@ -667,8 +667,8 @@
             userLocale = "es";
         } else if (userLocale.toLowerCase().includes("fr")) {
             userLocale = "fr";
-        } else { 
-            // do nothing 
+        } else {
+            // do nothing
         }
         // userLocale = "fr"; // uncomment to test the banner visibility and functionality
         function handleLangRedirect() {
@@ -687,7 +687,7 @@
                 .querySelector(".lb-cookie-policy-close")
                 .addEventListener("click", hidePolicy);
             let baseUrl = window.location.href;
-            if (sessionStorage.getItem("userLocale") != userLocale) 
+            if (sessionStorage.getItem("userLocale") != userLocale)
                 langBanner.style.display = "block";
         }
     }
