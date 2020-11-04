@@ -24,7 +24,7 @@ if __name__ == "__main__":
         # enable automatic reloading
         site.render(use_reloader=False)
 
-    site = Site.make_site(searchpath='src',
+    site = Site.make_site(searchpath='./src',
                           extensions=['jinja2.ext.i18n', 'jinja2.ext.autoescape', 'jinja2.ext.with_'])
 
     # enable automatic reloading
