@@ -455,7 +455,14 @@ class Site(object):
         if use_reloader:
             self.logger.info("Watching '%s' for changes..." %
                              self.searchpath)
+
             self.logger.info("Press Ctrl+C to stop.")
+            from datetime import datetime
+            now = datetime.now()
+            current_time = now.strftime("%H:%M:%S")
+
+            self.logger.info(current_time)
+
             Reloader(self).watch()
 
     def __repr__(self):
