@@ -6,8 +6,7 @@ from os import listdir
 from os.path import isfile, join
 import os
 cwd = os.getcwd()
-
-
+import feedparser
 
 
 if __name__ == "__main__":
@@ -24,7 +23,10 @@ if __name__ == "__main__":
     #     # enable automatic reloading
     #     site.render(use_reloader=False)
 
-    site = Site.make_site(searchpath='src/',
+    feed = feedparser.parse('https://blog.storychief.io/rss?skip=1&limit=3').entries
+
+
+    site = Site.make_site(searchpath='src/', env_globals={"feed":feed},
                           extensions=['jinja2.ext.i18n', 'jinja2.ext.autoescape', 'jinja2.ext.with_'])
 
     # enable automatic reloading
