@@ -7,7 +7,8 @@ from os.path import isfile, join
 import os
 cwd = os.getcwd()
 import feedparser
-
+from os import listdir
+from os.path import isfile, join
 
 if __name__ == "__main__":
     # d = 'locale'
@@ -23,7 +24,9 @@ if __name__ == "__main__":
     #     # enable automatic reloading
     #     site.render(use_reloader=False)
 
-    feed = feedparser.parse('https://blog.storychief.io/rss?skip=1&limit=3').entries
+    ###Grabbing blogposts and converting them to
+
+    feed = feedparser.parse('').entries
 
 
     site = Site.make_site(searchpath='src/', env_globals={"feed":feed},
