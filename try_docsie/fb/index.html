@@ -1,7 +1,5 @@
 
 
-
-
 <!DOCTYPE html>
 
 <head>
@@ -139,7 +137,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             easy-to-maintain, user-friendly product docs and simplify the way your team manages documenation.</p>
           <p class="my-10 sm:my-20"><a
               class="w-full sm:w-auto flex-none bg-red-700 hover:bg-red-900 text-white text-lg leading-6 font-semibold py-3 px-6 border border-transparent rounded-xl focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-red-900 focus:outline-none transition-colors duration-200"
-              href="https://app.docsie.io/onboarding/">Start My Free Trial</a></p>
+              href="https://app.docsie.io/try/fb-1/">Start My Free Trial</a></p>
         </section>
       </div>
       <section class="container mx-auto text-gray-600 text-center px-8 sm:px-14 mt-20 sm:mt-40 mb-20 sm:mb-40 ">
@@ -354,7 +352,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <p class="text-2xl my-10 font-bold">Experience your free trial! </p>
         <p class="my-10 sm:my-20"><a
             class="w-full sm:w-auto flex-none bg-red-700 hover:bg-red-900 text-white text-lg leading-6 font-semibold py-3 px-6 border border-transparent rounded-xl focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-red-900 focus:outline-none transition-colors duration-200"
-            href="https://app.docsie.io/onboarding/">Start My Free Trial</a></p>
+            href="https://app.docsie.io/try/fb-1/">Start My Free Trial</a></p>
       </section>
     </div>
   </div>
@@ -862,6 +860,83 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- TrafficGuard End-->-->
 
   
+      <script>    (function (window) {
+      var SlideCrossFade = {
+        container: 'crossfader',
+        displayTime: 5000,
+        fadeTime: 500,
+
+        start: function () {
+          var self = this;
+          $('#' + this.container + ' li').first().addClass('active');
+          setInterval(function () { self.next(); }, this.displayTime);
+        },
+
+        next: function () {
+          var $active = $('#' + this.container + ' .active');
+          var $next = ($active.next().length > 0) ? $active.next() : $('#' + this.container + ' li:first');
+          $next.css('z-index', 2);
+
+          $active.fadeOut(this.fadeTime, function () {
+            $active.css('z-index', 1).show().removeClass('active');
+            $next.css('z-index', 3).addClass('active');
+          });
+        }
+      };
+
+      window.SlideCrossFade = SlideCrossFade;
+
+      window.InfiniteSlider = function () {
+        var show, w, l;
+        var speed = 1500, interval = 1500;
+        function computeSizes() {
+
+          show = Math.floor(window.innerWidth / (
+            window.innerWidth < 1024
+              ? 300
+              : 400)
+          );
+
+          w = $('#slider').width() / show;
+          l = $('.slide').length;
+
+          //set each slide width
+          $('.slide').width(w);
+          //set the container width to fix the animation and make it look sliding
+          $('#slide-container').width(w * l)
+        }
+
+        computeSizes();
+        $(window).resize(function () {
+          computeSizes();
+        });
+
+        function slider() {
+          $('.slide:first-child').animate({
+            marginLeft: -w //hide the first slide on the left
+          }, speed, function () {
+            //once completely hidden, move this slide next to the last slide
+            $(this).appendTo($(this).parent()).css({ marginLeft: 0 });
+          });
+        }
+        //use setInterval to do the timed execution and animation
+        var timer = setInterval(slider, interval);
+
+        /* pausing the slider */
+        $('#slider').hover(function () {
+          //mouse in, clearinterval to pause
+          clearInterval(timer);
+        }, function () {
+          //mouse out, setinterval to continue
+          timer = setInterval(slider, interval);
+        });
+      }
+    })(this);
+    $(document).ready(function () {
+      SlideCrossFade.start();
+      InfiniteSlider();
+    });</script></body></html>
+
 <!-- Facebook Pixel Code -->
 <script>
 !function(f,b,e,v,n,t,s)
