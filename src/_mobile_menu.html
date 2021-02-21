@@ -1,0 +1,33 @@
+ <script type="text/javascript">
+    "use strict";
+    function GenerateMobileMenu(a) {
+      var b = Array.from(a.querySelectorAll("a:not([data-nomobile])"));
+      var c = document.createElement("button");
+      var d = document.createElement("ul");
+      d.classList.add("nv-m", "ui-tgl"), b.forEach(function (a) {
+        var b = document.createElement("li");
+        b.appendChild(a.cloneNode(true)), d.appendChild(b);
+      }), c.classList.add("m-tr"), c.innerHTML = "<svg width=\"32\" height=\"32\" viewBox=\"0 0 20 20\"><title>Menu</title><use xlink:href=\"#icon-menu\" /></svg><svg width=\"24\" height=\"24\" viewBox=\"0 0 20 20\"><title>Close</title><use xlink:href=\"#icon-close\" /></svg>", c.addEventListener("click", function () {
+        c.classList.toggle("active"), d.classList.toggle("active");
+      }), a.appendChild(c), a.appendChild(d);
+    }
+    function BringIntoView(a) {
+      var b = a.getBoundingClientRect();
+      a.classList.remove("left", "right"), b.left && b.left < 10 && a.classList.add("left"), b.right && b.right > window.innerWidth && a.classList.add("right");
+    }
+    function Toggler(a) {
+      var b = a.currentTarget;
+      var c = document.getElementById(b.dataset.toggle);
+      b.classList.toggle("active"), c.classList.toggle("active"), setTimeout(function () {
+        BringIntoView(c);
+      }, 1);
+    }
+    var tgl = Array.from(document.querySelectorAll("[data-toggle]"));
+    tgl.forEach(function (a) {
+      a.addEventListener("click", Toggler);
+    });
+    var $await = function (a, b) { function c() { var d = document.querySelector(a); d ? b(d) : setTimeout(c, 300); } c(); };
+    $await("#topNav", GenerateMobileMenu);
+
+
+  </script>
