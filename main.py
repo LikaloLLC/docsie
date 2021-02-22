@@ -11,18 +11,18 @@ from os import listdir
 from os.path import isfile, join
 
 if __name__ == "__main__":
-    d = 'locale'
-    dirs = [os.path.join(d, o) for o in os.listdir(d) if os.path.isdir(os.path.join(d,o))]
-    for loc in dirs:
-        locale = loc.replace('locale/', '')
-        if locale == 'ja_JP':
-            loc_name = '/jp'
-        else:
-            loc_name = '/' + locale
-        site = Site.make_site(searchpath='./src', env_globals={"locale": loc_name},locale=locale, extensions=['jinja2.ext.i18n','jinja_markdown.MarkdownExtension'])
-
-        # enable automatic reloading
-        site.render(use_reloader=False)
+    # d = 'locale'
+    # dirs = [os.path.join(d, o) for o in os.listdir(d) if os.path.isdir(os.path.join(d,o))]
+    # for loc in dirs:
+    #     locale = loc.replace('locale/', '')
+    #     if locale == 'ja_JP':
+    #         loc_name = '/jp'
+    #     else:
+    #         loc_name = '/' + locale
+    #     site = Site.make_site(searchpath='./src', env_globals={"locale": loc_name},locale=locale, extensions=['jinja2.ext.i18n','jinja_markdown.MarkdownExtension'])
+    #
+    #     # enable automatic reloading
+    #     site.render(use_reloader=False)
 
     ###Grabbing blogposts and converting them to
 
