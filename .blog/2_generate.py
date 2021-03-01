@@ -2,8 +2,11 @@
 import markdown
 from jinja2 import Template
 from utils import ImgExtExtension, H1H2Extension
-
+import pandas as pd
+import requests
 #https://docs.google.com/spreadsheets/d/1deKANndKOOmOdQUQWDK6-zC7P6J25SzBrUx2RX9lvkY/gviz/tq?tqx=out:csv&sheet=Form%20Responses%201
+from io import StringIO
+
 
 
 class Blog():
