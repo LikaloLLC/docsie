@@ -1,6 +1,6 @@
 <script type="text/javascript" src="/free-email-provider-domains.js"></script>
 <script type="text/template" id="rg-frm">
-  <form autocomplete="off" class="box-rg" action="https://app.docsie.io/onboarding/" method="get">
+<form name="onboarding" autocomplete="off" class="box-rg" action="https://app.docsie.io/onboarding/" method="get">
   <fieldset>
     <div class="rg-gr">
 <!--    <input class="ui-in" name="email" type="email" placeholder="{% trans %} Enter your email {% endtrans %}"-->
@@ -25,3 +25,6 @@
   $await(".docsie-header-conatiner", InjectFRM);
   $await(".docsie-footer-nav", InjectFRM);
 </script>
+{% set docsie_start_journey_replace_css_selector = '[name=onboarding]' %}
+{% set docsie_start_journey_replace_attr = 'action' %}
+{% include '_docsie_start_journey_cookie.html' %}
