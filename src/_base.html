@@ -1,16 +1,38 @@
 <!DOCTYPE html>
-
+<html lang="en-US">
 <head>
-  <html lang="en">
+  <link rel="preconnect" href="https://app.docsie.io">
+  <link rel="preconnect" href="https://portals.docsie.io">
+  <link rel="preconnect" href="https://help.docsie.io">
+  <link rel="canonical" href="https://docsie.io/{{landing_url}}">
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Docsie.io - {% block title %}{% endblock title %}</title>
+  <title>{% block title %}{% endblock title %} | Docsie</title>
+  <meta name=description content="{% block description %}{% endblock description %}">
+  <!-- Schema.org markup for Google+ -->
+  <meta itemprop="name" content="{{ self.title() }} | Docsie">
+  <meta itemprop="description"
+    content="{{ self.description() }}">
+  <meta itemprop="image" content="{% block shareimage %}{% endblock shareimage %}">
+  <!-- Twitter Card data -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@docsie_io">
+  <meta name="twitter:title" content="{{ self.title() }} | Docsie">
+  <meta name="twitter:description" content="{{ self.description() }}">
+  <!-- Twitter summary card with large image must be at least 280x150px -->
+  <meta name="twitter:image" content="{{ self.shareimage() }}">
+  <!-- Open Graph data -->
+  <meta property="og:title" content="{{ self.title() }} | Docsie" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://docsie.io/{{page_url}}" />
+  <meta property="og:image" content="{{ self.shareimage() }}" />
+  <meta property="og:description"
+    content="{{ self.description() }}" />
+  <meta property="og:site_name" content="docsie.io" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta charset="utf-8">
   <meta name="content-language" content="en" />
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="author" content="Likalo LLC">
-  <meta name="application-name" content="Docsie" />
+  <meta name="author" content="Docsie.io">
   <meta name="theme-color" content="#fff" />
   <meta name="msapplication-TileColor" content="#fff" />
   <meta name="msapplication-TileImage"
@@ -18,7 +40,6 @@
   <meta name="msapplication-square310x310logo"
     content="https://d1iq6qzgppjlud.cloudfront.net/images/favicon/mstile-310x310.png" />
   {% block header %}
-
   {% endblock header %}
   <link rel=" apple-touch-icon-precomposed" sizes="57x57"
     href="https://d1iq6qzgppjlud.cloudfront.net/images/favicon/apple-touch-icon-57x57.png" />
@@ -46,32 +67,24 @@
     sizes="16x16" />
   <link rel="icon" type="image/png" href="https://d1iq6qzgppjlud.cloudfront.net/images/favicon/favicon-128.png"
     sizes="128x128" />
-
   <link rel="dns-prefetch" href="https://www.googletagmanager.com">
   <script src="https://cdn.jsdelivr.net/npm/share-this/dist/share-this.js"></script>
-
-
   <script type="text/javascript" async="" src="https://certify-js.alexametrics.com/atrk.js"></script>
-
   <link rel="stylesheet" href='/style.css'>
   <link rel="stylesheet" href="/lang-picker.css">
   <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.3.1/dist/lazyload.min.js"></script>
-
   {% block styles %}
   {% endblock styles %}
-
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-116930058-3"></script>
   <script>
-
     window.dataLayer = window.dataLayer || [];
     function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
-
     gtag('config', 'UA-116930058-3');
   </script>
-
+</head>
 <body>
   <a href="#main" class="aria-visible">{% trans %}Skip to content{% endtrans %}</a>
   <!-- Page Header -->
@@ -86,24 +99,17 @@
               <use xlink:href="#icon-logo"></use>
             </svg>
           </a></li>
-
-
-           {% if small_header is defined %}
-
-        {% include '_header_small.html' %}
-
-      {% else %}
-        {% include '_header.html' %}
-      {% endif %}
-    {% include '_tags.html' %}
-
-  {% include '_tags.body.html' %}
-
+          {% if small_header is defined %}
+          {% include '_header_small.html' %}
+          {% else %}
+            {% include '_header.html' %}
+          {% endif %}
+        {% include '_tags.html' %}
+        {% include '_tags.body.html' %}
       </ul>
     </nav>
   </header>
   {% block content %}
-
   {% endblock content %}
   <script src="https://appcdn2.docsie.io/js/feedback/service/1.2.4/service.js"
     data-feedback="key:feedback_key_X7VzaPlcS6TrzS5PDmRoFsIU6 ,ratingType:emotions ,color:#0391CE ,logoUrl:https://cdn.docsie.io/feedback_key_9zESOoctHzPgS98kRCekDJcWh/logo.png ,autorecord:true ,position:static"></script>
@@ -120,20 +126,15 @@
           </svg>
         </div>
       </div>
-
         {% include '_footer.html' %}
-
-
-
     </section>
     <section class="ft-cc">
       {% trans %}Made in Canada with love by <a href="https://www.likalo.com">Docsie Team{% endtrans %}</a>.
     </section>
   </footer>
-
   {% include '_icons.html' %}
-   {% include '_alexa.html' %}
-   {% include '_mobile_menu.html' %}
+  {% include '_alexa.html' %}
+  {% include '_mobile_menu.html' %}
   {% include '_autopilot.html' %}
   {% include '_policy.html' %}
   {% include '_lang-picker.html' %}
@@ -144,12 +145,7 @@
   {% include '_quora_pixel.html' %}
   {% include '_perfect_audience.html' %}
   {% include '_facebook_pixel.html' %}
-
   {% block scripts %}
-
-
-lazyLoadInstance.update();
+  lazyLoadInstance.update();
   {% endblock scripts %}
-</body>
-
-</html>
+</body></html>

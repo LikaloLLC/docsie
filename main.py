@@ -26,10 +26,10 @@ if __name__ == "__main__":
 
     ###Grabbing blogposts and converting them to
 
-    feed = feedparser.parse('https://blog.storychief.io/rss?skip=1&limit=3').entries
+    # feed = feedparser.parse('https://blog.storychief.io/rss?skip=1&limit=3').entries
 
 
-    site = Site.make_site(searchpath='src/', env_globals={"feed":feed},
+    site = Site.make_site(searchpath='src/', #env_globals={"feed":feed},
                           extensions=['jinja2.ext.i18n', 'jinja2.ext.autoescape', 'jinja2.ext.with_','jinja_markdown.MarkdownExtension'])
 
     # enable automatic reloading

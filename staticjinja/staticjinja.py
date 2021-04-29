@@ -205,6 +205,7 @@ class Site(object):
 
         print(outpath)
 
+
         if locale:
             translations = Translations.load('locale', [locale])
 
@@ -389,10 +390,13 @@ class Site(object):
             template.name)``.
 
         """
+
         self.logger.info("Rendering %s..." % template.name)
 
         if context is None:
             context = self.get_context(template)
+        context['page_url'] = template.name.replace('index.html', '')
+
 
         if not os.path.exists(self.outpath):
             os.makedirs(self.outpath)
