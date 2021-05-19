@@ -9,15 +9,16 @@ from os.path import isfile, join
 
 if __name__=='__main__':
   site_path = sys.argv[1]
-  folder = cwd + '/src/'
-  flows = [val for sublist in [[os.path.join(i[0], j) for j in i[2]] for i in os.walk(cwd + '/src/')] for val in
+  folder = cwd
+  flows = [val for sublist in [[os.path.join(i[0], j) for j in i[2]] for i in os.walk(cwd)] for val in
            sublist]
 
 
   site_map = []
   for f in flows:
     if 'index.html' in f:
-      site_map.append(site_path+'/'+f.replace(cwd+'/src/', '').replace('index.html',''))
+      if 'src/' not in f and '.blog' not in f:
+        site_map.append(site_path +f.replace(cwd, '').replace('index.html',''))
 
   d = 'locale'
   dirs = [os.path.join(d, o) for o in os.listdir(d) if os.path.isdir(os.path.join(d, o))]
