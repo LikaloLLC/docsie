@@ -4,10 +4,29 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
-  <title>Docsie.io Blog</title>
-  <meta name="author" content="name"/>
-  <meta name="description" content="description here"/>
-  <meta name="keywords" content="keywords,here"/>
+
+  <!-- Primary Meta Tags -->
+  <title>Docsie.io Blog - Digital Documentation: Best Practices to Inform and Inspire</title>
+  <meta name="author" content="Tal F"/>
+  <meta name="description" content="o drive ease and consistency, enterprises should follow digital documentation best-practices. This encompasses the design, formatting, choice of file types, and governance of digital documentation."/>
+  <meta name="keywords" content="Product Documentation,Best Practices"/>
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.docsie.io/articles/digital-documentation-best-practices-to-inform-and-inspire/">
+  <meta property="og:title" content="Digital Documentation: Best Practices to Inform and Inspire">
+  <meta property="og:description"
+        content="o drive ease and consistency, enterprises should follow digital documentation best-practices. This encompasses the design, formatting, choice of file types, and governance of digital documentation.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://www.docsie.io/articles/digital-documentation-best-practices-to-inform-and-inspire/">
+  <meta property="twitter:title" content="Digital Documentation: Best Practices to Inform and Inspire">
+  <meta property="twitter:description"
+        content="o drive ease and consistency, enterprises should follow digital documentation best-practices. This encompasses the design, formatting, choice of file types, and governance of digital documentation.">
+  <meta property="twitter:image" content="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80">
+
   <link
     href="../templates/css/tailwind.min.css"
     rel="stylesheet"
@@ -100,10 +119,11 @@
     <h1 id="blog-title">Digital Documentation: Best Practices to Inform and Inspire</h1>
     <!--Author-->
     <div class="flex items-center">
-      <img class="w-10 h-10 rounded-full mr-4" src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80" alt="Avatar of Author">
+      <img class="w-10 h-10 rounded-full mr-4" src=" https://cdn.docsie.io/user_profiles/15/logo_logo_QmXrbijvL0L2hFKNm6Q25DtjahujKdB6nu4pqBlLBgvtT.png" alt="Avatar of Author">
       <div class="flex-1 px-2">
         <div class="font-bold leading-none mb-2">Tal F</div>
-        <div class="text-xs md:text-base">on April 05, 2021· filed under <span
+        <div class="text-xs md:text-base">on April 05, 2021 · <span id="reading-time"
+                class="block md:inline mt-2 md:mt-0"></span> · filed under <span
           class="block md:inline mt-2 md:mt-0">
 						
             <span class="rounded bg-green-500 text-white px-1 uppercase text-xs md:text-sm">Product Documentation</span>
@@ -118,7 +138,8 @@
 
     <!--Post Content-->
     <!--Lead Para-->
-    <h2>From Paper to Pixels</h2>
+    <div id="content">
+      <h2>From Paper to Pixels</h2>
 <p><img alt="" src="https://cdn.docsie.io/workspace_tovPs7rKnzB4cmaiR/doc_ULxUK3nJlSUujhpeo/file_ZyQQgNoRzIf0AZalw/boo_6i8Nk6EIN6esFJcNT/807c72cb-8b02-9d4a-f090-398beacaaf8b11.png" /></p>
 <p>Only a few decades ago, it seemed every business was using paper for documentation. Contracts, policies, meeting notes; everything was paper-based - being printed and passed around instead of attached and analyzed via email.</p>
 <p>As technology became more advanced, businesses had more storage space for documentation, and the computer systems needed for employees to access these digital documents. This marks the start of a transition away from paper to pixels.</p>
@@ -126,6 +147,7 @@
 <p>To drive ease and consistency, enterprises should follow digital documentation best-practices. This encompasses the design, formatting, choice of file types, and governance of digital documentation.</p>
 <p>In this eBook, we will discuss best-practices for digital documentation and the potential business impact of making these changes. Can better digital documentation drive revenue growth and attract customers? How can businesses transform their digital documentation to deliver better value to customers using a documentation management system, or DMS?</p>
 <p>Let us answer these questions!</p>
+    </div>
   </div>
   <!--/ Post Content-->
 
@@ -275,9 +297,28 @@
 
   facebookURI.setAttribute('href', `https://www.facebook.com/sharer.php?u=${postURI}`);
   twitterURI.setAttribute('href', `https://twitter.com/share?url=${postURI}&text=${postTitle}`);
-
-
 </script>
+
+<!--Sharect-->
+
+<script src="https://unpkg.com/sharect@2.0.0/dist/sharect.js"></script>
+<script>window["sharectConfig"] = {"backgroundColor": "#333333", "enabled": true, "facebook": true, "iconColor": "#FFFFFF", "selectableElements": ["body"], "twitter": true, "twitterUsername": "likalo_llc"}</script>
+<script src="../templates/js/sharect.js"></script>
+
+
+
+<!--Reading time-->
+<script src="../templates/js/reading-time.min.js"></script>
+<script>
+  const text = []
+  let content = [...document.getElementById('content').getElementsByTagName('p')].forEach((elem) => {
+    text.push(elem.textContent)
+  });
+  const stats = readingTime(text.join(" "));
+
+  document.getElementById('reading-time').innerHTML = stats.text;
+</script>
+
 </body>
 
 </html>

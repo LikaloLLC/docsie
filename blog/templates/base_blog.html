@@ -4,10 +4,29 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
-  <title>{{ settings.blog_name }}</title>
-  <meta name="author" content="name"/>
-  <meta name="description" content="description here"/>
-  <meta name="keywords" content="keywords,here"/>
+
+  <!-- Primary Meta Tags -->
+  <title>{{ settings.blog_name }} - {{head_blog.title}}</title>
+  <meta name="author" content="{{ head_blog.author_name }}"/>
+  <meta name="description" content="{{ head_blog.summary }}"/>
+  <meta name="keywords" content="{{ head_blog.categories|join(',') }}"/>
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{ head_blog.url }}">
+  <meta property="og:title" content="{{ head_blog.title }}">
+  <meta property="og:description"
+        content="{{ head_blog.summary }}">
+  <meta property="og:image" content="{{ head_blog.header_image }}">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="{{ head_blog.url }}">
+  <meta property="twitter:title" content="{{ head_blog.title }}">
+  <meta property="twitter:description"
+        content="{{ head_blog.summary }}">
+  <meta property="twitter:image" content="{{ head_blog.header_image }}">
+
   <link
     href="../templates/css/tailwind.min.css"
     rel="stylesheet"
@@ -90,10 +109,11 @@
     <h1 id="blog-title">{{head_blog.title}}</h1>
     <!--Author-->
     <div class="flex items-center">
-      <img class="w-10 h-10 rounded-full mr-4" src="{{ head_blog.header_image }}" alt="Avatar of Author">
+      <img class="w-10 h-10 rounded-full mr-4" src="{{ head_blog.author_image }}" alt="Avatar of Author">
       <div class="flex-1 px-2">
         <div class="font-bold leading-none mb-2">{{ head_blog.author_name }}</div>
-        <div class="text-xs md:text-base">on {{ head_blog.publish_date }}· filed under <span
+        <div class="text-xs md:text-base">on {{ head_blog.publish_date }} · <span id="reading-time"
+                class="block md:inline mt-2 md:mt-0"></span> · filed under <span
           class="block md:inline mt-2 md:mt-0">
 						{% for category in head_blog.categories %}
             <span class="rounded bg-green-500 text-white px-1 uppercase text-xs md:text-sm">{{ category }}</span>
@@ -106,7 +126,9 @@
 
     <!--Post Content-->
     <!--Lead Para-->
-    {% include blog %}
+    <div id="content">
+      {% include blog %}
+    </div>
   </div>
   <!--/ Post Content-->
 
@@ -246,9 +268,28 @@
 
   facebookURI.setAttribute('href', `https://www.facebook.com/sharer.php?u=${postURI}`);
   twitterURI.setAttribute('href', `https://twitter.com/share?url=${postURI}&text=${postTitle}`);
-
-
 </script>
+
+<!--Sharect-->
+{% if settings.sharect.enabled %}
+<script src="https://unpkg.com/sharect@2.0.0/dist/sharect.js"></script>
+<script>window["sharectConfig"] = {{ settings.sharect|tojson|safe }}</script>
+<script src="../templates/js/sharect.js"></script>
+{% endif %}
+
+
+<!--Reading time-->
+<script src="../templates/js/reading-time.min.js"></script>
+<script>
+  const text = []
+  let content = [...document.getElementById('content').getElementsByTagName('p')].forEach((elem) => {
+    text.push(elem.textContent)
+  });
+  const stats = readingTime(text.join(" "));
+
+  document.getElementById('reading-time').innerHTML = stats.text;
+</script>
+
 </body>
 
 </html>
