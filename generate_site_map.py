@@ -1,37 +1,33 @@
 import os
 import sys
+from collections import OrderedDict
+from pathlib import Path
+from urllib.parse import urljoin
+
 cwd = os.getcwd()
 
-from os import listdir
-from os.path import isfile, join
 
+if __name__ == '__main__':
+    site_path = sys.argv[1]
+    flows = [val for sublist in [[os.path.join(os.path.relpath(dir_, cwd), file) for file in files]
+                                 for dir_, _, files in os.walk(cwd)] for val in sublist]
 
+    site_map = [
+        urljoin(site_path, flow).replace('index.html', '') for flow in flows
+        if 'index.html' in flow and 'src/' not in flow and '.blog' not in flow
+    ]
 
-if __name__=='__main__':
-  site_path = sys.argv[1]
-  folder = cwd
-  flows = [val for sublist in [[os.path.join(i[0], j) for j in i[2]] for i in os.walk(cwd)] for val in
-           sublist]
+    locale_root = Path('locale')
+    locale_dirs = [dir_ for dir_ in locale_root.iterdir() if dir_.is_dir()]
+    for loc in locale_dirs:
+        locale = loc.name if loc.name != 'ja_JP' else 'jp'
+        site_map.extend([
+            urljoin(urljoin(site_path, locale) + '/', flow).replace('index.html', '') for flow in flows
+            if 'index.html' in flow and 'src/' not in flow and '.blog' not in flow
+        ])
 
-
-  site_map = []
-  for f in flows:
-    if 'index.html' in f:
-      if 'src/' not in f and '.blog' not in f:
-        site_map.append(site_path +f.replace(cwd, '').replace('index.html',''))
-
-  d = 'locale'
-  dirs = [os.path.join(d, o) for o in os.listdir(d) if os.path.isdir(os.path.join(d, o))]
-  for loc in dirs:
-    locale = loc.replace('locale/', '')
-    if locale == 'ja_JP':
-      loc_name = '/jp'
-    else:
-      loc_name = '/' + locale
-    for f in flows:
-      if 'index.html' in f:
-        site_map.append(site_path + loc_name + '/'+ f.replace(cwd + '/src/', '').replace('index.html', ''))
-
-  with open('sitemap/sitemap.txt', 'w') as f:
-    for item in site_map:
-      f.write("%s\n" % item)
+    # Hacky deduplicating of the urls
+    site_map_dict = d = OrderedDict.fromkeys(site_map)
+    with open('sitemap/sitemap.txt', 'w') as f:
+        for item in site_map_dict.keys():
+            f.write("%s\n" % item)
