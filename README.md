@@ -11,6 +11,18 @@ For any questions please contact support@likalo.com, open a ticket here or ask u
 We used to have a support board/forum, but we did not see it being used much and we do not want to maintain unused infrastructure, so we are moving all our free support over to github.
 
 
+
+# How to Build this
+
+
+setup virtual environment if needed
+pip install -r requirements.txt
+sh start.sh
+
+### To compile the site
+python main.py
+
+
 We also had a lot of problems hosting out static content on AWS infrastructure. From cryptic soft 404's on google bot to slow route and lag while connecting to Amazon network. Github pages solves that problems for us, as their network is uber fast.
 
 This made us decide to move https://docsie.io over to github pages.
