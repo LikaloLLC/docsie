@@ -34,7 +34,7 @@ if __name__ == "__main__":
 
 
     for f in feed:
-        f['link'] = f['link'].replace('/blog/blog/', 'blog')
+        f['link'] = f['link'].replace('/blog/blog/', '/blog')
         f['published'] = arrow.get(dateutil.parser.parse(f['published'])).humanize()
 
 
