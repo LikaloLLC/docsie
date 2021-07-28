@@ -9,6 +9,8 @@ cwd = os.getcwd()
 import feedparser
 from os import listdir
 from os.path import isfile, join
+import dateutil.parser
+import arrow
 
 if __name__ == "__main__":
     # d = 'locale'
@@ -28,6 +30,10 @@ if __name__ == "__main__":
 
     feed = feedparser.parse('https://www.docsie.io/blog/rss.xml?skip=1&limit=3').entries
     feed.reverse()
+
+    for f in feed:
+        f['published'] = arrow.get(dateutil.parser.parse(f['published'])).humanize()
+
 
     site = Site.make_site(searchpath='src/', env_globals={"feed":feed[::-1]},
                           extensions=['jinja2.ext.i18n', 'jinja2.ext.autoescape', 'jinja2.ext.with_','jinja_markdown.MarkdownExtension'])
