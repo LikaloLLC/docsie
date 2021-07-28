@@ -31,7 +31,10 @@ if __name__ == "__main__":
     feed = feedparser.parse('https://www.docsie.io/blog/rss.xml?skip=1&limit=3').entries
     feed.reverse()
 
+
+
     for f in feed:
+        f['link'] = f['link'].replace('/blog/blog/', 'blog')
         f['published'] = arrow.get(dateutil.parser.parse(f['published'])).humanize()
 
 
