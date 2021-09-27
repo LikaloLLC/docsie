@@ -13,10 +13,13 @@ if __name__ == '__main__':
                                  for dir_, _, files in os.walk(cwd)] for val in sublist]
 
     skip_flows = ['src', '.blog', 'jp', 'ko', 'de', 'es', 'de', 'fr', 'pt']
+
     site_map = [
         urljoin(site_path, flow).replace('index.html', '') for flow in flows
         if 'index.html' in flow and not any(skip in Path(flow).parts for skip in skip_flows)
     ]
+    skip_flows_locale = ['src', '.blog', 'jp', 'ko', 'de', 'es', 'de', 'fr', 'pt', 'blog', 'try_docsie']
+
 
     locale_root = Path('locale')
     locale_dirs = [dir_ for dir_ in locale_root.iterdir() if dir_.is_dir()]
@@ -24,7 +27,7 @@ if __name__ == '__main__':
         locale = loc.name if loc.name != 'ja_JP' else 'jp'
         site_map.extend([
             urljoin(urljoin(site_path, locale) + '/', flow).replace('index.html', '') for flow in flows
-            if 'index.html' in flow and not any(skip in Path(flow).parts for skip in skip_flows)
+            if 'index.html' in flow and not any(skip in Path(flow).parts for skip in skip_flows_locale)
         ])
 
     # Hacky deduplicating of the urls
