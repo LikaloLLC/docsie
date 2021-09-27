@@ -1,0 +1,389 @@
+<!-- Base template of the article page. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+
+  <!-- Primary Meta Tags -->
+  <title>Docsie.io Blog - Cómo crear una guía de usuario en 2021</title>
+  <meta name="author" content="Tal F"/>
+  <meta name="title" content="Cómo crear una guía de usuario en 2021">
+  <meta name="description" content="Guía sencilla, paso a paso, para crear guías de usuario"/>
+  <meta name="keywords" content="Documentación del producto,Gestión de productos,Portales de documentación,Actualizaciones de productos,Mejores prácticas"/>
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.docsie.io/blog/articles/how-to-create-a-user-guide-in-2021/">
+  <meta property="og:title" content="Cómo crear una guía de usuario en 2021">
+  <meta property="og:description"
+        content="Guía sencilla, paso a paso, para crear guías de usuario">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1560278674-4a17b808730a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzMTM3MXwwfDF8c2VhcmNofDY2fHxndWlkZXxlbnwwfHx8fDE2MTk2MjE1MDM&ixlib=rb-1.2.1&q=80&w=1080">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://www.docsie.io/blog/articles/how-to-create-a-user-guide-in-2021/">
+  <meta property="twitter:title" content="Cómo crear una guía de usuario en 2021">
+  <meta property="twitter:description"
+        content="Guía sencilla, paso a paso, para crear guías de usuario">
+  <meta property="twitter:image" content="https://images.unsplash.com/photo-1560278674-4a17b808730a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzMTM3MXwwfDF8c2VhcmNofDY2fHxndWlkZXxlbnwwfHx8fDE2MTk2MjE1MDM&ixlib=rb-1.2.1&q=80&w=1080">
+
+  <link href="/blog/templates/assets/css/tailwind.min.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="/blog/templates/assets/css/typography.min.css"/>
+  <!--Replace with your tailwind.css once created-->
+    
+    <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TZRGMQ9');</script>
+<!-- End Google Tag Manager -->
+  
+
+</head>
+
+
+<body class="bg-gray-100 font-sans leading-normal tracking-normal">
+
+<nav id="header" class="fixed w-full z-10 top-0">
+
+  <div id="progress" class="h-1 z-20 top-0"
+       style="background:linear-gradient(to right, #4dc0b5 var(--scroll), transparent 0);"></div>
+
+  <div class="container max-w-6xl mx-auto flex flex-wrap items-center justify-between mt-0 py-3">
+
+    <div class="pl-4">
+      <a class="text-gray-900 text-base no-underline hover:no-underline font-extrabold text-xl" href="../../">
+          Docsie.io Blog
+      </a>
+    </div>
+
+    <div class="block lg:hidden pr-4">
+      <button id="nav-toggle"
+              class="flex items-center px-3 py-2 border rounded text-gray-500 border-gray-600 hover:text-gray-900 hover:border-green-500 appearance-none focus:outline-none">
+        <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+          <title>Menu</title>
+          <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/>
+        </svg>
+      </button>
+    </div>
+
+    <div class="w-full flex-grow lg:flex lg:items-center lg:w-auto hidden lg:block mt-2 lg:mt-0 bg-gray-100 z-20"
+         id="nav-content">
+      <ul class="list-reset lg:flex justify-end flex-1 items-center">
+        
+        <li>
+          <a class="inline-block text-gray-600 hover:text-gray-900 hover:underline py-2 px-4"
+             href="https://www.docsie.io">Docsie</a>
+        </li>
+        
+        <li>
+          <a class="inline-block text-gray-600 hover:text-gray-900 hover:underline py-2 px-4"
+             href="https://www.docsie.io/pricing/">Docsie Pricing</a>
+        </li>
+        
+        <li>
+          <a class="inline-block text-gray-600 hover:text-gray-900 hover:underline py-2 px-4"
+             href="https://www.docsie.io/try_docsie/">Try Docsie</a>
+        </li>
+        
+      </ul>
+    </div>
+    <div class="flex w-full justify-end content-center">
+        <a
+          class="inline-block text-gray-500 hover:text-green-500 hover:underline text-center h-10 p-2 md:h-auto md:p-4 avatar"
+          data-tippy-content="@twitter_handle" href="https://twitter.com/intent/tweet?url=#"
+          id="twitter">
+          <svg class="fill-current h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+            <path
+              d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"></path>
+          </svg>
+        </a>
+        <a
+          class="inline-block text-gray-500 hover:text-green-500 hover:underline text-center h-10 p-2 md:h-auto md:p-4 avatar"
+          data-tippy-content="#facebook_id" href="https://www.facebook.com/sharer/sharer.php?u=#}"
+          id="facebook">
+          <svg class="fill-current h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+            <path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"></path>
+          </svg>
+        </a>
+      </div>
+  </div>
+
+</nav>
+
+<!--Container-->
+<div class="container max-w-4xl mx-auto mt-32 px-8 md:px-0">
+  <div class="prose prose lg:prose-xl mx-auto mt-32">
+    <!--Title-->
+    <h1 id="blog-title">Cómo crear una guía de usuario en 2021</h1>
+    <!--Author-->
+    <div class="flex items-center">
+      <img class="w-10 h-10 rounded-full mr-4" src=" https://cdn.docsie.io/user_profiles/15/logo_logo_QmXrbijvL0L2hFKNm6Q25DtjahujKdB6nu4pqBlLBgvtT.png" alt="Avatar of Author">
+      <div class="flex-1 px-2">
+        <div class="font-bold leading-none mb-2">Tal F</div>
+        <div class="text-xs md:text-base">on May 04, 2021 · <span id="reading-time"
+                class="block md:inline mt-2 md:mt-0"></span> · filed under <span
+          class="block md:inline mt-2 md:mt-0">
+						
+            <span class="rounded bg-green-500 text-white px-1 uppercase text-xs whitespace-nowrap md:text-sm">Documentación del producto</span>
+						
+            <span class="rounded bg-green-500 text-white px-1 uppercase text-xs whitespace-nowrap md:text-sm">Gestión de productos</span>
+						
+            <span class="rounded bg-green-500 text-white px-1 uppercase text-xs whitespace-nowrap md:text-sm">Portales de documentación</span>
+						
+            <span class="rounded bg-green-500 text-white px-1 uppercase text-xs whitespace-nowrap md:text-sm">Actualizaciones de productos</span>
+						
+            <span class="rounded bg-green-500 text-white px-1 uppercase text-xs whitespace-nowrap md:text-sm">Mejores prácticas</span>
+						
+					</span>
+        </div>
+      </div>
+    </div>
+    <!--/Author-->
+
+    <!--Post Content-->
+    <!--Lead Para-->
+    <div id="content">
+      <h6>Guía sencilla paso a paso</h6>
+<p>Así que finalmente has decidido escribir una nueva guía de usuario sobre tu increíble producto.</p>
+<p>Lo que uno se da cuenta en 2021, es que crear una guía de usuario sigue siendo en su mayoría un proceso manual. Consigues la mejor aplicación para crear tu guía de usuario y empiezas a reunir el contenido.</p>
+<p>Entonces, ¿cómo se empieza, por qué se empieza, por qué se necesita siquiera una guía de usuario (duh...)? Intentaré responder a algunas de las preguntas más comunes sobre la creación de guías de usuario, así como guiarte para ayudarte con la creación de tu primera guía de usuario en Docsie, pero puedes usar literalmente cualquier otra herramienta...</p>
+<p><img alt="" src="https://cdn.docsie.io/workspace_tovPs7rKnzB4cmaiR/doc_ULxUK3nJlSUujhpeo/file_lqOAjT8rVqHqh8oj8/boo_occBcYZBFuyefSBLr/4291e8d4-6bd3-9c95-761d-7a53b35c66711_(1).png" /></p>
+<h2>Razones y beneficios para crear una guía de usuario</h2>
+<p><img alt="" src="https://cdn.docsie.io/workspace_tovPs7rKnzB4cmaiR/doc_ULxUK3nJlSUujhpeo/file_iZzj1WY3nNoP7oCen/boo_occBcYZBFuyefSBLr/61ddfa77-6229-1511-c6b1-c77b1d40b8069.png" /></p>
+<p>Hay muchas razones para crear guías de usuario. Las guías de usuario son extremadamente útiles y desempeñan un papel crucial en el mundo de los consumidores, la electrónica, los programas de software y todas las facetas de los productos tangibles o intangibles. Las guías de usuario proporcionan a sus usuarios instrucciones sencillas, paso a paso, sobre cómo utilizar y/o montar los productos.</p>
+<p>Sus clientes necesitan ser instruidos sobre los productos que vende, los servicios que presta o los métodos y procedimientos que deben seguir. Ofrecen un proceso paso a paso en el que sus clientes pueden aprender a utilizar y formarse en las diferentes características y funciones de su producto.</p>
+<h3>La creación de guías de usuario adecuadas limita la responsabilidad legal de los productos:</h3>
+<p>Las guías de usuario también limitan la responsabilidad por el uso incorrecto de sus productos. Una guía de usuario es muy útil para productos que pueden causar posibles lesiones o incluso la muerte como resultado de no utilizar o montar el producto correctamente. Por ejemplo: los dispositivos de alta tensión, los que generan fuego e incluso los láseres requieren manuales extensos para proteger al cliente de un uso incorrecto.</p>
+<h3>La creación de buenas guías de usuario ahorra tiempo:</h3>
+<p>Los manuales de usuario de buena calidad comparten instrucciones sobre cómo utilizar sus productos, lo que puede ahorrar mucho tiempo a su equipo técnico explicando cosas o a los equipos de ventas haciendo demostraciones. Muchos productos de software complicados requieren buenas guías de usuario técnicas para ayudar a sus clientes a aprender a utilizar sus productos con el máximo potencial. Los programas informáticos suelen estar llenos de funciones, por lo que disponer de guías de usuario adecuadas para proporcionar al cliente información útil puede ayudar a retener a los clientes a largo plazo y a ahorrar tiempo en la explicación de los distintos aspectos del programa y de los productos complicados.</p>
+<h3>Educar a sus clientes sobre los usos de sus productos:</h3>
+<p>Educar a los clientes en los productos técnicos es muy importante. Sin unas guías de usuario adecuadas, los clientes pueden verse confundidos por un aluvión de funciones ocultas y no saber cómo utilizar todo el potencial del producto técnico. Las guías de usuario permiten un proceso fácil en el que sus clientes pueden aprender a involucrarse en los diversos aspectos técnicos de su producto y se sienten cómodos por tener una guía de usuario a mano cuando necesitan profundizar en sus productos. Les quitará el estrés de tratar de entender las cosas sin una guía escrita formal. Además, en el caso de los productos peligrosos, las guías de usuario pueden proporcionar advertencias sobre el uso incorrecto de los productos de forma peligrosa.</p>
+<h2>Qué hace una buena guía de usuario</h2>
+<p><img alt="" src="https://cdn.docsie.io/workspace_tovPs7rKnzB4cmaiR/doc_ULxUK3nJlSUujhpeo/file_jripxf4mYymO4f3xy/boo_occBcYZBFuyefSBLr/fe45270c-c55d-dab5-f45c-363cc455ecb821.png" /></p>
+<p>Así que para empezar a hacer una guía de usuario necesitas entender qué problema estás tratando de ayudar a resolver para un cliente específico. Hacer una guía de usuario para todo sobre todo la convierte en un lío incomprensible que nadie entenderá, incluyendo su público objetivo. Si miras algunos de los mejores ejemplos de guías de usuario en línea, escritos por empresas superestrellas como <a href="https://stripe.com/docs/payments?payments=popular">Stripe</a> o <a href="https://slack.com/intl/en-ca/help/categories/200111606-Using-Slack">Slack</a>. Notarás un patrón particular.</p>
+<blockquote>
+<p>Cada guía de usuario se centra en resolver un problema concreto.</p>
+</blockquote>
+<p>¿Qué debe hacer cada guía? Debe centrarse en acciones sencillas que el usuario pueda llevar a cabo mientras sigue la guía. No hay necesidad de complicarse. Por el contrario, si te centras en abordar acciones sencillas comunes que ayuden a tus usuarios a resolver problemas sencillos comunes con tu producto, llegarás a tener un conjunto de guías de usuario increíbles que tus clientes amarán.</p>
+<p>Así que vamos a mirar de cerca algunas guías de usuario para entender lo que es una estructura de una guía de usuario increíble para que podamos tomar como punto de referencia sobre cómo podemos escribir una guía de usuario increíble nosotros mismos.</p>
+<p><img alt="" src="https://cdn.docsie.io/workspace_tovPs7rKnzB4cmaiR/doc_ULxUK3nJlSUujhpeo/file_R5PJ3qo7jkogbCKR3/boo_occBcYZBFuyefSBLr/ce19c948-7756-658f-003e-05a17c916e7cimage.png" /></p>
+<h2>Entonces, ¿qué hay en una gran guía de usuario?</h2>
+<p>Analicemos la guía de Managing Book anterior y propongamos algunos puntos de</p>
+<h2>Organizar sus guías de usuario</h2>
+<p><strong>Utilizar Docsie para crear guías de usuario</strong></p>
+<p>Docsie tiene varias herramientas y características que le permiten hacer impresionantes guías de usuario. En primer lugar, veamos cómo funciona Docsie. Docsie funciona bajo la premisa de libros, estantes y colecciones.</p>
+<p><img alt="" src="https://cdn.docsie.io/workspace_tovPs7rKnzB4cmaiR/doc_ULxUK3nJlSUujhpeo/file_8ASkXMSmGFUkhL3h8/boo_occBcYZBFuyefSBLr/e263c093-0b3e-b83b-bd9a-38f6cc305cb21.png" /></p>
+<p>Las colecciones se utilizan para aislar varios libros que se quieren mostrar a diferentes tipos de clientes. Por ejemplo, esta colección se utiliza para mostrar sólo a los usuarios empresariales. Esto significa que seleccionamos sólo 3 libros de todos los libros creados para mostrar estos clientes específicos.</p>
+<p><img alt="" src="https://cdn.docsie.io/workspace_tovPs7rKnzB4cmaiR/doc_ULxUK3nJlSUujhpeo/file_4hX2usZ2Cfu8kxDGT/boo_occBcYZBFuyefSBLr/b69ec337-f114-7421-8222-ba3bf6c336e12.png" /></p>
+<p>Esto es útil cuando tienes varios tipos de clientes que utilizan diferentes lágrimas de tus productos. Esto se hace sin problemas en Docsie haciendo clic en los tres puntos junto a "Todos" y pulsando añadir.</p>
+<p><img alt="" src="https://cdn.docsie.io/workspace_tovPs7rKnzB4cmaiR/doc_ULxUK3nJlSUujhpeo/file_YGY3TUq04j0YUkBjB/boo_occBcYZBFuyefSBLr/c155b6fa-ad22-b5ca-1e6e-3df6b2293e7c3.png" /></p>
+<p>Una vez que esté en la barra de herramientas de Docsies Collection puede crear el nombre de su colección y también elegir qué guías de usuario quiere en esta colección específica. La razón por la que esto es importante es porque diferentes clientes pueden necesitar conocer diferentes guías de usuario de sus productos y esta herramienta le permite mostrar sólo las guías de usuario específicas que necesitan ver.</p>
+<p><img alt="" src="https://cdn.docsie.io/workspace_tovPs7rKnzB4cmaiR/doc_ULxUK3nJlSUujhpeo/file_4ez4W22Q45oCMqyi6/boo_occBcYZBFuyefSBLr/dfc1562f-cbad-ea86-a55a-cc371063c2634.png" /></p>
+<p>Ahora vamos a empezar a escribir su primera guía de usuario con Docsie, esto se hace con Docsies "Book"</p>
+<p>Piensa en un libro como tu guía de usuario o manual. Dentro de su libro abierto verá el Editor, un lugar para crear 'Artículos' y Encabezados.</p>
+<p><img alt="" src="https://cdn.docsie.io/workspace_tovPs7rKnzB4cmaiR/doc_ULxUK3nJlSUujhpeo/file_6H3Y1e38RtMPPxwXp/boo_occBcYZBFuyefSBLr/ec59b894-5433-d849-0493-cd836dbe797a5.png" /></p>
+<p>El editor en la parte superior, la posibilidad de crear varias versiones e idiomas en la esquina superior izquierda y, por supuesto, "Artículos y secciones de subtítulos a la izquierda.</p>
+<p>El editor es fácil de usar, te permite añadir vídeos, imágenes y código con nuestro sencillo proceso de arrastrar y soltar.  También te permite estilizar tu contenido como mejor te parezca.</p>
+<p>Los artículos son realmente fáciles de crear; sólo tienes que escribir el título. En este caso el tipo es "Qué es Docsie" pero puedes escribir lo que desees para el título de tu Guía de Usuario.</p>
+<p><img alt="" src="https://cdn.docsie.io/workspace_tovPs7rKnzB4cmaiR/doc_ULxUK3nJlSUujhpeo/file_w2Fo0BuxXtGjFQuzx/boo_occBcYZBFuyefSBLr/42e5df8b-db8e-ec6a-6a70-dc0420c427376.png" /></p>
+<p>Para crear subsecciones en sus guías de usuario que aparecerán como 1.1,1.2..ext todo lo que necesita hacer es seleccionar la ubicación de su texto y establecer el texto como 'Encabezado' esto se hace haciendo clic en la H en la pestaña del editor.</p>
+<p><img alt="" src="https://cdn.docsie.io/workspace_tovPs7rKnzB4cmaiR/doc_ULxUK3nJlSUujhpeo/file_OCwuils7ezubiAv8a/boo_occBcYZBFuyefSBLr/1dd88460-f856-79c7-96a9-e43c31fd5f217.png" /></p>
+<p>Docsie también le permite crear varias versiones e idiomas de sus guías de usuario. Esto es muy útil y práctico para la localización y para hablar de varias alteraciones de las guías de usuario de su producto.</p>
+<p><img alt="" src="https://cdn.docsie.io/workspace_tovPs7rKnzB4cmaiR/doc_ULxUK3nJlSUujhpeo/file_vJFG764JBiJeDM4fU/boo_occBcYZBFuyefSBLr/a160f3ac-da2e-37bc-7133-a0172707c2828.png" /></p>
+<p>Una vez que hayas preparado tus guías de usuario, las hayas redactado y estilizado con fotos que ayuden a explicar los distintos aspectos de tus productos y características, el siguiente paso es la publicación.</p>
+<h2>Para resumir, estos son los consejos y trucos para crear una guía de usuario</h2>
+<p>La mayoría de los programas informáticos y productos técnicos son muy complejos y polifacéticos. Para abordar esta cuestión en la creación de una guía de usuario para productos complejos es una buena idea dividir la información y las instrucciones en partes más pequeñas. Esencialmente, crear varias guías de usuario pequeñas y compilarlas en una configuración de manual de guía de usuario</p>
+<p>Sus clientes no están familiarizados con su producto o servicio. Cuanto más técnico sea su producto, más descriptivas deberán ser sus guías de usuario en la fase de creación. Las palabras vagas y la fraseología no serán sus amigas en este proceso. Sea lo más específico posible para que su cliente pueda comprender incluso los aspectos más complejos de su producto.</p>
+<p>Una imagen vale más que mil palabras. Esto es cierto, especialmente en el caso de las guías y manuales de usuario. La mayoría de las empresas descuidan este paso, pero es muy importante contar con las fotos o las instantáneas adecuadas de las características y los aspectos de su producto mientras los explica en sus guías de usuario. De este modo, el cliente puede entender a qué aspectos de su producto se refiere.</p>
+<p>Sus guías de usuario están diseñadas para ayudar a sus clientes a entender los distintos usos de sus productos. Explique las cosas de la manera más sencilla posible para que puedan entender sus diversas características y aspectos con facilidad.</p>
+    </div>
+  </div>
+  <!--/ Post Content-->
+
+  <!--Divider-->
+  <hr class="border-b-1 border-gray-400 mt-12 mb-8 mx-4">
+
+  <!--Next & Prev Links-->
+  <div class="font-sans flex justify-between content-center px-4 mb-4">
+    <div class="text-left">
+      <span class="text-xs md:text-sm font-normal text-gray-600">&lt; Previous Post</span><br>
+      <p><a href="../digital-documentation-best-practices-to-inform-and-inspire" class="break-normal text-base md:text-sm text-green-500 font-bold no-underline hover:underline">Documentación digital: Mejores prácticas para informar e inspirar</a></p>
+    </div>
+    <div class="text-right">
+      <span class="text-xs md:text-sm font-normal text-gray-600">Next Post &gt;</span><br>
+      <p><a href="../how-to-win-with-organized-and-automated-product-documentation" class="break-normal text-base md:text-sm text-green-500 font-bold no-underline hover:underline">Cómo ganar con una documentación de producto organizada y automatizada</a></p>
+    </div>
+  </div>
+
+
+  <!--/Next & Prev Links-->
+
+  
+    <div class="commentbox"></div>
+
+    <script src="https://unpkg.com/commentbox.io/dist/commentBox.min.js"></script>
+    <script>commentBox("5725910686760960-proj")</script>
+  
+
+  <!--Subscribe-->
+  
+    <!-- Base template of the subscription form. -->
+
+<div class="container font-sans bg-white rounded mt-8 p-4 md:p-24 text-center mb-10">
+    <h2 class="font-bold break-normal text-2xl md:text-4xl">Subscribe to the newsletter</h2>
+    <h3 class="font-bold break-normal font-normal text-gray-600 text-base md:text-xl">Stay up to date with our latest news and products</h3>
+    <div class="w-full text-center pt-4">
+        <form action="#">
+            <div class="max-w-xl mx-auto p-1 pr-0 flex flex-wrap items-center">
+                <input type="email" placeholder="youremail@example.com"
+                       class="flex-1 appearance-none rounded shadow p-3 text-gray-600 mr-2 focus:outline-none">
+                <button type="submit"
+                        class="flex-1 mt-4 md:mt-0 block md:inline-block appearance-none bg-green-500 text-white text-base font-semibold tracking-wider uppercase py-4 rounded shadow hover:bg-green-400">
+                    Subscribe
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+  
+  <!-- /Subscribe-->
+</div>
+<!--/container-->
+
+<footer class="bg-gray-900">
+  <div class="container max-w-6xl mx-auto flex items-center px-2 py-8">
+
+    <div class="w-full mx-auto flex flex-wrap items-center">
+      <div class="flex w-full md:w-1/2 justify-center md:justify-start text-white font-extrabold flex-col">
+        <a class="text-gray-900 no-underline hover:text-gray-900 hover:no-underline" href="/blog">
+          <span class="text-base text-gray-200">Docsie.io Blog</span>
+        </a>
+        <a class="text-gray-900 no-underline hover:text-gray-900 hover:no-underline"
+           href="https://github.com/LikaloLLC/BlogVi" target="_blank">
+          <span class="text-xs text-gray-200">Made with BlogVI</span>
+        </a>
+      </div>
+      <div class="flex w-full pt-2 content-center justify-between md:w-1/2 md:justify-end">
+        <ul class="list-reset flex justify-center flex-1 md:flex-none items-center">
+          
+            <li>
+              <a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-3"
+                 href="https://www.docsie.io">Docsie</a>
+            </li>
+          
+            <li>
+              <a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-3"
+                 href="https://www.docsie.io/pricing/">Docsie Pricing</a>
+            </li>
+          
+            <li>
+              <a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-3"
+                 href="https://www.docsie.io/try_docsie/">Try Docsie</a>
+            </li>
+          
+        </ul>
+      </div>
+    </div>
+
+
+  </div>
+</footer>
+
+<script>
+  /* Progress bar */
+  //Source: https://alligator.io/js/progress-bar-javascript-css-variables/
+  var h = document.documentElement,
+    b = document.body,
+    st = 'scrollTop',
+    sh = 'scrollHeight',
+    progress = document.querySelector('#progress'),
+    scroll;
+  var scrollpos = window.scrollY;
+  var header = document.getElementById("header");
+  var navcontent = document.getElementById("nav-content");
+
+  document.addEventListener('scroll', function () {
+
+    /*Refresh scroll % width*/
+    scroll = (h[st] || b[st]) / ((h[sh] || b[sh]) - h.clientHeight) * 100;
+    progress.style.setProperty('--scroll', scroll + '%');
+
+    /*Apply classes for slide in bar*/
+    scrollpos = window.scrollY;
+
+    if (scrollpos > 10) {
+      header.classList.add("bg-white");
+      header.classList.add("shadow");
+      navcontent.classList.remove("bg-gray-100");
+      navcontent.classList.add("bg-white");
+    } else {
+      header.classList.remove("bg-white");
+      header.classList.remove("shadow");
+      navcontent.classList.remove("bg-white");
+      navcontent.classList.add("bg-gray-100");
+
+    }
+
+  });
+
+
+  //Javascript to toggle the menu
+  document.getElementById('nav-toggle').onclick = function () {
+    document.getElementById("nav-content").classList.toggle("hidden");
+  }
+</script>
+<script>
+  /*
+    Twitter
+    https://twitter.com/share?url=[post-url]&text=[post-title]
+
+    Facebook
+    https://www.facebook.com/sharer.php?u=[post-url]
+
+  */
+  let twitterURI = document.getElementById('twitter');
+  let facebookURI = document.getElementById('facebook');
+
+  let postURI = encodeURI(document.location.href);
+  let postTitle = encodeURI(document.getElementById('blog-title').innerText + ":\n")
+
+  facebookURI.setAttribute('href', `https://www.facebook.com/sharer.php?u=${postURI}`);
+  twitterURI.setAttribute('href', `https://twitter.com/share?url=${postURI}&text=${postTitle}`);
+</script>
+
+<!--Sharect-->
+
+<script src="https://unpkg.com/sharect@2.0.0/dist/sharect.js"></script>
+<script>window["sharectConfig"] = {"backgroundColor": "#333333", "enabled": true, "facebook": true, "iconColor": "#FFFFFF", "selectableElements": ["body"], "twitter": true, "twitterUsername": ""}</script>
+<script src="/blog/templates/assets/js/sharect.js"></script>
+
+
+
+<!--Reading time-->
+<script src="/blog/templates/assets/js/reading-time.min.js"></script>
+<script>
+  const text = []
+  let content = [...document.getElementById('content').getElementsByTagName('p')].forEach((elem) => {
+    text.push(elem.textContent)
+  });
+  const stats = readingTime(text.join(" "));
+
+  document.getElementById('reading-time').innerHTML = stats.text;
+</script>
+
+
+  
+      <!-- Google Tag Manager (noscript) -->
+
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TZRGMQ9"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+  
+
+</body>
+
+</html>
