@@ -1,0 +1,404 @@
+<!-- Base template of the article page. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/blog/favicon.ico">
+
+
+  <!-- Primary Meta Tags -->
+  <title>Docsie.io Blog - WordPress för dokumentation med Docsie</title>
+  <meta name="author" content="Tal F"/>
+  <meta name="title" content="WordPress för dokumentation med Docsie">
+  <meta name="description" content="Upptäck hur du kan effektivisera värdskap och hantering av dokumentation i WordPress med Docsie."/>
+  <meta name="keywords" content="Produktdokumentation,Bästa praxis"/>
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.docsie.io/blog/articles/wordpress-for-documentation-with-docsie/">
+  <meta property="og:title" content="WordPress för dokumentation med Docsie">
+  <meta property="og:description"
+        content="Upptäck hur du kan effektivisera värdskap och hantering av dokumentation i WordPress med Docsie.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1566207474742-de921626ad0c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzMTM3MXwwfDF8c2VhcmNofDJ8fHdvcmRwcmVzc3xlbnwwfHx8fDE2MjAxNTU2MzY&ixlib=rb-1.2.1&q=80&w=1080">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://www.docsie.io/blog/articles/wordpress-for-documentation-with-docsie/">
+  <meta property="twitter:title" content="WordPress för dokumentation med Docsie">
+  <meta property="twitter:description"
+        content="Upptäck hur du kan effektivisera värdskap och hantering av dokumentation i WordPress med Docsie.">
+  <meta property="twitter:image" content="https://images.unsplash.com/photo-1566207474742-de921626ad0c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzMTM3MXwwfDF8c2VhcmNofDJ8fHdvcmRwcmVzc3xlbnwwfHx8fDE2MjAxNTU2MzY&ixlib=rb-1.2.1&q=80&w=1080">
+
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/blog/templates/assets/css/typography.min.css"/>
+  <!--Replace with your tailwind.css once created-->
+    
+    <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TZRGMQ9');</script>
+<!-- End Google Tag Manager -->
+  
+
+</head>
+
+
+<body class="bg-gray-100 font-sans leading-normal tracking-normal">
+
+<nav id="header" class="fixed w-full z-10 top-0">
+
+  <div id="progress" class="h-1 z-20 top-0"
+       style="background:linear-gradient(to right, #4dc0b5 var(--scroll), transparent 0);"></div>
+
+  <div class="container max-w-6xl mx-auto flex flex-wrap items-center justify-between mt-0 py-3">
+
+    <div class="pl-4">
+      <a class="text-gray-900 text-base no-underline hover:no-underline font-extrabold text-xl" href="../../">
+          Docsie.io Blog
+      </a>
+    </div>
+
+    <div class="block lg:hidden pr-4">
+      <button id="nav-toggle"
+              class="flex items-center px-3 py-2 border rounded text-gray-500 border-gray-600 hover:text-gray-900 hover:border-green-500 appearance-none focus:outline-none">
+        <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+          <title>Menu</title>
+          <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/>
+        </svg>
+      </button>
+    </div>
+
+    <div class="w-full flex-grow lg:flex lg:items-center lg:w-auto hidden lg:block mt-2 lg:mt-0 bg-gray-100 z-20"
+         id="nav-content">
+      <ul class="list-reset lg:flex justify-end flex-1 items-center">
+        
+        <li>
+          <a class="inline-block text-gray-600 hover:text-gray-900 hover:underline py-2 px-4"
+             href="https://www.docsie.io">Docsie</a>
+        </li>
+        
+        <li>
+          <a class="inline-block text-gray-600 hover:text-gray-900 hover:underline py-2 px-4"
+             href="https://www.docsie.io/pricing/">Docsie Pricing</a>
+        </li>
+        
+        <li>
+          <a class="inline-block text-gray-600 hover:text-gray-900 hover:underline py-2 px-4"
+             href="https://www.docsie.io/try_docsie/">Try Docsie</a>
+        </li>
+        
+      </ul>
+    </div>
+    <div class="flex w-full justify-end content-center">
+        <a
+          class="inline-block text-gray-500 hover:text-green-500 hover:underline text-center h-10 p-2 md:h-auto md:p-4 avatar"
+          data-tippy-content="@twitter_handle" href="https://twitter.com/intent/tweet?url=#"
+          id="twitter">
+          <svg class="fill-current h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+            <path
+              d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"></path>
+          </svg>
+        </a>
+        <a
+          class="inline-block text-gray-500 hover:text-green-500 hover:underline text-center h-10 p-2 md:h-auto md:p-4 avatar"
+          data-tippy-content="#facebook_id" href="https://www.facebook.com/sharer/sharer.php?u=#}"
+          id="facebook">
+          <svg class="fill-current h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+            <path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"></path>
+          </svg>
+        </a>
+      </div>
+  </div>
+
+</nav>
+
+<!--Container-->
+<div class="container max-w-4xl mx-auto mt-32 px-8 md:px-0">
+  <div class="prose prose lg:prose-xl mx-auto mt-32">
+    <!--Title-->
+    <h1 id="blog-title">WordPress för dokumentation med Docsie</h1>
+    <!--Author-->
+    <div class="flex items-center">
+      <img class="w-10 h-10 rounded-full mr-4" src=" https://cdn.docsie.io/user_profiles/15/logo_logo_QmXrbijvL0L2hFKNm6Q25DtjahujKdB6nu4pqBlLBgvtT.png" alt="Avatar of Author">
+      <div class="flex-1 px-2">
+        <div class="font-bold leading-none mb-2">Tal F</div>
+        <div class="text-xs md:text-base">on May 04, 2021 · <span id="reading-time"
+                class="block md:inline mt-2 md:mt-0"></span> · filed under <span
+          class="block md:inline mt-2 md:mt-0">
+						
+            <span class="rounded bg-green-500 text-white px-1 uppercase text-xs whitespace-nowrap md:text-sm">Produktdokumentation</span>
+						
+            <span class="rounded bg-green-500 text-white px-1 uppercase text-xs whitespace-nowrap md:text-sm">Bästa praxis</span>
+						
+					</span>
+        </div>
+      </div>
+    </div>
+    <!--/Author-->
+
+    <!--Post Content-->
+    <!--Lead Para-->
+    <div id="content">
+      <h2>Upptäck hur du kan effektivisera värdskap och hantering av dokumentation i WordPress med Docsie</h2>
+<p>Under hela kundresan söker människor efter information och vägledning för att stödja sina köpbeslut. Före ett köp vill kunderna förstå hur en produkt fungerar och om den kommer att uppfylla deras krav. Under och efter köpet uppskattar kunderna dokumentation som beskriver hur de ska konfigurera och använda din tjänst - och som hjälper dem att forma funktionaliteten så att den uppfyller deras behov.</p>
+<p>För att citera Matshona Dhliwayo - "Kunskap är rikedom". Moderna digitala konsumenter har förmånen att ha en mängd kunskap inom räckhåll tack vare Internet. För företag som saknar kapacitet eller förmåga att dela med sig av kunskap om sina tjänster innebär detta att de går miste om en tydlig, informationsdriven konkurrensfördel.</p>
+<p>Detta bekräftas av en nyligen genomförd studie från 2020 <a href="https://www.eptica.com/dcx2020">Eptica</a><a href="https://www.eptica.com/dcx2020"> studie</a>, där 36 % av de tillfrågade företagen misslyckas med att besvara rutinmässiga kundförfrågningar via digitala kanaler. I bästa fall kommer dessa misslyckanden att leda till ökad efterfrågan på kundtjänstavdelningen när människor begär information, vilket ökar personalkostnaderna och arbetsbelastningen. I värsta fall blir kunderna avhoppade. Kunderna kommer att hitta en konkurrent som erbjuder mer dokumentation före och efter försäljningen, vilket ökar förtroendet och sannolikheten att de fullföljer köpet.</p>
+<h3>Svar på rutinfrågor med en självbetjäningsdokumentationsportal</h3>
+<h3></h3>
+<p>Rutinfrågor är vanliga frågor på låg nivå som rör aspekter av din produkt eller tjänst, t.ex. konfiguration, fakturering och teknisk support. I de flesta fall är frågetyperna konsekventa och liknande frågor besvaras med lika liknande svar från kundtjänstmedarbetare. Dessa arbetsuppgifter på låg nivå är upprepbara och förutsägbara, vilket gör dem till idealiska kandidater för självbetjäning.</p>
+<p>Genom att implementera en självbetjäningsdokumentationsportal kan företag minska arbetsbelastningen för kundsupport. Detta sammanfaller med att konsumenternas känslor förändras. En <a href="http://connect.creativevirtual.com/contactbabel-report-us-mar2020">ContactBabel</a><a href="http://connect.creativevirtual.com/contactbabel-report-us-mar2020"> studie</a> från 2020 visade att 61 % av de amerikanska respondenterna identifierade AI-aktiverad självbetjäning som "mycket viktig". Detta visar hur kunderna inte bara accepterar kontaktfri support, utan att de omfamnar den. Särskilt millennials vill betjäna sig själva - 73 % av konsumenterna i denna <a href="https://www.aspect.com/company/news/press-releases/customer-serve-thy-self-new-study-reveals-millennials-desire-for-self-service-digital-interaction-to-change-customer-service-forever">Aspect-studie</a> säger att de bör ha möjlighet att lösa problem på egen hand.</p>
+<h4>Användning av Docsie för WordPress-dokumentation</h4>
+<h3></h3>
+<p>För att hjälpa konsumenterna att hjälpa sig själva är det viktigt att införa en dokumentationsportal. Docsie är ett utmärkt sätt att hantera och dela dokumentation i hela företaget - för att tillgodose både dina lojala kunder och passionerade interna medarbetare!</p>
+<h3>Docsie arbetsområden, böcker och hyllor</h3>
+<p>I ett Docsie-arbetsområde kan företag skapa och lagra dokumentation som ska publiceras i en dokumentationsportal. För enskilda produkter tillhandahåller Docsie en "hylla" där relaterad dokumentation - eller "böcker" - kan organiseras och hanteras. Affärsanvändare kan skapa så många "böcker" och "hyllor" som de behöver, vilket gör Docsie organiserbart och mycket skalbart. Dokumentationen bildar tillsammans ett "bibliotek" där personalen kan lägga till kunskap och kunderna kan använda denna kunskap för att lära sig mer om era produkter och tjänster.</p>
+<p><img alt="" src="https://docsie-app-media.s3.amazonaws.com/image/7093/doc_ULxUK3nJlSUujhpeo/cdhlmjjaoteiufwqsqba" /></p>
+<h3>Docsie Versionering av dokument</h3>
+<p>Docsie möjliggör också versionshantering av dokument, vilket gör att flera versioner av ett dokument hålls organiserade och tillgängliga på lång sikt. Detta är idealiskt för utvecklingsteam. Nya produktversioner och API-uppdateringar kan dokumenteras, med historisk dokumentation som säkerhetskopia för kunder som fortsätter att använda äldre versioner av dina produkter och tjänster - på ett effektivt sätt kan du tillgodose en fragmenterad användarbas.</p>
+<p><img alt="" src="https://docsie-app-media.s3.amazonaws.com/image/7093/doc_ULxUK3nJlSUujhpeo/pczuxadvbygftlmwekbo" /></p>
+<h3>Docsie anpassade dokumentationshubbar</h3>
+<p>Alla varumärken ser olika ut och känns olika. Docsie gör det möjligt att anpassa varumärket för all dokumentation genom att integrera företagslogotyper, färgscheman och typografi för konsekvent publicering på företagets webbplatser. Detta gör det möjligt för företag att ändra varumärkestillgångar en gång i Docsie och sprida dessa ändringar över alla dokument på alla värdplattformar - vilket effektiviserar varumärkeshanteringen.</p>
+<p><img alt="" src="https://docsie-app-media.s3.amazonaws.com/image/7093/doc_ULxUK3nJlSUujhpeo/mshntomlogkgyplixkup" /></p>
+<h3>Docsie Maskininlärning Språköversättning</h3>
+<p>Globala företag måste kommunicera kunskap på flera språk. Docsie ger ytterligare hantering av översatt dokumentation genom att skapa alternativa "böcker" på varje produkthylla för olika språk. Dessa "böcker" kan transkriberas manuellt eller så kan företagen välja Docsies inbyggda maskinöversättningsfunktion.</p>
+<p>Maskinöversättningen översätter automatiskt dokumenten till olika språk - en viktig funktion med tanke på att 75 % av de tillfrågade var mer benägna att göra ett köp om supporten gavs på deras lokala språk, enligt en undersökning från 2020 CSA (https://csa-research.com/More/Media/Press-Releases/ArticleID/655/Survey-of-8-709-Consumers-in-29-Countries-Finds-that-76-Prefer-Purchasing-Products-with-Information-in-their-Own-Language).</p>
+<p><img alt="" src="https://docsie-app-media.s3.amazonaws.com/image/7093/doc_ULxUK3nJlSUujhpeo/tjwcokomcquzbtjfyhms" /></p>
+<p>![] (https://docsie-app-media.s3.amazonaws.com/image/7093/doc_ULxUK3nJlSUujhpeo/hpiagizgxcvfteprinwn)</p>
+<h3>Docsie Vokalt: Visualized Feedback</h3>
+<p>Docsie Vocally gör det möjligt för användare att ge feedback på enskilda "böcker" i en dokumentationsportal. Detta hjälper företag att identifiera användbar och effektiv dokumentation som ger användarna mätbara fördelar. Det hjälper också företag att hitta dokumentation som inte fungerar och som bör ses över och ersättas för att ge kunderna ett större värde. Feedback består av "känslomässiga betyg" på en femgradig betygsskala eller textmeddelanden med förklaringar till feedback. Företag kan fördjupa sig i övervakning av användarupplevelsen (UX) med registrerade åtgärder på sidor för varje användare, vilket illustrerar kundernas surfvanor i förhållande till deras feedback för att vägleda affärsbeslut.</p>
+<p><img alt="" src="https://docsie-app-media.s3.amazonaws.com/image/7093/doc_ULxUK3nJlSUujhpeo/addifshigkkpoiobortf" /></p>
+<h4>Komma igång med Docsie på WordPress 5</h4>
+<h3></h3>
+<p>Företag kan använda Docsies funktionalitet för att hantera sin dokumentation och samtidigt lägga upp den på en valfri plattform - i det här fallet WordPress. Det kunde inte vara enklare att publicera till WordPress från Docsie, eftersom det krävs ett enda distributionsskript för att skjuta och publicera innehåll.</p>
+<h4>Docsie WordPress Deployment Script Creation</h4>
+<p>Öppna boken som du vill publicera i Docsie.</p>
+<p>I panelen Inställningar hittar du Egenskaper.</p>
+<p><img alt="" src="https://docsie-app-media.s3.amazonaws.com/image/7093/doc_ULxUK3nJlSUujhpeo/pmfgayfjbxpyaezonadq" /></p>
+<p>Klicka (hämta manus för självpublicering)</p>
+<p>![] (https://docsie-app-media.s3.amazonaws.com/image/7093/doc_ULxUK3nJlSUujhpeo/gapavaasxhjgmzvosbtt)</p>
+<p>Din kod visas redo att kopieras in i WordPress.</p>
+<p><img alt="" src="https://docsie-app-media.s3.amazonaws.com/image/7093/doc_ULxUK3nJlSUujhpeo/eeugiunjmalaxajwytjx" /></p>
+<p>I portalvyn kan företag dessutom välja befintlig dokumentation från varje hylla eller ett helt arbetsområde att publicera.</p>
+<p>Här finns innehållsfilter - support, webbplatsinnehåll, villkor och policy, dokumentation, andra sidor - som ger detaljerad kontroll över vad som publiceras i WordPress.</p>
+<p>Företag kan också välja visningsstilar - inklusive Version Picker, Language Picker, Section Anchors, Footer Navigation - som kontrollerar den slutliga formateringen i WordPress.</p>
+<p>Företagets användare väljer helt enkelt vad som ska publiceras och definierar innehållsfilter och visningsstilar via det grafiska användargränssnittet (GUI) - Docsie genererar sedan ett slutgiltigt distributionsskript i det nedre textområdet. Detta är känt som low-code eller kodlöst.</p>
+<p>Nu kan vi publicera till WordPress!</p>
+<h4>Lägga till skriptet i WordPress</h4>
+<p>När du har loggat in på WordPress-instrumentpanelen går du till Sidor.</p>
+<p>Välj Lägg till ny sida och skapa en titel eller välj en befintlig sida.</p>
+<p><img alt="" src="https://docsie-app-media.s3.amazonaws.com/image/7093/doc_ULxUK3nJlSUujhpeo/lbwsgahnmezbvkzftagh" /></p>
+<p>Klicka på knappen Lägg till på ett block på en webbplats i WordPress textredigerare. Välj alternativet Anpassad HTML för att lägga till Docsies kodskript.</p>
+<p><img alt="" src="https://docsie-app-media.s3.amazonaws.com/image/7093/doc_ULxUK3nJlSUujhpeo/ejdtdgrlzsahtursowbf" /></p>
+<p>Kopiera ditt distributionsskript i Docsie för att lägga till det i klippbordet. I WordPress klistrar du sedan in kodsträngen i rutan Anpassad HTML. Du kan också ange ett WordPress-sidnamn, även om Docsie automatiskt kontrollerar titeln för dig i det inbäddade dokumentet.</p>
+<p><img alt="" src="https://docsie-app-media.s3.amazonaws.com/image/7093/doc_ULxUK3nJlSUujhpeo/zrmyjvznfrgterpdolmk" /></p>
+<p>Det sista steget är att klicka på Förhandsgranska bredvid HTML högst upp på sidan i WordPress-redigeraren.</p>
+<p><img alt="" src="https://docsie-app-media.s3.amazonaws.com/image/7093/doc_ULxUK3nJlSUujhpeo/eiliooqudyhoghurdeqp" /></p>
+<p>Din Docsie-dokumentation kommer att visas sömlöst på sidan! Du kan nu klicka på Uppdatera uppe till höger för att publicera på din levande webbsida. Denna snabba och enkla process kan upprepas med all din dokumentation. Den stöder snabb publicering för små och stora dokumentationsbibliotek; klistra bara in och kör!</p>
+<p>OBS - WordPress 5 visar sin egen titel och andra webbplatselement med den här metoden, perfekt för att bädda in Docsie-dokument runt andra webbplatselement. Om du inte vill ladda något annat än Docsie-dokumentet - klistra in din kodsträng i HTML-foten på din sida i WordPress kodredigerare och lämna resten av sidan tom.</p>
+<h3>Samarbeta med lagmedlemmar i Docsie</h3>
+<h3></h3>
+<p>Docsie förenklar publicering över flera kanaler genom att förbättra konsistens, användarvänlighet och skalbarhet för stora dokumentationsbibliotek. Docsie stöder också samarbete för att hjälpa ditt team att orkestrera sina arbetsflöden för dokumentationshantering.</p>
+<h3>Docsie interna och externa medarbetare</h3>
+<p>Dokumentation måste skrivas innan den kan publiceras. Det kan röra sig om intern skrivpersonal eller externa medarbetare som betalas per projekt för att skriva dokumentation. Docsie tillgodoser alla dessa behov och gör det möjligt för företag att skapa team och hantera personer och innehåll samtidigt.</p>
+<p>Intern personal kan läggas till i ett team manuellt av en ägare eller administratör, genom grupprinciper med hjälp av Docsie rollbaserade åtkomstkontroller (RBAC), eller begära åtkomst för att gå med i en teamgrupp.</p>
+<p>Externa medarbetare kan bjudas in till ett team via e-post i Docsie-portalen, vilket gör att det går snabbt och effektivt att få in entreprenörer i teamet.</p>
+<p>![<a href="https://docsie-app-media.s3.amazonaws.com/image/7093/doc_ULxUK3nJlSUujhpeo/axkzsfrdmsdknhqnccqj"></a></p>
+<h3>Docsie Team Chat</h3>
+<p>I stället för e-post eller Slack kan företag använda Docsie Team Chat. Detta centraliserar kommunikationen om din dokumentation för att förbättra fokus, samtidigt som det underlättar snabbmeddelanden (IM) för snabbare svar från teamet. Teammedlemmarna får meddelanden i Docsie-portalen eller via e-post - så att ingen missar viktig information.</p>
+<p>![<a href="https://docsie-app-media.s3.amazonaws.com/image/7093/doc_ULxUK3nJlSUujhpeo/sqjnonxdlqfjcmhuwwhe"></a></p>
+<h3>Docsie-behörigheter och användarhantering</h3>
+<p>Docsie använder ett ramverk för rollbaserad åtkomstkontroll (RBAC) - ibland kallat identitetsåtkomsthantering (IAM) - för att kontrollera användarbehörigheter för åtkomst till dokumentation. Varje användare kan utses till ägare, administratör, redaktör och betraktare för att möjliggöra detaljerad kontroll av åtkomst, datastyrning och säkerhet - som ingår i GRC (Governance Risk Compliance).</p>
+<p>![<a href="https://docsie-app-media.s3.amazonaws.com/image/7093/doc_ULxUK3nJlSUujhpeo/lvuxrnhbknitdnmjdwjh"></a></p>
+    </div>
+  </div>
+  <!--/ Post Content-->
+
+  <!--Divider-->
+  <hr class="border-b-1 border-gray-400 mt-12 mb-8 mx-4">
+
+  <!--Next & Prev Links-->
+  <div class="font-sans flex justify-between content-center px-4 mb-4">
+    <div class="text-left">
+      <span class="text-xs md:text-sm font-normal text-gray-600">&lt; Previous Post</span><br>
+      <p><a href="../how-to-win-with-organized-and-automated-product-documentation" class="break-normal text-base md:text-sm text-green-500 font-bold no-underline hover:underline">Hur du vinner med organiserad och automatiserad produktdokumentation</a></p>
+    </div>
+    <div class="text-right">
+      <span class="text-xs md:text-sm font-normal text-gray-600">Next Post &gt;</span><br>
+      <p><a href="" class="break-normal text-base md:text-sm text-green-500 font-bold no-underline hover:underline"></a></p>
+    </div>
+  </div>
+
+
+  <!--/Next & Prev Links-->
+
+  
+    <div class="commentbox"></div>
+
+    <script src="https://unpkg.com/commentbox.io/dist/commentBox.min.js"></script>
+    <script>commentBox("5725910686760960-proj")</script>
+  
+
+  <!--Subscribe-->
+  
+    <!-- Base template of the subscription form. -->
+
+<div class="container font-sans bg-white rounded mt-8 p-4 md:p-24 text-center mb-10">
+    <h2 class="font-bold break-normal text-2xl md:text-4xl">Subscribe to the newsletter</h2>
+    <h3 class="font-bold break-normal font-normal text-gray-600 text-base md:text-xl">Stay up to date with our latest news and products</h3>
+    <div class="w-full text-center pt-4">
+        <form action="#">
+            <div class="max-w-xl mx-auto p-1 pr-0 flex flex-wrap items-center">
+                <input type="email" placeholder="youremail@example.com"
+                       class="flex-1 appearance-none rounded shadow p-3 text-gray-600 mr-2 focus:outline-none">
+                <button type="submit"
+                        class="flex-1 mt-4 md:mt-0 block md:inline-block appearance-none bg-green-500 text-white text-base font-semibold tracking-wider uppercase py-4 rounded shadow hover:bg-green-400">
+                    Subscribe
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+  
+  <!-- /Subscribe-->
+</div>
+<!--/container-->
+
+<footer class="bg-gray-900">
+  <div class="container max-w-6xl mx-auto flex items-center px-2 py-8">
+
+    <div class="w-full mx-auto flex flex-wrap items-center">
+      <div class="flex w-full md:w-1/2 justify-center md:justify-start text-white font-extrabold flex-col">
+        <a class="text-gray-900 no-underline hover:text-gray-900 hover:no-underline" href="/blog">
+          <span class="text-base text-gray-200">Docsie.io Blog</span>
+        </a>
+        <a class="text-gray-900 no-underline hover:text-gray-900 hover:no-underline"
+           href="https://github.com/LikaloLLC/BlogVi" target="_blank">
+          <span class="text-xs text-gray-200">Made with BlogVI</span>
+        </a>
+      </div>
+      <div class="flex w-full pt-2 content-center justify-between md:w-1/2 md:justify-end">
+        <ul class="list-reset flex justify-center flex-1 md:flex-none items-center">
+          
+            <li>
+              <a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-3"
+                 href="https://www.docsie.io">Docsie</a>
+            </li>
+          
+            <li>
+              <a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-3"
+                 href="https://www.docsie.io/pricing/">Docsie Pricing</a>
+            </li>
+          
+            <li>
+              <a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-3"
+                 href="https://www.docsie.io/try_docsie/">Try Docsie</a>
+            </li>
+          
+        </ul>
+      </div>
+    </div>
+
+
+  </div>
+</footer>
+
+<script>
+  /* Progress bar */
+  //Source: https://alligator.io/js/progress-bar-javascript-css-variables/
+  var h = document.documentElement,
+    b = document.body,
+    st = 'scrollTop',
+    sh = 'scrollHeight',
+    progress = document.querySelector('#progress'),
+    scroll;
+  var scrollpos = window.scrollY;
+  var header = document.getElementById("header");
+  var navcontent = document.getElementById("nav-content");
+
+  document.addEventListener('scroll', function () {
+
+    /*Refresh scroll % width*/
+    scroll = (h[st] || b[st]) / ((h[sh] || b[sh]) - h.clientHeight) * 100;
+    progress.style.setProperty('--scroll', scroll + '%');
+
+    /*Apply classes for slide in bar*/
+    scrollpos = window.scrollY;
+
+    if (scrollpos > 10) {
+      header.classList.add("bg-white");
+      header.classList.add("shadow");
+      navcontent.classList.remove("bg-gray-100");
+      navcontent.classList.add("bg-white");
+    } else {
+      header.classList.remove("bg-white");
+      header.classList.remove("shadow");
+      navcontent.classList.remove("bg-white");
+      navcontent.classList.add("bg-gray-100");
+
+    }
+
+  });
+
+
+  //Javascript to toggle the menu
+  document.getElementById('nav-toggle').onclick = function () {
+    document.getElementById("nav-content").classList.toggle("hidden");
+  }
+</script>
+<script>
+  /*
+    Twitter
+    https://twitter.com/share?url=[post-url]&text=[post-title]
+
+    Facebook
+    https://www.facebook.com/sharer.php?u=[post-url]
+
+  */
+  let twitterURI = document.getElementById('twitter');
+  let facebookURI = document.getElementById('facebook');
+
+  let postURI = encodeURI(document.location.href);
+  let postTitle = encodeURI(document.getElementById('blog-title').innerText + ":\n")
+
+  facebookURI.setAttribute('href', `https://www.facebook.com/sharer.php?u=${postURI}`);
+  twitterURI.setAttribute('href', `https://twitter.com/share?url=${postURI}&text=${postTitle}`);
+</script>
+
+<!--Sharect-->
+
+<script src="https://unpkg.com/sharect@2.0.0/dist/sharect.js"></script>
+<script>window["sharectConfig"] = {"backgroundColor": "#333333", "enabled": true, "facebook": true, "iconColor": "#FFFFFF", "selectableElements": ["body"], "twitter": true, "twitterUsername": ""}</script>
+<script src="/blog/templates/assets/js/sharect.js"></script>
+
+
+
+<!--Reading time-->
+<script src="/blog/templates/assets/js/reading-time.min.js"></script>
+<script>
+  const text = []
+  let content = [...document.getElementById('content').getElementsByTagName('p')].forEach((elem) => {
+    text.push(elem.textContent)
+  });
+  const stats = readingTime(text.join(" "));
+
+  document.getElementById('reading-time').innerHTML = stats.text;
+</script>
+
+
+  
+      <!-- Google Tag Manager (noscript) -->
+
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TZRGMQ9"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+  
+
+</body>
+
+</html>
