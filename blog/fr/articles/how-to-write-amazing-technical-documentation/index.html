@@ -1,0 +1,435 @@
+<!-- Base template of the article page. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/blog/favicon.ico">
+
+
+  <!-- Primary Meta Tags -->
+  <title>Docsie.io Blog - Comment rédiger une documentation technique étonnante ?</title>
+  <meta name="author" content="Tal F."/>
+  <meta name="title" content="Comment rédiger une documentation technique étonnante ?">
+  <meta name="description" content=" Dans cet article, nous allons vous apprendre tout ce que vous devez savoir à ce sujet afin que vous puissiez commencer à créer et à maintenir une documentation technique étonnante pour vos produits et projets."/>
+  <meta name="keywords" content="Documentation sur les produits,Meilleures pratiques,Rédaction technique,Documentation de l'API,Tutoriels sur la documentation des produits"/>
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.docsie.io/blog/articles/how-to-write-amazing-technical-documentation/">
+  <meta property="og:title" content="Comment rédiger une documentation technique étonnante ?">
+  <meta property="og:description"
+        content=" Dans cet article, nous allons vous apprendre tout ce que vous devez savoir à ce sujet afin que vous puissiez commencer à créer et à maintenir une documentation technique étonnante pour vos produits et projets.">
+  <meta property="og:image" content="https://cdn.docsie.io/workspace_WxPJSQ5gsES8Bzjxy/doc_ydgtE07E6Rp4AMmKv/file_ixpPN33GyhHXH9KBW/boo_uEOFXPlPg7tAhqPD1/0abc88ea-7ce0-ea44-74ba-9bd8c5d23854the_technical_writing_stuff.jpg">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://www.docsie.io/blog/articles/how-to-write-amazing-technical-documentation/">
+  <meta property="twitter:title" content="Comment rédiger une documentation technique étonnante ?">
+  <meta property="twitter:description"
+        content=" Dans cet article, nous allons vous apprendre tout ce que vous devez savoir à ce sujet afin que vous puissiez commencer à créer et à maintenir une documentation technique étonnante pour vos produits et projets.">
+  <meta property="twitter:image" content="https://cdn.docsie.io/workspace_WxPJSQ5gsES8Bzjxy/doc_ydgtE07E6Rp4AMmKv/file_ixpPN33GyhHXH9KBW/boo_uEOFXPlPg7tAhqPD1/0abc88ea-7ce0-ea44-74ba-9bd8c5d23854the_technical_writing_stuff.jpg">
+
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/blog/templates/assets/css/typography.min.css"/>
+  <!--Replace with your tailwind.css once created-->
+    
+    <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TZRGMQ9');</script>
+<!-- End Google Tag Manager -->
+  
+
+</head>
+
+
+<body class="bg-gray-100 font-sans leading-normal tracking-normal">
+
+<nav id="header" class="fixed w-full z-10 top-0">
+
+  <div id="progress" class="h-1 z-20 top-0"
+       style="background:linear-gradient(to right, #4dc0b5 var(--scroll), transparent 0);"></div>
+
+  <div class="container max-w-6xl mx-auto flex flex-wrap items-center justify-between mt-0 py-3">
+
+    <div class="pl-4">
+      <a class="text-gray-900 text-base no-underline hover:no-underline font-extrabold text-xl" href="../../">
+          Docsie.io Blog
+      </a>
+    </div>
+
+    <div class="block lg:hidden pr-4">
+      <button id="nav-toggle"
+              class="flex items-center px-3 py-2 border rounded text-gray-500 border-gray-600 hover:text-gray-900 hover:border-green-500 appearance-none focus:outline-none">
+        <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+          <title>Menu</title>
+          <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/>
+        </svg>
+      </button>
+    </div>
+
+    <div class="w-full flex-grow lg:flex lg:items-center lg:w-auto hidden lg:block mt-2 lg:mt-0 bg-gray-100 z-20"
+         id="nav-content">
+      <ul class="list-reset lg:flex justify-end flex-1 items-center">
+        
+        <li>
+          <a class="inline-block text-gray-600 hover:text-gray-900 hover:underline py-2 px-4"
+             href="https://www.docsie.io">Docsie</a>
+        </li>
+        
+        <li>
+          <a class="inline-block text-gray-600 hover:text-gray-900 hover:underline py-2 px-4"
+             href="https://www.docsie.io/pricing/">Docsie Pricing</a>
+        </li>
+        
+        <li>
+          <a class="inline-block text-gray-600 hover:text-gray-900 hover:underline py-2 px-4"
+             href="https://www.docsie.io/try_docsie/">Try Docsie</a>
+        </li>
+        
+      </ul>
+    </div>
+    <div class="flex w-full justify-end content-center">
+        <a
+          class="inline-block text-gray-500 hover:text-green-500 hover:underline text-center h-10 p-2 md:h-auto md:p-4 avatar"
+          data-tippy-content="@twitter_handle" href="https://twitter.com/intent/tweet?url=#"
+          id="twitter">
+          <svg class="fill-current h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+            <path
+              d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"></path>
+          </svg>
+        </a>
+        <a
+          class="inline-block text-gray-500 hover:text-green-500 hover:underline text-center h-10 p-2 md:h-auto md:p-4 avatar"
+          data-tippy-content="#facebook_id" href="https://www.facebook.com/sharer/sharer.php?u=#}"
+          id="facebook">
+          <svg class="fill-current h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+            <path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"></path>
+          </svg>
+        </a>
+      </div>
+  </div>
+
+</nav>
+
+<!--Container-->
+<div class="container max-w-4xl mx-auto mt-32 px-8 md:px-0">
+  <div class="prose prose lg:prose-xl mx-auto mt-32">
+    <!--Title-->
+    <h1 id="blog-title">Comment rédiger une documentation technique étonnante ?</h1>
+    <!--Author-->
+    <div class="flex items-center">
+      <img class="w-10 h-10 rounded-full mr-4" src=" https://cdn.docsie.io/user_profiles/15/logo_logo_QmXrbijvL0L2hFKNm6Q25DtjahujKdB6nu4pqBlLBgvtT.png" alt="Avatar of Author">
+      <div class="flex-1 px-2">
+        <div class="font-bold leading-none mb-2">Tal F.</div>
+        <div class="text-xs md:text-base">on October 04, 2021 · <span id="reading-time"
+                class="block md:inline mt-2 md:mt-0"></span> · filed under <span
+          class="block md:inline mt-2 md:mt-0">
+						
+            <span class="rounded bg-green-500 text-white px-1 uppercase text-xs whitespace-nowrap md:text-sm">Documentation sur les produits</span>
+						
+            <span class="rounded bg-green-500 text-white px-1 uppercase text-xs whitespace-nowrap md:text-sm">Meilleures pratiques</span>
+						
+            <span class="rounded bg-green-500 text-white px-1 uppercase text-xs whitespace-nowrap md:text-sm">Rédaction technique</span>
+						
+            <span class="rounded bg-green-500 text-white px-1 uppercase text-xs whitespace-nowrap md:text-sm">Documentation de l'API</span>
+						
+            <span class="rounded bg-green-500 text-white px-1 uppercase text-xs whitespace-nowrap md:text-sm">Tutoriels sur la documentation des produits</span>
+						
+					</span>
+        </div>
+      </div>
+    </div>
+    <!--/Author-->
+
+    <!--Post Content-->
+    <!--Lead Para-->
+    <div id="content">
+      <p><img alt="" src="https://cdn.docsie.io/workspace_WxPJSQ5gsES8Bzjxy/doc_ydgtE07E6Rp4AMmKv/file_ixpPN33GyhHXH9KBW/boo_uEOFXPlPg7tAhqPD1/0abc88ea-7ce0-ea44-74ba-9bd8c5d23854the_technical_writing_stuff.jpg" /></p>
+<p>Toute équipe de gestion de produits et de projets a besoin de personnes clés pour créer et gérer divers projets de documentation technique. Cela est important pour les différents aspects de la création et du développement de produits et de projets, ainsi que pour leur diffusion et l'éducation des clients et des employés sur les différents aspects des produits, des fonctionnalités et de leurs rôles.</p>
+<p>Bien que la documentation technique puisse sembler difficile, elle n'a pas à l'être. Dans cet article, nous vous apprendrons tout ce que vous devez savoir à ce sujet afin que vous puissiez commencer à créer et à maintenir une documentation technique étonnante pour vos produits et projets.</p>
+<h3>Qu'est-ce que la rédaction technique ?</h3>
+<p>La documentation technique existe sous une variété de formes et de formats, même si elle est aujourd'hui principalement disponible en ligne. Bien que la documentation technique soit souvent créée par des rédacteurs techniques, des équipes de développement, des chefs de projet, des développeurs et d'autres professionnels du secteur, la meilleure documentation technique communique les informations de manière suffisamment simple et claire pour être comprise par tous. Sinon, elle ne remplit pas la fonction pour laquelle elle a été conçue.</p>
+<p>La documentation technique désigne les documents qui détaillent les caractéristiques et les fonctions d'un produit. Elle est le plus souvent élaborée dans le secteur du développement de logiciels par des équipes de développement et de produits et peut être utilisée pour répondre aux besoins de soutien de diverses parties prenantes au sein d'une organisation.</p>
+<p>Ils fournissent un contexte pour les éléments liés au produit. Qu'ils décrivent l'utilisation, la technique, les fonctions, les caractéristiques ou le développement d'un produit, l'objectif final est d'éduquer le lecteur sur un élément particulier du produit. Cela est vrai, qu'ils soient utilisés dans le développement de logiciels, de produits ou dans d'autres domaines.</p>
+<h3>Qui est le public visé par la documentation technique ?</h3>
+<p><a href="https://cdn.docsie.io/workspace_WxPJSQ5gsES8Bzjxy/doc_ydgtE07E6Rp4AMmKv/file_gwW0HhhGm84k7Ee0A/boo_uEOFXPlPg7tAhqPD1/0c71d6f4-58ef-a35c-75b5-03d70464afc6melanie_deziel_fSWQPBxqClg_unsplash_(1).jpg"> </a></p>
+<p>Les publics peuvent être définis de différentes manières, allant des utilisateurs finaux aux programmeurs en passant par les parties prenantes. Elle varie considérablement en fonction du type de matériel en question.</p>
+<p>Néanmoins, la documentation technique basée sur les processus est souvent produite dans l'optique d'autres publics. Il peut s'agir de développeurs, de parties prenantes, de clients ou d'autres membres de l'équipe interne. Bien que ce type de documentation soit moins fréquemment utilisé que la documentation basée sur le produit, son objectif est d'offrir un regard plus approfondi sur les différents éléments techniques qui composent un produit.</p>
+<p>En fin de compte, la documentation technique est souvent créée au profit des utilisateurs du produit. Son objectif premier est souvent d'aider les utilisateurs à accomplir certaines tâches avec un produit. Il faut donc toujours tenir compte des utilisateurs finaux lors de la production des différents types de documentation technique.</p>
+<h3>Quelle est l'importance de la documentation technique ?</h3>
+<p>L'importance de la documentation technique s'explique par plusieurs raisons. Cependant, tout se résume à un avantage essentiel. La principale raison de la création d'une documentation technique est d'informer le public sur un produit.</p>
+<p>Cette affirmation peut sembler évidente, mais allons un peu plus loin. Après tout, un produit est totalement inutile si les consommateurs ne disposent pas de connaissances suffisantes à son sujet. Le manque d'informations fait que les individus sont incapables d'utiliser correctement un produit ou n'ont pas l'expertise nécessaire pour le comprendre réellement.</p>
+<p>La documentation technique est essentielle du point de vue de l'utilisateur final, car elle lui permet d'utiliser un produit efficacement. C'est doublement avantageux pour l'entreprise qui produit la documentation technique, car cela réduit le nombre d'heures de service à la clientèle et rend les utilisateurs heureux, car ils sont capables de résoudre les problèmes et de répondre à leurs propres questions.</p>
+<p>En interne, la documentation technique est essentielle car elle fournit aux employés les connaissances dont ils ont besoin pour travailler efficacement sur un produit, qu'il s'agisse de matériel hautement technique ou d'un aperçu de haut niveau de la planification et des processus.</p>
+<p>Dans tous les cas, les produits ne sont pas toujours explicites. C'est pourquoi la documentation technique doit nous fournir toutes les informations dont nous avons besoin à leur sujet.</p>
+<h2>Quels sont les différents types de documentation technique ?</h2>
+<p>La documentation technique se présente sous différentes formes. La méthode la plus simple pour distinguer les différentes formes de documentation technique est de déterminer pour qui elles sont écrites. On peut les classer en deux grandes catégories : la documentation sur les produits et la documentation sur les processus.</p>
+<p>Dans tous les cas, les produits ne sont pas toujours explicites. C'est pourquoi la documentation technique doit nous fournir toutes les informations dont nous avons besoin à leur sujet.</p>
+<h3>Documentation orientée processus</h3>
+<p>En termes simples, la documentation orientée processus détaille la méthode par laquelle un produit est développé. Elle ne s'intéresse pas au résultat final, mais aux différents processus, données et événements qui contribuent à son avancement et à son évolution.</p>
+<p>Ce type de rédaction technique est généralement conservé en interne et présente peu de valeur ou d'intérêt pour les consommateurs ou les utilisateurs finaux (sauf pour les parties prenantes externes ayant un intérêt direct dans le développement d'un produit). Il est bénéfique car il dénote les nombreuses étapes de la vie d'un produit. Ce type de documentation est utilisé par les équipes de gestion de produits et de projets, ainsi que par d'autres équipes de l'entreprise qui ont besoin d'initier divers processus et de cataloguer la documentation, comme les RH et même les équipes de développement.</p>
+<p>La documentation orientée processus peut consister6 en Propositions de projet, qui présentent les objectifs et les délais liés au développement du produit. Les exigences du produit, qui sont des documents convaincants décrivant les faits et chiffres essentiels d'un nouveau produit ou service. Les objectifs, les personnages et les histoires d'utilisateurs, les détails de la version, les feuilles de route, les maquettes et les détails de conception, les risques et les dépendances sont des aspects courants.</p>
+<p>La documentation orientée processus peut également consister en des plans de projet, des aperçus, des résumés et des chartes.</p>
+<p>Les chefs de projet et les chefs de produit ont particulièrement besoin de feuilles de route pour les produits et les projets. Il est donc essentiel de disposer d'une documentation et de plans pour soutenir cet aspect de leur flux de travail afin d'assurer la progression des projets et le développement des produits.</p>
+<p>Les rapports et mises à jour de projet, ainsi que les spécifications de certaines étapes des processus au sein du développement du produit ou du projet, constituent un autre aspect de la documentation orientée processus. Cela permet d'avoir une vue d'ensemble fantastique des nombreuses phases de la durée de vie de votre produit.</p>
+<h3>Documentation orientée produit</h3>
+<p>Le type suivant de documentation technique est la documentation orientée produit. Souvent appelée documentation utilisateur, elle décrit ce qu'est un produit fini et comment l'utiliser. Plutôt que de décrire le processus de développement, elle met l'accent sur le résultat final.</p>
+<p>Il existe différents types de documentation orientée produit, mais les principaux types sont les manuels d'utilisation, les didacticiels, les directives d'installation, les guides de dépannage, les foires aux questions, les bases de connaissances, les wikis et autres ressources d'apprentissage : Ces types de documentation fournissent des informations sur votre produit et aident les utilisateurs finaux à apprendre à l'utiliser.</p>
+<p>La documentation sur l'expérience utilisateur est une autre forme de documentation orientée produit pour les entreprises SaaS. La documentation UX décrit l'expérience utilisateur (UX) de votre produit. Une liste de toutes les captures d'écran et de tous les personas d'utilisateurs pertinents, y compris les personas d'utilisateurs, les cas d'utilisation, les directives de style, les maquettes, les prototypes, les structures filaires et toutes les captures d'écran nécessaires.</p>
+<p>Les notes de mise à jour constituent le type suivant de documentation du produit. Il peut s'agir d'une documentation interne destinée à tenir les services de vente et de marketing informés des mises à niveau des produits SaaS ou à informer les utilisateurs et les clients des nouvelles fonctionnalités et des mises à jour d'un produit technique.</p>
+<h3>Documentation orientée logiciel</h3>
+<p>Que vous écriviez pour des utilisateurs ou des développeurs, assurez-vous que votre documentation est complète et répond à leurs questions. Vous gagnerez du temps en répondant toujours aux mêmes questions.</p>
+<p>La documentation logicielle comprend la documentation de l'API, la conception de l'architecture logicielle, la documentation et la documentation du code source. Ces documentations sont très importantes pour les équipes logicielles, car elles leur permettent de savoir comment construire et structurer certaines plateformes et produits techniques.  Pour les développeurs, il est essentiel de créer de la documentation pour les exigences logicielles, la documentation du système, la documentation du code, les plans de test et de créer d'autres formes de documentation pour augmenter et maintenir des équipes efficaces.</p>
+<h3>Quels sont les avantages d'une superbe documentation technique ?</h3>
+<p><img alt="" src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=MnwzMTM3MXwwfDF8c2VhcmNofDU2fHxvbmxpbmUlMjBkb2N1bWVudGF0aW9ufGVufDB8fHx8MTYzMzM3MTIxMQ&amp;ixlib=rb-1.2.1&amp;q=80&amp;w=1080" /></p>
+<p>Une excellente documentation technique est importante pour le processus de développement de produits pour plusieurs raisons. Avant tout, elle aide chacun à atteindre ses objectifs.</p>
+<p>Qu'entendons-nous par là ? Si vous créez un produit, votre objectif ultime est que les gens prennent plaisir à l'utiliser. En tant que consommateur, votre objectif est d'utiliser un produit avec succès pour résoudre un problème ou offrir un service. C'est impossible si les consommateurs ne comprennent pas ou n'utilisent pas un produit.</p>
+<p>Une documentation technique de qualité est utile à cet égard. Elle permet aux consommateurs d'acquérir des connaissances sur le produit et de l'utiliser avec succès, tout en aidant les équipes chargées des produits dans leur processus de développement.</p>
+<p>Pour s'assurer que votre documentation technique est bien rédigée, l'astuce consiste à mettre en place un processus, un flux de travail et une stratégie appropriés pour rédiger une documentation technique de qualité, claire et décisive. Elle doit être simple à utiliser et à comprendre pour ses utilisateurs. Sinon, elle n'aidera pas tout le monde à atteindre ses objectifs.</p>
+<h3>Docsie est une solution claire pour vous aider à rédiger une meilleure documentation.</h3>
+<p>Une documentation technique claire, de qualité et facilement accessible est essentielle. Pour vous aider, vous et votre équipe de développement, à en faire une réalité, l'essai gratuit de Docsie peut vous aider à vous lancer dans la création et la rédaction de la documentation technique.</p>
+<p>Notre créateur de portail de connaissances, beau et facilement personnalisable, permet à votre équipe de collaborer sans effort sur la documentation technique tout en restant organisée.</p>
+<p>Oubliez les maux de tête associés à une documentation dispersée dans les courriels, les équipes Microsoft, GitHub et Google Drive. En utilisant notre plateforme, vous pouvez vous assurer que toutes les informations nécessaires sont centralisées, ce qui vous permet de concentrer votre attention sur la création de contenu exceptionnel. [Commencez dès maintenant] (https://www.docsie.io/)</p>
+<h2>Quelle est la meilleure façon d'élaborer une documentation technique ?</h2>
+<p>De nombreuses personnes ne savent pas par où commencer pour produire de la documentation technique. Ne vous inquiétez pas : créer une excellente documentation technique est un talent qui s'apprend. Pour vous aider, nous vous proposons quelques méthodes simples pour produire rapidement une bonne documentation technique.</p>
+<h3>1. Effectuez des recherches</h3>
+<p>Soyons francs : il est difficile de produire une bonne documentation technique si vous n'avez pas une idée précise du contenu que vous souhaitez fournir. Si vous disposez déjà d'exemples, de recherches, d'échantillons et d'autres données sur lesquelles travailler, passez à l'étape 2.</p>
+<p>Toutefois, si vous partez de zéro, il est essentiel que vous fassiez des recherches. Rencontrez l'équipe qui sera responsable de la documentation technique en question, discutez-en et attribuez des tâches de recherche aux différents membres de l'équipe.</p>
+<p>Pour votre recherche, il est bon de compiler toutes les informations et la documentation actuelles avec lesquelles vous pouvez travailler.</p>
+<p>L'étape suivante de votre recherche consiste à réfléchir à ce que votre documentation technique couvrira, ainsi qu'aux buts et objectifs que vous souhaitez atteindre avec votre documentation technique.</p>
+<p>Ensuite, l'étape suivante consiste à dresser la liste des logiciels, outils et guides de style spécifiques au développement de votre documentation technique. Ces outils peuvent facilement être gérés avec Docsie. En fait, toutes vos recherches peuvent être rédigées et faire l'objet d'une collaboration au sein de Docsie également.</p>
+<h3>2. Conception de la documentation technique</h3>
+<p>Le contenu de la documentation technique est essentiel. Néanmoins, l'apparence de votre documentation technique est également essentielle. Un document bien organisé et visuellement attrayant communiquera les informations bien plus efficacement qu'un enchevêtrement désorganisé de documents.</p>
+<p>Il y a donc quelques points à prendre en compte lors de la conception de votre documentation. Pour commencer, pensez à la structure et à la navigation. Les individus utilisent souvent la documentation technique pour trouver des informations particulières ou une solution à un problème, et ils doivent le faire rapidement pour garantir l'efficacité de la ressource. C'est pourquoi l'organisation de votre documentation est essentielle.</p>
+<p>Il est bon de catégoriser et de sous-catégoriser vos connaissances afin d'en faciliter l'accès. Cela peut être fait par le biais des articles de Docsie dans un livre Docsie. Les articles seront affichés sur le côté droit de chaque documentation publiée par Docsie :</p>
+<p><img alt="" src="https://cdn.docsie.io/workspace_WxPJSQ5gsES8Bzjxy/doc_ydgtE07E6Rp4AMmKv/file_iUtMpbO0NjOCAF31g/boo_uEOFXPlPg7tAhqPD1/e8596395-59f7-8047-cc5e-74a54d5881c81.png" /></p>
+<p>Il est également essentiel que votre documentation comporte une fonction de recherche robuste et une table des matières dynamique permettant aux utilisateurs d'accéder facilement aux informations dont ils ont besoin. Les logiciels de documentation les plus efficaces, tels que Docsie, disposent de cette fonctionnalité et de bien d'autres encore.</p>
+<p><img alt="" src="https://cdn.docsie.io/workspace_WxPJSQ5gsES8Bzjxy/doc_ydgtE07E6Rp4AMmKv/file_IFCFzJGnWtVc2CzOv/boo_uEOFXPlPg7tAhqPD1/eb564116-d7fa-ef24-1ddb-e5bcf7e3b4dd2.png" /></p>
+<p>En outre, il est bon de commencer par un squelette de documentation technique. Il est facile de créer un squelette de votre documentation technique et cela vous aidera à vous assurer que vous n'oubliez aucune donnée essentielle que vous souhaitez inclure dans votre documentation technique. Nous allons aborder le squelette de votre documentation technique à l'étape suivante. Cela permettra de maintenir la cohérence visuelle et l'organisation de l'ensemble de votre documentation.</p>
+<h3>3. Structure de l'écriture</h3>
+<p>À ce stade du processus, il est temps de commencer la véritable production de contenu. Rencontrez l'équipe responsable de la documentation technique de votre entreprise et rassemblez toutes les recherches effectuées à la première étape. Ensuite, en fonction des capacités de chaque membre de l'équipe, vous pouvez leur attribuer des tâches de rédaction.</p>
+<p>La meilleure documentation technique commence par un squelette, qui est le plan de la documentation.</p>
+<p><img alt="" src="https://cdn.docsie.io/workspace_WxPJSQ5gsES8Bzjxy/doc_ydgtE07E6Rp4AMmKv/file_tYYBJlM0YkLJ2S48e/boo_uEOFXPlPg7tAhqPD1/3ecefef2-02a7-686b-98d7-b7910dc0540d3.png" /></p>
+<p>La documentation doit également être facile à lire et à suivre. C'est une bonne idée de laisser d'autres membres de votre équipe examiner la documentation et la commenter. Cela peut être fait facilement avec la fonction de commentaire de Docsie.</p>
+<p><img alt="" src="https://cdn.docsie.io/workspace_WxPJSQ5gsES8Bzjxy/doc_ydgtE07E6Rp4AMmKv/file_BHCuBgK7PnFXEM5AF/boo_uEOFXPlPg7tAhqPD1/b868c808-13f3-cd68-a5a9-e365ca42b1284.png" /></p>
+<p>Une fois que tout le monde a terminé une première version de sa documentation technique, il est essentiel de la réviser, de l'évaluer et de la réviser encore. Il est bon de faire réviser chaque partie de votre documentation par au moins deux personnes. Cela permet de s'assurer que le matériel est non seulement clair, bien écrit et grammaticalement exact, mais aussi efficace pour le public visé.</p>
+<p>Si votre documentation technique contient des instructions ou des étapes à suivre, assurez-vous que les membres de votre équipe testent ces étapes et vérifient qu'elles permettent d'atteindre les objectifs fixés.</p>
+<h3>4. Testez la façon dont les utilisateurs interagissent avec votre documentation</h3>
+<p>Vous pensez peut-être que vous avez validé votre documentation tout au long du processus de révision, mais ce n'est pas le cas. Une fois que vous avez terminé votre documentation technique, il est essentiel de la soumettre à un processus de test pour vous assurer qu'elle est exempte de défauts d'organisation, de contenu confus et de difficultés d'utilisation.</p>
+<p>Pour atteindre cette étape, vous devez demander à des utilisateurs externes de procéder à une révision de votre documentation. Permettez-leur de la lire, de l'utiliser pour les aider à accomplir les tâches qui leur sont confiées et de vous faire part de leurs commentaires sincères. Il est essentiel que vos testeurs soient externes car ils verront votre documentation de manière objective et sans parti pris, ce qui aura un impact sur leur évaluation. Tout cela peut être réalisé grâce à l'analyse web de Docsie. Elle vous permet de voir ce sur quoi vos lecteurs se concentrent dans votre documentation, de recevoir des commentaires et de savoir ce qui les dérange dans la documentation et le format de vos documents techniques.</p>
+<p><img alt="" src="https://cdn.docsie.io/workspace_WxPJSQ5gsES8Bzjxy/doc_ydgtE07E6Rp4AMmKv/file_u6RAUGyvcgpYUsL7b/boo_uEOFXPlPg7tAhqPD1/4873aa1d-2007-2f3c-33d0-9c4b471fcae75.png" /></p>
+<p>Sur le site d'analyse Web de Docsie, vous pouvez voir une courte vidéo de la façon dont vos lecteurs interagissent avec votre documentation technique et utiliser ces informations, associées à une évaluation effectuée par le lecteur, pour optimiser votre documentation. Il est très important de comprendre comment aborder les <a href="https://www.docsie.io/blog/articles/7-golden-rules-to-successfully-approach-customer-feedback/">commentaires des clients</a> et les intégrer dans la création et le flux de travail de votre documentation technique.</p>
+<h3>5. Optimiser la documentation technique grâce au retour d'information</h3>
+<p>Considérez que vous êtes maintenant prêt à lancer votre toute nouvelle documentation technique ! Après avoir intégré tous les retours et commentaires recueillis pendant la phase de test, vous pouvez mettre à jour et republier votre documentation technique pour que vos utilisateurs puissent l'utiliser ! Ils devraient ainsi bénéficier d'une expérience de documentation plus saine.</p>
+<p>Néanmoins, votre voyage dans la documentation technique ne s'arrête pas là. Les documents techniques sont dynamiques et sont constamment mis à jour et modifiés pour refléter les produits qu'ils couvrent. Il est donc judicieux d'établir un protocole décrivant ce qui doit être fait lorsque de nouvelles informations sont ajoutées, que des modifications sont apportées ou qu'une maintenance générale est effectuée.</p>
+<p>De nombreuses entreprises choisissent de mettre en place un calendrier de mise à jour de leur documentation. Elles fixent des dates spécifiques pour évaluer si des changements sont nécessaires, garantissant ainsi que toutes leurs informations sont toujours à jour et que les modifications ne sont jamais négligées.</p>
+<h2>Conseils rapides pour commencer</h2>
+<h3>Inscrivez-vous sur Docsie</h3>
+<p>Docsie dispose d'un ensemble d'outils solides pour vous aider à créer une documentation technique étonnante et attrayante.</p>
+<h3>Connaissez votre public</h3>
+<p>Il existe plusieurs formes de documentation technique. Considérez qui lira votre documentation pour déterminer le type de document, de matériel et de langage à employer. Programmeurs, ingénieurs, intervenants, chefs de projet, utilisateurs finaux, etc.</p>
+<h3>Planifiez votre documentation</h3>
+<p>Préparez une stratégie initiale qui décrit le type de documents que vous allez créer. Tenez compte des types de documentation requis pour votre produit et de ce qu'ils couvriront ou non.</p>
+<h3>Soyez succinct et évitez les répétitions.</h3>
+<p>La première étape est facile si vous l'avez déjà réalisée. Vous avez travaillé dur sur votre documentation technique ; assurez-vous qu'elle est utile et facile à utiliser. Veillez à ce que votre rédaction soit succincte et à ce que vous ne répétiez pas les mêmes éléments d'un article à l'autre, sauf si c'est absolument nécessaire.</p>
+<h3>Cohérence</h3>
+<p>C'est un problème mineur, mais la cohérence de la documentation technique est vitale. Les polices, les styles d'écriture, la conception, le formatage et l'emplacement en sont des exemples. Définissez des directives dès le début du processus de développement de la documentation et respectez-les. Il est utile qu'elles correspondent à l'aspect et à la convivialité de la marque de votre entreprise. Vous pouvez utiliser le [Docsie's styling guide] (https://help.docsie.io/?doc=/publish-documentation-portal/docsie-styling-guide/) pour vous en assurer.</p>
+<h2>Rappelez votre objectif</h2>
+<p>Lorsque vous travaillez sur un document, demandez-vous ou demandez à votre équipe : "Que dois-je faire pour que le lecteur soit capable de faire ?" En vous concentrant sur votre objectif, vous garantirez que votre documentation est utile et exploitable sans détails inutiles.</p>
+<p>Commencez à rédiger votre documentation technique</p>
+<p>Vous êtes prêt à entrer dans le monde de la rédaction technique ? Gardez ces conseils à portée de main pendant que vous préparez la documentation technique de votre produit. C'est en forgeant qu'on devient forgeron, et il n'y a pas de meilleur moment que maintenant pour commencer.</p>
+<p>Commencez à planifier vos documents et à définir votre contenu. Avec notre [essai gratuit] (https://www.docsie.io/) et cet article comme guide, vous produirez une documentation technique exceptionnelle en un rien de temps !</p>
+    </div>
+  </div>
+  <!--/ Post Content-->
+
+  <!--Divider-->
+  <hr class="border-b-1 border-gray-400 mt-12 mb-8 mx-4">
+
+  <!--Next & Prev Links-->
+  <div class="font-sans flex justify-between content-center px-4 mb-4">
+    <div class="text-left">
+      <span class="text-xs md:text-sm font-normal text-gray-600">&lt; Previous Post</span><br>
+      <p><a href="" class="break-normal text-base md:text-sm text-green-500 font-bold no-underline hover:underline"></a></p>
+    </div>
+    <div class="text-right">
+      <span class="text-xs md:text-sm font-normal text-gray-600">Next Post &gt;</span><br>
+      <p><a href="" class="break-normal text-base md:text-sm text-green-500 font-bold no-underline hover:underline"></a></p>
+    </div>
+  </div>
+
+
+  <!--/Next & Prev Links-->
+
+  
+    <div class="commentbox"></div>
+
+    <script src="https://unpkg.com/commentbox.io/dist/commentBox.min.js"></script>
+    <script>commentBox("5725910686760960-proj")</script>
+  
+
+  <!--Subscribe-->
+  
+    <!-- Base template of the subscription form. -->
+
+<div class="container font-sans bg-white rounded mt-8 p-4 md:p-24 text-center mb-10">
+    <h2 class="font-bold break-normal text-2xl md:text-4xl">Subscribe to the newsletter</h2>
+    <h3 class="font-bold break-normal font-normal text-gray-600 text-base md:text-xl">Stay up to date with our latest news and products</h3>
+    <div class="w-full text-center pt-4">
+        <form action="#">
+            <div class="max-w-xl mx-auto p-1 pr-0 flex flex-wrap items-center">
+                <input type="email" placeholder="youremail@example.com"
+                       class="flex-1 appearance-none rounded shadow p-3 text-gray-600 mr-2 focus:outline-none">
+                <button type="submit"
+                        class="flex-1 mt-4 md:mt-0 block md:inline-block appearance-none bg-green-500 text-white text-base font-semibold tracking-wider uppercase py-4 rounded shadow hover:bg-green-400">
+                    Subscribe
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+  
+  <!-- /Subscribe-->
+</div>
+<!--/container-->
+
+<footer class="bg-gray-900">
+  <div class="container max-w-6xl mx-auto flex items-center px-2 py-8">
+
+    <div class="w-full mx-auto flex flex-wrap items-center">
+      <div class="flex w-full md:w-1/2 justify-center md:justify-start text-white font-extrabold flex-col">
+        <a class="text-gray-900 no-underline hover:text-gray-900 hover:no-underline" href="/blog">
+          <span class="text-base text-gray-200">Docsie.io Blog</span>
+        </a>
+        <a class="text-gray-900 no-underline hover:text-gray-900 hover:no-underline"
+           href="https://github.com/LikaloLLC/BlogVi" target="_blank">
+          <span class="text-xs text-gray-200">Made with BlogVI</span>
+        </a>
+      </div>
+      <div class="flex w-full pt-2 content-center justify-between md:w-1/2 md:justify-end">
+        <ul class="list-reset flex justify-center flex-1 md:flex-none items-center">
+          
+            <li>
+              <a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-3"
+                 href="https://www.docsie.io">Docsie</a>
+            </li>
+          
+            <li>
+              <a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-3"
+                 href="https://www.docsie.io/pricing/">Docsie Pricing</a>
+            </li>
+          
+            <li>
+              <a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-3"
+                 href="https://www.docsie.io/try_docsie/">Try Docsie</a>
+            </li>
+          
+        </ul>
+      </div>
+    </div>
+
+
+  </div>
+</footer>
+
+<script>
+  /* Progress bar */
+  //Source: https://alligator.io/js/progress-bar-javascript-css-variables/
+  var h = document.documentElement,
+    b = document.body,
+    st = 'scrollTop',
+    sh = 'scrollHeight',
+    progress = document.querySelector('#progress'),
+    scroll;
+  var scrollpos = window.scrollY;
+  var header = document.getElementById("header");
+  var navcontent = document.getElementById("nav-content");
+
+  document.addEventListener('scroll', function () {
+
+    /*Refresh scroll % width*/
+    scroll = (h[st] || b[st]) / ((h[sh] || b[sh]) - h.clientHeight) * 100;
+    progress.style.setProperty('--scroll', scroll + '%');
+
+    /*Apply classes for slide in bar*/
+    scrollpos = window.scrollY;
+
+    if (scrollpos > 10) {
+      header.classList.add("bg-white");
+      header.classList.add("shadow");
+      navcontent.classList.remove("bg-gray-100");
+      navcontent.classList.add("bg-white");
+    } else {
+      header.classList.remove("bg-white");
+      header.classList.remove("shadow");
+      navcontent.classList.remove("bg-white");
+      navcontent.classList.add("bg-gray-100");
+
+    }
+
+  });
+
+
+  //Javascript to toggle the menu
+  document.getElementById('nav-toggle').onclick = function () {
+    document.getElementById("nav-content").classList.toggle("hidden");
+  }
+</script>
+<script>
+  /*
+    Twitter
+    https://twitter.com/share?url=[post-url]&text=[post-title]
+
+    Facebook
+    https://www.facebook.com/sharer.php?u=[post-url]
+
+  */
+  let twitterURI = document.getElementById('twitter');
+  let facebookURI = document.getElementById('facebook');
+
+  let postURI = encodeURI(document.location.href);
+  let postTitle = encodeURI(document.getElementById('blog-title').innerText + ":\n")
+
+  facebookURI.setAttribute('href', `https://www.facebook.com/sharer.php?u=${postURI}`);
+  twitterURI.setAttribute('href', `https://twitter.com/share?url=${postURI}&text=${postTitle}`);
+</script>
+
+<!--Sharect-->
+
+<script src="https://unpkg.com/sharect@2.0.0/dist/sharect.js"></script>
+<script>window["sharectConfig"] = {"backgroundColor": "#333333", "enabled": true, "facebook": true, "iconColor": "#FFFFFF", "selectableElements": ["body"], "twitter": true, "twitterUsername": ""}</script>
+<script src="/blog/templates/assets/js/sharect.js"></script>
+
+
+
+<!--Reading time-->
+<script src="/blog/templates/assets/js/reading-time.min.js"></script>
+<script>
+  const text = []
+  let content = [...document.getElementById('content').getElementsByTagName('p')].forEach((elem) => {
+    text.push(elem.textContent)
+  });
+  const stats = readingTime(text.join(" "));
+
+  document.getElementById('reading-time').innerHTML = stats.text;
+</script>
+
+
+  
+      <!-- Google Tag Manager (noscript) -->
+
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TZRGMQ9"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+  
+
+</body>
+
+</html>
