@@ -1,0 +1,1398 @@
+{% extends "_base.html" %}
+{% block title %}{% trans %}Create documentation that your customers love{% endtrans %}{% endblock title %}
+{% block description %}{% trans %}Save time and retain customers, write, translate and manage better product documentation with Docsie{% endtrans %}{% endblock description %}
+{% block shareimage %}https://www.docsie.io/assets/share-image.jpeg{% endblock shareimage %}
+
+
+{% block styles %}
+
+
+<link rel="canonical" href="http://docsie.io.multiscreensite.com/api-documentation-tool">
+
+<meta id="view" name="viewport"
+      content=", initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=0, viewport-fit=cover">
+
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+<!--Add favorites icons-->
+
+<link rel="apple-touch-icon" href="https://irp.cdn-website.com/4ef706a8/dms3rep/multi/Docsie_favcion.png">
+
+<link rel="icon" type="image/x-icon" href="https://irp.cdn-website.com/4ef706a8/site_favicon_16_1648569807049.ico">
+
+<!-- End favorite icons -->
+
+<link rel="preconnect" href="https://lirp.cdn-website.com/" crossorigin="">
+
+
+{% endblock styles %}
+{% block content %}
+<!-- render the required CSS and JS in the head section -->
+<script>
+    window.SystemID = 'US_DIRECT_PRODUCTION';
+
+    if (!window.dmAPI) {
+        window.dmAPI = {
+            registerExternalRuntimeComponent: function () {
+            },
+            getCurrentDeviceType: function () {
+                return window._currentDevice;
+            }
+        };
+    }
+
+    if (!window.requestIdleCallback) {
+        window.requestIdleCallback = function (fn) {
+            setTimeout(fn, 0);
+        }
+    }
+
+    function loadCSS(link) {
+        try {
+            var urlParams = new URLSearchParams(window.location.search);
+            var noCSS = !!urlParams.get('nocss');
+            var cssTimeout = urlParams.get('cssTimeout') || 0;
+
+            if (noCSS) {
+                return;
+            }
+            requestIdleCallback(function () {
+                window.setTimeout(function () {
+                    link.onload = null;
+                    link.rel = 'stylesheet';
+                    link.type = 'text/css'
+                }, parseInt(cssTimeout, 10));
+            });
+        } catch (e) {/* Never fail - this is just a tool for measurements */
+        }
+    }
+
+</script>
+<style id="forceCssIncludes">
+    /* This file is auto-generated from a `scss` file with the same name */
+
+    .videobgwrapper {
+        overflow: hidden;
+        position: absolute;
+        z-index: 0;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        pointer-events: none;
+        border-radius: inherit
+    }
+
+    .videobgframe {
+        position: absolute;
+        width: 101%;
+        height: 100%;
+        top: 50%;
+        left: 50%;
+        transform: translateY(-50%) translateX(-50%);
+        object-fit: fill
+    }
+
+    #dm video.videobgframe {
+        margin: 0
+    }
+
+    .dmMobileBody .dmPhotoGallery.newPhotoGallery:not(.photo-gallery-done) {
+        min-height: 80vh
+    }
+
+    .dmDesktopBody .dmPhotoGallery.newPhotoGallery:not(.photo-gallery-done) {
+        min-height: 45vh
+    }
+
+    #dm [data-show-on-page-only] {
+        display: none !important
+    }
+</style>
+
+
+<!-- Google Fonts Include -->
+
+
+<script>
+    function loadCSS(link) {
+        try {
+            var urlParams = new URLSearchParams(window.location.search);
+            var noCSS = !!urlParams.get('nocss');
+            var cssTimeout = urlParams.get('cssTimeout') || 0;
+
+            if (noCSS) {
+                return;
+            }
+            requestIdleCallback(function () {
+                window.setTimeout(function () {
+                    link.onload = null;
+                    link.rel = 'stylesheet';
+                    link.type = 'text/css'
+                }, parseInt(cssTimeout, 10));
+            });
+        } catch (e) {/* Never fail - this is just a tool for measurements */
+        }
+    }
+</script>
+
+<link rel="stylesheet" href="/depenicies/api-documentation-tool-depenicies/css" as="style" fetchpriority="low"
+      onload="loadCSS(this)" type="text/css">
+
+<link rel="stylesheet" href="/depenicies/api-documentation-tool-depenicies/css(1)" as="style" fetchpriority="low"
+      onload="loadCSS(this)" type="text/css">
+
+<link rel="stylesheet" href="/depenicies/api-documentation-tool-depenicies/css(2).css" as="style" fetchpriority="low"
+      onload="loadCSS(this)" type="text/css">
+<link type="text/css" rel="stylesheet" href="/depenicies/api-documentation-tool-depenicies/4ef706a8.css"
+      id="siteGlobalCss">
+<link rel="stylesheet" type="text/css"
+      href="/depenicies/api-documentation-tool-depenicies/d-css-runtime-desktop-one-package-new.min.css">
+<link type="text/css" rel="stylesheet"
+      href="/depenicies/api-documentation-tool-depenicies/4124ff7778e87985af54eb7dc3e9b0f9.css" id="widgetCSS">
+
+
+<!-- RT CSS Include d-css-runtime-desktop-one-package-new-->
+
+<!-- End of RT CSS Include -->
+
+
+<!-- Support `img` size attributes -->
+
+<!-- Site CSS -->
+
+
+<!-- Flex Sections CSS -->
+
+
+<link type="text/css" rel="stylesheet" href="/depenicies/api-documentation-tool-depenicies/one.preview.css">
+
+
+<!-- End render the required css and JS in the head section -->
+
+
+<link type="application/rss+xml" rel="alternate" href="http://docsie.io.multiscreensite.com//feed/rss2">
+<link type="application/atom+xml" rel="alternate" href="http://docsie.io.multiscreensite.com//feed/atom">
+<title>
+
+    Create documentation that your customers love | Product and Software Documentation | Docsie
+
+</title>
+<meta name="description" content="Save time and retain customers, write, translate and manage better product documentation with Docsie
+Collaboration software that simplifies the way you create documentation.">
+<style>
+
+
+    .text-link:hover {
+        text-decoration: underline;
+    }
+
+
+</style>
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title"
+      content="Create documentation that your customers love | Product and Software Documentation | Docsie">
+<meta name="twitter:description" content="Save time and retain customers, write, translate and manage better product documentation with Docsie
+Collaboration software that simplifies the way you create documentation.">
+<meta name="twitter:image" content="https://irp.cdn-website.com/4ef706a8/dms3rep/multi/published_site.gif">
+<meta property="og:description" content="Save time and retain customers, write, translate and manage better product documentation with Docsie
+Collaboration software that simplifies the way you create documentation.">
+<meta property="og:title"
+      content="Create documentation that your customers love | Product and Software Documentation | Docsie">
+<meta property="og:image" content="https://irp.cdn-website.com/4ef706a8/dms3rep/multi/published_site.gif">
+
+
+<style>
+    :root {
+        --header-color: #2c3e50;
+        --header-border-color: #1e2b38;
+        --backgroundColor: #f7f7f7;
+        --d-one-blue: #407ab0;
+        --logo-url: none;
+        --visible-button-hover-color: rgb(2, 153, 222);
+        --backgroundImage: none;
+        --text-on-button: #ffffff;
+        --editorTopBarHover: rgb(2, 158, 229);
+        --editor-header-color: #2c3e50;
+        --link-color: #8c8c8c;
+        --button-visible-font-color: #ffffff;
+        --text-on-dark: ;
+        --header-text-color: #ffffff;
+        --oneHeaderColor: #2c3e50;
+        --oneButtonColorHalfTransparent: rgba(3, 169, 244, 0.5);
+        --oneDevicesFontIconColor: #2c3e50;
+        --button-color: #03a9f4;
+        --d-one-orange: #f56033;
+        --button-hover-color: #F86F4C;
+        --text-on-light: #2094c9;
+    }
+</style>
+
+
+<!-- Set the branding colors global to support polyfilling cssVariables -->
+
+<!-- SYS- VVNfRElSRUNUX1BST0RVQ1RJT04= -->
+<script charset="utf-8"
+        src="/depenicies/api-documentation-tool-depenicies/runtime-module-anchors.45de80bf97413604ac19.js.Без названия"></script>
+<script charset="utf-8"
+        src="/depenicies/api-documentation-tool-depenicies/1.9a25e57fafe0a4658324.js.Без названия"></script>
+<script charset="utf-8"
+        src="/depenicies/api-documentation-tool-depenicies/3.a00b47ef84c7a1b2d3d3.js.Без названия"></script>
+<script charset="utf-8"
+        src="/depenicies/api-documentation-tool-depenicies/19.9e0874c6c05d12c03c34.js.Без названия"></script></head>
+
+
+<body id="dmRoot" data-page-alias="api-documentation-tool"
+      class="supportsFontIcons supportsFontIcons dmRoot dmDesktopBody fix-mobile-scrolling addCanvasBorder dmResellerSite dmLargeBody responsiveTablet pcCustomScrollbar d1SiteBody dmBodyNoIscroll fullyLoaded"
+      style="padding:0;margin:0;">
+
+
+<!-- ========= Site Content ========= -->
+<div id="dm" class="dmwr">
+
+    <div class="dm_wrapper standard-var5 widgetStyle-3 standard">
+        <div dmwrapped="true" id="1901957768" class="dm-home-page" themewaschanged="true">
+            <div dmtemplateid="StandardLayoutMultiD"
+                 class="standardHeaderLayout dm-bfs dm-layout-sec hasAnimations rows-1200 hamburger-reverse dmPageBody dmFreeHeader d-page-1716942098 runtime-module-container"
+                 id="dm-outer-wrapper" data-page-class="1716942098" data-buttonstyle="ROUND_SIDES" data-soch="true"
+                 data-background-parallax-selector=".dmHomeSection1, .dmSectionParallex">
+                <div id="dmStyle_outerContainer" class="dmOuter">
+                    <div id="dmStyle_innerContainer" class="dmInner">
+                        <div class="dmLayoutWrapper standard-var dmStandardDesktop">
+                            <div>
+                                <div id="iscrollBody">
+                                    <div id="site_content">
+                                        <div class="dmHeaderContainer fHeader d-header-wrapper">
+                                            <div id="hcontainer" class="u_hcontainer dmHeader p_hfcontainer"
+                                                 freeheader="true"
+                                                 headerlayout="b58ba5b5703b4cd7b5f5f7951565dc87===horizontal-layout-5"
+                                                 layout="7f3c1de367df47d5b45ab63d33101c7b===header">
+                                                <div dm:templateorder="85" class="dmHeaderResp dmHeaderStack noSwitch"
+                                                     id="1709005236">
+                                                    <div class="u_1685710448 dmRespRow" id="1685710448">
+                                                        <div class="dmRespColsWrapper" id="1926738595">
+                                                            <div class="u_1886293272 dmRespCol small-12 large-4 medium-4"
+                                                                 id="1886293272">
+                                                                <nav class="u_1866717338 effect-text-color main-navigation unifiednav dmLinksMenu"
+                                                                     role="navigation"
+                                                                     layout-main="horizontal_nav_layout_1"
+                                                                     layout-sub="submenu_horizontal_1"
+                                                                     data-show-vertical-sub-items="HOVER"
+                                                                     id="1866717338" dmle_extension="onelinksmenu"
+                                                                     data-element-type="onelinksmenu" data-logo-src=""
+                                                                     alt="" data-nav-structure="HORIZONTAL" wr="true"
+                                                                     icon="true" surround="true" adwords=""
+                                                                     navigation-id="unifiedNav" data-from-nav="true"
+                                                                     data-sub-nav="true" data-items="-1"
+                                                                     custom-li-class="" custom-ul-class=""
+                                                                     custom-a-class="" custom-inner-ul-class=""
+                                                                     custom-nested-inner-ul-class=""
+                                                                     custom-span-class="" data-links-level="0"
+                                                                     data-divider="" is-build-your-own="true"
+                                                                     data-build-your-own="W3sidHlwZSI6InVybCIsIm5hdklkIjpudWxsLCJsYWJlbCI6IkRvY3VtZW50YXRpb24iLCJocmVmIjoiIyIsInZhbHVlIjpudWxsLCJ0YXJnZXQiOm51bGwsInBvcHVwX3RhcmdldCI6bnVsbCwiaXRlbXMiOltdfSx7InR5cGUiOiJ1cmwiLCJuYXZJZCI6bnVsbCwibGFiZWwiOiJCb29rIERlbW8iLCJocmVmIjoiIyIsInZhbHVlIjpudWxsLCJ0YXJnZXQiOm51bGwsInBvcHVwX3RhcmdldCI6bnVsbCwiaXRlbXMiOltdfSx7InR5cGUiOiJ1cmwiLCJuYXZJZCI6bnVsbCwibGFiZWwiOiJTaWduLWluIiwiaHJlZiI6IiMiLCJ2YWx1ZSI6bnVsbCwidGFyZ2V0IjpudWxsLCJwb3B1cF90YXJnZXQiOm51bGwsIml0ZW1zIjpbXX1d">
+
+                                                                </nav>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="dmRespRow dmRespRowStable dmRespRowNoPadding dmPageTitleRow ">
+                                            <div class="dmRespColsWrapper">
+                                                <div class="large-12 dmRespCol">
+                                                    <div id="innerBar" class="innerBar lineInnerBar">
+                                                        <div class="titleLine display_None">
+                                                            <hr>
+                                                        </div>
+                                                        <div class="titleLine display_None">
+                                                            <hr>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div dmwrapped="true" id="dmFirstContainer"
+                                             class="dmBody u_dmStyle_template_api-documentation-tool dm-home-page"
+                                             themewaschanged="true">
+                                            <div id="allWrapper" class="allWrapper"><!-- navigation placeholders -->
+                                                <div id="dm_content" class="dmContent">
+                                                    <div dm:templateorder="170"
+                                                         class="dmHomeRespTmpl mainBorder dmRespRowsWrapper dmFullRowRespTmpl dmRespRowsWrapperSize1"
+                                                         id="1716942098">
+                                                        <div class="u_1317214926 dmRespRow" id="1317214926">
+                                                            <div class="dmRespColsWrapper" id="1760705045">
+                                                                <div class="u_1135357947 dmRespCol small-12 medium-12 large-12"
+                                                                     id="1135357947">
+                                                                    <div class="u_1499601413 dmNewParagraph"
+                                                                         data-element-type="paragraph" data-version="5"
+                                                                         id="1499601413"
+                                                                         style="transition: none 0s ease 0s; text-align: left; display: block;">
+                                                                        <h1 class="text-align-center"
+                                                                            style="line-height: 1.3;"><span class=""><span
+                                                                                    style="font-family: &#39;Open Sans&#39;; display: unset;">{% trans %}The best API Documentation Tool{% endtrans %}</span>
+                                                                            </span><span
+                                                                                    style="display: initial; font-family: &#39;Open Sans&#39;;">🛠️</span><span
+                                                                                    style="display: initial;"><br></span>
+                                                                        </h1>
+                                                                    </div>
+                                                                    <div class="u_1183891482 dmNewParagraph"
+                                                                         data-element-type="paragraph" data-version="5"
+                                                                         id="1183891482"
+                                                                         style="transition: opacity 1s ease-in-out 0s;">
+                                                                        <p class="m-size-25 text-align-center size-31"
+                                                                           style="line-height: 1.5;"><span
+                                                                                class="m-font-size-25 font-size-31"
+                                                                                style="display: unset;"><span
+                                                                                class="m-font-size-25 font-size-31"
+                                                                                style="display: unset;">{% trans %}Helping developers and software coders write and automate better API docs.{% endtrans %}</span>
+</span></p></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="dmRespRow u_1350740233" id="1350740233">
+                                                            <div class="dmRespColsWrapper" id="1027335926">
+                                                                <div class="dmRespCol large-12 medium-12 small-12"
+                                                                     id="1091926965">
+                                                                    <div class="dmNewParagraph"
+                                                                         data-element-type="paragraph" data-version="5"
+                                                                         id="1644636103"
+                                                                         style="transition: opacity 1s ease-in-out 0s;">
+                                                                        <h2 class="text-align-center"><span
+                                                                                style="display: unset;">{% trans %}Developers need a better way to create and maintain API documentation{% endtrans %}...</span>
+                                                                        </h2>
+                                                                    </div>
+                                                                    <div class="u_1586173422 widget-7b2ba5 dmCustomWidget"
+                                                                         data-lazy-load="" data-title="Tabs"
+                                                                         data-resize="widthOnly" id="1586173422"
+                                                                         dmle_extension="custom_extension"
+                                                                         data-element-type="custom_extension"
+                                                                         icon="false" surround="false"
+                                                                         data-widget-id="7b2ba547771b4d4db17e3e2b9f0abd0c"
+                                                                         data-widget-version="222"
+                                                                         data-widget-config="eyJ0YWJzIjpbeyJpbWFnZSI6Imh0dHBzOi8vaXJwLmNkbi13ZWJzaXRlLmNvbS80ZWY3MDZhOC9kbXMzcmVwL211bHRpL0NvbGxhYm9pcmF0ZV9pbnRlcm5hbF9leHRlcm5hbF90ZWFtcy5wbmciLCJpdGVtTGFiZWwiOiJBdXRvIGdlbmVyYXRlIGRvY3Mgd2l0aCBTd2FnZ2VyIEFQSSIsImhlYWRpbmdUeXBlIjoiaDQiLCJpdGVtVGl0bGUiOiIiLCJpdGVtRGVzYyI6IjxwIGNsYXNzPVwicnRlQmxvY2tcIj5EbyB5b3UgdXNlIFN3YWdnZXI/IElmIHNvLCBEb2NzaWUgc3VwcG9ydHMgU3dhZ2dlciBBUEkgZmlsZXMhPC9wPjxwIGNsYXNzPVwicnRlQmxvY2tcIj5TaW1wbHkgaW1wb3J0IGEgU3dhZ2dlciBBUEkgZnJvbSBHaXRIdWIgb3IgYW55IG90aGVyIHBsYXRmb3JtLCBvciB1cGxvYWQgLnlhbWwgYW5kIC5qc29uIGZyb20gZGV2aWNlLjwvcD4iLCJzaG93QnRuIjpmYWxzZSwidGV4dE9uTGluayI6Ikl0ZW0gTGluayJ9LHsiaW1hZ2UiOiJodHRwczovL2lycC5jZG4td2Vic2l0ZS5jb20vNGVmNzA2YTgvZG1zM3JlcC9tdWx0aS9idWlsdGluY2hhdC5wbmciLCJpdGVtTGFiZWwiOiJNYXJrZG93biBleHRlbmRlZCBzeW50YXgiLCJoZWFkaW5nVHlwZSI6Img0IiwiaXRlbVRpdGxlIjoiIiwiaXRlbURlc2MiOiI8cCBjbGFzcz1cInJ0ZUJsb2NrXCI+RG9jc2llIHN1cHBvcnRzIE1hcmtkb3duIC5tZCBleHRlbmRlZCBzeW50YXggcnVsZXMuPC9wPjxwIGNsYXNzPVwicnRlQmxvY2tcIj5DcmVhdGUgZmVuY2VkIGNvZGUgYmxvY2tzLCBkZWZpbml0aW9uIGxpc3RzLCBzeW50YXggaGlnaGxpZ2h0aW5nIGFuZCBoZWFkaW5nIElEJiN4Mjc7cy48L3A+Iiwic2hvd0J0biI6ZmFsc2UsInRleHRPbkxpbmsiOiJJdGVtIExpbmsifSx7ImltYWdlIjoiaHR0cHM6Ly9pcnAuY2RuLXdlYnNpdGUuY29tLzRlZjcwNmE4L2RtczNyZXAvbXVsdGkvTWFuYWdlX211bHRpcGxlX3Byb2R1Y3RzXzIucG5nIiwiaXRlbUxhYmVsIjoiQ3JlYXRlIGEgbmV3IEFQSSB2ZXJzaW9uIGFuZCBkZXBsb3kgd2l0aCBlYXNlIiwiaGVhZGluZ1R5cGUiOiJoNCIsIml0ZW1UaXRsZSI6IiIsIml0ZW1EZXNjIjoiPHAgY2xhc3M9XCJydGVCbG9ja1wiPk5ldyBzb2Z0d2FyZSB2ZXJzaW9uPyBUaW1lIGZvciBhIG5ldyBBUEkgZG9jdW1lbnRhdGlvbiB2ZXJzaW9uITwvcD48cCBjbGFzcz1cInJ0ZUJsb2NrXCI+VXNlIDxzcGFuIHN0eWxlPVwidGV4dC1kZWNvcmF0aW9uOnVuZGVybGluZVwiPjxhIHZhbHVlPVwibmV3cGFnZTNhMTQ1MWNiXCIgbGFiZWw9XCJcIiB0eXBlPVwicGFnZVwiIGhyZWY9XCIvbmV3cGFnZTNhMTQ1MWNiXCIgZGF0YS1ydW50aW1lLXVybD1cIi9uZXdwYWdlM2ExNDUxY2JcIj5WZXJzaW9uIE1hbmFnZW1lbnQ8L2E+PC9zcGFuPiB0byByZXRhaW4gb2xkIGtub3dsZWRnZSwgd2hpbGUgbWFraW5nIG5ldyBrbm93bGVkZ2UgYXZhaWxhYmxlLjwvcD4iLCJzaG93QnRuIjpmYWxzZSwidGV4dE9uTGluayI6Ikl0ZW0gTGluayJ9XSwic2hvd0ltYWdlcyI6dHJ1ZSwibGF5b3V0cyI6ImxheW91dC1lIiwibW9iaWxlTGF5b3V0VG9nZ2xlIjpmYWxzZSwiZnVsbFdpZHRoSW1nIjpmYWxzZSwiaW1hZ2VQb3NpdGlvbiI6ZmFsc2UsInJldmVyc2VUYWJzRGlyZWN0aW9uIjpmYWxzZX0="
+                                                                         data-widget-initialized="">
+                                                                        <div class="wrapper layout-e">
+                                                                            <nav class="nav desktop in-editor swipe-menu ">
+                                                                                <div class="tab-label layout-e not-active">
+                                                                                    <h4 class="horizontal-label">{% trans %}Auto
+                                                                                        generate docs with Swagger
+                                                                                        API{% endtrans %}</h4>
+                                                                                </div>
+                                                                                <div class="tab-label layout-e not-active">
+                                                                                    <h4 class="horizontal-label">{% trans %}
+                                                                                        Markdown extended syntax{% endtrans %}</h4>
+                                                                                </div>
+                                                                                <div class="tab-label layout-e active">
+                                                                                    <h4 class="horizontal-label">{% trans %}Create
+                                                                                        a new API version and deploy
+                                                                                        with ease{% endtrans %}</h4>
+                                                                                </div>
+                                                                            </nav>
+                                                                            <div class="tab layout-e full-width-img">
+                                                                                <div class="image-container layout-e"
+                                                                                     style="background-image: url(&#39;https://lirp.cdn-website.com/4ef706a8/dms3rep/multi/opt/Collaboirate_internal_external_teams-1920w.png&#39;);">
+                                                                                    <img src="/depenicies/api-documentation-tool-depenicies/Collaboirate_internal_external_teams-1920w.png"
+                                                                                         alt="" class="image"
+                                                                                         onerror="handleImageLoadError(this)">
+                                                                                </div>
+                                                                                <div class="tab-space"></div>
+                                                                                <div class="tab-text-container">
+                                                                                    <div class="tab-description">
+                                                                                        <div class="desc-title"><p
+                                                                                                class=""></p>
+                                                                                        </div>
+                                                                                        <p></p>
+                                                                                        <p class="rteBlock">{% trans %}Do you use
+                                                                                            Swagger? If so, Docsie
+                                                                                            supports Swagger API
+                                                                                            files!{% endtrans %}</p>
+                                                                                        <p class="rteBlock">{% trans %}Simply
+                                                                                            import a Swagger API from
+                                                                                            GitHub or any other
+                                                                                            platform, or upload .yaml
+                                                                                            and .json from device.{% endtrans %}</p>
+                                                                                        <p></p>
+                                                                                    </div>
+                                                                                    <div class="btn-container "></div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="tab layout-e full-width-img">
+                                                                                <div class="image-container layout-e"
+                                                                                     style="background-image: url(&#39;https://lirp.cdn-website.com/4ef706a8/dms3rep/multi/opt/builtinchat-1920w.png&#39;);">
+                                                                                    <img src="/depenicies/api-documentation-tool-depenicies/builtinchat-1920w.png"
+                                                                                         alt="" class="image"
+                                                                                         onerror="handleImageLoadError(this)">
+                                                                                </div>
+                                                                                <div class="tab-space"></div>
+                                                                                <div class="tab-text-container">
+                                                                                    <div class="tab-description">
+                                                                                        <div class="desc-title"><p
+                                                                                                class=""></p>
+                                                                                        </div>
+                                                                                        <p></p>
+                                                                                        <p class="rteBlock">{% trans %}Docsie
+                                                                                            supports Markdown .md
+                                                                                            extended syntax rules.{% endtrans %}</p>
+                                                                                        <p class="rteBlock">{% trans %}Create
+                                                                                            fenced code blocks,
+                                                                                            definition lists, syntax
+                                                                                            highlighting and heading
+                                                                                            ID's.{% endtrans %}</p>
+                                                                                        <p></p>
+                                                                                    </div>
+                                                                                    <div class="btn-container "></div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="tab layout-e full-width-img active">
+                                                                                <div class="image-container layout-e"
+                                                                                     style="background-image: url(&#39;https://lirp.cdn-website.com/4ef706a8/dms3rep/multi/opt/Manage_multiple_products_2-1920w.png&#39;);">
+                                                                                    <img src="/depenicies/api-documentation-tool-depenicies/Manage_multiple_products_2-1920w.png"
+                                                                                         alt="" class="image"
+                                                                                         onerror="handleImageLoadError(this)">
+                                                                                </div>
+                                                                                <div class="tab-space"></div>
+                                                                                <div class="tab-text-container">
+                                                                                    <div class="tab-description">
+                                                                                        <div class="desc-title"><p
+                                                                                                class=""></p>
+                                                                                        </div>
+                                                                                        <p></p>
+                                                                                        <p class="rteBlock">{% trans %}New software
+                                                                                            version? Time for a new API
+                                                                                            documentation version!{% endtrans %}</p>
+                                                                                        <p class="rteBlock">{% trans %}Use {% endtrans %}<span
+                                                                                                style="text-decoration:underline"><a
+                                                                                                value="newpage3a1451cb"
+                                                                                                label="" type="page"
+                                                                                                href="https://philippe630f476b.responsivewebsitebuilder.io/site/4ef706a8/newpage3a1451cb?preview=true&amp;insitepreview=true&amp;dm_device=desktop"
+                                                                                                data-runtime-url="/newpage3a1451cb"
+                                                                                                raw_url="/site/4ef706a8/newpage3a1451cb">{% trans %}Version Management{% endtrans %}</a></span>
+                                                                                            {% trans %}to retain old knowledge,
+                                                                                            while making new knowledge
+                                                                                            available.{% endtrans %}</p>
+                                                                                        <p></p>
+                                                                                    </div>
+                                                                                    <div class="btn-container "></div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="dmRespRow u_1455278791" id="1455278791">
+                                                            <div class="dmRespColsWrapper" id="1042306848">
+                                                                <div class="dmRespCol large-12 medium-12 small-12"
+                                                                     id="1669333795">
+                                                                    <div class="dmNewParagraph"
+                                                                         data-element-type="paragraph" data-version="5"
+                                                                         id="1635856759"
+                                                                         style="transition: opacity 1s ease-in-out 0s;">
+                                                                        <h2 class="text-align-center"><span
+                                                                                style="display: unset;">{% trans %}What makes Docsie API Documentation Tool different?{% endtrans %}</span>
+                                                                        </h2>
+                                                                    </div>
+                                                                    <div class="dmRespRow u_1991492817" id="1991492817">
+                                                                        <div class="dmRespColsWrapper" id="1147442625">
+                                                                            <div class="dmRespCol large-6 medium-6 small-12"
+                                                                                 id="1882100847">
+                                                                                <div class="dmNewParagraph"
+                                                                                     data-element-type="paragraph"
+                                                                                     data-version="5" id="1295886986"
+                                                                                     style="transition: opacity 1s ease-in-out 0s;">
+                                                                                    <h3 class="m-size-25 size-31"><span
+                                                                                            class="m-font-size-25 font-size-31"
+                                                                                            style="display: unset;">{% trans %}Centralized API docs for your team and customers{% endtrans %}</span>
+                                                                                    </h3>
+                                                                                </div>
+                                                                                <div class="dmNewParagraph"
+                                                                                     data-element-type="paragraph"
+                                                                                     data-version="5" id="1672655934"
+                                                                                     style="transition: opacity 1s ease-in-out 0s;">
+                                                                                    <p class="m-size-22 size-27"
+                                                                                       style="line-height: 1.5;"><span
+                                                                                            class="font-size-27 m-font-size-22"
+                                                                                            style="display: unset;">{% trans %}Build API documentation in Docsie, and everyone can reference it in a single location.{% endtrans %}</span>
+                                                                                    </p>
+                                                                                    <p style="line-height: 1.5;"><span
+                                                                                            style="display: initial;"><br></span>
+                                                                                    </p>
+                                                                                    <p class="m-size-22 size-27"
+                                                                                       style="line-height: 1.5;"><span
+                                                                                            class="font-size-27 m-font-size-22"
+                                                                                            style="display: unset;">{% trans %}Employees can log into Docsie, and view or edit API documentation.{% endtrans %}</span>
+                                                                                    </p>
+                                                                                    <p style="line-height: 1.5;"><span
+                                                                                            style="display: initial;"><br></span>
+                                                                                    </p>
+                                                                                    <p class="m-size-22 size-27"
+                                                                                       style="line-height: 1.5;"><span
+                                                                                            class="font-size-27 m-font-size-22"
+                                                                                            style="display: unset;">{% trans %}Customers can access your help pages, and use API documentation to understand the technical side of your product or service.{% endtrans %}</span>
+                                                                                    </p>
+                                                                                    <p style="line-height: 1.5;"><br>
+                                                                                    </p>
+                                                                                    <p style="line-height: 1.5;"
+                                                                                       class="size-27 m-size-22"><span
+                                                                                            style="display: unset;"
+                                                                                            class="font-size-27 m-font-size-22">{% trans %}Try deploying API docs directly to GitHub, BitBucket, and Gitlab!{% endtrans %}</span>
+                                                                                    </p></div>
+                                                                            </div>
+                                                                            <div class="dmRespCol large-6 medium-6 small-12"
+                                                                                 id="1736140664">
+                                                                                <div class="u_1178201098 imageWidget align-center"
+                                                                                     data-element-type="image"
+                                                                                     data-widget-type="image"
+                                                                                     id="1178201098"
+                                                                                     editablewidget="true"><img
+                                                                                        src="/depenicies/api-documentation-tool-depenicies/Real+solution+for+Enterprise+Documentation-1920w.png"
+                                                                                        alt="" id="1817241577" class=""
+                                                                                        data-dm-image-path="https://irp.cdn-website.com/4ef706a8/dms3rep/multi/Real+solution+for+Enterprise+Documentation.png"
+                                                                                        width="700" height="700"
+                                                                                        onerror="handleImageLoadError(this)">
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="dmRespRow u_1258169371" id="1258169371">
+                                                            <div class="dmRespColsWrapper" id="1735498437">
+                                                                <div class="dmRespCol large-12 medium-12 small-12"
+                                                                     id="1034365053">
+                                                                    <div class="dmRespRow u_1665379162 mobile-columns-reversed"
+                                                                         id="1665379162">
+                                                                        <div class="dmRespColsWrapper" id="1115762958">
+                                                                            <div class="dmRespCol large-6 medium-6 small-12"
+                                                                                 id="1505932661">
+                                                                                <div class="u_1948610700 imageWidget align-center"
+                                                                                     data-element-type="image"
+                                                                                     data-widget-type="image"
+                                                                                     id="1948610700"
+                                                                                     editablewidget="true"><img
+                                                                                        src="/depenicies/api-documentation-tool-depenicies/Docs+for+global+companies-1920w.png"
+                                                                                        alt="" id="1464069996" class=""
+                                                                                        data-dm-image-path="https://irp.cdn-website.com/4ef706a8/dms3rep/multi/Docs+for+global+companies.png"
+                                                                                        width="700" height="700"
+                                                                                        onerror="handleImageLoadError(this)">
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="dmRespCol large-6 medium-6 small-12"
+                                                                                 id="1984372676">
+                                                                                <div class="dmNewParagraph"
+                                                                                     data-element-type="paragraph"
+                                                                                     data-version="5" id="1971487170"
+                                                                                     style="transition: opacity 1s ease-in-out 0s;">
+                                                                                    <h3 class="m-size-25 size-31"><span
+                                                                                            style="display: unset;"
+                                                                                            class="font-size-31 m-font-size-25">{% trans %}Swagger API definition files{% endtrans %}</span>
+                                                                                    </h3>
+                                                                                </div>
+                                                                                <div class="dmNewParagraph"
+                                                                                     data-element-type="paragraph"
+                                                                                     data-version="5" id="1348564917"
+                                                                                     style="transition: opacity 1s ease-in-out 0s;">
+                                                                                    <p class="m-size-22 size-27"
+                                                                                       style="line-height: 1.5;"><span
+                                                                                            class="m-font-size-22 font-size-27"
+                                                                                            style="display: unset;">{% trans %}Swagger is a free, open-source API development language. It describes API structures in a machine readable format, so Docsie can work its magic!{% endtrans %}</span>
+                                                                                    </p>
+                                                                                    <p style="line-height: 1.5;"><span
+                                                                                            style="display: initial;"><br></span>
+                                                                                    </p>
+                                                                                    <p class="m-size-22 size-27"
+                                                                                       style="line-height: 1.5;"><span
+                                                                                            class="m-font-size-22 font-size-27"
+                                                                                            style="display: unset;">{% trans %}Import a Swagger Definition file, and within a few seconds you will have an API documentation draft to edit and develop.{% endtrans %}</span>
+                                                                                    </p>
+                                                                                    <p style="line-height: 1.5;"><span
+                                                                                            style="display: initial;"><br></span>
+                                                                                    </p>
+                                                                                    <p class="m-size-22 size-27"
+                                                                                       style="line-height: 1.5;"><span
+                                                                                            class="m-font-size-22 font-size-27"
+                                                                                            style="display: unset;">{% trans %}Spend less time documenting APIs, and more time maintaining them to a high standard. Help developers and coders maximize the value of your product or service.{% endtrans %}</span>
+                                                                                    </p></div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="dmRespRow u_1751927471" id="1751927471">
+                                                            <div class="dmRespColsWrapper" id="1295739498">
+                                                                <div class="dmRespCol large-12 medium-12 small-12"
+                                                                     id="1921522891">
+                                                                    <div class="dmRespRow u_1612666922" id="1612666922">
+                                                                        <div class="dmRespColsWrapper" id="1171655436">
+                                                                            <div class="dmRespCol large-6 medium-6 small-12"
+                                                                                 id="1685804609">
+                                                                                <div class="dmNewParagraph"
+                                                                                     data-element-type="paragraph"
+                                                                                     data-version="5" id="1056826339"
+                                                                                     style="transition: opacity 1s ease-in-out 0s;">
+                                                                                    <h3 class="m-size-25 size-31"><span
+                                                                                            class="m-font-size-25 font-size-31"
+                                                                                            style="display: unset;">{% trans %}Collaborate on API docs with your internal team{% endtrans %}</span>
+                                                                                    </h3>
+                                                                                </div>
+                                                                                <div class="dmNewParagraph"
+                                                                                     data-element-type="paragraph"
+                                                                                     data-version="5" id="1427979266"
+                                                                                     style="transition: opacity 1s ease-in-out 0s;">
+                                                                                    <p class="m-size-22 size-27"
+                                                                                       style="line-height: 1.5;"><span
+                                                                                            class="m-font-size-22 font-size-27"
+                                                                                            style="display: unset;">{% trans %}Everyone can work together on API documentation in Docsie.{% endtrans %}</span>
+                                                                                    </p>
+                                                                                    <p style="line-height: 1.5;"><span
+                                                                                            style="display: initial;"><br></span>
+                                                                                    </p>
+                                                                                    <p class="m-size-22 size-27"
+                                                                                       style="line-height: 1.5;"><span
+                                                                                            class="m-font-size-22 font-size-27"
+                                                                                            style="display: unset;">{% trans %}Leverage built in chat with comments and @ mentions. Assign tasks and jobs with due dates to keep API writers on schedule.{% endtrans %}</span>
+                                                                                    </p>
+                                                                                    <p style="line-height: 1.5;"><span
+                                                                                            style="display: initial;"><br></span>
+                                                                                    </p>
+                                                                                    <p class="m-size-22 size-27"
+                                                                                       style="line-height: 1.5;"><span
+                                                                                            class="m-font-size-22 font-size-27"
+                                                                                            style="display: initial;"><span
+                                                                                            class="m-font-size-22 font-size-27"
+                                                                                            style="display: initial;">Learn more about</span>
+</span><a href="https://philippe630f476b.responsivewebsitebuilder.io/site/4ef706a8/?preview=true&amp;insitepreview=true&amp;dm_device=desktop"
+          runtime_url="/" type="page" class="m-font-size-22 font-size-27"
+          style="display: initial; text-decoration: underline;" raw_url="/site/4ef706a8/">{% trans %}Team Collaboration and Project
+                                                                                        Management{% endtrans %}</a><a
+                                                                                            href="https://philippe630f476b.responsivewebsitebuilder.io/site/4ef706a8/centralized-team-collaboration-and-project-management?nee=true&amp;ed=true&amp;showOriginal=true&amp;preview=true&amp;dm_try_mode=true&amp;dm_checkSync=1&amp;preview=true&amp;insitepreview=true&amp;dm_device=desktop"
+                                                                                            runtime_url="/site/4ef706a8/centralized-team-collaboration-and-project-management?nee=true&amp;ed=true&amp;showOriginal=true&amp;preview=true&amp;dm_try_mode=true&amp;dm_checkSync=1"
+                                                                                            type="page"
+                                                                                            class="m-font-size-22 font-size-27"
+                                                                                            style="display: unset;"
+                                                                                            raw_url="/site/4ef706a8/centralized-team-collaboration-and-project-management?nee=true&amp;ed=true&amp;showOriginal=true&amp;preview=true&amp;dm_try_mode=true&amp;dm_checkSync=1">.</a>
+                                                                                    </p></div>
+                                                                            </div>
+                                                                            <div class="dmRespCol large-6 medium-6 small-12"
+                                                                                 id="1226217594">
+                                                                                <div class="u_1323501609 imageWidget align-center"
+                                                                                     data-element-type="image"
+                                                                                     data-widget-type="image"
+                                                                                     id="1323501609"
+                                                                                     editablewidget="true"><img
+                                                                                        src="/depenicies/api-documentation-tool-depenicies/Amazing+collaboration+tools+for+busy+teams-1920w.png"
+                                                                                        alt="" id="1825585125" class=""
+                                                                                        data-dm-image-path="https://irp.cdn-website.com/4ef706a8/dms3rep/multi/Amazing+collaboration+tools+for+busy+teams.png"
+                                                                                        width="700" height="700"
+                                                                                        onerror="handleImageLoadError(this)">
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="dmRespRow u_1192486357" id="1192486357">
+                                                            <div class="dmRespColsWrapper" id="1942019406">
+                                                                <div class="dmRespCol large-12 medium-12 small-12"
+                                                                     id="1003222956">
+                                                                    <div class="dmNewParagraph"
+                                                                         data-element-type="paragraph" data-version="5"
+                                                                         id="1780558617"
+                                                                         style="transition: opacity 1s ease-in-out 0s;">
+                                                                        <h2 class="text-align-center"><span
+                                                                                style="display: unset;">{% trans %}Helping users understand and work with your application programming interface{% endtrans %}...</span>
+                                                                        </h2>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="u_1898486887 dmRespRow" id="1898486887">
+                                                            <div class="dmRespColsWrapper" id="1611290570">
+                                                                <div class="dmRespCol large-12 medium-12 small-12"
+                                                                     id="1302753920">
+                                                                    <div data-element-type="html"
+                                                                         class="u_1361458827 dmCustomHtml"
+                                                                         id="1361458827">
+                                                                        <style>fieldset {
+                                                                            border: none;
+                                                                        }
+
+                                                                        .rg-ctr .ui-in {
+                                                                            border-radius: 8px;
+                                                                            border-bottom: 2px solid #d8d8d8;
+                                                                        }
+
+                                                                        .ui-bt.ui-prime {
+                                                                            color: #fff;
+                                                                            background: #34ab76;
+                                                                            text-transform: uppercase;
+                                                                        }
+
+                                                                        .ui-bt {
+                                                                            white-space: nowrap;
+                                                                            display: inline-block;
+                                                                            height: 3em;
+                                                                            line-height: 3em;
+                                                                            padding: 0 14px;
+                                                                            box-shadow: 0 4px 6px rgb(50 50 93 / 11%), 0 1px 3px rgb(0 0 0 / 8%);
+                                                                            background: #fff;
+                                                                            border: 1px solid #d8d8d8;
+                                                                            border-radius: 0.5em;
+                                                                            font-weight: 600;
+                                                                            font-size: 15px;
+                                                                            letter-spacing: .025em;
+                                                                            color: #3c3c3c;
+                                                                            text-decoration: none;
+                                                                            transition: all .15s ease;
+                                                                            cursor: pointer;
+                                                                            text-align: center;
+                                                                        }
+
+                                                                        .ui-bt {
+                                                                            display: flex;
+                                                                            width: 100%;
+                                                                            justify-content: center;
+                                                                            align-items: center;
+                                                                            padding: 4px 1em;
+                                                                            margin-top: 1em;
+                                                                            flex-wrap: wrap;
+                                                                            white-space: normal;
+                                                                            height: auto;
+                                                                            min-height: 3em;
+                                                                            line-height: normal;
+                                                                        }</style>
+                                                                        <div class="docsie-signup-container box">
+                                                                            <div class="rg-ctr">
+                                                                                <form autocomplete="off" class="box-rg"
+                                                                                      action="https://app.docsie.io/try/lp/"
+                                                                                      target="_blank" method="get"
+                                                                                      raw_url="https://app.docsie.io/try/lp/">
+                                                                                    <fieldset>
+                                                                                        <div class="rg-gr"><input
+                                                                                                style="background: #fff; border-bottom: 2px solid #d8d8d8; max-width: 100%; padding: 0.2em 0.4em; font-size: 16px; height: 2.7em;"
+                                                                                                class="ui-in"
+                                                                                                name="email"
+                                                                                                type="email"
+                                                                                                placeholder="Enter your work email"
+                                                                                                oninvalid="InvalidMsg(this);"
+                                                                                                oninput="InvalidMsg(this);">
+                                                                                            <button class="ui-bt ui-prime"
+                                                                                                    type="submit"
+                                                                                                    aria-label="Submit registration request">
+                                                                                                To Get Started-Free
+                                                                                            </button>
+                                                                                        </div>
+                                                                                        <a href="https://app.docsie.io/login/"
+                                                                                           target="_blank" class="ui-bt"
+                                                                                           raw_url="https://app.docsie.io/login/">
+                                                                                            <span style="font-size:13px;">Already using Docsie? Sign-in.</span>
+                                                                                        </a>
+                                                                                    </fieldset>
+                                                                                    <input type="hidden" name="url"
+                                                                                           value="https://app.docsie.io/try/lp/"
+                                                                                           raw_url="https://app.docsie.io/try/lp/"
+                                                                                           action="https://app.docsie.io/try/lp/"><input
+                                                                                        type="hidden" name="preview"
+                                                                                        value="true"
+                                                                                        raw_url="https://app.docsie.io/try/lp/"
+                                                                                        action="https://app.docsie.io/try/lp/">
+                                                                                </form>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<!--  Add full CSS and Javascript before the close tag of the body if needed -->
+<!-- ========= JS Section ========= -->
+
+<script>
+    var isWLR = true;
+
+    window.customWidgetsFunctions = {};
+    window.customWidgetsStrings = {};
+    window.collections = {};
+    window.currentLanguage = "ENGLISH"
+    window.isSitePreview = true;
+</script>
+<script>
+    window.customWidgetsFunctions["7b2ba547771b4d4db17e3e2b9f0abd0c~222"] = function (element, data, api) {
+        var $element = $(element);
+        var $tabs = $element.find('.tab');// not relevant for mobile
+        var $tabLables = $element.find('.tab-label');
+
+        if ($tabs.length > 0) {
+            if (data.device === "mobile" && data.config.mobileLayoutToggle) {// on mobile and dropdown mode
+                addMobileClickListener($element);
+            } else { // on desktop or accordion mobile layout
+                addDesktopClickListener($element);
+            }
+            addHoverHandler($tabLables);
+        }
+
+        function addMobileClickListener($element) {
+            // tab label mobile click handler;
+            $element.off('click.tabs.mobile').on('click.tabs.mobile', '.tab-label', function () {
+                var $clicked_tab_item = $(this).closest('.tab-item');
+                var $siblings = $clicked_tab_item.siblings();
+                domChangeOnMobileClick($clicked_tab_item, $siblings);
+            });
+
+        }
+
+        function addDesktopClickListener($element) {
+            $tabLables.off('click.tabs.desktop').on('click.tabs.desktop', function (event) {
+                var $curr = $(this);
+                // layout-e-aux-tab-label is an auxilary class represents the
+                // remaining space on layout 3's labels, it shouldn't be selectable
+                if ($curr.hasClass('active') || $curr.hasClass('layout-e-aux-tab-label')) {
+                    return;
+                }
+                domChangeOnDesktopClick($curr);
+            });
+
+
+        }
+
+
+        function addHoverHandler($tabLables) {
+            //background hover issue hack - pseusu class support in widget builder is limited
+            $tabLables.off('mouseover.tabs').on('mouseenter.tabs', function (event) {
+                var $this = $(this);
+                // aux label on layout e should'nt be selected
+                if ($this.hasClass('layout-e-aux-tab-label')) return;
+                $this.addClass('hover');
+                $this.removeClass('not-active');
+            });
+            $tabLables.off('mouseout.tabs').on('mouseleave.tabs', function (event) {
+                var $this = $(this);
+                // aux label on layout e should'nt be selected
+                if ($this.hasClass('layout-e-aux-tab-label')) return;
+                if (!$this.hasClass('active')) {
+                    $this.removeClass('hover');
+                    $this.addClass('not-active');
+                }
+            });
+        }
+
+        function domChangeOnMobileClick($clicked_tab_item, $siblings) {
+            $siblings.removeClass('expanded');
+            $siblings.find('.tab-label').removeClass('active').addClass('not-active');
+            $clicked_tab_item.toggleClass('expanded');
+            $clicked_tab_item.find('.tab-label').toggleClass('active');
+        }
+
+        function domChangeOnDesktopClick($curr) {
+            $curr.addClass('active').removeClass('not-active').removeClass('hover');
+            $siblings = $curr.siblings();
+            $siblings.removeClass('active').addClass('not-active').removeClass('hover');
+            //If no argument is passed to the .index() method, the return value is an integer indicating the position of the
+            //first element within the jQuery object relative to its sibling elements.
+            var index = $curr.index();
+            $tabs.removeClass('active');
+            $tabs.eq(index).addClass('active');
+        }
+    };
+</script>
+<script>
+    if (!window.customWidgetsStrings["7b2ba547771b4d4db17e3e2b9f0abd0c"]) {
+        window.customWidgetsStrings["7b2ba547771b4d4db17e3e2b9f0abd0c"] = {};
+    }
+    var value = "QWxsIFRhYnM=";
+    window.customWidgetsStrings["7b2ba547771b4d4db17e3e2b9f0abd0c"]["tabsWidget.allTabsStyle"] = atob(value);
+</script>
+<script>
+    if (!window.customWidgetsStrings["7b2ba547771b4d4db17e3e2b9f0abd0c"]) {
+        window.customWidgetsStrings["7b2ba547771b4d4db17e3e2b9f0abd0c"] = {};
+    }
+    var value = "QnV0dG9uIFN0eWxl";
+    window.customWidgetsStrings["7b2ba547771b4d4db17e3e2b9f0abd0c"]["tabsWidget.buttonStyle"] = atob(value);
+</script>
+<script>
+    if (!window.customWidgetsStrings["7b2ba547771b4d4db17e3e2b9f0abd0c"]) {
+        window.customWidgetsStrings["7b2ba547771b4d4db17e3e2b9f0abd0c"] = {};
+    }
+    var value = "U2VsZWN0ZWQgVGFiICYgSG92ZXI=";
+    window.customWidgetsStrings["7b2ba547771b4d4db17e3e2b9f0abd0c"]["tabsWidget.selectedTabsStyle"] = atob(value);
+</script>
+<script>
+    if (!window.customWidgetsStrings["7b2ba547771b4d4db17e3e2b9f0abd0c"]) {
+        window.customWidgetsStrings["7b2ba547771b4d4db17e3e2b9f0abd0c"] = {};
+    }
+    var value = "VGV4dCBvbiBidXR0b24=";
+    window.customWidgetsStrings["7b2ba547771b4d4db17e3e2b9f0abd0c"]["tabsWidget.textOnLink"] = atob(value);
+</script>
+<script>
+    if (!window.customWidgetsStrings["7b2ba547771b4d4db17e3e2b9f0abd0c"]) {
+        window.customWidgetsStrings["7b2ba547771b4d4db17e3e2b9f0abd0c"] = {};
+    }
+    var value = "U2lkZS1ieS1zaWRlIGltYWdlIGFuZCB0ZXh0";
+    window.customWidgetsStrings["7b2ba547771b4d4db17e3e2b9f0abd0c"]["tabsWidget.fullWidthImg"] = atob(value);
+</script>
+<script>
+    if (!window.customWidgetsStrings["7b2ba547771b4d4db17e3e2b9f0abd0c"]) {
+        window.customWidgetsStrings["7b2ba547771b4d4db17e3e2b9f0abd0c"] = {};
+    }
+    var value = "RGVzY3JpcHRpb24=";
+    window.customWidgetsStrings["7b2ba547771b4d4db17e3e2b9f0abd0c"]["tabsWidget.tabDescriptionTitle"] = atob(value);
+</script>
+<script>
+    if (!window.customWidgetsStrings["7b2ba547771b4d4db17e3e2b9f0abd0c"]) {
+        window.customWidgetsStrings["7b2ba547771b4d4db17e3e2b9f0abd0c"] = {};
+    }
+    var value = "RGlzcGxheSBhcyBhY2NvcmRpb24=";
+    window.customWidgetsStrings["7b2ba547771b4d4db17e3e2b9f0abd0c"]["tabsWidget.makeTabsAccordion"] = atob(value);
+</script>
+<script>
+    if (!window.customWidgetsStrings["7b2ba547771b4d4db17e3e2b9f0abd0c"]) {
+        window.customWidgetsStrings["7b2ba547771b4d4db17e3e2b9f0abd0c"] = {};
+    }
+    var value = "RGVzY3JpcHRpb24gU3R5bGU=";
+    window.customWidgetsStrings["7b2ba547771b4d4db17e3e2b9f0abd0c"]["tabsWidget.tabDescriptionStyle"] = atob(value);
+</script>
+<script>
+    if (!window.customWidgetsStrings["7b2ba547771b4d4db17e3e2b9f0abd0c"]) {
+        window.customWidgetsStrings["7b2ba547771b4d4db17e3e2b9f0abd0c"] = {};
+    }
+    var value = "V3JpdGUgYSBkZXNjcmlwdGlvbiBmb3IgdGhpcyB0YWIgYW5kIGluY2x1ZGUgaW5mb3JtYXRpb24gdGhhdCB3aWxsIGludGVyZXN0IHNpdGUgdmlzaXRvcnMuIEZvciBleGFtcGxlIGlmIHlvdSBhcmUgdXNpbmcgdGFicyB0byBzaG93IGRpZmZlcmVudCBzZXJ2aWNlcyB3cml0ZSBhYm91dCB3aGF0IG1ha2VzIHRoaXMgc2VydmljZSB1bmlxdWUuIElmIHlvdSBhcmUgdXNpbmcgdGFicyB0byBkaXNwbGF5IHJlc3RhdXJhbnQgaXRlbXMgd3JpdGUgYWJvdXQgd2hhdCBtYWtlcyBhIHNwZWNpZmljIGRpc2ggcGFydGljdWxhcmx5IHdvcnRod2hpbGUgb3IgZGVsaWNpb3VzLg==";
+    window.customWidgetsStrings["7b2ba547771b4d4db17e3e2b9f0abd0c"]["tabsWidget.itemDescDefault"] = atob(value);
+</script>
+<script>
+    if (!window.customWidgetsStrings["7b2ba547771b4d4db17e3e2b9f0abd0c"]) {
+        window.customWidgetsStrings["7b2ba547771b4d4db17e3e2b9f0abd0c"] = {};
+    }
+    var value = "VGFi";
+    window.customWidgetsStrings["7b2ba547771b4d4db17e3e2b9f0abd0c"]["tabWidget.itemLabelDefault"] = atob(value);
+</script>
+<script>
+    if (!window.customWidgetsStrings["7b2ba547771b4d4db17e3e2b9f0abd0c"]) {
+        window.customWidgetsStrings["7b2ba547771b4d4db17e3e2b9f0abd0c"] = {};
+    }
+    var value = "VGl0bGU=";
+    window.customWidgetsStrings["7b2ba547771b4d4db17e3e2b9f0abd0c"]["tabsWidget.tabTitle"] = atob(value);
+</script>
+<script>
+    if (!window.customWidgetsStrings["7b2ba547771b4d4db17e3e2b9f0abd0c"]) {
+        window.customWidgetsStrings["7b2ba547771b4d4db17e3e2b9f0abd0c"] = {};
+    }
+    var value = "VGl0bGU=";
+    window.customWidgetsStrings["7b2ba547771b4d4db17e3e2b9f0abd0c"]["tabsWidget.itemTitle"] = atob(value);
+</script>
+<script>
+    if (!window.customWidgetsStrings["7b2ba547771b4d4db17e3e2b9f0abd0c"]) {
+        window.customWidgetsStrings["7b2ba547771b4d4db17e3e2b9f0abd0c"] = {};
+    }
+    var value = "TGFiZWwgaGVhZGluZyB0eXBl";
+    window.customWidgetsStrings["7b2ba547771b4d4db17e3e2b9f0abd0c"]["tabsWidget.labelHeadingType"] = atob(value);
+</script>
+<script>
+    if (!window.customWidgetsStrings["7b2ba547771b4d4db17e3e2b9f0abd0c"]) {
+        window.customWidgetsStrings["7b2ba547771b4d4db17e3e2b9f0abd0c"] = {};
+    }
+    var value = "U2hvdyBidXR0b24=";
+    window.customWidgetsStrings["7b2ba547771b4d4db17e3e2b9f0abd0c"]["tabsWidget.showBtn"] = atob(value);
+</script>
+<script>
+    if (!window.customWidgetsStrings["7b2ba547771b4d4db17e3e2b9f0abd0c"]) {
+        window.customWidgetsStrings["7b2ba547771b4d4db17e3e2b9f0abd0c"] = {};
+    }
+    var value = "UmV2ZXJzZSBidXR0b24gcG9zaXRpb24=";
+    window.customWidgetsStrings["7b2ba547771b4d4db17e3e2b9f0abd0c"]["tabsWidget.reverseBtnPos"] = atob(value);
+</script>
+<script>
+    if (!window.customWidgetsStrings["7b2ba547771b4d4db17e3e2b9f0abd0c"]) {
+        window.customWidgetsStrings["7b2ba547771b4d4db17e3e2b9f0abd0c"] = {};
+    }
+    var value = "SW1hZ2UgU3R5bGU=";
+    window.customWidgetsStrings["7b2ba547771b4d4db17e3e2b9f0abd0c"]["tabsWidget.imageStyle"] = atob(value);
+</script>
+<script>
+    if (!window.customWidgetsStrings["7b2ba547771b4d4db17e3e2b9f0abd0c"]) {
+        window.customWidgetsStrings["7b2ba547771b4d4db17e3e2b9f0abd0c"] = {};
+    }
+    var value = "UmV2ZXJzZSBpbWFnZSBwb3NpdGlvbg==";
+    window.customWidgetsStrings["7b2ba547771b4d4db17e3e2b9f0abd0c"]["tabsWidget.imagePosition"] = atob(value);
+</script>
+<script>
+    if (!window.customWidgetsStrings["7b2ba547771b4d4db17e3e2b9f0abd0c"]) {
+        window.customWidgetsStrings["7b2ba547771b4d4db17e3e2b9f0abd0c"] = {};
+    }
+    var value = "RGVzY3JpcHRpb24gVGl0bGU=";
+    window.customWidgetsStrings["7b2ba547771b4d4db17e3e2b9f0abd0c"]["tabsWidget.itemTiltleDefault"] = atob(value);
+</script>
+<script>
+    if (!window.customWidgetsStrings["7b2ba547771b4d4db17e3e2b9f0abd0c"]) {
+        window.customWidgetsStrings["7b2ba547771b4d4db17e3e2b9f0abd0c"] = {};
+    }
+    var value = "SWNvbiBjb2xvcg==";
+    window.customWidgetsStrings["7b2ba547771b4d4db17e3e2b9f0abd0c"]["tabsWidget.arrowColor"] = atob(value);
+</script>
+<script>
+    if (!window.customWidgetsStrings["7b2ba547771b4d4db17e3e2b9f0abd0c"]) {
+        window.customWidgetsStrings["7b2ba547771b4d4db17e3e2b9f0abd0c"] = {};
+    }
+    var value = "UmV2ZXJzZSB0YWIgZGlyZWN0aW9u";
+    window.customWidgetsStrings["7b2ba547771b4d4db17e3e2b9f0abd0c"]["tabsWidget.ReverseTabsDirection"] = atob(value);
+</script>
+<script>
+    if (!window.customWidgetsStrings["7b2ba547771b4d4db17e3e2b9f0abd0c"]) {
+        window.customWidgetsStrings["7b2ba547771b4d4db17e3e2b9f0abd0c"] = {};
+    }
+    var value = "QWRkIExpbms=";
+    window.customWidgetsStrings["7b2ba547771b4d4db17e3e2b9f0abd0c"]["tabsWidget.addLink"] = atob(value);
+</script>
+<script>
+    if (!window.customWidgetsStrings["7b2ba547771b4d4db17e3e2b9f0abd0c"]) {
+        window.customWidgetsStrings["7b2ba547771b4d4db17e3e2b9f0abd0c"] = {};
+    }
+    var value = "RnJhbWUgU3R5bGU=";
+    window.customWidgetsStrings["7b2ba547771b4d4db17e3e2b9f0abd0c"]["tabsWidget.frameStyle"] = atob(value);
+</script>
+<script>
+    if (!window.customWidgetsStrings["7b2ba547771b4d4db17e3e2b9f0abd0c"]) {
+        window.customWidgetsStrings["7b2ba547771b4d4db17e3e2b9f0abd0c"] = {};
+    }
+    var value = "QWRkIFRhYg==";
+    window.customWidgetsStrings["7b2ba547771b4d4db17e3e2b9f0abd0c"]["tabsWidget.tabs.addItem"] = atob(value);
+</script>
+<script>
+    if (!window.customWidgetsStrings["7b2ba547771b4d4db17e3e2b9f0abd0c"]) {
+        window.customWidgetsStrings["7b2ba547771b4d4db17e3e2b9f0abd0c"] = {};
+    }
+    var value = "SXRlbSBMaW5r";
+    window.customWidgetsStrings["7b2ba547771b4d4db17e3e2b9f0abd0c"]["tabsWidget.textOnLinkDefault"] = atob(value);
+</script>
+<script>
+    if (!window.customWidgetsStrings["7b2ba547771b4d4db17e3e2b9f0abd0c"]) {
+        window.customWidgetsStrings["7b2ba547771b4d4db17e3e2b9f0abd0c"] = {};
+    }
+    var value = "VGFiIGxhYmVs";
+    window.customWidgetsStrings["7b2ba547771b4d4db17e3e2b9f0abd0c"]["tabsWidget.itemLabel"] = atob(value);
+</script>
+<script>
+    if (!window.customWidgetsStrings["7b2ba547771b4d4db17e3e2b9f0abd0c"]) {
+        window.customWidgetsStrings["7b2ba547771b4d4db17e3e2b9f0abd0c"] = {};
+    }
+    var value = "VGFicw==";
+    window.customWidgetsStrings["7b2ba547771b4d4db17e3e2b9f0abd0c"]["tabsWidget.tabs.desc"] = atob(value);
+</script>
+<script>
+    if (!window.customWidgetsStrings["7b2ba547771b4d4db17e3e2b9f0abd0c"]) {
+        window.customWidgetsStrings["7b2ba547771b4d4db17e3e2b9f0abd0c"] = {};
+    }
+    var value = "RGVzY3JpcHRpb24=";
+    window.customWidgetsStrings["7b2ba547771b4d4db17e3e2b9f0abd0c"]["tabsWidget.description"] = atob(value);
+</script>
+<script>
+    if (!window.customWidgetsStrings["7b2ba547771b4d4db17e3e2b9f0abd0c"]) {
+        window.customWidgetsStrings["7b2ba547771b4d4db17e3e2b9f0abd0c"] = {};
+    }
+    var value = "U2hvdyBpbWFnZQ==";
+    window.customWidgetsStrings["7b2ba547771b4d4db17e3e2b9f0abd0c"]["tabsWidget.showImages"] = atob(value);
+</script>
+<script>
+    if (!window.customWidgetsStrings["7b2ba547771b4d4db17e3e2b9f0abd0c"]) {
+        window.customWidgetsStrings["7b2ba547771b4d4db17e3e2b9f0abd0c"] = {};
+    }
+    var value = "RGVzY3JpcHRpb24=";
+    window.customWidgetsStrings["7b2ba547771b4d4db17e3e2b9f0abd0c"]["tabsWidget.itemDesc"] = atob(value);
+</script>
+<script type="text/javascript">
+
+    var d_version = "14..20";
+    var build = "2022-05-10T06_57_33";
+    window['v' + 'ersion'] = d_version;
+
+    function buildEditorParent() {
+        window.isMultiScreen = true;
+        window.editorParent = {};
+        window.previewParent = {};
+        window.assetsCacheQueryParam = "?version=2022-05-10T06_57_33";
+        try {
+            var _p = window.parent;
+            if (_p && _p.document && _p.$ && _p.$.dmfw) {
+                window.editorParent = _p;
+            } else if (_p.isSitePreview) {
+                window.previewParent = _p;
+            }
+        } catch (e) {
+
+        }
+    }
+
+    buildEditorParent();
+
+
+</script>
+<!-- Load jQuery -->
+<script type="text/javascript"
+        src="/depenicies/api-documentation-tool-depenicies/jquery-3.6.0.min.js.Без названия"></script>
+<!-- End Load jQuery -->
+
+<!-- Injecting site-wide before scripts -->
+<!-- End Injecting site-wide to the head -->
+
+
+<script>
+    var jquery = window.$;
+    Object.defineProperty(window, '$', {
+        get() {
+            return jquery;
+        },
+        set() {
+            console.warn("Trying to over-write the global jquery object!");
+        }
+    });
+</script>
+<script>
+    window.cookiesNotificationMarkupPreview = 'null';
+</script>
+<script>
+    var shouldMonitorImages = false;
+    var numOfImageLoadErrorsReported = 0;
+    if (shouldMonitorImages) {
+        window.addEventListener('error', function (event) {
+            // log secured resources failures
+            if (event.target && event.target.src && event.target.src.includes
+                && event.target.src.includes('/s/')
+                && !event.target.src.includes('/_dm/s/rt/')) {
+                if (!window.fetch || numOfImageLoadErrorsReported > 4) {
+                    return;
+                }
+                try {
+                    numOfImageLoadErrorsReported++;
+                    return fetch('/_dm/s/rt/actions/log/INFO', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            data: {
+                                tags: 'imageFailedToLoad',
+                                eventType: event.type,
+                                image: event.target.src,
+                                href: window.location.href
+                            }
+                        })
+                    });
+                } catch (error) {
+                    console.log(error);
+                }
+
+            }
+        }, {capture: true});
+    }
+
+</script>
+<!-- HEAD RT JS Include -->
+<script>
+    window.INSITE = window.INSITE || {};
+    window.INSITE.device = "desktop";
+    window.rtCommonProps = {};
+    rtCommonProps["rt.ajax.ajaxScriptsFix"] = true;
+    rtCommonProps["rt.pushnotifs.sslframe.encoded"] = 'aHR0cHM6Ly97c3ViZG9tYWlufS5wdXNoLW5vdGlmcy5jb20=';
+    rtCommonProps["runtimecollector.url"] = '';
+    rtCommonProps["facebook.accessToken"] = '126515034112906|8vv7JhnEegS8qz43fIOZjxGZReA';
+    rtCommonProps["performance.tabletPreview.removeScroll"] = 'false';
+    rtCommonProps["feature.flag.contactUsNewForm"] = 'true';
+    rtCommonProps["inlineEditGrid.snap"] = true;
+    rtCommonProps["popup.insite.cookie.ttl"] = '0.5';
+    rtCommonProps["rt.pushnotifs.force.button"] = true;
+    rtCommonProps["google.places.key"] = 'AIzaSyBAwUOqPUB1CU31yDztoZYaUE7sPv4ktEI';
+    rtCommonProps["common.mapbox.token"] = 'pk.eyJ1IjoiZGFubnliMTIzIiwiYSI6ImNqMGljZ256dzAwMDAycXBkdWxwbDgzeXYifQ.Ck5P-0NKPVKAZ6SH98gxxw';
+    rtCommonProps["common.mapbox.js.override"] = false;
+    rtCommonProps["common.opencage.token"] = '319e14f32bcce967ba55cd263478796d';
+    rtCommonProps["common.here.appId"] = 'iYvDjIQ2quyEu0rg0hLo';
+    rtCommonProps["common.here.appCode"] = '1hcIxLJcbybmtBYTD9Z1UA';
+    rtCommonProps["isCoverage.test"] = false;
+    rtCommonProps["ecommerce.ecwid.script"] = 'https://app.multiscreenstore.com/script.js';
+    rtCommonProps["feature.flag.mappy.kml"] = false;
+    rtCommonProps["common.resources.dist.cdn"] = true;
+    rtCommonProps["common.build.dist.folder"] = 'production/2516';
+    rtCommonProps["common.resources.cdn.host"] = 'https://static.cdn-website.com';
+    rtCommonProps["common.resources.folder"] = 'https://static.cdn-website.com/mnlt/production/2516';
+    rtCommonProps["import.images.storage.useImageCDN"] = true;
+    rtCommonProps["feature.flag.runtime.backgroundSlider.preload.slowly"] = true;
+    rtCommonProps["feature.flag.runtime.photoswipe.fix"] = true;
+    rtCommonProps["feature.flag.runtime.newAnimation.enabled"] = true;
+    rtCommonProps["feature.flag.runtime.newAnimation.respectCssAnimationProps.enabled"] = true;
+    rtCommonProps["feature.flag.runtime.newAnimation.jitAnimation.enabled"] = true;
+    rtCommonProps["feature.flag.sites.google.analytics.gtag"] = true;
+
+    rtCommonProps['common.mapsProvider'] = 'mapbox';
+    rtCommonProps['common.mapsProvider.version'] = '0.52.0';
+    rtCommonProps['common.geocodeProvider'] = 'here';
+    rtCommonProps['common.map.defaults.radiusSize'] = '1500';
+    rtCommonProps['common.map.defaults.radiusBg'] = 'rgba(255, 255, 255, 0.4)';
+    rtCommonProps['common.map.defaults.strokeColor'] = 'rgba(255, 255, 255, 1)';
+    rtCommonProps['common.map.defaults.strokeSize'] = '2';
+    rtCommonProps['server.for.resources'] = '';
+    rtCommonProps['feature.flag.lazy.widgets'] = true;
+    rtCommonProps['editor.infra.noPrefixedChanges'] = true;
+    rtCommonProps['feature.flag.single.wow'] = false;
+    rtCommonProps['feature.flag.disallowPopupsInEditor'] = true;
+    rtCommonProps['feature.flag.mark.anchors'] = true;
+    rtCommonProps['captcha.public.key'] = '6LffcBsUAAAAAMU-MYacU-6QHY4iDtUEYv_Ppwlz';
+    rtCommonProps['captcha.invisible.public.key'] = '6LeiWB8UAAAAAHYnVJM7_-7ap6bXCUNGiv7bBPME';
+    rtCommonProps["images.sizes.small"] = 160;
+    rtCommonProps["images.sizes.mobile"] = 640;
+    rtCommonProps["images.sizes.tablet"] = 1280;
+    rtCommonProps["images.sizes.desktop"] = 1920;
+    rtCommonProps["modules.resources.cdn"] = true;
+    rtCommonProps["import.images.storage.imageCDN"] = 'https://lirp.cdn-website.com/';
+    rtCommonProps["facebook.api.version"] = '7.0';
+    rtCommonProps["runtime.save.restore.function.bind"] = true;
+    rtCommonProps["feature.flag.photo.gallery.exact.size"] = false;
+    rtCommonProps["feature.flag.photo.gallery.lazy"] = true;
+    rtCommonProps["store.handleItemId.enabled"] = true;
+    rtCommonProps["new.store.fix.ecwid.back.bug"] = true;
+    rtCommonProps["new.store.accountPage.ecwid.signIn.fix"] = true;
+    rtCommonProps["fix.ecwid.sign.in.page.with.return.url"] = true;
+    rtCommonProps["site.runtime.video.background.ssr"] = true;
+    rtCommonProps["feature.flag.runtime.newAnimation.asyncInit.enabled"] = true;
+    rtCommonProps["feature.flag.runtime.newAnimation.asyncInit.setTimeout.enabled"] = false;
+</script>
+<script src="/depenicies/api-documentation-tool-depenicies/d-js-one-runtime-unified-desktop.min.js.Без названия"></script>
+<!-- End of HEAD RT JS Include -->
+<script>window.rconfWar = "";</script>
+<script type="text/javascript" src="/depenicies/api-documentation-tool-depenicies/wp_preview.js.Без названия"></script>
+<script src="/depenicies/api-documentation-tool-depenicies/d-js-jquery-migrate.min.js.Без названия"></script>
+<script>jQuery.DM.updateWidthAndHeight();
+$(window).resize(function () {
+
+});
+$(window).bind("orientationchange", function (e) {
+    $.layoutManager.initLayout();
+
+});
+$(document).resize(function () {
+
+});
+</script>
+
+<script type="text/javascript" id="d_track_campaign">
+    (function () {
+        var campaign = (/utm_campaign=([^&]*)/).exec(window.location.search);
+
+        if (campaign && campaign != null && campaign.length > 1) {
+            campaign = campaign[1];
+            document.cookie = "_dm_rt_campaign=" + campaign + ";expires=" + new Date().getTime() + 24 * 60 * 60 * 1000 + ";domain=" + window.location.hostname + ";path=/";
+        }
+    }());
+</script>
+<script type="text/javascript">
+    var _dm_gaq = {};
+    var _gaq = _gaq || [];
+    var _dm_insite = [];
+</script>
+
+<div style="display:none;" id="P6iryBW0Wu"></div>
+
+<!-- photoswipe markup -->
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe.
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides.
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+<div id="fb-root" data-locale="en"></div>
+<!-- Alias: 4ef706a8 -->
+<div class="dmPopupMask" id="dmPopupMask"></div>
+<div id="dmPopup" class="dmPopup">
+    <div class="dmPopupCloseWrapper">
+        <div class="dmPopupClose dm-common-icons-close oneIcon" onclick="dmHidePopup(event);"></div>
+    </div>
+    <div class="dmPopupTitle"><span></span> Share by:</div>
+    <div class="data"></div>
+</div>
+<!--  End Script tags -->
+
+<!--  Begin Body End Markup -->
+
+
+<!--  Site Wide Html Markup -->
+<!--  Site Wide Html Markup -->
+
+{% endblock content %}
