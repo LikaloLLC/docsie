@@ -11,6 +11,7 @@ from os import listdir
 from os.path import isfile, join
 import dateutil.parser
 import arrow
+import sass
 
 if __name__ == "__main__":
     # d = 'locale'
@@ -43,3 +44,5 @@ if __name__ == "__main__":
 
     # enable automatic reloading
     site.render(use_reloader=True)
+
+    sass.compile(dirname=('./scss/', './'), output_style='compressed')
