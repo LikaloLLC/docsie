@@ -45,4 +45,4 @@ if __name__ == "__main__":
     # enable automatic reloading
     site.render(use_reloader=True)
 
-    sass.compile(dirname=('./scss/', './'), output_style='compressed')
+    sass.compile(dirname=('./scss/', './'))
