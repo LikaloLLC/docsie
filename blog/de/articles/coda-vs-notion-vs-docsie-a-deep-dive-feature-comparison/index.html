@@ -1,0 +1,578 @@
+<!-- Base template of the article page. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+  
+
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/blog/favicon.ico">
+
+
+  <!-- Primary Meta Tags -->
+  <title>Docsie.io Blog - Coda vs. Notion vs. Docsie - Ein detaillierter Funktionsvergleich</title>
+  <meta name="author" content="Tal F."/>
+  <meta name="title" content="Coda vs. Notion vs. Docsie - Ein detaillierter Funktionsvergleich">
+  <meta name="description" content="
+Wir haben Docsie in diesen Vergleich aufgenommen, weil es ein Tool ist, das Funktionen sowohl mit Notion als auch mit Coda teilt, aber Anwendungsfälle abdeckt, bei denen die beiden nicht mithalten können: bei der Erstellung robuster Wissensdatenbanken und Unternehmens-Wikis.
+"/>
+  <meta name="keywords" content="Product Documentation,Product Management,Documentation Portals,Best Practices,Technical Writing,Product Documentation Tutorials"/>
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.docsie.io/blog/blog/de/articles/coda-vs-notion-vs-docsie-a-deep-dive-feature-comparison/">
+  <meta property="og:title" content="Coda vs. Notion vs. Docsie - Ein detaillierter Funktionsvergleich">
+  <meta property="og:description"
+        content="
+Wir haben Docsie in diesen Vergleich aufgenommen, weil es ein Tool ist, das Funktionen sowohl mit Notion als auch mit Coda teilt, aber Anwendungsfälle abdeckt, bei denen die beiden nicht mithalten können: bei der Erstellung robuster Wissensdatenbanken und Unternehmens-Wikis.
+">
+  <meta property="og:image" content="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_JLDSpWBDcIaMWR3Ce/file_xS8S1iHstS24GtJoS/4b7c4dff-b4e2-f1f0-442d-559074353911image.png">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://www.docsie.io/blog/blog/de/articles/coda-vs-notion-vs-docsie-a-deep-dive-feature-comparison/">
+  <meta property="twitter:title" content="Coda vs. Notion vs. Docsie - Ein detaillierter Funktionsvergleich">
+  <meta property="twitter:description"
+        content="
+Wir haben Docsie in diesen Vergleich aufgenommen, weil es ein Tool ist, das Funktionen sowohl mit Notion als auch mit Coda teilt, aber Anwendungsfälle abdeckt, bei denen die beiden nicht mithalten können: bei der Erstellung robuster Wissensdatenbanken und Unternehmens-Wikis.
+">
+  <meta property="twitter:image" content="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_JLDSpWBDcIaMWR3Ce/file_xS8S1iHstS24GtJoS/4b7c4dff-b4e2-f1f0-442d-559074353911image.png">
+
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/blog/templates/assets/css/typography.min.css"/>
+  <!--Replace with your tailwind.css once created-->
+    
+    <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TZRGMQ9');</script>
+<!-- End Google Tag Manager -->
+  
+
+</head>
+
+
+<body class="bg-gray-100 font-sans leading-normal tracking-normal">
+
+<nav id="header" class="fixed w-full z-10 top-0">
+
+  <div id="progress" class="h-1 z-20 top-0"
+       style="background:linear-gradient(to right, #4dc0b5 var(--scroll), transparent 0);"></div>
+
+  <div class="container max-w-6xl mx-auto flex flex-wrap items-center justify-between mt-0 py-3">
+
+    <div class="pl-4">
+      <a class="text-gray-900 text-base no-underline hover:no-underline font-extrabold text-xl" href="../../">
+          Docsie.io Blog
+      </a>
+    </div>
+
+    <div class="block lg:hidden pr-4">
+      <button id="nav-toggle"
+              class="flex items-center px-3 py-2 border rounded text-gray-500 border-gray-600 hover:text-gray-900 hover:border-green-500 appearance-none focus:outline-none">
+        <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+          <title>Menu</title>
+          <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/>
+        </svg>
+      </button>
+    </div>
+
+    <div class="w-full flex-grow lg:flex lg:items-center lg:w-auto hidden lg:block mt-2 lg:mt-0 bg-gray-100 z-20"
+         id="nav-content">
+      <ul class="list-reset lg:flex justify-end flex-1 items-center">
+        
+        <li>
+          <a class="inline-block text-gray-600 hover:text-gray-900 hover:underline py-2 px-4"
+             href="https://www.docsie.io">Docsie</a>
+        </li>
+        
+        <li>
+          <a class="inline-block text-gray-600 hover:text-gray-900 hover:underline py-2 px-4"
+             href="https://www.docsie.io/pricing/">Docsie Pricing</a>
+        </li>
+        
+        <li>
+          <a class="inline-block text-gray-600 hover:text-gray-900 hover:underline py-2 px-4"
+             href="https://www.docsie.io/try_docsie/">Try Docsie</a>
+        </li>
+        
+      </ul>
+    </div>
+    <div class="flex w-full justify-end content-center">
+        <a
+          class="inline-block text-gray-500 hover:text-green-500 hover:underline text-center h-10 p-2 md:h-auto md:p-4 avatar"
+          data-tippy-content="@twitter_handle" href="https://twitter.com/intent/tweet?url=#"
+          id="twitter">
+          <svg class="fill-current h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+            <path
+              d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"></path>
+          </svg>
+        </a>
+        <a
+          class="inline-block text-gray-500 hover:text-green-500 hover:underline text-center h-10 p-2 md:h-auto md:p-4 avatar"
+          data-tippy-content="#facebook_id" href="https://www.facebook.com/sharer/sharer.php?u=#}"
+          id="facebook">
+          <svg class="fill-current h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+            <path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"></path>
+          </svg>
+        </a>
+      </div>
+  </div>
+
+</nav>
+
+<!--Container-->
+<div class="container max-w-4xl mx-auto mt-32 px-8 md:px-0">
+  <div class="prose prose lg:prose-xl mx-auto mt-32">
+    <!--Title-->
+    <h1 id="blog-title">Coda vs. Notion vs. Docsie - Ein detaillierter Funktionsvergleich</h1>
+    <!--Author-->
+    <div class="flex items-center">
+      <img class="w-10 h-10 rounded-full mr-4" src=" https://cdn.docsie.io/user_profiles/15/logo_logo_QmXrbijvL0L2hFKNm6Q25DtjahujKdB6nu4pqBlLBgvtT.png" alt="Avatar of Author">
+      <div class="flex-1 px-2">
+        <div class="font-bold leading-none mb-2">Tal F.</div>
+        <div class="text-xs md:text-base">on January 07, 2023 · <span id="reading-time"
+                class="block md:inline mt-2 md:mt-0"></span> · filed under <span
+          class="block md:inline mt-2 md:mt-0">
+						
+            <span class="rounded bg-green-500 text-white px-1 uppercase text-xs whitespace-nowrap md:text-sm">Product Documentation</span>
+						
+            <span class="rounded bg-green-500 text-white px-1 uppercase text-xs whitespace-nowrap md:text-sm">Product Management</span>
+						
+            <span class="rounded bg-green-500 text-white px-1 uppercase text-xs whitespace-nowrap md:text-sm">Documentation Portals</span>
+						
+            <span class="rounded bg-green-500 text-white px-1 uppercase text-xs whitespace-nowrap md:text-sm">Best Practices</span>
+						
+            <span class="rounded bg-green-500 text-white px-1 uppercase text-xs whitespace-nowrap md:text-sm">Technical Writing</span>
+						
+            <span class="rounded bg-green-500 text-white px-1 uppercase text-xs whitespace-nowrap md:text-sm">Product Documentation Tutorials</span>
+						
+					</span>
+        </div>
+      </div>
+    </div>
+    <!--/Author-->
+
+    <!--Post Content-->
+    <!--Lead Para-->
+    <div id="content">
+      <p>Auf den ersten Blick sind sich Coda und Notion sehr ähnlich: Beide sind Arbeitsumgebungen, die Datenbanken, Notizen, Dokumentation, Workflow-Management und Datenorganisation unterstützen.</p>
+<h3>Aber es gibt entscheidende Unterschiede, die sie für unterschiedliche Teams geeignet machen.</h3>
+<p>Wir haben Docsie in diesen Vergleich aufgenommen, weil es ein Tool ist, das Funktionen sowohl mit Notion als auch mit Coda teilt, aber Anwendungsfälle abdeckt, bei denen die beiden nicht mithalten können: bei der Erstellung robuster Wissensdatenbanken und Unternehmens-Wikis.</p>
+<p>Wir haben alle drei Anwendungen getestet und hunderte von Meinungen auf Reddit, G2 und Capterra gelesen. Wir haben die Tools in acht Bereichen verglichen, über die die Benutzer am meisten sprechen:</p>
+<ul>
+<li>
+<p>Preisgestaltung</p>
+</li>
+<li>
+<p>Unterstützung</p>
+</li>
+<li>
+<p>Automatisierung</p>
+</li>
+<li>
+<p>Integrationen</p>
+</li>
+<li>
+<p>Benutzerfreundlichkeit</p>
+</li>
+<li>
+<p>Datenbankfunktionen</p>
+</li>
+<li>
+<p>Dokumentationsfunktionen</p>
+</li>
+<li>
+<p>Und Wissensmanagement</p>
+</li>
+</ul>
+<p>**Wenn Sie auf der Suche nach einer einfach zu erlernenden Wissensmanagement-App sind, sollten Sie sich Doc<a href="https://www.docsie.io/">sie. I</a> ansehen. Es ist kostenlos für bis zu 3 Benutzer, und unbegrenzt viele Gäste können die Daten einsehen!</p>
+<h2>Zusammenfassung des Vergleichs: Coda vs Notion vs Docsie</h2>
+<p><img alt="" src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_JLDSpWBDcIaMWR3Ce/file_Gbzf0Ht5p4WkGyDEu/60d26fd0-6fa7-6315-b28c-77bb52071fcdimage.png" /></p>
+<h2>Docsie vs. Coda vs. Notion: Merkmale der Dokumentation</h2>
+<p><strong>Docsie ist am besten für die Erstellung von Dokumenten geeignet, und Notion führt Coda mit seinem Editor</strong></p>
+<p><img alt="" src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_JLDSpWBDcIaMWR3Ce/file_6jS1lrlw2jakRtTSS/7a1e10d0-7ff4-3e9a-c8a8-e95fe8681bb6image.png" /></p>
+<p><strong>Notion und Coda verwenden "Blöcke", während Docsie intuitiver ist</strong></p>
+<p>Notion und Coda verfügen beide über Bearbeitungsfunktionen, die auf Bausteinen basieren, mit denen Sie Überschriften, Bilder, Videos, Text usw. hinzufügen können.</p>
+<p><img alt="" src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_JLDSpWBDcIaMWR3Ce/file_K8EhYKmEzzXLlzyED/464be919-c7e6-ee02-2712-4199de0eb4fc4.png" /></p>
+<p>Der Unterschied besteht darin, dass Coda bei großen Dokumenten langsam zu arbeiten beginnt. Und Notion fließt beim Schreiben natürlicher, da es ursprünglich ein Werkzeug für Notizen war.</p>
+<p>Docsie hingegen ist eher ein WordPress-Editor - mit einer intuitiveren Benutzererfahrung. Wie Notion und Coda bietet auch Docsie alle erforderlichen Bearbeitungsfunktionen, konzentriert sich aber mit Funktionen wie Tastenkombinationen mehr auf die Benutzerfreundlichkeit.</p>
+<p><img alt="" src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_JLDSpWBDcIaMWR3Ce/file_QLNiJSTmyFVr34Hpw/dcb6f484-1df4-27ca-62c4-bb02c74f4f525.png" /></p>
+<p><strong>Docsie hat die beste Freigabe und den besten Client-Zugang</strong></p>
+<p>Mit Notion und Coda können Sie den Zugriff intern verwalten, indem Sie Rollen mit Admin-Tools zuweisen, oder extern, indem Sie sie im Internet freigeben.</p>
+<p>Docsie verwendet ein ähnliches System, ermöglicht es Ihnen aber auch, Seiten mit einem Passwort zu schützen und Artikel mit Lesern auf Wissensportalen oder Website-Einbettungen zu teilen.</p>
+<p><strong>Coda hat eine minimale Versionskontrolle, Notion zeigt den Änderungsverlauf an, und Docsie hat Rollback- und Zugriffsrechte</strong></p>
+<p>Coda bietet eine minimale Versionskontrolle, die bei Fragen wie "Wann wurde diese Seite zuletzt geändert?" oder "Was hat sich geändert?" nicht weiterhilft.</p>
+<p>Notion bietet mit dem Enterprise-Plan einen Änderungsverlauf, erlaubt aber nur Rollbacks, so dass es eher wie ein Backup als eine echte Versionskontrolle funktioniert.</p>
+<p>In der Zwischenzeit verfügt <strong>Docsie über leistungsstarke Versionskontrollfunktionen</strong>.</p>
+<p>Anstelle von Rollbacks sind alle Ihre früheren Artikelversionen im Buch verfügbar. Sie können eine davon als "aktuelle Version" festlegen und entscheiden, ob Sie den Benutzern alte Versionen zeigen wollen. Das bedeutet, dass Sie die vollständige Kontrolle darüber haben, was Sie Ihren Lesern zeigen und wie Sie Ihre Dokumente versionieren.</p>
+<p><strong>Docsie verfügt über leistungsstarke Inhaltseinbettungen</strong></p>
+<p>Ein weiterer Unterschied zwischen Coda, Notion und Docsie ist, dass Docsie [19 Inhaltseinbettungen] (https://portals.docsie.io/docsie/docsie-documentation/docsie-integrations/?doc=/content-embeds/google-forms-in-docsie/&amp;v=2.0.0&amp;ln=en) ermöglicht, die nahtlos in Ihre Artikel integriert werden können. Das bedeutet, dass Sie die volle Funktionalität von Anwendungen wie Google Sheets, Google Docs, Loom, Google Maps, GitHub Gists und vielen anderen nutzen können.</p>
+<p><strong>Gewinner:</strong> <strong>Do[csie</strong>] (https://www.docsie.io/). Es ist die perfekte Mischung aus Funktionen und Benutzerfreundlichkeit, um schöne digitale Dokumentationen zu erstellen.</p>
+<p><img alt="" src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_JLDSpWBDcIaMWR3Ce/file_ijClMNPejkT6AcQlq/3cff1420-b57a-6a94-c90f-d718f52f61856.png" /></p>
+<h2>Notion vs Coda vs Docsie: Wissensmanagement</h2>
+<p><strong>Docsie hat alles, was Sie brauchen, in einem Paket, Notion und Coda sind anpassbar, können aber komplex werden</strong></p>
+<p><strong>Docsie hat eine intuitive Organisationsstruktur, während Sie mit Coda und Notion Ihre eigene erstellen können</strong></p>
+<p><img alt="" src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_JLDSpWBDcIaMWR3Ce/file_WRgZM09XbYbBphN3g/b1cb0869-6f67-3a9e-0d4d-833833ed56faimage.png" /></p>
+<p>Docsie verwendet eine intuitive Organisationsstruktur für Wissen.</p>
+<p>Es verwendet "Regale", die "Bücher" enthalten, die in "Abschnitte" organisiert werden können. Die Bücher enthalten Artikel, frühere Versionen und Artikel in anderen Sprachen.</p>
+<p>**Docsie funktioniert wie eine Bibliothek und ist leicht zu verstehen.</p>
+<p><img alt="" src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_JLDSpWBDcIaMWR3Ce/file_taaK2xC3oGVlfbB6u/d5272e81-1fcf-649b-0943-f68f125596407.png" /></p>
+<p>Coda und Notion hingegen setzen auf verschachtelte Seiten. Das ist intuitiv und Sie können jede beliebige Struktur erstellen. Aber es kann schnell verwirrend werden, wenn Sie Unterseiten mehr als 3 Ebenen tief verschachteln.</p>
+<p><strong>Die Suche in Coda ist umständlich, Docsie und Notion finden leicht die richtigen Informationen</strong></p>
+<p>Große Unternehmen haben oft Probleme, Daten in Coda zu finden. Die Suche ist nicht so fortschrittlich wie die von Notion oder Docsie, da sie keine Seiten als Ergebnisse anzeigt, sondern nur Daten.</p>
+<p>Notion und Docsie hingegen sind benutzerfreundlicher, da sie seitenübergreifend und in allen Daten suchen. Mit Docsie können Sie auch Artikel nach Sprache filtern.</p>
+<p><strong>Gewinner:</strong> <strong>Do[csie</strong>] (https://www.docsie.io/), da es eine sehr intuitive und skalierbare Organisationsstruktur und eine leistungsstarke Suche verwendet, mit der Sie schnell durch Ihre Dokumente navigieren können.</p>
+<h2>Notion vs. Docsie vs. Coda: Preisgestaltung &amp; Preis-Leistungs-Verhältnis</h2>
+<p><strong>Notion bietet das beste Preis-Leistungs-Verhältnis, Docsie ist die günstigste Lösung für Wissensmanagement, Coda ist teuer</strong></p>
+<p><img alt="" src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_JLDSpWBDcIaMWR3Ce/file_ToSMUdd9b8bQxXq6O/769d7d69-0a9d-1c93-23d3-d2824a986423image.png" /></p>
+<h3>Kostenloser Tarifvergleich</h3>
+<p><strong>Coda</strong> bietet einen kostenlosen Plan für eine unbegrenzte Anzahl von Teammitgliedern. Die Anzahl der Tabellenzeilen ist auf 1000 für alle Ihre Tabellen begrenzt. Die Anzahl der Objekte im Dokument ist ebenfalls auf 50 begrenzt. Zu den Objekten gehören Seiten, Tabellen, Ansichten, Schaltflächen, Steuerelemente und Formeln. Wenn Sie also ein Team mit Coda verwalten möchten, werden Sie die Grenzen des kostenlosen Preisplans schnell überschreiten.</p>
+<p>Der kostenlose Plan von <strong>Notion</strong> schränkt die Anzahl der Blöcke, die Sie verwenden können, nicht ein, aber er ist nur für eine Person gedacht. Sie können 5 Gäste hinzufügen, aber Sie können den Zugang für sie nicht verwalten.</p>
+<p><strong>Docsie</strong> hat einen kostenlosen Plan für bis zu 3 Konten und Sie können Ihre Dokumente einer unbegrenzten Anzahl von Gästen zeigen. Allerdings gibt es ein Limit für das Hochladen von Dateien, und Sie können 5 Bücher und 1 Regal verwalten (allerdings mit unbegrenzten Artikeln).</p>
+<h3>Vergleich der kostenpflichtigen Tarife</h3>
+<p>**Bei der kostenpflichtigen Version können Sie mit jeder App kostenlos Dokumente für Gäste freigeben, so dass die Preise im Wesentlichen davon abhängen, wie viele Teammitglieder Bearbeitungsrechte haben.</p>
+<p><strong>Co[da</strong>] (https://coda.io/pricing) berechnet $10/Monat/Nutzer für den "Pro"-Tarif und $30/Monat/Nutzer für den "Team"-Tarif.</p>
+<p><strong>No[tion</strong>] (https://www.notion.so/pricing) berechnet $4/Monat/Benutzer für den "Personal Pro"-Tarif und $8/Monat/Benutzer für den "Team"-Tarif.</p>
+<p><strong>Do[csie</strong>] (https://www.docsie.io/pricing/) hat drei Pauschalpreise, die sich nach Teamgröße und Funktionen richten.</p>
+<p><img alt="" src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_JLDSpWBDcIaMWR3Ce/file_c5RDZVCv35TAPYDrP/7d646eed-dd46-d9ca-3fb2-3edac01eaefcimage.png" /></p>
+<p><strong>Was Sie wählen sollten, wenn der Preis Ihre größte Sorge ist</strong></p>
+<p><strong>Wählen Sie Notion, wenn:</strong></p>
+<ul>
+<li>
+<p>Sie nur eine kostenlose Plattform für persönliche Produktivität suchen. (kostenloser Plan)</p>
+</li>
+<li>
+<p>Sie Ihrem Team leistungsstarke persönliche Arbeitsbereiche zur Verfügung stellen möchten, aber keine starken Tools für die Zusammenarbeit benötigen. (Plan Personal Pro)</p>
+</li>
+<li>
+<p>Sie benötigen einen All-in-One-Arbeitsbereich für mehr als 25 Mitglieder (Team-Tarif)</p>
+</li>
+</ul>
+<p><strong>Wählen Sie Docsie, wenn:</strong></p>
+<ul>
+<li>
+<p>Sie eine kollaborative Plattform mit bis zu 15 Redakteuren benötigen (Startup Plus/Small Team Pläne)</p>
+</li>
+<li>
+<p>Sie ein Team beliebiger Größe sind, das eine spezialisierte Anwendung für die Verwaltung von Wissensdatenbanken/SOPs benötigt - Docsie ist nicht viel teurer als Notion, bietet aber bessere Funktionen für diese Anwendungsfälle</p>
+</li>
+</ul>
+<p><strong>Gehen Sie zu Coda, wenn:</strong></p>
+<ul>
+<li>
+<p>Sie einen Teamarbeitsbereich mit mehr Datenbank-/Automatisierungsfunktionen als Notion benötigen</p>
+</li>
+<li>
+<p>Das Fehlen wichtiger Funktionen zur Verwaltung der Wissensdatenbank und der hohe Preis für Sie kein Problem darstellen</p>
+</li>
+</ul>
+<p><strong>Gewinner</strong>: Entweder <strong>Do[csie</strong>] (https://www.docsie.io/) oder <strong>No[tion</strong>] (https://www.notion.so/). Wenn Sie eine spezielle SOP-Wissensdatenbank benötigen, entscheiden Sie sich für Docsie. Wenn Sie einen allgemeinen Produktivitätsarbeitsbereich benötigen, wählen Sie Notion.</p>
+<h2>Coda vs. Docsie vs. Notion: Kundenbetreuung</h2>
+<p><strong>Coda und Docsie haben den besten Kundensupport, während Notion noch aufholen muss</strong></p>
+<p><img alt="" src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_JLDSpWBDcIaMWR3Ce/file_cCccYMWpvSFtStVar/5515627e-1c86-1910-d840-530861b6e3e1image.png" /></p>
+<p>Die Kundenbetreuung ist schwer zu beurteilen.</p>
+<p>Es wäre nicht fair, ihn auf eine einzige Erfahrung zu stützen. Deshalb haben wir uns die neuesten Bewertungen und Meinungen auf Reddit, G2 und Capterra angeschaut, um die drei auf Basis der Aussagen der Nutzer zu vergleichen.</p>
+<p><strong>Der Kundensupport von Notion hat noch Nachholbedarf</strong></p>
+<p>Früher hat sich Notion beim Support auf seine Community verlassen.</p>
+<p>Erst seit kurzem wird in ein richtiges Support-Team investiert. Die Benutzer sagen, dass der Support keine gute technische Hilfe bietet und sie bei solchen Problemen schnell zu den Technikern schickt. Und die Techniker sagen in der Regel, dass sie das Problem in der nächsten Version beheben werden.</p>
+<p><img alt="" src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_JLDSpWBDcIaMWR3Ce/file_Zc6no9VdccJBm78Q1/badb84b7-f421-feec-f6a5-b0cc60e4e4518.jpg" /></p>
+<p><img alt="" src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_JLDSpWBDcIaMWR3Ce/file_arYfHgXKSqyItecO9/70a571c4-f7d4-ba02-a41d-df9dba82f4dd9.jpg" /></p>
+<p><strong>Coda hat einen hervorragenden Kundendienst</strong></p>
+<p><a href="https://www.g2.com/products/coda-coda/reviews?utf8=%E2%9C%93&amp;filters%5Bkeyphrases%5D=support%20team&amp;order=g2_default&amp;filters%5Bcomment_answer_values%5D=">Viele Coda-Nutzer</a> loben das Support-Team für die schnellen Reaktionszeiten und die einfache Zusammenarbeit.</p>
+<p><img alt="" src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_JLDSpWBDcIaMWR3Ce/file_L3h5NDTOx7T4H6yKS/6ebda287-cbc3-357a-728a-ffdb0fdbe03410.jpg" /></p>
+<p><img alt="" src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_JLDSpWBDcIaMWR3Ce/file_PyDZVl8IRsMaZMyXx/b4a516c7-f699-5f32-9009-b49b283b5dee11.jpg" /></p>
+<p><strong>Docsie's Kundenbetreuung ist "professionell, reaktionsschnell und gut organisiert "</strong></p>
+<p>Unser Team ist immer bereit, Ihnen zu helfen, wenn Sie irgendwelche Probleme mit Docsie haben. Aber es ist am besten, wenn Sie sich direkt an uns wenden <a href="https://www.g2.com/products/docsie/reviews?utf8=%E2%9C%93&amp;filters%5Bcomment_answer_values%5D=&amp;filters%5Bkeyphrases%5D=customer%20support&amp;order=g2_default">von unseren Benutzern</a>:</p>
+<p><img alt="" src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_JLDSpWBDcIaMWR3Ce/file_wt0iJ06KpLkaATys9/1dca9037-f99a-b339-f84d-e16f1f9b30be12.jpg" /></p>
+<p><img alt="" src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_JLDSpWBDcIaMWR3Ce/file_gOfQNDuAopOXxJZmO/596dc7e8-2dca-8115-5794-3ec872d923d113.jpg" /></p>
+<p><strong>Gewinner:</strong> <a href="https://coda.io/">Coda</a> und <a href="https://www.docsie.io/">Docsie</a>: für ihre schnelle (technische) Unterstützung.</p>
+<h2>Coda vs Notion vs Docsie: Datenbank-Funktionen</h2>
+<p><strong>Coda ist am leistungsstärksten, Notion ist für die Visualisierung gedacht und Docsie ermöglicht die Einbindung von Google Sheets</strong></p>
+<p><img alt="" src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_JLDSpWBDcIaMWR3Ce/file_13TNnIbQ7OYsubsAI/54dd4e37-3864-a62f-2859-fefca1ed835eimage.png" /></p>
+<p><strong>Notion ist der König der Visualisierung...</strong></p>
+<p>Die Tabellenfunktionen von Notion sind sehr umfangreich. Sie können verschiedene "Ansichten" erstellen wie</p>
+<ul>
+<li>
+<p>Liste,</p>
+</li>
+<li>
+<p>Tabelle,</p>
+</li>
+<li>
+<p>Tafel,</p>
+</li>
+<li>
+<p>Galerie,</p>
+</li>
+<li>
+<p>Kalender,</p>
+</li>
+<li>
+<p>Und Zeitleiste.</p>
+</li>
+</ul>
+<p>Sie erstellen sie, indem Sie eine neue Seite mit der ausgewählten Ansicht erstellen. Dann können Sie sie auch auf anderen Seiten einbetten.</p>
+<p><strong>... Aber die Funktionen von Coda sind viel besser als die von Notion</strong></p>
+<p>Coda hat ähnliche Datenbankfunktionen wie Notion.</p>
+<p>Aber es verfügt auch über bedingte Formatierungen und Berechnungen, was es so robust wie Google Sheets macht.</p>
+<p><img alt="" src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_JLDSpWBDcIaMWR3Ce/file_Lx9cKNSIm8lNlGA9H/1bebbbb3-8e7f-72d1-17aa-a06945e3edaf14.jpg" /></p>
+<p>Darüber hinaus verfügt Coda über integrierte Funktionen, die an eine echte Programmiersprache erinnern. Wenn Sie technisch versiert sind, werden sie sich intuitiv und einfach anfühlen. Und Sie können sie <em>überall</em> einfügen, nicht nur in Tabellen.</p>
+<p><img alt="" src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_JLDSpWBDcIaMWR3Ce/file_Voln5A5F6XDlzUZkl/76b858e2-6310-dffb-46c7-f0825f41e78415.jpg" /></p>
+<p>Hier ist zum Beispiel etwas, das in Coda trivial ist, aber in Notion ein großes Problem darstellt: Wenn ich die Anzahl der Zeilen in einem Arbeitsblatt mit dem Status "TODO" zählen möchte.</p>
+<p>In Coda ist dies so trivial wie das Erstellen einer Formel: =MyTable.CountIf(Status="TODO"). In Notion müssten Sie eine neue Bezugsdatenbank erstellen, Elemente miteinander verknüpfen, ein Rollup-Feld mit Beschriftungstext hinzufügen und dann eine komplizierte Formel wie length(replaceAll(replaceAll(prop("Status"), "TODO", "<em>"), "[\^</em>]", "")) verwenden.)</p>
+<p><strong>Docsie ermöglicht das Einbetten von Google Sheets</strong></p>
+<p>Docsie ermöglicht die Erstellung von Tabellenkalkulationen ähnlich wie Notion, erlaubt aber nicht so viele verschiedene Ansichten in seinem Editor und verfügt auch nicht über so leistungsstarke Funktionen wie Coda. Die Abhilfe besteht darin, dass Docsie die Einbettung von Google Sheets mit allen Funktionen ermöglicht.</p>
+<p><strong>Gewinner:</strong> <strong>Co[da</strong>] (https://coda.io/) für Power-User, die Google Sheets ersetzen wollen.</p>
+<h2>Notion vs Coda vs Docsie: Anwendungen und Integrationen</h2>
+<p><strong>Coda bietet mehr native Integrationen als Notion, Docsie konzentriert sich auf Wissensdatenbankfunktionen</strong></p>
+<p><img alt="" src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_JLDSpWBDcIaMWR3Ce/file_oMD9vlGvaPuY0cOtt/dd0aabe5-3e88-3177-8aa5-e89322d4f6f3image.png" /></p>
+<p>Coda ist die beste Option, wenn Sie Integrationen für viele Anwendungen benötigen. Es bietet <em>o[ver 300 native Integrationen</em>] (https://coda.io/gallery?page=11&amp;filter=packs), so dass es unmöglich ist, nicht mit Ihrem Tech-Stack zu integrieren. Notion hingegen konzentriert sich mit seinen <a href="https://www.notion.so/integrations/all">36 nativen Integrationen</a> nur auf das Wesentliche.</p>
+<p><strong>Docsie geht anders an App-Integrationen heran als Notion oder Coda</strong></p>
+<p>Das Motto von Docsie lautet "Wissensdatenbankfunktionalität zuerst" und ermöglicht es Ihnen, direkt <a href="https://portals.docsie.io/docsie/docsie-documentation/docsie-integrations/?doc=/content-embeds/&amp;v=2.0.0&amp;ln=en">Inhalte anderer Apps</a> in Ihre Artikel einzubinden. So können Sie zum Beispiel Google Docs direkt in Ihren Wissensportalen bearbeiten, ohne eine weitere Browser-Registerkarte oder App öffnen zu müssen.</p>
+<p>Docsie verfügt außerdem über eine native Integration mit <strong>GitHub, GitLab, BitBucket und Zapier</strong> - und lässt sich somit leicht in Ihre Geschäftsprozesse integrieren.</p>
+<p><strong>Gewinner: Co[da</strong>] (https://coda.io/), wegen der schieren Menge an nativen Integrationen.</p>
+<h2>Coda vs Notion vs Docsie: Pro &amp; Contra</h2>
+<h3>Coda Pro &amp; Contra</h3>
+<p><img alt="" src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_JLDSpWBDcIaMWR3Ce/file_Wl2GZ9HiSFPj4xQH7/dff98869-d4cc-b515-e962-c2e72e43e0f1image.png" /></p>
+<h3>Notion Pro &amp; Contra</h3>
+<p><img alt="" src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_JLDSpWBDcIaMWR3Ce/file_XmsifVBPdY9YdnIOv/b1b93820-6ada-d03d-2c2e-1c33b7a3d64fimage.png" /></p>
+<h3>Docsie Pro &amp; Contra</h3>
+<p><img alt="" src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_JLDSpWBDcIaMWR3Ce/file_q5oG4LBrLsHd3kY6o/fb42e323-3075-1bcd-c26d-33176ab38f5dimage.png" /></p>
+<h2>Endgültiges Urteil: Notion vs Coda vs Docsie</h2>
+<p><img alt="" src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_JLDSpWBDcIaMWR3Ce/file_kPBShLpDPmRI5Q2xy/2eadb3f0-af11-2e39-f274-4f628033b9edimage.png" /></p>
+<p>Großartige Anwendungen sind nicht deshalb großartig, weil sie einen Haufen Funktionen haben.</p>
+<p>Bei ihnen geht es darum, die Bedürfnisse der Nutzer zu erfüllen, indem sie den goldenen Mittelweg zwischen Benutzerfreundlichkeit und Funktionsumfang finden.</p>
+<h3></h3>
+<p><img alt="" src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_JLDSpWBDcIaMWR3Ce/file_G1agSf4EZ0watMJ6A/385616a2-d341-0af2-14af-a4089452a1bb1.png" /></p>
+<h3>Verwenden Sie Coda If:</h3>
+<ul>
+<li>
+<p>Sie viele Tabellenoperationen durchführen müssen</p>
+</li>
+<li>
+<p>Sie Formeln für fortgeschrittene Berechnungen und Automatisierung verwenden möchten</p>
+</li>
+<li>
+<p>Sie sind ein Unternehmen oder ein mittelgroßes Team, das einen Arbeitsbereich für die Verfolgung einzelner Projekte benötigt.</p>
+</li>
+</ul>
+<p><img alt="" src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_JLDSpWBDcIaMWR3Ce/file_zW1zFUNRzvRS8I9fp/c45a4993-a65b-ecf6-8d96-a9a9fc5fd41f2.png" /></p>
+<h3>Verwenden Sie Notion If:</h3>
+<ul>
+<li>
+<p>Sie eine Projektmanagement-App für den persönlichen Gebrauch oder eine Produktivitäts-App benötigen</p>
+</li>
+<li>
+<p>Sie eine gute visuelle Darstellung Ihrer Daten und Informationen benötigen</p>
+</li>
+<li>
+<p>Sie sind Solopreneur, ein kleines oder mittelgroßes Team, das einen Arbeitsbereich benötigt</p>
+</li>
+</ul>
+<h3></h3>
+<p><img alt="" src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_JLDSpWBDcIaMWR3Ce/file_up2m33igEV8JBw547/78a0be75-0e8a-e1a3-116d-df95c4d897123.png" /></p>
+<h2>Use Docsie If:</h2>
+<ul>
+<li>
+<p>Sie einfach schöne und funktionale Dokumente erstellen wollen</p>
+</li>
+<li>
+<p>Sie eine einfach zu verwaltende Plattform für kollaborative Wissensdatenbanken benötigen</p>
+</li>
+<li>
+<p>Sie möchten SOPs, Wikis, Handbücher, Produktdokumentationen und Datenblätter erstellen</p>
+</li>
+</ul>
+<p>*Klicken Sie auf h<a href="https://www.docsie.io/">ere </a>, um Docsie noch heute auszuprobieren!</p>
+    </div>
+  </div>
+  <!--/ Post Content-->
+
+  <!--Divider-->
+  <hr class="border-b-1 border-gray-400 mt-12 mb-8 mx-4">
+
+  <!--Next & Prev Links-->
+  <div class="font-sans flex justify-between content-center px-4 mb-4">
+    <div class="text-left">
+      <span class="text-xs md:text-sm font-normal text-gray-600">&lt; Previous Post</span><br>
+      <p><a href="../document360-gitbook-and-docsie-pricing-and-feature-analysis-of-documentation-platforms" class="break-normal text-base md:text-sm text-green-500 font-bold no-underline hover:underline">Document360, Gitbook und Docsie: Preis- und Funktionsanalyse von Dokumentationsplattformen</a></p>
+    </div>
+    <div class="text-right">
+      <span class="text-xs md:text-sm font-normal text-gray-600">Next Post &gt;</span><br>
+      <p><a href="../12-amazing-tips-when-putting-together-a-technical-guide-to-engage-your-readers" class="break-normal text-base md:text-sm text-green-500 font-bold no-underline hover:underline">12 verblüffende Tipps für die Erstellung eines technischen Leitfadens, um Ihre Leser zu begeistern</a></p>
+    </div>
+  </div>
+
+
+  <!--/Next & Prev Links-->
+
+  
+    <div class="commentbox"></div>
+
+    <script src="https://unpkg.com/commentbox.io/dist/commentBox.min.js"></script>
+    <script>commentBox("5725910686760960-proj")</script>
+  
+
+  <!--Subscribe-->
+  
+    <!-- Base template of the subscription form. -->
+
+<div class="container font-sans bg-white rounded mt-8 p-4 md:p-24 text-center mb-10">
+    <h2 class="font-bold break-normal text-2xl md:text-4xl">Subscribe to the newsletter</h2>
+    <h3 class="font-bold break-normal font-normal text-gray-600 text-base md:text-xl">Stay up to date with our latest news and products</h3>
+    <div class="w-full text-center pt-4">
+        <form action="#">
+            <div class="max-w-xl mx-auto p-1 pr-0 flex flex-wrap items-center">
+                <input type="email" placeholder="youremail@example.com"
+                       class="flex-1 appearance-none rounded shadow p-3 text-gray-600 mr-2 focus:outline-none">
+                <button type="submit"
+                        class="flex-1 mt-4 md:mt-0 block md:inline-block appearance-none bg-green-500 text-white text-base font-semibold tracking-wider uppercase py-4 rounded shadow hover:bg-green-400">
+                    Subscribe
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+  
+  <!-- /Subscribe-->
+</div>
+<!--/container-->
+
+<footer class="bg-gray-900">
+  <div class="container max-w-6xl mx-auto flex items-center px-2 py-8">
+
+    <div class="w-full mx-auto flex flex-wrap items-center">
+      <div class="flex w-full md:w-1/2 justify-center md:justify-start text-white font-extrabold flex-col">
+        <a class="text-gray-900 no-underline hover:text-gray-900 hover:no-underline" href="/blog/de">
+          <span class="text-base text-gray-200">Docsie.io Blog</span>
+        </a>
+        <a class="text-gray-900 no-underline hover:text-gray-900 hover:no-underline"
+           href="https://github.com/LikaloLLC/BlogVi" target="_blank">
+          <span class="text-xs text-gray-200">Made with BlogVI</span>
+        </a>
+      </div>
+      <div class="flex w-full pt-2 content-center justify-between md:w-1/2 md:justify-end">
+        <ul class="list-reset flex justify-center flex-1 md:flex-none items-center">
+          
+            <li>
+              <a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-3"
+                 href="https://www.docsie.io">Docsie</a>
+            </li>
+          
+            <li>
+              <a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-3"
+                 href="https://www.docsie.io/pricing/">Docsie Pricing</a>
+            </li>
+          
+            <li>
+              <a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-3"
+                 href="https://www.docsie.io/try_docsie/">Try Docsie</a>
+            </li>
+          
+        </ul>
+      </div>
+    </div>
+
+
+  </div>
+</footer>
+
+<script>
+  /* Progress bar */
+  //Source: https://alligator.io/js/progress-bar-javascript-css-variables/
+  var h = document.documentElement,
+    b = document.body,
+    st = 'scrollTop',
+    sh = 'scrollHeight',
+    progress = document.querySelector('#progress'),
+    scroll;
+  var scrollpos = window.scrollY;
+  var header = document.getElementById("header");
+  var navcontent = document.getElementById("nav-content");
+
+  document.addEventListener('scroll', function () {
+
+    /*Refresh scroll % width*/
+    scroll = (h[st] || b[st]) / ((h[sh] || b[sh]) - h.clientHeight) * 100;
+    progress.style.setProperty('--scroll', scroll + '%');
+
+    /*Apply classes for slide in bar*/
+    scrollpos = window.scrollY;
+
+    if (scrollpos > 10) {
+      header.classList.add("bg-white");
+      header.classList.add("shadow");
+      navcontent.classList.remove("bg-gray-100");
+      navcontent.classList.add("bg-white");
+    } else {
+      header.classList.remove("bg-white");
+      header.classList.remove("shadow");
+      navcontent.classList.remove("bg-white");
+      navcontent.classList.add("bg-gray-100");
+
+    }
+
+  });
+
+
+  //Javascript to toggle the menu
+  document.getElementById('nav-toggle').onclick = function () {
+    document.getElementById("nav-content").classList.toggle("hidden");
+  }
+</script>
+<script>
+  /*
+    Twitter
+    https://twitter.com/share?url=[post-url]&text=[post-title]
+
+    Facebook
+    https://www.facebook.com/sharer.php?u=[post-url]
+
+  */
+  let twitterURI = document.getElementById('twitter');
+  let facebookURI = document.getElementById('facebook');
+
+  let postURI = encodeURI(document.location.href);
+  let postTitle = encodeURI(document.getElementById('blog-title').innerText + ":\n")
+
+  facebookURI.setAttribute('href', `https://www.facebook.com/sharer.php?u=${postURI}`);
+  twitterURI.setAttribute('href', `https://twitter.com/share?url=${postURI}&text=${postTitle}`);
+</script>
+
+<!--Sharect-->
+
+<script src="https://unpkg.com/sharect@2.0.0/dist/sharect.js"></script>
+<script>window["sharectConfig"] = {"backgroundColor": "#333333", "enabled": true, "facebook": true, "iconColor": "#FFFFFF", "selectableElements": ["body"], "twitter": true, "twitterUsername": "likalo_llc"}</script>
+<script src="/blog/templates/assets/js/sharect.js"></script>
+
+
+
+<!--Reading time-->
+<script src="/blog/templates/assets/js/reading-time.min.js"></script>
+<script>
+  const text = []
+  let content = [...document.getElementById('content').getElementsByTagName('p')].forEach((elem) => {
+    text.push(elem.textContent)
+  });
+  const stats = readingTime(text.join(" "));
+
+  document.getElementById('reading-time').innerHTML = stats.text;
+</script>
+
+
+  
+      <!-- Google Tag Manager (noscript) -->
+
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TZRGMQ9"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+  
+
+</body>
+
+</html>

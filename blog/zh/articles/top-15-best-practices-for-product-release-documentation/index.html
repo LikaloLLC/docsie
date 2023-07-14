@@ -1,0 +1,434 @@
+<!-- Base template of the article page. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+  
+
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/blog/favicon.ico">
+
+
+  <!-- Primary Meta Tags -->
+  <title>Docsie.io Blog - 产品发布文档的15大最佳实践</title>
+  <meta name="author" content="Tal F."/>
+  <meta name="title" content="产品发布文档的15大最佳实践">
+  <meta name="description" content="创建专业产品文档的最佳做法是什么？"/>
+  <meta name="keywords" content="产品文档,产品管理,文件门户,产品更新,最佳实践,技术写作"/>
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.docsie.io/blog/blog/zh/articles/top-15-best-practices-for-product-release-documentation/">
+  <meta property="og:title" content="产品发布文档的15大最佳实践">
+  <meta property="og:description"
+        content="创建专业产品文档的最佳做法是什么？">
+  <meta property="og:image" content="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_JLDSpWBDcIaMWR3Ce/file_5C3GNQ7yaIgIyKnzx/09a24a03-f906-f5e0-cde4-3f5b06d4d9a6image.png">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://www.docsie.io/blog/blog/zh/articles/top-15-best-practices-for-product-release-documentation/">
+  <meta property="twitter:title" content="产品发布文档的15大最佳实践">
+  <meta property="twitter:description"
+        content="创建专业产品文档的最佳做法是什么？">
+  <meta property="twitter:image" content="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_JLDSpWBDcIaMWR3Ce/file_5C3GNQ7yaIgIyKnzx/09a24a03-f906-f5e0-cde4-3f5b06d4d9a6image.png">
+
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/blog/templates/assets/css/typography.min.css"/>
+  <!--Replace with your tailwind.css once created-->
+    
+    <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TZRGMQ9');</script>
+<!-- End Google Tag Manager -->
+  
+
+</head>
+
+
+<body class="bg-gray-100 font-sans leading-normal tracking-normal">
+
+<nav id="header" class="fixed w-full z-10 top-0">
+
+  <div id="progress" class="h-1 z-20 top-0"
+       style="background:linear-gradient(to right, #4dc0b5 var(--scroll), transparent 0);"></div>
+
+  <div class="container max-w-6xl mx-auto flex flex-wrap items-center justify-between mt-0 py-3">
+
+    <div class="pl-4">
+      <a class="text-gray-900 text-base no-underline hover:no-underline font-extrabold text-xl" href="../../">
+          Docsie.io Blog
+      </a>
+    </div>
+
+    <div class="block lg:hidden pr-4">
+      <button id="nav-toggle"
+              class="flex items-center px-3 py-2 border rounded text-gray-500 border-gray-600 hover:text-gray-900 hover:border-green-500 appearance-none focus:outline-none">
+        <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+          <title>Menu</title>
+          <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/>
+        </svg>
+      </button>
+    </div>
+
+    <div class="w-full flex-grow lg:flex lg:items-center lg:w-auto hidden lg:block mt-2 lg:mt-0 bg-gray-100 z-20"
+         id="nav-content">
+      <ul class="list-reset lg:flex justify-end flex-1 items-center">
+        
+        <li>
+          <a class="inline-block text-gray-600 hover:text-gray-900 hover:underline py-2 px-4"
+             href="https://www.docsie.io">Docsie</a>
+        </li>
+        
+        <li>
+          <a class="inline-block text-gray-600 hover:text-gray-900 hover:underline py-2 px-4"
+             href="https://www.docsie.io/pricing/">Docsie Pricing</a>
+        </li>
+        
+        <li>
+          <a class="inline-block text-gray-600 hover:text-gray-900 hover:underline py-2 px-4"
+             href="https://www.docsie.io/try_docsie/">Try Docsie</a>
+        </li>
+        
+      </ul>
+    </div>
+    <div class="flex w-full justify-end content-center">
+        <a
+          class="inline-block text-gray-500 hover:text-green-500 hover:underline text-center h-10 p-2 md:h-auto md:p-4 avatar"
+          data-tippy-content="@twitter_handle" href="https://twitter.com/intent/tweet?url=#"
+          id="twitter">
+          <svg class="fill-current h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+            <path
+              d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"></path>
+          </svg>
+        </a>
+        <a
+          class="inline-block text-gray-500 hover:text-green-500 hover:underline text-center h-10 p-2 md:h-auto md:p-4 avatar"
+          data-tippy-content="#facebook_id" href="https://www.facebook.com/sharer/sharer.php?u=#}"
+          id="facebook">
+          <svg class="fill-current h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+            <path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"></path>
+          </svg>
+        </a>
+      </div>
+  </div>
+
+</nav>
+
+<!--Container-->
+<div class="container max-w-4xl mx-auto mt-32 px-8 md:px-0">
+  <div class="prose prose lg:prose-xl mx-auto mt-32">
+    <!--Title-->
+    <h1 id="blog-title">产品发布文档的15大最佳实践</h1>
+    <!--Author-->
+    <div class="flex items-center">
+      <img class="w-10 h-10 rounded-full mr-4" src=" https://cdn.docsie.io/user_profiles/15/logo_logo_QmXrbijvL0L2hFKNm6Q25DtjahujKdB6nu4pqBlLBgvtT.png" alt="Avatar of Author">
+      <div class="flex-1 px-2">
+        <div class="font-bold leading-none mb-2">Tal F.</div>
+        <div class="text-xs md:text-base">on January 07, 2023 · <span id="reading-time"
+                class="block md:inline mt-2 md:mt-0"></span> · filed under <span
+          class="block md:inline mt-2 md:mt-0">
+						
+            <span class="rounded bg-green-500 text-white px-1 uppercase text-xs whitespace-nowrap md:text-sm">产品文档</span>
+						
+            <span class="rounded bg-green-500 text-white px-1 uppercase text-xs whitespace-nowrap md:text-sm">产品管理</span>
+						
+            <span class="rounded bg-green-500 text-white px-1 uppercase text-xs whitespace-nowrap md:text-sm">文件门户</span>
+						
+            <span class="rounded bg-green-500 text-white px-1 uppercase text-xs whitespace-nowrap md:text-sm">产品更新</span>
+						
+            <span class="rounded bg-green-500 text-white px-1 uppercase text-xs whitespace-nowrap md:text-sm">最佳实践</span>
+						
+            <span class="rounded bg-green-500 text-white px-1 uppercase text-xs whitespace-nowrap md:text-sm">技术写作</span>
+						
+					</span>
+        </div>
+      </div>
+    </div>
+    <!--/Author-->
+
+    <!--Post Content-->
+    <!--Lead Para-->
+    <div id="content">
+      <p>这个假动作告诉我，我需要通过客户的棱镜来看待我们的产品。然后，传说中的电灯开关就 "打开 "了。如果我提供的产品能解决客户的痛点，然后用专业的产品文档来支持它，我们就会有一个赢家。</p>
+<p>而我也发现创建专业的、美观的、易读的产品文档并不是一件容易的事。但如果做得正确，产品文档可以使快乐的客户欣喜若狂，最终增加收入。</p>
+<h2>创建专业产品文档的最佳做法是什么？</h2>
+<p><img alt="" src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_JLDSpWBDcIaMWR3Ce/file_PAtUEFouRAqhgcvnJ/809d42be-d04c-76b1-7895-4348b612a22dbrooke_cagle__uhvrvdr7pg_unsplash1.jpg" /></p>
+<p>这些最佳实践创造了美观、信息丰富和易于使用的产品文档。遵循这些准则将帮助你提供产品文档，使一个好客户变成一个伟大的客户。而优秀的客户最终会帮助公司增加收入，产品文档是客户体验的一个重要组成部分。</p>
+<h3>1.理解你的目标受众，给他们想要的东西</h3>
+<p>必须<a href="https://www.stickyminds.com/article/writing-requirements-documentation-multiple-audiences">知道你的受众的期望是什么</a>。例如，产品文档是为管理员还是终端用户准备的？你的目标受众的范围可能需要为管理员写技术性的东西，或者为终端用户写明确定义的条款和说明。</p>
+<p>创建专业产品文档的最佳实践是了解管理员或最终用户层面的客户期望。收集识别受众信息的一些方法是：</p>
+<ul>
+<li>问卷和调查</li>
+</ul>
+<p>*感知的受众反馈</p>
+<ul>
+<li>
+<p>公司集思广益</p>
+</li>
+<li>
+<p>流行的客户意见的反馈</p>
+</li>
+<li>
+<p>客户圆桌讨论</p>
+</li>
+</ul>
+<h3>2.创建一个文件计划作为最佳实践</h3>
+<p><img alt="" src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_JLDSpWBDcIaMWR3Ce/file_OpuMo68fDe86GImec/3a718347-9b9e-c209-a4ca-c923253bf756kaleidico_26mjgncm0wc_unsplash.jpg" /></p>
+<p>编写文档计划可以帮助设想项目实施过程中的任何潜在瓶颈。创建产品文档可能具有挑战性，最佳做法是创建一个文档计划，以帮助预见文档过程中可能出现的问题。</p>
+<p>创建一个文档计划的好处有以下几点：</p>
+<p><strong>可操作的项目</strong>-审核任何现有的文件，以<strong>挽救可重复使用的新产品文件计划的适用信息</strong>。</p>
+<p><strong>遵守模板和风格指南</strong>-如果产品文档是为新产品准备的，确保它保持在行业的声音和风格之内，或者如果文档与现有产品有关，保持现有的风格指南和模板，以**确保品牌的连续性。</p>
+<p><strong>文档流程工具化</strong> - 文档工具化可以定义和简化产品文档流程，同时确保团队工作的连续性和对文档开发流程的更好理解。</p>
+<h3>3.简化产品文档是一种最佳做法</h3>
+<p>2016年进行了一项研究，以确定有多少用户阅读产品文档。结果令人大开眼界，因为他们发现只有<a href="https://academic.oup.com/iwc/article-abstract/28/1/27/2363584?redirectedFrom=fulltext&amp;login=false">25%的用户不阅读产品文档。</a>调查发现终端用户不阅读产品文档的部分原因是：</p>
+<p><strong>用户没有耐心</strong> - 随着通过网络获得即时信息的出现，用户通常在发现问题的答案时变得没有耐心。由于特定产品需要大量的信息，阅读在线或离线的产品文档会很费劲。</p>
+<p><strong>跳跃综合症</strong> - 用户经常跳过必要的产品文档，直接阅读如何使用产品的基本知识。用户通过与产品的互动来学习和理解产品的工作原理，而不是阅读详细的说明。说明书必须尽可能的清晰和翔实。</p>
+<p><strong>令人困惑的布局和结构 </strong>- 手册往往是以难以理解和遵循的格式编写的。许多用户发现产品文档令人困惑，或者与他们的问题无关，变得沮丧，对阅读手册感到灰心丧气。通常情况下，公司没有进行详细的受众研究，没有正确理解用户的需求，而变得混乱不堪，无法完成阅读。</p>
+<h3>4.包括屏幕截图和图形信息</h3>
+<p>把产品文档看作是一个讲述产品故事的路线图。引导客户沿着一条容易被屏幕截图或其他图形[dentified]的路径前进(https://theideanest.ca/5-types-graphics/?doing_wp_cron=1666462401.5462460517883300781250)，以及每个不同的图形如何与其他图形互动。清楚地解释用户在看什么，或者当一个功能被激活时，它对产品有什么反应，以及接下来会有什么期待。确保每个图形都是有目的的，并且产品的工作流程是相互配合的。</p>
+<h3>5.使用交叉链接以更精确地理解主题。</h3>
+<p>我发现<a href="https://docs.typo3.org/m/typo3/docs-how-to-document/main/en-us/WritingReST/Reference/Content/Links.html">交叉链接在阅读产品文档时是非常有价值的。</a>了解一个特征或功能过程的作用，对交叉链接到相关的主题有极大的帮助。此外，通过交叉链接相关的数据点，关于系统如何互动和工作流程的整体情况变得更加明显。</p>
+<h3>6.记住产品文档的KISS原则。</h3>
+<p>在创建文档时，记得使用[KISS（Keep It Simple, Stupid）原则]（https://www.wrike.com/blog/understanding-kiss-principles-project-management/#What-does-KISS-stand-for）。然而，彻底记录过程是很重要的，但不要达到文档过剩的地步。此外，文档使用者可能正在寻找特定项目的某些信息，所以坚持KISS原则可以更容易地浏览和理解文档。</p>
+<p>例如，简单的记号就足以解释一个功能，也许还有一个参考（交叉链接）到主要的主题。保持事实的简洁，不要过分强调，这样用户可以很容易地搜索与他们的需求相关的信息。他们可能没有兴趣阅读产品的每个方面。</p>
+<h3>7.适应不同的学习风格</h3>
+<p><img alt="" src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_JLDSpWBDcIaMWR3Ce/file_uCmkZTtLD7r6Elyg2/b2bb8ece-a1f8-5df4-d5ed-f4392f04d374radek_grzybowski_ebrtyyjwpry_unsplash.jpg" /></p>
+<p>每个人都有一个<a href="https://www.ukessays.com/essays/social-work/people-learn-in-different-ways.php">不同的学习风格</a>。有些人喜欢深入的描述，而其他人可能喜欢图形和视觉表现。然而，有些用户通过亲身参与而不是集中阅读来学习。</p>
+<p>在创建有效的、内容丰富的产品文档时，要确保包含所有的学习风格。例如，插入屏幕截图、图表、结构化文本或视频链接等图形，有助于确保所有的学习方式都能理解产品文档。</p>
+<h3>8.个人化和结构化的入职培训内容</h3>
+<p>根据受众的角色对产品[文档]进行个性化处理(https://www.deanhouston.com/news/knowing-audience-document-right-document/)。在入职内容中，根据目标受众的角色创建不同版本的文档。例如，管理员的问题可能与高级用户对文档的问题不相关。</p>
+<p>文档可以通过创建稍有不同的文档版本，更多的针对目标受众的角色，引入一层个性化的内容。根据听众的角色来修改入职培训的内容，使文档具有个性化的元素。</p>
+<h3>9.为特定的听众明确定义术语</h3>
+<p>根据目标受众，解释整个文档中使用的每个术语的含义是一个好的做法。如果受众是内部的，你可以使用更复杂的术语，并做一些澄清。然而，当外部用户访问文档时，没有办法知道用户的专业知识。</p>
+<p>明确定义独特或复杂的术语，可以为所有内部利益相关者和外部用户建立更好、更有效的沟通。</p>
+<h3>10.提供一个收集用户反馈的方法</h3>
+<p>文件反馈提供了关于文件有效性的有力信息。提供一个链接或一个带有 "喜欢/不喜欢 "的简单按钮，以收集关于文档质量的宝贵信息。通过<a href="https://www.k15t.com/rock-the-docs/documentation-guide/collaborative-writing/collect-user-feedback">收集用户反馈，</a>可以完善和改进文档。</p>
+<h3>11 避免使用扁平结构的文档</h3>
+<p>在创建产品文档时，确保文档不是写成 "扁平结构"。阅读一个充满平面文字的文档是很费力的，而且也会变得很乏味。此外，如果信息与所讨论的主题相关，读者可以快速消费，那么读者对文档的兴趣就会提高。</p>
+<p>通过突出选定的信息或整合视频、图片、链接和其他方法来打破连续的、平面的文字，以提供更好的用户体验。此外，通过以 "一口大小 "的块状方式提供文件内容，读者会有更愉快的体验，并不太愿意阅读该文件。</p>
+<h3>12.创建对搜索引擎友好的文档</h3>
+<p><img alt="" src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_JLDSpWBDcIaMWR3Ce/file_JcQwSJ6c9VBPNDxiB/fc593084-5b7f-a9c5-63e1-9b310b83d086nisonco_pr_and_seo_yirdur6hivq_unsplash.jpg" /></p>
+<p>一个在线产品文档的最佳做法是确保它的写作风格是<a href="https://www.pragm.co/post/making-your-documentation-seo-friendly">文档SEO友好</a>。确保文档的编写是为了最大限度地提高整个互联网对你的文档的搜索结果。客户可能需要搜索他们的文档，当他们没有托管网站的明确链接时，通过输入搜索词，在SEO友好的情况下，回复会更快、更简洁。</p>
+<h3>13.保持产品文档的最新性</h3>
+<p>保持产品文档维护是至关重要的，主要是如果在网上访问。通常，产品的要求会发生变化，在线文档必须反映任何新的变化或更新。因此，用户文档需要是最新的，并为任何最近的更新而刷新，并确保客户被通知并了解产品文档的变化。</p>
+<h3>14.理解用户可能不会阅读产品文档</h3>
+<p>一项<a href="https://academic.oup.com/iwc/article-abstract/28/1/27/2363584?redirectedFrom=fulltext&amp;login=false"> 2014年的研究发现，用户并没有完全阅读</a>所有的产品文档。不阅读文档的主要原因是：</p>
+<ul>
+<li>
+<p>产品文档过于复杂</p>
+</li>
+<li>
+<p>文档没有直接解决他们的问题</p>
+</li>
+<li>
+<p>用户由于没有阅读文档而没有使用产品的许多功能</p>
+</li>
+<li>
+<p>与其阅读文档，许多用户更喜欢 "动手 "学习。</p>
+</li>
+</ul>
+<h3>15.同时管理动态和静态内容</h3>
+<p><img alt="" src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_JLDSpWBDcIaMWR3Ce/file_OgArkokVN075yERo3/b97f1b98-62a4-5b80-5e15-a008439ad625shubham_dhage_hatkch_piqm_unsplash.jpg" /></p>
+<p>产品文档随着更新、新功能、更正的内容、更新的维护警报和其他项目而不断发展。这种更新被认为是一个活生生的文件，根据产品的要求不断地发展。</p>
+<p>静态内容为用户提供了在整个产品生命周期内不会改变的数据。静态内容的想法是给用户参考，特别是新用户，在产品的生命周期中保持静态的信息。静态内容对于丰富的文档是至关重要的，但通常在动态文档中处于次要地位。</p>
+<p>当内容[被划分为动态或静态]时，维护文档集更容易。（https://brainly.com/question/24688083）。当文档被归类为动态或静态时，产品生命周期的文档可以更容易实施和验证。对于新功能的更新（静态）或详细的产品更新（动态），文档中可能会有小的变化。</p>
+<h3>16.产品文档可用性的最佳实践</h3>
+<p>尽管用户不一定会读很多产品文档，但当他们需要的时候，他们会立即想要它。传统的文档交付方式是有一本印刷的手册，与产品一起旅行。然而，在今天的数字、网络世界中，文档通常是通过网络传递的。</p>
+<p>无论产品文档是如何交付的，都必须有随时可用的访问点。因此，今天提供文档的主要方法是：</p>
+<p><strong>离线文档</strong> - 许多产品都有印刷的手册或 "快速入门 "的捷径表。这些文件通常是 "一次性的"，不容易分发。然而，许多手册可以选择以封装的PDF格式提供，促进便携性或选择按需打印出来。</p>
+<p><strong>在线文档</strong>-每次你在谷歌上搜索问题的答案时，你可能都会抓取一些在线文档的片段。网络的出现已经取代了终端用户的打印手册或产品文档材料。在线文档的一些好处是：</p>
+<p>1.远程工作--大流行病告诉我们一件事，在家里工作可以像在办公室一样富有成效，特别是当我们的问题有了在线文档的解答。</p>
+<p>2.协作--有了一个随时可以访问的在线文档门户，团队成员可以即时分享信息，形成团队合作，这在办公室里往往是不可能的。</p>
+<p>3.移动友好 - 移动设备如iPad和智能手机的出现已经慢慢取代了PC的日常互动。你可以用智能手机轻松访问在线文档，任何令人头疼的产品问题都可以随时研究，甚至在你最喜欢的咖啡馆吃午饭时也可以。</p>
+    </div>
+  </div>
+  <!--/ Post Content-->
+
+  <!--Divider-->
+  <hr class="border-b-1 border-gray-400 mt-12 mb-8 mx-4">
+
+  <!--Next & Prev Links-->
+  <div class="font-sans flex justify-between content-center px-4 mb-4">
+    <div class="text-left">
+      <span class="text-xs md:text-sm font-normal text-gray-600">&lt; Previous Post</span><br>
+      <p><a href="../how-to-win-with-organized-and-automated-product-documentation" class="break-normal text-base md:text-sm text-green-500 font-bold no-underline hover:underline">如何通过组织化和自动化的产品文档取得胜利</a></p>
+    </div>
+    <div class="text-right">
+      <span class="text-xs md:text-sm font-normal text-gray-600">Next Post &gt;</span><br>
+      <p><a href="../15-best-practices-when-launching-new-product-documentation" class="break-normal text-base md:text-sm text-green-500 font-bold no-underline hover:underline">推出新产品文档时的15个最佳做法</a></p>
+    </div>
+  </div>
+
+
+  <!--/Next & Prev Links-->
+
+  
+    <div class="commentbox"></div>
+
+    <script src="https://unpkg.com/commentbox.io/dist/commentBox.min.js"></script>
+    <script>commentBox("5725910686760960-proj")</script>
+  
+
+  <!--Subscribe-->
+  
+    <!-- Base template of the subscription form. -->
+
+<div class="container font-sans bg-white rounded mt-8 p-4 md:p-24 text-center mb-10">
+    <h2 class="font-bold break-normal text-2xl md:text-4xl">Subscribe to the newsletter</h2>
+    <h3 class="font-bold break-normal font-normal text-gray-600 text-base md:text-xl">Stay up to date with our latest news and products</h3>
+    <div class="w-full text-center pt-4">
+        <form action="#">
+            <div class="max-w-xl mx-auto p-1 pr-0 flex flex-wrap items-center">
+                <input type="email" placeholder="youremail@example.com"
+                       class="flex-1 appearance-none rounded shadow p-3 text-gray-600 mr-2 focus:outline-none">
+                <button type="submit"
+                        class="flex-1 mt-4 md:mt-0 block md:inline-block appearance-none bg-green-500 text-white text-base font-semibold tracking-wider uppercase py-4 rounded shadow hover:bg-green-400">
+                    Subscribe
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+  
+  <!-- /Subscribe-->
+</div>
+<!--/container-->
+
+<footer class="bg-gray-900">
+  <div class="container max-w-6xl mx-auto flex items-center px-2 py-8">
+
+    <div class="w-full mx-auto flex flex-wrap items-center">
+      <div class="flex w-full md:w-1/2 justify-center md:justify-start text-white font-extrabold flex-col">
+        <a class="text-gray-900 no-underline hover:text-gray-900 hover:no-underline" href="/blog/zh">
+          <span class="text-base text-gray-200">Docsie.io Blog</span>
+        </a>
+        <a class="text-gray-900 no-underline hover:text-gray-900 hover:no-underline"
+           href="https://github.com/LikaloLLC/BlogVi" target="_blank">
+          <span class="text-xs text-gray-200">Made with BlogVI</span>
+        </a>
+      </div>
+      <div class="flex w-full pt-2 content-center justify-between md:w-1/2 md:justify-end">
+        <ul class="list-reset flex justify-center flex-1 md:flex-none items-center">
+          
+            <li>
+              <a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-3"
+                 href="https://www.docsie.io">Docsie</a>
+            </li>
+          
+            <li>
+              <a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-3"
+                 href="https://www.docsie.io/pricing/">Docsie Pricing</a>
+            </li>
+          
+            <li>
+              <a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-3"
+                 href="https://www.docsie.io/try_docsie/">Try Docsie</a>
+            </li>
+          
+        </ul>
+      </div>
+    </div>
+
+
+  </div>
+</footer>
+
+<script>
+  /* Progress bar */
+  //Source: https://alligator.io/js/progress-bar-javascript-css-variables/
+  var h = document.documentElement,
+    b = document.body,
+    st = 'scrollTop',
+    sh = 'scrollHeight',
+    progress = document.querySelector('#progress'),
+    scroll;
+  var scrollpos = window.scrollY;
+  var header = document.getElementById("header");
+  var navcontent = document.getElementById("nav-content");
+
+  document.addEventListener('scroll', function () {
+
+    /*Refresh scroll % width*/
+    scroll = (h[st] || b[st]) / ((h[sh] || b[sh]) - h.clientHeight) * 100;
+    progress.style.setProperty('--scroll', scroll + '%');
+
+    /*Apply classes for slide in bar*/
+    scrollpos = window.scrollY;
+
+    if (scrollpos > 10) {
+      header.classList.add("bg-white");
+      header.classList.add("shadow");
+      navcontent.classList.remove("bg-gray-100");
+      navcontent.classList.add("bg-white");
+    } else {
+      header.classList.remove("bg-white");
+      header.classList.remove("shadow");
+      navcontent.classList.remove("bg-white");
+      navcontent.classList.add("bg-gray-100");
+
+    }
+
+  });
+
+
+  //Javascript to toggle the menu
+  document.getElementById('nav-toggle').onclick = function () {
+    document.getElementById("nav-content").classList.toggle("hidden");
+  }
+</script>
+<script>
+  /*
+    Twitter
+    https://twitter.com/share?url=[post-url]&text=[post-title]
+
+    Facebook
+    https://www.facebook.com/sharer.php?u=[post-url]
+
+  */
+  let twitterURI = document.getElementById('twitter');
+  let facebookURI = document.getElementById('facebook');
+
+  let postURI = encodeURI(document.location.href);
+  let postTitle = encodeURI(document.getElementById('blog-title').innerText + ":\n")
+
+  facebookURI.setAttribute('href', `https://www.facebook.com/sharer.php?u=${postURI}`);
+  twitterURI.setAttribute('href', `https://twitter.com/share?url=${postURI}&text=${postTitle}`);
+</script>
+
+<!--Sharect-->
+
+<script src="https://unpkg.com/sharect@2.0.0/dist/sharect.js"></script>
+<script>window["sharectConfig"] = {"backgroundColor": "#333333", "enabled": true, "facebook": true, "iconColor": "#FFFFFF", "selectableElements": ["body"], "twitter": true, "twitterUsername": "likalo_llc"}</script>
+<script src="/blog/templates/assets/js/sharect.js"></script>
+
+
+
+<!--Reading time-->
+<script src="/blog/templates/assets/js/reading-time.min.js"></script>
+<script>
+  const text = []
+  let content = [...document.getElementById('content').getElementsByTagName('p')].forEach((elem) => {
+    text.push(elem.textContent)
+  });
+  const stats = readingTime(text.join(" "));
+
+  document.getElementById('reading-time').innerHTML = stats.text;
+</script>
+
+
+  
+      <!-- Google Tag Manager (noscript) -->
+
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TZRGMQ9"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+  
+
+</body>
+
+</html>
