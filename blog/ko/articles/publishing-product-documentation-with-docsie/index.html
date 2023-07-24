@@ -1,0 +1,383 @@
+<!-- Base template of the article page. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+  
+
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/blog/https://d1iq6qzgppjlud.cloudfront.net/images/favicon/favicon-196x196.png">
+
+
+  <!-- Primary Meta Tags -->
+  <title>Docsie.io Blog - Docsie로 제품 문서 게시</title>
+  <meta name="author" content="Tal F."/>
+  <meta name="title" content="Docsie로 제품 문서 게시">
+  <meta name="description" content="Docsie를 사용하여 코드 한 줄로 제품 문서를 게시하는 방법에 대한 설명입니다."/>
+  <meta name="keywords" content="제품 문서,AI,제품 관리,문서 포털,기술 문서 작성"/>
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.docsie.io/blog/blog/ko/articles/publishing-product-documentation-with-docsie/">
+  <meta property="og:title" content="Docsie로 제품 문서 게시">
+  <meta property="og:description"
+        content="Docsie를 사용하여 코드 한 줄로 제품 문서를 게시하는 방법에 대한 설명입니다.">
+  <meta property="og:image" content="https://cdn.docsie.io/workspace_8D5W1pxgb7Jq3oZO7/doc_QpDdxIGnXpT0d02oQ/file_ne5sM8Y7ZPKSDxsue/boo_XGfvRm3TVTFbV6HET/f1f08434-4c1e-8167-48de-5bbe92935a4eUntitled_1_min_1_2_3_4_5_6.jpg">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://www.docsie.io/blog/blog/ko/articles/publishing-product-documentation-with-docsie/">
+  <meta property="twitter:title" content="Docsie로 제품 문서 게시">
+  <meta property="twitter:description"
+        content="Docsie를 사용하여 코드 한 줄로 제품 문서를 게시하는 방법에 대한 설명입니다.">
+  <meta property="twitter:image" content="https://cdn.docsie.io/workspace_8D5W1pxgb7Jq3oZO7/doc_QpDdxIGnXpT0d02oQ/file_ne5sM8Y7ZPKSDxsue/boo_XGfvRm3TVTFbV6HET/f1f08434-4c1e-8167-48de-5bbe92935a4eUntitled_1_min_1_2_3_4_5_6.jpg">
+
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/blog/templates/assets/css/typography.min.css"/>
+  <!--Replace with your tailwind.css once created-->
+    
+    <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TZRGMQ9');</script>
+<!-- End Google Tag Manager -->
+  
+
+</head>
+
+
+<body class="bg-gray-100 font-sans leading-normal tracking-normal">
+
+<nav id="header" class="fixed w-full z-10 top-0">
+
+  <div id="progress" class="h-1 z-20 top-0"
+       style="background:linear-gradient(to right, #4dc0b5 var(--scroll), transparent 0);"></div>
+
+  <div class="container max-w-6xl mx-auto flex flex-wrap items-center justify-between mt-0 py-3">
+
+    <div class="pl-4">
+      <a class="text-gray-900 text-base no-underline hover:no-underline font-extrabold text-xl" href="../../">
+          Docsie.io Blog
+      </a>
+    </div>
+
+    <div class="block lg:hidden pr-4">
+      <button id="nav-toggle"
+              class="flex items-center px-3 py-2 border rounded text-gray-500 border-gray-600 hover:text-gray-900 hover:border-green-500 appearance-none focus:outline-none">
+        <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+          <title>Menu</title>
+          <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/>
+        </svg>
+      </button>
+    </div>
+
+    <div class="w-full flex-grow lg:flex lg:items-center lg:w-auto hidden lg:block mt-2 lg:mt-0 bg-gray-100 z-20"
+         id="nav-content">
+      <ul class="list-reset lg:flex justify-end flex-1 items-center">
+        
+        <li>
+          <a class="inline-block text-gray-600 hover:text-gray-900 hover:underline py-2 px-4"
+             href="https://www.docsie.io">Docsie</a>
+        </li>
+        
+        <li>
+          <a class="inline-block text-gray-600 hover:text-gray-900 hover:underline py-2 px-4"
+             href="https://www.docsie.io/pricing/">Docsie Pricing</a>
+        </li>
+        
+        <li>
+          <a class="inline-block text-gray-600 hover:text-gray-900 hover:underline py-2 px-4"
+             href="https://www.docsie.io/try_docsie/">Try Docsie</a>
+        </li>
+        
+      </ul>
+    </div>
+    <div class="flex w-full justify-end content-center">
+        <a
+          class="inline-block text-gray-500 hover:text-green-500 hover:underline text-center h-10 p-2 md:h-auto md:p-4 avatar"
+          data-tippy-content="@twitter_handle" href="https://twitter.com/intent/tweet?url=#"
+          id="twitter">
+          <svg class="fill-current h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+            <path
+              d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"></path>
+          </svg>
+        </a>
+        <a
+          class="inline-block text-gray-500 hover:text-green-500 hover:underline text-center h-10 p-2 md:h-auto md:p-4 avatar"
+          data-tippy-content="#facebook_id" href="https://www.facebook.com/sharer/sharer.php?u=#}"
+          id="facebook">
+          <svg class="fill-current h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+            <path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"></path>
+          </svg>
+        </a>
+      </div>
+  </div>
+
+</nav>
+
+<!--Container-->
+<div class="container max-w-4xl mx-auto mt-32 px-8 md:px-0">
+  <div class="prose prose lg:prose-xl mx-auto mt-32">
+    <!--Title-->
+    <h1 id="blog-title">Docsie로 제품 문서 게시</h1>
+    <!--Author-->
+    <div class="flex items-center">
+      <img class="w-10 h-10 rounded-full mr-4" src=" https://cdn.docsie.io/user_profiles/15/logo_logo_QmXrbijvL0L2hFKNm6Q25DtjahujKdB6nu4pqBlLBgvtT.png" alt="Avatar of Author">
+      <div class="flex-1 px-2">
+        <div class="font-bold leading-none mb-2">Tal F.</div>
+        <div class="text-xs md:text-base">on June 30, 2021 · <span id="reading-time"
+                class="block md:inline mt-2 md:mt-0"></span> · filed under <span
+          class="block md:inline mt-2 md:mt-0">
+						
+            <span class="rounded bg-green-500 text-white px-1 uppercase text-xs whitespace-nowrap md:text-sm">제품 문서</span>
+						
+            <span class="rounded bg-green-500 text-white px-1 uppercase text-xs whitespace-nowrap md:text-sm">AI</span>
+						
+            <span class="rounded bg-green-500 text-white px-1 uppercase text-xs whitespace-nowrap md:text-sm">제품 관리</span>
+						
+            <span class="rounded bg-green-500 text-white px-1 uppercase text-xs whitespace-nowrap md:text-sm">문서 포털</span>
+						
+            <span class="rounded bg-green-500 text-white px-1 uppercase text-xs whitespace-nowrap md:text-sm">기술 문서 작성</span>
+						
+					</span>
+        </div>
+      </div>
+    </div>
+    <!--/Author-->
+
+    <!--Post Content-->
+    <!--Lead Para-->
+    <div id="content">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/jeJ0yJn5R4c" title="YouTube 동영상 플레이어" frameborder="0" allow="가속도계; 자동 재생; 클립보드 쓰기; 암호화된 미디어; 자이로스코프; 화면 속의 화면" allowfullscreen></iframe>
+
+<p>안녕하세요, 여러분!</p>
+<p>지난 비디오에서는 제품 문서를 만들고 제품 문서를 편집하는 방법에 대해 이야기했습니다. 또한 고객에게 기술 플랫폼과 솔루션에 대해 더 자세히 교육할 수 있도록 제품 문서를 작성할 수 있도록 동영상, 사진, 미디어 및 코드를 삽입하는 방법도 보여드렸습니다.</p>
+<p>이제 Docsie 제품 문서화 플랫폼에 대해 자세히 살펴보고 소프트웨어 문서를 간단하고 쉽게 만드는 방법을 보여드리고자 합니다.</p>
+<p>다음은 Docsie로 게시하는 방법을 설명하는 간단한 튜토리얼입니다.</p>
+<p>Docsie의 지식 포털로 게시하는 방법은 몇 가지가 있습니다. 이 동영상에서는 간단한 코드 한 줄로 Docsie의 지식 포털, 책, 선반 또는 아티클을 게시하는 방법을 설명합니다.</p>
+<p>이 예에서는 '첫 번째 장고 앱 작성하기, 파트 2'라는 특정 책을 게시하고자 합니다.</p>
+<p><img alt="" src="https://cdn.docsie.io/workspace_WxPJSQ5gsES8Bzjxy/doc_ydgtE07E6Rp4AMmKv/file_vghRPvDGV9FcXW5sq/boo_IPAeUSAJvs2JsOCoT/8baf35b2-88ce-eb21-1eca-e13454c076beimage.png" /></p>
+<p>현재 이미 작성된 소프트웨어 문서에서 볼 수 있듯이 '작업 중인 새 포털'이라는 버전을 작성했으며 그 근처의 '연필' 도구를 클릭하면 게시된 포털을 '활성' 또는 '기본'으로 설정하거나 이러한 기능을 끌 수 있습니다. 이는 귀하와 귀하의 팀이 문서를 작성하거나 업데이트할 수 있고 웹 사이트에 프로덕션에서 작성한 제품 문서를 게시 할 준비가 될 때까지 고객이나 클라이언트에게 표시되지 않도록 할 수 있기 때문에 멋지다는 것을 의미하기 때문입니다:</p>
+<p><img alt="" src="https://cdn.docsie.io/workspace_WxPJSQ5gsES8Bzjxy/doc_ydgtE07E6Rp4AMmKv/file_Wpue5g2itHdkeHQWH/boo_IPAeUSAJvs2JsOCoT/e1957632-a49c-efea-8206-7ea31886a8dcimage.png" /></p>
+<p>이제 문서를 배포할 준비가 되었습니다!  먼저 Docsie 플랫폼의 오른쪽 상단에 있는 점 세 개를 클릭한 다음 계정을 클릭하면 쉽게 완료됩니다:</p>
+<p><img alt="" src="https://cdn.docsie.io/workspace_WxPJSQ5gsES8Bzjxy/doc_ydgtE07E6Rp4AMmKv/file_Vyh10Vht9p5HgACri/boo_IPAeUSAJvs2JsOCoT/cc784b29-8edd-ade4-807c-cb6a30b61998image.png" /></p>
+<p>프로필 및 설정 페이지에서 '배포'라는 탭을 클릭하면 배포 페이지로 이동하여 웹사이트에 배치할 임베더 코드를 생성하는 데 도움이 되는 설정을 할 수 있습니다.</p>
+<p><img alt="" src="https://cdn.docsie.io/workspace_WxPJSQ5gsES8Bzjxy/doc_ydgtE07E6Rp4AMmKv/file_FOdT3hJo8ygjq6lYH/boo_IPAeUSAJvs2JsOCoT/ed142930-2a7b-b56c-0ccf-3183c6191179image.png" /></p>
+<p>이제 "새 배포 구성 +"를 클릭합니다.</p>
+<p><img alt="" src="https://cdn.docsie.io/workspace_WxPJSQ5gsES8Bzjxy/doc_ydgtE07E6Rp4AMmKv/file_vbyck51UPHrWOVomu/boo_IPAeUSAJvs2JsOCoT/c3affc72-9cdd-b8ee-4c51-5798f54e5688image.png" /></p>
+<p>훌륭하네요! 이제 대시보드에 액세스할 수 있게 되었으니 사용자 정의 도메인을 배포하기만 하면 됩니다. '도메인 배포: 탭 바를 열고 '사용자 정의 배포'를 클릭하면 쉽게 완료됩니다.</p>
+<p><img alt="" src="https://cdn.docsie.io/workspace_WxPJSQ5gsES8Bzjxy/doc_ydgtE07E6Rp4AMmKv/file_Xlx7uCVpKiy3TJbaI/boo_IPAeUSAJvs2JsOCoT/30f5281a-702a-9bd4-a926-9440f1aaef22image.png" /></p>
+<p>이제 다음 두 단계는 간단합니다:</p>
+<ol>
+<li>
+<p>첫 번째 단계는 도메인을 입력하는 것입니다(도메인 이름을 입력하기 전에 http:// 또는 https:// 을 사용해야 함을 잊지 마세요).</p>
+</li>
+<li>
+<p>두 번째 단계는 게시할 내용을 선택하는 것입니다. 게시할 내용은 책 또는 전체 서가 중에서 선택할 수 있습니다. 이 예에서는 '첫 번째 Django 앱 작성하기, 파트 2'라는 책을 게시합니다.</p>
+</li>
+</ol>
+<p><img alt="" src="https://cdn.docsie.io/workspace_WxPJSQ5gsES8Bzjxy/doc_ydgtE07E6Rp4AMmKv/file_Tac6kZ9pjFovGo8Ut/boo_IPAeUSAJvs2JsOCoT/2d5ad6d7-27fc-c487-f6bc-b97d7f1be44aimage.png" /></p>
+<p>훌륭합니다! 이제 코드를 받기 전 마지막 단계는 "+더 많은 옵션"을 클릭하는 것입니다.</p>
+<p><img alt="" src="https://cdn.docsie.io/workspace_WxPJSQ5gsES8Bzjxy/doc_ydgtE07E6Rp4AMmKv/file_OrYP2ugvhlurWxfbJ/boo_IPAeUSAJvs2JsOCoT/390a98c1-f554-9ae3-7e09-8faed42d93a2image.png" /></p>
+<p>이제 다양한 플러그인, 기능 및 기타 문서화 옵션을 사용하여 지식창고를 더욱 멋지게 꾸미고 사용자들이 더욱 편리하게 사용할 수 있습니다. 이러한 기능, 플러그인 및 제품 문서화 도구는 매우 훌륭하며 지식 포털을 더욱 강력하게 만들어 줍니다.</p>
+<p><img alt="" src="https://cdn.docsie.io/workspace_WxPJSQ5gsES8Bzjxy/doc_ydgtE07E6Rp4AMmKv/file_Wy76iK9zPT84NoPdu/boo_IPAeUSAJvs2JsOCoT/ed41417e-41dc-cffc-161a-4ffa182d3796image.png" /></p>
+<p>참고: 이러한 추가 기능과 플러그인 및 기타 제품 문서 도구는 언제든지 변경할 수 있습니다.</p>
+<p>완료되면 '웹 포털 만들기'를 클릭합니다.</p>
+<p>이제 하단으로 스크롤하여 "+ 배포 스크립트 가져오기"를 클릭합니다.</p>
+<p><img alt="" src="https://cdn.docsie.io/workspace_WxPJSQ5gsES8Bzjxy/doc_ydgtE07E6Rp4AMmKv/file_Lv7JtNkP26EPzxBTw/boo_IPAeUSAJvs2JsOCoT/6196219b-ddb3-55b8-d15f-3b08276ebbc2image.png" /></p>
+<p>그리고 스크립트를 복사하여 HTML에 붙여넣습니다:</p>
+<p><img alt="" src="https://cdn.docsie.io/workspace_WxPJSQ5gsES8Bzjxy/doc_ydgtE07E6Rp4AMmKv/file_C7q3zLB0gXrf4HObS/boo_IPAeUSAJvs2JsOCoT/550abafc-23f2-e1f3-138a-7435eca30e4fimage.png" /></p>
+<p>이제 스크립트에 액세스할 수 있게 되었으니 CSS 사용 가이드를 사용하여 멋지게 꾸밀 수 있으며, 브랜드 룩앤필에 어울리는 멋진 Docsie 지식 포털을 만드는 데 도움이 될 것입니다. 여기 링크에서 스타일링 사용 가이드를 검토하세요:  <a href="https://help.docsie.io/?doc=/publish-documentation-portal/docsie-styling-guide/base-style/">닥시 스타일링 가이드</a></p>
+<p>이번 튜토리얼이 도움이 되셨기를 바라며, 앞으로 더 많은 닥시 튜토리얼을 기대해 주세요!</p>
+<p>닥시가 어떻게 도움이 될 수 있는지 궁금한 점이 있거나 도구 데모를 보여드리고 싶다면 <a href="https://www.docsie.io/demo/">여기를 클릭</a>하여 데모 예약을 하시기 바랍니다.</p>
+    </div>
+  </div>
+  <!--/ Post Content-->
+
+  <!--Divider-->
+  <hr class="border-b-1 border-gray-400 mt-12 mb-8 mx-4">
+
+  <!--Next & Prev Links-->
+  <div class="font-sans flex justify-between content-center px-4 mb-4">
+    <div class="text-left">
+      <span class="text-xs md:text-sm font-normal text-gray-600">&lt; Previous Post</span><br>
+      <p><a href="../confused-about-product-and-software-documentation-don-t-worry-they-re-one-in-the-same" class="break-normal text-base md:text-sm text-green-500 font-bold no-underline hover:underline">제품 설명서와 소프트웨어 설명서가 헷갈리세요? 걱정하지 마세요, 둘은 하나이니까요!</a></p>
+    </div>
+    <div class="text-right">
+      <span class="text-xs md:text-sm font-normal text-gray-600">Next Post &gt;</span><br>
+      <p><a href="../the-ultimate-training-manual-template-guide-in-2023" class="break-normal text-base md:text-sm text-green-500 font-bold no-underline hover:underline">2023년 궁극의 교육 매뉴얼 템플릿 가이드</a></p>
+    </div>
+  </div>
+
+
+  <!--/Next & Prev Links-->
+
+  
+    <div class="commentbox"></div>
+
+    <script src="https://unpkg.com/commentbox.io/dist/commentBox.min.js"></script>
+    <script>commentBox("5725910686760960-proj")</script>
+  
+
+  <!--Subscribe-->
+  
+    <!-- Base template of the subscription form. -->
+
+<div class="container font-sans bg-white rounded mt-8 p-4 md:p-24 text-center mb-10">
+    <h2 class="font-bold break-normal text-2xl md:text-4xl">Subscribe to the newsletter</h2>
+    <h3 class="font-bold break-normal font-normal text-gray-600 text-base md:text-xl">Stay up to date with our latest news and products</h3>
+    <div class="w-full text-center pt-4">
+        <form action="#">
+            <div class="max-w-xl mx-auto p-1 pr-0 flex flex-wrap items-center">
+                <input type="email" placeholder="youremail@example.com"
+                       class="flex-1 appearance-none rounded shadow p-3 text-gray-600 mr-2 focus:outline-none">
+                <button type="submit"
+                        class="flex-1 mt-4 md:mt-0 block md:inline-block appearance-none bg-green-500 text-white text-base font-semibold tracking-wider uppercase py-4 rounded shadow hover:bg-green-400">
+                    Subscribe
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+  
+  <!-- /Subscribe-->
+</div>
+<!--/container-->
+
+<footer class="bg-gray-900">
+  <div class="container max-w-6xl mx-auto flex items-center px-2 py-8">
+
+    <div class="w-full mx-auto flex flex-wrap items-center">
+      <div class="flex w-full md:w-1/2 justify-center md:justify-start text-white font-extrabold flex-col">
+        <a class="text-gray-900 no-underline hover:text-gray-900 hover:no-underline" href="/blog/ko">
+          <span class="text-base text-gray-200">Docsie.io Blog</span>
+        </a>
+        <a class="text-gray-900 no-underline hover:text-gray-900 hover:no-underline"
+           href="https://github.com/LikaloLLC/BlogVi" target="_blank">
+          <span class="text-xs text-gray-200">Made with BlogVI</span>
+        </a>
+      </div>
+      <div class="flex w-full pt-2 content-center justify-between md:w-1/2 md:justify-end">
+        <ul class="list-reset flex justify-center flex-1 md:flex-none items-center">
+          
+            <li>
+              <a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-3"
+                 href="https://www.docsie.io">Docsie</a>
+            </li>
+          
+            <li>
+              <a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-3"
+                 href="https://www.docsie.io/pricing/">Docsie Pricing</a>
+            </li>
+          
+            <li>
+              <a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-3"
+                 href="https://www.docsie.io/try_docsie/">Try Docsie</a>
+            </li>
+          
+        </ul>
+      </div>
+    </div>
+
+
+  </div>
+</footer>
+
+<script>
+  /* Progress bar */
+  //Source: https://alligator.io/js/progress-bar-javascript-css-variables/
+  var h = document.documentElement,
+    b = document.body,
+    st = 'scrollTop',
+    sh = 'scrollHeight',
+    progress = document.querySelector('#progress'),
+    scroll;
+  var scrollpos = window.scrollY;
+  var header = document.getElementById("header");
+  var navcontent = document.getElementById("nav-content");
+
+  document.addEventListener('scroll', function () {
+
+    /*Refresh scroll % width*/
+    scroll = (h[st] || b[st]) / ((h[sh] || b[sh]) - h.clientHeight) * 100;
+    progress.style.setProperty('--scroll', scroll + '%');
+
+    /*Apply classes for slide in bar*/
+    scrollpos = window.scrollY;
+
+    if (scrollpos > 10) {
+      header.classList.add("bg-white");
+      header.classList.add("shadow");
+      navcontent.classList.remove("bg-gray-100");
+      navcontent.classList.add("bg-white");
+    } else {
+      header.classList.remove("bg-white");
+      header.classList.remove("shadow");
+      navcontent.classList.remove("bg-white");
+      navcontent.classList.add("bg-gray-100");
+
+    }
+
+  });
+
+
+  //Javascript to toggle the menu
+  document.getElementById('nav-toggle').onclick = function () {
+    document.getElementById("nav-content").classList.toggle("hidden");
+  }
+</script>
+<script>
+  /*
+    Twitter
+    https://twitter.com/share?url=[post-url]&text=[post-title]
+
+    Facebook
+    https://www.facebook.com/sharer.php?u=[post-url]
+
+  */
+  let twitterURI = document.getElementById('twitter');
+  let facebookURI = document.getElementById('facebook');
+
+  let postURI = encodeURI(document.location.href);
+  let postTitle = encodeURI(document.getElementById('blog-title').innerText + ":\n")
+
+  facebookURI.setAttribute('href', `https://www.facebook.com/sharer.php?u=${postURI}`);
+  twitterURI.setAttribute('href', `https://twitter.com/share?url=${postURI}&text=${postTitle}`);
+</script>
+
+<!--Sharect-->
+
+<script src="https://unpkg.com/sharect@2.0.0/dist/sharect.js"></script>
+<script>window["sharectConfig"] = {"backgroundColor": "#333333", "enabled": true, "facebook": true, "iconColor": "#FFFFFF", "selectableElements": ["body"], "twitter": true, "twitterUsername": "likalo_llc"}</script>
+<script src="/blog/templates/assets/js/sharect.js"></script>
+
+
+
+<!--Reading time-->
+<script src="/blog/templates/assets/js/reading-time.min.js"></script>
+<script>
+  const text = []
+  let content = [...document.getElementById('content').getElementsByTagName('p')].forEach((elem) => {
+    text.push(elem.textContent)
+  });
+  const stats = readingTime(text.join(" "));
+
+  document.getElementById('reading-time').innerHTML = stats.text;
+</script>
+
+
+  
+      <!-- Google Tag Manager (noscript) -->
+
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TZRGMQ9"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+  
+
+</body>
+
+</html>
