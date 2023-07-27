@@ -1,0 +1,492 @@
+<!-- Base template of the article page. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+  
+
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/blog/https://d1iq6qzgppjlud.cloudfront.net/images/favicon/favicon-196x196.png">
+
+
+  <!-- Primary Meta Tags -->
+  <title>Docsie.io Blog - O que são Webhooks e como é que a Docsie os está a utilizar em seu benefício?</title>
+  <meta name="author" content="Tanya A Mishra"/>
+  <meta name="title" content="O que são Webhooks e como é que a Docsie os está a utilizar em seu benefício?">
+  <meta name="description" content="Neste blogue, vamos falar sobre O que são Webhooks e como é que o Docsie os utiliza em seu benefício?"/>
+  <meta name="keywords" content="Technical Writing"/>
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.docsie.io/blog/blog/pt-pt/articles/what-are-webhooks-and-how-is-docsie-utilizing-them-to-its-benefit/">
+  <meta property="og:title" content="O que são Webhooks e como é que a Docsie os está a utilizar em seu benefício?">
+  <meta property="og:description"
+        content="Neste blogue, vamos falar sobre O que são Webhooks e como é que o Docsie os utiliza em seu benefício?">
+  <meta property="og:image" content="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_m04DV8imyNv6X2sU6/142c4f42-36fa-7e71-f791-a77ea80fbf1bwhat_are_webhooks__and_how_is_docsie_utilising_them_to_its_benefit.jpg">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://www.docsie.io/blog/blog/pt-pt/articles/what-are-webhooks-and-how-is-docsie-utilizing-them-to-its-benefit/">
+  <meta property="twitter:title" content="O que são Webhooks e como é que a Docsie os está a utilizar em seu benefício?">
+  <meta property="twitter:description"
+        content="Neste blogue, vamos falar sobre O que são Webhooks e como é que o Docsie os utiliza em seu benefício?">
+  <meta property="twitter:image" content="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_m04DV8imyNv6X2sU6/142c4f42-36fa-7e71-f791-a77ea80fbf1bwhat_are_webhooks__and_how_is_docsie_utilising_them_to_its_benefit.jpg">
+
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/blog/templates/assets/css/typography.min.css"/>
+  <!--Replace with your tailwind.css once created-->
+    
+    <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TZRGMQ9');</script>
+<!-- End Google Tag Manager -->
+  
+
+</head>
+
+
+<body class="bg-gray-100 font-sans leading-normal tracking-normal">
+
+<nav id="header" class="fixed w-full z-10 top-0">
+
+  <div id="progress" class="h-1 z-20 top-0"
+       style="background:linear-gradient(to right, #4dc0b5 var(--scroll), transparent 0);"></div>
+
+  <div class="container max-w-6xl mx-auto flex flex-wrap items-center justify-between mt-0 py-3">
+
+    <div class="pl-4">
+      <a class="text-gray-900 text-base no-underline hover:no-underline font-extrabold text-xl" href="../../">
+          Docsie.io Blog
+      </a>
+    </div>
+
+    <div class="block lg:hidden pr-4">
+      <button id="nav-toggle"
+              class="flex items-center px-3 py-2 border rounded text-gray-500 border-gray-600 hover:text-gray-900 hover:border-green-500 appearance-none focus:outline-none">
+        <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+          <title>Menu</title>
+          <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/>
+        </svg>
+      </button>
+    </div>
+
+    <div class="w-full flex-grow lg:flex lg:items-center lg:w-auto hidden lg:block mt-2 lg:mt-0 bg-gray-100 z-20"
+         id="nav-content">
+      <ul class="list-reset lg:flex justify-end flex-1 items-center">
+        
+        <li>
+          <a class="inline-block text-gray-600 hover:text-gray-900 hover:underline py-2 px-4"
+             href="https://www.docsie.io">Docsie</a>
+        </li>
+        
+        <li>
+          <a class="inline-block text-gray-600 hover:text-gray-900 hover:underline py-2 px-4"
+             href="https://www.docsie.io/pricing/">Docsie Pricing</a>
+        </li>
+        
+        <li>
+          <a class="inline-block text-gray-600 hover:text-gray-900 hover:underline py-2 px-4"
+             href="https://www.docsie.io/try_docsie/">Try Docsie</a>
+        </li>
+        
+      </ul>
+    </div>
+    <div class="flex w-full justify-end content-center">
+        <a
+          class="inline-block text-gray-500 hover:text-green-500 hover:underline text-center h-10 p-2 md:h-auto md:p-4 avatar"
+          data-tippy-content="@twitter_handle" href="https://twitter.com/intent/tweet?url=#"
+          id="twitter">
+          <svg class="fill-current h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+            <path
+              d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"></path>
+          </svg>
+        </a>
+        <a
+          class="inline-block text-gray-500 hover:text-green-500 hover:underline text-center h-10 p-2 md:h-auto md:p-4 avatar"
+          data-tippy-content="#facebook_id" href="https://www.facebook.com/sharer/sharer.php?u=#}"
+          id="facebook">
+          <svg class="fill-current h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+            <path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"></path>
+          </svg>
+        </a>
+      </div>
+  </div>
+
+</nav>
+
+<!--Container-->
+<div class="container max-w-4xl mx-auto mt-32 px-8 md:px-0">
+  <div class="prose prose lg:prose-xl mx-auto mt-32">
+    <!--Title-->
+    <h1 id="blog-title">O que são Webhooks e como é que a Docsie os está a utilizar em seu benefício?</h1>
+    <!--Author-->
+    <div class="flex items-center">
+      <img class="w-10 h-10 rounded-full mr-4" src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_p1X4gXS3n0rCHYuaE/1f3f5f57-d8e2-7978-faef-0b9fe89f3e4btanya_pic.jpg" alt="Avatar of Author">
+      <div class="flex-1 px-2">
+        <div class="font-bold leading-none mb-2">Tanya A Mishra</div>
+        <div class="text-xs md:text-base">on July 07, 2023 · <span id="reading-time"
+                class="block md:inline mt-2 md:mt-0"></span> · filed under <span
+          class="block md:inline mt-2 md:mt-0">
+						
+            <span class="rounded bg-green-500 text-white px-1 uppercase text-xs whitespace-nowrap md:text-sm">Technical Writing</span>
+						
+					</span>
+        </div>
+      </div>
+    </div>
+    <!--/Author-->
+
+    <!--Post Content-->
+    <!--Lead Para-->
+    <div id="content">
+      <p>No atual mundo dinâmico do desenvolvimento Web, uma nova funcionalidade revolucionária conhecida como webhooks está a mudar a forma como as aplicações interagem. Imagine desencadear acções numa aplicação imediatamente sempre que eventos específicos acontecem noutra.</p>
+<p>É para isso que servem os webhooks! Estes mensageiros digitais permitem a comunicação em tempo real entre aplicações Web e proporcionam uma velocidade sem paralelo.</p>
+<p>Esta publicação do blogue irá explorar o papel essencial dos webhooks no desenvolvimento moderno da Web. Pretendemos investigar a sua importância e aplicação, especialmente no contexto das novas funcionalidades do Docsie. Quer seja um programador experiente ou um novato na área da tecnologia, este guia abrangente tem como objetivo compreender profundamente os webhooks e a forma como podem potenciar as suas aplicações Web.</p>
+<h3>Entendendo webhooks</h3>
+<ol>
+<li>**Definição e aplicação</li>
+</ol>
+<p>Os webhooks são um conceito relativamente novo no desenvolvimento web, actuando como uma ponte entre aplicações web. Um navegador Web é como um mensageiro digital que notifica uma aplicação de eventos específicos noutra. <strong>Em vez de consultar ativamente os dados, os webhooks permitem-lhe "enviar" instantaneamente informações de uma aplicação para outra, logo que ocorra um evento predefinido. </strong></p>
+<p>Imagine receber uma notificação no seu telemóvel quando um amigo lhe envia uma mensagem de texto. É esse o poder dos webhooks - comunicação instantânea e em tempo real entre aplicações.</p>
+<ol>
+<li><strong>O papel da comunicação em tempo real</strong></li>
+</ol>
+<p>Os webhooks são essenciais para organizar o intercâmbio verbal em tempo real e sem descontinuidades entre aplicações. Quando um evento é desencadeado no software fornecido, que consiste em criar um novo ficheiro ou atualizar um editorial, o navegador de Internet envia uma mensagem com informações relevantes para um URL predefinido no utilitário em que foi construído.</p>
+<p>Esta mudança imediata de registo permite que as aplicações respondam a eventos, permitindo aos construtores automatizar acções e fornecer actualizações em tempo real. Quer seja para notificar os membros da equipa sobre alterações de relatórios ou para ligar a sistemas externos, o webhook oferece a coluna vertebral para uma conversa instantânea e ativa.</p>
+<p>Quando um evento é induzido no utilitário de fornecimento, este envia um pedido de webhook com estatísticas do evento para o URL da página de chamada do utilitário de destino. A aplicação de destino processa então a carga útil e executa uma operação descrita com base nas estatísticas recebidas.</p>
+<p>Essencialmente, os webhooks são uma ferramenta poderosa que permite fluxos de trabalho orientados por eventos, fornece comunicação e automação em tempo real e abre um mundo de possibilidades no desenvolvimento moderno da Internet.</p>
+<ol>
+<li>**Principais características do Webhook</li>
+</ol>
+<p>Os Webhooks têm várias características-chave que oferecem uma comunicação perfeita entre pacotes. Vamos nos aprofundar em cada item e entender o que ele significa:</p>
+<p><strong>Payload: </strong>A carga útil é o coração do webhook e envia as informações especificadas do aplicativo de origem para o utilitário de destino. Normalmente contém informações de alguma forma, juntamente com JSON ou XML, e factos contextuais sobre o evento que desencadeou o webhook.</p>
+<p><strong>Por exemplo</strong>, quando um novo ficheiro é criado no software fornecido, a carga útil também pode incluir o nome do ficheiro, o conteúdo, o autor e o carimbo de data/hora da criação.</p>
+<p><strong>Accionadores de eventos: </strong>Os accionadores de eventos são movimentos ou actividades específicas na aplicação fornecida que provocam um webhook. Os webhooks são concebidos para responder a ocasiões predefinidas, incluindo o desenvolvimento de documentos, a eliminação de novas entradas ou a realização de ajustes na máquina. Cada acionador de evento corresponde a um movimento específico no utilitário de objetivo.</p>
+<p><strong>URLs de retorno de chamada:</strong> O URL de retorno de chamada é o ponto de extremidade no software de objetivo em que a carga útil é enviada quando o webhook está prestes a ser ativado. Uma vez recebida a carga útil, utilizando o software de destino, este pode analisar os registos e efetuar movimentos básicos.</p>
+<p>O URL de retorno de chamada actua como o mecanismo de enfrentamento do cliente, garantindo que a mensagem chegue ao seu local de férias pretendido. Vamos aconselhar-nos na mesa seguinte para delinear os intervalos:</p>
+<table>
+<thead>
+<tr>
+<th>Componente</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Carga útil: transporta dados da aplicação de origem para a aplicação de destino, contendo informações específicas do evento.</td>
+<td></td>
+</tr>
+<tr>
+<td>Gatilhos de evento: ações ou ocorrências específicas dentro do aplicativo de origem que iniciam o webhook.</td>
+<td></td>
+</tr>
+<tr>
+<td>URLs de callback: o endpoint no aplicativo de destino para o qual o payload é enviado permite o processamento de dados e a execução de ações.</td>
+<td></td>
+</tr>
+<tr>
+<td>A compreensão dessas características é essencial para configurar webhooks e preservar conversas claras entre programas.</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Webhooks e APIs</li>
+</ul>
+<p>**Explicação da diferença</p>
+<p>Os webhooks e as APIs são ferramentas essenciais na melhoria da rede moderna, mas variam na forma como falam e facilitam o intercâmbio de dados.</p>
+<p><strong>Os webhooks são concebidos para o intercâmbio verbal entre servidores e obedecem a um método orientado para eventos. </strong>Estas aplicações podem enviar factos para qualquer outro software sem considerar um pedido selecionado. Sempre que um evento é precipitado no software de origem, o webhook envia uma mensagem para o URL predefinido dentro da aplicação de destino, que envia registos específicos da ocasião. Os webhooks funcionam particularmente bem em tempo real, fornecendo actualizações no local e automatizando movimentos à medida que os eventos ocorrem.</p>
+<p><strong>Por outro lado, as API (interfaces de programação de aplicações) são concebidas para o intercâmbio verbal entre consumidor e servidor. </strong>São realizadas através de um pedido expresso que uma aplicação cliente envia ao servidor. O cliente solicita registos ou acções precisas, e o servidor responde aos documentos solicitados.</p>
+<p><img alt="" src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_F7W3rTqgrYeAVpKRo/image2.jpg" /></p>
+<h3>Destacando o valor das condições orientadas por eventos</h3>
+<p>As vantagens dos webhooks são mais evidentes em ambientes orientados para a ocasião, onde a reação imediata aos eventos é essencial. Ao contrário das APIs, que exigem que os clientes procurem continuamente novos factos, os <strong>webhooks eliminam a necessidade de consultas frequentes</strong>. Esta capacidade reduz a carga inútil do servidor e a partilha de dados, tornando o webhook perfeito para pacotes em tempo real, incluindo notificações de chat, actualizações em direto e integração da IoT (Internet das Coisas).</p>
+<h3>Gráfico comparativo: Webhooks vs APIs</h3>
+<p>Para chamar a atenção visualmente para as diferenças entre webhooks e APIs, vamos dar uma olhada no gráfico comparativo a seguir:</p>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Webhooks</th>
+<th>APIs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Comunicação</td>
+<td>Servidor-a-servidor (baseada em push)</td>
+<td>Cliente-servidor (baseada em pedidos)</td>
+</tr>
+<tr>
+<td>Intercâmbio de dados</td>
+<td>Atualizações em tempo real, orientadas por eventos</td>
+<td>Solicitações explícitas do cliente</td>
+</tr>
+<tr>
+<td>Sondagem</td>
+<td>Não é necessária</td>
+<td>Pode ser necessária uma sondagem frequente</td>
+</tr>
+<tr>
+<td>Eficiência</td>
+<td>Resposta imediata a eventos</td>
+<td>Tempo de resposta depende da solicitação</td>
+</tr>
+<tr>
+<td>Cenários adequados</td>
+<td>Atualizações em tempo real, notificações de chat, IoT</td>
+<td>Recuperação de dados, interações com clientes</td>
+</tr>
+<tr>
+<td><strong>Em resumo, o webhook é excelente em situações relacionadas com eventos, apresentando conversação instantânea e eliminando a necessidade de votação contínua. </strong>Por outro lado, as APIs são ideais para uma comunicação clara entre cliente e servidor e para a recuperação de factos. Os webhooks e as APIs têm pontos fortes e fracos específicos; as suas diferenças permitem que os construtores seleccionem a melhor ferramenta para as suas necessidades.</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3>Implementando Webhooks com Docsie</h3>
+<p>**Webhooks no Docsie recentemente</p>
+<p>O Docsie introduziu um novo e interessante script com webhooks. Esta integração oferece uma grande variedade de oportunidades para aumentar a produtividade e permitir a diversificação na plataforma. O Docise acelera significativamente a troca verbal em tempo real através de Webhooks e permite a alternância perfeita de registos entre aplicações.</p>
+<p><strong>Produtividade e automatização</strong></p>
+<p>Os webhooks integrados permitem aos utilizadores do Docsie simplificar o seu fluxo de trabalho de ficheiros como nunca antes. O Docsie pode notificar imediatamente as equipas e as partes interessadas sobre eventos recentes, utilizando a energia da comunicação orientada para a ocasião, garantindo que todos estão sempre na mesma página. Em tempo real, a inovação é fácil e a coesão atinge novos patamares.</p>
+<p>Além disso, os webhooks no Docsie permitem a integração com sistemas externos, abrindo um mundo de oportunidades. Quer se trate do desenvolvimento de documentação, da realização de ferramentas de controlo ou da automatização da publicação de conteúdos em diferentes plataformas, os webhooks permitem uma integração sem esforço entre plataformas e reduzem as tarefas de guia.</p>
+<h3>Casos de utilização potenciais para Webhooks no Docsie</h3>
+<p><strong>Actualizações em tempo real:</strong> Com os webhooks, os membros da equipa podem receber notificações instantâneas em canais de comunicação como o Slack ou o Microsoft Groups sempre que um documento é criado ou atualizado no Docsie. Isto mantém todos actualizados sobre as últimas alterações e promove um ambiente de colaboração.</p>
+<p><strong>Integração com sistemas externos:</strong> O Webhook facilita a integração com sistemas externos, como ferramentas de gestão de projectos, sistemas de gestão de relações com clientes (CRM) ou sistemas de marketing, para que, sempre que uma nova transação seja adicionada ao Docsie, possa estimular a espontaneidade no mecanismo de gestão de projectos, o que tornará a equipa mais organizada e produtiva.</p>
+<p><strong>Publicação automatizada:</strong> Os webhooks podem ser utilizados para automatizar a publicação de documentos em várias plataformas. Por exemplo, a aprovação de novas directrizes de produtos no Docsie pode desencadear uma atualização dos documentos no sítio Web da empresa, garantindo a coerência entre plataformas.</p>
+<h3>Estabelecer webhooks no Docsie</h3>
+<p>A configuração de webhooks na plataforma Docsie é um processo simples. Aqui está um guia passo a passo para o ajudar a começar:</p>
+<p><strong>Passo 1: Navegar para Webhooks:</strong></p>
+<p>Configuração Primeiro, inicie sessão na sua conta Docsie e vá para a secção Definições. Em seguida, vá para Workspace e seleccione Webhooks.</p>
+<p><strong>Passo 2: Adicionar um novo Webhook</strong>:</p>
+<p>No menu de configuração dos Webhooks, clique no botão "Add webhook+" para iniciar o processo de configuração.</p>
+<p><strong>Etapa 3: Definir o contexto do webhook:</strong></p>
+<p>Especifique a plataforma de objetivo a partir das opções suportadas no menu de configuração: Slack, Mattermost, Microsoft Teams ou Personalizado. Em seguida, escolha os gatilhos de evento que devem ativar o webhook. Você pode selecionar vários eventos consistentes com o webhook, dependendo das suas necessidades.</p>
+<p><strong>Passo 4:</strong> <strong> Fornecer o URL de retorno de chamada:</strong></p>
+<p>Introduza o URL de chamada de retorno da aplicação de destino para a qual a carga útil pode ser enviada quando o navegador de Internet é ligado. Certifique-se de que o software de destino está configurado para receber e processar pedidos de webhook.</p>
+<p><strong>Passo 5: Guardar e verificar: </strong></p>
+<p>Depois de preencher as informações, mantenha as configurações do webhook. Pode verificar a configuração accionando-a ocasionalmente e verificando se o software do objetivo recebe o payload de forma eficiente.</p>
+<h3>Pré-requisitos e requisitos</h3>
+<p>Antes de colocar webhooks no Docsie, verifique se o software de destino oferece suporte a webhooks e pode manipular solicitações de webhook de entrada. Além disso, verifique se você tem as permissões e os direitos de acesso necessários para configurar webhooks na plataforma Docsie.</p>
+<p><strong>O webhook configura boas práticas:</strong></p>
+<p>Para tirar o máximo partido dos webhooks no Docsie ou noutra aplicação, consulte as seguintes práticas excelentes:</p>
+<p><strong>1. Segurança: </strong>Configure ligações estáveis com pacotes HTTPS para encriptar cargas úteis de webhook e proteger registos sensíveis.</p>
+<p><strong>2. Fiabilidade: </strong>Implementar mecanismos de controlo de erros e novas tentativas para garantir o envio bem sucedido de pedidos de webhook, mesmo em caso de falha rápida.</p>
+<p><strong>3. Autenticação de webhooks: </strong>Para confirmar os pedidos de webhook recebidos, utilize mecanismos de autenticação de webhook, como tokens pessoais ou assinaturas HMAC.</p>
+<p><strong>4. Monitorização e registo:</strong> Monitorizar a atividade do webhook e registar informações relevantes para avaliar o desempenho global da integração do webhook.</p>
+<p><strong>5. Limitar os pedidos:</strong> Utilizar a limitação de pedidos para controlar o envio de pedidos de webhook para evitar sobrecarregar o utilitário de destino.</p>
+<p><strong>6. Teste em ambiente de teste:</strong> Teste o webhook minuciosamente ou observe o ambiente antes de o enviar para produção.</p>
+<p><strong>Benefícios dos Webhooks na documentação empresarial</strong></p>
+<p>A adoção da Web na empresa de documentação pode ter vantagens significativas, incluindo a melhoria da produtividade, a multiplicação da produtividade e a diminuição do esforço manual.</p>
+<p><img alt="" src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_mkSOApRMBEIRTv4ft/image1.jpg" /></p>
+<p><a href="https://img.freepik.com/free-photo/e-mail-global-communications-connection-social-networking-concept_53876-123795.jpg?w=900&amp;t=st=1688548904~exp=1688549504~hmac=2be90ef94f789cbec18390b86b22cb43f33d76c0dd7764cecc2bc9b8c338c363">Source</a></p>
+<p>Alguns registos e estudos de casos ilustram as vantagens da utilização da Web:</p>
+<p>**De acordo com um estudo realizado pela Zapier, as agências que integram webhooks no seu fluxo de trabalho beneficiam de um desconto de 30% na introdução de informações de guia, aumentando a produtividade e poupando tempo.</p>
+<p>**Um estudo de caso de uma empresa de desenvolvimento de programas de software confirmou que os webhooks na sua técnica de subscrição reduziram os atrasos na atualização do material de conteúdo em 50% e melhoraram a comunicação da equipa.</p>
+<p>Em conclusão, a combinação de webhooks com a plataforma Docsie abre um mundo de produtividade e automatização multiplicadas. Ao fornecer actualizações em tempo real, facilitando a integração com estruturas externas e proporcionando um intercâmbio verbal contínuo entre programas, os webhooks permitem aos utilizadores simplificar os seus fluxos de trabalho de registo e obter um melhor desempenho e eficiência globais. Pode escalar melhor.</p>
+<h3>Exemplos de integrações de webhooks</h3>
+<p>**Popularidade da integração do webhook</p>
+<p>Os webhooks no Docsie permitem uma comunicação perfeita com aplicações e serviços populares, melhorando a colaboração e a troca de dados entre sistemas. As integrações populares de webhooks incluem:</p>
+<p><strong>Slack:</strong> Receba notificações em tempo real no Slack sempre que um novo documento for criado ou atualizado no Docsie, garantindo que as equipas se mantêm informadas e podem colaborar eficazmente.</p>
+<p><strong>Microsoft Teams:</strong> Integra-se com o Microsoft Teams para fornecer actualizações imediatas sobre alterações de documentos, facilitando a comunicação organizacional.</p>
+<p><strong>Trello:</strong> Trabalha automaticamente com cartões Trello quando são adicionados novos conteúdos ou versões ao Docsie, proporcionando-lhe um maior controlo do projeto.</p>
+<p><strong>Exemplos de estudos de caso de utilização</strong></p>
+<p>Colaboração em tempo real: Os webhooks permitem notificações instantâneas em plataformas de comunicação como o Slack, mantendo as equipas actualizadas sobre as alterações de documentos em tempo real.</p>
+<p>Gestão automatizada de projectos: A integração do Trello com outras ferramentas de gestão de projectos automatiza a criação e o processamento de projectos com base nas actualizações criadas no Docsie.</p>
+<h3>Conclusão</h3>
+<p>Em conclusão, os webhooks desempenham um papel essencial no desenvolvimento moderno da Web, permitindo a comunicação em tempo real e a troca fácil de dados entre aplicações. Com a nova funcionalidade do Docsie, os webhooks melhoram a produtividade e automatizam os fluxos de trabalho de documentos.</p>
+<p>Inovação e colaboração em tempo real.</p>
+<p>Automatização e controlo de tarefas.</p>
+<p>Integração perfeita com grandes pacotes.</p>
+<p>Simplifique o seu fluxo de trabalho de documentos e aumente a produtividade. Experimente a função de webhooks no <a href="https://help.docsie.io/view-and-manage-integrations/what-are-webhooks/">Docsie today </a> e desfrute de uma nova experiência de elevado desempenho geral para a sua técnica de subscrição.</p>
+    </div>
+  </div>
+  <!--/ Post Content-->
+
+  <!--Divider-->
+  <hr class="border-b-1 border-gray-400 mt-12 mb-8 mx-4">
+
+  <!--Next & Prev Links-->
+  <div class="font-sans flex justify-between content-center px-4 mb-4">
+    <div class="text-left">
+      <span class="text-xs md:text-sm font-normal text-gray-600">&lt; Previous Post</span><br>
+      <p><a href="../customer-onboarding-documentation-with-live-examples-best-practices-in-2023" class="break-normal text-base md:text-sm text-green-500 font-bold no-underline hover:underline">Documentação de integração do cliente com exemplos em direto - Melhores práticas em 2023</a></p>
+    </div>
+    <div class="text-right">
+      <span class="text-xs md:text-sm font-normal text-gray-600">Next Post &gt;</span><br>
+      <p><a href="../archbee-pricing-vs-slab-pricing-vs-docsie-pricing-a-comprehensive-comparison" class="break-normal text-base md:text-sm text-green-500 font-bold no-underline hover:underline">Preços Archbee vs Preços Slab vs Preços Docsie: Uma comparação abrangente</a></p>
+    </div>
+  </div>
+
+
+  <!--/Next & Prev Links-->
+
+  
+    <div class="commentbox"></div>
+
+    <script src="https://unpkg.com/commentbox.io/dist/commentBox.min.js"></script>
+    <script>commentBox("5725910686760960-proj")</script>
+  
+
+  <!--Subscribe-->
+  
+    <!-- Base template of the subscription form. -->
+
+<div class="container font-sans bg-white rounded mt-8 p-4 md:p-24 text-center mb-10">
+    <h2 class="font-bold break-normal text-2xl md:text-4xl">Subscribe to the newsletter</h2>
+    <h3 class="font-bold break-normal font-normal text-gray-600 text-base md:text-xl">Stay up to date with our latest news and products</h3>
+    <div class="w-full text-center pt-4">
+        <form action="#">
+            <div class="max-w-xl mx-auto p-1 pr-0 flex flex-wrap items-center">
+                <input type="email" placeholder="youremail@example.com"
+                       class="flex-1 appearance-none rounded shadow p-3 text-gray-600 mr-2 focus:outline-none">
+                <button type="submit"
+                        class="flex-1 mt-4 md:mt-0 block md:inline-block appearance-none bg-green-500 text-white text-base font-semibold tracking-wider uppercase py-4 rounded shadow hover:bg-green-400">
+                    Subscribe
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+  
+  <!-- /Subscribe-->
+</div>
+<!--/container-->
+
+<footer class="bg-gray-900">
+  <div class="container max-w-6xl mx-auto flex items-center px-2 py-8">
+
+    <div class="w-full mx-auto flex flex-wrap items-center">
+      <div class="flex w-full md:w-1/2 justify-center md:justify-start text-white font-extrabold flex-col">
+        <a class="text-gray-900 no-underline hover:text-gray-900 hover:no-underline" href="/blog/pt-pt">
+          <span class="text-base text-gray-200">Docsie.io Blog</span>
+        </a>
+        <a class="text-gray-900 no-underline hover:text-gray-900 hover:no-underline"
+           href="https://github.com/LikaloLLC/BlogVi" target="_blank">
+          <span class="text-xs text-gray-200">Made with BlogVI</span>
+        </a>
+      </div>
+      <div class="flex w-full pt-2 content-center justify-between md:w-1/2 md:justify-end">
+        <ul class="list-reset flex justify-center flex-1 md:flex-none items-center">
+          
+            <li>
+              <a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-3"
+                 href="https://www.docsie.io">Docsie</a>
+            </li>
+          
+            <li>
+              <a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-3"
+                 href="https://www.docsie.io/pricing/">Docsie Pricing</a>
+            </li>
+          
+            <li>
+              <a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-3"
+                 href="https://www.docsie.io/try_docsie/">Try Docsie</a>
+            </li>
+          
+        </ul>
+      </div>
+    </div>
+
+
+  </div>
+</footer>
+
+<script>
+  /* Progress bar */
+  //Source: https://alligator.io/js/progress-bar-javascript-css-variables/
+  var h = document.documentElement,
+    b = document.body,
+    st = 'scrollTop',
+    sh = 'scrollHeight',
+    progress = document.querySelector('#progress'),
+    scroll;
+  var scrollpos = window.scrollY;
+  var header = document.getElementById("header");
+  var navcontent = document.getElementById("nav-content");
+
+  document.addEventListener('scroll', function () {
+
+    /*Refresh scroll % width*/
+    scroll = (h[st] || b[st]) / ((h[sh] || b[sh]) - h.clientHeight) * 100;
+    progress.style.setProperty('--scroll', scroll + '%');
+
+    /*Apply classes for slide in bar*/
+    scrollpos = window.scrollY;
+
+    if (scrollpos > 10) {
+      header.classList.add("bg-white");
+      header.classList.add("shadow");
+      navcontent.classList.remove("bg-gray-100");
+      navcontent.classList.add("bg-white");
+    } else {
+      header.classList.remove("bg-white");
+      header.classList.remove("shadow");
+      navcontent.classList.remove("bg-white");
+      navcontent.classList.add("bg-gray-100");
+
+    }
+
+  });
+
+
+  //Javascript to toggle the menu
+  document.getElementById('nav-toggle').onclick = function () {
+    document.getElementById("nav-content").classList.toggle("hidden");
+  }
+</script>
+<script>
+  /*
+    Twitter
+    https://twitter.com/share?url=[post-url]&text=[post-title]
+
+    Facebook
+    https://www.facebook.com/sharer.php?u=[post-url]
+
+  */
+  let twitterURI = document.getElementById('twitter');
+  let facebookURI = document.getElementById('facebook');
+
+  let postURI = encodeURI(document.location.href);
+  let postTitle = encodeURI(document.getElementById('blog-title').innerText + ":\n")
+
+  facebookURI.setAttribute('href', `https://www.facebook.com/sharer.php?u=${postURI}`);
+  twitterURI.setAttribute('href', `https://twitter.com/share?url=${postURI}&text=${postTitle}`);
+</script>
+
+<!--Sharect-->
+
+<script src="https://unpkg.com/sharect@2.0.0/dist/sharect.js"></script>
+<script>window["sharectConfig"] = {"backgroundColor": "#333333", "enabled": true, "facebook": true, "iconColor": "#FFFFFF", "selectableElements": ["body"], "twitter": true, "twitterUsername": "likalo_llc"}</script>
+<script src="/blog/templates/assets/js/sharect.js"></script>
+
+
+
+<!--Reading time-->
+<script src="/blog/templates/assets/js/reading-time.min.js"></script>
+<script>
+  const text = []
+  let content = [...document.getElementById('content').getElementsByTagName('p')].forEach((elem) => {
+    text.push(elem.textContent)
+  });
+  const stats = readingTime(text.join(" "));
+
+  document.getElementById('reading-time').innerHTML = stats.text;
+</script>
+
+
+  
+      <!-- Google Tag Manager (noscript) -->
+
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TZRGMQ9"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+  
+
+</body>
+
+</html>

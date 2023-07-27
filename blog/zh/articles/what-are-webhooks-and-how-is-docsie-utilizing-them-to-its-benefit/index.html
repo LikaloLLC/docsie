@@ -1,0 +1,431 @@
+<!-- Base template of the article page. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+  
+
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/blog/https://d1iq6qzgppjlud.cloudfront.net/images/favicon/favicon-196x196.png">
+
+
+  <!-- Primary Meta Tags -->
+  <title>Docsie.io Blog - 什么是 Webhooks，Docsie 如何利用 Webhooks 使自己获益？</title>
+  <meta name="author" content="Tanya A Mishra"/>
+  <meta name="title" content="什么是 Webhooks，Docsie 如何利用 Webhooks 使自己获益？">
+  <meta name="description" content="在本博客中，我们将讨论什么是 Webhooks，以及 Docsie 如何利用 Webhooks 使自己受益？"/>
+  <meta name="keywords" content="Technical Writing"/>
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.docsie.io/blog/blog/zh/articles/what-are-webhooks-and-how-is-docsie-utilizing-them-to-its-benefit/">
+  <meta property="og:title" content="什么是 Webhooks，Docsie 如何利用 Webhooks 使自己获益？">
+  <meta property="og:description"
+        content="在本博客中，我们将讨论什么是 Webhooks，以及 Docsie 如何利用 Webhooks 使自己受益？">
+  <meta property="og:image" content="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_m04DV8imyNv6X2sU6/142c4f42-36fa-7e71-f791-a77ea80fbf1bwhat_are_webhooks__and_how_is_docsie_utilising_them_to_its_benefit.jpg">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://www.docsie.io/blog/blog/zh/articles/what-are-webhooks-and-how-is-docsie-utilizing-them-to-its-benefit/">
+  <meta property="twitter:title" content="什么是 Webhooks，Docsie 如何利用 Webhooks 使自己获益？">
+  <meta property="twitter:description"
+        content="在本博客中，我们将讨论什么是 Webhooks，以及 Docsie 如何利用 Webhooks 使自己受益？">
+  <meta property="twitter:image" content="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_m04DV8imyNv6X2sU6/142c4f42-36fa-7e71-f791-a77ea80fbf1bwhat_are_webhooks__and_how_is_docsie_utilising_them_to_its_benefit.jpg">
+
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/blog/templates/assets/css/typography.min.css"/>
+  <!--Replace with your tailwind.css once created-->
+    
+    <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TZRGMQ9');</script>
+<!-- End Google Tag Manager -->
+  
+
+</head>
+
+
+<body class="bg-gray-100 font-sans leading-normal tracking-normal">
+
+<nav id="header" class="fixed w-full z-10 top-0">
+
+  <div id="progress" class="h-1 z-20 top-0"
+       style="background:linear-gradient(to right, #4dc0b5 var(--scroll), transparent 0);"></div>
+
+  <div class="container max-w-6xl mx-auto flex flex-wrap items-center justify-between mt-0 py-3">
+
+    <div class="pl-4">
+      <a class="text-gray-900 text-base no-underline hover:no-underline font-extrabold text-xl" href="../../">
+          Docsie.io Blog
+      </a>
+    </div>
+
+    <div class="block lg:hidden pr-4">
+      <button id="nav-toggle"
+              class="flex items-center px-3 py-2 border rounded text-gray-500 border-gray-600 hover:text-gray-900 hover:border-green-500 appearance-none focus:outline-none">
+        <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+          <title>Menu</title>
+          <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/>
+        </svg>
+      </button>
+    </div>
+
+    <div class="w-full flex-grow lg:flex lg:items-center lg:w-auto hidden lg:block mt-2 lg:mt-0 bg-gray-100 z-20"
+         id="nav-content">
+      <ul class="list-reset lg:flex justify-end flex-1 items-center">
+        
+        <li>
+          <a class="inline-block text-gray-600 hover:text-gray-900 hover:underline py-2 px-4"
+             href="https://www.docsie.io">Docsie</a>
+        </li>
+        
+        <li>
+          <a class="inline-block text-gray-600 hover:text-gray-900 hover:underline py-2 px-4"
+             href="https://www.docsie.io/pricing/">Docsie Pricing</a>
+        </li>
+        
+        <li>
+          <a class="inline-block text-gray-600 hover:text-gray-900 hover:underline py-2 px-4"
+             href="https://www.docsie.io/try_docsie/">Try Docsie</a>
+        </li>
+        
+      </ul>
+    </div>
+    <div class="flex w-full justify-end content-center">
+        <a
+          class="inline-block text-gray-500 hover:text-green-500 hover:underline text-center h-10 p-2 md:h-auto md:p-4 avatar"
+          data-tippy-content="@twitter_handle" href="https://twitter.com/intent/tweet?url=#"
+          id="twitter">
+          <svg class="fill-current h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+            <path
+              d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"></path>
+          </svg>
+        </a>
+        <a
+          class="inline-block text-gray-500 hover:text-green-500 hover:underline text-center h-10 p-2 md:h-auto md:p-4 avatar"
+          data-tippy-content="#facebook_id" href="https://www.facebook.com/sharer/sharer.php?u=#}"
+          id="facebook">
+          <svg class="fill-current h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+            <path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"></path>
+          </svg>
+        </a>
+      </div>
+  </div>
+
+</nav>
+
+<!--Container-->
+<div class="container max-w-4xl mx-auto mt-32 px-8 md:px-0">
+  <div class="prose prose lg:prose-xl mx-auto mt-32">
+    <!--Title-->
+    <h1 id="blog-title">什么是 Webhooks，Docsie 如何利用 Webhooks 使自己获益？</h1>
+    <!--Author-->
+    <div class="flex items-center">
+      <img class="w-10 h-10 rounded-full mr-4" src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_p1X4gXS3n0rCHYuaE/1f3f5f57-d8e2-7978-faef-0b9fe89f3e4btanya_pic.jpg" alt="Avatar of Author">
+      <div class="flex-1 px-2">
+        <div class="font-bold leading-none mb-2">Tanya A Mishra</div>
+        <div class="text-xs md:text-base">on July 07, 2023 · <span id="reading-time"
+                class="block md:inline mt-2 md:mt-0"></span> · filed under <span
+          class="block md:inline mt-2 md:mt-0">
+						
+            <span class="rounded bg-green-500 text-white px-1 uppercase text-xs whitespace-nowrap md:text-sm">Technical Writing</span>
+						
+					</span>
+        </div>
+      </div>
+    </div>
+    <!--/Author-->
+
+    <!--Post Content-->
+    <!--Lead Para-->
+    <div id="content">
+      <p>在当今充满活力的网络开发世界中，一种名为 Webhooks 的改变游戏规则的新功能正在改变应用程序的交互方式。想象一下，每当一个应用程序中发生特定事件，另一个应用程序就会立即触发相应的操作。</p>
+<p>这就是网络钩子的作用！这些数字信使可实现网络应用程序之间的实时通信，并提供无与伦比的速度。</p>
+<p>本篇博文将探讨网络钩子在现代网络开发中的重要作用。我们将探讨其重要性和应用，尤其是在 Docsie 新功能的背景下。无论您是经验丰富的开发人员，还是技术领域的新手，本综合指南都将帮助您透彻了解 webhooks 以及它们如何为您的网络应用程序增添动力。</p>
+<h3>了解网络钩子</h3>
+<p>1.<strong>定义和应用 </strong></p>
+<p>网络钩子是网络开发中一个相对较新的概念，是网络应用程序之间的桥梁。网络浏览器就像一个数字信使，将一个应用程序中的特定事件通知另一个应用程序。<strong>网络钩子无需主动查询数据，而是在默认事件发生后，立即将信息从一个应用程序 "推送 "到另一个应用程序。</strong></p>
+<p>想象一下，当朋友给你发短信时，你的手机会收到通知。这就是网络钩子的威力--应用程序之间的即时通信。</p>
+<p>1.<strong>实时通信的作用</strong></p>
+<p>网络钩子对于组织应用程序之间无缝、实时的语言交流至关重要。当所提供软件中的事件被触发时，包括生成一个全新文件或更新一篇社论，互联网浏览器就会将相关信息发送到它们所构建的实用程序中预定义的 URL。</p>
+<p>这种即时的记录更改允许应用程序对事件做出响应，允许构建者自动执行操作并提供实时更新。无论是通知工作人员报告的变化还是连接到外部系统，网络钩子都为即时和活跃的对话提供了脊梁。</p>
+<p>当供应实用程序中发生事件时，它会向目标实用程序的调用页面 URL 发送包含事件统计信息的网络钩子请求。然后，目标应用程序处理有效载荷，并根据收到的统计数据执行描述的操作。</p>
+<p>从本质上讲，网络钩子是一种强大的工具，它允许事件驱动的工作流，提供实时通信和自动化，并为现代互联网开发开辟了一个充满可能性的世界。</p>
+<p>1.<strong>网络钩子的</strong>主要功能</p>
+<p>Webhooks 有几个关键功能，可提供软件包之间的无缝通信。让我们逐项深入了解其含义：</p>
+<p><strong>有效负载：</strong>有效载荷是网络钩子的核心，它将指定信息从源应用程序发送到目标实用程序。它通常包含某种形式的信息，以及 JSON 或 XML 和触发 webhook 的事件的上下文事实。</p>
+<p><strong>例如</strong>*，当在提供的软件中创建一个新文件时，有效载荷还可能包含文件名、内容、作者和创建时间戳。</p>
+<p><strong>事件触发器：</strong>事件触发器是供应应用软件中引起网络钩子的特殊动作或活动。Webhook 设计用于回复预定义的场合，包括开发文档、删除新条目或对机器进行调整。每个事件触发器都与目标实用程序中的特定动作相对应。</p>
+<p><strong>回调 URL：</strong> 回调 URL 是目标软件中的端点，当网络钩子被触发时，有效载荷将被发送到该端点。一旦目标软件接收到有效载荷，就可以对记录进行技术处理，并采取基本行动。</p>
+<p>回调 URL 充当客户端的应对机制，确保信息到达预定的度假地点。让我们从下面的表格中了解一下时间间隔：</p>
+<p>|组件|描述|...
+|-|-|
+|Payload|从源应用程序向目标应用程序传输数据，其中包含特定于事件的信息。
+|事件触发器|源应用程序中启动 webhook 的特定操作或事件。
+|回调 URL|目标应用程序中发送有效载荷的端点，用于处理数据和执行操作。
+了解这些功能对于配置网络钩子和保持程序之间的清晰对话至关重要。</p>
+<p><strong> 网络钩子和应用程序接口 </strong></p>
+<p>**区别说明</p>
+<p>网络钩子和应用程序接口是现代网络改进的基本工具，但它们在说话和促进数据交换的方式上各不相同。</p>
+<p><strong>Webhooks 专为服务器到服务器之间的语言交换而设计，符合事件驱动方法。</strong>这些应用程序可以在不考虑选定请求的情况下向任何其他软件推送事实。每当源软件中出现事件时，网络钩子就会向目标应用程序中的默认 URL 发送信息，目标应用程序则会发送特定场合的记录。网络钩子的实时性特别好，可在事件发生时提供现场更新并自动移动。</p>
+<p><strong>另一方面，API（应用编程接口）是为消费者与服务器之间的语言交流而设计的。</strong>它们通过客户端应用程序向服务器发送的明确请求来实现。客户请求精确的记录或操作，服务器则对所请求的文件做出响应。</p>
+<p><img alt="" src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_F7W3rTqgrYeAVpKRo/image2.jpg" /></p>
+<h3>强调事件驱动条件的价值</h3>
+<p>在事件驱动环境中，网络钩子的优势最为突出，因为在这种环境中，对事件的即时反应至关重要。与需要客户不断搜索新事实的应用程序接口不同，<strong>网络钩子无需频繁查询。</strong>这种功能减少了无用的服务器负载和数据共享，使网络钩子成为实时包（包括聊天通知、实时更新和物联网集成）的完美选择。</p>
+<h4>对比图：网络钩子与应用程序接口</h4>
+<p>为了直观地说明网络钩子与应用程序接口之间的区别，让我们来看看下面的对比图：</p>
+<p>|网络钩子与应用程序接口
+|-|-|-|
+|通信|服务器到服务器（基于推送）|客户端到服务器（基于请求）|
+|数据交换|事件驱动、实时更新|明确的客户端请求
+|轮询|不需要|可能需要频繁轮询
+|效率|对事件的即时响应|响应时间取决于请求
+|适用场景|实时更新、聊天通知、物联网|数据检索、客户端交互|<strong>总结
+</strong>总之，网络钩子在与事件相关的情况下表现出色，可提供即时对话，无需持续投票。**另一方面，应用程序接口非常适合用户与服务器之间的清晰交流和事实检索。网络钩子和应用程序接口各有优缺点；它们之间的差异允许构建者根据自己的需要选择最佳工具。</p>
+<h3>使用 Docsie 实施网络钩子</h3>
+<p><strong>最近在Docsie中使用的网络钩子</strong>*</p>
+<p>Docsie 引入了一个有趣的 Webhooks 新脚本。这种集成为提高工作效率和实现平台多样化提供了大量机会。Docise 通过 Webhooks 大大加快了实时语言交换的速度，并允许在应用程序之间无缝交替记录。</p>
+<p><strong>生产力与自动化</strong></p>
+<p>集成的 Webhooks 允许 Docsie 用户前所未有地简化文件工作流程。Docsie 可以利用场合驱动通信的能量，立即通知团队和利益相关者最近发生的事件，确保每个人始终保持在同一起跑线上。实时创新轻而易举，凝聚力达到新高度。</p>
+<p>此外，Docsie 中的 Webhooks 允许与外部系统集成，从而带来了无限商机。无论是开发文档、开发控制工具，还是将内容自动发布到不同的平台，网络钩子都能轻松实现平台集成，减少指导工作。</p>
+<h3>Docsie中网络钩子的潜在用例</h3>
+<p><strong>实时更新：</strong> 通过网络钩子，每当 Docsie 中创建或更新文档时，团队成员都能在 Slack 或 Microsoft Groups 等通信渠道中收到即时通知。这样，每个人都能及时了解最新的更改，并促进协作环境。</p>
+<p><strong>外部系统集成：</strong> Webhook 方便与外部系统（如项目管理工具、客户关系管理（CRM）系统或营销系统）无缝集成，这样，每当 Docsie 中添加新事务时，就能激发项目管理机制的自发性，从而使团队更有组织、更富有成效。</p>
+<p><strong>自动发布：</strong> Webhooks 可用于在各种平台上自动发布文档。例如，在 Docsie 中批准新产品指南可触发公司网站上的文件更新，确保各平台的一致性。</p>
+<h3>在 Docsie 中建立网络钩子</h3>
+<p>在 Docsie 平台中设置网络钩子是一个简单的过程。这里有一个分步指南，帮助你开始使用：</p>
+<p><strong>第 1 步：导航至 Webhooks:</strong></p>
+<p>配置 首先，登录你的 Docsie 账户，进入 "设置 "部分。然后转到工作区，选择 Webhooks。</p>
+<p><strong>第 2 步：添加新的网络钩子</strong>：</p>
+<p>在网络钩子配置菜单中，点击 "添加网络钩子+"按钮开始配置过程。</p>
+<p><strong>第 3 步：定义网络钩子上下文：</strong></p>
+<p>从配置菜单的支持选项中指定目标平台：Slack、Mattermost、Microsoft Teams 或自定义。接下来，选择必须激活 Webhook 的事件触发器。您可以根据需要选择与网络钩子一致的多个事件。</p>
+<p><strong>第 4 步：</strong> <strong>提供回调 URL:</strong></p>
+<p>输入目标应用程序的回调 URL，当网络浏览器连接后，有效载荷可能会被发送到该 URL。确保目标软件已配置为接收和处理网络钩子请求。</p>
+<p><strong>第 5 步：保存并检查：</strong></p>
+<p>填写信息后，保存网络钩子设置。您可以通过偶尔触发并验证目标软件是否有效接收有效载荷来检查配置。</p>
+<h3>前提条件和要求</h3>
+<p>在 Docsie 中添加网络钩子之前，请确保您的目标软件支持网络钩子，并能处理传入的网络钩子请求。此外，确保你拥有在 Docsie 平台上配置网络钩子所需的权限和访问权。</p>
+<p><strong> 网络钩子设置的最佳实践：</strong></p>
+<p>要在 Docsie 或其他应用程序中充分利用网络钩子，请查看以下精彩实践：</p>
+<p><strong>1.安全：</strong>使用 HTTPS 软件包建立稳定的连接，对网络钩子有效载荷进行加密，保护敏感记录。</p>
+<p><strong>2.可靠性：</strong>实施错误控制机制和重试，确保即使在快速故障的情况下也能成功发送网络钩子请求。</p>
+<p><strong>3.网络钩子验证：</strong>要确认收到的网络钩子请求，请使用网络钩子验证机制，如个人令牌或 HMAC 签名。</p>
+<p><strong>4.监控和记录：</strong> 监控网络钩子活动并记录相关信息，以检查网络钩子集成的成果和整体性能。</p>
+<p><strong>5.节流请求：</strong> 使用请求节流来控制网络钩子请求的发送，以避免目标工具超载。</p>
+<p><strong>6.在暂存环境中进行测试：</strong> 在将网络钩子发送到生产环境之前，彻底测试或查看周围环境。</p>
+<p><strong>网络钩子在文档企业内部的优势</strong></p>
+<p>在文档企业中采用网络可能会带来显著的优势，包括提高生产力、成倍提高生产力和减少人工操作。</p>
+<p><img alt="" src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_mkSOApRMBEIRTv4ft/image1.jpg" /></p>
+<p><a href="https://img.freepik.com/free-photo/e-mail-global-communications-connection-social-networking-concept_53876-123795.jpg?w=900&amp;t=st=1688548904~exp=1688549504~hmac=2be90ef94f789cbec18390b86b22cb43f33d76c0dd7764cecc2bc9b8c338c363">Source</a></p>
+<p>一些记录和案例研究说明了使用网络的好处：</p>
+<p><strong>根据 Zapier 的一项研究，将网络钩子整合到工作流程中的机构在指南信息录入、提高生产率和节省时间方面获得了 30% 的折扣</strong>。</p>
+<p>**一家软件开发企业的案例研究证实，其订阅技术中的网络钩子将内容更新延迟减少了 50%，并改善了团队沟通。</p>
+<p>总之，将网络钩子与 Docsie 平台相结合，可以提高生产力和自动化水平。通过提供实时更新、促进与外部结构的集成以及提供程序间的无缝语言交流，网络钩子使用户能够简化他们的记录工作流程，并获得更好的整体性能和效率。您可以爬得更好。</p>
+<h3>网络钩子集成示例</h3>
+<p><strong> Webhook 集成的流行程度 </strong></p>
+<p>Docsie 中的 Webhooks 可以与常用的应用程序和服务进行无缝通信，增强系统间的协作和数据交换。流行的网络钩子集成包括</p>
+<p><strong>Slack：</strong> 在 Docsie 中创建或更新新文档时，在 Slack 中获取实时通知，确保团队随时了解情况并有效协作。</p>
+<p><strong>Microsoft Teams：</strong> 与 Microsoft Teams 集成，即时更新文档变更，促进组织交流。</p>
+<p><strong>Trello：</strong> 在 Docsie 中添加新内容或新版本时，自动与 Trello 卡协同工作，让你更好地控制项目。</p>
+<p><strong>使用案例研究示例</strong></p>
+<p>实时协作：Webhooks 可在 Slack 等通信平台上实现即时通知，让团队实时了解文档变更。</p>
+<p>自动化项目管理：将 Trello 与其他项目管理工具集成，可根据 Docsie 中创建的更新自动创建和处理项目。</p>
+<h4>结论</h4>
+<p>总之，网络钩子在现代网络开发中发挥着至关重要的作用，它允许应用程序之间轻松地进行实时通信和数据交换。借助 Docsie 的新功能，webhooks 可以提高工作效率，实现文档工作流程自动化。</p>
+<p>实时创新与协作。</p>
+<p>自动化和任务控制。</p>
+<p>与大型软件包无缝集成。</p>
+<p>简化文档工作流程，提高工作效率。试用 <a href="https://help.docsie.io/view-and-manage-integrations/what-are-webhooks/">Docsie today</a> 中的网络钩子功能，为您的订阅技术带来全新的高性能体验。</p>
+    </div>
+  </div>
+  <!--/ Post Content-->
+
+  <!--Divider-->
+  <hr class="border-b-1 border-gray-400 mt-12 mb-8 mx-4">
+
+  <!--Next & Prev Links-->
+  <div class="font-sans flex justify-between content-center px-4 mb-4">
+    <div class="text-left">
+      <span class="text-xs md:text-sm font-normal text-gray-600">&lt; Previous Post</span><br>
+      <p><a href="../customer-onboarding-documentation-with-live-examples-best-practices-in-2023" class="break-normal text-base md:text-sm text-green-500 font-bold no-underline hover:underline">客户入职文档（附实例）--2023 年的最佳实践</a></p>
+    </div>
+    <div class="text-right">
+      <span class="text-xs md:text-sm font-normal text-gray-600">Next Post &gt;</span><br>
+      <p><a href="../archbee-pricing-vs-slab-pricing-vs-docsie-pricing-a-comprehensive-comparison" class="break-normal text-base md:text-sm text-green-500 font-bold no-underline hover:underline">Archbee 定价 vs Slab 定价 vs Docsie 定价：综合比较</a></p>
+    </div>
+  </div>
+
+
+  <!--/Next & Prev Links-->
+
+  
+    <div class="commentbox"></div>
+
+    <script src="https://unpkg.com/commentbox.io/dist/commentBox.min.js"></script>
+    <script>commentBox("5725910686760960-proj")</script>
+  
+
+  <!--Subscribe-->
+  
+    <!-- Base template of the subscription form. -->
+
+<div class="container font-sans bg-white rounded mt-8 p-4 md:p-24 text-center mb-10">
+    <h2 class="font-bold break-normal text-2xl md:text-4xl">Subscribe to the newsletter</h2>
+    <h3 class="font-bold break-normal font-normal text-gray-600 text-base md:text-xl">Stay up to date with our latest news and products</h3>
+    <div class="w-full text-center pt-4">
+        <form action="#">
+            <div class="max-w-xl mx-auto p-1 pr-0 flex flex-wrap items-center">
+                <input type="email" placeholder="youremail@example.com"
+                       class="flex-1 appearance-none rounded shadow p-3 text-gray-600 mr-2 focus:outline-none">
+                <button type="submit"
+                        class="flex-1 mt-4 md:mt-0 block md:inline-block appearance-none bg-green-500 text-white text-base font-semibold tracking-wider uppercase py-4 rounded shadow hover:bg-green-400">
+                    Subscribe
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+  
+  <!-- /Subscribe-->
+</div>
+<!--/container-->
+
+<footer class="bg-gray-900">
+  <div class="container max-w-6xl mx-auto flex items-center px-2 py-8">
+
+    <div class="w-full mx-auto flex flex-wrap items-center">
+      <div class="flex w-full md:w-1/2 justify-center md:justify-start text-white font-extrabold flex-col">
+        <a class="text-gray-900 no-underline hover:text-gray-900 hover:no-underline" href="/blog/zh">
+          <span class="text-base text-gray-200">Docsie.io Blog</span>
+        </a>
+        <a class="text-gray-900 no-underline hover:text-gray-900 hover:no-underline"
+           href="https://github.com/LikaloLLC/BlogVi" target="_blank">
+          <span class="text-xs text-gray-200">Made with BlogVI</span>
+        </a>
+      </div>
+      <div class="flex w-full pt-2 content-center justify-between md:w-1/2 md:justify-end">
+        <ul class="list-reset flex justify-center flex-1 md:flex-none items-center">
+          
+            <li>
+              <a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-3"
+                 href="https://www.docsie.io">Docsie</a>
+            </li>
+          
+            <li>
+              <a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-3"
+                 href="https://www.docsie.io/pricing/">Docsie Pricing</a>
+            </li>
+          
+            <li>
+              <a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-3"
+                 href="https://www.docsie.io/try_docsie/">Try Docsie</a>
+            </li>
+          
+        </ul>
+      </div>
+    </div>
+
+
+  </div>
+</footer>
+
+<script>
+  /* Progress bar */
+  //Source: https://alligator.io/js/progress-bar-javascript-css-variables/
+  var h = document.documentElement,
+    b = document.body,
+    st = 'scrollTop',
+    sh = 'scrollHeight',
+    progress = document.querySelector('#progress'),
+    scroll;
+  var scrollpos = window.scrollY;
+  var header = document.getElementById("header");
+  var navcontent = document.getElementById("nav-content");
+
+  document.addEventListener('scroll', function () {
+
+    /*Refresh scroll % width*/
+    scroll = (h[st] || b[st]) / ((h[sh] || b[sh]) - h.clientHeight) * 100;
+    progress.style.setProperty('--scroll', scroll + '%');
+
+    /*Apply classes for slide in bar*/
+    scrollpos = window.scrollY;
+
+    if (scrollpos > 10) {
+      header.classList.add("bg-white");
+      header.classList.add("shadow");
+      navcontent.classList.remove("bg-gray-100");
+      navcontent.classList.add("bg-white");
+    } else {
+      header.classList.remove("bg-white");
+      header.classList.remove("shadow");
+      navcontent.classList.remove("bg-white");
+      navcontent.classList.add("bg-gray-100");
+
+    }
+
+  });
+
+
+  //Javascript to toggle the menu
+  document.getElementById('nav-toggle').onclick = function () {
+    document.getElementById("nav-content").classList.toggle("hidden");
+  }
+</script>
+<script>
+  /*
+    Twitter
+    https://twitter.com/share?url=[post-url]&text=[post-title]
+
+    Facebook
+    https://www.facebook.com/sharer.php?u=[post-url]
+
+  */
+  let twitterURI = document.getElementById('twitter');
+  let facebookURI = document.getElementById('facebook');
+
+  let postURI = encodeURI(document.location.href);
+  let postTitle = encodeURI(document.getElementById('blog-title').innerText + ":\n")
+
+  facebookURI.setAttribute('href', `https://www.facebook.com/sharer.php?u=${postURI}`);
+  twitterURI.setAttribute('href', `https://twitter.com/share?url=${postURI}&text=${postTitle}`);
+</script>
+
+<!--Sharect-->
+
+<script src="https://unpkg.com/sharect@2.0.0/dist/sharect.js"></script>
+<script>window["sharectConfig"] = {"backgroundColor": "#333333", "enabled": true, "facebook": true, "iconColor": "#FFFFFF", "selectableElements": ["body"], "twitter": true, "twitterUsername": "likalo_llc"}</script>
+<script src="/blog/templates/assets/js/sharect.js"></script>
+
+
+
+<!--Reading time-->
+<script src="/blog/templates/assets/js/reading-time.min.js"></script>
+<script>
+  const text = []
+  let content = [...document.getElementById('content').getElementsByTagName('p')].forEach((elem) => {
+    text.push(elem.textContent)
+  });
+  const stats = readingTime(text.join(" "));
+
+  document.getElementById('reading-time').innerHTML = stats.text;
+</script>
+
+
+  
+      <!-- Google Tag Manager (noscript) -->
+
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TZRGMQ9"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+  
+
+</body>
+
+</html>

@@ -1,0 +1,575 @@
+<!-- Base template of the article page. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+  
+
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/blog/https://d1iq6qzgppjlud.cloudfront.net/images/favicon/favicon-196x196.png">
+
+
+  <!-- Primary Meta Tags -->
+  <title>Docsie.io Blog - Coda vs. Notion vs. Docsie - A Deep Dive funkció összehasonlítás</title>
+  <meta name="author" content="Tal F."/>
+  <meta name="title" content="Coda vs. Notion vs. Docsie - A Deep Dive funkció összehasonlítás">
+  <meta name="description" content="A Docsie-t azért vettük be ebbe az összehasonlításba, mert ez egy olyan eszköz, amely osztozik a Notion és a Coda funkcióin, de olyan felhasználási eseteket fed le, amelyekben a kettő nem elégséges: robusztus tudásbázisok és vállalati wikik létrehozása.
+"/>
+  <meta name="keywords" content="Termék dokumentáció,Termékmenedzsment,Dokumentációs portálok,Legjobb gyakorlatok,Műszaki írás,Termékdokumentáció oktatóanyagok"/>
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.docsie.io/blog/blog/hu/articles/coda-vs-notion-vs-docsie-a-deep-dive-feature-comparison/">
+  <meta property="og:title" content="Coda vs. Notion vs. Docsie - A Deep Dive funkció összehasonlítás">
+  <meta property="og:description"
+        content="A Docsie-t azért vettük be ebbe az összehasonlításba, mert ez egy olyan eszköz, amely osztozik a Notion és a Coda funkcióin, de olyan felhasználási eseteket fed le, amelyekben a kettő nem elégséges: robusztus tudásbázisok és vállalati wikik létrehozása.
+">
+  <meta property="og:image" content="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_JLDSpWBDcIaMWR3Ce/file_xS8S1iHstS24GtJoS/4b7c4dff-b4e2-f1f0-442d-559074353911image.png">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://www.docsie.io/blog/blog/hu/articles/coda-vs-notion-vs-docsie-a-deep-dive-feature-comparison/">
+  <meta property="twitter:title" content="Coda vs. Notion vs. Docsie - A Deep Dive funkció összehasonlítás">
+  <meta property="twitter:description"
+        content="A Docsie-t azért vettük be ebbe az összehasonlításba, mert ez egy olyan eszköz, amely osztozik a Notion és a Coda funkcióin, de olyan felhasználási eseteket fed le, amelyekben a kettő nem elégséges: robusztus tudásbázisok és vállalati wikik létrehozása.
+">
+  <meta property="twitter:image" content="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_JLDSpWBDcIaMWR3Ce/file_xS8S1iHstS24GtJoS/4b7c4dff-b4e2-f1f0-442d-559074353911image.png">
+
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/blog/templates/assets/css/typography.min.css"/>
+  <!--Replace with your tailwind.css once created-->
+    
+    <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TZRGMQ9');</script>
+<!-- End Google Tag Manager -->
+  
+
+</head>
+
+
+<body class="bg-gray-100 font-sans leading-normal tracking-normal">
+
+<nav id="header" class="fixed w-full z-10 top-0">
+
+  <div id="progress" class="h-1 z-20 top-0"
+       style="background:linear-gradient(to right, #4dc0b5 var(--scroll), transparent 0);"></div>
+
+  <div class="container max-w-6xl mx-auto flex flex-wrap items-center justify-between mt-0 py-3">
+
+    <div class="pl-4">
+      <a class="text-gray-900 text-base no-underline hover:no-underline font-extrabold text-xl" href="../../">
+          Docsie.io Blog
+      </a>
+    </div>
+
+    <div class="block lg:hidden pr-4">
+      <button id="nav-toggle"
+              class="flex items-center px-3 py-2 border rounded text-gray-500 border-gray-600 hover:text-gray-900 hover:border-green-500 appearance-none focus:outline-none">
+        <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+          <title>Menu</title>
+          <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/>
+        </svg>
+      </button>
+    </div>
+
+    <div class="w-full flex-grow lg:flex lg:items-center lg:w-auto hidden lg:block mt-2 lg:mt-0 bg-gray-100 z-20"
+         id="nav-content">
+      <ul class="list-reset lg:flex justify-end flex-1 items-center">
+        
+        <li>
+          <a class="inline-block text-gray-600 hover:text-gray-900 hover:underline py-2 px-4"
+             href="https://www.docsie.io">Docsie</a>
+        </li>
+        
+        <li>
+          <a class="inline-block text-gray-600 hover:text-gray-900 hover:underline py-2 px-4"
+             href="https://www.docsie.io/pricing/">Docsie Pricing</a>
+        </li>
+        
+        <li>
+          <a class="inline-block text-gray-600 hover:text-gray-900 hover:underline py-2 px-4"
+             href="https://www.docsie.io/try_docsie/">Try Docsie</a>
+        </li>
+        
+      </ul>
+    </div>
+    <div class="flex w-full justify-end content-center">
+        <a
+          class="inline-block text-gray-500 hover:text-green-500 hover:underline text-center h-10 p-2 md:h-auto md:p-4 avatar"
+          data-tippy-content="@twitter_handle" href="https://twitter.com/intent/tweet?url=#"
+          id="twitter">
+          <svg class="fill-current h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+            <path
+              d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"></path>
+          </svg>
+        </a>
+        <a
+          class="inline-block text-gray-500 hover:text-green-500 hover:underline text-center h-10 p-2 md:h-auto md:p-4 avatar"
+          data-tippy-content="#facebook_id" href="https://www.facebook.com/sharer/sharer.php?u=#}"
+          id="facebook">
+          <svg class="fill-current h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+            <path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"></path>
+          </svg>
+        </a>
+      </div>
+  </div>
+
+</nav>
+
+<!--Container-->
+<div class="container max-w-4xl mx-auto mt-32 px-8 md:px-0">
+  <div class="prose prose lg:prose-xl mx-auto mt-32">
+    <!--Title-->
+    <h1 id="blog-title">Coda vs. Notion vs. Docsie - A Deep Dive funkció összehasonlítás</h1>
+    <!--Author-->
+    <div class="flex items-center">
+      <img class="w-10 h-10 rounded-full mr-4" src=" https://cdn.docsie.io/user_profiles/15/logo_logo_QmXrbijvL0L2hFKNm6Q25DtjahujKdB6nu4pqBlLBgvtT.png" alt="Avatar of Author">
+      <div class="flex-1 px-2">
+        <div class="font-bold leading-none mb-2">Tal F.</div>
+        <div class="text-xs md:text-base">on January 07, 2023 · <span id="reading-time"
+                class="block md:inline mt-2 md:mt-0"></span> · filed under <span
+          class="block md:inline mt-2 md:mt-0">
+						
+            <span class="rounded bg-green-500 text-white px-1 uppercase text-xs whitespace-nowrap md:text-sm">Termék dokumentáció</span>
+						
+            <span class="rounded bg-green-500 text-white px-1 uppercase text-xs whitespace-nowrap md:text-sm">Termékmenedzsment</span>
+						
+            <span class="rounded bg-green-500 text-white px-1 uppercase text-xs whitespace-nowrap md:text-sm">Dokumentációs portálok</span>
+						
+            <span class="rounded bg-green-500 text-white px-1 uppercase text-xs whitespace-nowrap md:text-sm">Legjobb gyakorlatok</span>
+						
+            <span class="rounded bg-green-500 text-white px-1 uppercase text-xs whitespace-nowrap md:text-sm">Műszaki írás</span>
+						
+            <span class="rounded bg-green-500 text-white px-1 uppercase text-xs whitespace-nowrap md:text-sm">Termékdokumentáció oktatóanyagok</span>
+						
+					</span>
+        </div>
+      </div>
+    </div>
+    <!--/Author-->
+
+    <!--Post Content-->
+    <!--Lead Para-->
+    <div id="content">
+      <p>Ránézésre a Coda és a Notion nagyon hasonló: mindkettő olyan munkaterület, amely támogatja az adatbázisokat, a jegyzetelést, a dokumentációt, a munkafolyamatok kezelését és az adatok szervezését.</p>
+<h3>Vannak azonban olyan alapvető különbségek, amelyek alkalmassá teszik őket a különböző csapatok számára.</h3>
+<p>A Docsie-t azért vettük be ebbe az összehasonlításba, mert ez egy olyan eszköz, amely osztozik a Notion és a Coda funkcióin, de olyan felhasználási eseteket fed le, amelyekben a kettő alulmarad: robusztus tudásbázisok és vállalati wikik létrehozásában.</p>
+<p>Mindhárom alkalmazást teszteltük, és több száz véleményt olvastunk a Redditen, a G2-n és a Capterrán. Nyolc olyan területen hasonlítottuk össze az eszközöket, amelyekről a felhasználók a legtöbbet beszélnek:</p>
+<ul>
+<li>
+<p>Árképzés</p>
+</li>
+<li>
+<p>Támogatás</p>
+</li>
+<li>
+<p>Automatizálás</p>
+</li>
+<li>
+<p>Integrációk</p>
+</li>
+<li>
+<p>Könnyű használat</p>
+</li>
+<li>
+<p>Adatbázis funkciók</p>
+</li>
+<li>
+<p>Dokumentációs funkciók</p>
+</li>
+<li>
+<p>És tudásmenedzsment</p>
+</li>
+</ul>
+<p><strong>Hadd spóroljak meg neked egy kis időt... Ha egy könnyen megtanulható tudásmenedzsment alkalmazást keresel, nézd meg a Doc<a href="https://www.docsie.io/">sie. I</a>t, amely 3 felhasználóig ingyenes, és korlátlan számú vendég tekintheti meg az adatokat!</strong>*</p>
+<h2>Összehasonlítás: Coda vs Notion vs Docsie</h2>
+<p><img alt="" src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_JLDSpWBDcIaMWR3Ce/file_Gbzf0Ht5p4WkGyDEu/60d26fd0-6fa7-6315-b28c-77bb52071fcdimage.png" /></p>
+<h2>Docsie vs Coda vs Notion: Dokumentációs jellemzők</h2>
+<p><strong>Docsie a legjobb dokumentumkészítésre, Notion pedig a szerkesztőjével megelőzi a Kodát</strong></p>
+<p><img alt="" src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_JLDSpWBDcIaMWR3Ce/file_6jS1lrlw2jakRtTSS/7a1e10d0-7ff4-3e9a-c8a8-e95fe8681bb6image.png" /></p>
+<p><strong>A Notion és a Coda "blokkokat" használ, míg a Docsie intuitívabb</strong></p>
+<p>A Notion és a Coda is rendelkezik szerkesztési funkciókkal, amelyek építőblokkokra támaszkodnak, amelyek lehetővé teszik fejlécek, képek, videók, szövegek stb. hozzáadását.</p>
+<p><img alt="" src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_JLDSpWBDcIaMWR3Ce/file_K8EhYKmEzzXLlzyED/464be919-c7e6-ee02-2712-4199de0eb4fc4.png" /></p>
+<p>A különbség az, hogy a Coda lassan kezd el dolgozni, amikor nagy dokumentumokkal foglalkozik. A Notion pedig sokkal természetesebben folyik írás közben, mivel jegyzetelő eszközként indult.</p>
+<p>Eközben a Docsie inkább egy WordPress-szerkesztőre hasonlít - intuitívabb felhasználói élménnyel. A Notionhoz és a Codához hasonlóan ez is minden szükséges szerkesztési funkciót biztosít, de inkább a könnyű használatra összpontosít az olyan funkciókkal, mint a gyorsbillentyűk.</p>
+<p><img alt="" src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_JLDSpWBDcIaMWR3Ce/file_QLNiJSTmyFVr34Hpw/dcb6f484-1df4-27ca-62c4-bb02c74f4f525.png" /></p>
+<p><strong>Docsie a legjobb megosztás és ügyfél-hozzáférés</strong></p>
+<p>A Notion és a Coda is lehetővé teszi a hozzáférés kezelését belsőleg a szerepek admin eszközökkel történő kiosztásával, vagy külsőleg az interneten történő megosztással.</p>
+<p>A Docsie hasonló rendszert használ, de lehetővé teszi az oldalak jelszóval való védelmét és a cikkek megosztását az olvasókkal tudásportálokon vagy webhelybeágyazásokon.</p>
+<p><strong>Coda minimális verziókezeléssel rendelkezik, a Notion megmutatja a változtatási előzményeket, a Docsie pedig visszahúzással és hozzáférési jogosultságokkal rendelkezik</strong>.</p>
+<p>A Coda minimális verziókezelést kínál, ami nem tud segíteni az olyan kérdésekben, mint "mikor változott utoljára ez az oldal?" vagy "mi változott?".</p>
+<p>A Notion a vállalati csomaggal biztosít változtatási előzményeket, de csak a visszahúzást teszi lehetővé, így inkább biztonsági mentésként működik, mint tényleges verziókezelőként.</p>
+<p>Eközben a <strong>Docsie erőteljes verziókezelési funkciókkal rendelkezik.</strong></p>
+<p>Visszaforgatás helyett az összes korábbi cikkverzió elérhető a könyvben. Az egyiket kijelölheti "aktuális verziónak", és eldöntheti, hogy a régi verziókat meg akarja-e mutatni a felhasználóknak. Ez azt jelenti, hogy teljes mértékben Ön irányítja, hogy mit mutat meg az olvasóknak, és hogyan verziózza a dokumentumokat.</p>
+<p><strong>Docsie hatékony tartalmi beágyazásokkal rendelkezik</strong></p>
+<p>Egy másik különbség a Coda, a Notion és a Docsie között az, hogy a Docsie lehetővé teszi <a href="https://portals.docsie.io/docsie/docsie-documentation/docsie-integrations/?doc=/content-embeds/google-forms-in-docsie/&amp;v=2.0.0&amp;ln=en">19 tartalmi beágyazást</a>, amelyek zökkenőmentesen működnek a cikkeiben. Ez azt jelenti, hogy olyan alkalmazások teljes funkcionalitását használhatja, mint a Google Sheets, Google Docs, Loom, Google Maps, GitHub Gists és még sok más.</p>
+<p><strong>Győztes:</strong> **Do<a href="https://www.docsie.io/">csie**</a>. A funkciók és az egyszerű használat tökéletes keveréke a gyönyörű digitális dokumentáció létrehozásához.</p>
+<p><img alt="" src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_JLDSpWBDcIaMWR3Ce/file_ijClMNPejkT6AcQlq/3cff1420-b57a-6a94-c90f-d718f52f61856.png" /></p>
+<h2>Notion vs Coda vs Docsie: Tudásmenedzsment</h2>
+<p><strong>Docsie mindent egy csomagban tartalmaz, amire szükséged van, a Notion és a Coda testreszabható, de bonyolult lehet</strong></p>
+<p><strong>A Docsie intuitív szervezeti struktúrával rendelkezik, míg a Coda és a Notion lehetővé teszi saját szervezeti struktúra létrehozását</strong></p>
+<p><img alt="" src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_JLDSpWBDcIaMWR3Ce/file_WRgZM09XbYbBphN3g/b1cb0869-6f67-3a9e-0d4d-833833ed56faimage.png" /></p>
+<p>A Docsie intuitív tudásszervezési struktúrát használ.</p>
+<p>"Polcokat" használ, amelyek "könyveket" tartalmaznak, amelyek "szakaszokba" szervezhetők. A könyvek cikkeket, korábbi verziókat és más nyelvű cikkeket tartalmaznak.</p>
+<p><strong>Docsie úgy működik, mint egy könyvtár, és könnyen érthető </strong>.</p>
+<p><img alt="" src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_JLDSpWBDcIaMWR3Ce/file_taaK2xC3oGVlfbB6u/d5272e81-1fcf-649b-0943-f68f125596407.png" /></p>
+<p>A Coda és a Notion ezzel szemben az egymásba ágyazott oldalakra támaszkodik. Ez intuitív, és bármilyen struktúrát létrehozhatsz. De gyorsan zavarossá válhat, ha 3 rétegnél mélyebb aloldalakat fészkelsz be.</p>
+<p><strong>A Coda keresése nehézkes, a Docsie és a Notion könnyen felszínre hozza a megfelelő információt</strong></p>
+<p>A nagy szervezeteknek gyakran gondot okoz az adatok megtalálása a Coda-ban. A keresés nem olyan fejlett, mint a Notioné vagy a Docsie-é, mivel nem oldalakat jelenít meg találatként, csak adatokat.</p>
+<p>Eközben a Notion és a Docsie felhasználóbarátabb, mert az oldalakon és az összes adaton keresztül keres. A Docsie lehetővé teszi a cikkek nyelv szerinti szűrését is.</p>
+<p><strong>Győztes:</strong> **Do<a href="https://www.docsie.io/">csie**</a>, mivel nagyon intuitív és skálázható szervezeti struktúrát használ, és egy erőteljes keresést, amellyel gyorsan navigálhat a dokumentumaiban.</p>
+<h2>Notion vs Docsie vs Coda: Árképzés és ár-érték arány</h2>
+<p><strong>Notion kínálja a legjobb ár-érték arányt, Docsie a legolcsóbb tudásmenedzsmenthez, Coda drága</strong></p>
+<p><img alt="" src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_JLDSpWBDcIaMWR3Ce/file_ToSMUdd9b8bQxXq6O/769d7d69-0a9d-1c93-23d3-d2824a986423image.png" /></p>
+<h3>Ingyenes terv összehasonlítás</h3>
+<p>A <strong>Coda</strong> ingyenes csomagot kínál korlátlan számú csapattag számára. A táblázatsorok száma 1000-re van korlátozva az összes táblában. A dokumentumban lévő objektumok száma szintén 50-re van korlátozva. Az objektumok közé tartoznak az oldalak, táblázatok, nézetek, gombok, vezérlők és képletek. Ha tehát egy csapatot szeretne kezelni a Coda segítségével, akkor gyorsan túllépi az ingyenes díjcsomag korlátait.</p>
+<p>A <strong>Notion</strong> ingyenes csomagja nem korlátozza a használható blokkok számát, de csak egy személy számára készült. Hozzáadhat 5 vendéget, de nem tudja kezelni a hozzáférésüket.</p>
+<p>A <strong>Docsie</strong> ingyenes csomagja legfeljebb 3 fiókra szól, és korlátlan számú vendégnek mutathatja meg dokumentumait. De van egy fájlfeltöltési korlátja, és 5 könyvet és 1 polcot tudsz kezelni (bár korlátlan számú cikkel).</p>
+<h3>Fizetős terv ár-összehasonlítás</h3>
+<p><strong>A fizetős csomagban minden alkalmazással ingyenesen oszthat meg dokumentumokat a vendégekkel.</strong> Az árak tehát alapvetően attól függnek, hogy hány csapattagnak van szerkesztési hozzáférése.</p>
+<p>A **Co<a href="https://coda.io/pricing">da**</a> a "Pro" csomagért 10 $/hó/felhasználó, a "Team" csomagért pedig 30 $/hó/felhasználó díjat számít fel.</p>
+<p>**No<a href="https://www.notion.so/pricing">tion**</a> 4 $/hó/felhasználó a "Personal Pro" és 8 $/hó/felhasználó a "Team" csomagért.</p>
+<p>A **Do<a href="https://www.docsie.io/pricing/">csie**</a> három átalánydíjas árazási tervvel rendelkezik, amelyek a csapat méretén és funkcióin alapulnak.</p>
+<p><img alt="" src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_JLDSpWBDcIaMWR3Ce/file_c5RDZVCv35TAPYDrP/7d646eed-dd46-d9ca-3fb2-3edac01eaefcimage.png" /></p>
+<p><strong>Mit válasszon, ha az ár a legnagyobb gondja</strong></p>
+<p><strong>Válassza a Notiont, ha:</strong></p>
+<ul>
+<li>
+<p>Csak egy ingyenes személyes termelékenységi platformot keres. (Ingyenes terv)</p>
+</li>
+<li>
+<p>Csapatának hatékony személyes munkaterületeket szeretne biztosítani, de nincs szüksége erős együttműködési eszközökre. (Személyes Pro terv)</p>
+</li>
+<li>
+<p>Több mint 25 tagot számláló, mindenre kiterjedő munkaterületre van szüksége (Team terv)</p>
+</li>
+</ul>
+<p><strong>Válassza a Docsie-t, ha:</strong></p>
+<ul>
+<li>
+<p>Ha legfeljebb 15 szerkesztővel rendelkező kollaboratív platformra van szüksége (Startup Plus/Kiscsapat csomagok).</p>
+</li>
+<li>
+<p>Ön egy bármilyen méretű csapat, amelynek speciális alkalmazásra van szüksége a tudásbázis/SOP menedzsmenthez - a Docsie nem sokkal drágább, mint a Notion, de jobb funkciókkal rendelkezik ezekhez a felhasználási esetekhez.</p>
+</li>
+</ul>
+<p><strong>Válassza a Coda-t, ha:</strong></p>
+<ul>
+<li>
+<p>Csapat munkaterületre van szüksége, amely több adatbázis/automatizálási funkcióval rendelkezik, mint a Notion.</p>
+</li>
+<li>
+<p>A kulcsfontosságú tudásbázis-kezelési funkciók hiánya és a magas ár nem jelent problémát Önnek</p>
+</li>
+</ul>
+<p><strong>Győztes</strong>: Vagy <strong>Do<a href="https://www.docsie.io/">csie**</a> vagy </strong>No<a href="https://www.notion.so/">tion**</a>. Ha dedikált SOP tudásbázisra van szüksége, válassza a Docsie-t. Ha általános termelékenységi munkaterületre van szüksége, válassza a Notiont.</p>
+<h2>Coda vs Docsie vs Notion: Ügyfélszolgálat</h2>
+<p><strong>Coda és Docsie rendelkezik a legjobb ügyfélszolgálattal, míg a Notion még mindig felzárkózik</strong></p>
+<p><img alt="" src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_JLDSpWBDcIaMWR3Ce/file_cCccYMWpvSFtStVar/5515627e-1c86-1910-d840-530861b6e3e1image.png" /></p>
+<p>Az ügyfélszolgálatot nehéz megítélni.</p>
+<p>Nem lenne fair egyetlen tapasztalatra alapozni. Ezért átnéztük a Reddit, a G2 és a Capterra legfrissebb értékeléseit és véleményeit, hogy a felhasználók véleménye alapján összehasonlítsuk a hármat.</p>
+<p><strong>A Notion ügyfélszolgálata még felzárkózik</strong></p>
+<p>A Notion korábban a közösségére támaszkodott a támogatás terén.</p>
+<p>Csak nemrég kezdett el befektetni egy megfelelő támogató csapatba. A felhasználók szerint a támogatásuk nem nyújt jó technikai segítséget, és gyorsan a mérnökökhöz küldi az ilyen kérdésekben. A mérnökök pedig általában azt mondják, hogy a következő verzióban javítják a problémát.</p>
+<p><img alt="" src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_JLDSpWBDcIaMWR3Ce/file_Zc6no9VdccJBm78Q1/badb84b7-f421-feec-f6a5-b0cc60e4e4518.jpg" /></p>
+<p><img alt="" src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_JLDSpWBDcIaMWR3Ce/file_arYfHgXKSqyItecO9/70a571c4-f7d4-ba02-a41d-df9dba82f4dd9.jpg" /></p>
+<p><strong>Coda nagyszerű ügyfélszolgálattal rendelkezik</strong></p>
+<p><a href="https://www.g2.com/products/coda-coda/reviews?utf8=%E2%9C%93&amp;filters%5Bkeyphrases%5D=support%20team&amp;order=g2_default&amp;filters%5Bcomment_answer_values%5D=">Sok Coda felhasználó</a> dicséri a támogató csapatukat a gyors válaszidőért és azért, hogy milyen könnyű velük dolgozni.</p>
+<p><img alt="" src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_JLDSpWBDcIaMWR3Ce/file_L3h5NDTOx7T4H6yKS/6ebda287-cbc3-357a-728a-ffdb0fdbe03410.jpg" /></p>
+<p><img alt="" src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_JLDSpWBDcIaMWR3Ce/file_PyDZVl8IRsMaZMyXx/b4a516c7-f699-5f32-9009-b49b283b5dee11.jpg" /></p>
+<p><strong>Docsie ügyfélszolgálata "professzionális, gyors és jól szervezett "</strong></p>
+<p>Csapatunk mindig készen áll arra, hogy segítsen, ha bármilyen probléma merül fel a Docsie-val kapcsolatban. De a legjobb, ha közvetlenül <a href="https://www.g2.com/products/docsie/reviews?utf8=%E2%9C%93&amp;filters%5Bcomment_answer_values%5D=&amp;filters%5Bkeyphrases%5D=customer%20support&amp;order=g2_default">a felhasználóinktól</a>:</p>
+<p><img alt="" src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_JLDSpWBDcIaMWR3Ce/file_wt0iJ06KpLkaATys9/1dca9037-f99a-b339-f84d-e16f1f9b30be12.jpg" /></p>
+<p><img alt="" src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_JLDSpWBDcIaMWR3Ce/file_gOfQNDuAopOXxJZmO/596dc7e8-2dca-8115-5794-3ec872d923d113.jpg" /></p>
+<p><strong>Győztes:</strong> <a href="https://coda.io/">Coda</a> és <a href="https://www.docsie.io/">Docsie</a>: a gyors (technikai) támogatásért.</p>
+<h2>Coda vs Notion vs Docsie: Adatbázis funkciók</h2>
+<p><strong>A Coda a legerősebb, a Notion a vizualizációra, a Docsie pedig lehetővé teszi a Google Sheets beágyazását</strong>.</p>
+<p><img alt="" src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_JLDSpWBDcIaMWR3Ce/file_13TNnIbQ7OYsubsAI/54dd4e37-3864-a62f-2859-fefca1ed835eimage.png" /></p>
+<p><strong>A Notion a vizualizáció királya...</strong></p>
+<p>A Notion táblázatos képességei széleskörűek. Különböző "nézeteket" hozhat létre, mint például</p>
+<ul>
+<li>
+<p>Lista,</p>
+</li>
+<li>
+<p>táblázat,</p>
+</li>
+<li>
+<p>Tábla,</p>
+</li>
+<li>
+<p>Galéria,</p>
+</li>
+<li>
+<p>Naptár,</p>
+</li>
+<li>
+<p>És idővonal.</p>
+</li>
+</ul>
+<p>Ezeket úgy készítheti el, hogy új oldalt hoz létre a kiválasztott nézettel. Ezután más oldalakra is beágyazhatod őket.</p>
+<p><strong>... De a Coda funkciói sokkal b*jobbak, mint a Notioné</strong></p>
+<p>A Coda hasonló adatbázis funkciókkal rendelkezik, mint a Notion.</p>
+<p>De feltételes formázással és számításokkal is rendelkezik, így olyan robusztus, mint a Google Sheets.</p>
+<p><img alt="" src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_JLDSpWBDcIaMWR3Ce/file_Lx9cKNSIm8lNlGA9H/1bebbbb3-8e7f-72d1-17aa-a06945e3edaf14.jpg" /></p>
+<p>Ezen felül a Coda beépített függvényekkel rendelkezik, amelyek egy igazi programozási nyelvre emlékeztetnek. Ha műszaki ismeretekkel rendelkezel, intuitívnak és egyszerűnek fogod érezni őket. És <em>mindenhová</em> hozzáadhatod őket, nem csak a táblázatokba.</p>
+<p><img alt="" src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_JLDSpWBDcIaMWR3Ce/file_Voln5A5F6XDlzUZkl/76b858e2-6310-dffb-46c7-f0825f41e78415.jpg" /></p>
+<p>Itt van például valami, ami a Coda-ban triviális, de a Notionban hatalmas gondot okoz: Ha meg akarom számolni a "TODO"-nak megfelelő státuszú sorok számát egy táblázatban.</p>
+<p>Coda-ban ez olyan triviális, mint egy formula létrehozása: =MyTable.CountIf(Status="TODO"). A Notionban egy új kapcsolódó adatbázist kellene létrehozni, összekapcsolni az elemeket, hozzáadni egy címke szövegét tartalmazó rollup mezőt, majd egy olyan bonyolult képletet használni, mint length(replaceAll(replaceAll(prop("Status"), "TODO", "<em>"), "[\^</em>]", "")))).</p>
+<p><strong>Docsie lehetővé teszi a Google Sheets beágyazását</strong></p>
+<p>A Docsie a Notionhoz hasonlóan lehetővé teszi táblázatok létrehozását, de nem enged annyi különböző nézetet a szerkesztőjében, és nem rendelkezik olyan erős funkciókkal, mint a Coda. A megoldás azonban az, hogy a Docise lehetővé teszi a Google Sheets beágyazását, azok teljes funkcionalitásával.</p>
+<p><strong>Győztes:</strong> **Co<a href="https://coda.io/">da**</a> a Google Sheets-et helyettesíteni kívánó power felhasználók számára.</p>
+<h2>Notion vs Coda vs Docsie: Alkalmazások és integrációk</h2>
+<p><strong>Coda több natív integrációt kínál, mint a Notion, Docsie a tudásbázis funkciókra koncentrál</strong></p>
+<p><img alt="" src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_JLDSpWBDcIaMWR3Ce/file_oMD9vlGvaPuY0cOtt/dd0aabe5-3e88-3177-8aa5-e89322d4f6f3image.png" /></p>
+<p>A Coda a legjobb választás, ha több alkalmazáson keresztül történő integrációkra van szükséged. *o<a href="https://coda.io/gallery?page=11&amp;filter=packs">ver 300 natív integrációt*</a> kínál, így lehetetlenné teszi, hogy ne integráljon a tech stackjével. A Notion ezzel szemben csak a lényegre koncentrál a <a href="https://www.notion.so/integrations/all">36 natív integrációval</a>.</p>
+<p><strong>Docsie másképp közelíti meg az alkalmazásintegrációkat, mint a Notion vagy a Coda</strong></p>
+<p>A Docsie mottója a "tudásbázis funkcionalitás az első", amely lehetővé teszi, hogy közvetlenül <a href="https://portals.docsie.io/docsie/docsie-documentation/docsie-integrations/?doc=/content-embeds/&amp;v=2.0.0&amp;ln=en">más alkalmazások tartalmát</a> ágyazza be a cikkeibe. Például lehetővé teszi, hogy a Google Docs-t közvetlenül a tudásportálokon szerkessze, anélkül, hogy egy másik böngészőfület vagy alkalmazást kellene megnyitnia.</p>
+<p>A Docsie emellett natív integrációval rendelkezik <strong>GitHub, GitLab, BitBucket és Zapier</strong> - így könnyen integrálható az Ön üzleti folyamataiba.</p>
+<p>**Győztes: Co<a href="https://coda.io/">da**</a>, a natív integrációk puszta mennyisége miatt.</p>
+<h2>Coda vs Notion vs Docsie: Előnyök és hátrányok</h2>
+<h3>Coda előnyei és hátrányai</h3>
+<p><img alt="" src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_JLDSpWBDcIaMWR3Ce/file_Wl2GZ9HiSFPj4xQH7/dff98869-d4cc-b515-e962-c2e72e43e0f1image.png" /></p>
+<h3>Notion Pro és kontra</h3>
+<p><img alt="" src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_JLDSpWBDcIaMWR3Ce/file_XmsifVBPdY9YdnIOv/b1b93820-6ada-d03d-2c2e-1c33b7a3d64fimage.png" /></p>
+<h3>Docsie előnyei és hátrányai</h3>
+<p><img alt="" src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_JLDSpWBDcIaMWR3Ce/file_q5oG4LBrLsHd3kY6o/fb42e323-3075-1bcd-c26d-33176ab38f5dimage.png" /></p>
+<h2>Végső ítélet: Notion vs Coda vs Docsie</h2>
+<p><img alt="" src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_JLDSpWBDcIaMWR3Ce/file_kPBShLpDPmRI5Q2xy/2eadb3f0-af11-2e39-f274-4f628033b9edimage.png" /></p>
+<p>A nagyszerű alkalmazások nem azért nagyszerűek, mert egy csomó funkcióval rendelkeznek.</p>
+<p>Hanem arról szólnak, hogy a felhasználó igényeit úgy oldják meg, hogy eltalálják a használhatóság és a funkciókészlet közötti édeskeveset.</p>
+<h3></h3>
+<p><img alt="" src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_JLDSpWBDcIaMWR3Ce/file_G1agSf4EZ0watMJ6A/385616a2-d341-0af2-14af-a4089452a1bb1.png" /></p>
+<h3>Használja a Coda If:</h3>
+<ul>
+<li>
+<p>Sok táblázatos műveletet kell végeznie</p>
+</li>
+<li>
+<p>Képleteket szeretne használni a fejlett számításokhoz és automatizáláshoz</p>
+</li>
+<li>
+<p>Ön egy vállalati vagy közepes méretű csapat, amelynek szüksége van egy munkaterületre egyetlen projekt nyomon követéséhez.</p>
+</li>
+</ul>
+<p><img alt="" src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_JLDSpWBDcIaMWR3Ce/file_zW1zFUNRzvRS8I9fp/c45a4993-a65b-ecf6-8d96-a9a9fc5fd41f2.png" /></p>
+<h3>Use Notion If:</h3>
+<ul>
+<li>
+<p>Szüksége van egy projektmenedzsment alkalmazás személyes használatra vagy egy termelékenységi alkalmazás.</p>
+</li>
+<li>
+<p>Szüksége van az adatok és információk jó vizuális megjelenítésére.</p>
+</li>
+<li>
+<p>Ön egyéni vállalkozó, kis vagy közepes méretű csapat, akinek munkaterületre van szüksége.</p>
+</li>
+</ul>
+<h3></h3>
+<p><img alt="" src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_JLDSpWBDcIaMWR3Ce/file_up2m33igEV8JBw547/78a0be75-0e8a-e1a3-116d-df95c4d897123.png" /></p>
+<h2>Docsie használata If:</h2>
+<ul>
+<li>
+<p>Szeretne egyszerűen szép és funkcionális dokumentumokat készíteni.</p>
+</li>
+<li>
+<p>Egy könnyen kezelhető kollaboratív tudásbázis platformra van szüksége</p>
+</li>
+<li>
+<p>SOP-okat, wikiket, kézikönyveket, termékdokumentációkat és adatlapokat szeretne létrehozni.</p>
+</li>
+</ul>
+<p><em>Kattintson ide (https://www.docsie.io/)és próbálja ki a Docsie-t még ma!</em></p>
+    </div>
+  </div>
+  <!--/ Post Content-->
+
+  <!--Divider-->
+  <hr class="border-b-1 border-gray-400 mt-12 mb-8 mx-4">
+
+  <!--Next & Prev Links-->
+  <div class="font-sans flex justify-between content-center px-4 mb-4">
+    <div class="text-left">
+      <span class="text-xs md:text-sm font-normal text-gray-600">&lt; Previous Post</span><br>
+      <p><a href="../document360-gitbook-and-docsie-pricing-and-feature-analysis-of-documentation-platforms" class="break-normal text-base md:text-sm text-green-500 font-bold no-underline hover:underline">Document360, Gitbook és Docsie: Dokumentációs platformok ár- és funkcióelemzése</a></p>
+    </div>
+    <div class="text-right">
+      <span class="text-xs md:text-sm font-normal text-gray-600">Next Post &gt;</span><br>
+      <p><a href="../12-amazing-tips-when-putting-together-a-technical-guide-to-engage-your-readers" class="break-normal text-base md:text-sm text-green-500 font-bold no-underline hover:underline">12 Csodálatos tippek egy technikai útmutató összeállításakor az olvasók bevonása érdekében</a></p>
+    </div>
+  </div>
+
+
+  <!--/Next & Prev Links-->
+
+  
+    <div class="commentbox"></div>
+
+    <script src="https://unpkg.com/commentbox.io/dist/commentBox.min.js"></script>
+    <script>commentBox("5725910686760960-proj")</script>
+  
+
+  <!--Subscribe-->
+  
+    <!-- Base template of the subscription form. -->
+
+<div class="container font-sans bg-white rounded mt-8 p-4 md:p-24 text-center mb-10">
+    <h2 class="font-bold break-normal text-2xl md:text-4xl">Subscribe to the newsletter</h2>
+    <h3 class="font-bold break-normal font-normal text-gray-600 text-base md:text-xl">Stay up to date with our latest news and products</h3>
+    <div class="w-full text-center pt-4">
+        <form action="#">
+            <div class="max-w-xl mx-auto p-1 pr-0 flex flex-wrap items-center">
+                <input type="email" placeholder="youremail@example.com"
+                       class="flex-1 appearance-none rounded shadow p-3 text-gray-600 mr-2 focus:outline-none">
+                <button type="submit"
+                        class="flex-1 mt-4 md:mt-0 block md:inline-block appearance-none bg-green-500 text-white text-base font-semibold tracking-wider uppercase py-4 rounded shadow hover:bg-green-400">
+                    Subscribe
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+  
+  <!-- /Subscribe-->
+</div>
+<!--/container-->
+
+<footer class="bg-gray-900">
+  <div class="container max-w-6xl mx-auto flex items-center px-2 py-8">
+
+    <div class="w-full mx-auto flex flex-wrap items-center">
+      <div class="flex w-full md:w-1/2 justify-center md:justify-start text-white font-extrabold flex-col">
+        <a class="text-gray-900 no-underline hover:text-gray-900 hover:no-underline" href="/blog/hu">
+          <span class="text-base text-gray-200">Docsie.io Blog</span>
+        </a>
+        <a class="text-gray-900 no-underline hover:text-gray-900 hover:no-underline"
+           href="https://github.com/LikaloLLC/BlogVi" target="_blank">
+          <span class="text-xs text-gray-200">Made with BlogVI</span>
+        </a>
+      </div>
+      <div class="flex w-full pt-2 content-center justify-between md:w-1/2 md:justify-end">
+        <ul class="list-reset flex justify-center flex-1 md:flex-none items-center">
+          
+            <li>
+              <a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-3"
+                 href="https://www.docsie.io">Docsie</a>
+            </li>
+          
+            <li>
+              <a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-3"
+                 href="https://www.docsie.io/pricing/">Docsie Pricing</a>
+            </li>
+          
+            <li>
+              <a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-3"
+                 href="https://www.docsie.io/try_docsie/">Try Docsie</a>
+            </li>
+          
+        </ul>
+      </div>
+    </div>
+
+
+  </div>
+</footer>
+
+<script>
+  /* Progress bar */
+  //Source: https://alligator.io/js/progress-bar-javascript-css-variables/
+  var h = document.documentElement,
+    b = document.body,
+    st = 'scrollTop',
+    sh = 'scrollHeight',
+    progress = document.querySelector('#progress'),
+    scroll;
+  var scrollpos = window.scrollY;
+  var header = document.getElementById("header");
+  var navcontent = document.getElementById("nav-content");
+
+  document.addEventListener('scroll', function () {
+
+    /*Refresh scroll % width*/
+    scroll = (h[st] || b[st]) / ((h[sh] || b[sh]) - h.clientHeight) * 100;
+    progress.style.setProperty('--scroll', scroll + '%');
+
+    /*Apply classes for slide in bar*/
+    scrollpos = window.scrollY;
+
+    if (scrollpos > 10) {
+      header.classList.add("bg-white");
+      header.classList.add("shadow");
+      navcontent.classList.remove("bg-gray-100");
+      navcontent.classList.add("bg-white");
+    } else {
+      header.classList.remove("bg-white");
+      header.classList.remove("shadow");
+      navcontent.classList.remove("bg-white");
+      navcontent.classList.add("bg-gray-100");
+
+    }
+
+  });
+
+
+  //Javascript to toggle the menu
+  document.getElementById('nav-toggle').onclick = function () {
+    document.getElementById("nav-content").classList.toggle("hidden");
+  }
+</script>
+<script>
+  /*
+    Twitter
+    https://twitter.com/share?url=[post-url]&text=[post-title]
+
+    Facebook
+    https://www.facebook.com/sharer.php?u=[post-url]
+
+  */
+  let twitterURI = document.getElementById('twitter');
+  let facebookURI = document.getElementById('facebook');
+
+  let postURI = encodeURI(document.location.href);
+  let postTitle = encodeURI(document.getElementById('blog-title').innerText + ":\n")
+
+  facebookURI.setAttribute('href', `https://www.facebook.com/sharer.php?u=${postURI}`);
+  twitterURI.setAttribute('href', `https://twitter.com/share?url=${postURI}&text=${postTitle}`);
+</script>
+
+<!--Sharect-->
+
+<script src="https://unpkg.com/sharect@2.0.0/dist/sharect.js"></script>
+<script>window["sharectConfig"] = {"backgroundColor": "#333333", "enabled": true, "facebook": true, "iconColor": "#FFFFFF", "selectableElements": ["body"], "twitter": true, "twitterUsername": "likalo_llc"}</script>
+<script src="/blog/templates/assets/js/sharect.js"></script>
+
+
+
+<!--Reading time-->
+<script src="/blog/templates/assets/js/reading-time.min.js"></script>
+<script>
+  const text = []
+  let content = [...document.getElementById('content').getElementsByTagName('p')].forEach((elem) => {
+    text.push(elem.textContent)
+  });
+  const stats = readingTime(text.join(" "));
+
+  document.getElementById('reading-time').innerHTML = stats.text;
+</script>
+
+
+  
+      <!-- Google Tag Manager (noscript) -->
+
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TZRGMQ9"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+  
+
+</body>
+
+</html>

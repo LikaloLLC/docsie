@@ -1,0 +1,462 @@
+<!-- Base template of the article page. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+  
+
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/blog/https://d1iq6qzgppjlud.cloudfront.net/images/favicon/favicon-196x196.png">
+
+
+  <!-- Primary Meta Tags -->
+  <title>Docsie.io Blog - 제품 릴리스 문서를 위한 15가지 모범 사례</title>
+  <meta name="author" content="Tal F."/>
+  <meta name="title" content="제품 릴리스 문서를 위한 15가지 모범 사례">
+  <meta name="description" content="전문적인 제품 문서 작성을 위한 모범 사례는 무엇인가요?"/>
+  <meta name="keywords" content="제품 문서,제품 관리,문서 포털,제품 업데이트,모범 사례,기술 문서 작성"/>
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.docsie.io/blog/blog/ko/articles/top-15-best-practices-for-product-release-documentation/">
+  <meta property="og:title" content="제품 릴리스 문서를 위한 15가지 모범 사례">
+  <meta property="og:description"
+        content="전문적인 제품 문서 작성을 위한 모범 사례는 무엇인가요?">
+  <meta property="og:image" content="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_JLDSpWBDcIaMWR3Ce/file_5C3GNQ7yaIgIyKnzx/09a24a03-f906-f5e0-cde4-3f5b06d4d9a6image.png">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://www.docsie.io/blog/blog/ko/articles/top-15-best-practices-for-product-release-documentation/">
+  <meta property="twitter:title" content="제품 릴리스 문서를 위한 15가지 모범 사례">
+  <meta property="twitter:description"
+        content="전문적인 제품 문서 작성을 위한 모범 사례는 무엇인가요?">
+  <meta property="twitter:image" content="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_JLDSpWBDcIaMWR3Ce/file_5C3GNQ7yaIgIyKnzx/09a24a03-f906-f5e0-cde4-3f5b06d4d9a6image.png">
+
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/blog/templates/assets/css/typography.min.css"/>
+  <!--Replace with your tailwind.css once created-->
+    
+    <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TZRGMQ9');</script>
+<!-- End Google Tag Manager -->
+  
+
+</head>
+
+
+<body class="bg-gray-100 font-sans leading-normal tracking-normal">
+
+<nav id="header" class="fixed w-full z-10 top-0">
+
+  <div id="progress" class="h-1 z-20 top-0"
+       style="background:linear-gradient(to right, #4dc0b5 var(--scroll), transparent 0);"></div>
+
+  <div class="container max-w-6xl mx-auto flex flex-wrap items-center justify-between mt-0 py-3">
+
+    <div class="pl-4">
+      <a class="text-gray-900 text-base no-underline hover:no-underline font-extrabold text-xl" href="../../">
+          Docsie.io Blog
+      </a>
+    </div>
+
+    <div class="block lg:hidden pr-4">
+      <button id="nav-toggle"
+              class="flex items-center px-3 py-2 border rounded text-gray-500 border-gray-600 hover:text-gray-900 hover:border-green-500 appearance-none focus:outline-none">
+        <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+          <title>Menu</title>
+          <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/>
+        </svg>
+      </button>
+    </div>
+
+    <div class="w-full flex-grow lg:flex lg:items-center lg:w-auto hidden lg:block mt-2 lg:mt-0 bg-gray-100 z-20"
+         id="nav-content">
+      <ul class="list-reset lg:flex justify-end flex-1 items-center">
+        
+        <li>
+          <a class="inline-block text-gray-600 hover:text-gray-900 hover:underline py-2 px-4"
+             href="https://www.docsie.io">Docsie</a>
+        </li>
+        
+        <li>
+          <a class="inline-block text-gray-600 hover:text-gray-900 hover:underline py-2 px-4"
+             href="https://www.docsie.io/pricing/">Docsie Pricing</a>
+        </li>
+        
+        <li>
+          <a class="inline-block text-gray-600 hover:text-gray-900 hover:underline py-2 px-4"
+             href="https://www.docsie.io/try_docsie/">Try Docsie</a>
+        </li>
+        
+      </ul>
+    </div>
+    <div class="flex w-full justify-end content-center">
+        <a
+          class="inline-block text-gray-500 hover:text-green-500 hover:underline text-center h-10 p-2 md:h-auto md:p-4 avatar"
+          data-tippy-content="@twitter_handle" href="https://twitter.com/intent/tweet?url=#"
+          id="twitter">
+          <svg class="fill-current h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+            <path
+              d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"></path>
+          </svg>
+        </a>
+        <a
+          class="inline-block text-gray-500 hover:text-green-500 hover:underline text-center h-10 p-2 md:h-auto md:p-4 avatar"
+          data-tippy-content="#facebook_id" href="https://www.facebook.com/sharer/sharer.php?u=#}"
+          id="facebook">
+          <svg class="fill-current h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+            <path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"></path>
+          </svg>
+        </a>
+      </div>
+  </div>
+
+</nav>
+
+<!--Container-->
+<div class="container max-w-4xl mx-auto mt-32 px-8 md:px-0">
+  <div class="prose prose lg:prose-xl mx-auto mt-32">
+    <!--Title-->
+    <h1 id="blog-title">제품 릴리스 문서를 위한 15가지 모범 사례</h1>
+    <!--Author-->
+    <div class="flex items-center">
+      <img class="w-10 h-10 rounded-full mr-4" src=" https://cdn.docsie.io/user_profiles/15/logo_logo_QmXrbijvL0L2hFKNm6Q25DtjahujKdB6nu4pqBlLBgvtT.png" alt="Avatar of Author">
+      <div class="flex-1 px-2">
+        <div class="font-bold leading-none mb-2">Tal F.</div>
+        <div class="text-xs md:text-base">on January 07, 2023 · <span id="reading-time"
+                class="block md:inline mt-2 md:mt-0"></span> · filed under <span
+          class="block md:inline mt-2 md:mt-0">
+						
+            <span class="rounded bg-green-500 text-white px-1 uppercase text-xs whitespace-nowrap md:text-sm">제품 문서</span>
+						
+            <span class="rounded bg-green-500 text-white px-1 uppercase text-xs whitespace-nowrap md:text-sm">제품 관리</span>
+						
+            <span class="rounded bg-green-500 text-white px-1 uppercase text-xs whitespace-nowrap md:text-sm">문서 포털</span>
+						
+            <span class="rounded bg-green-500 text-white px-1 uppercase text-xs whitespace-nowrap md:text-sm">제품 업데이트</span>
+						
+            <span class="rounded bg-green-500 text-white px-1 uppercase text-xs whitespace-nowrap md:text-sm">모범 사례</span>
+						
+            <span class="rounded bg-green-500 text-white px-1 uppercase text-xs whitespace-nowrap md:text-sm">기술 문서 작성</span>
+						
+					</span>
+        </div>
+      </div>
+    </div>
+    <!--/Author-->
+
+    <!--Post Content-->
+    <!--Lead Para-->
+    <div id="content">
+      <p>이 실수를 통해 고객의 프리즘을 통해 제품을 바라봐야 한다는 교훈을 얻었습니다. 그리고 나서야 비로소 전등 스위치가 "켜짐"을 클릭했습니다. 고객의 고충을 해결할 수 있는 제품을 제공하고 전문적인 제품 문서로 이를 뒷받침한다면 승산이 있습니다.</p>
+<p>또한 전문적이고 미적으로 보기 좋으며 읽기 쉬운 제품 문서를 작성하는 것이 쉬운 일이 아니라는 것도 알게 되었습니다. 하지만 제품 문서를 올바르게 작성하면 고객의 만족도를 높이고 궁극적으로 매출을 높일 수 있습니다.</p>
+<h2>전문적인 제품 문서 작성을 위한 모범 사례는 무엇인가요?</h2>
+<p><img alt="" src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_JLDSpWBDcIaMWR3Ce/file_PAtUEFouRAqhgcvnJ/809d42be-d04c-76b1-7895-4348b612a22dbrooke_cagle__uhvrvdr7pg_unsplash1.jpg" /></p>
+<p>이 모범 사례는 미적으로 보기 좋으면서도 유익하고 사용하기 쉬운 제품 문서를 만드는 방법입니다. 이러한 가이드라인을 따르면 좋은 고객을 훌륭한 고객으로 만들 수 있는 제품 문서를 제공하는 데 도움이 됩니다. 그리고 우수 고객은 궁극적으로 기업의 매출 증대에 도움이 되며, 제품 문서는 고객 경험의 핵심 요소입니다.</p>
+<h3>1. 타겟 고객을 이해하고 그들이 원하는 것을 제공하세요.</h3>
+<p>타깃 고객의 기대치를 파악하는 것은 필수적입니다(https://www.stickyminds.com/article/writing-requirements-documentation-multiple-audiences). 예를 들어, 제품 문서가 관리자를 위한 것인가, 아니면 최종 사용자를 위한 것인가? 대상 독자의 범위에 따라 관리자를 위해 기술적으로 작성해야 할 수도 있고, 최종 사용자를 위해 명확하게 정의된 용어와 지침으로 작성해야 할 수도 있습니다.</p>
+<p>전문적인 제품 문서를 작성하기 위한 모범 사례는 관리자 또는 최종 사용자 수준에서 고객의 기대치를 이해하는 것입니다. 대상 고객 정보를 수집하는 몇 가지 방법은 다음과 같습니다:</p>
+<ul>
+<li>
+<p>설문지 및 설문조사</p>
+</li>
+<li>
+<p>인지된 고객 피드백</p>
+</li>
+<li>
+<p>회사 브레인스토밍</p>
+</li>
+<li>
+<p>인기 있는 고객 의견에 대한 피드백</p>
+</li>
+<li>
+<p>고객 원탁 토론</p>
+</li>
+</ul>
+<h3>2. 모범 사례로 문서화 계획 수립</h3>
+<p><img alt="" src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_JLDSpWBDcIaMWR3Ce/file_OpuMo68fDe86GImec/3a718347-9b9e-c209-a4ca-c923253bf756kaleidico_26mjgncm0wc_unsplash.jpg" /></p>
+<p>문서화 계획을 작성하면 프로젝트 구현 중 발생할 수 있는 병목 현상을 예측하는 데 도움이 됩니다. 제품 문서를 작성하는 것은 어려울 수 있으며, 문서화 과정에서 발생할 수 있는 문제를 예측하는 데 도움이 되는 문서화 계획을 작성하는 것이 모범 사례입니다.</p>
+<p>문서화 계획을 만들면 다음과 같은 이점이 있습니다:</p>
+<p><strong>실행 가능한 항목 </strong>- 기존 문서를 감사하여 새 제품 문서화 계획에 재사용할 수 있는 <strong>적용 가능한 정보</strong>를 찾아냅니다.</p>
+<ul>
+<li>
+<p>템플릿 및 스타일 가이드 준수<strong> - 신제품에 대한 제품 문서인 경우 업계의 목소리와 스타일에 맞게 작성하거나, 기존 제품에 대한 문서인 경우 현재 스타일 가이드와 템플릿을 유지하여 브랜드의 연속성을 </strong>보장**합니다.</p>
+</li>
+<li>
+<p>문서 프로세스 도구화** - 문서 도구화는 제품 문서화 프로세스를 정의하고 간소화하는 동시에 팀워크의 연속성을 보장하고 문서 개발 프로세스에 대한 이해를 높일 수 있습니다.</p>
+</li>
+</ul>
+<h3>3. 모범 사례로 제품 문서 간소화</h3>
+<p>2016년에 얼마나 많은 사용자가 제품 문서를 읽는지 알아보기 위한 연구가 수행되었습니다. 그 결과 [25%의 사용자만이 제품 설명서를 읽지 않는다]는 놀라운 결과가 나왔습니다.(https://academic.oup.com/iwc/article-abstract/28/1/27/2363584?redirectedFrom=fulltext&amp;login=false) 설문조사에 따르면 최종 사용자가 제품 설명서를 읽지 않는 이유는 다음과 같은 이유 때문인 것으로 나타났습니다:</p>
+<ul>
+<li>
+<p>사용자가 참을성이 없다** - 웹을 통해 즉각적인 정보를 얻을 수 있게 되면서 사용자는 일반적으로 문제에 대한 답을 찾는 데 인내심이 떨어집니다. 특정 제품에 대한 방대한 양의 정보로 인해 온라인 또는 오프라인에서 제품 설명서를 읽는 것은 힘들 수 있습니다.</p>
+</li>
+<li>
+<p>스킵어헤드 증후군** - 사용자는 종종 필요한 제품 설명서를 건너뛰고 제품 사용 방법에 대한 기본 사항으로 바로 넘어갑니다. 사용자는 자세한 설명서를 읽기보다는 제품과의 상호작용을 통해 제품의 작동 방식을 배우고 이해합니다. 지침은 가능한 한 명확하고 유익한 정보를 제공해야 합니다.</p>
+</li>
+<li>
+<p>혼란스러운 레이아웃과 구조 **- 설명서는 종종 이해하기 어렵고 따르기 힘든 형식으로 작성됩니다. 많은 사용자가 제품 설명서가 혼란스럽거나 질문과 관련이 없다고 생각하여 좌절하고 설명서를 읽지 않게 됩니다. 종종 회사는 상세한 고객 조사를 수행하지 않았고 사용자에게 필요한 것이 무엇인지 정확하게 이해하지 못하여 너무 혼란스러워서 읽기를 끝내지 못하는 경우가 많습니다.</p>
+</li>
+</ul>
+<h3>4. 스크린샷 및 그래픽 정보 포함</h3>
+<p>제품 문서는 제품에 대한 스토리를 전달하는 로드맵이라고 생각하세요. 스크린샷이나 기타 그래픽을 통해 고객이 쉽게 길을 찾을 수 있도록 유도하고(https://theideanest.ca/5-types-graphics/?doing_wp_cron=1666462401.5462460517883300781250), 각 그래픽이 서로 어떻게 상호 작용하는지 설명하세요. 사용자가 무엇을 보고 있는지, 언제 어떤 기능이 활성화되었는지, 제품에 어떻게 반응하는지, 다음에 무엇을 기대할 수 있는지 명확하게 설명하세요. 각 그래픽이 목적이 있고 제품의 워크플로우가 서로 잘 작동하는지 확인하세요.</p>
+<h3>5. 주제에 대한 보다 정확한 이해를 위해 교차 링크를 사용하세요.</h3>
+<p>제품 설명서를 읽을 때 <a href="https://docs.typo3.org/m/typo3/docs-how-to-document/main/en-us/WritingReST/Reference/Content/Links.html">교차 링크가 매우 유용하다는 것을 알았습니다.</a> 기능이나 기능 프로세스가 무엇을 하는지를 이해하면 관련 주제에 대한 교차 링크에 큰 도움이 됩니다. 또한 관련 데이터 포인트를 교차 연결하면 시스템이 상호 작용하는 방식과 워크플로우에 대한 전체적인 그림이 더 명확해집니다.</p>
+<h3>6. 제품 문서에 대한 KISS 원칙을 기억하세요.</h3>
+<p>문서를 작성할 때 <a href="https://www.wrike.com/blog/understanding-kiss-principles-project-management/#What-does-KISS-stand-for">KISS(Keep It Simple, Stupid) 원칙</a>을 잊지 마세요. 단, 프로세스를 철저히 문서화하되 문서가 과할 정도로 많은 양을 문서화하지 않는 것이 중요합니다. 또한 문서 사용자는 특정 항목에 대한 특정 정보를 찾고 있을 수 있으므로 KISS 원칙을 준수하면 문서를 훨씬 쉽게 탐색하고 이해할 수 있습니다.</p>
+<p>예를 들어, 함수를 설명할 때는 주요 주제에 대한 참조(교차 링크)를 포함하여 간단한 표기만으로도 충분할 수 있습니다. 사용자가 자신의 요구와 관련된 정보를 쉽게 검색할 수 있도록 사실을 과장하지 않고 깔끔하게 정리하세요. 사용자는 제품의 모든 측면을 읽는 데 관심이 없을 수 있습니다.</p>
+<h3>7. 다양한 학습 스타일 수용</h3>
+<p><img alt="" src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_JLDSpWBDcIaMWR3Ce/file_uCmkZTtLD7r6Elyg2/b2bb8ece-a1f8-5df4-d5ed-f4392f04d374radek_grzybowski_ebrtyyjwpry_unsplash.jpg" /></p>
+<p>사람마다 <a href="https://www.ukessays.com/essays/social-work/people-learn-in-different-ways.php">학습 스타일이 다릅니다</a>. 어떤 사람은 심도 있는 설명을 선호하고, 어떤 사람은 그래픽과 시각적 표현을 선호할 수 있습니다. 그러나 일부 사용자는 집중해서 읽기보다는 직접 참여함으로써 더 많은 것을 배웁니다.</p>
+<p>효과적이고 유익한 제품 문서를 작성할 때는 모든 학습 스타일을 아우를 수 있어야 합니다. 예를 들어 스크린샷, 그래프, 구조화된 텍스트 또는 동영상 링크와 같은 그래픽을 삽입하면 모든 학습 스타일이 제품 문서를 이해하는 데 도움이 됩니다.</p>
+<h3>8. 온보딩 콘텐츠 개인화 및 구조화</h3>
+<p>대상의 역할에 따라 제품 [문서]를 개인화하세요(https://www.deanhouston.com/news/knowing-audience-document-right-document/). 콘텐츠를 온보딩할 때 대상 고객의 역할에 따라 다양한 버전의 문서를 만드세요. 예를 들어 관리자의 질문은 파워 유저의 문서에 대한 질문과 관련이 없을 수 있습니다.</p>
+<p>문서에서는 대상 고객의 역할에 더 적합한 약간 다른 버전의 문서를 만들어 개인화 계층을 도입할 수 있습니다. 대상의 역할에 따라 온보딩 콘텐츠를 수정하면 문서에 개인화 요소가 추가됩니다.</p>
+<h3>9. 특정 대상에 대한 용어를 명확하게 정의하기</h3>
+<p>대상 고객에 따라 문서 전체에 사용된 각 용어의 의미를 설명하는 것이 좋습니다. 내부 사용자를 대상으로 하는 경우에는 좀 더 복잡한 용어를 사용할 수 있습니다. 그러나 외부 사용자가 문서에 액세스할 때는 사용자의 전문 지식을 알 수 있는 방법이 없습니다.</p>
+<p>고유하거나 복잡한 용어를 명확하게 정의하면 모든 내부 이해관계자와 외부 사용자가 훨씬 더 원활하고 효율적으로 커뮤니케이션할 수 있습니다.</p>
+<h3>10. 사용자 피드백을 수집할 수 있는 방법 제공</h3>
+<p>문서 피드백은 문서의 효과에 대한 강력한 정보를 제공합니다. 문서의 품질에 대한 귀중한 정보를 수집할 수 있도록 링크 또는 '좋아요/싫어요'가 있는 간단한 버튼을 제공하세요. 사용자 피드백 수집](https://www.k15t.com/rock-the-docs/documentation-guide/collaborative-writing/collect-user-feedback)을 통해 문서를 다듬고 개선할 수 있습니다.</p>
+<h3>11 평면적인 구조의 문서를 피하세요.</h3>
+<p>제품 문서를 작성할 때는 문서가 "평면적인 구조"로 작성되지 않도록 하세요. 평면적인 텍스트로 가득 찬 문서를 읽는 것은 힘들고 지루할 수도 있습니다. 또한 정보가 논의되는 주제와 관련이 있고 독자가 문서를 빠르게 소비할 수 있다면 독자의 문서에 대한 관심이 높아질 것입니다.</p>
+<p>선택한 정보를 강조 표시하거나 동영상, 이미지, 링크 등을 통합하여 연속적이고 평면적인 텍스트를 분리하면 더 나은 UX를 제공할 수 있습니다. 또한 문서 콘텐츠를 '한입에 먹기 좋은 크기'로 제공하면 독자는 더 즐거운 경험을 할 수 있고 문서를 읽는 데 거부감을 덜 느낄 수 있습니다.</p>
+<h3>12. SEO 친화적인 문서 만들기</h3>
+<p><img alt="" src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_JLDSpWBDcIaMWR3Ce/file_JcQwSJ6c9VBPNDxiB/fc593084-5b7f-a9c5-63e1-9b310b83d086nisonco_pr_and_seo_yirdur6hivq_unsplash.jpg" /></p>
+<p>온라인 제품 문서 모범 사례는 <a href="https://www.pragm.co/post/making-your-documentation-seo-friendly">문서 SEO 친화적</a> 스타일로 작성하는 것입니다. 인터넷에서 문서에 대한 검색 결과를 극대화하기 위해 문서가 작성되었는지 확인합니다. 고객이 문서를 검색해야 할 수 있으며, 호스팅 사이트에 대한 명시적인 링크가 없는 경우 검색어를 입력하면 SEO 친화적인 문서가 더 빠르고 간결하게 응답할 수 있습니다.</p>
+<h3>13. 제품 문서를 최신 상태로 유지</h3>
+<p>주로 온라인으로 액세스하는 경우 제품 문서를 최신 상태로 유지하는 것이 중요합니다. 제품의 요구 사항이 변경되는 경우가 많으며 온라인 문서에는 새로운 변경 사항이나 업데이트가 반영되어야 합니다. 따라서 사용자 설명서를 최신 상태로 유지하고 최근 업데이트 사항을 반영하여 새로 고쳐야 하며, 고객에게 제품 설명서의 변경 사항을 알리고 인지할 수 있도록 해야 합니다.</p>
+<h3>14. 사용자가 제품 설명서를 읽지 못할 수도 있음을 이해합니다.</h3>
+<p>2014년 조사에 따르면 사용자가 모든 제품 설명서를 완전히 읽지 않는 것으로 나타났습니다(https://academic.oup.com/iwc/article-abstract/28/1/27/2363584?redirectedFrom=fulltext&amp;login=false). 문서를 읽지 않는 주된 이유는 다음과 같습니다:</p>
+<ul>
+<li>
+<p>제품 설명서가 지나치게 복잡함</p>
+</li>
+<li>
+<p>문서가 궁금증을 직접적으로 해결하지 못함</p>
+</li>
+<li>
+<p>사용자가 설명서를 읽지 않아서 제품의 많은 기능을 사용하지 않음</p>
+</li>
+<li>
+<p>많은 사용자가 설명서를 읽는 것보다 '실습'을 통한 학습을 선호했습니다.</p>
+</li>
+</ul>
+<h3>15. 동적 콘텐츠와 정적 콘텐츠 모두 관리</h3>
+<p><img alt="" src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_JLDSpWBDcIaMWR3Ce/file_OgArkokVN075yERo3/b97f1b98-62a4-5b80-5e15-a008439ad625shubham_dhage_hatkch_piqm_unsplash.jpg" /></p>
+<p>제품 문서는 업데이트, 새로운 기능, 수정된 콘텐츠, 업데이트된 유지 관리 알림 및 기타 항목으로 지속적으로 발전합니다. 이 업데이트는 제품의 요구 사항에 따라 지속적으로 진화하는 살아 숨 쉬는 문서로 간주됩니다.</p>
+<p>정적 콘텐츠는 제품 수명 기간 동안 변경되지 않는 데이터를 사용자에게 제공합니다. 정적 콘텐츠의 아이디어는 사용자, 특히 신규 사용자에게 제품 수명 주기 동안 정적으로 유지되는 정보를 참조할 수 있도록 하는 것입니다. 정적 콘텐츠는 리치 문서에 필수적이지만 일반적으로 동적 문서에 비해 뒷자리를 차지합니다.</p>
+<p>콘텐츠를 [동적 또는 정적 문서로 분류]하면 문서 세트를 유지 관리하기가 더 쉽습니다(https://brainly.com/question/24688083). 문서를 동적 또는 정적 문서로 분류하면 제품 수명 주기 문서를 더 쉽게 구현하고 검증할 수 있습니다. 새로운 기능 업데이트(정적) 또는 자세한 제품 업데이트(동적)에 대한 문서에 사소한 변경 사항이 있을 수 있습니다.</p>
+<h3>16. 제품 문서 가용성에 대한 모범 사례</h3>
+<p>사용자는 제품 문서를 많이 읽지 않을 수도 있지만, 필요할 때는 즉시 문서를 원합니다. 전통적인 문서 전달 방식은 제품과 함께 인쇄된 설명서를 제공하는 것이었습니다. 하지만 오늘날의 디지털 온라인 세상에서는 웹을 통해 문서를 제공하는 경우가 많습니다.</p>
+<p>제품 설명서가 전달되는 방식에 관계없이 쉽게 액세스할 수 있는 액세스 포인트가 필수적입니다. 따라서 오늘날 문서를 제공하는 주된 방법은 다음과 같습니다:</p>
+<ul>
+<li>
+<p>오프라인 문서** - 많은 제품이 인쇄된 설명서 또는 '빠른 시작' 바로 가기 시트와 함께 패키지로 제공됩니다. 이러한 문서는 일반적으로 "일회성"이며 쉽게 배포되지 않습니다. 그러나 많은 매뉴얼이 선택적으로 캡슐화된 PDF 형식으로 제공되어 휴대성을 높이거나 필요할 때 인쇄할 수 있는 옵션을 제공합니다.</p>
+</li>
+<li>
+<p>온라인 설명서**- 문제에 대한 답을 찾기 위해 Google에서 검색할 때마다 온라인 설명서의 일부를 보게 될 것입니다. 웹의 등장으로 최종 사용자를 위한 인쇄 매뉴얼이나 제품 설명서 자료가 대체되었습니다. 온라인 문서의 장점은 다음과 같습니다:</p>
+</li>
+<li>
+<p>재택근무 - 팬데믹이 우리에게 가르쳐준 한 가지는 재택근무도 사무실만큼 생산적일 수 있으며, 특히 온라인 문서로 질문에 대한 답을 얻을 수 있다는 것입니다.</p>
+</li>
+<li>
+<p>협업 - 쉽게 액세스할 수 있는 온라인 문서 포털을 통해 팀원들은 즉석에서 정보를 공유하고 팀워크를 형성할 수 있으며, 이는 사무실에서는 불가능한 경우가 많습니다.</p>
+</li>
+<li>
+<p>모바일 친화적 - iPad와 스마트폰과 같은 모바일 기기의 등장으로 일상적인 상호 작용에서 PC를 서서히 대체하고 있습니다. 스마트폰으로 온라인 문서에 쉽게 액세스할 수 있으며, 점심시간에 즐겨 찾는 카페에서도 제품 관련 문제를 쉽게 조사할 수 있습니다.</p>
+</li>
+</ul>
+    </div>
+  </div>
+  <!--/ Post Content-->
+
+  <!--Divider-->
+  <hr class="border-b-1 border-gray-400 mt-12 mb-8 mx-4">
+
+  <!--Next & Prev Links-->
+  <div class="font-sans flex justify-between content-center px-4 mb-4">
+    <div class="text-left">
+      <span class="text-xs md:text-sm font-normal text-gray-600">&lt; Previous Post</span><br>
+      <p><a href="../how-to-win-with-organized-and-automated-product-documentation" class="break-normal text-base md:text-sm text-green-500 font-bold no-underline hover:underline">체계적이고 자동화된 제품 문서로 성공하는 방법</a></p>
+    </div>
+    <div class="text-right">
+      <span class="text-xs md:text-sm font-normal text-gray-600">Next Post &gt;</span><br>
+      <p><a href="../15-best-practices-when-launching-new-product-documentation" class="break-normal text-base md:text-sm text-green-500 font-bold no-underline hover:underline">신제품 문서 출시 시 15가지 모범 사례</a></p>
+    </div>
+  </div>
+
+
+  <!--/Next & Prev Links-->
+
+  
+    <div class="commentbox"></div>
+
+    <script src="https://unpkg.com/commentbox.io/dist/commentBox.min.js"></script>
+    <script>commentBox("5725910686760960-proj")</script>
+  
+
+  <!--Subscribe-->
+  
+    <!-- Base template of the subscription form. -->
+
+<div class="container font-sans bg-white rounded mt-8 p-4 md:p-24 text-center mb-10">
+    <h2 class="font-bold break-normal text-2xl md:text-4xl">Subscribe to the newsletter</h2>
+    <h3 class="font-bold break-normal font-normal text-gray-600 text-base md:text-xl">Stay up to date with our latest news and products</h3>
+    <div class="w-full text-center pt-4">
+        <form action="#">
+            <div class="max-w-xl mx-auto p-1 pr-0 flex flex-wrap items-center">
+                <input type="email" placeholder="youremail@example.com"
+                       class="flex-1 appearance-none rounded shadow p-3 text-gray-600 mr-2 focus:outline-none">
+                <button type="submit"
+                        class="flex-1 mt-4 md:mt-0 block md:inline-block appearance-none bg-green-500 text-white text-base font-semibold tracking-wider uppercase py-4 rounded shadow hover:bg-green-400">
+                    Subscribe
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+  
+  <!-- /Subscribe-->
+</div>
+<!--/container-->
+
+<footer class="bg-gray-900">
+  <div class="container max-w-6xl mx-auto flex items-center px-2 py-8">
+
+    <div class="w-full mx-auto flex flex-wrap items-center">
+      <div class="flex w-full md:w-1/2 justify-center md:justify-start text-white font-extrabold flex-col">
+        <a class="text-gray-900 no-underline hover:text-gray-900 hover:no-underline" href="/blog/ko">
+          <span class="text-base text-gray-200">Docsie.io Blog</span>
+        </a>
+        <a class="text-gray-900 no-underline hover:text-gray-900 hover:no-underline"
+           href="https://github.com/LikaloLLC/BlogVi" target="_blank">
+          <span class="text-xs text-gray-200">Made with BlogVI</span>
+        </a>
+      </div>
+      <div class="flex w-full pt-2 content-center justify-between md:w-1/2 md:justify-end">
+        <ul class="list-reset flex justify-center flex-1 md:flex-none items-center">
+          
+            <li>
+              <a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-3"
+                 href="https://www.docsie.io">Docsie</a>
+            </li>
+          
+            <li>
+              <a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-3"
+                 href="https://www.docsie.io/pricing/">Docsie Pricing</a>
+            </li>
+          
+            <li>
+              <a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-3"
+                 href="https://www.docsie.io/try_docsie/">Try Docsie</a>
+            </li>
+          
+        </ul>
+      </div>
+    </div>
+
+
+  </div>
+</footer>
+
+<script>
+  /* Progress bar */
+  //Source: https://alligator.io/js/progress-bar-javascript-css-variables/
+  var h = document.documentElement,
+    b = document.body,
+    st = 'scrollTop',
+    sh = 'scrollHeight',
+    progress = document.querySelector('#progress'),
+    scroll;
+  var scrollpos = window.scrollY;
+  var header = document.getElementById("header");
+  var navcontent = document.getElementById("nav-content");
+
+  document.addEventListener('scroll', function () {
+
+    /*Refresh scroll % width*/
+    scroll = (h[st] || b[st]) / ((h[sh] || b[sh]) - h.clientHeight) * 100;
+    progress.style.setProperty('--scroll', scroll + '%');
+
+    /*Apply classes for slide in bar*/
+    scrollpos = window.scrollY;
+
+    if (scrollpos > 10) {
+      header.classList.add("bg-white");
+      header.classList.add("shadow");
+      navcontent.classList.remove("bg-gray-100");
+      navcontent.classList.add("bg-white");
+    } else {
+      header.classList.remove("bg-white");
+      header.classList.remove("shadow");
+      navcontent.classList.remove("bg-white");
+      navcontent.classList.add("bg-gray-100");
+
+    }
+
+  });
+
+
+  //Javascript to toggle the menu
+  document.getElementById('nav-toggle').onclick = function () {
+    document.getElementById("nav-content").classList.toggle("hidden");
+  }
+</script>
+<script>
+  /*
+    Twitter
+    https://twitter.com/share?url=[post-url]&text=[post-title]
+
+    Facebook
+    https://www.facebook.com/sharer.php?u=[post-url]
+
+  */
+  let twitterURI = document.getElementById('twitter');
+  let facebookURI = document.getElementById('facebook');
+
+  let postURI = encodeURI(document.location.href);
+  let postTitle = encodeURI(document.getElementById('blog-title').innerText + ":\n")
+
+  facebookURI.setAttribute('href', `https://www.facebook.com/sharer.php?u=${postURI}`);
+  twitterURI.setAttribute('href', `https://twitter.com/share?url=${postURI}&text=${postTitle}`);
+</script>
+
+<!--Sharect-->
+
+<script src="https://unpkg.com/sharect@2.0.0/dist/sharect.js"></script>
+<script>window["sharectConfig"] = {"backgroundColor": "#333333", "enabled": true, "facebook": true, "iconColor": "#FFFFFF", "selectableElements": ["body"], "twitter": true, "twitterUsername": "likalo_llc"}</script>
+<script src="/blog/templates/assets/js/sharect.js"></script>
+
+
+
+<!--Reading time-->
+<script src="/blog/templates/assets/js/reading-time.min.js"></script>
+<script>
+  const text = []
+  let content = [...document.getElementById('content').getElementsByTagName('p')].forEach((elem) => {
+    text.push(elem.textContent)
+  });
+  const stats = readingTime(text.join(" "));
+
+  document.getElementById('reading-time').innerHTML = stats.text;
+</script>
+
+
+  
+      <!-- Google Tag Manager (noscript) -->
+
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TZRGMQ9"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+  
+
+</body>
+
+</html>

@@ -1,0 +1,405 @@
+<!-- Base template of the article page. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+  
+
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/blog/https://d1iq6qzgppjlud.cloudfront.net/images/favicon/favicon-196x196.png">
+
+
+  <!-- Primary Meta Tags -->
+  <title>Docsie.io Blog - 문서용 워드프레스와 Docsie</title>
+  <meta name="author" content="Tal F"/>
+  <meta name="title" content="문서용 워드프레스와 Docsie">
+  <meta name="description" content="워드프레스에서 문서 호스팅 및 관리를 간소화하는 방법을 Docsie로 알아보세요."/>
+  <meta name="keywords" content="제품 문서,모범 사례"/>
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.docsie.io/blog/blog/ko/articles/wordpress-for-documentation-with-docsie/">
+  <meta property="og:title" content="문서용 워드프레스와 Docsie">
+  <meta property="og:description"
+        content="워드프레스에서 문서 호스팅 및 관리를 간소화하는 방법을 Docsie로 알아보세요.">
+  <meta property="og:image" content="https://cdn.docsie.io/workspace_8D5W1pxgb7Jq3oZO7/doc_QpDdxIGnXpT0d02oQ/file_wmuhZoDEvn54PYqhY/boo_XGfvRm3TVTFbV6HET/c35f4db5-0946-eb37-b325-899deb4e3175Untitled_1_min.jpg">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://www.docsie.io/blog/blog/ko/articles/wordpress-for-documentation-with-docsie/">
+  <meta property="twitter:title" content="문서용 워드프레스와 Docsie">
+  <meta property="twitter:description"
+        content="워드프레스에서 문서 호스팅 및 관리를 간소화하는 방법을 Docsie로 알아보세요.">
+  <meta property="twitter:image" content="https://cdn.docsie.io/workspace_8D5W1pxgb7Jq3oZO7/doc_QpDdxIGnXpT0d02oQ/file_wmuhZoDEvn54PYqhY/boo_XGfvRm3TVTFbV6HET/c35f4db5-0946-eb37-b325-899deb4e3175Untitled_1_min.jpg">
+
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/blog/templates/assets/css/typography.min.css"/>
+  <!--Replace with your tailwind.css once created-->
+    
+    <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TZRGMQ9');</script>
+<!-- End Google Tag Manager -->
+  
+
+</head>
+
+
+<body class="bg-gray-100 font-sans leading-normal tracking-normal">
+
+<nav id="header" class="fixed w-full z-10 top-0">
+
+  <div id="progress" class="h-1 z-20 top-0"
+       style="background:linear-gradient(to right, #4dc0b5 var(--scroll), transparent 0);"></div>
+
+  <div class="container max-w-6xl mx-auto flex flex-wrap items-center justify-between mt-0 py-3">
+
+    <div class="pl-4">
+      <a class="text-gray-900 text-base no-underline hover:no-underline font-extrabold text-xl" href="../../">
+          Docsie.io Blog
+      </a>
+    </div>
+
+    <div class="block lg:hidden pr-4">
+      <button id="nav-toggle"
+              class="flex items-center px-3 py-2 border rounded text-gray-500 border-gray-600 hover:text-gray-900 hover:border-green-500 appearance-none focus:outline-none">
+        <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+          <title>Menu</title>
+          <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/>
+        </svg>
+      </button>
+    </div>
+
+    <div class="w-full flex-grow lg:flex lg:items-center lg:w-auto hidden lg:block mt-2 lg:mt-0 bg-gray-100 z-20"
+         id="nav-content">
+      <ul class="list-reset lg:flex justify-end flex-1 items-center">
+        
+        <li>
+          <a class="inline-block text-gray-600 hover:text-gray-900 hover:underline py-2 px-4"
+             href="https://www.docsie.io">Docsie</a>
+        </li>
+        
+        <li>
+          <a class="inline-block text-gray-600 hover:text-gray-900 hover:underline py-2 px-4"
+             href="https://www.docsie.io/pricing/">Docsie Pricing</a>
+        </li>
+        
+        <li>
+          <a class="inline-block text-gray-600 hover:text-gray-900 hover:underline py-2 px-4"
+             href="https://www.docsie.io/try_docsie/">Try Docsie</a>
+        </li>
+        
+      </ul>
+    </div>
+    <div class="flex w-full justify-end content-center">
+        <a
+          class="inline-block text-gray-500 hover:text-green-500 hover:underline text-center h-10 p-2 md:h-auto md:p-4 avatar"
+          data-tippy-content="@twitter_handle" href="https://twitter.com/intent/tweet?url=#"
+          id="twitter">
+          <svg class="fill-current h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+            <path
+              d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"></path>
+          </svg>
+        </a>
+        <a
+          class="inline-block text-gray-500 hover:text-green-500 hover:underline text-center h-10 p-2 md:h-auto md:p-4 avatar"
+          data-tippy-content="#facebook_id" href="https://www.facebook.com/sharer/sharer.php?u=#}"
+          id="facebook">
+          <svg class="fill-current h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+            <path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"></path>
+          </svg>
+        </a>
+      </div>
+  </div>
+
+</nav>
+
+<!--Container-->
+<div class="container max-w-4xl mx-auto mt-32 px-8 md:px-0">
+  <div class="prose prose lg:prose-xl mx-auto mt-32">
+    <!--Title-->
+    <h1 id="blog-title">문서용 워드프레스와 Docsie</h1>
+    <!--Author-->
+    <div class="flex items-center">
+      <img class="w-10 h-10 rounded-full mr-4" src=" https://cdn.docsie.io/user_profiles/15/logo_logo_QmXrbijvL0L2hFKNm6Q25DtjahujKdB6nu4pqBlLBgvtT.png" alt="Avatar of Author">
+      <div class="flex-1 px-2">
+        <div class="font-bold leading-none mb-2">Tal F</div>
+        <div class="text-xs md:text-base">on May 04, 2021 · <span id="reading-time"
+                class="block md:inline mt-2 md:mt-0"></span> · filed under <span
+          class="block md:inline mt-2 md:mt-0">
+						
+            <span class="rounded bg-green-500 text-white px-1 uppercase text-xs whitespace-nowrap md:text-sm">제품 문서</span>
+						
+            <span class="rounded bg-green-500 text-white px-1 uppercase text-xs whitespace-nowrap md:text-sm">모범 사례</span>
+						
+					</span>
+        </div>
+      </div>
+    </div>
+    <!--/Author-->
+
+    <!--Post Content-->
+    <!--Lead Para-->
+    <div id="content">
+      <p>문서 호스팅 및 관리를 간소화하는 방법 알아보기 ## Docsie로 워드프레스에서 문서 호스팅 및 관리 간소화하기</p>
+<p>고객 여정 전반에 걸쳐 사람들은 구매 결정을 지원하기 위해 정보와 안내를 검색합니다. 구매하기 전에 고객은 제품의 작동 방식과 요구 사항을 충족하는지 여부를 이해하고자 합니다. 구매 중과 구매 후에는 서비스를 구성하고 사용하는 방법을 자세히 설명하는 문서가 유용하며, 이를 통해 고객은 자신의 필요에 맞게 기능을 구성하고 구체화할 수 있습니다.</p>
+<p>마쇼나 딜리웨요의 말을 인용하자면 "지식은 재산이다." 현대의 디지털 소비자는 인터넷 덕분에 손끝에서 풍부한 지식을 얻을 수 있는 특권을 누리고 있습니다. 서비스에 대한 지식을 공유할 역량이나 능력이 부족한 기업은 정보에 기반한 뚜렷한 경쟁 우위를 놓치고 있다는 의미입니다.</p>
+<p>이는 최근 2020년 <a href="https://www.eptica.com/dcx2020">Eptica</a>[연구]에 따르면 기업 응답자의 36%가 디지털 채널을 통해 일상적인 고객 문의에 제대로 답변하지 못하고 있는 것으로 나타났습니다. 최상의 시나리오에서는 이러한 실패로 인해 고객 서비스 부서에 대한 고객들의 정보 요청이 증가하여 직원 비용과 업무량이 증가하게 됩니다. 최악의 시나리오는 고객 이탈입니다. 고객은 더 많은 판매 전/후 문서를 제공하는 경쟁업체를 발견하여 신뢰도를 높이고 구매로 이어질 가능성을 높일 수 있습니다.</p>
+<p>셀프 서비스 문서 포털로 일상적인 쿼리에 답변하기 ###</p>
+<h3></h3>
+<p>일상적인 쿼리는 구성, 청구, 기술 지원 등 제품이나 서비스의 측면에 관한 일반적인 낮은 수준의 질문입니다. 대부분의 경우 쿼리 유형은 일관성을 유지하며 비슷한 질문에 대해 고객 서비스 상담원이 똑같이 비슷한 답변을 제공합니다. 이러한 낮은 수준의 워크로드는 반복 가능하고 예측 가능하므로 셀프 서비스에 이상적인 후보입니다.</p>
+<p>셀프 서비스 문서 포털을 구현함으로써 기업은 고객 지원 워크로드를 줄일 수 있습니다. 이는 소비자 정서의 변화와도 일치합니다. 2020년 <a href="http://connect.creativevirtual.com/contactbabel-report-us-mar2020">ContactBabel</a>[연구]에 따르면 미국 응답자의 61%가 AI 지원 셀프 서비스가 '매우 중요하다'고 답했습니다. 이는 고객이 비대면 지원을 받아들일 뿐만 아니라 이를 수용하고 있음을 보여줍니다. 특히 밀레니얼 세대는 스스로 문제를 해결할 수 있는 능력을 갖춰야 한다고 응답한 소비자가 73%에 달할 정도로 스스로 서비스를 받기를 원합니다.</p>
+<h3>워드프레스 문서에 Docsie 사용하기</h3>
+<h3></h3>
+<p>소비자가 스스로 도울 수 있도록 돕기 위해서는 문서 포털을 구현하는 것이 필수적입니다. Docsie는 충성도 높은 고객과 열정적인 내부 직원 모두를 만족시키면서 비즈니스 전체에서 문서를 관리하고 공유할 수 있는 훌륭한 방법입니다!</p>
+<h3>Docsie 작업 공간, 책, 선반</h3>
+<p>Docsie 작업 공간에서 기업은 문서 포털에 게시할 문서를 작성하고 저장할 수 있습니다. 개별 제품의 경우 Docsie는 관련 문서, 즉 '책'을 정리하고 관리할 수 있는 '선반'을 제공합니다. 비즈니스 사용자는 필요한 만큼의 '책'과 '선반'을 생성할 수 있으므로 Docsie는 체계적이고 확장성이 뛰어납니다. 이러한 문서는 직원들이 지식을 추가할 수 있는 '라이브러리'를 형성하고, 고객은 이 지식을 사용하여 제품과 서비스에 대해 학습할 수 있습니다.</p>
+<p><img alt="" src="https://docsie-app-media.s3.amazonaws.com/image/7093/doc_ULxUK3nJlSUujhpeo/cdhlmjjaoteiufwqsqba" /></p>
+<h3>Docsie 문서 버전 관리</h3>
+<p>Docsie는 또한 문서 버전 관리를 지원하여 문서의 여러 반복 작업을 체계적으로 관리하고 장기간 사용할 수 있도록 합니다. 이는 개발 팀에 이상적입니다. 신제품 릴리스와 API 업데이트를 문서화할 수 있으며, 이전 버전의 제품 및 서비스를 계속 사용하는 고객을 위한 백업 문서로 이전 문서를 보관하여 세분화된 사용자층에 효율적으로 대응할 수 있습니다.</p>
+<p><img alt="" src="https://docsie-app-media.s3.amazonaws.com/image/7093/doc_ULxUK3nJlSUujhpeo/pczuxadvbygftlmwekbo" /></p>
+<h3>Docsie 사용자 지정 문서 허브</h3>
+<p>브랜드마다 모양과 느낌이 다릅니다. Docsie는 회사 로고, 색 구성표, 타이포그래피를 통합하여 회사 웹사이트에 일관성 있게 게시할 수 있도록 모든 문서에 사용자 지정 브랜딩을 지원합니다. 따라서 기업은 Docsie에서 브랜딩 자산을 한 번 변경하면 모든 호스팅 플랫폼의 모든 문서에 이러한 변경 사항을 전파할 수 있으므로 브랜딩 관리가 간소화됩니다.</p>
+<p><img alt="" src="https://docsie-app-media.s3.amazonaws.com/image/7093/doc_ULxUK3nJlSUujhpeo/mshntomlogkgyplixkup" /></p>
+<h3>닥시 머신러닝 언어 번역</h3>
+<p>글로벌 기업은 여러 언어로 지식을 전달해야 합니다. Docsie는 번역된 문서에 대한 추가 관리를 제공하여 각 제품 '선반'에 다른 언어에 대한 대체 '책'을 생성합니다. 이러한 '책'은 수동으로 필사하거나 Docsie의 내장된 기계 번역 기능을 선택할 수 있습니다.</p>
+<p>기계 번역은 문서를 다양한 언어로 자동 번역하며, 2020년 CSA 연구<a href="https://csa-research.com/More/Media/Press-Releases/ArticleID/655/Survey-of-8-709-Consumers-in-29-Countries-Finds-that-76-Prefer-Purchasing-Products-with-Information-in-their-Own-Language">연구</a>에 따르면 응답자의 75%가 현지 언어로 지원이 제공될 경우 구매 가능성이 더 높다고 답한 것을 고려할 때 중요한 기능입니다.</p>
+<p><img alt="" src="https://docsie-app-media.s3.amazonaws.com/image/7093/doc_ULxUK3nJlSUujhpeo/tjwcokomcquzbtjfyhms" /></p>
+<p><img alt="" src="https://docsie-app-media.s3.amazonaws.com/image/7093/doc_ULxUK3nJlSUujhpeo/hpiagizgxcvfteprinwn" /></p>
+<h3>닥시 보컬: 시각화된 피드백</h3>
+<p>Docsie Vocally를 사용하면 사용자가 문서 포털에서 개별 '책'에 대한 피드백을 제공할 수 있습니다. 이를 통해 기업은 사용자에게 측정 가능한 이점을 제공하는 유용하고 영향력 있는 문서를 식별할 수 있습니다. 또한 고객에게 더 많은 가치를 제공하기 위해 수정 및 교체해야 하는 저품질 문서를 찾아내는 데도 도움이 됩니다. 피드백은 5점 척도의 '감정적 평가' 또는 피드백에 대한 설명이 포함된 문자 메시지로 구성됩니다. 기업은 각 사용자에 대한 페이지에 기록된 작업을 통해 사용자 경험(UX) 모니터링에 더욱 심도 있게 접근할 수 있으며, 피드백을 통해 고객의 검색 습관을 파악하여 비즈니스 의사 결정을 내릴 수 있습니다.</p>
+<p><img alt="" src="https://docsie-app-media.s3.amazonaws.com/image/7093/doc_ULxUK3nJlSUujhpeo/addifshigkkpoiobortf" /></p>
+<p>워드프레스 5에서 문서 시작하기 ###</p>
+<h3></h3>
+<p>기업은 Docsie의 기능을 사용하여 원하는 플랫폼(이 경우 워드프레스)에서 항목을 호스팅하면서 문서를 관리할 수 있습니다. Docsie 내에서 워드프레스에 게시하는 것은 이보다 더 간단할 수 없으며, 하나의 배포 스크립트만 있으면 콘텐츠를 푸시하고 게시할 수 있습니다.</p>
+<h3>Docsie WordPress 배포 스크립트 만들기</h3>
+<p>Docsie에서 게시하려는 책을 엽니다.</p>
+<p>설정 패널에서 속성을 찾습니다.</p>
+<p><img alt="" src="https://docsie-app-media.s3.amazonaws.com/image/7093/doc_ULxUK3nJlSUujhpeo/pmfgayfjbxpyaezonadq" /></p>
+<p>클릭(자체 게시 스크립트 받기)</p>
+<p><img alt="" src="https://docsie-app-media.s3.amazonaws.com/image/7093/doc_ULxUK3nJlSUujhpeo/gapavaasxhjgmzvosbtt" /></p>
+<p>코드를 워드프레스에 복사할 준비가 된 것으로 표시됩니다.</p>
+<p><img alt="" src="https://docsie-app-media.s3.amazonaws.com/image/7093/doc_ULxUK3nJlSUujhpeo/eeugiunjmalaxajwytjx" /></p>
+<p>또한 포털 보기에서 기업은 각 선반 또는 전체 작업 영역에서 기존 문서를 선택하여 게시할 수 있습니다.</p>
+<p>여기에는 콘텐츠 필터(지원, 사이트 콘텐츠, 약관 및 정책, 문서, 기타 페이지)가 포함되어 있어 워드프레스에 게시되는 내용을 세밀하게 제어할 수 있습니다.</p>
+<p>또한 버전 선택기, 언어 선택기, 섹션 앵커, 바닥글 탐색 등의 표시 스타일을 선택하여 워드프레스에서 최종 서식 출력을 제어할 수 있습니다.</p>
+<p>비즈니스 사용자는 그래픽 사용자 인터페이스(GUI)를 통해 콘텐츠 필터와 표시 스타일을 정의하여 게시할 내용을 선택하기만 하면 Docsie가 하단 텍스트 영역에서 최종 배포 스크립트를 생성합니다. 이를 로우코드 또는 코드리스라고 합니다.</p>
+<p>이제 워드프레스에 게시할 수 있습니다!</p>
+<h3>워드프레스에 스크립트 추가하기</h3>
+<p>워드프레스 대시보드에 로그인한 후 페이지로 이동합니다.</p>
+<p>새 페이지 추가를 선택하고 제목을 만들거나 기존 페이지를 선택합니다.</p>
+<p><img alt="" src="https://docsie-app-media.s3.amazonaws.com/image/7093/doc_ULxUK3nJlSUujhpeo/lbwsgahnmezbvkzftagh" /></p>
+<p>워드프레스 텍스트 편집기에서 웹사이트 블록의 추가 버튼을 클릭합니다. 사용자 정의 HTML 옵션을 선택하여 Docsie의 코드 스크립트를 추가합니다.</p>
+<p><img alt="" src="https://docsie-app-media.s3.amazonaws.com/image/7093/doc_ULxUK3nJlSUujhpeo/ejdtdgrlzsahtursowbf" /></p>
+<p>닥시에 배포 스크립트를 복사하여 클립보드에 추가합니다. 그런 다음 워드프레스에서 코드 문자열을 사용자 정의 HTML 상자에 붙여넣습니다. 워드프레스 페이지 이름을 지정할 수도 있지만, 임베드된 문서에서 제목은 Docsie가 자동으로 제어합니다.</p>
+<p><img alt="" src="https://docsie-app-media.s3.amazonaws.com/image/7093/doc_ULxUK3nJlSUujhpeo/zrmyjvznfrgterpdolmk" /></p>
+<p>마지막 단계는 워드프레스 편집기에서 페이지 상단의 HTML 옆에 있는 미리보기를 클릭하는 것입니다.</p>
+<p><img alt="" src="https://docsie-app-media.s3.amazonaws.com/image/7093/doc_ULxUK3nJlSUujhpeo/eiliooqudyhoghurdeqp" /></p>
+<p>Docsie 문서가 페이지에 매끄럽게 표시됩니다! 이제 오른쪽 상단의 업데이트를 클릭하여 라이브 웹페이지에 게시할 수 있습니다. 이 빠르고 쉬운 프로세스는 모든 문서에 대해 반복할 수 있습니다. 크고 작은 문서 라이브러리를 위한 빠른 게시를 지원하므로 붙여넣기만 하면 됩니다!</p>
+<p>참고 - 워드프레스 5는 이 방법을 사용하여 자체 제목과 다른 웹사이트 요소를 표시하므로 다른 웹사이트 요소 주위에 닥시 문서를 삽입하는 데 적합합니다. 문서만 로드하려면 워드프레스 코드 편집기에서 페이지의 HTML 바닥글에 코드 문자열을 붙여넣고 페이지의 나머지 부분은 비워두세요.</p>
+<h3>Docsie에서 팀원들과 공동 작업하기</h3>
+<h3></h3>
+<p>Docsie는 대규모 문서 라이브러리의 일관성, 사용 편의성, 확장성을 개선하여 채널 간 게시를 간소화합니다. 또한 Docsie는 협업을 지원하여 팀이 문서 관리 워크플로우를 조율할 수 있도록 도와줍니다.</p>
+<h3>Docsie 내부 및 외부 공동 작업자</h3>
+<p>문서를 게시하려면 먼저 문서를 작성해야 합니다. 여기에는 내부 문서 작성 직원 또는 프로젝트당 비용을 지불하고 문서를 작성하는 외부 공동 작업자가 포함될 수 있습니다. Docsie는 위의 모든 요구 사항을 충족하여 기업이 Teams를 만들고 사람과 콘텐츠를 동시에 관리할 수 있도록 합니다.</p>
+<p>내부 직원은 소유자 또는 관리자가 Docsie 역할 기반 액세스 제어(RBAC)를 사용하는 그룹 정책을 통해 수동으로 팀에 추가하거나 팀 그룹에 가입할 수 있는 액세스 권한을 요청할 수 있습니다.</p>
+<p>외부 공동 작업자는 Docsie 포털 내에서 이메일을 통해 팀에 초대할 수 있으므로 계약자를 빠르고 효율적으로 온보딩할 수 있습니다.</p>
+<p><img alt="" src="https://docsie-app-media.s3.amazonaws.com/image/7093/doc_ULxUK3nJlSUujhpeo/axkzsfrdmsdknhqnccqj" /></p>
+<h3>Docsie 팀 채팅</h3>
+<p>이메일이나 Slack 대신 Docsie 팀 채팅을 사용할 수 있습니다. 문서와 관련된 커뮤니케이션을 중앙 집중화하여 집중력을 높이고 인스턴트 메시징(IM)을 활성화하여 팀 응답 속도를 높일 수 있습니다. 팀원들은 Docsie 포털 또는 이메일을 통해 메시지 알림을 받게 되므로 중요한 정보를 놓치는 사람이 없습니다.</p>
+<p><img alt="" src="https://docsie-app-media.s3.amazonaws.com/image/7093/doc_ULxUK3nJlSUujhpeo/sqjnonxdlqfjcmhuwwhe" /></p>
+<h3>문서 권한 및 사용자 관리</h3>
+<p>Docsie는 역할 기반 액세스 제어(RBAC) 프레임워크(ID 액세스 관리(IAM)라고도 함)를 사용해 문서 액세스에 대한 사용자 권한을 제어합니다. 각 사용자를 소유자, 관리자, 편집자, 보기로 지정하여 거버넌스 위험 규정 준수(GRC)에 포함된 액세스, 데이터 거버넌스 및 보안을 세분화하여 제어할 수 있습니다.</p>
+<p><img alt="" src="https://docsie-app-media.s3.amazonaws.com/image/7093/doc_ULxUK3nJlSUujhpeo/lvuxrnhbknitdnmjdwjh" /></p>
+    </div>
+  </div>
+  <!--/ Post Content-->
+
+  <!--Divider-->
+  <hr class="border-b-1 border-gray-400 mt-12 mb-8 mx-4">
+
+  <!--Next & Prev Links-->
+  <div class="font-sans flex justify-between content-center px-4 mb-4">
+    <div class="text-left">
+      <span class="text-xs md:text-sm font-normal text-gray-600">&lt; Previous Post</span><br>
+      <p><a href="../how-to-win-with-organized-and-automated-product-documentation" class="break-normal text-base md:text-sm text-green-500 font-bold no-underline hover:underline">체계적이고 자동화된 제품 문서로 성공하는 방법</a></p>
+    </div>
+    <div class="text-right">
+      <span class="text-xs md:text-sm font-normal text-gray-600">Next Post &gt;</span><br>
+      <p><a href="../5-key-benefits-of-using-a-documentation-platform-for-maintaining-software-documentation-in-your-business" class="break-normal text-base md:text-sm text-green-500 font-bold no-underline hover:underline">비즈니스에서 소프트웨어 문서 유지 관리를 위한 문서화 플랫폼 사용의 5가지 주요 이점</a></p>
+    </div>
+  </div>
+
+
+  <!--/Next & Prev Links-->
+
+  
+    <div class="commentbox"></div>
+
+    <script src="https://unpkg.com/commentbox.io/dist/commentBox.min.js"></script>
+    <script>commentBox("5725910686760960-proj")</script>
+  
+
+  <!--Subscribe-->
+  
+    <!-- Base template of the subscription form. -->
+
+<div class="container font-sans bg-white rounded mt-8 p-4 md:p-24 text-center mb-10">
+    <h2 class="font-bold break-normal text-2xl md:text-4xl">Subscribe to the newsletter</h2>
+    <h3 class="font-bold break-normal font-normal text-gray-600 text-base md:text-xl">Stay up to date with our latest news and products</h3>
+    <div class="w-full text-center pt-4">
+        <form action="#">
+            <div class="max-w-xl mx-auto p-1 pr-0 flex flex-wrap items-center">
+                <input type="email" placeholder="youremail@example.com"
+                       class="flex-1 appearance-none rounded shadow p-3 text-gray-600 mr-2 focus:outline-none">
+                <button type="submit"
+                        class="flex-1 mt-4 md:mt-0 block md:inline-block appearance-none bg-green-500 text-white text-base font-semibold tracking-wider uppercase py-4 rounded shadow hover:bg-green-400">
+                    Subscribe
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+  
+  <!-- /Subscribe-->
+</div>
+<!--/container-->
+
+<footer class="bg-gray-900">
+  <div class="container max-w-6xl mx-auto flex items-center px-2 py-8">
+
+    <div class="w-full mx-auto flex flex-wrap items-center">
+      <div class="flex w-full md:w-1/2 justify-center md:justify-start text-white font-extrabold flex-col">
+        <a class="text-gray-900 no-underline hover:text-gray-900 hover:no-underline" href="/blog/ko">
+          <span class="text-base text-gray-200">Docsie.io Blog</span>
+        </a>
+        <a class="text-gray-900 no-underline hover:text-gray-900 hover:no-underline"
+           href="https://github.com/LikaloLLC/BlogVi" target="_blank">
+          <span class="text-xs text-gray-200">Made with BlogVI</span>
+        </a>
+      </div>
+      <div class="flex w-full pt-2 content-center justify-between md:w-1/2 md:justify-end">
+        <ul class="list-reset flex justify-center flex-1 md:flex-none items-center">
+          
+            <li>
+              <a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-3"
+                 href="https://www.docsie.io">Docsie</a>
+            </li>
+          
+            <li>
+              <a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-3"
+                 href="https://www.docsie.io/pricing/">Docsie Pricing</a>
+            </li>
+          
+            <li>
+              <a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-3"
+                 href="https://www.docsie.io/try_docsie/">Try Docsie</a>
+            </li>
+          
+        </ul>
+      </div>
+    </div>
+
+
+  </div>
+</footer>
+
+<script>
+  /* Progress bar */
+  //Source: https://alligator.io/js/progress-bar-javascript-css-variables/
+  var h = document.documentElement,
+    b = document.body,
+    st = 'scrollTop',
+    sh = 'scrollHeight',
+    progress = document.querySelector('#progress'),
+    scroll;
+  var scrollpos = window.scrollY;
+  var header = document.getElementById("header");
+  var navcontent = document.getElementById("nav-content");
+
+  document.addEventListener('scroll', function () {
+
+    /*Refresh scroll % width*/
+    scroll = (h[st] || b[st]) / ((h[sh] || b[sh]) - h.clientHeight) * 100;
+    progress.style.setProperty('--scroll', scroll + '%');
+
+    /*Apply classes for slide in bar*/
+    scrollpos = window.scrollY;
+
+    if (scrollpos > 10) {
+      header.classList.add("bg-white");
+      header.classList.add("shadow");
+      navcontent.classList.remove("bg-gray-100");
+      navcontent.classList.add("bg-white");
+    } else {
+      header.classList.remove("bg-white");
+      header.classList.remove("shadow");
+      navcontent.classList.remove("bg-white");
+      navcontent.classList.add("bg-gray-100");
+
+    }
+
+  });
+
+
+  //Javascript to toggle the menu
+  document.getElementById('nav-toggle').onclick = function () {
+    document.getElementById("nav-content").classList.toggle("hidden");
+  }
+</script>
+<script>
+  /*
+    Twitter
+    https://twitter.com/share?url=[post-url]&text=[post-title]
+
+    Facebook
+    https://www.facebook.com/sharer.php?u=[post-url]
+
+  */
+  let twitterURI = document.getElementById('twitter');
+  let facebookURI = document.getElementById('facebook');
+
+  let postURI = encodeURI(document.location.href);
+  let postTitle = encodeURI(document.getElementById('blog-title').innerText + ":\n")
+
+  facebookURI.setAttribute('href', `https://www.facebook.com/sharer.php?u=${postURI}`);
+  twitterURI.setAttribute('href', `https://twitter.com/share?url=${postURI}&text=${postTitle}`);
+</script>
+
+<!--Sharect-->
+
+<script src="https://unpkg.com/sharect@2.0.0/dist/sharect.js"></script>
+<script>window["sharectConfig"] = {"backgroundColor": "#333333", "enabled": true, "facebook": true, "iconColor": "#FFFFFF", "selectableElements": ["body"], "twitter": true, "twitterUsername": "likalo_llc"}</script>
+<script src="/blog/templates/assets/js/sharect.js"></script>
+
+
+
+<!--Reading time-->
+<script src="/blog/templates/assets/js/reading-time.min.js"></script>
+<script>
+  const text = []
+  let content = [...document.getElementById('content').getElementsByTagName('p')].forEach((elem) => {
+    text.push(elem.textContent)
+  });
+  const stats = readingTime(text.join(" "));
+
+  document.getElementById('reading-time').innerHTML = stats.text;
+</script>
+
+
+  
+      <!-- Google Tag Manager (noscript) -->
+
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TZRGMQ9"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+  
+
+</body>
+
+</html>
