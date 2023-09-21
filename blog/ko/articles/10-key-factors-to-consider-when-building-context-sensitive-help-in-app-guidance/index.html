@@ -1,0 +1,731 @@
+<!-- Base template of the article page. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+  
+
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/blog/https://d1iq6qzgppjlud.cloudfront.net/images/favicon/favicon-196x196.png">
+
+
+  <!-- Primary Meta Tags -->
+  <title>Docsie.io Blog - 상황에 맞는 도움말 및 인앱 안내를 구축할 때 고려해야 할 10가지 주요 요소</title>
+  <meta name="author" content="Tanya A Mishra"/>
+  <meta name="title" content="상황에 맞는 도움말 및 인앱 안내를 구축할 때 고려해야 할 10가지 주요 요소">
+  <meta name="description" content="이 글에서는 상황에 맞는 도움말 및 인앱 가이드를 구축할 때 고려해야 할 10가지 핵심 요소를 살펴봅니다."/>
+  <meta name="keywords" content="제품 문서,기술 문서 작성,상황에 맞는 도움말 및 인앱 안내"/>
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.docsie.io/blog/blog/ko/articles/10-key-factors-to-consider-when-building-context-sensitive-help-in-app-guidance/">
+  <meta property="og:title" content="상황에 맞는 도움말 및 인앱 안내를 구축할 때 고려해야 할 10가지 주요 요소">
+  <meta property="og:description"
+        content="이 글에서는 상황에 맞는 도움말 및 인앱 가이드를 구축할 때 고려해야 할 10가지 핵심 요소를 살펴봅니다.">
+  <meta property="og:image" content="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_jDvJa9Zmr9vQivN0e/f8a80264-b138-f51d-67f9-00d1e16f5e45banner_12.jpg">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://www.docsie.io/blog/blog/ko/articles/10-key-factors-to-consider-when-building-context-sensitive-help-in-app-guidance/">
+  <meta property="twitter:title" content="상황에 맞는 도움말 및 인앱 안내를 구축할 때 고려해야 할 10가지 주요 요소">
+  <meta property="twitter:description"
+        content="이 글에서는 상황에 맞는 도움말 및 인앱 가이드를 구축할 때 고려해야 할 10가지 핵심 요소를 살펴봅니다.">
+  <meta property="twitter:image" content="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_jDvJa9Zmr9vQivN0e/f8a80264-b138-f51d-67f9-00d1e16f5e45banner_12.jpg">
+
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/blog/templates/assets/css/typography.min.css"/>
+  <!--Replace with your tailwind.css once created-->
+    
+    <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TZRGMQ9');</script>
+<!-- End Google Tag Manager -->
+  
+
+</head>
+
+
+<body class="bg-gray-100 font-sans leading-normal tracking-normal">
+
+<nav id="header" class="fixed w-full z-10 top-0">
+
+  <div id="progress" class="h-1 z-20 top-0"
+       style="background:linear-gradient(to right, #4dc0b5 var(--scroll), transparent 0);"></div>
+
+  <div class="container max-w-6xl mx-auto flex flex-wrap items-center justify-between mt-0 py-3">
+
+    <div class="pl-4">
+      <a class="text-gray-900 text-base no-underline hover:no-underline font-extrabold text-xl" href="../../">
+          Docsie.io Blog
+      </a>
+    </div>
+
+    <div class="block lg:hidden pr-4">
+      <button id="nav-toggle"
+              class="flex items-center px-3 py-2 border rounded text-gray-500 border-gray-600 hover:text-gray-900 hover:border-green-500 appearance-none focus:outline-none">
+        <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+          <title>Menu</title>
+          <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/>
+        </svg>
+      </button>
+    </div>
+
+    <div class="w-full flex-grow lg:flex lg:items-center lg:w-auto hidden lg:block mt-2 lg:mt-0 bg-gray-100 z-20"
+         id="nav-content">
+      <ul class="list-reset lg:flex justify-end flex-1 items-center">
+        
+        <li>
+          <a class="inline-block text-gray-600 hover:text-gray-900 hover:underline py-2 px-4"
+             href="https://www.docsie.io">Docsie</a>
+        </li>
+        
+        <li>
+          <a class="inline-block text-gray-600 hover:text-gray-900 hover:underline py-2 px-4"
+             href="https://www.docsie.io/pricing/">Docsie Pricing</a>
+        </li>
+        
+        <li>
+          <a class="inline-block text-gray-600 hover:text-gray-900 hover:underline py-2 px-4"
+             href="https://www.docsie.io/try_docsie/">Try Docsie</a>
+        </li>
+        
+      </ul>
+    </div>
+    <div class="flex w-full justify-end content-center">
+        <a
+          class="inline-block text-gray-500 hover:text-green-500 hover:underline text-center h-10 p-2 md:h-auto md:p-4 avatar"
+          data-tippy-content="@twitter_handle" href="https://twitter.com/intent/tweet?url=#"
+          id="twitter">
+          <svg class="fill-current h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+            <path
+              d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"></path>
+          </svg>
+        </a>
+        <a
+          class="inline-block text-gray-500 hover:text-green-500 hover:underline text-center h-10 p-2 md:h-auto md:p-4 avatar"
+          data-tippy-content="#facebook_id" href="https://www.facebook.com/sharer/sharer.php?u=#}"
+          id="facebook">
+          <svg class="fill-current h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+            <path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"></path>
+          </svg>
+        </a>
+      </div>
+  </div>
+
+</nav>
+
+<!--Container-->
+<div class="container max-w-4xl mx-auto mt-32 px-8 md:px-0">
+  <div class="prose prose lg:prose-xl mx-auto mt-32">
+    <!--Title-->
+    <h1 id="blog-title">상황에 맞는 도움말 및 인앱 안내를 구축할 때 고려해야 할 10가지 주요 요소</h1>
+    <!--Author-->
+    <div class="flex items-center">
+      <img class="w-10 h-10 rounded-full mr-4" src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_p1X4gXS3n0rCHYuaE/1f3f5f57-d8e2-7978-faef-0b9fe89f3e4btanya_pic.jpg" alt="Avatar of Author">
+      <div class="flex-1 px-2">
+        <div class="font-bold leading-none mb-2">Tanya A Mishra</div>
+        <div class="text-xs md:text-base">on September 07, 2023 · <span id="reading-time"
+                class="block md:inline mt-2 md:mt-0"></span> · filed under <span
+          class="block md:inline mt-2 md:mt-0">
+						
+            <span class="rounded bg-green-500 text-white px-1 uppercase text-xs whitespace-nowrap md:text-sm">제품 문서</span>
+						
+            <span class="rounded bg-green-500 text-white px-1 uppercase text-xs whitespace-nowrap md:text-sm">기술 문서 작성</span>
+						
+            <span class="rounded bg-green-500 text-white px-1 uppercase text-xs whitespace-nowrap md:text-sm">상황에 맞는 도움말 및 인앱 안내</span>
+						
+					</span>
+        </div>
+      </div>
+    </div>
+    <!--/Author-->
+
+    <!--Post Content-->
+    <!--Lead Para-->
+    <div id="content">
+      <p>상황에 맞는 도움말은 사용자의 특정 상황에 맞게 조정된 소프트웨어 애플리케이션의 도움말 콘텐츠를 말합니다. 상황에 맞는 도움말은 일반적인 도움말 문서를 제공하는 대신 앱 내 현재 위치, 완료하려는 작업 또는 직면한 문제와 관련된 정보 및 세부 정보를 사용자에게 제공합니다.</p>
+<h2>상황에 맞는 도움말이란 무엇인가요?</h2>
+<p>상황에 맞는 도움말은 <a href="https://www.tandfonline.com/doi/abs/10.1080/09588220600821552">참조</a> 소프트웨어 애플리케이션, 온라인 플랫폼 또는 시스템 내에서 제공되는 사용자 지원 지원으로, 플랫폼 방문자의 여정을 간소화하는 것을 목표로 합니다.</p>
+<ul>
+<li>
+<p>상황에 맞는 도움말의 몇 가지 예는 다음과 같습니다.</p>
+</li>
+<li>
+<p>특정 버튼이나 아이콘 위에 마우스를 올리면 해당 기능을 설명하는 툴팁이 표시됩니다.</p>
+</li>
+</ul>
+<p><img alt="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_JgxTgPxsanF6oNLrz/84677561-47de-1bd4-7ba7-ed63ee38c087image.png" src="https://s3.amazonaws.com/content-harmony-user-uploads/froala-uploads-1692820574617-1692820574617.png" title="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_JgxTgPxsanF6oNLrz/84677561-47de-1bd4-7ba7-ed63ee38c087image.png" /></p>
+<ol>
+<li>사용자에게 여러 단계의 프로세스를 안내하는 단계별 연습 오버레이</li>
+</ol>
+<p><img alt="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_NQWTLzhmKFbOI4nDz/9adffc58-0e30-abf0-0b11-b656905fbd0aimage.png" src="https://s3.amazonaws.com/content-harmony-user-uploads/froala-uploads-1692820574685-1692820574685.png" title="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_NQWTLzhmKFbOI4nDz/9adffc58-0e30-abf0-0b11-b656905fbd0aimage.png" /></p>
+<ol>
+<li>오류 코드 또는 상태를 감지하고 대상에 맞는 문제 해결 조언을 제공하는 오류 메시지 도움말 3.</li>
+</ol>
+<p><img alt="" src="https://s3.amazonaws.com/content-harmony-user-uploads/froala-uploads-1693391302473-1693391302473.png" /></p>
+<ol>
+<li>사용자에게 여러 단계의 프로세스를 안내하는 단계별 연습 오버레이</li>
+</ol>
+<p><img alt="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_2V0l6wSbWJS42mQom/60d856f7-7dcc-d8c0-129b-c6573fc8c5c2image.png" src="https://s3.amazonaws.com/content-harmony-user-uploads/froala-uploads-1692820574714-1692820574714.png" title="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_2V0l6wSbWJS42mQom/60d856f7-7dcc-d8c0-129b-c6573fc8c5c2image.png" /></p>
+<p><a href="https://site.docsie.io/in-app-help-and-support">상황에 맞는 도움말</a>은 매우 역동적이고 적응력이 뛰어납니다. 고급 구현에서는 AI 및 머신 러닝을 활용하여 사용자 행동을 분석하고 표시되는 도움말 콘텐츠를 사용자 지정할 수도 있습니다. 도움말 환경은 실제 사용자 데이터를 기반으로 지속적으로 발전합니다.</p>
+<p>상황에 맞는 도움말의 주요 <a href="https://www.id.iit.edu/wp-content/uploads/2015/03/Context-sensitive-interactive-systems-design-sato_hcii2003.pdf">목표</a>는 사용자나 팀이 필요할 때 가장 관련성이 높은 도움말 주제와 그에 대한 완전한 정보에 빠르고 쉽게 액세스할 수 있도록 하는 것입니다. 이를 통해 사용자의 필요를 예측하여 좌절과 혼란을 방지할 수 있습니다. 사용자는 문서를 검색하기 위해 앱을 떠날 필요 없이 워크플로우에 집중할 수 있습니다.</p>
+<p>전반적으로 상황에 맞는 도움말은 작업 완료율, 작업 시간, 고객 만족도와 같은 주요 사용성 지표를 개선하는 것을 목표로 합니다. 효과적으로 구현하면 사용자 경험과 소프트웨어 애플리케이션 채택률을 획기적으로 개선할 수 있습니다.</p>
+<h2>문맥에 따른 도움말은 사용자 경험을 어떻게 개선하나요?</h2>
+<p>상황에 맞는 도움말은 몇 가지 주요 방식으로 사용자 환경을 개선합니다:</p>
+<ul>
+<li>
+<p>인지적 부담 감소** - 문맥에 맞는 도움말은 특정 작업과 상황에 맞는 도움말을 제공함으로써 사용자가 관련 도움말 콘텐츠를 검색하는 데 드는 노력을 줄여줍니다. 따라서 답을 찾는 데 필요한 인지적 부담과 정신적 노력이 줄어듭니다.</p>
+</li>
+<li>
+<p>자급자족 능력 향상** - 사용자는 상황에 맞는 도움말을 쉽게 사용할 수 있으므로 문제를 해결하고 작업을 더 빨리 완료할 수 있습니다. 이를 통해 문서나 지원과 같은 외부 리소스에 의존하지 않고도 목표를 달성할 수 있습니다.</p>
+</li>
+<li>
+<p>집중력 향상** - 인터페이스와 워크플로에 통합된 도움말을 통해 사용자는 도움말을 찾기 위해 애플리케이션 간에 주의를 전환할 필요가 없습니다. 작업에만 집중할 수 있습니다.</p>
+</li>
+</ul>
+<p><strong>참여도 향상</strong> - 상황에 맞는 도움말은 온보딩 및 중요한 사용 순간에 자신감을 높여줍니다. 이는 애플리케이션 채택률과 참여도를 높이는 결과로 이어집니다.</p>
+<ul>
+<li>교육 시간 단축** - 상황에 맞는 도움말이 사용자를 바로 안내함으로써 공식적인 교육의 필요성을 줄여줍니다. 신규 사용자가 더 빠르게 증가할 수 있습니다.</li>
+</ul>
+<p><strong> 오류 감소</strong> - 사전에 도움말을 제공함으로써 사용 오류를 방지하고 사용자를 계속 추적할 수 있습니다. 따라서 인적 오류 이벤트가 줄어듭니다.</p>
+<ul>
+<li>
+<p>지원 비용 절감** - 사용자가 스스로 도움을 받을 수 있으므로 상황에 맞는 도움말을 통해 지원 티켓이 줄어듭니다. 따라서 지원팀의 부담이 줄어듭니다.</p>
+</li>
+<li>
+<p>만족도 향상**- 사용자가 쉽게 도움을 받을 수 있어 더 원활하고 불편함이 적은 경험을 할 수 있습니다. 이는 사용자 만족도를 높이는 데 기여합니다.</p>
+</li>
+</ul>
+<p>전반적으로 상황에 맞는 도움말은 사용자의 상황과 필요에 동적으로 반응하는 더 스마트하고 적응력이 뛰어난 도움말 환경을 제공합니다. 이를 통해 사용자는 자신감과 통제감을 느끼면서 효율적으로 작업을 수행할 수 있습니다. 가장 큰 수혜자는 최종 사용자이며, 가장 필요한 때와 장소에서 편리하게 도움을 받을 수 있습니다.</p>
+<p><img alt="" src="https://images.unsplash.com/photo-1520333789090-1afc82db536a?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3wzMTM3MXwwfDF8c2VhcmNofDR8fGhhcHB5JTIwdXNlcnxlbnwwfHx8fDE2OTI2Njg5NDR8MA&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=1080" /></p>
+<h2>다음은 상황에 맞는 도움말의 몇 가지 예입니다:</h2>
+<p>다양한 소프트웨어 애플리케이션과 웹사이트에 상황에 맞는 도움말이 구현된 예가 많이 있습니다:</p>
+<p><strong>툴팁</strong> - 버튼이나 아이콘 위에 마우스를 올리면 Microsoft Office 앱에서처럼 해당 기능을 설명하는 툴팁이 표시될 수 있습니다.</p>
+<ul>
+<li>
+<p>임베디드 도움말 링크** - Adobe Photoshop과 같은 애플리케이션은 메뉴와 패널에 도움말 링크를 임베디드하여 사용자를 관련 도움말 문서로 안내합니다.</p>
+</li>
+<li>
+<p>가이드 투어** - Facebook 및 LinkedIn에서 제공하는 것과 같은 안내를 통해 온보딩 중에 새로운 기능을 상황에 맞게 강조 표시합니다.</p>
+</li>
+<li>
+<p><strong>예측 검색</strong> - Google과 같은 검색 엔진은 입력된 단어를 기반으로 추천 검색어를 실시간으로 표시합니다.</p>
+</li>
+<li>
+<p>FAQ 링크** - 많은 전자상거래 사이트에서처럼 특정 오류 메시지나 페이지와 관련된 FAQ 링크를 인라인으로 표시할 수 있습니다.</p>
+</li>
+<li>
+<p>챗봇** - Microsoft Office의 Clippy와 같은 지능형 챗봇이 감지된 사용자 작업을 기반으로 선제적으로 팁을 제공합니다.</p>
+</li>
+</ul>
+<p><strong>인앱 메시지</strong> - Dropbox와 같은 앱은 반복적으로 실패하는 작업을 감지할 때 인앱 메시지를 사용해 도움말 문서를 제공합니다.</p>
+<ul>
+<li>
+<p>단계별 마법사** - TurboTax와 같은 세금 준비 소프트웨어는 사용자의 현재 상황에 맞는 단계별 안내를 제공합니다.</p>
+</li>
+<li>
+<p>대화형 튜토리얼** - 일부 앱은 대화형 애니메이션과 오버레이를 사용하여 기능 사용 방법을 보여줍니다.</p>
+</li>
+</ul>
+<p><strong> </strong>개인화된 추천** - Netflix 및 Amazon과 같은 서비스는 시청 기록 및 관심사를 기반으로 특정 콘텐츠를 추천합니다.</p>
+<p><strong> </strong>마이크로카피 지침** - 입력 필드 자리 표시자 및 유효성 검사 오류 텍스트와 같은 마이크로카피는 상황에 맞는 도움말을 제공합니다.</p>
+<p><strong> 객체 감지</strong> - AR/VR 컨텍스트에서 객체 감지를 통해 관련 정보 오버레이 표시를 트리거할 수 있습니다.</p>
+<p>공통점은 사용자에게 애플리케이션 내 현재 컨텍스트에 맞는 동적이고 개인화된 도움말 콘텐츠를 제공한다는 것입니다. 이를 통해 사용자의 요구 사항을 예측하고 가장 필요할 때 안내 지원을 제공합니다. 컨텍스트 민감성은 원활하고 직관적인 도움말 환경을 만드는 핵심 원동력입니다.</p>
+<h2>모바일 앱에서 상황에 맞는 도움말을 구현하려면 어떻게 해야 할까요?</h2>
+<p>모바일 앱에서 상황에 맞는 도움말을 구현하는 몇 가지 효과적인 방법이 있습니다:</p>
+<p>인앱 메시지를 사용하면 모바일 사용자의 워크플로 내에서 적절한 순간에 도움말 콘텐츠를 선제적으로 제공할 수 있습니다. 예를 들어, 사용자가 작업을 완료하는 데 어려움을 겪고 있는지 감지하여 툴팁이나 모달을 사용하여 작업을 안내할 수 있습니다.</p>
+<p>온보딩 중에 앱 요소를 강조 표시하고 핵심 워크플로를 단계별로 안내하여 신규 사용자를 안내할 수 있습니다. 주석이 달린 스크린샷, 툴팁, 오버레이 지침을 사용하세요.</p>
+<p>펄스, 하이라이트, 툴팁과 같은 방해가 되지 않는 UI 마이크로 인터랙션을 사용하여 주의를 집중시키고 결정 시점에 상황에 맞는 지침을 제공하세요.</p>
+<p>푸시 알림을 통해 기능 업데이트 또는 작업 완료 알림과 같이 각 사용자의 상황에 따라 시의적절하고 관련성 높은 도움말 콘텐츠를 전송하세요.</p>
+<p>사용자가 검색창에 입력하면 검색어에 맞는 추천 도움말 주제와 추천 콘텐츠를 표시하세요.</p>
+<p><strong>인앱 챗봇</strong></p>
+<p>챗봇은 상황에 맞는 단서를 기반으로 대화형 안내를 제공하여 사용자에게 대화형 도움말 경험을 제공합니다.</p>
+<p>사용자가 앱과 상호 작용하는 방식을 추적하여 향후 앱 버전에서 도움을 제공할 수 있는 기회와 문제점을 파악하세요.</p>
+<p>증강 현실을 사용하면 실제 카메라 뷰에 상황에 맞는 지침과 가이드를 오버레이하여 워크플로우를 지원할 수 있습니다.</p>
+<p>모바일 앱에서는 사용자 여정의 자연스러운 터치포인트에 동적이고 개인화된 도움말 콘텐츠를 통합하여 제공하는 것이 핵심입니다. 정적인 도움말 문서로 워크플로를 방해하지 마세요. 상황에 맞는 마이크로 인터랙션을 제공하여 사용자를 안내하고 이해도와 사용성을 향상시키세요.</p>
+<h2>인앱 안내 및 튜토리얼의 장점은 무엇인가요?</h2>
+<p>*인앱 안내 및 튜토리얼은 전반적인 사용자 경험을 개선하는 다음과 같은 다양한 이점을 제공합니다.</p>
+<ul>
+<li>
+<p>향상된 온보딩: 안내를 통해 핵심 워크플로를 단계별로 보여줌으로써 신규 사용자가 앱을 빠르게 익힐 수 있도록 도와줍니다.</p>
+</li>
+<li>
+<p>참여도 향상:** 새로운 기능을 강조하여 사용자가 앱을 더 많이 탐색하도록 유도합니다.</p>
+</li>
+<li>
+<p>채택률 향상: 사용자에게 주요 기능에 액세스하는 방법을 보여줌으로써 전체 앱의 성공적인 사용을 유도합니다.</p>
+</li>
+<li>
+<p>이탈률 감소:** 상황에 맞는 학습 지원을 제공하는 앱은 사용자가 좌절하여 이탈할 가능성이 적습니다.</p>
+</li>
+<li>
+<p>UX 지표 개선:** 사용자가 상황에 맞는 학습을 할 수 있을 때 작업 완료율, 작업 시간, 사용 편의성이 향상됩니다.</p>
+</li>
+<li>
+<p>교육 비용 절감:** 가이드를 통해 공식적인 교육 리소스 및 고객 지원의 필요성을 줄일 수 있습니다.</p>
+</li>
+<li>
+<p><strong>맞춤형 교육 콘텐츠:</strong> 인앱 가이드를 사용하면 앱 경험 내에서 매우 맞춤화된 교육 자료를 제공할 수 있습니다.</p>
+</li>
+<li>
+<p>적시 학습:** 적절한 순간에 안내를 표시하면 학습 및 정보 유지에 도움이 됩니다.</p>
+</li>
+<li>
+<p>시각적 및 인터랙티브 요소(https://www.frontiersin.org/articles/10.3389/fpsyg.2020.01623/full)는 사용자가 간과할 수 있는 요소에 주의를 끌 수 있습니다.</p>
+</li>
+<li>
+<p>진행 상황 추적 :** 튜토리얼은 진행 상황을 추적하면서 다단계 프로세스를 통해 사용자를 안내 할 수 있습니다.</p>
+</li>
+<li>
+<p>접근성 향상**: 잘 설계된 안내는 다양한 사용자와 접근성 요구 사항을 지원합니다.</p>
+</li>
+<li>
+<p>지속적인 지원: 새로운 기능이나 업데이트된 기능을 시도하는 숙련된 사용자도 학습을 강화할 수 있도록 안내를 제공합니다.</p>
+</li>
+</ul>
+<p>핵심은 인앱 가이드를 일회성 온보딩 솔루션이 아니라 시간이 지남에 따라 사용자와 함께 진화하는 상황에 맞는 지속적인 지원의 원천으로 생각하는 것입니다. 전략적이고 사용자 중심적인 접근 방식을 취하면 안내 및 튜토리얼을 활용하여 앱 환경 내에서 이해도, 사용성 및 사용자 생산성을 향상시킬 수 있습니다.</p>
+<h2>인앱 가이드를 트리거할 적절한 순간을 어떻게 식별하나요?</h2>
+<p>인앱 가이드를 트리거할 적절한 순간을 결정하려면 사용자의 상황과 요구 사항을 신중하게 고려해야 합니다. 다음은 몇 가지 모범 사례입니다:</p>
+<p><img alt="" src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_ldCxrtprpwOWOs7hG/be9c1008-dd32-952b-b8a1-843e605c5d66enhancing_customer_support_and_engagement.jpg" /></p>
+<ul>
+<li>
+<p>장애물 식별 -** 사용자가 작업에 어려움을 겪거나 실패하는 지점을 찾아서 다시 정상으로 돌아갈 수 있도록 지원을 제공하세요.</p>
+</li>
+<li>
+<p><strong>질문 예상하기</strong> - 기능이 혼란을 야기할 수 있는 경우, 사전 안내를 통해 사용자의 질문을 유도하세요.</p>
+</li>
+<li>
+<p>신중한 온보딩** - 신규 사용자가 온보딩하는 동안 방해가 되지 않는 툴팁과 오버레이를 통해 핵심 워크플로를 안내하세요.</p>
+</li>
+<li>
+<p>비활성화에 대응** - 사용자가 활동하지 않는 것 같으면 메시지를 사용하여 다음 단계를 수행하도록 유도합니다.</p>
+</li>
+</ul>
+<p><strong>새로운 기능 강조</strong> - 하이라이트 애니메이션과 펄싱을 통해 UI의 주요 새 기능이나 변경 사항에 주의를 환기하세요.</p>
+<ul>
+<li>
+<p>학습한 개념 강화** - 암기를 돕기 위해 복잡한 주제에 대한 안내를 가끔 다시 표시합니다.</p>
+</li>
+<li>
+<p>알려진 문제 영역 타겟팅** - 데이터에 따르면 사용자가 일반적으로 도움이 필요한 곳에 안내를 제공합니다.</p>
+</li>
+<li>
+<p>디자인 시스템 따르기** - 확립된 디자인 시스템을 사용하여 다른 UI 요소와 일관된 안내를 유지합니다.</p>
+</li>
+<li>
+<p>잠재적 장애물 고려하기** - 사용자가 어려워할 수 있는 UI 컨트롤이나 데이터 입력이 포함된 작업을 사용자에게 안내합니다.</p>
+</li>
+<li>
+<p><strong>신중한 시간 제안</strong> - 제안을 할 경우, 충분히 생각한 후 좌절감이 생기기 전에 표시하세요.</p>
+</li>
+</ul>
+<p><strong>사용자 제어 허용</strong> - 사용자에게 안내를 해제하거나 필요할 때 액세스할 수 있는 옵션을 제공하여 방해가 되지 않도록 합니다.</p>
+<ul>
+<li>
+<p>사용자와 함께 테스트하기** - 실제 사용자를 대상으로 반복적으로 안내를 테스트하고 사용자의 반응과 피드백을 관찰합니다.</p>
+</li>
+<li>
+<p>데이터 분석 및 최적화** - 분석 및 세션 재생과 같은 도구를 사용하여 안내의 성능을 확인하고 개선 사항을 파악합니다.</p>
+</li>
+</ul>
+<p>목표는 각 교육 또는 지원 경험을 가장 유용한 순간에 제공하는 것입니다. 이를 위해서는 사용자 워크플로를 이해하고, 요구 사항을 예측하며, 관찰된 사용 패턴을 기반으로 지속적으로 개선해야 합니다. 적절한 타이밍에 모든 안내 상호작용을 제공하면 방해가 되지 않고 원활하게 느껴질 수 있습니다.</p>
+<h2>어떤 유형의 인앱 안내가 가장 효과적일까요?</h2>
+<p>인앱 안내를 디자인할 때는 다음과 같은 가장 효과적인 상호작용 유형을 고려하세요:</p>
+<ul>
+<li>
+<p>스포트라이트 단서 -** 특정 버튼이나 UI 요소를 미묘하게 강조하거나 애니메이션을 적용하여 주의를 끌 수 있습니다.</p>
+</li>
+<li>
+<p>툴팁** - UI의 일부를 가리키거나 탭할 때 표시되는 짧은 문맥 텍스트.</p>
+</li>
+</ul>
+<p><strong>코치 마크</strong> - 특정 UI 요소에 초점을 맞춘 포트홀 컷아웃이 있는 오버레이.</p>
+<ul>
+<li>
+<p>체크리스트** - 작업 완료에 따라 조정되는 체크리스트를 통해 사용자가 다단계 워크플로를 완료할 수 있도록 도와줍니다.</p>
+</li>
+<li>
+<p>단계별 연습** - 복잡한 작업을 번호가 매겨진 단계별 지침으로 분류합니다.</p>
+</li>
+<li>
+<p>대화형 튜토리얼** - 하이라이트, 오버레이, 프롬프트를 통해 라이브 앱 UI 내에서 사용자가 연습할 수 있습니다.</p>
+</li>
+<li>
+<p>애니메이션 데모** - 워크플로 및 상호 작용에 대한 애니메이션 데모를 사용하여 보다 시각적으로 학습할 수 있습니다.</p>
+</li>
+<li>
+<p>인앱 알림** - 알림을 통해 방해받지 않는 리마인더, 팁, 업데이트를 전송합니다.</p>
+</li>
+</ul>
+<p><strong>사용자 문제 파악</strong> - 실패 지점을 감지하고 사용자가 다시 정상화할 수 있도록 선제적으로 지원합니다.</p>
+<ul>
+<li>개인화된 추천** - 사용자의 컨텍스트와 과거 행동을 기반으로 기능과 콘텐츠를 제안합니다.</li>
+</ul>
+<p><strong>온스크린 마이크로카피</strong> - UI 요소 내에서 상황에 맞는 간결한 텍스트 지침을 제공합니다.</p>
+<p><strong>챗봇</strong> - 사용자가 지능형 챗봇에게 질문하면 대화형 답변을 제공합니다.</p>
+<ul>
+<li>오브젝트 감지** - AR/VR에서 오브젝트를 감지하고 관련 정보를 오버레이합니다.</li>
+</ul>
+<p><strong>비디오 데모</strong> - 관련 컨텍스트 내에서 워크플로를 시연하는 링크를 포함하거나 짧은 비디오를 삽입할 수 있습니다.</p>
+<p><strong>검색 안내</strong> - 자동 완성 및 상황에 맞는 추천을 통해 검색 동작을 구체화합니다.</p>
+<p>안내 유형은 작업의 복잡성과 사용자의 경험 수준에 맞게 조정해야 합니다. 화면을 가득 채우는 몰입형 튜토리얼이나 마법사보다는 기존 UI 위에 적절한 타이밍에 눈에 거슬리지 않게 배치된 상호작용이 더 효과적입니다. 사용자와 함께 테스트하고 반복하여 올바른 접근 방식을 결정하세요.</p>
+<h2>인앱 안내를 방해하지 않게 만들려면 어떻게 해야 할까요?</h2>
+<p>인앱 안내를 방해하지 않게 만들기 위한 몇 가지 모범 사례가 있습니다:</p>
+<ul>
+<li>
+<p>단순성을 우선시하세요** - 사용자에게 부담을 주지 않도록 하세요. 안내는 필요한 필수 정보로 간소화하세요.</p>
+</li>
+<li>
+<p>희미한 스포트라이트나 얇은 툴팁과 같은 미묘한 시각적 요소 사용** - 사용자의 주의를 덜 산만하게 하는 경향이 있습니다.</p>
+</li>
+<li>
+<p>텍스트 최소화하기** - 간결한 마이크로 카피를 사용하고 도움말 텍스트의 벽을 피하세요.</p>
+</li>
+<li>
+<p>위치 고려하기** - 앱 전체에 걸쳐 오버레이로 표시하지 않고 관련 UI 요소 근처에 안내를 표시합니다.</p>
+</li>
+<li>
+<p>신중한 시간 설정** - 작업 중이 아닌 자연스러운 휴식 시간에 팝업으로 표시합니다.</p>
+</li>
+</ul>
+<p><strong> </strong>해제 허용** - 사용자가 안내를 쉽게 해제할 수 있도록 하여 강제적으로 느껴지지 않도록 합니다.</p>
+<p><strong>빈도 제한</strong> - 사용자에게 너무 많은 안내를 너무 자주 표시하지 마세요.</p>
+<ul>
+<li>
+<p>가능하면 개인화** - 알려진 사용자 속성 및 컨텍스트를 기반으로 맞춤형 안내를 제공합니다.</p>
+</li>
+<li>
+<p><strong>미묘한 애니메이션 사용</strong> - 미세한 진동 또는 강조 표시로 주의를 분산시키지 않고 주의를 끌 수 있습니다.</p>
+</li>
+</ul>
+<p><strong>문맥 외 테스트</strong> - 안내 구성 요소를 단독으로 보더라도 눈에 거슬리지 않게 느껴지도록 합니다.</p>
+<ul>
+<li>UI 미학을 따르세요** - 안내가 앱의 시각적 스타일과 일관되게 느껴져야 합니다.</li>
+</ul>
+<p><strong>지표 제공</strong> - 배지, 걸음 수 추적기, 진행률 표시줄을 통해 길이를 명확히 알 수 있습니다.</p>
+<ul>
+<li>
+<p>다시 보기 옵션 허용** - 사용자가 놓친 부분이 있는 경우 안내를 다시 볼 수 있도록 합니다.</p>
+</li>
+<li>
+<p>팝업 방지** - 오버레이 팝업은 방해가 되는 경향이 있으므로 임베디드 접근 방식을 고려하세요.</p>
+</li>
+<li>
+<p>단일 작업에 집중** - 긴 워크플로보다는 특정 원자 작업에 대한 안내를 타겟팅하세요.</p>
+</li>
+</ul>
+<p>잘 디자인된 상황별 안내는 사용자 경험을 방해하는 것이 아니라 자연스럽고 매끄러운 부분처럼 느껴집니다. 적절한 시각적 스타일, 콘텐츠 톤, 타이밍, 간결함을 통해 사용자의 집중과 흐름을 방해하지 않으면서도 안내가 도움을 제공할 수 있습니다. 실제 사용자와 함께 평가하고 피드백을 바탕으로 반복하는 것이 핵심입니다.</p>
+<h2>인앱 안내의 효과는 어떻게 측정하나요?</h2>
+<p>인앱 안내의 효과를 평가할 때는 정량적 지표와 정성적 피드백을 모두 포함해야 전체적인 상황을 파악할 수 있습니다.</p>
+<p><strong>작업 성공률</strong> - 사용자가 기능의 안내에 따라 작업을 완료한 횟수와 안내를 받지 않은 횟수의 비율입니다.</p>
+<p><strong>작업 완료 시간</strong> - 사용자가 안내를 받았을 때와 받지 않았을 때 작업을 완료하는 데 걸리는 시간.</p>
+<ul>
+<li>
+<p>오류율** - 안내된 작업 중 오류가 발생한 빈도와 안내되지 않은 작업 중 오류가 발생한 빈도를 비교합니다.</p>
+</li>
+<li>
+<p>안내 참여도** - 안내 구성 요소를 클릭하거나, 보거나, 상호작용하는 사용자의 비율입니다.</p>
+</li>
+<li>
+<p>안내 재확인** - 사용자가 처음 본 후 안내를 다시 열거나 다시 참여하는 빈도입니다.</p>
+</li>
+<li>
+<p>넷 프로모터 점수** - 추천 의향 척도로 평가된 사용자 만족도 지표입니다.</p>
+</li>
+<li>
+<p>이탈 또는 포기** - 가이드가 사용자 이탈률에 영향을 미치는지 여부.</p>
+</li>
+<li>
+<p>기능 채택률** - 가이드가 다루는 제품 영역 또는 기능의 채택률에 미치는 영향.</p>
+</li>
+<li>
+<p>사용성 테스트** - 사용자가 가이드와 상호작용하는 방식과 어려움을 겪는 부분을 관찰합니다.</p>
+</li>
+<li>
+<p>피드백 설문조사** - 안내의 유용성과 관련성에 대해 질문합니다.</p>
+</li>
+<li>
+<p>사용자 인터뷰** - 안내에 대한 사용자 경험을 인터뷰합니다.</p>
+</li>
+<li>
+<p>리뷰/앱 스토어 평점** - 안내 품질을 언급하는 리뷰를 모니터링합니다.</p>
+</li>
+</ul>
+<p><strong>지원 티켓 수</strong> - 가이드가 해당 주제와 관련된 지원 양을 줄이는지 여부를 모니터링합니다.</p>
+<p><strong>세션 다시보기</strong> - 사용자 세션을 다시 시청하여 적절한 시점에 안내가 표시되는지 확인합니다.</p>
+<p>안내 사용 데이터를 주요 비즈니스 및 전환 메트릭에 연결하여 ROI를 계산하고 사용자 경험을 최적화할 수 있습니다. 그러나 안내의 어조, 콘텐츠, 타이밍, 배치 및 표현을 개선하기 위해서는 사용자가 직접 제공하는 정성적인 인사이트도 그에 못지않게 중요합니다. 메트릭과 피드백을 모두 분석하면 접근 방식을 지속적으로 개선할 수 있습니다.</p>
+<h2>문맥 감지가 어떻게 지원 티켓을 줄이는 데 도움이 되나요?</h2>
+<p>문맥에 맞는 도움말은 몇 가지 주요 방법으로 고객 지원 티켓을 줄일 수 있습니다:</p>
+<ul>
+<li>
+<p>문제를 사전에 예방** - 문맥에 맞는 도움말은 사용자의 질문과 장애물을 예상하여 많은 일반적인 문제가 발생하지 않도록 방지합니다.</p>
+</li>
+<li>
+<p>셀프 서비스 장려** - 도움말을 쉽게 이용할 수 있으므로 사용자가 지원팀에 문의하지 않고도 간단한 문제를 스스로 해결할 수 있습니다.</p>
+</li>
+<li>
+<p><strong>문제에 대한 즉각적인 해결</strong> - 문제가 발생할 경우 타겟팅된 도움말 콘텐츠가 사용자에게 빠른 해결 방법을 안내합니다.</p>
+</li>
+<li>
+<p>방법 관련 질문 감소 **- "어떻게..."라는 질문이 많은 지원 티켓을 구성합니다. 상황에 맞는 도움말은 이러한 질문을 쉽게 처리합니다.</p>
+</li>
+</ul>
+<p><strong>교육 필요성 감소</strong> - 사용자가 스스로 학습할 수 있는 경우 공식적인 교육 리소스를 덜 만들어야 합니다.</p>
+<p><strong> </strong>찾기 용이성 향상** - 정적인 도움말 문서보다 상황에 맞는 임베디드 도움말이 더 쉽게 찾을 수 있습니다.</p>
+<ul>
+<li>
+<p>제품 채택 촉진** - 사용자를 안내하면 더욱 다양한 사용법을 장려하여 에지 케이스 문제를 줄일 수 있습니다.</p>
+</li>
+<li>
+<p>콘텐츠 표준화** - 일관된 중앙 집중식 인앱 콘텐츠로 외부 문서가 파편화되는 것을 방지합니다.</p>
+</li>
+</ul>
+<p><strong>알려진 해결 방법 표면화</strong> - 도움말에서 버그나 제한 사항과 관련된 알려진 임시 해결 방법을 푸시할 수 있습니다.</p>
+<ul>
+<li>
+<p>이해도 향상** - 도움말 콘텐츠의 이해도가 높아지면 사용 관련 문제가 줄어듭니다.</p>
+</li>
+<li>
+<p>사용자 신뢰도 향상** - 안내를 통해 사용자가 보다 독립적으로 기능을 탐색할 수 있는 자신감을 얻을 수 있습니다.</p>
+</li>
+<li>
+<p>UX 문제 식별** - 도움말 사용 분석을 통해 개선해야 할 사용성 문제를 파악할 수 있습니다.</p>
+</li>
+<li>
+<p>상담원 시간 절약** - 반복적인 질문을 방지하여 각 지원 티켓마다 상담원의 수고를 덜어줍니다.</p>
+</li>
+<li>
+<p>자체 문제 해결 지원** - 헬프에서 사용자가 스스로 문제 해결 워크플로를 진행할 수 있도록 안내합니다.</p>
+</li>
+</ul>
+<p>적시에 배포되는 전략적 안내를 통해 앱은 사용자의 질문을 유도하고 문제가 발생했을 때 더 빠르게 자가 해결을 가능하게 합니다. 이를 통해 지원 업무량과 비용을 크게 줄이는 동시에 더 나은 사용자 경험을 제공할 수 있습니다.</p>
+<h2>마무리하기</h2>
+<ul>
+<li>
+<p>상황에 맞는 도움말은 사용자의 특정 요구에 맞춘 즉각적인 지원을 제공합니다.</p>
+</li>
+<li>
+<p>인지 부하를 줄이고, 자급자족을 가능하게 하며, 집중력을 높이고, 참여도를 높이며, 교육 시간을 단축합니다.</p>
+</li>
+<li>
+<p>도구 설명, 단계별 연습, 개인화된 권장 사항, 포함된 FAQ 등이 그 예입니다.</p>
+</li>
+<li>
+<p>효과적인 구현을 위해서는 안내를 트리거할 적절한 순간을 파악하고 방해가 되지 않는 미묘한 디자인을 사용해야 합니다.</p>
+</li>
+<li>
+<p>작업 완료 지표, 사용 데이터, 정성적 피드백을 통해 영향력을 측정할 수 있습니다.</p>
+</li>
+<li>
+<p>상황별 도움말은 사용자의 질문과 장애물을 예측함으로써 고객 지원 티켓과 비용을 크게 줄여줍니다.</p>
+</li>
+<li>
+<p>적절한 설계와 타이밍을 통해 보다 원활하고 만족스러운 사용자 경험을 제공합니다.</p>
+</li>
+</ul>
+<p>종합적인 인앱 도움말 솔루션을 찾고 있다면 <a href="https://www.docsie.io/">가입</a>하여 무료 평가판을 통해 Docsie.io와 상황 인식 인앱 도움말을 사용해 보세요.</p>
+<p>자주 묻는 질문 ## 자주 묻는 질문</p>
+<p>**질문 1: 상황에 맞는 도움말이란 무엇인가요?</p>
+<p>상황에 맞는 도움말은 기본적으로 소프트웨어 애플리케이션, 온라인 플랫폼 또는 시스템 내에서 사용자 지원을 의미합니다. 상황에 맞는 도움말은 기본적으로 사용자의 현재 상황, 작업 또는 문제와 관련된 정보를 제공하는 것을 의미합니다.</p>
+<p>**질문 2: 상황에 맞는 도움말이 사용자 경험을 어떻게 개선하나요?</p>
+<p>상황에 맞는 도움말은 인지 부하를 줄이고, 자급자족도를 높이며, 참여도를 높이고, 교육 시간을 줄임으로써 사용자 경험을 개선합니다.</p>
+<p><strong>질문 3:</strong> **문맥에 맞는 도움말의 예에는 어떤 것이 있나요?</p>
+<p>툴팁, 임베디드 도움말 링크, 가이드 투어, 예측 검색, FAQ 링크, 챗봇, 인앱 메시지, 단계별 마법사 등이 상황에 맞는 도움말의 일부입니다.</p>
+<p>**질문 4: 인앱 안내 및 튜토리얼의 장점은 무엇인가요?</p>
+<p>인앱 안내 및 튜토리얼은 온보딩을 개선하고 참여도를 높이며 채택률을 높이고 이탈을 줄이는 등 사용자 경험을 향상시킵니다.</p>
+<p>**질문5: 질문5: 어떤 유형의 인앱 안내가 가장 효과적입니까?</p>
+<p>스포트라이트 단서, 툴팁, 코치 마크, 체크리스트, 단계별 안내, 대화형 튜토리얼, 애니메이션 데모, 인앱 알림은 가장 효과적인 인앱 안내 유형입니다.</p>
+<p>**질문 6: 인앱 안내의 효과는 어떻게 측정하나요?</p>
+<p>작업 성공률, 작업 완료 시간, 오류율, 참여도 지표와 같은 정량적 지표와 사용성 테스트, 피드백 설문조사, 사용자 인터뷰, 리뷰 및 지원 티켓 데이터를 통한 정성적 피드백은 인앱 안내의 효과를 추적하는 데 사용할 수 있는 몇 가지 측정 항목입니다.</p>
+    </div>
+  </div>
+  <!--/ Post Content-->
+
+  <!--Divider-->
+  <hr class="border-b-1 border-gray-400 mt-12 mb-8 mx-4">
+
+  <!--Next & Prev Links-->
+  <div class="font-sans flex justify-between content-center px-4 mb-4">
+    <div class="text-left">
+      <span class="text-xs md:text-sm font-normal text-gray-600">&lt; Previous Post</span><br>
+      <p><a href="../what-is-process-documentation-and-why-is-it-important" class="break-normal text-base md:text-sm text-green-500 font-bold no-underline hover:underline">프로세스 문서화란 무엇이며 왜 중요한가요?</a></p>
+    </div>
+    <div class="text-right">
+      <span class="text-xs md:text-sm font-normal text-gray-600">Next Post &gt;</span><br>
+      <p><a href="../12-amazing-plugins-for-gatsby-js-for-2024" class="break-normal text-base md:text-sm text-green-500 font-bold no-underline hover:underline">2024년을 위한 개츠비.js용 놀라운 플러그인 12가지</a></p>
+    </div>
+  </div>
+
+
+  <!--/Next & Prev Links-->
+
+  
+    <div class="commentbox"></div>
+
+    <script src="https://unpkg.com/commentbox.io/dist/commentBox.min.js"></script>
+    <script>commentBox("5725910686760960-proj")</script>
+  
+
+  <!--Subscribe-->
+  
+    <!-- Base template of the subscription form. -->
+
+<div class="container font-sans bg-white rounded mt-8 p-4 md:p-24 text-center mb-10">
+    <h2 class="font-bold break-normal text-2xl md:text-4xl">Subscribe to the newsletter</h2>
+    <h3 class="font-bold break-normal font-normal text-gray-600 text-base md:text-xl">Stay up to date with our latest news and products</h3>
+    <div class="w-full text-center pt-4">
+        <form action="#">
+            <div class="max-w-xl mx-auto p-1 pr-0 flex flex-wrap items-center">
+                <input type="email" placeholder="youremail@example.com"
+                       class="flex-1 appearance-none rounded shadow p-3 text-gray-600 mr-2 focus:outline-none">
+                <button type="submit"
+                        class="flex-1 mt-4 md:mt-0 block md:inline-block appearance-none bg-green-500 text-white text-base font-semibold tracking-wider uppercase py-4 rounded shadow hover:bg-green-400">
+                    Subscribe
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+  
+  <!-- /Subscribe-->
+</div>
+<!--/container-->
+
+<footer class="bg-gray-900">
+  <div class="container max-w-6xl mx-auto flex items-center px-2 py-8">
+
+    <div class="w-full mx-auto flex flex-wrap items-center">
+      <div class="flex w-full md:w-1/2 justify-center md:justify-start text-white font-extrabold flex-col">
+        <a class="text-gray-900 no-underline hover:text-gray-900 hover:no-underline" href="/blog/ko">
+          <span class="text-base text-gray-200">Docsie.io Blog</span>
+        </a>
+        <a class="text-gray-900 no-underline hover:text-gray-900 hover:no-underline"
+           href="https://github.com/LikaloLLC/BlogVi" target="_blank">
+          <span class="text-xs text-gray-200">Made with BlogVI</span>
+        </a>
+      </div>
+      <div class="flex w-full pt-2 content-center justify-between md:w-1/2 md:justify-end">
+        <ul class="list-reset flex justify-center flex-1 md:flex-none items-center">
+          
+            <li>
+              <a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-3"
+                 href="https://www.docsie.io">Docsie</a>
+            </li>
+          
+            <li>
+              <a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-3"
+                 href="https://www.docsie.io/pricing/">Docsie Pricing</a>
+            </li>
+          
+            <li>
+              <a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-3"
+                 href="https://www.docsie.io/try_docsie/">Try Docsie</a>
+            </li>
+          
+        </ul>
+      </div>
+    </div>
+
+
+  </div>
+</footer>
+
+<script>
+  /* Progress bar */
+  //Source: https://alligator.io/js/progress-bar-javascript-css-variables/
+  var h = document.documentElement,
+    b = document.body,
+    st = 'scrollTop',
+    sh = 'scrollHeight',
+    progress = document.querySelector('#progress'),
+    scroll;
+  var scrollpos = window.scrollY;
+  var header = document.getElementById("header");
+  var navcontent = document.getElementById("nav-content");
+
+  document.addEventListener('scroll', function () {
+
+    /*Refresh scroll % width*/
+    scroll = (h[st] || b[st]) / ((h[sh] || b[sh]) - h.clientHeight) * 100;
+    progress.style.setProperty('--scroll', scroll + '%');
+
+    /*Apply classes for slide in bar*/
+    scrollpos = window.scrollY;
+
+    if (scrollpos > 10) {
+      header.classList.add("bg-white");
+      header.classList.add("shadow");
+      navcontent.classList.remove("bg-gray-100");
+      navcontent.classList.add("bg-white");
+    } else {
+      header.classList.remove("bg-white");
+      header.classList.remove("shadow");
+      navcontent.classList.remove("bg-white");
+      navcontent.classList.add("bg-gray-100");
+
+    }
+
+  });
+
+
+  //Javascript to toggle the menu
+  document.getElementById('nav-toggle').onclick = function () {
+    document.getElementById("nav-content").classList.toggle("hidden");
+  }
+</script>
+<script>
+  /*
+    Twitter
+    https://twitter.com/share?url=[post-url]&text=[post-title]
+
+    Facebook
+    https://www.facebook.com/sharer.php?u=[post-url]
+
+  */
+  let twitterURI = document.getElementById('twitter');
+  let facebookURI = document.getElementById('facebook');
+
+  let postURI = encodeURI(document.location.href);
+  let postTitle = encodeURI(document.getElementById('blog-title').innerText + ":\n")
+
+  facebookURI.setAttribute('href', `https://www.facebook.com/sharer.php?u=${postURI}`);
+  twitterURI.setAttribute('href', `https://twitter.com/share?url=${postURI}&text=${postTitle}`);
+</script>
+
+<!--Sharect-->
+
+<script src="https://unpkg.com/sharect@2.0.0/dist/sharect.js"></script>
+<script>window["sharectConfig"] = {"backgroundColor": "#333333", "enabled": true, "facebook": true, "iconColor": "#FFFFFF", "selectableElements": ["body"], "twitter": true, "twitterUsername": "likalo_llc"}</script>
+<script src="/blog/templates/assets/js/sharect.js"></script>
+
+
+
+<!--Reading time-->
+<script src="/blog/templates/assets/js/reading-time.min.js"></script>
+<script>
+  const text = []
+  let content = [...document.getElementById('content').getElementsByTagName('p')].forEach((elem) => {
+    text.push(elem.textContent)
+  });
+  const stats = readingTime(text.join(" "));
+
+  document.getElementById('reading-time').innerHTML = stats.text;
+</script>
+
+
+  
+      <!-- Google Tag Manager (noscript) -->
+
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TZRGMQ9"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+  
+
+</body>
+
+</html>

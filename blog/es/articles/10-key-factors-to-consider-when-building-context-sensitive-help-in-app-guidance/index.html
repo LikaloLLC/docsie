@@ -1,0 +1,763 @@
+<!-- Base template of the article page. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+  
+
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/blog/https://d1iq6qzgppjlud.cloudfront.net/images/favicon/favicon-196x196.png">
+
+
+  <!-- Primary Meta Tags -->
+  <title>Docsie.io Blog - 10 factores clave que hay que tener en cuenta al crear ayuda contextual y orientación en la aplicación</title>
+  <meta name="author" content="Tanya A Mishra"/>
+  <meta name="title" content="10 factores clave que hay que tener en cuenta al crear ayuda contextual y orientación en la aplicación">
+  <meta name="description" content="En este artículo desvelaremos los 10 factores clave que hay que tener en cuenta a la hora de crear ayuda contextual y orientación dentro de la aplicación."/>
+  <meta name="keywords" content="Documentación del producto,Redacción técnica,Ayuda contextual y orientación en la aplicación"/>
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.docsie.io/blog/blog/es/articles/10-key-factors-to-consider-when-building-context-sensitive-help-in-app-guidance/">
+  <meta property="og:title" content="10 factores clave que hay que tener en cuenta al crear ayuda contextual y orientación en la aplicación">
+  <meta property="og:description"
+        content="En este artículo desvelaremos los 10 factores clave que hay que tener en cuenta a la hora de crear ayuda contextual y orientación dentro de la aplicación.">
+  <meta property="og:image" content="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_jDvJa9Zmr9vQivN0e/f8a80264-b138-f51d-67f9-00d1e16f5e45banner_12.jpg">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://www.docsie.io/blog/blog/es/articles/10-key-factors-to-consider-when-building-context-sensitive-help-in-app-guidance/">
+  <meta property="twitter:title" content="10 factores clave que hay que tener en cuenta al crear ayuda contextual y orientación en la aplicación">
+  <meta property="twitter:description"
+        content="En este artículo desvelaremos los 10 factores clave que hay que tener en cuenta a la hora de crear ayuda contextual y orientación dentro de la aplicación.">
+  <meta property="twitter:image" content="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_jDvJa9Zmr9vQivN0e/f8a80264-b138-f51d-67f9-00d1e16f5e45banner_12.jpg">
+
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/blog/templates/assets/css/typography.min.css"/>
+  <!--Replace with your tailwind.css once created-->
+    
+    <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TZRGMQ9');</script>
+<!-- End Google Tag Manager -->
+  
+
+</head>
+
+
+<body class="bg-gray-100 font-sans leading-normal tracking-normal">
+
+<nav id="header" class="fixed w-full z-10 top-0">
+
+  <div id="progress" class="h-1 z-20 top-0"
+       style="background:linear-gradient(to right, #4dc0b5 var(--scroll), transparent 0);"></div>
+
+  <div class="container max-w-6xl mx-auto flex flex-wrap items-center justify-between mt-0 py-3">
+
+    <div class="pl-4">
+      <a class="text-gray-900 text-base no-underline hover:no-underline font-extrabold text-xl" href="../../">
+          Docsie.io Blog
+      </a>
+    </div>
+
+    <div class="block lg:hidden pr-4">
+      <button id="nav-toggle"
+              class="flex items-center px-3 py-2 border rounded text-gray-500 border-gray-600 hover:text-gray-900 hover:border-green-500 appearance-none focus:outline-none">
+        <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+          <title>Menu</title>
+          <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/>
+        </svg>
+      </button>
+    </div>
+
+    <div class="w-full flex-grow lg:flex lg:items-center lg:w-auto hidden lg:block mt-2 lg:mt-0 bg-gray-100 z-20"
+         id="nav-content">
+      <ul class="list-reset lg:flex justify-end flex-1 items-center">
+        
+        <li>
+          <a class="inline-block text-gray-600 hover:text-gray-900 hover:underline py-2 px-4"
+             href="https://www.docsie.io">Docsie</a>
+        </li>
+        
+        <li>
+          <a class="inline-block text-gray-600 hover:text-gray-900 hover:underline py-2 px-4"
+             href="https://www.docsie.io/pricing/">Docsie Pricing</a>
+        </li>
+        
+        <li>
+          <a class="inline-block text-gray-600 hover:text-gray-900 hover:underline py-2 px-4"
+             href="https://www.docsie.io/try_docsie/">Try Docsie</a>
+        </li>
+        
+      </ul>
+    </div>
+    <div class="flex w-full justify-end content-center">
+        <a
+          class="inline-block text-gray-500 hover:text-green-500 hover:underline text-center h-10 p-2 md:h-auto md:p-4 avatar"
+          data-tippy-content="@twitter_handle" href="https://twitter.com/intent/tweet?url=#"
+          id="twitter">
+          <svg class="fill-current h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+            <path
+              d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"></path>
+          </svg>
+        </a>
+        <a
+          class="inline-block text-gray-500 hover:text-green-500 hover:underline text-center h-10 p-2 md:h-auto md:p-4 avatar"
+          data-tippy-content="#facebook_id" href="https://www.facebook.com/sharer/sharer.php?u=#}"
+          id="facebook">
+          <svg class="fill-current h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+            <path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"></path>
+          </svg>
+        </a>
+      </div>
+  </div>
+
+</nav>
+
+<!--Container-->
+<div class="container max-w-4xl mx-auto mt-32 px-8 md:px-0">
+  <div class="prose prose lg:prose-xl mx-auto mt-32">
+    <!--Title-->
+    <h1 id="blog-title">10 factores clave que hay que tener en cuenta al crear ayuda contextual y orientación en la aplicación</h1>
+    <!--Author-->
+    <div class="flex items-center">
+      <img class="w-10 h-10 rounded-full mr-4" src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_p1X4gXS3n0rCHYuaE/1f3f5f57-d8e2-7978-faef-0b9fe89f3e4btanya_pic.jpg" alt="Avatar of Author">
+      <div class="flex-1 px-2">
+        <div class="font-bold leading-none mb-2">Tanya A Mishra</div>
+        <div class="text-xs md:text-base">on September 07, 2023 · <span id="reading-time"
+                class="block md:inline mt-2 md:mt-0"></span> · filed under <span
+          class="block md:inline mt-2 md:mt-0">
+						
+            <span class="rounded bg-green-500 text-white px-1 uppercase text-xs whitespace-nowrap md:text-sm">Documentación del producto</span>
+						
+            <span class="rounded bg-green-500 text-white px-1 uppercase text-xs whitespace-nowrap md:text-sm">Redacción técnica</span>
+						
+            <span class="rounded bg-green-500 text-white px-1 uppercase text-xs whitespace-nowrap md:text-sm">Ayuda contextual y orientación en la aplicación</span>
+						
+					</span>
+        </div>
+      </div>
+    </div>
+    <!--/Author-->
+
+    <!--Post Content-->
+    <!--Lead Para-->
+    <div id="content">
+      <p>La ayuda sensible al contexto se refiere al contenido de ayuda en aplicaciones de software que se adapta al contexto específico del usuario. En lugar de ofrecer documentación de ayuda genérica, la ayuda contextual proporciona a los usuarios información y detalles relevantes para su ubicación actual en la aplicación, la tarea que están intentando completar o el problema al que se enfrentan.</p>
+<h2>¿Qué es la ayuda contextual?</h2>
+<p>La ayuda sensible al contexto <a href="https://www.tandfonline.com/doi/abs/10.1080/09588220600821552">se refiere</a> al apoyo de asistencia al usuario que se proporciona dentro de una aplicación de software, plataformas en línea o sistemas, cuyo objetivo es simplificar el recorrido de un visitante en la plataforma.</p>
+<ul>
+<li>
+<p><strong>Algunos ejemplos de ayuda sensible al contexto incluyen:</strong>*</p>
+</li>
+<li>
+<p>Información sobre herramientas que aparece al pasar el ratón por encima de un botón o icono específico, explicando su función.</p>
+</li>
+</ul>
+<p>https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_JgxTgPxsanF6oNLrz/84677561-47de-1bd4-7ba7-ed63ee38c087image.png](https://s3.amazonaws.com/content-harmony-user-uploads/froala-uploads-1692820574617-1692820574617.png "https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_JgxTgPxsanF6oNLrz/84677561-47de-1bd4-7ba7-ed63ee38c087image.png")</p>
+<ol>
+<li>Paso a paso que guían al usuario a través de un proceso de varios pasos.</li>
+</ol>
+<p><img alt="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_NQWTLzhmKFbOI4nDz/9adffc58-0e30-abf0-0b11-b656905fbd0aimage.png" src="https://s3.amazonaws.com/content-harmony-user-uploads/froala-uploads-1692820574685-1692820574685.png" title="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_NQWTLzhmKFbOI4nDz/9adffc58-0e30-abf0-0b11-b656905fbd0aimage.png" /></p>
+<ol>
+<li>
+<ol>
+<li>Ayuda con mensajes de error que detectan el código o la condición de error y ofrecen consejos específicos para la solución de problemas.</li>
+</ol>
+</li>
+</ol>
+<p><img alt="" src="https://s3.amazonaws.com/content-harmony-user-uploads/froala-uploads-1693391302473-1693391302473.png" /></p>
+<ol>
+<li>Superposiciones de recorridos paso a paso que guían al usuario a través de un proceso de varios pasos.</li>
+</ol>
+<p><img alt="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_2V0l6wSbWJS42mQom/60d856f7-7dcc-d8c0-129b-c6573fc8c5c2image.png" src="https://s3.amazonaws.com/content-harmony-user-uploads/froala-uploads-1692820574714-1692820574714.png" title="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_2V0l6wSbWJS42mQom/60d856f7-7dcc-d8c0-129b-c6573fc8c5c2image.png" /></p>
+<p>La <a href="https://site.docsie.io/in-app-help-and-support">Ayuda sensible al contexto</a> es muy dinámica y adaptable. Las implementaciones avanzadas pueden incluso aprovechar la IA y el aprendizaje automático para analizar los comportamientos del usuario y personalizar el contenido de ayuda mostrado. La experiencia de ayuda evoluciona continuamente en función de los datos reales de los usuarios.</p>
+<p>El principal <a href="https://www.id.iit.edu/wp-content/uploads/2015/03/Context-sensitive-interactive-systems-design-sato_hcii2003.pdf">objetivo</a> de la ayuda sensible al contexto es proporcionar a los usuarios o a un equipo un acceso rápido y sencillo a los temas de ayuda más relevantes, así como información completa sobre los mismos, en el momento y la forma en que se necesiten. Así se evitan frustraciones y confusiones al anticiparse a las necesidades del usuario. Permite a los usuarios seguir centrados en sus flujos de trabajo en lugar de tener que salir de la aplicación para buscar documentación.</p>
+<p>En general, la ayuda contextual tiene como objetivo mejorar las métricas clave de usabilidad, como la tasa de finalización de tareas, el tiempo en la tarea y la satisfacción del cliente. Cuando se aplica con eficacia, puede mejorar drásticamente la experiencia del usuario y la adopción de aplicaciones de software.</p>
+<h2>¿Cómo mejora la ayuda contextual la experiencia del usuario?</h2>
+<p>La ayuda contextual mejora la experiencia del usuario de varias maneras:</p>
+<p><strong>Reducción de la carga cognitiva</strong> - Al proporcionar asistencia adaptada a la tarea y el contexto específicos, la ayuda contextual reduce el esfuerzo del usuario para buscar contenido de ayuda relevante. Esto reduce la carga cognitiva y el esfuerzo mental necesarios para encontrar respuestas.</p>
+<ul>
+<li>
+<p><strong>Aumento de la autosuficiencia</strong> - Los usuarios pueden resolver problemas y completar tareas más rápidamente con la ayuda contextual disponible. Esto les permite alcanzar sus objetivos sin depender de recursos externos como la documentación o el soporte.</p>
+</li>
+<li>
+<p>Con la ayuda integrada en la interfaz y los flujos de trabajo, los usuarios no tienen que cambiar de aplicación para encontrar ayuda. Su atención permanece centrada en la tarea.</p>
+</li>
+<li>
+<p>Mayor compromiso: la ayuda contextual aumenta la confianza durante la incorporación y en los momentos críticos de uso. Esto conduce a una mayor adopción y compromiso con la aplicación.</p>
+</li>
+<li>
+<p>Al guiar a los usuarios en el momento, la ayuda contextual reduce la necesidad de formación formal. Los nuevos usuarios pueden empezar a utilizar la aplicación más rápidamente.</p>
+</li>
+<li>
+<p>Menos errores** - La ayuda proactiva evita errores de uso y mantiene a los usuarios en el buen camino. Esto reduce los errores humanos.</p>
+</li>
+<li>
+<p><strong>Menos costes de soporte</strong>- Con los usuarios capacitados para ayudarse a sí mismos, la ayuda sensible al contexto conduce a menos tickets de soporte. Esto aligera la carga de los equipos de soporte.</p>
+</li>
+<li>
+<p>Mayor satisfacción**- Los usuarios disfrutan de una experiencia más fluida y menos frustrante cuando la ayuda está disponible. Esto contribuye a aumentar la satisfacción de los usuarios.</p>
+</li>
+</ul>
+<p>En general, la ayuda contextual proporciona una experiencia de ayuda más inteligente y adaptable que responde dinámicamente a los contextos y necesidades de los usuarios. Esto permite a los usuarios realizar las tareas con eficacia y sentirse seguros y en control. El mayor beneficiario es el usuario final, que recibe la ayuda convenientemente cuando y donde más la necesita.</p>
+<p><img alt="" src="https://images.unsplash.com/photo-1520333789090-1afc82db536a?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3wzMTM3MXwwfDF8c2VhcmNofDR8fGhhcHB5JTIwdXNlcnxlbnwwfHx8fDE2OTI2Njg5NDR8MA&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=1080" /></p>
+<h2>He aquí algunos ejemplos de ayuda sensible al contexto:</h2>
+<p>Hay muchos ejemplos de ayuda sensible al contexto implementada en varias aplicaciones de software y sitios web:</p>
+<ul>
+<li>
+<p>Información sobre herramientas** - Al pasar el ratón por encima de botones o iconos, puede aparecer una información sobre herramientas explicando la función, como en las aplicaciones de Microsoft Office.</p>
+</li>
+<li>
+<p>Enlaces de ayuda integrados: aplicaciones como Adobe Photoshop incluyen enlaces de ayuda en menús y paneles que llevan a los usuarios a artículos de ayuda relacionados.</p>
+</li>
+<li>
+<p><strong>Visitas guiadas</strong>: los recorridos como los de Facebook y LinkedIn destacan nuevas funciones en contexto durante la incorporación.</p>
+</li>
+<li>
+<p>Búsqueda predictiva**: los motores de búsqueda como Google muestran sugerencias de búsqueda en tiempo real basadas en las palabras que se escriben.</p>
+</li>
+<li>
+<p>Enlaces a preguntas frecuentes** - Los enlaces a preguntas frecuentes pueden aparecer en línea en relación con mensajes de error o páginas específicas, como en muchos sitios de comercio electrónico.</p>
+</li>
+<li>
+<p>Chatbots** - Los chatbots inteligentes, como Clippy en Microsoft Office, ofrecen proactivamente consejos basados en las acciones detectadas del usuario.</p>
+</li>
+<li>
+<p>Mensajes dentro de la aplicación** - Aplicaciones como Dropbox utilizan mensajes dentro de la aplicación para ofrecer artículos de ayuda cuando detectan acciones fallidas repetidas.</p>
+</li>
+<li>
+<p>Asistentes paso a paso**: programas de preparación de impuestos como TurboTax ofrecen asistencia guiada paso a paso adaptada a la situación actual del usuario.</p>
+</li>
+<li>
+<p>Tutoriales interactivos**: algunas aplicaciones utilizan animaciones interactivas y superposiciones para mostrar cómo utilizar sus funciones.</p>
+</li>
+<li>
+<p>Recomendaciones personalizadas**: servicios como Netflix y Amazon recomiendan contenidos específicos según el historial de visitas y los intereses del usuario.</p>
+</li>
+<li>
+<p><strong>Instrucciones microcopiadas</strong> - Las instrucciones microcopiadas, como los marcadores de posición de campos de entrada y el texto de error de validación, proporcionan asistencia específica en función del contexto.</p>
+</li>
+<li>
+<p>Detección de objetos**: en contextos de realidad aumentada y realidad virtual, la detección de objetos puede activar la visualización de superposiciones de información relacionada.</p>
+</li>
+</ul>
+<p>El hilo conductor es proporcionar a los usuarios contenidos de ayuda dinámicos, personalizados y adaptados a su contexto actual dentro de la aplicación. De este modo, se anticipa a sus necesidades y les proporciona asistencia guiada cuando más la necesitan. La sensibilidad al contexto es la clave para crear una experiencia de ayuda fluida e intuitiva.</p>
+<h2>¿Cómo se puede implementar la ayuda sensible al contexto en una aplicación móvil?</h2>
+<p>Hay varias formas efectivas de implementar la ayuda sensible al contexto en las aplicaciones móviles:</p>
+<p>Los mensajes dentro de la aplicación le permiten proporcionar proactivamente contenido de ayuda a los usuarios móviles en momentos relevantes dentro de sus flujos de trabajo. Por ejemplo, puede detectar si un usuario tiene dificultades para completar una tarea y utilizar un tooltip o un modal para guiarle.</p>
+<p>Guíe a los nuevos usuarios resaltando los elementos de la aplicación y recorriendo paso a paso los flujos de trabajo básicos durante la incorporación. Utilice capturas de pantalla con anotaciones, información sobre herramientas e instrucciones superpuestas.</p>
+<p>Utilice microinteracciones de interfaz de usuario no intrusivas, como pulsaciones, resaltados e información sobre herramientas, para dirigir la atención y proporcionar instrucciones contextuales en los puntos de decisión.</p>
+<p>Envíe contenido de ayuda oportuno y relevante mediante notificaciones push basadas en el contexto de cada usuario, como actualizaciones de funciones o recordatorios para completar tareas.</p>
+<p>A medida que los usuarios escriben en las barras de búsqueda, mostrar temas de ayuda sugeridos y contenido recomendado adaptado a los términos de búsqueda.</p>
+<p>**Chatbots en la aplicación</p>
+<p>Los chatbots pueden ofrecer orientación conversacional basada en pistas contextuales, proporcionando a los usuarios una experiencia de ayuda interactiva.</p>
+<p>Haz un seguimiento de cómo interactúan los usuarios con tu aplicación para identificar los puntos débiles y las oportunidades de ofrecer asistencia en futuras versiones de la aplicación.</p>
+<p>La realidad aumentada permite superponer instrucciones y guías específicas del contexto en la vista de cámara del mundo real para flujos de trabajo asistidos.</p>
+<p>En las aplicaciones móviles, la clave está en ofrecer contenidos de ayuda dinámicos, personalizados e integrados en los puntos de contacto naturales del recorrido del usuario. Evite interrumpir los flujos de trabajo con documentación de ayuda estática. Ofrezca microinteracciones contextualmente relevantes para guiar a los usuarios, mejorando la comprensión y la usabilidad.</p>
+<h2>¿Cuáles son las ventajas de la orientación y los tutoriales integrados en la aplicación?</h2>
+<p><em>La guía y los tutoriales integrados en la aplicación ofrecen muchas ventajas que mejoran la experiencia general del usuario:</em>.</p>
+<ul>
+<li>
+<p>Los tutoriales guiados ayudan a los nuevos usuarios a familiarizarse rápidamente con la aplicación, ya que muestran paso a paso los flujos de trabajo principales.</p>
+</li>
+<li>
+<p>Aumento de la participación:** Al destacar las nuevas funciones y capacidades, se anima a los usuarios a explorar más la aplicación.</p>
+</li>
+<li>
+<p>Al mostrar a los usuarios cómo acceder a las funciones clave, la orientación aumenta el uso satisfactorio de toda la aplicación.</p>
+</li>
+<li>
+<p>Los usuarios son menos propensos a frustrarse y abandonar las aplicaciones que proporcionan apoyo al aprendizaje en contexto.</p>
+</li>
+<li>
+<p>Mejora de las métricas de UX: La finalización de tareas, el tiempo dedicado a las mismas y la percepción de facilidad de uso mejoran cuando los usuarios pueden aprender en contexto.</p>
+</li>
+<li>
+<p>Reducción de los costes de formación: la orientación reduce la necesidad de recursos de formación formal y de atención al cliente.</p>
+</li>
+<li>
+<p>Contenido educativo específico: La orientación dentro de la aplicación permite ofrecer material educativo muy personalizado dentro de la experiencia de la aplicación.</p>
+</li>
+<li>
+<p>Aprendizaje justo a tiempo:** Mostrar la orientación en el momento adecuado ayuda al aprendizaje y a la retención de la información.</p>
+</li>
+<li>
+<p>Elementos visuales e interactivos (https://www.frontiersin.org/articles/10.3389/fpsyg.2020.01623/full) pueden llamar la atención sobre aspectos que los usuarios podrían pasar por alto.</p>
+</li>
+<li>
+<p>Seguimiento del progreso: los tutoriales pueden guiar a los usuarios a través de procesos de varios pasos mientras se realiza un seguimiento del progreso.</p>
+</li>
+<li>
+<p>Mayor accesibilidad**: Una guía bien diseñada ofrece apoyo a diversos usuarios y necesidades de accesibilidad.</p>
+</li>
+<li>
+<p><strong>Apoyo continuo:</strong> La orientación ayuda a reforzar el aprendizaje incluso a los usuarios experimentados que prueban funciones nuevas o actualizadas.</p>
+</li>
+</ul>
+<p>La clave es pensar en la orientación dentro de la aplicación no sólo como una solución de incorporación única, sino como una fuente continua de apoyo integrado y contextual que evoluciona con los usuarios a lo largo del tiempo. Adoptar un enfoque estratégico centrado en el usuario le permite emplear guías y tutoriales para mejorar la comprensión, la usabilidad y la productividad del usuario dentro de la experiencia de su aplicación.</p>
+<h2>¿Cómo identificar los momentos adecuados para activar la orientación dentro de la aplicación?</h2>
+<p>Determinar los momentos adecuados para activar la orientación dentro de la aplicación requiere considerar detenidamente los contextos y las necesidades de los usuarios. Estas son algunas de las mejores prácticas:</p>
+<p><img alt="" src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_ldCxrtprpwOWOs7hG/be9c1008-dd32-952b-b8a1-843e605c5d66enhancing_customer_support_and_engagement.jpg" /></p>
+<ul>
+<li>
+<p><strong>Identifique los obstáculos -</strong> Busque los puntos en los que los usuarios tienen dificultades o fracasan en las tareas, y proporcióneles ayuda para que vuelvan al buen camino.</p>
+</li>
+<li>
+<p>Anticiparse a las preguntas** - Si una función puede causar confusión, utilice una orientación proactiva para responder a las preguntas de los usuarios.</p>
+</li>
+<li>
+<p>Guíe a los nuevos usuarios a través de los flujos de trabajo básicos durante la incorporación con información sobre herramientas y superposiciones no disruptivas.</p>
+</li>
+<li>
+<p><strong>Responder a la inactividad</strong> - Si los usuarios parecen inactivos, utilice mensajes para incitarles a dar los siguientes pasos.</p>
+</li>
+<li>
+<p>Destaque las nuevas funciones** - Llame la atención sobre las nuevas funciones clave o los cambios en la interfaz de usuario con animaciones y pulsaciones.</p>
+</li>
+<li>
+<p><strong>Refuerce los conceptos aprendidos</strong> - Vuelva a mostrar de vez en cuando orientaciones sobre temas complejos para facilitar la memorización.</p>
+</li>
+<li>
+<p><strong>Diríjase a áreas problemáticas conocidas</strong> - Ofrezca orientación en las que sus datos muestren que los usuarios suelen necesitar ayuda.</p>
+</li>
+<li>
+<p>Siga un sistema de diseño: mantenga la coherencia de la orientación con otros elementos de la interfaz de usuario mediante un sistema de diseño establecido.</p>
+</li>
+</ul>
+<p><strong>Tenga en cuenta los posibles obstáculos</strong> - Guíe a los usuarios a través de tareas que impliquen controles de interfaz de usuario o introducción de datos que puedan resultarles difíciles.</p>
+<ul>
+<li>
+<p>Si ofrece sugerencias, hágalas después de pensarlas pero antes de que surja la frustración.</p>
+</li>
+<li>
+<p>Permitir el control del usuario** - Ofrecer a los usuarios opciones para descartar la orientación o acceder a ella a petición, de modo que no sea demasiado molesta.</p>
+</li>
+<li>
+<p><strong>Probar con usuarios</strong> - Probar de forma iterativa la orientación con usuarios reales y observar sus reacciones y comentarios.</p>
+</li>
+<li>
+<p>Analice los datos y optimice: utilice herramientas como análisis y repeticiones de sesiones para ver cómo funciona la orientación e identificar mejoras.</p>
+</li>
+</ul>
+<p>El objetivo es ofrecer cada experiencia educativa o de apoyo en el momento en que resulte más útil. Para ello, es necesario comprender los flujos de trabajo de los usuarios, predecir sus necesidades y perfeccionarlos continuamente en función de los patrones de uso observados. Cuando se programan adecuadamente, todas las interacciones de orientación pueden resultar fluidas en lugar de molestas.</p>
+<h2>¿Qué tipos de orientación dentro de la aplicación son más eficaces?</h2>
+<p>Al diseñar la orientación dentro de la aplicación, tenga en cuenta estos tipos de interacciones más eficaces:</p>
+<ul>
+<li>
+<p><strong>Spotlight Cues -</strong> Resalte o anime sutilmente botones específicos o elementos de la interfaz de usuario para llamar la atención.</p>
+</li>
+<li>
+<p>Consejos sobre herramientas: texto contextual breve que aparece al pasar el puntero del ratón por una parte de la interfaz de usuario.</p>
+</li>
+<li>
+<p>Marcas de entrenador** - Superposiciones con recortes de ojo de buey que se centran en un elemento específico de la interfaz de usuario.</p>
+</li>
+<li>
+<p>Listas de comprobación** - Ayudan a los usuarios a completar flujos de trabajo de varios pasos mediante listas de comprobación que se adaptan a medida que se realizan las tareas.</p>
+</li>
+<li>
+<p>Recorridos paso a paso: divide las tareas complejas en instrucciones numeradas paso a paso.</p>
+</li>
+<li>
+<p>Tutoriales interactivos: permita que los usuarios practiquen en la interfaz de usuario de la aplicación en tiempo real mediante resaltes, superposiciones e indicaciones.</p>
+</li>
+<li>
+<p>Demostraciones animadas**: utilice demostraciones animadas de flujos de trabajo e interacciones para un aprendizaje más visual.</p>
+</li>
+<li>
+<p>Notificaciones dentro de la aplicación: envíe recordatorios no intrusivos, consejos y actualizaciones a través de notificaciones.</p>
+</li>
+<li>
+<p>Detecte los problemas de los usuarios: detecte los puntos de fallo y proporcione asistencia de forma proactiva para que los usuarios vuelvan al buen camino.</p>
+</li>
+<li>
+<p>Recomendaciones personalizadas**: sugiera funciones y contenidos basados en el contexto del usuario y sus comportamientos anteriores.</p>
+</li>
+<li>
+<p>Microcopia en pantalla** - Proporciona instrucciones de texto contextuales y concisas dentro de los elementos de la interfaz de usuario.</p>
+</li>
+<li>
+<p>Chatbots** - Permiten a los usuarios hacer preguntas a un chatbot inteligente que proporciona respuestas de forma conversacional.</p>
+</li>
+<li>
+<p>Detección de objetos** - En RA/VR, detecta objetos y superpone información relacionada.</p>
+</li>
+<li>
+<p>Demostraciones en vídeo: incluya enlaces o incorpore vídeos breves que muestren flujos de trabajo en contextos relevantes.</p>
+</li>
+<li>
+<p>Guía de búsqueda**: refine los comportamientos de búsqueda mediante la función de autocompletar y las recomendaciones contextuales.</p>
+</li>
+</ul>
+<p>Los tipos de orientación deben ajustarse a la complejidad de la tarea y al nivel de experiencia del usuario. Las interacciones oportunas y discretas superpuestas a la interfaz de usuario existente suelen funcionar mejor que los tutoriales o asistentes envolventes que ocupan toda la pantalla. Pruebe con los usuarios e itere para determinar los enfoques adecuados.</p>
+<h2>¿Cómo hacer que la orientación dentro de la aplicación sea discreta?</h2>
+<p>Existen algunas prácticas recomendadas para que la orientación dentro de la aplicación no sea intrusiva:</p>
+<p><strong>Priorice la simplicidad</strong> - Evite abrumar a los usuarios. Reduzca las instrucciones a la información esencial necesaria.</p>
+<ul>
+<li>
+<p><strong>Utilizar elementos visuales sutiles</strong>: los focos tenues y los tooltips finos suelen distraer menos.</p>
+</li>
+<li>
+<p><strong>Minimice el texto</strong> - Utilice micro textos sucintos y evite los muros de texto de ayuda.</p>
+</li>
+</ul>
+<p><strong>Considere la posición</strong>: muestre la orientación cerca de elementos de interfaz de usuario relacionados en lugar de superponerla a toda la aplicación.</p>
+<p><strong>Espere el momento oportuno</strong> - Aparecer en pausas naturales, no durante flujos de trabajo activos.</p>
+<ul>
+<li>
+<p><strong>Permitir el descarte</strong> - Permitir que los usuarios descarten fácilmente la orientación para que no parezca forzada.</p>
+</li>
+<li>
+<p>Limitar la frecuencia** - No saturar a los usuarios con demasiadas orientaciones con demasiada frecuencia.</p>
+</li>
+<li>
+<p><strong>Personalizar cuando sea posible</strong> - Adaptar la orientación en función de los atributos y contextos conocidos del usuario.</p>
+</li>
+<li>
+<p><strong>Utilizar animaciones sutiles</strong> - La pulsación o el resaltado sutiles llaman la atención sin distraer.</p>
+</li>
+<li>
+<p><strong>Prueba fuera de contexto</strong> - Asegúrate de que los componentes de la guía resulten discretos incluso cuando se ven solos.</p>
+</li>
+<li>
+<p>Siga la estética de la interfaz de usuario: la orientación debe ser coherente con el estilo visual de su aplicación.</p>
+</li>
+<li>
+<p><strong>Proporcionar indicadores</strong> - Las insignias, los rastreadores de pasos y las barras de progreso aportan claridad sobre la duración.</p>
+</li>
+<li>
+<p>Permita que los usuarios vuelvan a acceder a la guía en caso de que se hayan perdido algo.</p>
+</li>
+<li>
+<p><strong>Evitar ventanas emergentes</strong> - Las ventanas emergentes superpuestas tienden a ser molestas.</p>
+</li>
+<li>
+<p><strong>Centrarse en tareas individuales</strong> - Dirigir la orientación a tareas atómicas específicas en lugar de a flujos de trabajo largos.</p>
+</li>
+</ul>
+<p>La orientación contextual bien diseñada se percibe como una parte natural y fluida de la experiencia del usuario, en lugar de una interrupción. El estilo visual, el tono del contenido, el tiempo y la brevedad adecuados ayudan a que la orientación proporcione ayuda sin impedir la concentración y el flujo del usuario. La evaluación con usuarios reales y la iteración basada en los comentarios son fundamentales.</p>
+<h2>¿Cómo se mide la eficacia de la orientación dentro de la aplicación?</h2>
+<p>La evaluación de la eficacia de la orientación dentro de la aplicación debe incluir métricas cuantitativas y comentarios cualitativos para obtener una imagen completa.</p>
+<ul>
+<li>
+<p>Tasa de éxito de la tarea**: porcentaje de veces que los usuarios completan una tarea guiados por la función frente a los que no.</p>
+</li>
+<li>
+<p>Tiempo de realización de la tarea**: tiempo que tardan los usuarios en completar una tarea con o sin guía.</p>
+</li>
+<li>
+<p>Tasa de errores** - Frecuencia con la que se producen errores durante una tarea guiada en comparación con una no guiada.</p>
+</li>
+<li>
+<p>Porcentaje de usuarios que hacen clic, ven o interactúan con los componentes de la guía.</p>
+</li>
+<li>
+<p>Revisiones de la guía** - Frecuencia con la que los usuarios vuelven a abrir la guía o interactúan con ella después de la primera visita.</p>
+</li>
+<li>
+<p><strong>Puntuación del promotor neto</strong> - Medida de satisfacción del usuario clasificada en una escala de disposición a recomendar.</p>
+</li>
+<li>
+<p>Desvío o abandono** - Si la orientación afecta a las tasas de abandono de los usuarios.</p>
+</li>
+<li>
+<p>Adopción de funciones**: cómo afecta la orientación a la adopción de las áreas o funciones del producto que cubre.</p>
+</li>
+<li>
+<p><strong>Pruebas de usabilidad</strong> - Observar cómo interactúan los usuarios con la orientación y qué dificultades encuentran.</p>
+</li>
+<li>
+<p>Encuestas de opinión: preguntas sobre la utilidad y pertinencia de las orientaciones.</p>
+</li>
+<li>
+<p>Entrevistas a los usuarios**: entrevistar a los usuarios sobre su experiencia con la orientación.</p>
+</li>
+<li>
+<p><strong>Reviews/app store ratings</strong> - Supervisar las reseñas que mencionan la calidad de la orientación.</p>
+</li>
+<li>
+<p>Si la orientación reduce el volumen de soporte relacionado con los temas cubiertos.</p>
+</li>
+<li>
+<p>Repeticiones de sesiones** - Volver a ver las sesiones de usuario para comprobar si la orientación aparece en los momentos adecuados.</p>
+</li>
+</ul>
+<p>Al vincular los datos de uso de la orientación a las métricas clave de negocio y conversión, puede calcular el retorno de la inversión y optimizar la experiencia del usuario. Pero la información cualitativa procedente directamente de los usuarios es igual de crucial para mejorar el tono, el contenido, el momento, la ubicación y la presentación de la orientación. El análisis tanto de las métricas como de los comentarios garantiza la mejora continua de su enfoque.</p>
+<h2>¿Cómo puede ayudar el contexto sensible a reducir los tickets de soporte?</h2>
+<p>La ayuda contextual puede reducir las solicitudes de asistencia de varias maneras:</p>
+<ul>
+<li>
+<p><strong>Previene problemas de forma proactiva</strong> - Al anticiparse a las preguntas y obstáculos de los usuarios, la ayuda contextual evita que se produzcan muchos problemas comunes.</p>
+</li>
+<li>
+<p>Fomenta el autoservicio**: con la ayuda disponible, los usuarios pueden resolver problemas sencillos por sí mismos en lugar de ponerse en contacto con el servicio de asistencia.</p>
+</li>
+<li>
+<p><strong>Aborda los problemas de forma reactiva</strong>: para los problemas que surgen, el contenido de ayuda específico guía a los usuarios hacia soluciones rápidas.</p>
+</li>
+<li>
+<p>**Reduce las preguntas de tipo "¿Cómo puedo...? La ayuda en contexto las resuelve fácilmente.</p>
+</li>
+<li>
+<p>Reduce las necesidades de formación** - Cuando los usuarios pueden aprender por sí mismos, es necesario crear menos recursos de formación formales.</p>
+</li>
+<li>
+<p>La ayuda contextual integrada es más fácil de encontrar que la documentación de ayuda estática.</p>
+</li>
+<li>
+<p><strong>Impulsa la adopción del producto</strong> - Guiar a los usuarios fomenta un uso más diverso, reduciendo los problemas de casos extremos.</p>
+</li>
+<li>
+<p>Estandariza el contenido** - Un contenido coherente y centralizado en la aplicación evita la fragmentación de artículos externos.</p>
+</li>
+<li>
+<p>La ayuda puede promover soluciones temporales conocidas relacionadas con errores o limitaciones.</p>
+</li>
+<li>
+<p><strong>Mejora la comprensión</strong> - Una comprensión más clara gracias a un buen contenido de ayuda conduce a menos problemas de uso.</p>
+</li>
+<li>
+<p><strong>Instala la confianza del usuario</strong> - La orientación da a los usuarios la confianza necesaria para explorar las funciones de forma más independiente.</p>
+</li>
+<li>
+<p><strong>Identifica los problemas de UX</strong> - Los análisis sobre el uso de la ayuda revelan problemas de usabilidad que hay que mejorar.</p>
+</li>
+<li>
+<p>Ahorra tiempo al agente: al evitar preguntas repetitivas, cada solicitud de asistencia requiere menos esfuerzo por parte del agente.</p>
+</li>
+<li>
+<p>La ayuda guía a los usuarios a través de los flujos de trabajo de solución de problemas por sí mismos.</p>
+</li>
+</ul>
+<p>Con una orientación estratégica desplegada en los momentos adecuados, las aplicaciones responden a las preguntas de los usuarios y permiten una solución más rápida cuando surgen problemas. Esto reduce significativamente la carga de trabajo y los costes de asistencia, al tiempo que mejora la experiencia del usuario.</p>
+<h2>En resumen</h2>
+<ul>
+<li>
+<p>La ayuda contextual proporciona asistencia en el momento adaptada a las necesidades específicas de los usuarios.</p>
+</li>
+<li>
+<p>Reduce la carga cognitiva, permite la autosuficiencia, mejora la concentración, aumenta el compromiso y reduce el tiempo de formación.</p>
+</li>
+<li>
+<p>Algunos ejemplos son los tooltips, los recorridos paso a paso, las recomendaciones personalizadas y las preguntas frecuentes integradas.</p>
+</li>
+<li>
+<p>Una aplicación eficaz requiere identificar los momentos adecuados para activar la orientación y utilizar un diseño sutil y no intrusivo.</p>
+</li>
+<li>
+<p>El impacto puede medirse a través de métricas de finalización de tareas, datos de uso y comentarios cualitativos.</p>
+</li>
+<li>
+<p>Al anticiparse a las preguntas y obstáculos de los usuarios, la ayuda contextual reduce sustancialmente las incidencias y los costes de atención al cliente.</p>
+</li>
+<li>
+<p>Cuando está bien diseñada y programada, la experiencia del usuario es más fluida y satisfactoria.</p>
+</li>
+</ul>
+<p>Si está buscando una solución completa de ayuda in-app, pruebe Docsie.io y nuestra ayuda in-app sensible al contexto <a href="https://www.docsie.io/">registrándose</a> para una prueba gratuita.</p>
+<h2>Preguntas frecuentes</h2>
+<p>**Pregunta 1: ¿Qué es la ayuda contextual?</p>
+<p>La ayuda contextual se refiere básicamente a la asistencia al usuario en aplicaciones de software, plataformas en línea o sistemas. Ayuda sensible al contexto significa básicamente proporcionar información relacionada con el contexto, la tarea o el problema actual del usuario.</p>
+<p>**Pregunta 2: ¿Cómo mejora la ayuda contextual la experiencia del usuario?</p>
+<p>La ayuda contextual mejora la experiencia del usuario reduciendo la carga cognitiva, aumentando la autosuficiencia, potenciando el compromiso y reduciendo el tiempo de formación.</p>
+<p><strong>Pregunta 3:</strong> <strong>¿Cuáles son algunos ejemplos de ayuda sensible al contexto?</strong></p>
+<p>La información sobre herramientas, los enlaces de ayuda integrados, las visitas guiadas, la búsqueda predictiva, los enlaces a preguntas frecuentes, los chatbots, los mensajes dentro de la aplicación y los asistentes paso a paso son algunos ejemplos de ayuda contextual.</p>
+<p><strong>Pregunta 4: ¿Cuáles son las ventajas de la guía y los tutoriales dentro de la aplicación?</strong></p>
+<p>La orientación y los tutoriales dentro de la aplicación mejoran la experiencia del usuario, ya que mejoran la incorporación, aumentan el compromiso, incrementan la adopción y reducen la rotación, entre otras cosas.</p>
+<p><strong>Pregunta 5: ¿Qué tipos de orientación dentro de la aplicación son más eficaces?</strong></p>
+<p>Algunos de los tipos más eficaces de orientación dentro de la aplicación son los avisos, la información sobre herramientas, las marcas de orientación, las listas de comprobación, los recorridos paso a paso, los tutoriales interactivos, las demostraciones animadas y las notificaciones dentro de la aplicación.</p>
+<p>**Pregunta 6: ¿Cómo se mide la eficacia de la orientación dentro de la aplicación?</p>
+<p>Las métricas cuantitativas, como la tasa de éxito de la tarea, el tiempo de finalización de la tarea, la tasa de error, las métricas de compromiso y los comentarios cualitativos de las pruebas de usabilidad, las encuestas de opinión, las entrevistas con los usuarios, las revisiones y los datos de los tickets de soporte son algunas de las medidas que se pueden utilizar para realizar un seguimiento de la eficacia de la orientación dentro de la aplicación.</p>
+    </div>
+  </div>
+  <!--/ Post Content-->
+
+  <!--Divider-->
+  <hr class="border-b-1 border-gray-400 mt-12 mb-8 mx-4">
+
+  <!--Next & Prev Links-->
+  <div class="font-sans flex justify-between content-center px-4 mb-4">
+    <div class="text-left">
+      <span class="text-xs md:text-sm font-normal text-gray-600">&lt; Previous Post</span><br>
+      <p><a href="../what-is-process-documentation-and-why-is-it-important" class="break-normal text-base md:text-sm text-green-500 font-bold no-underline hover:underline">¿Qué es la documentación de procesos y por qué es importante?</a></p>
+    </div>
+    <div class="text-right">
+      <span class="text-xs md:text-sm font-normal text-gray-600">Next Post &gt;</span><br>
+      <p><a href="../12-amazing-plugins-for-gatsby-js-for-2024" class="break-normal text-base md:text-sm text-green-500 font-bold no-underline hover:underline">12 increíbles plugins para Gatsby.js para 2024</a></p>
+    </div>
+  </div>
+
+
+  <!--/Next & Prev Links-->
+
+  
+    <div class="commentbox"></div>
+
+    <script src="https://unpkg.com/commentbox.io/dist/commentBox.min.js"></script>
+    <script>commentBox("5725910686760960-proj")</script>
+  
+
+  <!--Subscribe-->
+  
+    <!-- Base template of the subscription form. -->
+
+<div class="container font-sans bg-white rounded mt-8 p-4 md:p-24 text-center mb-10">
+    <h2 class="font-bold break-normal text-2xl md:text-4xl">Subscribe to the newsletter</h2>
+    <h3 class="font-bold break-normal font-normal text-gray-600 text-base md:text-xl">Stay up to date with our latest news and products</h3>
+    <div class="w-full text-center pt-4">
+        <form action="#">
+            <div class="max-w-xl mx-auto p-1 pr-0 flex flex-wrap items-center">
+                <input type="email" placeholder="youremail@example.com"
+                       class="flex-1 appearance-none rounded shadow p-3 text-gray-600 mr-2 focus:outline-none">
+                <button type="submit"
+                        class="flex-1 mt-4 md:mt-0 block md:inline-block appearance-none bg-green-500 text-white text-base font-semibold tracking-wider uppercase py-4 rounded shadow hover:bg-green-400">
+                    Subscribe
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+  
+  <!-- /Subscribe-->
+</div>
+<!--/container-->
+
+<footer class="bg-gray-900">
+  <div class="container max-w-6xl mx-auto flex items-center px-2 py-8">
+
+    <div class="w-full mx-auto flex flex-wrap items-center">
+      <div class="flex w-full md:w-1/2 justify-center md:justify-start text-white font-extrabold flex-col">
+        <a class="text-gray-900 no-underline hover:text-gray-900 hover:no-underline" href="/blog/es">
+          <span class="text-base text-gray-200">Docsie.io Blog</span>
+        </a>
+        <a class="text-gray-900 no-underline hover:text-gray-900 hover:no-underline"
+           href="https://github.com/LikaloLLC/BlogVi" target="_blank">
+          <span class="text-xs text-gray-200">Made with BlogVI</span>
+        </a>
+      </div>
+      <div class="flex w-full pt-2 content-center justify-between md:w-1/2 md:justify-end">
+        <ul class="list-reset flex justify-center flex-1 md:flex-none items-center">
+          
+            <li>
+              <a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-3"
+                 href="https://www.docsie.io">Docsie</a>
+            </li>
+          
+            <li>
+              <a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-3"
+                 href="https://www.docsie.io/pricing/">Docsie Pricing</a>
+            </li>
+          
+            <li>
+              <a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-3"
+                 href="https://www.docsie.io/try_docsie/">Try Docsie</a>
+            </li>
+          
+        </ul>
+      </div>
+    </div>
+
+
+  </div>
+</footer>
+
+<script>
+  /* Progress bar */
+  //Source: https://alligator.io/js/progress-bar-javascript-css-variables/
+  var h = document.documentElement,
+    b = document.body,
+    st = 'scrollTop',
+    sh = 'scrollHeight',
+    progress = document.querySelector('#progress'),
+    scroll;
+  var scrollpos = window.scrollY;
+  var header = document.getElementById("header");
+  var navcontent = document.getElementById("nav-content");
+
+  document.addEventListener('scroll', function () {
+
+    /*Refresh scroll % width*/
+    scroll = (h[st] || b[st]) / ((h[sh] || b[sh]) - h.clientHeight) * 100;
+    progress.style.setProperty('--scroll', scroll + '%');
+
+    /*Apply classes for slide in bar*/
+    scrollpos = window.scrollY;
+
+    if (scrollpos > 10) {
+      header.classList.add("bg-white");
+      header.classList.add("shadow");
+      navcontent.classList.remove("bg-gray-100");
+      navcontent.classList.add("bg-white");
+    } else {
+      header.classList.remove("bg-white");
+      header.classList.remove("shadow");
+      navcontent.classList.remove("bg-white");
+      navcontent.classList.add("bg-gray-100");
+
+    }
+
+  });
+
+
+  //Javascript to toggle the menu
+  document.getElementById('nav-toggle').onclick = function () {
+    document.getElementById("nav-content").classList.toggle("hidden");
+  }
+</script>
+<script>
+  /*
+    Twitter
+    https://twitter.com/share?url=[post-url]&text=[post-title]
+
+    Facebook
+    https://www.facebook.com/sharer.php?u=[post-url]
+
+  */
+  let twitterURI = document.getElementById('twitter');
+  let facebookURI = document.getElementById('facebook');
+
+  let postURI = encodeURI(document.location.href);
+  let postTitle = encodeURI(document.getElementById('blog-title').innerText + ":\n")
+
+  facebookURI.setAttribute('href', `https://www.facebook.com/sharer.php?u=${postURI}`);
+  twitterURI.setAttribute('href', `https://twitter.com/share?url=${postURI}&text=${postTitle}`);
+</script>
+
+<!--Sharect-->
+
+<script src="https://unpkg.com/sharect@2.0.0/dist/sharect.js"></script>
+<script>window["sharectConfig"] = {"backgroundColor": "#333333", "enabled": true, "facebook": true, "iconColor": "#FFFFFF", "selectableElements": ["body"], "twitter": true, "twitterUsername": "likalo_llc"}</script>
+<script src="/blog/templates/assets/js/sharect.js"></script>
+
+
+
+<!--Reading time-->
+<script src="/blog/templates/assets/js/reading-time.min.js"></script>
+<script>
+  const text = []
+  let content = [...document.getElementById('content').getElementsByTagName('p')].forEach((elem) => {
+    text.push(elem.textContent)
+  });
+  const stats = readingTime(text.join(" "));
+
+  document.getElementById('reading-time').innerHTML = stats.text;
+</script>
+
+
+  
+      <!-- Google Tag Manager (noscript) -->
+
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TZRGMQ9"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+  
+
+</body>
+
+</html>
