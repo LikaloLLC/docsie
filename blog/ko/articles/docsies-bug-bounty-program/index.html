@@ -1,0 +1,400 @@
+<!-- Base template of the article page. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+  
+
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/blog/https://d1iq6qzgppjlud.cloudfront.net/images/favicon/favicon-196x196.png">
+
+
+  <!-- Primary Meta Tags -->
+  <title>Docsie.io Blog - Docsie의 버그 바운티 프로그램</title>
+  <meta name="author" content="Tanya A Mishra"/>
+  <meta name="title" content="Docsie의 버그 바운티 프로그램">
+  <meta name="description" content="시대의 흐름에 발맞춰, 결함을 발견하고 수정하는 데 도움을 줄 수 있도록 Docsie 버그 바운티 프로그램을 시작했습니다."/>
+  <meta name="keywords" content="기술 문서 작성,버그 바운티 프로그램"/>
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.docsie.io/blog/blog/ko/articles/docsies-bug-bounty-program/">
+  <meta property="og:title" content="Docsie의 버그 바운티 프로그램">
+  <meta property="og:description"
+        content="시대의 흐름에 발맞춰, 결함을 발견하고 수정하는 데 도움을 줄 수 있도록 Docsie 버그 바운티 프로그램을 시작했습니다.">
+  <meta property="og:image" content="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_g6x5zvB0ksWDAm2Cc/ea3d8677-14df-964b-3e6a-bd65d2d63db9banner_23.jpg">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://www.docsie.io/blog/blog/ko/articles/docsies-bug-bounty-program/">
+  <meta property="twitter:title" content="Docsie의 버그 바운티 프로그램">
+  <meta property="twitter:description"
+        content="시대의 흐름에 발맞춰, 결함을 발견하고 수정하는 데 도움을 줄 수 있도록 Docsie 버그 바운티 프로그램을 시작했습니다.">
+  <meta property="twitter:image" content="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_g6x5zvB0ksWDAm2Cc/ea3d8677-14df-964b-3e6a-bd65d2d63db9banner_23.jpg">
+
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/blog/templates/assets/css/typography.min.css"/>
+  <!--Replace with your tailwind.css once created-->
+    
+    <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TZRGMQ9');</script>
+<!-- End Google Tag Manager -->
+  
+
+</head>
+
+
+<body class="bg-gray-100 font-sans leading-normal tracking-normal">
+
+<nav id="header" class="fixed w-full z-10 top-0">
+
+  <div id="progress" class="h-1 z-20 top-0"
+       style="background:linear-gradient(to right, #4dc0b5 var(--scroll), transparent 0);"></div>
+
+  <div class="container max-w-6xl mx-auto flex flex-wrap items-center justify-between mt-0 py-3">
+
+    <div class="pl-4">
+      <a class="text-gray-900 text-base no-underline hover:no-underline font-extrabold text-xl" href="../../">
+          Docsie.io Blog
+      </a>
+    </div>
+
+    <div class="block lg:hidden pr-4">
+      <button id="nav-toggle"
+              class="flex items-center px-3 py-2 border rounded text-gray-500 border-gray-600 hover:text-gray-900 hover:border-green-500 appearance-none focus:outline-none">
+        <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+          <title>Menu</title>
+          <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/>
+        </svg>
+      </button>
+    </div>
+
+    <div class="w-full flex-grow lg:flex lg:items-center lg:w-auto hidden lg:block mt-2 lg:mt-0 bg-gray-100 z-20"
+         id="nav-content">
+      <ul class="list-reset lg:flex justify-end flex-1 items-center">
+        
+        <li>
+          <a class="inline-block text-gray-600 hover:text-gray-900 hover:underline py-2 px-4"
+             href="https://www.docsie.io">Docsie</a>
+        </li>
+        
+        <li>
+          <a class="inline-block text-gray-600 hover:text-gray-900 hover:underline py-2 px-4"
+             href="https://www.docsie.io/pricing/">Docsie Pricing</a>
+        </li>
+        
+        <li>
+          <a class="inline-block text-gray-600 hover:text-gray-900 hover:underline py-2 px-4"
+             href="https://www.docsie.io/try_docsie/">Try Docsie</a>
+        </li>
+        
+      </ul>
+    </div>
+    <div class="flex w-full justify-end content-center">
+        <a
+          class="inline-block text-gray-500 hover:text-green-500 hover:underline text-center h-10 p-2 md:h-auto md:p-4 avatar"
+          data-tippy-content="@twitter_handle" href="https://twitter.com/intent/tweet?url=#"
+          id="twitter">
+          <svg class="fill-current h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+            <path
+              d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"></path>
+          </svg>
+        </a>
+        <a
+          class="inline-block text-gray-500 hover:text-green-500 hover:underline text-center h-10 p-2 md:h-auto md:p-4 avatar"
+          data-tippy-content="#facebook_id" href="https://www.facebook.com/sharer/sharer.php?u=#}"
+          id="facebook">
+          <svg class="fill-current h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+            <path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"></path>
+          </svg>
+        </a>
+      </div>
+  </div>
+
+</nav>
+
+<!--Container-->
+<div class="container max-w-4xl mx-auto mt-32 px-8 md:px-0">
+  <div class="prose prose lg:prose-xl mx-auto mt-32">
+    <!--Title-->
+    <h1 id="blog-title">Docsie의 버그 바운티 프로그램</h1>
+    <!--Author-->
+    <div class="flex items-center">
+      <img class="w-10 h-10 rounded-full mr-4" src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_p1X4gXS3n0rCHYuaE/1f3f5f57-d8e2-7978-faef-0b9fe89f3e4btanya_pic.jpg" alt="Avatar of Author">
+      <div class="flex-1 px-2">
+        <div class="font-bold leading-none mb-2">Tanya A Mishra</div>
+        <div class="text-xs md:text-base">on October 05, 2023 · <span id="reading-time"
+                class="block md:inline mt-2 md:mt-0"></span> · filed under <span
+          class="block md:inline mt-2 md:mt-0">
+						
+            <span class="rounded bg-green-500 text-white px-1 uppercase text-xs whitespace-nowrap md:text-sm">기술 문서 작성</span>
+						
+            <span class="rounded bg-green-500 text-white px-1 uppercase text-xs whitespace-nowrap md:text-sm">버그 바운티 프로그램</span>
+						
+					</span>
+        </div>
+      </div>
+    </div>
+    <!--/Author-->
+
+    <!--Post Content-->
+    <!--Lead Para-->
+    <div id="content">
+      <p>당사는 윤리적 해킹 전문가 및 보안 테스터와 협력하여 기술적으로 건전하고 취약점이 없는 제품을 만드는 것을 중요하게 생각합니다. 2022년 버그 바운티 플랫폼의 글로벌 시장 규모는 [미화 1억 1,307만 4,000달러]였습니다(https://www.linkedin.com/pulse/bug-bounty-platforms-market-industry-trends-size/). 그리고 이 수치는 2028년까지 15.84%의 연평균 성장률로 성장하여 2억 7,327만 달러에 달할 것으로 예상됩니다. 이러한 시대적 흐름에 발맞춰, 저희는 사용자가 결함을 발견하고 수정하는 데 도움을 줄 수 있도록 <strong>닥시 버그 바운티 프로그램</strong>을 시작했습니다. 버그 바운티 프로그램은 취약점 개선과 함께 취약점 유형을 고려하고 보안 연구자에게 제품의 보안을 유지하는 데 대한 보상을 제공합니다. 여러분의 도움으로 Docsie 보안을 더욱 견고하고 강력하게 만들 수 있습니다!</p>
+<h2>닥시 버그 바운티 프로그램</h2>
+<p>실수하는 것은 인간적인 일이고, 용서하는 것은 신성한 일입니다! 그리고 그 오류를 찾아서 고치는 것이 <a href="https://www.docsie.io/">닥시</a>가 지향하는 바입니다!</p>
+<p>닥시 보안은 싸우기 어렵지만 복잡한 기술이 지속적으로 등장함에 따라 고위험 취약점을 발견하는 것이 중요하다는 것을 알고 있습니다. 따라서 이 프로그램은 모든 윤리적 해킹<strong> </strong>실무자 및 취약점 수정<strong> </strong>전문가에게 공식적으로 요청하여 시스템과 제품에 여전히 존재하는<strong> </strong>취약점 유형을 인식하는 여정에 동참해 줄 것을 요청합니다. 이 버그 바운티 프로그램에 참여하려면 트위터의 이용 약관을 읽고 이해해야 합니다.</p>
+<h2>일반 및 테스트 요건</h2>
+<p><a href="https://site.docsie.io/documentation-collaboration-software">닥시</a>는 보안을 중요하게 생각하며 회사와 보안 연구자 전문가 커뮤니티 간의 성공적인 협업의 결과라고 생각합니다. 닥시 버그 바운티 프로그램을 통해 모든 취약점 유형을 줄여 기술 제품을 더욱 안전하게 만드는 것을 목표로 합니다. 윤리적 해킹을 적극 지지하는 저희는 모든 참가자가 다음 요구 사항을 준수하여 보안 연구자 포상금에 대한 취약점 해결을 고려할 수 있도록 권장합니다.</p>
+<table>
+<thead>
+<tr>
+<th>단계</th>
+<th>요건</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>#1</td>
+<td>제출하신 내용을 CVSS 점수 및 작동 중인 개념 증명(POC)과 함께 공유해 주세요. 이렇게 하면 Docsie 보안 프레임워크 내에서 문제의 영향과 중요성을 파악하는 데 도움이 됩니다.</td>
+</tr>
+<tr>
+<td>#2</td>
+<td>시스템에서 취약점/취약점을 발견한 경우, 해당 문제를 간결한 형식으로 설명할 수 있도록 선명한 스크린샷을 찍어 제출하세요.</td>
+</tr>
+<tr>
+<td>#3</td>
+<td>문제 해결을 위한 고유한 해결 제안 및 가이드라인을 나열하세요.</td>
+</tr>
+<tr>
+<td>#4</td>
+<td>제출 내용이 고유하고 표절되지 않았으며 버그 바운티 프로그램의 취약점과 일치하는지 확인하세요.</td>
+</tr>
+<tr>
+<td><img alt="" src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_lLlyK5bsBLmSL81Su/image1.png" /></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2>테스트 요건 가이드라인</h2>
+<p>닥시](https://help.docsie.io/)는 사용자의 안전과 편의를 가장 중요하게 생각합니다. 따라서 버그 바운티 프로그램 참여자는 다음 조건을 준수해 주시기 바랍니다.</p>
+<p>취약점 유형 테스트에 스캐너를 사용하지 마세요. 보안 연구자 포상금을 받으려면 서비스에 잠재적으로 해를 끼칠 수 있는 자동 스캔 사용을 자제해 주세요.</p>
+<p>Docsie 보안<strong> </strong> 테스트는 https://app.docsie.io URL에서만 수행하세요. 공식 URL은 전체 인프라의 필수적인 부분입니다.</p>
+<p>주말에는 테스트 작업을 수행하지 마세요. 윤리적 해킹 모범 사례를 따르더라도 주말에 테스트를 진행하면 서비스 안정성이 변경되어 사용자가 불편을 겪을 수 있습니다.</p>
+<p>모든 테스트 작업에 소셜 엔지니어링 공격이 없는지 확인하시기 바랍니다. 제출 검토 프로세스의 가이드라인을 따르고 미끼, 피싱, 미행 또는 사전 구실과 관련된 어떠한 작업도 수행하지 마세요.</p>
+<p>유의해야 할 사항 ##</p>
+<p>공개 버그 바운티 규정](https://www.openbugbounty.org/about/)**에 따르면, 아래에 언급된 영역과 관련된 취약점은 Docsie 버그 바운티 프로그램에서 침입 테스트 대상에 포함되지 않습니다:</p>
+<ul>
+<li>
+<p>크로스 사이트 요청 위조(CSRF)</p>
+</li>
+<li>
+<p>크로스 사이트 스크립팅(XSS)</p>
+</li>
+<li>
+<p>부적절한 액세스 제어</p>
+</li>
+<li>
+<p>오픈 리디렉션</p>
+</li>
+</ul>
+<p>트위터는 윤리적 해킹을 통해 취약점 유형을 발견하고 취약점 해결의 가치를 인식하는 데 관심이 많지만, 시스템, 프로세스 또는 제품을 조사할 수 있는 어떠한 침입 테스트도 허용하지 않습니다. 버그 바운티 프로그램은 타사 취약점 스캐너나 자동화된 도구를 사용하지 않고 취약점을 탐지하고 보고하는 것을 목표로 합니다. 닥시 보안은 시스템 안정성과 규정 준수를 중요하게 생각하므로 웹사이트, 인프라 또는 데이터에 위협이 될 수 있는 취약점에 대해서는 보안 연구원에게 보상금을 제공하지 않습니다.</p>
+<p><img alt="" src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_92YXHMuv70HS79wi3/image2.png" /></p>
+<h2>인센티브 및 보상</h2>
+<p>닥시](https://www.docsie.io/demo/)는 제품에 숨어있는 취약점을 해결하기 위해 닥시 버그 바운티 프로그램에 참여하는 모든 분들의 헌신, 노력, 성실함을 소중하게 생각합니다. 따라서 성공적인 검증 및 취약점 수정이 완료되면 <a href="https://app.docsie.io/login/#/">Docsie</a>에서 발견한 문제의 심각성과 영향에 따라 <strong>$25에서 $500</strong>까지 현금 기반의 포상금을 지급할 예정입니다. 어떤 상황에서도 참가자가 윤리적 해킹 모범 사례를 따르고 이 노력의 약관을 준수하는 경우에만 보안 연구자에게 보상을 제공한다는 점에 유의하시기 바랍니다.</p>
+<h2>마지막 말</h2>
+<p><a href="https://help.docsie.io/">닥시</a>는 버그 바운티 프로그램에서 불법 활동에 대한 무관용 정책을 따릅니다. 우리의 목표는 효과적인 취약점 교정을 제공하여 Docsie 보안을 강화하는 것입니다. 따라서 모든 참가자는 높은 수준의 보안 테스트를 보장하면서 서로를 존중하고 예의 바르게 행동할 것을 권장합니다. 당사는 성실하게 수행된 제출물만 수락하며, 모든 제출물을 철저히 검토한 후 보안 연구원에게 보상을 제공할 것입니다. 이제 무엇을 기다리시나요? 지금 바로 Docsie 버그 바운티 프로그램에 참여하여 안전하고 보안이 강화된 제품과 시스템을 구축하는 데 도움을 주세요. 여러분의 경험, 전문성, 경각심은 모든 사용자를 위한 더 나은 안전한 기술을 만드는 데 도움이 될 것입니다.</p>
+<p><strong>버그 바운티 프로그램 참여하기](https://www.openbugbounty.org/bugbounty/docsie2/)</strong></p>
+    </div>
+  </div>
+  <!--/ Post Content-->
+
+  <!--Divider-->
+  <hr class="border-b-1 border-gray-400 mt-12 mb-8 mx-4">
+
+  <!--Next & Prev Links-->
+  <div class="font-sans flex justify-between content-center px-4 mb-4">
+    <div class="text-left">
+      <span class="text-xs md:text-sm font-normal text-gray-600">&lt; Previous Post</span><br>
+      <p><a href="../how-docsie-llm-streamlines-healthcare-data-management" class="break-normal text-base md:text-sm text-green-500 font-bold no-underline hover:underline">의료 데이터 관리를 간소화하는 Docsie LLM의 활용 방법</a></p>
+    </div>
+    <div class="text-right">
+      <span class="text-xs md:text-sm font-normal text-gray-600">Next Post &gt;</span><br>
+      <p><a href="../docsie-s-llm-revolutionizing-ai-knowledge-management-for-retail-customer-service" class="break-normal text-base md:text-sm text-green-500 font-bold no-underline hover:underline">Docsie의 LLM: 소매 고객 서비스를 위한 AI 지식 관리의 혁신</a></p>
+    </div>
+  </div>
+
+
+  <!--/Next & Prev Links-->
+
+  
+    <div class="commentbox"></div>
+
+    <script src="https://unpkg.com/commentbox.io/dist/commentBox.min.js"></script>
+    <script>commentBox("5725910686760960-proj")</script>
+  
+
+  <!--Subscribe-->
+  
+    <!-- Base template of the subscription form. -->
+
+<div class="container font-sans bg-white rounded mt-8 p-4 md:p-24 text-center mb-10">
+    <h2 class="font-bold break-normal text-2xl md:text-4xl">Subscribe to the newsletter</h2>
+    <h3 class="font-bold break-normal font-normal text-gray-600 text-base md:text-xl">Stay up to date with our latest news and products</h3>
+    <div class="w-full text-center pt-4">
+        <form action="#">
+            <div class="max-w-xl mx-auto p-1 pr-0 flex flex-wrap items-center">
+                <input type="email" placeholder="youremail@example.com"
+                       class="flex-1 appearance-none rounded shadow p-3 text-gray-600 mr-2 focus:outline-none">
+                <button type="submit"
+                        class="flex-1 mt-4 md:mt-0 block md:inline-block appearance-none bg-green-500 text-white text-base font-semibold tracking-wider uppercase py-4 rounded shadow hover:bg-green-400">
+                    Subscribe
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+  
+  <!-- /Subscribe-->
+</div>
+<!--/container-->
+
+<footer class="bg-gray-900">
+  <div class="container max-w-6xl mx-auto flex items-center px-2 py-8">
+
+    <div class="w-full mx-auto flex flex-wrap items-center">
+      <div class="flex w-full md:w-1/2 justify-center md:justify-start text-white font-extrabold flex-col">
+        <a class="text-gray-900 no-underline hover:text-gray-900 hover:no-underline" href="/blog/ko">
+          <span class="text-base text-gray-200">Docsie.io Blog</span>
+        </a>
+        <a class="text-gray-900 no-underline hover:text-gray-900 hover:no-underline"
+           href="https://github.com/LikaloLLC/BlogVi" target="_blank">
+          <span class="text-xs text-gray-200">Made with BlogVI</span>
+        </a>
+      </div>
+      <div class="flex w-full pt-2 content-center justify-between md:w-1/2 md:justify-end">
+        <ul class="list-reset flex justify-center flex-1 md:flex-none items-center">
+          
+            <li>
+              <a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-3"
+                 href="https://www.docsie.io">Docsie</a>
+            </li>
+          
+            <li>
+              <a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-3"
+                 href="https://www.docsie.io/pricing/">Docsie Pricing</a>
+            </li>
+          
+            <li>
+              <a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-3"
+                 href="https://www.docsie.io/try_docsie/">Try Docsie</a>
+            </li>
+          
+        </ul>
+      </div>
+    </div>
+
+
+  </div>
+</footer>
+
+<script>
+  /* Progress bar */
+  //Source: https://alligator.io/js/progress-bar-javascript-css-variables/
+  var h = document.documentElement,
+    b = document.body,
+    st = 'scrollTop',
+    sh = 'scrollHeight',
+    progress = document.querySelector('#progress'),
+    scroll;
+  var scrollpos = window.scrollY;
+  var header = document.getElementById("header");
+  var navcontent = document.getElementById("nav-content");
+
+  document.addEventListener('scroll', function () {
+
+    /*Refresh scroll % width*/
+    scroll = (h[st] || b[st]) / ((h[sh] || b[sh]) - h.clientHeight) * 100;
+    progress.style.setProperty('--scroll', scroll + '%');
+
+    /*Apply classes for slide in bar*/
+    scrollpos = window.scrollY;
+
+    if (scrollpos > 10) {
+      header.classList.add("bg-white");
+      header.classList.add("shadow");
+      navcontent.classList.remove("bg-gray-100");
+      navcontent.classList.add("bg-white");
+    } else {
+      header.classList.remove("bg-white");
+      header.classList.remove("shadow");
+      navcontent.classList.remove("bg-white");
+      navcontent.classList.add("bg-gray-100");
+
+    }
+
+  });
+
+
+  //Javascript to toggle the menu
+  document.getElementById('nav-toggle').onclick = function () {
+    document.getElementById("nav-content").classList.toggle("hidden");
+  }
+</script>
+<script>
+  /*
+    Twitter
+    https://twitter.com/share?url=[post-url]&text=[post-title]
+
+    Facebook
+    https://www.facebook.com/sharer.php?u=[post-url]
+
+  */
+  let twitterURI = document.getElementById('twitter');
+  let facebookURI = document.getElementById('facebook');
+
+  let postURI = encodeURI(document.location.href);
+  let postTitle = encodeURI(document.getElementById('blog-title').innerText + ":\n")
+
+  facebookURI.setAttribute('href', `https://www.facebook.com/sharer.php?u=${postURI}`);
+  twitterURI.setAttribute('href', `https://twitter.com/share?url=${postURI}&text=${postTitle}`);
+</script>
+
+<!--Sharect-->
+
+<script src="https://unpkg.com/sharect@2.0.0/dist/sharect.js"></script>
+<script>window["sharectConfig"] = {"backgroundColor": "#333333", "enabled": true, "facebook": true, "iconColor": "#FFFFFF", "selectableElements": ["body"], "twitter": true, "twitterUsername": "likalo_llc"}</script>
+<script src="/blog/templates/assets/js/sharect.js"></script>
+
+
+
+<!--Reading time-->
+<script src="/blog/templates/assets/js/reading-time.min.js"></script>
+<script>
+  const text = []
+  let content = [...document.getElementById('content').getElementsByTagName('p')].forEach((elem) => {
+    text.push(elem.textContent)
+  });
+  const stats = readingTime(text.join(" "));
+
+  document.getElementById('reading-time').innerHTML = stats.text;
+</script>
+
+
+  
+      <!-- Google Tag Manager (noscript) -->
+
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TZRGMQ9"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+  
+
+</body>
+
+</html>
