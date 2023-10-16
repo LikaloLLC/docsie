@@ -1,6 +1,5 @@
 name: Github-Actions
 
-
 on:
   push:
     branches:
@@ -12,6 +11,8 @@ jobs:
       - run: echo "Hi"
       - name: Check out repository code
         uses: actions/checkout@v4
+        with:
+          token: ${{secrets.SECRET_KEY}}
       - name: Install dependencies
         uses: actions/setup-python@v4
         with:
@@ -24,12 +25,12 @@ jobs:
       - name: Create settings.yaml
         run: |
           cd blog && echo '${{secrets.SETTINGS_YAML}}'  > settings.yaml
-    
+
       - name: Blogvi run
         run: cd blog && blogvi .
       - name: Commit report
         run: |
           git config --global user.name 'Docsie'
           git config --global user.email 'hello@docsie.io'
-          git commit -am "Blog Generation"
+          git commit -am "[skip ci] Blog Generation"
           git push
