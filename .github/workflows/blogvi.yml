@@ -1,0 +1,36 @@
+name: Github-Actions
+
+on:
+  push:
+    branches:
+      - master
+jobs:
+  Cloning-repository:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Hi"
+      - name: Check out repository code
+        uses: actions/checkout@v4
+        with:
+          token: ${{secrets.SECRET_KEY}}
+      - name: Install dependencies
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+          cache: 'pip' # caching pip dependencies
+      - run: pip install git+https://github.com/LikaloLLC/BlogVi
+      - name: List files in the repository
+        run: |
+          ls -la
+      - name: Create settings.yaml
+        run: |
+          cd blog && echo '${{secrets.SETTINGS_YAML}}'  > settings.yaml
+
+      - name: Blogvi run
+        run: cd blog && blogvi .
+      - name: Commit report
+        run: |
+          git config --global user.name 'Docsie'
+          git config --global user.email 'hello@docsie.io'
+          git commit -am "[skip ci] Blog Generation"
+          git push

@@ -1,0 +1,939 @@
+<!-- Base template of the article page. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+  
+
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/blog/https://d1iq6qzgppjlud.cloudfront.net/images/favicon/favicon-196x196.png">
+
+
+  <!-- Primary Meta Tags -->
+  <title>Docsie.io Blog - 12 niesamowitych wtyczek dla Gatsby.js na 2024 rok</title>
+  <meta name="author" content="Tanya A Mishra"/>
+  <meta name="title" content="12 niesamowitych wtyczek dla Gatsby.js na 2024 rok">
+  <meta name="description" content="W tym artykule omówimy niektóre z popularnych wtyczek i postaramy się przedstawić kilka spostrzeżeń na temat ich używania."/>
+  <meta name="keywords" content="Technical Writing,Gatsby Extension"/>
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.docsie.io/blog/blog/pl/articles/12-amazing-plugins-for-gatsby-js-for-2024/">
+  <meta property="og:title" content="12 niesamowitych wtyczek dla Gatsby.js na 2024 rok">
+  <meta property="og:description"
+        content="W tym artykule omówimy niektóre z popularnych wtyczek i postaramy się przedstawić kilka spostrzeżeń na temat ich używania.">
+  <meta property="og:image" content="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_v7wI6BClWfJ4u3L89/acbd1245-5505-1fc0-da96-bf9b5c06740ebanner_13_1.jpg">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://www.docsie.io/blog/blog/pl/articles/12-amazing-plugins-for-gatsby-js-for-2024/">
+  <meta property="twitter:title" content="12 niesamowitych wtyczek dla Gatsby.js na 2024 rok">
+  <meta property="twitter:description"
+        content="W tym artykule omówimy niektóre z popularnych wtyczek i postaramy się przedstawić kilka spostrzeżeń na temat ich używania.">
+  <meta property="twitter:image" content="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_v7wI6BClWfJ4u3L89/acbd1245-5505-1fc0-da96-bf9b5c06740ebanner_13_1.jpg">
+
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/blog/templates/assets/css/typography.min.css"/>
+  <!--Replace with your tailwind.css once created-->
+    
+    <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TZRGMQ9');</script>
+<!-- End Google Tag Manager -->
+  
+
+</head>
+
+
+<body class="bg-gray-100 font-sans leading-normal tracking-normal">
+
+<nav id="header" class="fixed w-full z-10 top-0">
+
+  <div id="progress" class="h-1 z-20 top-0"
+       style="background:linear-gradient(to right, #4dc0b5 var(--scroll), transparent 0);"></div>
+
+  <div class="container max-w-6xl mx-auto flex flex-wrap items-center justify-between mt-0 py-3">
+
+    <div class="pl-4">
+      <a class="text-gray-900 text-base no-underline hover:no-underline font-extrabold text-xl" href="../../">
+          Docsie.io Blog
+      </a>
+    </div>
+
+    <div class="block lg:hidden pr-4">
+      <button id="nav-toggle"
+              class="flex items-center px-3 py-2 border rounded text-gray-500 border-gray-600 hover:text-gray-900 hover:border-green-500 appearance-none focus:outline-none">
+        <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+          <title>Menu</title>
+          <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/>
+        </svg>
+      </button>
+    </div>
+
+    <div class="w-full flex-grow lg:flex lg:items-center lg:w-auto hidden lg:block mt-2 lg:mt-0 bg-gray-100 z-20"
+         id="nav-content">
+      <ul class="list-reset lg:flex justify-end flex-1 items-center">
+        
+        <li>
+          <a class="inline-block text-gray-600 hover:text-gray-900 hover:underline py-2 px-4"
+             href="https://www.docsie.io">Docsie</a>
+        </li>
+        
+        <li>
+          <a class="inline-block text-gray-600 hover:text-gray-900 hover:underline py-2 px-4"
+             href="https://www.docsie.io/pricing/">Docsie Pricing</a>
+        </li>
+        
+        <li>
+          <a class="inline-block text-gray-600 hover:text-gray-900 hover:underline py-2 px-4"
+             href="https://www.docsie.io/try_docsie/">Try Docsie</a>
+        </li>
+        
+      </ul>
+    </div>
+    <div class="flex w-full justify-end content-center">
+        <a
+          class="inline-block text-gray-500 hover:text-green-500 hover:underline text-center h-10 p-2 md:h-auto md:p-4 avatar"
+          data-tippy-content="@twitter_handle" href="https://twitter.com/intent/tweet?url=#"
+          id="twitter">
+          <svg class="fill-current h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+            <path
+              d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"></path>
+          </svg>
+        </a>
+        <a
+          class="inline-block text-gray-500 hover:text-green-500 hover:underline text-center h-10 p-2 md:h-auto md:p-4 avatar"
+          data-tippy-content="#facebook_id" href="https://www.facebook.com/sharer/sharer.php?u=#}"
+          id="facebook">
+          <svg class="fill-current h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+            <path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"></path>
+          </svg>
+        </a>
+      </div>
+  </div>
+
+</nav>
+
+<!--Container-->
+<div class="container max-w-4xl mx-auto mt-32 px-8 md:px-0">
+  <div class="prose prose lg:prose-xl mx-auto mt-32">
+    <!--Title-->
+    <h1 id="blog-title">12 niesamowitych wtyczek dla Gatsby.js na 2024 rok</h1>
+    <!--Author-->
+    <div class="flex items-center">
+      <img class="w-10 h-10 rounded-full mr-4" src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_p1X4gXS3n0rCHYuaE/1f3f5f57-d8e2-7978-faef-0b9fe89f3e4btanya_pic.jpg" alt="Avatar of Author">
+      <div class="flex-1 px-2">
+        <div class="font-bold leading-none mb-2">Tanya A Mishra</div>
+        <div class="text-xs md:text-base">on September 04, 2023 · <span id="reading-time"
+                class="block md:inline mt-2 md:mt-0"></span> · filed under <span
+          class="block md:inline mt-2 md:mt-0">
+						
+            <span class="rounded bg-green-500 text-white px-1 uppercase text-xs whitespace-nowrap md:text-sm">Technical Writing</span>
+						
+            <span class="rounded bg-green-500 text-white px-1 uppercase text-xs whitespace-nowrap md:text-sm">Gatsby Extension</span>
+						
+					</span>
+        </div>
+      </div>
+    </div>
+    <!--/Author-->
+
+    <!--Post Content-->
+    <!--Lead Para-->
+    <div id="content">
+      <p>Gatsby to niesamowicie szybki generator statycznych stron internetowych zbudowany w oparciu o React i zasilany przez GraphQL. Jedną z rzeczy, które sprawiają, że witryny Gatsby są niezwykle szybkie i elastyczne, jest ekosystem wtyczek. Wtyczki Gatsby to pakiety NPM, które implementują interfejsy API Gatsby w celu rozszerzenia funkcjonalności i dostosowania witryn. W tym artykule omówimy niektóre z najpopularniejszych i najbardziej przydatnych wtyczek Gatsby do zadań takich jak optymalizacja obrazu, obsługa trybu offline, stylizacja, zarządzanie metadanymi i inne.</p>
+<p>Według <a href="https://blog.hubspot.com/marketing/page-load-time-conversion-rates">HubSpot</a>, 70% klientów jest bardziej skłonnych do zakupu od firmy z szybko ładującą się stroną internetową. Oznacza to, że jeśli Twoja witryna ładuje się zbyt długo, ludzie najprawdopodobniej ją porzucą. Wtyczki te pokazują, w jaki sposób architektura wtyczek Gatsby pozwala dostosować witrynę do wykorzystania praktycznie dowolnej biblioteki JavaScript lub funkcji internetowej. Łącząc i dopasowując wtyczki, możesz stworzyć witrynę Gatsby dostosowaną dokładnie do twoich potrzeb i wykorzystać wydajność oraz możliwości Reacta i nowoczesnych technologii internetowych.</p>
+<p>W tym artykule omówimy niektóre z popularnych wtyczek i postaramy się przedstawić kilka wskazówek dotyczących ich używania.</p>
+<h2>Jakie są najpopularniejsze wtyczki Gatsby?</h2>
+<p><em>Oto kilka popularnych motywów i wtyczek Gatsby:</em>.</p>
+<ol>
+<li>
+<p><a href="https://www.gatsbyjs.com/plugins/gatsby-plugin-image/">Gatsby-plugin-image: </a> Specjalnością gatsby-plugin-image jest zwiększanie wydajności strony internetowej poprzez poprawę responsywności komponentów graficznych.</p>
+</li>
+<li>
+<p><a href="https://www.gatsbyjs.com/plugins/gatsby-plugin-sharp/">Gatsby-plugin-sharp: </a> Zajmując się przetwarzaniem i optymalizacją obrazu, gatsby-plugin-sarp wyróżnia się jako wtyczka, która znacznie zwiększa wydajność witryny.</p>
+</li>
+<li>
+<p><a href="https://www.gatsbyjs.com/plugins/gatsby-plugin-manifest/">Gatsby-plugin-manifest: </a> Umożliwiając użytkownikom tworzenie manifestów aplikacji internetowych dla progresywnych aplikacji internetowych (PWA), Gatsby-plugin-manifest przyczynia się do poprawy komfortu użytkowania urządzeń mobilnych.</p>
+</li>
+<li>
+<p><a href="https://www.gatsbyjs.com/plugins/gatsby-plugin-offline/">Gatsby-plugin-offline: </a> Wkraczając podczas przestojów sieci, gatsby-plugin-offline jest rozwiązaniem do dodawania wsparcia offline i pracowników serwisowych w celu zapewnienia płynnego doświadczenia użytkownika.</p>
+</li>
+<li>
+<p><a href="https://www.gatsbyjs.com/plugins/gatsby-plugin-react-helmet/">Gatsby-plugin-react-helmet: </a>Obsługując kluczowe metadane w nagłówku dokumentu, gatsby-plugin-react-helmet przejmuje wiodącą rolę w optymalizacji treści pod kątem wyszukiwarek.</p>
+</li>
+<li>
+<p><a href="https://www.gatsbyjs.com/plugins/gatsby-plugin-sitemap/">Gatsby-plugin-sitemap:</a> Upraszczając proces generowania map witryn SEO dla widoczności w wyszukiwarkach, gatsby-plugin-sitemap udowadnia swoją wartość.</p>
+</li>
+<li>
+<p><a href="https://www.gatsbyjs.com/plugins/gatsby-plugin-styled-components/">Gatsby-plugin-styled-components: </a> Wspierając podejście CSS-in-JS, gatsby-plugin-styled-components staje się kamieniem węgielnym dla uzyskania eleganckich układów stron internetowych.</p>
+</li>
+<li>
+<p><a href="https://www.gatsbyjs.com/plugins/gatsby-source-filesystem/">Gatsby-source-filesystem: </a> Płynnie organizując dane GraphQL poprzez wykorzystanie plików systemowych, gatsby-source-filesystem jest wtyczką do efektywnego zarządzania danymi.</p>
+</li>
+<li>
+<p><a href="https://www.gatsbyjs.com/plugins/gatsby-transformer-remark/">Gatsby-transformer-remark: </a> Wykorzystując możliwości Remark, gatsby-transformer-remark konwertuje pliki Markdown na HTML, usprawniając tworzenie stron internetowych i zarządzanie nimi.</p>
+</li>
+<li>
+<p><a href="https://www.gatsbyjs.com/plugins/gatsby-plugin-google-analytics/">Gatsby-plugin-google-analytics: </a> Odblokowując wgląd w wydajność witryny za pomocą Google Analytics, gatsby-plugin-google-analytics staje się niezbędnym zasobem.</p>
+</li>
+<li>
+<p><a href="https://www.docz.site/docs/gatsby-theme">Gatsby-theme-docz: </a> Upraszczając tworzenie kompleksowej dokumentacji dla witryn Gatsby, gatsby-theme-docz ułatwia wdrażanie użytkowników.</p>
+</li>
+<li>
+<p><a href="https://www.docsie.io/blog/gatsby_js_as_a_blog/?version=0.0.1&amp;language=EN&amp;article=gatsbyjs-general-components-and-enhancementss_xgxf">Docsie-gatsby-plugin: </a> Usprawniając proces tworzenia dokumentacji witryny, docsie-gatsby-plugin bez wysiłku importuje dane z obszarów roboczych Docsie.</p>
+</li>
+</ol>
+<h2>Jak używać gatsby-plugin-docsie do tworzenia witryn z dokumentacją za pomocą Gatsby?</h2>
+<p>Ta wtyczka dodaje zawartość Docsie do witryny GatsbyJs. Może ona automatycznie generować strony lub można samodzielnie wysyłać zapytania do bazy danych graphql, aby mieć większą kontrolę nad tworzeniem stron.</p>
+<h3>Jak używać gatsby-plugin-docsie?</h3>
+<p><code>`{
+  resolve: require.resolve(`gatsby-source-docsie`),
+  options: {
+          deploymentId: "deployment_iigwE2dX4i7JVKmce", [wymagane]
+        generatePages: true, [opcjonalne, domyślnie true]
+        path: "docs", [opcjonalnie, ścieżka główna dla ślimaków wszystkich węzłów, bez ukośników, domyślnie docs]
+        language: "English", [opcjonalnie, jeśli nie podano, domyślnie język podstawowy]
+  }
+}`</code></p>
+<h3>Użyj gatsby-plugin-docsie z generowaniem stron</h3>
+<p>Domyślnie wtyczka automatycznie generuje strony.</p>
+<p><em>Domyślne strony można stylizować przy użyciu następujących klas CSS:</em></p>
+<ul>
+<li>
+<p>.docsie-main-container</p>
+</li>
+<li>
+<p>.docsie-nav-container</p>
+</li>
+<li>
+<p>.docsie-page-container</p>
+</li>
+<li>
+<p>.docsie-nav</p>
+</li>
+<li>
+<p>.docsie-nav-items</p>
+</li>
+<li>
+<p>.docsie-nav-item</p>
+</li>
+</ul>
+<h3>Użyj gatsby-plugin-docsie bez generowania stron</h3>
+<p>Jeśli potrzebujesz większej kontroli nad sposobem generowania treści, możesz ustawić <code>generatePages</code> powyżej na <code>false</code> i pobrać dane bezpośrednio z GatsbyJs za pomocą graphql.</p>
+<p><em>Wtyczka dodaje 4 węzły graphql do GatsbyJs: </em>.</p>
+<ul>
+<li>
+<p>DociseDoc</p>
+</li>
+<li>
+<p>DociseBook</p>
+</li>
+<li>
+<p>DocsieArticle</p>
+</li>
+<li>
+<p>DocsieNav</p>
+</li>
+</ul>
+<p>Możesz znaleźć przykład generowania stron w <a href="https://github.com/tjbo/gatsby-source-docsie/blob/main/plugin/createPages.js">/plugin/createPages.js</a>, a także możesz spojrzeć na <a href="https://github.com/tjbo/gatsby-source-docsie/blob/main/plugin/DocsieTemplate.js">/plugin /DocsieTemplate.js</a>, aby zobaczyć, jak budować komponenty React.</p>
+<h2>Jak używać gatsby-plugin-manifest do konfigurowania manifestu aplikacji internetowej?</h2>
+<p>Wtyczka gatsby-plugin-manifest umożliwia łatwe konfigurowanie i generowanie manifestu aplikacji internetowej dla witryny Gatsby. Manifest aplikacji internetowej to plik JSON, który zawiera metadane dotyczące aplikacji internetowej, w tym nazwę, ikony, początkowy adres URL, kolory i inne. Pozwala to na zainstalowanie witryny jako progresywnej aplikacji internetowej na urządzeniach mobilnych z ikoną ekranu głównego.</p>
+<p><em>Aby użyć gatsby-plugin-manifest, należy najpierw zainstalować wtyczkę:</em></p>
+<p><code>`npm install --save gatsby-plugin-manifest`</code>
+Następnie skonfiguruj wtyczkę w pliku gatsby-config.js. Możesz określić właściwości, takie jak name, short_name, start_url, background_color, theme_color, display, icons itp. Na przykład:</p>
+<p><code>`{
+  resolve: `gatsby-plugin-manifest`,
+  options: {
+    name: `GatsbyJS`,
+    short_name: `GatsbyJS`,
+    start_url: `/`,
+    background_color: `#f7f0eb`,
+    theme_color: `#a2466c`,
+    display: `standalone`,
+    icon: 'src/images/icon.png'
+  }
+}`</code>
+Spowoduje to wygenerowanie pliku manifest.webmanifest podczas tworzenia witryny Gatsby. Upewnij się, że odwołujesz się do manifestu w szablonie HTML witryny, dodając:</p>
+<p><code>`&lt;link rel="manifest" href="/manifest.webmanifest"&gt;`.</code>
+<em>Kilka kluczowych rzeczy, na które należy zwrócić uwagę podczas konfigurowania gatsby-plugin-manifest:</em></p>
+<ul>
+<li>
+<p>short_name jest wymaganą właściwością dla nazwy wyświetlanej na ekranie głównym.</p>
+</li>
+<li>
+<p>start_url konfiguruje stronę startową podczas uruchamiania aplikacji z ekranu głównego urządzenia.</p>
+</li>
+<li>
+<p>Ikona powinna wskazywać na kwadratowy plik png o rozmiarze co najmniej 512x512px.</p>
+</li>
+<li>
+<p>Można skonfigurować tablicę obiektów ikon dla różnych rozmiarów/gęstości.</p>
+</li>
+<li>
+<p>Wyświetlanie pozwala określić, czy aplikacja uruchamia się na pełnym ekranie (samodzielna) czy w zakładce przeglądarki (przeglądarka).</p>
+</li>
+<li>
+<p>theme_color i background_color definiują schemat kolorów aplikacji.</p>
+</li>
+</ul>
+<p>Ogólnie rzecz biorąc, gatsby-plugin-manifest ułatwia konfigurację i generowanie pliku manifestu potrzebnego do zainstalowania witryny Gatsby jako PWA. Poprawia to wrażenia mobilne i pozwala użytkownikom uruchamiać witrynę jak natywną aplikację.</p>
+<h2>Co to jest gatsby-plugin-offline i jak mogę go użyć do utworzenia witryny obsługującej tryb offline?</h2>
+<p>gatsby-plugin-offline to wtyczka Gatsby, która dodaje obsługę tworzenia witryn z obsługą offline. Wykorzystuje ona Workbox, zestaw bibliotek i narzędzi do kompilacji, które ułatwiają tworzenie progresywnych aplikacji internetowych.</p>
+<p><em>Po prawidłowym zainstalowaniu i skonfigurowaniu, gatsby-plugin-offline będzie:</em></p>
+<ul>
+<li>
+<p>Utworzy plik pracownika usługi, który buforuje zasoby powłoki aplikacji, takie jak <strong>HTML, JavaScript, CSS, media</strong> i <strong>czcionki internetowe</strong>. Dzięki temu witryna będzie ładować się szybciej podczas kolejnych wizyt.</p>
+</li>
+<li>
+<p>Buforowanie danych strony, aby umożliwić dostęp do witryn w trybie offline. Wtyczka buforuje strony, gdy użytkownicy je odwiedzają.</p>
+</li>
+<li>
+<p>Dodanie obsługi manifestu dla instalacji "Dodaj do ekranu głównego".</p>
+</li>
+</ul>
+<p>Aby z niej skorzystać, należy najpierw zainstalować wtyczkę:</p>
+<p><code>`npm install gatsby-plugin-offline`</code>
+Następnie dodaj ją do pliku gatsby-config.js:</p>
+<p><code>`{
+  resolve: `gatsby-plugin-offline`,
+  options: {
+    precachePages: [`/about/`],
+  },
+}`</code>
+<em>Kluczowe opcje to:</em></p>
+<ul>
+<li>
+<p>precachePages - Określa strony do wstępnego buforowania dla wsparcia offline. Ważne jest, aby uwzględnić tutaj stronę główną.</p>
+</li>
+<li>
+<p>workboxConfig - Dostosuj opcje Workboksa, takie jak buforowanie runtime i ustawienia manifestu.</p>
+</li>
+<li>
+<p>appendScript - Wstrzykuje niestandardowy kod service worker do wygenerowanego pliku service worker.</p>
+</li>
+</ul>
+<p><em>Kilka najlepszych praktyk dotyczących korzystania z gatsby-plugin-offline:</em></p>
+<ul>
+<li>
+<p>Przetestuj swoją witrynę za pomocą panelu Chrome DevTools Audits, aby wcześnie wykryć problemy.</p>
+</li>
+<li>
+<p>Ustaw krótki czas wygaśnięcia pamięci podręcznej dla danych API i często aktualizowanych zasobów.</p>
+</li>
+<li>
+<p>Sprawdź opcję "Aktualizuj przy ponownym ładowaniu" w Workboksie, aby upewnić się, że użytkownicy otrzymują najnowsze pliki.</p>
+</li>
+<li>
+<p>Zarejestruj pracownika usługi w gatsby-browser.js, aby kontrolować cykl życia pracownika usługi.</p>
+</li>
+<li>
+<p>Rozważ skonfigurowanie strony awaryjnej lub interfejsu offline, gdy użytkownik nie ma połączenia.</p>
+</li>
+</ul>
+<p><strong>Podkreślony tekst</strong> Prześlij swoją działającą witrynę do Lighthouse, aby przetestować swój wynik PWA. Celuj w &gt;90.</p>
+<p>Ogólnie rzecz biorąc, gatsby-plugin-offline sprawia, że witryna Gatsby działa w trybie offline. Skutkuje to znacznie lepszym, podobnym do aplikacji doświadczeniem dla użytkowników, którzy wracają lub tracą połączenie internetowe. Pamiętaj o regularnym testowaniu w różnych przeglądarkach i na różnych urządzeniach, aby zapewnić pełną obsługę trybu offline.</p>
+<h2>Jak zaimplementować Google Analytics w witrynie Gatsby za pomocą gatsby-plugin-google-analytics?</h2>
+<p>Google Analytics to popularne narzędzie analityczne, które umożliwia monitorowanie i śledzenie ruchu i zaangażowania w witrynie. gatsby-plugin-google-analytics to zalecany sposób integracji Google Analytics z witryną Gatsby.</p>
+<p><em>Aby dodać obsługę Google Analytics, należy najpierw zainstalować wtyczkę:</em></p>
+<p><code>`npm install --save gatsby-plugin-google-analytics`</code>
+Następnie skonfiguruj ją w pliku gatsby-config.js, podając identyfikator śledzenia Google Analytics:</p>
+<p><code>`{
+  resolve: `gatsby-plugin-google-analytics`,
+  options: {
+    trackingId: 'YOUR_GOOGLE_ANALYTICS_TRACKING_ID',
+  },
+}`</code>
+Spowoduje to automatyczne dodanie niezbędnego kodu śledzenia Google Analytics do wszystkich stron w witrynie.</p>
+<p>Niektóre dodatkowe opcje konfiguracji obejmują:</p>
+<ul>
+<li>
+<p>head - Umożliwia dodanie dodatkowych skryptów do <head>. Przydatne dla dodatkowych narzędzi analitycznych.</p>
+</li>
+<li>
+<p>anonymize - maskuje adresy IP, jeśli chcesz zachować zgodność z RODO.</p>
+</li>
+<li>
+<p>respectDNT - nie ładuje GA, jeśli użytkownicy mają włączoną opcję "Do Not Track".</p>
+</li>
+<li>
+<p>pageTransitionDelay - Ustawia limit czasu dla zdarzeń analitycznych zmiany strony.</p>
+</li>
+<li>
+<p>optimizeId - Włącza Google Optimize dla testów A/B.</p>
+</li>
+<li>
+<p>experimentId - Dodaje identyfikator eksperymentu Google Optimize.</p>
+</li>
+<li>
+<p>variationId - Określa odmianę eksperymentu Google Optimize.</p>
+</li>
+<li>
+<p>defer - Odracza ładowanie skryptu, aby poprawić szybkość strony.</p>
+</li>
+<li>
+<p>sampleRate - Ustawia częstotliwość próbkowania, przydatną w przypadku witryn o dużym natężeniu ruchu.</p>
+</li>
+</ul>
+<p>Testując witrynę, można upewnić się, że zdarzenia Google Analytics są odbierane bez żadnych problemów. Weryfikacja danych takich jak odsłony w Google Analytics. Korzystając z dodatków GA Debugger, możesz sprawdzić, czy kod śledzenia jest ładowany na stronach.</p>
+<p>Korzystając z implementacji gatsby-plugin-google-analytics Google Analytics, witryna Gatsby może mieć dodaną solidną analitykę bez żadnego wysiłku. Podział kodu Gatsby i renderowanie po stronie serwera sprawiają, że jest on idealny do włączenia Google Analytics. Upewnij się, że wyświetla się poprawnie na każdej stronie i na każdym urządzeniu obsługiwanym przez Twoją witrynę.</p>
+<h2>Czym jest gatsby-plugin-react-helmet i jak mogę go użyć do zarządzania metadanymi nagłówka dokumentu?</h2>
+<p>gatsby-plugin-react-helmet umożliwia zarządzanie metadanymi nagłówka dokumentu w witrynie Gatsby przy użyciu React Helmet. React Helmet to komponent tekstowy, który pozwala kontrolować elementy takie jak tytuł, metatagi, skrypty itp. w nagłówku dokumentu.</p>
+<p><em>Kilka powodów, dla których warto używać gatsby-plugin-react-helmet:</em></p>
+<ul>
+<li>
+<p>Łatwe ustawianie tytułu strony, opisu, kanonicznego adresu URL, JSON-LD itp. na potrzeby SEO.</p>
+</li>
+<li>
+<p>Dynamiczne generowanie metatagów na podstawie rekwizytów, zapytań itp.</p>
+</li>
+<li>
+<p>Ustawianie metatagów og:image, twitter:card do udostępniania w serwisach społecznościowych.</p>
+</li>
+<li>
+<p>Bezpieczne dodawanie skryptów innych firm do nagłówka bez wpływu na inne strony.</p>
+</li>
+<li>
+<p>Działa idealnie z renderowaniem po stronie serwera Gatsby.</p>
+</li>
+</ul>
+<p><em>Aby z niej skorzystać, należy najpierw zainstalować wtyczkę:</em></p>
+<p><code>`npm install --save gatsby-plugin-react-helmet react-helmet` Skopiuj kod</code>
+Następnie owiń swoje strony komponentem <Helmet>, aby dodać metadane:</p>
+<p><code>``</code>import React z "react"
+import { Helmet } z "react-helmet"</p>
+<p>export default () =&gt; (
+  <div>
+    <Helmet>
+      <title>Mój tytuł</title>
+      <meta name="description" content="Mój opis" />
+    </Helmet>
+  </div>
+)`Kopiuj kod
+```
+Na stronie można umieścić wiele instancji <Helmet>.</p>
+<p>Rzeczy do odnotowania:</p>
+<ul>
+<li>
+<p>Używaj Helmet na stronach, szablonach, komponentach. Nie w gatsby-browser.js.</p>
+</li>
+<li>
+<p>Helmet połączy zduplikowane tagi, zamiast je nadpisywać.</p>
+</li>
+<li>
+<p>HTML renderowany przez serwer będzie poprawnie zawierał metadane nagłówka.</p>
+</li>
+<li>
+<p>HTML renderowany przez klienta będzie również zawierał metadane.</p>
+</li>
+<li>
+<p>Idealny dla dynamicznie generowanych tytułów, opisów, kanonicznych adresów URL dla każdej strony.</p>
+</li>
+</ul>
+<p>Ogólnie rzecz biorąc, gatsby-plugin-react-helmet daje ogromną kontrolę nad metadanymi nagłówka dokumentu dla SEO, udostępniania społecznościowego, kontroli interfejsu użytkownika. Wysoce zalecane dla każdej witryny Gatsby. Należy tylko uważać, aby nie dołączyć go w niewłaściwych miejscach, takich jak gatsby-browser.js, gdzie renderowanie serwera nie może działać.</p>
+<h2>Jak zaimplementować mapę witryny dla witryny Gatsby przy użyciu gatsby-plugin-sitemap?</h2>
+<p>Mapa witryny to plik XML, który zawiera listę stron w witrynie i pomaga wyszukiwarkom, takim jak Google i Bing, w bardziej efektywnym indeksowaniu treści. gatsby-plugin-sitemap to najprostszy sposób na wygenerowanie mapy witryny dla witryny Gatsby.</p>
+<p>Aby dodać mapę witryny, należy najpierw zainstalować wtyczkę:</p>
+<p><code>`npm install --save gatsby-plugin-sitemap`</code>
+Następnie dodaj ją do pliku gatsby-config.js:</p>
+<p><code>`{
+  resolve: `gatsby-plugin-sitemap`,
+  options: {
+    output: `/sitemap.xml`,
+  },
+}`</code>
+Spowoduje to wygenerowanie pliku sitemap.xml w folderze głównym witryny.</p>
+<p><em>Możesz określić kilka opcji:</em></p>
+<ul>
+<li>
+<p>Wyjście - Gdzie zapisać plik mapy witryny.</p>
+</li>
+<li>
+<p>exclude - tablica ścieżek do wykluczenia z mapy witryny.</p>
+</li>
+<li>
+<p>query - zapytanie GraphQL do filtrowania węzłów do uwzględnienia.</p>
+</li>
+<li>
+<p>serialize - niestandardowa funkcja do formatowania każdego adresu URL w mapie witryny.</p>
+</li>
+</ul>
+<p>Wtyczka automatycznie indeksuje wszystkie strony wygenerowane z węzłów Gatsby i dołącza je.</p>
+<p><em>Kilka wskazówek dla optymalnego wykorzystania:</em></p>
+<ul>
+<li>
+<p>Prześlij mapę witryny do Google Search Console w celu indeksowania.</p>
+</li>
+<li>
+<p>Pinguj wyszukiwarki za każdym razem, gdy aktualizujesz mapę witryny.</p>
+</li>
+<li>
+<p>Ustaw rozsądny czas buforowania mapy witryny za pomocą opcji sitemapSize.</p>
+</li>
+<li>
+<p>Wyklucz strony, których nie chcesz indeksować, takie jak strony profilu użytkownika.</p>
+</li>
+<li>
+<p>Użyj wykluczenia lub zapytania, aby ograniczyć duże mapy witryn, jeśli przekraczają 50 tys. adresów URL.</p>
+</li>
+<li>
+<p>Dodaj adres URL mapy witryny do pliku robots.txt.</p>
+</li>
+<li>
+<p>Skompresuj mapę witryny za pomocą gzip, aby przyspieszyć indeksowanie.</p>
+</li>
+<li>
+<p>Dynamiczne generowanie danych mapy witryny w czasie kompilacji w celu zapewnienia świeżości.</p>
+</li>
+</ul>
+<p>Ogólnie rzecz biorąc, gatsby-plugin-sitemap zapewnia łatwy sposób generowania kompleksowej mapy witryny w celu poprawy widoczności witryny Gatsby w wyszukiwarkach i wydajności indeksowania. Pamiętaj, aby dostosować opcje do swojego przypadku użycia i przesłać je do wyszukiwarek, aby uzyskać maksymalną wartość SEO.</p>
+<h2>Jak mogę dodać obsługę stylizowanych komponentów w Gatsby za pomocą gatsby-plugin-styled-components?</h2>
+<p>Styled-components to popularna biblioteka CSS-in-JS, która umożliwia pisanie CSS w zakresie komponentów przy użyciu literałów szablonów. gatsby-plugin-styled-components to zalecany sposób dodawania obsługi styled-components do witryny Gatsby.</p>
+<p><em>Aby korzystać ze styled-components w Gatsby, należy najpierw zainstalować zależności:</em></p>
+<p><code>`npm install --save gatsby-plugin-styled-components styled-components babel-plugin-styled-components`</code>
+Następnie dodaj wtyczkę do pliku gatsby-config.js:</p>
+<p><code>`module.exports = {
+  plugins: [
+    `gatsby-plugin-styled-components`,
+  ],
+}`</code>
+Teraz można importować styled-components i tworzyć stylizowane elementy w dowolnym miejscu witryny:</p>
+<p><code>``</code>import styled z 'styled-components';</p>
+<p>const Header = styled.header<code>background: red;
+  color: white;</code>;`
+```
+<strong><em>Korzyści z używania stylizowanych komponentów z Gatsby:</em></strong></p>
+<ul>
+<li>
+<p>Scoped CSS pozwala uniknąć konfliktów i kwestii specyficzności.</p>
+</li>
+<li>
+<p>Działa z funkcjami CSS-in-JS, takimi jak tworzenie tematów, mieszanie, zagnieżdżanie.</p>
+</li>
+<li>
+<p>Płynna integracja z architekturą komponentów React.</p>
+</li>
+<li>
+<p>Umożliwia tworzenie komponentów stylizowanych wielokrotnego użytku.</p>
+</li>
+<li>
+<p>Obsługuje SSR - generowany jest krytyczny CSS.</p>
+</li>
+<li>
+<p>Łatwe dostosowywanie i rozszerzanie stylów.</p>
+</li>
+<li>
+<p>Unika niepożądanego dzielenia kodu z importu CSS.</p>
+</li>
+</ul>
+<p><strong><em>Niektóre najlepsze praktyki podczas korzystania ze stylowanych komponentów:</em></strong>*</p>
+<ul>
+<li>
+<p>Używaj komentarzy // @ts-ignore, aby uniknąć błędów TypeScript.</p>
+</li>
+<li>
+<p>Włącz nazwaną konwencję eksportu.</p>
+</li>
+<li>
+<p>Użyj shouldForwardProp, aby ograniczyć rekwizyty przekazywane do DOM.</p>
+</li>
+<li>
+<p>W razie potrzeby dostosuj format etykiety.</p>
+</li>
+<li>
+<p>Rozważ emocje dla nieco lepszej wydajności.</p>
+</li>
+</ul>
+<p>Ogólnie rzecz biorąc, gatsby-plugin-styled-components umożliwia doskonałą integrację z procesem kompilacji Gatsby w celu wykorzystania biblioteki CSS-in-JS styled-components. Jest to świetna opcja do stylizacji zorientowanej na komponenty, która dobrze współgra z Reactem i SSR.</p>
+<h2>Czym jest gatsby-plugin-sharp i jak pomaga przetwarzać obrazy w Gatsby?</h2>
+<p>gatsby-plugin-sharp to oficjalna wtyczka Gatsby, która obsługuje przetwarzanie i optymalizację obrazów przy użyciu biblioteki Sharp do manipulacji obrazami. Umożliwia ona przekształcanie plików graficznych w statycznych witrynach i aplikacjach Gatsby.</p>
+<p><em>Niektóre kluczowe możliwości gatsby-plugin-sharp zapewniają:</em></p>
+<ul>
+<li>
+<p>Zmiana rozmiaru obrazów na potrzeby projektowania responsywnego. Można zdefiniować zestaw rozmiarów dla obrazu, a gatsby-plugin-sharp automatycznie wygeneruje wersje o odpowiednich rozmiarach.</p>
+</li>
+<li>
+<p>Kadrowanie i wybieranie fragmentów obrazów. Przydatne do skupiania się na kluczowych obszarach i generowania miniatur.</p>
+</li>
+<li>
+<p>Konwersja formatów między typami obrazów, takimi jak <strong>JPEG, PNG, WebP</strong> i <strong>GIF</strong>. Pomaga to zoptymalizować rozmiar i jakość pliku.</p>
+</li>
+<li>
+<p>Znak wodny i nakładanie nakładek na obrazy.</p>
+</li>
+<li>
+<p>Optymalizacja kompresji, jakości i metadanych w celu zmniejszenia rozmiaru plików graficznych.</p>
+</li>
+<li>
+<p>Przetwarzanie obrazów przy użyciu wtyczki gatsby-transformer-sharp i zapytań GraphQL w czasie kompilacji w celu zwiększenia wydajności.</p>
+</li>
+<li>
+<p>Obsługa leniwego ładowania dzięki integracji z wtyczkami Gatsby Image i gatsby-image.</p>
+</li>
+<li>
+<p>Akceptuje popularne formaty obrazów, takie jak JPEG, PNG, TIFF, GIF, SVG.</p>
+</li>
+<li>
+<p>Może przetwarzać obrazy hostowane lokalnie i zdalnie.</p>
+</li>
+</ul>
+<p>Zainstaluj wtyczki gatsby-plugin-sharp i gatsby-transformer-sharp i dołącz je do pliku gatsby-config.js, aby wtyczka gatsby-plugin-sharp działała. Filtrowanie według rozdzielczości stałej, płynnej lub responsywnej, a także innych właściwości, można następnie zastosować do przetworzonych zdjęć za pomocą zapytań GraphQL.</p>
+<p>Podsumowując, gatsby-plugin-sharp zwalnia solidne zasoby przetwarzania obrazu za pośrednictwem Sharp, co może zwiększyć wydajność i szybkość reakcji. Gatsby w dużym stopniu polega na nim w swoim potoku przetwarzania obrazu. Zachęcamy do korzystania z wielu funkcji przetwarzania obrazu w celu tworzenia profesjonalnych, wydajnych witryn internetowych.</p>
+<h2>Jak używać gatsby-theme-docz do tworzenia witryn z dokumentacją za pomocą Gatsby?</h2>
+<p>gatsby-theme-docz to oficjalny motyw Gatsby, który pomaga tworzyć witryny z dokumentacją przy użyciu komponentów MDX i React. Integruje się on z Docz, zestawem narzędzi do tworzenia dokumentacji technicznej.</p>
+<p><em>Kluczowe cechy motywu gatsby-theme-docz: </em>.</p>
+<ul>
+<li>
+<p>Pisanie dokumentów w MDX - łączy składnię Markdown z komponentami JSX.</p>
+</li>
+<li>
+<p>Obsługa Theme UI - Stylizacja za pomocą systemu projektowania opartego na ograniczeniach.</p>
+</li>
+<li>
+<p>Renderowanie bloków kodu za pomocą Prism.js - podświetlanie składni.</p>
+</li>
+<li>
+<p>Responsywne układy przyjazne dla urządzeń mobilnych.</p>
+</li>
+<li>
+<p>Przeładowywanie na żywo dzięki funkcji Hot Module Replacement.</p>
+</li>
+<li>
+<p>Optymalizacja SEO dzięki react-helmet.</p>
+</li>
+<li>
+<p>Dokumenty zorganizowane w zagnieżdżone trasy.</p>
+</li>
+<li>
+<p>Generowanie nawigacji paska bocznego.</p>
+</li>
+<li>
+<p>Szybkie wyszukiwanie zawartości dokumentacji.</p>
+</li>
+<li>
+<p>Obsługa trybu ciemnego.</p>
+</li>
+<li>
+<p>Konfigurowalne układy i komponenty.</p>
+</li>
+</ul>
+<p><em>Aby korzystać z gatsby-theme-docz:</em></p>
+<ol>
+<li>
+<p>Zainstaluj motyw i zależności Docz.</p>
+</li>
+<li>
+<p>Dodaj konfigurację gatsby-theme-docz do pliku gatsby-config.js.</p>
+</li>
+<li>
+<p>Utwórz dokumenty przy użyciu MDX w src/pages.</p>
+</li>
+<li>
+<p>Dostosowanie motywu poprzez cieniowanie komponentów.</p>
+</li>
+<li>
+<p>Wdrożenie witryny z dokumentacją.</p>
+</li>
+</ol>
+<p>Zapewnia to świetne środowisko programistyczne do pisania dokumentacji technicznej i dokumentacji komponentów przy użyciu znanych narzędzi, takich jak React i Markdown. A wygenerowanie witryny Gatsby oznacza, że dokumenty zyskują całą wydajność i możliwości Gatsby, takie jak wstępne renderowanie.</p>
+<p>Ogólnie rzecz biorąc, gatsby-theme-docz oferuje prosty sposób na tworzenie witryn z dokumentacją wykorzystujących szybkość Gatsby i architekturę komponentów React. Jest to idealne rozwiązanie dla programistów piszących biblioteki komponentów technicznych i API.</p>
+<h2>Jak mogę dostosować i skonfigurować gatsby-theme-docz?</h2>
+<p>Motyw gatsby-theme-docz ma wiele opcji umożliwiających dostosowanie stylu, układu, komponentów i zachowania do potrzeb dokumentacji.</p>
+<p><em>Niektóre kluczowe sposoby konfigurowania i dostosowywania gatsby-theme-docz: </em>.</p>
+<ul>
+<li>
+<p>Ustawienie themeConfig w gatsby-config.js - zmiana kolorów, czcionek, stylów.</p>
+</li>
+<li>
+<p>Shadow docz components - nadpisywanie wewnętrznych komponentów poprzez umieszczanie zamienników w src/gatsby-theme-docz/</p>
+</li>
+<li>
+<p>Niestandardowy układ dokumentu - cień komponentu układu docz/Wrapper.js.</p>
+</li>
+<li>
+<p>Dodaj komponenty MDX - Importuj i rejestruj komponenty, które mogą być używane w MDX.</p>
+</li>
+<li>
+<p>Modyfikacja nawigacji paska bocznego - dostosowanie linków i struktury.</p>
+</li>
+<li>
+<p>Niestandardowy motyw - Przekaż obiekt motywu Theme UI do themeConfig.</p>
+</li>
+<li>
+<p>Dodaj globalny CSS - zaimportuj plik CSS w gatsby-browser.js.</p>
+</li>
+<li>
+<p>Opcje wtyczki - ustawienie opcji takich jak docgenConfig podczas konfigurowania wtyczki.</p>
+</li>
+<li>
+<p>Niestandardowa strona indeksu - cieniowanie strony MDX indeksu.</p>
+</li>
+<li>
+<p>Zmień metadane strony - Ustaw frontmatter na stronach MDX.</p>
+</li>
+<li>
+<p>Dodawanie nagłówków/stopek - Użyj komponentów opakowujących docz/Layout.</p>
+</li>
+<li>
+<p>Zintegruj autoryzację - Przekaż konfigurację dostawcy autoryzacji i zawiń trasy.</p>
+</li>
+<li>
+<p>Integracja z Algolia - Włącz wyszukiwanie za pomocą wtyczki Docz Algolia.</p>
+</li>
+<li>
+<p>Niestandardowa strona 404 - Utwórz stronę 404.mdx.</p>
+</li>
+<li>
+<p>Wdrażanie na stronach GitHub - Użyj pathPrefix w gatsby-config.js.</p>
+</li>
+<li>
+<p>Rozszerzone funkcje Markdown - Dodaj wtyczki Markdown-it.</p>
+</li>
+<li>
+<p>Modyfikacja motywu Prism - przekazanie prismTheme do themeConfig.</p>
+</li>
+</ul>
+<p>Ogólnie rzecz biorąc, gatsby-theme-docz jest zbudowany tak, aby można go było dostosować do potrzeb witryny z dokumentami. Skorzystaj z jego punktów rozszerzeń, takich jak cieniowanie komponentów i zawijanie układu, aby stworzyć dopracowane środowisko dokumentów przy użyciu Gatsby i MDX.</p>
+<h2>Integracja Gatsby.Js z Docsie.io</h2>
+<p>Docsie.io to platforma, która pomaga we wszystkich potrzebach związanych z dokumentacją przedsiębiorstwa. Oszczędność czasu i prosta dokumentacja dzięki scentralizowaniu całej pracy w jednym miejscu bez potrzeby korzystania z różnych narzędzi. Zamiast korzystać z plików Markdown, Gatsby i <a href="https://www.docsie.io/">Docsie</a> współpracują ze sobą, aby umożliwić wydajne tworzenie stron internetowych, a także dokumentacji.</p>
+<p>Wydajne i użyteczne wtyczki Gatsby mają mnóstwo zalet, jak wspomniano na tym blogu. Wtyczki te mogą być również używane w Docsie. Kliknij ten link, aby <a href="https://github.com/LikaloLLC/gatsby-source-docsie">wygenerować dokument gatsby za pomocą docsie</a>.</p>
+<h2>Wnioski</h2>
+<p>Podsumowując, wtyczki Gatsby zapewniają ogromny zakres funkcji umożliwiających dostosowywanie i rozszerzanie witryn Gatsby poprzez wykorzystanie możliwości ekosystemu React i języka JavaScript. Popularne wtyczki, takie jak gatsby-plugin-image dla responsywnych obrazów, gatsby-plugin-manifest dla manifestów aplikacji internetowych i gatsby-plugin-styled-components dla stylizacji CSS-in-JS pokazują, w jaki sposób wtyczki umożliwiają programistom łatwą integrację nowoczesnych możliwości internetowych. Tętniąca życiem społeczność wtyczek Gatsby oznacza, że prawdopodobnie istnieje już wtyczka dostępna dla wielu typowych zadań związanych z tworzeniem stron internetowych. Nauka korzystania z wtyczek Gatsby uwalnia prawdziwy potencjał i produktywność tworzenia z Gatsby. Dzięki odpowiedniemu zestawowi wtyczek dobranemu do danego przypadku użycia, możesz stworzyć niesamowicie szybką, nowoczesną witrynę dostosowaną dokładnie do Twoich potrzeb.</p>
+<h2>Kluczowe wnioski</h2>
+<ul>
+<li>
+<p>Ekosystem wtyczek dla Gatsby zwiększa jego szybkość i wszechstronność, ułatwiając programistom dodawanie nowych funkcji i modyfikowanie istniejących.</p>
+</li>
+<li>
+<p>Szybkość działania witryny zwiększają wtyczki, takie jak gatsby-plugin-image i gatsby-plugin-sharp, które poprawiają obrazy pod kątem responsywnego projektowania.</p>
+</li>
+<li>
+<p>Aby poprawić wrażenia użytkownika nawet w przypadku braku połączenia sieciowego, gatsby-plugin-offline może być używany do generowania stron internetowych w trybie offline przy użyciu pracowników usług.</p>
+</li>
+<li>
+<p>gatsby-plugin-react-helmet dba o metadane w nagłówku dokumentu, dzięki czemu nadaje się on do optymalizacji pod kątem wyszukiwarek i udostępniania w mediach społecznościowych.</p>
+</li>
+<li>
+<p>Wtyczka gatsby-sitemap tworzy mapy witryn XML w celu lepszego indeksowania przez wyszukiwarki.</p>
+</li>
+<li>
+<p>Aby ułatwić CSS z podziałem na komponenty z najwyższą wydajnością, gatsby-plugin-styled-components zawiera styled-components.</p>
+</li>
+<li>
+<p>Strony internetowe dla dokumentacji technicznej: gatsby-theme-docz umożliwia programistom korzystanie z komponentów MDX i React do tworzenia stron internetowych dla dokumentacji technicznej.</p>
+</li>
+<li>
+<p>Wtyczki Gatsby zapewniają wiele opcji konfiguracyjnych, od tematycznych po cieniowanie komponentów, umożliwiając dostosowanie frameworka do szerokiego zakresu wymagań.</p>
+</li>
+<li>
+<p>Szeroka gama wtyczek stworzonych przez aktywną społeczność wtyczek Gatsby usprawnia i upraszcza proces tworzenia stron internetowych.</p>
+</li>
+<li>
+<p>Wtyczki Gatsby pozwalają programistom na łatwe włączanie najnowocześniejszych funkcji internetowych, co skutkuje błyskawicznymi, zindywidualizowanymi stronami internetowymi, które są zoptymalizowane pod kątem szybkości.</p>
+</li>
+</ul>
+<h2>Często zadawane pytania</h2>
+<p>**P.1 Jak mogę używać optymalizatora obrazu gatsby-plugin-sharp w Gatsby?</p>
+<p>Biblioteka Sharp jest używana przez gatsby-plugin-sharp. Można zmieniać rozmiar, przycinać, zmieniać format, a nawet dodawać znak wodny. Obrazy można przetwarzać w całym procesie kompilacji, konfigurując je w pliku gatsby-config.js, a następnie używając zapytań GraphQL.</p>
+<p>**Q2. Jak mogę dodać kod śledzenia Google Analytics podczas korzystania z Gatsby?</p>
+<p>Aby zintegrować monitorowanie Google Analytics z witryną Gatsby, należy użyć wtyczki gatsby-plugin-google-analytics. Aby rozpocząć śledzenie i monitorowanie aktywności użytkowników, edytuj plik gatsby-config.js i dodaj swój identyfikator śledzenia.</p>
+<p>**Q3. Jak mogę wykorzystać szablon strony dokumentacji gatsby-theme-docz?</p>
+<p>Wykorzystujący komponenty MDX i React szablon gatsby-theme-docz jest zatwierdzonym motywem Gatsby do tworzenia stron dokumentacji. Aby zapewnić elastyczną i dokładną dokumentację, konieczne jest zainstalowanie motywu, utworzenie stron MDX w katalogu src/pages i zmodyfikowanie motywu.</p>
+<p>**Q4. Jak wykorzystać gatsby-plugin-sitemap do wygenerowania mapy witryny XML?</p>
+<p>Dla celów SEO, mapy witryn XML mogą być generowane za pomocą gatsby-plugin-sitemap. Po zainstalowaniu wtyczki i dostosowaniu jej ustawień w pliku gatsby-config.js, dokładna mapa witryny zostanie utworzona automatycznie ze stron wygenerowanych przez węzły Gatsby.</p>
+<p>**Q5. Jakie wtyczki Gatsby są dostępne i jak mogę ich użyć, aby ulepszyć i powiększyć moją witrynę?</p>
+<p>Dzięki wtyczkom Gatsby można uzyskać wiele różnych funkcji, takich jak optymalizacja obrazu, zarządzanie informacjami, obsługa offline i wiele innych. Dzięki odpowiednim narzędziom i ostrożnym zmianom w ich ustawieniach można stworzyć szybką, niezawodną stronę internetową.</p>
+<p>**Q6. Co społeczność wtyczek Gatsby oznacza dla przyszłości projektowania i budowania stron internetowych?</p>
+<p>Duża społeczność wtyczek Gatsby ułatwia programistom dodawanie najnowocześniejszych funkcji internetowych do ich witryn bez większego nakładu pracy.</p>
+    </div>
+  </div>
+  <!--/ Post Content-->
+
+  <!--Divider-->
+  <hr class="border-b-1 border-gray-400 mt-12 mb-8 mx-4">
+
+  <!--Next & Prev Links-->
+  <div class="font-sans flex justify-between content-center px-4 mb-4">
+    <div class="text-left">
+      <span class="text-xs md:text-sm font-normal text-gray-600">&lt; Previous Post</span><br>
+      <p><a href="../10-key-factors-to-consider-when-building-context-sensitive-help-in-app-guidance" class="break-normal text-base md:text-sm text-green-500 font-bold no-underline hover:underline">10 kluczowych czynników, które należy wziąć pod uwagę podczas tworzenia pomocy kontekstowej i wskazówek w aplikacji</a></p>
+    </div>
+    <div class="text-right">
+      <span class="text-xs md:text-sm font-normal text-gray-600">Next Post &gt;</span><br>
+      <p><a href="../leveraging-ai-in-technical-manual-translations-cost-effective-solutions-for-modern-era" class="break-normal text-base md:text-sm text-green-500 font-bold no-underline hover:underline">Wykorzystanie sztucznej inteligencji w tłumaczeniach instrukcji technicznych: Efektywne kosztowo rozwiązania dla nowoczesnej ery</a></p>
+    </div>
+  </div>
+
+
+  <!--/Next & Prev Links-->
+
+  
+    <div class="commentbox"></div>
+
+    <script src="https://unpkg.com/commentbox.io/dist/commentBox.min.js"></script>
+    <script>commentBox("5725910686760960-proj")</script>
+  
+
+  <!--Subscribe-->
+  
+    <!-- Base template of the subscription form. -->
+
+<div class="container font-sans bg-white rounded mt-8 p-4 md:p-24 text-center mb-10">
+    <h2 class="font-bold break-normal text-2xl md:text-4xl">Subscribe to the newsletter</h2>
+    <h3 class="font-bold break-normal font-normal text-gray-600 text-base md:text-xl">Stay up to date with our latest news and products</h3>
+    <div class="w-full text-center pt-4">
+        <form action="#">
+            <div class="max-w-xl mx-auto p-1 pr-0 flex flex-wrap items-center">
+                <input type="email" placeholder="youremail@example.com"
+                       class="flex-1 appearance-none rounded shadow p-3 text-gray-600 mr-2 focus:outline-none">
+                <button type="submit"
+                        class="flex-1 mt-4 md:mt-0 block md:inline-block appearance-none bg-green-500 text-white text-base font-semibold tracking-wider uppercase py-4 rounded shadow hover:bg-green-400">
+                    Subscribe
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+  
+  <!-- /Subscribe-->
+</div>
+<!--/container-->
+
+<footer class="bg-gray-900">
+  <div class="container max-w-6xl mx-auto flex items-center px-2 py-8">
+
+    <div class="w-full mx-auto flex flex-wrap items-center">
+      <div class="flex w-full md:w-1/2 justify-center md:justify-start text-white font-extrabold flex-col">
+        <a class="text-gray-900 no-underline hover:text-gray-900 hover:no-underline" href="/blog/pl">
+          <span class="text-base text-gray-200">Docsie.io Blog</span>
+        </a>
+        <a class="text-gray-900 no-underline hover:text-gray-900 hover:no-underline"
+           href="https://github.com/LikaloLLC/BlogVi" target="_blank">
+          <span class="text-xs text-gray-200">Made with BlogVI</span>
+        </a>
+      </div>
+      <div class="flex w-full pt-2 content-center justify-between md:w-1/2 md:justify-end">
+        <ul class="list-reset flex justify-center flex-1 md:flex-none items-center">
+          
+            <li>
+              <a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-3"
+                 href="https://www.docsie.io">Docsie</a>
+            </li>
+          
+            <li>
+              <a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-3"
+                 href="https://www.docsie.io/pricing/">Docsie Pricing</a>
+            </li>
+          
+            <li>
+              <a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-3"
+                 href="https://www.docsie.io/try_docsie/">Try Docsie</a>
+            </li>
+          
+        </ul>
+      </div>
+    </div>
+
+
+  </div>
+</footer>
+
+<script>
+  /* Progress bar */
+  //Source: https://alligator.io/js/progress-bar-javascript-css-variables/
+  var h = document.documentElement,
+    b = document.body,
+    st = 'scrollTop',
+    sh = 'scrollHeight',
+    progress = document.querySelector('#progress'),
+    scroll;
+  var scrollpos = window.scrollY;
+  var header = document.getElementById("header");
+  var navcontent = document.getElementById("nav-content");
+
+  document.addEventListener('scroll', function () {
+
+    /*Refresh scroll % width*/
+    scroll = (h[st] || b[st]) / ((h[sh] || b[sh]) - h.clientHeight) * 100;
+    progress.style.setProperty('--scroll', scroll + '%');
+
+    /*Apply classes for slide in bar*/
+    scrollpos = window.scrollY;
+
+    if (scrollpos > 10) {
+      header.classList.add("bg-white");
+      header.classList.add("shadow");
+      navcontent.classList.remove("bg-gray-100");
+      navcontent.classList.add("bg-white");
+    } else {
+      header.classList.remove("bg-white");
+      header.classList.remove("shadow");
+      navcontent.classList.remove("bg-white");
+      navcontent.classList.add("bg-gray-100");
+
+    }
+
+  });
+
+
+  //Javascript to toggle the menu
+  document.getElementById('nav-toggle').onclick = function () {
+    document.getElementById("nav-content").classList.toggle("hidden");
+  }
+</script>
+<script>
+  /*
+    Twitter
+    https://twitter.com/share?url=[post-url]&text=[post-title]
+
+    Facebook
+    https://www.facebook.com/sharer.php?u=[post-url]
+
+  */
+  let twitterURI = document.getElementById('twitter');
+  let facebookURI = document.getElementById('facebook');
+
+  let postURI = encodeURI(document.location.href);
+  let postTitle = encodeURI(document.getElementById('blog-title').innerText + ":\n")
+
+  facebookURI.setAttribute('href', `https://www.facebook.com/sharer.php?u=${postURI}`);
+  twitterURI.setAttribute('href', `https://twitter.com/share?url=${postURI}&text=${postTitle}`);
+</script>
+
+<!--Sharect-->
+
+<script src="https://unpkg.com/sharect@2.0.0/dist/sharect.js"></script>
+<script>window["sharectConfig"] = {"backgroundColor": "#333333", "enabled": true, "facebook": true, "iconColor": "#FFFFFF", "selectableElements": ["body"], "twitter": true, "twitterUsername": "likalo_llc"}</script>
+<script src="/blog/templates/assets/js/sharect.js"></script>
+
+
+
+<!--Reading time-->
+<script src="/blog/templates/assets/js/reading-time.min.js"></script>
+<script>
+  const text = []
+  let content = [...document.getElementById('content').getElementsByTagName('p')].forEach((elem) => {
+    text.push(elem.textContent)
+  });
+  const stats = readingTime(text.join(" "));
+
+  document.getElementById('reading-time').innerHTML = stats.text;
+</script>
+
+
+  
+      <!-- Google Tag Manager (noscript) -->
+
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TZRGMQ9"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+  
+
+</body>
+
+</html>

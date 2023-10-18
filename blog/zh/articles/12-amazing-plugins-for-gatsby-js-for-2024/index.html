@@ -1,0 +1,903 @@
+<!-- Base template of the article page. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+  
+
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/blog/https://d1iq6qzgppjlud.cloudfront.net/images/favicon/favicon-196x196.png">
+
+
+  <!-- Primary Meta Tags -->
+  <title>Docsie.io Blog - 2024 年 Gatsby.js 的 12 个神奇插件</title>
+  <meta name="author" content="Tanya A Mishra"/>
+  <meta name="title" content="2024 年 Gatsby.js 的 12 个神奇插件">
+  <meta name="description" content="在本文中，我们将讨论一些流行的插件，并尝试就如何使用它们提供一些见解。"/>
+  <meta name="keywords" content="Technical Writing,Gatsby Extension"/>
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.docsie.io/blog/blog/zh/articles/12-amazing-plugins-for-gatsby-js-for-2024/">
+  <meta property="og:title" content="2024 年 Gatsby.js 的 12 个神奇插件">
+  <meta property="og:description"
+        content="在本文中，我们将讨论一些流行的插件，并尝试就如何使用它们提供一些见解。">
+  <meta property="og:image" content="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_v7wI6BClWfJ4u3L89/acbd1245-5505-1fc0-da96-bf9b5c06740ebanner_13_1.jpg">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://www.docsie.io/blog/blog/zh/articles/12-amazing-plugins-for-gatsby-js-for-2024/">
+  <meta property="twitter:title" content="2024 年 Gatsby.js 的 12 个神奇插件">
+  <meta property="twitter:description"
+        content="在本文中，我们将讨论一些流行的插件，并尝试就如何使用它们提供一些见解。">
+  <meta property="twitter:image" content="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_v7wI6BClWfJ4u3L89/acbd1245-5505-1fc0-da96-bf9b5c06740ebanner_13_1.jpg">
+
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/blog/templates/assets/css/typography.min.css"/>
+  <!--Replace with your tailwind.css once created-->
+    
+    <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TZRGMQ9');</script>
+<!-- End Google Tag Manager -->
+  
+
+</head>
+
+
+<body class="bg-gray-100 font-sans leading-normal tracking-normal">
+
+<nav id="header" class="fixed w-full z-10 top-0">
+
+  <div id="progress" class="h-1 z-20 top-0"
+       style="background:linear-gradient(to right, #4dc0b5 var(--scroll), transparent 0);"></div>
+
+  <div class="container max-w-6xl mx-auto flex flex-wrap items-center justify-between mt-0 py-3">
+
+    <div class="pl-4">
+      <a class="text-gray-900 text-base no-underline hover:no-underline font-extrabold text-xl" href="../../">
+          Docsie.io Blog
+      </a>
+    </div>
+
+    <div class="block lg:hidden pr-4">
+      <button id="nav-toggle"
+              class="flex items-center px-3 py-2 border rounded text-gray-500 border-gray-600 hover:text-gray-900 hover:border-green-500 appearance-none focus:outline-none">
+        <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+          <title>Menu</title>
+          <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/>
+        </svg>
+      </button>
+    </div>
+
+    <div class="w-full flex-grow lg:flex lg:items-center lg:w-auto hidden lg:block mt-2 lg:mt-0 bg-gray-100 z-20"
+         id="nav-content">
+      <ul class="list-reset lg:flex justify-end flex-1 items-center">
+        
+        <li>
+          <a class="inline-block text-gray-600 hover:text-gray-900 hover:underline py-2 px-4"
+             href="https://www.docsie.io">Docsie</a>
+        </li>
+        
+        <li>
+          <a class="inline-block text-gray-600 hover:text-gray-900 hover:underline py-2 px-4"
+             href="https://www.docsie.io/pricing/">Docsie Pricing</a>
+        </li>
+        
+        <li>
+          <a class="inline-block text-gray-600 hover:text-gray-900 hover:underline py-2 px-4"
+             href="https://www.docsie.io/try_docsie/">Try Docsie</a>
+        </li>
+        
+      </ul>
+    </div>
+    <div class="flex w-full justify-end content-center">
+        <a
+          class="inline-block text-gray-500 hover:text-green-500 hover:underline text-center h-10 p-2 md:h-auto md:p-4 avatar"
+          data-tippy-content="@twitter_handle" href="https://twitter.com/intent/tweet?url=#"
+          id="twitter">
+          <svg class="fill-current h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+            <path
+              d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"></path>
+          </svg>
+        </a>
+        <a
+          class="inline-block text-gray-500 hover:text-green-500 hover:underline text-center h-10 p-2 md:h-auto md:p-4 avatar"
+          data-tippy-content="#facebook_id" href="https://www.facebook.com/sharer/sharer.php?u=#}"
+          id="facebook">
+          <svg class="fill-current h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+            <path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"></path>
+          </svg>
+        </a>
+      </div>
+  </div>
+
+</nav>
+
+<!--Container-->
+<div class="container max-w-4xl mx-auto mt-32 px-8 md:px-0">
+  <div class="prose prose lg:prose-xl mx-auto mt-32">
+    <!--Title-->
+    <h1 id="blog-title">2024 年 Gatsby.js 的 12 个神奇插件</h1>
+    <!--Author-->
+    <div class="flex items-center">
+      <img class="w-10 h-10 rounded-full mr-4" src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_p1X4gXS3n0rCHYuaE/1f3f5f57-d8e2-7978-faef-0b9fe89f3e4btanya_pic.jpg" alt="Avatar of Author">
+      <div class="flex-1 px-2">
+        <div class="font-bold leading-none mb-2">Tanya A Mishra</div>
+        <div class="text-xs md:text-base">on September 04, 2023 · <span id="reading-time"
+                class="block md:inline mt-2 md:mt-0"></span> · filed under <span
+          class="block md:inline mt-2 md:mt-0">
+						
+            <span class="rounded bg-green-500 text-white px-1 uppercase text-xs whitespace-nowrap md:text-sm">Technical Writing</span>
+						
+            <span class="rounded bg-green-500 text-white px-1 uppercase text-xs whitespace-nowrap md:text-sm">Gatsby Extension</span>
+						
+					</span>
+        </div>
+      </div>
+    </div>
+    <!--/Author-->
+
+    <!--Post Content-->
+    <!--Lead Para-->
+    <div id="content">
+      <p>Gatsby 是一款基于 React 并由 GraphQL 支持的快速静态网站生成器。让 Gatsby 站点变得无比快速和灵活的原因之一是它的插件生态系统。Gatsby 插件是实现 Gatsby API 的 NPM 包，用于扩展功能和定制网站。在本文中，我们将探讨一些最流行、最实用的 Gatsby 插件，用于图像优化、离线支持、样式设计、元数据管理等任务。</p>
+<p>根据 <a href="https://blog.hubspot.com/marketing/page-load-time-conversion-rates">HubSpot</a>，70% 的客户更愿意从网站加载速度快的公司购买产品。这意味着，如果您的网站加载时间过长，人们很可能会放弃它。这些插件展示了 Gatsby 插件架构如何让您的网站适应几乎所有 JavaScript 库或网络功能。通过混合和匹配插件，您可以根据自己的需求量身打造一个 Gatsby 网站，并充分利用 React 和现代网络技术的性能和功能。</p>
+<p>在本文中，我们将讨论一些流行的插件，并尝试就如何使用它们提供一些见解。</p>
+<h2>最受欢迎的 Gatsby 插件有哪些？</h2>
+<p>以下是一些流行的盖茨比主题和插件：* *</p>
+<p>1.<a href="https://www.gatsbyjs.com/plugins/gatsby-plugin-image/">Gatsby-plugin-image: </a> gatsby-plugin-image 擅长通过提高图片组件的响应速度来增强网站性能。</p>
+<p>2.<a href="https://www.gatsbyjs.com/plugins/gatsby-plugin-sharp/">Gatsby-plugin-sharp: </a> gatsby-plugin-sarp 针对图像处理和优化，是一款能显著提升网站性能的插件。</p>
+<p>3.<a href="https://www.gatsbyjs.com/plugins/gatsby-plugin-manifest/">Gatsby-plugin-manifest: </a> Gatsby-plugin-manifest 允许用户为渐进式网络应用（PWA）创建网络应用清单，有助于增强移动用户体验。</p>
+<p>4.<a href="https://www.gatsbyjs.com/plugins/gatsby-plugin-offline/">Gatsby-plugin-offline: </a> Gatsby-plugin-offline 可在网络宕机时介入，是添加离线支持和服务人员以确保无缝用户体验的解决方案。</p>
+<p>5.5. <a href="https://www.gatsbyjs.com/plugins/gatsby-plugin-react-helmet/">Gatsby-plugin-react-helmet: </a> gatsby-plugin-react-helmet 处理文档头部的关键元数据，率先为搜索引擎优化内容。</p>
+<p>6.<a href="https://www.gatsbyjs.com/plugins/gatsby-plugin-sitemap/">Gatsby-plugin-sitemap:</a> gatsby-plugin-sitemap 简化了为搜索引擎可见性生成 SEO 网站地图的过程，证明了其价值所在。</p>
+<p>7.<a href="https://www.gatsbyjs.com/plugins/gatsby-plugin-styled-components/">Gatsby-plugin-styled-components: </a> gatsby-plugin-styled-components 支持 CSS-in-JS 方法，是实现优雅网站布局的基石。</p>
+<p>8.<a href="https://www.gatsbyjs.com/plugins/gatsby-source-filesystem/">Gatsby-source-filesystem: </a> gatsby-source-filesystem是一个高效数据管理的插件，它通过利用系统文件无缝地组织GraphQL数据。</p>
+<p>9.<a href="https://www.gatsbyjs.com/plugins/gatsby-transformer-remark/">Gatsby-transformer-remark: </a> 利用 Remark 的强大功能，gatsby-transformer-remark 可将 Markdown 文件转换为 HTML，从而简化网站建设和管理。</p>
+<p>10.<a href="https://www.gatsbyjs.com/plugins/gatsby-plugin-google-analytics/">Gatsby-plugin-google-analytics: </a> gatsby-plugin-google-analytics 可利用 Google Analytics 深入了解网站性能，成为不可或缺的资产。</p>
+<p>11.<a href="https://www.docz.site/docs/gatsby-theme">Gatsby-theme-docz: </a> gatsby-theme-docz 可简化 Gatsby 站点综合文档的创建，方便用户入职。</p>
+<p>12.<a href="https://www.docsie.io/blog/gatsby_js_as_a_blog/?version=0.0.1&amp;language=EN&amp;article=gatsbyjs-general-components-and-enhancementss_xgxf">Docsie-gatsby-plugin: </a> docsie-gatsby-plugin 可以轻松地从 Docsie 工作区导入数据，从而简化网站文档的制作过程。</p>
+<h2>如何使用 gatsby-plugin-docsie 与 Gatsby 一起构建文档网站？</h2>
+<p>该插件将 Docsie 内容添加到你的 GatsbyJs 网站。它可以自动生成页面，或者你也可以自己查询 graphql 来更多地控制页面的创建。</p>
+<h3>如何使用 gatsby-plugin-docsie？</h3>
+<p><code>`{
+  resolve: require.resolve(`gatsby-source-docsie`)、
+  options：{
+          deploymentId："deployment_iigwE2dX4i7JVKmce", [必填]
+        generatePages: true, [可选，默认为 true］
+        path："docs"，[可选，所有节点 slugs 的根路径，无需斜线，默认为 docs] 语言："docs"。
+        language："English"，[可选，如果未提供，默认为主要语言］
+  }
+}`</code></p>
+<h3>使用 gatsby-plugin-docsie 生成页面</h3>
+<p>默认情况下，插件会自动生成页面。</p>
+<p><em>你可以使用以下 CSS 类对默认页面进行样式设置：</em></p>
+<ul>
+<li>
+<p>.docsie-main-container</p>
+</li>
+<li>
+<p>.docsie-nav-container</p>
+</li>
+<li>
+<p>.docsie-page-container</p>
+</li>
+<li>
+<p>.docsie-nav</p>
+</li>
+<li>
+<p>.docsie-nav-items</p>
+</li>
+<li>
+<p>.docsie-nav-item</p>
+</li>
+</ul>
+<h3>使用 gatsby-plugin-docsie 而不生成页面</h3>
+<p>如果需要对内容生成方式进行更多控制，可以将上面的 <code>generatePages</code> 设置为 <code>false</code>，然后使用 graphql 直接从 GatsbyJs 获取数据。</p>
+<p>该插件在 GatsbyJs 中添加了 4 个 graphql 节点：<em> </em>.</p>
+<ul>
+<li>
+<p>DociseDoc</p>
+</li>
+<li>
+<p>DociseBook</p>
+</li>
+<li>
+<p>DocsieArticle</p>
+</li>
+<li>
+<p>DocsieNav</p>
+</li>
+</ul>
+<p>你可以在 <a href="https://github.com/tjbo/gatsby-source-docsie/blob/main/plugin/createPages.js">/plugin/createPages.js</a> 中找到如何生成页面的示例，也可以在 <a href="https://github.com/tjbo/gatsby-source-docsie/blob/main/plugin/DocsieTemplate.js">/plugin /DocsieTemplate.js</a> 中找到如何构建 React 组件的示例。</p>
+<h3>如何使用 gatsby-plugin-manifest 配置网络应用程序清单？</h3>
+<p>通过 gatsby-plugin-manifest 插件，您可以轻松地为 Gatsby 站点配置并生成网络应用程序清单。网络应用清单是一个 JSON 文件，它提供了网络应用的元数据，包括名称、图标、启动 URL、颜色等。这样，您的网站就可以作为渐进式网络应用程序安装在移动设备上，并带有主屏幕图标。</p>
+<p>要使用 gatsby-plugin-manifest，请先安装该插件：<em> </em>。</p>
+<p><code>npm install --save gatsby-plugin-manifest</code>
+然后在 gatsby-config.js 文件中配置插件。您可以指定名称、简称、start_url、背景色、主题色、显示、图标等属性。例如</p>
+<p><code>`{
+  解决：`gatsby-plugin-manifest`、
+  选项：{
+    name: `GatsbyJS`、
+    short_name: `GatsbyJS`、
+    start_url：`/`,
+    background_color: `#f7f0eb`、
+    theme_color: `#a2466c`、
+    display: `standalone`、
+    图标：`src/images/icon.png
+  }
+}`</code>
+这将在你创建 Gatsby 站点时生成 manifest.webmanifest 文件。确保在网站的 HTML 模板中引用清单，添加</p>
+<p><code>`&lt;link rel="manifest" href="/manifest.webmanifest"&gt;`</code>
+<em>配置 gatsby-plugin-manifest 时需要注意的一些关键事项：</em></p>
+<ul>
+<li>
+<p>short_name 是显示在主屏幕上的名称的必备属性。</p>
+</li>
+<li>
+<p>start_url 配置从设备主屏幕启动应用程序时的起始页面。</p>
+</li>
+<li>
+<p>图标应指向至少 512x512px 的正方形 png 文件。</p>
+</li>
+<li>
+<p>你可以为不同尺寸/密度的图标对象配置一个数组。</p>
+</li>
+<li>
+<p>显示方式可让你指定应用程序是以全屏（单机版）还是以浏览器标签（浏览器）启动。</p>
+</li>
+<li>
+<p>theme_color 和 background_color 可以定义应用程序的配色方案。</p>
+</li>
+</ul>
+<p>总之，gatsby-plugin-manifest 可以轻松配置和生成所需清单文件，使您的 Gatsby 网站可以安装为 PWA。这可以改善移动体验，让用户像启动原生应用程序一样启动网站。</p>
+<h2>什么是 gatsby-plugin-offline，如何使用它创建离线网站？</h2>
+<p>gatsby-plugin-offline 是一个 Gatsby 插件，用于添加对创建离线网站的支持。它使用 Workbox（一套库和构建工具，可轻松构建渐进式 Web 应用程序）。</p>
+<p><em>在正确安装和配置后，gatsby-plugin-offline 将：</em> 支持离线网站。</p>
+<ul>
+<li>
+<p>创建一个服务 Worker 文件，缓存应用程序外壳资源，如<strong>HTML、JavaScript、CSS、媒体</strong>和<strong>网页字体</strong>。这可让您的网站在重复访问时加载更快。</p>
+</li>
+<li>
+<p>缓存页面数据，使网站可以离线访问。插件会在用户访问时缓存页面。</p>
+</li>
+<li>
+<p>为 "添加到主屏幕 "安装添加清单支持。</p>
+</li>
+</ul>
+<p>要使用该功能，请先安装插件：</p>
+<p><code>npm install gatsby-plugin-offline</code>
+然后将其添加到 gatsby-config.js 中：</p>
+<p><code>`{
+  resolve：`gatsby-plugin-offline`、
+  options：{
+    precachePages：[`/about/`]、
+  },
+}`</code>
+<em>关键选项是：</em></p>
+<ul>
+<li>
+<p>precachePages - 指定要预缓存的页面，以便离线支持。在此处包含主页非常重要。</p>
+</li>
+<li>
+<p>workboxConfig - 自定义运行时缓存和清单设置等 Workbox 选项。</p>
+</li>
+<li>
+<p>appendScript - 在生成的服务工作程序文件中注入自定义服务工作程序代码。</p>
+</li>
+</ul>
+<p>使用 gatsby-plugin-offline 的一些最佳实践：* *</p>
+<ul>
+<li>
+<p>使用 Chrome DevTools Audits 面板测试网站，及早发现问题。</p>
+</li>
+<li>
+<p>为 API 数据和频繁更新的资产设置较短的缓存过期时间。</p>
+</li>
+<li>
+<p>检查工作框中的 "重新加载时更新 "选项，确保用户获得最新文件。</p>
+</li>
+<li>
+<p>在 gatsby-browser.js 中注册服务工作者，以控制服务工作者的生命周期。</p>
+</li>
+<li>
+<p>考虑配置一个后备页面或离线用户界面，以便在用户无法连接时使用。</p>
+</li>
+</ul>
+<p><strong> 强调文本</strong> 将您的实时网站提交至 Lighthouse，以衡量您的 PWA 得分。目标 &gt;90。</p>
+<p>总的来说，gatsby-plugin-offline 可以让你的 Gatsby 网站直接离线运行。这将为返回或失去网络连接的用户带来更好的、类似应用程序的体验。请务必定期跨浏览器和设备进行测试，以确保完全支持离线。</p>
+<h2>如何使用 gatsby-plugin-google-analytics 在 Gatsby 网站上实施 Google Analytics？</h2>
+<p>Gatsby-plugin-google-analytics 是将 Google Analytics 集成到 Gatsby 站点的推荐方法。</p>
+<p>要添加 Google Analytics 支持，请首先安装插件：* *</p>
+<p><code>npm install --save gatsby-plugin-google-analytics</code>
+然后在 gatsby-config.js 中进行配置，指定 Google Analytics 跟踪 ID：</p>
+<p><code>`{
+  解决：`gatsby-plugin-google-analytics`、
+  选项：{
+    trackingId：your_google_analytics_tracking_id'、
+  },
+}`</code>
+这将自动为网站的所有页面添加必要的 Google Analytics 跟踪代码。</p>
+<p>一些额外的配置选项包括</p>
+<ul>
+<li>
+<p>head - 允许在 <head> 中添加额外的脚本。可用于其他分析工具。</p>
+</li>
+<li>
+<p>匿名 - 如果需要遵守 GDPR，可屏蔽 IP 地址。</p>
+</li>
+<li>
+<p>respectDNT - 如果用户启用了 "不跟踪 "功能，则不加载 GA。</p>
+</li>
+<li>
+<p>pageTransitionDelay - 为页面更改分析事件设置超时。</p>
+</li>
+<li>
+<p>optimizeId - 启用 Google Optimize 进行 A/B 测试。</p>
+</li>
+<li>
+<p>experimentId - 添加谷歌优化实验 ID。</p>
+</li>
+<li>
+<p>variationId - 指定谷歌优化实验变体。</p>
+</li>
+<li>
+<p>defer - 推迟脚本加载，以提高页面速度。</p>
+</li>
+<li>
+<p>sampleRate - 设置采样率，适用于高流量网站。</p>
+</li>
+</ul>
+<p>通过测试网站，可以确保接收到的 Google Analytics 事件没有任何问题。在 Google Analytics 上验证页面浏览量等数据。使用 GA 调试器插件，可以检查网站是否加载了跟踪代码。</p>
+<p>使用 Google Analytics 的 gatsby-plugin-google-analytics 实现，Gatsby 网站可以毫不费力地添加强大的分析功能。Gatsby 的代码拆分和服务器端渲染功能使其成为整合 Google Analytics 的理想选择。确保在网站支持的每个页面和设备上都能正确显示。</p>
+<h2>什么是 gatsby-plugin-react-helmet，如何使用它来管理文件头元数据？</h2>
+<p>gatsby-plugin-react-helmet 允许你使用 React Helmet 管理 Gatsby 站点中的文档头元数据。React Helmet 是一个文本组件，可让您控制文档头部的标题、元标签、脚本等元素。</p>
+<p>使用 gatsby-plugin-react-helmet 的一些原因：<em> </em>.</p>
+<ul>
+<li>
+<p>为搜索引擎优化轻松设置页面标题、描述、规范 URL、JSON-LD 等。</p>
+</li>
+<li>
+<p>根据道具、查询等动态生成元标签。</p>
+</li>
+<li>
+<p>为社交分享设置 og:image、twitter:card 元标签。</p>
+</li>
+<li>
+<p>在头部安全添加第三方脚本，不会影响其他页面。</p>
+</li>
+<li>
+<p>与 Gatsby 的服务器端渲染完美配合。</p>
+</li>
+</ul>
+<p>要使用它，首先安装插件：* *</p>
+<p><code>`npm install --save gatsby-plugin-react-helmet react-helmet`复制代码</code>
+然后用 <Helmet> 组件包装页面，添加元数据：</p>
+<p>```
+从 "react" 导入 React
+import { Helmet } from "react-helmet"</p>
+<p>导出默认值 () =&gt; (
+  &lt;div
+    &lt;头盔
+      <title>我的标题&lt;/title
+      <meta name="description" content="My description" /> </Helmet> &lt;标题&gt;我的标题&lt;/标题
+    </Helmet>
+  &lt;/div
+复制代码
+```
+您可以在一个页面中包含多个 <Helmet> 实例。</p>
+<p>注意事项</p>
+<ul>
+<li>
+<p>在页面、模板、组件中使用 Helmet。不在 gatsby-browser.js 中使用。</p>
+</li>
+<li>
+<p>Helmet 会合并重复的标签，而不是覆盖。</p>
+</li>
+<li>
+<p>服务器渲染的 HTML 将正确包含头部元数据。</p>
+</li>
+<li>
+<p>客户端渲染的 HTML 也将包含元数据。</p>
+</li>
+<li>
+<p>非常适合为每个页面动态生成标题、描述和规范 URL。</p>
+</li>
+</ul>
+<p>总的来说，gatsby-plugin-react-helmet 能让你在搜索引擎优化、社交分享、用户界面控制方面对文档头部元数据进行极大的控制。强烈推荐每个 Gatsby 站点使用。只是要注意不要将其包含在错误的地方，如 gatsby-browser.js，因为在那里服务器渲染无法工作。</p>
+<h2>如何使用 gatsby-plugin-sitemap 为 Gatsby 站点实现网站地图？</h2>
+<p>gatsby-plugin-sitemap 是为 Gatsby 站点生成站点地图的最简单方法。</p>
+<p>要添加网站地图，首先要安装插件：</p>
+<p><code>npm install --save gatsby-plugin-sitemap</code>
+然后将其添加到 gatsby-config.js 中：</p>
+<p><code>`{
+  resolve：`gatsby-plugin-sitemap`、
+  options：{
+    output：`/sitemap.xml`、
+  },
+}`</code>
+这将在网站根目录下生成一个 sitemap.xml 文件。</p>
+<p><em>您可以指定几个选项：</em> ```.</p>
+<ul>
+<li>
+<p>输出 - 保存网站地图文件的位置。</p>
+</li>
+<li>
+<p>exclude - 从网站地图中排除的路径数组。</p>
+</li>
+<li>
+<p>query - GraphQL 查询，用于筛选要包含的节点。</p>
+</li>
+<li>
+<p>serialize - 用于格式化网站地图中每个 url 的自定义函数。</p>
+</li>
+</ul>
+<p>该插件将自动抓取由 Gatsby 节点生成的所有页面并将其包含在内。</p>
+<p>一些最佳使用技巧：* *</p>
+<ul>
+<li>
+<p>将网站地图提交到谷歌搜索控制台（Google Search Console），以便编入索引。</p>
+</li>
+<li>
+<p>每次更新网站地图时，都要 Ping 搜索引擎。</p>
+</li>
+<li>
+<p>使用 sitemapSize 选项设置合理的网站地图缓存时间。</p>
+</li>
+<li>
+<p>排除不想被索引的页面，如用户配置文件页面。</p>
+</li>
+<li>
+<p>如果超过 50k 网址，则使用排除或查询来限制大型网站地图。</p>
+</li>
+<li>
+<p>在 robots.txt 文件中添加网站地图网址。</p>
+</li>
+<li>
+<p>使用 gzip 压缩网站地图，以加快索引速度。</p>
+</li>
+<li>
+<p>在构建时动态生成网站地图数据，以确保其新鲜度。</p>
+</li>
+</ul>
+<p>总之，gatsby-plugin-sitemap 提供了一种生成综合网站地图的简单方法，以提高 Gatsby 网站的搜索引擎可见性和抓取效率。请确保根据您的使用情况自定义选项，并将其提交给搜索引擎，以获得最大的搜索引擎优化价值。</p>
+<h2>如何使用 gatsby-plugin-styled-components 在 Gatsby 中添加对样式组件的支持？</h2>
+<p>gatsby-plugin-styled-components 是为 Gatsby 站点添加样式组件支持的推荐方法。</p>
+<p>要在 Gatsby 中使用样式化组件，首先要安装以下依赖项：<em> 在 Gatsby 中使用样式化组件，首先要安装以下依赖项：</em> 在 Gatsby 中使用样式化组件，首先要安装以下依赖项</p>
+<p><code>`npm install --save gatsby-plugin-styled-components styled-components babel-plugin-styled-components``npm install --save gatsby-plugin-styled-components styled-components babel-plugin-styled-components</code>
+然后将插件添加到 gatsby-config.js 中：</p>
+<p><code>``module.exports = {
+  插件[
+    `gatsby-plugin-styled-components`、
+  ],
+}`</code>
+现在，你可以导入样式化组件，并在网站的任何地方创建样式化元素：</p>
+<p><code>`</code>import styled from 'styled-components'；</p>
+<p>const Header = styled.header<code>`
+  background: red；
+  color: white；</code>;`
+```
+<strong><em>在 Gatsby 中使用样式化组件的好处：</em></strong></p>
+<ul>
+<li>
+<p>范围 CSS 可避免冲突和特殊性问题。</p>
+</li>
+<li>
+<p>可与 CSS-in-JS 功能一起使用，如主题、混合、嵌套。</p>
+</li>
+<li>
+<p>与 React 组件架构平滑集成。</p>
+</li>
+<li>
+<p>让你创建可重复使用的样式化组件。</p>
+</li>
+<li>
+<p>支持 SSR - 生成关键的 CSS。</p>
+</li>
+<li>
+<p>易于自定义和扩展样式。</p>
+</li>
+<li>
+<p>避免因 CSS 导入而产生不必要的代码分割。</p>
+</li>
+</ul>
+<p>使用样式化组件时的一些最佳做法:****</p>
+<ul>
+<li>
+<p>使用 // @ts-ignore 注释来避免 TypeScript 错误。</p>
+</li>
+<li>
+<p>启用命名导出约定。</p>
+</li>
+<li>
+<p>使用 shouldForwardProp 来限制传递给 DOM 的道具。</p>
+</li>
+<li>
+<p>根据需要自定义标签格式。</p>
+</li>
+<li>
+<p>考虑使用情感元素来提高性能。</p>
+</li>
+</ul>
+<p>总的来说，gatsby-plugin-styled-components 可以与 Gatsby 的构建过程完美集成，使用 CSS-in-JS 库中的 styled-components。对于与 React 和 SSR 配合使用的面向组件的样式设计来说，这是一个不错的选择。</p>
+<h2>什么是 gatsby-plugin-sharp，它如何帮助 Gatsby 处理图片？</h2>
+<p>gatsby-plugin-sharp 是一个官方的 Gatsby 插件，使用 Sharp 图像处理库处理和优化图像。它允许你在静态网站和 Gatsby 应用程序中转换图像文件。</p>
+<p>*Gatsby-plugin-sharp提供的一些主要功能： *</p>
+<ul>
+<li>
+<p>为响应式设计调整图像大小。你可以为图片定义一组尺寸，gatsby-plugin-sharp 会自动生成相应尺寸的版本。</p>
+</li>
+<li>
+<p>裁剪和选择图片的部分内容。用于聚焦关键区域和生成缩略图。</p>
+</li>
+<li>
+<p>在<strong>JPEG、PNG、WebP</strong>和<strong>GIF</strong>等图像类型之间进行格式转换。这有助于优化文件大小和质量。</p>
+</li>
+<li>
+<p>在图像上添加水印和覆盖层。</p>
+</li>
+<li>
+<p>优化压缩、质量和元数据，以减小图片文件大小。</p>
+</li>
+<li>
+<p>使用 gatsby-transformer-sharp 插件和 GraphQL 查询在构建时处理图片，以提高性能。</p>
+</li>
+<li>
+<p>通过与 Gatsby Image 和 gatsby-image 插件集成，支持懒加载。</p>
+</li>
+<li>
+<p>接受 JPEG、PNG、TIFF、GIF、SVG 等常见图片格式。</p>
+</li>
+<li>
+<p>可处理本地和远程托管的图像。</p>
+</li>
+</ul>
+<p>安装 gatsby-plugin-sharp 和 gatsby-transformer-sharp 插件，并将其包含在 gatsby-config.js 中，这样 gatsby-plugin-sharp 才能正常工作。然后，就可以通过 GraphQL 查询对处理过的照片应用固定、流动或响应式分辨率过滤以及其他属性。</p>
+<p>总之，gatsby-plugin-sharp 可通过 Sharp 释放强大的图像处理资源，从而提高性能和响应速度。Gatsby 在图像处理管道中非常依赖它。利用它的多种图像处理功能，开发专业、高性能的网站吧。</p>
+<h2>如何使用 gatsby-theme-docz 与 Gatsby 一起构建文档网站？</h2>
+<p>gatsby-theme-docz 是 Gatsby 的官方主题，可帮助你使用 MDX 和 React 组件构建文档网站。它与技术写作工具包 Docz 集成。</p>
+<p>*gatsby-theme-docz的一些主要特性</p>
+<ul>
+<li>
+<p>使用 MDX 编写文档--将 Markdown 语法与 JSX 组件相结合。</p>
+</li>
+<li>
+<p>支持主题 UI - 使用基于约束的设计系统设计样式。</p>
+</li>
+<li>
+<p>使用 Prism.js 渲染代码块--语法高亮显示。</p>
+</li>
+<li>
+<p>响应式移动友好布局。</p>
+</li>
+<li>
+<p>使用热模块替换进行实时重载。</p>
+</li>
+<li>
+<p>利用 react-helmet 进行搜索引擎优化。</p>
+</li>
+<li>
+<p>以嵌套路径组织文档。</p>
+</li>
+<li>
+<p>生成侧边栏导航。</p>
+</li>
+<li>
+<p>快速搜索文档内容。</p>
+</li>
+<li>
+<p>支持黑暗模式。</p>
+</li>
+<li>
+<p>可定制布局和组件。</p>
+</li>
+</ul>
+<p><em>使用 gatsby-theme-docz:</em></p>
+<p>1.安装主题和 Docz 依赖项。</p>
+<p>2.将 gatsby-theme-docz 配置添加到 gatsby-config.js。</p>
+<p>3.在 src/pages 中使用 MDX 创建文档。</p>
+<p>4.通过阴影组件定制主题</p>
+<p>5.部署文档网站。</p>
+<p>在使用 React 和 Markdown 等熟悉的工具编写技术和组件文档时，Gatsby 为开发人员提供了良好的体验。生成一个 Gatsby 站点意味着文档可以获得 Gatsby 的所有性能和功能，如预渲染。</p>
+<p>总的来说，gatsby-theme-docz 提供了一种利用 Gatsby 速度和 React 组件架构创建文档网站的简单方法。它非常适合编写技术组件库和 API 的开发人员。</p>
+<h2>如何定制和配置 gatsby-theme-docz？</h2>
+<p>gatsby-theme-docz 主题有许多选项，可以自定义样式、布局、组件和行为，以满足您的文档需求。</p>
+<p>配置和自定义 gatsby-theme-docz 的一些主要方法：* *</p>
+<ul>
+<li>
+<p>在 gatsby-config.js 中设置 themeConfig - 更改颜色、字体和样式。</p>
+</li>
+<li>
+<p>在 src/gatsby-theme-docz/ 中设置主题配置（themeConfig）- 更改颜色、字体和样式。</p>
+</li>
+<li>
+<p>自定义文档布局--隐藏 docz/Wrapper.js 布局组件。</p>
+</li>
+<li>
+<p>添加 MDX 组件--导入并注册可在 MDX 中使用的组件。</p>
+</li>
+<li>
+<p>修改侧边栏导航 - 调整链接和结构。</p>
+</li>
+<li>
+<p>自定义主题--向 themeConfig 传递主题 UI 主题对象。</p>
+</li>
+<li>
+<p>添加全局 CSS - 在 gatsby-browser.js 中导入 CSS 文件。</p>
+</li>
+<li>
+<p>插件选项 - 在配置插件时设置 docgenConfig 等选项。</p>
+</li>
+<li>
+<p>自定义索引页面 - 在索引 MDX 页面上添加阴影。</p>
+</li>
+<li>
+<p>更改页面元数据 - 在 MDX 页面中设置 frontmatter。</p>
+</li>
+<li>
+<p>添加页眉/页脚--使用 docz/Layout 封装组件。</p>
+</li>
+<li>
+<p>整合认证--传递认证提供者配置并封装路由。</p>
+</li>
+<li>
+<p>整合 Algolia - 使用 Docz algolia 插件进行搜索。</p>
+</li>
+<li>
+<p>自定义 404 页面--创建 404.mdx 页面。</p>
+</li>
+<li>
+<p>部署到 GitHub 页面 - 在 gatsby-config.js 中使用 pathPrefix。</p>
+</li>
+<li>
+<p>扩展 Markdown 功能--添加 Markdown-it 插件。</p>
+</li>
+<li>
+<p>修改 Prism 主题 - 将 prismTheme 传递至 themeConfig。</p>
+</li>
+</ul>
+<p>总的来说，gatsby-theme-docz 可根据文档网站的需要进行定制。利用其扩展点（如组件阴影和布局包装），使用 Gatsby 和 MDX 打造完美的文档体验。</p>
+<h2>将 Gatsby.Js 与 Docsie.io 相结合</h2>
+<p>Docsie.io 是一个满足企业所有文档需求的平台。将所有工作集中到一个位置，无需使用各种工具，从而节省时间并简化文档。Gatsby 和<a href="https://www.docsie.io/">Docsie</a>不使用 Markdown 文件，而是一起实现网站和文档的高效开发。</p>
+<p>正如本博客所述，高效实用的 Gatsby 插件有很多好处。这些插件也可以在 Docsie 中使用。因此，请点击此链接 <a href="https://github.com/LikaloLLC/gatsby-source-docsie">通过 docsie 生成 gatsby 文档</a>。</p>
+<h2>结论</h2>
+<p>总之，Gatsby 插件通过利用 React 生态系统和 JavaScript 语言的强大功能，为定制和扩展 Gatsby 站点提供了大量功能。像用于响应式图像的 gatsby-plugin-image 插件、用于 Web 应用程序清单的 gatsby-plugin-manifest 插件和用于 CSS-in-JS 风格化的 gatsby-plugin-styled-components 插件等流行插件，都展示了插件是如何让开发者轻松集成现代网络功能的。充满活力的 Gatsby 插件社区意味着许多常见的网络开发任务都可能已经有了可用的插件。学会利用 Gatsby 插件，就能释放使用 Gatsby 构建的真正潜力和生产力。根据你的使用情况选择一套合适的插件，你就可以根据自己的需求量身打造一个快速、现代的网站。</p>
+<h2>关键收获</h2>
+<ul>
+<li>
+<p>Gatsby 的插件生态系统提高了其速度和多功能性，使开发人员可以轻松添加新功能和修改现有功能。</p>
+</li>
+<li>
+<p>gatsby-plugin-image 和 gatsby-plugin-sharp 等插件可提高网站速度，增强图片的响应式设计。</p>
+</li>
+<li>
+<p>即使在没有网络连接的情况下，也能通过 gatsby-plugin-offline 使用服务工作者生成离线网页，从而改善用户体验。</p>
+</li>
+<li>
+<p>gatsby-plugin-react-helmet 可以处理文档头部的元数据，使其适用于搜索引擎优化和社交媒体分享。</p>
+</li>
+<li>
+<p>gatsby-plugin-sitemap 生成 XML 网站地图，以便搜索引擎更好地抓取和索引。</p>
+</li>
+<li>
+<p>gatsby-plugin-styled-components 结合了 styled-components，为组件范围 CSS 提供了一流的性能。</p>
+</li>
+<li>
+<p>用于技术文档的网页：gatsby-theme-docz 可让程序员使用 MDX 和 React 组件创建用于技术文档的网页。</p>
+</li>
+<li>
+<p>Gatsby 插件提供了大量的配置选择，从主题到组件阴影，允许框架适应广泛的需求。</p>
+</li>
+<li>
+<p>由活跃的 Gatsby 插件社区创建的各种插件简化了网站建设过程。</p>
+</li>
+<li>
+<p>Gatsby 插件可让程序员轻松整合最前沿的网络功能，从而打造出快如闪电的个性化网站，并对速度进行优化。</p>
+</li>
+</ul>
+<h2>常见问题</h2>
+<p>**Q.1 如何在 Gatsby 中使用 gatsby-plugin-sharp 图像优化器？</p>
+<p>gatsby-plugin-sharp 使用的是 Sharp 库。您可以调整大小、修剪、更改格式，甚至添加水印。通过在 gatsby-config.js 中进行配置，然后使用 GraphQL 查询，你可以在整个构建过程中处理图片。</p>
+<p>**Q2.使用 Gatsby 时，如何添加 Google Analytics 跟踪代码？</p>
+<p>如果您想在 Gatsby 站点中集成 Google Analytics 监测功能，可使用 gatsby-plugin-google-analytics 插件。要开始跟踪和监控用户活动，请编辑 gatsby-config.js，并加入您的跟踪 ID。</p>
+<p>**Q3.如何使用 gatsby-theme-docz 文档网站模板？</p>
+<p>gatsby-theme-docz 使用 MDX 和 React 组件，是经认可的 Gatsby 主题，可用于创建文档网页。为了提供灵活、详尽的文档，有必要安装该主题，在 src/pages 目录中创建 MDX 页面，并修改主题。</p>
+<p>**Q4.如何利用 gatsby-plugin-sitemap 生成 XML 网站地图？</p>
+<p>出于搜索引擎优化的目的，可以借助 gatsby-plugin-sitemap 生成 XML 网站地图。安装插件并在 gatsby-config.js 中调整其设置后，Gatsby 节点生成的页面将自动生成完整的网站地图。</p>
+<p>**Q5.有哪些 Gatsby 插件，如何使用它们让我的网站变得更好、更大？</p>
+<p>通过 Gatsby 插件，你可以获得许多不同的功能，如图片优化、信息管理、离线支持等。使用正确的工具并仔细更改其设置，你就能创建一个快速、可靠的网站。</p>
+<p>**Q6.Gatsby 的插件社区对未来的网站设计和建设意味着什么？</p>
+<p>Gatsby 的大型插件社区让开发者无需太多工作，就能轻松为网站添加最先进的网络功能。</p>
+    </div>
+  </div>
+  <!--/ Post Content-->
+
+  <!--Divider-->
+  <hr class="border-b-1 border-gray-400 mt-12 mb-8 mx-4">
+
+  <!--Next & Prev Links-->
+  <div class="font-sans flex justify-between content-center px-4 mb-4">
+    <div class="text-left">
+      <span class="text-xs md:text-sm font-normal text-gray-600">&lt; Previous Post</span><br>
+      <p><a href="../10-key-factors-to-consider-when-building-context-sensitive-help-in-app-guidance" class="break-normal text-base md:text-sm text-green-500 font-bold no-underline hover:underline">构建上下文敏感型帮助和应用内指导时应考虑的 10 个关键因素</a></p>
+    </div>
+    <div class="text-right">
+      <span class="text-xs md:text-sm font-normal text-gray-600">Next Post &gt;</span><br>
+      <p><a href="../leveraging-ai-in-technical-manual-translations-cost-effective-solutions-for-modern-era" class="break-normal text-base md:text-sm text-green-500 font-bold no-underline hover:underline">在技术手册翻译中利用人工智能：现代经济高效的解决方案</a></p>
+    </div>
+  </div>
+
+
+  <!--/Next & Prev Links-->
+
+  
+    <div class="commentbox"></div>
+
+    <script src="https://unpkg.com/commentbox.io/dist/commentBox.min.js"></script>
+    <script>commentBox("5725910686760960-proj")</script>
+  
+
+  <!--Subscribe-->
+  
+    <!-- Base template of the subscription form. -->
+
+<div class="container font-sans bg-white rounded mt-8 p-4 md:p-24 text-center mb-10">
+    <h2 class="font-bold break-normal text-2xl md:text-4xl">Subscribe to the newsletter</h2>
+    <h3 class="font-bold break-normal font-normal text-gray-600 text-base md:text-xl">Stay up to date with our latest news and products</h3>
+    <div class="w-full text-center pt-4">
+        <form action="#">
+            <div class="max-w-xl mx-auto p-1 pr-0 flex flex-wrap items-center">
+                <input type="email" placeholder="youremail@example.com"
+                       class="flex-1 appearance-none rounded shadow p-3 text-gray-600 mr-2 focus:outline-none">
+                <button type="submit"
+                        class="flex-1 mt-4 md:mt-0 block md:inline-block appearance-none bg-green-500 text-white text-base font-semibold tracking-wider uppercase py-4 rounded shadow hover:bg-green-400">
+                    Subscribe
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+  
+  <!-- /Subscribe-->
+</div>
+<!--/container-->
+
+<footer class="bg-gray-900">
+  <div class="container max-w-6xl mx-auto flex items-center px-2 py-8">
+
+    <div class="w-full mx-auto flex flex-wrap items-center">
+      <div class="flex w-full md:w-1/2 justify-center md:justify-start text-white font-extrabold flex-col">
+        <a class="text-gray-900 no-underline hover:text-gray-900 hover:no-underline" href="/blog/zh">
+          <span class="text-base text-gray-200">Docsie.io Blog</span>
+        </a>
+        <a class="text-gray-900 no-underline hover:text-gray-900 hover:no-underline"
+           href="https://github.com/LikaloLLC/BlogVi" target="_blank">
+          <span class="text-xs text-gray-200">Made with BlogVI</span>
+        </a>
+      </div>
+      <div class="flex w-full pt-2 content-center justify-between md:w-1/2 md:justify-end">
+        <ul class="list-reset flex justify-center flex-1 md:flex-none items-center">
+          
+            <li>
+              <a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-3"
+                 href="https://www.docsie.io">Docsie</a>
+            </li>
+          
+            <li>
+              <a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-3"
+                 href="https://www.docsie.io/pricing/">Docsie Pricing</a>
+            </li>
+          
+            <li>
+              <a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-3"
+                 href="https://www.docsie.io/try_docsie/">Try Docsie</a>
+            </li>
+          
+        </ul>
+      </div>
+    </div>
+
+
+  </div>
+</footer>
+
+<script>
+  /* Progress bar */
+  //Source: https://alligator.io/js/progress-bar-javascript-css-variables/
+  var h = document.documentElement,
+    b = document.body,
+    st = 'scrollTop',
+    sh = 'scrollHeight',
+    progress = document.querySelector('#progress'),
+    scroll;
+  var scrollpos = window.scrollY;
+  var header = document.getElementById("header");
+  var navcontent = document.getElementById("nav-content");
+
+  document.addEventListener('scroll', function () {
+
+    /*Refresh scroll % width*/
+    scroll = (h[st] || b[st]) / ((h[sh] || b[sh]) - h.clientHeight) * 100;
+    progress.style.setProperty('--scroll', scroll + '%');
+
+    /*Apply classes for slide in bar*/
+    scrollpos = window.scrollY;
+
+    if (scrollpos > 10) {
+      header.classList.add("bg-white");
+      header.classList.add("shadow");
+      navcontent.classList.remove("bg-gray-100");
+      navcontent.classList.add("bg-white");
+    } else {
+      header.classList.remove("bg-white");
+      header.classList.remove("shadow");
+      navcontent.classList.remove("bg-white");
+      navcontent.classList.add("bg-gray-100");
+
+    }
+
+  });
+
+
+  //Javascript to toggle the menu
+  document.getElementById('nav-toggle').onclick = function () {
+    document.getElementById("nav-content").classList.toggle("hidden");
+  }
+</script>
+<script>
+  /*
+    Twitter
+    https://twitter.com/share?url=[post-url]&text=[post-title]
+
+    Facebook
+    https://www.facebook.com/sharer.php?u=[post-url]
+
+  */
+  let twitterURI = document.getElementById('twitter');
+  let facebookURI = document.getElementById('facebook');
+
+  let postURI = encodeURI(document.location.href);
+  let postTitle = encodeURI(document.getElementById('blog-title').innerText + ":\n")
+
+  facebookURI.setAttribute('href', `https://www.facebook.com/sharer.php?u=${postURI}`);
+  twitterURI.setAttribute('href', `https://twitter.com/share?url=${postURI}&text=${postTitle}`);
+</script>
+
+<!--Sharect-->
+
+<script src="https://unpkg.com/sharect@2.0.0/dist/sharect.js"></script>
+<script>window["sharectConfig"] = {"backgroundColor": "#333333", "enabled": true, "facebook": true, "iconColor": "#FFFFFF", "selectableElements": ["body"], "twitter": true, "twitterUsername": "likalo_llc"}</script>
+<script src="/blog/templates/assets/js/sharect.js"></script>
+
+
+
+<!--Reading time-->
+<script src="/blog/templates/assets/js/reading-time.min.js"></script>
+<script>
+  const text = []
+  let content = [...document.getElementById('content').getElementsByTagName('p')].forEach((elem) => {
+    text.push(elem.textContent)
+  });
+  const stats = readingTime(text.join(" "));
+
+  document.getElementById('reading-time').innerHTML = stats.text;
+</script>
+
+
+  
+      <!-- Google Tag Manager (noscript) -->
+
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TZRGMQ9"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+  
+
+</body>
+
+</html>

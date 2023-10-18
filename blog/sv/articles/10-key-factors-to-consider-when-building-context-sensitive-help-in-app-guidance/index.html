@@ -1,0 +1,639 @@
+<!-- Base template of the article page. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+  
+
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/blog/https://d1iq6qzgppjlud.cloudfront.net/images/favicon/favicon-196x196.png">
+
+
+  <!-- Primary Meta Tags -->
+  <title>Docsie.io Blog - 10 viktiga faktorer att tänka på när man bygger kontextkänslig hjälp och vägledning i appen</title>
+  <meta name="author" content="Tanya A Mishra"/>
+  <meta name="title" content="10 viktiga faktorer att tänka på när man bygger kontextkänslig hjälp och vägledning i appen">
+  <meta name="description" content="I den här artikeln kommer vi att avslöja de 10 viktigaste faktorerna att tänka på när man bygger kontextkänslig hjälp och vägledning i appen"/>
+  <meta name="keywords" content="Product Documentation,Technical Writing,Context Sensitive Help & In-app Guidance"/>
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.docsie.io/blog/blog/sv/articles/10-key-factors-to-consider-when-building-context-sensitive-help-in-app-guidance/">
+  <meta property="og:title" content="10 viktiga faktorer att tänka på när man bygger kontextkänslig hjälp och vägledning i appen">
+  <meta property="og:description"
+        content="I den här artikeln kommer vi att avslöja de 10 viktigaste faktorerna att tänka på när man bygger kontextkänslig hjälp och vägledning i appen">
+  <meta property="og:image" content="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_jDvJa9Zmr9vQivN0e/f8a80264-b138-f51d-67f9-00d1e16f5e45banner_12.jpg">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://www.docsie.io/blog/blog/sv/articles/10-key-factors-to-consider-when-building-context-sensitive-help-in-app-guidance/">
+  <meta property="twitter:title" content="10 viktiga faktorer att tänka på när man bygger kontextkänslig hjälp och vägledning i appen">
+  <meta property="twitter:description"
+        content="I den här artikeln kommer vi att avslöja de 10 viktigaste faktorerna att tänka på när man bygger kontextkänslig hjälp och vägledning i appen">
+  <meta property="twitter:image" content="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_jDvJa9Zmr9vQivN0e/f8a80264-b138-f51d-67f9-00d1e16f5e45banner_12.jpg">
+
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/blog/templates/assets/css/typography.min.css"/>
+  <!--Replace with your tailwind.css once created-->
+    
+    <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TZRGMQ9');</script>
+<!-- End Google Tag Manager -->
+  
+
+</head>
+
+
+<body class="bg-gray-100 font-sans leading-normal tracking-normal">
+
+<nav id="header" class="fixed w-full z-10 top-0">
+
+  <div id="progress" class="h-1 z-20 top-0"
+       style="background:linear-gradient(to right, #4dc0b5 var(--scroll), transparent 0);"></div>
+
+  <div class="container max-w-6xl mx-auto flex flex-wrap items-center justify-between mt-0 py-3">
+
+    <div class="pl-4">
+      <a class="text-gray-900 text-base no-underline hover:no-underline font-extrabold text-xl" href="../../">
+          Docsie.io Blog
+      </a>
+    </div>
+
+    <div class="block lg:hidden pr-4">
+      <button id="nav-toggle"
+              class="flex items-center px-3 py-2 border rounded text-gray-500 border-gray-600 hover:text-gray-900 hover:border-green-500 appearance-none focus:outline-none">
+        <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+          <title>Menu</title>
+          <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/>
+        </svg>
+      </button>
+    </div>
+
+    <div class="w-full flex-grow lg:flex lg:items-center lg:w-auto hidden lg:block mt-2 lg:mt-0 bg-gray-100 z-20"
+         id="nav-content">
+      <ul class="list-reset lg:flex justify-end flex-1 items-center">
+        
+        <li>
+          <a class="inline-block text-gray-600 hover:text-gray-900 hover:underline py-2 px-4"
+             href="https://www.docsie.io">Docsie</a>
+        </li>
+        
+        <li>
+          <a class="inline-block text-gray-600 hover:text-gray-900 hover:underline py-2 px-4"
+             href="https://www.docsie.io/pricing/">Docsie Pricing</a>
+        </li>
+        
+        <li>
+          <a class="inline-block text-gray-600 hover:text-gray-900 hover:underline py-2 px-4"
+             href="https://www.docsie.io/try_docsie/">Try Docsie</a>
+        </li>
+        
+      </ul>
+    </div>
+    <div class="flex w-full justify-end content-center">
+        <a
+          class="inline-block text-gray-500 hover:text-green-500 hover:underline text-center h-10 p-2 md:h-auto md:p-4 avatar"
+          data-tippy-content="@twitter_handle" href="https://twitter.com/intent/tweet?url=#"
+          id="twitter">
+          <svg class="fill-current h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+            <path
+              d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"></path>
+          </svg>
+        </a>
+        <a
+          class="inline-block text-gray-500 hover:text-green-500 hover:underline text-center h-10 p-2 md:h-auto md:p-4 avatar"
+          data-tippy-content="#facebook_id" href="https://www.facebook.com/sharer/sharer.php?u=#}"
+          id="facebook">
+          <svg class="fill-current h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+            <path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"></path>
+          </svg>
+        </a>
+      </div>
+  </div>
+
+</nav>
+
+<!--Container-->
+<div class="container max-w-4xl mx-auto mt-32 px-8 md:px-0">
+  <div class="prose prose lg:prose-xl mx-auto mt-32">
+    <!--Title-->
+    <h1 id="blog-title">10 viktiga faktorer att tänka på när man bygger kontextkänslig hjälp och vägledning i appen</h1>
+    <!--Author-->
+    <div class="flex items-center">
+      <img class="w-10 h-10 rounded-full mr-4" src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_p1X4gXS3n0rCHYuaE/1f3f5f57-d8e2-7978-faef-0b9fe89f3e4btanya_pic.jpg" alt="Avatar of Author">
+      <div class="flex-1 px-2">
+        <div class="font-bold leading-none mb-2">Tanya A Mishra</div>
+        <div class="text-xs md:text-base">on September 07, 2023 · <span id="reading-time"
+                class="block md:inline mt-2 md:mt-0"></span> · filed under <span
+          class="block md:inline mt-2 md:mt-0">
+						
+            <span class="rounded bg-green-500 text-white px-1 uppercase text-xs whitespace-nowrap md:text-sm">Product Documentation</span>
+						
+            <span class="rounded bg-green-500 text-white px-1 uppercase text-xs whitespace-nowrap md:text-sm">Technical Writing</span>
+						
+            <span class="rounded bg-green-500 text-white px-1 uppercase text-xs whitespace-nowrap md:text-sm">Context Sensitive Help & In-app Guidance</span>
+						
+					</span>
+        </div>
+      </div>
+    </div>
+    <!--/Author-->
+
+    <!--Post Content-->
+    <!--Lead Para-->
+    <div id="content">
+      <p>Kontextsensitiv hjälp avser hjälpinnehåll i programvaruapplikationer som är skräddarsytt för användarens specifika sammanhang. Istället för att tillhandahålla generisk hjälpdokumentation ger kontextkänslig hjälp användarna information och detaljer som är relevanta för deras aktuella plats i appen, den uppgift de försöker slutföra eller det problem de står inför.</p>
+<h2>Vad är kontextkänslig hjälp?</h2>
+<p>Kontextsensitiv hjälp <a href="https://www.tandfonline.com/doi/abs/10.1080/09588220600821552">avser</a> användarstöd som tillhandahålls inom en programvara, onlineplattformar eller system, som syftar till att förenkla resan för en besökare på plattformen.</p>
+<ul>
+<li>
+<p><strong>Några exempel på kontextkänslig hjälp inkluderar:</strong>*</p>
+</li>
+<li>
+<p>Verktygstips som visas när man håller muspekaren över en viss knapp eller ikon och förklarar dess funktion</p>
+</li>
+</ul>
+<p><img alt="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_JgxTgPxsanF6oNLrz/84677561-47de-1bd4-7ba7-ed63ee38c087image.png" src="https://s3.amazonaws.com/content-harmony-user-uploads/froala-uploads-1692820574617-1692820574617.png" title="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_JgxTgPxsanF6oNLrz/84677561-47de-1bd4-7ba7-ed63ee38c087image.png" /></p>
+<ol>
+<li>Steg-för-steg-översikter som guidar användaren genom en process i flera steg</li>
+</ol>
+<p><img alt="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_NQWTLzhmKFbOI4nDz/9adffc58-0e30-abf0-0b11-b656905fbd0aimage.png" src="https://s3.amazonaws.com/content-harmony-user-uploads/froala-uploads-1692820574685-1692820574685.png" title="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_NQWTLzhmKFbOI4nDz/9adffc58-0e30-abf0-0b11-b656905fbd0aimage.png" /></p>
+<ol>
+<li>Felmeddelandehjälp som identifierar felkoden eller feltillståndet och ger riktade felsökningsråd</li>
+</ol>
+<p><img alt="" src="https://s3.amazonaws.com/content-harmony-user-uploads/froala-uploads-1693391302473-1693391302473.png" /></p>
+<ol>
+<li>Steg-för-steg genomgång som guidar användaren genom en process med flera steg</li>
+</ol>
+<p><img alt="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_2V0l6wSbWJS42mQom/60d856f7-7dcc-d8c0-129b-c6573fc8c5c2image.png" src="https://s3.amazonaws.com/content-harmony-user-uploads/froala-uploads-1692820574714-1692820574714.png" title="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_2V0l6wSbWJS42mQom/60d856f7-7dcc-d8c0-129b-c6573fc8c5c2image.png" /></p>
+<p><a href="https://site.docsie.io/in-app-help-and-support">Kontextsensitiv hjälp</a> är mycket dynamisk och anpassningsbar. Avancerade implementeringar kan till och med utnyttja AI och maskininlärning för att analysera användarbeteenden och anpassa det hjälpinnehåll som visas. Hjälpupplevelsen utvecklas kontinuerligt baserat på verkliga användardata.</p>
+<p>Det huvudsakliga <a href="https://www.id.iit.edu/wp-content/uploads/2015/03/Context-sensitive-interactive-systems-design-sato_hcii2003.pdf">målet</a> med kontextkänslig hjälp är att ge användare eller ett team snabb och enkel tillgång till de mest relevanta hjälpämnena och fullständig information om dem när det behövs. Detta förhindrar frustration och förvirring genom att förutse användarens behov. Användarna kan fokusera på sina arbetsflöden istället för att behöva lämna appen för att söka efter dokumentation.</p>
+<p>Sammantaget syftar kontextkänslig hjälp till att förbättra viktiga användbarhetsmått som andelen slutförda uppgifter, tid för uppgiften och kundnöjdhet. När det implementeras effektivt kan det dramatiskt förbättra användarupplevelsen och användningen av programvaruapplikationer.</p>
+<h2>Hur förbättrar kontextberoende hjälp användarupplevelsen?</h2>
+<p>Kontextsensitiv hjälp förbättrar användarupplevelsen på flera viktiga sätt:</p>
+<ul>
+<li><strong>Minskad kognitiv belastning</strong> - Genom att tillhandahålla hjälp som är skräddarsydd för den specifika uppgiften och sammanhanget, minskar kontextkänslig hjälp användarens ansträngning att söka efter relevant hjälpinnehåll. Detta minskar den kognitiva bördan och den mentala ansträngning som krävs för att hitta svar.</li>
+</ul>
+<p><strong>Ökat självförtroende</strong> - Användare kan lösa problem och slutföra uppgifter snabbare med hjälp av kontextkänslig hjälp som är lättillgänglig. Det gör att de kan uppnå sina mål utan att behöva förlita sig på externa resurser som dokumentation eller support.</p>
+<p><strong>Ökat fokus</strong> - Med hjälp integrerad i gränssnittet och arbetsflödena behöver användarna inte flytta uppmärksamheten mellan olika applikationer för att hitta hjälp. Deras uppmärksamhet förblir fokuserad på uppgiften.</p>
+<ul>
+<li><strong>Högre engagemang</strong>- Kontextuell hjälp ökar förtroendet under introduktionen och vid kritiska användningsmoment. Detta leder till ökad användning och engagemang för applikationen.</li>
+</ul>
+<p><strong>Minskad utbildningstid</strong> - Genom att vägleda användarna i stunden minskar den kontextberoende hjälpen behovet av formell utbildning. Nya användare kan komma igång snabbare.</p>
+<p><strong>Färre fel</strong> - Proaktiv hjälp förhindrar användningsfel och håller användarna på rätt spår. Detta minskar antalet mänskliga fel.</p>
+<p><strong> Lägre supportkostnader</strong> - Med användare som kan hjälpa sig själva leder kontextkänslig hjälp till färre supportärenden. Detta minskar belastningen på supportteamen.</p>
+<p><strong>Ökad tillfredsställelse</strong>- Användarna får en smidigare och mindre frustrerande upplevelse när hjälpen är lättillgänglig. Detta bidrar till högre användarnöjdhet.</p>
+<p>Sammantaget ger kontextkänslig hjälp en smartare och mer anpassningsbar hjälpupplevelse som dynamiskt svarar mot användarens kontext och behov. Detta gör att användarna kan utföra sina uppgifter effektivt samtidigt som de känner sig trygga och har kontroll. Den största vinnaren är slutanvändaren, som får hjälp på ett smidigt sätt när och där den behövs som mest.</p>
+<p><img alt="" src="https://images.unsplash.com/photo-1520333789090-1afc82db536a?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3wzMTM3MXwwfDF8c2VhcmNofDR8fGhhcHB5JTIwdXNlcnxlbnwwfHx8fDE2OTI2Njg5NDR8MA&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=1080" /></p>
+<h2>Här är några exempel på kontextkänslig hjälp:</h2>
+<p>Det finns många exempel på kontextkänslig hjälp som implementerats i olika programvaruapplikationer och webbplatser:</p>
+<ul>
+<li>
+<p><strong>Tooltips</strong> - När du håller muspekaren över knappar eller ikoner kan ett verktygstips visas som förklarar funktionen, som i Microsoft Office-applikationer.</p>
+</li>
+<li>
+<p><strong>Inbäddade hjälplänkar</strong> - Program som Adobe Photoshop bäddar in hjälplänkar i menyer och paneler som tar användaren till relaterade hjälpartiklar.</p>
+</li>
+</ul>
+<p><strong>Guidade turer</strong> - Genomgångar som de på Facebook och LinkedIn lyfter fram nya funktioner i kontext under onboarding.</p>
+<p><strong>Prediktiv sökning</strong> - Sökmotorer som Google visar förslag på sökningar i realtid baserat på de ord som skrivs in.</p>
+<p><strong>FAQ-länkar</strong> - FAQ-länkar kan visas inline i samband med specifika felmeddelanden eller sidor, som på många e-handelssajter.</p>
+<p><strong>Chatbots</strong> - Intelligenta chatbots som Clippy i Microsoft Office erbjuder proaktivt tips baserat på upptäckta användaråtgärder.</p>
+<p><strong> Meddelanden i appen</strong> - Appar som Dropbox använder meddelanden i appen för att tillhandahålla hjälpartiklar när de upptäcker upprepade misslyckade åtgärder.</p>
+<p><strong>Steg-för-steg-guider</strong> - Skatteprogram som TurboTax ger guidad steg-för-steg-hjälp som är skräddarsydd för användarens aktuella situation.</p>
+<p><strong>Interaktiva handledningar</strong> - Vissa appar använder interaktiva animationer och överlägg för att visa hur man använder funktioner.</p>
+<p><strong>Personliga rekommendationer</strong> - Tjänster som Netflix och Amazon rekommenderar specifikt innehåll baserat på tittarhistorik och intressen.</p>
+<ul>
+<li><strong>Mikroskopiska instruktioner</strong> - Mikroskopiska instruktioner, t.ex. platshållare för inmatningsfält och feltext vid validering, ger kontextspecifik hjälp.</li>
+</ul>
+<p><strong>Objektdetektering</strong> - I AR/VR-sammanhang kan objektdetektering trigga visning av relaterade informationsöverlägg.</p>
+<p>Den röda tråden är att ge användarna dynamiskt, personligt hjälpinnehåll som är skräddarsytt för deras aktuella sammanhang i applikationen. Detta förutser deras behov och ger guidad hjälp när de behöver det som mest. Kontextkänslighet är den viktigaste faktorn för att skapa en smidig och intuitiv hjälpupplevelse.</p>
+<h2>Hur kan du implementera Context Sensitive's hjälp i en mobilapp?</h2>
+<p>Det finns flera effektiva sätt att implementera kontextkänslig hjälp i mobilappar:</p>
+<p>Med meddelanden i appen kan du proaktivt tillhandahålla hjälpinnehåll till mobilanvändare vid relevanta tidpunkter i deras arbetsflöden. Du kan t.ex. upptäcka om en användare har svårt att slutföra en uppgift och använda ett verktygstips eller en modal för att vägleda dem genom uppgiften.</p>
+<p>Vägled nya användare genom att markera appelement och gå igenom centrala arbetsflöden steg för steg under onboarding. Använd kommenterade skärmdumpar, verktygstips och överlagrade instruktioner.</p>
+<p>Använd icke-påträngande mikrointeraktioner som pulser, markeringar och verktygstips för att rikta uppmärksamheten och ge instruktioner i kontexten vid beslutspunkter.</p>
+<p>Skicka aktuellt och relevant hjälpinnehåll via push-notiser baserat på varje användares sammanhang, t.ex. funktionsuppdateringar eller påminnelser om att slutföra uppgifter.</p>
+<p>När användare skriver i sökfält kan du visa föreslagna hjälpämnen och rekommenderat innehåll som är skräddarsytt för söktermerna.</p>
+<p>**Chatbots i appen</p>
+<p>Chatbots kan erbjuda konversationsvägledning baserat på kontextuella ledtrådar, vilket ger användarna en interaktiv hjälpupplevelse.</p>
+<p>Spåra hur användarna interagerar med din app för att identifiera smärtpunkter och möjligheter att ge hjälp i framtida appversioner.</p>
+<p>Med förstärkt verklighet kan du lägga till kontextspecifika instruktioner och guider på kameravyn i den verkliga världen för assisterade arbetsflöden.</p>
+<p>Med mobilappar är det viktigt att tillhandahålla hjälpinnehåll som är dynamiskt, personligt och integrerat i naturliga beröringspunkter i användarresan. Undvik att störa arbetsflöden med statisk hjälpdokumentation. Leverera kontextuellt relevanta mikrointeraktioner för att vägleda användarna och förbättra förståelsen och användbarheten.</p>
+<h2>Vilka är fördelarna med vägledning och handledning i appen?</h2>
+<p><em>In-app-vägledning och tutorials ger många fördelar som förbättrar den övergripande användarupplevelsen:</em></p>
+<ul>
+<li>
+<p><strong>Förbättrad onboarding:</strong> Guidade genomgångar hjälper nya användare att snabbt komma igång med appen genom att visa grundläggande arbetsflöden steg för steg.</p>
+</li>
+<li>
+<p><strong>Ökat engagemang:</strong> Genom att lyfta fram nya funktioner och möjligheter uppmuntras användarna att utforska mer av appen.</p>
+</li>
+</ul>
+<p><strong>Högre användning:</strong> Genom att visa användarna hur de får tillgång till viktiga funktioner ökar användningen av hela appen.</p>
+<p><strong>Reducerad churn:</strong> Användare är mindre benägna att bli frustrerade och överge appar som tillhandahåller inlärningsstöd i kontexten.</p>
+<p><strong>Förbättrade UX-mått:</strong> När användarna kan lära sig i kontexten blir det lättare att slutföra uppgifter, ta sig igenom dem och uppleva användarvänlighet.</p>
+<p><strong>Minskade utbildningskostnader:</strong> Guidance minskar behovet av formella utbildningsresurser och kundsupport.</p>
+<p><strong> Riktat utbildningsinnehåll:</strong> Vägledning i appen gör det möjligt att leverera mycket skräddarsytt utbildningsmaterial i din appupplevelse.</p>
+<p><strong>Inlärning vid rätt tillfälle:</strong> Om vägledningen visas vid rätt tillfälle underlättas inlärning och informationsbehållning.</p>
+<p><strong>On-Screen Affordances:</strong> Visuella och interaktiva <a href="https://www.frontiersin.org/articles/10.3389/fpsyg.2020.01623/full">element</a> kan fästa uppmärksamheten på saker som användarna kanske förbiser.</p>
+<p><strong>Progress Tracking:</strong> Tutorials kan guida användare genom flerstegsprocesser och samtidigt spåra framsteg.</p>
+<p><strong>Ökad tillgänglighet</strong>: Väl utformad vägledning ger stöd för olika användare och tillgänglighetsbehov.</p>
+<ul>
+<li><strong>Fortlöpande stöd:</strong> Vägledning hjälper till att förstärka inlärningen även för erfarna användare som provar nya eller uppdaterade funktioner.</li>
+</ul>
+<p>Nyckeln är att se vägledningen i appen inte bara som en engångslösning för onboarding, utan som en kontinuerlig källa till inbäddad, kontextuell support som utvecklas med användarna över tid. Med ett strategiskt, användarcentrerat tillvägagångssätt kan du använda vägledning och handledning för att förbättra förståelsen, användbarheten och användarproduktiviteten i din appupplevelse.</p>
+<h2>Hur identifierar du rätt ögonblick för att utlösa vägledning i appen?</h2>
+<p>För att fastställa rätt ögonblick för att aktivera vägledning i appen måste du noggrant överväga dina användares sammanhang och behov. Här är några exempel på bästa praxis:</p>
+<p><img alt="" src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_ldCxrtprpwOWOs7hG/be9c1008-dd32-952b-b8a1-843e605c5d66enhancing_customer_support_and_engagement.jpg" /></p>
+<ul>
+<li>
+<p><strong>Identifiera hinder -</strong> Leta efter punkter där användarna kämpar eller misslyckas med uppgifter, och ge dem hjälp att komma tillbaka på rätt spår.</p>
+</li>
+<li>
+<p><strong>Förutse frågor</strong> - Om en funktion kan orsaka förvirring, använd proaktiv vägledning för att besvara användarnas frågor.</p>
+</li>
+<li>
+<p><strong>Omtänksam introduktion</strong> - Vägled nya användare genom centrala arbetsflöden under introduktionen med hjälp av icke-störande verktygstips och överlägg.</p>
+</li>
+</ul>
+<p><strong>Svara på inaktivitet</strong> - Om användare verkar inaktiva, använd meddelanden för att uppmana dem att ta nästa steg.</p>
+<ul>
+<li>
+<p><strong>Markera nya funktioner</strong> - Markera viktiga nya funktioner eller ändringar i användargränssnittet med markeringsanimationer och pulsering.</p>
+</li>
+<li>
+<p><strong>Förstärk inlärda koncept</strong> - Återuppvisa ibland vägledning om komplexa ämnen för att underlätta memorering.</p>
+</li>
+</ul>
+<p><strong> Rikta in dig på kända problemområden</strong> - Ge vägledning där dina data visar att användarna ofta behöver hjälp.</p>
+<ul>
+<li>
+<p><strong>Följ ett designsystem</strong> - Håll vägledningen konsekvent med andra element i användargränssnittet med hjälp av ett etablerat designsystem.</p>
+</li>
+<li>
+<p><strong>Beakta potentiella hinder</strong> - Vägled användarna genom uppgifter som involverar gränssnittskontroller eller datainmatning som de kan tycka är svåra.</p>
+</li>
+</ul>
+<p><strong>Tajma förslagen noga</strong> - Om du ger förslag bör du visa dem efter att ha tänkt igenom dem, men innan frustration uppstår.</p>
+<p><strong>Tillåt användarkontroll</strong> - Ge användarna möjlighet att avfärda vägledningen eller få tillgång till den på begäran så att den inte blir alltför störande.</p>
+<ul>
+<li><strong>Testa med användare</strong> - Testa vägledningen med faktiska användare och observera deras reaktioner och feedback.</li>
+</ul>
+<p><strong>Analysera data och optimera</strong> - Använd verktyg som analys och sessionsuppspelningar för att se hur vägledningen fungerar och identifiera förbättringar.</p>
+<p>Målet är att leverera varje utbildning eller stödjande upplevelse vid den tidpunkt då den kommer att vara mest användbar. Detta kräver förståelse för användarnas arbetsflöden, förutsägelse av behov och kontinuerlig förfining baserat på observerade användningsmönster. Vid rätt tidpunkt kan varje vägledningsinteraktion kännas sömlös snarare än störande.</p>
+<h2>Vilka typer av vägledning i appen är mest effektiva?</h2>
+<p>När du utformar vägledning i appen bör du ta hänsyn till dessa mest effektiva typer av interaktioner:</p>
+<ul>
+<li>
+<p><strong>Spotlight Cues -</strong> Markera eller animera specifika knappar eller gränssnittselement för att dra till dig uppmärksamhet.</p>
+</li>
+<li>
+<p><strong>Tooltips</strong> - Kort kontextuell text som visas när man håller muspekaren över/trycker på en del av användargränssnittet.</p>
+</li>
+</ul>
+<p><strong>Coach Marks</strong> - Overlays med utskurna porthål som fokuserar på ett specifikt element i användargränssnittet.</p>
+<p><strong>Checklistor</strong> - Hjälp användare att utföra arbetsflöden i flera steg med hjälp av checklistor som anpassas efter hand som uppgifterna utförs.</p>
+<p><strong>Steg-för-steg-genomgångar</strong> - Dela upp komplexa uppgifter i numrerade steg-för-steg-instruktioner.</p>
+<p><strong>Interaktiva handledningar</strong> - Låt användarna öva i appens användargränssnitt med hjälp av markeringar, överlagringar och uppmaningar.</p>
+<p><strong>Animerade demos</strong> - Använd animerade demos av arbetsflöden och interaktioner för mer visuell inlärning.</p>
+<p><strong>In-App Notifications</strong> - Skicka påminnelser, tips och uppdateringar via notiser.</p>
+<p><strong>Spot User Struggles</strong> - Upptäck felkällor och ge proaktivt stöd för att få användarna på rätt spår igen.</p>
+<p><strong>Personliga rekommendationer</strong> - Föreslå funktioner och innehåll baserat på användarens sammanhang och tidigare beteenden.</p>
+<p><strong>On-Screen Microcopy</strong> - Ge kortfattade kontextuella textinstruktioner inom gränssnittselement.</p>
+<p><strong>Chatbots</strong> - Låt användarna ställa frågor till en intelligent chatbot som ger svar genom konversation.</p>
+<p><strong>Objektdetektering</strong> - I AR/VR, detektera objekt och överlagra relaterad information.</p>
+<p><strong>Videodemonstrationer</strong> - Inkludera länkar eller bädda in korta videor som visar arbetsflöden i relevanta sammanhang.</p>
+<p><strong>Sökvägledning</strong> - Förfina sökbeteenden via automatisk komplettering och kontextuella rekommendationer.</p>
+<p>Typen av vägledning bör anpassas till uppgiftens komplexitet och användarens erfarenhetsnivå. Vältajmade, diskreta interaktioner som läggs ovanpå det befintliga användargränssnittet tenderar att fungera bättre än fördjupande handledningar eller guider som tar över hela skärmen. Testa med användare och iterera för att hitta rätt tillvägagångssätt.</p>
+<h2>Hur kan du göra vägledningen i appen diskret?</h2>
+<p>Det finns några bästa metoder för att göra vägledningen i appen mindre påträngande:</p>
+<ul>
+<li>
+<p><strong>Prioritera enkelhet</strong> - Undvik att överväldiga användarna. Koka ner instruktionerna till den väsentliga information som behövs.</p>
+</li>
+<li>
+<p><strong>Använd subtila visuella element</strong> - Saker som svaga spotlights och tunna verktygstips tenderar att vara mindre distraherande.</p>
+</li>
+</ul>
+<p><strong>Minimera text</strong> - Använd kortfattad mikrotext och undvik väggar av hjälptext.</p>
+<p><strong> Tänk på positionering</strong> - Visa vägledningen nära relaterade gränssnittselement snarare än som överlagringar i hela appen.</p>
+<ul>
+<li>
+<p><strong>Tajma det med eftertanke</strong> - dyk upp vid naturliga pauser, inte under aktiva arbetsflöden.</p>
+</li>
+<li>
+<p><strong>Tillåt avfärdande</strong> - Låt användarna enkelt avfärda vägledningen så att den inte känns påtvingad.</p>
+</li>
+</ul>
+<p><strong> Begränsa frekvensen</strong> - Övermätta inte användarna med för mycket vägledning för ofta.</p>
+<p><strong>Personanpassa när det är möjligt</strong> - Skräddarsy vägledningen baserat på kända användarattribut och sammanhang.</p>
+<p><strong>Använd subtil animering</strong> - Subtila pulserande eller framhävande element drar till sig uppmärksamhet utan att distrahera.</p>
+<ul>
+<li>
+<p><strong>Testa utanför sammanhanget</strong> - Se till att vägledningskomponenterna känns diskreta även när de betraktas ensamma.</p>
+</li>
+<li>
+<p><strong>Följ UI:s estetik</strong> - Vägledningen ska kännas konsekvent med appens visuella stil.</p>
+</li>
+<li>
+<p><strong>Ge indikatorer</strong> - Badges, stegräknare och framstegsstaplar ger tydlighet om längden.</p>
+</li>
+<li>
+<p><strong>Tillåt möjlighet att se om</strong> - Låt användarna komma åt vägledningen igen om de missar något.</p>
+</li>
+<li>
+<p><strong>Undvik popup-fönster</strong> - Överlagrade popup-fönster tenderar att vara störande - överväg mer inbäddade metoder.</p>
+</li>
+<li>
+<p><strong>Fokusera på enskilda uppgifter</strong> - Rikta vägledningen mot specifika atomära uppgifter snarare än långa arbetsflöden.</p>
+</li>
+</ul>
+<p>Väl utformad, kontextuell vägledning känns som en naturlig, sömlös del av användarupplevelsen istället för ett avbrott. Rätt visuell utformning, innehållston, timing och korthet hjälper vägledningen att ge stöd utan att hindra användarens fokus och flöde. Utvärdering med riktiga användare och iterering baserat på feedback är avgörande.</p>
+<h2>Hur mäter ni hur effektiv vägledningen i appen är?</h2>
+<p>Utvärderingen av hur effektiv vägledningen i appen är bör omfatta både kvantitativa mått och kvalitativ feedback för att få en fullständig bild.</p>
+<ul>
+<li><strong>Task success rate</strong> - % av gångerna som användarna slutför en uppgift med hjälp av funktionen jämfört med utan hjälp.</li>
+</ul>
+<p><strong>Task completion time</strong> - Hur lång tid det tar för användarna att slutföra en uppgift med respektive utan vägledning.</p>
+<p><strong>Felprocent</strong> - Hur ofta fel uppstår under en vägledd uppgift jämfört med utan vägledning.</p>
+<p><strong>Guidance engagement</strong> - Hur många % av användarna som klickar, tittar på eller interagerar med guidningskomponenterna.</p>
+<p><strong>Guidance re-views</strong> - Hur ofta användare öppnar eller interagerar med vägledningen igen efter den första visningen.</p>
+<p><strong>Net Promoter Score</strong> - Mätning av användarnöjdhet på en skala av viljan att rekommendera.</p>
+<p><strong>Churn eller abandonment</strong> - Huruvida vägledningen påverkar användarnas avhoppsfrekvens.</p>
+<p><strong>Feature adoption</strong> - Hur vägledningen påverkar adoptionen av de produktområden eller funktioner som den täcker.</p>
+<p><strong>Usability testing</strong> - observera hur användarna interagerar med vägledningen och var de har problem.</p>
+<p><strong>Feedbackundersökningar</strong> - Ställ frågor om vägledningens användbarhet och relevans.</p>
+<p><strong>Användarintervjuer</strong> - Intervjua användare om deras erfarenheter av vägledningen.</p>
+<p><strong>Reviews/app store ratings</strong> - Övervaka recensioner som nämner vägledningens kvalitet.</p>
+<p><strong>Supportärenden</strong> - Huruvida vägledning minskar supportvolymen relaterad till ämnen som omfattas.</p>
+<p><strong>Session replays</strong> - Titta på användarsessioner igen för att se om vägledningen visas vid lämpliga tidpunkter.</p>
+<p>Genom att koppla användningsdata för vägledning till viktiga affärs- och konverteringsmått kan du beräkna ROI och optimera användarupplevelsen. Men kvalitativa insikter direkt från användarna är lika viktiga för att förbättra ton, innehåll, timing, placering och presentation av vägledningen. Genom att analysera både mätvärden och feedback kan ni säkerställa att er strategi ständigt förbättras.</p>
+<h2>Hur kan kontextkänslig hjälp minska antalet supportärenden?</h2>
+<p>Kontextsensitiv hjälp kan minska antalet supportärenden på flera viktiga sätt:</p>
+<ul>
+<li>
+<p><strong>Förebygger problem proaktivt</strong> - Genom att förutse användarnas frågor och hinder kan kontextkänslig hjälp förhindra att många vanliga problem uppstår.</p>
+</li>
+<li>
+<p><strong>Uppmuntrar till självbetjäning</strong> - Med lättillgänglig hjälp kan användarna lösa enkla problem på egen hand istället för att kontakta supporten.</p>
+</li>
+</ul>
+<p><strong>Tar itu med problem reaktivt</strong> - För problem som uppstår, vägleder riktat hjälpinnehåll användarna till snabba lösningar.</p>
+<p><strong>Reducerar antalet frågor om hur man gör </strong>- "Hur gör jag..." utgör en stor del av supportärendena. Hjälp i kontexten hanterar dessa enkelt.</p>
+<p><strong>Minskar utbildningsbehovet</strong> - När användarna kan lära sig på egen hand behöver man inte skapa lika formella utbildningsresurser.</p>
+<p><strong>Bättre sökbarhet</strong> - Inbäddad, kontextuell hjälp är lättare att hitta än statisk hjälpdokumentation.</p>
+<ul>
+<li>
+<p><strong>Förbättrar produktanvändningen</strong> - Genom att vägleda användarna uppmuntras en mer varierad användning, vilket minskar antalet problem med "edge cases".</p>
+</li>
+<li>
+<p><strong>Standardiserar innehållet</strong> - Enhetligt, centraliserat innehåll i appen förhindrar fragmenterade externa artiklar.</p>
+</li>
+<li>
+<p><strong>Träffar kända workarounds</strong> - Hjälp kan driva kända tillfälliga lösningar relaterade till buggar eller begränsningar.</p>
+</li>
+<li>
+<p><strong>Förbättrar förståelsen</strong> - Tydligare förståelse från bra hjälpinnehåll leder till färre användningsproblem.</p>
+</li>
+<li>
+<p><strong>Förstärker användarnas självförtroende</strong> - Vägledning ger användarna självförtroende att utforska funktioner mer självständigt.</p>
+</li>
+</ul>
+<p><strong>Identifierar UX-problem</strong> - Analys av hjälpanvändningen avslöjar användbarhetsproblem som kan förbättras.</p>
+<ul>
+<li><strong>Sparar handläggarnas tid</strong> - Genom att förhindra repetitiva frågor kräver varje supportärende mindre handläggarinsatser.</li>
+</ul>
+<p><strong> Möjliggör felsökning på egen hand</strong> - Hjälpen vägleder användarna genom felsökning av arbetsflöden på egen hand.</p>
+<p>Med strategisk vägledning som distribueras vid rätt tidpunkt kan apparna både ställa frågor till användarna och möjliggöra snabbare självavhjälpning när problem uppstår. Detta minskar arbetsbelastningen och kostnaderna för support avsevärt samtidigt som det ger en bättre användarupplevelse.</p>
+<h2>För att sammanfatta</h2>
+<ul>
+<li>
+<p>Kontextsensitiv hjälp ger stöd i rätt ögonblick som är skräddarsytt för användarnas specifika behov.</p>
+</li>
+<li>
+<p>Det minskar den kognitiva belastningen, möjliggör självförsörjning, förbättrar fokus, ökar engagemanget och minskar utbildningstiden.</p>
+</li>
+<li>
+<p>Exempel är verktygstips, steg-för-steg-genomgångar, personliga rekommendationer och inbäddade FAQ:er.</p>
+</li>
+<li>
+<p>Effektiv implementering kräver att man identifierar rätt ögonblick för att trigga vägledning och använder subtil, diskret design.</p>
+</li>
+<li>
+<p>Effekten kan mätas genom mått på slutförda uppgifter, användningsdata och kvalitativ feedback.</p>
+</li>
+<li>
+<p>Genom att förutse användarnas frågor och hinder minskar kontextkänslig hjälp avsevärt antalet ärenden och kostnader för kundsupport.</p>
+</li>
+<li>
+<p>När den är väl utformad och tajmad ger den en smidigare och mer tillfredsställande användarupplevelse.</p>
+</li>
+</ul>
+<p>Om du letar efter en heltäckande lösning för hjälp i appen kan du prova Docsie.io och vår kontextkänsliga hjälp i appen genom att <a href="https://www.docsie.io/">registrera dig</a> för en kostnadsfri testperiod.</p>
+<h2>Ofta ställda frågor</h2>
+<p>**Fråga 1: Vad är kontextkänslig hjälp?</p>
+<p>Kontextsensitiv hjälp innebär i princip användarstöd inom programvaruapplikationer, onlineplattformar eller system. Kontextsensitiv hjälp innebär i princip att tillhandahålla information som är relaterad till användarens aktuella sammanhang, uppgift eller problem.</p>
+<p><strong>Fråga 2: Hur förbättrar kontextkänslig hjälp användarupplevelsen?</strong></p>
+<p>Kontextsensitiv hjälp förbättrar användarupplevelsen genom att minska den kognitiva belastningen, öka självtillräckligheten, öka engagemanget och minska utbildningstiden.</p>
+<p><strong>Fråga 3:</strong> <strong>Vilka är några exempel på kontextkänslig hjälp?</strong></p>
+<p>Verktygstips, inbäddade hjälplänkar, guidade turer, prediktiv sökning, FAQ-länkar, chatbots, meddelanden i appen och steg-för-steg-guider är några exempel på kontextkänslig hjälp.</p>
+<p>**Fråga 4: Vilka är fördelarna med vägledning och handledning i appen?</p>
+<p>Vägledning och tutorials i appen förbättrar användarupplevelsen eftersom de bland annat förbättrar onboarding, ökar engagemanget, ökar adoptionen och minskar churn.</p>
+<p><strong>Fråga 5: Vilka typer av vägledning i appen är mest effektiva?</strong></p>
+<p>Spotlightsignaler, verktygstips, coachmarkeringar, checklistor, steg-för-steg-genomgångar, interaktiva handledningar, animerade demos och meddelanden i appen är några av de mest effektiva vägledningarna i appen.</p>
+<p><strong>Fråga 6: Hur mäter du effektiviteten hos vägledning i appen?</strong></p>
+<p>Kvantitativa mått som framgångsgrad, tid för att slutföra uppgiften, felfrekvens, engagemangsmått och kvalitativ feedback från användbarhetstester, feedbackundersökningar, användarintervjuer, recensioner och supportdata är några av de mått som kan användas för att spåra hur effektiv vägledningen i appen är.</p>
+    </div>
+  </div>
+  <!--/ Post Content-->
+
+  <!--Divider-->
+  <hr class="border-b-1 border-gray-400 mt-12 mb-8 mx-4">
+
+  <!--Next & Prev Links-->
+  <div class="font-sans flex justify-between content-center px-4 mb-4">
+    <div class="text-left">
+      <span class="text-xs md:text-sm font-normal text-gray-600">&lt; Previous Post</span><br>
+      <p><a href="../what-is-process-documentation-and-why-is-it-important" class="break-normal text-base md:text-sm text-green-500 font-bold no-underline hover:underline">Vad är processdokumentation och varför är det viktigt?</a></p>
+    </div>
+    <div class="text-right">
+      <span class="text-xs md:text-sm font-normal text-gray-600">Next Post &gt;</span><br>
+      <p><a href="../12-amazing-plugins-for-gatsby-js-for-2024" class="break-normal text-base md:text-sm text-green-500 font-bold no-underline hover:underline">12 fantastiska plugins för Gatsby.js för 2024</a></p>
+    </div>
+  </div>
+
+
+  <!--/Next & Prev Links-->
+
+  
+    <div class="commentbox"></div>
+
+    <script src="https://unpkg.com/commentbox.io/dist/commentBox.min.js"></script>
+    <script>commentBox("5725910686760960-proj")</script>
+  
+
+  <!--Subscribe-->
+  
+    <!-- Base template of the subscription form. -->
+
+<div class="container font-sans bg-white rounded mt-8 p-4 md:p-24 text-center mb-10">
+    <h2 class="font-bold break-normal text-2xl md:text-4xl">Subscribe to the newsletter</h2>
+    <h3 class="font-bold break-normal font-normal text-gray-600 text-base md:text-xl">Stay up to date with our latest news and products</h3>
+    <div class="w-full text-center pt-4">
+        <form action="#">
+            <div class="max-w-xl mx-auto p-1 pr-0 flex flex-wrap items-center">
+                <input type="email" placeholder="youremail@example.com"
+                       class="flex-1 appearance-none rounded shadow p-3 text-gray-600 mr-2 focus:outline-none">
+                <button type="submit"
+                        class="flex-1 mt-4 md:mt-0 block md:inline-block appearance-none bg-green-500 text-white text-base font-semibold tracking-wider uppercase py-4 rounded shadow hover:bg-green-400">
+                    Subscribe
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+  
+  <!-- /Subscribe-->
+</div>
+<!--/container-->
+
+<footer class="bg-gray-900">
+  <div class="container max-w-6xl mx-auto flex items-center px-2 py-8">
+
+    <div class="w-full mx-auto flex flex-wrap items-center">
+      <div class="flex w-full md:w-1/2 justify-center md:justify-start text-white font-extrabold flex-col">
+        <a class="text-gray-900 no-underline hover:text-gray-900 hover:no-underline" href="/blog/sv">
+          <span class="text-base text-gray-200">Docsie.io Blog</span>
+        </a>
+        <a class="text-gray-900 no-underline hover:text-gray-900 hover:no-underline"
+           href="https://github.com/LikaloLLC/BlogVi" target="_blank">
+          <span class="text-xs text-gray-200">Made with BlogVI</span>
+        </a>
+      </div>
+      <div class="flex w-full pt-2 content-center justify-between md:w-1/2 md:justify-end">
+        <ul class="list-reset flex justify-center flex-1 md:flex-none items-center">
+          
+            <li>
+              <a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-3"
+                 href="https://www.docsie.io">Docsie</a>
+            </li>
+          
+            <li>
+              <a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-3"
+                 href="https://www.docsie.io/pricing/">Docsie Pricing</a>
+            </li>
+          
+            <li>
+              <a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-3"
+                 href="https://www.docsie.io/try_docsie/">Try Docsie</a>
+            </li>
+          
+        </ul>
+      </div>
+    </div>
+
+
+  </div>
+</footer>
+
+<script>
+  /* Progress bar */
+  //Source: https://alligator.io/js/progress-bar-javascript-css-variables/
+  var h = document.documentElement,
+    b = document.body,
+    st = 'scrollTop',
+    sh = 'scrollHeight',
+    progress = document.querySelector('#progress'),
+    scroll;
+  var scrollpos = window.scrollY;
+  var header = document.getElementById("header");
+  var navcontent = document.getElementById("nav-content");
+
+  document.addEventListener('scroll', function () {
+
+    /*Refresh scroll % width*/
+    scroll = (h[st] || b[st]) / ((h[sh] || b[sh]) - h.clientHeight) * 100;
+    progress.style.setProperty('--scroll', scroll + '%');
+
+    /*Apply classes for slide in bar*/
+    scrollpos = window.scrollY;
+
+    if (scrollpos > 10) {
+      header.classList.add("bg-white");
+      header.classList.add("shadow");
+      navcontent.classList.remove("bg-gray-100");
+      navcontent.classList.add("bg-white");
+    } else {
+      header.classList.remove("bg-white");
+      header.classList.remove("shadow");
+      navcontent.classList.remove("bg-white");
+      navcontent.classList.add("bg-gray-100");
+
+    }
+
+  });
+
+
+  //Javascript to toggle the menu
+  document.getElementById('nav-toggle').onclick = function () {
+    document.getElementById("nav-content").classList.toggle("hidden");
+  }
+</script>
+<script>
+  /*
+    Twitter
+    https://twitter.com/share?url=[post-url]&text=[post-title]
+
+    Facebook
+    https://www.facebook.com/sharer.php?u=[post-url]
+
+  */
+  let twitterURI = document.getElementById('twitter');
+  let facebookURI = document.getElementById('facebook');
+
+  let postURI = encodeURI(document.location.href);
+  let postTitle = encodeURI(document.getElementById('blog-title').innerText + ":\n")
+
+  facebookURI.setAttribute('href', `https://www.facebook.com/sharer.php?u=${postURI}`);
+  twitterURI.setAttribute('href', `https://twitter.com/share?url=${postURI}&text=${postTitle}`);
+</script>
+
+<!--Sharect-->
+
+<script src="https://unpkg.com/sharect@2.0.0/dist/sharect.js"></script>
+<script>window["sharectConfig"] = {"backgroundColor": "#333333", "enabled": true, "facebook": true, "iconColor": "#FFFFFF", "selectableElements": ["body"], "twitter": true, "twitterUsername": "likalo_llc"}</script>
+<script src="/blog/templates/assets/js/sharect.js"></script>
+
+
+
+<!--Reading time-->
+<script src="/blog/templates/assets/js/reading-time.min.js"></script>
+<script>
+  const text = []
+  let content = [...document.getElementById('content').getElementsByTagName('p')].forEach((elem) => {
+    text.push(elem.textContent)
+  });
+  const stats = readingTime(text.join(" "));
+
+  document.getElementById('reading-time').innerHTML = stats.text;
+</script>
+
+
+  
+      <!-- Google Tag Manager (noscript) -->
+
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TZRGMQ9"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+  
+
+</body>
+
+</html>

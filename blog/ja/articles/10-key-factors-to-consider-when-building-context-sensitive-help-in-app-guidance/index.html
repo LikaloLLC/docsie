@@ -1,0 +1,739 @@
+<!-- Base template of the article page. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+  
+
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/blog/https://d1iq6qzgppjlud.cloudfront.net/images/favicon/favicon-196x196.png">
+
+
+  <!-- Primary Meta Tags -->
+  <title>Docsie.io Blog - コンテキストに応じたヘルプとアプリ内ガイダンスを構築する際に考慮すべき10のポイント</title>
+  <meta name="author" content="Tanya A Mishra"/>
+  <meta name="title" content="コンテキストに応じたヘルプとアプリ内ガイダンスを構築する際に考慮すべき10のポイント">
+  <meta name="description" content="この記事では、コンテキストに応じたヘルプとアプリ内ガイダンスを構築する際に考慮すべき10の重要な要素について説明します。"/>
+  <meta name="keywords" content="Product Documentation,Technical Writing,Context Sensitive Help & In-app Guidance"/>
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.docsie.io/blog/blog/ja/articles/10-key-factors-to-consider-when-building-context-sensitive-help-in-app-guidance/">
+  <meta property="og:title" content="コンテキストに応じたヘルプとアプリ内ガイダンスを構築する際に考慮すべき10のポイント">
+  <meta property="og:description"
+        content="この記事では、コンテキストに応じたヘルプとアプリ内ガイダンスを構築する際に考慮すべき10の重要な要素について説明します。">
+  <meta property="og:image" content="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_jDvJa9Zmr9vQivN0e/f8a80264-b138-f51d-67f9-00d1e16f5e45banner_12.jpg">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://www.docsie.io/blog/blog/ja/articles/10-key-factors-to-consider-when-building-context-sensitive-help-in-app-guidance/">
+  <meta property="twitter:title" content="コンテキストに応じたヘルプとアプリ内ガイダンスを構築する際に考慮すべき10のポイント">
+  <meta property="twitter:description"
+        content="この記事では、コンテキストに応じたヘルプとアプリ内ガイダンスを構築する際に考慮すべき10の重要な要素について説明します。">
+  <meta property="twitter:image" content="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_jDvJa9Zmr9vQivN0e/f8a80264-b138-f51d-67f9-00d1e16f5e45banner_12.jpg">
+
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/blog/templates/assets/css/typography.min.css"/>
+  <!--Replace with your tailwind.css once created-->
+    
+    <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TZRGMQ9');</script>
+<!-- End Google Tag Manager -->
+  
+
+</head>
+
+
+<body class="bg-gray-100 font-sans leading-normal tracking-normal">
+
+<nav id="header" class="fixed w-full z-10 top-0">
+
+  <div id="progress" class="h-1 z-20 top-0"
+       style="background:linear-gradient(to right, #4dc0b5 var(--scroll), transparent 0);"></div>
+
+  <div class="container max-w-6xl mx-auto flex flex-wrap items-center justify-between mt-0 py-3">
+
+    <div class="pl-4">
+      <a class="text-gray-900 text-base no-underline hover:no-underline font-extrabold text-xl" href="../../">
+          Docsie.io Blog
+      </a>
+    </div>
+
+    <div class="block lg:hidden pr-4">
+      <button id="nav-toggle"
+              class="flex items-center px-3 py-2 border rounded text-gray-500 border-gray-600 hover:text-gray-900 hover:border-green-500 appearance-none focus:outline-none">
+        <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+          <title>Menu</title>
+          <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/>
+        </svg>
+      </button>
+    </div>
+
+    <div class="w-full flex-grow lg:flex lg:items-center lg:w-auto hidden lg:block mt-2 lg:mt-0 bg-gray-100 z-20"
+         id="nav-content">
+      <ul class="list-reset lg:flex justify-end flex-1 items-center">
+        
+        <li>
+          <a class="inline-block text-gray-600 hover:text-gray-900 hover:underline py-2 px-4"
+             href="https://www.docsie.io">Docsie</a>
+        </li>
+        
+        <li>
+          <a class="inline-block text-gray-600 hover:text-gray-900 hover:underline py-2 px-4"
+             href="https://www.docsie.io/pricing/">Docsie Pricing</a>
+        </li>
+        
+        <li>
+          <a class="inline-block text-gray-600 hover:text-gray-900 hover:underline py-2 px-4"
+             href="https://www.docsie.io/try_docsie/">Try Docsie</a>
+        </li>
+        
+      </ul>
+    </div>
+    <div class="flex w-full justify-end content-center">
+        <a
+          class="inline-block text-gray-500 hover:text-green-500 hover:underline text-center h-10 p-2 md:h-auto md:p-4 avatar"
+          data-tippy-content="@twitter_handle" href="https://twitter.com/intent/tweet?url=#"
+          id="twitter">
+          <svg class="fill-current h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+            <path
+              d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"></path>
+          </svg>
+        </a>
+        <a
+          class="inline-block text-gray-500 hover:text-green-500 hover:underline text-center h-10 p-2 md:h-auto md:p-4 avatar"
+          data-tippy-content="#facebook_id" href="https://www.facebook.com/sharer/sharer.php?u=#}"
+          id="facebook">
+          <svg class="fill-current h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+            <path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"></path>
+          </svg>
+        </a>
+      </div>
+  </div>
+
+</nav>
+
+<!--Container-->
+<div class="container max-w-4xl mx-auto mt-32 px-8 md:px-0">
+  <div class="prose prose lg:prose-xl mx-auto mt-32">
+    <!--Title-->
+    <h1 id="blog-title">コンテキストに応じたヘルプとアプリ内ガイダンスを構築する際に考慮すべき10のポイント</h1>
+    <!--Author-->
+    <div class="flex items-center">
+      <img class="w-10 h-10 rounded-full mr-4" src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_p1X4gXS3n0rCHYuaE/1f3f5f57-d8e2-7978-faef-0b9fe89f3e4btanya_pic.jpg" alt="Avatar of Author">
+      <div class="flex-1 px-2">
+        <div class="font-bold leading-none mb-2">Tanya A Mishra</div>
+        <div class="text-xs md:text-base">on September 07, 2023 · <span id="reading-time"
+                class="block md:inline mt-2 md:mt-0"></span> · filed under <span
+          class="block md:inline mt-2 md:mt-0">
+						
+            <span class="rounded bg-green-500 text-white px-1 uppercase text-xs whitespace-nowrap md:text-sm">Product Documentation</span>
+						
+            <span class="rounded bg-green-500 text-white px-1 uppercase text-xs whitespace-nowrap md:text-sm">Technical Writing</span>
+						
+            <span class="rounded bg-green-500 text-white px-1 uppercase text-xs whitespace-nowrap md:text-sm">Context Sensitive Help & In-app Guidance</span>
+						
+					</span>
+        </div>
+      </div>
+    </div>
+    <!--/Author-->
+
+    <!--Post Content-->
+    <!--Lead Para-->
+    <div id="content">
+      <p>コンテキスト依存ヘルプとは、ユーザーの特定のコンテキストに合わせたソフトウェアアプリケーションのヘルプコンテンツを指します。一般的なヘルプ文書を提供する代わりに、コンテキスト依存ヘルプは、アプリ内の現在地、完了しようとしているタスク、または直面している問題に関連する情報や詳細をユーザーに提供します。</p>
+<h2>コンテキスト依存ヘルプとは？</h2>
+<p>コンテキスト依存ヘルプ<a href="https://www.tandfonline.com/doi/abs/10.1080/09588220600821552">とは</a>は、ソフトウェアアプリケーション、オンラインプラットフォーム、またはシステム内で提供されるユーザー支援サポートのことで、プラットフォーム上の訪問者の旅を簡素化することを目的としています。</p>
+<ul>
+<li>コンテキスト依存ヘルプの例としては、以下のようなものがあります。</li>
+</ul>
+<p>1.特定のボタンやアイコンにカーソルを合わせると表示されるツールチップ。</p>
+<p><img alt="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_JgxTgPxsanF6oNLrz/84677561-47de-1bd4-7ba7-ed63ee38c087image.png" src="https://s3.amazonaws.com/content-harmony-user-uploads/froala-uploads-1692820574617-1692820574617.png" title="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_JgxTgPxsanF6oNLrz/84677561-47de-1bd4-7ba7-ed63ee38c087image.png" /></p>
+<p>2.ステップ・バイ・ステップのウォークスルー・オーバーレイ。</p>
+<p><img alt="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_NQWTLzhmKFbOI4nDz/9adffc58-0e30-abf0-0b11-b656905fbd0aimage.png" src="https://s3.amazonaws.com/content-harmony-user-uploads/froala-uploads-1692820574685-1692820574685.png" title="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_NQWTLzhmKFbOI4nDz/9adffc58-0e30-abf0-0b11-b656905fbd0aimage.png" /></p>
+<p>3.エラーコードまたは状態を検出し、的を絞ったトラブルシューティングアドバイスを提供するエラーメッセージヘルプ</p>
+<p><img alt="" src="https://s3.amazonaws.com/content-harmony-user-uploads/froala-uploads-1693391302473-1693391302473.png" /></p>
+<p>4.マルチステッププロセスを通してユーザーをガイドするステップバイステップのウォークスルーオーバーレイ</p>
+<p><img alt="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_2V0l6wSbWJS42mQom/60d856f7-7dcc-d8c0-129b-c6573fc8c5c2image.png" src="https://s3.amazonaws.com/content-harmony-user-uploads/froala-uploads-1692820574714-1692820574714.png" title="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_2V0l6wSbWJS42mQom/60d856f7-7dcc-d8c0-129b-c6573fc8c5c2image.png" /></p>
+<p><a href="https://site.docsie.io/in-app-help-and-support">文脈依存ヘルプ</a>は、非常にダイナミックで適応性が高い。高度な実装では、AIや機械学習を活用してユーザーの行動を分析し、表示されるヘルプコンテンツをカスタマイズすることもできる。ヘルプ体験は、実際のユーザーデータに基づいて継続的に進化します。</p>
+<p>コンテキスト依存ヘルプの主な<a href="https://www.id.iit.edu/wp-content/uploads/2015/03/Context-sensitive-interactive-systems-design-sato_hcii2003.pdf">目標</a>は、ユーザーまたはチームに、最も関連性の高いヘルプトピックとそれらに関する完全な情報に、必要なときに素早く簡単にアクセスできるようにすることです。これにより、ユーザーのニーズを予測し、フラストレーションや混乱を防ぐことができます。ユーザーは、ドキュメントを探すためにアプリを離れる必要がなく、ワークフローに集中することができます。</p>
+<p>全体として、コンテキスト依存ヘルプは、タスク完了率、タスクにかかる時間、顧客満足度などの主要なユーザビリティ測定基準を改善することを目的としています。効果的に実装された場合、ソフトウェアアプリケーションのユーザーエクスペリエンスと採用率を劇的に向上させることができます。</p>
+<h2>コンテキスト依存のヘルプは、どのようにユーザーエクスペリエンスを向上させるのでしょうか？</h2>
+<p>コンテキスト依存ヘルプは、いくつかの重要な方法でユーザーエクスペリエンスを向上させます：</p>
+<p><strong>認知的負荷の軽減</strong> - 特定のタスクとコンテキストに合わせた支援を提供することで、コンテキスト依存ヘルプは、関連するヘルプコンテンツを検索するユーザーの労力を軽減します。これにより、答えを見つけるために必要な認知的負担と精神的労力が軽減されます。</p>
+<p><strong>自己充足感の向上</strong> - ユーザーは、コンテキストに応じたヘルプをすぐに利用できるため、問題を解決し、タスクをより速く完了することができます。これにより、ドキュメントやサポートなどの外部リソースに頼ることなく、目標を達成することができます。</p>
+<ul>
+<li>
+<p>集中力の強化** - インターフェースとワークフローにヘルプが統合されているため、ユーザーはヘルプを探すためにアプリケーション間で注意を移動させる必要がありません。ユーザーの注意はタスクに集中し続けます。</p>
+</li>
+<li>
+<p>オンボーディング時や重要な使用場面において、コンテキストヘルプは信頼性を高めます。これは、アプリケーションの採用とエンゲージメントの向上につながります。</p>
+</li>
+<li>
+<p>トレーニング時間の短縮** - その場でユーザーをガイドすることで、コンテキストに応じたヘルプは正式なトレーニングの必要性を低減します。新規ユーザーは、より早く立ち上げることができます。</p>
+</li>
+<li>
+<p>エラーの減少** - プロアクティブにヘルプを提供することで、使用上のエラーを防ぎ、ユーザーを軌道に乗せることができます。これにより、ヒューマンエラーが減少します。</p>
+</li>
+<li>
+<p>サポートコストの削減*** - ユーザーが自分自身でヘルプを提供できるようになることで、コンテキストに応じたヘルプがサポートチケットの減少につながります。これにより、サポートチームの負担が軽減されます。</p>
+</li>
+<li>
+<p>満足度の向上***- ユーザーは、ヘルプがすぐに利用できることで、よりスムーズでフラストレーションの少ない体験を得ることができます。これは、ユーザー満足度の向上に貢献します。</p>
+</li>
+</ul>
+<p>全体として、コンテキスト依存ヘルプは、ユーザーのコンテキストとニーズに動的に対応する、よりスマートで適応性の高いヘルプ体験を提供します。これにより、ユーザーは自信を持ってコントロールできると感じながら、効率的にタスクを達成することができます。最大の受益者はエンドユーザーであり、エンドユーザーはヘルプを最も必要な時に、必要な場所で便利に利用することができます。</p>
+<p><img alt="" src="https://images.unsplash.com/photo-1520333789090-1afc82db536a?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3wzMTM3MXwwfDF8c2VhcmNofDR8fGhhcHB5JTIwdXNlcnxlbnwwfHx8fDE2OTI2Njg5NDR8MA&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=1080" /></p>
+<h2>以下は、文脈依存ヘルプの例です：</h2>
+<p>さまざまなソフトウェアアプリケーションやウェブサイトに、文脈依存ヘルプが実装されている例はたくさんあります：</p>
+<ul>
+<li>
+<p>ツールチップ** - Microsoft Officeのアプリのように、ボタンやアイコンにカーソルを合わせると、機能を説明するツールチップが表示されます。</p>
+</li>
+<li>
+<p>ヘルプリンクの埋め込み** - Adobe Photoshopのようなアプリケーションは、メニューやパネル内にヘルプリンクを埋め込み、ユーザーを関連するヘルプ記事に誘導します。</p>
+</li>
+<li>
+<p>FacebookやLinkedInのようなウォークスルーは、オンボーディング中に新機能を文脈に沿ってハイライトします。</p>
+</li>
+<li>
+<p>予測検索** - Googleのような検索エンジンは、入力された単語に基づいて、リアルタイムで検索候補を表示します。</p>
+</li>
+<li>
+<p>FAQリンク** - 多くのeコマースサイトのように、特定のエラーメッセージやページに関連するFAQリンクをインラインで表示することができます。</p>
+</li>
+<li>
+<p>チャットボット** - マイクロソフトオフィスのクリッピーのようなインテリジェントなチャットボットは、検出されたユーザーのアクションに基づいて、積極的にヒントを提供します。</p>
+</li>
+<li>
+<p>アプリ内メッセージ** - Dropboxのようなアプリは、繰り返される失敗したアクションを検出したときにヘルプ記事を提供するためにアプリ内メッセージを使用します。</p>
+</li>
+<li>
+<p>ステップバイステップのウィザード** - TurboTaxのような納税準備ソフトウェアは、ユーザーの現在の状況に合わせたガイド付きのステップバイステップの支援を提供します。</p>
+</li>
+<li>
+<p>インタラクティブなチュートリアル** - いくつかのアプリは、機能の使用方法を示すためにインタラクティブなアニメーションやオーバーレイを使用しています。</p>
+</li>
+<li>
+<p>NetflixやAmazonのようなサービスは、視聴履歴や興味に基づいて特定のコンテンツを推奨します。</p>
+</li>
+<li>
+<p>マイクロコピーの指示** - 入力フィールドのプレースホルダーや検証エラーのテキストなどのマイクロコピーは、コンテキストに応じた支援を提供します。</p>
+</li>
+<li>
+<p>オブジェクト検出** - AR/VRコンテキストでは、オブジェクト検出は、関連する情報オーバーレイの表示をトリガすることができます。</p>
+</li>
+</ul>
+<p>共通のスレッドは、アプリケーション内の現在のコンテキストに合わせた動的でパーソナライズされたヘルプコンテンツをユーザーに提供することです。これにより、ユーザーのニーズを予測し、最も必要なときにガイド付きの支援を提供します。コンテキスト感度は、スムーズで直感的なヘルプ体験を生み出す重要な原動力です。</p>
+<h2>モバイルアプリにコンテキストセンシティブのヘルプを実装するには？</h2>
+<p>モバイルアプリにコンテキストセンシティブヘルプを実装するには、いくつかの効果的な方法があります：</p>
+<p>アプリ内メッセージを使えば、モバイルユーザーのワークフローに関連したタイミングで、積極的にヘルプコンテンツを提供することができます。例えば、ユーザーがタスクを完了するのに苦労していることを検出し、ツールチップやモーダルを使用してその手順を説明することができます。</p>
+<p>オンボーディング中に、アプリの要素をハイライトしたり、コアなワークフローをステップバイステップで説明することで、新規ユーザーをガイドします。注釈付きのスクリーンショット、ツールチップ、オーバーレイ指示を使用します。</p>
+<p>パルス、ハイライト、ツールチップなど、押し付けがましくないUIのマイクロインタラクションを使用して、注意を向けさせ、意思決定ポイントでインコンテキストの指示を提供する。</p>
+<p>機能アップデートやタスク完了のリマインダなど、各ユーザーのコンテキストに基づいて、タイムリーで適切なヘルプコンテンツをプッシュ通知で送信する。</p>
+<p>ユーザーが検索バーに入力すると、検索キーワードに合わせたヘルプトピックや推奨コンテンツが表示されます。</p>
+<p>**アプリ内チャットボット</p>
+<p>チャットボットは、文脈を手がかりに会話ガイダンスを提供し、ユーザーにインタラクティブなヘルプ体験を提供します。</p>
+<p>ユーザーがアプリとどのようにやり取りしているかを追跡し、今後のアプリのバージョンで支援を提供するためのペインポイントと機会を特定します。</p>
+<p>拡張現実では、現実世界のカメラビューにコンテキストに応じた指示やガイドをオーバーレイして、ワークフローをアシストすることができます。</p>
+<p>モバイルアプリで重要なのは、ダイナミックでパーソナライズされ、ユーザージャーニーの自然なタッチポイントに統合されたヘルプコンテンツを提供することです。静的なヘルプ文書でワークフローを中断させることは避けましょう。コンテキストに関連したマイクロインタラクションを提供してユーザーを誘導し、理解度とユーザビリティを高めます。</p>
+<h2>アプリ内ガイダンスとチュートリアルの利点は何ですか？</h2>
+<p>*アプリ内ガイダンスとチュートリアルは、全体的なユーザーエクスペリエンスを向上させる多くの利点を提供します。</p>
+<p><strong>Enhanced Onboarding:</strong> ガイド付きチュートリアルは、コアなワークフローを段階的に示すことで、新規ユーザーがアプリを素早く使いこなすのを支援します。</p>
+<ul>
+<li><strong>エンゲージメントの向上:</strong>スポットライトを当てた新機能や能力は、ユーザーがアプリをもっと探検することを促します。</li>
+</ul>
+<p><strong>Higher Adoption:</strong>主要機能へのアクセス方法をユーザーに示すことで、ガイダンスがアプリ全体の使用を成功に導きます。</p>
+<ul>
+<li>
+<p>ユーザーは、インコンテクスト学習サポートを提供するアプリに不満を感じたり、アプリを放棄したりする可能性が低くなります。</p>
+</li>
+<li>
+<p>UX指標の改善：***ユーザーがコンテキスト内で学習できるようになると、タスク完了、タスク実行時間、使いやすさが向上します。</p>
+</li>
+<li>
+<p>トレーニングコストの削減： **ガイダンスにより、正式なトレーニングリソースやカスタマーサポートの必要性が削減されます。</p>
+</li>
+<li>
+<p>アプリ内ガイダンスにより、アプリ体験の中で非常にカスタマイズされた教材を配信することができます。</p>
+</li>
+<li>
+<p>ジャスト・イン・タイム学習：**適切なタイミングでガイダンスを表示することで、学習と情報の定着を助けます。</p>
+</li>
+</ul>
+<p><strong>On-Screen Affordances:</strong>ビジュアルでインタラクティブな<a href="https://www.frontiersin.org/articles/10.3389/fpsyg.2020.01623/full">要素</a>は、ユーザーが見落としそうなことに注意を向けさせることができます。</p>
+<ul>
+<li>
+<p>進捗追跡：*** チュートリアルは、進捗を追跡しながら、マルチステッププロセスを通してユーザーをガイドすることができます。</p>
+</li>
+<li>
+<p>アクセシビリティの向上**：よく設計されたガイダンスは、多様なユーザーとアクセシビリティのニーズをサポートします。</p>
+</li>
+<li>
+<p>継続的なサポート:**ガイダンスは、新しい機能や更新された機能を試している経験豊富なユーザーにとっても、学習を強化するのに役立ちます。</p>
+</li>
+</ul>
+<p>重要なのは、アプリ内ガイダンスを単に1回限りのオンボーディングソリューションとしてではなく、時間の経過とともにユーザーとともに進化する、組み込み型の継続的なコンテキストサポートのソースとして考えることです。戦略的でユーザー中心のアプローチをとることで、ガイダンスとチュートリアルを採用し、アプリのエクスペリエンスにおいて、理解度、ユーザビリティ、ユーザーの生産性を高めることができます。</p>
+<h2>アプリ内ガイダンスのトリガーとなる適切な瞬間をどのように特定しますか？</h2>
+<p>アプリ内ガイダンスのトリガーとなる適切な瞬間を見極めるには、ユーザーのコンテキストとニーズを注意深く考慮する必要があります。ベストプラクティスをいくつか紹介しましょう：</p>
+<p><img alt="" src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_ldCxrtprpwOWOs7hG/be9c1008-dd32-952b-b8a1-843e605c5d66enhancing_customer_support_and_engagement.jpg" /></p>
+<ul>
+<li>
+<p>ユーザーがタスクで苦労したり、失敗したりするポイントを探し、軌道に乗せるための支援を提供する。</p>
+</li>
+<li>
+<p>機能によって混乱が生じる可能性がある場合、ユーザーの質問を促すために積極的なガイダンスを使用します。</p>
+</li>
+<li>
+<p>オンボーディングは思慮深く** - オンボーディングの間、邪魔にならないツールチップやオーバーレイを使って、新しいユーザーをコアなワークフローに導きます。</p>
+</li>
+</ul>
+<p><strong>非アクティブへの対応</strong> - ユーザーが非アクティブのようであれば、メッセージを使用して次のステップに進むように促します。</p>
+<ul>
+<li>
+<p>新機能のハイライト** - UIの主要な新機能や変更に、ハイライトアニメーションやパルシングで注目を集めましょう。</p>
+</li>
+<li>
+<p>時折、複雑なトピックに関するガイダンスを再表示し、暗記を助けます。</p>
+</li>
+<li>
+<p>既知の問題領域をターゲットにする** - ユーザーが一般的に支援を必要としていることをデータが示している場所にガイダンスを提供します。</p>
+</li>
+<li>
+<p>ガイダンスは、確立されたデザインシステムを使用して、他の UI 要素と一貫性を保ちます。</p>
+</li>
+<li>
+<p>潜在的な障害を考慮する** - UIコントロールまたはデータ入力を含むタスクを通して、ユーザーを歩かせる。</p>
+</li>
+<li>
+<p>提案のタイミングを計る** - 提案をする場合は、ある程度考えた後、不満が生じる前に表示する。</p>
+</li>
+<li>
+<p>ユーザーコントロールを許可する** - ガイダンスを却下したり、要求に応じてアクセスしたりするオプションをユーザーに与えることで、あまり邪魔にならないようにします。</p>
+</li>
+<li>
+<p>ユーザーとテストする** - 実際のユーザーとガイダンスを繰り返しテストし、彼らの反応とフィードバックを観察する。</p>
+</li>
+<li>
+<p>データを分析し、最適化する** - アナリティクスやセッションリプレイのようなツールを使用して、ガイダンスのパフォーマンスを確認し、改善点を特定します。</p>
+</li>
+</ul>
+<p>目標は、それぞれの教育的または支援的な体験を、それが最も役立つ瞬間に提供することです。そのためには、ユーザーのワークフローを理解し、ニーズを予測し、観察された利用パターンに基づいて継続的に改善する必要があります。適切なタイミングを計ることで、すべてのガイダンス・インタラクションは、邪魔なものではなく、シームレスに感じられるようになる。</p>
+<h2>どのようなアプリ内ガイダンスが最も効果的か？</h2>
+<p>アプリ内ガイダンスを設計する際、最も効果的なインタラクションのタイプを考えてみましょう：</p>
+<ul>
+<li>
+<p>スポットライトの合図 -*** 特定のボタンやUI要素をさりげなく強調したり、アニメーションさせたりして、注意を引く。</p>
+</li>
+<li>
+<p>ツールチップ** - UIの一部をホバー/タップすると表示される短い文脈テキスト。</p>
+</li>
+<li>
+<p>コーチマーク** - 特定のUI要素に焦点を当てる舷窓の切り抜きによるオーバーレイ。</p>
+</li>
+<li>
+<p>チェックリスト** - タスクが達成されると適応されるチェックリストを介して、ユーザーがマルチステップワークフローを完了するのを助けます。</p>
+</li>
+<li>
+<p>ステップ・バイ・ステップ・チュートリアル** - 複雑なタスクを番号付きのステップ・バイ・ステップの指示に分割します。</p>
+</li>
+<li>
+<p>インタラクティブチュートリアル** - ハイライト、オーバーレイ、およびプロンプトを介して、ユーザーがライブアプリのUI内で練習することができます。</p>
+</li>
+<li>
+<p>アニメーションデモ** - ワークフローやインタラクションのアニメーションデモを使用して、より視覚的に学習できます。</p>
+</li>
+<li>
+<p>アプリ内通知** - 通知によって、押し付けがましくないリマインダー、ヒント、アップデートを送信します。</p>
+</li>
+<li>
+<p>ユーザーの苦労を発見** - 障害のポイントを検出し、積極的にユーザーを軌道に戻すための支援を提供します。</p>
+</li>
+<li>
+<p>パーソナライズされたレコメンデーション** - ユーザーのコンテキストと過去の行動に基づいて、機能やコンテンツを提案します。</p>
+</li>
+<li>
+<p>オンスクリーンマイクロコピー** - UI要素内に簡潔な文脈テキスト指示を提供します。</p>
+</li>
+<li>
+<p>チャットボット** - 会話形式で回答を提供するインテリジェントなチャットボットにユーザーが質問できるようにします。</p>
+</li>
+<li>
+<p>オブジェクト検出** - AR/VRにおいて、オブジェクトを検出し、関連情報をオーバーレイ表示します。</p>
+</li>
+<li>
+<p>ビデオデモ** - 関連するコンテキスト内でワークフローをデモするリンクを含めるか、短いビデオを埋め込みます。</p>
+</li>
+<li>
+<p>検索ガイダンス** - オートコンプリートや文脈に沿ったレコメンデーションにより、検索行動を洗練させます。</p>
+</li>
+</ul>
+<p>ガイダンスの種類は、タスクの複雑さとユーザーの経験レベルに合わせる必要があります。画面を占領するような没入型のチュートリアルやウィザードよりも、既存のUIの上にタイミングよく、邪魔にならないインタラクションを重ねた方がうまくいく傾向がある。適切なアプローチを決定するために、ユーザーとテストを繰り返しましょう。</p>
+<h2>アプリ内ガイダンスを邪魔にならないようにするには？</h2>
+<p>アプリ内ガイダンスを邪魔にならないものにするためのベストプラクティスがいくつかあります：</p>
+<ul>
+<li>
+<p>シンプルさを優先する** - ユーザーを圧倒することは避けましょう。ユーザーを圧倒しないようにしましょう。</p>
+</li>
+<li>
+<p>ほのかなスポットライトや薄いツールチップのようなものは、気が散りにくい傾向があります。</p>
+</li>
+<li>
+<p>テキストを最小限にする** - 簡潔なマイクロコピーを使用し、ヘルプテキストの壁を避ける。</p>
+</li>
+<li>
+<p>アプリ全体のオーバーレイとしてではなく、関連するUI要素の近くにガイダンスを表示します。</p>
+</li>
+<li>
+<p>アクティブなワークフロー中ではなく、自然な休憩時にポップアップします。</p>
+</li>
+<li>
+<p>ガイダンスが強制されているように感じないように、ユーザーが簡単にガイダンスを解除できるようにしましょう。</p>
+</li>
+<li>
+<p>頻度を制限する** - あまりにも頻繁にガイダンスを表示しすぎて、ユーザーを飽和させないようにしましょう。</p>
+</li>
+<li>
+<p>可能な限りパーソナライズする** - 既知のユーザー属性とコンテキストに基づいてガイダンスを調整します。</p>
+</li>
+<li>
+<p>微妙なアニメーションを使用する** - 微妙な脈動やハイライトは、気を散らすことなく注意を引きます。</p>
+</li>
+<li>
+<p>ガイダンスの構成要素が、単独で表示されても邪魔に感じないようにしましょう。</p>
+</li>
+<li>
+<p>ガイダンスはアプリのビジュアルスタイルと一貫性があるように感じるべきです。</p>
+</li>
+<li>
+<p>バッジ、ステップトラッカー、プログレスバーは、長さを明確にします。</p>
+</li>
+<li>
+<p>ガイダンスに再度アクセスできるようにしましょう。</p>
+</li>
+<li>
+<p>ポップアップは邪魔になりがちです。</p>
+</li>
+<li>
+<p>長時間のワークフローではなく、特定のアトミックなタスクにガイダンスをターゲットにしてください。</p>
+</li>
+</ul>
+<p>うまくデザインされた、文脈に沿ったガイダンスは、ユーザーエクスペリエンスの中断ではなく、自然でシームレスな一部のように感じられます。適切な視覚的スタイル、コンテンツのトーン、タイミング、簡潔さは、ユーザーの集中や流れを妨げることなく、ガイダンスが支援を提供するのに役立ちます。実際のユーザーを使って評価し、フィードバックに基づいて反復することが重要です。</p>
+<h2>アプリ内ガイダンスの効果をどのように測定しますか？</h2>
+<p>アプリ内ガイダンスの効果を評価するには、定量的な指標と定性的なフィードバックの両方を用いて全体像を把握する必要があります。</p>
+<ul>
+<li>
+<p>タスク成功率** - ユーザーがガイダンス機能によってタスクを完了した割合。</p>
+</li>
+<li>
+<p>タスク完了時間** - ユーザーがタスクを完了するのにかかった時間。</p>
+</li>
+<li>
+<p>タスク完了時間** - ユーザーがタスクを完了するのにかかった時間。</p>
+</li>
+<li>
+<p>ガイダンスの関与** - ユーザーの何%がガイダンスコンポーネントをクリック、表示、または相互作用しているか。</p>
+</li>
+<li>
+<p>ガイダンスの再閲覧** - 最初の閲覧の後、ユーザーがガイダンスを再度開いたり、再参加する頻度。</p>
+</li>
+<li>
+<p>Net Promoter Score** - 推奨意向の尺度で評価されたユーザー満足度。</p>
+</li>
+</ul>
+<p><strong>Churn or abandonment</strong> - ガイダンスがユーザーの離脱率に影響を与えるかどうか。</p>
+<p><strong>Feature adoption</strong> - ガイダンスがカバーする製品分野や機能の採用にどのような影響を与えるか。</p>
+<ul>
+<li>
+<p>ユーザビリティテスト** - ユーザがガイダンスとどのように関わり、どこで苦労しているかを観察する。</p>
+</li>
+<li>
+<p>フィードバック調査** - ガイダンスの有用性や関連性について質問します。</p>
+</li>
+<li>
+<p>ユーザーインタビュー** - ガイダンスの経験についてユーザーにインタビューする。</p>
+</li>
+<li>
+<p>レビュー/アプリストアの評価** - ガイダンスの質について言及したレビューを監視する。</p>
+</li>
+</ul>
+<p><strong>サポートチケット</strong> - ガイダンスによって、対象トピックに関するサポート件数が減少するかどうか。</p>
+<ul>
+<li>セッションリプレイ** - ユーザーセッションを再視聴し、ガイダンスが適切なタイミングで表示されるかどうかを確認します。</li>
+</ul>
+<p>ガイダンスの利用データを主要なビジネスおよびコンバージョンの指標に結び付けることで、ROIを計算し、ユーザーエクスペリエンスを最適化することができます。しかし、ユーザーから直接得られる定性的な洞察は、ガイダンスのトーン、コンテンツ、タイミング、配置、プレゼンテーションを向上させるために同様に重要です。指標とフィードバックの両方を分析することで、アプローチを継続的に改善することができます。</p>
+<h2>コンテキストセンシティブはどのようにサポートチケットを減らすことができますか？</h2>
+<p>コンテキストに配慮したヘルプは、いくつかの重要な方法でカスタマーサポートチケットを減らすことができます：</p>
+<p><strong>問題を未然に防ぐ</strong> - ユーザーの質問や障害を予測することで、コンテキスト依存ヘルプは多くの一般的な問題の発生を防ぎます。</p>
+<p><strong>セルフサービスの促進</strong> - ヘルプがすぐに利用できるため、ユーザーはサポートに連絡するよりも、簡単な問題を自分で解決することができます。</p>
+<ul>
+<li>
+<p>問題が発生した場合、的を絞ったヘルプコンテンツがユーザーを迅速な解決へと導きます。</p>
+</li>
+<li>
+<p>どのようにすれば...」という質問は、多くのサポートチケットの多くを占めています。インコンテキストヘルプは、これらの質問を簡単に処理します。</p>
+</li>
+<li>
+<p>ユーザが自分で学習できるようになると、正式なトレーニングリソースを作成する必要がなくなります。</p>
+</li>
+<li>
+<p>埋め込み型のコンテキストヘルプは、静的なヘルプドキュメントよりも見つけやすくなっています。</p>
+</li>
+<li>
+<p>ユーザーをガイドすることは、より多様な使い方を促し、エッジケースの問題を減らします。</p>
+</li>
+</ul>
+<p><strong>Standardizes content</strong> - 一貫性のある、一元化されたアプリ内コンテンツは、断片的な外部記事を防ぎます。</p>
+<ul>
+<li>
+<p>ヘルプは、バグや制限に関連する既知の一時的な解決策をプッシュすることができます。</p>
+</li>
+<li>
+<p><strong>理解力の向上</strong> - 優れたヘルプコンテンツによる明確な理解は、使用上の問題の減少につながります。</p>
+</li>
+</ul>
+<p><strong>Installs user confidence</strong> - ガイダンスは、ユーザーがより独自に機能を探求する自信を与えます。</p>
+<ul>
+<li>
+<p>ヘルプの利用状況を分析することで、改善すべきユーザビリティの問題が明らかになります。</p>
+</li>
+<li>
+<p>エージェントの時間を節約** - 繰り返しの質問を防ぐことによって、各サポートチケットは、より少ないエージェントの労力を必要とします。</p>
+</li>
+<li>
+<p>ヘルプは、ユーザー自身がワークフローのトラブルシューティングを行えるようにガイドします。</p>
+</li>
+</ul>
+<p>適切なタイミングで展開される戦略的なガイダンスにより、アプリはユーザーの質問を促し、問題が発生した場合に迅速な自己修復を可能にします。これにより、ユーザー・エクスペリエンスを向上させながら、サポートの作業量とコストを大幅に削減します。</p>
+<h2>まとめ</h2>
+<ul>
+<li>
+<p>コンテキスト依存のヘルプは、ユーザーの特定のニーズに合わせたその場での支援を提供します。</p>
+</li>
+<li>
+<p>認知的負荷を軽減し、自己充足を可能にし、集中力を高め、エンゲージメントを向上させ、トレーニング時間を短縮します。</p>
+</li>
+<li>
+<p>例としては、ツールチップ、ステップバイステップのウォークスルー、パーソナライズされた推奨、および埋め込みFAQが含まれます。</p>
+</li>
+<li>
+<p>効果的な導入には、ガイダンスを引き起こす適切な瞬間を特定し、さりげなく、押し付けがましくないデザインを使用することが必要です。</p>
+</li>
+<li>
+<p>タスク完了の指標、利用データ、質的フィードバックによって、その効果を測定することができます。</p>
+</li>
+<li>
+<p>ユーザーの質問や障害を予測することで、コンテキストに配慮したヘルプは、カスタマーサポートのチケットとコストを大幅に削減します。</p>
+</li>
+<li>
+<p>うまく設計され、タイミングが合えば、よりスムーズで満足度の高いユーザー体験を提供します。</p>
+</li>
+</ul>
+<p>包括的なアプリ内ヘルプソリューションをお探しでしたら、Docsie.ioと当社のコンテキスト対応アプリ内ヘルプをお試しください。<a href="https://www.docsie.io/">サインアップ</a>して無料トライアルをご利用ください。</p>
+<h2>よくある質問</h2>
+<p>**質問1：コンテキスト依存ヘルプとは何ですか？</p>
+<p>文脈依存ヘルプとは、基本的にソフトウェアアプリケーション、オンラインプラットフォーム、またはシステム内でのユーザー補助を意味します。コンテキスト依存ヘルプとは、基本的に、ユーザーの現在のコンテキスト、タスク、または問題に関連する情報を提供することを意味します。</p>
+<p>**質問2：文脈依存ヘルプはどのようにユーザー体験を向上させますか？</p>
+<p>文脈依存ヘルプは、認知的負荷を軽減し、自己充足を高め、エンゲージメントを高め、トレーニング時間を短縮することで、ユーザーエクスペリエンスを向上させます。</p>
+<p><strong>Question 3:</strong> **文脈依存型ヘルプの例にはどのようなものがありますか？</p>
+<p>ツールチップ、埋め込みヘルプリンク、ガイド付きツアー、予測検索、FAQリンク、チャットボット、アプリ内メッセージ、ステップバイステップのウィザードなどは、文脈依存型ヘルプの一部です。</p>
+<p>**質問4：アプリ内ガイダンスとチュートリアルの利点は何ですか？</p>
+<p>アプリ内ガイダンスとチュートリアルは、オンボーディングを改善し、エンゲージメントを高め、採用を増やし、解約を減らすなど、ユーザーエクスペリエンスを向上させます。</p>
+<p>**Question5：どのようなアプリ内ガイダンスが最も効果的ですか？</p>
+<p>スポットライトキュー、ツールチップ、コーチマーク、チェックリスト、ステップバイステップのウォークスルー、インタラクティブなチュートリアル、アニメーションデモ、アプリ内通知などは、最も効果的なアプリ内ガイダンスの一部です。</p>
+<p>**質問6：アプリ内ガイダンスの効果をどのように測定しますか？</p>
+<p>タスク成功率、タスク完了時間、エラー率、エンゲージメントメトリクスなどの定量的メトリクス、ユーザビリティテスト、フィードバック調査、ユーザーインタビュー、レビュー、サポートチケットデータからの定性的フィードバックは、アプリ内ガイダンスの効果を追跡するために使用できる尺度の一部です。</p>
+    </div>
+  </div>
+  <!--/ Post Content-->
+
+  <!--Divider-->
+  <hr class="border-b-1 border-gray-400 mt-12 mb-8 mx-4">
+
+  <!--Next & Prev Links-->
+  <div class="font-sans flex justify-between content-center px-4 mb-4">
+    <div class="text-left">
+      <span class="text-xs md:text-sm font-normal text-gray-600">&lt; Previous Post</span><br>
+      <p><a href="../what-is-process-documentation-and-why-is-it-important" class="break-normal text-base md:text-sm text-green-500 font-bold no-underline hover:underline">プロセス・ドキュメンテーションとは何か？</a></p>
+    </div>
+    <div class="text-right">
+      <span class="text-xs md:text-sm font-normal text-gray-600">Next Post &gt;</span><br>
+      <p><a href="../12-amazing-plugins-for-gatsby-js-for-2024" class="break-normal text-base md:text-sm text-green-500 font-bold no-underline hover:underline">2024年のためのGatsby.js用12の驚くべきプラグイン</a></p>
+    </div>
+  </div>
+
+
+  <!--/Next & Prev Links-->
+
+  
+    <div class="commentbox"></div>
+
+    <script src="https://unpkg.com/commentbox.io/dist/commentBox.min.js"></script>
+    <script>commentBox("5725910686760960-proj")</script>
+  
+
+  <!--Subscribe-->
+  
+    <!-- Base template of the subscription form. -->
+
+<div class="container font-sans bg-white rounded mt-8 p-4 md:p-24 text-center mb-10">
+    <h2 class="font-bold break-normal text-2xl md:text-4xl">Subscribe to the newsletter</h2>
+    <h3 class="font-bold break-normal font-normal text-gray-600 text-base md:text-xl">Stay up to date with our latest news and products</h3>
+    <div class="w-full text-center pt-4">
+        <form action="#">
+            <div class="max-w-xl mx-auto p-1 pr-0 flex flex-wrap items-center">
+                <input type="email" placeholder="youremail@example.com"
+                       class="flex-1 appearance-none rounded shadow p-3 text-gray-600 mr-2 focus:outline-none">
+                <button type="submit"
+                        class="flex-1 mt-4 md:mt-0 block md:inline-block appearance-none bg-green-500 text-white text-base font-semibold tracking-wider uppercase py-4 rounded shadow hover:bg-green-400">
+                    Subscribe
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+  
+  <!-- /Subscribe-->
+</div>
+<!--/container-->
+
+<footer class="bg-gray-900">
+  <div class="container max-w-6xl mx-auto flex items-center px-2 py-8">
+
+    <div class="w-full mx-auto flex flex-wrap items-center">
+      <div class="flex w-full md:w-1/2 justify-center md:justify-start text-white font-extrabold flex-col">
+        <a class="text-gray-900 no-underline hover:text-gray-900 hover:no-underline" href="/blog/ja">
+          <span class="text-base text-gray-200">Docsie.io Blog</span>
+        </a>
+        <a class="text-gray-900 no-underline hover:text-gray-900 hover:no-underline"
+           href="https://github.com/LikaloLLC/BlogVi" target="_blank">
+          <span class="text-xs text-gray-200">Made with BlogVI</span>
+        </a>
+      </div>
+      <div class="flex w-full pt-2 content-center justify-between md:w-1/2 md:justify-end">
+        <ul class="list-reset flex justify-center flex-1 md:flex-none items-center">
+          
+            <li>
+              <a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-3"
+                 href="https://www.docsie.io">Docsie</a>
+            </li>
+          
+            <li>
+              <a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-3"
+                 href="https://www.docsie.io/pricing/">Docsie Pricing</a>
+            </li>
+          
+            <li>
+              <a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-3"
+                 href="https://www.docsie.io/try_docsie/">Try Docsie</a>
+            </li>
+          
+        </ul>
+      </div>
+    </div>
+
+
+  </div>
+</footer>
+
+<script>
+  /* Progress bar */
+  //Source: https://alligator.io/js/progress-bar-javascript-css-variables/
+  var h = document.documentElement,
+    b = document.body,
+    st = 'scrollTop',
+    sh = 'scrollHeight',
+    progress = document.querySelector('#progress'),
+    scroll;
+  var scrollpos = window.scrollY;
+  var header = document.getElementById("header");
+  var navcontent = document.getElementById("nav-content");
+
+  document.addEventListener('scroll', function () {
+
+    /*Refresh scroll % width*/
+    scroll = (h[st] || b[st]) / ((h[sh] || b[sh]) - h.clientHeight) * 100;
+    progress.style.setProperty('--scroll', scroll + '%');
+
+    /*Apply classes for slide in bar*/
+    scrollpos = window.scrollY;
+
+    if (scrollpos > 10) {
+      header.classList.add("bg-white");
+      header.classList.add("shadow");
+      navcontent.classList.remove("bg-gray-100");
+      navcontent.classList.add("bg-white");
+    } else {
+      header.classList.remove("bg-white");
+      header.classList.remove("shadow");
+      navcontent.classList.remove("bg-white");
+      navcontent.classList.add("bg-gray-100");
+
+    }
+
+  });
+
+
+  //Javascript to toggle the menu
+  document.getElementById('nav-toggle').onclick = function () {
+    document.getElementById("nav-content").classList.toggle("hidden");
+  }
+</script>
+<script>
+  /*
+    Twitter
+    https://twitter.com/share?url=[post-url]&text=[post-title]
+
+    Facebook
+    https://www.facebook.com/sharer.php?u=[post-url]
+
+  */
+  let twitterURI = document.getElementById('twitter');
+  let facebookURI = document.getElementById('facebook');
+
+  let postURI = encodeURI(document.location.href);
+  let postTitle = encodeURI(document.getElementById('blog-title').innerText + ":\n")
+
+  facebookURI.setAttribute('href', `https://www.facebook.com/sharer.php?u=${postURI}`);
+  twitterURI.setAttribute('href', `https://twitter.com/share?url=${postURI}&text=${postTitle}`);
+</script>
+
+<!--Sharect-->
+
+<script src="https://unpkg.com/sharect@2.0.0/dist/sharect.js"></script>
+<script>window["sharectConfig"] = {"backgroundColor": "#333333", "enabled": true, "facebook": true, "iconColor": "#FFFFFF", "selectableElements": ["body"], "twitter": true, "twitterUsername": "likalo_llc"}</script>
+<script src="/blog/templates/assets/js/sharect.js"></script>
+
+
+
+<!--Reading time-->
+<script src="/blog/templates/assets/js/reading-time.min.js"></script>
+<script>
+  const text = []
+  let content = [...document.getElementById('content').getElementsByTagName('p')].forEach((elem) => {
+    text.push(elem.textContent)
+  });
+  const stats = readingTime(text.join(" "));
+
+  document.getElementById('reading-time').innerHTML = stats.text;
+</script>
+
+
+  
+      <!-- Google Tag Manager (noscript) -->
+
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TZRGMQ9"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+  
+
+</body>
+
+</html>

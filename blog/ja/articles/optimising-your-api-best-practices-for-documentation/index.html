@@ -1,0 +1,415 @@
+<!-- Base template of the article page. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+  
+
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/blog/https://d1iq6qzgppjlud.cloudfront.net/images/favicon/favicon-196x196.png">
+
+
+  <!-- Primary Meta Tags -->
+  <title>Docsie.io Blog - APIの最適化ドキュメンテーションのベストプラクティス</title>
+  <meta name="author" content="Tanya A Mishra"/>
+  <meta name="title" content="APIの最適化ドキュメンテーションのベストプラクティス">
+  <meta name="description" content="このブログでは、ドキュメンテーションのベストプラクティスを活用しながら、APIを最適化する方法を紹介する。"/>
+  <meta name="keywords" content="Product Documentation,API Documentation"/>
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.docsie.io/blog/blog/ja/articles/optimising-your-api-best-practices-for-documentation/">
+  <meta property="og:title" content="APIの最適化ドキュメンテーションのベストプラクティス">
+  <meta property="og:description"
+        content="このブログでは、ドキュメンテーションのベストプラクティスを活用しながら、APIを最適化する方法を紹介する。">
+  <meta property="og:image" content="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_quYQj9FV6KNpWmTdC/3d985e71-8597-503c-795f-f19b4b886d16banner_18.jpg">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://www.docsie.io/blog/blog/ja/articles/optimising-your-api-best-practices-for-documentation/">
+  <meta property="twitter:title" content="APIの最適化ドキュメンテーションのベストプラクティス">
+  <meta property="twitter:description"
+        content="このブログでは、ドキュメンテーションのベストプラクティスを活用しながら、APIを最適化する方法を紹介する。">
+  <meta property="twitter:image" content="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_quYQj9FV6KNpWmTdC/3d985e71-8597-503c-795f-f19b4b886d16banner_18.jpg">
+
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/blog/templates/assets/css/typography.min.css"/>
+  <!--Replace with your tailwind.css once created-->
+    
+    <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TZRGMQ9');</script>
+<!-- End Google Tag Manager -->
+  
+
+</head>
+
+
+<body class="bg-gray-100 font-sans leading-normal tracking-normal">
+
+<nav id="header" class="fixed w-full z-10 top-0">
+
+  <div id="progress" class="h-1 z-20 top-0"
+       style="background:linear-gradient(to right, #4dc0b5 var(--scroll), transparent 0);"></div>
+
+  <div class="container max-w-6xl mx-auto flex flex-wrap items-center justify-between mt-0 py-3">
+
+    <div class="pl-4">
+      <a class="text-gray-900 text-base no-underline hover:no-underline font-extrabold text-xl" href="../../">
+          Docsie.io Blog
+      </a>
+    </div>
+
+    <div class="block lg:hidden pr-4">
+      <button id="nav-toggle"
+              class="flex items-center px-3 py-2 border rounded text-gray-500 border-gray-600 hover:text-gray-900 hover:border-green-500 appearance-none focus:outline-none">
+        <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+          <title>Menu</title>
+          <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/>
+        </svg>
+      </button>
+    </div>
+
+    <div class="w-full flex-grow lg:flex lg:items-center lg:w-auto hidden lg:block mt-2 lg:mt-0 bg-gray-100 z-20"
+         id="nav-content">
+      <ul class="list-reset lg:flex justify-end flex-1 items-center">
+        
+        <li>
+          <a class="inline-block text-gray-600 hover:text-gray-900 hover:underline py-2 px-4"
+             href="https://www.docsie.io">Docsie</a>
+        </li>
+        
+        <li>
+          <a class="inline-block text-gray-600 hover:text-gray-900 hover:underline py-2 px-4"
+             href="https://www.docsie.io/pricing/">Docsie Pricing</a>
+        </li>
+        
+        <li>
+          <a class="inline-block text-gray-600 hover:text-gray-900 hover:underline py-2 px-4"
+             href="https://www.docsie.io/try_docsie/">Try Docsie</a>
+        </li>
+        
+      </ul>
+    </div>
+    <div class="flex w-full justify-end content-center">
+        <a
+          class="inline-block text-gray-500 hover:text-green-500 hover:underline text-center h-10 p-2 md:h-auto md:p-4 avatar"
+          data-tippy-content="@twitter_handle" href="https://twitter.com/intent/tweet?url=#"
+          id="twitter">
+          <svg class="fill-current h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+            <path
+              d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"></path>
+          </svg>
+        </a>
+        <a
+          class="inline-block text-gray-500 hover:text-green-500 hover:underline text-center h-10 p-2 md:h-auto md:p-4 avatar"
+          data-tippy-content="#facebook_id" href="https://www.facebook.com/sharer/sharer.php?u=#}"
+          id="facebook">
+          <svg class="fill-current h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+            <path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"></path>
+          </svg>
+        </a>
+      </div>
+  </div>
+
+</nav>
+
+<!--Container-->
+<div class="container max-w-4xl mx-auto mt-32 px-8 md:px-0">
+  <div class="prose prose lg:prose-xl mx-auto mt-32">
+    <!--Title-->
+    <h1 id="blog-title">APIの最適化ドキュメンテーションのベストプラクティス</h1>
+    <!--Author-->
+    <div class="flex items-center">
+      <img class="w-10 h-10 rounded-full mr-4" src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_p1X4gXS3n0rCHYuaE/1f3f5f57-d8e2-7978-faef-0b9fe89f3e4btanya_pic.jpg" alt="Avatar of Author">
+      <div class="flex-1 px-2">
+        <div class="font-bold leading-none mb-2">Tanya A Mishra</div>
+        <div class="text-xs md:text-base">on September 27, 2023 · <span id="reading-time"
+                class="block md:inline mt-2 md:mt-0"></span> · filed under <span
+          class="block md:inline mt-2 md:mt-0">
+						
+            <span class="rounded bg-green-500 text-white px-1 uppercase text-xs whitespace-nowrap md:text-sm">Product Documentation</span>
+						
+            <span class="rounded bg-green-500 text-white px-1 uppercase text-xs whitespace-nowrap md:text-sm">API Documentation</span>
+						
+					</span>
+        </div>
+      </div>
+    </div>
+    <!--/Author-->
+
+    <!--Post Content-->
+    <!--Lead Para-->
+    <div id="content">
+      <p>洞窟の落書きから最近登場したThreadsアプリまで、人間のコミュニケーションは長い道のりを歩んできた。同じように、機械とアプリは常に互いにコミュニケーションをとっている。2022年には、ソフトウェア開発者の63％が2021年よりも多くのAPIを使用している。State of APIs Report from Rapid](https://www.devopsdigest.com/apis-are-the-future-of-software-development#:~:text=Developers%2C%20who%20are%20natural%20innovators,of%20APIs%20Report%20from%20Rapid.) によると、APIの使用率は一貫して上昇している。そのバリエーションは増え続けており、開発者はツールの効率とスピードの向上を求めている。しかし、<strong>API </strong>ライティングとは何だろうか？それは、企業がより多くの<strong>顧客</strong>を獲得するためにどのように役立つのでしょうか？APIドキュメンテーション・ツールのすべてを知ってください。**</p>
+<h2>APIドキュメンテーションとは？</h2>
+<p><img alt="" src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_poQhW1OMOPBQVkdLq/image9.png" /></p>
+<p>APIドキュメンテーションとは、信頼性が高く効率的な<strong>APIドキュメンテーションツール</strong>を使って技術文書を作成するプロセスを指す。これは、APIに関する詳細な情報を共有し、効果的なAPIの統合、保守、使用に関する具体的なガイドラインを提供する取扱説明書です。</p>
+<p>コード例**からチュートリアル、スクリーンショットからビデオコンテンツまで......」このドキュメントは、開発者とユーザーがAPIのさまざまな側面を理解し、同じように作業するのに役立つ完全なガイドラインを提供します。</p>
+<p>Docsie](https://app.docsie.io/login/#/)のようなツールを使ってドキュメントの草稿を完成させた後、すべての関係者の間で共有されます。優れたAPIドキュメントには、APIの機能、APIのエンドポイント、APIの使い方の具体例などの説明が含まれている。</p>
+<p>良いAPIドキュメントの特徴は、初心者と上級者の両方が使えることです。ですから、もし良い、詳細で説明的な文書を書きたいのであれば、技術的な言葉や専門用語は捨てましょう。複雑な概念を分解し、技術的なアイデアをシンプルで平易な言葉で説明しましょう。  </p>
+<h2>種類と構造</h2>
+<p>Docsie](https://www.docsie.io/demo/)のような対話型の<strong>API文書作成ツール</strong>を使うことで、理解しやすく実装しやすい説明文書を書くことができます。</p>
+<p><img alt="" src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_mfhOkMpNzkEprY1MQ/image7.png" /></p>
+<p>大きく分類すると、APIには<strong>3つのタイプ</strong>があります：</p>
+<h3>1.チームメンバー向け</h3>
+<p>時には、企業が内部APIを持ち、特定のチームメンバーだけがアクセスし、使用できることがある。この種のAPIは一般的に、システム間やチーム間のデータ転送プロセスを効率化する。この場合、社内の開発者がドキュメントを担当したままとなる。</p>
+<h3>2.カウンターパートの場合</h3>
+<p>APIを提供する企業は、組織外でこれを共有し、そこで第二者にアクセス権を与える。このような場合、2つの企業の間にビジネス関係が存在する。この種のAPIのセキュリティ対策は比較的厳しい。権限を与えられたクライアントだけが、閲覧、保守、変更の提案のためのアクセスを得ることができる。</p>
+<h3>3.エンドユーザーの場合</h3>
+<p>これらはオープンAPIであるため、どの開発者も自由に使用することができます。認可措置や厳格な認証はありません。ほとんどの場合、これらのAPIは無料で利用できる。しかし、これらのAPIには利用料がかかることもある。しかし、このコストはAPIコールの回数に依存する。</p>
+<h2>APIドキュメンテーションツールとは？</h2>
+<p>APIドキュメントがシンプルで読みやすく、よりインタラクティブな要素で満たされていたらいいのに、と思っていませんか？そんな心配は無用です。<a href="https://site.docsie.io/">Docsie</a>のようなドキュメント作成ツールを使えば、あなたのドキュメントをより一貫性のある、より見やすいものにすることができます。</p>
+<p>これらのツールはAPIプロバイダーを支援し、<strong>インタラクティブなAPIドキュメント</strong>インターフェイスで作業する経験を提供します。このようなツールの最も注目すべき機能には、API仕様からのドキュメントの自動生成、ドキュメントの自動更新、さまざまなドキュメントのバージョン、パーソナライズオプションなどがあります。</p>
+<p>Docsie](https://www.docsie.io/pricing/)のようなトップクラスのAPIドキュメントツールを使用している場合、ドキュメントの作成、整理、保守ができるだけでなく、プラットフォームの流行のデザイン機能を使用して、ドキュメントを美しくすることもできます。</p>
+<p>一方では、これらのツールは、文書作成者が文書を整理しておくのに役立ち、他方では、開発者、プロダクトマネージャー、チームメンバーが<strong>API</strong>を理解し、効果的に使用するのを容易にします。</p>
+<h2>APIドキュメントツールの利点</h2>
+<p>Docsie](https://www.docsie.io/)のようなツールは、開発者の生産性向上に貢献する。よく練られたAPIドキュメントに目を通すことで、開発者は各エンドポイントの機能と目的を容易に理解することができる。これはエラーの確率を減らし、また多くの時間と労力を節約する。</p>
+<p>適切な文書化によって、APIを作成する企業は、自社の製品に関する<strong>データ</strong>と貴重な情報をパートナー企業に転送する。テクニカル・ライターは、このようなドキュメントを信頼できるソースとして、エンド<strong>カスタマー</strong>のためのガイドやチュートリアルを作成することができる。このように、これらの文書はコラボレーションを保証し、特定のAPIで作業するすべての人にシームレスな体験を提供します。</p>
+<p>APIドキュメントは製品の機能を説明するだけでなく、適切なコード例とともにガイドラインも共有する。このツールは、ライターがAPIの各機能を取り上げ、複雑なアイデアを説明し、APIの様々な使用例について詳しく話すのを助ける。これは開発者がAPIの能力と限界を理解し、それに従ってアプリケーションを構築するのに役立つ。</p>
+<h2>APIドキュメンテーションツールの選び方は？</h2>
+<p><img alt="" src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_Rf37TTrGuHN9CI72t/image6.png" /></p>
+<p>技術市場には、いくつものドキュメント作成ツールがあふれています。その多さに圧倒されるのも無理はない！そのような状況を緩和するために、私たちは、あなたが好みのツールを選択する際にチェックすることをお勧めする5つの要因を以下に示します：</p>
+<h3>1.手間のかからない統合</h3>
+<p>あなたがよく使う他のツールとの互換性が高いツールを探しましょう。例えば、選択したツールは、統合システムやバージョン管理などとのシームレスな統合を提供する必要があります。</p>
+<h3>2.シンプルでカスタマイズ可能</h3>
+<p>ユニークなユーザー体験を提供するツールを選びましょう。選択したツールは、カスタマイズしやすい優れた文書を最短時間で作成するのに役立つはずです。</p>
+<h3>3.セキュリティ</h3>
+<p>ツールの目的は、あなたの文書をユーザーフレンドリーにすることです。ですから、Docsieのようにセキュリティが強化されたアプリを選択することで、望ましくない悪意のある攻撃からお客様を守ることができます。</p>
+<h3>4.サポート</h3>
+<p>開発者コミュニティを持つツールを検討し、トラブルシューティングリソースや他の製品関連の支援を提供するものを選ぶ。選択したプロバイダーのカスタマーサービスは、サポートが手厚く、対応が迅速であるべきです。  </p>
+<h3>5.コスト</h3>
+<p>予算を念頭に置き、コストパフォーマンスの高いツールを検討する。拡張性**、機能、利点をチェックし、特定の製品が支出に値するかどうかを調べるために、その制限を検討してください。</p>
+<h2>誰がAPIドキュメントを書くのか？</h2>
+<p>APIを作成する開発者がドキュメンテーションを担当することもある。しかし、そのようなドキュメントは専門的になりすぎる可能性がある。そのため、企業はプロのテクニカル・ライターを雇い、ドキュメンテーションに取り組ませる。</p>
+<p>テクニカルライターは複雑な言語を理解することができる。また、関連する情報を伝えながら、魅力的なコンテンツを書くことができる。APIライターはソースコードを理解し、<strong>対話型API文書</strong>のために十分な情報を導き出さなければならない。</p>
+<p>APIライターは通常、言語とプログラミングのスキルを完璧に融合させている。プログラミング言語の知識、フォーマット標準の理解、優れたコミュニケーション能力、編集ツールの知識 - これらはAPIライターが持つべき主な資格の一部である。</p>
+<p>理想的な候補者は、Python、Java、PHPなどのプログラミング言語に精通し、テクニカルライティングの領域でもある程度の経験と専門知識を持っている人です。ソフトウェア開発キット（SDK）に関する深い知識を持つ人も、この種のライティングが可能です。</p>
+<h2>APIドキュメントのベストプラクティスとは？</h2>
+<p>|何を|なぜ|？
+|-|-|
+|||
+|顧客を理解する|APIについて書き始める前に、潜在的な読者を見つけよう。通常、APIを評価するプロダクトマネージャーやテクニカルリーダーと、APIを積極的に利用する開発者の2種類の読者グループが存在する。|
+|シンプルに|専門知識や経験のレベルは様々です。ですから、平易でシンプルで理解しやすい言葉を心がけましょう。専門用語や高度な技術用語は、読者を遠ざける可能性があります。|
+|クイックガイドを導入する|新しい開発者を簡単にオンボーディングできるよう、クイックスタートガイドを提供できるAPIドキュメントツールを選びましょう。これらのガイドにはコードサンプルやAPIの使い方に関する説明が含まれていることを確認してください。APIを可能な限り利用しやすくすることが第一の目標です。|
+|APIのあらゆる側面を網羅すること。読者が取扱説明書として参照できるように、リファレンスやガイド、豊富なサンプルを用意しましょう。APIのあらゆる側面をカバーし、読者の一般的な質問に答えましょう。|
+|参考ドキュメントを追加する|あなたのAPIが公開しているメソッドやオブジェクトについて言及した包括的なリストを含める。説明を加え、それぞれの使い方を説明しましょう。これは開発者があなたのAPIの使い勝手を理解する助けになる。|
+|ドキュメントのメンテナンス|定期的にドキュメントを更新しましょう。間違った情報や不正確な情報を削除し、開発者からのよくある質問に答えるドキュメントを維持しましょう。ドキュメントには、APIに追加された最新の情報を反映させ、どのように役立つのか完全な情報を掲載しましょう。|</p>
+<h2>完璧なAPIコンパニオン- Docsie</h2>
+<p>Docsieは、APIドキュメントの作成、保守、編集に使用できる、効果的で信頼性の高いツールを提供します。</p>
+<p><img alt="" src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_qGXGtgxj0vejosSJB/image5.png" /></p>
+<p>すぐに使える**テンプレートから、自動生成ドキュメント、複数のバージョンまで、このツールは、シームレスなAPIドキュメント作成の旅を体験できるように、幅広い機能を備えています。</p>
+<p><img alt="" src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_TrnppJvOBJgTTHVN0/image3.png" /></p>
+<h2>Docsieは他のツールと何が違うのですか？</h2>
+<p><img alt="" src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_am5Sn98pQV49CS6O2/image8.png" /></p>
+<p>Docsieは、チームメンバーやエンドユーザーのための一元化されたドキュメントリソースとして機能します。新しいチームメンバーとドキュメントを共有すると、いつでも一箇所で閲覧・編集することができます。</p>
+<p>顧客とドキュメントを共有すると、顧客はヘルプページやサポートチュートリアルにアクセスして、製品やサービスの技術的な側面や使用例を理解することができます。</p>
+<p><strong>Swaggerを使っていますか？</strong> <a href="https://site.docsie.io/api-documentation-tool">Docsie</a> では、Swagger APIファイルも扱うことができます！Swagger定義ファイルをインポートするだけです。そして、DocsieはあなたにAPIドキュメントのドラフトを提供します。</p>
+<p>Markdown Extended Syntax](https://site.docsie.io/online-markdown-editor)<strong>や</strong>ビルトインチャット**のようなユーザーフレンドリーな機能により、Docsieを使えばチームメンバーとのつながりを保ち、APIタスクやジョブを割り当てることでコラボレーションを促進することができます。</p>
+<p><img alt="" src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_IJrGkvt4r6BjkyYCD/image1.png" /></p>
+<h2>キーポイント</h2>
+<p><strong>APIドキュメンテーションツール</strong>は、API提供者がAPIの機能とその使用例に関する重要な情報を共有するのに役立つ。このようなツールを使うことで、開発者とエンドユーザーはAPIの正しい理解、知識、使い方を得ることができる。この文書は、APIを既存のアプリケーションにうまく統合するための本格的なガイドラインである。</p>
+<p>これらのツールを使うことで、<strong>文書化プロセスを加速し、変更を追跡・編集し、コンテンツを整理・構造化し、コラボレーションを促進することができる</strong>。また、このようなツールのデザイン機能により、ドキュメントを思い通りにスタイリングすることができます。文書をより見やすくし、顧客の注目を集めることができます。</p>
+<p>適切なAPIツールを選ぶことは、あなたのビジネスに不可欠です。Docsieのようなツールは、<strong>インタラクティブなAPIドキュメント</strong>を作成するのに役立ちます。これは、あなたのドキュメントをチームメンバーと共有するのに役立ち、チームメンバーはそれをさらに共有し、価値ある情報を追加することができます。ユーザーフレンドリーで、メンテナンスが簡単で、インタラクティブで、手頃な価格のドキュメントサービスを選びましょう。</p>
+<h2>よくある質問</h2>
+<p><strong>1.APIドキュメンテーションとはどういう意味ですか？
+</strong>回答<strong>：API開発者はソフトウェア開発者やプロジェクトマネージャのためにAPIドキュメントを書きます。これらの文書はAPIに光を当て、その機能、使用例、アプリケーションなどについて言及する。APIをどこに保管すればよいかわからない場合は、会社のウェブサイトに安全に保管し、チームメンバー全員でアクセスを共有することができます。
+</strong>2.APIドキュメントを書く最初のステップは何ですか？
+<strong>回答</strong>：基本的なことから始めましょう。APIについて読み、APIプロバイダーと議論し、開発者がどのようにAPIを作成したかを確認する。もしそれが適切であれば、APIを使ってみて、その長所と短所を自分でチェックしてみてはどうでしょう？これはAPI文書の初稿を書くのに大いに役立つだろう。
+<strong>3.APIドキュメントを書き始めるには？
+</strong>回答**：APIについて学び、その機能とユースケースについて完全な知識を集めましょう。自分自身でソフトウェアを使用して、その機能を理解し、直面する可能性のあるボトルネックを書き留めてください。顧客のニーズに合わせて、簡単な言葉で文書を書きましょう。</p>
+<h2>最後に</h2>
+<p>機能的なやり取りであれ、価値ある情報のやり取りであれ、ソフトウェア、アプリ、ウェブサイトはグラフィカルなインターフェイスを通じて互いにコミュニケーションをとる。よく練られた<strong>対話型API文書</strong>を書き、維持することで、企業は製品の詳細を開発者によりよく伝えることができる。APIは、ソフトウェア開発の強化、スピードアップ、機能追加、新しいアプリケーションの構築など、<strong>顧客</strong>を支援する。</p>
+<p>State of API Integration Report of 2020,](https://cdn2.hubspot.net/hubfs/440197/2020-04%20-%20SOAI%20Report.pdf) によると、回答者の83％以上が、API統合はITとビジネス・インフラの中心にあると考えている。さて、APIを起草する方法がわかったところで、ベストプラクティスに従い、具体的な構造を持ち、日々のプロセスにドキュメントを組み込もう。</p>
+    </div>
+  </div>
+  <!--/ Post Content-->
+
+  <!--Divider-->
+  <hr class="border-b-1 border-gray-400 mt-12 mb-8 mx-4">
+
+  <!--Next & Prev Links-->
+  <div class="font-sans flex justify-between content-center px-4 mb-4">
+    <div class="text-left">
+      <span class="text-xs md:text-sm font-normal text-gray-600">&lt; Previous Post</span><br>
+      <p><a href="../custom-knowledge-bases-pros-and-cons" class="break-normal text-base md:text-sm text-green-500 font-bold no-underline hover:underline">カスタムナレッジベース：長所と短所</a></p>
+    </div>
+    <div class="text-right">
+      <span class="text-xs md:text-sm font-normal text-gray-600">Next Post &gt;</span><br>
+      <p><a href="../how-to-write-clear-concise-user-manual-instructions" class="break-normal text-base md:text-sm text-green-500 font-bold no-underline hover:underline">分かりやすく簡潔な取扱説明書の書き方</a></p>
+    </div>
+  </div>
+
+
+  <!--/Next & Prev Links-->
+
+  
+    <div class="commentbox"></div>
+
+    <script src="https://unpkg.com/commentbox.io/dist/commentBox.min.js"></script>
+    <script>commentBox("5725910686760960-proj")</script>
+  
+
+  <!--Subscribe-->
+  
+    <!-- Base template of the subscription form. -->
+
+<div class="container font-sans bg-white rounded mt-8 p-4 md:p-24 text-center mb-10">
+    <h2 class="font-bold break-normal text-2xl md:text-4xl">Subscribe to the newsletter</h2>
+    <h3 class="font-bold break-normal font-normal text-gray-600 text-base md:text-xl">Stay up to date with our latest news and products</h3>
+    <div class="w-full text-center pt-4">
+        <form action="#">
+            <div class="max-w-xl mx-auto p-1 pr-0 flex flex-wrap items-center">
+                <input type="email" placeholder="youremail@example.com"
+                       class="flex-1 appearance-none rounded shadow p-3 text-gray-600 mr-2 focus:outline-none">
+                <button type="submit"
+                        class="flex-1 mt-4 md:mt-0 block md:inline-block appearance-none bg-green-500 text-white text-base font-semibold tracking-wider uppercase py-4 rounded shadow hover:bg-green-400">
+                    Subscribe
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+  
+  <!-- /Subscribe-->
+</div>
+<!--/container-->
+
+<footer class="bg-gray-900">
+  <div class="container max-w-6xl mx-auto flex items-center px-2 py-8">
+
+    <div class="w-full mx-auto flex flex-wrap items-center">
+      <div class="flex w-full md:w-1/2 justify-center md:justify-start text-white font-extrabold flex-col">
+        <a class="text-gray-900 no-underline hover:text-gray-900 hover:no-underline" href="/blog/ja">
+          <span class="text-base text-gray-200">Docsie.io Blog</span>
+        </a>
+        <a class="text-gray-900 no-underline hover:text-gray-900 hover:no-underline"
+           href="https://github.com/LikaloLLC/BlogVi" target="_blank">
+          <span class="text-xs text-gray-200">Made with BlogVI</span>
+        </a>
+      </div>
+      <div class="flex w-full pt-2 content-center justify-between md:w-1/2 md:justify-end">
+        <ul class="list-reset flex justify-center flex-1 md:flex-none items-center">
+          
+            <li>
+              <a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-3"
+                 href="https://www.docsie.io">Docsie</a>
+            </li>
+          
+            <li>
+              <a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-3"
+                 href="https://www.docsie.io/pricing/">Docsie Pricing</a>
+            </li>
+          
+            <li>
+              <a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-3"
+                 href="https://www.docsie.io/try_docsie/">Try Docsie</a>
+            </li>
+          
+        </ul>
+      </div>
+    </div>
+
+
+  </div>
+</footer>
+
+<script>
+  /* Progress bar */
+  //Source: https://alligator.io/js/progress-bar-javascript-css-variables/
+  var h = document.documentElement,
+    b = document.body,
+    st = 'scrollTop',
+    sh = 'scrollHeight',
+    progress = document.querySelector('#progress'),
+    scroll;
+  var scrollpos = window.scrollY;
+  var header = document.getElementById("header");
+  var navcontent = document.getElementById("nav-content");
+
+  document.addEventListener('scroll', function () {
+
+    /*Refresh scroll % width*/
+    scroll = (h[st] || b[st]) / ((h[sh] || b[sh]) - h.clientHeight) * 100;
+    progress.style.setProperty('--scroll', scroll + '%');
+
+    /*Apply classes for slide in bar*/
+    scrollpos = window.scrollY;
+
+    if (scrollpos > 10) {
+      header.classList.add("bg-white");
+      header.classList.add("shadow");
+      navcontent.classList.remove("bg-gray-100");
+      navcontent.classList.add("bg-white");
+    } else {
+      header.classList.remove("bg-white");
+      header.classList.remove("shadow");
+      navcontent.classList.remove("bg-white");
+      navcontent.classList.add("bg-gray-100");
+
+    }
+
+  });
+
+
+  //Javascript to toggle the menu
+  document.getElementById('nav-toggle').onclick = function () {
+    document.getElementById("nav-content").classList.toggle("hidden");
+  }
+</script>
+<script>
+  /*
+    Twitter
+    https://twitter.com/share?url=[post-url]&text=[post-title]
+
+    Facebook
+    https://www.facebook.com/sharer.php?u=[post-url]
+
+  */
+  let twitterURI = document.getElementById('twitter');
+  let facebookURI = document.getElementById('facebook');
+
+  let postURI = encodeURI(document.location.href);
+  let postTitle = encodeURI(document.getElementById('blog-title').innerText + ":\n")
+
+  facebookURI.setAttribute('href', `https://www.facebook.com/sharer.php?u=${postURI}`);
+  twitterURI.setAttribute('href', `https://twitter.com/share?url=${postURI}&text=${postTitle}`);
+</script>
+
+<!--Sharect-->
+
+<script src="https://unpkg.com/sharect@2.0.0/dist/sharect.js"></script>
+<script>window["sharectConfig"] = {"backgroundColor": "#333333", "enabled": true, "facebook": true, "iconColor": "#FFFFFF", "selectableElements": ["body"], "twitter": true, "twitterUsername": "likalo_llc"}</script>
+<script src="/blog/templates/assets/js/sharect.js"></script>
+
+
+
+<!--Reading time-->
+<script src="/blog/templates/assets/js/reading-time.min.js"></script>
+<script>
+  const text = []
+  let content = [...document.getElementById('content').getElementsByTagName('p')].forEach((elem) => {
+    text.push(elem.textContent)
+  });
+  const stats = readingTime(text.join(" "));
+
+  document.getElementById('reading-time').innerHTML = stats.text;
+</script>
+
+
+  
+      <!-- Google Tag Manager (noscript) -->
+
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TZRGMQ9"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+  
+
+</body>
+
+</html>

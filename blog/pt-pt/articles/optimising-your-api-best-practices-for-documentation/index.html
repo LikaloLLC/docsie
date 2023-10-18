@@ -1,0 +1,415 @@
+<!-- Base template of the article page. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+  
+
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/blog/https://d1iq6qzgppjlud.cloudfront.net/images/favicon/favicon-196x196.png">
+
+
+  <!-- Primary Meta Tags -->
+  <title>Docsie.io Blog - Otimizar a sua API: Melhores práticas para documentação</title>
+  <meta name="author" content="Tanya A Mishra"/>
+  <meta name="title" content="Otimizar a sua API: Melhores práticas para documentação">
+  <meta name="description" content="Neste blogue, vamos desvendar como podemos otimizar a API e, ao mesmo tempo, aproveitar as melhores práticas de documentação"/>
+  <meta name="keywords" content="Product Documentation,API Documentation"/>
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.docsie.io/blog/blog/pt-pt/articles/optimising-your-api-best-practices-for-documentation/">
+  <meta property="og:title" content="Otimizar a sua API: Melhores práticas para documentação">
+  <meta property="og:description"
+        content="Neste blogue, vamos desvendar como podemos otimizar a API e, ao mesmo tempo, aproveitar as melhores práticas de documentação">
+  <meta property="og:image" content="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_quYQj9FV6KNpWmTdC/3d985e71-8597-503c-795f-f19b4b886d16banner_18.jpg">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://www.docsie.io/blog/blog/pt-pt/articles/optimising-your-api-best-practices-for-documentation/">
+  <meta property="twitter:title" content="Otimizar a sua API: Melhores práticas para documentação">
+  <meta property="twitter:description"
+        content="Neste blogue, vamos desvendar como podemos otimizar a API e, ao mesmo tempo, aproveitar as melhores práticas de documentação">
+  <meta property="twitter:image" content="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_quYQj9FV6KNpWmTdC/3d985e71-8597-503c-795f-f19b4b886d16banner_18.jpg">
+
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/blog/templates/assets/css/typography.min.css"/>
+  <!--Replace with your tailwind.css once created-->
+    
+    <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TZRGMQ9');</script>
+<!-- End Google Tag Manager -->
+  
+
+</head>
+
+
+<body class="bg-gray-100 font-sans leading-normal tracking-normal">
+
+<nav id="header" class="fixed w-full z-10 top-0">
+
+  <div id="progress" class="h-1 z-20 top-0"
+       style="background:linear-gradient(to right, #4dc0b5 var(--scroll), transparent 0);"></div>
+
+  <div class="container max-w-6xl mx-auto flex flex-wrap items-center justify-between mt-0 py-3">
+
+    <div class="pl-4">
+      <a class="text-gray-900 text-base no-underline hover:no-underline font-extrabold text-xl" href="../../">
+          Docsie.io Blog
+      </a>
+    </div>
+
+    <div class="block lg:hidden pr-4">
+      <button id="nav-toggle"
+              class="flex items-center px-3 py-2 border rounded text-gray-500 border-gray-600 hover:text-gray-900 hover:border-green-500 appearance-none focus:outline-none">
+        <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+          <title>Menu</title>
+          <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/>
+        </svg>
+      </button>
+    </div>
+
+    <div class="w-full flex-grow lg:flex lg:items-center lg:w-auto hidden lg:block mt-2 lg:mt-0 bg-gray-100 z-20"
+         id="nav-content">
+      <ul class="list-reset lg:flex justify-end flex-1 items-center">
+        
+        <li>
+          <a class="inline-block text-gray-600 hover:text-gray-900 hover:underline py-2 px-4"
+             href="https://www.docsie.io">Docsie</a>
+        </li>
+        
+        <li>
+          <a class="inline-block text-gray-600 hover:text-gray-900 hover:underline py-2 px-4"
+             href="https://www.docsie.io/pricing/">Docsie Pricing</a>
+        </li>
+        
+        <li>
+          <a class="inline-block text-gray-600 hover:text-gray-900 hover:underline py-2 px-4"
+             href="https://www.docsie.io/try_docsie/">Try Docsie</a>
+        </li>
+        
+      </ul>
+    </div>
+    <div class="flex w-full justify-end content-center">
+        <a
+          class="inline-block text-gray-500 hover:text-green-500 hover:underline text-center h-10 p-2 md:h-auto md:p-4 avatar"
+          data-tippy-content="@twitter_handle" href="https://twitter.com/intent/tweet?url=#"
+          id="twitter">
+          <svg class="fill-current h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+            <path
+              d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"></path>
+          </svg>
+        </a>
+        <a
+          class="inline-block text-gray-500 hover:text-green-500 hover:underline text-center h-10 p-2 md:h-auto md:p-4 avatar"
+          data-tippy-content="#facebook_id" href="https://www.facebook.com/sharer/sharer.php?u=#}"
+          id="facebook">
+          <svg class="fill-current h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+            <path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"></path>
+          </svg>
+        </a>
+      </div>
+  </div>
+
+</nav>
+
+<!--Container-->
+<div class="container max-w-4xl mx-auto mt-32 px-8 md:px-0">
+  <div class="prose prose lg:prose-xl mx-auto mt-32">
+    <!--Title-->
+    <h1 id="blog-title">Otimizar a sua API: Melhores práticas para documentação</h1>
+    <!--Author-->
+    <div class="flex items-center">
+      <img class="w-10 h-10 rounded-full mr-4" src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_p1X4gXS3n0rCHYuaE/1f3f5f57-d8e2-7978-faef-0b9fe89f3e4btanya_pic.jpg" alt="Avatar of Author">
+      <div class="flex-1 px-2">
+        <div class="font-bold leading-none mb-2">Tanya A Mishra</div>
+        <div class="text-xs md:text-base">on September 27, 2023 · <span id="reading-time"
+                class="block md:inline mt-2 md:mt-0"></span> · filed under <span
+          class="block md:inline mt-2 md:mt-0">
+						
+            <span class="rounded bg-green-500 text-white px-1 uppercase text-xs whitespace-nowrap md:text-sm">Product Documentation</span>
+						
+            <span class="rounded bg-green-500 text-white px-1 uppercase text-xs whitespace-nowrap md:text-sm">API Documentation</span>
+						
+					</span>
+        </div>
+      </div>
+    </div>
+    <!--/Author-->
+
+    <!--Post Content-->
+    <!--Lead Para-->
+    <div id="content">
+      <p>Desde os rabiscos das cavernas até à recém-lançada aplicação Threads, a comunicação humana percorreu um longo caminho. Da mesma forma, as máquinas e as aplicações comunicam entre si a toda a hora. Em 2022, 63% dos desenvolvedores de software usaram mais APIs do que em 2021. De acordo com o <a href="https://www.devopsdigest.com/apis-are-the-future-of-software-development#: ~: text = Desenvolvedores% 2C% 20 que% 20 são% 20 inovadores naturais, de% 20 APIs% 20 Relatório% 20 de% 20 Rapid.">Relatório do estado das APIs do Rapid</a>, O uso de API está aumentando de forma consistente. As suas variantes estão a aumentar e os programadores estão a tentar melhorar a eficiência e a velocidade das ferramentas. Mas o que é a escrita de <strong>API </strong>? Como é que ajuda as empresas a adquirir mais <strong>clientes</strong>? Continue a ler e descubra tudo sobre as ferramentas de documentação <strong>API. </strong></p>
+<h2>O que é a documentação da API?</h2>
+<p><img alt="" src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_poQhW1OMOPBQVkdLq/image9.png" /></p>
+<p>A documentação da API refere-se ao processo de criação de um documento técnico utilizando <strong>ferramentas de documentação da API</strong> fiáveis e eficientes. É um manual de instruções que partilha informações detalhadas sobre a API e fornece orientações específicas sobre a integração, manutenção e utilização eficazes da API.</p>
+<p>Desde <strong>exemplos de código</strong> a tutoriais, capturas de ecrã a conteúdos de vídeo - esta documentação fornece orientações completas que ajudam os programadores e os utilizadores a compreender os diferentes aspectos da API e a trabalhar com a mesma.</p>
+<p>Depois de completar o rascunho da sua documentação através de ferramentas como <a href="https://app.docsie.io/login/#/">Docsie</a>, esta é partilhada entre todos os intervenientes. Uma boa documentação da API contém uma descrição dos recursos da API, pontos de extremidade da API, exemplos específicos de como usar a API, etc.</p>
+<p>A caraterística distintiva de um bom documento da API é que tanto os principiantes como os <strong>clientes avançados </strong> o podem utilizar. Por isso, se quiser escrever documentos bons, detalhados e descritivos, elimine a linguagem técnica e o jargão. Descreva conceitos complexos e explique ideias técnicas numa linguagem simples e clara.  </p>
+<h2>Tipos e estrutura</h2>
+<p>Utilizando uma ferramenta interactiva de documentação <strong>API</strong> como <a href="https://www.docsie.io/demo/">Docsie</a>, pode escrever documentos explicativos que são fáceis de compreender e implementar.</p>
+<p><img alt="" src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_mfhOkMpNzkEprY1MQ/image7.png" /></p>
+<p>Em termos gerais, existem <strong>três tipos de APIs</strong>:</p>
+<h3>1. Para membros da equipa</h3>
+<p>Por vezes, as empresas têm uma API interna e apenas determinados membros da equipa têm acesso e podem utilizá-la. Este tipo de API geralmente agiliza o processo de transferência de dados entre sistemas, bem como entre equipas. Nesse caso, os desenvolvedores internos da empresa permanecem responsáveis pelo documento.</p>
+<h3>2. Para contrapartes</h3>
+<p>As empresas que fornecem a API, partilham-na fora da organização onde dão acesso a uma segunda parte. Nestes casos, existe uma relação comercial entre as duas empresas. As medidas de segurança neste tipo de APIs são relativamente rigorosas. Apenas os clientes autorizados podem ter acesso para visualizar, atualizar e sugerir alterações.</p>
+<h3>3. Para utilizadores finais</h3>
+<p>Estas são APIs abertas, pelo que qualquer programador é livre de as utilizar. Não existem medidas de autorização ou autenticação rigorosa envolvidas. Na maioria das vezes, estas APIs estão disponíveis gratuitamente, uma vez que os fornecedores pretendem uma adoção cada vez maior. Mas, por vezes, estas API estão sujeitas a uma taxa de subscrição. Este custo, no entanto, depende do número de chamadas à API que são efectuadas.</p>
+<h2>O que são ferramentas de documentação de API?</h2>
+<p>Deseja que o seu documento API seja simples, fácil de ler e cheio de elementos mais interactivos? Deixe de lado todas as suas preocupações e escolha uma ferramenta de documentação como <a href="https://site.docsie.io/">Docsie</a> que pode tornar o seu documento mais consistente e mais apresentável.</p>
+<p>Estas ferramentas ajudam os fornecedores de API e oferecem-lhes a experiência de trabalhar com uma interface <strong>interactiva de documentação de API</strong>. As características mais notáveis destas ferramentas incluem a geração automática de documentos a partir das especificações da API, a atualização automática da documentação, diferentes versões da documentação, opções de personalização, etc.</p>
+<p>Se estiver a utilizar ferramentas de documentação de API de topo como <a href="https://www.docsie.io/pricing/">Docsie</a>, pode não só escrever, organizar e manter os seus documentos, mas também embelezá-los utilizando as características de design modernas da plataforma.</p>
+<p>Por um lado, estas ferramentas ajudam os escritores a manter a sua documentação organizada e, por outro lado, facilitam aos programadores, gestores de produtos e membros da equipa a compreensão das <strong>APIs</strong> e a sua utilização eficaz.</p>
+<h2>Benefícios das ferramentas de documentação da API</h2>
+<p>Ferramentas como <a href="https://www.docsie.io/">Docsie</a> contribuem para aumentar a produtividade dos programadores. Ao analisar um documento de API bem redigido, os programadores podem compreender facilmente a funcionalidade e o objetivo de cada ponto final. Isso diminui a probabilidade de erros e também economiza muito tempo e esforço.</p>
+<p>Através de uma documentação adequada, as empresas que criam APIs transferem <strong>dados</strong> e informações preciosas sobre o seu produto para as empresas parceiras. Os escritores técnicos podem utilizar esses documentos como fonte fiável para criar guias e tutoriais para os <strong>clientes</strong> finais. Assim, estes documentos asseguram a colaboração e oferecem uma experiência perfeita para todos os que trabalham com a API em particular.</p>
+<p>Os documentos da API não só explicam as características do produto, como também partilham directrizes com exemplos de código adequados. As ferramentas ajudam os redactores a abordar cada funcionalidade da API, a explicar ideias complexas e a falar em pormenor sobre os vários casos de utilização da API. Isto ajuda os programadores a compreender as capacidades e limitações da API e a criar aplicações em conformidade.</p>
+<h2>Como escolher ferramentas de documentação de API?</h2>
+<p><img alt="" src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_Rf37TTrGuHN9CI72t/image6.png" /></p>
+<p>O mercado de tecnologia está cheio de várias ferramentas de documentação. Nós entendemos como isso pode ser esmagador! Para facilitar as coisas, aqui estão os cinco factores que recomendamos que verifique ao escolher a sua ferramenta preferida:</p>
+<h3>1. Integração sem complicações</h3>
+<p>Procure a ferramenta que partilha uma boa compatibilidade com as outras ferramentas que utiliza frequentemente. Por exemplo, a ferramenta escolhida deve oferecer uma integração perfeita com sistemas de integração, controlo de versões, etc.</p>
+<h3>2. Simples e personalizável</h3>
+<p>Opte por ferramentas que proporcionem uma experiência de utilizador única. A ferramenta selecionada deve ajudá-lo a preparar excelentes documentos facilmente personalizáveis num período de tempo mínimo.</p>
+<h3>3. Segurança</h3>
+<p>O objetivo da sua ferramenta é tornar o seu documento fácil de utilizar. Por isso, seleccione uma aplicação como o Docsie que tenha uma segurança reforçada para que os seus <strong>clientes </strong>permaneçam a salvo de ataques indesejáveis e maliciosos.</p>
+<h3>4. Suporte</h3>
+<p>Considere ferramentas que tenham uma comunidade de programadores e opte por aquelas que oferecem recursos de resolução de problemas e outra assistência relacionada com o produto. O serviço de apoio ao cliente do fornecedor escolhido deve ser solidário e reativo.  </p>
+<h3>5. Custo</h3>
+<p>Tenha em conta o seu orçamento e considere as ferramentas que têm uma boa relação qualidade/preço. Verifique a sua <strong>escalabilidade</strong>, características e benefícios e considere as suas limitações para descobrir se o produto em particular vale o seu gasto.</p>
+<h2>Quem escreve a documentação da API?</h2>
+<p>Por vezes, os programadores que criam as APIs assumem a tarefa da documentação. No entanto, esses documentos podem tornar-se demasiado técnicos. Por isso, as empresas contratam redactores técnicos profissionais para trabalhar na documentação.</p>
+<p>Os redactores técnicos conseguem compreender uma linguagem complexa. Além disso, conseguem escrever conteúdos atractivos e transmitir informações relevantes. Os redactores de API devem compreender o código-fonte e obter informações suficientes para a <strong>documentação interactiva da API</strong>.</p>
+<p>Um redator de API tem normalmente a combinação perfeita de competências linguísticas e de programação. Bons conhecimentos de linguagens de programação, compreensão das normas de formatação, excelentes capacidades de comunicação e conhecimentos de ferramentas editoriais - estas são algumas das principais qualificações que um redator de API deve ter.</p>
+<p>O candidato ideal é alguém que conheça linguagens de programação como Python, Java, PHP, etc., e que tenha também alguma experiência e conhecimentos no domínio da escrita técnica. As pessoas com conhecimentos profundos do Kit de Desenvolvimento de Software (SDK) também podem fazer este tipo de redação.</p>
+<h2>Quais são as melhores práticas para a documentação da API?</h2>
+<p>|O quê? Por quê?
+|-|-|
+|||
+|Compreenda os seus clientes|Descubra o seu público potencial antes de começar a escrever sobre a sua API. Normalmente, haverá dois tipos de grupos de público - gestores de produtos e líderes técnicos que avaliam a API e programadores que interagem e utilizam ativamente a sua API. |
+|Mantenha a simplicidade|Pessoas com diferentes níveis de conhecimento e experiência irão ler o seu documento. Por isso, mantenha a sua linguagem clara, simples e fácil de compreender. Evite o jargão e a linguagem altamente técnica que podem afastar alguns dos seus leitores. |
+|Introduza guias rápidos|Escolha ferramentas de documentação da API que o ajudem a fornecer guias de início rápido para facilitar a integração dos seus novos programadores. Certifique-se de que estes guias contêm exemplos de código e instruções relativas à utilização da API. O seu principal objetivo deve ser tornar a sua API tão acessível quanto possível. |
+|Cobrir todos os aspectos da API|Tornar a documentação da API abrangente. Ela deve ter referências, guias e muitos exemplos para que os leitores possam consultá-la como um manual de instruções. Cubra todos os aspectos da sua API, respondendo às perguntas comuns do seu público. |
+|Inclua uma lista abrangente que mencione os métodos e objectos que a sua API expõe. Adicione uma descrição e explique como utilizar cada um deles. Isto ajudará os programadores a compreender a usabilidade da sua API. |
+|Mantenha seu documento|Atualize seu documento regularmente. Remova informações erradas e imprecisões e mantenha um documento que responda às perguntas frequentes dos programadores. Certifique-se de que o seu documento reflecte a mais recente adição à sua API e tem informações completas sobre como pode ser útil. </p>
+<h2>Seu companheiro perfeito de API - Docsie</h2>
+<p>O balcão único para todas as suas necessidades de documentação, Docsie fornece uma ferramenta eficaz e fiável que pode utilizar para criar, manter e editar os seus documentos API.</p>
+<p><img alt="" src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_qGXGtgxj0vejosSJB/image5.png" /></p>
+<p>Desde modelos <strong>prontos a utilizar</strong> a documentação de geração automática e múltiplas versões - esta ferramenta inclui uma vasta gama de funcionalidades para que possa experimentar uma viagem de criação de documentos API sem problemas.</p>
+<p><img alt="" src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_TrnppJvOBJgTTHVN0/image3.png" /></p>
+<h2>O que torna o Docsie diferente de outras ferramentas?</h2>
+<p><img alt="" src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_am5Sn98pQV49CS6O2/image8.png" /></p>
+<p>Funciona como um recurso de documentação centralizado para os membros da sua equipa e utilizadores finais. Sempre que partilhar o seu documento com novos membros da equipa, estes podem visualizá-lo ou editá-lo num único local.</p>
+<p>Quando partilha os seus documentos com os seus clientes, estes podem aceder às páginas de ajuda e aos tutoriais de apoio para compreenderem os aspectos técnicos e os casos de utilização do seu produto ou serviço.</p>
+<p><strong>Está a utilizar o Swagger?</strong> <a href="https://site.docsie.io/api-documentation-tool">Docsie</a> também lhe permite trabalhar em ficheiros da API Swagger! Tudo o que precisa de fazer é importar um ficheiro de definição Swagger. Depois, o Docsie fornece-lhe um rascunho de documentação da API que pode desenvolver.</p>
+<p>Com funcionalidades fáceis de utilizar como <strong><a href="https://site.docsie.io/online-markdown-editor">Markdown Extended Syntax</a></strong> e <strong>built-in chats</strong> - utilizar o Docsie é canja, pois mantém-no ligado aos membros da sua equipa e promove a colaboração atribuindo tarefas e trabalhos API.</p>
+<p><img alt="" src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_IJrGkvt4r6BjkyYCD/image1.png" /></p>
+<h2>Principais conclusões</h2>
+<p><strong>As ferramentas de documentação da API</strong> ajudam os fornecedores de API a partilhar informações importantes sobre as características da API e os seus casos de utilização. Com estas ferramentas, os programadores e os utilizadores finais adquirem uma compreensão, conhecimento e utilização adequados da API. O documento é uma diretriz completa sobre a integração bem sucedida da API com as suas aplicações existentes.</p>
+<p>Com estas ferramentas, pode acelerar o seu <strong>processo de documentação, acompanhar e editar alterações, organizar e estruturar o seu conteúdo e promover a colaboração</strong>. A funcionalidade de design destas ferramentas também lhe permite estilizar os seus documentos da forma que desejar. Pode tornar os seus documentos mais apresentáveis e captar a atenção dos seus clientes.</p>
+<p>A escolha da ferramenta API correcta é essencial para o seu negócio. Ferramentas como Docsie ajudam-no a criar <strong>documentação interactiva da API</strong>. Isto ajuda-o a partilhar o seu documento com os membros da sua equipa, que podem depois partilhá-lo e acrescentar informações valiosas. Escolha um serviço de documentação fácil de utilizar, fácil de manter, interativo e acessível que se alinhe com os seus objectivos comerciais.</p>
+<h2>Perguntas mais frequentes</h2>
+<p><strong>1. O que se entende por documentação da API?
+</strong>Ans<strong>: Os programadores de API escrevem documentos de API para programadores de software e gestores de projectos. Estes documentos esclarecem a API e mencionam as suas características, casos de utilização, aplicações, etc. Se não tiver a certeza de onde armazenar a sua API, pode mantê-la segura no sítio Web da sua empresa e partilhar o acesso com todos os membros da sua equipa.
+</strong>2. Qual é o primeiro passo para escrever um documento de API?
+<strong>Ir para o básico. Leia sobre a API, fale com os fornecedores de API e veja como os programadores criaram a API. Se for apropriado, porque não utilizar a API e verificar os seus prós e contras? Isto será de grande ajuda para escrever o primeiro rascunho do seu documento API.
+</strong>3. Como começar a escrever documentos API?
+**Aprenda sobre a sua API e reúna conhecimentos completos sobre as suas características e casos de utilização. Utilize o software para compreender as suas funcionalidades e anotar os problemas com que se pode deparar. Escreva o seu documento numa linguagem simples que satisfaça as necessidades dos seus clientes.</p>
+<h2>Considerações finais</h2>
+<p>Quer seja para trocar funcionalidades ou informações valiosas, o software, as aplicações e os sítios Web comunicam entre si através de uma interface gráfica. Ao escrever e manter uma <strong>documentação de API interactiva</strong> bem elaborada, as empresas podem comunicar melhor os detalhes do produto aos programadores. As API ajudam os <strong>clientes</strong> a melhorar o desenvolvimento de software, a aumentar a sua velocidade, a acrescentar funcionalidades adicionais ou a criar novas aplicações.</p>
+<p>De acordo com o <a href="https://cdn2.hubspot.net/hubfs/440197/2020-04%20-%20SOAI%20Report.pdf">State of API Integration Report of 2020,</a> mais de 83% dos inquiridos consideram que a integração de APIs está no centro das infra-estruturas de TI e empresariais. Portanto, agora que já sabe como elaborar APIs, siga as melhores práticas, tenha uma estrutura concreta e incorpore a documentação nos seus processos diários.</p>
+    </div>
+  </div>
+  <!--/ Post Content-->
+
+  <!--Divider-->
+  <hr class="border-b-1 border-gray-400 mt-12 mb-8 mx-4">
+
+  <!--Next & Prev Links-->
+  <div class="font-sans flex justify-between content-center px-4 mb-4">
+    <div class="text-left">
+      <span class="text-xs md:text-sm font-normal text-gray-600">&lt; Previous Post</span><br>
+      <p><a href="../custom-knowledge-bases-pros-and-cons" class="break-normal text-base md:text-sm text-green-500 font-bold no-underline hover:underline">Bases de conhecimento personalizadas: Prós e contras</a></p>
+    </div>
+    <div class="text-right">
+      <span class="text-xs md:text-sm font-normal text-gray-600">Next Post &gt;</span><br>
+      <p><a href="../how-to-write-clear-concise-user-manual-instructions" class="break-normal text-base md:text-sm text-green-500 font-bold no-underline hover:underline">Como escrever instruções claras e concisas para o manual do utilizador</a></p>
+    </div>
+  </div>
+
+
+  <!--/Next & Prev Links-->
+
+  
+    <div class="commentbox"></div>
+
+    <script src="https://unpkg.com/commentbox.io/dist/commentBox.min.js"></script>
+    <script>commentBox("5725910686760960-proj")</script>
+  
+
+  <!--Subscribe-->
+  
+    <!-- Base template of the subscription form. -->
+
+<div class="container font-sans bg-white rounded mt-8 p-4 md:p-24 text-center mb-10">
+    <h2 class="font-bold break-normal text-2xl md:text-4xl">Subscribe to the newsletter</h2>
+    <h3 class="font-bold break-normal font-normal text-gray-600 text-base md:text-xl">Stay up to date with our latest news and products</h3>
+    <div class="w-full text-center pt-4">
+        <form action="#">
+            <div class="max-w-xl mx-auto p-1 pr-0 flex flex-wrap items-center">
+                <input type="email" placeholder="youremail@example.com"
+                       class="flex-1 appearance-none rounded shadow p-3 text-gray-600 mr-2 focus:outline-none">
+                <button type="submit"
+                        class="flex-1 mt-4 md:mt-0 block md:inline-block appearance-none bg-green-500 text-white text-base font-semibold tracking-wider uppercase py-4 rounded shadow hover:bg-green-400">
+                    Subscribe
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+  
+  <!-- /Subscribe-->
+</div>
+<!--/container-->
+
+<footer class="bg-gray-900">
+  <div class="container max-w-6xl mx-auto flex items-center px-2 py-8">
+
+    <div class="w-full mx-auto flex flex-wrap items-center">
+      <div class="flex w-full md:w-1/2 justify-center md:justify-start text-white font-extrabold flex-col">
+        <a class="text-gray-900 no-underline hover:text-gray-900 hover:no-underline" href="/blog/pt-pt">
+          <span class="text-base text-gray-200">Docsie.io Blog</span>
+        </a>
+        <a class="text-gray-900 no-underline hover:text-gray-900 hover:no-underline"
+           href="https://github.com/LikaloLLC/BlogVi" target="_blank">
+          <span class="text-xs text-gray-200">Made with BlogVI</span>
+        </a>
+      </div>
+      <div class="flex w-full pt-2 content-center justify-between md:w-1/2 md:justify-end">
+        <ul class="list-reset flex justify-center flex-1 md:flex-none items-center">
+          
+            <li>
+              <a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-3"
+                 href="https://www.docsie.io">Docsie</a>
+            </li>
+          
+            <li>
+              <a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-3"
+                 href="https://www.docsie.io/pricing/">Docsie Pricing</a>
+            </li>
+          
+            <li>
+              <a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-3"
+                 href="https://www.docsie.io/try_docsie/">Try Docsie</a>
+            </li>
+          
+        </ul>
+      </div>
+    </div>
+
+
+  </div>
+</footer>
+
+<script>
+  /* Progress bar */
+  //Source: https://alligator.io/js/progress-bar-javascript-css-variables/
+  var h = document.documentElement,
+    b = document.body,
+    st = 'scrollTop',
+    sh = 'scrollHeight',
+    progress = document.querySelector('#progress'),
+    scroll;
+  var scrollpos = window.scrollY;
+  var header = document.getElementById("header");
+  var navcontent = document.getElementById("nav-content");
+
+  document.addEventListener('scroll', function () {
+
+    /*Refresh scroll % width*/
+    scroll = (h[st] || b[st]) / ((h[sh] || b[sh]) - h.clientHeight) * 100;
+    progress.style.setProperty('--scroll', scroll + '%');
+
+    /*Apply classes for slide in bar*/
+    scrollpos = window.scrollY;
+
+    if (scrollpos > 10) {
+      header.classList.add("bg-white");
+      header.classList.add("shadow");
+      navcontent.classList.remove("bg-gray-100");
+      navcontent.classList.add("bg-white");
+    } else {
+      header.classList.remove("bg-white");
+      header.classList.remove("shadow");
+      navcontent.classList.remove("bg-white");
+      navcontent.classList.add("bg-gray-100");
+
+    }
+
+  });
+
+
+  //Javascript to toggle the menu
+  document.getElementById('nav-toggle').onclick = function () {
+    document.getElementById("nav-content").classList.toggle("hidden");
+  }
+</script>
+<script>
+  /*
+    Twitter
+    https://twitter.com/share?url=[post-url]&text=[post-title]
+
+    Facebook
+    https://www.facebook.com/sharer.php?u=[post-url]
+
+  */
+  let twitterURI = document.getElementById('twitter');
+  let facebookURI = document.getElementById('facebook');
+
+  let postURI = encodeURI(document.location.href);
+  let postTitle = encodeURI(document.getElementById('blog-title').innerText + ":\n")
+
+  facebookURI.setAttribute('href', `https://www.facebook.com/sharer.php?u=${postURI}`);
+  twitterURI.setAttribute('href', `https://twitter.com/share?url=${postURI}&text=${postTitle}`);
+</script>
+
+<!--Sharect-->
+
+<script src="https://unpkg.com/sharect@2.0.0/dist/sharect.js"></script>
+<script>window["sharectConfig"] = {"backgroundColor": "#333333", "enabled": true, "facebook": true, "iconColor": "#FFFFFF", "selectableElements": ["body"], "twitter": true, "twitterUsername": "likalo_llc"}</script>
+<script src="/blog/templates/assets/js/sharect.js"></script>
+
+
+
+<!--Reading time-->
+<script src="/blog/templates/assets/js/reading-time.min.js"></script>
+<script>
+  const text = []
+  let content = [...document.getElementById('content').getElementsByTagName('p')].forEach((elem) => {
+    text.push(elem.textContent)
+  });
+  const stats = readingTime(text.join(" "));
+
+  document.getElementById('reading-time').innerHTML = stats.text;
+</script>
+
+
+  
+      <!-- Google Tag Manager (noscript) -->
+
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TZRGMQ9"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+  
+
+</body>
+
+</html>
