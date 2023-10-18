@@ -39,7 +39,7 @@ if __name__ == "__main__":
 
 
     site = Site.make_site(searchpath='src/', env_globals={"feed":feed[-12:][::-1]},
-                          extensions=['jinja2.ext.i18n', 'jinja2.ext.autoescape', 'jinja2.ext.with_','jinja_markdown.MarkdownExtension'])
+                          extensions=['jinja2.ext.i18n','jinja_markdown.MarkdownExtension'])
 
     # enable automatic reloading
     site.render(use_reloader=True)
