@@ -42,4 +42,4 @@ if __name__ == "__main__":
                           extensions=['jinja2.ext.i18n','jinja_markdown.MarkdownExtension'])
 
     # enable automatic reloading
-    site.render(use_reloader=True)
+    site.render()
