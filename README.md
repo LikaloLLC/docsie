@@ -3,7 +3,7 @@
 ## Purpose of this repo is to  
  
 * Host the static portion of docsie.io  
-* Serve as Tech Support and feature request hub for docsie.io
+* Serve as Tech Support and feature request hub for docsie.io 
 * Serve as a live example of a Docsie.io project
  
 For any questions please contact support@likalo.com, open a ticket here or ask us on gitter https://gitter.im/docsie/Lobby/
