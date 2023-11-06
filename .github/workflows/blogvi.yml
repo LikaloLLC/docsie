@@ -18,7 +18,7 @@ jobs:
         with:
           python-version: '3.10'
           cache: 'pip' # caching pip dependencies
-      - run: pip install git+https://github.com/LikaloLLC/BlogVi
+      - run: pip install git+https://github.com/LikaloLLC/BlogVi && pip install -r requirements.txt
       - name: List files in the repository
         run: |
           ls -la
@@ -28,9 +28,12 @@ jobs:
 
       - name: Blogvi run
         run: cd blog && blogvi .
+      - name: Regenerate site
+        run: python3 main.py
       - name: Commit report
         run: |
           git config --global user.name 'Docsie'
           git config --global user.email 'hello@docsie.io'
-          git commit -am "[skip ci] Blog Generation"
+          git add .
+          git commit -m "[skip ci] Blog Generation"
           git push
