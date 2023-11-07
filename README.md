@@ -1,11 +1,11 @@
 # Docsie.io
 
-## Purpose of this repo is to 
+## Purpose of this repo is to   
  
-* Host the static portion of docsie.io
+* Host the static portion of docsie.io  
 * Serve as Tech Support and feature request hub for docsie.io
-* Serve as a live example of a Docsie.io project
-
+* Serve as a live example of a Docsie.io project 
+ 
 For any questions please contact support@likalo.com, open a ticket here or ask us on gitter https://gitter.im/docsie/Lobby/
 
 We used to have a support board/forum, but we did not see it being used much and we do not want to maintain unused infrastructure, so we are moving all our free support over to github.
