@@ -1,0 +1,408 @@
+<!-- Base template of the article page. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+  
+
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/blog/https://d1iq6qzgppjlud.cloudfront.net/images/favicon/favicon-196x196.png">
+
+
+  <!-- Primary Meta Tags -->
+  <title>Docsie.io Blog - Different Aspects of Testing Documentation – Advantages, Types and Best Practices</title>
+  <meta name="author" content="Tanya A Mishra"/>
+  <meta name="title" content="Different Aspects of Testing Documentation – Advantages, Types and Best Practices">
+  <meta name="description" content="This Blog sheds light on the multiple benefits of testing documentation, including a special mention of some examples of testing documentation. "/>
+  <meta name="keywords" content="AI,Testing Documentation"/>
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.docsie.io/blog/blog/articles/different-aspects-of-testing-documentation-advantages-types-and-best-practices/">
+  <meta property="og:title" content="Different Aspects of Testing Documentation – Advantages, Types and Best Practices">
+  <meta property="og:description"
+        content="This Blog sheds light on the multiple benefits of testing documentation, including a special mention of some examples of testing documentation. ">
+  <meta property="og:image" content="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_E9huzHUdPx4vMtxpj/2761d2f9-c0dd-c27d-f383-680573d4f4fabanner_34.jpg">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://www.docsie.io/blog/blog/articles/different-aspects-of-testing-documentation-advantages-types-and-best-practices/">
+  <meta property="twitter:title" content="Different Aspects of Testing Documentation – Advantages, Types and Best Practices">
+  <meta property="twitter:description"
+        content="This Blog sheds light on the multiple benefits of testing documentation, including a special mention of some examples of testing documentation. ">
+  <meta property="twitter:image" content="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_E9huzHUdPx4vMtxpj/2761d2f9-c0dd-c27d-f383-680573d4f4fabanner_34.jpg">
+
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/blog/templates/assets/css/typography.min.css"/>
+  <!--Replace with your tailwind.css once created-->
+    
+    <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TZRGMQ9');</script>
+<!-- End Google Tag Manager -->
+  
+
+</head>
+
+
+<body class="bg-gray-100 font-sans leading-normal tracking-normal">
+
+<nav id="header" class="fixed w-full z-10 top-0">
+
+  <div id="progress" class="h-1 z-20 top-0"
+       style="background:linear-gradient(to right, #4dc0b5 var(--scroll), transparent 0);"></div>
+
+  <div class="container max-w-6xl mx-auto flex flex-wrap items-center justify-between mt-0 py-3">
+
+    <div class="pl-4">
+      <a class="text-gray-900 text-base no-underline hover:no-underline font-extrabold text-xl" href="../../">
+          Docsie.io Blog
+      </a>
+    </div>
+
+    <div class="block lg:hidden pr-4">
+      <button id="nav-toggle"
+              class="flex items-center px-3 py-2 border rounded text-gray-500 border-gray-600 hover:text-gray-900 hover:border-green-500 appearance-none focus:outline-none">
+        <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+          <title>Menu</title>
+          <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/>
+        </svg>
+      </button>
+    </div>
+
+    <div class="w-full flex-grow lg:flex lg:items-center lg:w-auto hidden lg:block mt-2 lg:mt-0 bg-gray-100 z-20"
+         id="nav-content">
+      <ul class="list-reset lg:flex justify-end flex-1 items-center">
+        
+        <li>
+          <a class="inline-block text-gray-600 hover:text-gray-900 hover:underline py-2 px-4"
+             href="https://www.docsie.io">Docsie</a>
+        </li>
+        
+        <li>
+          <a class="inline-block text-gray-600 hover:text-gray-900 hover:underline py-2 px-4"
+             href="https://www.docsie.io/pricing/">Docsie Pricing</a>
+        </li>
+        
+        <li>
+          <a class="inline-block text-gray-600 hover:text-gray-900 hover:underline py-2 px-4"
+             href="https://www.docsie.io/try_docsie/">Try Docsie</a>
+        </li>
+        
+      </ul>
+    </div>
+    <div class="flex w-full justify-end content-center">
+        <a
+          class="inline-block text-gray-500 hover:text-green-500 hover:underline text-center h-10 p-2 md:h-auto md:p-4 avatar"
+          data-tippy-content="@twitter_handle" href="https://twitter.com/intent/tweet?url=#"
+          id="twitter">
+          <svg class="fill-current h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+            <path
+              d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"></path>
+          </svg>
+        </a>
+        <a
+          class="inline-block text-gray-500 hover:text-green-500 hover:underline text-center h-10 p-2 md:h-auto md:p-4 avatar"
+          data-tippy-content="#facebook_id" href="https://www.facebook.com/sharer/sharer.php?u=#}"
+          id="facebook">
+          <svg class="fill-current h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+            <path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"></path>
+          </svg>
+        </a>
+      </div>
+  </div>
+
+</nav>
+
+<!--Container-->
+<div class="container max-w-4xl mx-auto mt-32 px-8 md:px-0">
+  <div class="prose prose lg:prose-xl mx-auto mt-32">
+    <!--Title-->
+    <h1 id="blog-title">Different Aspects of Testing Documentation – Advantages, Types and Best Practices</h1>
+    <!--Author-->
+    <div class="flex items-center">
+      <img class="w-10 h-10 rounded-full mr-4" src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_p1X4gXS3n0rCHYuaE/1f3f5f57-d8e2-7978-faef-0b9fe89f3e4btanya_pic.jpg" alt="Avatar of Author">
+      <div class="flex-1 px-2">
+        <div class="font-bold leading-none mb-2">Tanya A Mishra</div>
+        <div class="text-xs md:text-base">on November 16, 2023 · <span id="reading-time"
+                class="block md:inline mt-2 md:mt-0"></span> · filed under <span
+          class="block md:inline mt-2 md:mt-0">
+						
+            <span class="rounded bg-green-500 text-white px-1 uppercase text-xs whitespace-nowrap md:text-sm">AI</span>
+						
+            <span class="rounded bg-green-500 text-white px-1 uppercase text-xs whitespace-nowrap md:text-sm">Testing Documentation</span>
+						
+					</span>
+        </div>
+      </div>
+    </div>
+    <!--/Author-->
+
+    <!--Post Content-->
+    <!--Lead Para-->
+    <div id="content">
+      <p>Do you know that global IoT connections might achieve the milestone of 29.4 billion in 2030?</p>
+<p>As per the <a href="https://transformainsights.com/research/reports/global-iot-forecast-report-2032">Global IoT Forecast Report, 2021-2030</a> by Transforma Insights, the IoT market size is ready to grow and develop, gaining further revenues for the technological world.</p>
+<p>Ensuring high levels of software testing efficiency, testing documentation shares the objectives, processes and expected results of software testing. This document sheds light on the multiple benefits of testing documentation, including a special mention of some examples of testing documentation. As a bonus, this article also shares the best practices for testing documentation!</p>
+<p><img alt="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_1UH7JeOUnUhqkHti3/image5.png" src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_1UH7JeOUnUhqkHti3/image5.png" /></p>
+<h2>What is Testing Documentation?</h2>
+<p>Software testing is an everyday affair in the lives of product designers, testers and software engineers. Testing documentation refers to creating documents related to software testing. Such documents are produced when software products are developed and maintained. Technical writers write these documents using the best practices for testing documentation to record plans and progress of different phases of software testing.</p>
+<p>When it comes to testing process optimisation, test documentation helps teams create a comprehensive plan for software designing, test implementation and record keeping.</p>
+<p>When you maintain a testing document, you can write down the details of all your software testing plans, including the product owners and the team members. It helps you create the testing environment so that other teams or employees can reuse the information and use it as a reference for future cases.</p>
+<p>If we look into the different examples of testing documentation, we can observe that these detailed reports share more insights about the testing processes. They also play an important role in keeping all the stakeholders updated about the testing progress. Documentation also enables testers to analyse the efficiency of the testing procedures which helps them to further optimise the testing practices.</p>
+<p>Several testing documentation platforms help users create documents related to the various testing phases. If you are looking for such a platform, use <a href="https://www.docsie.io/pricing/">Docsie</a> as your trusted software partner and create documents in an easy, fun way!</p>
+<p><img alt="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_2QAlE7tO9d0ePWDEX/image6.png" src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_2QAlE7tO9d0ePWDEX/image6.png" /></p>
+<h2>Benefits of testing documentation</h2>
+<p>The importance of test documentation  lies in the number of advantages that it comes with. The examples of testing documentation showcase the pros of the entire documentation process. With documentation platforms like <a href="https://help.docsie.io/">Docsie</a>, you can create test documents effectively. Here is a snapshot of the chief benefits of test documentation:</p>
+<p>Improves user experience and provides detailed and accurate information on the product.</p>
+<p>Enhances collaboration and encourages all team members to work towards a common, shared goal.</p>
+<p>Provides a systematic approach to testing and acts as a resource material for software beginners.</p>
+<p>Helps to create a bug-free product within a stipulated time.</p>
+<p>Assists the QA team to gain knowledge about the required configuration for testing.</p>
+<p><img alt="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_61Vmm2FsSScSByIse/image1.png" src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_61Vmm2FsSScSByIse/image1.png" /></p>
+<h2>Types of Testing Documentation</h2>
+<p>In today's world where we use software products for almost everything, creating quality assurance documentation is highly important. With proper documentation partners like <a href="https://app.docsie.io/login/#/">Docsie</a>, software companies can keep their stakeholders updated regarding the progress of their projects and help the end users understand the suitability of the product concerned. To fully understand the benefits of testing documentation, let us look into some real-world testing examples.</p>
+<h3>Test strategy:</h3>
+<p>A high-level document, describes the testing technique, the tested module and multiple components, including test processes, test objectives, documentation formats, customer communications strategy, etc.</p>
+<h3>Test plan:</h3>
+<p>Generally prepared by the manager or test lead, this planning document has multiple components such as scope, risks, approaches, resources, defect tracking, assumption, etc.</p>
+<h2>Test case documentation:</h2>
+<p>A descriptive document outlines the testing steps and includes detailed information regarding the preferred outcome and the actual test results.</p>
+<h3>Test scenario:</h3>
+<p>This provides insights into the different test scenarios of the application. It does not include the navigation steps or the input data but helps engineers understand the application's gradual flow.</p>
+<h3>Test data:</h3>
+<p>Technical writers generally create this document before test execution begins. Prepared in Excel manually, this document records data that is used when testing cases are implemented.</p>
+<h3>Bug report:</h3>
+<p>This records the defects in the software system and also provides solutions for how to debug the product. It is the go-to content for all sorts of issues - open, solved or work in progress.</p>
+<h3>Test policy:</h3>
+<p>Every software company follows certain principles and methods as its testing guidelines. This document sheds light on those and how they align with the overall testing goals of the company.</p>
+<h3>Test summary:</h3>
+<p>This provides detailed knowledge about the activities and the final test results. From test execution to the final deployment - it records information on all the testing phases.</p>
+<p><img alt="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_WE3E6bbchQBrQLE8Y/image4.png" src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_WE3E6bbchQBrQLE8Y/image4.png" /></p>
+<h2>What are the best practices for Testing Documentation?</h2>
+<p>Merely drafting the content is not enough. Your end users should understand your documentation and have some key takeaways from the process. By following the  best practices for testing documentation, you can create a customer-facing document and enhance the overall user experience.</p>
+<p>Areas</p>
+<p>Importance</p>
+<p>Regularly updated</p>
+<p>Whatever is not regularly updated is bound to lose its relevance and importance. Software products are dynamic. Keeping in line with that, make changes to your testing documentation so that it reflects the most recent alterations in the testing phases.</p>
+<p>Version control</p>
+<p>Adhere to a system that helps you monitor the changes made to your documentation. Implement the version control feature to understand who has edited your documentation and when.</p>
+<p>Use a single source</p>
+<p>Create and store your documentation in a single place so that your team members can easily access and use it. Use a single knowledge base as the source of truth to remove unnecessary time spent searching for the right information.</p>
+<p>Protect sensitive information</p>
+<p>This is perhaps one of the most important software development best practices that include keeping your documentation private and allowing only a bunch of people to access and make changes to it. Ensure high levels of security and take extra care so that no unwanted teams or members can access valuable information about your product.</p>
+<p>Train team members</p>
+<p>Provide complete training to your team members so that everyone understands the content and usage of your documentation process. Team up with the QA department and involve them in the documentation creation project.</p>
+<p>Maintain a style guide</p>
+<p>Create and stick to a style guide to ensure tone consistency in the documentation process. When you follow a standardised set of guidelines, you can set the tone and frame a coherent tone for the entire length of your documents.</p>
+<p>Have standardised templates</p>
+<p>Use content templates to present your documentation professionally. From adding visuals to including examples and exercises, have a set format so that all your documents look consistent in their structure and format.</p>
+<p><img alt="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_8qNmHqxKlNzMiF344/image2.png" src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_8qNmHqxKlNzMiF344/image2.png" /></p>
+<h2>Frequently Asked Questions</h2>
+<h3>1. What is testing documentation?</h3>
+<p>It is a piece of content that helps software testers, product designers and engineers note down all the processes and systems that happen during the software testing and development procedure. This documentation involves artefacts that assist the software testing team in planning the team's strategy, evaluating testing efforts and monitoring project requirements.</p>
+<h3>2. What are the top benefits of testing documentation?</h3>
+<p>It removes ambiguities and provides clarity in the testing activities.</p>
+<p>It offers a streamlined, systematic approach to the testing procedure and acts as a resource for training freshers in the testing process.</p>
+<p>It breaks down the entire testing procedure and showcases each aspect of the software's journey from development to the final execution.</p>
+<h3>3. How to follow the best practices for testing documentation?</h3>
+<p>Start with having a clear objective and use a standardised format for documentation purposes. Be concise in your approach, add the pros and cons of the test scenarios and prioritise test cases. Make sure to keep your content up to date by reviewing it time and again. Implement version control and promote collaboration by all stakeholders.</p>
+<h3>4. What is the documentation impact on software quality?</h3>
+<p>Well-documented requirements provide clarity, reduce ambiguity and help engineers understand the existing codebase. It facilitates team collaboration and ensures knowledge transfer with successful user understanding.</p>
+<h3>5. What information is usually conveyed in the examples of testing documentation?</h3>
+<p>Document testing generally includes business goals and KPIs, the technical environment of the testing, system characteristics and details of the business model.</p>
+<p><img alt="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_4hhrD8uf8FrH9lQ2X/image3.png" src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_4hhrD8uf8FrH9lQ2X/image3.png" /></p>
+<h2>Final Thoughts</h2>
+<p>According to <a href="https://www.gminsights.com/industry-analysis/software-testing-market">Global Markets Insights</a>, the current value of the software testing market size amounts to $45 billion. And this amount is likely to grow gradually from 2023 to 2032 at an impressive rate of 5%. As the world of technology continues to evolve, more software projects are being developed, leading to more software testing. Now that you have these testing documentation guidelines with you, you can better draft your documentation content, follow the best practices for testing documentation  and unleash the benefits of testing documentation.</p>
+    </div>
+  </div>
+  <!--/ Post Content-->
+
+  <!--Divider-->
+  <hr class="border-b-1 border-gray-400 mt-12 mb-8 mx-4">
+
+  <!--Next & Prev Links-->
+  <div class="font-sans flex justify-between content-center px-4 mb-4">
+    <div class="text-left">
+      <span class="text-xs md:text-sm font-normal text-gray-600">&lt; Previous Post</span><br>
+      <p><a href="../docsie-s-black-friday-deal" class="break-normal text-base md:text-sm text-green-500 font-bold no-underline hover:underline">Docsie's Black Friday Deal</a></p>
+    </div>
+    <div class="text-right">
+      <span class="text-xs md:text-sm font-normal text-gray-600">Next Post &gt;</span><br>
+      <p><a href="" class="break-normal text-base md:text-sm text-green-500 font-bold no-underline hover:underline"></a></p>
+    </div>
+  </div>
+
+
+  <!--/Next & Prev Links-->
+
+  
+    <div class="commentbox"></div>
+
+    <script src="https://unpkg.com/commentbox.io/dist/commentBox.min.js"></script>
+    <script>commentBox("5725910686760960-proj")</script>
+  
+
+  <!--Subscribe-->
+  
+    <!-- Base template of the subscription form. -->
+
+<div class="container font-sans bg-white rounded mt-8 p-4 md:p-24 text-center mb-10">
+    <h2 class="font-bold break-normal text-2xl md:text-4xl">Subscribe to the newsletter</h2>
+    <h3 class="font-bold break-normal font-normal text-gray-600 text-base md:text-xl">Stay up to date with our latest news and products</h3>
+    <div class="w-full text-center pt-4">
+        <form action="#">
+            <div class="max-w-xl mx-auto p-1 pr-0 flex flex-wrap items-center">
+                <input type="email" placeholder="youremail@example.com"
+                       class="flex-1 appearance-none rounded shadow p-3 text-gray-600 mr-2 focus:outline-none">
+                <button type="submit"
+                        class="flex-1 mt-4 md:mt-0 block md:inline-block appearance-none bg-green-500 text-white text-base font-semibold tracking-wider uppercase py-4 rounded shadow hover:bg-green-400">
+                    Subscribe
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+  
+  <!-- /Subscribe-->
+</div>
+<!--/container-->
+
+<footer class="bg-gray-900">
+  <div class="container max-w-6xl mx-auto flex items-center px-2 py-8">
+
+    <div class="w-full mx-auto flex flex-wrap items-center">
+      <div class="flex w-full md:w-1/2 justify-center md:justify-start text-white font-extrabold flex-col">
+        <a class="text-gray-900 no-underline hover:text-gray-900 hover:no-underline" href="/blog">
+          <span class="text-base text-gray-200">Docsie.io Blog</span>
+        </a>
+        <a class="text-gray-900 no-underline hover:text-gray-900 hover:no-underline"
+           href="https://github.com/LikaloLLC/BlogVi" target="_blank">
+          <span class="text-xs text-gray-200">Made with BlogVI</span>
+        </a>
+      </div>
+      <div class="flex w-full pt-2 content-center justify-between md:w-1/2 md:justify-end">
+        <ul class="list-reset flex justify-center flex-1 md:flex-none items-center">
+          
+            <li>
+              <a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-3"
+                 href="https://www.docsie.io">Docsie</a>
+            </li>
+          
+            <li>
+              <a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-3"
+                 href="https://www.docsie.io/pricing/">Docsie Pricing</a>
+            </li>
+          
+            <li>
+              <a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-3"
+                 href="https://www.docsie.io/try_docsie/">Try Docsie</a>
+            </li>
+          
+        </ul>
+      </div>
+    </div>
+
+
+  </div>
+</footer>
+
+<script>
+  /* Progress bar */
+  //Source: https://alligator.io/js/progress-bar-javascript-css-variables/
+  var h = document.documentElement,
+    b = document.body,
+    st = 'scrollTop',
+    sh = 'scrollHeight',
+    progress = document.querySelector('#progress'),
+    scroll;
+  var scrollpos = window.scrollY;
+  var header = document.getElementById("header");
+  var navcontent = document.getElementById("nav-content");
+
+  document.addEventListener('scroll', function () {
+
+    /*Refresh scroll % width*/
+    scroll = (h[st] || b[st]) / ((h[sh] || b[sh]) - h.clientHeight) * 100;
+    progress.style.setProperty('--scroll', scroll + '%');
+
+    /*Apply classes for slide in bar*/
+    scrollpos = window.scrollY;
+
+    if (scrollpos > 10) {
+      header.classList.add("bg-white");
+      header.classList.add("shadow");
+      navcontent.classList.remove("bg-gray-100");
+      navcontent.classList.add("bg-white");
+    } else {
+      header.classList.remove("bg-white");
+      header.classList.remove("shadow");
+      navcontent.classList.remove("bg-white");
+      navcontent.classList.add("bg-gray-100");
+
+    }
+
+  });
+
+
+  //Javascript to toggle the menu
+  document.getElementById('nav-toggle').onclick = function () {
+    document.getElementById("nav-content").classList.toggle("hidden");
+  }
+</script>
+<script>
+  /*
+    Twitter
+    https://twitter.com/share?url=[post-url]&text=[post-title]
+
+    Facebook
+    https://www.facebook.com/sharer.php?u=[post-url]
+
+  */
+  let twitterURI = document.getElementById('twitter');
+  let facebookURI = document.getElementById('facebook');
+
+  let postURI = encodeURI(document.location.href);
+  let postTitle = encodeURI(document.getElementById('blog-title').innerText + ":\n")
+
+  facebookURI.setAttribute('href', `https://www.facebook.com/sharer.php?u=${postURI}`);
+  twitterURI.setAttribute('href', `https://twitter.com/share?url=${postURI}&text=${postTitle}`);
+</script>
+
+<!--Sharect-->
+
+<script src="https://unpkg.com/sharect@2.0.0/dist/sharect.js"></script>
+<script>window["sharectConfig"] = {"backgroundColor": "#333333", "enabled": true, "facebook": true, "iconColor": "#FFFFFF", "selectableElements": ["body"], "twitter": true, "twitterUsername": "likalo_llc"}</script>
+<script src="/blog/templates/assets/js/sharect.js"></script>
+
+
+
+<!--Reading time-->
+<script src="/blog/templates/assets/js/reading-time.min.js"></script>
+<script>
+  const text = []
+  let content = [...document.getElementById('content').getElementsByTagName('p')].forEach((elem) => {
+    text.push(elem.textContent)
+  });
+  const stats = readingTime(text.join(" "));
+
+  document.getElementById('reading-time').innerHTML = stats.text;
+</script>
+
+
+  
+      <!-- Google Tag Manager (noscript) -->
+
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TZRGMQ9"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+  
+
+</body>
+
+</html>
