@@ -1,4 +1,5 @@
 <link rel="stylesheet" href="banner/style.css" />
+{% include 'new_home/banner/modalVideo.html' %}
 <section class="docsie-banner-wrapper">
   <div class="docsie-banner-text-wrapper">
     <h1 class="docsie-banner-title">
@@ -13,7 +14,15 @@
       <a href="#" class="docsie-home-button-base docsie-home-button-primary"
         >Try for Free</a
       >
-      <button class="docsie-home-button-base docsie-home-button-ghost">
+      <button
+        class="docsie-home-button-base docsie-home-button-ghost"
+        id="docsie-button-video"
+      >
+        <img
+          src="../assets/new_home/play.svg"
+          alt="play"
+          class="docsie-home-icon"
+        />
         Watch Video
       </button>
     </div>
@@ -23,3 +32,30 @@
     <div class="docsie-banner-image-comment"></div>
   </div>
 </section>
+
+<script>
+  const modal = document.getElementById("videoModal");
+  const trigger = document.getElementById("docsie-button-video");
+  const triggerClose = document.getElementsByClassName(
+    "docsie-banner-close-modal"
+  )[0];
+  const iframe = document.getElementById("docsie-banner-iframe");
+
+  trigger.onclick = function () {
+    modal.classList.add("show");
+    iframe.src =
+      "https://www.youtube.com/embed/LfM7dL82JTM?si=pBmoeaaPlDH4Lfw4&autoplay=1";
+  };
+
+  triggerClose.onclick = function () {
+    modal.classList.remove("show");
+    iframe.src = "";
+  };
+
+  window.onclick = function (event) {
+    if (event.target == modal) {
+      modal.classList.remove("show");
+      iframe.src = "";
+    }
+  };
+</script>
