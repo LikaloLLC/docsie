@@ -1,0 +1,54 @@
+<link rel="stylesheet" href="features/style.css" />
+<section class="docsie-features-wrapper">
+  <div class="docsie-features-header-wrapper">
+    <p class="docsie-features-text-details">
+      <span class="docsie-features-text-style"># Why</span> Choose Our Platform
+    </p>
+    <h1 class="docsie-features-title">Everything you need, in one place</h1>
+  </div>
+  <div class="docsie-features-animation-wrapper">
+    <div class="docsie-features-animation">
+      <div class="docsie-features-actions-left">
+        <button class="docsie-features-actions-item">
+          Knowledge Base Portal
+        </button>
+        <button class="docsie-features-actions-item">Project Management</button>
+        <button class="docsie-features-actions-item">
+          In-App Help Interfaces
+        </button>
+        <button class="docsie-features-actions-item">
+          Role-based Access Controls
+        </button>
+      </div>
+      {% include 'new_home/features/macbook.html' %}
+      <div class="docsie-features-actions-right">
+        <button class="docsie-features-actions-item">Version Management</button>
+        <button class="docsie-features-actions-item">Webhook Support</button>
+        <button class="docsie-features-actions-item">
+          AI Generative Content
+        </button>
+        <button class="docsie-features-actions-item">
+          Rule-based Content Linter
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+  function trocarImagem(src) {
+    const imagemNotebook = document.getElementById("notebookImage");
+
+    const novoCaminho = `/assets/new_home/sectionCompany/${
+      src ? src : "shelves2.png"
+    }`;
+
+    imagemNotebook.style.opacity = "0";
+    setTimeout(function () {
+      imagemNotebook.setAttribute("xlink:href", novoCaminho);
+
+      imagemNotebook.style.opacity = "1";
+    }, 500);
+  }
+
+  trocarImagem();
+</script>
