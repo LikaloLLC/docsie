@@ -9,37 +9,82 @@
   <div class="docsie-features-animation-wrapper">
     <div class="docsie-features-animation">
       <div class="docsie-features-actions-left">
-        <button class="docsie-features-actions-item">
+        <button
+          class="docsie-features-actions-item"
+          onclick="changeImage('collaborate.png')"
+        >
+          <div class="docsie-features-actions-item-icon redcolor">
+            <img src="/assets/new_home/features/books.svg" alt="books" />
+          </div>
           Knowledge Base Portal
         </button>
-        <button class="docsie-features-actions-item">Project Management</button>
-        <button class="docsie-features-actions-item">
+        <button
+          class="docsie-features-actions-item"
+          onclick="changeImage('feedback.png')"
+        >
+          <div class="docsie-features-actions-item-icon greencolor">
+            <img src="/assets/new_home/features/hourglass.svg" alt="project" />
+          </div>
+          Project Management
+        </button>
+        <button
+          class="docsie-features-actions-item"
+          onclick="changeImage('publish.gif')"
+        >
+          <div class="docsie-features-actions-item-icon bluecolor">
+            <img src="/assets/new_home/features/question.svg" alt="inApp" />
+          </div>
           In-App Help Interfaces
         </button>
-        <button class="docsie-features-actions-item">
+        <button
+          class="docsie-features-actions-item"
+          onclick="changeImage('website.png')"
+        >
+          <div class="docsie-features-actions-item-icon yellowcolor">
+            <img
+              src="/assets/new_home/features/shield-check.svg"
+              alt="shield"
+            />
+          </div>
           Role-based Access Controls
         </button>
       </div>
-      {% include 'new_home/features/macbook.html' %}
       <div class="docsie-features-actions-right">
-        <button class="docsie-features-actions-item">Version Management</button>
-        <button class="docsie-features-actions-item">Webhook Support</button>
+        <button class="docsie-features-actions-item" onclick="changeImage()">
+          <div class="docsie-features-actions-item-icon redcolor">
+            <img src="/assets/new_home/features/user-gear.svg" alt="version" />
+          </div>
+          Version Management
+        </button>
         <button class="docsie-features-actions-item">
+          <div class="docsie-features-actions-item-icon greencolor">
+            <img src="/assets/new_home/features/chat.svg" alt="chat" />
+          </div>
+          Webhook Support
+        </button>
+        <button class="docsie-features-actions-item">
+          <div class="docsie-features-actions-item-icon bluecolor">
+            <img src="/assets/new_home/features/cpu.svg" alt="cpu" />
+          </div>
           AI Generative Content
         </button>
         <button class="docsie-features-actions-item">
+          <div class="docsie-features-actions-item-icon yellowcolor">
+            <img src="/assets/new_home/features/article.svg" alt="article" />
+          </div>
           Rule-based Content Linter
         </button>
       </div>
+      {% include 'new_home/features/macbook.html' %}
     </div>
   </div>
 </section>
 <script>
-  function trocarImagem(src) {
+  function changeImage(src) {
     const imagemNotebook = document.getElementById("notebookImage");
 
-    const novoCaminho = `/assets/new_home/sectionCompany/${
-      src ? src : "shelves2.png"
+    const novoCaminho = `/assets/new_home/features/${
+      src ? src : "shelves.png"
     }`;
 
     imagemNotebook.style.opacity = "0";
@@ -50,5 +95,5 @@
     }, 500);
   }
 
-  trocarImagem();
+  changeImage();
 </script>
