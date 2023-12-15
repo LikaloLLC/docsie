@@ -28,20 +28,21 @@ shareimage %}{% block styles %}
         </header>
 
         <div class="docsie-pricing-toggle-container">
-          <div class="docsie-pricing-toggle">
+          <div class="docsie-pricing-toggle" onclick="toggleActive('shared-plans')" id="shared-plans">
             <span class="docsie-pricing-toggle-text docsie-pricing-toggle-title docsie-pricing-text-active">Shared
               hosting plans</span>
             <span class="docsie-pricing-toggle-text docsie-pricing-none-mobile">Your data lives in our servers</span>
           </div>
-          <div class="docsie-pricing-toggle">
-            <span class="docsie-pricing-toggle-text docsie-pricing-toggle-title">Private hosting</span>
+          <div class="docsie-pricing-toggle" onclick="toggleActive('private-plans')" id="private-plans">
+            <span class="docsie-pricing-toggle-text docsie-pricing-toggle-title">Private
+              hosting</span>
             <span class="docsie-pricing-toggle-text docsie-pricing-none-mobile">A dedicated server, just for you!</span>
           </div>
         </div>
 
         <section class="docsie-section docsie-grid grid-3 docsie-pricing-table">
           <div class="docsie-pricing-container-tiers">
-            <div class="docsie-section-container" role="presentation">
+            <div class="docsie-section-container" role="presentation" id="shared-plans-content">
               <div class="docsie-pricing-card">
                 <div class="docsie-pricing-card-bg">
                   <div class="docsie-pricing-card-header">
@@ -235,6 +236,19 @@ shareimage %}{% block styles %}
                   </div>
                 </div>
               </div>
+            </div>
+
+            <div id="private-plans-content" class="private-plans-content">
+              <h1>
+                Get full isolation, control, performance and security for your KB with our private hosting
+              </h1>
+              <h3>
+                Schedule a time to talk to our team about your needs and get a quote
+              </h3>
+              <button class="docsie-pricing-button-base docsie-pricing-button-primary"
+                onclick="Calendly.initPopupWidget({url: 'https://calendly.com/docsie-io/demo-call'});return false;">
+                Schedule a call
+              </button>
             </div>
 
             <div class="docsie-pricing-content-header" role="presentation">
@@ -465,4 +479,28 @@ shareimage %}{% block styles %}
 {% endblock content %} {% block scripts %}
 <script async type="text/javascript" src="https://lib.docsie.io/1.4.10/service.js"
   data-docsie="live_pk_6Y24rR0t7GWA6yo6cdSwZ8q3:boo_CQIeD5drM0TCIxdfB,navigation:false,footer:false,sectionAnchor:false,viewportWidth:100%"></script>
+<script>
+  function toggleActive(id) {
+    var elements = document.querySelectorAll('.docsie-pricing-toggle');
+
+
+    elements.forEach(function (element) {
+      if (element.id === id) {
+        element.querySelector('.docsie-pricing-toggle-text').classList.add('docsie-pricing-text-active');
+      } else {
+        element.querySelector('.docsie-pricing-toggle-text').classList.remove('docsie-pricing-text-active');
+      }
+    });
+
+    if (id === 'shared-plans') {
+      document.getElementById('private-plans-content').style.display = 'none';
+      document.getElementById('shared-plans-content').style.display = 'grid';
+    } else {
+      document.getElementById('shared-plans-content').style.display = 'none';
+      document.getElementById('private-plans-content').style.display = 'flex';
+    }
+  }
+
+</script>
+
 {% endblock scripts %}
