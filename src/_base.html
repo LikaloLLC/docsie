@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-US">
+
 <head>
   <link rel="preconnect" href="https://app.docsie.io">
   <link rel="preconnect" href="https://portals.docsie.io">
@@ -10,8 +11,7 @@
   <meta name=description content="{% block description %}{% endblock description %}">
   <!-- Schema.org markup for Google+ -->
   <meta itemprop="name" content="{{ self.title() }} | Docsie">
-  <meta itemprop="description"
-    content="{{ self.description() }}">
+  <meta itemprop="description" content="{{ self.description() }}">
   <meta itemprop="image" content="{% block shareimage %}{% endblock shareimage %}">
   <!-- Twitter Card data -->
   <meta name="twitter:card" content="summary_large_image">
@@ -25,8 +25,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.docsie.io/{{page_url}}" />
   <meta property="og:image" content="{{ self.shareimage() }}" />
-  <meta property="og:description"
-    content="{{ self.description() }}" />
+  <meta property="og:description" content="{{ self.description() }}" />
   <meta property="og:site_name" content="docsie.io" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta charset="utf-8">
@@ -89,7 +88,8 @@
     gtag('config', 'UA-116930058-3');
   </script>
 </head>
-<body>
+
+<body class="docsie-background-img">
   <a href="#main" class="aria-visible">{% trans %}Skip to content{% endtrans %}</a>
   <!-- Page Header -->
   <header class="gn">
@@ -103,11 +103,11 @@
               <use xlink:href="#icon-logo"></use>
             </svg>
           </a></li>
-          {% if small_header is defined %}
-          {% include '_header_small.html' %}
-          {% else %}
-            {% include '_header.html' %}
-          {% endif %}
+        {% if small_header is defined %}
+        {% include '_header_small.html' %}
+        {% else %}
+        {% include '_header.html' %}
+        {% endif %}
         {% include '_tags.html' %}
         {% include '_tags.body.html' %}
       </ul>
@@ -130,7 +130,7 @@
           </svg>
         </div>
       </div>
-        {% include '_footer.html' %}
+      {% include '_footer.html' %}
     </section>
     <section class="ft-cc">
       {% trans %}Made in Texas with love by Docsie Team{% endtrans %}</a>.
@@ -143,7 +143,7 @@
   {% include '_policy.html' %}
   {% include '_lang-picker.html' %}
   {% include '_lang-redirect-banner.html' %}
-<!--  {% include '_google_optmize.html' %}-->
+  <!--  {% include '_google_optmize.html' %}-->
   {% include '_lucky_orange.html' %}
   {% include '_traffic_guard.html' %}
   {% include '_quora_pixel.html' %}
@@ -154,4 +154,6 @@
   {% block scripts %}
   lazyLoadInstance.update();
   {% endblock scripts %}
-</body></html>
+</body>
+
+</html>
