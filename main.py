@@ -31,14 +31,19 @@ if __name__ == "__main__":
     feed = feedparser.parse('https://www.docsie.io/blog/rss.xml?skip=1&limit=3').entries
     feed.reverse()
 
-
+    feed_videos = feedparser.parse('https://www.youtube.com/feeds/videos.xml?channel_id=UCnQm591jTzvHwb003Y8e1XA').entries
+    feed_videos.reverse()
 
     for f in feed:
         f['link'] = f['link'].replace('/blog/blog/', '/blog/')
         f['published'] = arrow.get(dateutil.parser.parse(f['published'])).humanize()
 
+    for v in feed_videos:
+        v['video_link'] = v['link'].replace('https://www.youtube.com/watch?v=', 'https://www.youtube.com/embed/')
+        v['published'] = arrow.get(dateutil.parser.parse(v['published'])).humanize()
 
-    site = Site.make_site(searchpath='src/', env_globals={"feed":feed[-12:][::-1]},
+
+    site = Site.make_site(searchpath='src/', env_globals={"feed":feed[-12:][::-1],"videos":feed_videos},
                           extensions=['jinja2.ext.i18n','jinja_markdown.MarkdownExtension'])
 
     # enable automatic reloading
