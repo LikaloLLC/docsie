@@ -121,55 +121,13 @@ shareimage %}{% block styles %}
           </div>
         </div>
       </div>
-      <div class="social-company-people">
-        <div class="frame-7">
-          <img class="company-image" src="../assets/new_home/sectionBenefits/greenLab.png" />
-          <p class="landing-page-text">
-            “As a freelancer, Docsie has been an invaluable resource. The
-            feedback feature is great for collaboration, and the export options
-            are versatile.”
-          </p>
-          <div class="frame-8">
-            <img class="rectangle" src="../assets/new_home/sectionBenefits/person1.png" />
-            <p class="wrapper-people-company">
-              <span class="landing-page-text span">Belton George,</span>
-              <span class="landing-page-text"> CMO at GreenLabs</span>
-            </p>
-          </div>
-        </div>
-        <div class="frame-7">
-          <img class="company-image" src="../assets/new_home/sectionBenefits/ingenico.png" />
-          <p class="landing-page-text">
-            “Documentation is on another level. Docsie is great - it takes pride
-            of place on our documentation journey. I highly recommend this
-            powerful platform.”
-          </p>
-          <div class="frame-8">
-            <img class="rectangle" src="../assets/new_home/sectionBenefits/person2.png" />
-            <p class="wrapper-people-company">
-              <span class="landing-page-text span">Jose Thompsonn,</span>
-              <span class="landing-page-text"> COO at Ingenico</span>
-            </p>
-          </div>
-        </div>
-        <div class="frame-7">
-          <img class="company-image" src="../assets/new_home/sectionBenefits/phoenix.png" />
-          <p class="landing-page-text">
-            "I love the flexibility of Docsie. Whether I need to write an
-            internal report or create a user manual, it has all the tools I
-            need."
-          </p>
-          <div class="frame-8">
-            <img class="rectangle" src="../assets/new_home/sectionBenefits/person3.png" />
-            <p class="wrapper-people-company">
-              <span class="landing-page-text span">Jose Alba,</span>
-              <span class="landing-page-text"> Product owner at Phoenix</span>
-            </p>
-          </div>
-        </div>
-      </div>
     </div>
   </section>
+
+  <div>
+    <div class='sk-ww-g2-reviews' data-embed-id='247832'></div>
+    <script src='https://widgets.sociablekit.com/g2-reviews/widget.js' async defer></script>
+  </div>
 
   <div class="divider-section"></div>
 
@@ -344,8 +302,13 @@ shareimage %}{% block styles %}
           Read our Blogs
         </h2>
         <div class="list-cards-video">
-          <div class='sk-ww-g2-reviews' data-embed-id='247832'></div>
-          <script src='https://widgets.sociablekit.com/g2-reviews/widget.js' async defer></script>
+          {%for item in feed %}
+          <div class="card-video">
+            <a href=" {{item['link']}} ">
+              <img class="img" src="{{item['links'][1]['href']}}" alt="{{item['description']}}" />
+            </a>
+          </div>
+          {%endfor%}
         </div>
       </div>
     </div>
