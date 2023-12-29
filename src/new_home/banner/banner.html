@@ -1,0 +1,63 @@
+{% include 'new_home/banner/modalVideo.html' %}
+<div style="position: relative; overflow: hidden;">
+  <section class="section-padding">
+    <div class="docsie-banner-wrapper">
+      <div class="docsie-banner-text-wrapper">
+        <h1 class="docsie-banner-title">
+          <span class="docsie-banner-title-style">Docsie:</span> Your
+          Enterprise AI Knowledge Base Partner
+        </h1>
+        <p class="docsie-banner-text">
+           Build, share and manage knowledge bases, product docs, help centers, chat-bots, user manuals, SOPs and more!
+        </p>
+        <div class="docsie-banner-buttons-wrapper">
+          <a
+            href="https://app.docsie.io/onboarding/"
+            class="docsie-home-button-base docsie-home-button-primary"
+            >Try for Free</a
+          >
+          <button
+            class="docsie-home-button-base docsie-home-button-ghost"
+            id="docsie-button-video"
+          >
+            <img
+              src="../assets/new_home/play.svg"
+              alt="play"
+              class="docsie-home-icon"
+            />
+            Watch Video
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="docsie-banner-image-main"></div>
+  <div class="docsie-banner-image-comment"></div>
+</div>
+
+<script>
+  const modal = document.getElementById("videoModal");
+  const trigger = document.getElementById("docsie-button-video");
+  const triggerClose = document.getElementsByClassName(
+    "docsie-banner-close-modal"
+  )[0];
+  const iframe = document.getElementById("docsie-banner-iframe");
+
+  trigger.onclick = function () {
+    modal.classList.add("show");
+    iframe.src =
+      "https://www.youtube.com/embed/LfM7dL82JTM?si=pBmoeaaPlDH4Lfw4&autoplay=1";
+  };
+
+  triggerClose.onclick = function () {
+    modal.classList.remove("show");
+    iframe.src = "";
+  };
+
+  window.onclick = function (event) {
+    if (event.target == modal) {
+      modal.classList.remove("show");
+      iframe.src = "";
+    }
+  };
+</script>
