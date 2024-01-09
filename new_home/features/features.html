@@ -10,25 +10,25 @@
     <div class="docsie-features-animation-wrapper">
       <div class="docsie-features-animation">
         <div class="docsie-features-actions-left">
-          <button class="docsie-features-actions-item" onclick="changeImage('web-Knowledge.jpg')">
+          <button class="docsie-features-actions-item" onclick="changeImage('webKnowledge')">
             <div class="docsie-features-actions-item-icon redcolor">
               <img src="/assets/new_home/features/books.svg" alt="books" />
             </div>
             Web Knowledge Bases
           </button>
-          <button class="docsie-features-actions-item" onclick="changeImage('management.jpg')">
+          <button class="docsie-features-actions-item" onclick="changeImage('management')">
             <div class="docsie-features-actions-item-icon greencolor">
               <img src="/assets/new_home/features/hourglass.svg" alt="project" />
             </div>
             Document Lifecycle Management
           </button>
-          <button class="docsie-features-actions-item" onclick="changeImage('in-app.jpg')">
+          <button class="docsie-features-actions-item" onclick="changeImage('inApp')">
             <div class="docsie-features-actions-item-icon bluecolor">
               <img src="/assets/new_home/features/question.svg" alt="inApp" />
             </div>
             In-App Help Interfaces
           </button>
-          <button class="docsie-features-actions-item" onclick="changeImage('support-tickets.png')">
+          <button class="docsie-features-actions-item" onclick="changeImage('supportTickets')">
             <div class="docsie-features-actions-item-icon yellowcolor">
               <img src="/assets/new_home/features/shield-check.svg" alt="shield" />
             </div>
@@ -36,25 +36,25 @@
           </button>
         </div>
         <div class="docsie-features-actions-right">
-          <button class="docsie-features-actions-item" onclick="changeImage('multi-language.gif')">
+          <button class="docsie-features-actions-item" onclick="changeImage('multiLanguage')">
             <div class="docsie-features-actions-item-icon redcolor">
               <img src="/assets/new_home/features/user-gear.svg" alt="version" />
             </div>
             Multiple Versions and Languages
           </button>
-          <button class="docsie-features-actions-item" onclick="changeImage('chatbot.gif')">
+          <button class="docsie-features-actions-item" onclick="changeImage('chatbot')">
             <div class="docsie-features-actions-item-icon greencolor">
               <img src="/assets/new_home/features/chat.svg" alt="chat" />
             </div>
             AI Chatbot
           </button>
-          <button class="docsie-features-actions-item" onclick="changeImage('generative-AI.gif')">
+          <button class="docsie-features-actions-item" onclick="changeImage('generativeAI')">
             <div class="docsie-features-actions-item-icon bluecolor">
               <img src="/assets/new_home/features/cpu.svg" alt="cpu" />
             </div>
             AI Generative Content
           </button>
-          <button class="docsie-features-actions-item" onclick="changeImage('product-tours.gif')">
+          <button class="docsie-features-actions-item" onclick="changeImage('tourguide')">
             <div class="docsie-features-actions-item-icon yellowcolor">
               <img src="/assets/new_home/features/article.svg" alt="article" />
             </div>
@@ -84,6 +84,8 @@
     fill="url(#paint0_linear_160_1241)"
   />
   <rect x="130.806" y="34.0753" width="846.389" height="527.619" fill="white" />
+  <text id="notebookText" x="50%" y="25" fill="black" font-size="18px" text-anchor="middle">
+  </text>
   <image
     id="notebookImage"
     xlink:href=""
@@ -238,18 +240,59 @@
   </div>
 </section>
 <script>
-  function changeImage(src) {
-    const svg = document.getElementById("notebookImage");
+  function changeImage(type) {
+    const svgElem = document.getElementById("notebookImage");
+    const textElem = document.getElementById("notebookText");
 
-    const newPath = `/assets/new_home/features/${src}`;
+    let imagePath = "";
+    let newText = "";
+    switch (type) {
+      case "webKnowledge":
+        imagePath = "web-Knowledge.jpg";
+        text = "placeholder"
+        break;
+      case "management":
+        imagePath = "management.jpg";
+        text = "placeholder";
+        break;
+      case "inApp":
+        imagePath = "in-app.jpg";
+        text = "placeholder";
+        break;
+      case "supportTickets":
+        imagePath = "support-tickets.png";
+        text = "placeholder";
+        break;
+      case "multiLanguage":
+        imagePath = "multi-language.gif";
+        text = "placeholder";
+        break;
+      case "chatbot":
+        imagePath = "chatbot.gif";
+        text = "placeholder";
+        break;
+      case "generativeAI":
+        imagePath = "generative-AI.gif";
+        text = "placeholder";
+        break;
+      case "tourguide":
+        imagePath = "product-tours.gif";
+        text = "placeholder";
+        break;
+      default:
+        imagePath = "web-Knowledge.jpg";
+        text = "placeholder";
+    }
 
-    svg.style.opacity = "0";
+
+    textElem.innerHTML = text;
+    svgElem.style.opacity = "0";
     setTimeout(function () {
-      svg.setAttribute("xlink:href", newPath);
+      svgElem.setAttribute("xlink:href", `/assets/new_home/features/${imagePath}`);
 
-      svg.style.opacity = "1";
+      svgElem.style.opacity = "1";
     }, 500);
   }
 
-  changeImage("web-Knowledge.jpg");
+  changeImage();
 </script>
