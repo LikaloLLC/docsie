@@ -74,7 +74,6 @@
   <link rel="stylesheet" href="/lang-picker.css">
   <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-  <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.3.1/dist/lazyload.min.js"></script>
   <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
   {% block styles %}
   {% endblock styles %}
@@ -151,9 +150,11 @@
   {% include '_facebook_pixel.html' %}
   {% include '_tapfilliate_pixel.html' %}
 
-  {% block scripts %}
-  lazyLoadInstance.update();
-  {% endblock scripts %}
+  <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.3.0/dist/lazyload.min.js"></script>
+  <script>
+    var lazyLoadInstance = new LazyLoad({
+    });
+  </script>
 </body>
 
 </html>
