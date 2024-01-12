@@ -554,52 +554,51 @@ shareimage %}{% block styles %}
   <!-- <br /><br /><br /><br /> -->
   <!-- <div role="presentation" data-ddsroot></div> -->
 </main>
-{% endblock content %} {% block scripts %}
-<script async type="text/javascript" src="https://lib.docsie.io/1.4.10/service.js"
-  data-docsie="live_pk_6Y24rR0t7GWA6yo6cdSwZ8q3:boo_CQIeD5drM0TCIxdfB,navigation:false,footer:false,sectionAnchor:false,viewportWidth:100%"></script>
-<script>
-  function toggleActive(id) {
-    var elements = document.querySelectorAll('.docsie-pricing-toggle');
-
-
-    elements.forEach(function (element) {
-      if (element.id === id) {
-        element.querySelector('.docsie-pricing-toggle-text').classList.add('docsie-pricing-text-active');
+{% block scripts %}
+  <script async type="text/javascript" src="https://lib.docsie.io/1.4.10/service.js"
+    data-docsie="live_pk_6Y24rR0t7GWA6yo6cdSwZ8q3:boo_CQIeD5drM0TCIxdfB,navigation:false,footer:false,sectionAnchor:false,viewportWidth:100%"></script>
+  <script>
+    function toggleActive(id) {
+      var elements = document.querySelectorAll('.docsie-pricing-toggle');
+  
+  
+      elements.forEach(function (element) {
+        if (element.id === id) {
+          element.querySelector('.docsie-pricing-toggle-text').classList.add('docsie-pricing-text-active');
+        } else {
+          element.querySelector('.docsie-pricing-toggle-text').classList.remove('docsie-pricing-text-active');
+        }
+      });
+  
+      if (id === 'shared-plans') {
+        document.getElementById('private-plans-content').style.display = 'none';
+        document.getElementById('shared-plans-content').style.display = 'grid';
       } else {
-        element.querySelector('.docsie-pricing-toggle-text').classList.remove('docsie-pricing-text-active');
+        document.getElementById('shared-plans-content').style.display = 'none';
+        document.getElementById('private-plans-content').style.display = 'flex';
       }
-    });
-
-    if (id === 'shared-plans') {
-      document.getElementById('private-plans-content').style.display = 'none';
-      document.getElementById('shared-plans-content').style.display = 'grid';
-    } else {
-      document.getElementById('shared-plans-content').style.display = 'none';
-      document.getElementById('private-plans-content').style.display = 'flex';
     }
-  }
-
-  function toggleFeatures() {
-    const featuresElements = document.querySelectorAll('.docsie-show-features');
-    const expandIconElements = document.querySelectorAll('.docsie-img-expand');
-
-    featuresElements.forEach(function (element) {
-      if (element.style.display === 'none') {
-        element.style.display = 'block';
-      } else {
-        element.style.display = 'none';
-      }
-    });
-
-    expandIconElements.forEach(function (element) {
-      if (element.style.transform === 'rotate(180deg)') {
-        element.style.transform = 'rotate(0deg)';
-      } else {
-        element.style.transform = 'rotate(180deg)';
-      }
-    });
-
-  }
-</script>
-
+  
+    function toggleFeatures() {
+      const featuresElements = document.querySelectorAll('.docsie-show-features');
+      const expandIconElements = document.querySelectorAll('.docsie-img-expand');
+  
+      featuresElements.forEach(function (element) {
+        if (!element.style.display || element.style.display === 'none') {
+          element.style.display = 'block';
+        } else {
+          element.style.display = 'none';
+        }
+      });
+  
+      expandIconElements.forEach(function (element) {
+        if (!element.style.transform || element.style.transform === 'rotate(180deg)') {
+          element.style.transform = 'rotate(0deg)';
+        } else {
+          element.style.transform = 'rotate(180deg)';
+        }
+      });
+    }
+  </script>
 {% endblock scripts %}
+{% endblock content %} 
