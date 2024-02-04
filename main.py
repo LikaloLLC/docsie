@@ -2,7 +2,7 @@ from staticjinja import Site
 from jinja2 import Environment
 import gettext
 import sys
-from os import listdir
+from os import listdir 
 from os.path import isfile, join
 import os
 cwd = os.getcwd() 
