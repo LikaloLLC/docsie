@@ -8,7 +8,7 @@ import os
 cwd = os.getcwd() 
 import feedparser
 from os import listdir 
-from os.path import isfile, join
+from os.path import isfile, join 
 import dateutil.parser
 import arrow
 
