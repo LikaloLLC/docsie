@@ -134,13 +134,47 @@
 .docsie-pricing-container-tiers .docsie-section-container {
   width: 100%;
 }
-
+.docsie-section-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+}
+.docsie-pricing-card {
+  flex: 1;
+  max-width: 300px;
+  position: relative;
+  transition: all 0.3s ease;
+}
 .docsie-pricing-container-tiers .docsie-pricing-card {
   border-radius: 14px;
   border: 1px solid #63617810;
   overflow: hidden;
   background: #FEFEFF;
   transition: all 0.3s ease-in-out;
+}
+
+.docsie-pricing-card.popular {
+  border: 2px solid #13AF4B;
+  box-shadow: 0 0 15px rgba(19, 175, 75, 0.2);
+  position: relative;
+  overflow: visible;
+}
+
+.popular-badge {
+  background-color: #13AF4B;
+  color: white;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 12px;
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 12px;
+  z-index: 2;
+  white-space: nowrap;
 }
 
 .docsie-pricing-container-tiers .docsie-pricing-card .docsie-pricing-card-bg {
@@ -274,64 +308,50 @@
   cursor: pointer;
 }
 
-.docsie-pricing-container-addons .docsie-pricing-container-addons-item {
+.docsie-pricing-container-addons {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.docsie-pricing-container-addons-item {
   display: flex;
   flex-direction: column;
-  border-radius: 20px;
-  border: 1px solid #63617833;
-  backdrop-filter: blur(2px);
-}
-
-.docsie-pricing-container-addons .docsie-pricing-container-addons-item .docsie-pricing-addons-item-title {
-  color: #39464E;
-  font-family: 'Arimo', sans-serif;
-  font-size: 26px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 120%;
-  padding: 32px;
-  padding-bottom: 20px;
-
-  display: flex;
   justify-content: space-between;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  height: 100%;
+}
+
+.docsie-pricing-addons-item-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  display: flex;
   align-items: center;
+  gap: 10px;
 }
 
-.docsie-pricing-container-addons .docsie-pricing-container-addons-item .docsie-pricing-addons-item-text {
-  color: #647B89;
-  font-family: 'Open Sans', sans-serif;
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 160%;
-  padding: 32px;
-  border-radius: 15px;
-  border: 1px solid #63617833;
+.docsie-pricing-addons-item-text {
+  font-size: 14px;
+  line-height: 1.5;
+  flex-grow: 1;
+  margin-bottom: 15px;
 }
 
-.docsie-pricing-container-addons .docsie-pricing-container-addons-item .docsie-pricing-addons-item-price {
-  color: #101212;
-  font-family: 'Arimo', sans-serif;
-  font-size: 32px;
-  font-style: normal;
+.docsie-pricing-addons-item-price {
+  font-size: 24px;
   font-weight: 700;
-  line-height: 61px;
-  letter-spacing: 0.32px;
-  text-transform: capitalize;
-  padding: 32px;
-  padding-top: 20px;
+  color: #13AF4B;
+  margin-top: auto;
 }
 
-.docsie-pricing-container-addons .docsie-pricing-container-addons-item .docsie-pricing-addons-item-price-details {
-  color: #39464E;
-  font-family: 'Open Sans', sans-serif;
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 160%;
-  letter-spacing: 0.36px;
+.docsie-pricing-addons-item-price-details {
+  font-size: 14px;
+  color: #666;
 }
-
 .docsie-pricing-header-internal {
   margin: 80px auto;
 }
@@ -465,6 +485,74 @@
   .docsie-pricing-container-addons {
     grid-template-columns: repeat(3, 1fr) !important;
   }
+}
+
+.PRICE1-toggle-container-content {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.PRICE1-toggle-wrapper {
+  display: flex;
+  align-items: center;
+  background-color: #f5f5f5;
+  border-radius: 20px;
+  padding: 5px 10px;
+}
+
+.PRICE1-toggle-label {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #39464E;
+  margin: 0 10px;
+  cursor: pointer;
+}
+
+.PRICE1-toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.PRICE1-toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.PRICE1-toggle-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+  border-radius: 34px;
+}
+
+.PRICE1-toggle-slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+.PRICE1-toggle-switch input:checked + .PRICE1-toggle-slider {
+  background-color: #13AF4B;
+}
+
+.PRICE1-toggle-switch input:checked + .PRICE1-toggle-slider:before {
+  transform: translateX(26px);
 }
 
 @media screen and (max-width: 768px) {
@@ -618,71 +706,71 @@ input:checked + .toggle-slider:before {
 /* Pricing Toggle Styles */
 /* Pricing Toggle Styles */
 /* Pricing Toggle Styles */
-.PRICE1-toggle-container-content {
-  display: flex;
-  justify-content: center;
-  margin: 20px 0;
 }
 
-.PRICE1-toggle-wrapper {
-  display: flex;
-  align-items: center;
-  background-color: #f5f5f5;
-  border-radius: 20px;
-  padding: 5px 10px;
+.testimonials-section {
+  background-color: #f9f9f9;
+  padding: 60px 0;
+  margin-top: 80px;
 }
 
-.PRICE1-toggle-label {
-  font-family: 'Open Sans', sans-serif;
-  font-size: 14px;
-  font-weight: 600;
-  color: #39464E;
-  margin: 0 10px;
-  cursor: pointer;
+.docsie-pricing-header-internal {
+  text-align: center;
+  margin-bottom: 40px;
 }
 
-.PRICE1-toggle-switch {
-  position: relative;
-  display: inline-block;
-  width: 60px;
-  height: 34px;
+.docsie-pricing-header-description {
+  font-size: 18px;
+  color: #555;
+  margin-bottom: 10px;
 }
 
-.PRICE1-toggle-switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
+.docsie-pricing-text-red {
+  color: #B61D1D;
+  font-weight: bold;
 }
 
-.PRICE1-toggle-slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #ccc;
-  transition: .4s;
-  border-radius: 34px;
+.docsie-pricing-header-title.subheader {
+  font-size: 36px;
+  color: #333;
+  margin-top: 10px;
 }
 
-.PRICE1-toggle-slider:before {
-  position: absolute;
-  content: "";
-  height: 26px;
-  width: 26px;
-  left: 4px;
-  bottom: 4px;
-  background-color: white;
-  transition: .4s;
-  border-radius: 50%;
+.testimonials-container {
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.PRICE1-toggle-switch input:checked + .PRICE1-toggle-slider {
-  background-color: #13AF4B;
+/* Styles for the embedded G2 reviews */
+.sk-ww-g2-reviews {
+  background-color: transparent !important;
 }
 
-.PRICE1-toggle-switch input:checked + .PRICE1-toggle-slider:before {
-  transform: translateX(26px);
+.sk-ww-g2-reviews .sk-ww-g2-reviews-item {
+  background-color: #fff !important;
+  border-radius: 8px !important;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+  padding: 20px !important;
+  margin: 10px !important;
 }
+
+.sk-ww-g2-reviews .sk-ww-g2-reviews-stars {
+  font-size: 20px !important;
+  margin-bottom: 10px !important;
+}
+
+.sk-ww-g2-reviews .sk-ww-g2-reviews-text {
+  font-size: 16px !important;
+  line-height: 1.6 !important;
+  color: #444 !important;
+}
+
+.sk-ww-g2-reviews .sk-ww-g2-reviews-user-name {
+  font-weight: bold !important;
+  color: #333 !important;
+}
+
+.sk-ww-g2-reviews .sk-ww-g2-reviews-user-title {
+  font-size: 14px !important;
+  color: #666 !important;
 }
