@@ -1,0 +1,393 @@
+<!-- Base template of the article page. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+  
+
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="https://d1iq6qzgppjlud.cloudfront.net/images/favicon/favicon-196x196.png">
+
+
+  <!-- Primary Meta Tags -->
+  <title>Docsie.io Blog - 제품 요구 사항 문서 101: 훌륭한 PRD 작성을 위한 가이드</title>
+  <meta name="author" content="Tanya A Mishra"/>
+  <meta name="title" content="제품 요구 사항 문서 101: 훌륭한 PRD 작성을 위한 가이드">
+  <meta name="description" content="제품 요구 사항 문서는 제품의 근간입니다. 다음은 Docsie를 중심으로 제품 요구 사항 문서를 작성하는 방법에 대한 전체 가이드입니다."/>
+  <meta name="keywords" content="AI,기술 문서 작성,제품 요구 사항 문서"/>
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.docsie.io/blog/blog/ko/articles/product-requirements-document-101-your-guide-to-writing-great-prds/">
+  <meta property="og:title" content="제품 요구 사항 문서 101: 훌륭한 PRD 작성을 위한 가이드">
+  <meta property="og:description"
+        content="제품 요구 사항 문서는 제품의 근간입니다. 다음은 Docsie를 중심으로 제품 요구 사항 문서를 작성하는 방법에 대한 전체 가이드입니다.">
+  <meta property="og:image" content="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_cBiHkLABfALD3xmNp/banner_49_fab6d5dd-faba-70d3-be1a-b8fcf1ff4c6b.jpg">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://www.docsie.io/blog/blog/ko/articles/product-requirements-document-101-your-guide-to-writing-great-prds/">
+  <meta property="twitter:title" content="제품 요구 사항 문서 101: 훌륭한 PRD 작성을 위한 가이드">
+  <meta property="twitter:description"
+        content="제품 요구 사항 문서는 제품의 근간입니다. 다음은 Docsie를 중심으로 제품 요구 사항 문서를 작성하는 방법에 대한 전체 가이드입니다.">
+  <meta property="twitter:image" content="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_cBiHkLABfALD3xmNp/banner_49_fab6d5dd-faba-70d3-be1a-b8fcf1ff4c6b.jpg">
+
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/blog/templates/assets/css/typography.min.css"/>
+  <!--Replace with your tailwind.css once created-->
+    
+    <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TZRGMQ9');</script>
+<!-- End Google Tag Manager -->
+  
+
+</head>
+
+
+<body class="bg-gray-100 font-sans leading-normal tracking-normal">
+
+<nav id="header" class="fixed w-full z-10 top-0">
+
+  <div id="progress" class="h-1 z-20 top-0"
+       style="background:linear-gradient(to right, #4dc0b5 var(--scroll), transparent 0);"></div>
+
+  <div class="container max-w-6xl mx-auto flex flex-wrap items-center justify-between mt-0 py-3">
+
+    <div class="pl-4">
+      <a class="text-gray-900 text-base no-underline hover:no-underline font-extrabold text-xl" href="../../">
+          Docsie.io Blog
+      </a>
+    </div>
+
+    <div class="block lg:hidden pr-4">
+      <button id="nav-toggle"
+              class="flex items-center px-3 py-2 border rounded text-gray-500 border-gray-600 hover:text-gray-900 hover:border-green-500 appearance-none focus:outline-none">
+        <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+          <title>Menu</title>
+          <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/>
+        </svg>
+      </button>
+    </div>
+
+    <div class="w-full flex-grow lg:flex lg:items-center lg:w-auto hidden lg:block mt-2 lg:mt-0 bg-gray-100 z-20"
+         id="nav-content">
+      <ul class="list-reset lg:flex justify-end flex-1 items-center">
+        
+        <li>
+          <a class="inline-block text-gray-600 hover:text-gray-900 hover:underline py-2 px-4"
+             href="https://www.docsie.io">Docsie</a>
+        </li>
+        
+        <li>
+          <a class="inline-block text-gray-600 hover:text-gray-900 hover:underline py-2 px-4"
+             href="https://www.docsie.io/pricing/">Docsie Pricing</a>
+        </li>
+        
+        <li>
+          <a class="inline-block text-gray-600 hover:text-gray-900 hover:underline py-2 px-4"
+             href="https://www.docsie.io/try_docsie/">Try Docsie</a>
+        </li>
+        
+      </ul>
+    </div>
+    <div class="flex w-full justify-end content-center">
+        <a
+          class="inline-block text-gray-500 hover:text-green-500 hover:underline text-center h-10 p-2 md:h-auto md:p-4 avatar"
+          data-tippy-content="@twitter_handle" href="https://twitter.com/intent/tweet?url=#"
+          id="twitter">
+          <svg class="fill-current h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+            <path
+              d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"></path>
+          </svg>
+        </a>
+        <a
+          class="inline-block text-gray-500 hover:text-green-500 hover:underline text-center h-10 p-2 md:h-auto md:p-4 avatar"
+          data-tippy-content="#facebook_id" href="https://www.facebook.com/sharer/sharer.php?u=#}"
+          id="facebook">
+          <svg class="fill-current h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+            <path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"></path>
+          </svg>
+        </a>
+      </div>
+  </div>
+
+</nav>
+
+<!--Container-->
+<div class="container max-w-4xl mx-auto mt-32 px-8 md:px-0">
+  <div class="prose prose lg:prose-xl mx-auto mt-32">
+    <!--Title-->
+    <h1 id="blog-title">제품 요구 사항 문서 101: 훌륭한 PRD 작성을 위한 가이드</h1>
+    <!--Author-->
+    <div class="flex items-center">
+      <img class="w-10 h-10 rounded-full mr-4" src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_p1X4gXS3n0rCHYuaE/1f3f5f57-d8e2-7978-faef-0b9fe89f3e4btanya_pic.jpg" alt="Avatar of Author">
+      <div class="flex-1 px-2">
+        <div class="font-bold leading-none mb-2">Tanya A Mishra</div>
+        <div class="text-xs md:text-base">on February 05, 2024 · <span id="reading-time"
+                class="block md:inline mt-2 md:mt-0"></span> · filed under <span
+          class="block md:inline mt-2 md:mt-0">
+						
+            <span class="rounded bg-green-500 text-white px-1 uppercase text-xs whitespace-nowrap md:text-sm">AI</span>
+						
+            <span class="rounded bg-green-500 text-white px-1 uppercase text-xs whitespace-nowrap md:text-sm">기술 문서 작성</span>
+						
+            <span class="rounded bg-green-500 text-white px-1 uppercase text-xs whitespace-nowrap md:text-sm">제품 요구 사항 문서</span>
+						
+					</span>
+        </div>
+      </div>
+    </div>
+    <!--/Author-->
+
+    <!--Post Content-->
+    <!--Lead Para-->
+    <div id="content">
+      <p>모든 제품은 아이디어와 시급한 문제를 해결하려는 강한 의지에서 시작됩니다. 초보 창업가든 노련한 비즈니스맨이든 제품에 대한 명확한 관점을 가지고 있어야 지정된 제품 팀에 전달하여 제품을 만들 수 있습니다. 이 문서에서는 제품 요구 사항 문서의 다양한 측면을 자세히 살펴보고 기술 팀을 도울 수 있는 완벽한 문서 정의 초안을 작성하는 방법에 대한 인사이트를 공유합니다.</p>
+<h2>제품 요구 사항 문서란 무엇인가요?</h2>
+<p>간단히 말해서 모든 제품의 특성, 특징 및 기능에 대한 상세한 청사진입니다. 일반적으로 전체 제품 설계를 담당하고 초기 제품에 대한 판매자의 비전을 충족하는지 확인하는 제품 팀과 공유됩니다. PRD를 개발팀과 공유하면 제품과 관련된 모든 사람이 제품, 잠재 고객, 특정 문제를 해결하는 데 도움이 될 수 있는 방법을 더 잘 이해할 수 있습니다.</p>
+<p>제품 요구사항 문서는 포괄적이고 필수적인 문서입니다. 전문가가 작성한 초안은 나중에 소프트웨어 릴리스 프로세스에서 작성되는 문서에 대한 가이드 역할을 합니다. 제품 관리자는 일반적으로 템플릿을 따라 팀이 프로젝트 작업을 시작하기 전에 예상되는 프로젝트의 구체적인 세부 사항을 기록합니다.</p>
+<p>프로젝트 매니저이거나 현재 신제품을 담당하고 있고 제품 요구사항 문서를 작성하는 방법이 궁금하다면 <a href="https://www.docsie.io/discovery_call/"> </a><a href="https://www.docsie.io/discovery_call/">Docsie</a>가 제품의 세부 사항을 작성하고 팀원 및 모든 외부 이해관계자와 공유할 수 있는 전문 문서 작성 도구라는 사실을 알게 되시면 기쁠 것입니다.</p>
+<p>제품 요구사항 문서의 ## 이점</p>
+<p><img alt="제품 요구사항 문서의 이점" src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_w0x51VQJqlm6MGO4B/image4.png" /></p>
+<p>새로운 제품 작업을 시작하거나 기존 제품을 개선하기 전에 프로젝트의 비전과 사명을 공유하는 상세한 PRD를 작성하세요. 목표 시장의 개요부터 고객 요구사항에 대한 언급까지, PRD는 관련된 모든 팀 간의 원활한 협업을 촉진하고 제품 성공률을 높여줍니다. 하지만 제품 요구 사항 문서를 작성하는 방법을 살펴보기 전에 PRD의 의미와 가치를 완전히 이해하기 위해 몇 가지 전문가들의 의견을 살펴봅시다:</p>
+<hr />
+<table>
+<thead>
+<tr>
+<th>장점</th>
+<th>어떻게 도움이 되는가</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>프로젝트 목표 개요</td>
+<td>PRD는 제품의 높은 수준의 목표를 공유하고 프로젝트 마감일 및 작업 영역과 함께 모든 팀에 자세한 방향을 제공합니다.</td>
+</tr>
+<tr>
+<td>성공적인 협업에 도움</td>
+<td>모든 이해관계자가 PRD를 통해 프로젝트와 각자의 역할, 성과 기대치를 더 잘 이해할 수 있습니다.</td>
+</tr>
+<tr>
+<td>범위를 명확히 함</td>
+<td>PRD에는 제품의 특징 및 기능과 함께 범위를 벗어난 특정 사항이 포함됩니다. 이는 모호함을 줄이고 긍정적인 업무 환경을 조성하는 데 도움이 됩니다.</td>
+</tr>
+<tr>
+<td>원활한 협업 제공</td>
+<td>효과적인 PRD는 여러 팀 간의 성공적인 협업의 결과로 만들어지는 훌륭한 문서입니다. 결과적으로 모든 부서의 구심점이 됩니다.</td>
+</tr>
+<tr>
+<td>고객을 중심에 두다</td>
+<td>PRD는 훌륭한 시장 조사와 심층 분석의 결과물입니다. 제품 관리자는 PRD 초안을 작성할 때 최종 사용자의 관점을 고려하는 경우가 많습니다.</td>
+</tr>
+<tr>
+<td><strong> </strong></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2>제품 요구사항 문서는 어떻게 작성하나요?</h2>
+<p>제품 요구사항 문서를 작성하는 방법에 대해 고민하고 계신가요? 제품 문서 초안을 작성하는 데 따를 수 있는 몇 가지 간단한 단계를 공유하니 걱정하지 마세요.</p>
+<p>제품 요구사항 문서 작성 방법](https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_kA2rByOmXxWvbOet8/image5.png)</p>
+<h3>1. 제품의 목적을 공유하세요:</h3>
+<p>PRD에 제품이 해결하고 해결하고자 하는 문제가 언급되어 있는지 확인하세요. 제품을 만드는 모든 이유를 요약하세요. 어떤 문제를 해결할 수 있는지부터 시작하여 그 문제가 왜 중요한지, 최종 사용자에게 어떤 혜택을 줄 수 있는지에 대해 이야기하세요.</p>
+<h3>2. 제품의 기능에 대해 토론하세요:</h3>
+<p>제품을 독특하게 만드는 모든 기능을 적으세요. 각 기능에 대한 설명과 함께 목표 및 구체적인 사용 사례를 추가하세요. 콘텐츠를 짧게 작성하되 프로젝트의 비전을 전달할 수 있는 시각적 자료를 많이 사용하여 흥미롭고 쉽게 이해할 수 있도록 하세요.</p>
+<h3>3. 대략적인 마감일을 정하세요:</h3>
+<p>구체적인 타임라인을 설정하고 모든 프로젝트 이해관계자가 그에 따라 작업 계획을 세울 수 있도록 공유하세요. 모든 사람이 진행 상황을 모니터링하고 주요 마일스톤 달성에 대한 기대치를 설정할 수 있도록 도와주세요.</p>
+<h3>4. 성공 지표를 지정하세요:</h3>
+<p>제품 요구 사항 문서를 작성하는 방법의 중요한 부분에는 성공 평가 및 측정이 포함됩니다. 따라서 성공 지표를 정의하고, 측정 가능한 목표를 설정하고, 이를 추적할 방법을 정하세요.</p>
+<h3>5.릴리즈 기준에 유의하세요:</h3>
+<p>제품이 출시되기 전에 충족해야 하는 사전 결정 요건이 있나요? 제품의 최소 기능을 간략하게 설명하고, 사용자 테스트의 범위를 명확히 하고, 사용자 친화적인 제품을 만들 수 있도록 릴리스 기준을 나열하세요.</p>
+<h2>제품 요구 사항 문서 작성을 위한 유용한 팁</h2>
+<p>제품 요구 사항 문서 작성을 위한 유용한 팁](https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_8qxdhLqT5afunlR0R/image6.png)</p>
+<p>일반적인 PRD 템플릿에 무엇을 포함해야 하고 무엇을 포함하지 말아야 하는지에 대해 많은 논쟁이 있습니다. PRD 작성에 대한 딱딱하고 빠른 규칙이나 전략은 없지만 이러한 문서에 포함되어야 하는 몇 가지 항목이 있습니다. 다음과 같습니다:</p>
+<h3>목표:</h3>
+<p>프로젝트 목표뿐만 아니라 제품의 배경에 대해서도 이야기하세요. 제품을 제조하려는 이유는 무엇이며 어떤 문제를 해결하고자 하나요? PRD가 이러한 질문에 답할 수 있도록 하세요.</p>
+<h3>특성:</h3>
+<p>제품의 각 기능을 가지고 최종 사용자의 삶을 어떻게 단순화하거나 더 편리하게 만들 수 있는지 논의하세요. 사용 사례를 강조하고 필요에 따라 중요한 세부 정보를 추가로 공유하세요.</p>
+<h3>시스템 요구 사항:</h3>
+<p>제품을 출시하기 전에 제품에 어떤 종류의 최종 사용자 환경이 필요한지 명확히 파악해야 합니다. 운영 체제 및 브라우저부터 메모리 및 디바이스의 처리 능력에 이르기까지 지원되는 환경을 간략하게 설명하세요.</p>
+<h3>가정 및 장애물:</h3>
+<p>제품 요구 사항 문서**를 작성하는 과정에서 구현 시 주의사항에 대해서도 이야기하는 것이 중요합니다. 구현 시 제한 사항이 있는지 나열하세요. 제품 출시 중에 주의해야 할 사항이 있거나 제품 기능에 필요한 추가 요소가 있나요? 초안에서 이 모든 것을 언급하세요.</p>
+<h2>Docsie - 최고의 문서화 파트너</h2>
+<p>모든 문서화 요구 사항을 충족할 수 있는 신뢰할 수 있는 소프트웨어를 찾고 있다면 쉽고 저렴하며 원활한 문서화를 위한 원스톱 상점인 Docsie를 소개합니다. 환영합니다<a href="https://www.docsie.io/pricing/"> </a><a href="https://www.docsie.io/pricing/">Docsie</a>를 워크플로우에 도입하여 제품 요구사항 문서를 간편하게 작성, 유지 관리, 공유 및 편집할 수 있는 방법을 만들어 보세요.</p>
+<p><img alt="Docsie - 최고의 문서화 파트너" src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_joL0V459OFZbwg1kd/image1.png" /></p>
+<p>버전 관리, 언어 관리, AI 언어 번역 등과 같은 Docsie의 강력하고 놀라운 기능을 사용하면 여러 제품 요구 사항 문서에서 작업하고 제품의 유용성, 중요성 및 가치를 효과적으로 전달할 수 있습니다. 따라서 다음에 제품 요구사항 문서를 작성하는 방법이 고민된다면 <a href="https://help.docsie.io/"> </a><a href="https://help.docsie.io/">Docsie</a>를 시스템에 통합하여 문서화 프로세스를 개선하세요.</p>
+<p><img alt="Docsie - 최고의 문서화 파트너 2" src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_Tg8Lrd0bTCQFs302g/image3.png" /></p>
+<h2>최종 생각</h2>
+<p>PRD는 가장 필수적인 비즈니스 요구사항 문서 중 하나로 중요한 위치를 차지하고 있습니다. 제품과 관련된 전체 프로젝트에 좋은 구조를 제공하고 제품을 잘 출시할 수 있도록 준비시켜 줍니다. 그러나 일반적인 제품 요구 사항 문서의 예는 유연성이 있으므로 모든 구성원이 문서에 액세스하여 제품 또는 사용자 경험을 개선하는 데 필요한 변경을 수행할 수 있습니다. 신뢰할 수 있는 소프트웨어를 찾고 있다면 제품 요구사항 문서를 만드는 방법부터 시작하려면 <a href="https://app.docsie.io/login/#/"> </a><a href="https://app.docsie.io/login/#/">Docsie</a>를 협업 파트너로 선택하여 쉽게 문서화할 준비를 하세요.</p>
+    </div>
+  </div>
+  <!--/ Post Content-->
+
+  <!--Divider-->
+  <hr class="border-b-1 border-gray-400 mt-12 mb-8 mx-4">
+
+  <!--Next & Prev Links-->
+  <div class="font-sans flex justify-between content-center px-4 mb-4">
+    <div class="text-left">
+      <span class="text-xs md:text-sm font-normal text-gray-600">&lt; Previous Post</span><br>
+      <p><a href="../how-technical-writer-can-create-10x-more-content-with-docsieai" class="break-normal text-base md:text-sm text-green-500 font-bold no-underline hover:underline">테크니컬라이터가 DocsieAI로 10배 더 많은 콘텐츠를 제작하는 방법은?</a></p>
+    </div>
+    <div class="text-right">
+      <span class="text-xs md:text-sm font-normal text-gray-600">Next Post &gt;</span><br>
+      <p><a href="../how-to-write-effective-technical-documentation-in-2024" class="break-normal text-base md:text-sm text-green-500 font-bold no-underline hover:underline">2024년에 효과적인 기술 문서를 작성하는 방법</a></p>
+    </div>
+  </div>
+
+
+  <!--/Next & Prev Links-->
+
+  
+    <div class="commentbox"></div>
+
+    <script src="https://unpkg.com/commentbox.io/dist/commentBox.min.js"></script>
+    <script>commentBox("5725910686760960-proj")</script>
+  
+
+
+  <!--Subscribe-->
+  
+  <!-- /Subscribe-->
+</div>
+<!--/container-->
+
+<footer class="bg-gray-900">
+  <div class="container max-w-6xl mx-auto flex items-center px-2 py-8">
+
+    <div class="w-full mx-auto flex flex-wrap items-center">
+      <div class="flex w-full md:w-1/2 justify-center md:justify-start text-white font-extrabold flex-col">
+        <a class="text-gray-900 no-underline hover:text-gray-900 hover:no-underline" href="/blog/ko">
+          <span class="text-base text-gray-200">Docsie.io Blog</span>
+        </a>
+        <a class="text-gray-900 no-underline hover:text-gray-900 hover:no-underline"
+           href="https://github.com/LikaloLLC/BlogVi" target="_blank">
+          <span class="text-xs text-gray-200">Made with BlogVI</span>
+        </a>
+      </div>
+      <div class="flex w-full pt-2 content-center justify-between md:w-1/2 md:justify-end">
+        <ul class="list-reset flex justify-center flex-1 md:flex-none items-center">
+          
+            <li>
+              <a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-3"
+                 href="https://www.docsie.io">Docsie</a>
+            </li>
+          
+            <li>
+              <a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-3"
+                 href="https://www.docsie.io/pricing/">Docsie Pricing</a>
+            </li>
+          
+            <li>
+              <a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-3"
+                 href="https://www.docsie.io/try_docsie/">Try Docsie</a>
+            </li>
+          
+        </ul>
+      </div>
+    </div>
+
+
+  </div>
+</footer>
+
+<script>
+  /* Progress bar */
+  //Source: https://alligator.io/js/progress-bar-javascript-css-variables/
+  var h = document.documentElement,
+    b = document.body,
+    st = 'scrollTop',
+    sh = 'scrollHeight',
+    progress = document.querySelector('#progress'),
+    scroll;
+  var scrollpos = window.scrollY;
+  var header = document.getElementById("header");
+  var navcontent = document.getElementById("nav-content");
+
+  document.addEventListener('scroll', function () {
+
+    /*Refresh scroll % width*/
+    scroll = (h[st] || b[st]) / ((h[sh] || b[sh]) - h.clientHeight) * 100;
+    progress.style.setProperty('--scroll', scroll + '%');
+
+    /*Apply classes for slide in bar*/
+    scrollpos = window.scrollY;
+
+    if (scrollpos > 10) {
+      header.classList.add("bg-white");
+      header.classList.add("shadow");
+      navcontent.classList.remove("bg-gray-100");
+      navcontent.classList.add("bg-white");
+    } else {
+      header.classList.remove("bg-white");
+      header.classList.remove("shadow");
+      navcontent.classList.remove("bg-white");
+      navcontent.classList.add("bg-gray-100");
+
+    }
+
+  });
+
+
+  //Javascript to toggle the menu
+  document.getElementById('nav-toggle').onclick = function () {
+    document.getElementById("nav-content").classList.toggle("hidden");
+  }
+</script>
+<script>
+  /*
+    Twitter
+    https://twitter.com/share?url=[post-url]&text=[post-title]
+
+    Facebook
+    https://www.facebook.com/sharer.php?u=[post-url]
+
+  */
+  let twitterURI = document.getElementById('twitter');
+  let facebookURI = document.getElementById('facebook');
+
+  let postURI = encodeURI(document.location.href);
+  let postTitle = encodeURI(document.getElementById('blog-title').innerText + ":\n")
+
+  facebookURI.setAttribute('href', `https://www.facebook.com/sharer.php?u=${postURI}`);
+  twitterURI.setAttribute('href', `https://twitter.com/share?url=${postURI}&text=${postTitle}`);
+</script>
+
+<!--Sharect-->
+
+<script src="https://unpkg.com/sharect@2.0.0/dist/sharect.js"></script>
+<script>window["sharectConfig"] = {"backgroundColor": "#333333", "enabled": true, "facebook": true, "iconColor": "#FFFFFF", "selectableElements": ["body"], "twitter": true, "twitterUsername": "likalo_llc"}</script>
+<script src="/blog/templates/assets/js/sharect.js"></script>
+
+
+
+<!--Reading time-->
+<script src="/blog/templates/assets/js/reading-time.min.js"></script>
+<script>
+  const text = []
+  let content = [...document.getElementById('content').getElementsByTagName('p')].forEach((elem) => {
+    text.push(elem.textContent)
+  });
+  const stats = readingTime(text.join(" "));
+
+  document.getElementById('reading-time').innerHTML = stats.text;
+</script>
+
+
+  
+      <!-- Google Tag Manager (noscript) -->
+
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TZRGMQ9"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+  
+
+</body>
+
+</html>

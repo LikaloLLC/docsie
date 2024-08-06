@@ -1,0 +1,378 @@
+<!-- Base template of the article page. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+  
+
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="https://d1iq6qzgppjlud.cloudfront.net/images/favicon/favicon-196x196.png">
+
+
+  <!-- Primary Meta Tags -->
+  <title>Docsie.io Blog - 10 maneiras de dominar a engenharia de prompts para redactores técnicos</title>
+  <meta name="author" content="Tanya A Mishra"/>
+  <meta name="title" content="10 maneiras de dominar a engenharia de prompts para redactores técnicos">
+  <meta name="description" content="Neste artigo, vamos discutir como pode utilizar a IA na documentação técnica. Como bónus, terá também uma espreitadela da escrita técnica com o Docsie!"/>
+  <meta name="keywords" content="IA,Engenharia rápida"/>
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.docsie.io/blog/blog/pt-pt/articles/10-ways-to-master-prompt-engineering-for-technical-writers/">
+  <meta property="og:title" content="10 maneiras de dominar a engenharia de prompts para redactores técnicos">
+  <meta property="og:description"
+        content="Neste artigo, vamos discutir como pode utilizar a IA na documentação técnica. Como bónus, terá também uma espreitadela da escrita técnica com o Docsie!">
+  <meta property="og:image" content="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_rKF4eYYbOjtbKdWts/225c2411-7ae2-4052-d0e1-45c5cd0afa8abanner_31.jpg">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://www.docsie.io/blog/blog/pt-pt/articles/10-ways-to-master-prompt-engineering-for-technical-writers/">
+  <meta property="twitter:title" content="10 maneiras de dominar a engenharia de prompts para redactores técnicos">
+  <meta property="twitter:description"
+        content="Neste artigo, vamos discutir como pode utilizar a IA na documentação técnica. Como bónus, terá também uma espreitadela da escrita técnica com o Docsie!">
+  <meta property="twitter:image" content="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_rKF4eYYbOjtbKdWts/225c2411-7ae2-4052-d0e1-45c5cd0afa8abanner_31.jpg">
+
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/blog/templates/assets/css/typography.min.css"/>
+  <!--Replace with your tailwind.css once created-->
+    
+    <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TZRGMQ9');</script>
+<!-- End Google Tag Manager -->
+  
+
+</head>
+
+
+<body class="bg-gray-100 font-sans leading-normal tracking-normal">
+
+<nav id="header" class="fixed w-full z-10 top-0">
+
+  <div id="progress" class="h-1 z-20 top-0"
+       style="background:linear-gradient(to right, #4dc0b5 var(--scroll), transparent 0);"></div>
+
+  <div class="container max-w-6xl mx-auto flex flex-wrap items-center justify-between mt-0 py-3">
+
+    <div class="pl-4">
+      <a class="text-gray-900 text-base no-underline hover:no-underline font-extrabold text-xl" href="../../">
+          Docsie.io Blog
+      </a>
+    </div>
+
+    <div class="block lg:hidden pr-4">
+      <button id="nav-toggle"
+              class="flex items-center px-3 py-2 border rounded text-gray-500 border-gray-600 hover:text-gray-900 hover:border-green-500 appearance-none focus:outline-none">
+        <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+          <title>Menu</title>
+          <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/>
+        </svg>
+      </button>
+    </div>
+
+    <div class="w-full flex-grow lg:flex lg:items-center lg:w-auto hidden lg:block mt-2 lg:mt-0 bg-gray-100 z-20"
+         id="nav-content">
+      <ul class="list-reset lg:flex justify-end flex-1 items-center">
+        
+        <li>
+          <a class="inline-block text-gray-600 hover:text-gray-900 hover:underline py-2 px-4"
+             href="https://www.docsie.io">Docsie</a>
+        </li>
+        
+        <li>
+          <a class="inline-block text-gray-600 hover:text-gray-900 hover:underline py-2 px-4"
+             href="https://www.docsie.io/pricing/">Docsie Pricing</a>
+        </li>
+        
+        <li>
+          <a class="inline-block text-gray-600 hover:text-gray-900 hover:underline py-2 px-4"
+             href="https://www.docsie.io/try_docsie/">Try Docsie</a>
+        </li>
+        
+      </ul>
+    </div>
+    <div class="flex w-full justify-end content-center">
+        <a
+          class="inline-block text-gray-500 hover:text-green-500 hover:underline text-center h-10 p-2 md:h-auto md:p-4 avatar"
+          data-tippy-content="@twitter_handle" href="https://twitter.com/intent/tweet?url=#"
+          id="twitter">
+          <svg class="fill-current h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+            <path
+              d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"></path>
+          </svg>
+        </a>
+        <a
+          class="inline-block text-gray-500 hover:text-green-500 hover:underline text-center h-10 p-2 md:h-auto md:p-4 avatar"
+          data-tippy-content="#facebook_id" href="https://www.facebook.com/sharer/sharer.php?u=#}"
+          id="facebook">
+          <svg class="fill-current h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+            <path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"></path>
+          </svg>
+        </a>
+      </div>
+  </div>
+
+</nav>
+
+<!--Container-->
+<div class="container max-w-4xl mx-auto mt-32 px-8 md:px-0">
+  <div class="prose prose lg:prose-xl mx-auto mt-32">
+    <!--Title-->
+    <h1 id="blog-title">10 maneiras de dominar a engenharia de prompts para redactores técnicos</h1>
+    <!--Author-->
+    <div class="flex items-center">
+      <img class="w-10 h-10 rounded-full mr-4" src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_p1X4gXS3n0rCHYuaE/1f3f5f57-d8e2-7978-faef-0b9fe89f3e4btanya_pic.jpg" alt="Avatar of Author">
+      <div class="flex-1 px-2">
+        <div class="font-bold leading-none mb-2">Tanya A Mishra</div>
+        <div class="text-xs md:text-base">on October 30, 2023 · <span id="reading-time"
+                class="block md:inline mt-2 md:mt-0"></span> · filed under <span
+          class="block md:inline mt-2 md:mt-0">
+						
+            <span class="rounded bg-green-500 text-white px-1 uppercase text-xs whitespace-nowrap md:text-sm">IA</span>
+						
+            <span class="rounded bg-green-500 text-white px-1 uppercase text-xs whitespace-nowrap md:text-sm">Engenharia rápida</span>
+						
+					</span>
+        </div>
+      </div>
+    </div>
+    <!--/Author-->
+
+    <!--Post Content-->
+    <!--Lead Para-->
+    <div id="content">
+      <p>Sabia que mais de <a href="https://www.notta.ai/en/blog/chatgpt-statistics#:~:text=Key%20ChatGPT%20Statistics,-If%20you're&amp;text=ChatGPT%20currently%20has%20100%2B%20million,GPT%2D4%20from%20March%202023."> </a><a href="https://www.notta.ai/en/blog/chatgpt-statistics#:~:text=Key%20ChatGPT%20Statistics,-If%20you're&amp;text=ChatGPT%20currently%20has%20100%2B%20million,GPT%2D4%20from%20March%202023.">100 mil milhões de utilizadores</a> estão atualmente a utilizar o ChatGPT? Da publicidade ao entretenimento, da educação aos recursos humanos - vários sectores estão a tirar o máximo partido da engenharia de mensagens para obter as respostas mais adequadas dos modelos de linguagem. Ao escrever sobre vários tópicos de conteúdo pesado, os redactores técnicos têm dificuldade em tornar os seus artigos relacionáveis e digeríveis. Neste artigo, discutiremos como pode utilizar a IA na documentação técnica. Como bónus, também terá uma espreitadela da escrita técnica com Docsie!</p>
+<h2>O que é o Prompt Engineering?</h2>
+<p>|O que é o Prompt Engineering?
+|-|A definição|
+|No fundo, a engenharia de prompts refere-se à arte (e à ciência!) de desenvolver e criar prompts que podemos usar para receber os resultados desejados de modelos de linguagem como o ChatGPT e o GPT-4. Embora alguns de nós possam ter boas capacidades de interrogação na manga, os redactores técnicos precisam de conhecer os meandros da engenharia de solicitações para poderem criar melhores comandos, fazer perguntas mais perspicazes e dar melhores instruções aos sistemas de IA. |
+|Os princípios
+|Atualmente, a utilização da IA no processo de criação de documentação técnica está a passar por uma série de desenvolvimentos. No entanto, devemos compreender que toda a criação de documentos depende de dois princípios fundamentais: clareza e especificidade. Só podemos receber as respostas desejadas dos modelos de IA treinados em linguagem quando os nossos avisos são bem concebidos, específicos e não têm qualquer ambiguidade.
+|O objetivo
+|As vantagens da engenharia de prompts são ilimitadas, uma vez que envolve modelos de texto para texto, bem como de texto para imagem e de texto para som. Os engenheiros e redactores técnicos criam prompts de IA, analisam os resultados e aperfeiçoam-nos ainda mais, respeitando a conformidade e as questões regulamentares e atendendo às necessidades dos contextos sociais.</p>
+<h2>Quais são as vantagens da Prompt Engineering?</h2>
+<p>Quando se trata de utilizar a IA na documentação técnica, ferramentas como<a href="https://www.docsie.io/collaboration_software/"> </a><a href="https://www.docsie.io/collaboration_software/">Docsie</a> podem ser o seu salvador final. No entanto, conhecer os princípios básicos da engenharia de prompts também ajuda os redactores técnicos a partilhar informações com uma abordagem centrada no utilizador e com menos jargão.</p>
+<p>À medida que os modelos de linguagem para os redactores técnicos continuam a crescer e a desenvolver-se de forma consistente, a inteligência artificial desempenhará um papel significativo na elaboração de prompts de fácil compreensão e compreensão por parte dos humanos.</p>
+<p>Eis as principais vantagens da engenharia de prompts:</p>
+<p>Melhora a experiência do utilizador, reduz a ambiguidade e a confusão e proporciona resoluções rápidas de forma independente.</p>
+<p>Afina os avisos, optimiza-os e reduz a frustração do utilizador.</p>
+<p>Quando os redactores dominam a engenharia de prompts, ficam mais aptos a tirar partido do seu poder. Desde a otimização das operações comerciais até à utilização de assistentes virtuais, os redactores podem explorar opções ilimitadas.</p>
+<p>Manter um estilo, um tom e uma voz consistentes torna-se realmente fácil e poupa tempo e recursos às organizações e agências.</p>
+<p>Através das traduções com IA, é possível traduzir mensagens eficazes para se adequarem a diferentes contextos culturais e públicos globais.</p>
+<h2>Como é que os redactores técnicos se podem destacar na engenharia de prompts?</h2>
+<p>A IA é um espaço em constante expansão. Assim, para acompanhar as crescentes exigências da utilização da IA na documentação técnica, os redactores precisam de compreender como orientar os sistemas para obter conteúdos relevantes. Antes de mergulharem na escrita técnica com o Docsie, os redactores técnicos devem saber como criar os prompts perfeitos para os sistemas de IA.</p>
+<p>Para explorar as múltiplas vantagens da engenharia de solicitações, os redactores devem desenvolver competências técnicas ou aperfeiçoar as que já possuem, de modo a poderem criar uma grande variedade de documentos técnicos.</p>
+<p>Aqui estão 10 dicas sobre como se tornar um especialista em engenharia rápida e explorar o mundo da escrita técnica com IA:</p>
+<h3>1. Compreender os utilizadores</h3>
+<p>Quer você seja um profissional de marketing ou um criador de conteúdo, todos nós sabemos como é importante conhecer a consulta do nosso público-alvo. Compreender as necessidades dos seus clientes finais é a chave para criar prompts eficazes. A recolha de conhecimentos sobre vários factores, como a idade, o sexo, a localização, as preferências, etc., pode ajudá-lo a criar uma persona do utilizador. E, com base nesta persona do utilizador ideal, pode personalizar e aperfeiçoar os seus prompts.</p>
+<h3>2. Personalização e contexto</h3>
+<p>Um modelo de linguagem grande precisa de conhecer o contexto do seu pedido. Assim, ao introduzir um pouco de conhecimento de fundo no sistema, pode treinar o LLM para lhe dar o resultado desejado. Ao criar escrita técnica com Docsie, a plataforma permite-lhe implementar chatbots LLM para assistência imediata e garantida e resoluções de consultas. Por exemplo, pode pedir ao sistema de IA que explique como funcionam os ímanes, acrescentando o contexto necessário para que seja adequado a alunos do 6º ano.</p>
+<h3>3. Conhecer a arte da brevidade</h3>
+<p>Aprender os benefícios da engenharia de prontidão é tão importante quanto entender como transmitir informações de forma concisa por meio de suas peças de conteúdo. Aborde o tema em questão e escreva conteúdos directos para que os leitores possam obter uma mensagem clara através das suas palavras. Divida as informações técnicas complexas e escreva num tom compreensível e fácil de utilizar. Não se esqueça de que está a escrever para seres humanos. Por isso, mantenha os seus leitores envolvidos e escreva numa linguagem que eles possam compreender facilmente.</p>
+<h3>4. Conhecimento de aprendizado de máquina</h3>
+<p>Quando se trabalha como redator técnico para uma empresa ou agência, saber uma ou duas coisas sobre aprendizagem automática pode ajudá-lo muito e colocá-lo muito à frente dos seus concorrentes. Com a aprendizagem automática, pode analisar os dados de comportamento do utilizador no passado e, em seguida, fazer alterações aos seus avisos com base nesses dados. Pode criar avisos mais precisos para uma melhor experiência do utilizador e melhorar a qualidade dos resultados.</p>
+<h3>5. Ilustrar com exemplos</h3>
+<p>Referências e analogias funcionam melhor onde as definições falham. Por isso, cite exemplos e utilize comparações e analogias nos seus artigos para facilitar a compreensão por parte do público mais vasto (sem conhecimentos técnicos). Quando estiver a explorar a escrita técnica com a Docsie, escreva na linguagem do dia a dia e transmita a sua mensagem com simplicidade e autenticidade.</p>
+<h3>6. Um estilo de escrita único</h3>
+<p>À medida que continua a integrar a IA na documentação técnica, por vezes o seu conteúdo técnico pode tornar-se seco e demasiado rígido para ser lido. Com um estilo de escrita único, pode criar melhores prompts e, eventualmente, tornar o seu conteúdo mais envolvente e abrangente para uma vasta gama de públicos. Evite utilizar palavras e frases altamente técnicas e utilize termos leigos para chegar a um público mais vasto que poderá não conhecer a terminologia técnica.</p>
+<h3>7. Conhecimentos técnicos</h3>
+<p>Se quiser tirar o máximo partido da engenharia rápida, tente dominar as linguagens de programação mais comuns. Embora a experiência de codificação não seja obrigatória, a recolha de informações sobre as linguagens de programação mais utilizadas ajudá-lo-á a personalizar as suas interacções com diferentes modelos de IA. Poderá dar avisos mais precisos, automatizar tarefas repetitivas e mundanas e implementar medidas de segurança.</p>
+<h3>8. Estruture seu prompt</h3>
+<p>Todos os prompts eficazes têm uma coisa em comum. Têm um bom fluxo com uma introdução, secções detalhadas e um final adequado. Suponha que precisa de dar uma sugestão ao seu sistema de IA para criar uma descrição de emprego para uma vaga. A introdução consistirá na apresentação da função e das responsabilidades, o corpo do texto conterá instruções sobre o tipo de tom necessário, juntamente com directrizes sobre o comprimento das frases, e o final resumirá a tarefa principal em poucas palavras.</p>
+<h3>9. Investigação</h3>
+<p>Aprofunde-se nos conceitos técnicos e alargue o horizonte dos seus conhecimentos lendo artigos, manuais e conhecendo a terminologia específica do sector. Por isso, para tirar o máximo partido das vantagens da engenharia rápida, é necessário pesquisar mais profundamente, compreender os conceitos técnicos e depois dividi-los em partes mais pequenas e digeríveis para que os seus utilizadores os leiam e compreendam.</p>
+<h3>10. Mantenha-se atualizado</h3>
+<p>Na sua jornada de escrita técnica com Docsie, a plataforma irá, sem dúvida, dar-lhe todas as ferramentas para criar documentação detalhada - tudo sob o mesmo teto. Mas precisa de se manter atualizado sobre os acontecimentos recentes da indústria, ler notícias técnicas e participar em eventos da indústria para encontrar histórias internas e obter conteúdo para o seu próximo artigo.</p>
+<p>**<a href="https://www.docsie.io/pricing/">Docsie</a> - o seu assistente de documentos digitais!</p>
+<hr />
+<hr />
+<p>Se é um novato no mundo da escrita técnica,<a href="https://help.docsie.io/"> </a><a href="https://help.docsie.io/">Docsie</a> é o seu parceiro perfeito! Ao infundir o poder da IA na documentação técnica, <strong>Docsie</strong> é o balcão único que lhe permite criar, editar, gerir e partilhar os seus documentos com os seus colegas de equipa, mantendo total privacidade e segurança. A escrita técnica com Docsie é simples, organizada e sem stress. Embora o forte LLM constitua a espinha dorsal da plataforma, também pode criar a sua própria gestão de conhecimentos com Docsie e simplificar a forma como a sua equipa acede à base de conhecimentos interna.</p>
+<p><img alt="" src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_Nq7S4E71oXOk5ZQL7/image1.png" /></p>
+<h2>Pensamentos finais</h2>
+<p>De acordo com a NASSCOM, a Índia testemunhará um <a href="https://www.linkedin.com/pulse/unleashing-power-words-journey-technical-writers-india-kranthi-kumar/"></a> <a href="https://www.linkedin.com/pulse/unleashing-power-words-journey-technical-writers-india-kranthi-kumar/">aumento de 11%</a> na demanda por escritores técnicos altamente qualificados e especializados de 2022 a 2030. Por isso, se é um aspirante a redator técnico ou um redator técnico experiente, esta é a melhor altura para melhorar as suas competências em engenharia rápida<strong> </strong> e explorar oportunidades maravilhosas no sector do emprego. Utilizando a rica gestão de conhecimentos com Docsie,<strong> </strong>pode dispor de uma plataforma normalizada, personalizada e colaborativa para o armazenamento de toda a sua documentação.</p>
+<p>Para satisfazer todas as suas necessidades relacionadas com documentos, visite <a href="https://app.docsie.io/login/#/">Docsie </a>hoje e aproveite o poder da IA na documentação técnica.</p>
+<h2>Perguntas frequentes</h2>
+<h3>1. O que é a engenharia de prontidão no contexto da redação técnica?</h3>
+<p>A engenharia de solicitações refere-se à arte e à ciência de criar ou alimentar solicitações exactas para software ou produtos, de modo a que os redactores possam personalizar as respostas obtidas dos sistemas de IA.</p>
+<h3>2. Porque é que é importante para os escritores?</h3>
+<p>Ter um conhecimento aprofundado da engenharia de prompts ajuda os redactores a conceber prompts eficazes, a transmitir informações de forma eficiente, a manter a consistência e a garantir o sucesso do produto.</p>
+<h3>3. Como utilizar a IA na documentação técnica?</h3>
+<p>Além de recuperar informações relevantes, a inteligência artificial também pode ajudar a gerar conteúdo centrado no utilizador, analisar comportamentos e padrões do consumidor, automatizar fluxos de trabalho de documentação, etc.</p>
+<h3>4. Posso aprender escrita técnica com IA?</h3>
+<p>Compreender os conceitos básicos e lidar com ferramentas de IA pode ajudar muito na criação de uma carreira em redação técnica. Com a IA, também pode aprender sobre modelos de linguagem, PNL, chatbots e assistentes virtuais.</p>
+<h3>5. Como usar modelos de linguagem para redatores técnicos?</h3>
+<p>Os modelos de linguagem podem ajudar os redatores de diferentes maneiras. Da criação de conteúdos à tradução, da automatização à personalização, os modelos linguísticos ajudam a melhorar a qualidade dos conteúdos.</p>
+    </div>
+  </div>
+  <!--/ Post Content-->
+
+  <!--Divider-->
+  <hr class="border-b-1 border-gray-400 mt-12 mb-8 mx-4">
+
+  <!--Next & Prev Links-->
+  <div class="font-sans flex justify-between content-center px-4 mb-4">
+    <div class="text-left">
+      <span class="text-xs md:text-sm font-normal text-gray-600">&lt; Previous Post</span><br>
+      <p><a href="../a-to-z-of-documentation-version-control-and-how-it-improves-workplace-collaboration" class="break-normal text-base md:text-sm text-green-500 font-bold no-underline hover:underline">A a Z do controlo de versões de documentação e como este melhora a colaboração no local de trabalho</a></p>
+    </div>
+    <div class="text-right">
+      <span class="text-xs md:text-sm font-normal text-gray-600">Next Post &gt;</span><br>
+      <p><a href="../why-is-there-a-need-for-customization-in-documentation" class="break-normal text-base md:text-sm text-green-500 font-bold no-underline hover:underline">Por que razão é necessária a personalização da documentação?</a></p>
+    </div>
+  </div>
+
+
+  <!--/Next & Prev Links-->
+
+  
+    <div class="commentbox"></div>
+
+    <script src="https://unpkg.com/commentbox.io/dist/commentBox.min.js"></script>
+    <script>commentBox("5725910686760960-proj")</script>
+  
+
+
+  <!--Subscribe-->
+  
+  <!-- /Subscribe-->
+</div>
+<!--/container-->
+
+<footer class="bg-gray-900">
+  <div class="container max-w-6xl mx-auto flex items-center px-2 py-8">
+
+    <div class="w-full mx-auto flex flex-wrap items-center">
+      <div class="flex w-full md:w-1/2 justify-center md:justify-start text-white font-extrabold flex-col">
+        <a class="text-gray-900 no-underline hover:text-gray-900 hover:no-underline" href="/blog/pt-pt">
+          <span class="text-base text-gray-200">Docsie.io Blog</span>
+        </a>
+        <a class="text-gray-900 no-underline hover:text-gray-900 hover:no-underline"
+           href="https://github.com/LikaloLLC/BlogVi" target="_blank">
+          <span class="text-xs text-gray-200">Made with BlogVI</span>
+        </a>
+      </div>
+      <div class="flex w-full pt-2 content-center justify-between md:w-1/2 md:justify-end">
+        <ul class="list-reset flex justify-center flex-1 md:flex-none items-center">
+          
+            <li>
+              <a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-3"
+                 href="https://www.docsie.io">Docsie</a>
+            </li>
+          
+            <li>
+              <a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-3"
+                 href="https://www.docsie.io/pricing/">Docsie Pricing</a>
+            </li>
+          
+            <li>
+              <a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-3"
+                 href="https://www.docsie.io/try_docsie/">Try Docsie</a>
+            </li>
+          
+        </ul>
+      </div>
+    </div>
+
+
+  </div>
+</footer>
+
+<script>
+  /* Progress bar */
+  //Source: https://alligator.io/js/progress-bar-javascript-css-variables/
+  var h = document.documentElement,
+    b = document.body,
+    st = 'scrollTop',
+    sh = 'scrollHeight',
+    progress = document.querySelector('#progress'),
+    scroll;
+  var scrollpos = window.scrollY;
+  var header = document.getElementById("header");
+  var navcontent = document.getElementById("nav-content");
+
+  document.addEventListener('scroll', function () {
+
+    /*Refresh scroll % width*/
+    scroll = (h[st] || b[st]) / ((h[sh] || b[sh]) - h.clientHeight) * 100;
+    progress.style.setProperty('--scroll', scroll + '%');
+
+    /*Apply classes for slide in bar*/
+    scrollpos = window.scrollY;
+
+    if (scrollpos > 10) {
+      header.classList.add("bg-white");
+      header.classList.add("shadow");
+      navcontent.classList.remove("bg-gray-100");
+      navcontent.classList.add("bg-white");
+    } else {
+      header.classList.remove("bg-white");
+      header.classList.remove("shadow");
+      navcontent.classList.remove("bg-white");
+      navcontent.classList.add("bg-gray-100");
+
+    }
+
+  });
+
+
+  //Javascript to toggle the menu
+  document.getElementById('nav-toggle').onclick = function () {
+    document.getElementById("nav-content").classList.toggle("hidden");
+  }
+</script>
+<script>
+  /*
+    Twitter
+    https://twitter.com/share?url=[post-url]&text=[post-title]
+
+    Facebook
+    https://www.facebook.com/sharer.php?u=[post-url]
+
+  */
+  let twitterURI = document.getElementById('twitter');
+  let facebookURI = document.getElementById('facebook');
+
+  let postURI = encodeURI(document.location.href);
+  let postTitle = encodeURI(document.getElementById('blog-title').innerText + ":\n")
+
+  facebookURI.setAttribute('href', `https://www.facebook.com/sharer.php?u=${postURI}`);
+  twitterURI.setAttribute('href', `https://twitter.com/share?url=${postURI}&text=${postTitle}`);
+</script>
+
+<!--Sharect-->
+
+<script src="https://unpkg.com/sharect@2.0.0/dist/sharect.js"></script>
+<script>window["sharectConfig"] = {"backgroundColor": "#333333", "enabled": true, "facebook": true, "iconColor": "#FFFFFF", "selectableElements": ["body"], "twitter": true, "twitterUsername": "likalo_llc"}</script>
+<script src="/blog/templates/assets/js/sharect.js"></script>
+
+
+
+<!--Reading time-->
+<script src="/blog/templates/assets/js/reading-time.min.js"></script>
+<script>
+  const text = []
+  let content = [...document.getElementById('content').getElementsByTagName('p')].forEach((elem) => {
+    text.push(elem.textContent)
+  });
+  const stats = readingTime(text.join(" "));
+
+  document.getElementById('reading-time').innerHTML = stats.text;
+</script>
+
+
+  
+      <!-- Google Tag Manager (noscript) -->
+
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TZRGMQ9"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+  
+
+</body>
+
+</html>

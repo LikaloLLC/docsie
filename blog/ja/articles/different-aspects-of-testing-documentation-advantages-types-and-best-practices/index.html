@@ -1,0 +1,390 @@
+<!-- Base template of the article page. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+  
+
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="https://d1iq6qzgppjlud.cloudfront.net/images/favicon/favicon-196x196.png">
+
+
+  <!-- Primary Meta Tags -->
+  <title>Docsie.io Blog - テストドキュメンテーションのさまざまな側面 - メリット、種類、ベストプラクティス</title>
+  <meta name="author" content="Tanya A Mishra"/>
+  <meta name="title" content="テストドキュメンテーションのさまざまな側面 - メリット、種類、ベストプラクティス">
+  <meta name="description" content="このブログでは、テストドキュメンテーションのいくつかの例について特別に言及することを含め、テストドキュメンテーションの複数の利点に光を当てます。"/>
+  <meta name="keywords" content="AI,テスト・ドキュメンテーション"/>
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.docsie.io/blog/blog/ja/articles/different-aspects-of-testing-documentation-advantages-types-and-best-practices/">
+  <meta property="og:title" content="テストドキュメンテーションのさまざまな側面 - メリット、種類、ベストプラクティス">
+  <meta property="og:description"
+        content="このブログでは、テストドキュメンテーションのいくつかの例について特別に言及することを含め、テストドキュメンテーションの複数の利点に光を当てます。">
+  <meta property="og:image" content="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_E9huzHUdPx4vMtxpj/2761d2f9-c0dd-c27d-f383-680573d4f4fabanner_34.jpg">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://www.docsie.io/blog/blog/ja/articles/different-aspects-of-testing-documentation-advantages-types-and-best-practices/">
+  <meta property="twitter:title" content="テストドキュメンテーションのさまざまな側面 - メリット、種類、ベストプラクティス">
+  <meta property="twitter:description"
+        content="このブログでは、テストドキュメンテーションのいくつかの例について特別に言及することを含め、テストドキュメンテーションの複数の利点に光を当てます。">
+  <meta property="twitter:image" content="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_E9huzHUdPx4vMtxpj/2761d2f9-c0dd-c27d-f383-680573d4f4fabanner_34.jpg">
+
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/blog/templates/assets/css/typography.min.css"/>
+  <!--Replace with your tailwind.css once created-->
+    
+    <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TZRGMQ9');</script>
+<!-- End Google Tag Manager -->
+  
+
+</head>
+
+
+<body class="bg-gray-100 font-sans leading-normal tracking-normal">
+
+<nav id="header" class="fixed w-full z-10 top-0">
+
+  <div id="progress" class="h-1 z-20 top-0"
+       style="background:linear-gradient(to right, #4dc0b5 var(--scroll), transparent 0);"></div>
+
+  <div class="container max-w-6xl mx-auto flex flex-wrap items-center justify-between mt-0 py-3">
+
+    <div class="pl-4">
+      <a class="text-gray-900 text-base no-underline hover:no-underline font-extrabold text-xl" href="../../">
+          Docsie.io Blog
+      </a>
+    </div>
+
+    <div class="block lg:hidden pr-4">
+      <button id="nav-toggle"
+              class="flex items-center px-3 py-2 border rounded text-gray-500 border-gray-600 hover:text-gray-900 hover:border-green-500 appearance-none focus:outline-none">
+        <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+          <title>Menu</title>
+          <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/>
+        </svg>
+      </button>
+    </div>
+
+    <div class="w-full flex-grow lg:flex lg:items-center lg:w-auto hidden lg:block mt-2 lg:mt-0 bg-gray-100 z-20"
+         id="nav-content">
+      <ul class="list-reset lg:flex justify-end flex-1 items-center">
+        
+        <li>
+          <a class="inline-block text-gray-600 hover:text-gray-900 hover:underline py-2 px-4"
+             href="https://www.docsie.io">Docsie</a>
+        </li>
+        
+        <li>
+          <a class="inline-block text-gray-600 hover:text-gray-900 hover:underline py-2 px-4"
+             href="https://www.docsie.io/pricing/">Docsie Pricing</a>
+        </li>
+        
+        <li>
+          <a class="inline-block text-gray-600 hover:text-gray-900 hover:underline py-2 px-4"
+             href="https://www.docsie.io/try_docsie/">Try Docsie</a>
+        </li>
+        
+      </ul>
+    </div>
+    <div class="flex w-full justify-end content-center">
+        <a
+          class="inline-block text-gray-500 hover:text-green-500 hover:underline text-center h-10 p-2 md:h-auto md:p-4 avatar"
+          data-tippy-content="@twitter_handle" href="https://twitter.com/intent/tweet?url=#"
+          id="twitter">
+          <svg class="fill-current h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+            <path
+              d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"></path>
+          </svg>
+        </a>
+        <a
+          class="inline-block text-gray-500 hover:text-green-500 hover:underline text-center h-10 p-2 md:h-auto md:p-4 avatar"
+          data-tippy-content="#facebook_id" href="https://www.facebook.com/sharer/sharer.php?u=#}"
+          id="facebook">
+          <svg class="fill-current h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+            <path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"></path>
+          </svg>
+        </a>
+      </div>
+  </div>
+
+</nav>
+
+<!--Container-->
+<div class="container max-w-4xl mx-auto mt-32 px-8 md:px-0">
+  <div class="prose prose lg:prose-xl mx-auto mt-32">
+    <!--Title-->
+    <h1 id="blog-title">テストドキュメンテーションのさまざまな側面 - メリット、種類、ベストプラクティス</h1>
+    <!--Author-->
+    <div class="flex items-center">
+      <img class="w-10 h-10 rounded-full mr-4" src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_p1X4gXS3n0rCHYuaE/1f3f5f57-d8e2-7978-faef-0b9fe89f3e4btanya_pic.jpg" alt="Avatar of Author">
+      <div class="flex-1 px-2">
+        <div class="font-bold leading-none mb-2">Tanya A Mishra</div>
+        <div class="text-xs md:text-base">on November 16, 2023 · <span id="reading-time"
+                class="block md:inline mt-2 md:mt-0"></span> · filed under <span
+          class="block md:inline mt-2 md:mt-0">
+						
+            <span class="rounded bg-green-500 text-white px-1 uppercase text-xs whitespace-nowrap md:text-sm">AI</span>
+						
+            <span class="rounded bg-green-500 text-white px-1 uppercase text-xs whitespace-nowrap md:text-sm">テスト・ドキュメンテーション</span>
+						
+					</span>
+        </div>
+      </div>
+    </div>
+    <!--/Author-->
+
+    <!--Post Content-->
+    <!--Lead Para-->
+    <div id="content">
+      <p>2030年に世界のIoT接続数が294億に達する可能性があることをご存知だろうか。</p>
+<p>Transforma Insightsの<a href="https://transformainsights.com/research/reports/global-iot-forecast-report-2032">Global IoT Forecast Report, 2021-2030</a>によると、IoT市場規模は成長・発展する準備が整っており、技術世界のさらなる収益を獲得している。</p>
+<p>ソフトウェアテストの高い効率性を保証するテストドキュメントは、ソフトウェアテストの目的、プロセス、期待される結果を共有します。この文書では、テストドキュメンテーションのいくつかの例を特別に言及することを含め、テストドキュメンテーションの複数の利点に光を当てる。ボーナスとして、この記事は、テストドキュメンテーションのベストプラクティスも共有しています！</p>
+<p><img alt="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_1UH7JeOUnUhqkHti3/image5.png" src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_1UH7JeOUnUhqkHti3/image5.png" /></p>
+<h2>テストドキュメントとは何か？</h2>
+<p>ソフトウェアテストは、製品設計者、テスター、ソフトウェアエンジニアの生活において、日常的なことです。テストドキュメンテーションとは、ソフトウェアテストに関連する文書を作成することを指す。このような文書は、ソフトウェア製品を開発し、保守するときに作成される。テクニカルライターは、テストドキュメンテーションのベストプラクティスを用いてこれらのドキュメントを作成し、ソフトウェアテストのさまざまなフェーズの計画や進捗状況を記録します。</p>
+<p>テストプロセスの最適化に関して言えば、テストドキュメンテーションは、チームがソフトウェア設計、テスト実施、および記録保持のための包括的な計画を作成するのに役立ちます。</p>
+<p>テストドキュメントを管理するとき、プロダクトオーナーやチームメンバーを含むすべてのソフトウェアテスト計画の詳細を書き留めることができます。それは、他のチームや従業員が情報を再利用し、将来のケースのための参照として使用できるように、テスト環境を作成するのに役立ちます。</p>
+<p>テストドキュメントのさまざまな例を調べてみると、これらの詳細なレポートは、テストプロセスに関するより多くの洞察を共有していることがわかります。また、すべての利害関係者にテストの進捗状況を知らせるという重要な役割も果たしている。また、文書化によって、テスト担当者はテスト手順の効率性を分析することができ、テストプラクティスをさらに最適化するのに役立ちます。</p>
+<p>いくつかのテストドキュメントプラットフォームは、ユーザーが様々なテストフェーズに関連するドキュメントを作成するのに役立ちます。そのようなプラットフォームをお探しなら、<a href="https://www.docsie.io/pricing/">Docsie</a> を信頼できるソフトウェアパートナーとして利用し、簡単で楽しい方法でドキュメントを作成してください！</p>
+<p>https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_2QAlE7tO9d0ePWDEX/image6.png](https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_2QAlE7tO9d0ePWDEX/image6.png)</p>
+<h2>ドキュメントをテストする利点</h2>
+<p>テスト文書の重要性は、それがもたらす多くの利点にあります。テスト文書の例は、文書化プロセス全体の長所を示しています。Docsie](https://help.docsie.io/)のようなドキュメント作成プラットフォームを使うと、効果的にテストドキュメントを作成することができます。ここでは、テストドキュメンテーションの主な利点のスナップショットを示します：</p>
+<p>ユーザーエクスペリエンスを改善し、製品に関する詳細で正確な情報を提供する。</p>
+<p>コラボレーションを強化し、チームメンバー全員が共通の目標に向かって努力することを促します。</p>
+<p>テストへの体系的なアプローチを提供し、ソフトウェア初心者のためのリソース資料として機能します。</p>
+<p>規定時間内にバグのない製品を作成するのに役立ちます。</p>
+<p>QAチームがテストに必要な構成に関する知識を得られるよう支援する。</p>
+<p>https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_61Vmm2FsSScSByIse/image1.png](https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_61Vmm2FsSScSByIse/image1.png)</p>
+<h2>テスト文書の種類</h2>
+<p>ソフトウェア製品をあらゆることに利用する現代社会において、品質保証のためのドキュメント作成は非常に重要である。Docsie](https://app.docsie.io/login/#/)のような適切なドキュメンテーション・パートナーを利用することで、ソフトウェア会社はプロジェクトの進捗状況について関係者に最新情報を提供し、エンドユーザーが当該製品の適合性を理解する手助けをすることができます。テストドキュメンテーションの利点を十分に理解するために、実際のテスト例をいくつか見てみましょう。</p>
+<h3>テスト戦略：</h3>
+<p>テストプロセス、テスト目的、文書化フォーマット、顧客とのコミュニケーション戦略などを含む、テスト技法、テスト対象モ ジュール、および複数のコンポーネントについて記述したハイレベルな文書。</p>
+<h3>テスト計画：</h3>
+<p>この計画文書には、スコープ、リスク、アプローチ、リソース、不具合追跡、仮定など、複数の要素が含まれる。</p>
+<h2>テストケースの文書化：</h2>
+<p>テストステップの概要を記述し、望ましい結果と実際のテスト結果に関する詳細な情報を含む。</p>
+<h3>テストシナリオ：</h3>
+<p>これは、アプリケーションの様々なテストシナリオに関する洞察を提供します。ナビゲーションステップや入力データは含まれませんが、エンジニアがアプリケーションの段階的な流れを理解するのに役立ちます。</p>
+<h3>テストデータ：</h3>
+<p>テストデータ： テクニカルライターは、一般的にテスト実行を開始する前にこの文書を作成します。手作業でエクセルで作成し、テストケースが実施されるときに使用されるデータを記録します。</p>
+<h3>バグ報告：</h3>
+<p>ソフトウェアシステムの不具合を記録し、製品のデバッグ方法の解決策も提供する。未解決、解決済み、進行中など、あらゆる種類の問題に対して利用されるコンテンツである。</p>
+<h3>テスト方針：</h3>
+<p>どのソフトウェア会社も、テストのガイドラインとして特定の原則と方法に従っています。このドキュメントは、それらについて、またそれらが会社の全体的なテスト目標とどのように整合しているかについて、光を当てるものである。</p>
+<h3>テストの概要：</h3>
+<p>これは、活動や最終的なテスト結果に関する詳細な知識を提供する。テストの実行から最終的な配備まで、すべてのテストフェーズに関する情報を記録する。</p>
+<p><img alt="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_WE3E6bbchQBrQLE8Y/image4.png" src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_WE3E6bbchQBrQLE8Y/image4.png" /></p>
+<h2>テスト文書作成のベストプラクティスとは？</h2>
+<p>単に内容を起草するだけでは十分ではありません。エンドユーザーは、あなたのドキュメントを理解し、そのプロセスからいくつかの重要な収穫を得る必要があります。テストドキュメントのベストプラクティスに従うことで、顧客向けのドキュメントを作成し、全体的なユーザーエクスペリエンスを向上させることができます。</p>
+<p>分野</p>
+<p>重要性</p>
+<p>定期的な更新</p>
+<p>定期的に更新されないものは、その関連性と重要性を失うに違いない。ソフトウェア製品は動的である。それに合わせて、テストフェーズにおける最新の変更を反映するように、テスト文書に変更を加えてください。</p>
+<p>バージョン管理</p>
+<p>ドキュメントに加えられた変更を監視するためのシステムを遵守してください。バージョン管理機能を導入して、誰がいつドキュメントを編集したかを把握しましょう。</p>
+<p>単一のソースを使用する</p>
+<p>チームメンバーがドキュメントに簡単にアクセスし、利用できるように、ドキュメントを単一の場所に作成・保管する。単一のナレッジベースを真実のソースとして使用することで、正しい情報を探すのに費やす無駄な時間を省くことができます。</p>
+<p>機密情報の保護</p>
+<p>これは、おそらく最も重要なソフトウェア開発のベストプラクティスの1つで、ドキュメントを非公開にし、一部の人だけがアクセスして変更できるようにすることを含みます。高レベルのセキュリティを確保し、不要なチームやメンバーが製品に関する貴重な情報にアクセスできないように細心の注意を払いましょう。</p>
+<p>チームメンバーのトレーニング</p>
+<p>ドキュメンテーション・プロセスの内容や使い方を全員が理解できるよう、チーム・メンバーに完全なトレーニングを提供しましょう。QA部門とチームを組み、ドキュメント作成プロジェクトに参加させましょう。</p>
+<p>スタイルガイドを整備する</p>
+<p>ドキュメンテーション・プロセスの一貫性を確保するために、スタイル・ガイドを作成し、それに従いましょう。標準化されたガイドラインに従うことで、文書全体のトーンを設定し、一貫したトーンにすることができます。</p>
+<p>標準化されたテンプレートを用意する</p>
+<p>コンテンツ・テンプレートを使って、プロフェッショナルな文書を作成しましょう。ビジュアルの追加から例題や練習問題の掲載まで、すべての文書が一貫した構成と形式に見えるように、決まったフォーマットを用意しましょう。</p>
+<p><img alt="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_8qNmHqxKlNzMiF344/image2.png" src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_8qNmHqxKlNzMiF344/image2.png" /></p>
+<h2>よくある質問</h2>
+<h3>1.テスト文書とは何ですか？</h3>
+<p>これは、ソフトウェアテスト担当者、製品設計者、エンジニアが、ソフトウェアテストや開発手順の中で発生する すべてのプロセスやシステムを記録するのに役立つコンテンツの一部である。この文書化には、ソフトウェアテストチームが、チームの戦略を計画し、テストの取り組みを評価し、プロジェ クトの要件を監視するのを支援する成果物が含まれる。</p>
+<h3>2.テスト文書化の主な利点は何ですか？</h3>
+<p>曖昧さを取り除き、テスト活動を明確にする。</p>
+<p>テスト手順への合理的で体系的なアプローチを提供し、テストプロセスにおける新人のトレーニングのためのリソースとして機能する。</p>
+<p>テスト手順全体を分解し、ソフトウェアの開発から最終的な実行までの各側面を紹介しています。</p>
+<h3>3.テストドキュメンテーションのベストプラクティスに従うには？</h3>
+<p>明確な目的を持つことから始め、文書化のために標準化されたフォーマットを使用する。アプローチを簡潔にし、テストシナリオの長所と短所を追加し、テストケースに優先順位をつける。内容を何度も見直すことで、常に最新の状態に保つようにしましょう。バージョン管理を実施し、すべての利害関係者によるコラボレーションを促進する。</p>
+<h3>4.ドキュメンテーションがソフトウェアの品質に与える影響とは？</h3>
+<p>十分に文書化された要件は、明確さを提供し、曖昧さを減らし、エンジニアが既存のコードベースを理解するのに役立ちます。また、チームのコラボレーションを促進し、ユーザーの理解による知識の伝達を確実にします。</p>
+<h3>5.テストドキュメントの例では、通常どのような情報が伝えられますか？</h3>
+<p>一般的に、ドキュメントテストには、ビジネスゴールとKPI、テストの技術環境、システムの特性、ビジネスモデルの詳細が含まれます。</p>
+<p><img alt="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_4hhrD8uf8FrH9lQ2X/image3.png" src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_4hhrD8uf8FrH9lQ2X/image3.png" /></p>
+<h2>最終的な考察</h2>
+<p>Global Markets Insights](https://www.gminsights.com/industry-analysis/software-testing-market)によると、現在のソフトウェアテスト市場規模は450億ドルである。そしてこの金額は、2023年から2032年にかけて、5％という驚異的な割合で徐々に成長する可能性が高い。テクノロジーの世界が進化し続けるにつれて、より多くのソフトウェアプロジェクトが開発され、より多くのソフトウェアテストが行われるようになっています。これらのテストドキュメンテーションのガイドラインがあれば、ドキュメンテーションの内容をよりよく起草し、テストドキュメンテーションのベストプラクティスに従い、テストドキュメンテーションの利点を発揮することができます。</p>
+    </div>
+  </div>
+  <!--/ Post Content-->
+
+  <!--Divider-->
+  <hr class="border-b-1 border-gray-400 mt-12 mb-8 mx-4">
+
+  <!--Next & Prev Links-->
+  <div class="font-sans flex justify-between content-center px-4 mb-4">
+    <div class="text-left">
+      <span class="text-xs md:text-sm font-normal text-gray-600">&lt; Previous Post</span><br>
+      <p><a href="../top-10-alternatives-to-rightanswers-knowledge-base" class="break-normal text-base md:text-sm text-green-500 font-bold no-underline hover:underline">RightAnswers Knowledge Baseの代替トップ10</a></p>
+    </div>
+    <div class="text-right">
+      <span class="text-xs md:text-sm font-normal text-gray-600">Next Post &gt;</span><br>
+      <p><a href="../docsie-s-black-friday-deal" class="break-normal text-base md:text-sm text-green-500 font-bold no-underline hover:underline">ドクシーズ・ブラックフライデー・ディール</a></p>
+    </div>
+  </div>
+
+
+  <!--/Next & Prev Links-->
+
+  
+    <div class="commentbox"></div>
+
+    <script src="https://unpkg.com/commentbox.io/dist/commentBox.min.js"></script>
+    <script>commentBox("5725910686760960-proj")</script>
+  
+
+
+  <!--Subscribe-->
+  
+  <!-- /Subscribe-->
+</div>
+<!--/container-->
+
+<footer class="bg-gray-900">
+  <div class="container max-w-6xl mx-auto flex items-center px-2 py-8">
+
+    <div class="w-full mx-auto flex flex-wrap items-center">
+      <div class="flex w-full md:w-1/2 justify-center md:justify-start text-white font-extrabold flex-col">
+        <a class="text-gray-900 no-underline hover:text-gray-900 hover:no-underline" href="/blog/ja">
+          <span class="text-base text-gray-200">Docsie.io Blog</span>
+        </a>
+        <a class="text-gray-900 no-underline hover:text-gray-900 hover:no-underline"
+           href="https://github.com/LikaloLLC/BlogVi" target="_blank">
+          <span class="text-xs text-gray-200">Made with BlogVI</span>
+        </a>
+      </div>
+      <div class="flex w-full pt-2 content-center justify-between md:w-1/2 md:justify-end">
+        <ul class="list-reset flex justify-center flex-1 md:flex-none items-center">
+          
+            <li>
+              <a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-3"
+                 href="https://www.docsie.io">Docsie</a>
+            </li>
+          
+            <li>
+              <a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-3"
+                 href="https://www.docsie.io/pricing/">Docsie Pricing</a>
+            </li>
+          
+            <li>
+              <a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-3"
+                 href="https://www.docsie.io/try_docsie/">Try Docsie</a>
+            </li>
+          
+        </ul>
+      </div>
+    </div>
+
+
+  </div>
+</footer>
+
+<script>
+  /* Progress bar */
+  //Source: https://alligator.io/js/progress-bar-javascript-css-variables/
+  var h = document.documentElement,
+    b = document.body,
+    st = 'scrollTop',
+    sh = 'scrollHeight',
+    progress = document.querySelector('#progress'),
+    scroll;
+  var scrollpos = window.scrollY;
+  var header = document.getElementById("header");
+  var navcontent = document.getElementById("nav-content");
+
+  document.addEventListener('scroll', function () {
+
+    /*Refresh scroll % width*/
+    scroll = (h[st] || b[st]) / ((h[sh] || b[sh]) - h.clientHeight) * 100;
+    progress.style.setProperty('--scroll', scroll + '%');
+
+    /*Apply classes for slide in bar*/
+    scrollpos = window.scrollY;
+
+    if (scrollpos > 10) {
+      header.classList.add("bg-white");
+      header.classList.add("shadow");
+      navcontent.classList.remove("bg-gray-100");
+      navcontent.classList.add("bg-white");
+    } else {
+      header.classList.remove("bg-white");
+      header.classList.remove("shadow");
+      navcontent.classList.remove("bg-white");
+      navcontent.classList.add("bg-gray-100");
+
+    }
+
+  });
+
+
+  //Javascript to toggle the menu
+  document.getElementById('nav-toggle').onclick = function () {
+    document.getElementById("nav-content").classList.toggle("hidden");
+  }
+</script>
+<script>
+  /*
+    Twitter
+    https://twitter.com/share?url=[post-url]&text=[post-title]
+
+    Facebook
+    https://www.facebook.com/sharer.php?u=[post-url]
+
+  */
+  let twitterURI = document.getElementById('twitter');
+  let facebookURI = document.getElementById('facebook');
+
+  let postURI = encodeURI(document.location.href);
+  let postTitle = encodeURI(document.getElementById('blog-title').innerText + ":\n")
+
+  facebookURI.setAttribute('href', `https://www.facebook.com/sharer.php?u=${postURI}`);
+  twitterURI.setAttribute('href', `https://twitter.com/share?url=${postURI}&text=${postTitle}`);
+</script>
+
+<!--Sharect-->
+
+<script src="https://unpkg.com/sharect@2.0.0/dist/sharect.js"></script>
+<script>window["sharectConfig"] = {"backgroundColor": "#333333", "enabled": true, "facebook": true, "iconColor": "#FFFFFF", "selectableElements": ["body"], "twitter": true, "twitterUsername": "likalo_llc"}</script>
+<script src="/blog/templates/assets/js/sharect.js"></script>
+
+
+
+<!--Reading time-->
+<script src="/blog/templates/assets/js/reading-time.min.js"></script>
+<script>
+  const text = []
+  let content = [...document.getElementById('content').getElementsByTagName('p')].forEach((elem) => {
+    text.push(elem.textContent)
+  });
+  const stats = readingTime(text.join(" "));
+
+  document.getElementById('reading-time').innerHTML = stats.text;
+</script>
+
+
+  
+      <!-- Google Tag Manager (noscript) -->
+
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TZRGMQ9"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+  
+
+</body>
+
+</html>

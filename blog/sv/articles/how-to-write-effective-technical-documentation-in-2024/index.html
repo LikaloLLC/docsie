@@ -1,0 +1,397 @@
+<!-- Base template of the article page. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+  
+
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="https://d1iq6qzgppjlud.cloudfront.net/images/favicon/favicon-196x196.png">
+
+
+  <!-- Primary Meta Tags -->
+  <title>Docsie.io Blog - Hur man skriver effektiv teknisk dokumentation år 2024</title>
+  <meta name="author" content="Tanya A Mishra"/>
+  <meta name="title" content="Hur man skriver effektiv teknisk dokumentation år 2024">
+  <meta name="description" content="Den här bloggen guidar dig genom allt du behöver veta om dokumentationsprocessen för programvara med hjälp av ett exempel på teknisk dokumentation."/>
+  <meta name="keywords" content="Produktdokumentation,AI,Tekniskt skrivande"/>
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.docsie.io/blog/blog/sv/articles/how-to-write-effective-technical-documentation-in-2024/">
+  <meta property="og:title" content="Hur man skriver effektiv teknisk dokumentation år 2024">
+  <meta property="og:description"
+        content="Den här bloggen guidar dig genom allt du behöver veta om dokumentationsprocessen för programvara med hjälp av ett exempel på teknisk dokumentation.">
+  <meta property="og:image" content="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_VM2kZCRZZu70HssRx/banner_48_b812f255-bf12-1704-2c4a-489a7418971e.jpg">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://www.docsie.io/blog/blog/sv/articles/how-to-write-effective-technical-documentation-in-2024/">
+  <meta property="twitter:title" content="Hur man skriver effektiv teknisk dokumentation år 2024">
+  <meta property="twitter:description"
+        content="Den här bloggen guidar dig genom allt du behöver veta om dokumentationsprocessen för programvara med hjälp av ett exempel på teknisk dokumentation.">
+  <meta property="twitter:image" content="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_VM2kZCRZZu70HssRx/banner_48_b812f255-bf12-1704-2c4a-489a7418971e.jpg">
+
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/blog/templates/assets/css/typography.min.css"/>
+  <!--Replace with your tailwind.css once created-->
+    
+    <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TZRGMQ9');</script>
+<!-- End Google Tag Manager -->
+  
+
+</head>
+
+
+<body class="bg-gray-100 font-sans leading-normal tracking-normal">
+
+<nav id="header" class="fixed w-full z-10 top-0">
+
+  <div id="progress" class="h-1 z-20 top-0"
+       style="background:linear-gradient(to right, #4dc0b5 var(--scroll), transparent 0);"></div>
+
+  <div class="container max-w-6xl mx-auto flex flex-wrap items-center justify-between mt-0 py-3">
+
+    <div class="pl-4">
+      <a class="text-gray-900 text-base no-underline hover:no-underline font-extrabold text-xl" href="../../">
+          Docsie.io Blog
+      </a>
+    </div>
+
+    <div class="block lg:hidden pr-4">
+      <button id="nav-toggle"
+              class="flex items-center px-3 py-2 border rounded text-gray-500 border-gray-600 hover:text-gray-900 hover:border-green-500 appearance-none focus:outline-none">
+        <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+          <title>Menu</title>
+          <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/>
+        </svg>
+      </button>
+    </div>
+
+    <div class="w-full flex-grow lg:flex lg:items-center lg:w-auto hidden lg:block mt-2 lg:mt-0 bg-gray-100 z-20"
+         id="nav-content">
+      <ul class="list-reset lg:flex justify-end flex-1 items-center">
+        
+        <li>
+          <a class="inline-block text-gray-600 hover:text-gray-900 hover:underline py-2 px-4"
+             href="https://www.docsie.io">Docsie</a>
+        </li>
+        
+        <li>
+          <a class="inline-block text-gray-600 hover:text-gray-900 hover:underline py-2 px-4"
+             href="https://www.docsie.io/pricing/">Docsie Pricing</a>
+        </li>
+        
+        <li>
+          <a class="inline-block text-gray-600 hover:text-gray-900 hover:underline py-2 px-4"
+             href="https://www.docsie.io/try_docsie/">Try Docsie</a>
+        </li>
+        
+      </ul>
+    </div>
+    <div class="flex w-full justify-end content-center">
+        <a
+          class="inline-block text-gray-500 hover:text-green-500 hover:underline text-center h-10 p-2 md:h-auto md:p-4 avatar"
+          data-tippy-content="@twitter_handle" href="https://twitter.com/intent/tweet?url=#"
+          id="twitter">
+          <svg class="fill-current h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+            <path
+              d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"></path>
+          </svg>
+        </a>
+        <a
+          class="inline-block text-gray-500 hover:text-green-500 hover:underline text-center h-10 p-2 md:h-auto md:p-4 avatar"
+          data-tippy-content="#facebook_id" href="https://www.facebook.com/sharer/sharer.php?u=#}"
+          id="facebook">
+          <svg class="fill-current h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+            <path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"></path>
+          </svg>
+        </a>
+      </div>
+  </div>
+
+</nav>
+
+<!--Container-->
+<div class="container max-w-4xl mx-auto mt-32 px-8 md:px-0">
+  <div class="prose prose lg:prose-xl mx-auto mt-32">
+    <!--Title-->
+    <h1 id="blog-title">Hur man skriver effektiv teknisk dokumentation år 2024</h1>
+    <!--Author-->
+    <div class="flex items-center">
+      <img class="w-10 h-10 rounded-full mr-4" src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_OGDco2MiXWhhNeIMc/banner_39_eca44851-07d5-b27c-6068-b26fc0e76026.jpg" alt="Avatar of Author">
+      <div class="flex-1 px-2">
+        <div class="font-bold leading-none mb-2">Tanya A Mishra</div>
+        <div class="text-xs md:text-base">on January 29, 2024 · <span id="reading-time"
+                class="block md:inline mt-2 md:mt-0"></span> · filed under <span
+          class="block md:inline mt-2 md:mt-0">
+						
+            <span class="rounded bg-green-500 text-white px-1 uppercase text-xs whitespace-nowrap md:text-sm">Produktdokumentation</span>
+						
+            <span class="rounded bg-green-500 text-white px-1 uppercase text-xs whitespace-nowrap md:text-sm">AI</span>
+						
+            <span class="rounded bg-green-500 text-white px-1 uppercase text-xs whitespace-nowrap md:text-sm">Tekniskt skrivande</span>
+						
+					</span>
+        </div>
+      </div>
+    </div>
+    <!--/Author-->
+
+    <!--Post Content-->
+    <!--Lead Para-->
+    <div id="content">
+      <p>Vet du hur man förbereder och producerar effektiv teknisk dokumentation som är lätt att förstå? Om du är utvecklare, produktchef eller till och med driver eget företag är vikten av att översätta teknisk och komplex information till dina användare, medarbetare och kunder något som du redan känner till i grunden.</p>
+<p>I den här bloggen guidar vi dig genom allt du behöver veta om dokumentationsprocessen för programvara med hjälp av ett exempel på teknisk dokumentation. Vi kommer också att presentera <a href="https://www.docsie.io/">Docsie</a>, en fantastisk programvara för användardokumentation som kan hjälpa dig att organisera den tekniska dokumentationsprocessen och skapa en sammanhängande upplevelse av att dokumentera ditt företag såväl som dina kunder.</p>
+<h2>Vikten av effektiv teknisk dokumentation</h2>
+<p>Teknisk dokumentation är ryggraden i korrekt kommunikation i den digitala tidsåldern. Den ger detaljerad information för att förstå, använda och felsöka en produkt eller ett system. Den kan vara i form av användarhandböcker, manualer, vanliga frågor, handledning, API-referenser och så vidare.</p>
+<p>Bra teknisk dokumentation är mer än bara en guide; den förbättrar den övergripande användarupplevelsen. Dessutom kan bra teknisk dokumentation hjälpa dig att uppnå följande fördelar:</p>
+<h3>1. Öka kundnöjdheten och lojaliteten</h3>
+<p>Genom att förse kunderna med detaljerad och fullständig dokumentation ger du dem möjlighet att besvara sina frågor snabbt, utan att öka kundernas frustration. Detta hjälper till att behålla dina kunder.</p>
+<h3>2. Öka medarbetarnas produktivitet och prestanda</h3>
+<p>Genom att skapa och organisera intern dokumentation på ett mer effektivt sätt kan dina anställda få tillgång till information mycket snabbare och enklare, vilket gör att de kan arbeta mer effektivt.</p>
+<h3>3. Minska supportkostnader och arbetsbelastning</h3>
+<p>Genom att erbjuda självbetjäningsdokumentation kan du minska antalet supportförfrågningar och den tid som läggs på att lösa dem, vilket sparar pengar och resurser för ditt företag.</p>
+<h3>4. Utveckla din varumärkesimage och ditt rykte</h3>
+<p>Genom att ta fram bra dokumentation kan du visa din expertis, professionalism och tillförlitlighet och på så sätt skapa förtroende och trovärdighet hos dina kunder och potentiella kunder.</p>
+<p>Som du kan se är en effektiv mall för teknisk dokumentation avgörande för att din produkt eller tjänst ska bli framgångsrik. Men hur skapar man den? Vilka är de viktigaste aspekterna av ett tekniskt dokument?</p>
+<h2>Vilka är de 3 huvuddelarna i ett tekniskt dokument?</h2>
+<p>Ett tekniskt dokument består vanligtvis av tre huvuddelar: Inledningen, brödtexten och slutsatsen. Dessa delar har olika roller och tjänar olika syften som ska skrivas i ett sådant arrangemang.</p>
+<h3>#1. Inledning</h3>
+<p>Å ena sidan "ses introduktionsprocessen som överföring av information från avsändare till mottagare". Den ger en bakgrund, ett sammanhang och syftet med dokumentet, och presenterar siffror för att fånga nästan alla typer av uppmärksamhetsspann som finns där ute.</p>
+<h3>#2. Kropp/Innehåll</h3>
+<p>Den mest betydelsefulla delen av ett tekniskt dokument är brödtexten. Här finns utförlig information och instruktioner om hur produkten eller systemet kan användas och hur problem kan diagnostiseras.</p>
+<h3>#3. Slutsats</h3>
+<p>De säger att slutnotatet gör del två av uppvaktningen; det är därför starkt och avgörande för att förbli för evigt. Det är en kortfattad omformulering av de viktigaste punkterna och målen i dokumentet - i korthet slutar det på rätt sätt; ger läsarna den känslan av kulmination.</p>
+<h2>Hur skriver man ett tekniskt dokument?</h2>
+<p>Att skriva ett tekniskt dokument kan verka förvirrande och skrämmande, särskilt om du inte är van vid att öva tekniskt skrivande.</p>
+<ul>
+<li>
+<p><strong>Steg 1:</strong> Planering och disposition</p>
+</li>
+<li>
+<p><strong>Steg 2:</strong> Utformning av innehåll</p>
+</li>
+<li>
+<p><strong>Steg 3:</strong> Revidering och redigering</p>
+</li>
+<li>
+<p><strong>Steg 4:</strong> Publicering och delning</p>
+</li>
+<li>
+<p><strong>Steg 5:</strong> Uppdatering och underhåll</p>
+</li>
+</ul>
+<h2>Exempel på hur man skriver ett felfritt tekniskt dokument</h2>
+<p>Teknisk dokumentation betecknar den djupgående kunskap och data som gör att du kan få en produkt eller ett system eller använda det och till och med åtgärda eventuella problem som kan ha uppstått. Det kan bland annat innebära användarhandböcker, manualer, frågor och svar om de tekniska aspekterna av ett visst ämne eller en viss produkt. Men hur skriver man ett perfekt tekniskt dokument? Om du vill ha en djupare inblick kan du ta en titt på den här <a href="https://www.docsie.io/blog/articles/how-to-write-clear-concise-user-manual-instructions/">bloggen</a>. Här är ett exempel på teknisk dokumentation:</p>
+<h3>Wireframe av ett idealiskt tekniskt dokument</h3>
+<ol>
+<li>Inledning</li>
+</ol>
+<p>En kortfattad men övertygande inledning sätter tonen och ger dig en snabb överblick över API:ets syfte och funktionalitet.</p>
+<ol>
+<li>Att komma igång</li>
+</ol>
+<p>Det här avsnittet visar hur du snabbt kan integrera API:et i dina projekt. Du kan använda Docsies användarvänliga planerings- och skissfunktioner för att säkerställa ett logiskt informationsflöde.</p>
+<ol>
+<li>API-referens</li>
+</ol>
+<p>Dokumentationens hjärta, API-referensavsnittet, är noggrant organiserat med hjälp av Docsie. Du kan använda plattformens funktioner för att skapa välstrukturerat innehåll, vilket gör det enkelt för dig att hitta och förstå varje slutpunkt.</p>
+<ol>
+<li>Exempel på kod</li>
+</ol>
+<p>Docsies markdown-redigerare förenklar införandet av kodprover, vilket ger dig praktiska exempel som förbättrar din förståelse.</p>
+<ol>
+<li>Felsökning och vanliga frågor</li>
+</ol>
+<p>Ett särskilt avsnitt löser vanliga problem och svarar på dina frågor, vilket visar Docsies förmåga att sömlöst integrera vanliga frågor i dokumentationen.</p>
+<p>Infoga en ny rad här...</p>
+<p>Låt oss nu ta upp de funktioner som Docsie erbjuder för att hjälpa till att lindra dina bekymmer.</p>
+<h2>Hur Docsie hjälper dig att skapa teknisk dokumentation sömlöst?</h2>
+<p>Docsie är en av de bästa kunskapsbasplattformarna för företag som gör att du kan skapa och starta många kunskapsbaser för självbetjäning. Docsie presenterar en mängd olika kvaliteter som gör teknisk dokumentation enkel, effektiv och rolig. Här är några av de viktigaste funktionerna som Docsie tillhandahåller:</p>
+<h3>#1. Enhetlig dokumentationsupplevelse</h3>
+<p>Docsie fungerar som en one-stop-shop för alla dina behov av <a href="https://site.docsie.io/enterprise-documentation">företagsdokumentation</a>. Oavsett om du behöver skapa dokumentation för olika produkter, versioner, språk eller målgrupper, så har Docsie lösningen för dig. Genom att samla alla dina dokument på en central plats effektiviserar Docsie dina arbetsflöden och minskar beroendet av flera verktyg och plattformar. Docsie integreras också med dina befintliga verktyg och system, till exempel <strong>GitHub, Slack, Zendesk</strong> med flera, vilket förbättrar din produktivitet och prestanda.</p>
+<h3>#2. Anpassade nav för dokumentation</h3>
+<p>Med Docsie programvara för teknisk dokumentation kan du bygga skräddarsydda kunskapsportaler, <a href="https://www.docsie.io/blog/articles/why-is-there-a-need-for-customization-in-documentation/">dokumentation</a> nav eller självbetjäningssidor som återspeglar ditt varumärkes design, stil och röst. Det finns olika mallar och teman från vilka man kan välja och även skapa sin tekniska dokumentationsmall. Du kommer också att ha alternativ för att anpassa din domän- eller logotypfot och du kan till och med ange vilken CSS- eller Javascript-kod du vill. Värdalternativen som tillhandahålls av Docsie inkluderar offentligt moln, privat moln; eller lokalt, vilket ger dig autonomi och säkerhet när det gäller dina dokument.</p>
+<h3>#3. Sömlöst och säkert samarbete</h3>
+<p>Docsies funktioner som främjar samarbete med de globala teamen involverar användarroller, åtkomstkontroller och nedladdningsbar chatt. Du och dina kollegor kan gå med i utbildningsprogrammet genom bud på ditt <a href="https://app.docsie.io/onboarding/#/account">Docsie-konto</a>, där du kan ställa in olika roller, funktioner och behörigheter som administratörsrättigheter, behörighet att redigera, granska eller bara titta på. Du kan också redigera dina dokument tillsammans med resten av dina medarbetare i realtid genom att lämna kommentarer, ge uppgifter och spåra ändringar. Programvaran för produktdokumentation ger också säker och konfidentiell lagring för ditt material som är känsligt med sina verktyg som JWT Token Authentication, IAM RBAC, SSL Encryption och GDPR Compliance.</p>
+<h2>Slutsats</h2>
+<p>Teknisk dokumentation är en viktig färdighet för alla som vill kommunicera komplex och teknisk information till sina användare, anställda och kunder. Det kan dock vara ganska utmanande att förbereda effektiv teknisk dokumentation i tid. Det är därför du behöver Docsie, den ledande kunskapsbasplattformen för företag som hjälper till att skapa och släppa många självbetjänade kunskapsbaser.</p>
+<p>Få hjälp av Docsie med att skissera, skapa, skriva, revidera och korrekturläsa och avsluta dokumentationsprocessen smidigt och enkelt. Docsie kan också hjälpa dig att arbeta med dina teammedlemmar, skräddarsy din dokumentation, övervaka och förbättra kvaliteten på din dokumentation.</p>
+<p>Är du redo att börja med <a href="https://www.docsie.io/">Docsie</a>? Registrera dig för en kostnadsfri testversion idag och se hur din tekniska dokumentationsprocess utvecklas.</p>
+    </div>
+  </div>
+  <!--/ Post Content-->
+
+  <!--Divider-->
+  <hr class="border-b-1 border-gray-400 mt-12 mb-8 mx-4">
+
+  <!--Next & Prev Links-->
+  <div class="font-sans flex justify-between content-center px-4 mb-4">
+    <div class="text-left">
+      <span class="text-xs md:text-sm font-normal text-gray-600">&lt; Previous Post</span><br>
+      <p><a href="../product-requirements-document-101-your-guide-to-writing-great-prds" class="break-normal text-base md:text-sm text-green-500 font-bold no-underline hover:underline">Produktkravsdokument 101: Din guide till att skriva bra PRD:er</a></p>
+    </div>
+    <div class="text-right">
+      <span class="text-xs md:text-sm font-normal text-gray-600">Next Post &gt;</span><br>
+      <p><a href="../what-is-product-knowledge-and-how-to-improve-it" class="break-normal text-base md:text-sm text-green-500 font-bold no-underline hover:underline">Vad är produktkunskap och hur kan man förbättra den?</a></p>
+    </div>
+  </div>
+
+
+  <!--/Next & Prev Links-->
+
+  
+    <div class="commentbox"></div>
+
+    <script src="https://unpkg.com/commentbox.io/dist/commentBox.min.js"></script>
+    <script>commentBox("5725910686760960-proj")</script>
+  
+
+
+  <!--Subscribe-->
+  
+  <!-- /Subscribe-->
+</div>
+<!--/container-->
+
+<footer class="bg-gray-900">
+  <div class="container max-w-6xl mx-auto flex items-center px-2 py-8">
+
+    <div class="w-full mx-auto flex flex-wrap items-center">
+      <div class="flex w-full md:w-1/2 justify-center md:justify-start text-white font-extrabold flex-col">
+        <a class="text-gray-900 no-underline hover:text-gray-900 hover:no-underline" href="/blog/sv">
+          <span class="text-base text-gray-200">Docsie.io Blog</span>
+        </a>
+        <a class="text-gray-900 no-underline hover:text-gray-900 hover:no-underline"
+           href="https://github.com/LikaloLLC/BlogVi" target="_blank">
+          <span class="text-xs text-gray-200">Made with BlogVI</span>
+        </a>
+      </div>
+      <div class="flex w-full pt-2 content-center justify-between md:w-1/2 md:justify-end">
+        <ul class="list-reset flex justify-center flex-1 md:flex-none items-center">
+          
+            <li>
+              <a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-3"
+                 href="https://www.docsie.io">Docsie</a>
+            </li>
+          
+            <li>
+              <a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-3"
+                 href="https://www.docsie.io/pricing/">Docsie Pricing</a>
+            </li>
+          
+            <li>
+              <a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-3"
+                 href="https://www.docsie.io/try_docsie/">Try Docsie</a>
+            </li>
+          
+        </ul>
+      </div>
+    </div>
+
+
+  </div>
+</footer>
+
+<script>
+  /* Progress bar */
+  //Source: https://alligator.io/js/progress-bar-javascript-css-variables/
+  var h = document.documentElement,
+    b = document.body,
+    st = 'scrollTop',
+    sh = 'scrollHeight',
+    progress = document.querySelector('#progress'),
+    scroll;
+  var scrollpos = window.scrollY;
+  var header = document.getElementById("header");
+  var navcontent = document.getElementById("nav-content");
+
+  document.addEventListener('scroll', function () {
+
+    /*Refresh scroll % width*/
+    scroll = (h[st] || b[st]) / ((h[sh] || b[sh]) - h.clientHeight) * 100;
+    progress.style.setProperty('--scroll', scroll + '%');
+
+    /*Apply classes for slide in bar*/
+    scrollpos = window.scrollY;
+
+    if (scrollpos > 10) {
+      header.classList.add("bg-white");
+      header.classList.add("shadow");
+      navcontent.classList.remove("bg-gray-100");
+      navcontent.classList.add("bg-white");
+    } else {
+      header.classList.remove("bg-white");
+      header.classList.remove("shadow");
+      navcontent.classList.remove("bg-white");
+      navcontent.classList.add("bg-gray-100");
+
+    }
+
+  });
+
+
+  //Javascript to toggle the menu
+  document.getElementById('nav-toggle').onclick = function () {
+    document.getElementById("nav-content").classList.toggle("hidden");
+  }
+</script>
+<script>
+  /*
+    Twitter
+    https://twitter.com/share?url=[post-url]&text=[post-title]
+
+    Facebook
+    https://www.facebook.com/sharer.php?u=[post-url]
+
+  */
+  let twitterURI = document.getElementById('twitter');
+  let facebookURI = document.getElementById('facebook');
+
+  let postURI = encodeURI(document.location.href);
+  let postTitle = encodeURI(document.getElementById('blog-title').innerText + ":\n")
+
+  facebookURI.setAttribute('href', `https://www.facebook.com/sharer.php?u=${postURI}`);
+  twitterURI.setAttribute('href', `https://twitter.com/share?url=${postURI}&text=${postTitle}`);
+</script>
+
+<!--Sharect-->
+
+<script src="https://unpkg.com/sharect@2.0.0/dist/sharect.js"></script>
+<script>window["sharectConfig"] = {"backgroundColor": "#333333", "enabled": true, "facebook": true, "iconColor": "#FFFFFF", "selectableElements": ["body"], "twitter": true, "twitterUsername": "likalo_llc"}</script>
+<script src="/blog/templates/assets/js/sharect.js"></script>
+
+
+
+<!--Reading time-->
+<script src="/blog/templates/assets/js/reading-time.min.js"></script>
+<script>
+  const text = []
+  let content = [...document.getElementById('content').getElementsByTagName('p')].forEach((elem) => {
+    text.push(elem.textContent)
+  });
+  const stats = readingTime(text.join(" "));
+
+  document.getElementById('reading-time').innerHTML = stats.text;
+</script>
+
+
+  
+      <!-- Google Tag Manager (noscript) -->
+
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TZRGMQ9"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+  
+
+</body>
+
+</html>

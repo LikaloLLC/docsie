@@ -1,0 +1,378 @@
+<!-- Base template of the article page. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+  
+
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="https://d1iq6qzgppjlud.cloudfront.net/images/favicon/favicon-196x196.png">
+
+
+  <!-- Primary Meta Tags -->
+  <title>Docsie.io Blog - 技术写作者掌握提示工程的 10 种方法</title>
+  <meta name="author" content="Tanya A Mishra"/>
+  <meta name="title" content="技术写作者掌握提示工程的 10 种方法">
+  <meta name="description" content="在本文中，我们将讨论如何在技术文档中使用人工智能。作为奖励，您还将看到使用 Docsie 进行技术写作的一瞥！"/>
+  <meta name="keywords" content="人工智能,及时工程"/>
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.docsie.io/blog/blog/zh/articles/10-ways-to-master-prompt-engineering-for-technical-writers/">
+  <meta property="og:title" content="技术写作者掌握提示工程的 10 种方法">
+  <meta property="og:description"
+        content="在本文中，我们将讨论如何在技术文档中使用人工智能。作为奖励，您还将看到使用 Docsie 进行技术写作的一瞥！">
+  <meta property="og:image" content="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_rKF4eYYbOjtbKdWts/225c2411-7ae2-4052-d0e1-45c5cd0afa8abanner_31.jpg">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://www.docsie.io/blog/blog/zh/articles/10-ways-to-master-prompt-engineering-for-technical-writers/">
+  <meta property="twitter:title" content="技术写作者掌握提示工程的 10 种方法">
+  <meta property="twitter:description"
+        content="在本文中，我们将讨论如何在技术文档中使用人工智能。作为奖励，您还将看到使用 Docsie 进行技术写作的一瞥！">
+  <meta property="twitter:image" content="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_rKF4eYYbOjtbKdWts/225c2411-7ae2-4052-d0e1-45c5cd0afa8abanner_31.jpg">
+
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/blog/templates/assets/css/typography.min.css"/>
+  <!--Replace with your tailwind.css once created-->
+    
+    <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TZRGMQ9');</script>
+<!-- End Google Tag Manager -->
+  
+
+</head>
+
+
+<body class="bg-gray-100 font-sans leading-normal tracking-normal">
+
+<nav id="header" class="fixed w-full z-10 top-0">
+
+  <div id="progress" class="h-1 z-20 top-0"
+       style="background:linear-gradient(to right, #4dc0b5 var(--scroll), transparent 0);"></div>
+
+  <div class="container max-w-6xl mx-auto flex flex-wrap items-center justify-between mt-0 py-3">
+
+    <div class="pl-4">
+      <a class="text-gray-900 text-base no-underline hover:no-underline font-extrabold text-xl" href="../../">
+          Docsie.io Blog
+      </a>
+    </div>
+
+    <div class="block lg:hidden pr-4">
+      <button id="nav-toggle"
+              class="flex items-center px-3 py-2 border rounded text-gray-500 border-gray-600 hover:text-gray-900 hover:border-green-500 appearance-none focus:outline-none">
+        <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+          <title>Menu</title>
+          <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/>
+        </svg>
+      </button>
+    </div>
+
+    <div class="w-full flex-grow lg:flex lg:items-center lg:w-auto hidden lg:block mt-2 lg:mt-0 bg-gray-100 z-20"
+         id="nav-content">
+      <ul class="list-reset lg:flex justify-end flex-1 items-center">
+        
+        <li>
+          <a class="inline-block text-gray-600 hover:text-gray-900 hover:underline py-2 px-4"
+             href="https://www.docsie.io">Docsie</a>
+        </li>
+        
+        <li>
+          <a class="inline-block text-gray-600 hover:text-gray-900 hover:underline py-2 px-4"
+             href="https://www.docsie.io/pricing/">Docsie Pricing</a>
+        </li>
+        
+        <li>
+          <a class="inline-block text-gray-600 hover:text-gray-900 hover:underline py-2 px-4"
+             href="https://www.docsie.io/try_docsie/">Try Docsie</a>
+        </li>
+        
+      </ul>
+    </div>
+    <div class="flex w-full justify-end content-center">
+        <a
+          class="inline-block text-gray-500 hover:text-green-500 hover:underline text-center h-10 p-2 md:h-auto md:p-4 avatar"
+          data-tippy-content="@twitter_handle" href="https://twitter.com/intent/tweet?url=#"
+          id="twitter">
+          <svg class="fill-current h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+            <path
+              d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"></path>
+          </svg>
+        </a>
+        <a
+          class="inline-block text-gray-500 hover:text-green-500 hover:underline text-center h-10 p-2 md:h-auto md:p-4 avatar"
+          data-tippy-content="#facebook_id" href="https://www.facebook.com/sharer/sharer.php?u=#}"
+          id="facebook">
+          <svg class="fill-current h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+            <path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"></path>
+          </svg>
+        </a>
+      </div>
+  </div>
+
+</nav>
+
+<!--Container-->
+<div class="container max-w-4xl mx-auto mt-32 px-8 md:px-0">
+  <div class="prose prose lg:prose-xl mx-auto mt-32">
+    <!--Title-->
+    <h1 id="blog-title">技术写作者掌握提示工程的 10 种方法</h1>
+    <!--Author-->
+    <div class="flex items-center">
+      <img class="w-10 h-10 rounded-full mr-4" src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_p1X4gXS3n0rCHYuaE/1f3f5f57-d8e2-7978-faef-0b9fe89f3e4btanya_pic.jpg" alt="Avatar of Author">
+      <div class="flex-1 px-2">
+        <div class="font-bold leading-none mb-2">Tanya A Mishra</div>
+        <div class="text-xs md:text-base">on October 30, 2023 · <span id="reading-time"
+                class="block md:inline mt-2 md:mt-0"></span> · filed under <span
+          class="block md:inline mt-2 md:mt-0">
+						
+            <span class="rounded bg-green-500 text-white px-1 uppercase text-xs whitespace-nowrap md:text-sm">人工智能</span>
+						
+            <span class="rounded bg-green-500 text-white px-1 uppercase text-xs whitespace-nowrap md:text-sm">及时工程</span>
+						
+					</span>
+        </div>
+      </div>
+    </div>
+    <!--/Author-->
+
+    <!--Post Content-->
+    <!--Lead Para-->
+    <div id="content">
+      <p>您是否知道目前有超过<a href="https://www.notta.ai/en/blog/chatgpt-statistics#:~:text=Key%20ChatGPT%20Statistics,-If%20you're&amp;text=ChatGPT%20currently%20has%20100%2B%20million,GPT%2D4%20from%20 March%2023."></a><a href="https://www.notta.ai/en/blog/chatgpt-statistics#:~:text=Key%20ChatGPT%20Statistics,-If%20you're&amp;text=ChatGPT%20currently%20has%20100%2B%20million,GPT%2D4%20from%20 March%2023.">1000亿用户</a>正在使用ChatGPT？从广告到娱乐，从教育到人力资源......各行各业都在充分利用提示工程从语言模型中获得最合适的回复。在撰写各种内容繁杂的主题时，技术撰稿人很难让自己的文章具有亲和力和可读性。在本文中，我们将讨论如何在技术文档中使用人工智能。作为奖励，您还将一睹使用 Docsie 进行技术写作的风采！</p>
+<h2>什么是 Prompt Engineering？</h2>
+<p>|提示工程一览
+|-|定义
+|提示工程的核心是开发和制作提示语的艺术（和科学！），我们可以利用这些提示语从 ChatGPT 和 GPT-4 等语言模型中获得我们想要的输出。虽然我们中的一些人可能已经掌握了良好的提问技巧，但技术撰稿人需要了解提示工程的来龙去脉，这样他们才能创建更好的命令，提出更有见地的问题，并向人工智能系统发出更好的指令。|
+|原则
+|目前，人工智能在技术文档创建过程中的应用正在经历一系列发展。但是，我们应该明白，所有的提示创建都取决于两个主要原则--清晰和具体。只有当我们的提示语设计合理、具体且没有歧义时，我们才能从经过语言训练的人工智能模型那里得到我们想要的回应。
+|目的
+|提示工程涉及文本到文本以及文本到图像和文本到声音的模型，其好处是无限的。提示工程师和技术撰稿人创建人工智能提示，分析输出结果并进一步完善，同时遵守合规性和监管问题，并满足社会环境的需求。</p>
+<h2>提示工程有哪些优势？</h2>
+<p>说到在技术文档中使用人工智能，<a href="https://www.docsie.io/collaboration_software/"> </a><a href="https://www.docsie.io/collaboration_software/">Docsie</a>等工具可以说是你的终极救星。不过，了解提示工程的基础知识也有助于技术撰稿人采用以用户为中心的方法分享信息，减少术语。</p>
+<p>随着技术撰稿人语言模型的不断增长和发展，人工智能将在制作对人类友好、易于理解的提示方面发挥重要作用。</p>
+<p>以下是提示工程的主要优势：</p>
+<p>提升用户体验，减少歧义和困惑，独立快速解决问题。</p>
+<p>对提示进行微调、优化，降低用户的挫败感。</p>
+<p>当写作者掌握了提示工程，他们就能更好地利用它的力量。从简化业务运营到为虚拟助理提供动力，作家们可以探索无限的选择。</p>
+<p>â- 保持一致的风格、语调和声音变得容易，为组织和机构节省时间和资源。</p>
+<p>通过人工智能翻译，可以将有效的提示翻译成适合不同文化背景和全球受众的语言。</p>
+<h2>技术撰稿人如何在提示工程中出类拔萃？</h2>
+<p>人工智能是一个不断扩展的领域。因此，为了满足在技术文档中使用人工智能这一日益增长的需求，写作者需要了解如何引导系统获取相关内容。在使用 Docsie 进行技术写作之前，技术写作者应该了解如何为人工智能系统创建完美的提示。</p>
+<p>为了探索提示工程的多重优势，写作者应该发展技术技能或温习现有技能，这样才能创作出各种各样的技术文档。</p>
+<p>以下是关于如何成为提示工程专家和探索人工智能技术写作世界的 10 个技巧：</p>
+<h3>1.了解用户</h3>
+<p>无论你是营销人员还是内容创作者，我们都知道了解目标受众的疑问是多么重要。了解最终客户的需求是制作有效提示的关键。收集有关年龄、性别、地点、偏好等因素的知识可以帮助您创建用户角色。在理想用户角色的基础上，您可以定制和完善您的提示。</p>
+<h3>2.个性化和语境</h3>
+<p>大语言模型需要了解提示的语境。因此，只要在系统中输入一点背景知识，就能训练大语言模型为您提供所需的输出。使用 Docsie 创建技术文档时，该平台可让您部署 LLM 聊天机器人，以提供即时、可靠的帮助和查询解决方案。例如，您可以要求人工智能系统解释磁铁的工作原理，并添加适合六年级学生的上下文。</p>
+<h3>3.懂得简洁的艺术</h3>
+<p>学习提示工程的好处与了解如何通过内容作品简明扼要地传达信息同样重要。针对手头的主题，写出开门见山的内容，这样读者才能从你的文字中获得明确的信息。分解复杂的技术信息，以贴近生活、方便用户的语气写作。请记住，您是在为人类写作。因此，要让读者参与进来，用他们容易理解的语言写作。</p>
+<h3>4.机器学习知识</h3>
+<p>当你在一家公司或机构担任技术撰稿人时，了解一两门机器学习的知识会对你大有帮助，让你大大领先于竞争对手。通过机器学习，您可以分析过去的用户行为数据，然后根据这些数据对提示进行修改。您可以创建更精细的提示，以获得更好的用户体验，并提高输出的质量。</p>
+<h3>5.举例说明</h3>
+<p>在定义失效的地方，引用和类比最有效。因此，在文章中引用例子、使用比喻和类比，让更多受众（没有技术知识的人）更容易理解。在与 Docsie 一起探索技术写作时，请使用日常用语写作，并以简洁、真实的方式传达信息。</p>
+<h3>6.独特的写作风格</h3>
+<p>当你在技术文档中不断融入人工智能时，有时你的技术内容可能会变得干巴巴的，读起来太生硬。有了独特的写作风格，你就能制作出更好的提示，最终让你的内容更吸引人，更全面，更适合广大受众。避免使用技术性很强的单词和短语，使用通俗易懂的术语，让更多不了解技术术语的受众也能理解。</p>
+<h3>7.专业技术</h3>
+<p>如果你想从及时工程中获得最大收益，就应努力掌握常用的编程语言。虽然编码经验不是必须的，但收集有关最常用编程语言的信息将有助于你定制与不同人工智能模型的交互。您将能够给出更精细的提示，自动执行重复、琐碎的任务，并实施安全措施。</p>
+<h3>8.构建你的提示</h3>
+<p>所有有效的提示都有一个共同点。它们有一个良好的流程，包括引言、详细部分和适当的尾声。假设您需要给人工智能系统一个提示，让它为一个空缺职位编写一份职位描述。引言将包括角色介绍和职责，正文将包含关于需要何种语气的说明以及关于句子长度的指导，最后的尾声将用几个词概括主要任务。</p>
+<h3>9.研究</h3>
+<p>通过阅读文章、手册和了解特定行业的术语，深入挖掘技术概念，拓宽知识视野。因此，要充分发挥及时工程的优势，就需要深入研究、理解技术概念，然后将其分解成更小、更易消化的片段，供用户阅读和理解。</p>
+<h3>10.保持更新</h3>
+<p>在使用 Docsie 进行技术写作的过程中，该平台无疑会为你提供创建详细文档的所有工具--所有工具都在同一屋檐下。但是，您需要随时了解最近发生的行业动态，阅读技术新闻，参加行业活动，寻找内幕消息，为您的下一篇文章获取内容。</p>
+<p><strong><a href="https://www.docsie.io/pricing/">Docsie</a>--你的数字文档助手！</strong></p>
+<hr />
+<hr />
+<p>如果您是技术写作领域的新手，<a href="https://help.docsie.io/"> </a><a href="https://help.docsie.io/">Docsie</a>将是您的最佳拍档！在技术文档中注入人工智能的力量，<strong>Docsie</strong>是一站式商店，让您可以创建、编辑、管理并与队友共享文档，同时保持完全的隐私和安全。使用Docsie撰写技术文档简单、有条理、无压力。虽然强大的 LLM 构成了平台的支柱，但您也可以使用 Docsie 创建自己的知识管理，并简化团队访问内部知识库的方式。</p>
+<p><img alt="" src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_Nq7S4E71oXOk5ZQL7/image1.png" /></p>
+<h2>最后的想法</h2>
+<p>根据 NASSCOM 的预测，从 2022 年到 2030 年，印度对高素质专业技术撰稿人的需求将<a href="https://www.linkedin.com/pulse/unleashing-power-words-journey-technical-writers-india-kranthi-kumar/"></a><a href="https://www.linkedin.com/pulse/unleashing-power-words-journey-technical-writers-india-kranthi-kumar/">激增 11%</a>。因此，如果你是一名有抱负或经验丰富的技术撰稿人，那么现在就是提升自己的及时工程<strong><em>*</em></strong><strong><em>*</em></strong><strong><em>*</em></strong><em>，并在就业领域寻找绝佳机会的最佳时机。利用 Docsie 丰富的知识管理功能，</em><em> </em>*您可以拥有一个标准化、定制化和协作式的平台来存储所有文档。</p>
+<p>要满足您所有与文档相关的需求，请立即访问 <a href="https://app.docsie.io/login/#/">Docsie </a>，在技术文档中利用人工智能的力量。</p>
+<h2>常见问题</h2>
+<h3>1.什么是技术写作中的提示工程？</h3>
+<p>提示工程是指创建或向软件或产品提供准确提示的艺术和科学，以便写作者可以定制或个性化从人工智能系统中获得的回复。</p>
+<h3>2.为什么它对写作者很重要？</h3>
+<p>全面了解提示工程有助于撰稿人设计有效的提示、高效地传达信息、保持一致性并确保产品成功。</p>
+<h3>3.如何在技术文档中使用人工智能？</h3>
+<p>除了检索相关信息，人工智能还可以帮助生成以用户为中心的内容，分析消费者行为和模式，实现文档工作流程自动化等。</p>
+<h3>4.我能用人工智能学习技术写作吗？</h3>
+<p>了解基础知识和使用人工智能工具对开创技术写作事业大有裨益。有了人工智能，你还可以学习语言模型、NLP、聊天机器人和虚拟助手。</p>
+<h3>5.技术写作者如何使用语言模型？</h3>
+<p>语言模型可以在不同方面帮助撰稿人。从内容生成到翻译，从自动化到个性化，语言模型都有助于提高内容质量。</p>
+    </div>
+  </div>
+  <!--/ Post Content-->
+
+  <!--Divider-->
+  <hr class="border-b-1 border-gray-400 mt-12 mb-8 mx-4">
+
+  <!--Next & Prev Links-->
+  <div class="font-sans flex justify-between content-center px-4 mb-4">
+    <div class="text-left">
+      <span class="text-xs md:text-sm font-normal text-gray-600">&lt; Previous Post</span><br>
+      <p><a href="../a-to-z-of-documentation-version-control-and-how-it-improves-workplace-collaboration" class="break-normal text-base md:text-sm text-green-500 font-bold no-underline hover:underline">文档版本控制大全及如何改进工作场所协作</a></p>
+    </div>
+    <div class="text-right">
+      <span class="text-xs md:text-sm font-normal text-gray-600">Next Post &gt;</span><br>
+      <p><a href="../why-is-there-a-need-for-customization-in-documentation" class="break-normal text-base md:text-sm text-green-500 font-bold no-underline hover:underline">为什么需要定制文件？</a></p>
+    </div>
+  </div>
+
+
+  <!--/Next & Prev Links-->
+
+  
+    <div class="commentbox"></div>
+
+    <script src="https://unpkg.com/commentbox.io/dist/commentBox.min.js"></script>
+    <script>commentBox("5725910686760960-proj")</script>
+  
+
+
+  <!--Subscribe-->
+  
+  <!-- /Subscribe-->
+</div>
+<!--/container-->
+
+<footer class="bg-gray-900">
+  <div class="container max-w-6xl mx-auto flex items-center px-2 py-8">
+
+    <div class="w-full mx-auto flex flex-wrap items-center">
+      <div class="flex w-full md:w-1/2 justify-center md:justify-start text-white font-extrabold flex-col">
+        <a class="text-gray-900 no-underline hover:text-gray-900 hover:no-underline" href="/blog/zh">
+          <span class="text-base text-gray-200">Docsie.io Blog</span>
+        </a>
+        <a class="text-gray-900 no-underline hover:text-gray-900 hover:no-underline"
+           href="https://github.com/LikaloLLC/BlogVi" target="_blank">
+          <span class="text-xs text-gray-200">Made with BlogVI</span>
+        </a>
+      </div>
+      <div class="flex w-full pt-2 content-center justify-between md:w-1/2 md:justify-end">
+        <ul class="list-reset flex justify-center flex-1 md:flex-none items-center">
+          
+            <li>
+              <a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-3"
+                 href="https://www.docsie.io">Docsie</a>
+            </li>
+          
+            <li>
+              <a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-3"
+                 href="https://www.docsie.io/pricing/">Docsie Pricing</a>
+            </li>
+          
+            <li>
+              <a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-3"
+                 href="https://www.docsie.io/try_docsie/">Try Docsie</a>
+            </li>
+          
+        </ul>
+      </div>
+    </div>
+
+
+  </div>
+</footer>
+
+<script>
+  /* Progress bar */
+  //Source: https://alligator.io/js/progress-bar-javascript-css-variables/
+  var h = document.documentElement,
+    b = document.body,
+    st = 'scrollTop',
+    sh = 'scrollHeight',
+    progress = document.querySelector('#progress'),
+    scroll;
+  var scrollpos = window.scrollY;
+  var header = document.getElementById("header");
+  var navcontent = document.getElementById("nav-content");
+
+  document.addEventListener('scroll', function () {
+
+    /*Refresh scroll % width*/
+    scroll = (h[st] || b[st]) / ((h[sh] || b[sh]) - h.clientHeight) * 100;
+    progress.style.setProperty('--scroll', scroll + '%');
+
+    /*Apply classes for slide in bar*/
+    scrollpos = window.scrollY;
+
+    if (scrollpos > 10) {
+      header.classList.add("bg-white");
+      header.classList.add("shadow");
+      navcontent.classList.remove("bg-gray-100");
+      navcontent.classList.add("bg-white");
+    } else {
+      header.classList.remove("bg-white");
+      header.classList.remove("shadow");
+      navcontent.classList.remove("bg-white");
+      navcontent.classList.add("bg-gray-100");
+
+    }
+
+  });
+
+
+  //Javascript to toggle the menu
+  document.getElementById('nav-toggle').onclick = function () {
+    document.getElementById("nav-content").classList.toggle("hidden");
+  }
+</script>
+<script>
+  /*
+    Twitter
+    https://twitter.com/share?url=[post-url]&text=[post-title]
+
+    Facebook
+    https://www.facebook.com/sharer.php?u=[post-url]
+
+  */
+  let twitterURI = document.getElementById('twitter');
+  let facebookURI = document.getElementById('facebook');
+
+  let postURI = encodeURI(document.location.href);
+  let postTitle = encodeURI(document.getElementById('blog-title').innerText + ":\n")
+
+  facebookURI.setAttribute('href', `https://www.facebook.com/sharer.php?u=${postURI}`);
+  twitterURI.setAttribute('href', `https://twitter.com/share?url=${postURI}&text=${postTitle}`);
+</script>
+
+<!--Sharect-->
+
+<script src="https://unpkg.com/sharect@2.0.0/dist/sharect.js"></script>
+<script>window["sharectConfig"] = {"backgroundColor": "#333333", "enabled": true, "facebook": true, "iconColor": "#FFFFFF", "selectableElements": ["body"], "twitter": true, "twitterUsername": "likalo_llc"}</script>
+<script src="/blog/templates/assets/js/sharect.js"></script>
+
+
+
+<!--Reading time-->
+<script src="/blog/templates/assets/js/reading-time.min.js"></script>
+<script>
+  const text = []
+  let content = [...document.getElementById('content').getElementsByTagName('p')].forEach((elem) => {
+    text.push(elem.textContent)
+  });
+  const stats = readingTime(text.join(" "));
+
+  document.getElementById('reading-time').innerHTML = stats.text;
+</script>
+
+
+  
+      <!-- Google Tag Manager (noscript) -->
+
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TZRGMQ9"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+  
+
+</body>
+
+</html>

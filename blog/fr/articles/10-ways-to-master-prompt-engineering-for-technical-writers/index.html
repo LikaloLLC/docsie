@@ -1,0 +1,378 @@
+<!-- Base template of the article page. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+  
+
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="https://d1iq6qzgppjlud.cloudfront.net/images/favicon/favicon-196x196.png">
+
+
+  <!-- Primary Meta Tags -->
+  <title>Docsie.io Blog - 10 façons de maîtriser l'ingénierie des questions pour les rédacteurs techniques</title>
+  <meta name="author" content="Tanya A Mishra"/>
+  <meta name="title" content="10 façons de maîtriser l'ingénierie des questions pour les rédacteurs techniques">
+  <meta name="description" content="Dans cet article, nous verrons comment vous pouvez utiliser l'IA dans la documentation technique. En prime, vous aurez un aperçu de la rédaction technique avec Docsie !"/>
+  <meta name="keywords" content="AI,Ingénierie rapide"/>
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.docsie.io/blog/blog/fr/articles/10-ways-to-master-prompt-engineering-for-technical-writers/">
+  <meta property="og:title" content="10 façons de maîtriser l'ingénierie des questions pour les rédacteurs techniques">
+  <meta property="og:description"
+        content="Dans cet article, nous verrons comment vous pouvez utiliser l'IA dans la documentation technique. En prime, vous aurez un aperçu de la rédaction technique avec Docsie !">
+  <meta property="og:image" content="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_rKF4eYYbOjtbKdWts/225c2411-7ae2-4052-d0e1-45c5cd0afa8abanner_31.jpg">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://www.docsie.io/blog/blog/fr/articles/10-ways-to-master-prompt-engineering-for-technical-writers/">
+  <meta property="twitter:title" content="10 façons de maîtriser l'ingénierie des questions pour les rédacteurs techniques">
+  <meta property="twitter:description"
+        content="Dans cet article, nous verrons comment vous pouvez utiliser l'IA dans la documentation technique. En prime, vous aurez un aperçu de la rédaction technique avec Docsie !">
+  <meta property="twitter:image" content="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_rKF4eYYbOjtbKdWts/225c2411-7ae2-4052-d0e1-45c5cd0afa8abanner_31.jpg">
+
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/blog/templates/assets/css/typography.min.css"/>
+  <!--Replace with your tailwind.css once created-->
+    
+    <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TZRGMQ9');</script>
+<!-- End Google Tag Manager -->
+  
+
+</head>
+
+
+<body class="bg-gray-100 font-sans leading-normal tracking-normal">
+
+<nav id="header" class="fixed w-full z-10 top-0">
+
+  <div id="progress" class="h-1 z-20 top-0"
+       style="background:linear-gradient(to right, #4dc0b5 var(--scroll), transparent 0);"></div>
+
+  <div class="container max-w-6xl mx-auto flex flex-wrap items-center justify-between mt-0 py-3">
+
+    <div class="pl-4">
+      <a class="text-gray-900 text-base no-underline hover:no-underline font-extrabold text-xl" href="../../">
+          Docsie.io Blog
+      </a>
+    </div>
+
+    <div class="block lg:hidden pr-4">
+      <button id="nav-toggle"
+              class="flex items-center px-3 py-2 border rounded text-gray-500 border-gray-600 hover:text-gray-900 hover:border-green-500 appearance-none focus:outline-none">
+        <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+          <title>Menu</title>
+          <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/>
+        </svg>
+      </button>
+    </div>
+
+    <div class="w-full flex-grow lg:flex lg:items-center lg:w-auto hidden lg:block mt-2 lg:mt-0 bg-gray-100 z-20"
+         id="nav-content">
+      <ul class="list-reset lg:flex justify-end flex-1 items-center">
+        
+        <li>
+          <a class="inline-block text-gray-600 hover:text-gray-900 hover:underline py-2 px-4"
+             href="https://www.docsie.io">Docsie</a>
+        </li>
+        
+        <li>
+          <a class="inline-block text-gray-600 hover:text-gray-900 hover:underline py-2 px-4"
+             href="https://www.docsie.io/pricing/">Docsie Pricing</a>
+        </li>
+        
+        <li>
+          <a class="inline-block text-gray-600 hover:text-gray-900 hover:underline py-2 px-4"
+             href="https://www.docsie.io/try_docsie/">Try Docsie</a>
+        </li>
+        
+      </ul>
+    </div>
+    <div class="flex w-full justify-end content-center">
+        <a
+          class="inline-block text-gray-500 hover:text-green-500 hover:underline text-center h-10 p-2 md:h-auto md:p-4 avatar"
+          data-tippy-content="@twitter_handle" href="https://twitter.com/intent/tweet?url=#"
+          id="twitter">
+          <svg class="fill-current h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+            <path
+              d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"></path>
+          </svg>
+        </a>
+        <a
+          class="inline-block text-gray-500 hover:text-green-500 hover:underline text-center h-10 p-2 md:h-auto md:p-4 avatar"
+          data-tippy-content="#facebook_id" href="https://www.facebook.com/sharer/sharer.php?u=#}"
+          id="facebook">
+          <svg class="fill-current h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+            <path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"></path>
+          </svg>
+        </a>
+      </div>
+  </div>
+
+</nav>
+
+<!--Container-->
+<div class="container max-w-4xl mx-auto mt-32 px-8 md:px-0">
+  <div class="prose prose lg:prose-xl mx-auto mt-32">
+    <!--Title-->
+    <h1 id="blog-title">10 façons de maîtriser l'ingénierie des questions pour les rédacteurs techniques</h1>
+    <!--Author-->
+    <div class="flex items-center">
+      <img class="w-10 h-10 rounded-full mr-4" src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_p1X4gXS3n0rCHYuaE/1f3f5f57-d8e2-7978-faef-0b9fe89f3e4btanya_pic.jpg" alt="Avatar of Author">
+      <div class="flex-1 px-2">
+        <div class="font-bold leading-none mb-2">Tanya A Mishra</div>
+        <div class="text-xs md:text-base">on October 30, 2023 · <span id="reading-time"
+                class="block md:inline mt-2 md:mt-0"></span> · filed under <span
+          class="block md:inline mt-2 md:mt-0">
+						
+            <span class="rounded bg-green-500 text-white px-1 uppercase text-xs whitespace-nowrap md:text-sm">AI</span>
+						
+            <span class="rounded bg-green-500 text-white px-1 uppercase text-xs whitespace-nowrap md:text-sm">Ingénierie rapide</span>
+						
+					</span>
+        </div>
+      </div>
+    </div>
+    <!--/Author-->
+
+    <!--Post Content-->
+    <!--Lead Para-->
+    <div id="content">
+      <p>Savez-vous que plus de<a href="https://www.notta.ai/en/blog/chatgpt-statistics#:~:text=Key%20ChatGPT%20Statistics,-If%20you're&amp;text=ChatGPT%20currently%20has%20100%2B%20million,GPT%2D4%20from%20March%2023."> </a><a href="https://www.notta.ai/en/blog/chatgpt-statistics#:~:text=Key%20ChatGPT%20Statistics,-If%20you're&amp;text=ChatGPT%20currently%20has%20100%2B%20million,GPT%2D4%20from%20March%2023.">100 milliards d'utilisateurs</a> utilisent actuellement ChatGPT ? De la publicité au divertissement, de l'éducation aux ressources humaines, divers secteurs tirent le meilleur parti de l'ingénierie des messages pour obtenir les réponses les plus appropriées de la part des modèles linguistiques. Lorsqu'ils écrivent sur des sujets à fort contenu, les rédacteurs techniques ont du mal à rendre leurs articles compréhensibles et digestes. Dans cet article, nous verrons comment vous pouvez utiliser l'IA dans la documentation technique. En prime, vous aurez un aperçu de la rédaction technique avec Docsie !</p>
+<h2>Qu'est-ce que Prompt Engineering ?</h2>
+<p>|L'ingénierie des messages en un coup d'œil
+|-|La définition
+|L'ingénierie des messages fait référence à l'art (et à la science !) du développement et de l'élaboration de messages-guides que nous pouvons utiliser pour obtenir les résultats souhaités de modèles linguistiques tels que ChatGPT et GPT-4. Alors que certains d'entre nous peuvent avoir de bonnes compétences en matière de questions, les rédacteurs techniques doivent connaître les tenants et les aboutissants de l'ingénierie des messages-guides afin de pouvoir créer de meilleures commandes, poser des questions plus perspicaces et donner de meilleures instructions aux systèmes d'IA. |
+|Les principes
+|L'utilisation de l'IA dans le processus de création de la documentation technique connaît actuellement une série de développements. Cependant, nous devons comprendre que toute création de message dépend de deux principes fondamentaux : la clarté et la spécificité. Nous ne pouvons obtenir les réponses souhaitées de la part des modèles d'IA formés au langage que si nos messages-guides sont bien conçus, spécifiques et sans ambiguïté.
+|L'objectif
+|Les avantages de l'ingénierie des messages-guides sont illimités, car ils impliquent des modèles texte-texte, texte-image et texte-son. Les ingénieurs des messages-guides et les rédacteurs techniques créent des messages-guides d'IA, analysent les résultats et les affinent, tout en respectant les questions de conformité et de réglementation et en répondant aux besoins des contextes sociaux.</p>
+<h2>Quels sont les avantages de l'ingénierie des messages-guides ?</h2>
+<p>Lorsqu'il s'agit d'utiliser l'IA dans la documentation technique, des outils tels que<a href="https://www.docsie.io/collaboration_software/"> </a><a href="https://www.docsie.io/collaboration_software/">Docsie</a> peuvent vous sauver la mise. Toutefois, le fait de connaître les bases de l'ingénierie des prompts aide également les rédacteurs techniques à partager des informations avec une approche axée sur l'utilisateur et contenant moins de jargon.</p>
+<p>À mesure que les modèles linguistiques pour les rédacteurs techniques continuent de croître et de se développer, l'intelligence artificielle jouera un rôle important dans l'élaboration de messages-guides conviviaux et faciles à comprendre.</p>
+<p>Voici les principaux avantages de l'ingénierie des invites :</p>
+<p>â- Elle améliore l'expérience de l'utilisateur, réduit l'ambiguïté et la confusion et apporte des solutions rapides en toute indépendance.</p>
+<p>â- Il affine les messages-guides, les optimise et réduit la frustration de l'utilisateur.</p>
+<p>â- Lorsque les rédacteurs maîtrisent l'ingénierie des messages-guides, ils sont mieux à même de tirer parti de leur puissance. De la rationalisation des opérations commerciales à l'alimentation des assistants virtuels, les rédacteurs peuvent explorer des options illimitées.</p>
+<p>â- Le maintien d'un style, d'un ton et d'une voix cohérents devient vraiment facile et permet aux organisations et aux agences d'économiser du temps et des ressources.</p>
+<p>â- Grâce à l'IA, des messages efficaces peuvent être traduits pour s'adapter aux différents contextes culturels et aux publics internationaux.</p>
+<h2>Comment les rédacteurs techniques peuvent-ils exceller dans l'ingénierie des messages-guides ?</h2>
+<p>L'IA est un domaine en constante expansion. Ainsi, pour répondre à la demande croissante d'utilisation de l'IA dans la documentation technique, les rédacteurs doivent comprendre comment guider les systèmes pour obtenir un contenu pertinent. Avant de se lancer dans la rédaction technique avec Docsie, les rédacteurs techniques doivent savoir comment créer des messages-guides parfaits pour les systèmes d'IA.</p>
+<p>Pour explorer les multiples avantages de l'ingénierie des messages-guides, les rédacteurs doivent développer des compétences techniques ou perfectionner celles qu'ils possèdent déjà afin de pouvoir créer une grande variété de documents techniques.</p>
+<p>Voici 10 conseils pour devenir un expert en ingénierie des messages courts et explorer le monde de la rédaction technique avec l'IA :</p>
+<h3>1. Comprendre les utilisateurs</h3>
+<p>Que vous soyez un spécialiste du marketing ou un créateur de contenu, nous savons tous à quel point il est important de connaître les requêtes de notre public cible. Comprendre les besoins de vos clients finaux est la clé pour créer des messages-guides efficaces. La collecte d'informations sur plusieurs facteurs tels que l'âge, le sexe, le lieu, les préférences, etc. peut vous aider à créer un profil d'utilisateur. C'est sur la base de ce persona de l'utilisateur idéal que vous pourrez personnaliser et affiner vos messages-guides.</p>
+<h3>2. Personnalisation et contexte</h3>
+<p>Un modèle linguistique étendu doit connaître le contexte de votre message-guide. Ainsi, en entrant un peu de connaissances de base dans le système, vous pouvez entraîner le LLM à vous donner le résultat souhaité. Lorsque vous créez des textes techniques avec Docsie, la plateforme vous permet de déployer des chatbots LLM pour une assistance immédiate et assurée et la résolution des questions. Par exemple, vous pouvez demander au système d'IA d'expliquer le fonctionnement des aimants en ajoutant le contexte qu'il doit être adapté à des élèves de 6e année.</p>
+<h3>3. Connaître l'art de la concision</h3>
+<p>Apprendre les avantages de l'ingénierie de la rapidité est aussi important que de comprendre comment transmettre des informations de manière concise dans vos documents de contenu. Abordez le sujet en question et écrivez un contenu pertinent afin que les lecteurs puissent tirer un message clair de vos mots. Décomposez les informations techniques complexes et écrivez sur un ton compréhensible et convivial. Gardez à l'esprit que vous écrivez pour des êtres humains. Gardez donc vos lecteurs engagés et écrivez dans un langage qu'ils peuvent comprendre facilement.</p>
+<h3>4. Connaissance de l'apprentissage automatique</h3>
+<p>Si vous travaillez comme rédacteur technique pour une entreprise ou une agence, le fait de connaître un ou deux aspects de l'apprentissage automatique peut vous être très utile et vous donner une longueur d'avance sur vos concurrents. Grâce à l'apprentissage automatique, vous pouvez analyser les données relatives au comportement des utilisateurs dans le passé et modifier vos messages-guides en conséquence. Vous pouvez créer des messages-guides plus précis pour une meilleure expérience utilisateur et améliorer la qualité des résultats.</p>
+<h3>5. Illustrer par des exemples</h3>
+<p>Les références et les analogies fonctionnent mieux lorsque les définitions échouent. Citez donc des exemples et utilisez des similitudes et des analogies dans vos articles pour faciliter la compréhension du public le plus large (sans connaissances techniques). Lorsque vous explorez la rédaction technique avec Docsie, écrivez dans un langage courant et transmettez votre message avec simplicité et authenticité.</p>
+<h3>6. Un style d'écriture unique</h3>
+<p>Au fur et à mesure que vous intégrez l'IA dans la documentation technique, votre contenu technique peut parfois devenir aride et trop rigide à lire. En adoptant un style d'écriture unique, vous pouvez créer de meilleurs messages-guides et, à terme, rendre votre contenu plus attrayant et plus complet pour un large éventail de publics. Évitez d'utiliser des mots et des phrases très techniques et employez des termes simples pour toucher un public plus large qui ne connaît peut-être pas la terminologie technique.</p>
+<h3>7. Expertise technique</h3>
+<p>Si vous souhaitez profiter pleinement des avantages de l'ingénierie rapide, essayez d'acquérir une bonne maîtrise des langages de programmation courants. Bien qu'une expérience en matière de codage ne soit pas obligatoire, la collecte d'informations sur les langages de programmation les plus utilisés vous aidera à personnaliser vos interactions avec les différents modèles d'IA. Vous serez en mesure de donner des instructions plus précises, d'automatiser des tâches répétitives et banales et de mettre en œuvre des mesures de sécurité.</p>
+<h3>8. Structurez votre message-guide</h3>
+<p>Tous les messages-guides efficaces ont un point commun. Elles sont bien structurées, avec une introduction, des sections détaillées et une fin appropriée. Supposons que vous deviez demander à votre système d'IA de rédiger une description de poste pour un emploi vacant. L'introduction comprendra la présentation du rôle et les responsabilités, le corps du texte contiendra des instructions sur le ton à adopter, ainsi que des indications sur la longueur des phrases, et la conclusion résumera la tâche principale en quelques mots.</p>
+<h3>9. Recherche</h3>
+<p>Approfondissez les concepts techniques et élargissez l'horizon de vos connaissances en lisant des articles, des manuels et en vous familiarisant avec la terminologie propre au secteur. Ainsi, pour exploiter pleinement les avantages de l'ingénierie rapide, vous devez approfondir vos recherches, comprendre les concepts techniques et les décomposer en éléments plus petits et plus faciles à digérer pour que vos utilisateurs puissent les lire et les comprendre.</p>
+<h3>10. Restez à jour</h3>
+<p>Dans votre parcours de rédaction technique avec Docsie, la plateforme vous fournira sans aucun doute tous les outils pour créer une documentation détaillée - le tout sous le même toit. Mais vous devez vous tenir au courant des derniers événements de l'industrie, lire les nouvelles techniques et assister aux événements de l'industrie pour trouver des histoires de l'intérieur et obtenir du contenu pour votre prochain article.</p>
+<p><strong><a href="https://www.docsie.io/pricing/">Docsie</a> - votre assistant numérique de documentation!</strong></p>
+<hr />
+<hr />
+<p>Si vous êtes un débutant dans le monde de la rédaction technique,<a href="https://help.docsie.io/"> </a><a href="https://help.docsie.io/">Docsie</a> est votre partenaire idéal ! Intégrant la puissance de l'IA dans la documentation technique, <strong>Docsie</strong> est le guichet unique qui vous permet de créer, d'éditer, de gérer et de partager vos documents avec vos coéquipiers, tout en maintenant une confidentialité et une sécurité totales. Avec Docsie, la rédaction technique est simple, organisée et sans stress. Bien que la solide LLM constitue l'épine dorsale de la plateforme, vous pouvez également créer votre propre gestion des connaissances avec Docsie et simplifier la manière dont votre équipe accède à la base de connaissances interne.</p>
+<p><img alt="" src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_Nq7S4E71oXOk5ZQL7/image1.png" /></p>
+<h2>Réflexions finales</h2>
+<p>Selon NASSCOM, l'Inde connaîtra une<a href="https://www.linkedin.com/pulse/unleashing-power-words-journey-technical-writers-india-kranthi-kumar/"> </a><a href="https://www.linkedin.com/pulse/unleashing-power-words-journey-technical-writers-india-kranthi-kumar/">hausse de 11 %</a> de la demande de rédacteurs techniques hautement qualifiés et experts entre 2022 et 2030. Ainsi, si vous êtes un rédacteur technique en herbe ou chevronné, c'est le meilleur moment pour vous perfectionner dans le domaine de l'ingénierie rapide<strong> </strong>et explorer de merveilleuses opportunités dans le secteur de l'emploi. Grâce à la gestion des connaissances de Docsie<strong> </strong>, vous pouvez disposer d'une plateforme standardisée, personnalisée et collaborative pour le stockage de toute votre documentation.</p>
+<p>Pour répondre à tous vos besoins en matière de documentation, visitez <a href="https://app.docsie.io/login/#/">Docsie </a> dès aujourd'hui et tirez parti de la puissance de l'IA dans le domaine de la documentation technique.</p>
+<h2>Foire aux questions</h2>
+<h3>1. Qu'est-ce que le prompt engineering dans le contexte de la rédaction technique ?</h3>
+<p>L'ingénierie des messages-guides fait référence à l'art et à la science de créer ou d'alimenter en messages-guides précis des logiciels ou des produits afin que les rédacteurs puissent adapter ou personnaliser les réponses fournies par les systèmes d'intelligence artificielle.</p>
+<h3>2. Pourquoi est-ce important pour les rédacteurs ?</h3>
+<p>Une compréhension approfondie de l'ingénierie des messages-guides aide les rédacteurs à concevoir des messages-guides efficaces, à transmettre les informations de manière efficace, à maintenir la cohérence et à garantir le succès du produit.</p>
+<h3>3. Comment utiliser l'IA dans la documentation technique ?</h3>
+<p>Outre la recherche d'informations pertinentes, l'intelligence artificielle peut également aider à générer du contenu centré sur l'utilisateur, à analyser les comportements et les modèles des consommateurs, à automatiser les flux de travail de la documentation, etc.</p>
+<h3>4. Puis-je apprendre la rédaction technique avec l'IA ?</h3>
+<p>Comprendre les bases et manipuler les outils d'intelligence artificielle peut contribuer grandement à la création d'une carrière dans la rédaction technique. Avec l'IA, vous pouvez vous familiariser avec les modèles de langage, le NLP, les chatbots et les assistants virtuels.</p>
+<h3>5. Comment utiliser les modèles de langage pour les rédacteurs techniques ?</h3>
+<p>Les modèles linguistiques peuvent aider les rédacteurs de différentes manières. De la génération de contenu à la traduction, de l'automatisation à la personnalisation, les modèles linguistiques contribuent à améliorer la qualité du contenu.</p>
+    </div>
+  </div>
+  <!--/ Post Content-->
+
+  <!--Divider-->
+  <hr class="border-b-1 border-gray-400 mt-12 mb-8 mx-4">
+
+  <!--Next & Prev Links-->
+  <div class="font-sans flex justify-between content-center px-4 mb-4">
+    <div class="text-left">
+      <span class="text-xs md:text-sm font-normal text-gray-600">&lt; Previous Post</span><br>
+      <p><a href="../a-to-z-of-documentation-version-control-and-how-it-improves-workplace-collaboration" class="break-normal text-base md:text-sm text-green-500 font-bold no-underline hover:underline">Le contrôle des versions de la documentation de A à Z et la manière dont il améliore la collaboration sur le lieu de travail</a></p>
+    </div>
+    <div class="text-right">
+      <span class="text-xs md:text-sm font-normal text-gray-600">Next Post &gt;</span><br>
+      <p><a href="../why-is-there-a-need-for-customization-in-documentation" class="break-normal text-base md:text-sm text-green-500 font-bold no-underline hover:underline">Pourquoi faut-il personnaliser la documentation ?</a></p>
+    </div>
+  </div>
+
+
+  <!--/Next & Prev Links-->
+
+  
+    <div class="commentbox"></div>
+
+    <script src="https://unpkg.com/commentbox.io/dist/commentBox.min.js"></script>
+    <script>commentBox("5725910686760960-proj")</script>
+  
+
+
+  <!--Subscribe-->
+  
+  <!-- /Subscribe-->
+</div>
+<!--/container-->
+
+<footer class="bg-gray-900">
+  <div class="container max-w-6xl mx-auto flex items-center px-2 py-8">
+
+    <div class="w-full mx-auto flex flex-wrap items-center">
+      <div class="flex w-full md:w-1/2 justify-center md:justify-start text-white font-extrabold flex-col">
+        <a class="text-gray-900 no-underline hover:text-gray-900 hover:no-underline" href="/blog/fr">
+          <span class="text-base text-gray-200">Docsie.io Blog</span>
+        </a>
+        <a class="text-gray-900 no-underline hover:text-gray-900 hover:no-underline"
+           href="https://github.com/LikaloLLC/BlogVi" target="_blank">
+          <span class="text-xs text-gray-200">Made with BlogVI</span>
+        </a>
+      </div>
+      <div class="flex w-full pt-2 content-center justify-between md:w-1/2 md:justify-end">
+        <ul class="list-reset flex justify-center flex-1 md:flex-none items-center">
+          
+            <li>
+              <a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-3"
+                 href="https://www.docsie.io">Docsie</a>
+            </li>
+          
+            <li>
+              <a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-3"
+                 href="https://www.docsie.io/pricing/">Docsie Pricing</a>
+            </li>
+          
+            <li>
+              <a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-3"
+                 href="https://www.docsie.io/try_docsie/">Try Docsie</a>
+            </li>
+          
+        </ul>
+      </div>
+    </div>
+
+
+  </div>
+</footer>
+
+<script>
+  /* Progress bar */
+  //Source: https://alligator.io/js/progress-bar-javascript-css-variables/
+  var h = document.documentElement,
+    b = document.body,
+    st = 'scrollTop',
+    sh = 'scrollHeight',
+    progress = document.querySelector('#progress'),
+    scroll;
+  var scrollpos = window.scrollY;
+  var header = document.getElementById("header");
+  var navcontent = document.getElementById("nav-content");
+
+  document.addEventListener('scroll', function () {
+
+    /*Refresh scroll % width*/
+    scroll = (h[st] || b[st]) / ((h[sh] || b[sh]) - h.clientHeight) * 100;
+    progress.style.setProperty('--scroll', scroll + '%');
+
+    /*Apply classes for slide in bar*/
+    scrollpos = window.scrollY;
+
+    if (scrollpos > 10) {
+      header.classList.add("bg-white");
+      header.classList.add("shadow");
+      navcontent.classList.remove("bg-gray-100");
+      navcontent.classList.add("bg-white");
+    } else {
+      header.classList.remove("bg-white");
+      header.classList.remove("shadow");
+      navcontent.classList.remove("bg-white");
+      navcontent.classList.add("bg-gray-100");
+
+    }
+
+  });
+
+
+  //Javascript to toggle the menu
+  document.getElementById('nav-toggle').onclick = function () {
+    document.getElementById("nav-content").classList.toggle("hidden");
+  }
+</script>
+<script>
+  /*
+    Twitter
+    https://twitter.com/share?url=[post-url]&text=[post-title]
+
+    Facebook
+    https://www.facebook.com/sharer.php?u=[post-url]
+
+  */
+  let twitterURI = document.getElementById('twitter');
+  let facebookURI = document.getElementById('facebook');
+
+  let postURI = encodeURI(document.location.href);
+  let postTitle = encodeURI(document.getElementById('blog-title').innerText + ":\n")
+
+  facebookURI.setAttribute('href', `https://www.facebook.com/sharer.php?u=${postURI}`);
+  twitterURI.setAttribute('href', `https://twitter.com/share?url=${postURI}&text=${postTitle}`);
+</script>
+
+<!--Sharect-->
+
+<script src="https://unpkg.com/sharect@2.0.0/dist/sharect.js"></script>
+<script>window["sharectConfig"] = {"backgroundColor": "#333333", "enabled": true, "facebook": true, "iconColor": "#FFFFFF", "selectableElements": ["body"], "twitter": true, "twitterUsername": "likalo_llc"}</script>
+<script src="/blog/templates/assets/js/sharect.js"></script>
+
+
+
+<!--Reading time-->
+<script src="/blog/templates/assets/js/reading-time.min.js"></script>
+<script>
+  const text = []
+  let content = [...document.getElementById('content').getElementsByTagName('p')].forEach((elem) => {
+    text.push(elem.textContent)
+  });
+  const stats = readingTime(text.join(" "));
+
+  document.getElementById('reading-time').innerHTML = stats.text;
+</script>
+
+
+  
+      <!-- Google Tag Manager (noscript) -->
+
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TZRGMQ9"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+  
+
+</body>
+
+</html>

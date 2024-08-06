@@ -1,0 +1,390 @@
+<!-- Base template of the article page. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+  
+
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="https://d1iq6qzgppjlud.cloudfront.net/images/favicon/favicon-196x196.png">
+
+
+  <!-- Primary Meta Tags -->
+  <title>Docsie.io Blog - Différents aspects de la documentation de test - Avantages, types et meilleures pratiques</title>
+  <meta name="author" content="Tanya A Mishra"/>
+  <meta name="title" content="Différents aspects de la documentation de test - Avantages, types et meilleures pratiques">
+  <meta name="description" content="Ce blog met en lumière les multiples avantages de la documentation de test, en mentionnant notamment quelques exemples de documentation de test."/>
+  <meta name="keywords" content="AI,Documentation sur les essais"/>
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.docsie.io/blog/blog/fr/articles/different-aspects-of-testing-documentation-advantages-types-and-best-practices/">
+  <meta property="og:title" content="Différents aspects de la documentation de test - Avantages, types et meilleures pratiques">
+  <meta property="og:description"
+        content="Ce blog met en lumière les multiples avantages de la documentation de test, en mentionnant notamment quelques exemples de documentation de test.">
+  <meta property="og:image" content="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_E9huzHUdPx4vMtxpj/2761d2f9-c0dd-c27d-f383-680573d4f4fabanner_34.jpg">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://www.docsie.io/blog/blog/fr/articles/different-aspects-of-testing-documentation-advantages-types-and-best-practices/">
+  <meta property="twitter:title" content="Différents aspects de la documentation de test - Avantages, types et meilleures pratiques">
+  <meta property="twitter:description"
+        content="Ce blog met en lumière les multiples avantages de la documentation de test, en mentionnant notamment quelques exemples de documentation de test.">
+  <meta property="twitter:image" content="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_E9huzHUdPx4vMtxpj/2761d2f9-c0dd-c27d-f383-680573d4f4fabanner_34.jpg">
+
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/blog/templates/assets/css/typography.min.css"/>
+  <!--Replace with your tailwind.css once created-->
+    
+    <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TZRGMQ9');</script>
+<!-- End Google Tag Manager -->
+  
+
+</head>
+
+
+<body class="bg-gray-100 font-sans leading-normal tracking-normal">
+
+<nav id="header" class="fixed w-full z-10 top-0">
+
+  <div id="progress" class="h-1 z-20 top-0"
+       style="background:linear-gradient(to right, #4dc0b5 var(--scroll), transparent 0);"></div>
+
+  <div class="container max-w-6xl mx-auto flex flex-wrap items-center justify-between mt-0 py-3">
+
+    <div class="pl-4">
+      <a class="text-gray-900 text-base no-underline hover:no-underline font-extrabold text-xl" href="../../">
+          Docsie.io Blog
+      </a>
+    </div>
+
+    <div class="block lg:hidden pr-4">
+      <button id="nav-toggle"
+              class="flex items-center px-3 py-2 border rounded text-gray-500 border-gray-600 hover:text-gray-900 hover:border-green-500 appearance-none focus:outline-none">
+        <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+          <title>Menu</title>
+          <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/>
+        </svg>
+      </button>
+    </div>
+
+    <div class="w-full flex-grow lg:flex lg:items-center lg:w-auto hidden lg:block mt-2 lg:mt-0 bg-gray-100 z-20"
+         id="nav-content">
+      <ul class="list-reset lg:flex justify-end flex-1 items-center">
+        
+        <li>
+          <a class="inline-block text-gray-600 hover:text-gray-900 hover:underline py-2 px-4"
+             href="https://www.docsie.io">Docsie</a>
+        </li>
+        
+        <li>
+          <a class="inline-block text-gray-600 hover:text-gray-900 hover:underline py-2 px-4"
+             href="https://www.docsie.io/pricing/">Docsie Pricing</a>
+        </li>
+        
+        <li>
+          <a class="inline-block text-gray-600 hover:text-gray-900 hover:underline py-2 px-4"
+             href="https://www.docsie.io/try_docsie/">Try Docsie</a>
+        </li>
+        
+      </ul>
+    </div>
+    <div class="flex w-full justify-end content-center">
+        <a
+          class="inline-block text-gray-500 hover:text-green-500 hover:underline text-center h-10 p-2 md:h-auto md:p-4 avatar"
+          data-tippy-content="@twitter_handle" href="https://twitter.com/intent/tweet?url=#"
+          id="twitter">
+          <svg class="fill-current h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+            <path
+              d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"></path>
+          </svg>
+        </a>
+        <a
+          class="inline-block text-gray-500 hover:text-green-500 hover:underline text-center h-10 p-2 md:h-auto md:p-4 avatar"
+          data-tippy-content="#facebook_id" href="https://www.facebook.com/sharer/sharer.php?u=#}"
+          id="facebook">
+          <svg class="fill-current h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+            <path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"></path>
+          </svg>
+        </a>
+      </div>
+  </div>
+
+</nav>
+
+<!--Container-->
+<div class="container max-w-4xl mx-auto mt-32 px-8 md:px-0">
+  <div class="prose prose lg:prose-xl mx-auto mt-32">
+    <!--Title-->
+    <h1 id="blog-title">Différents aspects de la documentation de test - Avantages, types et meilleures pratiques</h1>
+    <!--Author-->
+    <div class="flex items-center">
+      <img class="w-10 h-10 rounded-full mr-4" src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_p1X4gXS3n0rCHYuaE/1f3f5f57-d8e2-7978-faef-0b9fe89f3e4btanya_pic.jpg" alt="Avatar of Author">
+      <div class="flex-1 px-2">
+        <div class="font-bold leading-none mb-2">Tanya A Mishra</div>
+        <div class="text-xs md:text-base">on November 16, 2023 · <span id="reading-time"
+                class="block md:inline mt-2 md:mt-0"></span> · filed under <span
+          class="block md:inline mt-2 md:mt-0">
+						
+            <span class="rounded bg-green-500 text-white px-1 uppercase text-xs whitespace-nowrap md:text-sm">AI</span>
+						
+            <span class="rounded bg-green-500 text-white px-1 uppercase text-xs whitespace-nowrap md:text-sm">Documentation sur les essais</span>
+						
+					</span>
+        </div>
+      </div>
+    </div>
+    <!--/Author-->
+
+    <!--Post Content-->
+    <!--Lead Para-->
+    <div id="content">
+      <p>Savez-vous que les connexions IoT mondiales pourraient atteindre le chiffre de 29,4 milliards en 2030 ?</p>
+<p>Selon le <a href="https://transformainsights.com/research/reports/global-iot-forecast-report-2032">Global IoT Forecast Report, 2021-2030</a> de Transforma Insights, la taille du marché de l'IdO est prête à croître et à se développer, générant des revenus supplémentaires pour le monde technologique.</p>
+<p>La documentation de test, qui garantit un niveau élevé d'efficacité des tests de logiciels, présente les objectifs, les processus et les résultats escomptés des tests de logiciels. Ce document met en lumière les multiples avantages de la documentation de test, y compris une mention spéciale de quelques exemples de documentation de test. En prime, cet article présente également les meilleures pratiques en matière de documentation de test !</p>
+<p><img alt="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_1UH7JeOUnUhqkHti3/image5.png" src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_1UH7JeOUnUhqkHti3/image5.png" /></p>
+<h2>Qu'est-ce que la documentation de test ?</h2>
+<p>Les tests de logiciels font partie du quotidien des concepteurs de produits, des testeurs et des ingénieurs logiciels. La documentation des tests fait référence à la création de documents liés aux tests de logiciels. Ces documents sont produits lors du développement et de la maintenance des produits logiciels. Les rédacteurs techniques rédigent ces documents en utilisant les meilleures pratiques pour la documentation des tests afin d'enregistrer les plans et les progrès des différentes phases des tests de logiciels.</p>
+<p>Lorsqu'il s'agit d'optimiser le processus de test, la documentation de test aide les équipes à créer un plan complet pour la conception du logiciel, la mise en œuvre des tests et l'archivage.</p>
+<p>Lorsque vous tenez à jour un document de test, vous pouvez noter les détails de tous vos plans de test de logiciels, y compris les propriétaires de produits et les membres de l'équipe. Cela vous aide à créer un environnement de test de sorte que d'autres équipes ou employés puissent réutiliser les informations et s'en servir comme référence pour des cas futurs.</p>
+<p>Si nous examinons les différents exemples de documentation de test, nous pouvons observer que ces rapports détaillés donnent davantage d'informations sur les processus de test. Ils jouent également un rôle important en informant toutes les parties prenantes de l'avancement des tests. La documentation permet également aux testeurs d'analyser l'efficacité des procédures de test, ce qui les aide à optimiser davantage les pratiques de test.</p>
+<p>Plusieurs plateformes de documentation de test aident les utilisateurs à créer des documents relatifs aux différentes phases de test. Si vous êtes à la recherche d'une telle plateforme, utilisez <a href="https://www.docsie.io/pricing/">Docsie</a> comme votre partenaire logiciel de confiance et créez des documents d'une manière simple et amusante !</p>
+<p><img alt="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_2QAlE7tO9d0ePWDEX/image6.png" src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_2QAlE7tO9d0ePWDEX/image6.png" /></p>
+<h2>Avantages de la documentation de test</h2>
+<p>L'importance de la documentation des tests réside dans le nombre d'avantages qu'elle comporte. Les exemples de documentation de test mettent en évidence les avantages de l'ensemble du processus de documentation. Avec des plateformes de documentation comme <a href="https://help.docsie.io/">Docsie</a>, vous pouvez créer des documents de test de manière efficace. Voici un aperçu des principaux avantages de la documentation de test :</p>
+<p>Améliore l'expérience de l'utilisateur et fournit des informations détaillées et précises sur le produit.</p>
+<p>Améliore la collaboration et encourage tous les membres de l'équipe à travailler vers un objectif commun et partagé.</p>
+<p>Fournit une approche systématique des tests et sert de matériel de référence pour les débutants en matière de logiciels.</p>
+<p>Aide à créer un produit exempt de bogues dans un délai imparti.</p>
+<p>Aide l'équipe d'assurance qualité à acquérir des connaissances sur la configuration requise pour les tests.</p>
+<p><img alt="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_61Vmm2FsSScSByIse/image1.png" src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_61Vmm2FsSScSByIse/image1.png" /></p>
+<h2>Types de tests Documentation</h2>
+<p>Dans le monde d'aujourd'hui, où nous utilisons des produits logiciels pour presque tout, la création d'une documentation d'assurance qualité est très importante. Grâce à des partenaires de documentation appropriés comme <a href="https://app.docsie.io/login/#/">Docsie</a>, les entreprises de logiciels peuvent tenir leurs parties prenantes informées de l'avancement de leurs projets et aider les utilisateurs finaux à comprendre l'adéquation du produit concerné. Pour bien comprendre les avantages de la documentation de test, examinons quelques exemples de tests dans le monde réel.</p>
+<h3>Stratégie de test :</h3>
+<p>Document de haut niveau, décrivant la technique de test, le module testé et de multiples composants, y compris les processus de test, les objectifs de test, les formats de documentation, la stratégie de communication avec les clients, etc.</p>
+<h3>Plan de test :</h3>
+<p>Généralement préparé par le manager ou le responsable des tests, ce document de planification comporte de multiples composants tels que l'étendue, les risques, les approches, les ressources, le suivi des défauts, les hypothèses, etc.</p>
+<h3>Documentation des cas de test :</h3>
+<p>Un document descriptif décrit les étapes du test et inclut des informations détaillées concernant le résultat souhaité et les résultats réels du test.</p>
+<h3>Scénario de test :</h3>
+<p>Ce document donne un aperçu des différents scénarios de test de l'application. Il n'inclut pas les étapes de navigation ou les données d'entrée, mais aide les ingénieurs à comprendre le flux progressif de l'application.</p>
+<h3>Données de test :</h3>
+<p>Les rédacteurs techniques créent généralement ce document avant le début de l'exécution des tests. Préparé manuellement sous Excel, ce document enregistre les données utilisées lors de la mise en œuvre des cas de test.</p>
+<h3>Rapport de bogue :</h3>
+<p>Ce document enregistre les défauts du système logiciel et fournit également des solutions sur la manière de déboguer le produit. Il s'agit du contenu de référence pour toutes sortes de problèmes - ouverts, résolus ou en cours de traitement.</p>
+<h3>Politique de test :</h3>
+<p>Chaque société de logiciels suit certains principes et méthodes en tant que directives de test. Ce document fait la lumière sur ces principes et sur la manière dont ils s'alignent sur les objectifs généraux de l'entreprise en matière de tests.</p>
+<h3>Résumé des tests :</h3>
+<p>Il fournit des informations détaillées sur les activités et les résultats finaux des tests. De l'exécution du test au déploiement final, il enregistre des informations sur toutes les phases du test.</p>
+<p><img alt="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_WE3E6bbchQBrQLE8Y/image4.png" src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_WE3E6bbchQBrQLE8Y/image4.png" /></p>
+<h2>Quelles sont les meilleures pratiques en matière de documentation de test ?</h2>
+<p>Il ne suffit pas de rédiger le contenu. Vos utilisateurs finaux doivent comprendre votre documentation et en tirer des enseignements essentiels. En suivant les meilleures pratiques pour la documentation de test, vous pouvez créer un document orienté client et améliorer l'expérience globale de l'utilisateur.</p>
+<p>Domaines</p>
+<p>Importance</p>
+<p>Régulièrement mis à jour</p>
+<p>Tout ce qui n'est pas régulièrement mis à jour est voué à perdre sa pertinence et son importance. Les produits logiciels sont dynamiques. Dans cette optique, apportez des modifications à votre documentation de test afin qu'elle reflète les changements les plus récents dans les phases de test.</p>
+<p>Contrôle des versions</p>
+<p>Adoptez un système qui vous aide à contrôler les modifications apportées à votre documentation. Mettez en œuvre la fonction de contrôle des versions pour savoir qui a modifié votre documentation et quand.</p>
+<p>Utiliser une source unique</p>
+<p>Créez et stockez votre documentation en un seul endroit afin que les membres de votre équipe puissent y accéder et l'utiliser facilement. Utilisez une base de connaissances unique comme source de vérité pour éviter de perdre du temps à chercher la bonne information.</p>
+<p>Protéger les informations sensibles</p>
+<p>Il s'agit peut-être de l'une des meilleures pratiques les plus importantes en matière de développement logiciel, qui consiste à préserver la confidentialité de votre documentation et à n'autoriser qu'un petit nombre de personnes à y accéder et à y apporter des modifications. Assurez des niveaux de sécurité élevés et veillez à ce qu'aucune équipe ou aucun membre indésirable ne puisse accéder à des informations précieuses sur votre produit.</p>
+<p>Former les membres de l'équipe</p>
+<p>Dispensez une formation complète aux membres de votre équipe afin que chacun comprenne le contenu et l'utilisation de votre processus de documentation. Faites équipe avec le service d'assurance qualité et impliquez-le dans le projet de création de la documentation.</p>
+<p>Maintenir un guide de style</p>
+<p>Créez un guide de style et respectez-le pour garantir la cohérence du ton dans le processus de documentation. Lorsque vous suivez un ensemble de lignes directrices standardisées, vous pouvez donner le ton et définir un ton cohérent pour l'ensemble de vos documents.</p>
+<p>Disposer de modèles standardisés</p>
+<p>Utilisez des modèles de contenu pour présenter votre documentation de manière professionnelle. Qu'il s'agisse d'ajouter des éléments visuels ou d'inclure des exemples et des exercices, adoptez un format fixe pour que tous vos documents soient cohérents dans leur structure et leur format.</p>
+<p><img alt="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_8qNmHqxKlNzMiF344/image2.png" src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_8qNmHqxKlNzMiF344/image2.png" /></p>
+<h2>Foire aux questions</h2>
+<h3>1. Qu'est-ce que la documentation des tests ?</h3>
+<p>Il s'agit d'un élément de contenu qui aide les testeurs de logiciels, les concepteurs de produits et les ingénieurs à noter tous les processus et systèmes qui interviennent au cours de la procédure de test et de développement de logiciels. Cette documentation comprend des artefacts qui aident l'équipe de test de logiciels à planifier la stratégie de l'équipe, à évaluer les efforts de test et à surveiller les exigences du projet.</p>
+<h3>2. Quels sont les principaux avantages de la documentation de test ?</h3>
+<p>Elle supprime les ambiguïtés et clarifie les activités de test.</p>
+<p>Elle offre une approche rationalisée et systématique de la procédure de test et sert de ressource pour la formation des nouveaux venus au processus de test.</p>
+<p>Il décompose l'ensemble de la procédure de test et présente chaque aspect du parcours du logiciel, du développement à l'exécution finale.</p>
+<h3>3. Comment suivre les meilleures pratiques pour la documentation des tests ?</h3>
+<p>Commencez par avoir un objectif clair et utilisez un format standardisé pour la documentation. Soyez concis dans votre approche, ajoutez les avantages et les inconvénients des scénarios de test et classez les cas de test par ordre de priorité. Veillez à maintenir votre contenu à jour en le révisant régulièrement. Mettez en place un contrôle des versions et encouragez la collaboration de toutes les parties prenantes.</p>
+<h3>4. Quel est l'impact de la documentation sur la qualité du logiciel ?</h3>
+<p>Des exigences bien documentées apportent de la clarté, réduisent l'ambiguïté et aident les ingénieurs à comprendre la base de code existante. Elle facilite la collaboration au sein de l'équipe et assure le transfert des connaissances avec une bonne compréhension de la part de l'utilisateur.</p>
+<h3>5. Quelles informations sont généralement transmises dans les exemples de documentation de test ?</h3>
+<p>Les documents de test comprennent généralement les objectifs commerciaux et les indicateurs clés de performance, l'environnement technique du test, les caractéristiques du système et les détails du modèle commercial.</p>
+<p><img alt="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_4hhrD8uf8FrH9lQ2X/image3.png" src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_4hhrD8uf8FrH9lQ2X/image3.png" /></p>
+<h2>Réflexions finales</h2>
+<p>Selon <a href="https://www.gminsights.com/industry-analysis/software-testing-market">Global Markets Insights</a>, la valeur actuelle du marché des tests de logiciels s'élève à 45 milliards de dollars. Ce montant est susceptible d'augmenter progressivement entre 2023 et 2032 à un taux impressionnant de 5 %. Le monde de la technologie continuant d'évoluer, de plus en plus de projets logiciels sont développés, ce qui entraîne une augmentation du nombre de tests de logiciels. Maintenant que vous disposez de ces lignes directrices pour la documentation des tests, vous pouvez mieux rédiger le contenu de votre documentation, suivre les meilleures pratiques pour la documentation des tests et tirer parti des avantages de la documentation des tests.</p>
+    </div>
+  </div>
+  <!--/ Post Content-->
+
+  <!--Divider-->
+  <hr class="border-b-1 border-gray-400 mt-12 mb-8 mx-4">
+
+  <!--Next & Prev Links-->
+  <div class="font-sans flex justify-between content-center px-4 mb-4">
+    <div class="text-left">
+      <span class="text-xs md:text-sm font-normal text-gray-600">&lt; Previous Post</span><br>
+      <p><a href="../top-10-alternatives-to-rightanswers-knowledge-base" class="break-normal text-base md:text-sm text-green-500 font-bold no-underline hover:underline">Les 10 meilleures alternatives à la base de connaissances RightAnswers</a></p>
+    </div>
+    <div class="text-right">
+      <span class="text-xs md:text-sm font-normal text-gray-600">Next Post &gt;</span><br>
+      <p><a href="../docsie-s-black-friday-deal" class="break-normal text-base md:text-sm text-green-500 font-bold no-underline hover:underline">Offre du vendredi noir de Docsie</a></p>
+    </div>
+  </div>
+
+
+  <!--/Next & Prev Links-->
+
+  
+    <div class="commentbox"></div>
+
+    <script src="https://unpkg.com/commentbox.io/dist/commentBox.min.js"></script>
+    <script>commentBox("5725910686760960-proj")</script>
+  
+
+
+  <!--Subscribe-->
+  
+  <!-- /Subscribe-->
+</div>
+<!--/container-->
+
+<footer class="bg-gray-900">
+  <div class="container max-w-6xl mx-auto flex items-center px-2 py-8">
+
+    <div class="w-full mx-auto flex flex-wrap items-center">
+      <div class="flex w-full md:w-1/2 justify-center md:justify-start text-white font-extrabold flex-col">
+        <a class="text-gray-900 no-underline hover:text-gray-900 hover:no-underline" href="/blog/fr">
+          <span class="text-base text-gray-200">Docsie.io Blog</span>
+        </a>
+        <a class="text-gray-900 no-underline hover:text-gray-900 hover:no-underline"
+           href="https://github.com/LikaloLLC/BlogVi" target="_blank">
+          <span class="text-xs text-gray-200">Made with BlogVI</span>
+        </a>
+      </div>
+      <div class="flex w-full pt-2 content-center justify-between md:w-1/2 md:justify-end">
+        <ul class="list-reset flex justify-center flex-1 md:flex-none items-center">
+          
+            <li>
+              <a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-3"
+                 href="https://www.docsie.io">Docsie</a>
+            </li>
+          
+            <li>
+              <a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-3"
+                 href="https://www.docsie.io/pricing/">Docsie Pricing</a>
+            </li>
+          
+            <li>
+              <a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-3"
+                 href="https://www.docsie.io/try_docsie/">Try Docsie</a>
+            </li>
+          
+        </ul>
+      </div>
+    </div>
+
+
+  </div>
+</footer>
+
+<script>
+  /* Progress bar */
+  //Source: https://alligator.io/js/progress-bar-javascript-css-variables/
+  var h = document.documentElement,
+    b = document.body,
+    st = 'scrollTop',
+    sh = 'scrollHeight',
+    progress = document.querySelector('#progress'),
+    scroll;
+  var scrollpos = window.scrollY;
+  var header = document.getElementById("header");
+  var navcontent = document.getElementById("nav-content");
+
+  document.addEventListener('scroll', function () {
+
+    /*Refresh scroll % width*/
+    scroll = (h[st] || b[st]) / ((h[sh] || b[sh]) - h.clientHeight) * 100;
+    progress.style.setProperty('--scroll', scroll + '%');
+
+    /*Apply classes for slide in bar*/
+    scrollpos = window.scrollY;
+
+    if (scrollpos > 10) {
+      header.classList.add("bg-white");
+      header.classList.add("shadow");
+      navcontent.classList.remove("bg-gray-100");
+      navcontent.classList.add("bg-white");
+    } else {
+      header.classList.remove("bg-white");
+      header.classList.remove("shadow");
+      navcontent.classList.remove("bg-white");
+      navcontent.classList.add("bg-gray-100");
+
+    }
+
+  });
+
+
+  //Javascript to toggle the menu
+  document.getElementById('nav-toggle').onclick = function () {
+    document.getElementById("nav-content").classList.toggle("hidden");
+  }
+</script>
+<script>
+  /*
+    Twitter
+    https://twitter.com/share?url=[post-url]&text=[post-title]
+
+    Facebook
+    https://www.facebook.com/sharer.php?u=[post-url]
+
+  */
+  let twitterURI = document.getElementById('twitter');
+  let facebookURI = document.getElementById('facebook');
+
+  let postURI = encodeURI(document.location.href);
+  let postTitle = encodeURI(document.getElementById('blog-title').innerText + ":\n")
+
+  facebookURI.setAttribute('href', `https://www.facebook.com/sharer.php?u=${postURI}`);
+  twitterURI.setAttribute('href', `https://twitter.com/share?url=${postURI}&text=${postTitle}`);
+</script>
+
+<!--Sharect-->
+
+<script src="https://unpkg.com/sharect@2.0.0/dist/sharect.js"></script>
+<script>window["sharectConfig"] = {"backgroundColor": "#333333", "enabled": true, "facebook": true, "iconColor": "#FFFFFF", "selectableElements": ["body"], "twitter": true, "twitterUsername": "likalo_llc"}</script>
+<script src="/blog/templates/assets/js/sharect.js"></script>
+
+
+
+<!--Reading time-->
+<script src="/blog/templates/assets/js/reading-time.min.js"></script>
+<script>
+  const text = []
+  let content = [...document.getElementById('content').getElementsByTagName('p')].forEach((elem) => {
+    text.push(elem.textContent)
+  });
+  const stats = readingTime(text.join(" "));
+
+  document.getElementById('reading-time').innerHTML = stats.text;
+</script>
+
+
+  
+      <!-- Google Tag Manager (noscript) -->
+
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TZRGMQ9"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+  
+
+</body>
+
+</html>

@@ -1,0 +1,378 @@
+<!-- Base template of the article page. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+  
+
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="https://d1iq6qzgppjlud.cloudfront.net/images/favicon/favicon-196x196.png">
+
+
+  <!-- Primary Meta Tags -->
+  <title>Docsie.io Blog - テクニカルライターのためのプロンプト・エンジニアリングをマスターする10の方法</title>
+  <meta name="author" content="Tanya A Mishra"/>
+  <meta name="title" content="テクニカルライターのためのプロンプト・エンジニアリングをマスターする10の方法">
+  <meta name="description" content="この記事では、技術文書にAIを活用する方法について説明します。ボーナスとして、Docsieを使ったテクニカル・ライティングもこっそりお見せします！"/>
+  <meta name="keywords" content="AI,プロンプトエンジニアリング"/>
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.docsie.io/blog/blog/ja/articles/10-ways-to-master-prompt-engineering-for-technical-writers/">
+  <meta property="og:title" content="テクニカルライターのためのプロンプト・エンジニアリングをマスターする10の方法">
+  <meta property="og:description"
+        content="この記事では、技術文書にAIを活用する方法について説明します。ボーナスとして、Docsieを使ったテクニカル・ライティングもこっそりお見せします！">
+  <meta property="og:image" content="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_rKF4eYYbOjtbKdWts/225c2411-7ae2-4052-d0e1-45c5cd0afa8abanner_31.jpg">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://www.docsie.io/blog/blog/ja/articles/10-ways-to-master-prompt-engineering-for-technical-writers/">
+  <meta property="twitter:title" content="テクニカルライターのためのプロンプト・エンジニアリングをマスターする10の方法">
+  <meta property="twitter:description"
+        content="この記事では、技術文書にAIを活用する方法について説明します。ボーナスとして、Docsieを使ったテクニカル・ライティングもこっそりお見せします！">
+  <meta property="twitter:image" content="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_rKF4eYYbOjtbKdWts/225c2411-7ae2-4052-d0e1-45c5cd0afa8abanner_31.jpg">
+
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/blog/templates/assets/css/typography.min.css"/>
+  <!--Replace with your tailwind.css once created-->
+    
+    <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TZRGMQ9');</script>
+<!-- End Google Tag Manager -->
+  
+
+</head>
+
+
+<body class="bg-gray-100 font-sans leading-normal tracking-normal">
+
+<nav id="header" class="fixed w-full z-10 top-0">
+
+  <div id="progress" class="h-1 z-20 top-0"
+       style="background:linear-gradient(to right, #4dc0b5 var(--scroll), transparent 0);"></div>
+
+  <div class="container max-w-6xl mx-auto flex flex-wrap items-center justify-between mt-0 py-3">
+
+    <div class="pl-4">
+      <a class="text-gray-900 text-base no-underline hover:no-underline font-extrabold text-xl" href="../../">
+          Docsie.io Blog
+      </a>
+    </div>
+
+    <div class="block lg:hidden pr-4">
+      <button id="nav-toggle"
+              class="flex items-center px-3 py-2 border rounded text-gray-500 border-gray-600 hover:text-gray-900 hover:border-green-500 appearance-none focus:outline-none">
+        <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+          <title>Menu</title>
+          <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/>
+        </svg>
+      </button>
+    </div>
+
+    <div class="w-full flex-grow lg:flex lg:items-center lg:w-auto hidden lg:block mt-2 lg:mt-0 bg-gray-100 z-20"
+         id="nav-content">
+      <ul class="list-reset lg:flex justify-end flex-1 items-center">
+        
+        <li>
+          <a class="inline-block text-gray-600 hover:text-gray-900 hover:underline py-2 px-4"
+             href="https://www.docsie.io">Docsie</a>
+        </li>
+        
+        <li>
+          <a class="inline-block text-gray-600 hover:text-gray-900 hover:underline py-2 px-4"
+             href="https://www.docsie.io/pricing/">Docsie Pricing</a>
+        </li>
+        
+        <li>
+          <a class="inline-block text-gray-600 hover:text-gray-900 hover:underline py-2 px-4"
+             href="https://www.docsie.io/try_docsie/">Try Docsie</a>
+        </li>
+        
+      </ul>
+    </div>
+    <div class="flex w-full justify-end content-center">
+        <a
+          class="inline-block text-gray-500 hover:text-green-500 hover:underline text-center h-10 p-2 md:h-auto md:p-4 avatar"
+          data-tippy-content="@twitter_handle" href="https://twitter.com/intent/tweet?url=#"
+          id="twitter">
+          <svg class="fill-current h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+            <path
+              d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"></path>
+          </svg>
+        </a>
+        <a
+          class="inline-block text-gray-500 hover:text-green-500 hover:underline text-center h-10 p-2 md:h-auto md:p-4 avatar"
+          data-tippy-content="#facebook_id" href="https://www.facebook.com/sharer/sharer.php?u=#}"
+          id="facebook">
+          <svg class="fill-current h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+            <path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"></path>
+          </svg>
+        </a>
+      </div>
+  </div>
+
+</nav>
+
+<!--Container-->
+<div class="container max-w-4xl mx-auto mt-32 px-8 md:px-0">
+  <div class="prose prose lg:prose-xl mx-auto mt-32">
+    <!--Title-->
+    <h1 id="blog-title">テクニカルライターのためのプロンプト・エンジニアリングをマスターする10の方法</h1>
+    <!--Author-->
+    <div class="flex items-center">
+      <img class="w-10 h-10 rounded-full mr-4" src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_p1X4gXS3n0rCHYuaE/1f3f5f57-d8e2-7978-faef-0b9fe89f3e4btanya_pic.jpg" alt="Avatar of Author">
+      <div class="flex-1 px-2">
+        <div class="font-bold leading-none mb-2">Tanya A Mishra</div>
+        <div class="text-xs md:text-base">on October 30, 2023 · <span id="reading-time"
+                class="block md:inline mt-2 md:mt-0"></span> · filed under <span
+          class="block md:inline mt-2 md:mt-0">
+						
+            <span class="rounded bg-green-500 text-white px-1 uppercase text-xs whitespace-nowrap md:text-sm">AI</span>
+						
+            <span class="rounded bg-green-500 text-white px-1 uppercase text-xs whitespace-nowrap md:text-sm">プロンプトエンジニアリング</span>
+						
+					</span>
+        </div>
+      </div>
+    </div>
+    <!--/Author-->
+
+    <!--Post Content-->
+    <!--Lead Para-->
+    <div id="content">
+      <p>現在、ChatGPTは<a href="https://www.notta.ai/en/blog/chatgpt-statistics#:~:text=Key%20ChatGPT%20Statistics,-If%20you're&amp;text=ChatGPT%20has%20100%2B%20million,GPT%2D4%20from%20March%2023."> </a><a href="https://www.notta.ai/en/blog/chatgpt-statistics#:~:text=Key%20ChatGPT%20Statistics,-If%20you're&amp;text=ChatGPT%20has%20100%2B%20million,GPT%2D4%20from%20March%2023.">1000 billion users</a> 以上が利用していることをご存知ですか？広告からエンターテイメント、教育から人材まで、様々な業界で言語モデルから最適な回答を引き出すプロンプトエンジニアリングが活用されています。様々な内容の濃いトピックで記事を書くとき、テクニカルライターは親しみやすく消化しやすい記事を作るのに苦労します。この記事では、技術文書にAIを活用する方法について説明する。ボーナスとして、Docsieを使ったテクニカル・ライティングもご紹介します！</p>
+<h2>プロンプトエンジニアリングとは？</h2>
+<p>|プロンプトエンジニアリングとは？
+|-|定義
+|プロンプトエンジニアリングとは、ChatGPTやGPT-4のような言語モデルから望ましいアウトプットを得るためのプロンプトを開発・作成することです。プロンプトエンジニアリングは、より良いコマンドを作成し、より洞察力のある質問をし、AIシステムにより良い指示を与えることができるようになります。|
+|原則
+|現在、テクニカルドキュメントの作成プロセスにおけるAIの利用は、次々と発展している。しかし、すべてのプロンプト作成は、明快さと具体性という2つの大原則に依存していることを理解すべきである。言語訓練されたAIモデルから望ましい回答を得ることができるのは、プロンプトがよく設計され、具体的で、あいまいさがない場合に限られる。
+|目的
+|プロンプト・エンジニアリングは、テキストからテキスト、テキストから画像、テキストから音声のモデルを含むため、その利点は無限である。プロンプト・エンジニアとテクニカル・ライターは、AIプロンプトを作成し、出力を分析し、コンプライアンスと規制の問題を遵守し、社会的文脈のニーズに対応しながら、さらに洗練させます。</p>
+<h2>プロンプトエンジニアリングの利点は？</h2>
+<p>技術文書にAIを活用する場合、<a href="https://www.docsie.io/collaboration_software/"> </a><a href="https://www.docsie.io/collaboration_software/">Docsie</a>のようなツールは究極の救世主となり得る。しかし、プロンプト・エンジニアリングの基本を知ることは、テクニカルライターが専門用語をあまり使わず、ユーザー重視のアプローチで情報を共有するのにも役立ちます。</p>
+<p>テクニカルライターの言語モデルが一貫して成長・発展し続けるにつれて、人工知能は人間にやさしく理解しやすいプロンプトを作成する上で重要な役割を果たすようになるでしょう。</p>
+<p>プロンプトエンジニアリングの主な利点は次のとおりです：</p>
+<p>ユーザーエクスペリエンスを向上させ、曖昧さや混乱を減らし、独自に迅速な解決策を提供する。</p>
+<p>プロンプトを微調整し、最適化し、ユーザーのフラストレーションを軽減します。</p>
+<p>プロンプト・エンジニアリングを習得すれば、プロンプトのパワーを最大限に活用できます。ビジネスオペレーションの合理化からバーチャルアシスタントのパワーアップまで、ライターは無限のオプションを探求することができます。</p>
+<p>一貫したスタイル、トーン、ボイスを維持することが容易になり、組織やエージェンシーの時間とリソースを節約できます。</p>
+<p>AI翻訳によって、効果的なプロンプトをさまざまな文化的背景やグローバルな視聴者に合わせて翻訳することができます。</p>
+<h2>プロンプトエンジニアリングでテクニカルライターが活躍するには？</h2>
+<p>AIは拡大を続ける分野です。そのため、技術文書でAIを使用する需要の高まりに対応するために、ライターは適切なコンテンツを得るためにシステムを誘導する方法を理解する必要があります。Docsieを使ってテクニカルライティングに飛び込む前に、テクニカルライターはAIシステムに最適なプロンプトを作成する方法を知っておく必要があります。</p>
+<p>プロンプト・エンジニアリングがもたらすさまざまなメリットを追求するために、ライターは技術的なスキルを身につけるか、既存のスキルをブラッシュアップして、多種多様な技術文書を作成できるようにする必要があります。</p>
+<p>ここでは、プロンプトエンジニアリングのエキスパートになり、AIを活用したテクニカルライティングの世界を探求するための10のヒントを紹介する：</p>
+<h3>1.ユーザーを理解する</h3>
+<p>マーケターであれコンテンツクリエイターであれ、ターゲットオーディエンスのクエリを知ることがいかに重要であるかは誰もが知っている。最終顧客のニーズを理解することは、効果的なプロンプトを作成するための鍵となります。年齢、性別、場所、好みなど、いくつかの要素に関する知識を集めることは、ユーザーペルソナを作成するのに役立ちます。そして、この理想的なユーザーのペルソナに基づいて、プロンプトをカスタマイズし、改良することができます。</p>
+<h3>2.パーソナライゼーションとコンテキスト</h3>
+<p>大規模言語モデルは、プロンプトのコンテキストを知る必要があります。そのため、システムに背景知識を少し入力することで、LLMを訓練し、希望する出力を与えることができます。Docsieでテクニカル・ライティングを作成する場合、このプラットフォームでは、LLMチャットボットを導入して、迅速かつ確実な支援や問い合わせの解決を行うことができます。例えば、AIシステムに磁石の仕組みを説明するよう依頼し、小学6年生に適切な文脈を追加することができます。</p>
+<h3>3.簡潔さを知る</h3>
+<p>プロンプト・エンジニアリングの利点を学ぶことは、コンテンツを通して情報を簡潔に伝える方法を理解することと同じくらい重要です。読者があなたの言葉から明確なメッセージを得られるように、目の前のトピックに対処し、要点を得た内容を書きましょう。複雑な技術情報を分解し、親しみやすく、ユーザーフレンドリーなトーンで書きましょう。人間に向けて書いていることを念頭に置いてください。読者を惹きつけ、読者が理解しやすい言葉で書きましょう。</p>
+<h3>4.機械学習の知識</h3>
+<p>企業や代理店でテクニカルライターとして働く場合、機械学習について1つや2つ知っていると、競合他社に大きく差をつけることができます。機械学習を使えば、過去のユーザー行動データを分析し、それに基づいてプロンプトを変更することができます。より良いユーザー体験のために、より細かいプロンプトを作成し、アウトプットの質を高めることができる。</p>
+<h3>5.例を用いて説明する</h3>
+<p>参照や類推は、定義がうまくいかない場合に最も効果的です。ですから、（専門的な知識のない）幅広い読者が理解しやすいように、記事の中で例を挙げたり、例え話や類推を使いましょう。Docsieでテクニカル・ライティングを学ぶ際には、日常的な言葉で書き、シンプルで信頼性のあるメッセージを伝えましょう。</p>
+<h3>6.ユニークなライティングスタイル</h3>
+<p>技術文書にAIを統合し続けると、技術的な内容が乾燥し、堅苦しくて読めなくなることがあります。ユニークな書き方をすることで、より良いプロンプトを作成することができ、最終的には幅広い読者にとってより魅力的で包括的なコンテンツにすることができます。専門用語を知らないような幅広い読者にも読んでもらえるよう、高度な専門用語の使用は避け、平易な用語を使うようにしましょう。</p>
+<h3>7.技術的な専門知識</h3>
+<p>プロンプト・エンジニアリングのメリットを最大限に享受したいのであれば、一般的なプログラミング言語をしっかりと身につけましょう。コーディングの経験は必須ではないが、最も使用されているプログラミング言語について情報を収集することは、さまざまなAIモデルとのインタラクションをカスタマイズするのに役立つ。より細かなプロンプトを出したり、反復的で平凡なタスクを自動化したり、セキュリティ対策を施したりできるようになる。</p>
+<h3>8.プロンプトを構造化する</h3>
+<p>効果的なプロンプトには共通点があります。それは、導入部、詳細なセクション、適切なアウトロといった、良い流れがあることです。例えば、AIシステムに求人情報の職務経歴書を作成させるプロンプトを出すとします。イントロは役割の紹介と職責で構成され、本文にはどのようなトーンの文章が必要か、文章の長さに関するガイドラインなどの指示が含まれ、最後のアウトロでは主な仕事を数語で要約します。</p>
+<h3>9.リサーチ</h3>
+<p>記事やマニュアルを読み、業界特有の用語を知ることで、技術的な概念を深く掘り下げ、知識の視野を広げる。つまり、プロンプト・エンジニアリングの利点を十分に発揮させるには、より深く研究し、技術的なコンセプトを理解し、ユーザーが読んで理解できるように、それを消化しやすい小さな塊に分解する必要があるのです。</p>
+<h3>10.アップデートの継続</h3>
+<p>Docsieを使用してテクニカルライティングを行うにあたり、このプラットフォームは間違いなく、詳細なドキュメントを作成するためのすべてのツールを提供します。しかし、常に業界の最新情報を入手し、技術的なニュースを読んだり、業界のイベントに参加したりして、内部のストーリーを見つけ、次の記事のためのコンテンツを得る必要があります。</p>
+<p><strong>【Docsie】(https://www.docsie.io/pricing/) - あなたのデジタル・ドキュメント・アシスタント！</strong>*</p>
+<hr />
+<hr />
+<p>テクニカルライティングの世界で初心者のあなたにとって、<a href="https://help.docsie.io/"> </a><a href="https://help.docsie.io/">Docsie</a> は最高のパートナーです！テクニカルドキュメントにAIのパワーを注入した<strong>Docsie</strong>は、完全なプライバシーとセキュリティを維持しながら、ドキュメントの作成、編集、管理、チームメイトとの共有を可能にするワンストップショップです。Docsieを使ったテクニカルライティングは、シンプルで、整理され、ストレスフリーです。強力なLLMがプラットフォームのバックボーンを形成していますが、Docsieを使って独自のナレッジマネジメントを作成し、チームが社内のナレッジベースにアクセスする方法を簡素化することもできます。</p>
+<p><img alt="" src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_Nq7S4E71oXOk5ZQL7/image1.png" /></p>
+<h2>最終的な感想</h2>
+<p>NASSCOMによると、インドは2022年から2030年にかけて、高度な資格を持つ専門家であるテクニカルライターの需要が<a href="https://www.linkedin.com/pulse/unleashing-power-words-journey-technical-writers-india-kranthi-kumar/"> </a><a href="https://www.linkedin.com/pulse/unleashing-power-words-journey-technical-writers-india-kranthi-kumar/">11%急増</a>するという。ですから、もしあなたがテクニカルライターを志している、またはベテランのテクニカルライターであるならば、今こそプロンプトエンジニアリング***のスキルアップをする絶好の機会です。Docsieの豊富なナレッジマネジメントを利用することで、標準化され、カスタマイズされ、コラボレーションが可能なプラットフォームを持つことができます。</p>
+<p>ドキュメントに関するあらゆるニーズを満たすために、今すぐ<a href="https://app.docsie.io/login/#/">Docsie</a>を訪れ、技術文書にAIの力を活用してください。</p>
+<h2>よくある質問</h2>
+<h3>1.テクニカルライティングにおけるプロンプトエンジニアリングとは何ですか？</h3>
+<p>プロンプトエンジニアリングとは、ソフトウェアや製品に正確なプロンプトを作成または送信し、ライターがAIシステムから引き出される回答をカスタマイズまたはパーソナライズできるようにする技術と科学を指します。</p>
+<h3>2.なぜそれがライターにとって重要なのか？</h3>
+<p>プロンプトエンジニアリングを十分に理解することで、ライターは効果的なプロンプトを設計し、効率的に情報を伝え、一貫性を維持し、製品を成功に導くことができます。</p>
+<h3>3.技術文書でAIを活用するには？</h3>
+<p>人工知能は、関連情報を検索するだけでなく、ユーザー中心のコンテンツの生成、消費者の行動やパターンの分析、ドキュメンテーションのワークフローの自動化などにも役立ちます。</p>
+<h3>4.AIを使ってテクニカルライティングを学ぶことはできますか？</h3>
+<p>基本を理解し、AIツールを扱うことは、テクニカルライティングのキャリアを築く上で大いに役立ちます。AIでは、言語モデル、NLP、チャットボット、バーチャルアシスタントについても学ぶことができます。</p>
+<h3>5.テクニカルライターのための言語モデルの使い方とは？</h3>
+<p>言語モデルは、さまざまな方法でライターを支援します。コンテンツの生成から翻訳、自動化からパーソナライゼーションまで、言語モデルはコンテンツの質を高める手助けをします。</p>
+    </div>
+  </div>
+  <!--/ Post Content-->
+
+  <!--Divider-->
+  <hr class="border-b-1 border-gray-400 mt-12 mb-8 mx-4">
+
+  <!--Next & Prev Links-->
+  <div class="font-sans flex justify-between content-center px-4 mb-4">
+    <div class="text-left">
+      <span class="text-xs md:text-sm font-normal text-gray-600">&lt; Previous Post</span><br>
+      <p><a href="../a-to-z-of-documentation-version-control-and-how-it-improves-workplace-collaboration" class="break-normal text-base md:text-sm text-green-500 font-bold no-underline hover:underline">文書バージョン管理のAtoZと職場コラボレーションの改善方法</a></p>
+    </div>
+    <div class="text-right">
+      <span class="text-xs md:text-sm font-normal text-gray-600">Next Post &gt;</span><br>
+      <p><a href="../why-is-there-a-need-for-customization-in-documentation" class="break-normal text-base md:text-sm text-green-500 font-bold no-underline hover:underline">なぜドキュメンテーションにカスタマイズが必要なのか？</a></p>
+    </div>
+  </div>
+
+
+  <!--/Next & Prev Links-->
+
+  
+    <div class="commentbox"></div>
+
+    <script src="https://unpkg.com/commentbox.io/dist/commentBox.min.js"></script>
+    <script>commentBox("5725910686760960-proj")</script>
+  
+
+
+  <!--Subscribe-->
+  
+  <!-- /Subscribe-->
+</div>
+<!--/container-->
+
+<footer class="bg-gray-900">
+  <div class="container max-w-6xl mx-auto flex items-center px-2 py-8">
+
+    <div class="w-full mx-auto flex flex-wrap items-center">
+      <div class="flex w-full md:w-1/2 justify-center md:justify-start text-white font-extrabold flex-col">
+        <a class="text-gray-900 no-underline hover:text-gray-900 hover:no-underline" href="/blog/ja">
+          <span class="text-base text-gray-200">Docsie.io Blog</span>
+        </a>
+        <a class="text-gray-900 no-underline hover:text-gray-900 hover:no-underline"
+           href="https://github.com/LikaloLLC/BlogVi" target="_blank">
+          <span class="text-xs text-gray-200">Made with BlogVI</span>
+        </a>
+      </div>
+      <div class="flex w-full pt-2 content-center justify-between md:w-1/2 md:justify-end">
+        <ul class="list-reset flex justify-center flex-1 md:flex-none items-center">
+          
+            <li>
+              <a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-3"
+                 href="https://www.docsie.io">Docsie</a>
+            </li>
+          
+            <li>
+              <a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-3"
+                 href="https://www.docsie.io/pricing/">Docsie Pricing</a>
+            </li>
+          
+            <li>
+              <a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-3"
+                 href="https://www.docsie.io/try_docsie/">Try Docsie</a>
+            </li>
+          
+        </ul>
+      </div>
+    </div>
+
+
+  </div>
+</footer>
+
+<script>
+  /* Progress bar */
+  //Source: https://alligator.io/js/progress-bar-javascript-css-variables/
+  var h = document.documentElement,
+    b = document.body,
+    st = 'scrollTop',
+    sh = 'scrollHeight',
+    progress = document.querySelector('#progress'),
+    scroll;
+  var scrollpos = window.scrollY;
+  var header = document.getElementById("header");
+  var navcontent = document.getElementById("nav-content");
+
+  document.addEventListener('scroll', function () {
+
+    /*Refresh scroll % width*/
+    scroll = (h[st] || b[st]) / ((h[sh] || b[sh]) - h.clientHeight) * 100;
+    progress.style.setProperty('--scroll', scroll + '%');
+
+    /*Apply classes for slide in bar*/
+    scrollpos = window.scrollY;
+
+    if (scrollpos > 10) {
+      header.classList.add("bg-white");
+      header.classList.add("shadow");
+      navcontent.classList.remove("bg-gray-100");
+      navcontent.classList.add("bg-white");
+    } else {
+      header.classList.remove("bg-white");
+      header.classList.remove("shadow");
+      navcontent.classList.remove("bg-white");
+      navcontent.classList.add("bg-gray-100");
+
+    }
+
+  });
+
+
+  //Javascript to toggle the menu
+  document.getElementById('nav-toggle').onclick = function () {
+    document.getElementById("nav-content").classList.toggle("hidden");
+  }
+</script>
+<script>
+  /*
+    Twitter
+    https://twitter.com/share?url=[post-url]&text=[post-title]
+
+    Facebook
+    https://www.facebook.com/sharer.php?u=[post-url]
+
+  */
+  let twitterURI = document.getElementById('twitter');
+  let facebookURI = document.getElementById('facebook');
+
+  let postURI = encodeURI(document.location.href);
+  let postTitle = encodeURI(document.getElementById('blog-title').innerText + ":\n")
+
+  facebookURI.setAttribute('href', `https://www.facebook.com/sharer.php?u=${postURI}`);
+  twitterURI.setAttribute('href', `https://twitter.com/share?url=${postURI}&text=${postTitle}`);
+</script>
+
+<!--Sharect-->
+
+<script src="https://unpkg.com/sharect@2.0.0/dist/sharect.js"></script>
+<script>window["sharectConfig"] = {"backgroundColor": "#333333", "enabled": true, "facebook": true, "iconColor": "#FFFFFF", "selectableElements": ["body"], "twitter": true, "twitterUsername": "likalo_llc"}</script>
+<script src="/blog/templates/assets/js/sharect.js"></script>
+
+
+
+<!--Reading time-->
+<script src="/blog/templates/assets/js/reading-time.min.js"></script>
+<script>
+  const text = []
+  let content = [...document.getElementById('content').getElementsByTagName('p')].forEach((elem) => {
+    text.push(elem.textContent)
+  });
+  const stats = readingTime(text.join(" "));
+
+  document.getElementById('reading-time').innerHTML = stats.text;
+</script>
+
+
+  
+      <!-- Google Tag Manager (noscript) -->
+
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TZRGMQ9"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+  
+
+</body>
+
+</html>

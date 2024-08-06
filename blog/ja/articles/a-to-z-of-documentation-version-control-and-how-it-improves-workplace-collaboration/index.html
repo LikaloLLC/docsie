@@ -1,0 +1,402 @@
+<!-- Base template of the article page. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+  
+
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="https://d1iq6qzgppjlud.cloudfront.net/images/favicon/favicon-196x196.png">
+
+
+  <!-- Primary Meta Tags -->
+  <title>Docsie.io Blog - 文書バージョン管理のAtoZと職場コラボレーションの改善方法</title>
+  <meta name="author" content="Tanya A Mishra"/>
+  <meta name="title" content="文書バージョン管理のAtoZと職場コラボレーションの改善方法">
+  <meta name="description" content="このブログでは、ドキュメント管理とバージョン管理のAtoZを理解するお手伝いをします。変更追跡の基本を知るために、このブログを読み込んでください。"/>
+  <meta name="keywords" content="AI,ドキュメンテーション・ポータル,ドキュメントのバージョン管理"/>
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.docsie.io/blog/blog/ja/articles/a-to-z-of-documentation-version-control-and-how-it-improves-workplace-collaboration/">
+  <meta property="og:title" content="文書バージョン管理のAtoZと職場コラボレーションの改善方法">
+  <meta property="og:description"
+        content="このブログでは、ドキュメント管理とバージョン管理のAtoZを理解するお手伝いをします。変更追跡の基本を知るために、このブログを読み込んでください。">
+  <meta property="og:image" content="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_JZfTaBdbV6eFIrGgG/b0d79ea9-0300-9369-6c3b-f1f5d0783faabanner_33.jpg">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://www.docsie.io/blog/blog/ja/articles/a-to-z-of-documentation-version-control-and-how-it-improves-workplace-collaboration/">
+  <meta property="twitter:title" content="文書バージョン管理のAtoZと職場コラボレーションの改善方法">
+  <meta property="twitter:description"
+        content="このブログでは、ドキュメント管理とバージョン管理のAtoZを理解するお手伝いをします。変更追跡の基本を知るために、このブログを読み込んでください。">
+  <meta property="twitter:image" content="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_JZfTaBdbV6eFIrGgG/b0d79ea9-0300-9369-6c3b-f1f5d0783faabanner_33.jpg">
+
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/blog/templates/assets/css/typography.min.css"/>
+  <!--Replace with your tailwind.css once created-->
+    
+    <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TZRGMQ9');</script>
+<!-- End Google Tag Manager -->
+  
+
+</head>
+
+
+<body class="bg-gray-100 font-sans leading-normal tracking-normal">
+
+<nav id="header" class="fixed w-full z-10 top-0">
+
+  <div id="progress" class="h-1 z-20 top-0"
+       style="background:linear-gradient(to right, #4dc0b5 var(--scroll), transparent 0);"></div>
+
+  <div class="container max-w-6xl mx-auto flex flex-wrap items-center justify-between mt-0 py-3">
+
+    <div class="pl-4">
+      <a class="text-gray-900 text-base no-underline hover:no-underline font-extrabold text-xl" href="../../">
+          Docsie.io Blog
+      </a>
+    </div>
+
+    <div class="block lg:hidden pr-4">
+      <button id="nav-toggle"
+              class="flex items-center px-3 py-2 border rounded text-gray-500 border-gray-600 hover:text-gray-900 hover:border-green-500 appearance-none focus:outline-none">
+        <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+          <title>Menu</title>
+          <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/>
+        </svg>
+      </button>
+    </div>
+
+    <div class="w-full flex-grow lg:flex lg:items-center lg:w-auto hidden lg:block mt-2 lg:mt-0 bg-gray-100 z-20"
+         id="nav-content">
+      <ul class="list-reset lg:flex justify-end flex-1 items-center">
+        
+        <li>
+          <a class="inline-block text-gray-600 hover:text-gray-900 hover:underline py-2 px-4"
+             href="https://www.docsie.io">Docsie</a>
+        </li>
+        
+        <li>
+          <a class="inline-block text-gray-600 hover:text-gray-900 hover:underline py-2 px-4"
+             href="https://www.docsie.io/pricing/">Docsie Pricing</a>
+        </li>
+        
+        <li>
+          <a class="inline-block text-gray-600 hover:text-gray-900 hover:underline py-2 px-4"
+             href="https://www.docsie.io/try_docsie/">Try Docsie</a>
+        </li>
+        
+      </ul>
+    </div>
+    <div class="flex w-full justify-end content-center">
+        <a
+          class="inline-block text-gray-500 hover:text-green-500 hover:underline text-center h-10 p-2 md:h-auto md:p-4 avatar"
+          data-tippy-content="@twitter_handle" href="https://twitter.com/intent/tweet?url=#"
+          id="twitter">
+          <svg class="fill-current h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+            <path
+              d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"></path>
+          </svg>
+        </a>
+        <a
+          class="inline-block text-gray-500 hover:text-green-500 hover:underline text-center h-10 p-2 md:h-auto md:p-4 avatar"
+          data-tippy-content="#facebook_id" href="https://www.facebook.com/sharer/sharer.php?u=#}"
+          id="facebook">
+          <svg class="fill-current h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+            <path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"></path>
+          </svg>
+        </a>
+      </div>
+  </div>
+
+</nav>
+
+<!--Container-->
+<div class="container max-w-4xl mx-auto mt-32 px-8 md:px-0">
+  <div class="prose prose lg:prose-xl mx-auto mt-32">
+    <!--Title-->
+    <h1 id="blog-title">文書バージョン管理のAtoZと職場コラボレーションの改善方法</h1>
+    <!--Author-->
+    <div class="flex items-center">
+      <img class="w-10 h-10 rounded-full mr-4" src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_p1X4gXS3n0rCHYuaE/1f3f5f57-d8e2-7978-faef-0b9fe89f3e4btanya_pic.jpg" alt="Avatar of Author">
+      <div class="flex-1 px-2">
+        <div class="font-bold leading-none mb-2">Tanya A Mishra</div>
+        <div class="text-xs md:text-base">on November 06, 2023 · <span id="reading-time"
+                class="block md:inline mt-2 md:mt-0"></span> · filed under <span
+          class="block md:inline mt-2 md:mt-0">
+						
+            <span class="rounded bg-green-500 text-white px-1 uppercase text-xs whitespace-nowrap md:text-sm">AI</span>
+						
+            <span class="rounded bg-green-500 text-white px-1 uppercase text-xs whitespace-nowrap md:text-sm">ドキュメンテーション・ポータル</span>
+						
+            <span class="rounded bg-green-500 text-white px-1 uppercase text-xs whitespace-nowrap md:text-sm">ドキュメントのバージョン管理</span>
+						
+					</span>
+        </div>
+      </div>
+    </div>
+    <!--/Author-->
+
+    <!--Post Content-->
+    <!--Lead Para-->
+    <div id="content">
+      <p>間違った文書バージョンの編集に何時間も費やしたことはありませんか？私はあなたの痛みを感じることができる。</p>
+<p>コンテンツの文書化は、失敗のない簡単なプロセスであるべきです。しかし、ドキュメントのワークフローを管理する上で問題に直面することもあります。それはあなたの時間を奪うだけでなく、チーム内のコラボレーションにも支障をきたします。ドキュメントのバージョン管理と変更追跡を導入することで、このようなミスをなくすことができます。</p>
+<p>今日、グローバル企業は世界のさまざまな場所で事業を展開している。従業員はグローバルに分散しているため、チーム・コラボレーションの重要性は倍増している。そのため、効率性と安定したワークフローを維持するために、ドキュメントの管理がこれまで以上に重要になっている。ドキュメンテーションのベストプラクティスに従うことで、職場により正確さをもたらすことに一歩近づくことができる。</p>
+<p>アジャイル開発に伴い、多くの企業が、チーム間のコラボレーションを強化し、組織がより効率的な方向に進むのを助けるために、ドキュメント作成ソフトウェアを作成しています。このブログでは、ドキュメント管理とバージョン管理のAからZまでを理解するお手伝いをします。変更追跡の基本を知るために、ぜひ読んでみてください。</p>
+<h2>バージョン管理とは？</h2>
+<p>バージョン管理は、文書に対する完全な権限を与えます。編集権を持つ複数の株主の間で共通の文書が共有されている場合、あなたは最近の変更を追跡することができます。また、必要に応じて特定のバージョンを呼び出すこともできます。ドキュメントのベストプラクティスに従わせることで、ドキュメントの衛生管理を強化します。</p>
+<h2>なぜ文書作成にバージョン管理が必要なのか？</h2>
+<p>ドキュメンテーションにおけるバージョン管理は、ドキュメントの最新バージョンにアクセスできるようにすることで、混乱を避け、時間を節約するのに役立ちます。チームメンバー間のコミュニケーション範囲を改善することで、チームコラボレーションを向上させます。ドキュメントのバージョンを透明化することで、各チームメンバーによる変更を簡単に追跡することができます。この機能は、同じ製品のアップデートに携わるプロダクトマネージャー、ライター、エンジニアにとって特に有益です。さらに、コラボレーションツールは、コンフリクトを素早く特定し、解決する上で優位に立つ。</p>
+<p>Docsie](https://site.docsie.io/documentation-collaboration-software)のようなドキュメンテーションツールは、チームコラボレーション](https://site.docsie.io/documentation-collaboration-software)とプロジェクト管理機能を備えています。このようなコラボレーションツールを使えば、外出先でもドキュメントを管理することができます。一元化されたプラットフォームは、顧客の好み、言語、場所に応じて適応する埋め込み可能なソフトウェアドキュメントを作成するのに役立ちます。</p>
+<table>
+<thead>
+<tr>
+<th>CTA：Docsieでドキュメンテーションのベストプラクティスを導入しよう!</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2>ドキュメント共有のメリット</h2>
+<p>自分がプロダクトマネージャーで、コンテンツライターと密接に仕事をしていると想像してみてください。あなたとあなたのチームは、適切な機能を売り込み、顧客に新しい製品を理解してもらおうと努力しています。あなたのチームとライターは同じドキュメントを使って機能をリストアップしていますが、ドキュメントにはバージョン履歴をチェックするオプションがありません。この機能がない場合、あなたとライターは同じドキュメントの異なるバージョンで作業することになります。このような場合、どれだけの時間と労力が失われるか考えてみてください。</p>
+<p>文書管理ソフトウェアを導入し、文書のベストプラクティスに従うことで、このような問題を回避することができます。ここでは、Docsieのようなコラボレーションツールを使用するメリットをいくつかご紹介します。  </p>
+<h3>正確で信頼できる情報</h3>
+<p>データの完全性は、世界中の組織にとって最優先事項です。すべての組織は、部門間でやり取りされる情報が正確で最新であることを望んでいる。そのため、文書の履歴を閲覧する機能は、関係者が変更を加えたり、関連情報を更新したりすることを可能にするため、重要になります。また、日常の文書作成プロセスを保護することもできる。変更履歴を追跡することで、偶発的な編集を制御し、正確性を向上させ、文書の信頼性を確保することができます。</p>
+<h3>エラーの可能性が低い</h3>
+<p>M-Filesが最近発表したレポート](https://www.m-files.com/infographic-18-startling-information-management-statistics-3/)では、回答者の46%が必要なドキュメントを探すのに時間がかかり、困難であると回答しています。文書履歴の追跡がなければ、間違った文書に編集を加え、組織内で同じ文書を流通させてしまうかもしれません。これでは会社を危険にさらすことになりかねません。ドキュメントの共有時に最新バージョンを編集できるコラボレーションツールを持つことで、ミスの可能性を減らすことができます。コンテンツ作成時のエラーの可能性を抑制し、ドキュメントを一般公開する前に、すべてのステークホルダーを同じページに集めることができる。さらに、これらのツールは、ドキュメンテーションのベストプラクティスに正しく従う手助けをしてくれる。</p>
+<h3>履歴の追跡</h3>
+<p>複数のバージョンのドキュメントを管理する際には、ドキュメントの変更履歴の追跡が必要です。ドキュメントの履歴を使用すると、誰がプロジェクトに何を貢献しているかを確認できます。さらに、ドキュメントが社内外のチームと共有されている場合、ライター、プロダクトマネージャー、サードパーティの請負業者、その他の利害関係者による変更を確認することができます。これにより、ミスを減らし、必要な変更を混乱なく行うことができる。</p>
+<h3>ドキュメントアクセスコントロール</h3>
+<p>ドキュメント共有時の履歴追跡は、安全基準も向上させます。ワークフロープロセスが、各業界の安全基準に準拠していることを保証します。サイバーセキュリティの脅威のリスクが高まる中、機密情報の保護は世界中の組織にとって必須条件です。バージョン管理機能付きドキュメントを使用することで、ユーザー認証、パスワード暗号化、アクセス制御を追加し、組織のセキュリティを強化することができます。</p>
+<h3>より良いワークフロー</h3>
+<p>ドキュメントの履歴追跡は、ワークフローの改善に役立つため、組織の効率性と生産性が向上する。様々な人材が同じプロジェクトでコラボレーションし、貢献することが容易になる。彼らは、入力、変更のレビュー、競合や混乱をマージすることができます。また、正しい文書のバージョンを探したり、古いバージョンを書き直したりする手間を省くことができる。</p>
+<h3>コンプライアンスと規制上のメリット</h3>
+<p>内部監査やコンプライアンス、規制上の利点のために、正しい文書をファイリングする必要があります。バージョン履歴の追跡は、正しい文書を編集し、時間の経過とともに行われた変更を記録するためのコントロールを提供します。アジャイル開発によって作られたドキュメント・プラットフォームは、データの機密性、保管、コンプライアンスに配慮しています。</p>
+<h3>災害復旧</h3>
+<p>パソコンやノートパソコンで作業していると、誤って重要なファイルを削除してしまうことがあります。ドキュメント共有は、ファイルが失われることなく、更新されたバージョンで復元できることを保証します。データの保存とセキュリティに関する対立を解消します。</p>
+<p>文書共有と履歴追跡は、組織全体に信頼できる情報を送るのに役立ちます。これらのコラボレーション・ツールを使えば、コンフリクトをマージし、エラーを減らし、正確なファイル記録をすぐに維持することができる。また、ドキュメンテーションソフトを使用することで、プロジェクトの進捗管理や各担当者の責任判断が容易になります。</p>
+<h2>ドキュメンテーション管理でコラボレーションを改善するために、Docieはどのように役立ちますか？</h2>
+<p>[Docsie】(https://site.docsie.io/documentation-collaboration-software)<a href="https://site.docsie.io/documentation-collaboration-software">ドキュメント管理</a>は、その高度な機能により、複数のドキュメントを簡単に管理することができます。ノート、メモ、リマインダー、チャット、タスク機能が内蔵されており、チームのコラボレーションを向上させます。さらに、この文書共有ソフトにはプロジェクト管理機能も付いています。社内・社外チームの文書コラボレーションや、文書のインポート＆エクスポートオプションにより、文書の管理、編集、保存をその場で行うことができます。</p>
+<table>
+<thead>
+<tr>
+<th>CTA：デモをご希望の方は当社までご連絡ください。</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2>キーポイント</h2>
+<p>Docsieは、全従業員のドキュメントワークフローの管理を支援します。拠点が都市部にある場合でも、世界中にオフィスがある場合でも、ドキュメントの文書化管理によって、チームのコラボレーションを向上させ、対立を解消することができます。</p>
+<p>Docsieを使用すると、複数のドキュメントのバージョンを管理し、ドキュメントの履歴を追跡し、顧客の言語、場所、好みに合わせて埋め込み可能なソフトウェアドキュメントを作成できます。</p>
+<p>ゴーストAI翻訳を使えば、顧客の地域や嗜好に合わせてコンテンツを簡単にローカライズできます。Docsieを使えば、グローバルチームと手間なくつながることができます。</p>
+<p>すべてのドキュメントを追跡し、適切な場所に保管するのは面倒かもしれません。Docsieの文書管理なら、クラウドプラットフォーム上に文書を簡単に保管できます。</p>
+<table>
+<thead>
+<tr>
+<th>CTAをご利用ください：デモをご希望の方は弊社チームまでご連絡ください。</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2>結論</h2>
+<p>文書履歴追跡ソフトウェアは、生産性を向上させ、セキュリティレイヤーを追加し、効率を高め、バージョンへのアクセスとコントロールで全体的な機能を拡張します。また、チームのコミュニケーションを改善し、摩擦を減らし、コンフリクトをマージするのに役立ちます。アジャイル開発によって開発されたソフトウェアは、ドキュメントのワークフローを作成・維持する際の柔軟性を促進する。</p>
+<p><strong>よくある質問</strong> (FAQ)</p>
+<p>**Docsie ドキュメント共有は、複数のバージョン履歴を扱うことができますか？</p>
+<p>Docsieは、複数のドキュメント履歴を管理することができます。誰が最近変更したのか、同じ文書の最新バージョンは何なのかを簡単に追跡できます。このソフトウェアは、チームメンバー間の透明性と生産性を向上させることで、混乱やマージ競合を回避するのに役立ちます。</p>
+<p>**Docsieのコラボレーションツールは、大企業でも活用できますか？</p>
+<p>Docsieのコラボレーションツールは、社内外のチーム間のチームワークを向上させます。複数のバージョン、言語、AI翻訳を提供することで、コンテンツをよりローカライズし、より多くの読者に届けることができます。さらに、中小企業だけでなく、大規模なグローバル企業のニーズを満たすのに適しています。</p>
+<p>**Docsieのドキュメント共有は、リモートチームのワークフローを改善できますか？</p>
+<p>Docsieは、グローバルな従業員を抱える企業に最適です。Docsieはグローバルな従業員を抱える企業に最適です。内蔵のチャット、タスク、メモ機能は、作業の改善と効率化をもたらします。</p>
+<p><strong>なぜドキュメントの変更追跡が必要なのですか？</strong></p>
+<p>ドキュメントの変更追跡が必要なのは、最新の開発状況を常に把握できるからです。複数の株主と一緒に仕事をする場合、誰が最近の変更を行ったのか、そしてその変更がプロジェクト全体の成功にどのように貢献したのかを簡単に確認することができます。</p>
+<p>**ドキュメントにおけるアジャイル開発とは何か？</p>
+<p>ドキュメンテーションにおけるアジャイル開発とは、アジャイルソフトウェア開発の原則に基づいて動作するドキュメンテーションを作成し、維持する方法です。アジャイル開発によって開発されたソフトウェアの焦点は、職場に柔軟性とコラボレーションをもたらすことである。</p>
+    </div>
+  </div>
+  <!--/ Post Content-->
+
+  <!--Divider-->
+  <hr class="border-b-1 border-gray-400 mt-12 mb-8 mx-4">
+
+  <!--Next & Prev Links-->
+  <div class="font-sans flex justify-between content-center px-4 mb-4">
+    <div class="text-left">
+      <span class="text-xs md:text-sm font-normal text-gray-600">&lt; Previous Post</span><br>
+      <p><a href="../docsie-s-black-friday-deal" class="break-normal text-base md:text-sm text-green-500 font-bold no-underline hover:underline">ドクシーズ・ブラックフライデー・ディール</a></p>
+    </div>
+    <div class="text-right">
+      <span class="text-xs md:text-sm font-normal text-gray-600">Next Post &gt;</span><br>
+      <p><a href="../10-ways-to-master-prompt-engineering-for-technical-writers" class="break-normal text-base md:text-sm text-green-500 font-bold no-underline hover:underline">テクニカルライターのためのプロンプト・エンジニアリングをマスターする10の方法</a></p>
+    </div>
+  </div>
+
+
+  <!--/Next & Prev Links-->
+
+  
+    <div class="commentbox"></div>
+
+    <script src="https://unpkg.com/commentbox.io/dist/commentBox.min.js"></script>
+    <script>commentBox("5725910686760960-proj")</script>
+  
+
+
+  <!--Subscribe-->
+  
+  <!-- /Subscribe-->
+</div>
+<!--/container-->
+
+<footer class="bg-gray-900">
+  <div class="container max-w-6xl mx-auto flex items-center px-2 py-8">
+
+    <div class="w-full mx-auto flex flex-wrap items-center">
+      <div class="flex w-full md:w-1/2 justify-center md:justify-start text-white font-extrabold flex-col">
+        <a class="text-gray-900 no-underline hover:text-gray-900 hover:no-underline" href="/blog/ja">
+          <span class="text-base text-gray-200">Docsie.io Blog</span>
+        </a>
+        <a class="text-gray-900 no-underline hover:text-gray-900 hover:no-underline"
+           href="https://github.com/LikaloLLC/BlogVi" target="_blank">
+          <span class="text-xs text-gray-200">Made with BlogVI</span>
+        </a>
+      </div>
+      <div class="flex w-full pt-2 content-center justify-between md:w-1/2 md:justify-end">
+        <ul class="list-reset flex justify-center flex-1 md:flex-none items-center">
+          
+            <li>
+              <a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-3"
+                 href="https://www.docsie.io">Docsie</a>
+            </li>
+          
+            <li>
+              <a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-3"
+                 href="https://www.docsie.io/pricing/">Docsie Pricing</a>
+            </li>
+          
+            <li>
+              <a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-3"
+                 href="https://www.docsie.io/try_docsie/">Try Docsie</a>
+            </li>
+          
+        </ul>
+      </div>
+    </div>
+
+
+  </div>
+</footer>
+
+<script>
+  /* Progress bar */
+  //Source: https://alligator.io/js/progress-bar-javascript-css-variables/
+  var h = document.documentElement,
+    b = document.body,
+    st = 'scrollTop',
+    sh = 'scrollHeight',
+    progress = document.querySelector('#progress'),
+    scroll;
+  var scrollpos = window.scrollY;
+  var header = document.getElementById("header");
+  var navcontent = document.getElementById("nav-content");
+
+  document.addEventListener('scroll', function () {
+
+    /*Refresh scroll % width*/
+    scroll = (h[st] || b[st]) / ((h[sh] || b[sh]) - h.clientHeight) * 100;
+    progress.style.setProperty('--scroll', scroll + '%');
+
+    /*Apply classes for slide in bar*/
+    scrollpos = window.scrollY;
+
+    if (scrollpos > 10) {
+      header.classList.add("bg-white");
+      header.classList.add("shadow");
+      navcontent.classList.remove("bg-gray-100");
+      navcontent.classList.add("bg-white");
+    } else {
+      header.classList.remove("bg-white");
+      header.classList.remove("shadow");
+      navcontent.classList.remove("bg-white");
+      navcontent.classList.add("bg-gray-100");
+
+    }
+
+  });
+
+
+  //Javascript to toggle the menu
+  document.getElementById('nav-toggle').onclick = function () {
+    document.getElementById("nav-content").classList.toggle("hidden");
+  }
+</script>
+<script>
+  /*
+    Twitter
+    https://twitter.com/share?url=[post-url]&text=[post-title]
+
+    Facebook
+    https://www.facebook.com/sharer.php?u=[post-url]
+
+  */
+  let twitterURI = document.getElementById('twitter');
+  let facebookURI = document.getElementById('facebook');
+
+  let postURI = encodeURI(document.location.href);
+  let postTitle = encodeURI(document.getElementById('blog-title').innerText + ":\n")
+
+  facebookURI.setAttribute('href', `https://www.facebook.com/sharer.php?u=${postURI}`);
+  twitterURI.setAttribute('href', `https://twitter.com/share?url=${postURI}&text=${postTitle}`);
+</script>
+
+<!--Sharect-->
+
+<script src="https://unpkg.com/sharect@2.0.0/dist/sharect.js"></script>
+<script>window["sharectConfig"] = {"backgroundColor": "#333333", "enabled": true, "facebook": true, "iconColor": "#FFFFFF", "selectableElements": ["body"], "twitter": true, "twitterUsername": "likalo_llc"}</script>
+<script src="/blog/templates/assets/js/sharect.js"></script>
+
+
+
+<!--Reading time-->
+<script src="/blog/templates/assets/js/reading-time.min.js"></script>
+<script>
+  const text = []
+  let content = [...document.getElementById('content').getElementsByTagName('p')].forEach((elem) => {
+    text.push(elem.textContent)
+  });
+  const stats = readingTime(text.join(" "));
+
+  document.getElementById('reading-time').innerHTML = stats.text;
+</script>
+
+
+  
+      <!-- Google Tag Manager (noscript) -->
+
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TZRGMQ9"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+  
+
+</body>
+
+</html>

@@ -1,0 +1,393 @@
+<!-- Base template of the article page. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+  
+
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="https://d1iq6qzgppjlud.cloudfront.net/images/favicon/favicon-196x196.png">
+
+
+  <!-- Primary Meta Tags -->
+  <title>Docsie.io Blog - Termékkövetelmény-dokumentum 101: Útmutató a nagyszerű PRD-k írásához</title>
+  <meta name="author" content="Tanya A Mishra"/>
+  <meta name="title" content="Termékkövetelmény-dokumentum 101: Útmutató a nagyszerű PRD-k írásához">
+  <meta name="description" content="A termékkövetelmények dokumentumai a termékek gerincét alkotják. Az alábbiakban egy teljes útmutatót olvashat arról, hogyan készítsen termékkövetelmény-dokumentumot, különös tekintettel a Docsie-ra."/>
+  <meta name="keywords" content="AI,Műszaki írás,Termékkövetelmények dokumentum"/>
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.docsie.io/blog/blog/hu/articles/product-requirements-document-101-your-guide-to-writing-great-prds/">
+  <meta property="og:title" content="Termékkövetelmény-dokumentum 101: Útmutató a nagyszerű PRD-k írásához">
+  <meta property="og:description"
+        content="A termékkövetelmények dokumentumai a termékek gerincét alkotják. Az alábbiakban egy teljes útmutatót olvashat arról, hogyan készítsen termékkövetelmény-dokumentumot, különös tekintettel a Docsie-ra.">
+  <meta property="og:image" content="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_cBiHkLABfALD3xmNp/banner_49_fab6d5dd-faba-70d3-be1a-b8fcf1ff4c6b.jpg">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://www.docsie.io/blog/blog/hu/articles/product-requirements-document-101-your-guide-to-writing-great-prds/">
+  <meta property="twitter:title" content="Termékkövetelmény-dokumentum 101: Útmutató a nagyszerű PRD-k írásához">
+  <meta property="twitter:description"
+        content="A termékkövetelmények dokumentumai a termékek gerincét alkotják. Az alábbiakban egy teljes útmutatót olvashat arról, hogyan készítsen termékkövetelmény-dokumentumot, különös tekintettel a Docsie-ra.">
+  <meta property="twitter:image" content="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_cBiHkLABfALD3xmNp/banner_49_fab6d5dd-faba-70d3-be1a-b8fcf1ff4c6b.jpg">
+
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/blog/templates/assets/css/typography.min.css"/>
+  <!--Replace with your tailwind.css once created-->
+    
+    <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TZRGMQ9');</script>
+<!-- End Google Tag Manager -->
+  
+
+</head>
+
+
+<body class="bg-gray-100 font-sans leading-normal tracking-normal">
+
+<nav id="header" class="fixed w-full z-10 top-0">
+
+  <div id="progress" class="h-1 z-20 top-0"
+       style="background:linear-gradient(to right, #4dc0b5 var(--scroll), transparent 0);"></div>
+
+  <div class="container max-w-6xl mx-auto flex flex-wrap items-center justify-between mt-0 py-3">
+
+    <div class="pl-4">
+      <a class="text-gray-900 text-base no-underline hover:no-underline font-extrabold text-xl" href="../../">
+          Docsie.io Blog
+      </a>
+    </div>
+
+    <div class="block lg:hidden pr-4">
+      <button id="nav-toggle"
+              class="flex items-center px-3 py-2 border rounded text-gray-500 border-gray-600 hover:text-gray-900 hover:border-green-500 appearance-none focus:outline-none">
+        <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+          <title>Menu</title>
+          <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/>
+        </svg>
+      </button>
+    </div>
+
+    <div class="w-full flex-grow lg:flex lg:items-center lg:w-auto hidden lg:block mt-2 lg:mt-0 bg-gray-100 z-20"
+         id="nav-content">
+      <ul class="list-reset lg:flex justify-end flex-1 items-center">
+        
+        <li>
+          <a class="inline-block text-gray-600 hover:text-gray-900 hover:underline py-2 px-4"
+             href="https://www.docsie.io">Docsie</a>
+        </li>
+        
+        <li>
+          <a class="inline-block text-gray-600 hover:text-gray-900 hover:underline py-2 px-4"
+             href="https://www.docsie.io/pricing/">Docsie Pricing</a>
+        </li>
+        
+        <li>
+          <a class="inline-block text-gray-600 hover:text-gray-900 hover:underline py-2 px-4"
+             href="https://www.docsie.io/try_docsie/">Try Docsie</a>
+        </li>
+        
+      </ul>
+    </div>
+    <div class="flex w-full justify-end content-center">
+        <a
+          class="inline-block text-gray-500 hover:text-green-500 hover:underline text-center h-10 p-2 md:h-auto md:p-4 avatar"
+          data-tippy-content="@twitter_handle" href="https://twitter.com/intent/tweet?url=#"
+          id="twitter">
+          <svg class="fill-current h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+            <path
+              d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"></path>
+          </svg>
+        </a>
+        <a
+          class="inline-block text-gray-500 hover:text-green-500 hover:underline text-center h-10 p-2 md:h-auto md:p-4 avatar"
+          data-tippy-content="#facebook_id" href="https://www.facebook.com/sharer/sharer.php?u=#}"
+          id="facebook">
+          <svg class="fill-current h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+            <path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"></path>
+          </svg>
+        </a>
+      </div>
+  </div>
+
+</nav>
+
+<!--Container-->
+<div class="container max-w-4xl mx-auto mt-32 px-8 md:px-0">
+  <div class="prose prose lg:prose-xl mx-auto mt-32">
+    <!--Title-->
+    <h1 id="blog-title">Termékkövetelmény-dokumentum 101: Útmutató a nagyszerű PRD-k írásához</h1>
+    <!--Author-->
+    <div class="flex items-center">
+      <img class="w-10 h-10 rounded-full mr-4" src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_p1X4gXS3n0rCHYuaE/1f3f5f57-d8e2-7978-faef-0b9fe89f3e4btanya_pic.jpg" alt="Avatar of Author">
+      <div class="flex-1 px-2">
+        <div class="font-bold leading-none mb-2">Tanya A Mishra</div>
+        <div class="text-xs md:text-base">on February 05, 2024 · <span id="reading-time"
+                class="block md:inline mt-2 md:mt-0"></span> · filed under <span
+          class="block md:inline mt-2 md:mt-0">
+						
+            <span class="rounded bg-green-500 text-white px-1 uppercase text-xs whitespace-nowrap md:text-sm">AI</span>
+						
+            <span class="rounded bg-green-500 text-white px-1 uppercase text-xs whitespace-nowrap md:text-sm">Műszaki írás</span>
+						
+            <span class="rounded bg-green-500 text-white px-1 uppercase text-xs whitespace-nowrap md:text-sm">Termékkövetelmények dokumentum</span>
+						
+					</span>
+        </div>
+      </div>
+    </div>
+    <!--/Author-->
+
+    <!--Post Content-->
+    <!--Lead Para-->
+    <div id="content">
+      <p>Minden termék egy ötlettel kezdődik, és azzal az erős szándékkal, hogy megoldjon egy sürgető problémát. Akár kezdő vállalkozó, akár tapasztalt üzletember vagy, világos elképzeléssel kell rendelkezned a termékedről, amelyet átadhatsz a kijelölt termékcsapatnak, hogy megépíthesse. Ez a cikk közelebbről megvizsgálja a termékkövetelmény-dokumentum különböző aspektusait, és betekintést nyújt abba, hogyan készítheti el a tökéletes dokumentumdefiníciót, hogy segítse a műszaki csapatát.</p>
+<h2>Mi az a termékkövetelmény-dokumentum?</h2>
+<p>Egyszerűen fogalmazva, ez egy részletes tervrajz a termék összes jellemzőjéről, tulajdonságáról és képességéről. Ezt általában megosztják a termékcsapatokkal, akik a termék általános tervezésén dolgoznak, és biztosítják, hogy az megfeleljen az eladó eredeti termékről alkotott elképzelésének. Amikor megosztja a PRD-t a fejlesztőcsapattal, a termékkel kapcsolatban álló valamennyi érintett személy jobban megérti a terméket, a leendő ügyfeleket, és azt, hogy az hogyan segíthet egy adott probléma megoldásában.</p>
+<p>A termékkövetelmény-dokumentum egy átfogó és alapvető fontosságú dokumentum. Egy szakértő által megfogalmazott dokumentum útmutatóként szolgál a szoftverkiadási folyamat során később elkészülő dokumentumok számára. A termékmenedzserek általában egy sablont követnek, és feljegyzik a várható projekt konkrét részleteit, mielőtt a csapat elkezdene dolgozni a projekten.</p>
+<p>Ha Ön projektmenedzser, vagy jelenleg egy új termékért felelős, és azon gondolkodik, hogyan készítsen termékkövetelmény-dokumentumot, örömmel fogja tudni, hogy<a href="https://www.docsie.io/discovery_call/"> </a><a href="https://www.docsie.io/discovery_call/">Docsie</a> egy speciális dokumentumkészítő eszköz, amellyel felvázolhatja a termék részleteit, és megoszthatja azt a csapattagokkal és az összes külső érdekelt féllel.</p>
+<h2>A termékkövetelmények dokumentumának előnyei</h2>
+<p><img alt="A termékkövetelmények dokumentumának előnyei" src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_w0x51VQJqlm6MGO4B/image4.png" /></p>
+<p>Mielőtt elkezdene dolgozni egy új terméken vagy egy meglévő termék javításán, készítsen egy részletes PRD-t, amelyben megosztja a projekt jövőképét és küldetését. A célpiac felvázolásától a vevői követelmények megemlítéséig - a PRD megkönnyíti a zökkenőmentes együttműködést az összes érintett csapat között, és növeli a termék sikerét. Mielőtt azonban belemerülnénk abba, hogyan kell elkészíteni egy termékkövetelmény-dokumentumot, tekintsünk át néhány profi tudnivalót, hogy teljes mértékben megértsük a PRD jelentését és értékeit:</p>
+<hr />
+<table>
+<thead>
+<tr>
+<th>Előnyök</th>
+<th>Hogyan segít</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A PRD megosztja a termék magas szintű célkitűzéseit, és részletes utasításokat ad az összes csapat számára a projekt határidejével és a munkaterületekkel együtt.</td>
+<td></td>
+</tr>
+<tr>
+<td>Segít a sikeres együttműködésben</td>
+<td>Ha minden érdekelt fél átnézi a PRD-t, jobban megértik a projektet, a szerepüket és a teljesítményükkel kapcsolatos elvárásokat.</td>
+</tr>
+<tr>
+<td>Tisztázza a hatóköröket</td>
+<td>A PRD-k tartalmazzák a termék jellemzőit és funkcióit, valamint a hatókörön kívül eső dolgokat. Ez segít csökkenteni a kétértelműségeket, és pozitív munkakörnyezetet teremt.</td>
+</tr>
+<tr>
+<td>Zökkenőmentes együttműködést biztosít</td>
+<td>A hatékony PRD egy kiváló dokumentum, amely több csapat sikeres együttműködésének eredményeként jön létre. Ennek eredményeképpen minden részleg számára a középpontba kerül.</td>
+</tr>
+<tr>
+<td>Az ügyfelet helyezi a középpontba</td>
+<td>A PRD a jó piackutatás és a mélyreható elemzés következménye. A PRD elkészítése során a termékmenedzserek gyakran figyelembe veszik a végfelhasználók szempontjait.</td>
+</tr>
+<tr>
+<td><strong> </strong></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2>Hogyan kell termékkövetelmény-dokumentumot írni?</h2>
+<p>Gondban van azzal, hogyan készítsen termékkövetelmény-dokumentumot? Dobja el minden aggodalmát, mivel itt megosztunk néhány egyszerű lépést, amelyet követhet a termékdokumentáció elkészítéséhez.</p>
+<p><img alt="Hogyan írjunk termékkövetelmény-dokumentumot" src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_kA2rByOmXxWvbOet8/image5.png" /></p>
+<h3>1. Ossza meg a termék célját:</h3>
+<p>Győződjön meg róla, hogy a PRD megemlíti azokat a problémákat, amelyeket a termékével kezel és megold. Foglalja össze azokat az okokat, amelyek miatt létrehozza a terméket. Kezdje azzal, hogy milyen okokat képes megoldani, és beszéljen arról, hogy miért fontos a probléma, és milyen előnyökkel járhat a végfelhasználók számára.</p>
+<h3>2. Beszélje meg a termék jellemzőit:</h3>
+<p>Írja le az összes olyan jellemzőt, amely egyedivé teszi a termékét. Adjon mindegyikhez leírást, valamint egy célkitűzést és egy konkrét felhasználási esetet. Tartsa rövidre a tartalmat, de tegye magával ragadóvá és könnyen érthetővé, sok vizuális segédanyag használatával, hogy közvetítse a projektről alkotott elképzelését.</p>
+<h3>3. Határozzon meg durva határidőket:</h3>
+<p>Állítson fel egy konkrét ütemtervet, és ossza meg azt a projekt összes érintettjével, hogy ennek megfelelően tudják megtervezni a munkájukat. Segítsen mindenkinek nyomon követni az előrehaladást, és határozzon meg elvárásokat a kulcsfontosságú mérföldkövek eléréséhez.</p>
+<h3>4. Határozza meg a sikerességi mérőszámokat:</h3>
+<p>A termékkövetelmény-dokumentum megírásának fontos része a siker értékelése és mérése. Határozza meg tehát a sikeresség mérőszámait, tűzzön ki mérhető célokat, és azt, hogy hogyan követné azokat.</p>
+<h3>5:</h3>
+<p>Vannak-e olyan előfeltételek, amelyeknek a termékének a kiadás előtt meg kell felelnie? Vázolja fel a termék minimális funkcionalitását, tisztázza a felhasználói tesztelés terjedelmét, és sorolja fel a kiadási kritériumokat, hogy felhasználóbarát terméket hozhasson létre.</p>
+<h2>Hasznos tippek a termékkövetelmény-dokumentum megírásához</h2>
+<p><img alt="Hasznos tippek a termékkövetelmények dokumentumának megírásához" src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_8qxdhLqT5afunlR0R/image6.png" /></p>
+<p>Sok vita folyik arról, hogy mit tartalmazzon és mit ne tartalmazzon egy tipikus PRD sablon. Noha nincsenek szigorú szabályok vagy stratégiák a PRD megírására, van néhány olyan elem, amely szerepel az ilyen dokumentumokban. Ezek a következők:</p>
+<h3>Cél:</h3>
+<p>Ne csak a projekt céljáról beszéljen, hanem a termék hátteréről is. Miért akarod legyártani, és milyen problémát old meg? Győződjön meg róla, hogy a PRD-je választ ad ezekre a kérdésekre.</p>
+<h3>Jellemzők:</h3>
+<p>Vegye sorra a termékének minden egyes jellemzőjét, és tárgyalja meg, hogyan egyszerűsíti vagy könnyíti meg a végfelhasználók életét. Emelje ki a felhasználási eseteket, és szükség esetén ossza meg a további fontos részleteket.</p>
+<h3>Rendszerkövetelmények:</h3>
+<p>A termék kiadása előtt világos elképzeléssel kell rendelkeznie arról, hogy milyen végfelhasználói környezetet igényel a termék. Az operációs rendszerektől és böngészőktől kezdve a memórián át az eszköz feldolgozási teljesítményéig - vázolja fel a támogatott környezeteket.</p>
+<h3>Feltételezések és akadályok:</h3>
+<p>A <strong>termékkövetelmény-dokumentum</strong> elkészítésének útja során fontos, hogy beszéljen a megvalósítási óvintézkedésekről is. Sorolja fel, hogy vannak-e a megvalósításnak korlátai. Van-e valami, amire a termék bevezetése során figyelni kell, vagy vannak-e további elemek, amelyek szükségesek a termék funkcionalitásához? Mindezeket említse meg a tervezetében.</p>
+<h2>Docsie - Az Ön végső dokumentációs partnere</h2>
+<p>Ha megbízható szoftvert keres, amely minden dokumentációs igényét kielégíti - a Docsie bemutatása - az egyszerű, megfizethető és zökkenőmentes dokumentáció egyablakos megoldása. Üdvözöljük<a href="https://www.docsie.io/pricing/"> </a><a href="https://www.docsie.io/pricing/">Docsie</a> a munkafolyamataiban, és hozzon létre egyszerűsített módokat a termékkövetelmény-dokumentum elkészítéséhez, karbantartásához, megosztásához és szerkesztéséhez.</p>
+<p><img alt="Docsie - az Ön végső dokumentációs partnere" src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_joL0V459OFZbwg1kd/image1.png" /></p>
+<p>A Docsie olyan hatékony és lenyűgöző funkcióival, mint a verziókezelés, nyelvkezelés, AI nyelvi fordítás stb. segítségével több Termékkövetelmény-dokumentumon dolgozhat, és hatékonyan közvetítheti terméke használhatóságát, fontosságát és értékét. Tehát, amikor legközelebb azon aggódik, hogyan készítsen termékkövetelmény-dokumentumot, integrálja<a href="https://help.docsie.io/"> </a><a href="https://help.docsie.io/">Docsie</a> a rendszerébe, és javítsa a dokumentációs folyamatot.</p>
+<p><img alt="Docsie - Az Ön végső dokumentációs partnere 2" src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_Tg8Lrd0bTCQFs302g/image3.png" /></p>
+<h2>Záró gondolatok</h2>
+<p>A PRD jelentős pozíciót foglal el, mint az egyik legfontosabb üzleti követelménydokumentum. Jó struktúrát ad a termékkel kapcsolatos teljes projektnek, és felkészíti a terméket a jó bevezetésre. Egy tipikus termékkövetelmény-dokumentum példa azonban nyitott a rugalmasságra - ami azt jelenti, hogy minden tagja hozzáférhet a dokumentumhoz, és elvégezheti a szükséges változtatásokat a termék vagy a felhasználói élmény javítása érdekében. Ha megbízható szoftvert keres, hogy elkezdje a termékkövetelmény-dokumentum készítésének folyamatát, válassza<a href="https://app.docsie.io/login/#/"> </a><a href="https://app.docsie.io/login/#/">Docsie</a> mint együttműködő partnert, és készüljön fel a könnyed dokumentálásra.</p>
+    </div>
+  </div>
+  <!--/ Post Content-->
+
+  <!--Divider-->
+  <hr class="border-b-1 border-gray-400 mt-12 mb-8 mx-4">
+
+  <!--Next & Prev Links-->
+  <div class="font-sans flex justify-between content-center px-4 mb-4">
+    <div class="text-left">
+      <span class="text-xs md:text-sm font-normal text-gray-600">&lt; Previous Post</span><br>
+      <p><a href="../how-technical-writer-can-create-10x-more-content-with-docsieai" class="break-normal text-base md:text-sm text-green-500 font-bold no-underline hover:underline">Hogyan hozhat létre 10X több tartalmat a DocsieAI segítségével a műszaki író?</a></p>
+    </div>
+    <div class="text-right">
+      <span class="text-xs md:text-sm font-normal text-gray-600">Next Post &gt;</span><br>
+      <p><a href="../how-to-write-effective-technical-documentation-in-2024" class="break-normal text-base md:text-sm text-green-500 font-bold no-underline hover:underline">Hogyan írjunk hatékony műszaki dokumentációt 2024-ben?</a></p>
+    </div>
+  </div>
+
+
+  <!--/Next & Prev Links-->
+
+  
+    <div class="commentbox"></div>
+
+    <script src="https://unpkg.com/commentbox.io/dist/commentBox.min.js"></script>
+    <script>commentBox("5725910686760960-proj")</script>
+  
+
+
+  <!--Subscribe-->
+  
+  <!-- /Subscribe-->
+</div>
+<!--/container-->
+
+<footer class="bg-gray-900">
+  <div class="container max-w-6xl mx-auto flex items-center px-2 py-8">
+
+    <div class="w-full mx-auto flex flex-wrap items-center">
+      <div class="flex w-full md:w-1/2 justify-center md:justify-start text-white font-extrabold flex-col">
+        <a class="text-gray-900 no-underline hover:text-gray-900 hover:no-underline" href="/blog/hu">
+          <span class="text-base text-gray-200">Docsie.io Blog</span>
+        </a>
+        <a class="text-gray-900 no-underline hover:text-gray-900 hover:no-underline"
+           href="https://github.com/LikaloLLC/BlogVi" target="_blank">
+          <span class="text-xs text-gray-200">Made with BlogVI</span>
+        </a>
+      </div>
+      <div class="flex w-full pt-2 content-center justify-between md:w-1/2 md:justify-end">
+        <ul class="list-reset flex justify-center flex-1 md:flex-none items-center">
+          
+            <li>
+              <a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-3"
+                 href="https://www.docsie.io">Docsie</a>
+            </li>
+          
+            <li>
+              <a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-3"
+                 href="https://www.docsie.io/pricing/">Docsie Pricing</a>
+            </li>
+          
+            <li>
+              <a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-3"
+                 href="https://www.docsie.io/try_docsie/">Try Docsie</a>
+            </li>
+          
+        </ul>
+      </div>
+    </div>
+
+
+  </div>
+</footer>
+
+<script>
+  /* Progress bar */
+  //Source: https://alligator.io/js/progress-bar-javascript-css-variables/
+  var h = document.documentElement,
+    b = document.body,
+    st = 'scrollTop',
+    sh = 'scrollHeight',
+    progress = document.querySelector('#progress'),
+    scroll;
+  var scrollpos = window.scrollY;
+  var header = document.getElementById("header");
+  var navcontent = document.getElementById("nav-content");
+
+  document.addEventListener('scroll', function () {
+
+    /*Refresh scroll % width*/
+    scroll = (h[st] || b[st]) / ((h[sh] || b[sh]) - h.clientHeight) * 100;
+    progress.style.setProperty('--scroll', scroll + '%');
+
+    /*Apply classes for slide in bar*/
+    scrollpos = window.scrollY;
+
+    if (scrollpos > 10) {
+      header.classList.add("bg-white");
+      header.classList.add("shadow");
+      navcontent.classList.remove("bg-gray-100");
+      navcontent.classList.add("bg-white");
+    } else {
+      header.classList.remove("bg-white");
+      header.classList.remove("shadow");
+      navcontent.classList.remove("bg-white");
+      navcontent.classList.add("bg-gray-100");
+
+    }
+
+  });
+
+
+  //Javascript to toggle the menu
+  document.getElementById('nav-toggle').onclick = function () {
+    document.getElementById("nav-content").classList.toggle("hidden");
+  }
+</script>
+<script>
+  /*
+    Twitter
+    https://twitter.com/share?url=[post-url]&text=[post-title]
+
+    Facebook
+    https://www.facebook.com/sharer.php?u=[post-url]
+
+  */
+  let twitterURI = document.getElementById('twitter');
+  let facebookURI = document.getElementById('facebook');
+
+  let postURI = encodeURI(document.location.href);
+  let postTitle = encodeURI(document.getElementById('blog-title').innerText + ":\n")
+
+  facebookURI.setAttribute('href', `https://www.facebook.com/sharer.php?u=${postURI}`);
+  twitterURI.setAttribute('href', `https://twitter.com/share?url=${postURI}&text=${postTitle}`);
+</script>
+
+<!--Sharect-->
+
+<script src="https://unpkg.com/sharect@2.0.0/dist/sharect.js"></script>
+<script>window["sharectConfig"] = {"backgroundColor": "#333333", "enabled": true, "facebook": true, "iconColor": "#FFFFFF", "selectableElements": ["body"], "twitter": true, "twitterUsername": "likalo_llc"}</script>
+<script src="/blog/templates/assets/js/sharect.js"></script>
+
+
+
+<!--Reading time-->
+<script src="/blog/templates/assets/js/reading-time.min.js"></script>
+<script>
+  const text = []
+  let content = [...document.getElementById('content').getElementsByTagName('p')].forEach((elem) => {
+    text.push(elem.textContent)
+  });
+  const stats = readingTime(text.join(" "));
+
+  document.getElementById('reading-time').innerHTML = stats.text;
+</script>
+
+
+  
+      <!-- Google Tag Manager (noscript) -->
+
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TZRGMQ9"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+  
+
+</body>
+
+</html>

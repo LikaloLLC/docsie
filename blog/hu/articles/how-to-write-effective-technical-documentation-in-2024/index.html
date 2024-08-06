@@ -1,0 +1,397 @@
+<!-- Base template of the article page. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+  
+
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="https://d1iq6qzgppjlud.cloudfront.net/images/favicon/favicon-196x196.png">
+
+
+  <!-- Primary Meta Tags -->
+  <title>Docsie.io Blog - Hogyan írjunk hatékony műszaki dokumentációt 2024-ben?</title>
+  <meta name="author" content="Tanya A Mishra"/>
+  <meta name="title" content="Hogyan írjunk hatékony műszaki dokumentációt 2024-ben?">
+  <meta name="description" content="Ez a blog egy műszaki dokumentációs példán keresztül vezet végig minden olyan tudnivalón, amelyet a szoftverdokumentációs folyamathoz kapcsolódóan tudnia kell."/>
+  <meta name="keywords" content="Termék dokumentáció,AI,Műszaki írás"/>
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.docsie.io/blog/blog/hu/articles/how-to-write-effective-technical-documentation-in-2024/">
+  <meta property="og:title" content="Hogyan írjunk hatékony műszaki dokumentációt 2024-ben?">
+  <meta property="og:description"
+        content="Ez a blog egy műszaki dokumentációs példán keresztül vezet végig minden olyan tudnivalón, amelyet a szoftverdokumentációs folyamathoz kapcsolódóan tudnia kell.">
+  <meta property="og:image" content="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_VM2kZCRZZu70HssRx/banner_48_b812f255-bf12-1704-2c4a-489a7418971e.jpg">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://www.docsie.io/blog/blog/hu/articles/how-to-write-effective-technical-documentation-in-2024/">
+  <meta property="twitter:title" content="Hogyan írjunk hatékony műszaki dokumentációt 2024-ben?">
+  <meta property="twitter:description"
+        content="Ez a blog egy műszaki dokumentációs példán keresztül vezet végig minden olyan tudnivalón, amelyet a szoftverdokumentációs folyamathoz kapcsolódóan tudnia kell.">
+  <meta property="twitter:image" content="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_VM2kZCRZZu70HssRx/banner_48_b812f255-bf12-1704-2c4a-489a7418971e.jpg">
+
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/blog/templates/assets/css/typography.min.css"/>
+  <!--Replace with your tailwind.css once created-->
+    
+    <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TZRGMQ9');</script>
+<!-- End Google Tag Manager -->
+  
+
+</head>
+
+
+<body class="bg-gray-100 font-sans leading-normal tracking-normal">
+
+<nav id="header" class="fixed w-full z-10 top-0">
+
+  <div id="progress" class="h-1 z-20 top-0"
+       style="background:linear-gradient(to right, #4dc0b5 var(--scroll), transparent 0);"></div>
+
+  <div class="container max-w-6xl mx-auto flex flex-wrap items-center justify-between mt-0 py-3">
+
+    <div class="pl-4">
+      <a class="text-gray-900 text-base no-underline hover:no-underline font-extrabold text-xl" href="../../">
+          Docsie.io Blog
+      </a>
+    </div>
+
+    <div class="block lg:hidden pr-4">
+      <button id="nav-toggle"
+              class="flex items-center px-3 py-2 border rounded text-gray-500 border-gray-600 hover:text-gray-900 hover:border-green-500 appearance-none focus:outline-none">
+        <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+          <title>Menu</title>
+          <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/>
+        </svg>
+      </button>
+    </div>
+
+    <div class="w-full flex-grow lg:flex lg:items-center lg:w-auto hidden lg:block mt-2 lg:mt-0 bg-gray-100 z-20"
+         id="nav-content">
+      <ul class="list-reset lg:flex justify-end flex-1 items-center">
+        
+        <li>
+          <a class="inline-block text-gray-600 hover:text-gray-900 hover:underline py-2 px-4"
+             href="https://www.docsie.io">Docsie</a>
+        </li>
+        
+        <li>
+          <a class="inline-block text-gray-600 hover:text-gray-900 hover:underline py-2 px-4"
+             href="https://www.docsie.io/pricing/">Docsie Pricing</a>
+        </li>
+        
+        <li>
+          <a class="inline-block text-gray-600 hover:text-gray-900 hover:underline py-2 px-4"
+             href="https://www.docsie.io/try_docsie/">Try Docsie</a>
+        </li>
+        
+      </ul>
+    </div>
+    <div class="flex w-full justify-end content-center">
+        <a
+          class="inline-block text-gray-500 hover:text-green-500 hover:underline text-center h-10 p-2 md:h-auto md:p-4 avatar"
+          data-tippy-content="@twitter_handle" href="https://twitter.com/intent/tweet?url=#"
+          id="twitter">
+          <svg class="fill-current h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+            <path
+              d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"></path>
+          </svg>
+        </a>
+        <a
+          class="inline-block text-gray-500 hover:text-green-500 hover:underline text-center h-10 p-2 md:h-auto md:p-4 avatar"
+          data-tippy-content="#facebook_id" href="https://www.facebook.com/sharer/sharer.php?u=#}"
+          id="facebook">
+          <svg class="fill-current h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+            <path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"></path>
+          </svg>
+        </a>
+      </div>
+  </div>
+
+</nav>
+
+<!--Container-->
+<div class="container max-w-4xl mx-auto mt-32 px-8 md:px-0">
+  <div class="prose prose lg:prose-xl mx-auto mt-32">
+    <!--Title-->
+    <h1 id="blog-title">Hogyan írjunk hatékony műszaki dokumentációt 2024-ben?</h1>
+    <!--Author-->
+    <div class="flex items-center">
+      <img class="w-10 h-10 rounded-full mr-4" src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_OGDco2MiXWhhNeIMc/banner_39_eca44851-07d5-b27c-6068-b26fc0e76026.jpg" alt="Avatar of Author">
+      <div class="flex-1 px-2">
+        <div class="font-bold leading-none mb-2">Tanya A Mishra</div>
+        <div class="text-xs md:text-base">on January 29, 2024 · <span id="reading-time"
+                class="block md:inline mt-2 md:mt-0"></span> · filed under <span
+          class="block md:inline mt-2 md:mt-0">
+						
+            <span class="rounded bg-green-500 text-white px-1 uppercase text-xs whitespace-nowrap md:text-sm">Termék dokumentáció</span>
+						
+            <span class="rounded bg-green-500 text-white px-1 uppercase text-xs whitespace-nowrap md:text-sm">AI</span>
+						
+            <span class="rounded bg-green-500 text-white px-1 uppercase text-xs whitespace-nowrap md:text-sm">Műszaki írás</span>
+						
+					</span>
+        </div>
+      </div>
+    </div>
+    <!--/Author-->
+
+    <!--Post Content-->
+    <!--Lead Para-->
+    <div id="content">
+      <p>Tudja, hogyan kell hatékony és könnyen érthető műszaki dokumentációt készíteni? Ha Ön fejlesztő, termékmenedzser, vagy akár saját vállalkozást vezet, akkor a műszaki és összetett információk felhasználók, alkalmazottak és ügyfelek számára történő lefordításának fontosságát a lényeget tekintve már ismeri.</p>
+<p>Ebben a blogban egy műszaki dokumentációs példán keresztül vezetjük végig mindazon, amit a szoftverdokumentáció folyamatával kapcsolatban tudni kell. Bemutatjuk továbbá a <a href="https://www.docsie.io/">Docsie</a>, egy fantasztikus felhasználói dokumentációs szoftvert, amely segíthet megszervezni a műszaki dokumentációs folyamatot, és egységes élményt nyújt a vállalat, valamint az ügyfelek dokumentálásában.</p>
+<h2>A hatékony műszaki dokumentáció fontossága</h2>
+<p>A műszaki dokumentáció a megfelelő kommunikáció gerince a digitális korban. Részletes információkat nyújt egy termék vagy rendszer megértéséhez, működtetéséhez és hibaelhárításához. Ez lehet felhasználói útmutatók, kézikönyvek, GYIK, útmutatók, oktatóanyagok, API-hivatkozások stb. formájában.</p>
+<p>A jó műszaki dokumentáció több mint egyszerű útmutató; javítja az általános felhasználói élményt. Nem csak ez, a jó műszaki dokumentáció a következő előnyök elérésében segíthet:</p>
+<h3>1. Növeli az ügyfelek elégedettségét és hűségét</h3>
+<p>Azzal, hogy részletes és teljes dokumentációt biztosít az ügyfelek számára, lehetőséget ad a gyors válaszadásra, anélkül, hogy növelné az ügyfelek frusztrációját. Ez segít megtartani az ügyfeleit.</p>
+<h3>2. Növeli az alkalmazottak termelékenységét és teljesítményét</h3>
+<p>A belső dokumentáció hatékonyabb létrehozása és rendszerezése segíthet abban, hogy alkalmazottai sokkal gyorsabban és könnyebben hozzáférjenek az információkhoz, így hatékonyabban tudnak dolgozni.</p>
+<h3>3. Csökkentse a támogatási költségeket és a munkaterhelést</h3>
+<p>Az önkiszolgáló dokumentáció biztosításával csökkentheti a támogatási kéréseket és a megoldásukra fordított időt, így pénzt és erőforrásokat takaríthat meg vállalkozása számára.</p>
+<h3>4. Fejlesztheti márkaképét és hírnevét</h3>
+<p>A jó dokumentáció kidolgozásával demonstrálhatja a szakértelem, a szakmaiság és a megbízhatóság szintjét, ami lehetővé teszi, hogy bizalmat és hitelességet alakítson ki ügyfelei és érdeklődői körében.</p>
+<p>Amint láthatja, a hatékony műszaki dokumentáció sablonja elengedhetetlen a termék vagy szolgáltatás sikeréhez. De hogyan készítse el? Melyek a műszaki dokumentum döntő szempontjai?</p>
+<h2>Mi a műszaki dokumentum 3 fő része?</h2>
+<p>Egy műszaki dokumentum jellemzően három fő részből áll: A bevezetésből, a törzsszövegből és a következtetésből. Ezeknek a részeknek különböző szerepük van, és különböző célokat szolgálnak, hogy ilyen elrendezésben íródjanak.</p>
+<h3>#1. Bevezetés</h3>
+<p>Egyrészt "a bevezetési folyamatot úgy tekintjük, mint az információ átadását a feladótól a címzetthez". Megadja a hátteret, a kontextust és a dokumentum célját, olyan számadatokat bemutatva, amelyek szinte mindenféle figyelmet megragadnak.</p>
+<h3>#2. Törzs/tartalom</h3>
+<p>A műszaki dokumentum legjelentősebb része a törzs. Alapos információkat és utasításokat nyújt arról, hogyan lehet a terméket vagy rendszert működtetni, és hogyan lehet a problémákat diagnosztizálni.</p>
+<h3>#3. Következtetés</h3>
+<p>Azt mondják, hogy a zárszó teszi az udvarlás második részét; ezért erős és döntő fontosságú, hogy örökre megmaradjon. Ez a dokumentumban jelzett főbb pontok és célkitűzések tömör újrafogalmazása - röviden, a megfelelő hangnemben fejeződik be; az olvasóknak a betetőzés érzését adja.</p>
+<h2>Hogyan kell műszaki dokumentumot írni?</h2>
+<p>Egy műszaki dokumentum megírása zavarosnak és ijesztőnek tűnhet, különösen, ha nem szokott hozzá a műszaki írás gyakorlásához.</p>
+<ul>
+<li>
+<p><strong>1. lépés:</strong> Tervezés és vázlatkészítés</p>
+</li>
+<li>
+<p><strong>2. lépés:</strong> A tartalom megfogalmazása</p>
+</li>
+<li>
+<p><strong>3. lépés:</strong> Átdolgozás és szerkesztés</p>
+</li>
+<li>
+<p><strong>4. lépés:</strong> Közzététel és megosztás</p>
+</li>
+<li>
+<p><strong>5. lépés:</strong> Frissítés és karbantartás</p>
+</li>
+</ul>
+<h2>Példa a hibátlan műszaki dokumentum megírására</h2>
+<p>A műszaki dokumentáció azokat a mélyreható ismereteket és adatokat jelöli, amelyek lehetővé teszik egy termék vagy rendszer beszerzését vagy használatát, sőt, az esetlegesen felmerülő problémák kijavítását is. Ez alatt érthetjük többek között a felhasználói útmutatókat, kézikönyveket, kérdés- és válaszlapokat egy adott téma vagy termék műszaki vonatkozásaira vonatkozóan. De hogyan lehet tökéletes műszaki dokumentumot írni? Ha mélyebb felfogásra vágyik, nézze meg ezt a <a href="https://www.docsie.io/blog/articles/how-to-write-clear-concise-user-manual-instructions/">blogot</a>. Íme egy példa a műszaki dokumentációra:</p>
+<h3>Egy ideális műszaki dokumentum drótváza</h3>
+<ol>
+<li>Bevezetés</li>
+</ol>
+<p>A tömör, de meggyőző bevezetés adja meg az alaphangot, gyors áttekintést nyújtva az API céljáról és funkcióiról.</p>
+<ol>
+<li>Kezdő lépések</li>
+</ol>
+<p>Ez a szakasz bemutatja, hogyan integrálhatja gyorsan az API-t a projektjeibe. A Docsie felhasználóbarát tervezési és vázlatkészítési funkcióit használhatja az információk logikus áramlásának biztosítására.</p>
+<ol>
+<li>API-hivatkozás</li>
+</ol>
+<p>A dokumentáció szíve, az API-referencia rész aprólékosan megszervezett a Docsie használatával. A platform funkcióit jól strukturált tartalom létrehozására használhatja, így könnyen megtalálhatja és megértheti az egyes végpontokat.</p>
+<ol>
+<li>Kódminták</li>
+</ol>
+<p>A Docsie markdown-szerkesztője leegyszerűsíti a kódminták beillesztését, és olyan gyakorlati példákat ad, amelyek javítják a megértést.</p>
+<ol>
+<li>Hibaelhárítás és GYIK</li>
+</ol>
+<p>Egy külön rész megoldja a gyakori problémákat és válaszol a kérdéseire, bemutatva a Docsie képességét a GYIK zökkenőmentes integrálására a dokumentációba.</p>
+<p>Itt egy új sor beillesztése...</p>
+<p>Ezután foglalkozzunk azokkal a funkciókkal, amelyeket a Docsie kínál az Ön aggodalmainak enyhítésére.</p>
+<h2>Hogyan segít a Docsie zökkenőmentesen létrehozni a műszaki dokumentációt?</h2>
+<p>A Docsie az egyik legjobb vállalati tudásbázis platform, amely lehetővé teszi számos önkiszolgáló tudásbázis létrehozását és elindítását. A Docsie számos olyan tulajdonságot mutat be, amelyek a műszaki dokumentációt egyszerűvé, hatékonnyá és szórakoztatóvá teszik. Íme néhány a Docsie által biztosított legfontosabb jellemzők közül:</p>
+<h3>#1. Egységes dokumentációs élmény</h3>
+<p>A Docsie egyablakos szolgáltatásként szolgál az összes <a href="https://site.docsie.io/enterprise-documentation">vállalati dokumentáció</a> igénye számára. Akár különböző termékekhez, verziókhoz, nyelvekhez vagy célközönséghez kell dokumentációt készítenie, a Docsie mindent tud. Azáltal, hogy az összes dokumentumot egy központi helyen konszolidálja, a Docsie racionalizálja a munkafolyamatokat, csökkentve a több eszközre és platformra való támaszkodást. A Docsie integrálható a meglévő eszközeivel és rendszereivel is, mint például <strong>GitHub, Slack, Zendesk</strong>, és így tovább, növelve a termelékenységet és a teljesítményt.</p>
+<h3>#2. Testreszabott dokumentációs központok</h3>
+<p>A Docsie műszaki dokumentációs szoftverrel testre szabott tudásportálokat, <a href="https://www.docsie.io/blog/articles/why-is-there-a-need-for-customization-in-documentation/">dokumentációs</a> hubokat vagy önkiszolgáló oldalakat hozhat létre, amelyek tükrözik márkája dizájnját, stílusát és hangját. Különböző sablonok, valamint témák állnak rendelkezésre, amelyek közül választhat, illetve létrehozhatja saját műszaki dokumentációs sablonját. Lehetősége lesz a domain vagy a logó láblécének testreszabására is, és még arra is képes, hogy bármilyen CSS vagy Javascript kódot megadjon. A Docsie által kínált tárhelyszolgáltatási lehetőségek között szerepel a nyilvános felhő, a privát felhő; vagy a helyben történő elhelyezés, ami önállóságot és biztonságot nyújt Önnek a dokumentumai tekintetében.</p>
+<h3>#3. Zökkenőmentes, biztonságos együttműködés</h3>
+<p>A Docsie világszerte működő csapatokkal való együttműködést elősegítő funkciói közé tartoznak a felhasználói szerepek, a hozzáférés-szabályozás és a letölthető csevegés. Ön és kollégái a <a href="https://app.docsie.io/onboarding/#/account">Docsie-fiók</a> ajánlatokon keresztül csatlakozhatnak az oktatási programhoz, ahol különböző szerepköröket, funkciókat és jogosultságokat állíthat be, például adminjogokat, szerkesztési, felülvizsgálati vagy csak figyelési jogosultságot. A dokumentumokat a többi munkatársaddal együtt, valós időben szerkesztheted, megjegyzéseket hagyva, feladatokat adva és a változásokat nyomon követve. A termékdokumentációs szoftver olyan eszközeivel, mint a JWT Token hitelesítés, az IAM RBAC, az SSL titkosítás és a GDPR-megfelelőség, biztonságos és bizalmas tárolást is biztosít az érzékeny anyagok számára.</p>
+<h2>Következtetés</h2>
+<p>A műszaki dokumentáció alapvető készség mindazok számára, akik összetett és technikai információkat szeretnének kommunikálni a felhasználók, alkalmazottak és ügyfelek számára. Azonban meglehetősen nagy kihívást jelenthet a hatékony műszaki dokumentáció időben történő elkészítése. Ezért van szüksége a Docsie-ra, a vezető vállalati tudásbázis-platformra, amely segít a sokrétű, önellátó tudásbázisok létrehozásában és kiadásában.</p>
+<p>Kérje a Docsie segítségét a vázlatkészítéshez, létrehozáshoz, megírásához, átdolgozáshoz és lektoráláshoz, valamint a dokumentációs folyamat zökkenőmentes és egyszerű befejezéséhez. A Docsie a csapattagokkal való együttműködésben, a dokumentáció testreszabásában, a dokumentáció minőségének ellenőrzésében és javításában is segítséget nyújt.</p>
+<p>Készen áll arra, hogy elkezdje a <a href="https://www.docsie.io/">Docsie</a> használatát? Regisztráljon még ma egy ingyenes próbaverzióra, és legyen tanúja a műszaki dokumentációs folyamat új fejlődésének.</p>
+    </div>
+  </div>
+  <!--/ Post Content-->
+
+  <!--Divider-->
+  <hr class="border-b-1 border-gray-400 mt-12 mb-8 mx-4">
+
+  <!--Next & Prev Links-->
+  <div class="font-sans flex justify-between content-center px-4 mb-4">
+    <div class="text-left">
+      <span class="text-xs md:text-sm font-normal text-gray-600">&lt; Previous Post</span><br>
+      <p><a href="../product-requirements-document-101-your-guide-to-writing-great-prds" class="break-normal text-base md:text-sm text-green-500 font-bold no-underline hover:underline">Termékkövetelmény-dokumentum 101: Útmutató a nagyszerű PRD-k írásához</a></p>
+    </div>
+    <div class="text-right">
+      <span class="text-xs md:text-sm font-normal text-gray-600">Next Post &gt;</span><br>
+      <p><a href="../what-is-product-knowledge-and-how-to-improve-it" class="break-normal text-base md:text-sm text-green-500 font-bold no-underline hover:underline">Mi a termékismeret és hogyan lehet javítani azt?</a></p>
+    </div>
+  </div>
+
+
+  <!--/Next & Prev Links-->
+
+  
+    <div class="commentbox"></div>
+
+    <script src="https://unpkg.com/commentbox.io/dist/commentBox.min.js"></script>
+    <script>commentBox("5725910686760960-proj")</script>
+  
+
+
+  <!--Subscribe-->
+  
+  <!-- /Subscribe-->
+</div>
+<!--/container-->
+
+<footer class="bg-gray-900">
+  <div class="container max-w-6xl mx-auto flex items-center px-2 py-8">
+
+    <div class="w-full mx-auto flex flex-wrap items-center">
+      <div class="flex w-full md:w-1/2 justify-center md:justify-start text-white font-extrabold flex-col">
+        <a class="text-gray-900 no-underline hover:text-gray-900 hover:no-underline" href="/blog/hu">
+          <span class="text-base text-gray-200">Docsie.io Blog</span>
+        </a>
+        <a class="text-gray-900 no-underline hover:text-gray-900 hover:no-underline"
+           href="https://github.com/LikaloLLC/BlogVi" target="_blank">
+          <span class="text-xs text-gray-200">Made with BlogVI</span>
+        </a>
+      </div>
+      <div class="flex w-full pt-2 content-center justify-between md:w-1/2 md:justify-end">
+        <ul class="list-reset flex justify-center flex-1 md:flex-none items-center">
+          
+            <li>
+              <a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-3"
+                 href="https://www.docsie.io">Docsie</a>
+            </li>
+          
+            <li>
+              <a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-3"
+                 href="https://www.docsie.io/pricing/">Docsie Pricing</a>
+            </li>
+          
+            <li>
+              <a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-3"
+                 href="https://www.docsie.io/try_docsie/">Try Docsie</a>
+            </li>
+          
+        </ul>
+      </div>
+    </div>
+
+
+  </div>
+</footer>
+
+<script>
+  /* Progress bar */
+  //Source: https://alligator.io/js/progress-bar-javascript-css-variables/
+  var h = document.documentElement,
+    b = document.body,
+    st = 'scrollTop',
+    sh = 'scrollHeight',
+    progress = document.querySelector('#progress'),
+    scroll;
+  var scrollpos = window.scrollY;
+  var header = document.getElementById("header");
+  var navcontent = document.getElementById("nav-content");
+
+  document.addEventListener('scroll', function () {
+
+    /*Refresh scroll % width*/
+    scroll = (h[st] || b[st]) / ((h[sh] || b[sh]) - h.clientHeight) * 100;
+    progress.style.setProperty('--scroll', scroll + '%');
+
+    /*Apply classes for slide in bar*/
+    scrollpos = window.scrollY;
+
+    if (scrollpos > 10) {
+      header.classList.add("bg-white");
+      header.classList.add("shadow");
+      navcontent.classList.remove("bg-gray-100");
+      navcontent.classList.add("bg-white");
+    } else {
+      header.classList.remove("bg-white");
+      header.classList.remove("shadow");
+      navcontent.classList.remove("bg-white");
+      navcontent.classList.add("bg-gray-100");
+
+    }
+
+  });
+
+
+  //Javascript to toggle the menu
+  document.getElementById('nav-toggle').onclick = function () {
+    document.getElementById("nav-content").classList.toggle("hidden");
+  }
+</script>
+<script>
+  /*
+    Twitter
+    https://twitter.com/share?url=[post-url]&text=[post-title]
+
+    Facebook
+    https://www.facebook.com/sharer.php?u=[post-url]
+
+  */
+  let twitterURI = document.getElementById('twitter');
+  let facebookURI = document.getElementById('facebook');
+
+  let postURI = encodeURI(document.location.href);
+  let postTitle = encodeURI(document.getElementById('blog-title').innerText + ":\n")
+
+  facebookURI.setAttribute('href', `https://www.facebook.com/sharer.php?u=${postURI}`);
+  twitterURI.setAttribute('href', `https://twitter.com/share?url=${postURI}&text=${postTitle}`);
+</script>
+
+<!--Sharect-->
+
+<script src="https://unpkg.com/sharect@2.0.0/dist/sharect.js"></script>
+<script>window["sharectConfig"] = {"backgroundColor": "#333333", "enabled": true, "facebook": true, "iconColor": "#FFFFFF", "selectableElements": ["body"], "twitter": true, "twitterUsername": "likalo_llc"}</script>
+<script src="/blog/templates/assets/js/sharect.js"></script>
+
+
+
+<!--Reading time-->
+<script src="/blog/templates/assets/js/reading-time.min.js"></script>
+<script>
+  const text = []
+  let content = [...document.getElementById('content').getElementsByTagName('p')].forEach((elem) => {
+    text.push(elem.textContent)
+  });
+  const stats = readingTime(text.join(" "));
+
+  document.getElementById('reading-time').innerHTML = stats.text;
+</script>
+
+
+  
+      <!-- Google Tag Manager (noscript) -->
+
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TZRGMQ9"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+  
+
+</body>
+
+</html>

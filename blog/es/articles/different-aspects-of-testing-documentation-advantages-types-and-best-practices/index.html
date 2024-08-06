@@ -1,0 +1,390 @@
+<!-- Base template of the article page. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+  
+
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="https://d1iq6qzgppjlud.cloudfront.net/images/favicon/favicon-196x196.png">
+
+
+  <!-- Primary Meta Tags -->
+  <title>Docsie.io Blog - Diferentes aspectos de la documentación de pruebas: ventajas, tipos y mejores prácticas</title>
+  <meta name="author" content="Tanya A Mishra"/>
+  <meta name="title" content="Diferentes aspectos de la documentación de pruebas: ventajas, tipos y mejores prácticas">
+  <meta name="description" content="Este Blog arroja luz sobre los múltiples beneficios de la documentación de pruebas, incluyendo una mención especial a algunos ejemplos de documentación de pruebas."/>
+  <meta name="keywords" content="AI,Documentación de pruebas"/>
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.docsie.io/blog/blog/es/articles/different-aspects-of-testing-documentation-advantages-types-and-best-practices/">
+  <meta property="og:title" content="Diferentes aspectos de la documentación de pruebas: ventajas, tipos y mejores prácticas">
+  <meta property="og:description"
+        content="Este Blog arroja luz sobre los múltiples beneficios de la documentación de pruebas, incluyendo una mención especial a algunos ejemplos de documentación de pruebas.">
+  <meta property="og:image" content="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_E9huzHUdPx4vMtxpj/2761d2f9-c0dd-c27d-f383-680573d4f4fabanner_34.jpg">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://www.docsie.io/blog/blog/es/articles/different-aspects-of-testing-documentation-advantages-types-and-best-practices/">
+  <meta property="twitter:title" content="Diferentes aspectos de la documentación de pruebas: ventajas, tipos y mejores prácticas">
+  <meta property="twitter:description"
+        content="Este Blog arroja luz sobre los múltiples beneficios de la documentación de pruebas, incluyendo una mención especial a algunos ejemplos de documentación de pruebas.">
+  <meta property="twitter:image" content="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_E9huzHUdPx4vMtxpj/2761d2f9-c0dd-c27d-f383-680573d4f4fabanner_34.jpg">
+
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/blog/templates/assets/css/typography.min.css"/>
+  <!--Replace with your tailwind.css once created-->
+    
+    <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TZRGMQ9');</script>
+<!-- End Google Tag Manager -->
+  
+
+</head>
+
+
+<body class="bg-gray-100 font-sans leading-normal tracking-normal">
+
+<nav id="header" class="fixed w-full z-10 top-0">
+
+  <div id="progress" class="h-1 z-20 top-0"
+       style="background:linear-gradient(to right, #4dc0b5 var(--scroll), transparent 0);"></div>
+
+  <div class="container max-w-6xl mx-auto flex flex-wrap items-center justify-between mt-0 py-3">
+
+    <div class="pl-4">
+      <a class="text-gray-900 text-base no-underline hover:no-underline font-extrabold text-xl" href="../../">
+          Docsie.io Blog
+      </a>
+    </div>
+
+    <div class="block lg:hidden pr-4">
+      <button id="nav-toggle"
+              class="flex items-center px-3 py-2 border rounded text-gray-500 border-gray-600 hover:text-gray-900 hover:border-green-500 appearance-none focus:outline-none">
+        <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+          <title>Menu</title>
+          <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/>
+        </svg>
+      </button>
+    </div>
+
+    <div class="w-full flex-grow lg:flex lg:items-center lg:w-auto hidden lg:block mt-2 lg:mt-0 bg-gray-100 z-20"
+         id="nav-content">
+      <ul class="list-reset lg:flex justify-end flex-1 items-center">
+        
+        <li>
+          <a class="inline-block text-gray-600 hover:text-gray-900 hover:underline py-2 px-4"
+             href="https://www.docsie.io">Docsie</a>
+        </li>
+        
+        <li>
+          <a class="inline-block text-gray-600 hover:text-gray-900 hover:underline py-2 px-4"
+             href="https://www.docsie.io/pricing/">Docsie Pricing</a>
+        </li>
+        
+        <li>
+          <a class="inline-block text-gray-600 hover:text-gray-900 hover:underline py-2 px-4"
+             href="https://www.docsie.io/try_docsie/">Try Docsie</a>
+        </li>
+        
+      </ul>
+    </div>
+    <div class="flex w-full justify-end content-center">
+        <a
+          class="inline-block text-gray-500 hover:text-green-500 hover:underline text-center h-10 p-2 md:h-auto md:p-4 avatar"
+          data-tippy-content="@twitter_handle" href="https://twitter.com/intent/tweet?url=#"
+          id="twitter">
+          <svg class="fill-current h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+            <path
+              d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"></path>
+          </svg>
+        </a>
+        <a
+          class="inline-block text-gray-500 hover:text-green-500 hover:underline text-center h-10 p-2 md:h-auto md:p-4 avatar"
+          data-tippy-content="#facebook_id" href="https://www.facebook.com/sharer/sharer.php?u=#}"
+          id="facebook">
+          <svg class="fill-current h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+            <path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"></path>
+          </svg>
+        </a>
+      </div>
+  </div>
+
+</nav>
+
+<!--Container-->
+<div class="container max-w-4xl mx-auto mt-32 px-8 md:px-0">
+  <div class="prose prose lg:prose-xl mx-auto mt-32">
+    <!--Title-->
+    <h1 id="blog-title">Diferentes aspectos de la documentación de pruebas: ventajas, tipos y mejores prácticas</h1>
+    <!--Author-->
+    <div class="flex items-center">
+      <img class="w-10 h-10 rounded-full mr-4" src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_p1X4gXS3n0rCHYuaE/1f3f5f57-d8e2-7978-faef-0b9fe89f3e4btanya_pic.jpg" alt="Avatar of Author">
+      <div class="flex-1 px-2">
+        <div class="font-bold leading-none mb-2">Tanya A Mishra</div>
+        <div class="text-xs md:text-base">on November 16, 2023 · <span id="reading-time"
+                class="block md:inline mt-2 md:mt-0"></span> · filed under <span
+          class="block md:inline mt-2 md:mt-0">
+						
+            <span class="rounded bg-green-500 text-white px-1 uppercase text-xs whitespace-nowrap md:text-sm">AI</span>
+						
+            <span class="rounded bg-green-500 text-white px-1 uppercase text-xs whitespace-nowrap md:text-sm">Documentación de pruebas</span>
+						
+					</span>
+        </div>
+      </div>
+    </div>
+    <!--/Author-->
+
+    <!--Post Content-->
+    <!--Lead Para-->
+    <div id="content">
+      <p>¿Sabe que las conexiones IoT mundiales podrían alcanzar la cifra de 29 400 millones en 2030?</p>
+<p>Según el <a href="https://transformainsights.com/research/reports/global-iot-forecast-report-2032">Global IoT Forecast Report, 2021-2030</a> de Transforma Insights, el tamaño del mercado IoT está listo para crecer y desarrollarse, obteniendo más ingresos para el mundo tecnológico.</p>
+<p>Para garantizar altos niveles de eficacia en las pruebas de software, la documentación de pruebas comparte los objetivos, procesos y resultados esperados de las pruebas de software. Este documento arroja luz sobre los múltiples beneficios de la documentación de pruebas, incluyendo una mención especial a algunos ejemplos de documentación de pruebas. Como extra, este artículo también comparte las mejores prácticas para la documentación de pruebas.</p>
+<p>https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_1UH7JeOUnUhqkHti3/image5.png</p>
+<h2>¿Qué es la documentación de pruebas?</h2>
+<p>Las pruebas de software son un asunto cotidiano en la vida de los diseñadores de productos, probadores e ingenieros de software. La documentación de pruebas hace referencia a la creación de documentos relacionados con las pruebas de software. Estos documentos se elaboran cuando se desarrollan y mantienen productos de software. Los escritores técnicos escriben estos documentos utilizando las mejores prácticas para la documentación de pruebas para registrar los planes y el progreso de las diferentes fases de las pruebas de software.</p>
+<p>Cuando se trata de optimizar el proceso de pruebas, la documentación de pruebas ayuda a los equipos a crear un plan completo para el diseño de software, la implementación de pruebas y el mantenimiento de registros.</p>
+<p>Cuando se mantiene un documento de pruebas, se pueden anotar los detalles de todos los planes de pruebas de software, incluidos los propietarios del producto y los miembros del equipo. Le ayuda a crear el entorno de pruebas para que otros equipos o empleados puedan reutilizar la información y utilizarla como referencia para casos futuros.</p>
+<p>Si nos fijamos en los diferentes ejemplos de documentación de pruebas, podemos observar que estos informes detallados comparten más información sobre los procesos de pruebas. También desempeñan un papel importante a la hora de mantener informadas a todas las partes interesadas sobre el progreso de las pruebas. La documentación también permite a los evaluadores analizar la eficacia de los procedimientos de evaluación, lo que les ayuda a optimizar aún más las prácticas de evaluación.</p>
+<p>Varias plataformas de documentación de pruebas ayudan a los usuarios a crear documentos relacionados con las distintas fases de las pruebas. Si está buscando una plataforma de este tipo, utilice <a href="https://www.docsie.io/pricing/">Docsie</a> como su socio de software de confianza y cree documentos de forma fácil y divertida.</p>
+<p><img alt="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_2QAlE7tO9d0ePWDEX/image6.png" src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_2QAlE7tO9d0ePWDEX/image6.png" /></p>
+<h2>Ventajas de probar la documentación</h2>
+<p>La importancia de la documentación de pruebas radica en la cantidad de ventajas que conlleva. Los ejemplos de documentación de pruebas muestran las ventajas de todo el proceso de documentación. Con plataformas de documentación como <a href="https://help.docsie.io/">Docsie</a>, puede crear documentos de prueba de forma eficaz. He aquí un resumen de las principales ventajas de la documentación de pruebas:</p>
+<p>Mejora la experiencia del usuario y proporciona información detallada y precisa sobre el producto.</p>
+<p>Mejora la colaboración y anima a todos los miembros del equipo a trabajar por un objetivo común y compartido.</p>
+<p>Proporciona un enfoque sistemático de las pruebas y actúa como material de consulta para principiantes en software.</p>
+<p>Ayuda a crear un producto sin errores en un plazo estipulado.</p>
+<p>Ayuda al equipo de control de calidad a adquirir conocimientos sobre la configuración necesaria para las pruebas.</p>
+<p>https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_61Vmm2FsSScSByIse/image1.png</p>
+<h2>Tipos de pruebas Documentación</h2>
+<p>En el mundo actual, en el que utilizamos productos de software para casi todo, crear documentación de garantía de calidad es muy importante. Con socios de documentación adecuados como <a href="https://app.docsie.io/login/#/">Docsie</a>, las empresas de software pueden mantener informadas a las partes interesadas sobre el progreso de sus proyectos y ayudar a los usuarios finales a comprender la idoneidad del producto en cuestión. Para comprender plenamente las ventajas de la documentación de pruebas, veamos algunos ejemplos de pruebas en el mundo real.</p>
+<h3>Estrategia de pruebas:</h3>
+<p>Un documento de alto nivel, que describe la técnica de prueba, el módulo probado y sus múltiples componentes, incluidos los procesos de prueba, los objetivos de la prueba, los formatos de la documentación, la estrategia de comunicación con el cliente, etc.</p>
+<h3>Plan de pruebas:</h3>
+<p>Generalmente preparado por el gestor o jefe de pruebas, este documento de planificación tiene múltiples componentes como alcance, riesgos, enfoques, recursos, seguimiento de defectos, hipótesis, etc.</p>
+<h3>Documentación de casos de prueba:</h3>
+<p>Es un documento descriptivo en el que se describen los pasos de las pruebas y se incluye información detallada sobre el resultado preferido y los resultados reales de las pruebas.</p>
+<h3>Escenario de prueba:</h3>
+<p>Proporciona información sobre los distintos escenarios de prueba de la aplicación. No incluye los pasos de navegación ni los datos de entrada, pero ayuda a los ingenieros a comprender el flujo gradual de la aplicación.</p>
+<h3>Datos de prueba:</h3>
+<p>Los redactores técnicos suelen crear este documento antes de que comience la ejecución de las pruebas. Preparado en Excel manualmente, este documento registra los datos que se utilizan cuando se ejecutan los casos de prueba.</p>
+<h3>Informe de errores:</h3>
+<p>En él se registran los defectos del sistema de software y también se ofrecen soluciones sobre cómo depurar el producto. Es el contenido de referencia para todo tipo de problemas: abiertos, resueltos o en curso.</p>
+<h3>Política de pruebas:</h3>
+<p>Todas las empresas de software siguen ciertos principios y métodos como directrices para sus pruebas. Este documento arroja luz sobre ellos y cómo se alinean con los objetivos generales de pruebas de la empresa.</p>
+<h3>Resumen de las pruebas:</h3>
+<p>Proporciona información detallada sobre las actividades y los resultados finales de las pruebas. Desde la ejecución de la prueba hasta el despliegue final, registra información sobre todas las fases de la prueba.</p>
+<p>https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_WE3E6bbchQBrQLE8Y/image4.png</p>
+<h2>¿Cuáles son las mejores prácticas para la Documentación de Pruebas?</h2>
+<p>No basta con redactar el contenido. Los usuarios finales deben entender la documentación y obtener algunas conclusiones clave del proceso. Siguiendo las mejores prácticas para probar la documentación, puede crear un documento orientado al cliente y mejorar la experiencia general del usuario.</p>
+<p>Áreas</p>
+<p>Importancia</p>
+<p>Actualización periódica</p>
+<p>Todo lo que no se actualiza con regularidad está destinado a perder su relevancia e importancia. Los productos de software son dinámicos. En consonancia con ello, modifique su documentación de pruebas para que refleje los cambios más recientes en las fases de prueba.</p>
+<p>Control de versiones</p>
+<p>Adhiérase a un sistema que le ayude a supervisar los cambios realizados en su documentación. Implemente el control de versiones para saber quién ha editado su documentación y cuándo.</p>
+<p>Utilice una única fuente</p>
+<p>Cree y almacene su documentación en un único lugar para que los miembros de su equipo puedan acceder a ella y utilizarla fácilmente. Utilice una única base de conocimientos como fuente de la verdad para eliminar el tiempo innecesario dedicado a buscar la información correcta.</p>
+<p>Proteja la información confidencial</p>
+<p>Esta es quizás una de las mejores prácticas de desarrollo de software más importantes, que incluye mantener la documentación privada y permitir que sólo un grupo de personas acceda a ella y realice cambios. Garantice altos niveles de seguridad y tenga especial cuidado para que ningún equipo o miembro no deseado pueda acceder a información valiosa sobre su producto.</p>
+<p>Forme a los miembros del equipo</p>
+<p>Proporcione una formación completa a los miembros de su equipo para que todos comprendan el contenido y el uso de su proceso de documentación. Trabaje en equipo con el departamento de control de calidad e involúcrelos en el proyecto de creación de documentación.</p>
+<p>Mantenga una guía de estilo</p>
+<p>Cree y siga una guía de estilo para garantizar la coherencia del proceso de documentación. Cuando se sigue un conjunto estandarizado de directrices, se puede establecer el tono y enmarcar un tono coherente para toda la extensión de los documentos.</p>
+<p>Disponga de plantillas normalizadas</p>
+<p>Utilice plantillas de contenido para presentar su documentación de forma profesional. Desde añadir elementos visuales hasta incluir ejemplos y ejercicios, tenga un formato establecido para que todos sus documentos parezcan coherentes en su estructura y formato.</p>
+<p>https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_8qNmHqxKlNzMiF344/image2.png</p>
+<h2>Preguntas frecuentes</h2>
+<h3>1. 1. ¿Qué es la documentación de pruebas?</h3>
+<p>Es un contenido que ayuda a los encargados de las pruebas de software, a los diseñadores de productos y a los ingenieros a anotar todos los procesos y sistemas que tienen lugar durante el procedimiento de prueba y desarrollo del software. Esta documentación incluye artefactos que ayudan al equipo de pruebas de software a planificar la estrategia del equipo, evaluar los esfuerzos de las pruebas y supervisar los requisitos del proyecto.</p>
+<h3>2. ¿Cuáles son las principales ventajas de la documentación de pruebas?</h3>
+<p>Elimina ambigüedades y aporta claridad a las actividades de prueba.</p>
+<p>Ofrece un enfoque racionalizado y sistemático del procedimiento de pruebas y sirve de recurso para formar a los principiantes en el proceso de pruebas.</p>
+<p>Desglosa todo el procedimiento de pruebas y muestra cada aspecto del recorrido del software, desde el desarrollo hasta la ejecución final.</p>
+<h3>3. ¿Cómo seguir las mejores prácticas para la documentación de las pruebas?</h3>
+<p>Empiece por tener un objetivo claro y utilice un formato normalizado para la documentación. Sea conciso en su planteamiento, añada los pros y los contras de los escenarios de prueba y priorice los casos de prueba. Asegúrate de mantener actualizado el contenido revisándolo una y otra vez. Aplique el control de versiones y promueva la colaboración de todas las partes interesadas.</p>
+<h3>4. ¿Cuál es el impacto de la documentación en la calidad del software?</h3>
+<p>Unos requisitos bien documentados aportan claridad, reducen la ambigüedad y ayudan a los ingenieros a comprender el código base existente. Facilita la colaboración en equipo y garantiza la transferencia de conocimientos con una buena comprensión por parte del usuario.</p>
+<h3>5. ¿Qué información se suele transmitir en los ejemplos de documentación de pruebas?</h3>
+<p>La documentación de las pruebas suele incluir los objetivos empresariales y los KPI, el entorno técnico de las pruebas, las características del sistema y los detalles del modelo de negocio.</p>
+<p>https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_4hhrD8uf8FrH9lQ2X/image3.png</p>
+<h2>Reflexiones finales</h2>
+<p>Según <a href="https://www.gminsights.com/industry-analysis/software-testing-market">Global Markets Insights</a>, el valor actual del tamaño del mercado de pruebas de software asciende a 45.000 millones de dólares. Y es probable que esta cantidad crezca gradualmente de 2023 a 2032 a una impresionante tasa del 5%. A medida que el mundo de la tecnología sigue evolucionando, se desarrollan más proyectos de software, lo que conlleva más pruebas de software. Ahora que tiene a mano estas directrices sobre documentación de pruebas, puede redactar mejor el contenido de su documentación, seguir las mejores prácticas para la documentación de pruebas y liberar los beneficios de la documentación de pruebas.</p>
+    </div>
+  </div>
+  <!--/ Post Content-->
+
+  <!--Divider-->
+  <hr class="border-b-1 border-gray-400 mt-12 mb-8 mx-4">
+
+  <!--Next & Prev Links-->
+  <div class="font-sans flex justify-between content-center px-4 mb-4">
+    <div class="text-left">
+      <span class="text-xs md:text-sm font-normal text-gray-600">&lt; Previous Post</span><br>
+      <p><a href="../top-10-alternatives-to-rightanswers-knowledge-base" class="break-normal text-base md:text-sm text-green-500 font-bold no-underline hover:underline">Las 10 mejores alternativas a RightAnswers Knowledge Base</a></p>
+    </div>
+    <div class="text-right">
+      <span class="text-xs md:text-sm font-normal text-gray-600">Next Post &gt;</span><br>
+      <p><a href="../docsie-s-black-friday-deal" class="break-normal text-base md:text-sm text-green-500 font-bold no-underline hover:underline">Oferta Black Friday de Docsie</a></p>
+    </div>
+  </div>
+
+
+  <!--/Next & Prev Links-->
+
+  
+    <div class="commentbox"></div>
+
+    <script src="https://unpkg.com/commentbox.io/dist/commentBox.min.js"></script>
+    <script>commentBox("5725910686760960-proj")</script>
+  
+
+
+  <!--Subscribe-->
+  
+  <!-- /Subscribe-->
+</div>
+<!--/container-->
+
+<footer class="bg-gray-900">
+  <div class="container max-w-6xl mx-auto flex items-center px-2 py-8">
+
+    <div class="w-full mx-auto flex flex-wrap items-center">
+      <div class="flex w-full md:w-1/2 justify-center md:justify-start text-white font-extrabold flex-col">
+        <a class="text-gray-900 no-underline hover:text-gray-900 hover:no-underline" href="/blog/es">
+          <span class="text-base text-gray-200">Docsie.io Blog</span>
+        </a>
+        <a class="text-gray-900 no-underline hover:text-gray-900 hover:no-underline"
+           href="https://github.com/LikaloLLC/BlogVi" target="_blank">
+          <span class="text-xs text-gray-200">Made with BlogVI</span>
+        </a>
+      </div>
+      <div class="flex w-full pt-2 content-center justify-between md:w-1/2 md:justify-end">
+        <ul class="list-reset flex justify-center flex-1 md:flex-none items-center">
+          
+            <li>
+              <a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-3"
+                 href="https://www.docsie.io">Docsie</a>
+            </li>
+          
+            <li>
+              <a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-3"
+                 href="https://www.docsie.io/pricing/">Docsie Pricing</a>
+            </li>
+          
+            <li>
+              <a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-3"
+                 href="https://www.docsie.io/try_docsie/">Try Docsie</a>
+            </li>
+          
+        </ul>
+      </div>
+    </div>
+
+
+  </div>
+</footer>
+
+<script>
+  /* Progress bar */
+  //Source: https://alligator.io/js/progress-bar-javascript-css-variables/
+  var h = document.documentElement,
+    b = document.body,
+    st = 'scrollTop',
+    sh = 'scrollHeight',
+    progress = document.querySelector('#progress'),
+    scroll;
+  var scrollpos = window.scrollY;
+  var header = document.getElementById("header");
+  var navcontent = document.getElementById("nav-content");
+
+  document.addEventListener('scroll', function () {
+
+    /*Refresh scroll % width*/
+    scroll = (h[st] || b[st]) / ((h[sh] || b[sh]) - h.clientHeight) * 100;
+    progress.style.setProperty('--scroll', scroll + '%');
+
+    /*Apply classes for slide in bar*/
+    scrollpos = window.scrollY;
+
+    if (scrollpos > 10) {
+      header.classList.add("bg-white");
+      header.classList.add("shadow");
+      navcontent.classList.remove("bg-gray-100");
+      navcontent.classList.add("bg-white");
+    } else {
+      header.classList.remove("bg-white");
+      header.classList.remove("shadow");
+      navcontent.classList.remove("bg-white");
+      navcontent.classList.add("bg-gray-100");
+
+    }
+
+  });
+
+
+  //Javascript to toggle the menu
+  document.getElementById('nav-toggle').onclick = function () {
+    document.getElementById("nav-content").classList.toggle("hidden");
+  }
+</script>
+<script>
+  /*
+    Twitter
+    https://twitter.com/share?url=[post-url]&text=[post-title]
+
+    Facebook
+    https://www.facebook.com/sharer.php?u=[post-url]
+
+  */
+  let twitterURI = document.getElementById('twitter');
+  let facebookURI = document.getElementById('facebook');
+
+  let postURI = encodeURI(document.location.href);
+  let postTitle = encodeURI(document.getElementById('blog-title').innerText + ":\n")
+
+  facebookURI.setAttribute('href', `https://www.facebook.com/sharer.php?u=${postURI}`);
+  twitterURI.setAttribute('href', `https://twitter.com/share?url=${postURI}&text=${postTitle}`);
+</script>
+
+<!--Sharect-->
+
+<script src="https://unpkg.com/sharect@2.0.0/dist/sharect.js"></script>
+<script>window["sharectConfig"] = {"backgroundColor": "#333333", "enabled": true, "facebook": true, "iconColor": "#FFFFFF", "selectableElements": ["body"], "twitter": true, "twitterUsername": "likalo_llc"}</script>
+<script src="/blog/templates/assets/js/sharect.js"></script>
+
+
+
+<!--Reading time-->
+<script src="/blog/templates/assets/js/reading-time.min.js"></script>
+<script>
+  const text = []
+  let content = [...document.getElementById('content').getElementsByTagName('p')].forEach((elem) => {
+    text.push(elem.textContent)
+  });
+  const stats = readingTime(text.join(" "));
+
+  document.getElementById('reading-time').innerHTML = stats.text;
+</script>
+
+
+  
+      <!-- Google Tag Manager (noscript) -->
+
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TZRGMQ9"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+  
+
+</body>
+
+</html>

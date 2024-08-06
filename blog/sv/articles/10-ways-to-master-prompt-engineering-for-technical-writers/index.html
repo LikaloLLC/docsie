@@ -1,0 +1,378 @@
+<!-- Base template of the article page. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+  
+
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="https://d1iq6qzgppjlud.cloudfront.net/images/favicon/favicon-196x196.png">
+
+
+  <!-- Primary Meta Tags -->
+  <title>Docsie.io Blog - 10 sätt att bemästra frågeformuleringar för tekniska skribenter</title>
+  <meta name="author" content="Tanya A Mishra"/>
+  <meta name="title" content="10 sätt att bemästra frågeformuleringar för tekniska skribenter">
+  <meta name="description" content="I den här artikeln kommer vi att diskutera hur du kan använda AI i teknisk dokumentation. Som en bonus får du också en smygtitt på teknisk dokumentation med Docsie!"/>
+  <meta name="keywords" content="AI,Snabb teknik"/>
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.docsie.io/blog/blog/sv/articles/10-ways-to-master-prompt-engineering-for-technical-writers/">
+  <meta property="og:title" content="10 sätt att bemästra frågeformuleringar för tekniska skribenter">
+  <meta property="og:description"
+        content="I den här artikeln kommer vi att diskutera hur du kan använda AI i teknisk dokumentation. Som en bonus får du också en smygtitt på teknisk dokumentation med Docsie!">
+  <meta property="og:image" content="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_rKF4eYYbOjtbKdWts/225c2411-7ae2-4052-d0e1-45c5cd0afa8abanner_31.jpg">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://www.docsie.io/blog/blog/sv/articles/10-ways-to-master-prompt-engineering-for-technical-writers/">
+  <meta property="twitter:title" content="10 sätt att bemästra frågeformuleringar för tekniska skribenter">
+  <meta property="twitter:description"
+        content="I den här artikeln kommer vi att diskutera hur du kan använda AI i teknisk dokumentation. Som en bonus får du också en smygtitt på teknisk dokumentation med Docsie!">
+  <meta property="twitter:image" content="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_rKF4eYYbOjtbKdWts/225c2411-7ae2-4052-d0e1-45c5cd0afa8abanner_31.jpg">
+
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/blog/templates/assets/css/typography.min.css"/>
+  <!--Replace with your tailwind.css once created-->
+    
+    <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TZRGMQ9');</script>
+<!-- End Google Tag Manager -->
+  
+
+</head>
+
+
+<body class="bg-gray-100 font-sans leading-normal tracking-normal">
+
+<nav id="header" class="fixed w-full z-10 top-0">
+
+  <div id="progress" class="h-1 z-20 top-0"
+       style="background:linear-gradient(to right, #4dc0b5 var(--scroll), transparent 0);"></div>
+
+  <div class="container max-w-6xl mx-auto flex flex-wrap items-center justify-between mt-0 py-3">
+
+    <div class="pl-4">
+      <a class="text-gray-900 text-base no-underline hover:no-underline font-extrabold text-xl" href="../../">
+          Docsie.io Blog
+      </a>
+    </div>
+
+    <div class="block lg:hidden pr-4">
+      <button id="nav-toggle"
+              class="flex items-center px-3 py-2 border rounded text-gray-500 border-gray-600 hover:text-gray-900 hover:border-green-500 appearance-none focus:outline-none">
+        <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+          <title>Menu</title>
+          <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/>
+        </svg>
+      </button>
+    </div>
+
+    <div class="w-full flex-grow lg:flex lg:items-center lg:w-auto hidden lg:block mt-2 lg:mt-0 bg-gray-100 z-20"
+         id="nav-content">
+      <ul class="list-reset lg:flex justify-end flex-1 items-center">
+        
+        <li>
+          <a class="inline-block text-gray-600 hover:text-gray-900 hover:underline py-2 px-4"
+             href="https://www.docsie.io">Docsie</a>
+        </li>
+        
+        <li>
+          <a class="inline-block text-gray-600 hover:text-gray-900 hover:underline py-2 px-4"
+             href="https://www.docsie.io/pricing/">Docsie Pricing</a>
+        </li>
+        
+        <li>
+          <a class="inline-block text-gray-600 hover:text-gray-900 hover:underline py-2 px-4"
+             href="https://www.docsie.io/try_docsie/">Try Docsie</a>
+        </li>
+        
+      </ul>
+    </div>
+    <div class="flex w-full justify-end content-center">
+        <a
+          class="inline-block text-gray-500 hover:text-green-500 hover:underline text-center h-10 p-2 md:h-auto md:p-4 avatar"
+          data-tippy-content="@twitter_handle" href="https://twitter.com/intent/tweet?url=#"
+          id="twitter">
+          <svg class="fill-current h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+            <path
+              d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"></path>
+          </svg>
+        </a>
+        <a
+          class="inline-block text-gray-500 hover:text-green-500 hover:underline text-center h-10 p-2 md:h-auto md:p-4 avatar"
+          data-tippy-content="#facebook_id" href="https://www.facebook.com/sharer/sharer.php?u=#}"
+          id="facebook">
+          <svg class="fill-current h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+            <path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"></path>
+          </svg>
+        </a>
+      </div>
+  </div>
+
+</nav>
+
+<!--Container-->
+<div class="container max-w-4xl mx-auto mt-32 px-8 md:px-0">
+  <div class="prose prose lg:prose-xl mx-auto mt-32">
+    <!--Title-->
+    <h1 id="blog-title">10 sätt att bemästra frågeformuleringar för tekniska skribenter</h1>
+    <!--Author-->
+    <div class="flex items-center">
+      <img class="w-10 h-10 rounded-full mr-4" src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_p1X4gXS3n0rCHYuaE/1f3f5f57-d8e2-7978-faef-0b9fe89f3e4btanya_pic.jpg" alt="Avatar of Author">
+      <div class="flex-1 px-2">
+        <div class="font-bold leading-none mb-2">Tanya A Mishra</div>
+        <div class="text-xs md:text-base">on October 30, 2023 · <span id="reading-time"
+                class="block md:inline mt-2 md:mt-0"></span> · filed under <span
+          class="block md:inline mt-2 md:mt-0">
+						
+            <span class="rounded bg-green-500 text-white px-1 uppercase text-xs whitespace-nowrap md:text-sm">AI</span>
+						
+            <span class="rounded bg-green-500 text-white px-1 uppercase text-xs whitespace-nowrap md:text-sm">Snabb teknik</span>
+						
+					</span>
+        </div>
+      </div>
+    </div>
+    <!--/Author-->
+
+    <!--Post Content-->
+    <!--Lead Para-->
+    <div id="content">
+      <p>Visste du att mer än<a href="https://www.notta.ai/en/blog/chatgpt-statistics#:~:text=Key%20ChatGPT%20Statistics,-If%20you're&amp;text=ChatGPT%20currently%20has%20100%2B%20million,GPT%2D4%20from%20March%202023."> </a><a href="https://www.notta.ai/en/blog/chatgpt-statistics#:~:text=Key%20ChatGPT%20Statistics,-If%20you're&amp;text=ChatGPT%20currently%20has%20100%2B%20million,GPT%2D4%20from%20March%202023.">100 billion users</a> för närvarande använder ChatGPT? Från reklam till underhållning, utbildning till personalfrågor - olika branscher utnyttjar prompt engineering för att få fram de mest lämpliga svaren från språkmodellerna. När tekniska skribenter skriver om olika innehållstunga ämnen har de svårt att göra sina artiklar relaterbara och smältbara. I den här artikeln kommer vi att diskutera hur du kan använda AI i teknisk dokumentation. Som en bonus får du också en förhandstitt på tekniskt skrivande med Docsie!</p>
+<h2>Vad är Prompt Engineering?</h2>
+<p>|Prompt Engineering i korthet
+|-|Definitionen|
+|Prompt engineering handlar i grund och botten om konsten (och vetenskapen!) att utveckla och utforma frågor som vi kan använda för att få önskade resultat från språkmodeller som ChatGPT och GPT-4. Även om vissa av oss kanske har bra frågefärdigheter i rockärmen, behöver tekniska skribenter känna till detaljerna i prompt engineering så att de kan skapa bättre kommandon, ställa mer insiktsfulla frågor och ge bättre instruktioner till AI-system. |
+|Principerna
+|För närvarande genomgår användningen av AI i processen för att skapa teknisk dokumentation en rad olika utvecklingar. Vi bör dock förstå att allt skapande av snabbmeddelanden är beroende av två huvudprinciper - tydlighet och specificitet. Vi kan få våra önskade svar från de språktränade AI-modellerna endast när våra uppmaningar är välkonstruerade, specifika och inte innehåller några tvetydigheter.
+|Syftet
+|Fördelarna med prompt engineering är obegränsade eftersom det handlar om text-till-text-, text-till-bild- och text-till-ljud-modeller. Promptingenjörer och tekniska skribenter skapar AI-prompter, analyserar utdata och förfinar dem ytterligare, med hänsyn till efterlevnad och regelverk samt sociala sammanhangs behov.</p>
+<h2>Vilka är fördelarna med Prompt Engineering?</h2>
+<p>När det gäller att använda AI i teknisk dokumentation kan verktyg som<a href="https://www.docsie.io/collaboration_software/"> </a><a href="https://www.docsie.io/collaboration_software/">Docsie</a> vara den ultimata räddaren i nöden. Men att känna till grunderna i prompt engineering hjälper också tekniska skribenter att dela information med ett användarfokuserat tillvägagångssätt som innehåller mindre jargong.</p>
+<p>I takt med att språkmodellerna för tekniska skribenter fortsätter att växa och utvecklas kommer artificiell intelligens att spela en viktig roll när det gäller att skapa människovänliga och lättförståeliga instruktioner.</p>
+<p>Här är de främsta fördelarna med prompt engineering:</p>
+<p>â- Det förbättrar användarupplevelsen, minskar tvetydighet och förvirring och ger snabba lösningar på egen hand.</p>
+<p>â- Det finjusterar anvisningarna, optimerar dem och minskar användarnas frustration.</p>
+<p>När skribenter behärskar prompt engineering kan de bättre utnyttja dess kraft. Från att effektivisera affärsverksamheten till att driva virtuella assistenter kan skribenter utforska obegränsade alternativ.</p>
+<p>â- Att upprätthålla en konsekvent stil, ton och röst blir verkligen enkelt och det sparar tid och resurser för organisationer och byråer.</p>
+<p>â- Genom AI-översättningar kan effektiva uppmaningar översättas så att de passar olika kulturella sammanhang och globala målgrupper.</p>
+<h2>Hur kan tekniska skribenter utmärka sig i Prompt Engineering?</h2>
+<p>AI är ett ständigt expanderande område. Så för att hålla jämna steg med de växande kraven på att använda AI i teknisk dokumentation måste skribenter förstå hur de ska vägleda systemen för att få relevant innehåll. Innan du börjar skriva tekniska texter med Docsie bör du som teknisk skribent veta hur du skapar de perfekta uppmaningarna för AI-system.</p>
+<p>För att utforska de många fördelarna med prompt engineering bör skribenter utveckla tekniska färdigheter eller fräscha upp sina befintliga så att de kan skapa ett brett utbud av tekniska dokument.</p>
+<p>Här är 10 tips på hur du kan bli expert på prompt engineering och utforska världen av tekniskt skrivande med AI:</p>
+<h3>1. Förstå användarna</h3>
+<p>Oavsett om du är marknadsförare eller innehållsskapare vet vi alla hur viktigt det är att känna till vår målgrupps frågor. Att förstå dina slutkunders behov är nyckeln till att skapa effektiva prompter. Att samla kunskap om flera faktorer som ålder, kön, plats, preferenser etc. kan hjälpa dig att skapa en användarpersona. Och baserat på denna persona av den ideala användaren kan du anpassa och förfina dina uppmaningar.</p>
+<h3>2. Personalisering och sammanhang</h3>
+<p>En Large Language Model måste känna till sammanhanget för din prompt. Så genom att mata in lite bakgrundskunskap i systemet kan du träna LLM så att den ger dig önskad output. När du skapar tekniska texter med Docsie kan du använda LLM-chattbottar för omedelbar och säker hjälp och för att lösa frågor. Du kan till exempel be AI-systemet att förklara hur magneter fungerar genom att lägga till sammanhanget att det måste vara lämpligt för elever i sjätte klass.</p>
+<h3>3. Kunna konsten att fatta sig kort</h3>
+<p>Att lära sig fördelarna med snabb teknik är lika viktigt som att förstå hur man förmedlar information kortfattat genom dina innehållsstycken. Ta upp det aktuella ämnet och skriv kärnfullt så att läsarna kan få ett tydligt budskap från dina ord. Bryt ner komplex teknisk information och skriv i en relaterbar, användarvänlig ton. Tänk på att du skriver för människor. Så håll dina läsare engagerade och skriv på ett språk som de lätt kan förstå.</p>
+<h3>4. Kunskap om maskininlärning</h3>
+<p>När du arbetar som teknisk skribent för ett företag eller en byrå kan det hjälpa dig mycket att veta en sak eller två om maskininlärning och sätta dig mycket före dina konkurrenter. Med maskininlärning kan du analysera data om tidigare användarbeteenden och sedan göra ändringar i dina uppmaningar baserat på detta. Du kan skapa finare uppmaningar för en bättre användarupplevelse och förbättra kvaliteten på utdata.</p>
+<h3>5. Illustrera med exempel</h3>
+<p>Referenser och analogier fungerar bäst där definitioner misslyckas. Citera därför exempel och använd liknelser och analogier i dina artiklar för att göra det lättare för en bredare publik (utan teknisk kunskap) att förstå. När du utforskar tekniskt skrivande med Docsie ska du skriva på vardagsspråket och förmedla ditt budskap med enkelhet och äkthet.</p>
+<h3>6. En unik skrivstil</h3>
+<p>När du fortsätter att integrera AI i teknisk dokumentation kan det hända att ditt tekniska innehåll blir torrt och för svårt att läsa. Med en unik skrivstil kan du skapa bättre uppmaningar och så småningom göra ditt innehåll mer engagerande och omfattande för ett brett spektrum av målgrupper. Undvik att använda mycket tekniska ord och fraser och använd lekmannatermer för att nå ut till en bredare publik som kanske inte känner till den tekniska terminologin.</p>
+<h3>7. Teknisk expertis</h3>
+<p>Om du vill dra full nytta av fördelarna med prompt engineering bör du försöka få ett starkt grepp om de vanligaste programmeringsspråken. Även om kodningserfarenhet inte är obligatorisk, kommer insamling av information om de mest använda programmeringsspråken att hjälpa dig att anpassa dina interaktioner med olika AI-modeller. Du kommer att kunna ge finare uppmaningar, automatisera repetitiva, vardagliga uppgifter och genomföra säkerhetsåtgärder.</p>
+<h3>8. Strukturera din uppmaning</h3>
+<p>Alla effektiva uppmaningar har en sak gemensamt. De har ett bra flöde med en inledning, detaljerade avsnitt och en ordentlig avslutning. Anta att du behöver ge en uppmaning till ditt AI-system att skapa en arbetsbeskrivning för en ledig tjänst. Introduktionen kommer att bestå av en presentation av rollen och ansvarsområdena, brödtexten kommer att innehålla instruktioner om vilken typ av ton som krävs samt riktlinjer för längden på meningarna och den avslutande outron kommer att sammanfatta huvuduppgiften med några få ord.</p>
+<h3>9. Forskning</h3>
+<p>Fördjupa dig i tekniska begrepp och bredda dina kunskaper genom att läsa artiklar, handböcker och lära dig branschspecifik terminologi. Så för att fullt ut kunna utnyttja fördelarna med prompt engineering måste du göra djupare efterforskningar, förstå tekniska begrepp och sedan bryta ner dem till mindre, smältbara bitar som dina användare kan läsa och förstå.</p>
+<h3>10. Håll dig uppdaterad</h3>
+<p>Under din resa som teknisk skribent med Docsie kommer plattformen utan tvekan att ge dig alla verktyg för att skapa detaljerad dokumentation - allt under samma tak. Men du måste hålla dig uppdaterad om de senaste händelserna i branschen, läsa tekniska nyheter och delta i branschevenemang för att hitta inside stories och få innehåll till din nästa artikel.</p>
+<p><strong><a href="https://www.docsie.io/pricing/">Docsie</a> - din digitala dokumentassistent!</strong></p>
+<hr />
+<hr />
+<p>Om du är nybörjare i världen av tekniskt skrivande är<a href="https://help.docsie.io/"> </a><a href="https://help.docsie.io/">Docsie</a> din perfekta partner! Med hjälp av AI i teknisk dokumentation är <strong>Docsie</strong> en one-stop-shop som låter dig skapa, redigera, hantera och dela dina dokument med dina lagkamrater, samtidigt som du behåller fullständig integritet och säkerhet. Att skriva teknisk dokumentation med Docsie är enkelt, organiserat och stressfritt. Även om den starka LLM utgör ryggraden i plattformen kan du också skapa din egen kunskapshantering med Docsie och förenkla hur ditt team får tillgång till den interna kunskapsbasen.</p>
+<p><img alt="" src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_Nq7S4E71oXOk5ZQL7/image1.png" /></p>
+<h2>Slutliga tankar</h2>
+<p>Enligt NASSCOM kommer Indien att bevittna en<a href="https://www.linkedin.com/pulse/unleashing-power-words-journey-technical-writers-india-kranthi-kumar/"> </a><a href="https://www.linkedin.com/pulse/unleashing-power-words-journey-technical-writers-india-kranthi-kumar/">11% ökning</a> i efterfrågan på högkvalificerade och sakkunniga tekniska skribenter från 2022 till 2030. Så om du är en blivande eller erfaren teknisk skribent är det nu den bästa tiden att uppgradera dig inom snabbteknik<strong> </strong> och utforska fantastiska möjligheter inom jobbsektorn. Med hjälp av den omfattande kunskapshanteringen i Docsie<strong> </strong> kan du få en standardiserad, anpassad och samarbetsinriktad plattform för all din dokumentationslagring.</p>
+<p>För att få alla dina dokumentrelaterade behov uppfyllda, besök <a href="https://app.docsie.io/login/#/">Docsie </a>idag och utnyttja kraften i AI i teknisk dokumentation.</p>
+<h2>Vanliga frågor och svar</h2>
+<h3>1. Vad är prompt engineering i samband med tekniskt skrivande?</h3>
+<p>Prompt engineering är konsten och vetenskapen att skapa eller mata in korrekta prompter i programvara eller produkter så att skribenter kan anpassa eller personifiera de svar som AI-systemen ger.</p>
+<h3>2. Varför är det viktigt för skribenter?</h3>
+<p>Att ha en grundlig förståelse för prompt engineering hjälper skribenter att utforma effektiva prompter, förmedla information på ett effektivt sätt, upprätthålla konsekvens och säkerställa att produkten blir framgångsrik.</p>
+<h3>3. Hur använder man AI i teknisk dokumentation?</h3>
+<p>Förutom att hämta relevant information kan artificiell intelligens också hjälpa till att skapa användarcentrerat innehåll, analysera konsumentbeteenden och -mönster, automatisera arbetsflöden för dokumentation osv.</p>
+<h3>4. Kan jag lära mig tekniskt skrivande med AI?</h3>
+<p>Om du förstår grunderna och kan hantera AI-verktyg kan du komma en bra bit på vägen mot en karriär inom tekniskt skrivande. Med AI kan du lära dig mer om språkmodeller, NLP, chatbottar och virtuella assistenter.</p>
+<h3>5. Hur använder man språkmodeller för tekniska skribenter?</h3>
+<p>Språkmodeller kan hjälpa skribenter på olika sätt. Från innehållsgenerering till översättning, från automatisering till personalisering - språkmodeller bidrar till att förbättra innehållskvaliteten.</p>
+    </div>
+  </div>
+  <!--/ Post Content-->
+
+  <!--Divider-->
+  <hr class="border-b-1 border-gray-400 mt-12 mb-8 mx-4">
+
+  <!--Next & Prev Links-->
+  <div class="font-sans flex justify-between content-center px-4 mb-4">
+    <div class="text-left">
+      <span class="text-xs md:text-sm font-normal text-gray-600">&lt; Previous Post</span><br>
+      <p><a href="../a-to-z-of-documentation-version-control-and-how-it-improves-workplace-collaboration" class="break-normal text-base md:text-sm text-green-500 font-bold no-underline hover:underline">A till Ö om versionshantering av dokumentation och hur det förbättrar samarbetet på arbetsplatsen</a></p>
+    </div>
+    <div class="text-right">
+      <span class="text-xs md:text-sm font-normal text-gray-600">Next Post &gt;</span><br>
+      <p><a href="../why-is-there-a-need-for-customization-in-documentation" class="break-normal text-base md:text-sm text-green-500 font-bold no-underline hover:underline">Varför finns det ett behov av anpassning av dokumentation?</a></p>
+    </div>
+  </div>
+
+
+  <!--/Next & Prev Links-->
+
+  
+    <div class="commentbox"></div>
+
+    <script src="https://unpkg.com/commentbox.io/dist/commentBox.min.js"></script>
+    <script>commentBox("5725910686760960-proj")</script>
+  
+
+
+  <!--Subscribe-->
+  
+  <!-- /Subscribe-->
+</div>
+<!--/container-->
+
+<footer class="bg-gray-900">
+  <div class="container max-w-6xl mx-auto flex items-center px-2 py-8">
+
+    <div class="w-full mx-auto flex flex-wrap items-center">
+      <div class="flex w-full md:w-1/2 justify-center md:justify-start text-white font-extrabold flex-col">
+        <a class="text-gray-900 no-underline hover:text-gray-900 hover:no-underline" href="/blog/sv">
+          <span class="text-base text-gray-200">Docsie.io Blog</span>
+        </a>
+        <a class="text-gray-900 no-underline hover:text-gray-900 hover:no-underline"
+           href="https://github.com/LikaloLLC/BlogVi" target="_blank">
+          <span class="text-xs text-gray-200">Made with BlogVI</span>
+        </a>
+      </div>
+      <div class="flex w-full pt-2 content-center justify-between md:w-1/2 md:justify-end">
+        <ul class="list-reset flex justify-center flex-1 md:flex-none items-center">
+          
+            <li>
+              <a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-3"
+                 href="https://www.docsie.io">Docsie</a>
+            </li>
+          
+            <li>
+              <a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-3"
+                 href="https://www.docsie.io/pricing/">Docsie Pricing</a>
+            </li>
+          
+            <li>
+              <a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-3"
+                 href="https://www.docsie.io/try_docsie/">Try Docsie</a>
+            </li>
+          
+        </ul>
+      </div>
+    </div>
+
+
+  </div>
+</footer>
+
+<script>
+  /* Progress bar */
+  //Source: https://alligator.io/js/progress-bar-javascript-css-variables/
+  var h = document.documentElement,
+    b = document.body,
+    st = 'scrollTop',
+    sh = 'scrollHeight',
+    progress = document.querySelector('#progress'),
+    scroll;
+  var scrollpos = window.scrollY;
+  var header = document.getElementById("header");
+  var navcontent = document.getElementById("nav-content");
+
+  document.addEventListener('scroll', function () {
+
+    /*Refresh scroll % width*/
+    scroll = (h[st] || b[st]) / ((h[sh] || b[sh]) - h.clientHeight) * 100;
+    progress.style.setProperty('--scroll', scroll + '%');
+
+    /*Apply classes for slide in bar*/
+    scrollpos = window.scrollY;
+
+    if (scrollpos > 10) {
+      header.classList.add("bg-white");
+      header.classList.add("shadow");
+      navcontent.classList.remove("bg-gray-100");
+      navcontent.classList.add("bg-white");
+    } else {
+      header.classList.remove("bg-white");
+      header.classList.remove("shadow");
+      navcontent.classList.remove("bg-white");
+      navcontent.classList.add("bg-gray-100");
+
+    }
+
+  });
+
+
+  //Javascript to toggle the menu
+  document.getElementById('nav-toggle').onclick = function () {
+    document.getElementById("nav-content").classList.toggle("hidden");
+  }
+</script>
+<script>
+  /*
+    Twitter
+    https://twitter.com/share?url=[post-url]&text=[post-title]
+
+    Facebook
+    https://www.facebook.com/sharer.php?u=[post-url]
+
+  */
+  let twitterURI = document.getElementById('twitter');
+  let facebookURI = document.getElementById('facebook');
+
+  let postURI = encodeURI(document.location.href);
+  let postTitle = encodeURI(document.getElementById('blog-title').innerText + ":\n")
+
+  facebookURI.setAttribute('href', `https://www.facebook.com/sharer.php?u=${postURI}`);
+  twitterURI.setAttribute('href', `https://twitter.com/share?url=${postURI}&text=${postTitle}`);
+</script>
+
+<!--Sharect-->
+
+<script src="https://unpkg.com/sharect@2.0.0/dist/sharect.js"></script>
+<script>window["sharectConfig"] = {"backgroundColor": "#333333", "enabled": true, "facebook": true, "iconColor": "#FFFFFF", "selectableElements": ["body"], "twitter": true, "twitterUsername": "likalo_llc"}</script>
+<script src="/blog/templates/assets/js/sharect.js"></script>
+
+
+
+<!--Reading time-->
+<script src="/blog/templates/assets/js/reading-time.min.js"></script>
+<script>
+  const text = []
+  let content = [...document.getElementById('content').getElementsByTagName('p')].forEach((elem) => {
+    text.push(elem.textContent)
+  });
+  const stats = readingTime(text.join(" "));
+
+  document.getElementById('reading-time').innerHTML = stats.text;
+</script>
+
+
+  
+      <!-- Google Tag Manager (noscript) -->
+
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TZRGMQ9"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+  
+
+</body>
+
+</html>

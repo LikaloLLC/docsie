@@ -1,0 +1,367 @@
+<!-- Base template of the article page. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+  
+
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="https://d1iq6qzgppjlud.cloudfront.net/images/favicon/favicon-196x196.png">
+
+
+  <!-- Primary Meta Tags -->
+  <title>Docsie.io Blog - Documento de Requisitos del Producto 101: Su Guía para Escribir Grandes PRDs</title>
+  <meta name="author" content="Tanya A Mishra"/>
+  <meta name="title" content="Documento de Requisitos del Producto 101: Su Guía para Escribir Grandes PRDs">
+  <meta name="description" content="Los documentos de requisitos del producto son la columna vertebral de los productos. Aquí tienes una guía completa sobre cómo hacer un documento de requisitos de producto, con especial atención a Docsie."/>
+  <meta name="keywords" content="AI,Redacción técnica,Documento de requisitos del producto"/>
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.docsie.io/blog/blog/es/articles/product-requirements-document-101-your-guide-to-writing-great-prds/">
+  <meta property="og:title" content="Documento de Requisitos del Producto 101: Su Guía para Escribir Grandes PRDs">
+  <meta property="og:description"
+        content="Los documentos de requisitos del producto son la columna vertebral de los productos. Aquí tienes una guía completa sobre cómo hacer un documento de requisitos de producto, con especial atención a Docsie.">
+  <meta property="og:image" content="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_cBiHkLABfALD3xmNp/banner_49_fab6d5dd-faba-70d3-be1a-b8fcf1ff4c6b.jpg">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://www.docsie.io/blog/blog/es/articles/product-requirements-document-101-your-guide-to-writing-great-prds/">
+  <meta property="twitter:title" content="Documento de Requisitos del Producto 101: Su Guía para Escribir Grandes PRDs">
+  <meta property="twitter:description"
+        content="Los documentos de requisitos del producto son la columna vertebral de los productos. Aquí tienes una guía completa sobre cómo hacer un documento de requisitos de producto, con especial atención a Docsie.">
+  <meta property="twitter:image" content="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_cBiHkLABfALD3xmNp/banner_49_fab6d5dd-faba-70d3-be1a-b8fcf1ff4c6b.jpg">
+
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/blog/templates/assets/css/typography.min.css"/>
+  <!--Replace with your tailwind.css once created-->
+    
+    <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TZRGMQ9');</script>
+<!-- End Google Tag Manager -->
+  
+
+</head>
+
+
+<body class="bg-gray-100 font-sans leading-normal tracking-normal">
+
+<nav id="header" class="fixed w-full z-10 top-0">
+
+  <div id="progress" class="h-1 z-20 top-0"
+       style="background:linear-gradient(to right, #4dc0b5 var(--scroll), transparent 0);"></div>
+
+  <div class="container max-w-6xl mx-auto flex flex-wrap items-center justify-between mt-0 py-3">
+
+    <div class="pl-4">
+      <a class="text-gray-900 text-base no-underline hover:no-underline font-extrabold text-xl" href="../../">
+          Docsie.io Blog
+      </a>
+    </div>
+
+    <div class="block lg:hidden pr-4">
+      <button id="nav-toggle"
+              class="flex items-center px-3 py-2 border rounded text-gray-500 border-gray-600 hover:text-gray-900 hover:border-green-500 appearance-none focus:outline-none">
+        <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+          <title>Menu</title>
+          <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/>
+        </svg>
+      </button>
+    </div>
+
+    <div class="w-full flex-grow lg:flex lg:items-center lg:w-auto hidden lg:block mt-2 lg:mt-0 bg-gray-100 z-20"
+         id="nav-content">
+      <ul class="list-reset lg:flex justify-end flex-1 items-center">
+        
+        <li>
+          <a class="inline-block text-gray-600 hover:text-gray-900 hover:underline py-2 px-4"
+             href="https://www.docsie.io">Docsie</a>
+        </li>
+        
+        <li>
+          <a class="inline-block text-gray-600 hover:text-gray-900 hover:underline py-2 px-4"
+             href="https://www.docsie.io/pricing/">Docsie Pricing</a>
+        </li>
+        
+        <li>
+          <a class="inline-block text-gray-600 hover:text-gray-900 hover:underline py-2 px-4"
+             href="https://www.docsie.io/try_docsie/">Try Docsie</a>
+        </li>
+        
+      </ul>
+    </div>
+    <div class="flex w-full justify-end content-center">
+        <a
+          class="inline-block text-gray-500 hover:text-green-500 hover:underline text-center h-10 p-2 md:h-auto md:p-4 avatar"
+          data-tippy-content="@twitter_handle" href="https://twitter.com/intent/tweet?url=#"
+          id="twitter">
+          <svg class="fill-current h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+            <path
+              d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"></path>
+          </svg>
+        </a>
+        <a
+          class="inline-block text-gray-500 hover:text-green-500 hover:underline text-center h-10 p-2 md:h-auto md:p-4 avatar"
+          data-tippy-content="#facebook_id" href="https://www.facebook.com/sharer/sharer.php?u=#}"
+          id="facebook">
+          <svg class="fill-current h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+            <path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"></path>
+          </svg>
+        </a>
+      </div>
+  </div>
+
+</nav>
+
+<!--Container-->
+<div class="container max-w-4xl mx-auto mt-32 px-8 md:px-0">
+  <div class="prose prose lg:prose-xl mx-auto mt-32">
+    <!--Title-->
+    <h1 id="blog-title">Documento de Requisitos del Producto 101: Su Guía para Escribir Grandes PRDs</h1>
+    <!--Author-->
+    <div class="flex items-center">
+      <img class="w-10 h-10 rounded-full mr-4" src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_p1X4gXS3n0rCHYuaE/1f3f5f57-d8e2-7978-faef-0b9fe89f3e4btanya_pic.jpg" alt="Avatar of Author">
+      <div class="flex-1 px-2">
+        <div class="font-bold leading-none mb-2">Tanya A Mishra</div>
+        <div class="text-xs md:text-base">on February 05, 2024 · <span id="reading-time"
+                class="block md:inline mt-2 md:mt-0"></span> · filed under <span
+          class="block md:inline mt-2 md:mt-0">
+						
+            <span class="rounded bg-green-500 text-white px-1 uppercase text-xs whitespace-nowrap md:text-sm">AI</span>
+						
+            <span class="rounded bg-green-500 text-white px-1 uppercase text-xs whitespace-nowrap md:text-sm">Redacción técnica</span>
+						
+            <span class="rounded bg-green-500 text-white px-1 uppercase text-xs whitespace-nowrap md:text-sm">Documento de requisitos del producto</span>
+						
+					</span>
+        </div>
+      </div>
+    </div>
+    <!--/Author-->
+
+    <!--Post Content-->
+    <!--Lead Para-->
+    <div id="content">
+      <p>Todo producto comienza con una idea y la firme intención de resolver un problema acuciante. Tanto si eres un empresario en ciernes como un hombre de negocios experimentado, necesitas tener una visión clara de tu producto que puedas transmitir al Equipo de Producto designado para construirlo. En este artículo se examinan en detalle los diversos aspectos de un documento de requisitos del producto y se comparten ideas sobre cómo redactar la definición perfecta del documento para ayudar a su equipo técnico.</p>
+<h2>¿Qué es un documento de requisitos del producto?</h2>
+<p>En términos sencillos, es un plano detallado de todas las características, funciones y capacidades de su producto. Normalmente se comparte con los equipos de producto que trabajan en el diseño general del producto y se aseguran de que cumple la visión del vendedor sobre el producto inicial. Cuando comparte su PRD con su equipo de desarrollo, todos los asociados con el producto adquieren una mejor comprensión del mismo, de los posibles clientes y de cómo puede ayudar a resolver un problema concreto.</p>
+<p>Un Documento de Requisitos del Producto es un documento exhaustivo y esencial. Redactado por un experto, sirve de guía para los documentos que se redacten más adelante en el proceso de lanzamiento del software. Los jefes de producto suelen seguir una plantilla y anotan los detalles específicos del proyecto previsto antes de que el equipo empiece a trabajar en él.</p>
+<p>Si eres gestor de proyectos o estás a cargo de un nuevo producto y te preguntas cómo elaborar un documento de requisitos del producto, te alegrará saber que<a href="https://www.docsie.io/discovery_call/"> </a><a href="https://www.docsie.io/discovery_call/">Docsie</a> es una herramienta especializada en la creación de documentos con la que podrás redactar los detalles de tu producto y compartirlos con los miembros de tu equipo y con todas las partes interesadas externas.</p>
+<h2>Ventajas del documento de requisitos del producto</h2>
+<p>Ventajas del documento de requisitos del producto](https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_w0x51VQJqlm6MGO4B/image4.png)</p>
+<p>Antes de empezar a trabajar en un nuevo producto o mejorar uno existente, cree un PRD detallado que comparta la visión y la misión del proyecto. Desde esbozar el mercado objetivo hasta mencionar los requisitos del cliente, un PRD facilita una colaboración fluida entre todos los equipos implicados y aumenta el éxito del producto. Pero antes de profundizar en cómo hacer un Documento de Requisitos del Producto, vamos a revisar algunos de los pros para comprender plenamente el significado y los valores del PRD:</p>
+<hr />
+<p>|Beneficios Cómo ayuda
+|-|-|
+|El PRD comparte los objetivos de alto nivel del producto y proporciona instrucciones detalladas a todos los equipos, junto con los plazos del proyecto y las áreas de trabajo.
+|Ayuda a colaborar con éxito: Cuando todas las partes interesadas pasan por el PRD, pueden entender mejor el proyecto, sus funciones y sus expectativas de rendimiento.
+|Los PRD incluyen las características y funcionalidades del producto junto con aspectos específicos que se consideran fuera del alcance. Esto ayuda a reducir las ambigüedades y crea un ambiente de trabajo positivo.
+|Ofrece una colaboración fluida|Un PRD eficaz es un documento excelente que se crea como resultado de una colaboración satisfactoria entre varios equipos. Como resultado, se convierte en un punto focal para todos los departamentos.
+|Pone al cliente en el centro|El PRD es consecuencia de un buen estudio de mercado y un análisis en profundidad. Al redactar el PRD, los jefes de producto suelen tener en cuenta las perspectivas de los usuarios finales.</p>
+<hr />
+<h2>¿Cómo redactar un Documento de Requisitos del Producto?</h2>
+<p>¿Estás luchando con la forma de hacer un Documento de Requisitos del Producto? Deje de preocuparse, ya que aquí compartimos algunos pasos sencillos que puede seguir para redactar la documentación de su producto.</p>
+<p>Cómo redactar un Documento de Requisitos del Producto](https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_kA2rByOmXxWvbOet8/image5.png)</p>
+<h3>1. Comparta el propósito del producto:</h3>
+<p>Asegúrese de que el PRD menciona los problemas que su producto aborda y resuelve. Resuma todas las razones por las que está creando el producto. Empiece por las razones que puede resolver y hable de por qué el problema es importante y cómo puede beneficiar a los usuarios finales.</p>
+<h3>2. Hable de las características del producto:</h3>
+<p>Escriba todas las características que hacen que su producto sea único. Añade una descripción de cada una junto con un objetivo y un caso de uso específico. El contenido debe ser breve, pero atractivo y fácil de entender, con muchos recursos visuales para transmitir tu visión del proyecto.</p>
+<h3>3. Establece plazos aproximados:</h3>
+<p>Establece un calendario concreto y compártelo con todas las partes interesadas en el proyecto para que puedan planificar su trabajo en consecuencia. Ayude a todos a supervisar sus progresos y fije expectativas para alcanzar hitos clave.</p>
+<h3>4. Especifique las métricas de éxito:</h3>
+<p>Una parte importante de cómo redactar un Documento de Requisitos del Producto incluye la evaluación y medición del éxito. Por lo tanto, defina sus métricas de éxito, establezca objetivos medibles y cómo realizaría su seguimiento.</p>
+<h3>5. Anote los criterios de lanzamiento:</h3>
+<p>¿Existen predeterminantes que su producto deba cumplir antes de su lanzamiento? Esboza la funcionalidad mínima del producto, aclara el alcance de las pruebas de usuario y enumera los criterios de lanzamiento para poder crear un producto fácil de usar.</p>
+<h2>Consejos prácticos para redactar un documento de requisitos del producto</h2>
+<p>Consejos prácticos para redactar un documento de requisitos del producto](https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_8qxdhLqT5afunlR0R/image6.png)</p>
+<p>Hay mucho debate sobre qué incluir y qué no incluir en una plantilla típica de PRD. Aunque no hay reglas o estrategias rígidas y rápidas para escribir un PRD, hay algunos elementos que aparecen en este tipo de documentos. Son los siguientes</p>
+<h3>Objetivo:</h3>
+<p>Habla no sólo del objetivo de tu proyecto, sino también de los antecedentes del producto. ¿Por qué quiere fabricarlo y qué problema resuelve? Asegúrese de que su PRD responde a estas preguntas.</p>
+<h3>Características:</h3>
+<p>Analice cada característica de su producto y explique cómo puede simplificar o facilitar la vida de los usuarios finales. Destaque los casos de uso y comparta otros detalles importantes si es necesario.</p>
+<h3>Requisitos del sistema:</h3>
+<p>Antes de lanzar tu producto, debes tener una idea clara de qué tipo de entorno de usuario final requiere tu producto. Desde sistemas operativos y navegadores hasta memoria y capacidad de procesamiento del dispositivo: describa los entornos compatibles.</p>
+<h3>Supuestos y obstáculos:</h3>
+<p>En tu viaje sobre cómo hacer un <strong>Documento de Requisitos del Producto,</strong> es importante hablar también de las precauciones de implementación. Enumera si hay alguna limitación en la implementación. ¿Hay algo que deba tenerse en cuenta durante el lanzamiento del producto o hay elementos adicionales necesarios para la funcionalidad del producto? Mencione todo esto en su borrador.</p>
+<h2>Docsie - Su mejor socio en documentación</h2>
+<p>Si está buscando un software de confianza que pueda satisfacer todas sus necesidades de documentación, le presentamos Docsie, la ventanilla única para una documentación fácil, asequible y sin fisuras. Dé la bienvenida<a href="https://www.docsie.io/pricing/"> </a><a href="https://www.docsie.io/pricing/">Docsie</a> a sus flujos de trabajo y cree formas simplificadas de redactar, mantener, compartir y editar Documentos de Requisitos de Producto.</p>
+<p>Docsie: su socio de documentación definitivo](https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_joL0V459OFZbwg1kd/image1.png)</p>
+<p>Con las potentes y asombrosas funciones de Docsie, como el control de versiones, la gestión de idiomas, la traducción automática de idiomas, etc., puede trabajar en varios documentos de requisitos del producto y transmitir eficazmente la facilidad de uso, la importancia y el valor de su producto. Así que, la próxima vez que le preocupe cómo hacer un Documento de Requisitos del Producto, integre<a href="https://help.docsie.io/"> </a><a href="https://help.docsie.io/">Docsie</a> en su sistema y mejore su proceso de documentación.</p>
+<p>Docsie - Su mejor aliado en documentación 2](https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_Tg8Lrd0bTCQFs302g/image3.png)</p>
+<h2>Reflexiones finales</h2>
+<p>PRD ocupa una posición importante como uno de los documentos de requisitos empresariales más esenciales. Da una buena estructura al proyecto global asociado al producto y prepara su producto para un buen lanzamiento. Sin embargo, un ejemplo típico de Documento de Requisitos del Producto está abierto a la flexibilidad, lo que significa que todos sus miembros pueden acceder al documento y realizar los cambios necesarios para mejorar el producto o la experiencia de los usuarios. Si está buscando un software fiable, para empezar con el proceso de cómo hacer un Documento de Requisitos del Producto, elija<a href="https://app.docsie.io/login/#/"> </a><a href="https://app.docsie.io/login/#/">Docsie</a> como su socio colaborador y prepárese para documentar con facilidad.</p>
+    </div>
+  </div>
+  <!--/ Post Content-->
+
+  <!--Divider-->
+  <hr class="border-b-1 border-gray-400 mt-12 mb-8 mx-4">
+
+  <!--Next & Prev Links-->
+  <div class="font-sans flex justify-between content-center px-4 mb-4">
+    <div class="text-left">
+      <span class="text-xs md:text-sm font-normal text-gray-600">&lt; Previous Post</span><br>
+      <p><a href="../how-technical-writer-can-create-10x-more-content-with-docsieai" class="break-normal text-base md:text-sm text-green-500 font-bold no-underline hover:underline">¿Cómo puede un redactor técnico crear 10 veces más contenido con DocsieAI?</a></p>
+    </div>
+    <div class="text-right">
+      <span class="text-xs md:text-sm font-normal text-gray-600">Next Post &gt;</span><br>
+      <p><a href="../how-to-write-effective-technical-documentation-in-2024" class="break-normal text-base md:text-sm text-green-500 font-bold no-underline hover:underline">Cómo escribir documentación técnica eficaz en 2024</a></p>
+    </div>
+  </div>
+
+
+  <!--/Next & Prev Links-->
+
+  
+    <div class="commentbox"></div>
+
+    <script src="https://unpkg.com/commentbox.io/dist/commentBox.min.js"></script>
+    <script>commentBox("5725910686760960-proj")</script>
+  
+
+
+  <!--Subscribe-->
+  
+  <!-- /Subscribe-->
+</div>
+<!--/container-->
+
+<footer class="bg-gray-900">
+  <div class="container max-w-6xl mx-auto flex items-center px-2 py-8">
+
+    <div class="w-full mx-auto flex flex-wrap items-center">
+      <div class="flex w-full md:w-1/2 justify-center md:justify-start text-white font-extrabold flex-col">
+        <a class="text-gray-900 no-underline hover:text-gray-900 hover:no-underline" href="/blog/es">
+          <span class="text-base text-gray-200">Docsie.io Blog</span>
+        </a>
+        <a class="text-gray-900 no-underline hover:text-gray-900 hover:no-underline"
+           href="https://github.com/LikaloLLC/BlogVi" target="_blank">
+          <span class="text-xs text-gray-200">Made with BlogVI</span>
+        </a>
+      </div>
+      <div class="flex w-full pt-2 content-center justify-between md:w-1/2 md:justify-end">
+        <ul class="list-reset flex justify-center flex-1 md:flex-none items-center">
+          
+            <li>
+              <a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-3"
+                 href="https://www.docsie.io">Docsie</a>
+            </li>
+          
+            <li>
+              <a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-3"
+                 href="https://www.docsie.io/pricing/">Docsie Pricing</a>
+            </li>
+          
+            <li>
+              <a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-3"
+                 href="https://www.docsie.io/try_docsie/">Try Docsie</a>
+            </li>
+          
+        </ul>
+      </div>
+    </div>
+
+
+  </div>
+</footer>
+
+<script>
+  /* Progress bar */
+  //Source: https://alligator.io/js/progress-bar-javascript-css-variables/
+  var h = document.documentElement,
+    b = document.body,
+    st = 'scrollTop',
+    sh = 'scrollHeight',
+    progress = document.querySelector('#progress'),
+    scroll;
+  var scrollpos = window.scrollY;
+  var header = document.getElementById("header");
+  var navcontent = document.getElementById("nav-content");
+
+  document.addEventListener('scroll', function () {
+
+    /*Refresh scroll % width*/
+    scroll = (h[st] || b[st]) / ((h[sh] || b[sh]) - h.clientHeight) * 100;
+    progress.style.setProperty('--scroll', scroll + '%');
+
+    /*Apply classes for slide in bar*/
+    scrollpos = window.scrollY;
+
+    if (scrollpos > 10) {
+      header.classList.add("bg-white");
+      header.classList.add("shadow");
+      navcontent.classList.remove("bg-gray-100");
+      navcontent.classList.add("bg-white");
+    } else {
+      header.classList.remove("bg-white");
+      header.classList.remove("shadow");
+      navcontent.classList.remove("bg-white");
+      navcontent.classList.add("bg-gray-100");
+
+    }
+
+  });
+
+
+  //Javascript to toggle the menu
+  document.getElementById('nav-toggle').onclick = function () {
+    document.getElementById("nav-content").classList.toggle("hidden");
+  }
+</script>
+<script>
+  /*
+    Twitter
+    https://twitter.com/share?url=[post-url]&text=[post-title]
+
+    Facebook
+    https://www.facebook.com/sharer.php?u=[post-url]
+
+  */
+  let twitterURI = document.getElementById('twitter');
+  let facebookURI = document.getElementById('facebook');
+
+  let postURI = encodeURI(document.location.href);
+  let postTitle = encodeURI(document.getElementById('blog-title').innerText + ":\n")
+
+  facebookURI.setAttribute('href', `https://www.facebook.com/sharer.php?u=${postURI}`);
+  twitterURI.setAttribute('href', `https://twitter.com/share?url=${postURI}&text=${postTitle}`);
+</script>
+
+<!--Sharect-->
+
+<script src="https://unpkg.com/sharect@2.0.0/dist/sharect.js"></script>
+<script>window["sharectConfig"] = {"backgroundColor": "#333333", "enabled": true, "facebook": true, "iconColor": "#FFFFFF", "selectableElements": ["body"], "twitter": true, "twitterUsername": "likalo_llc"}</script>
+<script src="/blog/templates/assets/js/sharect.js"></script>
+
+
+
+<!--Reading time-->
+<script src="/blog/templates/assets/js/reading-time.min.js"></script>
+<script>
+  const text = []
+  let content = [...document.getElementById('content').getElementsByTagName('p')].forEach((elem) => {
+    text.push(elem.textContent)
+  });
+  const stats = readingTime(text.join(" "));
+
+  document.getElementById('reading-time').innerHTML = stats.text;
+</script>
+
+
+  
+      <!-- Google Tag Manager (noscript) -->
+
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TZRGMQ9"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+  
+
+</body>
+
+</html>
