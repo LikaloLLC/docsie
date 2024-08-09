@@ -75,7 +75,7 @@ shareimage %}{% block styles %}
                       <span class="meta">/per month</span>
                     </div>
 
-
+                     <div class="billing-period">billed annually</div>
                   </div>
                   <div class="docsie-pricing-card-description">
   <span class="item"><i class="fas fa-lock"></i> Public Knowledge Base</span>
@@ -133,6 +133,7 @@ shareimage %}{% block styles %}
                       <span class="price">$170</span>
                       <span class="meta">/per month</span>
                     </div>
+                   <div class="billing-period">billed annually</div>
                   </div>
                   <div class="docsie-pricing-card-description">
     <span class="item"><i class="fas fa-lock-open"></i> Mixed Public & Private Knowledge Base</span>
@@ -189,6 +190,7 @@ shareimage %}{% block styles %}
                       <span class="price">$249</span>
                       <span class="meta">/per month</span>
                     </div>
+                     <div class="billing-period">billed annually</div>
                   </div>
                   <div class="docsie-pricing-card-description">
       <span class="item"><i class="fas fa-lock-open"></i> Mixed Public & Private Knowledge Base</span>
@@ -498,7 +500,7 @@ shareimage %}{% block styles %}
                 </div>
 
                 <div class="docsie-pricing-button-wrapper">
-                  Organizations
+                  Enterprise
                                 <button class="docsie-pricing-button-base docsie-pricing-button-primary" style="width: 100%" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/docsie-io/demo-call'})">
           Talk to Sales
         </button>
@@ -518,63 +520,35 @@ shareimage %}{% block styles %}
 {% block scripts %}
 
   <script>
-    function toggleActive(id) {
-      var elements = document.querySelectorAll('.docsie-pricing-toggle');
-  
-  
-      elements.forEach(function (element) {
-        if (element.id === id) {
-          element.querySelector('.docsie-pricing-toggle-text').classList.add('docsie-pricing-text-active');
-        } else {
-          element.querySelector('.docsie-pricing-toggle-text').classList.remove('docsie-pricing-text-active');
-        }
-      });
-  
-      if (id === 'shared-plans') {
-        document.getElementById('private-plans-content').style.display = 'none';
-        document.getElementById('shared-plans-content').style.display = 'grid';
-      } else {
-        document.getElementById('shared-plans-content').style.display = 'none';
-        document.getElementById('private-plans-content').style.display = 'flex';
-      }
-    }
-  
-    function toggleFeatures() {
-      const featuresElements = document.querySelectorAll('.docsie-show-features');
-      const expandIconElements = document.querySelectorAll('.docsie-img-expand');
-  
-      featuresElements.forEach(function (element) {
-        if (!element.style.display || element.style.display === 'none') {
-          element.style.display = 'block';
-        } else {
-          element.style.display = 'none';
-        }
-      });
-  
-      expandIconElements.forEach(function (element) {
-        if (!element.style.transform || element.style.transform === 'rotate(180deg)') {
-          element.style.transform = 'rotate(0deg)';
-        } else {
-          element.style.transform = 'rotate(180deg)';
-        }
-      });
-    }
-
 document.addEventListener('DOMContentLoaded', function() {
   const pricingToggle = document.getElementById('pricing-toggle');
   const priceElements = document.querySelectorAll('.docsie-pricing-card-header-bottom .price');
-  const monthlyPrices = ['$143', '$341', '$449', 'Custom'];
-  const annualPrices = ['$1068', '$2040', '$2988', 'Custom'];
+  const monthlyPrices = [143, 341, 449, 'Custom'];
+  const annualPrices = [1068, 2040, 2988, 'Custom'];
   const toggleLabels = document.querySelectorAll('.PRICE1-toggle-label');
+  const billingPeriodElements = document.querySelectorAll('.billing-period');
 
   function updatePrices(isAnnual) {
     priceElements.forEach((el, index) => {
-      el.textContent = isAnnual ? annualPrices[index] : monthlyPrices[index];
+      if (annualPrices[index] === 'Custom') {
+        el.textContent = 'Custom';
+      } else {
+        const price = isAnnual ? (annualPrices[index] / 12) : monthlyPrices[index];
+        el.textContent = `$${price}`;
+      }
+    });
+    billingPeriodElements.forEach(el => {
+      el.textContent = isAnnual ? 'billed annually' : 'billed monthly';
     });
 
     const metaElements = document.querySelectorAll('.docsie-pricing-card-header-bottom .meta');
     metaElements.forEach(el => {
-      el.textContent = isAnnual ? '/per year' : '/per month';
+      el.textContent = '/mo';
+    });
+
+    const billingPeriods = document.querySelectorAll('.billing-period');
+    billingPeriods.forEach(el => {
+      el.textContent = isAnnual ? 'billed annually' : 'billed monthly';
     });
 
     // Update toggle label styles
@@ -601,6 +575,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 });
+
   </script>
 {% endblock scripts %}
 {% endblock content %} 
