@@ -1,0 +1,220 @@
+.security-section {
+  background: 
+    linear-gradient(120deg, rgba(177, 17, 17, 0.03) 0%, rgba(177, 17, 17, 0) 100%),
+    #FFFFFF;
+  position: relative;
+  overflow: hidden;
+  padding: 80px 0;
+}
+
+.security-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+}
+
+.security-section::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(#f0f0f0 1px, transparent 1px);
+  background-size: 20px 20px;
+  opacity: 0.3;
+  top: 0;
+  left: 0;
+}
+
+/* Header Styles */
+.security-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.security-subtitle {
+  font-family: 'Open Sans', sans-serif;
+  color: #39464E;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
+  margin-bottom: 14px;
+}
+
+.security-text-style {
+  color: #B11111;
+}
+
+.security-title {
+  color: #101212;
+  font-family: 'Arimo', sans-serif;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 61px;
+  text-transform: capitalize;
+  margin: 0 0 16px 0;
+}
+
+.security-description {
+  color: #39464E;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  line-height: 160%;
+  letter-spacing: 0.48px;
+  margin: 0 auto;
+  max-width: 600px;
+}
+
+/* Features Styles */
+.security-features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.security-feature-card {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 40px;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  border: 1px solid rgba(236, 240, 244, 0.8);
+  box-shadow: 
+    0 4px 20px rgba(0, 0, 0, 0.05),
+    0 0 0 1px rgba(255, 255, 255, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.security-feature-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(177, 17, 17, 0.05) 0%,
+    rgba(177, 17, 17, 0) 100%
+  );
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.security-feature-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 
+    0 20px 40px rgba(0, 0, 0, 0.12),
+    0 0 0 1px rgba(255, 255, 255, 0.15);
+}
+
+.security-feature-card:hover::before {
+  opacity: 1;
+}
+
+.security-feature-icon {
+  width: 72px;
+  height: 72px;
+  background: linear-gradient(
+    135deg,
+    rgba(177, 17, 17, 0.15) 0%,
+    rgba(177, 17, 17, 0.05) 100%
+  );
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 28px;
+  position: relative;
+  overflow: hidden;
+}
+
+.security-feature-icon::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0.3) 50%,
+    rgba(255, 255, 255, 0.1) 100%
+  );
+  transform: translateX(-100%);
+  transition: transform 0.6s ease;
+}
+
+.security-feature-card:hover .security-feature-icon::after {
+  transform: translateX(100%);
+}
+
+.security-feature-icon i {
+  font-size: 32px;
+  color: #B11111;
+  filter: drop-shadow(0 2px 4px rgba(177, 17, 17, 0.2));
+}
+
+.security-feature-content h3 {
+  font-size: 22px;
+  margin: 0 0 18px 0;
+  position: relative;
+  padding-bottom: 12px;
+}
+
+.security-feature-content h3::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 40px;
+  height: 3px;
+  background: linear-gradient(90deg, #B11111 0%, rgba(177, 17, 17, 0.3) 100%);
+  border-radius: 2px;
+}
+
+.security-feature-content p {
+  color: #39464E;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 968px) {
+  .security-features {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .security-section {
+    padding: 60px 0;
+  }
+
+  .security-header {
+    margin-bottom: 40px;
+  }
+
+  .security-title {
+    font-size: 24px;
+    line-height: 1.4;
+  }
+
+  .security-description {
+    font-size: 14px;
+  }
+
+  .security-features {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .security-feature-card {
+    padding: 24px;
+  }
+}

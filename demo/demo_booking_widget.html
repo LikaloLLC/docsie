@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book a Demo</title>
+    <style>
+        .demo-form {
+            max-width: 400px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .demo-form input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        .demo-form button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .demo-form button:hover {
+            background-color: #0056b3;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="demo-form" id="demoForm">
+        <h2>Book a Demo</h2>
+        <form id="emailForm" action="https://formspree.io/f/xwpeqkqo" method="POST">
+            <input type="email" name="email" id="emailInput" placeholder="Enter your email" required>
+            <button type="submit" id="submitButton">Book Demo</button>
+        </form>
+        <p id="thankYouMessage" class="hidden">Thank you! Please select a time slot in the Calendly widget.</p>
+    </div>
+
+    <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+    <script>
+        document.getElementById('emailForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = document.getElementById('emailInput').value;
+
+            // Submit form to Formspree
+            fetch(this.action, {
+                method: 'POST',
+                body: new FormData(this),
+                headers: {
+                    'Accept': 'application/json'
+                }
+            }).then(response => {
+                if (response.ok) {
+                    // Hide form and show thank you message
+                    document.getElementById('emailForm').classList.add('hidden');
+                    document.getElementById('thankYouMessage').classList.remove('hidden');
+
+                    // Initialize Calendly with the collected email
+                    Calendly.initPopupWidget({
+                        url: 'https://calendly.com/docsie-io/demo-call',
+                        prefill: {
+                            email: email
+                        }
+                    });
+                } else {
+                    throw new Error('Form submission failed');
+                }
+            }).catch(error => {
+                console.error('Error:', error);
+                alert('There was a problem submitting your email. Please try again.');
+            });
+        });
+
+        // Optional: Track form views and button clicks
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Demo form viewed');
+        });
+
+        document.getElementById('submitButton').addEventListener('click', function() {
+            console.log('Demo button clicked');
+        });
+    </script>
+</body>
+</html>

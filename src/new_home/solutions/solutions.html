@@ -1,0 +1,164 @@
+<section class="section-padding solutions-section">
+  <div class="solutions-container">
+    <!-- Solutions Header -->
+    <div class="solutions-header">
+      <p class="solutions-subtitle">
+        <!-- <span class="solutions-text-style">#Documentation Solutions</span> for your company -->
+      </p>
+      <h2 class="solutions-title">How can Docsie help you?</h2>
+      <p class="solutions-description">
+        Choose your use case and see how Docsie can transform your documentation process
+      </p>
+    </div>
+
+    <!-- Solution Picker -->
+    <div class="solutions-picker">
+      <button class="picker-button active" data-solution="knowledge-base">
+        <div class="picker-icon">
+          <i class="fas fa-book"></i>
+        </div>
+        <span>Knowledge Base</span>
+      </button>
+      
+      <button class="picker-button" data-solution="product-docs">
+        <div class="picker-icon">
+          <i class="fas fa-file-alt"></i>
+        </div>
+        <span>Product Documentation</span>
+      </button>
+      
+      <button class="picker-button" data-solution="sops">
+        <div class="picker-icon">
+          <i class="fas fa-tasks"></i>
+        </div>
+        <span>SOPs</span>
+      </button>
+      
+      <button class="picker-button" data-solution="manuals">
+        <div class="picker-icon">
+          <i class="fas fa-book-reader"></i>
+        </div>
+        <span>User Manuals</span>
+      </button>
+    </div>
+
+    <!-- Solution Cards Container -->
+    <div class="solutions-cards">
+      <!-- Knowledge Base Card -->
+      <div class="solution-card active" id="knowledge-base">
+        <div class="card-image">
+          <img data-src="../assets/new_home/solutions/knowledge-base-preview.png" alt="Knowledge Base Preview" class="lazy" />
+        </div>
+        <div class="card-content">
+          <div class="card-header">
+            <div class="solution-icon">
+              <i class="fas fa-book"></i>
+            </div>
+            <h3>Knowledge Base</h3>
+          </div>
+          <p>Minimize Support Tickets with Instant Access to Expert Help. Empower your users to find solutions fast with our always-available, detailed self-help guides.</p>
+          <div class="card-features">
+            <ul>
+              <li>Instant access to help documentation</li>
+              <li>Searchable knowledge repository</li>
+              <li>Reduce support ticket volume</li>
+              <li>24/7 self-service support</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product Documentation Card -->
+      <div class="solution-card" id="product-docs">
+        <div class="card-image">
+          <img data-src="../assets/new_home/solutions/product-docs-preview.png" alt="Product Documentation Preview" class="lazy" />
+        </div>
+        <div class="card-content">
+          <div class="card-header">
+            <div class="solution-icon">
+              <i class="fas fa-file-alt"></i>
+            </div>
+            <h3>Product Documentation</h3>
+          </div>
+          <p>Empower Your Product Expertise with Docsie. Elevate your company's ability to create and maintain comprehensive product documentation.</p>
+          <div class="card-features">
+            <ul>
+              <li>Comprehensive documentation tools</li>
+              <li>Version control and tracking</li>
+              <li>Collaborative editing features</li>
+              <li>Multi-format export options</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- SOPs Card -->
+      <div class="solution-card" id="sops">
+        <div class="card-image">
+          <img data-src="../assets/new_home/solutions/sops-preview.png" alt="SOPs Preview" class="lazy" />
+        </div>
+        <div class="card-content">
+          <div class="card-header">
+            <div class="solution-icon">
+              <i class="fas fa-tasks"></i>
+            </div>
+            <h3>SOPs</h3>
+          </div>
+          <p>Optimize Operations with Streamlined SOPs. Centralize and enhance standard operating procedures for key processes like onboarding and compliance.</p>
+          <div class="card-features">
+            <ul>
+              <li>Standardized procedure templates</li>
+              <li>Process workflow automation</li>
+              <li>Compliance tracking</li>
+              <li>Interactive checklists</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- User Manuals Card -->
+      <div class="solution-card" id="manuals">
+        <div class="card-image">
+          <img data-src="../assets/new_home/solutions/manuals-preview.png" alt="User Manuals Preview" class="lazy" />
+        </div>
+        <div class="card-content">
+          <div class="card-header">
+            <div class="solution-icon">
+              <i class="fas fa-book-reader"></i>
+            </div>
+            <h3>User Manuals</h3>
+          </div>
+          <p>Transform User Manuals: From Static PDFs to Dynamic Solutions. Upgrade from outdated PDFs to a dynamic, searchable, multilingual platform.</p>
+          <div class="card-features">
+            <ul>
+              <li>Interactive digital manuals</li>
+              <li>Multi-language support</li>
+              <li>Real-time updates</li>
+              <li>Advanced search capabilities</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const buttons = document.querySelectorAll('.picker-button');
+  const cards = document.querySelectorAll('.solution-card');
+
+  buttons.forEach(button => {
+    button.addEventListener('click', () => {
+      // Remove active class from all buttons and cards
+      buttons.forEach(b => b.classList.remove('active'));
+      cards.forEach(c => c.classList.remove('active'));
+
+      // Add active class to clicked button and corresponding card
+      button.classList.add('active');
+      const solutionId = button.getAttribute('data-solution');
+      document.getElementById(solutionId).classList.add('active');
+    });
+  });
+});
+</script>
