@@ -3,6 +3,7 @@
   display: flex;
   padding-bottom: 100px;
   margin-top: 100px;
+  justify-content: center;
 }
 
 .docsie-about-wrapper .docsie-about-text-style {
@@ -13,8 +14,11 @@
   display: flex;
   flex-direction: column;
   gap: 48px;
-  width: 50%;
+  width: 100%;
+  max-width: 800px;
   justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 .docsie-about-wrapper .docsie-about-text-wrapper .docsie-about-details-text {
@@ -66,12 +70,30 @@
   height: 40px;
 }
 
-.docsie-about-wrapper .docsie-about-location {
-  width: 50%;
-  background-image: url("/assets/new_home/canada.png");
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
+.docsie-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin: 2rem 0;
+  text-align: center;
+}
+
+.docsie-stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stat-number {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #4AC175;
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  font-size: 1rem;
+  color: #666;
 }
 
 @media screen and (max-width: 768px) {
@@ -109,6 +131,11 @@
 
   .disabled-in-mobile {
     display: none !important;
+  }
+
+  .docsie-stats-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
 }
 

@@ -533,21 +533,19 @@ document.addEventListener('DOMContentLoaded', function() {
       if (annualPrices[index] === 'Custom') {
         el.textContent = 'Custom';
       } else {
-        const price = isAnnual ? (annualPrices[index] / 12) : monthlyPrices[index];
+        const price = isAnnual ? 
+          Math.round(annualPrices[index] / 12) :
+          monthlyPrices[index];
         el.textContent = `$${price}`;
       }
-    });
-    billingPeriodElements.forEach(el => {
-      el.textContent = isAnnual ? 'billed annually' : 'billed monthly';
     });
 
     const metaElements = document.querySelectorAll('.docsie-pricing-card-header-bottom .meta');
     metaElements.forEach(el => {
-      el.textContent = '/mo';
+      el.textContent = '/per month';
     });
 
-    const billingPeriods = document.querySelectorAll('.billing-period');
-    billingPeriods.forEach(el => {
+    billingPeriodElements.forEach(el => {
       el.textContent = isAnnual ? 'billed annually' : 'billed monthly';
     });
 
@@ -560,12 +558,15 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
+  // Set toggle to checked (annual) by default
+  pricingToggle.checked = true;
+
   pricingToggle.addEventListener('change', function() {
     updatePrices(this.checked);
   });
 
-  // Initialize prices and styles
-  updatePrices(pricingToggle.checked);
+  // Initialize prices and styles with annual pricing
+  updatePrices(true);
 
   // Add click event to labels for better UX
   toggleLabels.forEach(label => {
