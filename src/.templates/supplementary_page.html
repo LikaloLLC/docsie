@@ -1,0 +1,95 @@
+{% extends "_base.html" %}
+
+{% block title %}{{ page.title }}{% endblock %}
+{% block description %}{{ page.description }}{% endblock %}
+{% block shareimage %}{{ page.components.hero.image if page.components.hero and page.components.hero.image else 'https://d1iq6qzgppjlud.cloudfront.net/images/docsie-share.png' }}{% endblock %}
+
+
+{% block styles %}
+<!-- Global styles -->
+<link rel="stylesheet" href="/new_home/globals.css" />
+<!-- Component specific styles -->
+<link rel="stylesheet" href="/styles/supplementary_page.css" />
+<link rel="stylesheet" href="/styles/components/hero.css" />
+<link rel="stylesheet" href="/styles/components/features.css" />
+<link rel="stylesheet" href="/styles/components/gallery.css" />
+<link rel="stylesheet" href="/styles/components/related.css" />
+<link rel="stylesheet" href="/styles/components/reviews.css" />
+<link rel="stylesheet" href="/styles/components/carousel.css" />
+<link rel="stylesheet" href="/styles/components/stats.css" />
+<link rel="stylesheet" href="/styles/components/comparison.css" />
+<link rel="stylesheet" href="/styles/components/cta_section.css" />
+<link rel="stylesheet" href="/styles/components/benefits.css" />
+{% endblock %}
+
+{% block content %}
+<section class="section-padding supplementary-page">
+  <!-- Hero Section -->
+  {% if page.components.hero %}
+    {{ render_component('hero', page.components.hero, page=page) }}
+  {% endif %}
+
+  <!-- Stats Section -->
+  {% if page.components.stats %}
+    <div class="content-section">
+      {{ render_component('stats', page.components.stats) }}
+    </div>
+  {% endif %}
+
+  <!-- Benefits Section -->
+  {% if page.components.benefits %}
+    <div class="content-section">
+      {{ render_component('benefits', page.components.benefits) }}
+    </div>
+  {% endif %}
+
+
+  <!-- Features Section -->
+  {% if page.components.features %}
+    <div class="content-section">
+      <h2 class="section-title">{{ page.components.features.title }}</h2>
+      <p class="section-description">{{ page.components.features.description }}</p>
+      {{ render_component('features', page.components.features) }}
+    </div>
+  {% endif %}
+
+  <!-- Gallery Section -->
+  {% if page.components.gallery %}
+    <div class="content-section">
+      <h2 class="section-title">{{ page.components.gallery.title }}</h2>
+      <p class="section-description">{{ page.components.gallery.description }}</p>
+      {{ render_component('gallery', page.components.gallery) }}
+    </div>
+  {% endif %}
+
+  <!-- Comparison Section -->
+  {% if page.components.comparison %}
+    <div class="content-section">
+      {{ render_component('comparison', page.components.comparison) }}
+    </div>
+  {% endif %}
+
+  <!-- Carousel Section -->
+  {% if page.components.carousel %}
+    <div class="content-section">
+      {{ render_component('carousel', page.components.carousel) }}
+    </div>
+  {% endif %}
+
+  <!-- Related Section -->
+  {% if page.components.related %}
+    <div class="content-section">
+      {{ render_component('related', page.components.related) }}
+    </div>
+  {% endif %}
+
+
+  {% set default_cta = {
+    'title': 'Ready to Transform Your Documentation?',
+    'description': 'Start creating professional documentation that your users will love',
+    'cta': {'text': 'Book Demo'}
+} %}
+{{ render_component('cta_section', page.components.cta_section or default_cta) }}
+
+</section>
+{% endblock %}

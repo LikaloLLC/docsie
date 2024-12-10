@@ -1,0 +1,19 @@
+{% if section %}
+<section class="features-section section-padding">
+    <div class="container">
+        <div class="features-grid">
+            {% for feature in section.features_list %}
+            <div class="feature-card">
+                {% if feature.icon %}
+                <div class="feature-icon">
+                    <i class="{{ feature.icon }}"></i>
+                </div>
+                {% endif %}
+                <h3>{{ feature.title }}</h3>
+                <p>{{ feature.description }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endif %}

@@ -1,0 +1,74 @@
+{% block styles %}
+<link rel="stylesheet" href='/index.css'>
+{% endblock styles %}
+
+{% if section %}
+<section class="docsie-section docsie-grid accent4" data-index="0">
+    <div class="docsie-section-container" role="presentation">
+      <div class="cr-ft">
+        <figure class="ft-f">
+          {% for slide in section.carousel_slides %}
+          <img
+            src="{{ slide.image }}"
+            alt="{{ slide.alt }}" />
+          {% endfor %}
+          <figcaption class="h-lg"></figcaption>
+        </figure>
+        <nav class="ft-n v-lg">
+          <ul>
+            {% for slide in section.carousel_slides %}
+            <li><button data-icon="menu">
+                {{ slide.caption }}
+            </button></li>
+            {% endfor %}
+            {% if section.cta %}
+            <li><a href="{{ section.cta.url }}">{{ section.cta.text }} <svg class="inl" width="22" height="22" viewBox="0 0 20 20">
+                  <use xlink:href="#icon-arrow-right" /></svg></a></li>
+            {% endif %}
+          </ul>
+        </nav>
+      </div>
+    </div>
+</section>
+
+<script type="text/javascript">
+  "use strict";
+  function Icon(a) {
+    var b = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : "inl";
+    return "<svg class=\"".concat(b, "\" width=\"22\" height=\"22\" viewBox=\"0 0 20 20\"><use xlink:href=\"#icon-").concat(a, "\" /></svg>");
+  }
+  function Rider(a) {
+    var b;
+    var c = Array.from(a.querySelectorAll("img"));
+    var d = Array.from(a.querySelectorAll("button"));
+    var e = a.querySelector("figcaption");
+
+    var f = function (f) {
+      b = f;
+      c.forEach(function (a) {
+        return a.classList.remove("active");
+      });
+      d.forEach(function (a) {
+        return a.classList.remove("active");
+      });
+      c[f].classList.add("active");
+      d[f].classList.add("active");
+      e.innerHTML = d[f].innerHTML;
+    };
+
+    d.forEach(function (a, b) {
+      return a.addEventListener("click", function () {
+        return f(b);
+      });
+    });
+    f(0);
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
+    const carousels = document.querySelectorAll('.cr-ft');
+    carousels.forEach(function(carousel) {
+      Rider(carousel);
+    });
+  });
+</script>
+{% endif %}
