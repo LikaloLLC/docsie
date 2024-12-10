@@ -3,14 +3,14 @@
     <!-- Industries Header -->
     <div class="industries-header">
       <p class="industries-subtitle">
-      <h2 class="industries-title">Industries that we serve</h1>
+      <h2 class="industries-title">Industries that we serve</h2>
       <p class="industries-description">
         Discover how Docsie can transform documentation in your industry
       </p>
     </div>
 
     <!-- Industries Picker -->
-    <div class="industries-picker">
+    <div class="industries-picker desktop-only">
       <button class="industry-tab active" data-industry="manufacturing">
         <i class="fas fa-industry"></i>
         Manufacturing
@@ -35,6 +35,18 @@
         <i class="fas fa-landmark"></i>
         Government/Non-Profit
       </button>
+    </div>
+
+    <!-- Mobile Industry Selector -->
+    <div class="mobile-industry-selector">
+      <select id="industrySelect" class="industry-select">
+        <option value="manufacturing">Manufacturing</option>
+        <option value="it">IT Services</option>
+        <option value="energy">Energy</option>
+        <option value="saas">SaaS</option>
+        <option value="compliance">Compliance</option>
+        <option value="government">Government/Non-Profit</option>
+      </select>
     </div>
 
     <!-- Industries Content -->
@@ -175,6 +187,7 @@
 document.addEventListener('DOMContentLoaded', function() {
   const tabs = document.querySelectorAll('.industry-tab');
   const panels = document.querySelectorAll('.industry-panel');
+  const select = document.getElementById('industrySelect');
 
   tabs.forEach(tab => {
     tab.addEventListener('click', () => {
@@ -186,6 +199,14 @@ document.addEventListener('DOMContentLoaded', function() {
       tab.classList.add('active');
       document.getElementById(industry).classList.add('active');
     });
+  });
+
+  select.addEventListener('change', () => {
+    const industry = select.value;
+    
+    panels.forEach(p => p.classList.remove('active'));
+    
+    document.getElementById(industry).classList.add('active');
   });
 });
 </script>
