@@ -1,5 +1,7 @@
 .related-content {
-  margin-top: 5rem;
+  margin: 5rem auto;
+  max-width: 1200px;
+  padding: 0 1rem;
 }
 
 .related-content h2 {
@@ -7,12 +9,14 @@
   margin-bottom: 2.5rem;
   color: #1a1a1a;
   font-weight: 600;
+  text-align: center;
 }
 
 .related-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 2rem;
+  margin: 0 auto;
 }
 
 .related-card {
@@ -24,6 +28,7 @@
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   border: 1px solid rgba(0, 0, 0, 0.05);
+  height: 100%;
 }
 
 .related-card:hover {
@@ -45,32 +50,38 @@
 .related-card .related-content {
   padding: 1.75rem;
   margin-top: 0;
+  display: flex;
+  flex-direction: column;
+  height: calc(100% - 220px);
 }
 
 .related-card h3 {
   font-size: 1.25rem;
-  margin-bottom: 0.875rem;
-  color: #1a1a1a;
   font-weight: 600;
-  line-height: 1.4;
+  color: #1a1a1a;
+  margin: 0 0 0.75rem 0;
 }
 
 .related-card p {
   font-size: 1rem;
-  line-height: 1.7;
-  color: #4f4f4f;
+  color: #4a5568;
+  line-height: 1.6;
   margin: 0;
-  opacity: 0.9;
+  flex-grow: 1;
 }
 
 /* Add responsive styles */
 @media screen and (max-width: 768px) {
-  .related-content h2 {
-    font-size: 1.875rem;
-  }
-  
   .related-grid {
     grid-template-columns: 1fr;
+  }
+  
+  .related-content {
+    margin: 3rem auto;
+  }
+  
+  .related-content h2 {
+    font-size: 1.875rem;
   }
 }
 
@@ -78,4 +89,4 @@
   .related-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-} 
+}
