@@ -82,4 +82,4 @@ if __name__ == "__main__":
             (".*", render_template_file)
         ]
     )
-    site.render(use_reloader=True)
+    site.render()
