@@ -1,7 +1,7 @@
 # Docsie Landing Page
 
 A modern, conversion-focused landing page for Docsie - an intelligent documentation platform. This project uses HTML, CSS, and vanilla JavaScript with Jinja templating for component organization.
- 
+
 ## Project Structure
 
 
