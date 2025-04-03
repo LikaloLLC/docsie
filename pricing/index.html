@@ -1693,22 +1693,27 @@ document.addEventListener('DOMContentLoaded', function() {
   const pricingToggle = document.getElementById('pricing-toggle');
   const toggleLabels = document.querySelectorAll('.PRICE1-toggle-label');
   
-  // Standard plan
+  // Standard plan pricing
   const standardMonthly = 45;
-  const standardAnnual = 399; // Fixed annual price
+  const standardAnnual = 399;
   
   // Update prices based on toggle state
   function updatePrices(isAnnual) {
     document.querySelectorAll('.docsie-pricing-card').forEach((card, index) => {
       const priceElement = card.querySelector('.price');
+      const metaElement = card.querySelector('.meta');
       const billingPeriod = card.querySelector('.billing-period');
       
       if (index === 0) { // Standard plan
         if (isAnnual) {
-          priceElement.textContent = '$' + standardAnnual;
+          // For annual, show the monthly equivalent (annual price / 12)
+          const monthlyEquivalent = Math.round(standardAnnual / 12);
+          priceElement.textContent = '$' + monthlyEquivalent;
+          metaElement.textContent = '/per month';
           billingPeriod.textContent = 'billed annually';
         } else {
           priceElement.textContent = '$' + standardMonthly;
+          metaElement.textContent = '/per month';
           billingPeriod.textContent = 'billed monthly';
         }
       }
@@ -2323,22 +2328,27 @@ document.addEventListener('DOMContentLoaded', function() {
   const pricingToggle = document.getElementById('pricing-toggle');
   const toggleLabels = document.querySelectorAll('.PRICE1-toggle-label');
   
-  // Standard plan
+  // Standard plan pricing
   const standardMonthly = 45;
-  const standardAnnual = 399; // Fixed annual price
+  const standardAnnual = 399;
   
   // Update prices based on toggle state
   function updatePrices(isAnnual) {
     document.querySelectorAll('.docsie-pricing-card').forEach((card, index) => {
       const priceElement = card.querySelector('.price');
+      const metaElement = card.querySelector('.meta');
       const billingPeriod = card.querySelector('.billing-period');
       
       if (index === 0) { // Standard plan
         if (isAnnual) {
-          priceElement.textContent = '$' + standardAnnual;
+          // For annual, show the monthly equivalent (annual price / 12)
+          const monthlyEquivalent = Math.round(standardAnnual / 12);
+          priceElement.textContent = '$' + monthlyEquivalent;
+          metaElement.textContent = '/per month';
           billingPeriod.textContent = 'billed annually';
         } else {
           priceElement.textContent = '$' + standardMonthly;
+          metaElement.textContent = '/per month';
           billingPeriod.textContent = 'billed monthly';
         }
       }
