@@ -1,0 +1,29 @@
+<script type="text/javascript" src="/free-email-provider-domains.js"></script>
+<script type="text/template" id="rg-frm">
+  <form autocomplete="off" class="box-rg" action="https://app.docsie.io{{landing_url}}" method="get">
+  <fieldset>
+    <div class="rg-gr">
+    <input class="ui-in" name="email" type="email" placeholder="Enter your email"
+      oninvalid="InvalidMsg(this);"
+      oninput="InvalidMsg(this);">
+    <button class="ui-bt ui-prime" type="submit" aria-label="Submit registration request">{% trans %}Claim Your Perk{% endtrans %}</button>
+    </div>
+    <div class="rg-info">{% trans %} Already using Docsie? <a href="https://app.docsie.io/login/">Sign-in. {% endtrans %}</a></div>
+  </fieldset>
+</form>
+</script>
+<script type="text/javascript">
+  function InjectFRM(el) {
+    var tpl = document.getElementById("rg-frm");
+    if (tpl) {
+      var ctr = document.createElement("div");
+      ctr.classList.add("rg-ctr");
+      ctr.innerHTML = tpl.text;
+      // el.appendChild(ctr);
+      let h6Tags = document.getElementsByTagName("h6");
+      el.insertBefore(ctr, h6Tags[1]);
+    }
+  }
+  $await(".docsie-header-conatiner", InjectFRM);
+  $await(".docsie-footer-nav", InjectFRM);
+</script>

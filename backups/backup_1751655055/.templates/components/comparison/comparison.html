@@ -1,0 +1,37 @@
+{% if section %}
+<section class="comparison-section section-padding">
+    <div class="container">
+        {% if section.title %}
+        <h2 class="section-title">{{ section.title }}</h2>
+        {% endif %}
+        
+        {% if section.description %}
+        <p class="section-description">{{ section.description }}</p>
+        {% endif %}
+        
+        <div class="comparison-grid">
+            {% for comparison in section.comparisons_list %}
+            <div class="comparison-item">
+                <div class="comparison-traditional">
+                    <h3>{{ comparison.traditional.title }}</h3>
+                    <ul class="comparison-list traditional">
+                    {% for point in comparison.traditional.points %}
+                        <li><i class="fas fa-times"></i> {{ point }}</li>
+                    {% endfor %}
+                    </ul>
+                </div>
+                
+                <div class="comparison-modern">
+                    <h3>{{ comparison.modern.title }}</h3>
+                    <ul class="comparison-list modern">
+                    {% for point in comparison.modern.points %}
+                        <li><i class="fas fa-check"></i> {{ point }}</li>
+                    {% endfor %}
+                    </ul>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endif %}

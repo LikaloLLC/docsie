@@ -1,0 +1,33 @@
+<script type="text/javascript" src="/free-email-provider-domains.js"></script>
+<script type="text/template" id="rg-frm">
+<form name="onboarding" autocomplete="off" class="box-rg" action="https://app.docsie.io/new_rest-auth/linkedin/url/" method="get">
+  <fieldset>
+    <div class="rg-gr">
+<!--    <input class="ui-in" name="email" type="email" placeholder="{% trans %} Enter your email {% endtrans %}"-->
+<!--      oninvalid="InvalidMsg(this);"-->
+<!--      oninput="InvalidMsg(this);">-->
+    <button class="ui-bt ui-prime" type="submit"    aria-label="Submit registration request">{% trans %} Get Started-Free {% endtrans %}</button>
+    <button class="ui-bt ui-prime" type="submit"    aria-label="Submit registration request" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/docsie-io/demo-call'});return false;">{% trans %} Request a Demo {% endtrans %}</button>
+    </div>
+    <div class="rg-info">{% trans %} Already using Docsie? <a href="https://app.docsie.io/login/">Sign-in. {% endtrans %}</a></div>
+  </fieldset>
+</form>
+
+
+</script>
+<script type="text/javascript">
+  function InjectFRM(el) {
+    var tpl = document.getElementById("rg-frm");
+    if (tpl) {
+      var ctr = document.createElement("div");
+      ctr.classList.add("rg-ctr");
+      ctr.innerHTML = tpl.text;
+      el.appendChild(ctr);
+    }
+  }
+  $await(".docsie-signup-container", InjectFRM);
+  $await(".docsie-footer-nav", InjectFRM);
+</script>
+{% set docsie_start_journey_replace_css_selector = '[name=onboarding]' %}
+{% set docsie_start_journey_replace_attr = 'action' %}
+{% include '_docsie_start_journey_cookie.html' %}

@@ -1,0 +1,66 @@
+{% if section %}
+<!-- Modern CTA Section v2 - Built with Tailwind CSS -->
+<section class="cta-section-v2 w-full py-12 md:py-24 lg:py-32">
+  <div class="container mx-auto max-w-4xl px-4 md:px-6">
+    <div class="flex flex-col items-center justify-center space-y-4 text-center">
+      <div class="space-y-2">
+        
+        <!-- Badge/Label -->
+        {% if section.badge %}
+        <div class="inline-flex items-center rounded-lg bg-primary/10 px-3 py-1 text-sm font-medium text-primary">
+          <svg class="mr-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+          </svg>
+          {{ section.badge }}
+        </div>
+        {% endif %}
+        
+        <!-- Main Title -->
+        <h2 class="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-transparent">
+          {{ section.title }}
+        </h2>
+        
+        <!-- Description -->
+        {% if section.description %}
+        <p class="mx-auto max-w-[600px] text-muted-foreground md:text-xl/relaxed">
+          {{ section.description }}
+        </p>
+        {% endif %}
+      </div>
+      
+      <!-- CTA Buttons -->
+      <div class="flex flex-col gap-2 min-[400px]:flex-row">
+        {% if section.primary_button %}
+        <a href="{{ section.primary_button.url }}" 
+           class="group inline-flex items-center justify-center rounded-lg bg-primary px-8 py-3 text-sm font-medium text-primary-foreground shadow-lg transition-all hover:bg-primary/90 hover:shadow-xl hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2">
+          {{ section.primary_button.text }}
+          <svg class="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+          </svg>
+        </a>
+        {% endif %}
+        
+        {% if section.secondary_button %}
+        <a href="{{ section.secondary_button.url }}" 
+           class="inline-flex items-center justify-center rounded-lg border border-input bg-background px-8 py-3 text-sm font-medium shadow-sm transition-all hover:bg-accent hover:text-accent-foreground hover:shadow-md hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2">
+          {{ section.secondary_button.text }}
+        </a>
+        {% endif %}
+      </div>
+      
+      <!-- Additional Info -->
+      {% if section.note %}
+      <p class="text-xs text-muted-foreground mt-4">
+        {{ section.note }}
+      </p>
+      {% endif %}
+    </div>
+  </div>
+  
+  <!-- Background Elements -->
+  <div class="absolute inset-0 -z-10 overflow-hidden">
+    <div class="absolute -top-40 -right-40 w-80 h-80 bg-primary/5 rounded-full blur-3xl"></div>
+    <div class="absolute -bottom-40 -left-40 w-80 h-80 bg-primary/5 rounded-full blur-3xl"></div>
+  </div>
+</section>
+{% endif %} 

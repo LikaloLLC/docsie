@@ -1,0 +1,89 @@
+{% if section %}
+<!-- Modern Benefits Section v2 - Built with Tailwind CSS -->
+<section class="benefits-v2 w-full py-12 md:py-24 lg:py-32 bg-background">
+  <div class="container mx-auto max-w-7xl px-4 md:px-6">
+    
+    <!-- Section Header -->
+    <div class="flex flex-col items-center justify-center space-y-4 text-center mb-12">
+      <div class="space-y-2">
+        {% if section.badge %}
+        <div class="inline-flex items-center rounded-lg bg-primary/10 px-3 py-1 text-sm font-medium text-primary">
+          <svg class="mr-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+          </svg>
+          {{ section.badge }}
+        </div>
+        {% endif %}
+        
+        <h2 class="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+          {{ section.title }}
+        </h2>
+        
+        {% if section.description %}
+        <p class="mx-auto max-w-[900px] text-muted-foreground md:text-xl/relaxed">
+          {{ section.description }}
+        </p>
+        {% endif %}
+      </div>
+    </div>
+
+    <!-- Bento Grid -->
+    <div class="bento-grid grid w-full auto-rows-[22rem] grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      {% for benefit in section.benefit_list %}
+      <div class="benefit-card group relative flex flex-col justify-between overflow-hidden rounded-xl
+                  bg-white shadow-[0_0_0_1px_rgba(0,0,0,.03),0_2px_4px_rgba(0,0,0,.05),0_12px_24px_rgba(0,0,0,.05)]
+                  transform-gpu dark:bg-black dark:border dark:border-white/10 dark:shadow-[0_-20px_80px_-20px_#ffffff1f_inset]
+                  transition-all duration-300 hover:shadow-[0_0_0_1px_rgba(0,0,0,.08),0_4px_8px_rgba(0,0,0,.1),0_20px_40px_rgba(0,0,0,.1)]
+                  {{ benefit.grid_class or 'col-span-1' }}">
+        
+        <!-- Background Pattern/Image -->
+        <div class="absolute inset-0 pointer-events-none">
+          {% if benefit.background_pattern %}
+          <div class="absolute -top-40 -right-40 w-80 h-80 bg-{{ benefit.color or 'primary' }}/5 rounded-full blur-3xl"></div>
+          {% endif %}
+          {% if benefit.background_image %}
+          <img src="{{ benefit.background_image }}" alt="" class="absolute inset-0 w-full h-full object-cover opacity-10">
+          {% endif %}
+        </div>
+        
+        <!-- Content -->
+        <div class="pointer-events-none z-10 flex transform-gpu flex-col gap-1 p-6 transition-all duration-300 group-hover:-translate-y-2">
+          <!-- Icon -->
+          {% if benefit.icon %}
+          <div class="mb-4 text-{{ benefit.color or 'primary' }} transform-gpu transition-all duration-300 ease-in-out group-hover:scale-75">
+            <i class="{{ benefit.icon }} text-4xl"></i>
+          </div>
+          {% endif %}
+          
+          <!-- Title -->
+          <h3 class="text-xl font-semibold text-neutral-700 dark:text-neutral-300">
+            {{ benefit.title }}
+          </h3>
+          
+          <!-- Description -->
+          <p class="max-w-lg text-neutral-400">
+            {{ benefit.description }}
+          </p>
+        </div>
+
+        <!-- CTA Button (appears on hover) -->
+        <div class="pointer-events-none absolute bottom-0 flex w-full translate-y-10 transform-gpu flex-row items-center p-4 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+          {% if benefit.cta %}
+          <a href="{{ benefit.cta.url or '#' }}" 
+             class="pointer-events-auto inline-flex items-center rounded-md bg-primary px-3 py-1 text-sm font-medium text-primary-foreground shadow-sm hover:bg-primary/90 transition-colors">
+            {{ benefit.cta.text or 'Learn More' }}
+            <svg class="ml-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+            </svg>
+          </a>
+          {% endif %}
+        </div>
+        
+        <!-- Hover overlay -->
+        <div class="pointer-events-none absolute inset-0 transform-gpu transition-all duration-300 group-hover:bg-black/[.03] group-hover:dark:bg-neutral-800/10"></div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %} 

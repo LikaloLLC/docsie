@@ -1,0 +1,125 @@
+<section class="section-padding">
+  <div class="docsie-features-wrapper">
+    <div class="docsie-features-header-wrapper">
+      <p class="docsie-features-text-details">
+        <span class="docsie-features-text-style"># Why</span> Choose Our
+        Platform
+      </p>
+      <h1 class="docsie-features-title">Everything you need, in one place</h1>
+    </div>
+    <div class="docsie-features-animation-wrapper">
+      <div class="docsie-features-animation">
+        <div class="docsie-features-actions-left">
+          <button class="docsie-features-actions-item" onclick="changeImage('webKnowledge')">
+            <div class="docsie-features-actions-item-icon redcolor">
+              <img class="lazy" data-src="/assets/new_home/features/books.svg" alt="books" />
+            </div>
+            Web Knowledge Bases
+          </button>
+          <button class="docsie-features-actions-item" onclick="changeImage('management')">
+            <div class="docsie-features-actions-item-icon greencolor">
+              <img class="lazy" data-src="/assets/new_home/features/hourglass.svg" alt="project" />
+            </div>
+            Document Lifecycle Management
+          </button>
+          <button class="docsie-features-actions-item" onclick="changeImage('inApp')">
+            <div class="docsie-features-actions-item-icon bluecolor">
+              <img class="lazy" data-src="/assets/new_home/features/question.svg" alt="inApp" />
+            </div>
+            In-App Help Interfaces
+          </button>
+          <button class="docsie-features-actions-item" onclick="changeImage('supportTickets')">
+            <div class="docsie-features-actions-item-icon yellowcolor">
+              <img class="lazy" data-src="/assets/new_home/features/shield-check.svg" alt="shield" />
+            </div>
+            Support Tickets
+          </button>
+        </div>
+        <div class="docsie-features-actions-right">
+          <button class="docsie-features-actions-item" onclick="changeImage('multiLanguage')">
+            <div class="docsie-features-actions-item-icon redcolor">
+              <img class="lazy" data-src="/assets/new_home/features/user-gear.svg" alt="version" />
+            </div>
+            Multiple Versions and Languages
+          </button>
+          <button class="docsie-features-actions-item" onclick="changeImage('chatbot')">
+            <div class="docsie-features-actions-item-icon greencolor">
+              <img class="lazy" data-src="/assets/new_home/features/chat.svg" alt="chat" />
+            </div>
+            AI Chatbot
+          </button>
+          <button class="docsie-features-actions-item" onclick="changeImage('generativeAI')">
+            <div class="docsie-features-actions-item-icon bluecolor">
+              <img class="lazy" data-src="/assets/new_home/features/cpu.svg" alt="cpu" />
+            </div>
+            AI Generative Content
+          </button>
+          <button class="docsie-features-actions-item" onclick="changeImage('tourguide')">
+            <div class="docsie-features-actions-item-icon yellowcolor">
+              <img class="lazy" data-src="/assets/new_home/features/article.svg" alt="article" />
+            </div>
+            Product Tours
+          </button>
+        </div>
+        {% include 'new_home/features/macbook.html' %}
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+  function changeImage(type) {
+    const svgElem = document.getElementById("notebookImage");
+    const textElem = document.getElementById("notebookText");
+
+    let imagePath = "";
+    let newText = "";
+    switch (type) {
+      case "webKnowledge":
+        imagePath = "web-knowledge.jpg";
+        text = "Create and publish internal and external knowledge bases"
+        break;
+      case "management":
+        imagePath = "management.jpg";
+        text = "Manage documentation lifecycle with documentation projects";
+        break;
+      case "inApp":
+        imagePath = "in-app.jpg";
+        text = "Educate your users with in-app help widgets";
+        break;
+      case "supportTickets":
+        imagePath = "support-tickets.png";
+        text = "Track support requests and support tickets";
+        break;
+      case "multiLanguage":
+        imagePath = "multi-language.gif";
+        text = "Manage your knowledge in multiple languages";
+        break;
+      case "chatbot":
+        imagePath = "chatbot.gif";
+        text = "Enhance customer interaction with AI-driven chatbots";
+        break;
+      case "generativeAI":
+        imagePath = "generative-AI.gif";
+        text = "Leverage generative AI for dynamic content creation";
+        break;
+      case "tourguide":
+        imagePath = "product-tours.gif";
+        text = "Guided product tours for enhanced user onboarding";
+        break;
+      default:
+        imagePath = "web-knowledge.jpg";
+        text = "Create and publish internal and external knowledge bases";
+    }
+
+
+    textElem.innerHTML = text;
+    svgElem.style.opacity = "0";
+    setTimeout(function () {
+      svgElem.setAttribute("xlink:href", `/assets/new_home/features/${imagePath}`);
+
+      svgElem.style.opacity = "1";
+    }, 500);
+  }
+
+  changeImage();
+</script>

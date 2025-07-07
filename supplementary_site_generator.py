@@ -5,6 +5,7 @@ import sys
 import os
 import yaml
 import shutil
+import argparse
 
 def is_hidden(filepath):
     """Check if a file or directory should be hidden (starts with .)"""
@@ -119,7 +120,7 @@ def load_all_supplementary_pages():
     print(f"\nTotal pages loaded: {len(pages_data)}")
     return pages_data
 
-def generate_supplementary_pages(env):
+def generate_supplementary_pages(env, force_version=False, ui_version='v1'):
     """Generate supplementary pages from YAML data with component support"""
     template = env.get_template('.templates/supplementary_page.html')
     
@@ -139,6 +140,11 @@ def generate_supplementary_pages(env):
     for page in pages_data:
         try:
             print(f"\nProcessing page: {page.get('id', 'unknown')}")
+            
+            # Override UI version if version flag is used
+            if force_version:
+                page['ui_version'] = ui_version
+                print(f"  Forcing UI version {ui_version} for {page.get('id', 'unknown')}")
             
             # Create context with all necessary variables
             context = {
@@ -208,7 +214,7 @@ def verify_components():
     
     return len(missing_components) == 0
 
-def render_site():
+def render_site(force_version=False, ui_version='v1'):
     # Verify components first
     verify_components()
     
@@ -219,17 +225,17 @@ def render_site():
     site = Site.make_site(
         searchpath="src",
         env_globals={
-            "render_component": lambda name, config, **kwargs: debug_render_component(site._env, name, config, **kwargs)
+            "render_component": lambda name, config, **kwargs: render_component_with_version(site._env, name, config, ui_version, **kwargs)
         },
         extensions=['jinja2.ext.i18n', 'jinja_markdown.MarkdownExtension']
     )
     
     # Generate supplementary pages using the same Jinja environment
-    generate_supplementary_pages(site._env)
+    generate_supplementary_pages(site._env, force_version=force_version, ui_version=ui_version)
     print("\nSite generation completed!")
 
 def debug_render_component(env, name, config, **kwargs):
-    """Debug wrapper for component rendering"""
+    """Debug wrapper for component rendering with version support"""
     try:
         print(f"\nRendering component: {name}")
         print(f"Config: {config}")
@@ -254,24 +260,91 @@ def debug_render_component(env, name, config, **kwargs):
             print(f"Config keys: {config.keys()}")
         raise
 
+def render_component_with_version(env, name, config, ui_version='v1', **kwargs):
+    """
+    Generic component rendering with version support and fallbacks
+    
+    Args:
+        env: Jinja2 environment
+        name: Component name (e.g., 'hero', 'features')
+        config: Component configuration
+        ui_version: UI version (e.g., 'v1', 'v2', 'v3')
+        **kwargs: Additional template variables
+    
+    Returns:
+        Rendered component HTML
+    """
+    try:
+        print(f"\nRendering component: {name} (requested version: {ui_version})")
+        
+        if not config:
+            print(f"No config provided for {name}")
+            return ''
+        
+        # Try to find the best version of the component
+        component_versions = []
+        
+        # Check for specific version first (e.g., hero_v2)
+        if ui_version != 'v1':
+            versioned_name = f"{name}_{ui_version}"
+            versioned_path = f'.templates/components/{versioned_name}/{versioned_name}.html'
+            try:
+                env.get_template(versioned_path)
+                component_versions.append((versioned_name, versioned_path))
+                print(f"Found versioned component: {versioned_name}")
+            except:
+                print(f"Version {ui_version} not found for {name}")
+        
+        # Always add v1 (original) as fallback
+        original_path = f'.templates/components/{name}/{name}.html'
+        try:
+            env.get_template(original_path)
+            component_versions.append((name, original_path))
+            print(f"Found original component: {name}")
+        except:
+            print(f"Original component not found: {name}")
+        
+        # Use the first available version
+        if component_versions:
+            selected_name, selected_path = component_versions[0]
+            print(f"Using component: {selected_name}")
+            
+            template = env.get_template(selected_path)
+            result = template.render(section=config, **kwargs)
+            print(f"Successfully rendered {selected_name}")
+            return result
+        else:
+            print(f"No version of component {name} found")
+            return f"<!-- Component {name} not found -->"
+            
+    except Exception as e:
+        print(f"Error rendering component {name}: {str(e)}")
+        print(f"Config type: {type(config)}")
+        if isinstance(config, dict):
+            print(f"Config keys: {config.keys()}")
+        # Return fallback with error info
+        return f"<!-- Error rendering {name}: {str(e)} -->"
+
 def ensure_styles():
     """Ensure styles are in the correct location"""
     # Create styles directory if it doesn't exist
     os.makedirs('styles/components', exist_ok=True)
     
-    # Define source and destination paths for styles
+    # Start with the main supplementary page style
     styles_to_copy = {
-        'src/.templates/supplementary_page.css': 'styles/supplementary_page.css',
-        'src/.templates/components/hero/style.css': 'styles/components/hero.css',
-        'src/.templates/components/features/style.css': 'styles/components/features.css',
-        'src/.templates/components/gallery/style.css': 'styles/components/gallery.css',
-        'src/.templates/components/related/style.css': 'styles/components/related.css',
-        'src/.templates/components/reviews/style.css': 'styles/components/reviews.css',
-        'src/.templates/components/carousel/style.css': 'styles/components/carousel.css',
-        'src/.templates/components/stats/style.css': 'styles/components/stats.css',
-        'src/.templates/components/comparison/style.css': 'styles/components/comparison.css',
-        'src/.templates/components/cta_section/style.css': 'styles/components/cta_section.css'
+        'src/.templates/supplementary_page.css': 'styles/supplementary_page.css'
     }
+    
+    # Dynamically discover all component styles
+    components_dir = 'src/.templates/components'
+    if os.path.exists(components_dir):
+        for component_name in os.listdir(components_dir):
+            component_path = os.path.join(components_dir, component_name)
+            if os.path.isdir(component_path):
+                style_file = os.path.join(component_path, 'style.css')
+                if os.path.exists(style_file):
+                    dst_path = f'styles/components/{component_name}.css'
+                    styles_to_copy[style_file] = dst_path
     
     # Copy each style file
     for src, dst in styles_to_copy.items():
@@ -282,5 +355,38 @@ def ensure_styles():
         else:
             print(f"Warning: Style file not found: {src}")
 
+def main():
+    parser = argparse.ArgumentParser(description='Generate supplementary site pages')
+    parser.add_argument('--v2', action='store_true', 
+                       help='Force all pages to use v2 UI components')
+    parser.add_argument('--v3', action='store_true', 
+                       help='Force all pages to use v3 UI components')
+    parser.add_argument('--v4', action='store_true', 
+                       help='Force all pages to use v4 UI components')
+    parser.add_argument('--version', type=str, 
+                       help='Specify UI version explicitly (e.g., v2, v3, v4)')
+    
+    args = parser.parse_args()
+    
+    # Determine the UI version
+    ui_version = 'v1'  # default
+    if args.version:
+        ui_version = args.version if args.version.startswith('v') else f'v{args.version}'
+    elif args.v4:
+        ui_version = 'v4'
+    elif args.v3:
+        ui_version = 'v3'
+    elif args.v2:
+        ui_version = 'v2'
+    
+    force_version = ui_version != 'v1'
+    
+    if force_version:
+        print(f"🚀 Generating all pages with {ui_version} UI components")
+    else:
+        print("🚀 Generating all pages with v1 UI components (default)")
+    
+    render_site(force_version=force_version, ui_version=ui_version)
+
 if __name__ == "__main__":
-    render_site()
+    main()

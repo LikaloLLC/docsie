@@ -10,16 +10,13 @@
 <link rel="stylesheet" href="/new_home/globals.css" />
 <!-- Component specific styles -->
 <link rel="stylesheet" href="/styles/supplementary_page.css" />
-<link rel="stylesheet" href="/styles/components/hero.css" />
-<link rel="stylesheet" href="/styles/components/features.css" />
-<link rel="stylesheet" href="/styles/components/gallery.css" />
-<link rel="stylesheet" href="/styles/components/related.css" />
-<link rel="stylesheet" href="/styles/components/reviews.css" />
-<link rel="stylesheet" href="/styles/components/carousel.css" />
-<link rel="stylesheet" href="/styles/components/stats.css" />
-<link rel="stylesheet" href="/styles/components/comparison.css" />
-<link rel="stylesheet" href="/styles/components/cta_section.css" />
-<link rel="stylesheet" href="/styles/components/benefits.css" />
+
+<!-- Dynamic component styles - load both v1 and v2 styles -->
+{% set component_names = ['hero', 'features', 'gallery', 'related', 'reviews', 'carousel', 'stats', 'comparison', 'cta_section', 'benefits', 'testimonials'] %}
+{% for component in component_names %}
+<link rel="stylesheet" href="/styles/components/{{ component }}.css" />
+<link rel="stylesheet" href="/styles/components/{{ component }}_v2.css" />
+{% endfor %}
 {% endblock %}
 
 {% block content %}
@@ -43,12 +40,16 @@
     </div>
   {% endif %}
 
+  <!-- Testimonials Section -->
+  {% if page.components.testimonials %}
+    <div class="content-section">
+      {{ render_component('testimonials', page.components.testimonials) }}
+    </div>
+  {% endif %}
 
   <!-- Features Section -->
   {% if page.components.features %}
     <div class="content-section">
-      <h2 class="section-title">{{ page.components.features.title }}</h2>
-      <p class="section-description">{{ page.components.features.description }}</p>
       {{ render_component('features', page.components.features) }}
     </div>
   {% endif %}
@@ -56,8 +57,6 @@
   <!-- Gallery Section -->
   {% if page.components.gallery %}
     <div class="content-section">
-      <h2 class="section-title">{{ page.components.gallery.title }}</h2>
-      <p class="section-description">{{ page.components.gallery.description }}</p>
       {{ render_component('gallery', page.components.gallery) }}
     </div>
   {% endif %}
@@ -83,13 +82,13 @@
     </div>
   {% endif %}
 
-
+  <!-- CTA Section -->
   {% set default_cta = {
     'title': 'Ready to Transform Your Documentation?',
     'description': 'Start creating professional documentation that your users will love',
     'cta': {'text': 'Book Demo'}
-} %}
-{{ render_component('cta_section', page.components.cta_section or default_cta) }}
+  } %}
+  {{ render_component('cta_section', page.components.cta_section or default_cta) }}
 
 </section>
 {% endblock %}

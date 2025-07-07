@@ -1,0 +1,26 @@
+
+
+{%for item in feed %}
+ <div class="docsie-grid-cell">
+
+              <div class="docsie-card">
+                <p>
+                         <a href=" {{item['link']}} ">
+                 {{item['title']}}
+                                      </a>
+                </p>
+
+                                   <a href=" {{item['link']}} ">
+               <img src="{{item['links'][1]['href']}}" alt="{{item['description']}}" />
+     </a>
+                <p>
+                  <small class="meta">Published {{item['published']}}</small><br />
+
+                  <a href=" {{item['link']}} ">{% trans %}Learn More{% endtrans %} <svg class="inl"
+                      width="22" height="22" viewBox="0 0 20 20">
+                      <use xlink:href="#icon-arrow-right" /></svg></a>
+                </p>
+              </div>
+
+</div>
+    {%endfor%}

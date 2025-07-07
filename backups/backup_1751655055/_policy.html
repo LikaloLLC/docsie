@@ -1,0 +1,35 @@
+<div class="cookie-policy">
+  <aside tabindex="0" role="alertdialog" class="cookie-policy-alert" aria-labelledby="cookie-policy-title"
+    aria-describedby="cookie-policy-content">
+    <h1 id="cookie-policy-title" class="off-screen">
+     {% trans %} Cookie policy notification {% endtrans %}
+    </h1>
+    <span class="cookie-policy-content" id="cookie-policy-content" role="document" tabindex="0"> {%trans%} We use cookies to
+      improve your experience. By your continued use of
+      this site you accept such use. {% endtrans %}<br>  {%trans%} This notice will disappear by
+      itself.{% endtrans %}
+      <button class="cookie-policy-close" aria-label="Close this cookie policy notification"> {% trans %} Close {% endtrans %}</button>
+    </span>
+  </aside>
+</div>
+<script type="text/javascript">
+  "use strict";
+  function Policy(policy) {
+    var policyHide = 15000;
+
+    function hidePolicy() {
+      policy.style.display = "none";
+      localStorage.setItem("docsie-cookie-policy", true);
+    }
+    if (
+      !localStorage.getItem("docsie-cookie-policy")
+    ) {
+      policy
+        .querySelector(".cookie-policy-close")
+        .addEventListener("click", hidePolicy);
+      policy.style.display = "block";
+      setTimeout(hidePolicy, policyHide);
+    }
+  }
+  $await(".cookie-policy-alert", Policy);
+</script>

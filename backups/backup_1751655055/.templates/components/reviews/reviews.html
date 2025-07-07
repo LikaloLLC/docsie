@@ -1,0 +1,63 @@
+<div class="reviews-section">
+  <div class="reviews-header">
+    <div class="reviews-rating">
+      <div class="rating-score">
+        <span class="score">4.8</span>
+        <div class="rating-stars">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star-half-alt"></i>
+        </div>
+      </div>
+      <div class="rating-meta">
+        <p class="rating-count">117 Reviews on</p>
+        <img data-src="../assets/new_home/g2-logo.svg" alt="G2 Logo" class="lazy g2-logo" />
+      </div>
+    </div>
+  </div>
+
+  <div class="reviews-carousel">
+    <div class="reviews-track">
+      {% for review in section.reviews %}
+      <div class="review-card">
+        <div class="review-header">
+          <div class="reviewer-info">
+            <div class="reviewer-avatar">
+              <i class="fas fa-user-circle"></i>
+            </div>
+            <div class="reviewer-meta">
+              <h4>{{ review.name }}</h4>
+              <p>{{ review.title }}</p>
+              <p class="company-size">{{ review.company_size }}</p>
+            </div>
+          </div>
+          <div class="review-rating">
+            {% for i in range(review.rating) %}
+            <i class="fas fa-star"></i>
+            {% endfor %}
+          </div>
+        </div>
+        <div class="review-content">
+          <p>{{ review.content }}</p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+    <button class="nav-button prev">
+      <i class="fas fa-chevron-left"></i>
+    </button>
+    <button class="nav-button next">
+      <i class="fas fa-chevron-right"></i>
+    </button>
+  </div>
+
+  <div class="reviews-cta">
+    <a href="https://www.g2.com/products/docsie/reviews" target="_blank" class="view-reviews-button">
+      View all reviews on G2
+      <i class="fas fa-external-link-alt"></i>
+    </a>
+  </div>
+</div> 

@@ -1,0 +1,224 @@
+<!-- Animated Testimonials Carousel Component -->
+<section class="testimonials-carousel py-16 md:py-24 bg-gradient-to-br from-gray-50 to-white">
+  <div class="container mx-auto px-4 lg:px-8">
+    
+    <!-- Section Header -->
+    <div class="text-center mb-16">
+      <h2 class="text-3xl lg:text-5xl font-bold bg-gradient-to-r from-gray-900 to-gray-600 bg-clip-text text-transparent mb-6">
+        {{ section.title }}
+      </h2>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+        {{ section.description }}
+      </p>
+    </div>
+    
+    <!-- Carousel Container -->
+    <div class="max-w-sm md:max-w-4xl mx-auto px-4 md:px-8 lg:px-12">
+      <div class="relative grid grid-cols-1 md:grid-cols-2 gap-20">
+        
+        <!-- Images Stack -->
+        <div class="carousel-images-container">
+          <div class="relative h-80 w-full">
+            {% for slide in section.carousel_slides %}
+            <div class="carousel-image absolute inset-0 origin-bottom transition-all duration-500 ease-in-out {% if loop.first %}active{% endif %}"
+                 data-slide="{{ loop.index0 }}">
+              <img src="{{ slide.image }}" 
+                   alt="{{ slide.caption or slide.title }}"
+                   class="h-full w-full rounded-3xl object-cover object-center shadow-xl">
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+        
+        <!-- Content Area -->
+        <div class="flex justify-between flex-col py-4">
+          
+          <!-- Dynamic Content -->
+          <div class="carousel-content">
+            {% for slide in section.carousel_slides %}
+            <div class="content-slide transition-all duration-300 {% if not loop.first %}hidden{% endif %}"
+                 data-slide="{{ loop.index0 }}">
+              <h3 class="text-2xl font-bold text-gray-900 mb-2">
+                {{ slide.title or slide.caption }}
+              </h3>
+              {% if slide.subtitle %}
+              <p class="text-sm text-gray-600 mb-6">
+                {{ slide.subtitle }}
+              </p>
+              {% endif %}
+              <div class="text-content">
+                <p class="text-lg text-gray-700 leading-relaxed">
+                  {{ slide.description or slide.caption }}
+                </p>
+              </div>
+              {% if slide.cta %}
+              <div class="mt-6">
+                <a href="{{ slide.cta.url }}" 
+                   class="inline-flex items-center text-blue-600 hover:text-blue-700 font-medium transition-colors duration-200 group">
+                  {{ slide.cta.text }}
+                  <svg class="ml-2 w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                  </svg>
+                </a>
+              </div>
+              {% endif %}
+            </div>
+            {% endfor %}
+          </div>
+          
+          <!-- Navigation Controls -->
+          <div class="flex gap-4 pt-12 md:pt-0">
+            <button class="carousel-btn carousel-prev h-10 w-10 rounded-full bg-gray-200 hover:bg-gray-300 flex items-center justify-center transition-all duration-200 group disabled:opacity-50">
+              <svg class="h-5 w-5 text-gray-700 group-hover:rotate-12 transition-transform duration-300 rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+              </svg>
+            </button>
+            <button class="carousel-btn carousel-next h-10 w-10 rounded-full bg-gray-200 hover:bg-gray-300 flex items-center justify-center transition-all duration-200 group disabled:opacity-50">
+              <svg class="h-5 w-5 text-gray-700 group-hover:-rotate-12 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+              </svg>
+            </button>
+          </div>
+          
+          <!-- Dots Indicator -->
+          <div class="flex justify-center mt-8 space-x-2">
+            {% for slide in section.carousel_slides %}
+            <button class="carousel-dot w-2 h-2 rounded-full transition-all duration-200 {% if loop.first %}bg-blue-600{% else %}bg-gray-300 hover:bg-gray-400{% endif %}"
+                    data-slide="{{ loop.index0 }}">
+            </button>
+            {% endfor %}
+          </div>
+          
+        </div>
+      </div>
+    </div>
+    
+    <!-- CTA Section -->
+    {% if section.cta %}
+    <div class="text-center mt-16">
+      <div class="inline-flex flex-col sm:flex-row gap-4">
+        <a href="{{ section.cta.url }}" 
+           class="inline-flex items-center justify-center px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 transform hover:-translate-y-1">
+          {{ section.cta.text }}
+          <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+          </svg>
+        </a>
+        
+        {% if section.cta.secondary %}
+        <a href="{{ section.cta.secondary.url }}" 
+           class="inline-flex items-center justify-center px-8 py-4 bg-white hover:bg-gray-50 text-gray-700 font-semibold rounded-xl border-2 border-gray-200 hover:border-gray-300 transition-all duration-200">
+          {{ section.cta.secondary.text }}
+        </a>
+        {% endif %}
+      </div>
+    </div>
+    {% endif %}
+    
+  </div>
+</section>
+
+<!-- Carousel JavaScript -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const carousels = document.querySelectorAll('.testimonials-carousel');
+  
+  carousels.forEach(function(carousel) {
+    const images = carousel.querySelectorAll('.carousel-image');
+    const contents = carousel.querySelectorAll('.content-slide');
+    const dots = carousel.querySelectorAll('.carousel-dot');
+    const prevBtn = carousel.querySelector('.carousel-prev');
+    const nextBtn = carousel.querySelector('.carousel-next');
+    
+    let currentSlide = 0;
+    const totalSlides = images.length;
+    
+    function updateCarousel() {
+      // Update images with stacking effect
+      images.forEach((image, index) => {
+        const isActive = index === currentSlide;
+        const offset = index - currentSlide;
+        
+        image.classList.toggle('active', isActive);
+        
+        if (isActive) {
+          image.style.transform = 'rotate(0deg) scale(1)';
+          image.style.opacity = '1';
+          image.style.zIndex = '999';
+        } else {
+          const rotation = offset * 2;
+          const scale = 1 - (Math.abs(offset) * 0.05);
+          image.style.transform = `rotate(${rotation}deg) scale(${scale})`;
+          image.style.opacity = Math.abs(offset) <= 2 ? '0.7' : '0';
+          image.style.zIndex = totalSlides - Math.abs(offset);
+        }
+      });
+      
+      // Update content with fade transition
+      contents.forEach((content, index) => {
+        if (index === currentSlide) {
+          content.classList.remove('hidden');
+          content.style.opacity = '0';
+          setTimeout(() => {
+            content.style.opacity = '1';
+          }, 150);
+        } else {
+          setTimeout(() => {
+            content.classList.add('hidden');
+          }, 150);
+        }
+      });
+      
+      // Update dots
+      dots.forEach((dot, index) => {
+        dot.classList.toggle('bg-blue-600', index === currentSlide);
+        dot.classList.toggle('bg-gray-300', index !== currentSlide);
+      });
+      
+      // Update navigation buttons
+      prevBtn.disabled = currentSlide === 0;
+      nextBtn.disabled = currentSlide === totalSlides - 1;
+    }
+    
+    function nextSlide() {
+      if (currentSlide < totalSlides - 1) {
+        currentSlide++;
+        updateCarousel();
+      }
+    }
+    
+    function prevSlide() {
+      if (currentSlide > 0) {
+        currentSlide--;
+        updateCarousel();
+      }
+    }
+    
+    function goToSlide(index) {
+      currentSlide = index;
+      updateCarousel();
+    }
+    
+    // Event listeners
+    nextBtn.addEventListener('click', nextSlide);
+    prevBtn.addEventListener('click', prevSlide);
+    
+    dots.forEach((dot, index) => {
+      dot.addEventListener('click', () => goToSlide(index));
+    });
+    
+    // Auto-advance every 5 seconds
+    setInterval(() => {
+      if (currentSlide < totalSlides - 1) {
+        nextSlide();
+      } else {
+        currentSlide = 0;
+        updateCarousel();
+      }
+    }, 5000);
+    
+    // Initialize
+    updateCarousel();
+  });
+});
+</script>

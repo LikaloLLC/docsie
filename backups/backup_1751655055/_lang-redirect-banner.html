@@ -1,0 +1,62 @@
+<div class="lb-cookie-policy cookie-policy">
+    <aside tabindex="0" role="alertdialog" class="lb-cookie-policy-alert cookie-policy-alert "
+        aria-labelledby="cookie-policy-title" aria-describedby="cookie-policy-content">
+        <h1 id="cookie-policy-title" class="off-screen">
+            {% trans %} Language Redirect notification {% endtrans %}
+        </h1>
+        <span class="cookie-policy-content" id="cookie-policy-content" role="document" tabindex="0"> {%trans%} Would you
+            like to view this page in {% endtrans %}<a href="/" id="docsie-locale-lang-path"></a>.
+            <button class="cookie-policy-close lb-cookie-policy-close"
+                aria-label="Close this cookie policy notification"> {% trans %} Close {% endtrans %}</button>
+        </span>
+    </aside>
+</div>
+<script type="text/javascript">
+    // handle showing banner if the navigator.language is other than "English"
+    function showRedirectLangBanner(langBanner) {
+        let userLocale = window.navigator.language;
+        if (userLocale.toLowerCase().includes("pt")) {
+            // pt has 3 dialects
+            // 1. "pt"; 2. "pt-BR"(Brazil); 3. "pt-PT"(Protugal)
+            userLocale = "pt";
+        } else if (userLocale.toLowerCase().includes("en")) {
+            userLocale = "en";
+        }
+        // else if (userLocale.toLowerCase().includes("ko")) {
+        //     userLocale = "ko";
+        // } 
+        else if (userLocale.toLowerCase().includes("es")) {
+            userLocale = "es";
+        } else if (userLocale.toLowerCase().includes("fr")) {
+            userLocale = "fr";
+        }
+        // else if (userLocale.toLowerCase().includes("de")) {
+        //     userLocale = "de";
+        // } 
+        else {
+            // do nothing 
+        }
+        // userLocale = "fr"; // uncomment to test the banner visibility and functionality
+        function handleLangRedirect() {
+            sessionStorage.setItem("userLocale", userLocale);
+        }
+        function hidePolicy() {
+            langBanner.style.display = "none";
+        }
+        if (!userLocale.toLowerCase().includes("en") && Object.keys(labels[userLocale]).length > 0) {
+            let localLabel = labels[userLocale] ? labels[userLocale] : labels["en"];
+            let linkEl = document.getElementById("docsie-locale-lang-path");
+            linkEl.innerHTML = `${localLabel.label}`;
+            linkEl.setAttribute('href', `${localLabel.path}`);
+            linkEl.addEventListener("click", handleLangRedirect);
+            langBanner
+                .querySelector(".lb-cookie-policy-close")
+                .addEventListener("click", hidePolicy);
+            let baseUrl = window.location.href;
+            if (sessionStorage.getItem("userLocale") != userLocale)
+                langBanner.style.display = "block";
+        }
+    }
+
+    $await(".lb-cookie-policy-alert", showRedirectLangBanner);
+</script>

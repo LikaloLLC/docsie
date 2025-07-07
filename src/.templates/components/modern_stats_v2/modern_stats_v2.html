@@ -1,0 +1,136 @@
+<!-- Modern Stats Component v2 -->
+<section class="modern-stats py-20 bg-gradient-to-r from-blue-50 via-purple-50 to-cyan-50">
+  <div class="container mx-auto px-4 lg:px-8">
+    
+    <!-- Stats Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+      
+      <!-- Stat Item 1 -->
+      <div class="stat-item text-center opacity-0 transform translate-y-8" data-animate-delay="0">
+        <div class="stat-card bg-white/80 backdrop-blur-sm rounded-2xl p-8 border border-white/50 shadow-xl hover:shadow-2xl transition-all duration-300 group">
+          <div class="stat-icon mb-6">
+            <div class="w-16 h-16 mx-auto bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+              </svg>
+            </div>
+          </div>
+          <div class="stat-number text-4xl md:text-5xl font-bold text-gray-900 mb-2" data-target="60">0</div>
+          <div class="stat-suffix text-2xl font-bold text-blue-600 mb-2">%</div>
+          <div class="stat-label text-gray-600 font-medium">Faster Documentation</div>
+          <div class="stat-description text-sm text-gray-500 mt-2">Reduce time spent on documentation tasks</div>
+        </div>
+      </div>
+      
+      <!-- Stat Item 2 -->
+      <div class="stat-item text-center opacity-0 transform translate-y-8" data-animate-delay="200">
+        <div class="stat-card bg-white/80 backdrop-blur-sm rounded-2xl p-8 border border-white/50 shadow-xl hover:shadow-2xl transition-all duration-300 group">
+          <div class="stat-icon mb-6">
+            <div class="w-16 h-16 mx-auto bg-gradient-to-br from-purple-500 to-pink-600 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h1a3 3 0 000-6h-1m1 6V4a3 3 0 000 6M9 10v11l6-3 6 3V10"></path>
+              </svg>
+            </div>
+          </div>
+          <div class="stat-number text-4xl md:text-5xl font-bold text-gray-900 mb-2" data-target="98">0</div>
+          <div class="stat-suffix text-2xl font-bold text-purple-600 mb-2">%</div>
+          <div class="stat-label text-gray-600 font-medium">Customer Satisfaction</div>
+          <div class="stat-description text-sm text-gray-500 mt-2">Users love our platform and features</div>
+        </div>
+      </div>
+      
+      <!-- Stat Item 3 -->
+      <div class="stat-item text-center opacity-0 transform translate-y-8" data-animate-delay="400">
+        <div class="stat-card bg-white/80 backdrop-blur-sm rounded-2xl p-8 border border-white/50 shadow-xl hover:shadow-2xl transition-all duration-300 group">
+          <div class="stat-icon mb-6">
+            <div class="w-16 h-16 mx-auto bg-gradient-to-br from-cyan-500 to-blue-600 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+            </div>
+          </div>
+          <div class="stat-number text-4xl md:text-5xl font-bold text-gray-900 mb-2" data-target="24">24</div>
+          <div class="stat-suffix text-2xl font-bold text-cyan-600 mb-2">/7</div>
+          <div class="stat-label text-gray-600 font-medium">Global Support</div>
+          <div class="stat-description text-sm text-gray-500 mt-2">Round-the-clock assistance worldwide</div>
+        </div>
+      </div>
+      
+    </div>
+    
+  </div>
+</section>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Intersection Observer for triggering animations
+  const observerOptions = {
+    threshold: 0.3,
+    rootMargin: '0px 0px -50px 0px'
+  };
+  
+  const observer = new IntersectionObserver(function(entries) {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const statItems = entry.target.querySelectorAll('.stat-item');
+        
+        statItems.forEach((item, index) => {
+          const delay = parseInt(item.dataset.animateDelay) || 0;
+          
+          setTimeout(() => {
+            // Animate the card appearance
+            item.style.opacity = '1';
+            item.style.transform = 'translateY(0)';
+            
+            // Animate the number counter
+            const numberElement = item.querySelector('.stat-number');
+            const target = parseInt(numberElement.dataset.target) || 0;
+            animateCounter(numberElement, target);
+            
+          }, delay);
+        });
+        
+        observer.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+  
+  // Observe the stats section
+  const statsSection = document.querySelector('.modern-stats');
+  if (statsSection) {
+    observer.observe(statsSection);
+  }
+  
+  // Counter animation function
+  function animateCounter(element, target) {
+    let current = 0;
+    const increment = target / 60; // 60 frames for smooth animation
+    const duration = 2000; // 2 seconds
+    const stepTime = duration / 60;
+    
+    const timer = setInterval(() => {
+      current += increment;
+      
+      if (current >= target) {
+        current = target;
+        clearInterval(timer);
+      }
+      
+      // Handle special case for "24/7" display
+      if (target === 24) {
+        element.textContent = Math.floor(current);
+      } else {
+        element.textContent = Math.floor(current);
+      }
+      
+      // Add a subtle bounce effect when reaching the target
+      if (current === target) {
+        element.style.transform = 'scale(1.1)';
+        setTimeout(() => {
+          element.style.transform = 'scale(1)';
+        }, 200);
+      }
+    }, stepTime);
+  }
+});
+</script>

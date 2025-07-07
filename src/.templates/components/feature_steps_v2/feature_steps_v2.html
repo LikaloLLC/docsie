@@ -1,0 +1,308 @@
+<!-- Feature Steps Carousel Component -->
+<section class="feature-steps-carousel py-16 md:py-24">
+  <div class="container mx-auto px-4 lg:px-8">
+    
+    <!-- Section Header -->
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-gray-900">
+        {{ section.title or "How to get Started" }}
+      </h2>
+      {% if section.description %}
+      <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+        {{ section.description }}
+      </p>
+      {% endif %}
+    </div>
+
+    <!-- Main Content Grid -->
+    <div class="max-w-7xl mx-auto">
+      <div class="flex flex-col md:grid md:grid-cols-2 gap-6 md:gap-10">
+        
+        <!-- Steps List -->
+        <div class="order-2 md:order-1 space-y-8">
+          {% for step in section.steps %}
+          <div class="step-item flex items-center gap-6 md:gap-8 opacity-30 transition-all duration-500 {% if loop.first %}active{% endif %}"
+               data-step="{{ loop.index0 }}">
+            
+            <!-- Step Number/Check -->
+            <div class="step-indicator w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center border-2 border-gray-300 bg-gray-100 transition-all duration-500">
+              <span class="step-number text-lg font-bold text-gray-600">{{ loop.index }}</span>
+              <span class="step-check text-xl font-bold text-white hidden">✓</span>
+            </div>
+
+            <!-- Step Content -->
+            <div class="flex-1">
+              <h3 class="text-xl md:text-2xl font-semibold text-gray-900 mb-2">
+                {{ step.title }}
+              </h3>
+              <p class="text-sm md:text-lg text-gray-600 leading-relaxed">
+                {{ step.description }}
+              </p>
+              
+              <!-- Progress Bar -->
+              <div class="step-progress mt-3 h-1 bg-gray-200 rounded-full overflow-hidden">
+                <div class="progress-bar h-full bg-blue-600 transition-all duration-100 ease-linear w-0"></div>
+              </div>
+            </div>
+            
+          </div>
+          {% endfor %}
+        </div>
+
+        <!-- Image Display -->
+        <div class="order-1 md:order-2 relative h-[300px] md:h-[400px] lg:h-[500px] overflow-hidden rounded-lg bg-gray-100">
+          {% for step in section.steps %}
+          <div class="step-image absolute inset-0 rounded-lg overflow-hidden transition-all duration-500 ease-in-out {% if not loop.first %}opacity-0 transform translate-y-8{% endif %}"
+               data-step="{{ loop.index0 }}">
+            <img src="{{ step.image }}" 
+                 alt="{{ step.title }}"
+                 class="w-full h-full object-cover transition-transform duration-500">
+            
+            <!-- Gradient Overlay -->
+            <div class="absolute bottom-0 left-0 right-0 h-2/3 bg-gradient-to-t from-black/50 via-black/20 to-transparent"></div>
+            
+            <!-- Step Badge -->
+            <div class="absolute top-4 left-4 px-3 py-1 bg-white/90 backdrop-blur-sm rounded-full text-sm font-medium text-gray-800">
+              Step {{ loop.index }}
+            </div>
+          </div>
+          {% endfor %}
+          
+          <!-- Controls -->
+          <div class="absolute bottom-4 right-4 flex gap-2">
+            <button class="control-btn play-pause-btn p-2 bg-white/90 hover:bg-white backdrop-blur-sm rounded-full transition-all duration-200">
+              <svg class="play-icon w-5 h-5 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h1m4 0h1m-6 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              </svg>
+              <svg class="pause-icon w-5 h-5 text-gray-700 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 9v6m4-6v6m7-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+    
+    <!-- Navigation Dots -->
+    <div class="flex justify-center mt-12 space-x-2">
+      {% for step in section.steps %}
+      <button class="nav-dot w-3 h-3 rounded-full transition-all duration-200 {% if loop.first %}bg-blue-600{% else %}bg-gray-300 hover:bg-gray-400{% endif %}"
+              data-step="{{ loop.index0 }}">
+      </button>
+      {% endfor %}
+    </div>
+    
+    <!-- CTA Section -->
+    {% if section.cta %}
+    <div class="text-center mt-16">
+      <div class="inline-flex flex-col sm:flex-row gap-4">
+        <a href="{{ section.cta.url }}" 
+           class="inline-flex items-center justify-center px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 transform hover:-translate-y-1">
+          {{ section.cta.text }}
+          <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+          </svg>
+        </a>
+        
+        {% if section.cta.secondary %}
+        <a href="{{ section.cta.secondary.url }}" 
+           class="inline-flex items-center justify-center px-8 py-4 bg-white hover:bg-gray-50 text-gray-700 font-semibold rounded-xl border-2 border-gray-200 hover:border-gray-300 transition-all duration-200">
+          {{ section.cta.secondary.text }}
+        </a>
+        {% endif %}
+      </div>
+    </div>
+    {% endif %}
+    
+  </div>
+</section>
+
+<!-- Feature Steps JavaScript -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const featureStepsCarousels = document.querySelectorAll('.feature-steps-carousel');
+  
+  featureStepsCarousels.forEach(function(carousel) {
+    const stepItems = carousel.querySelectorAll('.step-item');
+    const stepImages = carousel.querySelectorAll('.step-image');
+    const navDots = carousel.querySelectorAll('.nav-dot');
+    const playPauseBtn = carousel.querySelector('.play-pause-btn');
+    const playIcon = carousel.querySelector('.play-icon');
+    const pauseIcon = carousel.querySelector('.pause-icon');
+    
+    let currentStep = 0;
+    let progress = 0;
+    let isPlaying = true;
+    let progressInterval;
+    let stepInterval;
+    
+    const autoPlayInterval = 4000; // 4 seconds per step
+    const progressUpdateInterval = 50; // Update progress every 50ms
+    
+    function updateCarousel() {
+      // Update step items
+      stepItems.forEach((item, index) => {
+        const indicator = item.querySelector('.step-indicator');
+        const number = item.querySelector('.step-number');
+        const check = item.querySelector('.step-check');
+        const progressBar = item.querySelector('.progress-bar');
+        
+        if (index === currentStep) {
+          // Active step
+          item.classList.add('active');
+          item.style.opacity = '1';
+          indicator.classList.add('bg-blue-600', 'border-blue-600');
+          indicator.classList.remove('bg-gray-100', 'border-gray-300');
+          number.classList.add('text-white');
+          number.classList.remove('text-gray-600');
+          
+          // Update progress bar
+          progressBar.style.width = `${progress}%`;
+          
+        } else if (index < currentStep) {
+          // Completed step
+          item.classList.add('completed');
+          item.style.opacity = '0.8';
+          indicator.classList.add('bg-green-600', 'border-green-600');
+          indicator.classList.remove('bg-gray-100', 'border-gray-300', 'bg-blue-600', 'border-blue-600');
+          number.classList.add('hidden');
+          check.classList.remove('hidden');
+          progressBar.style.width = '100%';
+          
+        } else {
+          // Future step
+          item.classList.remove('active', 'completed');
+          item.style.opacity = '0.3';
+          indicator.classList.add('bg-gray-100', 'border-gray-300');
+          indicator.classList.remove('bg-blue-600', 'border-blue-600', 'bg-green-600', 'border-green-600');
+          number.classList.remove('hidden', 'text-white');
+          number.classList.add('text-gray-600');
+          check.classList.add('hidden');
+          progressBar.style.width = '0%';
+        }
+      });
+      
+      // Update images
+      stepImages.forEach((image, index) => {
+        if (index === currentStep) {
+          image.style.opacity = '1';
+          image.style.transform = 'translateY(0)';
+          image.style.zIndex = '10';
+        } else {
+          image.style.opacity = '0';
+          image.style.transform = 'translateY(20px)';
+          image.style.zIndex = '1';
+        }
+      });
+      
+      // Update navigation dots
+      navDots.forEach((dot, index) => {
+        dot.classList.toggle('bg-blue-600', index === currentStep);
+        dot.classList.toggle('bg-gray-300', index !== currentStep);
+      });
+    }
+    
+    function nextStep() {
+      if (currentStep < stepItems.length - 1) {
+        currentStep++;
+        progress = 0;
+        updateCarousel();
+      } else {
+        // Restart from beginning
+        currentStep = 0;
+        progress = 0;
+        updateCarousel();
+      }
+    }
+    
+    function goToStep(index) {
+      currentStep = index;
+      progress = 0;
+      updateCarousel();
+    }
+    
+    function startAutoPlay() {
+      if (!isPlaying) return;
+      
+      progressInterval = setInterval(() => {
+        if (isPlaying) {
+          progress += (100 / (autoPlayInterval / progressUpdateInterval));
+          
+          if (progress >= 100) {
+            clearInterval(progressInterval);
+            setTimeout(() => {
+              nextStep();
+              startAutoPlay();
+            }, 200);
+          } else {
+            // Update current step progress
+            const currentProgressBar = stepItems[currentStep].querySelector('.progress-bar');
+            currentProgressBar.style.width = `${progress}%`;
+          }
+        }
+      }, progressUpdateInterval);
+    }
+    
+    function pauseAutoPlay() {
+      isPlaying = false;
+      clearInterval(progressInterval);
+      playIcon.classList.remove('hidden');
+      pauseIcon.classList.add('hidden');
+    }
+    
+    function resumeAutoPlay() {
+      isPlaying = true;
+      startAutoPlay();
+      playIcon.classList.add('hidden');
+      pauseIcon.classList.remove('hidden');
+    }
+    
+    // Event listeners
+    playPauseBtn.addEventListener('click', () => {
+      if (isPlaying) {
+        pauseAutoPlay();
+      } else {
+        resumeAutoPlay();
+      }
+    });
+    
+    navDots.forEach((dot, index) => {
+      dot.addEventListener('click', () => {
+        clearInterval(progressInterval);
+        goToStep(index);
+        if (isPlaying) {
+          startAutoPlay();
+        }
+      });
+    });
+    
+    stepItems.forEach((item, index) => {
+      item.addEventListener('click', () => {
+        clearInterval(progressInterval);
+        goToStep(index);
+        if (isPlaying) {
+          startAutoPlay();
+        }
+      });
+    });
+    
+    // Initialize
+    updateCarousel();
+    startAutoPlay();
+    
+    // Pause on hover
+    carousel.addEventListener('mouseenter', () => {
+      if (isPlaying) {
+        clearInterval(progressInterval);
+      }
+    });
+    
+    carousel.addEventListener('mouseleave', () => {
+      if (isPlaying) {
+        startAutoPlay();
+      }
+    });
+  });
+});
+</script> 

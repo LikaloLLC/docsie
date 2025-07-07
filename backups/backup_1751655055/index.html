@@ -1,0 +1,116 @@
+{% extends "_base.html" %} {% block title %}{% trans %}Create documentation that
+your customers love{% endtrans %}{% endblock title %} {% block description %}{%
+trans %}Save time and retain customers, write, translate and manage better
+product documentation with Docsie{% endtrans %}{% endblock description %} {%
+block shareimage %}https://www.docsie.io/assets/share-image.jpeg{% endblock
+shareimage %}{% block styles %}
+<link rel="stylesheet" href="/new_home/globals.css" />
+<link rel="stylesheet" href='/index.css'>
+<link rel="stylesheet" href="/new_home/style.css" />
+<link rel="stylesheet" href="/new_home/banner/style.css" />
+<link rel="stylesheet" href="/new_home/banner/modal.css" />
+<link rel="stylesheet" href="/new_home/about/style.css" />
+<link rel="stylesheet" href="/new_home/features/style.css" />
+<link rel="stylesheet" href="/new_home/formAccount/styles.css" />
+<link rel="stylesheet" href="/new_home/solutions/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<link rel="stylesheet" href="/new_home/security/style.css">
+<link rel="stylesheet" href="/new_home/ai/style.css">
+<link rel="stylesheet" href="/new_home/industries/style.css">
+<link rel="stylesheet" href="/new_home/roles/style.css">
+<link rel="stylesheet" href="/new_home/reviews/style.css">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lettering.js/0.7.0/jquery.lettering.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/textillate/0.4.0/jquery.textillate.min.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+{% endblock styles %} {% block content %}
+<main>
+  {% include 'new_home/banner/banner.html' %}
+  
+  
+          <!-- Solutions Section -->
+{% include 'new_home/solutions/solutions.html' %}
+
+  
+   {% include 'new_home/about/about.html' %}
+
+  
+
+
+
+
+   {% include 'new_home/ai/ai.html' %}
+
+
+
+
+
+  <div class="divider-section"></div>
+
+  {% include 'new_home/security/security.html' %}
+
+  <div class="divider-section"></div>
+
+  {% include 'new_home/industries/industries.html' %}
+
+  {% include 'new_home/reviews/reviews.html' %}
+
+  <section id="section9">
+    <div class="divider-section"></div>
+    <div class="start-free-wrapper">
+      <div>
+        <h2 class="landing-page-text section-header-text landing-page-text-center">
+          Ready to dive in?
+        </h2>
+        <h2 class="landing-page-text section-header-text landing-page-text-center">
+          Create your docs today.
+        </h2>
+      </div>
+      {% include 'new_home/formAccount/form.html' %}
+    </div>
+    <div class="divider-section"></div>
+  </section>
+</main>
+<script>
+  function onChangePriceView(type) {
+    if (type == "monthly") {
+      document
+        .getElementById("button-choice-monthly")
+        .classList.add("button-choice-active");
+      document
+        .getElementById("button-choice-annually")
+        .classList.remove("button-choice-active");
+
+      document.getElementById("price-plan-standard").innerHTML = "$189";
+      document.getElementById("price-plan-premium").innerHTML = "$349";
+      document.getElementById("price-plan-business").innerHTML = "$449";
+      document.getElementById("price-plan-organization").innerHTML = "$900";
+
+      const elements = document.querySelectorAll(".price-billed-annually");
+      elements.forEach((element) => {
+        element.style.display = "none";
+      });
+    } else {
+      document
+        .getElementById("button-choice-annually")
+        .classList.add("button-choice-active");
+      document
+        .getElementById("button-choice-monthly")
+        .classList.remove("button-choice-active");
+
+      document.getElementById("price-plan-standard").innerHTML = "$99";
+      document.getElementById("price-plan-premium").innerHTML = "$179";
+      document.getElementById("price-plan-business").innerHTML = "$249";
+      document.getElementById("price-plan-organization").innerHTML = "$699";
+
+      const elements = document.querySelectorAll(".price-billed-annually");
+      elements.forEach((element) => {
+        element.style.display = "block";
+      });
+    }
+  }
+
+  onChangePriceView("annually");
+</script>
+{% endblock content %}
+

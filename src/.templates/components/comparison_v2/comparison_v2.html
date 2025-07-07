@@ -1,0 +1,84 @@
+<!-- Tailwind v2 Comparison Component -->
+<section class="comparison-v2 py-16 bg-white">
+  <div class="container mx-auto px-4 lg:px-8">
+    
+    <!-- Section Header -->
+    <div class="text-center mb-12">
+      <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+        {{ section.title }}
+      </h2>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+        {{ section.description }}
+      </p>
+    </div>
+    
+    <!-- Comparison Grid -->
+    <div class="max-w-6xl mx-auto">
+      {% for comparison in section.comparisons_list %}
+      <div class="comparison-item grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+        
+        <!-- Traditional Column -->
+        <div class="traditional-column bg-gray-50 rounded-lg p-8 relative">
+          <div class="absolute top-4 right-4">
+            <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-red-100 text-red-800">
+              Traditional
+            </span>
+          </div>
+          
+          <h3 class="text-2xl font-bold text-gray-900 mb-6">
+            {{ comparison.traditional.title }}
+          </h3>
+          
+          <ul class="space-y-4">
+            {% for point in comparison.traditional.points %}
+            <li class="flex items-start">
+              <div class="flex-shrink-0 w-6 h-6 bg-red-100 rounded-full flex items-center justify-center mt-0.5">
+                <svg class="w-4 h-4 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+              </div>
+              <span class="ml-3 text-gray-700">{{ point }}</span>
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+        
+        <!-- Modern Column -->
+        <div class="modern-column bg-gradient-to-br from-blue-50 to-indigo-50 rounded-lg p-8 relative border-2 border-blue-200">
+          <div class="absolute top-4 right-4">
+            <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-800">
+              Modern
+            </span>
+          </div>
+          
+          <h3 class="text-2xl font-bold text-gray-900 mb-6">
+            {{ comparison.modern.title }}
+          </h3>
+          
+          <ul class="space-y-4">
+            {% for point in comparison.modern.points %}
+            <li class="flex items-start">
+              <div class="flex-shrink-0 w-6 h-6 bg-green-100 rounded-full flex items-center justify-center mt-0.5">
+                <svg class="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+              </div>
+              <span class="ml-3 text-gray-700 font-medium">{{ point }}</span>
+            </li>
+            {% endfor %}
+          </ul>
+          
+          <!-- Highlight Badge -->
+          <div class="absolute -top-3 left-1/2 transform -translate-x-1/2">
+            <span class="inline-flex items-center px-4 py-2 rounded-full text-sm font-bold bg-gradient-to-r from-blue-600 to-indigo-600 text-white shadow-lg">
+              ✨ Recommended
+            </span>
+          </div>
+        </div>
+        
+      </div>
+      {% endfor %}
+    </div>
+    
+  </div>
+</section>
