@@ -386,7 +386,7 @@ function renderAnimatedColumns() {
     
     // Apply animation with different speeds for mobile
     const baseDuration = column.dataset.duration || '20';
-    const duration = isMobile ? parseInt(baseDuration) + 5 : baseDuration; // Slower on mobile
+    const duration = isMobile ? parseInt(baseDuration) * 3.5 : baseDuration; // Much slower on mobile (3.5x)
     scrollContainer.style.animation = `scroll-reviews ${duration}s linear infinite`;
   });
 }
@@ -474,6 +474,7 @@ document.addEventListener('DOMContentLoaded', function() {
   flex-direction: column;
   gap: 1.5rem;
   padding-bottom: 1.5rem;
+  align-items: center;
 }
 
 .review-card {
@@ -519,19 +520,31 @@ document.addEventListener('DOMContentLoaded', function() {
 
 @media (max-width: 640px) {
   .reviews-column {
-    width: 320px;
+    width: 100%;
     max-width: 90vw;
+    display: flex;
+    justify-content: center;
+  }
+  
+  /* Hide columns that shouldn't be visible on mobile */
+  .reviews-column.hidden {
+    display: none !important;
   }
   
   #reviews-columns {
     gap: 0;
     justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   
   .review-card {
     padding: 1.25rem;
     min-height: 260px;
     max-width: 300px;
+    width: 100%;
+    margin: 0 auto;
   }
   
   .review-card h3 {
@@ -547,13 +560,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
 @media (max-width: 480px) {
   .reviews-column {
-    width: 280px;
+    width: 100%;
+    max-width: 85vw;
   }
   
   .review-card {
     padding: 1rem;
     min-height: 240px;
     max-width: 260px;
+    width: 100%;
   }
 }
 
