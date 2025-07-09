@@ -38,13 +38,61 @@ class CustomSite(Site):
 def render_template_file(site, template, **kwargs):
     """
     Custom render function that handles template rendering.
+    Automatically detects V2 pages and provides appropriate context.
+    Special handling for V2 homepage.
     """
-    # Get the output directory and ensure it exists
-    outpath = os.path.join(site.outpath, template.name)
+    # Skip rendering index.html if index_v2.html exists (V2 takes precedence)
+    if template.name == 'index.html':
+        index_v2_path = os.path.join(site.searchpath, 'index_v2.html')
+        if os.path.exists(index_v2_path):
+            print(f"Skipping {template.name} because index_v2.html exists")
+            return True
+    
+    # Skip rendering pricing/index.html if pricing_v2/index.html exists (V2 takes precedence)
+    if template.name == 'pricing/index.html':
+        pricing_v2_path = os.path.join(site.searchpath, 'pricing_v2/index.html')
+        if os.path.exists(pricing_v2_path):
+            print(f"Skipping {template.name} because pricing_v2/index.html exists")
+            return True
+    
+    # Special handling for index_v2.html - render it as index.html
+    if template.name == 'index_v2.html':
+        outpath = os.path.join(site.outpath, 'index.html')
+        print(f"Rendering {template.name} as index.html (V2 homepage)")
+    # Special handling for pricing_v2/index.html - render it as pricing/index.html
+    elif template.name == 'pricing_v2/index.html':
+        outpath = os.path.join(site.outpath, 'pricing/index.html')
+        print(f"Rendering {template.name} as pricing/index.html (V2 pricing)")
+    else:
+        outpath = os.path.join(site.outpath, template.name)
+    
     outdir = os.path.dirname(outpath)
     
     if outdir:
         os.makedirs(outdir, exist_ok=True)
+    
+    # Check if this is a V2 page by examining the template name or reading the file
+    is_v2_page = False
+    try:
+        # Check template name first
+        if 'index_v2.html' in template.name or 'v2_demo.html' in template.name or 'pricing_v2' in template.name:
+            is_v2_page = True
+        else:
+            # Read the template file to check for _base_v2.html
+            template_path = os.path.join(site.searchpath, template.name)
+            if os.path.exists(template_path):
+                with open(template_path, 'r', encoding='utf-8') as f:
+                    template_content = f.read()
+                    if '_base_v2.html' in template_content:
+                        is_v2_page = True
+    except Exception:
+        # If there's any error, default to V1
+        is_v2_page = False
+    
+    # Add V2-specific context if needed
+    if is_v2_page:
+        kwargs['is_v2'] = True
+        kwargs['use_v2_styles'] = True
         
     # Render the template
     rendered = template.render(**kwargs)

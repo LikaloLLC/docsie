@@ -1,4 +1,8 @@
 {% if section %}
+<!-- Calendly widget dependencies -->
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+
 <section class="cta-section section-padding">
     <div class="container">
         <div class="cta-content">
@@ -12,7 +16,7 @@
             
             <div class="cta-buttons">
                 {% if section.cta %}
-                <a onclick="Calendly.initPopupWidget({url: 'https://calendly.com/docsie-io/demo-call'})" class="cta-button">Book Demo</a>
+                <button onclick="Calendly.initPopupWidget({url: 'https://calendly.com/docsie-io/demo-call'});return false;" class="cta-button">{{ section.cta.text or 'Book Demo' }}</button>
                 {% endif %}
             </div>
         </div>

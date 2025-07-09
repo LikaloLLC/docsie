@@ -1,0 +1,101 @@
+{% extends "_base_v2.html" %}
+
+{% block title %}{{ page.title }}{% endblock %}
+{% block description %}{{ page.description }}{% endblock %}
+{% block shareimage %}{{ page.components.hero.image if page.components.hero and page.components.hero.image else 'https://d1iq6qzgppjlud.cloudfront.net/images/docsie-share.png' }}{% endblock %}
+
+
+{% block styles %}
+<!-- Global styles -->
+<link rel="stylesheet" href="/new_home/globals.css" />
+<!-- Component specific styles -->
+<link rel="stylesheet" href="/styles/supplementary_page.css" />
+
+<!-- Dynamic component styles - load both v1 and v2 styles -->
+{% set component_names = ['hero', 'features', 'gallery', 'related', 'related_auto', 'reviews', 'carousel', 'stats', 'comparison', 'cta_section', 'benefits', 'testimonials'] %}
+{% for component in component_names %}
+<link rel="stylesheet" href="/styles/components/{{ component }}.css" />
+<link rel="stylesheet" href="/styles/components/{{ component }}_v2.css" />
+{% endfor %}
+{% endblock %}
+
+{% block content %}
+<section class="section-padding supplementary-page">
+  <!-- Hero Section -->
+  {% if page.components.hero %}
+    {{ render_component('hero', page.components.hero, page=page) }}
+  {% endif %}
+
+  <!-- Stats Section -->
+  {% if page.components.stats %}
+    <div class="content-section">
+      {{ render_component('stats', page.components.stats) }}
+    </div>
+  {% endif %}
+
+  <!-- Benefits Section -->
+  {% if page.components.benefits %}
+    <div class="content-section">
+      {{ render_component('benefits', page.components.benefits) }}
+    </div>
+  {% endif %}
+
+  <!-- Testimonials Section -->
+  {% if page.components.testimonials %}
+    <div class="content-section">
+      {{ render_component('testimonials', page.components.testimonials) }}
+    </div>
+  {% endif %}
+
+  <!-- Features Section -->
+  {% if page.components.features %}
+    <div class="content-section">
+      {{ render_component('features', page.components.features) }}
+    </div>
+  {% endif %}
+
+  <!-- Gallery Section -->
+  {% if page.components.gallery %}
+    <div class="content-section">
+      {{ render_component('gallery', page.components.gallery) }}
+    </div>
+  {% endif %}
+
+  <!-- Comparison Section -->
+  {% if page.components.comparison %}
+    <div class="content-section">
+      {{ render_component('comparison', page.components.comparison) }}
+    </div>
+  {% endif %}
+
+  <!-- Carousel Section -->
+  {% if page.components.carousel %}
+    <div class="content-section">
+      {{ render_component('carousel', page.components.carousel) }}
+    </div>
+  {% endif %}
+
+  <!-- Related Section -->
+  {% if page.components.related %}
+    <div class="content-section">
+      {{ render_component('related', page.components.related) }}
+    </div>
+  {% endif %}
+
+  <!-- Auto-Configured Related Section -->
+  {% if page.components.related_auto %}
+    <div class="content-section">
+      {{ render_component('related_auto', page.components.related_auto) }}
+    </div>
+  {% endif %}
+
+  <!-- CTA Section -->
+  {% set default_cta = {
+    'title': 'Ready to Transform Your Documentation?',
+    'description': 'Start creating professional documentation that your users will love',
+    'cta': {'text': 'Book Demo'}
+  } %}
+  {{ render_component('cta_section', page.components.cta_section or default_cta) }}
+
+</section>
+{% endblock %}

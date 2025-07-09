@@ -122,10 +122,34 @@ def load_all_supplementary_pages():
 
 def generate_supplementary_pages(env, force_version=False, ui_version='v1'):
     """Generate supplementary pages from YAML data with component support"""
-    template = env.get_template('.templates/supplementary_page.html')
+    # Use V2 template for better header/footer
+    template = env.get_template('.templates/supplementary_page_v2.html')
     
     # Load all page data from YAML files
     pages_data = load_all_supplementary_pages()
+    
+    # Create a lookup dictionary for pages by URL
+    pages_by_url = {}
+    for page in pages_data:
+        page_id = page.get('id', '')
+        category = page.get('category', '').lower()
+        if category and category != 'solutions':
+            url = f"/solutions/{category}/{page_id}"
+        else:
+            url = f"/solutions/{page_id}"
+        pages_by_url[url] = page
+        # Also add with trailing slash
+        pages_by_url[url + "/"] = page
+    
+    # Define lookup function for templates
+    def get_page_by_url(url):
+        """Lookup function to get page data by URL"""
+        # Remove trailing slash and normalize
+        clean_url = url.rstrip('/')
+        return pages_by_url.get(clean_url) or pages_by_url.get(clean_url + "/")
+    
+    # Register the lookup function as a global in the Jinja environment
+    env.globals['get_page_by_url'] = get_page_by_url
     
     # Load component configurations
     components_data = load_component_data()
@@ -150,7 +174,8 @@ def generate_supplementary_pages(env, force_version=False, ui_version='v1'):
             context = {
                 'page': page,
                 'components': components_data,
-                'styles_path': '/styles'
+                'styles_path': '/styles',
+                'get_page_by_url': get_page_by_url
             }
             
             # Debug component data

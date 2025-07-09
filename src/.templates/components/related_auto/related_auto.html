@@ -1,0 +1,23 @@
+{% if section %}
+<div class="related-content">
+  <h2>{{ section.title or "Related Solutions" }}</h2>
+  <div class="related-grid">
+    {% for solution in section.solutions %}
+    {% if solution.url %}
+      {% set page_data = get_page_by_url(solution.url) %}
+      <a href="{{ solution.url }}" class="related-card">
+        {% if page_data and page_data.components.hero.image %}
+        <img src="{{ page_data.components.hero.image }}" alt="{{ page_data.components.hero.title or page_data.title }}" />
+        {% elif solution.image %}
+        <img src="{{ solution.image }}" alt="{{ solution.title }}" />
+        {% endif %}
+        <div class="related-content">
+          <h3>{{ solution.title or (page_data.components.hero.title if page_data else 'Solution') }}</h3>
+          <p>{{ solution.description or (page_data.components.hero.description if page_data else page_data.description if page_data else 'Learn more about this solution') }}</p>
+        </div>
+      </a>
+    {% endif %}
+    {% endfor %}
+  </div>
+</div>
+{% endif %}

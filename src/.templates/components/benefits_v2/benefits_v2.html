@@ -1,89 +1,200 @@
 {% if section %}
-<!-- Modern Benefits Section v2 - Built with Tailwind CSS -->
-<section class="benefits-v2 w-full py-12 md:py-24 lg:py-32 bg-background">
-  <div class="container mx-auto max-w-7xl px-4 md:px-6">
+<!-- Modern Benefits Section v2 - Upgraded with sophisticated design patterns -->
+<section class="benefits-v2 relative w-full py-16 md:py-24 lg:py-32 bg-gradient-to-br from-gray-50 via-blue-50/30 to-indigo-50/30 overflow-hidden">
+  
+  <!-- Background Pattern -->
+  <div class="absolute inset-0 opacity-5">
+    <div class="absolute inset-0" style="background-image: radial-gradient(circle at 25% 25%, #3b82f6 2px, transparent 2px); background-size: 50px 50px;"></div>
+  </div>
+  
+  <!-- Floating background elements -->
+  <div class="absolute -top-40 -left-40 w-80 h-80 bg-gradient-to-br from-blue-400/10 to-purple-400/10 rounded-full blur-3xl animate-float"></div>
+  <div class="absolute -bottom-40 -right-40 w-80 h-80 bg-gradient-to-br from-indigo-400/10 to-blue-400/10 rounded-full blur-3xl animate-float-delayed"></div>
+  
+  <div class="container mx-auto max-w-7xl px-4 md:px-6 relative z-10">
     
     <!-- Section Header -->
-    <div class="flex flex-col items-center justify-center space-y-4 text-center mb-12">
+    <div class="flex flex-col items-center justify-center space-y-4 text-center mb-16">
       <div class="space-y-2">
         {% if section.badge %}
-        <div class="inline-flex items-center rounded-lg bg-primary/10 px-3 py-1 text-sm font-medium text-primary">
-          <svg class="mr-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <div class="inline-flex items-center rounded-full bg-gradient-to-r from-green-50 to-blue-50 border border-green-200/50 px-4 py-2 text-sm font-semibold text-green-700 opacity-0 animate-fade-in" style="animation-delay: 0.2s;">
+          <svg class="mr-2 h-4 w-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
           </svg>
           {{ section.badge }}
         </div>
         {% endif %}
         
-        <h2 class="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-          {{ section.title }}
+        <h2 class="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl opacity-0 animate-slide-up" style="animation-delay: 0.4s;">
+          <span class="bg-gradient-to-r from-gray-900 via-blue-900 to-purple-900 bg-clip-text text-transparent">
+            {{ section.title }}
+          </span>
         </h2>
         
         {% if section.description %}
-        <p class="mx-auto max-w-[900px] text-muted-foreground md:text-xl/relaxed">
+        <p class="mx-auto max-w-[900px] text-xl text-gray-600 leading-relaxed opacity-0 animate-slide-up" style="animation-delay: 0.6s;">
           {{ section.description }}
         </p>
         {% endif %}
       </div>
     </div>
 
-    <!-- Bento Grid -->
-    <div class="bento-grid grid w-full auto-rows-[22rem] grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+    <!-- Enhanced Bento Grid -->
+    <div class="bento-grid grid auto-rows-fr gap-6 md:gap-8">
       {% for benefit in section.benefit_list %}
-      <div class="benefit-card group relative flex flex-col justify-between overflow-hidden rounded-xl
-                  bg-white shadow-[0_0_0_1px_rgba(0,0,0,.03),0_2px_4px_rgba(0,0,0,.05),0_12px_24px_rgba(0,0,0,.05)]
-                  transform-gpu dark:bg-black dark:border dark:border-white/10 dark:shadow-[0_-20px_80px_-20px_#ffffff1f_inset]
-                  transition-all duration-300 hover:shadow-[0_0_0_1px_rgba(0,0,0,.08),0_4px_8px_rgba(0,0,0,.1),0_20px_40px_rgba(0,0,0,.1)]
-                  {{ benefit.grid_class or 'col-span-1' }}">
+      <div class="benefit-card group relative bg-white/70 backdrop-blur-sm rounded-2xl p-8 border border-gray-100 hover:border-blue-200 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 opacity-0 animate-slide-up" 
+           style="animation-delay: 0.8s; grid-column: span {{ benefit.grid_cols or 1 }}; grid-row: span {{ benefit.grid_rows or 1 }};">
         
-        <!-- Background Pattern/Image -->
-        <div class="absolute inset-0 pointer-events-none">
-          {% if benefit.background_pattern %}
-          <div class="absolute -top-40 -right-40 w-80 h-80 bg-{{ benefit.color or 'primary' }}/5 rounded-full blur-3xl"></div>
-          {% endif %}
-          {% if benefit.background_image %}
-          <img src="{{ benefit.background_image }}" alt="" class="absolute inset-0 w-full h-full object-cover opacity-10">
-          {% endif %}
-        </div>
+        <!-- Hover glow effect -->
+        <div class="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-purple-500/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
         
-        <!-- Content -->
-        <div class="pointer-events-none z-10 flex transform-gpu flex-col gap-1 p-6 transition-all duration-300 group-hover:-translate-y-2">
+        <div class="relative h-full flex flex-col">
+          
           <!-- Icon -->
           {% if benefit.icon %}
-          <div class="mb-4 text-{{ benefit.color or 'primary' }} transform-gpu transition-all duration-300 ease-in-out group-hover:scale-75">
-            <i class="{{ benefit.icon }} text-4xl"></i>
+          <div class="mb-6">
+            <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl shadow-lg group-hover:shadow-xl transition-all duration-300 flex items-center justify-center">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                {% if benefit.icon == 'document' %}
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                {% elif benefit.icon == 'users' %}
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z"/>
+                {% elif benefit.icon == 'lightning' %}
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                {% elif benefit.icon == 'shield' %}
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                {% elif benefit.icon == 'chart' %}
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                {% elif benefit.icon == 'globe' %}
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/>
+                {% else %}
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                {% endif %}
+              </svg>
+              
+              <!-- Icon glow effect -->
+              <div class="absolute inset-0 bg-gradient-to-br from-blue-500/30 to-purple-600/30 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-lg"></div>
+            </div>
           </div>
           {% endif %}
           
-          <!-- Title -->
-          <h3 class="text-xl font-semibold text-neutral-700 dark:text-neutral-300">
-            {{ benefit.title }}
-          </h3>
+          <!-- Content -->
+          <div class="flex-1">
+            <h3 class="text-xl font-bold text-gray-900 mb-4 group-hover:text-blue-900 transition-colors duration-300">
+              {{ benefit.title }}
+            </h3>
+            
+            <p class="text-gray-600 leading-relaxed group-hover:text-gray-700 transition-colors duration-300">
+              {{ benefit.description }}
+            </p>
+            
+            {% if benefit.link %}
+            <div class="mt-6">
+              <a href="{{ benefit.link.url }}" 
+                 class="inline-flex items-center text-blue-600 hover:text-blue-700 font-medium transition-colors duration-300">
+                {{ benefit.link.text }}
+                <svg class="ml-2 w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                </svg>
+              </a>
+            </div>
+            {% endif %}
+          </div>
           
-          <!-- Description -->
-          <p class="max-w-lg text-neutral-400">
-            {{ benefit.description }}
-          </p>
-        </div>
-
-        <!-- CTA Button (appears on hover) -->
-        <div class="pointer-events-none absolute bottom-0 flex w-full translate-y-10 transform-gpu flex-row items-center p-4 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
-          {% if benefit.cta %}
-          <a href="{{ benefit.cta.url or '#' }}" 
-             class="pointer-events-auto inline-flex items-center rounded-md bg-primary px-3 py-1 text-sm font-medium text-primary-foreground shadow-sm hover:bg-primary/90 transition-colors">
-            {{ benefit.cta.text or 'Learn More' }}
-            <svg class="ml-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-            </svg>
-          </a>
+          <!-- Visual Enhancement -->
+          {% if benefit.image %}
+          <div class="mt-6 rounded-lg overflow-hidden">
+            <img src="{{ benefit.image }}" alt="{{ benefit.title }}" 
+                 class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+          </div>
           {% endif %}
+          
         </div>
-        
-        <!-- Hover overlay -->
-        <div class="pointer-events-none absolute inset-0 transform-gpu transition-all duration-300 group-hover:bg-black/[.03] group-hover:dark:bg-neutral-800/10"></div>
       </div>
       {% endfor %}
     </div>
+    
+    <!-- Optional CTA Section -->
+    {% if section.cta %}
+    <div class="text-center mt-16 opacity-0 animate-fade-in" style="animation-delay: 1.8s;">
+      <a href="{{ section.cta.url }}" 
+         class="group inline-flex items-center px-8 py-4 bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+        {{ section.cta.text }}
+        <svg class="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+        </svg>
+      </a>
+    </div>
+    {% endif %}
+    
   </div>
 </section>
+
+<style>
+/* Animation Keyframes */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes floatDelayed {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+}
+
+/* Animation Classes */
+.animate-fade-in {
+  animation: fadeIn 1s ease-out forwards;
+}
+
+.animate-slide-up {
+  animation: slideUp 1s ease-out forwards;
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: floatDelayed 8s ease-in-out infinite;
+}
+
+/* Bento Grid Layout */
+.bento-grid {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .bento-grid {
+    grid-template-columns: 1fr;
+    auto-rows: minmax(20rem, auto);
+  }
+  
+  .benefit-card {
+    min-height: 20rem;
+    padding: 2rem;
+  }
+  
+  .benefit-card.col-span-2,
+  .benefit-card.row-span-2 {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+  
+  .benefits-v2 h2 {
+    font-size: 2.5rem;
+  }
+}
+</style>
 {% endif %} 

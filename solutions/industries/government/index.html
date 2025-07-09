@@ -108,6 +108,9 @@
 <link rel="stylesheet" href="/styles/components/related.css" />
 <link rel="stylesheet" href="/styles/components/related_v2.css" />
 
+<link rel="stylesheet" href="/styles/components/related_auto.css" />
+<link rel="stylesheet" href="/styles/components/related_auto_v2.css" />
+
 <link rel="stylesheet" href="/styles/components/reviews.css" />
 <link rel="stylesheet" href="/styles/components/reviews_v2.css" />
 
@@ -130,7 +133,7 @@
 <link rel="stylesheet" href="/styles/components/testimonials_v2.css" />
 
 
-  <!-- Global site tag (gtag.js) - Google Analytics -->
+  
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-116930058-3"></script>
   <script>
@@ -183,378 +186,467 @@
               '100%': { transform: 'translateX(calc(-250px * 7))' },
             }
           },
-          backdropBlur: {
-            xs: '2px',
-          },
           gridTemplateColumns: {
-            'auto-fit': 'repeat(auto-fit, minmax(300px, 1fr))',
+            'auto-fit': 'repeat(auto-fit, minmax(250px, 1fr))',
             'auto-fill': 'repeat(auto-fill, minmax(300px, 1fr))',
           }
         }
-      },
-      safelist: [
-        // Hero v2 classes
-        'hero-v2', 'py-16', 'py-24', 'container', 'mx-auto', 'px-4', 'px-8', 'grid', 'grid-cols-1', 'grid-cols-2', 'gap-12', 'items-center',
-        'text-center', 'text-left', 'order-1', 'order-2', 'text-4xl', 'text-5xl', 'text-6xl', 'font-bold', 'text-gray-900', 'mb-6', 'leading-tight',
-        'text-xl', 'text-gray-600', 'mb-8', 'leading-relaxed', 'flex', 'flex-col', 'flex-row', 'gap-4', 'justify-center', 'justify-start',
-        'inline-flex', 'items-center', 'justify-center', 'px-8', 'py-3', 'border', 'border-transparent', 'text-base', 'font-medium', 'rounded-md',
-        'text-white', 'bg-blue-600', 'hover:bg-blue-700', 'focus:outline-none', 'focus:ring-2', 'focus:ring-offset-2', 'focus:ring-blue-500',
-        'transition-colors', 'relative', 'w-full', 'h-auto', 'rounded-lg', 'shadow-lg',
-        // Benefits v2 classes
-        'benefits-v2', 'py-12', 'py-32', 'bg-background', 'max-w-7xl', 'md:px-6', 'space-y-4', 'mb-12', 'space-y-2', 'text-3xl',
-        'tracking-tighter', 'sm:text-4xl', 'md:text-5xl', 'text-muted-foreground', 'max-w-3xl', 'mx-auto', 'grid-cols-3', 'gap-6',
-        'col-span-1', 'col-span-2', 'row-span-1', 'row-span-2', 'rounded-xl', 'border', 'bg-card', 'p-6', 'hover:shadow-lg', 'transition-shadow',
-        'text-card-foreground', 'mb-4', 'text-2xl', 'font-semibold', 'mb-2', 'text-sm', 'opacity-0', 'hover:opacity-100', 'transition-opacity',
-        'absolute', 'inset-0', 'bg-gradient-to-br', 'from-primary/20', 'to-secondary/20', 'rounded-xl', 'pointer-events-none',
-        // Features v2 classes
-        'features-v2', 'lg:py-32', 'bg-white', 'grid-cols-2', 'grid-cols-3', 'lg:gap-8', 'bg-gradient-to-r', 'from-blue-50', 'to-purple-50',
-        'p-8', 'rounded-lg', 'shadow-sm', 'hover:shadow-md', 'transition-shadow', 'duration-300', 'w-12', 'h-12', 'text-blue-600', 'mb-4',
-        'text-lg', 'font-semibold', 'text-gray-900', 'text-gray-600', 'leading-relaxed',
-        // CTA v2 classes
-        'cta-v2', 'bg-gradient-to-r', 'from-blue-600', 'to-purple-600', 'text-white', 'relative', 'overflow-hidden', 'py-20', 'md:py-28',
-        'text-center', 'z-10', 'text-4xl', 'md:text-5xl', 'lg:text-6xl', 'font-bold', 'mb-6', 'bg-gradient-to-r', 'from-white', 'to-blue-100',
-        'bg-clip-text', 'text-transparent', 'text-xl', 'md:text-2xl', 'mb-8', 'opacity-90', 'inline-block', 'px-2', 'py-1', 'text-sm',
-        'bg-white/20', 'rounded-full', 'backdrop-blur-sm', 'mb-6', 'px-8', 'py-4', 'bg-white', 'text-blue-600', 'hover:bg-blue-50',
-        'rounded-full', 'font-semibold', 'transition-all', 'duration-300', 'hover:scale-105', 'hover:shadow-xl', 'absolute', 'top-10', 'left-10',
-        'w-32', 'h-32', 'bg-white/10', 'rounded-full', 'animate-float', 'top-20', 'right-20', 'w-24', 'h-24', 'animation-delay-1000',
-        'bottom-10', 'left-20', 'w-20', 'h-20', 'animation-delay-2000', 'bottom-20', 'right-10', 'w-16', 'h-16', 'animation-delay-3000',
-        // Testimonials v2 classes
-        'testimonials-v2', 'bg-gray-50', 'overflow-hidden', 'whitespace-nowrap', 'inline-block', 'animate-scroll', 'bg-white', 'border-gray-200',
-        'w-80', 'flex-shrink-0', 'mr-6', 'p-6', 'rounded-lg', 'shadow-sm', 'hover:shadow-md', 'transition-shadow', 'duration-300',
-        'flex', 'items-center', 'mb-4', 'w-12', 'h-12', 'rounded-full', 'mr-4', 'bg-gray-300', 'text-gray-700', 'font-medium', 'text-yellow-400',
-        'ml-2', 'text-gray-500', 'italic', 'line-clamp-3', 'text-gray-800', 'font-medium', 'text-gray-600', 'text-sm',
-        // Stats v2 classes
-        'stats-v2', 'bg-blue-600', 'text-white', 'py-16', 'md:py-24', 'relative', 'overflow-hidden', 'z-10', 'grid-cols-4', 'gap-8',
-        'text-center', 'text-4xl', 'md:text-5xl', 'lg:text-6xl', 'font-bold', 'mb-2', 'text-lg', 'opacity-90', 'absolute', 'top-0', 'left-0',
-        'w-full', 'h-full', 'bg-gradient-to-br', 'from-blue-400/20', 'to-purple-600/20', 'pointer-events-none', 'top-10', 'left-10',
-        'w-32', 'h-32', 'bg-white/10', 'rounded-full', 'animate-float', 'top-20', 'right-20', 'w-24', 'h-24', 'animation-delay-1000',
-        'bottom-10', 'left-20', 'w-20', 'h-20', 'animation-delay-2000', 'bottom-20', 'right-10', 'w-16', 'h-16', 'animation-delay-3000',
-        // Common responsive classes
-        'sm:text-2xl', 'sm:text-3xl', 'sm:text-4xl', 'sm:text-5xl', 'sm:text-6xl', 'sm:px-6', 'sm:py-4', 'sm:py-8', 'sm:py-12', 'sm:py-16',
-        'md:text-2xl', 'md:text-3xl', 'md:text-4xl', 'md:text-5xl', 'md:text-6xl', 'md:px-6', 'md:py-4', 'md:py-8', 'md:py-12', 'md:py-16',
-        'lg:text-2xl', 'lg:text-3xl', 'lg:text-4xl', 'lg:text-5xl', 'lg:text-6xl', 'lg:px-6', 'lg:py-4', 'lg:py-8', 'lg:py-12', 'lg:py-16',
-        'xl:text-2xl', 'xl:text-3xl', 'xl:text-4xl', 'xl:text-5xl', 'xl:text-6xl', 'xl:px-6', 'xl:py-4', 'xl:py-8', 'xl:py-12', 'xl:py-16',
-        // Layout classes
-        'lg:grid-cols-1', 'lg:grid-cols-2', 'lg:grid-cols-3', 'lg:grid-cols-4', 'lg:order-1', 'lg:order-2', 'lg:text-left', 'lg:text-center',
-        'lg:justify-start', 'lg:justify-center', 'lg:justify-end', 'md:grid-cols-1', 'md:grid-cols-2', 'md:grid-cols-3', 'md:grid-cols-4',
-        'sm:grid-cols-1', 'sm:grid-cols-2', 'sm:grid-cols-3', 'sm:grid-cols-4', 'sm:flex-row', 'sm:flex-col',
-        // Background and text colors
-        'bg-white', 'bg-gray-50', 'bg-gray-100', 'bg-gray-200', 'bg-blue-50', 'bg-blue-100', 'bg-blue-500', 'bg-blue-600', 'bg-blue-700',
-        'bg-purple-50', 'bg-purple-100', 'bg-purple-500', 'bg-purple-600', 'bg-purple-700', 'text-white', 'text-gray-50', 'text-gray-100',
-        'text-gray-200', 'text-gray-300', 'text-gray-400', 'text-gray-500', 'text-gray-600', 'text-gray-700', 'text-gray-800', 'text-gray-900',
-        'text-blue-50', 'text-blue-100', 'text-blue-200', 'text-blue-300', 'text-blue-400', 'text-blue-500', 'text-blue-600', 'text-blue-700',
-        'text-blue-800', 'text-blue-900', 'text-purple-600', 'text-purple-700', 'text-purple-800', 'text-purple-900',
-        // Hover states
-        'hover:bg-blue-50', 'hover:bg-blue-100', 'hover:bg-blue-700', 'hover:bg-blue-800', 'hover:bg-purple-700', 'hover:bg-purple-800',
-        'hover:text-blue-600', 'hover:text-blue-700', 'hover:text-purple-600', 'hover:text-purple-700', 'hover:shadow-sm', 'hover:shadow-md',
-        'hover:shadow-lg', 'hover:shadow-xl', 'hover:scale-105', 'hover:scale-110', 'hover:opacity-90', 'hover:opacity-100',
-        // Focus states
-        'focus:outline-none', 'focus:ring-1', 'focus:ring-2', 'focus:ring-3', 'focus:ring-blue-500', 'focus:ring-purple-500',
-        'focus:ring-offset-1', 'focus:ring-offset-2', 'focus:ring-offset-4', 'focus:border-blue-500', 'focus:border-purple-500',
-        // Transition classes
-        'transition-all', 'transition-colors', 'transition-opacity', 'transition-shadow', 'transition-transform', 'duration-150',
-        'duration-200', 'duration-300', 'duration-500', 'duration-700', 'duration-1000', 'ease-in', 'ease-out', 'ease-in-out',
-        // Border classes
-        'border', 'border-2', 'border-4', 'border-gray-200', 'border-gray-300', 'border-blue-200', 'border-blue-300', 'border-purple-200',
-        'border-purple-300', 'border-transparent', 'rounded', 'rounded-sm', 'rounded-md', 'rounded-lg', 'rounded-xl', 'rounded-2xl',
-        'rounded-3xl', 'rounded-full',
-        // Shadow classes
-        'shadow-sm', 'shadow', 'shadow-md', 'shadow-lg', 'shadow-xl', 'shadow-2xl', 'shadow-inner', 'shadow-none',
-        // Positioning classes
-        'relative', 'absolute', 'fixed', 'sticky', 'static', 'inset-0', 'top-0', 'right-0', 'bottom-0', 'left-0', 'z-0', 'z-10', 'z-20',
-        'z-30', 'z-40', 'z-50', 'overflow-hidden', 'overflow-visible', 'overflow-auto', 'overflow-scroll',
-        // Flexbox classes
-        'flex', 'inline-flex', 'flex-col', 'flex-row', 'flex-wrap', 'flex-nowrap', 'items-start', 'items-center', 'items-end',
-        'items-stretch', 'items-baseline', 'justify-start', 'justify-center', 'justify-end', 'justify-between', 'justify-around',
-        'justify-evenly', 'space-x-1', 'space-x-2', 'space-x-3', 'space-x-4', 'space-x-6', 'space-x-8', 'space-y-1', 'space-y-2',
-        'space-y-3', 'space-y-4', 'space-y-6', 'space-y-8', 'gap-1', 'gap-2', 'gap-3', 'gap-4', 'gap-6', 'gap-8', 'gap-12',
-        // Width and height classes
-        'w-auto', 'w-full', 'w-screen', 'w-min', 'w-max', 'w-fit', 'w-1/2', 'w-1/3', 'w-2/3', 'w-1/4', 'w-3/4', 'w-1/5', 'w-2/5',
-        'w-3/5', 'w-4/5', 'w-1/6', 'w-5/6', 'w-1/12', 'w-11/12', 'h-auto', 'h-full', 'h-screen', 'h-min', 'h-max', 'h-fit',
-        // Padding and margin classes
-        'p-1', 'p-2', 'p-3', 'p-4', 'p-5', 'p-6', 'p-8', 'p-10', 'p-12', 'p-16', 'p-20', 'p-24', 'px-1', 'px-2', 'px-3', 'px-4',
-        'px-5', 'px-6', 'px-8', 'px-10', 'px-12', 'px-16', 'px-20', 'px-24', 'py-1', 'py-2', 'py-3', 'py-4', 'py-5', 'py-6', 'py-8',
-        'py-10', 'py-12', 'py-16', 'py-20', 'py-24', 'py-28', 'py-32', 'm-1', 'm-2', 'm-3', 'm-4', 'm-5', 'm-6', 'm-8', 'm-10',
-        'm-12', 'm-16', 'm-20', 'm-24', 'mx-1', 'mx-2', 'mx-3', 'mx-4', 'mx-5', 'mx-6', 'mx-8', 'mx-10', 'mx-12', 'mx-16', 'mx-20',
-        'mx-24', 'mx-auto', 'my-1', 'my-2', 'my-3', 'my-4', 'my-5', 'my-6', 'my-8', 'my-10', 'my-12', 'my-16', 'my-20', 'my-24',
-        'mb-1', 'mb-2', 'mb-3', 'mb-4', 'mb-5', 'mb-6', 'mb-8', 'mb-10', 'mb-12', 'mb-16', 'mb-20', 'mb-24', 'mt-1', 'mt-2', 'mt-3',
-        'mt-4', 'mt-5', 'mt-6', 'mt-8', 'mt-10', 'mt-12', 'mt-16', 'mt-20', 'mt-24', 'ml-1', 'ml-2', 'ml-3', 'ml-4', 'ml-5', 'ml-6',
-        'ml-8', 'ml-10', 'ml-12', 'ml-16', 'ml-20', 'ml-24', 'mr-1', 'mr-2', 'mr-3', 'mr-4', 'mr-5', 'mr-6', 'mr-8', 'mr-10', 'mr-12',
-        'mr-16', 'mr-20', 'mr-24',
-        // Typography classes
-        'text-xs', 'text-sm', 'text-base', 'text-lg', 'text-xl', 'text-2xl', 'text-3xl', 'text-4xl', 'text-5xl', 'text-6xl', 'text-7xl',
-        'text-8xl', 'text-9xl', 'font-thin', 'font-extralight', 'font-light', 'font-normal', 'font-medium', 'font-semibold', 'font-bold',
-        'font-extrabold', 'font-black', 'italic', 'not-italic', 'underline', 'line-through', 'no-underline', 'uppercase', 'lowercase',
-        'capitalize', 'normal-case', 'leading-3', 'leading-4', 'leading-5', 'leading-6', 'leading-7', 'leading-8', 'leading-9',
-        'leading-10', 'leading-none', 'leading-tight', 'leading-snug', 'leading-normal', 'leading-relaxed', 'leading-loose',
-        'tracking-tighter', 'tracking-tight', 'tracking-normal', 'tracking-wide', 'tracking-wider', 'tracking-widest',
-        'text-left', 'text-center', 'text-right', 'text-justify', 'whitespace-nowrap', 'whitespace-pre', 'whitespace-pre-line',
-        'whitespace-pre-wrap', 'break-normal', 'break-words', 'break-all', 'truncate',
-        // Opacity classes
-        'opacity-0', 'opacity-5', 'opacity-10', 'opacity-20', 'opacity-25', 'opacity-30', 'opacity-40', 'opacity-50', 'opacity-60',
-        'opacity-70', 'opacity-75', 'opacity-80', 'opacity-90', 'opacity-95', 'opacity-100',
-        // Display classes
-        'block', 'inline-block', 'inline', 'flex', 'inline-flex', 'table', 'inline-table', 'table-caption', 'table-cell',
-        'table-column', 'table-column-group', 'table-footer-group', 'table-header-group', 'table-row-group', 'table-row',
-        'flow-root', 'grid', 'inline-grid', 'contents', 'list-item', 'hidden',
-        // New classes for backdrop blur and other effects
-        'backdrop-blur-sm', 'backdrop-blur', 'backdrop-blur-md', 'backdrop-blur-lg', 'backdrop-blur-xl', 'backdrop-blur-2xl',
-        'backdrop-blur-3xl', 'backdrop-saturate-50', 'backdrop-saturate-100', 'backdrop-saturate-150', 'backdrop-saturate-200',
-        'line-clamp-1', 'line-clamp-2', 'line-clamp-3', 'line-clamp-4', 'line-clamp-5', 'line-clamp-6',
-        // Animation classes
-        'animate-none', 'animate-spin', 'animate-ping', 'animate-pulse', 'animate-bounce', 'animate-float', 'animate-scroll',
-        'animation-delay-1000', 'animation-delay-2000', 'animation-delay-3000',
-        // Gradient classes
-        'bg-gradient-to-r', 'bg-gradient-to-l', 'bg-gradient-to-t', 'bg-gradient-to-b', 'bg-gradient-to-tr', 'bg-gradient-to-tl',
-        'bg-gradient-to-br', 'bg-gradient-to-bl', 'from-blue-50', 'from-blue-100', 'from-blue-200', 'from-blue-300', 'from-blue-400',
-        'from-blue-500', 'from-blue-600', 'from-blue-700', 'from-blue-800', 'from-blue-900', 'from-purple-50', 'from-purple-100',
-        'from-purple-200', 'from-purple-300', 'from-purple-400', 'from-purple-500', 'from-purple-600', 'from-purple-700',
-        'from-purple-800', 'from-purple-900', 'from-white', 'from-gray-50', 'from-gray-100', 'from-gray-200', 'from-gray-300',
-        'from-gray-400', 'from-gray-500', 'from-gray-600', 'from-gray-700', 'from-gray-800', 'from-gray-900', 'to-blue-50',
-        'to-blue-100', 'to-blue-200', 'to-blue-300', 'to-blue-400', 'to-blue-500', 'to-blue-600', 'to-blue-700', 'to-blue-800',
-        'to-blue-900', 'to-purple-50', 'to-purple-100', 'to-purple-200', 'to-purple-300', 'to-purple-400', 'to-purple-500',
-        'to-purple-600', 'to-purple-700', 'to-purple-800', 'to-purple-900', 'to-white', 'to-gray-50', 'to-gray-100', 'to-gray-200',
-        'to-gray-300', 'to-gray-400', 'to-gray-500', 'to-gray-600', 'to-gray-700', 'to-gray-800', 'to-gray-900',
-        'via-blue-50', 'via-blue-100', 'via-blue-200', 'via-blue-300', 'via-blue-400', 'via-blue-500', 'via-blue-600',
-        'via-blue-700', 'via-blue-800', 'via-blue-900', 'via-purple-50', 'via-purple-100', 'via-purple-200', 'via-purple-300',
-        'via-purple-400', 'via-purple-500', 'via-purple-600', 'via-purple-700', 'via-purple-800', 'via-purple-900',
-        'via-white', 'via-gray-50', 'via-gray-100', 'via-gray-200', 'via-gray-300', 'via-gray-400', 'via-gray-500',
-        'via-gray-600', 'via-gray-700', 'via-gray-800', 'via-gray-900',
-        // Background clip classes
-        'bg-clip-border', 'bg-clip-padding', 'bg-clip-content', 'bg-clip-text',
-        // Text clip classes
-        'text-transparent',
-        // Pointer events
-        'pointer-events-none', 'pointer-events-auto',
-        // Scroll behavior
-        'scroll-smooth', 'scroll-auto',
-        // Cursor
-        'cursor-pointer', 'cursor-default', 'cursor-wait', 'cursor-text', 'cursor-move', 'cursor-help', 'cursor-not-allowed',
-        // User select
-        'select-none', 'select-text', 'select-all', 'select-auto',
-        // Outline
-        'outline-none', 'outline', 'outline-2', 'outline-4', 'outline-8',
-        // Ring
-        'ring-0', 'ring-1', 'ring-2', 'ring-4', 'ring-8', 'ring-inset', 'ring-blue-500', 'ring-purple-500', 'ring-white',
-        'ring-black', 'ring-gray-300', 'ring-gray-500', 'ring-offset-0', 'ring-offset-1', 'ring-offset-2', 'ring-offset-4',
-        'ring-offset-8', 'ring-offset-white', 'ring-offset-black', 'ring-offset-gray-50', 'ring-offset-gray-100',
-        // Backdrop
-        'backdrop-opacity-0', 'backdrop-opacity-5', 'backdrop-opacity-10', 'backdrop-opacity-20', 'backdrop-opacity-25',
-        'backdrop-opacity-30', 'backdrop-opacity-40', 'backdrop-opacity-50', 'backdrop-opacity-60', 'backdrop-opacity-70',
-        'backdrop-opacity-75', 'backdrop-opacity-80', 'backdrop-opacity-90', 'backdrop-opacity-95', 'backdrop-opacity-100',
-        // Filter
-        'filter', 'blur-none', 'blur-sm', 'blur', 'blur-md', 'blur-lg', 'blur-xl', 'blur-2xl', 'blur-3xl',
-        // Grid
-        'grid-cols-1', 'grid-cols-2', 'grid-cols-3', 'grid-cols-4', 'grid-cols-5', 'grid-cols-6', 'grid-cols-7', 'grid-cols-8',
-        'grid-cols-9', 'grid-cols-10', 'grid-cols-11', 'grid-cols-12', 'grid-cols-none', 'grid-rows-1', 'grid-rows-2',
-        'grid-rows-3', 'grid-rows-4', 'grid-rows-5', 'grid-rows-6', 'grid-rows-none', 'col-auto', 'col-span-1', 'col-span-2',
-        'col-span-3', 'col-span-4', 'col-span-5', 'col-span-6', 'col-span-7', 'col-span-8', 'col-span-9', 'col-span-10',
-        'col-span-11', 'col-span-12', 'col-span-full', 'col-start-1', 'col-start-2', 'col-start-3', 'col-start-4',
-        'col-start-5', 'col-start-6', 'col-start-7', 'col-start-8', 'col-start-9', 'col-start-10', 'col-start-11',
-        'col-start-12', 'col-start-13', 'col-start-auto', 'col-end-1', 'col-end-2', 'col-end-3', 'col-end-4', 'col-end-5',
-        'col-end-6', 'col-end-7', 'col-end-8', 'col-end-9', 'col-end-10', 'col-end-11', 'col-end-12', 'col-end-13',
-        'col-end-auto', 'row-auto', 'row-span-1', 'row-span-2', 'row-span-3', 'row-span-4', 'row-span-5', 'row-span-6',
-        'row-span-full', 'row-start-1', 'row-start-2', 'row-start-3', 'row-start-4', 'row-start-5', 'row-start-6',
-        'row-start-7', 'row-start-auto', 'row-end-1', 'row-end-2', 'row-end-3', 'row-end-4', 'row-end-5', 'row-end-6',
-        'row-end-7', 'row-end-auto', 'gap-0', 'gap-1', 'gap-2', 'gap-3', 'gap-4', 'gap-5', 'gap-6', 'gap-7', 'gap-8',
-        'gap-9', 'gap-10', 'gap-11', 'gap-12', 'gap-14', 'gap-16', 'gap-20', 'gap-24', 'gap-28', 'gap-32', 'gap-36',
-        'gap-40', 'gap-44', 'gap-48', 'gap-52', 'gap-56', 'gap-60', 'gap-64', 'gap-72', 'gap-80', 'gap-96', 'gap-x-0',
-        'gap-x-1', 'gap-x-2', 'gap-x-3', 'gap-x-4', 'gap-x-5', 'gap-x-6', 'gap-x-7', 'gap-x-8', 'gap-x-9', 'gap-x-10',
-        'gap-x-11', 'gap-x-12', 'gap-x-14', 'gap-x-16', 'gap-x-20', 'gap-x-24', 'gap-x-28', 'gap-x-32', 'gap-x-36',
-        'gap-x-40', 'gap-x-44', 'gap-x-48', 'gap-x-52', 'gap-x-56', 'gap-x-60', 'gap-x-64', 'gap-x-72', 'gap-x-80',
-        'gap-x-96', 'gap-y-0', 'gap-y-1', 'gap-y-2', 'gap-y-3', 'gap-y-4', 'gap-y-5', 'gap-y-6', 'gap-y-7', 'gap-y-8',
-        'gap-y-9', 'gap-y-10', 'gap-y-11', 'gap-y-12', 'gap-y-14', 'gap-y-16', 'gap-y-20', 'gap-y-24', 'gap-y-28',
-        'gap-y-32', 'gap-y-36', 'gap-y-40', 'gap-y-44', 'gap-y-48', 'gap-y-52', 'gap-y-56', 'gap-y-60', 'gap-y-64',
-        'gap-y-72', 'gap-y-80', 'gap-y-96'
-      ]
+      }
     }
   </script>
 </head>
 
 <body class="docsie-background-img">
   <a href="#main" class="aria-visible">Skip to content</a>
-  <!-- Page Header -->
-  <header class="gn">
-    <nav id="topNav">
-      <ul class="nv-l">
-        <li><a class="nv-lg" href="/" data-nomobile="">
-            <svg class="lg" width="32" height="40" viewBox="0 0 48 48">
+  
+  <!-- Page Header V2 -->
+  <header class="bg-white shadow-sm sticky top-0 z-50">
+    <nav class="container mx-auto px-4 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        
+        <!-- Logo -->
+        <div class="flex items-center">
+          <a href="/" class="flex items-center">
+            <svg class="w-8 h-10 text-docsie-primary mr-3" width="32" height="40" viewBox="0 0 48 48">
               <use xlink:href="#icon-docsie"></use>
             </svg>
-            <svg class="lg-dx" width="110" viewBox="0 0 158 58" xmlns="http://www.w3.org/2000/svg">
+            <svg class="h-8 hidden sm:block" width="110" viewBox="0 0 158 58" xmlns="http://www.w3.org/2000/svg">
               <use xlink:href="#icon-logo"></use>
             </svg>
-          </a></li>
-        
-                <!-- <li class="li-dd v-sm">
-          <button class="li-a" data-toggle="Products">Products</button>
-          <div id="Products" class="ui-tgl" role="dropdown" aria-hidden="true">
-            <ul>
-              <li>
-                <a class="li-hdr" href="https://site.docsie.io/documentation-collaboration-software">📅 Collaboration Software</a>
-                <span>Smart documentation authoring &amp; publishing platform</span>
-                  <a class="li-hdr" href="https://site.docsie.io/docsie-chat-llm-generative-ai">🤖AI Chatbots</a>
-                <span>AI Chatbots with roles, scopes and permissions</span>
-                <a class="li-hdr" href="https://site.docsie.io/internal-knowledge-base">🏢 Internal Knowledge Base</a>
-                <span>Empower your team with easily accessible information</span>
-                <a class="li-hdr" href="https://site.docsie.io/external-knowledge-base">💡 External Knowledge Base</a>
-                <span>Delight customers with a comprehensive help center</span>
-                <a class="li-hdr" href="https://site.docsie.io/in-app-help-and-support">📎 In-App Help and Support</a>
-                <span>Deliver instant assistance without leaving your app</span>
-                <a class="li-hdr" href="https://site.docsie.io/walkthroughs-and-guided-tours">🚌 Product Tours</a>
-                <span>Create engaging walkthroughs for seamless user onboarding</span>
-                <a class="li-hdr" href="https://site.docsie.io/centralized-team-collaboration-and-project-management">🧑‍💼 Project Management</a>
-                <span>Streamline collaboration and drive productivity</span>
-              </li>
-            </ul>
-          </div>
-        </li>
-                <li class="li-dd v-sm">
-          <button class="li-a" data-toggle="Features">Features</button>
-          <div id="Features" class="ui-tgl" role="dropdown" aria-hidden="true">
-            <ul>
-              <li>
-                <a class="li-hdr" href="https://site.docsie.io/enterprise-documentation">🏢 Enterprise Documentation</a>
-                <span>Scalable solutions for large-scale organizations</span>
-                <a class="li-hdr" href="https://site.docsie.io/proprietary-custom-knowledge-portal">⚙️ Knowledge Portal</a>
-                <span>Customizable and secure hub for all your documentation needs</span>
-                <a class="li-hdr" href="https://site.docsie.io/api-documentation-tool">🛠️ API Documentation Tool</a>
-                <span>Effortless API documentation for developers</span>
-                <a class="li-hdr" href="https://site.docsie.io/documentation-with-multiple-versions-and-languages">🈺 Versions & Languages</a>
-                <span>Manage multiple versions and localize content with ease</span>
-                <a class="li-hdr" href="https://site.docsie.io/integrations-and-content-embedding">📲 Integrations</a>
-                <span>Seamlessly connect with your favorite tools and platforms</span>
-                <a class="li-hdr" href="https://site.docsie.io/ghost-ai-language-translation">👻 Ghost AI Translations</a>
-                <span>Seamlessly connect with your favorite tools and platforms</span>
-              </li>
-            </ul>
-          </div>
-        </li> -->
+          </a>
+        </div>
 
-        <span class="spacer"></span>
-        <li class="v-sm"><a href="/pricing/">Pricing </a></li>
-
-
-<!--        <li class="li-dd v-sm">-->
-<!--          <button class="li-a" data-toggle="Resources">Resources</button>-->
-<!--          <div id="Resources" class="ui-tgl" role="dropdown" aria-hidden="true">-->
-<!--            <ul>-->
-<!--              <li class="li-hr"><strong>Docsie</strong></li>-->
-<!--              <li>-->
-<!--                <a class="li-hdr" href="https://portals.docsie.io/docsie/docsie-documentation/using-docsie/">User-guide</a>-->
-<!--                <span>Learn how our easy &amp; intuitive documentation authoring tools-->
-<!--                  work</span>-->
-<!--              </li>-->
-<!--                <li>-->
-<!--                <a class="li-hdr" href="https://portals.docsie.io/docsie/docsie-documentation/publish-documentation-portal/">Publishing Guide</a>-->
-<!--                <span>Learn how to deploy and publish our solution</span>-->
-<!--              </li>-->
-<!--                <li>-->
-<!--                <a class="li-hdr" href="https://portals.docsie.io/docsie/docsie-documentation/docsie-integrations/">Integration Guides</a>-->
-<!--                <span>Learn how to integrate docsie into your solution</span>-->
-<!--              </li>-->
-<!--              &lt;!&ndash;<li>&ndash;&gt;-->
-<!--              &lt;!&ndash;<a class="li-hdr" href="#">Integration</a>&ndash;&gt;-->
-<!--              &lt;!&ndash;<span>Find out how to use Docsie on your website</span>&ndash;&gt;-->
-<!--              &lt;!&ndash;</li>&ndash;&gt;-->
-<!--              <li>-->
-<!--                <a class="li-hdr"-->
-<!--                  href="/documentation/styling_guide/">Customizations</a>-->
-<!--                <span>Learn how to customize Docsie docs to follow your own style and-->
-<!--                  branding</span>-->
-<!--              </li>-->
-<!--            </ul>-->
-<!--            <ul>-->
-<!--              <li class="li-hr"><strong>Vocally</strong></li>-->
-<!--              <li>-->
-<!--                <a class="li-hdr" href="/vocally/documentation/">Getting-->
-<!--                  started</a>-->
-<!--                <span>Discover our simple &amp; straight-fowrward way to manage user-->
-<!--                  feedeback</span>-->
-<!--              </li>-->
-<!--              <li>-->
-<!--                <a class="li-hdr" href="/vocally/documentation/configuration/">Configuration</a>-->
-<!--                <span>Make vocally a part of your ecosystem</span>-->
-<!--              </li>-->
-<!--              <li>-->
-<!--                <a class="li-hdr" href="/vocally/documentation/integrations/">Integrations</a>-->
-<!--                <span>Integrate your tools with vocally</span>-->
-<!--              </li>-->
-<!--              <li>-->
-<!--                <a class="li-hdr" href="/vocally/documentation/installation/">Installation</a>-->
-<!--                <span>Set-up vocally for the first time</span>-->
-<!--              </li>-->
-<!--            </ul>-->
-<!--          </div>-->
-<!--        </li>-->
-        <li class="v-sm"><a onclick="Calendly.initPopupWidget({url: 'https://calendly.com/docsie-io/demo-call'});return false;">Book Demo</a></li>
-        <li class="v-sm"><a class="clr-a" href="https://app.docsie.io/login">Sign-in</a></li>
-        
-        <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-TZRGMQ9');</script>
-<!-- End Google Tag Manager -->
-        
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TZRGMQ9"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-      </ul>
-    </nav>
-  </header>
+        <!-- Header V2 Navigation -->
+        <!-- Header V2 - Modern Navigation with Unified Design System -->
+<div class="header-v2-nav flex items-center justify-between w-full">
   
-<section class="section-padding supplementary-page">
-  <!-- Hero Section -->
-  
-    <!-- FrankenUI v2 Hero Component - Updated for proper compatibility -->
-<section class="hero-v2 py-16 md:py-24">
-<div class="container mx-auto px-4 lg:px-8">
-  <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+  <!-- Mobile Navigation Toggle -->
+  <button class="md:hidden p-2 text-gray-600 hover:text-docsie-primary transition-colors duration-300" 
+          onclick="toggleMobileMenu()" aria-label="Toggle navigation">
+    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+    </svg>
+  </button>
+
+  <!-- Main Navigation Links (Desktop) -->
+  <div class="hidden md:flex items-center space-x-8">
     
-    <!-- Text Content Column -->
-    <div class="text-center lg:text-left order-2 lg:order-1">
+    <!-- Solutions Dropdown -->
+    <div class="relative group">
+      <button class="flex items-center text-gray-700 hover:text-docsie-primary font-medium transition-colors duration-300 group">
+        Solutions
+        <svg class="ml-1 w-4 h-4 group-hover:rotate-180 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+        </svg>
+      </button>
       
-      <!-- Badge -->
-      
-      
-      <!-- Title -->
-      <h1 class="text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-        Government Documentation Platform
-      </h1>
-      
-      <!-- Description -->
-      <p class="text-xl text-gray-600 mb-8 leading-relaxed">
-        Transform your public sector documentation with digital policy management, service guides, and compliance documentation that improve operational efficiency by up to 55%
-      </p>
-      
-      <!-- CTA Buttons -->
-      
-      <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-        <a href="/signup" class="docsie-btn-primary">
-          Start Free Trial
-        </a>
-        
-        
+      <!-- Solutions Mega Menu -->
+      <div class="absolute top-full left-0 w-screen max-w-4xl bg-white border border-gray-200 rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 z-50">
+        <div class="p-6">
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            
+            <!-- Documentation Solutions -->
+            <div>
+              <h3 class="text-sm font-semibold text-docsie-primary uppercase tracking-wide mb-4">
+                Documentation
+              </h3>
+              <ul class="space-y-3">
+                <li>
+                  <a href="/solutions/technical-documentation/" class="block p-2 rounded-md hover:bg-gray-50 transition-colors duration-200">
+                    <div class="text-sm font-medium text-gray-900">Technical Docs</div>
+                    <div class="text-xs text-gray-500">Developer & API documentation</div>
+                  </a>
+                </li>
+                <li>
+                  <a href="/solutions/api-documentation/" class="block p-2 rounded-md hover:bg-gray-50 transition-colors duration-200">
+                    <div class="text-sm font-medium text-gray-900">API Documentation</div>
+                    <div class="text-xs text-gray-500">Interactive API references</div>
+                  </a>
+                </li>
+                <li>
+                  <a href="/solutions/product-documentation/" class="block p-2 rounded-md hover:bg-gray-50 transition-colors duration-200">
+                    <div class="text-sm font-medium text-gray-900">Product Docs</div>
+                    <div class="text-xs text-gray-500">User guides & manuals</div>
+                  </a>
+                </li>
+                <li>
+                  <a href="/solutions/user-manuals/" class="block p-2 rounded-md hover:bg-gray-50 transition-colors duration-200">
+                    <div class="text-sm font-medium text-gray-900">User Manuals</div>
+                    <div class="text-xs text-gray-500">Step-by-step guides</div>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            
+            <!-- AI Solutions -->
+            <div>
+              <h3 class="text-sm font-semibold text-docsie-primary uppercase tracking-wide mb-4">
+                AI Solutions
+              </h3>
+              <ul class="space-y-3">
+                <li>
+                  <a href="/solutions/ai-chatbot/" class="block p-2 rounded-md hover:bg-gray-50 transition-colors duration-200">
+                    <div class="text-sm font-medium text-gray-900">AI Chatbot</div>
+                    <div class="text-xs text-gray-500">Smart documentation assistant</div>
+                  </a>
+                </li>
+                <li>
+                  <a href="/solutions/knowledge-base/" class="block p-2 rounded-md hover:bg-gray-50 transition-colors duration-200">
+                    <div class="text-sm font-medium text-gray-900">Knowledge Base</div>
+                    <div class="text-xs text-gray-500">Self-service help center</div>
+                  </a>
+                </li>
+                <li>
+                  <a href="/solutions/ai-technical-writer/" class="block p-2 rounded-md hover:bg-gray-50 transition-colors duration-200">
+                    <div class="text-sm font-medium text-gray-900">AI Writer</div>
+                    <div class="text-xs text-gray-500">AI-powered content generation</div>
+                  </a>
+                </li>
+                <li>
+                  <a href="/solutions/documentation-from-video/" class="block p-2 rounded-md hover:bg-gray-50 transition-colors duration-200">
+                    <div class="text-sm font-medium text-gray-900">Video to Docs</div>
+                    <div class="text-xs text-gray-500">Transform videos into docs</div>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            
+            <!-- Enterprise Solutions -->
+            <div>
+              <h3 class="text-sm font-semibold text-docsie-primary uppercase tracking-wide mb-4">
+                Enterprise
+              </h3>
+              <ul class="space-y-3">
+                <li>
+                  <a href="/solutions/sops/" class="block p-2 rounded-md hover:bg-gray-50 transition-colors duration-200">
+                    <div class="text-sm font-medium text-gray-900">SOPs</div>
+                    <div class="text-xs text-gray-500">Standard operating procedures</div>
+                  </a>
+                </li>
+                <li>
+                  <a href="/solutions/quality-management/" class="block p-2 rounded-md hover:bg-gray-50 transition-colors duration-200">
+                    <div class="text-sm font-medium text-gray-900">Quality Management</div>
+                    <div class="text-xs text-gray-500">QMS documentation</div>
+                  </a>
+                </li>
+                <li>
+                  <a href="/solutions/training-documentation/" class="block p-2 rounded-md hover:bg-gray-50 transition-colors duration-200">
+                    <div class="text-sm font-medium text-gray-900">Training Docs</div>
+                    <div class="text-xs text-gray-500">Employee training materials</div>
+                  </a>
+                </li>
+                <li>
+                  <a href="/solutions/compliance-documentation/" class="block p-2 rounded-md hover:bg-gray-50 transition-colors duration-200">
+                    <div class="text-sm font-medium text-gray-900">Compliance</div>
+                    <div class="text-xs text-gray-500">Regulatory documentation</div>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            
+          </div>
+          
+          <!-- CTA Section -->
+          <div class="mt-6 pt-6 border-t border-gray-200">
+            <div class="flex items-center justify-between">
+              <div>
+                <p class="text-sm font-medium text-gray-900">Ready to get started?</p>
+                <p class="text-xs text-gray-500">Explore all our documentation solutions</p>
+              </div>
+              <a href="/solutions/" class="docsie-btn-primary text-sm px-4 py-2">
+                View All Solutions
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
-      
-      
     </div>
     
-    <!-- Image Column -->
-    <div class="order-1 lg:order-2">
+    <!-- Pricing Link -->
+    <a href="/pricing/" class="text-gray-700 hover:text-docsie-primary font-medium transition-colors duration-300">
+      Pricing
+    </a>
+    
+    <!-- Resources Dropdown -->
+    <div class="relative group">
+      <button class="flex items-center text-gray-700 hover:text-docsie-primary font-medium transition-colors duration-300 group">
+        Resources
+        <svg class="ml-1 w-4 h-4 group-hover:rotate-180 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+        </svg>
+      </button>
       
-      <div class="relative">
-        <img src="/assets/new_home/industries/government-hero.jpg" alt="Government Documentation Platform" class="w-full h-auto rounded-lg shadow-lg">
+      <!-- Resources Dropdown Menu -->
+      <div class="absolute top-full left-0 w-64 bg-white border border-gray-200 rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 z-50">
+        <div class="p-4">
+          <ul class="space-y-2">
+            <li>
+              <a href="/blog/" class="block p-2 rounded-md hover:bg-gray-50 transition-colors duration-200">
+                <div class="text-sm font-medium text-gray-900">Blog</div>
+                <div class="text-xs text-gray-500">Latest insights & updates</div>
+              </a>
+            </li>
+            <li>
+              <a href="https://help.docsie.io/" class="block p-2 rounded-md hover:bg-gray-50 transition-colors duration-200">
+                <div class="text-sm font-medium text-gray-900">Documentation</div>
+                <div class="text-xs text-gray-500">How to use Docsie</div>
+              </a>
+            </li>
+            <li>
+              <a href="https://app.docsie.io/schema/redoc/" class="block p-2 rounded-md hover:bg-gray-50 transition-colors duration-200">
+                <div class="text-sm font-medium text-gray-900">API Docs</div>
+                <div class="text-xs text-gray-500">Developer reference</div>
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
-      
+    </div>
+    
+  </div>
+
+  <!-- Right Side Navigation -->
+  <div class="flex items-center space-x-4">
+    
+    <!-- Book Demo Button -->
+    <button onclick="Calendly.initPopupWidget({url: 'https://calendly.com/docsie-io/demo-call'});return false;" 
+            class="hidden md:inline-flex items-center px-4 py-2 bg-white text-docsie-primary border border-docsie-primary font-medium rounded-lg hover:bg-docsie-primary hover:text-white transition-all duration-300">
+      Book Demo
+    </button>
+    
+    <!-- Sign In Link -->
+    <a href="https://app.docsie.io/login" 
+       class="inline-flex items-center px-4 py-2 bg-docsie-primary text-white font-medium rounded-lg hover:bg-docsie-primary-dark transition-all duration-300 shadow-sm hover:shadow-md">
+      Sign In
+    </a>
+    
+  </div>
+  
+</div>
+
+<!-- Mobile Menu (Hidden by default) -->
+<div id="mobile-menu" class="md:hidden hidden bg-white border-t border-gray-200 shadow-lg">
+  <div class="p-4">
+    
+    <!-- Mobile Solutions -->
+    <div class="mb-4">
+      <button onclick="toggleMobileDropdown('mobile-solutions')" 
+              class="flex items-center justify-between w-full text-left text-gray-700 font-medium py-2">
+        Solutions
+        <svg class="w-4 h-4 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+        </svg>
+      </button>
+      <div id="mobile-solutions" class="hidden pl-4 mt-2 space-y-2">
+        <a href="/solutions/technical-documentation/" class="block text-gray-600 hover:text-docsie-primary py-1">Technical Documentation</a>
+        <a href="/solutions/api-documentation/" class="block text-gray-600 hover:text-docsie-primary py-1">API Documentation</a>
+        <a href="/solutions/knowledge-base/" class="block text-gray-600 hover:text-docsie-primary py-1">Knowledge Base</a>
+        <a href="/solutions/ai-chatbot/" class="block text-gray-600 hover:text-docsie-primary py-1">AI Chatbot</a>
+        <a href="/solutions/" class="block text-docsie-primary hover:text-docsie-primary-dark py-1 font-medium">View All Solutions</a>
+      </div>
+    </div>
+    
+    <!-- Mobile Pricing -->
+    <a href="/pricing/" class="block text-gray-700 font-medium py-2">Pricing</a>
+    
+    <!-- Mobile Resources -->
+    <div class="mb-4">
+      <button onclick="toggleMobileDropdown('mobile-resources')" 
+              class="flex items-center justify-between w-full text-left text-gray-700 font-medium py-2">
+        Resources
+        <svg class="w-4 h-4 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+        </svg>
+      </button>
+      <div id="mobile-resources" class="hidden pl-4 mt-2 space-y-2">
+        <a href="/blog/" class="block text-gray-600 hover:text-docsie-primary py-1">Blog</a>
+        <a href="https://help.docsie.io/" class="block text-gray-600 hover:text-docsie-primary py-1">Documentation</a>
+      </div>
+    </div>
+    
+    <!-- Mobile CTAs -->
+    <div class="space-y-3 pt-4 border-t border-gray-200">
+      <button onclick="Calendly.initPopupWidget({url: 'https://calendly.com/docsie-io/demo-call'});return false;" 
+              class="w-full inline-flex items-center justify-center px-4 py-2 bg-white text-docsie-primary border border-docsie-primary font-medium rounded-lg hover:bg-docsie-primary hover:text-white transition-all duration-300">
+        Book Demo
+      </button>
+      <a href="https://app.docsie.io/login" class="block w-full inline-flex items-center justify-center px-4 py-2 bg-docsie-primary text-white font-medium rounded-lg hover:bg-docsie-primary-dark transition-all duration-300 shadow-sm hover:shadow-md text-center">
+        Sign In
+      </a>
     </div>
     
   </div>
 </div>
+
+<script>
+function toggleMobileMenu() {
+  const menu = document.getElementById('mobile-menu');
+  menu.classList.toggle('hidden');
+}
+
+function toggleMobileDropdown(id) {
+  const dropdown = document.getElementById(id);
+  const button = dropdown.previousElementSibling;
+  const icon = button.querySelector('svg');
+  
+  dropdown.classList.toggle('hidden');
+  icon.classList.toggle('rotate-180');
+}
+
+// Close mobile menu when clicking outside
+document.addEventListener('click', function(event) {
+  const menu = document.getElementById('mobile-menu');
+  const toggle = event.target.closest('[onclick*="toggleMobileMenu"]');
+  
+  if (!toggle && !menu.contains(event.target)) {
+    menu.classList.add('hidden');
+  }
+});
+</script>
+        
+      </div>
+    </nav>
+  </header>
+
+  
+<section class="section-padding supplementary-page">
+  <!-- Hero Section -->
+  
+    <!-- Modern Hero Section v2 - Upgraded to match banner_v2 design patterns -->
+<section class="hero-v2 relative min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 overflow-hidden">
+  
+  <!-- Background Pattern -->
+  <div class="absolute inset-0 opacity-5">
+    <div class="absolute inset-0" style="background-image: radial-gradient(circle at 25% 25%, #3b82f6 2px, transparent 2px); background-size: 50px 50px;"></div>
+  </div>
+  
+  <!-- Floating background elements -->
+  <div class="absolute -top-40 -left-40 w-80 h-80 bg-gradient-to-br from-blue-400/20 to-purple-400/20 rounded-full blur-3xl animate-pulse"></div>
+  <div class="absolute -bottom-40 -right-40 w-80 h-80 bg-gradient-to-br from-indigo-400/20 to-blue-400/20 rounded-full blur-3xl animate-pulse" style="animation-delay: 2s;"></div>
+  
+  <div class="relative z-10 min-h-screen flex items-center">
+    <div class="container mx-auto px-4 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        
+        <!-- Text Content Column -->
+        <div class="text-center lg:text-left order-2 lg:order-1">
+          
+          <!-- Badge -->
+          
+          
+          <!-- Title -->
+          <h1 class="text-4xl lg:text-5xl xl:text-6xl font-bold mb-6 leading-tight opacity-0 animate-slide-up" style="animation-delay: 0.8s;">
+            <span class="bg-gradient-to-r from-gray-900 via-blue-900 to-purple-900 bg-clip-text text-transparent">
+              Government Documentation Platform
+            </span>
+          </h1>
+          
+          <!-- Description -->
+          <p class="text-xl md:text-2xl text-gray-600 mb-12 leading-relaxed opacity-0 animate-slide-up" style="animation-delay: 1.1s;">
+            Transform your public sector documentation with digital policy management, service guides, and compliance documentation that improve operational efficiency by up to 55%
+          </p>
+          
+          <!-- CTA Buttons -->
+          
+          <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8 opacity-0 animate-slide-up" style="animation-delay: 1.4s;">
+            <a href="/demo" 
+               class="group inline-flex items-center px-8 py-4 bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+              Book Demo
+              <svg class="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+              </svg>
+            </a>
+            
+            
+          </div>
+          
+          
+          <!-- Trust indicators -->
+          <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 text-gray-700 opacity-0 animate-slide-up" style="animation-delay: 1.7s;">
+            <div class="flex items-center gap-1">
+              <div class="flex">
+                <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                </svg>
+                <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                </svg>
+                <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                </svg>
+                <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                </svg>
+                <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                </svg>
+              </div>
+              <span class="text-gray-700 font-medium ml-1">4.8 Stars (100+ Reviews)</span>
+            </div>
+          </div>
+          
+        </div>
+        
+        <!-- Image Column -->
+        <div class="order-1 lg:order-2 opacity-0 animate-slide-up" style="animation-delay: 1.2s;">
+          
+          <div class="relative group">
+            <img src="/assets/new_home/industries/government-hero.jpg" alt="Government Documentation Platform" 
+                 class="w-full h-auto rounded-2xl shadow-2xl group-hover:shadow-3xl transition-all duration-500 transform group-hover:scale-105">
+            
+            <!-- Image overlay effect -->
+            <div class="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          </div>
+          
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  
 </section>
+
+<style>
+/* Animation Keyframes */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Animation Classes */
+.animate-fade-in {
+  animation: fadeIn 1s ease-out forwards;
+}
+
+.animate-slide-up {
+  animation: slideUp 1s ease-out forwards;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .hero-v2 h1 {
+    font-size: 2.5rem;
+  }
+  
+  .hero-v2 p {
+    font-size: 1.125rem;
+  }
+  
+  .hero-v2 .flex-col {
+    width: 100%;
+  }
+  
+  .hero-v2 a {
+    width: 100%;
+    max-width: 280px;
+  }
+}
+</style>
   
 
   <!-- Stats Section -->
@@ -570,22 +662,34 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   
     <div class="content-section">
       
-<!-- Modern Features Component v2 - Built with Tailwind CSS -->
-<section class="features-v2 w-full py-12 md:py-24 lg:py-32 bg-muted/30">
-    <div class="container mx-auto max-w-7xl px-4 md:px-6">
+<!-- Modern Features Component v2 - Upgraded with sophisticated design patterns -->
+<section class="features-v2 relative w-full py-16 md:py-24 lg:py-32 bg-gradient-to-br from-gray-50 via-blue-50/30 to-indigo-50/30 overflow-hidden">
+    
+    <!-- Background Pattern -->
+    <div class="absolute inset-0 opacity-5">
+        <div class="absolute inset-0" style="background-image: radial-gradient(circle at 25% 25%, #3b82f6 2px, transparent 2px); background-size: 50px 50px;"></div>
+    </div>
+    
+    <!-- Floating background elements -->
+    <div class="absolute -top-40 -left-40 w-80 h-80 bg-gradient-to-br from-blue-400/10 to-purple-400/10 rounded-full blur-3xl animate-pulse"></div>
+    <div class="absolute -bottom-40 -right-40 w-80 h-80 bg-gradient-to-br from-indigo-400/10 to-blue-400/10 rounded-full blur-3xl animate-pulse" style="animation-delay: 2s;"></div>
+    
+    <div class="container mx-auto max-w-7xl px-4 md:px-6 relative z-10">
         
         <!-- Section Header -->
         
-        <div class="flex flex-col items-center justify-center space-y-4 text-center mb-12">
+        <div class="flex flex-col items-center justify-center space-y-4 text-center mb-16">
             <div class="space-y-2">
                 
                 
-                <h2 class="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-                    Key Features
+                <h2 class="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl opacity-0 animate-slide-up" style="animation-delay: 0.4s;">
+                    <span class="bg-gradient-to-r from-gray-900 via-blue-900 to-purple-900 bg-clip-text text-transparent">
+                        Key Features
+                    </span>
                 </h2>
                 
                 
-                <p class="text-lg text-muted-foreground max-w-[900px] mx-auto">
+                <p class="text-xl text-gray-600 max-w-[900px] mx-auto leading-relaxed opacity-0 animate-slide-up" style="animation-delay: 0.6s;">
                     Everything you need for modern government and non-profit documentation
                 </p>
                 
@@ -594,188 +698,263 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         
         
         <!-- Features Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
             
-            <div class="feature-card-v2 group bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+            <div class="feature-card-v2 group relative bg-white/70 backdrop-blur-sm rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-100 hover:border-blue-200 opacity-0 animate-slide-up" style="animation-delay: 0.8s;">
+                
+                <!-- Hover glow effect -->
+                <div class="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-purple-500/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 
                 <!-- Icon -->
                 
-                <div class="feature-icon-v2 mb-6">
-                    <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center text-white text-2xl group-hover:scale-110 transition-transform duration-300">
-                        <i class="fas fa-landmark"></i>
+                <div class="feature-icon-v2 relative mb-6">
+                    <div class="relative w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl shadow-lg group-hover:shadow-xl transition-all duration-300 flex items-center justify-center">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            
+                        </svg>
+                        
+                        <!-- Icon glow effect -->
+                        <div class="absolute inset-0 bg-gradient-to-br from-blue-500/30 to-purple-600/30 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-lg"></div>
                     </div>
                 </div>
                 
                 
                 <!-- Content -->
-                <div class="feature-content-v2">
-                    <h3 class="text-xl font-semibold text-gray-900 mb-4 group-hover:text-blue-600 transition-colors duration-300">
+                <div class="space-y-4">
+                    <h3 class="text-xl font-bold text-gray-900 group-hover:text-blue-900 transition-colors duration-300">
                         Policy Documentation
                     </h3>
-                    <p class="text-gray-600 leading-relaxed">
+                    
+                    <p class="text-gray-600 leading-relaxed group-hover:text-gray-700 transition-colors duration-300">
                         Create and maintain comprehensive policy documents
                     </p>
-                </div>
-                
-                <!-- Hover Arrow -->
-                <div class="feature-arrow-v2 mt-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-                    </svg>
+                    
+                    
                 </div>
             </div>
             
-            <div class="feature-card-v2 group bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+            <div class="feature-card-v2 group relative bg-white/70 backdrop-blur-sm rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-100 hover:border-blue-200 opacity-0 animate-slide-up" style="animation-delay: 0.8s;">
+                
+                <!-- Hover glow effect -->
+                <div class="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-purple-500/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 
                 <!-- Icon -->
                 
-                <div class="feature-icon-v2 mb-6">
-                    <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center text-white text-2xl group-hover:scale-110 transition-transform duration-300">
-                        <i class="fas fa-universal-access"></i>
+                <div class="feature-icon-v2 relative mb-6">
+                    <div class="relative w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl shadow-lg group-hover:shadow-xl transition-all duration-300 flex items-center justify-center">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            
+                        </svg>
+                        
+                        <!-- Icon glow effect -->
+                        <div class="absolute inset-0 bg-gradient-to-br from-blue-500/30 to-purple-600/30 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-lg"></div>
                     </div>
                 </div>
                 
                 
                 <!-- Content -->
-                <div class="feature-content-v2">
-                    <h3 class="text-xl font-semibold text-gray-900 mb-4 group-hover:text-blue-600 transition-colors duration-300">
+                <div class="space-y-4">
+                    <h3 class="text-xl font-bold text-gray-900 group-hover:text-blue-900 transition-colors duration-300">
                         Accessibility
                     </h3>
-                    <p class="text-gray-600 leading-relaxed">
+                    
+                    <p class="text-gray-600 leading-relaxed group-hover:text-gray-700 transition-colors duration-300">
                         Ensure documentation meets accessibility standards
                     </p>
-                </div>
-                
-                <!-- Hover Arrow -->
-                <div class="feature-arrow-v2 mt-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-                    </svg>
+                    
+                    
                 </div>
             </div>
             
-            <div class="feature-card-v2 group bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+            <div class="feature-card-v2 group relative bg-white/70 backdrop-blur-sm rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-100 hover:border-blue-200 opacity-0 animate-slide-up" style="animation-delay: 0.8s;">
+                
+                <!-- Hover glow effect -->
+                <div class="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-purple-500/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 
                 <!-- Icon -->
                 
-                <div class="feature-icon-v2 mb-6">
-                    <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center text-white text-2xl group-hover:scale-110 transition-transform duration-300">
-                        <i class="fas fa-shield-alt"></i>
+                <div class="feature-icon-v2 relative mb-6">
+                    <div class="relative w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl shadow-lg group-hover:shadow-xl transition-all duration-300 flex items-center justify-center">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            
+                        </svg>
+                        
+                        <!-- Icon glow effect -->
+                        <div class="absolute inset-0 bg-gradient-to-br from-blue-500/30 to-purple-600/30 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-lg"></div>
                     </div>
                 </div>
                 
                 
                 <!-- Content -->
-                <div class="feature-content-v2">
-                    <h3 class="text-xl font-semibold text-gray-900 mb-4 group-hover:text-blue-600 transition-colors duration-300">
+                <div class="space-y-4">
+                    <h3 class="text-xl font-bold text-gray-900 group-hover:text-blue-900 transition-colors duration-300">
                         Security Controls
                     </h3>
-                    <p class="text-gray-600 leading-relaxed">
+                    
+                    <p class="text-gray-600 leading-relaxed group-hover:text-gray-700 transition-colors duration-300">
                         Implement robust security measures for sensitive data
                     </p>
-                </div>
-                
-                <!-- Hover Arrow -->
-                <div class="feature-arrow-v2 mt-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-                    </svg>
+                    
+                    
                 </div>
             </div>
             
-            <div class="feature-card-v2 group bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+            <div class="feature-card-v2 group relative bg-white/70 backdrop-blur-sm rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-100 hover:border-blue-200 opacity-0 animate-slide-up" style="animation-delay: 0.8s;">
+                
+                <!-- Hover glow effect -->
+                <div class="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-purple-500/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 
                 <!-- Icon -->
                 
-                <div class="feature-icon-v2 mb-6">
-                    <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center text-white text-2xl group-hover:scale-110 transition-transform duration-300">
-                        <i class="fas fa-handshake"></i>
+                <div class="feature-icon-v2 relative mb-6">
+                    <div class="relative w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl shadow-lg group-hover:shadow-xl transition-all duration-300 flex items-center justify-center">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            
+                        </svg>
+                        
+                        <!-- Icon glow effect -->
+                        <div class="absolute inset-0 bg-gradient-to-br from-blue-500/30 to-purple-600/30 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-lg"></div>
                     </div>
                 </div>
                 
                 
                 <!-- Content -->
-                <div class="feature-content-v2">
-                    <h3 class="text-xl font-semibold text-gray-900 mb-4 group-hover:text-blue-600 transition-colors duration-300">
+                <div class="space-y-4">
+                    <h3 class="text-xl font-bold text-gray-900 group-hover:text-blue-900 transition-colors duration-300">
                         Public Services
                     </h3>
-                    <p class="text-gray-600 leading-relaxed">
+                    
+                    <p class="text-gray-600 leading-relaxed group-hover:text-gray-700 transition-colors duration-300">
                         Document public services and citizen resources
                     </p>
-                </div>
-                
-                <!-- Hover Arrow -->
-                <div class="feature-arrow-v2 mt-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-                    </svg>
+                    
+                    
                 </div>
             </div>
             
-            <div class="feature-card-v2 group bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+            <div class="feature-card-v2 group relative bg-white/70 backdrop-blur-sm rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-100 hover:border-blue-200 opacity-0 animate-slide-up" style="animation-delay: 0.8s;">
+                
+                <!-- Hover glow effect -->
+                <div class="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-purple-500/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 
                 <!-- Icon -->
                 
-                <div class="feature-icon-v2 mb-6">
-                    <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center text-white text-2xl group-hover:scale-110 transition-transform duration-300">
-                        <i class="fas fa-chart-pie"></i>
+                <div class="feature-icon-v2 relative mb-6">
+                    <div class="relative w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl shadow-lg group-hover:shadow-xl transition-all duration-300 flex items-center justify-center">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            
+                        </svg>
+                        
+                        <!-- Icon glow effect -->
+                        <div class="absolute inset-0 bg-gradient-to-br from-blue-500/30 to-purple-600/30 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-lg"></div>
                     </div>
                 </div>
                 
                 
                 <!-- Content -->
-                <div class="feature-content-v2">
-                    <h3 class="text-xl font-semibold text-gray-900 mb-4 group-hover:text-blue-600 transition-colors duration-300">
+                <div class="space-y-4">
+                    <h3 class="text-xl font-bold text-gray-900 group-hover:text-blue-900 transition-colors duration-300">
                         Performance Metrics
                     </h3>
-                    <p class="text-gray-600 leading-relaxed">
+                    
+                    <p class="text-gray-600 leading-relaxed group-hover:text-gray-700 transition-colors duration-300">
                         Track and report on service delivery metrics
                     </p>
-                </div>
-                
-                <!-- Hover Arrow -->
-                <div class="feature-arrow-v2 mt-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-                    </svg>
+                    
+                    
                 </div>
             </div>
             
-            <div class="feature-card-v2 group bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+            <div class="feature-card-v2 group relative bg-white/70 backdrop-blur-sm rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-100 hover:border-blue-200 opacity-0 animate-slide-up" style="animation-delay: 0.8s;">
+                
+                <!-- Hover glow effect -->
+                <div class="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-purple-500/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 
                 <!-- Icon -->
                 
-                <div class="feature-icon-v2 mb-6">
-                    <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center text-white text-2xl group-hover:scale-110 transition-transform duration-300">
-                        <i class="fas fa-globe"></i>
+                <div class="feature-icon-v2 relative mb-6">
+                    <div class="relative w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl shadow-lg group-hover:shadow-xl transition-all duration-300 flex items-center justify-center">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            
+                        </svg>
+                        
+                        <!-- Icon glow effect -->
+                        <div class="absolute inset-0 bg-gradient-to-br from-blue-500/30 to-purple-600/30 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-lg"></div>
                     </div>
                 </div>
                 
                 
                 <!-- Content -->
-                <div class="feature-content-v2">
-                    <h3 class="text-xl font-semibold text-gray-900 mb-4 group-hover:text-blue-600 transition-colors duration-300">
+                <div class="space-y-4">
+                    <h3 class="text-xl font-bold text-gray-900 group-hover:text-blue-900 transition-colors duration-300">
                         Multi-language Support
                     </h3>
-                    <p class="text-gray-600 leading-relaxed">
+                    
+                    <p class="text-gray-600 leading-relaxed group-hover:text-gray-700 transition-colors duration-300">
                         Provide documentation in multiple languages
                     </p>
-                </div>
-                
-                <!-- Hover Arrow -->
-                <div class="feature-arrow-v2 mt-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-                    </svg>
+                    
+                    
                 </div>
             </div>
             
         </div>
         
-        <!-- Optional CTA -->
+        <!-- Optional CTA Section -->
+        
         
     </div>
 </section>
+
+<style>
+/* Animation Keyframes */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Animation Classes */
+.animate-fade-in {
+  animation: fadeIn 1s ease-out forwards;
+}
+
+.animate-slide-up {
+  animation: slideUp 1s ease-out forwards;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .features-v2 .grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .feature-card-v2 {
+    padding: 2rem;
+  }
+  
+  .features-v2 h2 {
+    font-size: 2rem;
+  }
+}
+</style>
  
     </div>
   
@@ -1035,105 +1214,96 @@ document.addEventListener('DOMContentLoaded', function() {
 
   <!-- Related Section -->
   
+
+  <!-- Auto-Configured Related Section -->
+  
     <div class="content-section">
-      <!-- Tailwind v2 Related Components -->
-<section class="related-v2 py-16 bg-white">
-  <div class="container mx-auto px-4 lg:px-8">
+      
+<div class="related-content">
+  <h2>Related Solutions</h2>
+  <div class="related-grid">
     
-    <!-- Section Header -->
-    <div class="text-center mb-12">
-      <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-        Related Solutions
-      </h2>
-    </div>
     
-    <!-- Related Solutions Grid -->
-    <div class="related-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       
-      <a href="" class="related-card group block bg-white border border-gray-200 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden">
+      <a href="/solutions/standard-operating-procedures" class="related-card">
         
-        <!-- Image Container -->
-        
-        
-        <!-- Content -->
-        <div class="p-6">
-          <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors duration-300">
-            Standard Operating Procedures
-          </h3>
-          <p class="text-gray-600 leading-relaxed mb-4">
-            Create and manage detailed SOPs for government operations
-          </p>
-          
-          <!-- Read More Link -->
-          <div class="flex items-center text-blue-600 font-medium group-hover:text-blue-700 transition-colors duration-300">
-            <span>Learn More</span>
-            <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-            </svg>
-          </div>
+        <div class="related-content">
+          <h3>Solution</h3>
+          <p>Learn more about this solution</p>
         </div>
-        
       </a>
+    
+    
+    
       
-      <a href="" class="related-card group block bg-white border border-gray-200 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden">
+      <a href="/solutions/knowledge-base" class="related-card">
         
-        <!-- Image Container -->
+        <img src="/assets/solutions/kb-hero.jpg" alt="Self-Service Knowledge Base" />
         
-        
-        <!-- Content -->
-        <div class="p-6">
-          <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors duration-300">
-            Knowledge Base
-          </h3>
-          <p class="text-gray-600 leading-relaxed mb-4">
-            Build accessible knowledge bases for public services
-          </p>
-          
-          <!-- Read More Link -->
-          <div class="flex items-center text-blue-600 font-medium group-hover:text-blue-700 transition-colors duration-300">
-            <span>Learn More</span>
-            <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-            </svg>
-          </div>
+        <div class="related-content">
+          <h3>Self-Service Knowledge Base</h3>
+          <p>Transform your customer support with a powerful knowledge base that helps users find answers instantly, reducing support tickets by up to 70%</p>
         </div>
-        
       </a>
-      
-    </div>
+    
     
   </div>
-</section>
+</div>
+
     </div>
   
 
   <!-- CTA Section -->
   
   
-<!-- Modern CTA Section v2 - Built with Tailwind CSS -->
-<section class="cta-section-v2 w-full py-12 md:py-24 lg:py-32">
-  <div class="container mx-auto max-w-4xl px-4 md:px-6">
-    <div class="flex flex-col items-center justify-center space-y-4 text-center">
-      <div class="space-y-2">
-        
-        <!-- Badge/Label -->
-        
-        
-        <!-- Main Title -->
-        <h2 class="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-transparent">
+<!-- Calendly widget dependencies -->
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+
+<!-- Modern CTA Section v2 - Upgraded with sophisticated design patterns -->
+<section class="cta-section-v2 relative w-full py-16 md:py-24 lg:py-32 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 overflow-hidden">
+  
+  <!-- Background Pattern -->
+  <div class="absolute inset-0 opacity-5">
+    <div class="absolute inset-0" style="background-image: radial-gradient(circle at 25% 25%, #3b82f6 2px, transparent 2px); background-size: 50px 50px;"></div>
+  </div>
+  
+  <!-- Enhanced floating background elements -->
+  <div class="absolute -top-40 -left-40 w-80 h-80 bg-gradient-to-br from-blue-400/20 to-purple-400/20 rounded-full blur-3xl animate-float"></div>
+  <div class="absolute -bottom-40 -right-40 w-80 h-80 bg-gradient-to-br from-indigo-400/20 to-blue-400/20 rounded-full blur-3xl animate-float-delayed"></div>
+  <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-br from-white/10 to-transparent rounded-full blur-3xl animate-pulse"></div>
+  
+  <div class="container mx-auto max-w-4xl px-4 md:px-6 relative z-10">
+    <div class="flex flex-col items-center justify-center space-y-8 text-center">
+      
+      <!-- Badge/Label -->
+      
+      
+      <!-- Main Title -->
+      <h2 class="text-3xl font-bold tracking-tighter sm:text-4xl md:text-6xl opacity-0 animate-slide-up" style="animation-delay: 0.4s;">
+        <span class="bg-gradient-to-r from-gray-900 via-blue-900 to-purple-900 bg-clip-text text-transparent">
           Ready to Transform Your Documentation?
-        </h2>
-        
-        <!-- Description -->
-        
-        <p class="mx-auto max-w-[600px] text-muted-foreground md:text-xl/relaxed">
-          Start creating professional documentation that your users will love
-        </p>
-        
-      </div>
+        </span>
+      </h2>
+      
+      <!-- Description -->
+      
+      <p class="mx-auto max-w-[700px] text-xl md:text-2xl text-gray-600 leading-relaxed opacity-0 animate-slide-up" style="animation-delay: 0.6s;">
+        Start creating professional documentation that your users will love
+      </p>
+      
       
       <!-- CTA Buttons -->
-      <div class="flex flex-col gap-2 min-[400px]:flex-row">
+      <div class="flex flex-col gap-4 min-[400px]:flex-row opacity-0 animate-slide-up" style="animation-delay: 0.8s;">
+        
+        <!-- Fallback to legacy cta format with Calendly popup -->
+        <button onclick="Calendly.initPopupWidget({url: 'https://calendly.com/docsie-io/demo-call'});return false;" 
+                class="group inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 px-8 py-4 text-lg font-semibold text-white shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2">
+          Book Demo
+          <svg class="ml-2 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+          </svg>
+        </button>
         
         
         
@@ -1141,189 +1311,416 @@ document.addEventListener('DOMContentLoaded', function() {
       
       <!-- Additional Info -->
       
+      
+      <!-- Trust indicators -->
+      
+      <!-- Default trust indicators if none provided -->
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-6 mt-8 text-gray-600 opacity-0 animate-fade-in" style="animation-delay: 1.2s;">
+        <div class="flex items-center gap-2">
+          <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+          </svg>
+          <span class="text-sm font-medium">Free 14-day trial</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+          </svg>
+          <span class="text-sm font-medium">No credit card required</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+          </svg>
+          <span class="text-sm font-medium">Cancel anytime</span>
+        </div>
+      </div>
+      
+      
     </div>
   </div>
   
-  <!-- Background Elements -->
-  <div class="absolute inset-0 -z-10 overflow-hidden">
-    <div class="absolute -top-40 -right-40 w-80 h-80 bg-primary/5 rounded-full blur-3xl"></div>
-    <div class="absolute -bottom-40 -left-40 w-80 h-80 bg-primary/5 rounded-full blur-3xl"></div>
-  </div>
 </section>
+
+<style>
+/* Animation Keyframes */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes floatDelayed {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+}
+
+/* Animation Classes */
+.animate-fade-in {
+  animation: fadeIn 1s ease-out forwards;
+}
+
+.animate-slide-up {
+  animation: slideUp 1s ease-out forwards;
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: floatDelayed 8s ease-in-out infinite;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .cta-section-v2 h2 {
+    font-size: 2.5rem;
+  }
+  
+  .cta-section-v2 p {
+    font-size: 1.125rem;
+  }
+  
+  .cta-section-v2 .flex-col {
+    width: 100%;
+  }
+  
+  .cta-section-v2 a {
+    width: 100%;
+    max-width: 280px;
+  }
+}
+</style>
  
 
 </section>
 
 
-  <footer class="gn">
-    <!-- Page Footer -->`
-    <div id="ddfb-root"></div>
-    <div class="lang-redirect-container"></div>
-    <section class="ft-nav">
-      <div class="logo-lang-container">
-        <div class="docsie-lang-picker-container"></div>
-        <div class="nav-logo v-md">
-          <svg class="lg" width="32" height="40" viewBox="0 0 48 48">
+  <!-- Footer V2 -->
+  <!-- Footer V2 - Dynamic Content Generation with Unified Design System -->
+<footer class="footer-v2 bg-gradient-to-br from-slate-900 to-slate-800 text-white">
+  <div class="container mx-auto px-4 py-16">
+    
+    <!-- Main Footer Content -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
+      
+      <!-- Company Info & Logo -->
+      <div class="lg:col-span-1">
+        <div class="mb-6">
+          <svg class="w-10 h-12 text-docsie-primary mb-4" width="48" height="48" viewBox="0 0 48 48">
             <use xlink:href="#icon-docsie"></use>
           </svg>
+          <p class="text-gray-300 text-sm leading-relaxed">
+            AI-powered documentation platform that helps teams create, manage, and share knowledge that drives business forward.
+          </p>
+        </div>
+        
+        <!-- Social Links -->
+        <div class="flex space-x-4">
+          <a href="https://www.linkedin.com/company/likalo/" class="text-gray-400 hover:text-docsie-primary transition-colors duration-300" aria-label="LinkedIn">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+            </svg>
+          </a>
+          <a href="https://twitter.com/likalo_llc" class="text-gray-400 hover:text-docsie-primary transition-colors duration-300" aria-label="Twitter">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+            </svg>
+          </a>
+          <a href="https://www.youtube.com/channel/UCnQm591jTzvHwb003Y8e1XA" class="text-gray-400 hover:text-docsie-primary transition-colors duration-300" aria-label="YouTube">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+            </svg>
+          </a>
+          <a href="https://www.instagram.com/docsie.io/" class="text-gray-400 hover:text-docsie-primary transition-colors duration-300" aria-label="Instagram">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 6.618 5.367 11.986 11.988 11.986C18.635 23.973 24 18.605 24 11.987 24 5.367 18.635.001 12.017.001zm5.568 16.585c-.884 0-1.595-.711-1.595-1.595s.711-1.595 1.595-1.595 1.595.711 1.595 1.595-.711 1.595-1.595 1.595zm-5.568 1.388c-3.836 0-6.973-3.138-6.973-6.973s3.137-6.973 6.973-6.973c3.835 0 6.973 3.138 6.973 6.973s-3.138 6.973-6.973 6.973z"/>
+            </svg>
+          </a>
         </div>
       </div>
-      <nav class="footer-nav">
-        <div class="footer-column">
-          <ul class="footer-list">
-            <li class="footer-header">
-              <h4>Documentation Solutions:</h4>
-            </li>
-            <li class="footer-item">
-              <a href="/solutions/technical-documentation/">Technical Documentation</a>
-            </li>
-            <li class="footer-item">
-              <a href="/solutions/api-documentation/">API Documentation</a>
-            </li>
-            <li class="footer-item">
-              <a href="/solutions/product-documentation/">Product Documentation</a>
-            </li>
-            <li class="footer-item">
-              <a href="/solutions/user-manuals/">User Manuals</a>
-            </li>
-            <li class="footer-item">
-              <a href="/solutions/training-documentation/">Training Documentation</a>
-            </li>
-            <li class="footer-item">
-              <a href="/solutions/data-sheets/">Data Sheets</a>
-            </li>
-            <li class="footer-item">
-              <a href="/solutions/sops/">Standard Operating Procedures</a>
-            </li>
-            <li class="footer-item">
-              <a href="/solutions/compliance-documentation/">Compliance Documentation</a>
-            </li>
-          </ul>
+      
+      <!-- Documentation Solutions - Auto-generated -->
+      <div>
+        <h4 class="text-lg font-semibold mb-6 text-white">
+          Documentation Solutions
+        </h4>
+        <ul class="space-y-3">
+          <li>
+            <a href="/solutions/technical-documentation/" class="text-gray-300 hover:text-docsie-primary transition-colors duration-300 text-sm">
+              Technical Documentation
+            </a>
+          </li>
+          <li>
+            <a href="/solutions/api-documentation/" class="text-gray-300 hover:text-docsie-primary transition-colors duration-300 text-sm">
+              API Documentation
+            </a>
+          </li>
+          <li>
+            <a href="/solutions/product-documentation/" class="text-gray-300 hover:text-docsie-primary transition-colors duration-300 text-sm">
+              Product Documentation
+            </a>
+          </li>
+          <li>
+            <a href="/solutions/user-manuals/" class="text-gray-300 hover:text-docsie-primary transition-colors duration-300 text-sm">
+              User Manuals
+            </a>
+          </li>
+          <li>
+            <a href="/solutions/training-documentation/" class="text-gray-300 hover:text-docsie-primary transition-colors duration-300 text-sm">
+              Training Documentation
+            </a>
+          </li>
+          <li>
+            <a href="/solutions/sops/" class="text-gray-300 hover:text-docsie-primary transition-colors duration-300 text-sm">
+              SOPs
+            </a>
+          </li>
+          <li>
+            <a href="/solutions/quality-management/" class="text-gray-300 hover:text-docsie-primary transition-colors duration-300 text-sm">
+              Quality Management
+            </a>
+          </li>
+        </ul>
+      </div>
+      
+      <!-- AI & Advanced Solutions - Auto-generated -->
+      <div>
+        <h4 class="text-lg font-semibold mb-6 text-white">
+          AI & Advanced Solutions
+        </h4>
+        <ul class="space-y-3">
+          <li>
+            <a href="/solutions/knowledge-base/" class="text-gray-300 hover:text-docsie-primary transition-colors duration-300 text-sm">
+              Knowledge Base
+            </a>
+          </li>
+          <li>
+            <a href="/solutions/ai-chatbot/" class="text-gray-300 hover:text-docsie-primary transition-colors duration-300 text-sm">
+              AI Chatbot
+            </a>
+          </li>
+          <li>
+            <a href="/solutions/ai-technical-writer/" class="text-gray-300 hover:text-docsie-primary transition-colors duration-300 text-sm">
+              AI Technical Writer
+            </a>
+          </li>
+          <li>
+            <a href="/solutions/doc-chatbots/" class="text-gray-300 hover:text-docsie-primary transition-colors duration-300 text-sm">
+              Documentation Chatbots
+            </a>
+          </li>
+          <li>
+            <a href="/solutions/custom-ai-content-prompts/" class="text-gray-300 hover:text-docsie-primary transition-colors duration-300 text-sm">
+              Custom AI Content
+            </a>
+          </li>
+          <li>
+            <a href="/solutions/documentation-from-video/" class="text-gray-300 hover:text-docsie-primary transition-colors duration-300 text-sm">
+              Video to Documentation
+            </a>
+          </li>
+          <li>
+            <a href="/solutions/content-management/" class="text-gray-300 hover:text-docsie-primary transition-colors duration-300 text-sm">
+              Content Management
+            </a>
+          </li>
+        </ul>
+      </div>
+      
+      <!-- Industries - Auto-generated -->
+      <div>
+        <h4 class="text-lg font-semibold mb-6 text-white">
+          Industries
+        </h4>
+        <ul class="space-y-3">
+          <li>
+            <a href="/solutions/industries/saas/" class="text-gray-300 hover:text-docsie-primary transition-colors duration-300 text-sm">
+              SaaS
+            </a>
+          </li>
+          <li>
+            <a href="/solutions/industries/manufacturing/" class="text-gray-300 hover:text-docsie-primary transition-colors duration-300 text-sm">
+              Manufacturing
+            </a>
+          </li>
+          <li>
+            <a href="/solutions/industries/energy/" class="text-gray-300 hover:text-docsie-primary transition-colors duration-300 text-sm">
+              Energy
+            </a>
+          </li>
+          <li>
+            <a href="/solutions/industries/government/" class="text-gray-300 hover:text-docsie-primary transition-colors duration-300 text-sm">
+              Government
+            </a>
+          </li>
+          <li>
+            <a href="/solutions/industries/compliance/" class="text-gray-300 hover:text-docsie-primary transition-colors duration-300 text-sm">
+              Compliance
+            </a>
+          </li>
+          <li>
+            <a href="/solutions/industries/it-services/" class="text-gray-300 hover:text-docsie-primary transition-colors duration-300 text-sm">
+              IT Services
+            </a>
+          </li>
+        </ul>
+      </div>
+      
+      <!-- Resources & Company -->
+      <div>
+        <h4 class="text-lg font-semibold mb-6 text-white">
+          Company & Resources
+        </h4>
+        <ul class="space-y-3">
+          <li>
+            <a href="/pricing/" class="text-gray-300 hover:text-docsie-primary transition-colors duration-300 text-sm">
+              Pricing
+            </a>
+          </li>
+          <li>
+            <a href="/demo/" class="text-gray-300 hover:text-docsie-primary transition-colors duration-300 text-sm">
+              Book a Demo
+            </a>
+          </li>
+          <li>
+            <a href="/blog/" class="text-gray-300 hover:text-docsie-primary transition-colors duration-300 text-sm">
+              Blog
+            </a>
+          </li>
+          <li>
+            <a href="https://help.docsie.io/" class="text-gray-300 hover:text-docsie-primary transition-colors duration-300 text-sm">
+              Documentation
+            </a>
+          </li>
+          <li>
+            <a href="https://app.docsie.io/schema/redoc/" class="text-gray-300 hover:text-docsie-primary transition-colors duration-300 text-sm">
+              API Docs
+            </a>
+          </li>
+          <li>
+            <a href="/about/" class="text-gray-300 hover:text-docsie-primary transition-colors duration-300 text-sm">
+              About Us
+            </a>
+          </li>
+        </ul>
+      </div>
+      
+    </div>
+    
+    <!-- Footer CTA Section -->
+    <div class="bg-gradient-to-r from-docsie-primary/10 to-blue-600/10 rounded-xl p-6 mb-12">
+      <div class="max-w-2xl mx-auto text-center">
+        <h3 class="text-xl font-semibold mb-2">Ready to Transform Your Documentation?</h3>
+        <p class="text-gray-300 mb-4">Join thousands of teams who trust Docsie for their knowledge management needs.</p>
+        <div class="flex flex-col sm:flex-row gap-3 justify-center">
+          <button onclick="Calendly.initPopupWidget({url: 'https://calendly.com/docsie-io/demo-call'});return false;" 
+                  class="inline-flex items-center justify-center px-6 py-3 bg-docsie-primary text-white font-medium rounded-lg hover:bg-docsie-primary-dark transition-all duration-300 shadow-sm hover:shadow-md">
+            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+            </svg>
+            Book Demo
+          </button>
+          <a href="https://app.docsie.io/onboarding/" 
+             class="inline-flex items-center justify-center px-6 py-3 bg-white/10 border border-white/20 text-white font-medium rounded-lg hover:bg-white/20 transition-all duration-300">
+            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+            </svg>
+            Start Free Trial
+          </a>
         </div>
-        <div class="footer-column">
-          <ul class="footer-list">
-            <li class="footer-header">
-              <h4>AI & Advanced Solutions:</h4>
-            </li>
-            <li class="footer-item">
-              <a href="/solutions/knowledge-base/">Knowledge Base</a>
-            </li>
-            <li class="footer-item">
-              <a href="/solutions/ai-chatbot/">AI Chatbot</a>
-            </li>
-            <li class="footer-item">
-              <a href="/solutions/ai-technical-writer/">AI Technical Writer</a>
-            </li>
-            <li class="footer-item">
-              <a href="/solutions/doc-chatbots/">Documentation Chatbots</a>
-            </li>
-            <li class="footer-item">
-              <a href="/solutions/custom-ai-content-prompts/">Custom AI Content Prompts</a>
-            </li>
-            <li class="footer-item">
-              <a href="/solutions/documentation-from-video/">Documentation from Video</a>
-            </li>
-            <li class="footer-item">
-              <a href="/solutions/developer-portal/">Developer Portal</a>
-            </li>
-            <li class="footer-item">
-              <a href="/solutions/quality-management/">Quality Management</a>
-            </li>
-          </ul>
+      </div>
+    </div>
+    
+    <!-- Trust Badges & Awards -->
+    <div class="border-t border-gray-700 pt-8 mb-8">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+        
+        <!-- G2 Reviews -->
+        <div class="flex items-center space-x-3">
+          <img src="/assets/new_home/g2-logo.svg" alt="G2 Logo" style="height: 20px; width: auto;" class="opacity-80"/>
+          <div class="flex items-center space-x-1">
+            <div class="flex">
+              <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+              </svg>
+              <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+              </svg>
+              <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+              </svg>
+              <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+              </svg>
+              <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+              </svg>
+            </div>
+            <span class="text-gray-300 text-sm ml-1">4.8/5 (100+ Reviews)</span>
+          </div>
         </div>
-        <div class="footer-column">
-          <ul class="footer-list">
-            <li class="footer-header">
-              <h4>Industries:</h4>
-            </li>
-            <li class="footer-item">
-              <a href="/solutions/industries/saas/">SaaS</a>
-            </li>
-            <li class="footer-item">
-              <a href="/solutions/industries/manufacturing/">Manufacturing</a>
-            </li>
-            <li class="footer-item">
-              <a href="/solutions/industries/energy/">Energy</a>
-            </li>
-            <li class="footer-item">
-              <a href="/solutions/industries/government/">Government</a>
-            </li>
-            <li class="footer-item">
-              <a href="/solutions/industries/compliance/">Compliance</a>
-            </li>
-            <li class="footer-item">
-              <a href="/solutions/industries/it-services/">IT Services</a>
-            </li>
-          </ul>
+        
+        <!-- Trust Badges -->
+        <div class="flex items-center space-x-6">
+          <div class="sf-root" data-id="3158012" data-badge="customers-love-us-white" data-variant-id="sf" style="width:80px">
+            <a href="https://sourceforge.net/software/product/Docsie/" target="_blank" class="text-xs text-gray-400">SourceForge</a>
+          </div>
+          <div class="sf-root" data-id="3158012" data-badge="users-love-us-new-white" data-variant-id="sd" style="width:80px">
+            <a href="https://slashdot.org/software/p/Docsie/" target="_blank" class="text-xs text-gray-400">Slashdot</a>
+          </div>
         </div>
-        <div class="footer-column">
-          <ul class="footer-list">
-            <li class="footer-header">
-              <h4>Resources:</h4>
-            </li>
-            <li class="footer-item">
-              <a href="/blog/">Blog</a>
-            </li>
-            <li class="footer-item">
-              <a href="/documentation/">Documentation</a>
-            </li>
-            <li class="footer-item">
-              <a href="https://www.youtube.com/channel/UCnQm591jTzvHwb003Y8e1XA">Youtube</a>
-            </li>
-            <li class="footer-item">
-              <a href="https://www.linkedin.com/company/likalo/">LinkedIn</a>
-            </li>
-            <li class="footer-item">
-              <a href="https://twitter.com/likalo_llc">Twitter</a>
-            </li>
-            <li class="footer-item">
-              <a href="https://www.instagram.com/docsie.io/">Instagram</a>
-            </li>
-            <li class="footer-item">
-              <a href="https://app.docsie.io/schema/redoc/">Docsie API Docs</a>
-            </li>
-            <li class="footer-item">
-              <a href="/release-notes/">Release Notes</a>
-            </li>
-          </ul>
+        
+      </div>
+    </div>
+    
+    <!-- Bottom Footer -->
+    <div class="border-t border-gray-700 pt-8">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+        
+        <!-- Copyright -->
+        <div class="text-gray-400 text-sm">
+          © 2024 Docsie. All rights reserved.
         </div>
-        <div class="footer-column">
-          <ul class="footer-list">
-            <li class="footer-header">
-              <h4>Company:</h4>
-            </li>
-            <li class="footer-item">
-              <a href="/demo/">Book a Demo</a>
-            </li>
-            <li class="footer-item">
-              <a href="/">Home</a>
-            </li>
-            <li class="footer-item">
-              <a href="https://terms.docsie.io/?doc=/privacy-policy/">Privacy policy</a>
-            </li>
-            <li class="footer-item">
-              <a href="https://terms.docsie.io/?doc=/terms-of-service/">Terms of service</a>
-            </li>
-            <li class="footer-item">
-              <a href="https://terms.docsie.io/?doc=/privacy-policy/cookies-policy/">Cookie Policy</a>
-            </li>
-            <li class="badges-container" style="margin-top: 20px; display: flex; flex-wrap: wrap; gap: 10px;">
-              <div class="sf-root" data-id="3158012" data-badge="customers-love-us-white" data-variant-id="sf" style="width:100px">
-                <a href="https://sourceforge.net/software/product/Docsie/" target="_blank">Docsie Reviews</a>
-              </div>
-              <div class="sf-root" data-id="3158012" data-badge="users-love-us-new-white" data-variant-id="sd" style="width:100px">
-                <a href="https://slashdot.org/software/p/Docsie/" target="_blank">Docsie Reviews</a>
-              </div>
-            </li>
-          </ul>
+        
+        <!-- Legal Links -->
+        <div class="flex items-center space-x-6 text-sm">
+          <a href="https://terms.docsie.io/?doc=/privacy-policy/" class="text-gray-400 hover:text-docsie-primary transition-colors duration-300">
+            Privacy Policy
+          </a>
+          <a href="https://terms.docsie.io/?doc=/terms-of-service/" class="text-gray-400 hover:text-docsie-primary transition-colors duration-300">
+            Terms of Service
+          </a>
+          <a href="https://terms.docsie.io/?doc=/privacy-policy/cookies-policy/" class="text-gray-400 hover:text-docsie-primary transition-colors duration-300">
+            Cookie Policy
+          </a>
         </div>
-      </nav>
+        
+        <!-- Language Picker Placeholder -->
+        <div class="docsie-lang-picker-container">
+          <!-- Language picker will be inserted here -->
+        </div>
+        
+      </div>
+    </div>
+    
+  </div>
+</footer>
 
+<!-- SourceForge/Slashdot Badge Scripts -->
 <script>(function () {var sc=document.createElement('script');sc.async=true;sc.src='https://b.sf-syn.com/badge_js?sf_id=3158012&variant_id=sf';var p=document.getElementsByTagName('script')[0];p.parentNode.insertBefore(sc, p);})();</script>
-
 <script>(function () {var sc=document.createElement('script');sc.async=true;sc.src='https://b.sf-syn.com/badge_js?sf_id=3158012&variant_id=sd';var p=document.getElementsByTagName('script')[0];p.parentNode.insertBefore(sc, p);})();</script>
-    </section>
-  </footer>
+  
   <svg style="display:none">
   <symbol id="icon-docsie" viewBox="0 0 48 48">
     <rect width="48" height="48" rx="5" ry="5" fill="#b50000"></rect>
@@ -1661,7 +2058,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
     $await(".lb-cookie-policy-alert", showRedirectLangBanner);
 </script>
-  <!--  <script src="https://www.googleoptimize.com/optimize.js?id=OPT-WXKCNSX"></script>-->
   <script type='text/javascript'>
 window.__lo_site_id = 284654;
 
