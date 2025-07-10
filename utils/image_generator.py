@@ -276,8 +276,8 @@ class ImageGenerator:
         
         # Determine visual style based on image type and purpose
         if 'hero' in image_path or 'banner' in image_path:
-            # Hero images: Modern startup-style illustrations
-            base_style = "Modern startup landing page illustration, vibrant gradient backgrounds, clean geometric shapes, professional isometric design, contemporary SaaS aesthetic, subtle shadows, premium color palette"
+            # Hero images: Modern startup-style illustrations with your design system
+            base_style = "Flat vector isometric illustration. Clean, modern SaaS design with soft gradients. Color palette: soft blue (#CFE8FF), lavender (#E3D9FF), deep indigo (#2E2E8F), white background. Rounded UI elements, subtle shadows, floating icons in isometric perspective. Visual balance, minimalist layout, startup aesthetic"
         elif 'case' in image_path:
             # Case study images: Realistic photography
             base_style = "Professional photograph, high-resolution, clean modern aesthetic, natural lighting, realistic human subjects, contemporary office environment"
@@ -291,7 +291,13 @@ class ImageGenerator:
         # Create sophisticated prompts mixing styles based on image type
         if 'api-docs' in image_path or 'api-case' in image_path:
             if 'hero' in image_path:
-                return f"Isometric illustration of interconnected API endpoints floating in 3D space, with data flowing between colorful nodes and geometric shapes representing different programming languages. Modern SaaS landing page style with gradient blue-to-purple background. {base_style}"
+                variations = [
+                    f"Diverse startup team collaborating around floating holographic API documentation interfaces, data streams connecting their devices in isometric view. {base_style}",
+                    f"API endpoints as friendly geometric characters shaking hands and exchanging colorful data packets in a minimalist isometric city. {base_style}",
+                    f"Developer's desk transforming into a rocket ship launching API connections to cloud platforms, isometric perspective. {base_style}"
+                ]
+                import random
+                return random.choice(variations)
             elif 'case1' in image_path:
                 return f"Professional developer sitting at a modern desk, viewing an interactive API console on a large monitor with code examples and endpoint testing interface visible on screen. Clean, well-lit office environment with natural lighting. {base_style}"
             elif 'case2' in image_path:
@@ -303,7 +309,13 @@ class ImageGenerator:
         
         elif 'tech-docs' in image_path or 'tech-case' in image_path:
             if 'hero' in image_path:
-                return f"Abstract illustration of technical architecture with floating code blocks, system diagrams, and interconnected components in a modern isometric style. Vibrant tech-focused color palette with blues and greens. {base_style}"
+                variations = [
+                    f"Technical documentation growing like a digital tree with branches of code snippets, diagrams blooming as flowers, isometric garden view. {base_style}",
+                    f"Startup team building a documentation fortress with blocks of knowledge, each block glowing with different technical concepts. {base_style}",
+                    f"Documentation portal as a futuristic command center with floating holographic manuals and interactive guides. {base_style}"
+                ]
+                import random
+                return random.choice(variations)
             elif 'case1' in image_path:
                 return f"Software engineer creating technical documentation, typing on a laptop with architectural diagrams and system documentation visible on the screen. Modern tech office environment. {base_style}"
             elif 'case2' in image_path:
@@ -364,8 +376,15 @@ class ImageGenerator:
                 return f"Customer service professional using smart support documentation with instant access to help resources. {base_style}"
         
         else:
-            # Generic fallback for other images
-            return f"Professional working on documentation in a modern office environment, with clean, organized content visible on computer screen. Natural lighting, contemporary workspace. {base_style}"
+            # Generic fallback with startup variations
+            variations = [
+                f"Startup founder's journey visualized as ascending platforms with {page_title} milestones floating as achievement badges. {base_style}",
+                f"Modern coworking space where entrepreneurs collaborate on {page_title}, ideas floating as colorful thought bubbles. {base_style}",
+                f"Innovation hub with {page_title} concepts orbiting around central workspace like planets in isometric solar system. {base_style}",
+                f"Digital transformation represented by {page_title} evolving from paper to holographic interfaces in startup setting. {base_style}"
+            ]
+            import random
+            return random.choice(variations)
 
     def generate_ai_prompt(self, image_path: str, metadata: Dict) -> str:
         """Use GPT to generate sophisticated image prompts based on context."""
@@ -540,7 +559,7 @@ Generate only the image prompt, no explanation:
             logger.error(f"Error generating image for {image_path}: {e}")
             return False
 
-    def process_all_files(self):
+    def process_all_files(self, specific_image=None):
         """Process all YAML files and generate missing images."""
         yaml_files = self.find_yaml_files()
         all_image_metadata = {}
@@ -549,6 +568,15 @@ Generate only the image prompt, no explanation:
         for yaml_file in yaml_files:
             image_metadata = self.extract_image_paths(yaml_file)
             all_image_metadata.update(image_metadata)
+
+        # Filter to specific image if requested
+        if specific_image:
+            if specific_image in all_image_metadata:
+                all_image_metadata = {specific_image: all_image_metadata[specific_image]}
+                logger.info(f"Targeting specific image: {specific_image}")
+            else:
+                logger.error(f"Image not found in YAML files: {specific_image}")
+                return
 
         # Find missing images
         missing_images = self.get_missing_images(all_image_metadata)
@@ -595,6 +623,8 @@ def main():
                        help='Image quality: standard (medium) or hd (high) (default: standard)')
     parser.add_argument('--ai-prompts', action='store_true',
                        help='Use AI to generate sophisticated prompts (requires extra GPT-4 calls)')
+    parser.add_argument('--image', '-i', type=str,
+                       help='Generate only this specific image path (e.g., /assets/solutions/api-documentation-hero.jpg)')
     args = parser.parse_args()
     
     # Get the project root directory
@@ -610,7 +640,7 @@ def main():
         override_existing=args.override,
         quality=args.quality
     )
-    generator.process_all_files()
+    generator.process_all_files(specific_image=args.image)
 
 if __name__ == "__main__":
     main()
