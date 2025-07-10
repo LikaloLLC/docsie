@@ -1,13 +1,13 @@
 <!-- Tailwind v2 Gallery Component -->
-<section class="gallery-v2 py-16 bg-gray-50">
+<section class="gallery-v2 py-16" style="background: transparent;">
   <div class="container mx-auto px-4 lg:px-8">
     
     <!-- Section Header -->
     <div class="text-center mb-12">
-      <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+      <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4" style="color: #111827;">
         {{ section.title }}
       </h2>
-      <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto" style="color: #4b5563;">
         {{ section.description }}
       </p>
     </div>
@@ -15,7 +15,10 @@
     <!-- Gallery Grid -->
     <div class="gallery-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       {% for image in section.gallery_images %}
-      <div class="gallery-item group relative overflow-hidden rounded-lg bg-white shadow-lg hover:shadow-xl transition-all duration-300">
+      <div class="gallery-item group relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300" style="background-color: rgba(255, 255, 255, 0.95);">
+        {% if image.link %}
+        <a href="{{ image.link }}" class="block">
+        {% endif %}
         
         <!-- Image Container -->
         <div class="relative overflow-hidden">
@@ -28,24 +31,35 @@
           <!-- Overlay -->
           <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
           
-          <!-- View Button -->
+          <!-- View Button or Link Icon -->
           <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            {% if image.link %}
+            <div class="bg-white/90 text-gray-900 rounded-full p-3 shadow-lg transform scale-90 group-hover:scale-100 transition-all duration-300">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+              </svg>
+            </div>
+            {% else %}
             <button class="gallery-lightbox-btn bg-white/90 hover:bg-white text-gray-900 rounded-full p-3 shadow-lg transform scale-90 group-hover:scale-100 transition-all duration-300" data-image="{{ image.image }}" data-alt="{{ image.alt }}">
               <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
               </svg>
             </button>
+            {% endif %}
           </div>
         </div>
         
         <!-- Caption -->
         {% if image.caption %}
         <div class="p-6">
-          <p class="text-gray-700 font-medium">{{ image.caption }}</p>
+          <p class="text-gray-700 font-medium" style="color: #374151;">{{ image.caption }}</p>
         </div>
         {% endif %}
         
+        {% if image.link %}
+        </a>
+        {% endif %}
       </div>
       {% endfor %}
     </div>
@@ -93,14 +107,15 @@ document.addEventListener('DOMContentLoaded', function() {
   let currentImageIndex = 0;
   let images = [];
   
-  // Collect all images
+  // Collect all images (only those without links)
   galleryBtns.forEach((btn, index) => {
     images.push({
       src: btn.dataset.image,
       alt: btn.dataset.alt
     });
     
-    btn.addEventListener('click', function() {
+    btn.addEventListener('click', function(e) {
+      e.preventDefault();
       currentImageIndex = index;
       showLightbox();
     });

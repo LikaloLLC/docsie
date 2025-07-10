@@ -1,0 +1,70 @@
+<!-- Interactive 3D Component using Spline -->
+<div class="interactive-3d-container {{ section.container_class | default('') }}">
+  <div class="interactive-3d-card">
+    <!-- Spotlight effect -->
+    <div class="spotlight-effect"></div>
+    
+    <div class="interactive-3d-content">
+      <!-- Left content -->
+      <div class="content-left">
+        <h2 class="interactive-title">{{ section.title | default('Interactive AI Agent') }}</h2>
+        <p class="interactive-description">{{ section.description | default('Experience our AI documentation agent in action. Interact with the 3D model to see how intelligent documentation works.') }}</p>
+        
+        {% if section.features %}
+        <ul class="interactive-features">
+          {% for feature in section.features %}
+          <li>
+            <i class="fas fa-check-circle"></i>
+            <span>{{ feature }}</span>
+          </li>
+          {% endfor %}
+        </ul>
+        {% endif %}
+        
+        {% if section.cta %}
+        <button onclick="Calendly.initPopupWidget({url: '{{ page.calendly_url if page and page.calendly_url else "https://calendly.com/docsie-io/demo-call" }}'});return false;" 
+                class="interactive-cta">
+          {{ section.cta.text }}
+          <i class="fas fa-arrow-right"></i>
+        </button>
+        {% endif %}
+      </div>
+
+      <!-- Right content - 3D Scene -->
+      <div class="content-right">
+        <div class="spline-container" id="spline-{{ section.id | default('scene') }}">
+          <script type="module" src="https://unpkg.com/@splinetool/viewer@1.10.24/build/spline-viewer.js"></script>
+          <spline-viewer 
+            url="{{ section.scene_url | default('https://prod.spline.design/dUjLAC9mNY3BDD-2/scene.splinecode') }}"
+            events-target="global">
+          </spline-viewer>
+          
+          <!-- Error state -->
+          <div class="spline-error" id="spline-error-{{ section.id | default('scene') }}" style="display: none;">
+            <i class="fas fa-robot fa-4x mb-4 text-gray-400"></i>
+            <p class="text-gray-600">Interactive 3D preview is currently unavailable</p>
+            {% if section.fallback_image %}
+            <img src="{{ section.fallback_image }}" alt="AI Documentation Agent" class="mt-4 rounded-lg shadow-lg max-w-full">
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+// Add interactive hints only
+document.addEventListener('DOMContentLoaded', function() {
+  const cards = document.querySelectorAll('.interactive-3d-card');
+  cards.forEach(card => {
+    card.addEventListener('mouseenter', function() {
+      this.classList.add('active');
+    });
+    
+    card.addEventListener('mouseleave', function() {
+      this.classList.remove('active');
+    });
+  });
+});
+</script>

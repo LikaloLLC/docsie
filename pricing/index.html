@@ -87,6 +87,9 @@
   <!-- Unified Design System - loaded for all pages -->
   <link rel="stylesheet" href="/styles/design-system.css">
   
+  <!-- Animated Background System -->
+  <link rel="stylesheet" href="/assets/css/animated-gradient-bg.css">
+  
   
   
   
@@ -179,8 +182,11 @@
   <!-- Mobile Navigation Toggle -->
   <button class="md:hidden p-2 text-gray-600 hover:text-docsie-primary transition-colors duration-300" 
           onclick="toggleMobileMenu()" aria-label="Toggle navigation">
-    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <svg id="mobile-menu-icon" class="w-6 h-6 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+    </svg>
+    <svg id="mobile-menu-close" class="w-6 h-6 hidden transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
     </svg>
   </button>
 
@@ -241,6 +247,12 @@
               </h3>
               <ul class="space-y-3">
                 <li>
+                  <a href="/solutions/ai/" class="block p-2 rounded-md hover:bg-docsie-light transition-colors duration-200 border border-docsie-primary/20">
+                    <div class="text-sm font-medium text-docsie-primary">View All AI Solutions</div>
+                    <div class="text-xs text-gray-500">Explore our AI-powered tools</div>
+                  </a>
+                </li>
+                <li>
                   <a href="/solutions/ai-chatbot/" class="block p-2 rounded-md hover:bg-gray-50 transition-colors duration-200">
                     <div class="text-sm font-medium text-gray-900">AI Chatbot</div>
                     <div class="text-xs text-gray-500">Smart documentation assistant</div>
@@ -300,6 +312,21 @@
               </ul>
             </div>
             
+          </div>
+          
+          <!-- Industries Section -->
+          <div class="mt-6 pt-6 border-t border-gray-200">
+            <div class="mb-4">
+              <h3 class="text-sm font-semibold text-docsie-primary uppercase tracking-wide mb-3">
+                Industry Solutions
+              </h3>
+              <a href="/solutions/industries/" class="inline-flex items-center text-sm font-medium text-docsie-primary hover:text-docsie-dark transition-colors duration-200">
+                Explore Industry-Specific Solutions
+                <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+              </a>
+            </div>
           </div>
           
           <!-- CTA Section -->
@@ -380,53 +407,124 @@
   
 </div>
 
-<!-- Mobile Menu (Hidden by default) -->
-<div id="mobile-menu" class="md:hidden hidden bg-white border-t border-gray-200 shadow-lg">
-  <div class="p-4">
+<!-- Mobile Menu Overlay -->
+<div id="mobile-menu-overlay" class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden md:hidden transition-opacity duration-300"></div>
+
+<!-- Mobile Menu (Slide-in from right) -->
+<div id="mobile-menu" class="fixed top-0 right-0 h-full w-80 max-w-[80vw] bg-white shadow-xl transform translate-x-full transition-transform duration-300 ease-in-out z-50 md:hidden">
+  <div class="flex flex-col h-full">
     
-    <!-- Mobile Solutions -->
-    <div class="mb-4">
-      <button onclick="toggleMobileDropdown('mobile-solutions')" 
-              class="flex items-center justify-between w-full text-left text-gray-700 font-medium py-2">
-        Solutions
-        <svg class="w-4 h-4 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+    <!-- Mobile Menu Header -->
+    <div class="flex items-center justify-between p-4 border-b border-gray-200">
+      <h2 class="text-lg font-semibold text-gray-900">Menu</h2>
+      <button onclick="toggleMobileMenu()" class="p-2 text-gray-600 hover:text-docsie-primary transition-colors">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
         </svg>
       </button>
-      <div id="mobile-solutions" class="hidden pl-4 mt-2 space-y-2">
-        <a href="/solutions/technical-documentation/" class="block text-gray-600 hover:text-docsie-primary py-1">Technical Documentation</a>
-        <a href="/solutions/api-documentation/" class="block text-gray-600 hover:text-docsie-primary py-1">API Documentation</a>
-        <a href="/solutions/knowledge-base/" class="block text-gray-600 hover:text-docsie-primary py-1">Knowledge Base</a>
-        <a href="/solutions/ai-chatbot/" class="block text-gray-600 hover:text-docsie-primary py-1">AI Chatbot</a>
-        <a href="/solutions/" class="block text-docsie-primary hover:text-docsie-primary-dark py-1 font-medium">View All Solutions</a>
-      </div>
     </div>
     
-    <!-- Mobile Pricing -->
-    <a href="/pricing/" class="block text-gray-700 font-medium py-2">Pricing</a>
-    
-    <!-- Mobile Resources -->
-    <div class="mb-4">
-      <button onclick="toggleMobileDropdown('mobile-resources')" 
-              class="flex items-center justify-between w-full text-left text-gray-700 font-medium py-2">
-        Resources
-        <svg class="w-4 h-4 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-        </svg>
-      </button>
-      <div id="mobile-resources" class="hidden pl-4 mt-2 space-y-2">
-        <a href="/blog/" class="block text-gray-600 hover:text-docsie-primary py-1">Blog</a>
-        <a href="https://help.docsie.io/" class="block text-gray-600 hover:text-docsie-primary py-1">Documentation</a>
+    <!-- Mobile Menu Content -->
+    <div class="flex-1 overflow-y-auto p-4 space-y-2">
+      
+      <!-- Solutions Section -->
+      <div class="mobile-menu-item">
+        <button onclick="toggleMobileDropdown('mobile-solutions')" 
+                class="flex items-center justify-between w-full text-left text-gray-900 font-medium py-3 hover:text-docsie-primary transition-colors">
+          Solutions
+          <svg class="w-4 h-4 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </button>
+        <div id="mobile-solutions" class="hidden overflow-hidden transition-all duration-300 ease-in-out">
+          <div class="space-y-1 ml-4 mt-2">
+            <div class="mb-3">
+              <a href="/solutions/" class="flex items-center text-docsie-primary hover:text-docsie-dark py-2 text-sm font-medium">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7"></path>
+                </svg>
+                View All Solutions
+              </a>
+            </div>
+            <div class="mb-3">
+              <div class="text-xs font-semibold text-docsie-primary uppercase tracking-wide mb-2">Documentation</div>
+              <a href="/solutions/technical-documentation/" class="block text-gray-600 hover:text-docsie-primary py-2 text-sm">Technical Docs</a>
+              <a href="/solutions/api-documentation/" class="block text-gray-600 hover:text-docsie-primary py-2 text-sm">API Documentation</a>
+              <a href="/solutions/product-documentation/" class="block text-gray-600 hover:text-docsie-primary py-2 text-sm">Product Docs</a>
+              <a href="/solutions/user-manuals/" class="block text-gray-600 hover:text-docsie-primary py-2 text-sm">User Manuals</a>
+            </div>
+            <div class="mb-3">
+              <div class="text-xs font-semibold text-docsie-primary uppercase tracking-wide mb-2">AI Solutions</div>
+              <a href="/solutions/ai/" class="flex items-center text-docsie-primary hover:text-docsie-dark py-2 text-sm">
+                <svg class="w-3 h-3 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+                View All AI Solutions
+              </a>
+              <a href="/solutions/ai-chatbot/" class="block text-gray-600 hover:text-docsie-primary py-2 text-sm">AI Chatbot</a>
+              <a href="/solutions/knowledge-base/" class="block text-gray-600 hover:text-docsie-primary py-2 text-sm">Knowledge Base</a>
+              <a href="/solutions/ai-technical-writer/" class="block text-gray-600 hover:text-docsie-primary py-2 text-sm">AI Writer</a>
+              <a href="/solutions/documentation-from-video/" class="block text-gray-600 hover:text-docsie-primary py-2 text-sm">Video to Docs</a>
+            </div>
+            <div class="mb-3">
+              <div class="text-xs font-semibold text-docsie-primary uppercase tracking-wide mb-2">Industries</div>
+              <a href="/solutions/industries/" class="flex items-center text-docsie-primary hover:text-docsie-dark py-2 text-sm">
+                <svg class="w-3 h-3 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+                View Industry Solutions
+              </a>
+            </div>
+            <div class="mb-3">
+              <div class="text-xs font-semibold text-docsie-primary uppercase tracking-wide mb-2">Enterprise</div>
+              <a href="/solutions/sops/" class="block text-gray-600 hover:text-docsie-primary py-2 text-sm">SOPs</a>
+              <a href="/solutions/quality-management/" class="block text-gray-600 hover:text-docsie-primary py-2 text-sm">Quality Management</a>
+              <a href="/solutions/training-documentation/" class="block text-gray-600 hover:text-docsie-primary py-2 text-sm">Training Docs</a>
+              <a href="/solutions/compliance-documentation/" class="block text-gray-600 hover:text-docsie-primary py-2 text-sm">Compliance</a>
+            </div>
+          </div>
+        </div>
       </div>
+
+      <!-- Pricing -->
+      <div class="mobile-menu-item">
+        <a href="/pricing/" class="block text-gray-900 hover:text-docsie-primary font-medium py-3 transition-colors">Pricing</a>
+      </div>
+
+      <!-- Resources Section -->
+      <div class="mobile-menu-item">
+        <button onclick="toggleMobileDropdown('mobile-resources')" 
+                class="flex items-center justify-between w-full text-left text-gray-900 font-medium py-3 hover:text-docsie-primary transition-colors">
+          Resources
+          <svg class="w-4 h-4 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </button>
+        <div id="mobile-resources" class="hidden overflow-hidden transition-all duration-300 ease-in-out">
+          <div class="space-y-1 ml-4 mt-2">
+            <a href="/blog/" class="block text-gray-600 hover:text-docsie-primary py-2 text-sm">Blog</a>
+            <a href="https://help.docsie.io/" class="block text-gray-600 hover:text-docsie-primary py-2 text-sm">Documentation</a>
+            <a href="https://app.docsie.io/schema/redoc/" class="block text-gray-600 hover:text-docsie-primary py-2 text-sm">API Docs</a>
+          </div>
+        </div>
+      </div>
+
     </div>
-    
-    <!-- Mobile CTAs -->
-    <div class="space-y-3 pt-4 border-t border-gray-200">
+
+    <!-- Mobile Menu Footer - CTA Buttons -->
+    <div class="p-4 border-t border-gray-200 space-y-3">
       <button onclick="Calendly.initPopupWidget({url: 'https://calendly.com/docsie-io/demo-call'});return false;" 
-              class="w-full inline-flex items-center justify-center px-4 py-2 bg-white text-docsie-primary border border-docsie-primary font-medium rounded-lg hover:bg-docsie-primary hover:text-white transition-all duration-300">
+              class="w-full bg-white border-2 border-docsie-primary text-docsie-primary py-3 px-4 rounded-lg font-medium hover:bg-docsie-primary hover:text-white transition-colors duration-300 flex items-center justify-center">
+        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+        </svg>
         Book Demo
       </button>
-      <a href="https://app.docsie.io/login" class="block w-full inline-flex items-center justify-center px-4 py-2 bg-docsie-primary text-white font-medium rounded-lg hover:bg-docsie-primary-dark transition-all duration-300 shadow-sm hover:shadow-md text-center">
+      <a href="https://app.docsie.io/login" 
+         class="block w-full bg-gradient-to-r from-docsie-primary to-docsie-primary-dark text-white py-3 px-4 rounded-lg font-medium text-center hover:from-docsie-primary-dark hover:to-docsie-primary transition-all duration-300 flex items-center justify-center">
+        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013 3v1"></path>
+        </svg>
         Sign In
       </a>
     </div>
@@ -437,7 +535,31 @@
 <script>
 function toggleMobileMenu() {
   const menu = document.getElementById('mobile-menu');
-  menu.classList.toggle('hidden');
+  const overlay = document.getElementById('mobile-menu-overlay');
+  const menuIcon = document.getElementById('mobile-menu-icon');
+  const closeIcon = document.getElementById('mobile-menu-close');
+  const body = document.body;
+  
+  // Toggle menu visibility
+  if (menu.classList.contains('translate-x-full')) {
+    // Open menu
+    menu.classList.remove('translate-x-full');
+    menu.classList.add('translate-x-0');
+    overlay.classList.remove('hidden');
+    overlay.classList.add('opacity-50');
+    menuIcon.classList.add('hidden');
+    closeIcon.classList.remove('hidden');
+    body.style.overflow = 'hidden';
+  } else {
+    // Close menu
+    menu.classList.remove('translate-x-0');
+    menu.classList.add('translate-x-full');
+    overlay.classList.remove('opacity-50');
+    overlay.classList.add('hidden');
+    menuIcon.classList.remove('hidden');
+    closeIcon.classList.add('hidden');
+    body.style.overflow = '';
+  }
 }
 
 function toggleMobileDropdown(id) {
@@ -449,13 +571,36 @@ function toggleMobileDropdown(id) {
   icon.classList.toggle('rotate-180');
 }
 
-// Close mobile menu when clicking outside
+// Close mobile menu when clicking overlay
+document.addEventListener('click', function(event) {
+  const overlay = document.getElementById('mobile-menu-overlay');
+  const menu = document.getElementById('mobile-menu');
+  
+  if (event.target === overlay) {
+    toggleMobileMenu();
+  }
+});
+
+// Close mobile menu when clicking menu links
 document.addEventListener('click', function(event) {
   const menu = document.getElementById('mobile-menu');
-  const toggle = event.target.closest('[onclick*="toggleMobileMenu"]');
+  const link = event.target.closest('a');
   
-  if (!toggle && !menu.contains(event.target)) {
-    menu.classList.add('hidden');
+  if (link && menu.contains(link) && !link.closest('[onclick*="toggleMobileDropdown"]')) {
+    // Small delay to allow navigation
+    setTimeout(() => {
+      toggleMobileMenu();
+    }, 100);
+  }
+});
+
+// Handle escape key to close mobile menu
+document.addEventListener('keydown', function(event) {
+  if (event.key === 'Escape') {
+    const menu = document.getElementById('mobile-menu');
+    if (!menu.classList.contains('translate-x-full')) {
+      toggleMobileMenu();
+    }
   }
 });
 </script>
@@ -487,7 +632,7 @@ document.addEventListener('click', function(event) {
           <svg class="mr-2 h-4 w-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"/>
           </svg>
-          Trusted by 100+ Countries
+          Trusted and used in 100+ countries
         </div>
         
         <!-- Main Title -->
@@ -1042,20 +1187,758 @@ document.addEventListener('click', function(event) {
   </section>
 
   <!-- Reviews Section -->
-  <section class="py-16 bg-gray-50">
-    <div class="container mx-auto max-w-6xl px-4 md:px-6">
+  <!-- Calendly widget dependencies -->
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+
+<!-- Modern Reviews Section v2 - Real G2 Reviews with Column Layout -->
+<section class="reviews-v2 py-20 bg-gradient-to-br from-gray-50 to-white">
+  <div class="container mx-auto px-4 lg:px-8">
+    
+    <div class="text-center mb-16">
+      <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-100 text-blue-700 text-sm font-medium mb-6">
+        <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
+          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+        </svg>
+        Customer Reviews
+      </div>
+      
+      <h2 class="text-4xl md:text-6xl font-bold text-gray-900 mb-4">
+        Trusted and Used in 100+ Countries
+      </h2>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+        Real reviews from customers on G2 about their experience with Docsie
+      </p>
+      
+      <div class="flex items-center justify-center space-x-2 mb-8">
+        <img src="/assets/new_home/g2-logo.svg" alt="G2 Logo" class="h-6 w-auto opacity-70"/>
+        <div class="flex items-center space-x-1">
+          <div class="flex">
+            <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20">
+              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+            </svg>
+            <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20">
+              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+            </svg>
+            <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20">
+              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+            </svg>
+            <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20">
+              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+            </svg>
+            <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20">
+              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+            </svg>
+          </div>
+          <span class="text-gray-500 text-sm ml-1">4.8/5 (100+ Reviews)</span>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Animated Reviews Columns -->
+    <div class="relative">
+      <div id="reviews-columns" class="flex justify-center gap-4 md:gap-6 max-h-[500px] md:max-h-[600px] overflow-hidden" style="mask-image: linear-gradient(to bottom, transparent, black 25%, black 75%, transparent);">
+        <div class="reviews-column" data-duration="20"></div>
+        <div class="reviews-column hidden sm:block" data-duration="25"></div>
+        <div class="reviews-column hidden lg:block" data-duration="22"></div>
+      </div>
+    </div>
+    
+    <!-- Stats Section -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto mt-20">
+      <div class="text-center stat-item">
+        <div class="text-3xl md:text-4xl font-bold text-blue-600 mb-2 stat-number" data-target="1000">0</div>
+        <div class="text-gray-600 font-medium">Happy Customers</div>
+      </div>
+      <div class="text-center stat-item">
+        <div class="text-3xl md:text-4xl font-bold text-blue-600 mb-2 stat-number" data-target="4.8">0</div>
+        <div class="text-gray-600 font-medium">Average Rating</div>
+      </div>
+      <div class="text-center stat-item">
+        <div class="text-3xl md:text-4xl font-bold text-blue-600 mb-2 stat-number" data-target="99">0</div>
+        <div class="text-gray-600 font-medium">Satisfaction Rate</div>
+      </div>
+      <div class="text-center stat-item">
+        <div class="text-3xl md:text-4xl font-bold text-blue-600 mb-2">24/7</div>
+        <div class="text-gray-600 font-medium">Support Available</div>
+      </div>
+    </div>
+    
+    <!-- Call to Action -->
+    <div class="mt-20 text-center">
+      <div class="bg-gradient-to-r from-blue-600 to-indigo-600 rounded-3xl p-12 text-white relative overflow-hidden">
+        <div class="absolute inset-0 bg-black/10 rounded-3xl"></div>
+        <div class="relative z-10">
+          <h3 class="text-3xl md:text-4xl font-bold mb-4">
+            Ready to Join Thousands of Happy Customers?
+          </h3>
+          <p class="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+            Experience the documentation platform that teams worldwide trust for their most important projects.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <button onclick="Calendly.initPopupWidget({url: 'https://calendly.com/docsie-io/demo-call'});return false;" class="inline-flex items-center px-8 py-4 bg-white text-blue-600 font-semibold rounded-xl hover:bg-gray-50 transition-all duration-300 transform hover:-translate-y-1 shadow-lg hover:shadow-xl">
+              <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+              </svg>
+              Book a Demo
+            </button>
+            <button onclick="window.open('https://app.docsie.io/onboarding/', '_blank')" class="inline-flex items-center px-8 py-4 bg-transparent border-2 border-white text-white font-semibold rounded-xl hover:bg-white hover:text-blue-600 transition-all duration-300 transform hover:-translate-y-1">
+              <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+              </svg>
+              Start Free Trial
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+// Real G2 Reviews Data
+const g2Reviews = [
+  {
+    id: 1,
+    name: "Nora D.",
+    title: "Cyber Security Business Analyst",
+    company: "Enterprise (> 1000 emp.)",
+    rating: 5,
+    date: "2/21/2023",
+    review: "Docsie revolutionized our communication, documentation, and onboarding.",
+    fullReview: "As an IT professional, I highly appreciate the functionality of linking and categorizing documents. The ability to consolidate essential information and processes in a single location accessible by both new and existing team members is invaluable."
+  },
+  {
+    id: 2,
+    name: "Anne T.",
+    title: "Business Data Analyst", 
+    company: "Enterprise (> 1000 emp.)",
+    rating: 5,
+    date: "2/15/2023",
+    review: "Effortlessly Organize and Manage Content",
+    fullReview: "The rich text editor is superb and makes creating content a breeze. The history of changes feature has been a lifesaver on more than one occasion. I highly recommend Docsie to anyone in need of a powerful and user-friendly content management system."
+  },
+  {
+    id: 3,
+    name: "Jose T.",
+    title: "Business System Analyst",
+    company: "Enterprise (> 1000 emp.)",
+    rating: 4.5,
+    date: "3/1/2023",
+    review: "Highly recommend tool for creating a company knowledge base",
+    fullReview: "I find Docsie to be a valuable tool due to its highly adaptable page layout and diverse range of functions available. With such flexibility, the possibilities for content creation are virtually limitless."
+  },
+  {
+    id: 4,
+    name: "Oren S.",
+    title: "Account Manager",
+    company: "Small-Business (50 or fewer emp.)",
+    rating: 5,
+    date: "8/12/2022",
+    review: "Awesome platform and even better team of engineers supporting it",
+    fullReview: "Flexible platform that is capable of custom features including images, dynamic content and complex nesting. The best part is the team that supports Docsie. They are responsive, professional and able to take our input and turn it into results."
+  },
+  {
+    id: 5,
+    name: "Lindsay T.",
+    title: "Information Technology Business Analyst",
+    company: "Enterprise (> 1000 emp.)",
+    rating: 5,
+    date: "11/8/2022",
+    review: "I still believe Docsie is fantastic!",
+    fullReview: "Docsie is simple to use and integrates search with our process, making it simple to access information no matter where it is stored."
+  },
+  {
+    id: 6,
+    name: "Shelley L.",
+    title: "Software Engineer",
+    company: "Enterprise (> 1000 emp.)",
+    rating: 5,
+    date: "5/19/2022",
+    review: "Beautiful product for creating docs fast!",
+    fullReview: "There are a lot of features available in Docsie. Effective organisation, solid search, rich and attractive content, and a good model for sharing and permissions all contribute to a positive user experience."
+  },
+  {
+    id: 7,
+    name: "Roxy R.",
+    title: "Business Analyst",
+    company: "Enterprise (> 1000 emp.)",
+    rating: 5,
+    date: "7/13/2022",
+    review: "Fantastic, and fun to use doc creation tool!",
+    fullReview: "From end to end flow Docsie allows you to create, publish and maintain awesome looking documentation! Thank you so much for creating an awesome documentation creation product!"
+  },
+  {
+    id: 8,
+    name: "Jennifer K.",
+    title: "Business Analyst",
+    company: "Enterprise (> 1000 emp.)",
+    rating: 5,
+    date: "4/25/2022",
+    review: "Docsie is required for awesome docs!",
+    fullReview: "My confidence in my ability to figure out how to create awesome docs has grown over the course of just a few weeks of using this tool. Everything about this is amazing."
+  },
+  {
+    id: 9,
+    name: "Ghina S.",
+    title: "Business Analyst",
+    company: "Enterprise (> 1000 emp.)",
+    rating: 4.5,
+    date: "6/8/2022",
+    review: "Excellent tool for knowledge sharing!",
+    fullReview: "The tool's simplicity of use. It is incredibly intuitive and simple to use, which means that the entire team can access and utilise the system with little or no training."
+  },
+  {
+    id: 10,
+    name: "Linda J.",
+    title: "User Experience Designer",
+    company: "Small-Business (50 or fewer emp.)",
+    rating: 5,
+    date: "2/8/2022",
+    review: "We love Docsie!",
+    fullReview: "The UI is very user-friendly and simple to understand. Members of the team with no prior knowledge base creation experience have been able to grasp the concept quickly."
+  },
+  {
+    id: 11,
+    name: "Shannon R.",
+    title: "Senior Business Analyst",
+    company: "Small-Business (50 or fewer emp.)",
+    rating: 5,
+    date: "8/11/2021",
+    review: "Great Documentation and Knowledge Management Solution. Awesome Support!",
+    fullReview: "It's fast. We were able to get the portal hosted on the custom domain for free. The app works well and is conducive to collaboration between the teams. Docsie offers a lot of functionality for a low cost."
+  },
+  {
+    id: 12,
+    name: "Diane S.",
+    title: "Project Manager",
+    company: "Small-Business (50 or fewer emp.)",
+    rating: 5,
+    date: "12/8/2021",
+    review: "Life saver tool for client-side documentation!",
+    fullReview: "Docsie has many amazing qualities. It publishes simple yet dynamic design documentation, which are easy to create, and has so many plugins to make them meet all requirements."
+  }
+];
+
+// Color schemes for different review cards
+const colorSchemes = [
+  { from: 'blue-50', to: 'indigo-50', border: 'blue-100', avatar: 'from-blue-500 to-indigo-600' },
+  { from: 'green-50', to: 'emerald-50', border: 'green-100', avatar: 'from-green-500 to-emerald-600' },
+  { from: 'purple-50', to: 'pink-50', border: 'purple-100', avatar: 'from-purple-500 to-pink-600' },
+  { from: 'orange-50', to: 'red-50', border: 'orange-100', avatar: 'from-orange-500 to-red-600' },
+  { from: 'teal-50', to: 'cyan-50', border: 'teal-100', avatar: 'from-teal-500 to-cyan-600' },
+  { from: 'indigo-50', to: 'blue-50', border: 'indigo-100', avatar: 'from-indigo-500 to-blue-600' }
+];
+
+// Function to get random reviews with better randomization
+function getRandomReviews(count = 3) {
+  const shuffled = [...g2Reviews];
+  // Fisher-Yates shuffle algorithm for better randomization
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  }
+  return shuffled.slice(0, count);
+}
+
+// Function to get initials from name
+function getInitials(name) {
+  return name.split(' ').map(word => word.charAt(0)).join('');
+}
+
+// Function to render star rating
+function renderStarRating(rating) {
+  const fullStars = Math.floor(rating);
+  const hasHalfStar = rating % 1 !== 0;
+  let starsHtml = '';
+  
+  for (let i = 0; i < fullStars; i++) {
+    starsHtml += `<svg class="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20">
+      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+    </svg>`;
+  }
+  
+  if (hasHalfStar) {
+    starsHtml += `<svg class="w-5 h-5 text-yellow-400" viewBox="0 0 20 20">
+      <defs>
+        <linearGradient id="half-star-${rating}">
+          <stop offset="50%" stop-color="#fbbf24"/>
+          <stop offset="50%" stop-color="#d1d5db"/>
+        </linearGradient>
+      </defs>
+      <path fill="url(#half-star-${rating})" d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+    </svg>`;
+  }
+  
+  return starsHtml;
+}
+
+// Function to create a review card
+function createReviewCard(review, index) {
+  const colorScheme = colorSchemes[index % colorSchemes.length];
+  const initials = getInitials(review.name);
+  const stars = renderStarRating(review.rating);
+  const isMobile = window.innerWidth < 640;
+  
+  const reviewCard = document.createElement('div');
+  reviewCard.className = `review-card bg-gradient-to-br from-${colorScheme.from} to-${colorScheme.to} rounded-2xl p-6 border border-${colorScheme.border} hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-105 ${isMobile ? 'max-w-xs' : 'max-w-sm'} w-full mb-6 relative group overflow-hidden`;
+  
+  reviewCard.innerHTML = `
+    <!-- Floating quote icon -->
+    <div class="absolute top-4 right-4 opacity-10 group-hover:opacity-20 transition-opacity">
+      <svg class="w-8 h-8 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+      </svg>
+    </div>
+    
+    <!-- Animated background gradient -->
+    <div class="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+    
+    <div class="relative z-10 h-full flex flex-col">
+      <!-- Star Rating -->
+      <div class="stars mb-4">
+        <div class="flex">${stars}</div>
+      </div>
+      
+      <!-- Title -->
+      <h3 class="text-lg font-bold text-gray-900 mb-4 leading-tight">
+        "${review.review}"
+      </h3>
+      
+      <!-- Content -->
+      <p class="text-gray-700 mb-6 italic leading-relaxed flex-grow">
+        "${review.fullReview}"
+      </p>
+      
+      <!-- Author -->
+      <div class="flex items-center mb-4">
+        <div class="relative">
+          <div class="w-12 h-12 bg-gradient-to-br ${colorScheme.avatar} rounded-full flex items-center justify-center text-white font-semibold mr-4 border-2 border-white/50">
+            ${initials}
+          </div>
+          <!-- Floating ring animation -->
+          <div class="absolute inset-0 border-2 border-blue-400/30 rounded-full animate-pulse"></div>
+        </div>
+        <div>
+          <div class="font-semibold text-gray-900">${review.name}</div>
+          <div class="text-sm text-gray-600">${review.title}</div>
+          <div class="text-xs text-gray-500">${review.company}</div>
+        </div>
+      </div>
+      
+      <!-- Source -->
+      <div class="text-xs text-gray-500 text-right">
+        Review collected by and hosted on G2.com
+      </div>
+    </div>
+  `;
+  
+  return reviewCard;
+}
+
+// Function to render animated columns
+function renderAnimatedColumns() {
+  const columns = document.querySelectorAll('.reviews-column');
+  const isMobile = window.innerWidth < 640;
+  const isTablet = window.innerWidth < 1024;
+  
+  let visibleColumns = 3;
+  if (isMobile) visibleColumns = 1;
+  else if (isTablet) visibleColumns = 2;
+  
+  const reviewsPerColumn = Math.ceil(g2Reviews.length / visibleColumns);
+  
+  columns.forEach((column, columnIndex) => {
+    // Skip hidden columns on mobile/tablet
+    if (isMobile && columnIndex > 0) return;
+    if (isTablet && columnIndex > 1) return;
+    
+    const startIndex = columnIndex * reviewsPerColumn;
+    const endIndex = startIndex + reviewsPerColumn;
+    const columnReviews = g2Reviews.slice(startIndex, endIndex);
+    
+    // Create scrolling container
+    const scrollContainer = document.createElement('div');
+    scrollContainer.className = 'reviews-scroll-container';
+    
+    // Create two sets of reviews for seamless loop
+    const reviewSets = [columnReviews, columnReviews];
+    
+    reviewSets.forEach(reviewSet => {
+      reviewSet.forEach((review, index) => {
+        const card = createReviewCard(review, (columnIndex * reviewsPerColumn) + index);
+        scrollContainer.appendChild(card);
+      });
+    });
+    
+    column.appendChild(scrollContainer);
+    
+    // Apply animation with different speeds for mobile
+    const baseDuration = column.dataset.duration || '20';
+    const duration = isMobile ? parseInt(baseDuration) * 3.5 : baseDuration; // Much slower on mobile (3.5x)
+    scrollContainer.style.animation = `scroll-reviews ${duration}s linear infinite`;
+  });
+}
+
+// Function to animate stats counter
+function animateStats() {
+  const statNumbers = document.querySelectorAll('.stat-number');
+  
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const targetAttr = entry.target.dataset.target;
+        
+        // Skip animation for non-numeric values (like "24/7")
+        if (!targetAttr || isNaN(parseFloat(targetAttr))) {
+          observer.unobserve(entry.target);
+          return;
+        }
+        
+        const target = parseFloat(targetAttr);
+        const isDecimal = target.toString().includes('.');
+        
+        let current = 0;
+        const increment = target / 100;
+        const timer = setInterval(() => {
+          current += increment;
+          if (current >= target) {
+            current = target;
+            clearInterval(timer);
+          }
+          
+          if (isDecimal) {
+            entry.target.textContent = current.toFixed(1);
+          } else {
+            entry.target.textContent = Math.floor(current).toLocaleString();
+            if (target === 99) {
+              entry.target.textContent = Math.floor(current) + '%';
+            } else if (target === 1000) {
+              entry.target.textContent = Math.floor(current) + '+';
+            }
+          }
+        }, 20);
+        
+        observer.unobserve(entry.target);
+      }
+    });
+  });
+  
+  statNumbers.forEach(stat => {
+    observer.observe(stat);
+  });
+}
+
+// Initialize and set up event listeners
+document.addEventListener('DOMContentLoaded', function() {
+  // Load animated columns
+  renderAnimatedColumns();
+  
+  // Initialize stats animation
+  animateStats();
+  
+  // Handle window resize for responsive columns
+  let resizeTimer;
+  window.addEventListener('resize', function() {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+      // Clear existing columns and regenerate for new screen size
+      document.querySelectorAll('.reviews-column').forEach(col => col.innerHTML = '');
+      renderAnimatedColumns();
+    }, 250);
+  });
+});
+</script>
+
+<style>
+.reviews-column {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  width: 350px;
+}
+
+.reviews-scroll-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding-bottom: 1.5rem;
+  align-items: center;
+}
+
+.review-card {
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+}
+
+.review-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Scrolling animation */
+@keyframes scroll-reviews {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .reviews-column {
+    width: 320px;
+  }
+}
+
+@media (max-width: 768px) {
+  .reviews-column {
+    width: 300px;
+  }
+  
+  .review-card {
+    padding: 1.5rem;
+    min-height: 280px;
+  }
+}
+
+@media (max-width: 640px) {
+  .reviews-column {
+    width: 100%;
+    max-width: 90vw;
+    display: flex;
+    justify-content: center;
+  }
+  
+  /* Hide columns that shouldn't be visible on mobile */
+  .reviews-column.hidden {
+    display: none !important;
+  }
+  
+  #reviews-columns {
+    gap: 0;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .review-card {
+    padding: 1.25rem;
+    min-height: 260px;
+    max-width: 300px;
+    width: 100%;
+    margin: 0 auto;
+  }
+  
+  .review-card h3 {
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+  
+  .review-card p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+}
+
+@media (max-width: 480px) {
+  .reviews-column {
+    width: 100%;
+    max-width: 85vw;
+  }
+  
+  .review-card {
+    padding: 1rem;
+    min-height: 240px;
+    max-width: 260px;
+    width: 100%;
+  }
+}
+
+/* Stats animations */
+.stat-item {
+  transition: all 0.3s ease;
+}
+
+.stat-item:hover {
+  transform: translateY(-4px) scale(1.05);
+}
+
+.stat-number {
+  background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+</style>
+
+  <!-- FAQ Section -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto max-w-4xl px-4 md:px-6">
       <div class="text-center mb-12">
         <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-          Trusted by Thousands of Users in Over 100+ Countries
+          Frequently Asked Questions
         </h2>
         <p class="text-xl text-gray-600">
-          Voice of Our Customers
+          Everything you need to know about our pricing and special programs
         </p>
       </div>
       
-      <div class="testimonials-container">
-        <div class='sk-ww-g2-reviews' data-embed-id='247832'></div>
-        <script src='https://widgets.sociablekit.com/g2-reviews/widget.js' async defer></script>
+      <div class="space-y-6">
+        <!-- Non-profit Discount FAQ -->
+        <div class="border border-gray-200 rounded-lg overflow-hidden">
+          <button class="w-full px-6 py-4 text-left bg-gray-50 hover:bg-gray-100 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 faq-toggle" data-target="nonprofit-faq">
+            <div class="flex justify-between items-center">
+              <h3 class="text-lg font-semibold text-gray-900">
+                Do you offer discounts for non-profit organizations?
+              </h3>
+              <svg class="w-5 h-5 text-gray-500 transform transition-transform faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </div>
+          </button>
+          <div class="px-6 py-4 bg-white hidden faq-content" id="nonprofit-faq">
+            <div class="space-y-3">
+              <p class="text-gray-700">
+                Yes! We're proud to support non-profit organizations with special pricing to help them focus their resources on their mission.
+              </p>
+              <div class="bg-green-50 border border-green-200 rounded-lg p-4">
+                <div class="flex items-start">
+                  <svg class="w-5 h-5 text-green-600 mt-0.5 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                  </svg>
+                  <div>
+                    <h4 class="font-semibold text-green-800 mb-1">Non-Profit Discount: Up to 55% Off</h4>
+                    <p class="text-green-700 text-sm">
+                      Qualified 501(c)(3) organizations and registered non-profits can receive significant discounts on all our paid plans.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <p class="text-gray-600 text-sm">
+                To apply: Contact our team with your non-profit documentation, and we'll set up your discounted account within 2 business days.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Student/Academic FAQ -->
+        <div class="border border-gray-200 rounded-lg overflow-hidden">
+          <button class="w-full px-6 py-4 text-left bg-gray-50 hover:bg-gray-100 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 faq-toggle" data-target="academic-faq">
+            <div class="flex justify-between items-center">
+              <h3 class="text-lg font-semibold text-gray-900">
+                Is Docsie free for students and researchers?
+              </h3>
+              <svg class="w-5 h-5 text-gray-500 transform transition-transform faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </div>
+          </button>
+          <div class="px-6 py-4 bg-white hidden faq-content" id="academic-faq">
+            <div class="space-y-3">
+              <p class="text-gray-700">
+                Absolutely! We believe in supporting education and research initiatives.
+              </p>
+              <div class="bg-blue-50 border border-blue-200 rounded-lg p-4">
+                <div class="flex items-start">
+                  <svg class="w-5 h-5 text-blue-600 mt-0.5 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                  </svg>
+                  <div>
+                    <h4 class="font-semibold text-blue-800 mb-1">Free Access for Academic Use</h4>
+                    <p class="text-blue-700 text-sm">
+                      Students and researchers at post-secondary institutions get free access to our Professional plan for academic projects.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="text-sm text-gray-600 space-y-2">
+                <p><strong>Eligibility:</strong></p>
+                <ul class="list-disc list-inside space-y-1 ml-4">
+                  <li>Currently enrolled students at accredited universities, colleges, or trade schools</li>
+                  <li>Faculty and researchers at academic institutions</li>
+                  <li>Research organizations and academic departments</li>
+                </ul>
+                <p class="mt-3">
+                  Apply with your .edu email address or academic documentation for instant verification.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- General Pricing FAQ -->
+        <div class="border border-gray-200 rounded-lg overflow-hidden">
+          <button class="w-full px-6 py-4 text-left bg-gray-50 hover:bg-gray-100 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 faq-toggle" data-target="pricing-faq">
+            <div class="flex justify-between items-center">
+              <h3 class="text-lg font-semibold text-gray-900">
+                Can I change or cancel my plan anytime?
+              </h3>
+              <svg class="w-5 h-5 text-gray-500 transform transition-transform faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </div>
+          </button>
+          <div class="px-6 py-4 bg-white hidden faq-content" id="pricing-faq">
+            <p class="text-gray-700">
+              Yes, you have complete flexibility. Upgrade, downgrade, or cancel your subscription at any time from your account settings. No long-term commitments or cancellation fees.
+            </p>
+          </div>
+        </div>
+
+        <!-- Support FAQ -->
+        <div class="border border-gray-200 rounded-lg overflow-hidden">
+          <button class="w-full px-6 py-4 text-left bg-gray-50 hover:bg-gray-100 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 faq-toggle" data-target="support-faq">
+            <div class="flex justify-between items-center">
+              <h3 class="text-lg font-semibold text-gray-900">
+                What support is included with my plan?
+              </h3>
+              <svg class="w-5 h-5 text-gray-500 transform transition-transform faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </div>
+          </button>
+          <div class="px-6 py-4 bg-white hidden faq-content" id="support-faq">
+            <p class="text-gray-700">
+              All plans include email support and access to our knowledge base. Professional and Enterprise plans include priority support with faster response times, and Enterprise customers get dedicated account management.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact CTA for Special Programs -->
+      <div class="mt-12 text-center">
+        <div class="bg-gradient-to-r from-blue-50 to-purple-50 border border-blue-200 rounded-lg p-6">
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">
+            Need Help with Special Pricing?
+          </h3>
+          <p class="text-gray-600 mb-4">
+            Our team is here to help with non-profit discounts, academic access, or custom enterprise solutions.
+          </p>
+          <button onclick="Calendly.initPopupWidget({url: 'https://calendly.com/docsie-io/demo-call'});return false;" 
+                  class="inline-flex items-center px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors">
+            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-3.582 8-8 8a8.959 8.959 0 01-4.906-1.519L3 21l2.519-5.094A8.959 8.959 0 013 12c0-4.418 3.582-8 8-8s8 3.582 8 8z"></path>
+            </svg>
+            Contact Our Team
+          </button>
+        </div>
       </div>
     </div>
   </section>
@@ -1223,6 +2106,39 @@ document.addEventListener('DOMContentLoaded', function() {
       toggleText.textContent = 'See full feature comparison';
       toggleIcon.classList.remove('rotate-180');
     }
+  });
+
+  // FAQ Toggle Functionality
+  const faqToggles = document.querySelectorAll('.faq-toggle');
+  
+  faqToggles.forEach(toggle => {
+    toggle.addEventListener('click', function() {
+      const targetId = this.getAttribute('data-target');
+      const content = document.getElementById(targetId);
+      const icon = this.querySelector('.faq-icon');
+      
+      // Toggle content visibility
+      content.classList.toggle('hidden');
+      
+      // Rotate icon
+      if (content.classList.contains('hidden')) {
+        icon.style.transform = 'rotate(0deg)';
+      } else {
+        icon.style.transform = 'rotate(180deg)';
+      }
+      
+      // Close other FAQ items
+      faqToggles.forEach(otherToggle => {
+        if (otherToggle !== this) {
+          const otherId = otherToggle.getAttribute('data-target');
+          const otherContent = document.getElementById(otherId);
+          const otherIcon = otherToggle.querySelector('.faq-icon');
+          
+          otherContent.classList.add('hidden');
+          otherIcon.style.transform = 'rotate(0deg)';
+        }
+      });
+    });
   });
 });
 </script>
@@ -1529,9 +2445,25 @@ document.addEventListener('DOMContentLoaded', function() {
           </a>
         </div>
         
-        <!-- Language Picker Placeholder -->
+        <!-- Language Picker -->
         <div class="docsie-lang-picker-container">
-          <!-- Language picker will be inserted here -->
+          <div class="relative">
+            <button id="language-picker-btn" class="flex items-center gap-2 px-3 py-2 bg-white/10 rounded-lg hover:bg-white/20 transition-colors duration-300">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"/>
+              </svg>
+              <span id="current-language" class="text-sm">English</span>
+              <svg class="w-4 h-4 transition-transform duration-200" id="language-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </button>
+            
+            <div id="language-dropdown" class="absolute bottom-full left-0 mb-2 w-48 bg-white rounded-lg shadow-xl border border-gray-200 hidden z-50">
+              <div class="py-2" id="language-options">
+                <!-- Languages will be populated by JavaScript -->
+              </div>
+            </div>
+          </div>
         </div>
         
       </div>
@@ -1543,6 +2475,79 @@ document.addEventListener('DOMContentLoaded', function() {
 <!-- SourceForge/Slashdot Badge Scripts -->
 <script>(function () {var sc=document.createElement('script');sc.async=true;sc.src='https://b.sf-syn.com/badge_js?sf_id=3158012&variant_id=sf';var p=document.getElementsByTagName('script')[0];p.parentNode.insertBefore(sc, p);})();</script>
 <script>(function () {var sc=document.createElement('script');sc.async=true;sc.src='https://b.sf-syn.com/badge_js?sf_id=3158012&variant_id=sd';var p=document.getElementsByTagName('script')[0];p.parentNode.insertBefore(sc, p);})();</script>
+
+<!-- Language Picker Script -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const languageBtn = document.getElementById('language-picker-btn');
+  const dropdown = document.getElementById('language-dropdown');
+  const chevron = document.getElementById('language-chevron');
+  const currentLang = document.getElementById('current-language');
+  const optionsContainer = document.getElementById('language-options');
+  
+  // Default languages (fallback if JSON not available)
+  const defaultLanguages = {
+    'en': { name: 'English', url: '/' },
+    'es': { name: 'Español', url: '/es/' },
+    'fr': { name: 'Français', url: '/fr/' },
+    'de': { name: 'Deutsch', url: '/de/' },
+    'pt': { name: 'Português', url: '/pt/' }
+  };
+  
+  // Load language data
+  fetch('/assets/languages.json')
+    .then(response => response.json())
+    .then(data => {
+      populateLanguages(data.languages);
+      setCurrentLanguage(data.languages);
+    })
+    .catch(error => {
+      console.log('Using default languages');
+      populateLanguages(defaultLanguages);
+      setCurrentLanguage(defaultLanguages);
+    });
+  
+  function populateLanguages(languages) {
+    optionsContainer.innerHTML = '';
+    Object.entries(languages).forEach(([code, info]) => {
+      if (info.enabled !== false) {
+        const option = document.createElement('a');
+        option.href = info.url;
+        option.className = 'block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-colors duration-200';
+        option.innerHTML = `
+          <span class="font-medium">${info.name}</span>
+          <span class="text-gray-500 ml-2">${code.toUpperCase()}</span>
+        `;
+        optionsContainer.appendChild(option);
+      }
+    });
+  }
+  
+  function setCurrentLanguage(languages) {
+    const currentCode = document.documentElement.lang || 'en';
+    const currentInfo = languages[currentCode];
+    if (currentInfo) {
+      currentLang.textContent = currentInfo.name;
+    }
+  }
+  
+  // Toggle dropdown
+  if (languageBtn) {
+    languageBtn.addEventListener('click', function() {
+      dropdown.classList.toggle('hidden');
+      chevron.classList.toggle('rotate-180');
+    });
+  }
+  
+  // Close dropdown when clicking outside
+  document.addEventListener('click', function(e) {
+    if (languageBtn && !languageBtn.contains(e.target) && !dropdown.contains(e.target)) {
+      dropdown.classList.add('hidden');
+      chevron.classList.remove('rotate-180');
+    }
+  });
+});
+</script>
   
   <svg style="display:none">
   <symbol id="icon-docsie" viewBox="0 0 48 48">
@@ -1950,6 +2955,9 @@ src="https://www.facebook.com/tr?id=415019276437410&ev=PageView&noscript=1"
     });
   </script>
   
+  
+  <!-- Animated Background System -->
+  <script src="/assets/js/animated-gradient-bg.js"></script>
 </body>
 
 </html>

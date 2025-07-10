@@ -3,18 +3,10 @@
 <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
 <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
 
-<!-- Modern CTA Section v2 - Upgraded with sophisticated design patterns -->
-<section class="cta-section-v2 relative w-full py-16 md:py-24 lg:py-32 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 overflow-hidden">
+<!-- Modern CTA Section v2 - Transparent background -->
+<section class="cta-section-v2 relative w-full py-16 md:py-24 lg:py-32 overflow-hidden">
   
-  <!-- Background Pattern -->
-  <div class="absolute inset-0 opacity-5">
-    <div class="absolute inset-0" style="background-image: radial-gradient(circle at 25% 25%, #3b82f6 2px, transparent 2px); background-size: 50px 50px;"></div>
-  </div>
-  
-  <!-- Enhanced floating background elements -->
-  <div class="absolute -top-40 -left-40 w-80 h-80 bg-gradient-to-br from-blue-400/20 to-purple-400/20 rounded-full blur-3xl animate-float"></div>
-  <div class="absolute -bottom-40 -right-40 w-80 h-80 bg-gradient-to-br from-indigo-400/20 to-blue-400/20 rounded-full blur-3xl animate-float-delayed"></div>
-  <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-br from-white/10 to-transparent rounded-full blur-3xl animate-pulse"></div>
+  <!-- Content positioned above global animated background -->
   
   <div class="container mx-auto max-w-4xl px-4 md:px-6 relative z-10">
     <div class="flex flex-col items-center justify-center space-y-8 text-center">
@@ -55,16 +47,37 @@
         </a>
         {% elif section.cta %}
         <!-- Fallback to legacy cta format with Calendly popup -->
-        <button onclick="Calendly.initPopupWidget({url: 'https://calendly.com/docsie-io/demo-call'});return false;" 
+        <button onclick="Calendly.initPopupWidget({url: '{{ page.calendly_url if page and page.calendly_url else "https://calendly.com/docsie-io/demo-call" }}'});return false;" 
                 class="group inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 px-8 py-4 text-lg font-semibold text-white shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2">
           {{ section.cta.text or 'Book Demo' }}
           <svg class="ml-2 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
           </svg>
         </button>
+        {% elif section.buttons %}
+        <!-- Handle buttons array for AI pilot page -->
+        {% for button in section.buttons %}
+          {% if loop.index == 1 %}
+          <button onclick="Calendly.initPopupWidget({url: '{{ page.calendly_url if page and page.calendly_url else "https://calendly.com/docsie-io/demo-call" }}'});return false;" 
+                  class="group inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 px-8 py-4 text-lg font-semibold text-white shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-500 focus-visible:ring-offset-2">
+            {{ button.text }}
+            <svg class="ml-2 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+            </svg>
+          </button>
+          {% else %}
+          <a href="{{ button.url }}" 
+             class="group inline-flex items-center justify-center rounded-xl border border-gray-200 bg-white/80 backdrop-blur-sm px-8 py-4 text-lg font-semibold text-gray-700 shadow-lg transition-all duration-300 hover:bg-white hover:border-gray-300 hover:shadow-xl hover:-translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-500 focus-visible:ring-offset-2">
+            {{ button.text }}
+            {% if button.icon %}
+            <i class="{{ button.icon }} ml-2"></i>
+            {% endif %}
+          </a>
+          {% endif %}
+        {% endfor %}
         {% else %}
         <!-- Default Book a Demo button if no configuration -->
-        <button onclick="Calendly.initPopupWidget({url: 'https://calendly.com/docsie-io/demo-call'});return false;" 
+        <button onclick="Calendly.initPopupWidget({url: '{{ page.calendly_url if page and page.calendly_url else "https://calendly.com/docsie-io/demo-call" }}'});return false;" 
                 class="group inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 px-8 py-4 text-lg font-semibold text-white shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2">
           Book a Demo
           <svg class="ml-2 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">

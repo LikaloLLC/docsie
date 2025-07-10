@@ -1,0 +1,73 @@
+name: "interactive_3d"
+display_name: "Interactive 3D Scene"
+description: "Interactive 3D component with Spline integration"
+category: "Interactive"
+version: "1.0.0"
+
+# Default configuration
+defaults:
+  title: "Interactive AI Agent"
+  description: "Experience our AI documentation agent in action. Interact with the 3D model to see how intelligent documentation works."
+  scene_url: "https://my.spline.design/untitled-1736522638788.splinecode"
+  container_class: ""
+  
+# Configuration schema
+schema:
+  title:
+    type: "string"
+    required: true
+    description: "Main title for the 3D scene"
+    
+  description:
+    type: "string"
+    required: true
+    description: "Description text"
+    
+  scene_url:
+    type: "string"
+    required: true
+    description: "Spline scene URL (embed URL ending in .splinecode)"
+    
+  features:
+    type: "array"
+    required: false
+    description: "List of feature bullets"
+    items:
+      type: "string"
+      
+  cta:
+    type: "object"
+    required: false
+    description: "Call to action button"
+    properties:
+      text:
+        type: "string"
+        required: true
+      url:
+        type: "string"
+        required: true
+        
+  container_class:
+    type: "string"
+    required: false
+    description: "Additional CSS classes for container"
+    
+  id:
+    type: "string"
+    required: false
+    description: "Unique identifier for the scene"
+
+# Example usage
+example:
+  title: "Meet Your AI Documentation Assistant"
+  description: "Interact with our AI agent to see how it transforms complex documentation into simple, conversational guidance."
+  scene_url: "https://my.spline.design/aiagentdemo-1736522638788.splinecode"
+  features:
+    - "Real-time conversation"
+    - "Step-by-step guidance"
+    - "Multilingual support"
+    - "24/7 availability"
+  cta:
+    text: "Try AI Agent"
+    url: "/ai-pilot"
+  id: "ai-agent-demo"

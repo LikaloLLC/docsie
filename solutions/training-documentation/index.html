@@ -87,6 +87,9 @@
   <!-- Unified Design System - loaded for all pages -->
   <link rel="stylesheet" href="/styles/design-system.css">
   
+  <!-- Animated Background System -->
+  <link rel="stylesheet" href="/assets/css/animated-gradient-bg.css">
+  
   
 <!-- Global styles -->
 <link rel="stylesheet" href="/new_home/globals.css" />
@@ -131,6 +134,18 @@
 
 <link rel="stylesheet" href="/styles/components/testimonials.css" />
 <link rel="stylesheet" href="/styles/components/testimonials_v2.css" />
+
+<link rel="stylesheet" href="/styles/components/interactive_3d.css" />
+<link rel="stylesheet" href="/styles/components/interactive_3d_v2.css" />
+
+<link rel="stylesheet" href="/styles/components/pilot_inclusions.css" />
+<link rel="stylesheet" href="/styles/components/pilot_inclusions_v2.css" />
+
+<link rel="stylesheet" href="/styles/components/pilot_process.css" />
+<link rel="stylesheet" href="/styles/components/pilot_process_v2.css" />
+
+<link rel="stylesheet" href="/styles/components/simple_spline.css" />
+<link rel="stylesheet" href="/styles/components/simple_spline_v2.css" />
 
 
   
@@ -223,8 +238,11 @@
   <!-- Mobile Navigation Toggle -->
   <button class="md:hidden p-2 text-gray-600 hover:text-docsie-primary transition-colors duration-300" 
           onclick="toggleMobileMenu()" aria-label="Toggle navigation">
-    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <svg id="mobile-menu-icon" class="w-6 h-6 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+    </svg>
+    <svg id="mobile-menu-close" class="w-6 h-6 hidden transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
     </svg>
   </button>
 
@@ -285,6 +303,12 @@
               </h3>
               <ul class="space-y-3">
                 <li>
+                  <a href="/solutions/ai/" class="block p-2 rounded-md hover:bg-docsie-light transition-colors duration-200 border border-docsie-primary/20">
+                    <div class="text-sm font-medium text-docsie-primary">View All AI Solutions</div>
+                    <div class="text-xs text-gray-500">Explore our AI-powered tools</div>
+                  </a>
+                </li>
+                <li>
                   <a href="/solutions/ai-chatbot/" class="block p-2 rounded-md hover:bg-gray-50 transition-colors duration-200">
                     <div class="text-sm font-medium text-gray-900">AI Chatbot</div>
                     <div class="text-xs text-gray-500">Smart documentation assistant</div>
@@ -344,6 +368,21 @@
               </ul>
             </div>
             
+          </div>
+          
+          <!-- Industries Section -->
+          <div class="mt-6 pt-6 border-t border-gray-200">
+            <div class="mb-4">
+              <h3 class="text-sm font-semibold text-docsie-primary uppercase tracking-wide mb-3">
+                Industry Solutions
+              </h3>
+              <a href="/solutions/industries/" class="inline-flex items-center text-sm font-medium text-docsie-primary hover:text-docsie-dark transition-colors duration-200">
+                Explore Industry-Specific Solutions
+                <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+              </a>
+            </div>
           </div>
           
           <!-- CTA Section -->
@@ -424,53 +463,124 @@
   
 </div>
 
-<!-- Mobile Menu (Hidden by default) -->
-<div id="mobile-menu" class="md:hidden hidden bg-white border-t border-gray-200 shadow-lg">
-  <div class="p-4">
+<!-- Mobile Menu Overlay -->
+<div id="mobile-menu-overlay" class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden md:hidden transition-opacity duration-300"></div>
+
+<!-- Mobile Menu (Slide-in from right) -->
+<div id="mobile-menu" class="fixed top-0 right-0 h-full w-80 max-w-[80vw] bg-white shadow-xl transform translate-x-full transition-transform duration-300 ease-in-out z-50 md:hidden">
+  <div class="flex flex-col h-full">
     
-    <!-- Mobile Solutions -->
-    <div class="mb-4">
-      <button onclick="toggleMobileDropdown('mobile-solutions')" 
-              class="flex items-center justify-between w-full text-left text-gray-700 font-medium py-2">
-        Solutions
-        <svg class="w-4 h-4 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+    <!-- Mobile Menu Header -->
+    <div class="flex items-center justify-between p-4 border-b border-gray-200">
+      <h2 class="text-lg font-semibold text-gray-900">Menu</h2>
+      <button onclick="toggleMobileMenu()" class="p-2 text-gray-600 hover:text-docsie-primary transition-colors">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
         </svg>
       </button>
-      <div id="mobile-solutions" class="hidden pl-4 mt-2 space-y-2">
-        <a href="/solutions/technical-documentation/" class="block text-gray-600 hover:text-docsie-primary py-1">Technical Documentation</a>
-        <a href="/solutions/api-documentation/" class="block text-gray-600 hover:text-docsie-primary py-1">API Documentation</a>
-        <a href="/solutions/knowledge-base/" class="block text-gray-600 hover:text-docsie-primary py-1">Knowledge Base</a>
-        <a href="/solutions/ai-chatbot/" class="block text-gray-600 hover:text-docsie-primary py-1">AI Chatbot</a>
-        <a href="/solutions/" class="block text-docsie-primary hover:text-docsie-primary-dark py-1 font-medium">View All Solutions</a>
-      </div>
     </div>
     
-    <!-- Mobile Pricing -->
-    <a href="/pricing/" class="block text-gray-700 font-medium py-2">Pricing</a>
-    
-    <!-- Mobile Resources -->
-    <div class="mb-4">
-      <button onclick="toggleMobileDropdown('mobile-resources')" 
-              class="flex items-center justify-between w-full text-left text-gray-700 font-medium py-2">
-        Resources
-        <svg class="w-4 h-4 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-        </svg>
-      </button>
-      <div id="mobile-resources" class="hidden pl-4 mt-2 space-y-2">
-        <a href="/blog/" class="block text-gray-600 hover:text-docsie-primary py-1">Blog</a>
-        <a href="https://help.docsie.io/" class="block text-gray-600 hover:text-docsie-primary py-1">Documentation</a>
+    <!-- Mobile Menu Content -->
+    <div class="flex-1 overflow-y-auto p-4 space-y-2">
+      
+      <!-- Solutions Section -->
+      <div class="mobile-menu-item">
+        <button onclick="toggleMobileDropdown('mobile-solutions')" 
+                class="flex items-center justify-between w-full text-left text-gray-900 font-medium py-3 hover:text-docsie-primary transition-colors">
+          Solutions
+          <svg class="w-4 h-4 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </button>
+        <div id="mobile-solutions" class="hidden overflow-hidden transition-all duration-300 ease-in-out">
+          <div class="space-y-1 ml-4 mt-2">
+            <div class="mb-3">
+              <a href="/solutions/" class="flex items-center text-docsie-primary hover:text-docsie-dark py-2 text-sm font-medium">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7"></path>
+                </svg>
+                View All Solutions
+              </a>
+            </div>
+            <div class="mb-3">
+              <div class="text-xs font-semibold text-docsie-primary uppercase tracking-wide mb-2">Documentation</div>
+              <a href="/solutions/technical-documentation/" class="block text-gray-600 hover:text-docsie-primary py-2 text-sm">Technical Docs</a>
+              <a href="/solutions/api-documentation/" class="block text-gray-600 hover:text-docsie-primary py-2 text-sm">API Documentation</a>
+              <a href="/solutions/product-documentation/" class="block text-gray-600 hover:text-docsie-primary py-2 text-sm">Product Docs</a>
+              <a href="/solutions/user-manuals/" class="block text-gray-600 hover:text-docsie-primary py-2 text-sm">User Manuals</a>
+            </div>
+            <div class="mb-3">
+              <div class="text-xs font-semibold text-docsie-primary uppercase tracking-wide mb-2">AI Solutions</div>
+              <a href="/solutions/ai/" class="flex items-center text-docsie-primary hover:text-docsie-dark py-2 text-sm">
+                <svg class="w-3 h-3 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+                View All AI Solutions
+              </a>
+              <a href="/solutions/ai-chatbot/" class="block text-gray-600 hover:text-docsie-primary py-2 text-sm">AI Chatbot</a>
+              <a href="/solutions/knowledge-base/" class="block text-gray-600 hover:text-docsie-primary py-2 text-sm">Knowledge Base</a>
+              <a href="/solutions/ai-technical-writer/" class="block text-gray-600 hover:text-docsie-primary py-2 text-sm">AI Writer</a>
+              <a href="/solutions/documentation-from-video/" class="block text-gray-600 hover:text-docsie-primary py-2 text-sm">Video to Docs</a>
+            </div>
+            <div class="mb-3">
+              <div class="text-xs font-semibold text-docsie-primary uppercase tracking-wide mb-2">Industries</div>
+              <a href="/solutions/industries/" class="flex items-center text-docsie-primary hover:text-docsie-dark py-2 text-sm">
+                <svg class="w-3 h-3 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+                View Industry Solutions
+              </a>
+            </div>
+            <div class="mb-3">
+              <div class="text-xs font-semibold text-docsie-primary uppercase tracking-wide mb-2">Enterprise</div>
+              <a href="/solutions/sops/" class="block text-gray-600 hover:text-docsie-primary py-2 text-sm">SOPs</a>
+              <a href="/solutions/quality-management/" class="block text-gray-600 hover:text-docsie-primary py-2 text-sm">Quality Management</a>
+              <a href="/solutions/training-documentation/" class="block text-gray-600 hover:text-docsie-primary py-2 text-sm">Training Docs</a>
+              <a href="/solutions/compliance-documentation/" class="block text-gray-600 hover:text-docsie-primary py-2 text-sm">Compliance</a>
+            </div>
+          </div>
+        </div>
       </div>
+
+      <!-- Pricing -->
+      <div class="mobile-menu-item">
+        <a href="/pricing/" class="block text-gray-900 hover:text-docsie-primary font-medium py-3 transition-colors">Pricing</a>
+      </div>
+
+      <!-- Resources Section -->
+      <div class="mobile-menu-item">
+        <button onclick="toggleMobileDropdown('mobile-resources')" 
+                class="flex items-center justify-between w-full text-left text-gray-900 font-medium py-3 hover:text-docsie-primary transition-colors">
+          Resources
+          <svg class="w-4 h-4 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </button>
+        <div id="mobile-resources" class="hidden overflow-hidden transition-all duration-300 ease-in-out">
+          <div class="space-y-1 ml-4 mt-2">
+            <a href="/blog/" class="block text-gray-600 hover:text-docsie-primary py-2 text-sm">Blog</a>
+            <a href="https://help.docsie.io/" class="block text-gray-600 hover:text-docsie-primary py-2 text-sm">Documentation</a>
+            <a href="https://app.docsie.io/schema/redoc/" class="block text-gray-600 hover:text-docsie-primary py-2 text-sm">API Docs</a>
+          </div>
+        </div>
+      </div>
+
     </div>
-    
-    <!-- Mobile CTAs -->
-    <div class="space-y-3 pt-4 border-t border-gray-200">
+
+    <!-- Mobile Menu Footer - CTA Buttons -->
+    <div class="p-4 border-t border-gray-200 space-y-3">
       <button onclick="Calendly.initPopupWidget({url: 'https://calendly.com/docsie-io/demo-call'});return false;" 
-              class="w-full inline-flex items-center justify-center px-4 py-2 bg-white text-docsie-primary border border-docsie-primary font-medium rounded-lg hover:bg-docsie-primary hover:text-white transition-all duration-300">
+              class="w-full bg-white border-2 border-docsie-primary text-docsie-primary py-3 px-4 rounded-lg font-medium hover:bg-docsie-primary hover:text-white transition-colors duration-300 flex items-center justify-center">
+        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+        </svg>
         Book Demo
       </button>
-      <a href="https://app.docsie.io/login" class="block w-full inline-flex items-center justify-center px-4 py-2 bg-docsie-primary text-white font-medium rounded-lg hover:bg-docsie-primary-dark transition-all duration-300 shadow-sm hover:shadow-md text-center">
+      <a href="https://app.docsie.io/login" 
+         class="block w-full bg-gradient-to-r from-docsie-primary to-docsie-primary-dark text-white py-3 px-4 rounded-lg font-medium text-center hover:from-docsie-primary-dark hover:to-docsie-primary transition-all duration-300 flex items-center justify-center">
+        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013 3v1"></path>
+        </svg>
         Sign In
       </a>
     </div>
@@ -481,7 +591,31 @@
 <script>
 function toggleMobileMenu() {
   const menu = document.getElementById('mobile-menu');
-  menu.classList.toggle('hidden');
+  const overlay = document.getElementById('mobile-menu-overlay');
+  const menuIcon = document.getElementById('mobile-menu-icon');
+  const closeIcon = document.getElementById('mobile-menu-close');
+  const body = document.body;
+  
+  // Toggle menu visibility
+  if (menu.classList.contains('translate-x-full')) {
+    // Open menu
+    menu.classList.remove('translate-x-full');
+    menu.classList.add('translate-x-0');
+    overlay.classList.remove('hidden');
+    overlay.classList.add('opacity-50');
+    menuIcon.classList.add('hidden');
+    closeIcon.classList.remove('hidden');
+    body.style.overflow = 'hidden';
+  } else {
+    // Close menu
+    menu.classList.remove('translate-x-0');
+    menu.classList.add('translate-x-full');
+    overlay.classList.remove('opacity-50');
+    overlay.classList.add('hidden');
+    menuIcon.classList.remove('hidden');
+    closeIcon.classList.add('hidden');
+    body.style.overflow = '';
+  }
 }
 
 function toggleMobileDropdown(id) {
@@ -493,13 +627,36 @@ function toggleMobileDropdown(id) {
   icon.classList.toggle('rotate-180');
 }
 
-// Close mobile menu when clicking outside
+// Close mobile menu when clicking overlay
+document.addEventListener('click', function(event) {
+  const overlay = document.getElementById('mobile-menu-overlay');
+  const menu = document.getElementById('mobile-menu');
+  
+  if (event.target === overlay) {
+    toggleMobileMenu();
+  }
+});
+
+// Close mobile menu when clicking menu links
 document.addEventListener('click', function(event) {
   const menu = document.getElementById('mobile-menu');
-  const toggle = event.target.closest('[onclick*="toggleMobileMenu"]');
+  const link = event.target.closest('a');
   
-  if (!toggle && !menu.contains(event.target)) {
-    menu.classList.add('hidden');
+  if (link && menu.contains(link) && !link.closest('[onclick*="toggleMobileDropdown"]')) {
+    // Small delay to allow navigation
+    setTimeout(() => {
+      toggleMobileMenu();
+    }, 100);
+  }
+});
+
+// Handle escape key to close mobile menu
+document.addEventListener('keydown', function(event) {
+  if (event.key === 'Escape') {
+    const menu = document.getElementById('mobile-menu');
+    if (!menu.classList.contains('translate-x-full')) {
+      toggleMobileMenu();
+    }
   }
 });
 </script>
@@ -509,20 +666,16 @@ document.addEventListener('click', function(event) {
   </header>
 
   
+<!-- Simple Spline Section (Full Screen) -->
+
+
 <section class="section-padding supplementary-page">
   <!-- Hero Section -->
   
-    <!-- Modern Hero Section v2 - Upgraded to match banner_v2 design patterns -->
-<section class="hero-v2 relative min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 overflow-hidden">
+    <!-- Modern Hero Section v2 - Transparent background for animated gradient -->
+<section class="hero-v2 relative min-h-screen overflow-hidden">
   
-  <!-- Background Pattern -->
-  <div class="absolute inset-0 opacity-5">
-    <div class="absolute inset-0" style="background-image: radial-gradient(circle at 25% 25%, #3b82f6 2px, transparent 2px); background-size: 50px 50px;"></div>
-  </div>
-  
-  <!-- Floating background elements -->
-  <div class="absolute -top-40 -left-40 w-80 h-80 bg-gradient-to-br from-blue-400/20 to-purple-400/20 rounded-full blur-3xl animate-pulse"></div>
-  <div class="absolute -bottom-40 -right-40 w-80 h-80 bg-gradient-to-br from-indigo-400/20 to-blue-400/20 rounded-full blur-3xl animate-pulse" style="animation-delay: 2s;"></div>
+  <!-- Content above animated background -->
   
   <div class="relative z-10 min-h-screen flex items-center">
     <div class="container mx-auto px-4 lg:px-8">
@@ -549,6 +702,7 @@ document.addEventListener('click', function(event) {
           <!-- CTA Buttons -->
           
           <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8 opacity-0 animate-slide-up" style="animation-delay: 1.4s;">
+            
             <a href="/demo" 
                class="group inline-flex items-center px-8 py-4 bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
               Book Demo
@@ -556,6 +710,7 @@ document.addEventListener('click', function(event) {
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
               </svg>
             </a>
+            
             
             
           </div>
@@ -647,6 +802,9 @@ document.addEventListener('click', function(event) {
   }
 }
 </style>
+  
+
+  <!-- Interactive 3D Section -->
   
 
   <!-- Stats Section -->
@@ -941,6 +1099,9 @@ document.addEventListener('click', function(event) {
 </style>
  
     </div>
+  
+  
+  <!-- Pilot Inclusions Section -->
   
 
   <!-- Testimonials Section -->
@@ -1253,6 +1414,300 @@ document.addEventListener('click', function(event) {
   <!-- Comparison Section -->
   
 
+  <!-- Benefits/Limitations Section -->
+  
+    <div class="content-section">
+      
+<!-- Modern Benefits Section v2 - Upgraded with sophisticated design patterns -->
+<section class="benefits-v2 relative w-full py-16 md:py-24 lg:py-32 bg-gradient-to-br from-gray-50 via-blue-50/30 to-indigo-50/30 overflow-hidden">
+  
+  <!-- Background Pattern -->
+  <div class="absolute inset-0 opacity-5">
+    <div class="absolute inset-0" style="background-image: radial-gradient(circle at 25% 25%, #3b82f6 2px, transparent 2px); background-size: 50px 50px;"></div>
+  </div>
+  
+  <!-- Floating background elements -->
+  <div class="absolute -top-40 -left-40 w-80 h-80 bg-gradient-to-br from-blue-400/10 to-purple-400/10 rounded-full blur-3xl animate-float"></div>
+  <div class="absolute -bottom-40 -right-40 w-80 h-80 bg-gradient-to-br from-indigo-400/10 to-blue-400/10 rounded-full blur-3xl animate-float-delayed"></div>
+  
+  <div class="container mx-auto max-w-7xl px-4 md:px-6 relative z-10">
+    
+    <!-- Section Header -->
+    <div class="flex flex-col items-center justify-center space-y-4 text-center mb-16">
+      <div class="space-y-2">
+        
+        
+        <h2 class="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl opacity-0 animate-slide-up" style="animation-delay: 0.4s;">
+          <span class="bg-gradient-to-r from-gray-900 via-blue-900 to-purple-900 bg-clip-text text-transparent">
+            Key Benefits
+          </span>
+        </h2>
+        
+        
+        <p class="mx-auto max-w-[900px] text-xl text-gray-600 leading-relaxed opacity-0 animate-slide-up" style="animation-delay: 0.6s;">
+          Transform your training documentation
+        </p>
+        
+      </div>
+    </div>
+
+    <!-- Enhanced Bento Grid -->
+    <div class="bento-grid grid auto-rows-fr gap-6 md:gap-8">
+      
+      <div class="benefit-card group relative bg-white/70 backdrop-blur-sm rounded-2xl p-8 border border-gray-100 hover:border-blue-200 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 opacity-0 animate-slide-up" 
+           style="animation-delay: 0.8s; grid-column: span 1; grid-row: span 1;">
+        
+        <!-- Hover glow effect -->
+        <div class="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-purple-500/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        
+        <div class="relative h-full flex flex-col">
+          
+          <!-- Icon -->
+          
+          <div class="mb-6">
+            <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl shadow-lg group-hover:shadow-xl transition-all duration-300 flex items-center justify-center">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                
+              </svg>
+              
+              <!-- Icon glow effect -->
+              <div class="absolute inset-0 bg-gradient-to-br from-blue-500/30 to-purple-600/30 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-lg"></div>
+            </div>
+          </div>
+          
+          
+          <!-- Content -->
+          <div class="flex-1">
+            <h3 class="text-xl font-bold text-gray-900 mb-4 group-hover:text-blue-900 transition-colors duration-300">
+              Faster Onboarding
+            </h3>
+            
+            <p class="text-gray-600 leading-relaxed group-hover:text-gray-700 transition-colors duration-300">
+              Reduce training time by up to 40%
+            </p>
+            
+            
+          </div>
+          
+          <!-- Visual Enhancement -->
+          
+          
+        </div>
+      </div>
+      
+      <div class="benefit-card group relative bg-white/70 backdrop-blur-sm rounded-2xl p-8 border border-gray-100 hover:border-blue-200 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 opacity-0 animate-slide-up" 
+           style="animation-delay: 0.8s; grid-column: span 1; grid-row: span 1;">
+        
+        <!-- Hover glow effect -->
+        <div class="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-purple-500/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        
+        <div class="relative h-full flex flex-col">
+          
+          <!-- Icon -->
+          
+          <div class="mb-6">
+            <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl shadow-lg group-hover:shadow-xl transition-all duration-300 flex items-center justify-center">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                
+              </svg>
+              
+              <!-- Icon glow effect -->
+              <div class="absolute inset-0 bg-gradient-to-br from-blue-500/30 to-purple-600/30 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-lg"></div>
+            </div>
+          </div>
+          
+          
+          <!-- Content -->
+          <div class="flex-1">
+            <h3 class="text-xl font-bold text-gray-900 mb-4 group-hover:text-blue-900 transition-colors duration-300">
+              Better Retention
+            </h3>
+            
+            <p class="text-gray-600 leading-relaxed group-hover:text-gray-700 transition-colors duration-300">
+              Improve knowledge retention with interactive content
+            </p>
+            
+            
+          </div>
+          
+          <!-- Visual Enhancement -->
+          
+          
+        </div>
+      </div>
+      
+      <div class="benefit-card group relative bg-white/70 backdrop-blur-sm rounded-2xl p-8 border border-gray-100 hover:border-blue-200 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 opacity-0 animate-slide-up" 
+           style="animation-delay: 0.8s; grid-column: span 1; grid-row: span 1;">
+        
+        <!-- Hover glow effect -->
+        <div class="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-purple-500/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        
+        <div class="relative h-full flex flex-col">
+          
+          <!-- Icon -->
+          
+          <div class="mb-6">
+            <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl shadow-lg group-hover:shadow-xl transition-all duration-300 flex items-center justify-center">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                
+              </svg>
+              
+              <!-- Icon glow effect -->
+              <div class="absolute inset-0 bg-gradient-to-br from-blue-500/30 to-purple-600/30 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-lg"></div>
+            </div>
+          </div>
+          
+          
+          <!-- Content -->
+          <div class="flex-1">
+            <h3 class="text-xl font-bold text-gray-900 mb-4 group-hover:text-blue-900 transition-colors duration-300">
+              Increased Efficiency
+            </h3>
+            
+            <p class="text-gray-600 leading-relaxed group-hover:text-gray-700 transition-colors duration-300">
+              Streamline training delivery and management
+            </p>
+            
+            
+          </div>
+          
+          <!-- Visual Enhancement -->
+          
+          
+        </div>
+      </div>
+      
+      <div class="benefit-card group relative bg-white/70 backdrop-blur-sm rounded-2xl p-8 border border-gray-100 hover:border-blue-200 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 opacity-0 animate-slide-up" 
+           style="animation-delay: 0.8s; grid-column: span 1; grid-row: span 1;">
+        
+        <!-- Hover glow effect -->
+        <div class="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-purple-500/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        
+        <div class="relative h-full flex flex-col">
+          
+          <!-- Icon -->
+          
+          <div class="mb-6">
+            <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl shadow-lg group-hover:shadow-xl transition-all duration-300 flex items-center justify-center">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                
+              </svg>
+              
+              <!-- Icon glow effect -->
+              <div class="absolute inset-0 bg-gradient-to-br from-blue-500/30 to-purple-600/30 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-lg"></div>
+            </div>
+          </div>
+          
+          
+          <!-- Content -->
+          <div class="flex-1">
+            <h3 class="text-xl font-bold text-gray-900 mb-4 group-hover:text-blue-900 transition-colors duration-300">
+              Global Reach
+            </h3>
+            
+            <p class="text-gray-600 leading-relaxed group-hover:text-gray-700 transition-colors duration-300">
+              Deliver consistent training worldwide
+            </p>
+            
+            
+          </div>
+          
+          <!-- Visual Enhancement -->
+          
+          
+        </div>
+      </div>
+      
+    </div>
+    
+    <!-- Optional CTA Section -->
+    
+    
+  </div>
+</section>
+
+<style>
+/* Animation Keyframes */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes floatDelayed {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+}
+
+/* Animation Classes */
+.animate-fade-in {
+  animation: fadeIn 1s ease-out forwards;
+}
+
+.animate-slide-up {
+  animation: slideUp 1s ease-out forwards;
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: floatDelayed 8s ease-in-out infinite;
+}
+
+/* Bento Grid Layout */
+.bento-grid {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .bento-grid {
+    grid-template-columns: 1fr;
+    auto-rows: minmax(20rem, auto);
+  }
+  
+  .benefit-card {
+    min-height: 20rem;
+    padding: 2rem;
+  }
+  
+  .benefit-card.col-span-2,
+  .benefit-card.row-span-2 {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+  
+  .benefits-v2 h2 {
+    font-size: 2.5rem;
+  }
+}
+</style>
+ 
+    </div>
+  
+
+  <!-- Pilot Process Section -->
+  
+
   <!-- Carousel Section -->
   
     <div class="content-section">
@@ -1563,18 +2018,10 @@ document.addEventListener('DOMContentLoaded', function() {
 <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
 <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
 
-<!-- Modern CTA Section v2 - Upgraded with sophisticated design patterns -->
-<section class="cta-section-v2 relative w-full py-16 md:py-24 lg:py-32 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 overflow-hidden">
+<!-- Modern CTA Section v2 - Transparent background -->
+<section class="cta-section-v2 relative w-full py-16 md:py-24 lg:py-32 overflow-hidden">
   
-  <!-- Background Pattern -->
-  <div class="absolute inset-0 opacity-5">
-    <div class="absolute inset-0" style="background-image: radial-gradient(circle at 25% 25%, #3b82f6 2px, transparent 2px); background-size: 50px 50px;"></div>
-  </div>
-  
-  <!-- Enhanced floating background elements -->
-  <div class="absolute -top-40 -left-40 w-80 h-80 bg-gradient-to-br from-blue-400/20 to-purple-400/20 rounded-full blur-3xl animate-float"></div>
-  <div class="absolute -bottom-40 -right-40 w-80 h-80 bg-gradient-to-br from-indigo-400/20 to-blue-400/20 rounded-full blur-3xl animate-float-delayed"></div>
-  <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-br from-white/10 to-transparent rounded-full blur-3xl animate-pulse"></div>
+  <!-- Content positioned above global animated background -->
   
   <div class="container mx-auto max-w-4xl px-4 md:px-6 relative z-10">
     <div class="flex flex-col items-center justify-center space-y-8 text-center">
@@ -2009,9 +2456,25 @@ document.addEventListener('DOMContentLoaded', function() {
           </a>
         </div>
         
-        <!-- Language Picker Placeholder -->
+        <!-- Language Picker -->
         <div class="docsie-lang-picker-container">
-          <!-- Language picker will be inserted here -->
+          <div class="relative">
+            <button id="language-picker-btn" class="flex items-center gap-2 px-3 py-2 bg-white/10 rounded-lg hover:bg-white/20 transition-colors duration-300">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"/>
+              </svg>
+              <span id="current-language" class="text-sm">English</span>
+              <svg class="w-4 h-4 transition-transform duration-200" id="language-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </button>
+            
+            <div id="language-dropdown" class="absolute bottom-full left-0 mb-2 w-48 bg-white rounded-lg shadow-xl border border-gray-200 hidden z-50">
+              <div class="py-2" id="language-options">
+                <!-- Languages will be populated by JavaScript -->
+              </div>
+            </div>
+          </div>
         </div>
         
       </div>
@@ -2023,6 +2486,79 @@ document.addEventListener('DOMContentLoaded', function() {
 <!-- SourceForge/Slashdot Badge Scripts -->
 <script>(function () {var sc=document.createElement('script');sc.async=true;sc.src='https://b.sf-syn.com/badge_js?sf_id=3158012&variant_id=sf';var p=document.getElementsByTagName('script')[0];p.parentNode.insertBefore(sc, p);})();</script>
 <script>(function () {var sc=document.createElement('script');sc.async=true;sc.src='https://b.sf-syn.com/badge_js?sf_id=3158012&variant_id=sd';var p=document.getElementsByTagName('script')[0];p.parentNode.insertBefore(sc, p);})();</script>
+
+<!-- Language Picker Script -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const languageBtn = document.getElementById('language-picker-btn');
+  const dropdown = document.getElementById('language-dropdown');
+  const chevron = document.getElementById('language-chevron');
+  const currentLang = document.getElementById('current-language');
+  const optionsContainer = document.getElementById('language-options');
+  
+  // Default languages (fallback if JSON not available)
+  const defaultLanguages = {
+    'en': { name: 'English', url: '/' },
+    'es': { name: 'Español', url: '/es/' },
+    'fr': { name: 'Français', url: '/fr/' },
+    'de': { name: 'Deutsch', url: '/de/' },
+    'pt': { name: 'Português', url: '/pt/' }
+  };
+  
+  // Load language data
+  fetch('/assets/languages.json')
+    .then(response => response.json())
+    .then(data => {
+      populateLanguages(data.languages);
+      setCurrentLanguage(data.languages);
+    })
+    .catch(error => {
+      console.log('Using default languages');
+      populateLanguages(defaultLanguages);
+      setCurrentLanguage(defaultLanguages);
+    });
+  
+  function populateLanguages(languages) {
+    optionsContainer.innerHTML = '';
+    Object.entries(languages).forEach(([code, info]) => {
+      if (info.enabled !== false) {
+        const option = document.createElement('a');
+        option.href = info.url;
+        option.className = 'block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-colors duration-200';
+        option.innerHTML = `
+          <span class="font-medium">${info.name}</span>
+          <span class="text-gray-500 ml-2">${code.toUpperCase()}</span>
+        `;
+        optionsContainer.appendChild(option);
+      }
+    });
+  }
+  
+  function setCurrentLanguage(languages) {
+    const currentCode = document.documentElement.lang || 'en';
+    const currentInfo = languages[currentCode];
+    if (currentInfo) {
+      currentLang.textContent = currentInfo.name;
+    }
+  }
+  
+  // Toggle dropdown
+  if (languageBtn) {
+    languageBtn.addEventListener('click', function() {
+      dropdown.classList.toggle('hidden');
+      chevron.classList.toggle('rotate-180');
+    });
+  }
+  
+  // Close dropdown when clicking outside
+  document.addEventListener('click', function(e) {
+    if (languageBtn && !languageBtn.contains(e.target) && !dropdown.contains(e.target)) {
+      dropdown.classList.add('hidden');
+      chevron.classList.remove('rotate-180');
+    }
+  });
+});
+</script>
   
   <svg style="display:none">
   <symbol id="icon-docsie" viewBox="0 0 48 48">
@@ -2430,6 +2966,9 @@ src="https://www.facebook.com/tr?id=415019276437410&ev=PageView&noscript=1"
     });
   </script>
   
+  
+  <!-- Animated Background System -->
+  <script src="/assets/js/animated-gradient-bg.js"></script>
 </body>
 
 </html>

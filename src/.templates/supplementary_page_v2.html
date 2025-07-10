@@ -12,7 +12,7 @@
 <link rel="stylesheet" href="/styles/supplementary_page.css" />
 
 <!-- Dynamic component styles - load both v1 and v2 styles -->
-{% set component_names = ['hero', 'features', 'gallery', 'related', 'related_auto', 'reviews', 'carousel', 'stats', 'comparison', 'cta_section', 'benefits', 'testimonials'] %}
+{% set component_names = ['hero', 'features', 'gallery', 'related', 'related_auto', 'reviews', 'carousel', 'stats', 'comparison', 'cta_section', 'benefits', 'testimonials', 'interactive_3d', 'pilot_inclusions', 'pilot_process', 'simple_spline'] %}
 {% for component in component_names %}
 <link rel="stylesheet" href="/styles/components/{{ component }}.css" />
 <link rel="stylesheet" href="/styles/components/{{ component }}_v2.css" />
@@ -20,72 +20,105 @@
 {% endblock %}
 
 {% block content %}
+<!-- Simple Spline Section (Full Screen) -->
+{% if page.components.simple_spline %}
+  {{ render_component('simple_spline', page.components.simple_spline, page=page) }}
+{% endif %}
+
 <section class="section-padding supplementary-page">
   <!-- Hero Section -->
   {% if page.components.hero %}
     {{ render_component('hero', page.components.hero, page=page) }}
   {% endif %}
 
+  <!-- Interactive 3D Section -->
+  {% if page.components.interactive_3d %}
+    <div class="content-section">
+      {{ render_component('interactive_3d', page.components.interactive_3d, page=page) }}
+    </div>
+  {% endif %}
+
   <!-- Stats Section -->
   {% if page.components.stats %}
     <div class="content-section">
-      {{ render_component('stats', page.components.stats) }}
+      {{ render_component('stats', page.components.stats, page=page) }}
     </div>
   {% endif %}
 
   <!-- Benefits Section -->
   {% if page.components.benefits %}
     <div class="content-section">
-      {{ render_component('benefits', page.components.benefits) }}
+      {{ render_component('benefits', page.components.benefits, page=page) }}
+    </div>
+  {% endif %}
+  
+  <!-- Pilot Inclusions Section -->
+  {% if page.components.pilot_inclusions %}
+    <div class="content-section">
+      {{ render_component('pilot_inclusions', page.components.pilot_inclusions, page=page) }}
     </div>
   {% endif %}
 
   <!-- Testimonials Section -->
   {% if page.components.testimonials %}
     <div class="content-section">
-      {{ render_component('testimonials', page.components.testimonials) }}
+      {{ render_component('testimonials', page.components.testimonials, page=page) }}
     </div>
   {% endif %}
 
   <!-- Features Section -->
   {% if page.components.features %}
     <div class="content-section">
-      {{ render_component('features', page.components.features) }}
+      {{ render_component('features', page.components.features, page=page) }}
     </div>
   {% endif %}
 
   <!-- Gallery Section -->
   {% if page.components.gallery %}
     <div class="content-section">
-      {{ render_component('gallery', page.components.gallery) }}
+      {{ render_component('gallery', page.components.gallery, page=page) }}
     </div>
   {% endif %}
 
   <!-- Comparison Section -->
   {% if page.components.comparison %}
     <div class="content-section">
-      {{ render_component('comparison', page.components.comparison) }}
+      {{ render_component('comparison', page.components.comparison, page=page) }}
+    </div>
+  {% endif %}
+
+  <!-- Benefits/Limitations Section -->
+  {% if page.components.benefits %}
+    <div class="content-section">
+      {{ render_component('benefits', page.components.benefits, page=page) }}
+    </div>
+  {% endif %}
+
+  <!-- Pilot Process Section -->
+  {% if page.components.pilot_process %}
+    <div class="content-section">
+      {{ render_component('pilot_process', page.components.pilot_process, page=page) }}
     </div>
   {% endif %}
 
   <!-- Carousel Section -->
   {% if page.components.carousel %}
     <div class="content-section">
-      {{ render_component('carousel', page.components.carousel) }}
+      {{ render_component('carousel', page.components.carousel, page=page) }}
     </div>
   {% endif %}
 
   <!-- Related Section -->
   {% if page.components.related %}
     <div class="content-section">
-      {{ render_component('related', page.components.related) }}
+      {{ render_component('related', page.components.related, page=page) }}
     </div>
   {% endif %}
 
   <!-- Auto-Configured Related Section -->
   {% if page.components.related_auto %}
     <div class="content-section">
-      {{ render_component('related_auto', page.components.related_auto) }}
+      {{ render_component('related_auto', page.components.related_auto, page=page) }}
     </div>
   {% endif %}
 
@@ -95,7 +128,7 @@
     'description': 'Start creating professional documentation that your users will love',
     'cta': {'text': 'Book Demo'}
   } %}
-  {{ render_component('cta_section', page.components.cta_section or default_cta) }}
+  {{ render_component('cta_section', page.components.cta_section or default_cta, page=page) }}
 
 </section>
 {% endblock %}

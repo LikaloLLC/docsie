@@ -1,14 +1,7 @@
-<!-- Modern Hero Section v2 - Upgraded to match banner_v2 design patterns -->
-<section class="hero-v2 relative min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 overflow-hidden">
+<!-- Modern Hero Section v2 - Transparent background for animated gradient -->
+<section class="hero-v2 relative min-h-screen overflow-hidden">
   
-  <!-- Background Pattern -->
-  <div class="absolute inset-0 opacity-5">
-    <div class="absolute inset-0" style="background-image: radial-gradient(circle at 25% 25%, #3b82f6 2px, transparent 2px); background-size: 50px 50px;"></div>
-  </div>
-  
-  <!-- Floating background elements -->
-  <div class="absolute -top-40 -left-40 w-80 h-80 bg-gradient-to-br from-blue-400/20 to-purple-400/20 rounded-full blur-3xl animate-pulse"></div>
-  <div class="absolute -bottom-40 -right-40 w-80 h-80 bg-gradient-to-br from-indigo-400/20 to-blue-400/20 rounded-full blur-3xl animate-pulse" style="animation-delay: 2s;"></div>
+  <!-- Content above animated background -->
   
   <div class="relative z-10 min-h-screen flex items-center">
     <div class="container mx-auto px-4 lg:px-8">
@@ -44,6 +37,15 @@
           <!-- CTA Buttons -->
           {% if section.cta %}
           <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8 opacity-0 animate-slide-up" style="animation-delay: 1.4s;">
+            {% if section.cta.url == '#' or section.cta.url == '' %}
+            <button onclick="Calendly.initPopupWidget({url: '{{ page.calendly_url if page and page.calendly_url else "https://calendly.com/docsie-io/demo-call" }}'});return false;" 
+                    class="group inline-flex items-center px-8 py-4 bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+              {{ section.cta.text }}
+              <svg class="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+              </svg>
+            </button>
+            {% else %}
             <a href="{{ section.cta.url or '/signup' }}" 
                class="group inline-flex items-center px-8 py-4 bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
               {{ section.cta.text }}
@@ -51,6 +53,7 @@
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
               </svg>
             </a>
+            {% endif %}
             
             {% if section.secondary_cta %}
             <a href="{{ section.secondary_cta.url or '/demo' }}" 

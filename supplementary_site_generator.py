@@ -120,7 +120,7 @@ def load_all_supplementary_pages():
     print(f"\nTotal pages loaded: {len(pages_data)}")
     return pages_data
 
-def generate_supplementary_pages(env, force_version=False, ui_version='v1'):
+def generate_supplementary_pages(env, force_version=False, ui_version='v2'):
     """Generate supplementary pages from YAML data with component support"""
     # Use V2 template for better header/footer
     template = env.get_template('.templates/supplementary_page_v2.html')
@@ -394,7 +394,7 @@ def main():
     args = parser.parse_args()
     
     # Determine the UI version
-    ui_version = 'v1'  # default
+    ui_version = 'v2'  # default changed to v2
     if args.version:
         ui_version = args.version if args.version.startswith('v') else f'v{args.version}'
     elif args.v4:
@@ -404,12 +404,10 @@ def main():
     elif args.v2:
         ui_version = 'v2'
     
-    force_version = ui_version != 'v1'
+    # Always force the version to ensure consistency
+    force_version = True
     
-    if force_version:
-        print(f"🚀 Generating all pages with {ui_version} UI components")
-    else:
-        print("🚀 Generating all pages with v1 UI components (default)")
+    print(f"🚀 Generating all pages with {ui_version} UI components")
     
     render_site(force_version=force_version, ui_version=ui_version)
 

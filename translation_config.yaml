@@ -1,0 +1,298 @@
+# Translation System Configuration
+# This file controls the translation system behavior
+
+# Project settings
+project:
+  name: "Docsie Documentation Platform"
+  source_language: "en"
+  source_dir: "src/"
+  locale_dir: "locale/"
+  
+# Languages to translate
+# Format: code: name
+languages:
+  # European Languages - Top World + Tier 1/2 EU
+  es:
+    name: "Español"
+    enabled: true
+    rtl: false
+  fr:
+    name: "Français"
+    enabled: true
+    rtl: false
+  de:
+    name: "Deutsch"
+    enabled: true
+    rtl: false
+  it:
+    name: "Italiano"
+    enabled: true
+    rtl: false
+  pt:
+    name: "Português"
+    enabled: true
+    rtl: false
+  nl:
+    name: "Nederlands"
+    enabled: true
+    rtl: false
+  pl:
+    name: "Polski"
+    enabled: true
+    rtl: false
+  ru:
+    name: "Русский"
+    enabled: true
+    rtl: false
+  cs:
+    name: "Čeština"
+    enabled: true
+    rtl: false
+  hu:
+    name: "Magyar"
+    enabled: true
+    rtl: false
+  ro:
+    name: "Română"
+    enabled: true
+    rtl: false
+  bg:
+    name: "Български"
+    enabled: false
+    rtl: false
+  hr:
+    name: "Hrvatski"
+    enabled: false
+    rtl: false
+  sk:
+    name: "Slovenčina"
+    enabled: false
+    rtl: false
+  sl:
+    name: "Slovenščina"
+    enabled: false
+    rtl: false
+  et:
+    name: "Eesti"
+    enabled: false
+    rtl: false
+  lv:
+    name: "Latviešu"
+    enabled: false
+    rtl: false
+  lt:
+    name: "Lietuvių"
+    enabled: false
+    rtl: false
+  
+  # Nordic Languages
+  sv:
+    name: "Svenska"
+    enabled: true
+    rtl: false
+  da:
+    name: "Dansk"
+    enabled: true
+    rtl: false
+  "no":
+    name: "Norsk"
+    enabled: true
+    rtl: false
+  fi:
+    name: "Suomi"
+    enabled: true
+    rtl: false
+  is:
+    name: "Íslenska"
+    enabled: true
+    rtl: false
+  
+  # Asian Languages - Top World Languages
+  zh:
+    name: "中文 (简体)"
+    enabled: true
+    rtl: false
+  ja:
+    name: "日本語"
+    enabled: true
+    rtl: false
+  ko:
+    name: "한국어"
+    enabled: true
+    rtl: false
+  hi:
+    name: "हिन्दी"
+    enabled: true
+    rtl: false
+  bn:
+    name: "বাংলা"
+    enabled: true
+    rtl: false
+  id:
+    name: "Bahasa Indonesia"
+    enabled: true
+    rtl: false
+  # Disabled for now
+  zh-TW:
+    name: "中文 (繁體)"
+    enabled: false
+    rtl: false
+  th:
+    name: "ไทย"
+    enabled: false
+    rtl: false
+  vi:
+    name: "Tiếng Việt"
+    enabled: false
+    rtl: false
+  ms:
+    name: "Bahasa Malaysia"
+    enabled: false
+    rtl: false
+  tl:
+    name: "Filipino"
+    enabled: false
+    rtl: false
+  
+  # RTL Languages
+  ar:
+    name: "العربية"
+    enabled: true
+    rtl: true
+  he:
+    name: "עברית"
+    enabled: true
+    rtl: true
+  fa:
+    name: "فارسی"
+    enabled: false
+    rtl: true
+  ur:
+    name: "اردو"
+    enabled: false
+    rtl: true
+  
+  # Other World Languages
+  tr:
+    name: "Türkçe"
+    enabled: true
+    rtl: false
+  el:
+    name: "Ελληνικά"
+    enabled: true
+    rtl: false
+  uk:
+    name: "Українська"
+    enabled: true
+    rtl: false
+  be:
+    name: "Беларуская"
+    enabled: false
+    rtl: false
+  mk:
+    name: "Македонски"
+    enabled: false
+    rtl: false
+  sr:
+    name: "Српски"
+    enabled: false
+    rtl: false
+  bs:
+    name: "Bosanski"
+    enabled: false
+    rtl: false
+  sq:
+    name: "Shqip"
+    enabled: false
+    rtl: false
+  
+  # African Languages
+  sw:
+    name: "Kiswahili"
+    enabled: false
+    rtl: false
+  am:
+    name: "አማርኛ"
+    enabled: false
+    rtl: false
+  
+  # South American Languages
+  pt-BR:
+    name: "Português (Brasil)"
+    enabled: false
+    rtl: false
+
+# Translation API settings
+anthropic:
+  model: "claude-sonnet-4-20250514"
+  temperature: 0.1
+  max_tokens: 1000
+  batch_size: 20
+  delay_between_batches: 1  # seconds
+  max_concurrent_languages: 3  # Max threads for parallel language processing
+  cache_translations: true  # Cache translations to avoid re-translating
+
+# Translation behavior
+translation:
+  # Skip translations that already exist
+  skip_existing: true
+  
+  # Preserve these patterns (regex)
+  preserve_patterns:
+    - '\{\{.*?\}\}'  # Jinja variables
+    - '\{%.*?%\}'    # Jinja tags
+    - '<[^>]+>'      # HTML tags
+    - '\$\{.*?\}'    # JavaScript template literals
+    
+  # Custom terminology (maintain consistency)
+  terminology:
+    "Docsie": "Docsie"  # Don't translate brand name
+    "API": "API"        # Keep technical terms
+    "SDK": "SDK"
+    "SSO": "SSO"
+    "SAML": "SAML"
+    "OAuth": "OAuth"
+    "webhook": "webhook"
+    "markdown": "markdown"
+    
+  # Context for better translations
+  context: |
+    You are translating a professional documentation platform interface.
+    Maintain formal, professional tone appropriate for business software.
+    Keep technical terms accurate and consistent.
+    
+# UI settings
+ui:
+  # Language picker settings
+  language_picker:
+    show_flag_icons: false
+    show_language_code: true
+    show_native_name: true
+    position: "footer"  # header, footer, or both
+    
+  # RTL support
+  rtl_support:
+    enabled: true
+    # CSS file to load for RTL languages
+    rtl_stylesheet: "/assets/css/rtl.css"
+    # Add dir="rtl" to html tag
+    auto_detect: true
+
+# Build settings
+build:
+  # Auto-compile after translation
+  auto_compile: true
+  
+  # Generate language routes
+  generate_routes: true
+  route_pattern: "/{lang}/"  # e.g., /es/, /fr/
+  
+  # Fallback behavior
+  fallback_to_source: true
+  
+# Export settings
+export:
+  # Generate translation status report
+  generate_report: true
+  report_format: "html"  # html, csv, json
+  report_path: "translation_report.html"

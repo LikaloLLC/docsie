@@ -1,0 +1,49 @@
+<!-- Simple Spline Viewer Component -->
+<div class="simple-spline-container {{ section.container_class | default('') }}">
+  <!-- Mobile fallback image -->
+  <div class="mobile-fallback">
+    <img src="{{ section.fallback_image | default('/assets/solutions/ai-pilot-hero.jpg') }}" alt="AI Pilot Program">
+    <div class="mobile-message">
+      <h2>AI Documentation Pilot Program</h2>
+      <p>Experience our interactive 3D demo on desktop</p>
+    </div>
+  </div>
+  
+  <!-- Desktop Spline viewer -->
+  <div class="spline-wrapper">
+    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.10.24/build/spline-viewer.js"></script>
+    <spline-viewer 
+      url="{{ section.scene_url }}">
+    </spline-viewer>
+    <!-- Invisible overlay to prevent Spline from capturing scroll -->
+    <div class="scroll-overlay"></div>
+  </div>
+</div>
+
+<script>
+// Prevent Spline from blocking page scroll
+document.addEventListener('DOMContentLoaded', function() {
+  const splineContainers = document.querySelectorAll('.simple-spline-container');
+  
+  splineContainers.forEach(container => {
+    // Prevent wheel events from being captured by Spline
+    container.addEventListener('wheel', function(e) {
+      e.stopPropagation();
+      window.scrollBy(0, e.deltaY);
+    }, { passive: false });
+    
+    // Also handle touch events for mobile (though Spline is hidden on mobile)
+    let touchStartY = 0;
+    container.addEventListener('touchstart', function(e) {
+      touchStartY = e.touches[0].clientY;
+    });
+    
+    container.addEventListener('touchmove', function(e) {
+      const touchEndY = e.touches[0].clientY;
+      const deltaY = touchStartY - touchEndY;
+      window.scrollBy(0, deltaY);
+      touchStartY = touchEndY;
+    }, { passive: false });
+  });
+});
+</script>
