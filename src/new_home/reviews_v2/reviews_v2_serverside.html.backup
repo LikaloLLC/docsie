@@ -1,0 +1,180 @@
+<!-- Calendly widget dependencies -->
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+
+<!-- Modern Reviews Section v2 - Real G2 Reviews with Column Layout -->
+<section class="reviews-v2 py-20 bg-gradient-to-br from-gray-50 to-white">
+  <div class="container mx-auto px-4 lg:px-8">
+    
+    <div class="text-center mb-16">
+      <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-100 text-blue-700 text-sm font-medium mb-6">
+        <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
+          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+        </svg>
+        {{ reviews_data.title|default("Customer Reviews") }}
+      </div>
+      
+      <h2 class="text-4xl md:text-6xl font-bold text-gray-900 mb-4">
+        {{ reviews_data.subtitle|default("Trusted and Used in 100+ Countries") }}
+      </h2>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+        {{ reviews_data.description|default("Real reviews from customers on G2 about their experience with Docsie") }}
+      </p>
+      
+      <div class="flex items-center justify-center space-x-2 mb-8">
+        <img src="/assets/new_home/g2-logo.svg" alt="G2 Logo" class="h-6 w-auto opacity-70"/>
+        <div class="flex items-center space-x-1">
+          <div class="flex">
+            {% for i in range(5) %}
+            <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20">
+              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+            </svg>
+            {% endfor %}
+          </div>
+          <span class="text-gray-500 text-sm ml-1">{{ reviews_data.rating_text|default("4.8/5 (100+ Reviews)") }}</span>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Static Reviews Grid -->
+    {% if reviews_data.reviews %}
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+      {% for review in reviews_data.reviews[:6] %}
+      <div class="review-card bg-gradient-to-br from-white to-gray-50 rounded-2xl p-6 border border-gray-100 hover:shadow-xl transition-all duration-300">
+        <!-- Quote icon -->
+        <div class="flex items-start justify-between mb-4">
+          <svg class="w-8 h-8 text-gray-200" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
+          </svg>
+          <div class="flex">
+            {% for i in range(5) %}
+              {% if i < review.rating|int %}
+              <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+              </svg>
+              {% elif review.rating % 1 != 0 and i == review.rating|int %}
+              <svg class="w-4 h-4 text-yellow-400" viewBox="0 0 20 20">
+                <defs>
+                  <linearGradient id="half-star-{{ review.id }}">
+                    <stop offset="50%" stop-color="#fbbf24"/>
+                    <stop offset="50%" stop-color="#d1d5db"/>
+                  </linearGradient>
+                </defs>
+                <path fill="url(#half-star-{{ review.id }})" d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+              </svg>
+              {% else %}
+              <svg class="w-4 h-4 text-gray-300" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+              </svg>
+              {% endif %}
+            {% endfor %}
+          </div>
+        </div>
+        
+        <!-- Review content -->
+        <h3 class="font-semibold text-gray-900 mb-2">{{ review.review }}</h3>
+        <p class="text-gray-600 text-sm mb-4">{{ review.full_review }}</p>
+        
+        <!-- Reviewer info -->
+        <div class="flex items-center justify-between pt-4 border-t border-gray-100">
+          <div>
+            <p class="font-medium text-gray-900">{{ review.name }}</p>
+            <p class="text-xs text-gray-500">{{ review.title }}</p>
+            <p class="text-xs text-gray-500">{{ review.company }}</p>
+          </div>
+          <p class="text-xs text-gray-400">{{ review.date }}</p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    
+    <!-- Show More Reviews -->
+    <div class="text-center">
+      <a href="https://www.g2.com/products/docsie/reviews" target="_blank" class="inline-flex items-center text-blue-600 hover:text-blue-700 font-medium transition-colors">
+        {% trans %}See all reviews on G2{% endtrans %}
+        <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+        </svg>
+      </a>
+    </div>
+    {% endif %}
+    
+    <!-- CTA Section -->
+    <div class="mt-20 text-center">
+      <div class="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-3xl p-8 md:p-12 max-w-4xl mx-auto">
+        <h3 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+          {% trans %}Join thousands of happy customers{% endtrans %}
+        </h3>
+        <p class="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
+          {% trans %}Start creating beautiful documentation that your users will love. No credit card required.{% endtrans %}
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/demo" class="inline-flex items-center justify-center px-6 py-3 rounded-lg bg-blue-600 text-white font-medium hover:bg-blue-700 transition-colors">
+            {% trans %}Book a Demo{% endtrans %}
+          </a>
+          <button onclick="window.location.href='https://app.docsie.io/onboarding/'" class="inline-flex items-center justify-center px-6 py-3 rounded-lg border border-gray-300 bg-white text-gray-700 font-medium hover:bg-gray-50 transition-colors">
+            {% trans %}Start Free Trial{% endtrans %}
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+/* Reviews section specific styles */
+.reviews-v2 {
+  position: relative;
+  overflow: hidden;
+}
+
+.review-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.review-card::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, #3b82f6, #8b5cf6, #ec4899, #3b82f6);
+  background-size: 400% 400%;
+  border-radius: inherit;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+
+.review-card:hover::before {
+  opacity: 0.1;
+  animation: gradient-shift 3s ease infinite;
+}
+
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Animation Keyframes */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.6s ease-out forwards;
+}
+</style>

@@ -1,0 +1,24 @@
+<!-- YAML-aware supplementary page template wrapper -->
+{% macro translate_yaml_string(text) -%}
+    {%- if text -%}
+        {{ _(text) }}
+    {%- else -%}
+        {{ text }}
+    {%- endif -%}
+{%- endmacro %}
+
+{% macro render_yaml_content(data) -%}
+    {%- if data is string -%}
+        {{ translate_yaml_string(data) }}
+    {%- elif data is mapping -%}
+        {%- for key, value in data.items() -%}
+            {%- if key not in ['id', 'category', 'template', 'url', 'image', 'icon', 'color', 'type', 'link'] -%}
+                {{ render_yaml_content(value) }}
+            {%- endif -%}
+        {%- endfor -%}
+    {%- elif data is iterable -%}
+        {%- for item in data -%}
+            {{ render_yaml_content(item) }}
+        {%- endfor -%}
+    {%- endif -%}
+{%- endmacro %}

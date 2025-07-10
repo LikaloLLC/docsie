@@ -11,11 +11,14 @@
 <!-- Component specific styles -->
 <link rel="stylesheet" href="/styles/supplementary_page.css" />
 
-<!-- Dynamic component styles - load both v1 and v2 styles -->
+<!-- Dynamic component styles -->
 {% set component_names = ['hero', 'features', 'gallery', 'related', 'related_auto', 'reviews', 'carousel', 'stats', 'comparison', 'cta_section', 'benefits', 'testimonials', 'interactive_3d', 'pilot_inclusions', 'pilot_process', 'simple_spline', 'qualification_criteria', 'faq_v2'] %}
+{% set v2_components = ['hero', 'features', 'gallery', 'related', 'carousel', 'stats', 'comparison', 'cta_section', 'benefits', 'testimonials'] %}
 {% for component in component_names %}
 <link rel="stylesheet" href="/styles/components/{{ component }}.css" />
+{% if component in v2_components %}
 <link rel="stylesheet" href="/styles/components/{{ component }}_v2.css" />
+{% endif %}
 {% endfor %}
 {% endblock %}
 

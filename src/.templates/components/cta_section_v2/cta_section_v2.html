@@ -75,15 +75,6 @@
           </a>
           {% endif %}
         {% endfor %}
-        {% else %}
-        <!-- Default Book a Demo button if no configuration -->
-        <button onclick="Calendly.initPopupWidget({url: '{{ page.calendly_url if page and page.calendly_url else "https://calendly.com/docsie-io/demo-call" }}'});return false;" 
-                class="group inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 px-8 py-4 text-lg font-semibold text-white shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2">
-          Book a Demo
-          <svg class="ml-2 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
-          </svg>
-        </button>
         {% endif %}
         
         {% if section.secondary_button %}
@@ -117,28 +108,6 @@
           <span class="text-sm font-medium">{{ indicator.text }}</span>
         </div>
         {% endfor %}
-      </div>
-      {% else %}
-      <!-- Default trust indicators if none provided -->
-      <div class="flex flex-col sm:flex-row items-center justify-center gap-6 mt-8 text-gray-600 opacity-0 animate-fade-in" style="animation-delay: 1.2s;">
-        <div class="flex items-center gap-2">
-          <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-          </svg>
-          <span class="text-sm font-medium">Free 14-day trial</span>
-        </div>
-        <div class="flex items-center gap-2">
-          <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-          </svg>
-          <span class="text-sm font-medium">No credit card required</span>
-        </div>
-        <div class="flex items-center gap-2">
-          <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-          </svg>
-          <span class="text-sm font-medium">Cancel anytime</span>
-        </div>
       </div>
       {% endif %}
       

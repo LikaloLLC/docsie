@@ -1,334 +1,147 @@
 <!-- Pilot Process Timeline Component -->
 <div class="pilot-process-container">
     <div class="pilot-process-wrapper">
+        {% if section.steps %}
         <!-- Left Timeline -->
         <div class="timeline-section">
             <div class="timeline-line"></div>
             <div class="timeline-cards">
-                <!-- Step 1 -->
-                <div class="timeline-card active" data-step="1">
+                {% for step in section.steps %}
+                <div class="timeline-card {% if loop.first %}active{% endif %}" data-step="{{ loop.index }}">
                     <div class="timeline-dot">
                         <span class="dot-inner"></span>
                     </div>
                     <div class="card-content">
-                        <div class="step-day">Day 1</div>
-                        <h4 class="step-title">Apply & Qualify</h4>
-                        <p class="step-preview">Quick application and qualification process</p>
+                        <div class="step-day">{{ step.day_label }}</div>
+                        <h4 class="step-title">{{ step.title }}</h4>
+                        <p class="step-preview">{{ step.preview }}</p>
                     </div>
                 </div>
-
-                <!-- Step 2 -->
-                <div class="timeline-card" data-step="2">
-                    <div class="timeline-dot">
-                        <span class="dot-inner"></span>
-                    </div>
-                    <div class="card-content">
-                        <div class="step-day">Day 2</div>
-                        <h4 class="step-title">Content Upload</h4>
-                        <p class="step-preview">Upload your documentation and content</p>
-                    </div>
-                </div>
-
-                <!-- Step 3 -->
-                <div class="timeline-card" data-step="3">
-                    <div class="timeline-dot">
-                        <span class="dot-inner"></span>
-                    </div>
-                    <div class="card-content">
-                        <div class="step-day">Days 3-4</div>
-                        <h4 class="step-title">AI Processing</h4>
-                        <p class="step-preview">Our AI analyzes and optimizes your content</p>
-                    </div>
-                </div>
-
-                <!-- Step 4 -->
-                <div class="timeline-card" data-step="4">
-                    <div class="timeline-dot">
-                        <span class="dot-inner"></span>
-                    </div>
-                    <div class="card-content">
-                        <div class="step-day">Day 5</div>
-                        <h4 class="step-title">Setup & Training</h4>
-                        <p class="step-preview">Platform configuration and team training</p>
-                    </div>
-                </div>
-
-                <!-- Step 5 -->
-                <div class="timeline-card" data-step="5">
-                    <div class="timeline-dot">
-                        <span class="dot-inner"></span>
-                    </div>
-                    <div class="card-content">
-                        <div class="step-day">Days 6-19</div>
-                        <h4 class="step-title">2-Week Pilot</h4>
-                        <p class="step-preview">Full access pilot with support</p>
-                    </div>
-                </div>
+                {% endfor %}
             </div>
         </div>
 
-        <!-- Right Content Area -->
+        <!-- Right Content Panel -->
         <div class="content-section">
             <!-- Progress Bar -->
-            <div class="progress-bar-container">
+            <div class="progress-container">
                 <div class="progress-bar">
                     <div class="progress-fill" style="width: 20%"></div>
                 </div>
-                <div class="progress-text">Step <span class="current-step">1</span> of 5</div>
+                <div class="progress-text">
+                    {{ (section.progress_text or "Step {current} of {total}").format(current=1, total=section.steps|length) }}
+                </div>
             </div>
 
             <!-- Content Panels -->
             <div class="content-panels">
-                <!-- Step 1 Content -->
-                <div class="content-panel active" data-content="1">
-                    <div class="panel-header">
-                        <span class="step-indicator">STEP 1</span>
-                        <h2 class="panel-title">Apply & Qualify</h2>
-                    </div>
-                    <div class="panel-body">
-                        <p class="panel-description">Start your journey with a simple application process. Our team will review your requirements and ensure Docsie is the right fit for your needs.</p>
+                {% for step in section.steps %}
+                <div class="content-panel {% if loop.first %}active{% endif %}" data-panel="{{ loop.index }}">
+                    <div class="panel-inner">
+                        <div class="step-indicator">STEP {{ loop.index }}</div>
+                        <h3 class="panel-title">{{ step.title }}</h3>
+                        <p class="panel-description">{{ step.description }}</p>
+                        
+                        {% if step.features %}
                         <div class="panel-features">
+                            {% for feature in step.features %}
                             <div class="feature-item">
-                                <i class="fas fa-check-circle"></i>
-                                <span>5-minute application form</span>
+                                <svg class="feature-icon" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                                <span>{{ feature }}</span>
                             </div>
-                            <div class="feature-item">
-                                <i class="fas fa-check-circle"></i>
-                                <span>Instant qualification check</span>
-                            </div>
-                            <div class="feature-item">
-                                <i class="fas fa-check-circle"></i>
-                                <span>Personalized pilot plan</span>
-                            </div>
-                            <div class="feature-item">
-                                <i class="fas fa-check-circle"></i>
-                                <span>Dedicated success manager assigned</span>
-                            </div>
+                            {% endfor %}
                         </div>
+                        {% endif %}
                     </div>
                 </div>
-
-                <!-- Step 2 Content -->
-                <div class="content-panel" data-content="2">
-                    <div class="panel-header">
-                        <span class="step-indicator">STEP 2</span>
-                        <h2 class="panel-title">Content Upload</h2>
-                    </div>
-                    <div class="panel-body">
-                        <p class="panel-description">Easily upload your existing documentation, knowledge base articles, or any content you want to enhance with AI.</p>
-                        <div class="panel-features">
-                            <div class="feature-item">
-                                <i class="fas fa-check-circle"></i>
-                                <span>Support for multiple file formats</span>
-                            </div>
-                            <div class="feature-item">
-                                <i class="fas fa-check-circle"></i>
-                                <span>Bulk import capabilities</span>
-                            </div>
-                            <div class="feature-item">
-                                <i class="fas fa-check-circle"></i>
-                                <span>API integration options</span>
-                            </div>
-                            <div class="feature-item">
-                                <i class="fas fa-check-circle"></i>
-                                <span>Secure data handling</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Step 3 Content -->
-                <div class="content-panel" data-content="3">
-                    <div class="panel-header">
-                        <span class="step-indicator">STEP 3</span>
-                        <h2 class="panel-title">AI Processing</h2>
-                    </div>
-                    <div class="panel-body">
-                        <p class="panel-description">Our advanced AI analyzes your content, identifies patterns, and prepares intelligent responses for your documentation chatbot.</p>
-                        <div class="panel-features">
-                            <div class="feature-item">
-                                <i class="fas fa-check-circle"></i>
-                                <span>Content analysis and optimization</span>
-                            </div>
-                            <div class="feature-item">
-                                <i class="fas fa-check-circle"></i>
-                                <span>Knowledge graph creation</span>
-                            </div>
-                            <div class="feature-item">
-                                <i class="fas fa-check-circle"></i>
-                                <span>FAQ generation</span>
-                            </div>
-                            <div class="feature-item">
-                                <i class="fas fa-check-circle"></i>
-                                <span>Multi-language support setup</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Step 4 Content -->
-                <div class="content-panel" data-content="4">
-                    <div class="panel-header">
-                        <span class="step-indicator">STEP 4</span>
-                        <h2 class="panel-title">Setup & Training</h2>
-                    </div>
-                    <div class="panel-body">
-                        <p class="panel-description">Get your team up to speed with personalized training sessions and complete platform configuration.</p>
-                        <div class="panel-features">
-                            <div class="feature-item">
-                                <i class="fas fa-check-circle"></i>
-                                <span>1-on-1 onboarding session</span>
-                            </div>
-                            <div class="feature-item">
-                                <i class="fas fa-check-circle"></i>
-                                <span>Custom chatbot configuration</span>
-                            </div>
-                            <div class="feature-item">
-                                <i class="fas fa-check-circle"></i>
-                                <span>Team access setup</span>
-                            </div>
-                            <div class="feature-item">
-                                <i class="fas fa-check-circle"></i>
-                                <span>Best practices guide</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Step 5 Content -->
-                <div class="content-panel" data-content="5">
-                    <div class="panel-header">
-                        <span class="step-indicator">STEP 5</span>
-                        <h2 class="panel-title">2-Week Pilot</h2>
-                    </div>
-                    <div class="panel-body">
-                        <p class="panel-description">Experience the full power of Docsie with complete access to all features and dedicated support throughout your pilot.</p>
-                        <div class="panel-features">
-                            <div class="feature-item">
-                                <i class="fas fa-check-circle"></i>
-                                <span>Full platform access</span>
-                            </div>
-                            <div class="feature-item">
-                                <i class="fas fa-check-circle"></i>
-                                <span>Daily check-ins available</span>
-                            </div>
-                            <div class="feature-item">
-                                <i class="fas fa-check-circle"></i>
-                                <span>Performance analytics</span>
-                            </div>
-                            <div class="feature-item">
-                                <i class="fas fa-check-circle"></i>
-                                <span>End-of-pilot review & recommendations</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                {% endfor %}
             </div>
 
             <!-- Navigation Controls -->
-            <div class="navigation-controls">
+            <div class="nav-controls">
                 <button class="nav-btn prev-btn" disabled>
-                    <i class="fas fa-chevron-left"></i>
-                    <span>Previous</span>
+                    <svg viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                    </svg>
+                    {{ section.prev_button_text or "Previous" }}
                 </button>
-                <div class="dots-indicator">
-                    <span class="dot active" data-dot="1"></span>
-                    <span class="dot" data-dot="2"></span>
-                    <span class="dot" data-dot="3"></span>
-                    <span class="dot" data-dot="4"></span>
-                    <span class="dot" data-dot="5"></span>
-                </div>
                 <button class="nav-btn next-btn">
-                    <span>Next</span>
-                    <i class="fas fa-chevron-right"></i>
+                    {{ section.next_button_text or "Next" }}
+                    <svg viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
+                    </svg>
                 </button>
             </div>
-
         </div>
+        {% endif %}
     </div>
 </div>
 
 <script>
-(function() {
-    // Component State
+document.addEventListener('DOMContentLoaded', function() {
+    const container = document.querySelector('.pilot-process-container');
+    if (!container) return;
+    
+    const timelineCards = container.querySelectorAll('.timeline-card');
+    const contentPanels = container.querySelectorAll('.content-panel');
+    const prevBtn = container.querySelector('.prev-btn');
+    const nextBtn = container.querySelector('.next-btn');
+    const progressFill = container.querySelector('.progress-fill');
+    const progressText = container.querySelector('.progress-text');
+    
     let currentStep = 1;
-    const totalSteps = 5;
-
-    // DOM Elements
-    const timelineCards = document.querySelectorAll('.timeline-card');
-    const contentPanels = document.querySelectorAll('.content-panel');
-    const dots = document.querySelectorAll('.dots-indicator .dot');
-    const prevBtn = document.querySelector('.prev-btn');
-    const nextBtn = document.querySelector('.next-btn');
-    const progressFill = document.querySelector('.progress-fill');
-    const currentStepText = document.querySelector('.current-step');
-
-    // Initialize
-    function init() {
-        // Add click handlers to timeline cards
-        timelineCards.forEach(card => {
-            card.addEventListener('click', () => {
-                const step = parseInt(card.dataset.step);
-                goToStep(step);
-            });
-        });
-
-        // Add click handlers to dots
-        dots.forEach(dot => {
-            dot.addEventListener('click', () => {
-                const step = parseInt(dot.dataset.dot);
-                goToStep(step);
-            });
-        });
-
-        // Navigation buttons
-        prevBtn.addEventListener('click', () => goToStep(currentStep - 1));
-        nextBtn.addEventListener('click', () => goToStep(currentStep + 1));
-    }
-
-    // Go to specific step
-    function goToStep(step) {
+    const totalSteps = {{ section.steps|length }};
+    
+    function updateStep(step) {
         if (step < 1 || step > totalSteps) return;
-
+        
         currentStep = step;
-        updateUI();
-    }
-
-    // Update UI based on current step
-    function updateUI() {
+        
         // Update timeline cards
         timelineCards.forEach((card, index) => {
-            const cardStep = index + 1;
-            card.classList.toggle('active', cardStep === currentStep);
-            card.classList.toggle('completed', cardStep < currentStep);
+            card.classList.toggle('active', index + 1 === step);
+            card.classList.toggle('completed', index + 1 < step);
         });
-
+        
         // Update content panels
-        contentPanels.forEach(panel => {
-            const panelStep = parseInt(panel.dataset.content);
-            panel.classList.toggle('active', panelStep === currentStep);
+        contentPanels.forEach((panel, index) => {
+            panel.classList.toggle('active', index + 1 === step);
         });
-
-        // Update dots
-        dots.forEach(dot => {
-            const dotStep = parseInt(dot.dataset.dot);
-            dot.classList.toggle('active', dotStep === currentStep);
-        });
-
-        // Update navigation buttons
-        prevBtn.disabled = currentStep === 1;
-        nextBtn.disabled = currentStep === totalSteps;
-
+        
         // Update progress bar
-        const progressPercentage = (currentStep / totalSteps) * 100;
-        progressFill.style.width = `${progressPercentage}%`;
-
-        // Update step text
-        currentStepText.textContent = currentStep;
+        const progress = (step / totalSteps) * 100;
+        progressFill.style.width = progress + '%';
+        
+        // Update progress text
+        const template = {{ (section.progress_text or "Step {current} of {total}")|tojson }};
+        progressText.textContent = template.replace('{current}', step).replace('{total}', totalSteps);
+        
+        // Update navigation buttons
+        prevBtn.disabled = step === 1;
+        nextBtn.disabled = step === totalSteps;
+        
+        // Smooth scroll timeline card into view
+        const activeCard = timelineCards[step - 1];
+        if (activeCard) {
+            activeCard.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
     }
-
-
-    // Start the component
-    init();
-})();
+    
+    // Click handlers for timeline cards
+    timelineCards.forEach((card, index) => {
+        card.addEventListener('click', () => updateStep(index + 1));
+    });
+    
+    // Navigation button handlers
+    prevBtn.addEventListener('click', () => updateStep(currentStep - 1));
+    nextBtn.addEventListener('click', () => updateStep(currentStep + 1));
+    
+    // Keyboard navigation
+    container.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft') updateStep(currentStep - 1);
+        if (e.key === 'ArrowRight') updateStep(currentStep + 1);
+    });
+});
 </script>
