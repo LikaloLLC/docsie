@@ -5,16 +5,22 @@
   --gap: 1rem;
   gap: var(--gap);
   flex-direction: row;
-  --duration: 40s;
+  --duration: 30s;
+  width: 100%;
 }
 
 .testimonial-track {
   gap: var(--gap);
   animation: marquee var(--duration) linear infinite;
   flex-direction: row;
+  width: max-content;
 }
 
 .testimonial-track.paused {
+  animation-play-state: paused;
+}
+
+.testimonial-track:hover {
   animation-play-state: paused;
 }
 
@@ -23,7 +29,7 @@
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-50%);
+    transform: translateX(calc(-50% - 0.5rem));
   }
 }
 

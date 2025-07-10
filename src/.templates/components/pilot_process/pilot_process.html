@@ -244,14 +244,6 @@
                 </button>
             </div>
 
-            <!-- Auto-play Toggle -->
-            <div class="autoplay-controls">
-                <label class="autoplay-toggle">
-                    <input type="checkbox" id="autoplay-checkbox" checked>
-                    <span class="toggle-slider"></span>
-                    <span class="toggle-label">Auto-play</span>
-                </label>
-            </div>
         </div>
     </div>
 </div>
@@ -260,10 +252,7 @@
 (function() {
     // Component State
     let currentStep = 1;
-    let autoplayInterval = null;
-    let isAutoplayEnabled = true;
     const totalSteps = 5;
-    const autoplayDelay = 5000; // 5 seconds
 
     // DOM Elements
     const timelineCards = document.querySelectorAll('.timeline-card');
@@ -273,7 +262,6 @@
     const nextBtn = document.querySelector('.next-btn');
     const progressFill = document.querySelector('.progress-fill');
     const currentStepText = document.querySelector('.current-step');
-    const autoplayCheckbox = document.getElementById('autoplay-checkbox');
 
     // Initialize
     function init() {
@@ -296,35 +284,6 @@
         // Navigation buttons
         prevBtn.addEventListener('click', () => goToStep(currentStep - 1));
         nextBtn.addEventListener('click', () => goToStep(currentStep + 1));
-
-        // Autoplay toggle
-        autoplayCheckbox.addEventListener('change', (e) => {
-            isAutoplayEnabled = e.target.checked;
-            if (isAutoplayEnabled) {
-                startAutoplay();
-            } else {
-                stopAutoplay();
-            }
-        });
-
-        // Start autoplay
-        if (isAutoplayEnabled) {
-            startAutoplay();
-        }
-
-        // Pause autoplay on hover
-        const container = document.querySelector('.pilot-process-container');
-        container.addEventListener('mouseenter', () => {
-            if (isAutoplayEnabled) {
-                stopAutoplay();
-            }
-        });
-
-        container.addEventListener('mouseleave', () => {
-            if (isAutoplayEnabled) {
-                startAutoplay();
-            }
-        });
     }
 
     // Go to specific step
@@ -333,7 +292,6 @@
 
         currentStep = step;
         updateUI();
-        resetAutoplay();
     }
 
     // Update UI based on current step
@@ -369,31 +327,6 @@
         currentStepText.textContent = currentStep;
     }
 
-    // Autoplay functions
-    function startAutoplay() {
-        stopAutoplay();
-        autoplayInterval = setInterval(() => {
-            if (currentStep < totalSteps) {
-                goToStep(currentStep + 1);
-            } else {
-                goToStep(1); // Loop back to start
-            }
-        }, autoplayDelay);
-    }
-
-    function stopAutoplay() {
-        if (autoplayInterval) {
-            clearInterval(autoplayInterval);
-            autoplayInterval = null;
-        }
-    }
-
-    function resetAutoplay() {
-        if (isAutoplayEnabled) {
-            stopAutoplay();
-            startAutoplay();
-        }
-    }
 
     // Start the component
     init();

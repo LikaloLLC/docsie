@@ -12,7 +12,7 @@
 <link rel="stylesheet" href="/styles/supplementary_page.css" />
 
 <!-- Dynamic component styles - load both v1 and v2 styles -->
-{% set component_names = ['hero', 'features', 'gallery', 'related', 'related_auto', 'reviews', 'carousel', 'stats', 'comparison', 'cta_section', 'benefits', 'testimonials', 'interactive_3d', 'pilot_inclusions', 'pilot_process', 'simple_spline'] %}
+{% set component_names = ['hero', 'features', 'gallery', 'related', 'related_auto', 'reviews', 'carousel', 'stats', 'comparison', 'cta_section', 'benefits', 'testimonials', 'interactive_3d', 'pilot_inclusions', 'pilot_process', 'simple_spline', 'qualification_criteria', 'faq_v2'] %}
 {% for component in component_names %}
 <link rel="stylesheet" href="/styles/components/{{ component }}.css" />
 <link rel="stylesheet" href="/styles/components/{{ component }}_v2.css" />
@@ -52,6 +52,13 @@
     </div>
   {% endif %}
   
+  <!-- Qualification Criteria Section -->
+  {% if page.components.qualification_criteria %}
+    <div class="content-section">
+      {{ render_component('qualification_criteria', page.components.qualification_criteria, page=page) }}
+    </div>
+  {% endif %}
+  
   <!-- Pilot Inclusions Section -->
   {% if page.components.pilot_inclusions %}
     <div class="content-section">
@@ -62,7 +69,14 @@
   <!-- Testimonials Section -->
   {% if page.components.testimonials %}
     <div class="content-section">
-      {{ render_component('testimonials', page.components.testimonials, page=page) }}
+      {{ render_component('testimonials_v2', page.components.testimonials, page=page) }}
+    </div>
+  {% endif %}
+
+  <!-- FAQ Section -->
+  {% if page.components.faq_v2 %}
+    <div class="content-section">
+      {{ render_component('faq_v2', page.components.faq_v2, page=page) }}
     </div>
   {% endif %}
 
@@ -84,13 +98,6 @@
   {% if page.components.comparison %}
     <div class="content-section">
       {{ render_component('comparison', page.components.comparison, page=page) }}
-    </div>
-  {% endif %}
-
-  <!-- Benefits/Limitations Section -->
-  {% if page.components.benefits %}
-    <div class="content-section">
-      {{ render_component('benefits', page.components.benefits, page=page) }}
     </div>
   {% endif %}
 
