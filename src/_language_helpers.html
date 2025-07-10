@@ -1,0 +1,27 @@
+{# Language URL Helper Macros #}
+
+{# Macro to generate language-aware URLs #}
+{% macro lang_url(path) -%}
+  {%- if locale and locale != '/' -%}
+    {{- locale }}{{ path -}}
+  {%- else -%}
+    {{- path -}}
+  {%- endif -%}
+{%- endmacro %}
+
+{# Macro to generate absolute language-aware URLs #}
+{% macro abs_lang_url(path) -%}
+  {%- if locale and locale != '/' -%}
+    {%- if path.startswith('/') -%}
+      {{- locale }}{{ path -}}
+    {%- else -%}
+      {{- locale }}/{{ path -}}
+    {%- endif -%}
+  {%- else -%}
+    {%- if path.startswith('/') -%}
+      {{- path -}}
+    {%- else -%}
+      {{- '/' }}{{ path -}}
+    {%- endif -%}
+  {%- endif -%}
+{%- endmacro %}

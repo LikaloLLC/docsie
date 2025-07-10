@@ -372,6 +372,360 @@ content="Create Your User Manual Online with Docsie" />
 </head>
 
 <body class="docsie-background-img">
+  <!-- Language Suggestion Banner -->
+<style>
+  .language-suggestion-banner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+    color: white;
+    padding: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 9999;
+    transform: translateY(-100%);
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .language-suggestion-banner.show {
+    transform: translateY(0);
+  }
+  
+  .language-suggestion-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  
+  .language-suggestion-text {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex: 1;
+  }
+  
+  .language-suggestion-icon {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+  }
+  
+  .language-suggestion-message {
+    font-size: 0.875rem;
+    line-height: 1.5;
+  }
+  
+  .language-suggestion-message strong {
+    font-weight: 600;
+  }
+  
+  .language-suggestion-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  
+  .language-suggestion-btn {
+    padding: 0.5rem 1rem;
+    border-radius: 0.375rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .language-suggestion-btn-primary {
+    background: white;
+    color: #2563eb;
+    border: none;
+  }
+  
+  .language-suggestion-btn-primary:hover {
+    background: #f3f4f6;
+    transform: translateY(-1px);
+  }
+  
+  .language-suggestion-btn-secondary {
+    background: transparent;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+  }
+  
+  .language-suggestion-btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.5);
+  }
+  
+  .language-suggestion-close {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 0.375rem;
+    transition: background 0.2s ease;
+  }
+  
+  .language-suggestion-close:hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
+  
+  /* Mobile responsive */
+  @media (max-width: 768px) {
+    .language-suggestion-content {
+      flex-direction: column;
+      align-items: stretch;
+      text-align: center;
+    }
+    
+    .language-suggestion-text {
+      justify-content: center;
+    }
+    
+    .language-suggestion-actions {
+      justify-content: center;
+    }
+  }
+</style>
+
+<div id="languageSuggestionBanner" class="language-suggestion-banner">
+  <div class="language-suggestion-content">
+    <div class="language-suggestion-text">
+      <svg class="language-suggestion-icon" fill="currentColor" viewBox="0 0 20 20">
+        <path d="M10 12a2 2 0 100-4 2 2 0 000 4z"/>
+        <path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"/>
+      </svg>
+      <div class="language-suggestion-message" id="suggestionMessage">
+        <!-- Message will be populated by JavaScript -->
+      </div>
+    </div>
+    <div class="language-suggestion-actions">
+      <a id="switchLanguageBtn" href="#" class="language-suggestion-btn language-suggestion-btn-primary">
+        <span id="switchLanguageText">Switch Language</span>
+        <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+        </svg>
+      </a>
+      <button id="stayLanguageBtn" class="language-suggestion-btn language-suggestion-btn-secondary">
+        <span id="stayLanguageText">Stay in English</span>
+      </button>
+      <button id="closeSuggestionBtn" class="language-suggestion-close" aria-label="Close">
+        <svg width="20" height="20" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+(function() {
+  // Language data (same as in language picker)
+  const languages = {
+    'en': { name: 'English', nativeName: 'English', flag: '🇺🇸' },
+    'es': { name: 'Spanish', nativeName: 'Español', flag: '🇪🇸' },
+    'fr': { name: 'French', nativeName: 'Français', flag: '🇫🇷' },
+    'de': { name: 'German', nativeName: 'Deutsch', flag: '🇩🇪' },
+    'it': { name: 'Italian', nativeName: 'Italiano', flag: '🇮🇹' },
+    'pt': { name: 'Portuguese', nativeName: 'Português', flag: '🇵🇹' },
+    'nl': { name: 'Dutch', nativeName: 'Nederlands', flag: '🇳🇱' },
+    'pl': { name: 'Polish', nativeName: 'Polski', flag: '🇵🇱' },
+    'ru': { name: 'Russian', nativeName: 'Русский', flag: '🇷🇺' },
+    'cs': { name: 'Czech', nativeName: 'Čeština', flag: '🇨🇿' },
+    'hu': { name: 'Hungarian', nativeName: 'Magyar', flag: '🇭🇺' },
+    'ro': { name: 'Romanian', nativeName: 'Română', flag: '🇷🇴' },
+    'sv': { name: 'Swedish', nativeName: 'Svenska', flag: '🇸🇪' },
+    'da': { name: 'Danish', nativeName: 'Dansk', flag: '🇩🇰' },
+    'no': { name: 'Norwegian', nativeName: 'Norsk', flag: '🇳🇴' },
+    'fi': { name: 'Finnish', nativeName: 'Suomi', flag: '🇫🇮' },
+    'is': { name: 'Icelandic', nativeName: 'Íslenska', flag: '🇮🇸' },
+    'zh': { name: 'Chinese', nativeName: '中文', flag: '🇨🇳' },
+    'ja': { name: 'Japanese', nativeName: '日本語', flag: '🇯🇵' },
+    'ko': { name: 'Korean', nativeName: '한국어', flag: '🇰🇷' },
+    'hi': { name: 'Hindi', nativeName: 'हिन्दी', flag: '🇮🇳' },
+    'bn': { name: 'Bengali', nativeName: 'বাংলা', flag: '🇧🇩' },
+    'id': { name: 'Indonesian', nativeName: 'Bahasa Indonesia', flag: '🇮🇩' },
+    'ar': { name: 'Arabic', nativeName: 'العربية', flag: '🇸🇦' },
+    'he': { name: 'Hebrew', nativeName: 'עברית', flag: '🇮🇱' },
+    'tr': { name: 'Turkish', nativeName: 'Türkçe', flag: '🇹🇷' },
+    'el': { name: 'Greek', nativeName: 'Ελληνικά', flag: '🇬🇷' },
+    'uk': { name: 'Ukrainian', nativeName: 'Українська', flag: '🇺🇦' }
+  };
+
+  // Check if we should show the banner
+  function shouldShowBanner() {
+    // Don't show if already dismissed
+    const dismissed = sessionStorage.getItem('language-suggestion-dismissed');
+    if (dismissed === 'true') return false;
+
+    // Get current language from URL
+    const currentLang = getCurrentLanguage();
+    
+    // Check for preferred language in localStorage
+    const preferredLang = localStorage.getItem('docsie-preferred-language');
+    if (preferredLang && preferredLang !== currentLang && languages[preferredLang]) {
+      return { type: 'preferred', language: preferredLang };
+    }
+    
+    // Check browser language
+    const browserLang = navigator.language.split('-')[0];
+    if (browserLang !== currentLang && languages[browserLang]) {
+      // Don't suggest if user has explicitly chosen a different language before
+      const hasChosenLanguage = localStorage.getItem('docsie-language-chosen');
+      if (!hasChosenLanguage) {
+        return { type: 'detected', language: browserLang };
+      }
+    }
+    
+    return false;
+  }
+
+  // Get current language from URL
+  function getCurrentLanguage() {
+    const path = window.location.pathname;
+    const langMatch = path.match(/^\/([a-z]{2}|ja_JP)\//);
+    
+    if (langMatch) {
+      const code = langMatch[1];
+      return code === 'ja_JP' ? 'ja' : code;
+    }
+    
+    return 'en';
+  }
+
+  // Get language URL
+  function getLanguageURL(langCode) {
+    const currentPath = window.location.pathname;
+    const currentLang = getCurrentLanguage();
+    
+    // Remove current language prefix if exists
+    let newPath = currentPath;
+    if (currentLang !== 'en') {
+      const langPrefix = currentLang === 'ja' ? '/jp/' : `/${currentLang}/`;
+      if (currentPath.startsWith(langPrefix)) {
+        newPath = currentPath.substring(langPrefix.length - 1);
+      }
+    }
+    
+    // Add new language prefix
+    if (langCode === 'en') {
+      return newPath;
+    } else if (langCode === 'ja') {
+      return '/jp' + newPath;
+    } else {
+      return '/' + langCode + newPath;
+    }
+  }
+
+  // Show the banner
+  function showBanner(suggestion) {
+    const banner = document.getElementById('languageSuggestionBanner');
+    const message = document.getElementById('suggestionMessage');
+    const switchBtn = document.getElementById('switchLanguageBtn');
+    const switchText = document.getElementById('switchLanguageText');
+    const stayText = document.getElementById('stayLanguageText');
+    
+    if (!banner || !message || !switchBtn) return;
+    
+    const langInfo = languages[suggestion.language];
+    const currentLangInfo = languages[getCurrentLanguage()] || languages['en'];
+    
+    // Set message based on type
+    if (suggestion.type === 'preferred') {
+      message.innerHTML = `
+        <strong>Welcome back!</strong> 
+        Would you like to switch to ${langInfo.flag} ${langInfo.nativeName} 
+        (your last used language)?
+      `;
+    } else {
+      message.innerHTML = `
+        <strong>Language detected:</strong> 
+        We noticed your browser is set to ${langInfo.flag} ${langInfo.nativeName}. 
+        Would you like to view this page in ${langInfo.name}?
+      `;
+    }
+    
+    // Set button texts
+    switchText.textContent = `Switch to ${langInfo.nativeName}`;
+    stayText.textContent = `Stay in ${currentLangInfo.nativeName}`;
+    
+    // Set switch button URL
+    switchBtn.href = getLanguageURL(suggestion.language);
+    
+    // Show banner with animation
+    setTimeout(() => {
+      banner.classList.add('show');
+    }, 500);
+  }
+
+  // Initialize
+  function init() {
+    const suggestion = shouldShowBanner();
+    if (!suggestion) return;
+    
+    const banner = document.getElementById('languageSuggestionBanner');
+    const switchBtn = document.getElementById('switchLanguageBtn');
+    const stayBtn = document.getElementById('stayLanguageBtn');
+    const closeBtn = document.getElementById('closeSuggestionBtn');
+    
+    if (!banner) return;
+    
+    // Show the banner
+    showBanner(suggestion);
+    
+    // Handle switch button click
+    if (switchBtn) {
+      switchBtn.addEventListener('click', (e) => {
+        // Save preference
+        localStorage.setItem('docsie-preferred-language', suggestion.language);
+        localStorage.setItem('docsie-language-chosen', 'true');
+        // Let the default link behavior happen
+      });
+    }
+    
+    // Handle stay button click
+    if (stayBtn) {
+      stayBtn.addEventListener('click', () => {
+        // Save current language as preference
+        const currentLang = getCurrentLanguage();
+        localStorage.setItem('docsie-preferred-language', currentLang);
+        localStorage.setItem('docsie-language-chosen', 'true');
+        sessionStorage.setItem('language-suggestion-dismissed', 'true');
+        banner.classList.remove('show');
+      });
+    }
+    
+    // Handle close button click
+    if (closeBtn) {
+      closeBtn.addEventListener('click', () => {
+        sessionStorage.setItem('language-suggestion-dismissed', 'true');
+        banner.classList.remove('show');
+      });
+    }
+  }
+
+  // Wait for DOM ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
+</script>
   <a href="#main" class="aria-visible">Skip to content</a>
   <!-- Page Header -->
   <header class="gn">
@@ -624,7 +978,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </svg>
         </div>
       </div>
-      <nav class="footer-nav">
+      
+<nav class="footer-nav">
         <div class="footer-column">
           <ul class="footer-list">
             <li class="footer-header">
@@ -884,173 +1239,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     }
   }
   $await(".cookie-policy-alert", Policy);
-</script>
-  <script type="text/template" id="l-p">
-  <div class="container-lg">
-    <ul class="metaNav">
-      <li class="select language globalPopupActive" onclick="popUp(event)">
-        <a class="rootLink item-language"><svg width="13" height="13">
-            <path
-              d="M8.079,9.837L6.116,12.3A0.654,0.654,0,0,1,5,11.841V9.852C2.488,9.351,1,7.6,1,5.5,1,3.015,3.087,1,6.5,1S12,3.015,12,5.5A4.5,4.5,0,0,1,8.079,9.837Z">
-            </path>
-          </svg>
-          <span class="active-lp">English</span></a>
-
-        <div class="popup languagePicker">
-          <ul class="optionList">
-            <li>
-              <a data-language="en" data-set-locale="en" href="/" class="">
-                  <span>English</span>
-                  <svg class="icon icon--check" viewBox="0 0 20 20" width="22" height="22">
-                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-checkmark"></use>
-                  </svg>
-              </a>
-            </li>
-            <!-- <li>
-              <a data-language="ja" data-set-locale="ja" href="/jp" class="">
-                  <span>日本語</span>
-                  <svg class="icon icon--check" viewBox="0 0 20 20" width="22" height="22">
-                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-checkmark"></use>
-                  </svg>
-              </a>
-            </li> -->
-            <!-- <li>
-              <a data-language="ko" data-set-locale="ko" href="/ko" class="">
-                  <span>한국어</span>
-                  <svg class="icon icon--check" viewBox="0 0 20 20" width="22" height="22">
-                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-checkmark"></use>
-                  </svg>
-              </a>
-            </li> -->
-            <li>
-              <a data-language="es" data-set-locale="es" href="/es" class="">
-                  <span>Español</span>
-                  <svg class="icon icon--check" viewBox="0 0 20 20" width="22" height="22">
-                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-checkmark"></use>
-                  </svg>
-              </a>
-            </li>
-            <li>
-              <a data-language="fr" data-set-locale="fr" href="/fr" class="">
-                  <span>Français</span>
-                  <svg class="icon icon--check" viewBox="0 0 20 20" width="22" height="22">
-                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-checkmark"></use>
-                  </svg>
-              </a>
-            </li>
-            <li>
-              <a data-language="pt" data-set-locale="pt" href="/pt" class="">
-                  <span>Português</span>
-                  <svg class="icon icon--check" viewBox="0 0 20 20" width="22" height="22">
-                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-checkmark"></use>
-                  </svg>
-              </a>
-            </li>
-            <!-- <li>
-              <a data-language="de" data-set-locale="de" href="/de" class="">
-                  <span>Deutsch</span>
-                  <svg class="icon icon--check" viewBox="0 0 20 20" width="22" height="22">
-                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-checkmark"></use>
-                  </svg>
-              </a>
-            </li> -->
-          </ul>
-        </div>
-      </li>
-    </ul>
-  </div>
-</script>
-<script type="text/javascript">
-  var labels = {
-    "en": {
-      label: 'English',
-      path: "/"
-    },
-    // "ja": {
-    //   label: '日本語',
-    //   path: "/jp"
-    // },
-
-    // "ko": {
-    //   label: '한국어',
-    //   path: '/ko'
-    // },
-    "es": {
-      label: 'Español',
-      path: '/es'
-    },
-    "fr": {
-      label: 'Français',
-      path: '/fr'
-    },
-    "pt": {
-      label: 'Português',
-      path: "/pt"
-    },
-    // "de": {
-    //   label: 'Deutsch',
-    //   path: '/de'
-    // }
-  }
-  var popupEl, globalPopupActive;
-  function popUp(e) {
-    e.stopPropagation();
-    popupEl = document.getElementsByClassName("languagePicker")[0];
-    globalPopupActive = document.getElementsByClassName("globalPopupActive")[0];
-    // show popup on click
-    if (popupEl) {
-      popupEl.style.display = "block";
-    }
-    // register a function to hide the popup when there is a click outside the popup
-    window.onclick = (e) => {
-      // check that your clicked
-      // element has no id=info
-      // and is not child of info
-      if (e.target != globalPopupActive && !globalPopupActive.contains(e.target)) {
-        popupEl.style.display = "none";
-      }
-    };
-  }
-  function InjectFRM(el) {
-    var tpl = document.getElementById("l-p");
-    if (tpl) {
-      var ctr = document.createElement("article");
-      ctr.classList.add("globalFooterNav");
-      ctr.innerHTML = tpl.text;
-      el.appendChild(ctr);
-    }
-  }
-  $await(".docsie-lang-picker-container", InjectFRM);
-  let baseUrl = window.location.href;
-  let langObj = labels["en"];
-  // if (baseUrl.includes("/jp")) {
-  //   langObj = labels["ja"];
-  //   document.querySelectorAll('[data-language="ja"]')[0].setAttribute("class", "selected");
-  // } else 
-  if (baseUrl.includes("/pt")) {
-    langObj = labels["pt"];
-    document.querySelectorAll('[data-language="pt"]')[0].setAttribute("class", "selected");
-  }
-  // else if (baseUrl.includes("/ko")) {
-  //   langObj = labels["ko"];
-  //   document.querySelectorAll('[data-language="ko"]')[0].setAttribute("class", "selected");
-  // } 
-  else if (baseUrl.includes("/es")) {
-    langObj = labels["es"];
-    document.querySelectorAll('[data-language="es"]')[0].setAttribute("class", "selected");
-  } else if (baseUrl.includes("/fr")) {
-    langObj = labels["fr"];
-    document.querySelectorAll('[data-language="fr"]')[0].setAttribute("class", "selected");
-  }
-  // else if (baseUrl.includes("/de")) {
-  //   langObj = labels["de"];
-  //   document.querySelectorAll('[data-language="de"]')[0].setAttribute("class", "selected");
-  // } 
-  else {
-    document.querySelectorAll('[data-language="en"]')[0].setAttribute("class", "selected");
-  }
-  // set active label
-  document.getElementsByClassName("active-lp")[0].innerHTML = langObj.label;
 </script>
   <div class="lb-cookie-policy cookie-policy">
     <aside tabindex="0" role="alertdialog" class="lb-cookie-policy-alert cookie-policy-alert "

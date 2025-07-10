@@ -80,7 +80,16 @@ def load_all_supplementary_pages():
         return pages_data
     
     for root, _, files in os.walk(data_dir):
+        # Skip language-specific directories (they start with underscore)
+        relative_root = os.path.relpath(root, data_dir)
+        if relative_root != '.' and any(part.startswith('_') for part in relative_root.split(os.sep)):
+            continue
+            
         for filename in files:
+            # Skip special YAML files that aren't supplementary pages
+            if filename in ['reviews.yaml', 'supplementary_pages.yaml']:
+                continue
+                
             if filename.endswith('.yaml') and not is_hidden(filename):
                 file_path = os.path.join(root, filename)
                 try:

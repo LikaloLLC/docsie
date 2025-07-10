@@ -21,7 +21,8 @@ def is_binary_file(filepath):
         '.png', '.jpg', '.jpeg', '.gif', '.bmp', '.ico', '.svg',
         '.pdf', '.doc', '.docx', '.ppt', '.pptx',
         '.mp4', '.webm', '.ogg', '.mp3', '.wav',
-        '.zip', '.tar', '.gz', '.rar'
+        '.zip', '.tar', '.gz', '.rar',
+        '.backup', '.bak', '.tmp', '.swp'  # Add backup files
     }
     _, ext = os.path.splitext(filepath.lower())
     return ext in excluded_extensions

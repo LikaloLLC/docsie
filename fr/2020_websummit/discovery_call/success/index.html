@@ -1,16 +1,37 @@
-````<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en-US">
 
 <head>
-  <html lang="en">
+  <link rel="preconnect" href="https://app.docsie.io">
+  <link rel="preconnect" href="https://portals.docsie.io">
+  <link rel="preconnect" href="https://help.docsie.io">
+  <link rel="canonical" href="https://www.docsie.io/">
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Docsie.io - Docsie - Discovery Call</title>
+  <title>Docsie - Discovery Call | Docsie</title>
+  <meta name=description content="">
+  <!-- Schema.org markup for Google+ -->
+  <meta itemprop="name" content="Docsie - Discovery Call | Docsie">
+  <meta itemprop="description" content="">
+  <meta itemprop="image" content="">
+  <!-- Twitter Card data -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@docsie_io">
+  <meta name="twitter:title" content="Docsie - Discovery Call | Docsie">
+  <meta name="twitter:description" content="">
+  <!-- Twitter summary card with large image must be at least 280x150px -->
+  <meta name="twitter:image" content="">
+  <!-- Open Graph data -->
+  <meta property="og:title" content="Docsie - Discovery Call | Docsie" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.docsie.io/2020_websummit/discovery_call/success/" />
+  <meta property="og:image" content="" />
+  <meta property="og:description" content="" />
+  <meta property="og:site_name" content="docsie.io" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta charset="utf-8">
   <meta name="content-language" content="en" />
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="author" content="Likalo LLC">
-  <meta name="application-name" content="Docsie" />
+  <meta name="author" content="Docsie.io">
   <meta name="theme-color" content="#fff" />
   <meta name="msapplication-TileColor" content="#fff" />
   <meta name="msapplication-TileImage"
@@ -37,7 +58,7 @@
 <!-- Open Graph data -->
 <meta property="og:title" content="Learn how we are helping companies like yours write better product documentation." />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://docsie.io/" />
+<meta property="og:url" content="https://www.docsie.io/" />
 <meta property="og:image" content="https://www.docsie.io/logo.png" />
 <meta property="og:description"
   content="Schedule a quick discovery call to get started (15 minutes)" />
@@ -72,40 +93,632 @@
     sizes="16x16" />
   <link rel="icon" type="image/png" href="https://d1iq6qzgppjlud.cloudfront.net/images/favicon/favicon-128.png"
     sizes="128x128" />
-
   <link rel="dns-prefetch" href="https://www.googletagmanager.com">
   <script src="https://cdn.jsdelivr.net/npm/share-this/dist/share-this.js"></script>
-
-
   <script type="text/javascript" async="" src="https://certify-js.alexametrics.com/atrk.js"></script>
 
   <link rel="stylesheet" href='/style.css'>
   <link rel="stylesheet" href="/lang-picker.css">
-  <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.3.1/dist/lazyload.min.js"></script>
-
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  
+  <!-- FrankenUI v2 (UIkit 3 compatible + Tailwind CSS) -->
+  <link href="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/css/core.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/js/core.iife.min.js"></script>
+  
+  <!-- Tailwind CSS for additional utilities -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+  
+  <!-- Unified Design System - loaded for all pages -->
+  <link rel="stylesheet" href="/styles/design-system.css">
+  
   
 <link rel="stylesheet" href='/index.css'>
-
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-116930058-3"></script>
   <script>
-
     window.dataLayer = window.dataLayer || [];
     function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
-
     gtag('config', 'UA-116930058-3');
   </script>
+  <script id="vtag-ai-js" async src="https://r2.leadsy.ai/tag.js" data-pid="12EYwQyDE3RbKRkbk" data-version="062024"></script>
+  <script>
+    // Configure Tailwind to include all the classes we need
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'blue-600': '#2563eb',
+            'blue-700': '#1d4ed8',
+            'blue-500': '#3b82f6',
+            'gray-900': '#111827',
+            'gray-600': '#4b5563',
+            'gray-100': '#f3f4f6',
+            'purple-600': '#9333ea',
+            'purple-700': '#7c3aed',
+            // Docsie Brand Colors
+            'docsie': {
+              'primary': '#13AF4B',
+              'primary-dark': '#0f8f3d',
+              'primary-light': '#1bc95a',
+            },
+            background: 'hsl(var(--background))',
+            foreground: 'hsl(var(--foreground))',
+          },
+          spacing: {
+            '72': '18rem',
+            '84': '21rem',
+            '96': '24rem',
+          },
+          animation: {
+            'float': 'float 3s ease-in-out infinite',
+            'pulse': 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            'scroll': 'scroll 40s linear infinite',
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-10px)' },
+            },
+            scroll: {
+              '0%': { transform: 'translateX(0)' },
+              '100%': { transform: 'translateX(calc(-250px * 7))' },
+            }
+          },
+          backdropBlur: {
+            xs: '2px',
+          },
+          gridTemplateColumns: {
+            'auto-fit': 'repeat(auto-fit, minmax(300px, 1fr))',
+            'auto-fill': 'repeat(auto-fill, minmax(300px, 1fr))',
+          }
+        }
+      },
+      safelist: [
+        // Hero v2 classes
+        'hero-v2', 'py-16', 'py-24', 'container', 'mx-auto', 'px-4', 'px-8', 'grid', 'grid-cols-1', 'grid-cols-2', 'gap-12', 'items-center',
+        'text-center', 'text-left', 'order-1', 'order-2', 'text-4xl', 'text-5xl', 'text-6xl', 'font-bold', 'text-gray-900', 'mb-6', 'leading-tight',
+        'text-xl', 'text-gray-600', 'mb-8', 'leading-relaxed', 'flex', 'flex-col', 'flex-row', 'gap-4', 'justify-center', 'justify-start',
+        'inline-flex', 'items-center', 'justify-center', 'px-8', 'py-3', 'border', 'border-transparent', 'text-base', 'font-medium', 'rounded-md',
+        'text-white', 'bg-blue-600', 'hover:bg-blue-700', 'focus:outline-none', 'focus:ring-2', 'focus:ring-offset-2', 'focus:ring-blue-500',
+        'transition-colors', 'relative', 'w-full', 'h-auto', 'rounded-lg', 'shadow-lg',
+        // Benefits v2 classes
+        'benefits-v2', 'py-12', 'py-32', 'bg-background', 'max-w-7xl', 'md:px-6', 'space-y-4', 'mb-12', 'space-y-2', 'text-3xl',
+        'tracking-tighter', 'sm:text-4xl', 'md:text-5xl', 'text-muted-foreground', 'max-w-3xl', 'mx-auto', 'grid-cols-3', 'gap-6',
+        'col-span-1', 'col-span-2', 'row-span-1', 'row-span-2', 'rounded-xl', 'border', 'bg-card', 'p-6', 'hover:shadow-lg', 'transition-shadow',
+        'text-card-foreground', 'mb-4', 'text-2xl', 'font-semibold', 'mb-2', 'text-sm', 'opacity-0', 'hover:opacity-100', 'transition-opacity',
+        'absolute', 'inset-0', 'bg-gradient-to-br', 'from-primary/20', 'to-secondary/20', 'rounded-xl', 'pointer-events-none',
+        // Features v2 classes
+        'features-v2', 'lg:py-32', 'bg-white', 'grid-cols-2', 'grid-cols-3', 'lg:gap-8', 'bg-gradient-to-r', 'from-blue-50', 'to-purple-50',
+        'p-8', 'rounded-lg', 'shadow-sm', 'hover:shadow-md', 'transition-shadow', 'duration-300', 'w-12', 'h-12', 'text-blue-600', 'mb-4',
+        'text-lg', 'font-semibold', 'text-gray-900', 'text-gray-600', 'leading-relaxed',
+        // CTA v2 classes
+        'cta-v2', 'bg-gradient-to-r', 'from-blue-600', 'to-purple-600', 'text-white', 'relative', 'overflow-hidden', 'py-20', 'md:py-28',
+        'text-center', 'z-10', 'text-4xl', 'md:text-5xl', 'lg:text-6xl', 'font-bold', 'mb-6', 'bg-gradient-to-r', 'from-white', 'to-blue-100',
+        'bg-clip-text', 'text-transparent', 'text-xl', 'md:text-2xl', 'mb-8', 'opacity-90', 'inline-block', 'px-2', 'py-1', 'text-sm',
+        'bg-white/20', 'rounded-full', 'backdrop-blur-sm', 'mb-6', 'px-8', 'py-4', 'bg-white', 'text-blue-600', 'hover:bg-blue-50',
+        'rounded-full', 'font-semibold', 'transition-all', 'duration-300', 'hover:scale-105', 'hover:shadow-xl', 'absolute', 'top-10', 'left-10',
+        'w-32', 'h-32', 'bg-white/10', 'rounded-full', 'animate-float', 'top-20', 'right-20', 'w-24', 'h-24', 'animation-delay-1000',
+        'bottom-10', 'left-20', 'w-20', 'h-20', 'animation-delay-2000', 'bottom-20', 'right-10', 'w-16', 'h-16', 'animation-delay-3000',
+        // Testimonials v2 classes
+        'testimonials-v2', 'bg-gray-50', 'overflow-hidden', 'whitespace-nowrap', 'inline-block', 'animate-scroll', 'bg-white', 'border-gray-200',
+        'w-80', 'flex-shrink-0', 'mr-6', 'p-6', 'rounded-lg', 'shadow-sm', 'hover:shadow-md', 'transition-shadow', 'duration-300',
+        'flex', 'items-center', 'mb-4', 'w-12', 'h-12', 'rounded-full', 'mr-4', 'bg-gray-300', 'text-gray-700', 'font-medium', 'text-yellow-400',
+        'ml-2', 'text-gray-500', 'italic', 'line-clamp-3', 'text-gray-800', 'font-medium', 'text-gray-600', 'text-sm',
+        // Stats v2 classes
+        'stats-v2', 'bg-blue-600', 'text-white', 'py-16', 'md:py-24', 'relative', 'overflow-hidden', 'z-10', 'grid-cols-4', 'gap-8',
+        'text-center', 'text-4xl', 'md:text-5xl', 'lg:text-6xl', 'font-bold', 'mb-2', 'text-lg', 'opacity-90', 'absolute', 'top-0', 'left-0',
+        'w-full', 'h-full', 'bg-gradient-to-br', 'from-blue-400/20', 'to-purple-600/20', 'pointer-events-none', 'top-10', 'left-10',
+        'w-32', 'h-32', 'bg-white/10', 'rounded-full', 'animate-float', 'top-20', 'right-20', 'w-24', 'h-24', 'animation-delay-1000',
+        'bottom-10', 'left-20', 'w-20', 'h-20', 'animation-delay-2000', 'bottom-20', 'right-10', 'w-16', 'h-16', 'animation-delay-3000',
+        // Common responsive classes
+        'sm:text-2xl', 'sm:text-3xl', 'sm:text-4xl', 'sm:text-5xl', 'sm:text-6xl', 'sm:px-6', 'sm:py-4', 'sm:py-8', 'sm:py-12', 'sm:py-16',
+        'md:text-2xl', 'md:text-3xl', 'md:text-4xl', 'md:text-5xl', 'md:text-6xl', 'md:px-6', 'md:py-4', 'md:py-8', 'md:py-12', 'md:py-16',
+        'lg:text-2xl', 'lg:text-3xl', 'lg:text-4xl', 'lg:text-5xl', 'lg:text-6xl', 'lg:px-6', 'lg:py-4', 'lg:py-8', 'lg:py-12', 'lg:py-16',
+        'xl:text-2xl', 'xl:text-3xl', 'xl:text-4xl', 'xl:text-5xl', 'xl:text-6xl', 'xl:px-6', 'xl:py-4', 'xl:py-8', 'xl:py-12', 'xl:py-16',
+        // Layout classes
+        'lg:grid-cols-1', 'lg:grid-cols-2', 'lg:grid-cols-3', 'lg:grid-cols-4', 'lg:order-1', 'lg:order-2', 'lg:text-left', 'lg:text-center',
+        'lg:justify-start', 'lg:justify-center', 'lg:justify-end', 'md:grid-cols-1', 'md:grid-cols-2', 'md:grid-cols-3', 'md:grid-cols-4',
+        'sm:grid-cols-1', 'sm:grid-cols-2', 'sm:grid-cols-3', 'sm:grid-cols-4', 'sm:flex-row', 'sm:flex-col',
+        // Background and text colors
+        'bg-white', 'bg-gray-50', 'bg-gray-100', 'bg-gray-200', 'bg-blue-50', 'bg-blue-100', 'bg-blue-500', 'bg-blue-600', 'bg-blue-700',
+        'bg-purple-50', 'bg-purple-100', 'bg-purple-500', 'bg-purple-600', 'bg-purple-700', 'text-white', 'text-gray-50', 'text-gray-100',
+        'text-gray-200', 'text-gray-300', 'text-gray-400', 'text-gray-500', 'text-gray-600', 'text-gray-700', 'text-gray-800', 'text-gray-900',
+        'text-blue-50', 'text-blue-100', 'text-blue-200', 'text-blue-300', 'text-blue-400', 'text-blue-500', 'text-blue-600', 'text-blue-700',
+        'text-blue-800', 'text-blue-900', 'text-purple-600', 'text-purple-700', 'text-purple-800', 'text-purple-900',
+        // Hover states
+        'hover:bg-blue-50', 'hover:bg-blue-100', 'hover:bg-blue-700', 'hover:bg-blue-800', 'hover:bg-purple-700', 'hover:bg-purple-800',
+        'hover:text-blue-600', 'hover:text-blue-700', 'hover:text-purple-600', 'hover:text-purple-700', 'hover:shadow-sm', 'hover:shadow-md',
+        'hover:shadow-lg', 'hover:shadow-xl', 'hover:scale-105', 'hover:scale-110', 'hover:opacity-90', 'hover:opacity-100',
+        // Focus states
+        'focus:outline-none', 'focus:ring-1', 'focus:ring-2', 'focus:ring-3', 'focus:ring-blue-500', 'focus:ring-purple-500',
+        'focus:ring-offset-1', 'focus:ring-offset-2', 'focus:ring-offset-4', 'focus:border-blue-500', 'focus:border-purple-500',
+        // Transition classes
+        'transition-all', 'transition-colors', 'transition-opacity', 'transition-shadow', 'transition-transform', 'duration-150',
+        'duration-200', 'duration-300', 'duration-500', 'duration-700', 'duration-1000', 'ease-in', 'ease-out', 'ease-in-out',
+        // Border classes
+        'border', 'border-2', 'border-4', 'border-gray-200', 'border-gray-300', 'border-blue-200', 'border-blue-300', 'border-purple-200',
+        'border-purple-300', 'border-transparent', 'rounded', 'rounded-sm', 'rounded-md', 'rounded-lg', 'rounded-xl', 'rounded-2xl',
+        'rounded-3xl', 'rounded-full',
+        // Shadow classes
+        'shadow-sm', 'shadow', 'shadow-md', 'shadow-lg', 'shadow-xl', 'shadow-2xl', 'shadow-inner', 'shadow-none',
+        // Positioning classes
+        'relative', 'absolute', 'fixed', 'sticky', 'static', 'inset-0', 'top-0', 'right-0', 'bottom-0', 'left-0', 'z-0', 'z-10', 'z-20',
+        'z-30', 'z-40', 'z-50', 'overflow-hidden', 'overflow-visible', 'overflow-auto', 'overflow-scroll',
+        // Flexbox classes
+        'flex', 'inline-flex', 'flex-col', 'flex-row', 'flex-wrap', 'flex-nowrap', 'items-start', 'items-center', 'items-end',
+        'items-stretch', 'items-baseline', 'justify-start', 'justify-center', 'justify-end', 'justify-between', 'justify-around',
+        'justify-evenly', 'space-x-1', 'space-x-2', 'space-x-3', 'space-x-4', 'space-x-6', 'space-x-8', 'space-y-1', 'space-y-2',
+        'space-y-3', 'space-y-4', 'space-y-6', 'space-y-8', 'gap-1', 'gap-2', 'gap-3', 'gap-4', 'gap-6', 'gap-8', 'gap-12',
+        // Width and height classes
+        'w-auto', 'w-full', 'w-screen', 'w-min', 'w-max', 'w-fit', 'w-1/2', 'w-1/3', 'w-2/3', 'w-1/4', 'w-3/4', 'w-1/5', 'w-2/5',
+        'w-3/5', 'w-4/5', 'w-1/6', 'w-5/6', 'w-1/12', 'w-11/12', 'h-auto', 'h-full', 'h-screen', 'h-min', 'h-max', 'h-fit',
+        // Padding and margin classes
+        'p-1', 'p-2', 'p-3', 'p-4', 'p-5', 'p-6', 'p-8', 'p-10', 'p-12', 'p-16', 'p-20', 'p-24', 'px-1', 'px-2', 'px-3', 'px-4',
+        'px-5', 'px-6', 'px-8', 'px-10', 'px-12', 'px-16', 'px-20', 'px-24', 'py-1', 'py-2', 'py-3', 'py-4', 'py-5', 'py-6', 'py-8',
+        'py-10', 'py-12', 'py-16', 'py-20', 'py-24', 'py-28', 'py-32', 'm-1', 'm-2', 'm-3', 'm-4', 'm-5', 'm-6', 'm-8', 'm-10',
+        'm-12', 'm-16', 'm-20', 'm-24', 'mx-1', 'mx-2', 'mx-3', 'mx-4', 'mx-5', 'mx-6', 'mx-8', 'mx-10', 'mx-12', 'mx-16', 'mx-20',
+        'mx-24', 'mx-auto', 'my-1', 'my-2', 'my-3', 'my-4', 'my-5', 'my-6', 'my-8', 'my-10', 'my-12', 'my-16', 'my-20', 'my-24',
+        'mb-1', 'mb-2', 'mb-3', 'mb-4', 'mb-5', 'mb-6', 'mb-8', 'mb-10', 'mb-12', 'mb-16', 'mb-20', 'mb-24', 'mt-1', 'mt-2', 'mt-3',
+        'mt-4', 'mt-5', 'mt-6', 'mt-8', 'mt-10', 'mt-12', 'mt-16', 'mt-20', 'mt-24', 'ml-1', 'ml-2', 'ml-3', 'ml-4', 'ml-5', 'ml-6',
+        'ml-8', 'ml-10', 'ml-12', 'ml-16', 'ml-20', 'ml-24', 'mr-1', 'mr-2', 'mr-3', 'mr-4', 'mr-5', 'mr-6', 'mr-8', 'mr-10', 'mr-12',
+        'mr-16', 'mr-20', 'mr-24',
+        // Typography classes
+        'text-xs', 'text-sm', 'text-base', 'text-lg', 'text-xl', 'text-2xl', 'text-3xl', 'text-4xl', 'text-5xl', 'text-6xl', 'text-7xl',
+        'text-8xl', 'text-9xl', 'font-thin', 'font-extralight', 'font-light', 'font-normal', 'font-medium', 'font-semibold', 'font-bold',
+        'font-extrabold', 'font-black', 'italic', 'not-italic', 'underline', 'line-through', 'no-underline', 'uppercase', 'lowercase',
+        'capitalize', 'normal-case', 'leading-3', 'leading-4', 'leading-5', 'leading-6', 'leading-7', 'leading-8', 'leading-9',
+        'leading-10', 'leading-none', 'leading-tight', 'leading-snug', 'leading-normal', 'leading-relaxed', 'leading-loose',
+        'tracking-tighter', 'tracking-tight', 'tracking-normal', 'tracking-wide', 'tracking-wider', 'tracking-widest',
+        'text-left', 'text-center', 'text-right', 'text-justify', 'whitespace-nowrap', 'whitespace-pre', 'whitespace-pre-line',
+        'whitespace-pre-wrap', 'break-normal', 'break-words', 'break-all', 'truncate',
+        // Opacity classes
+        'opacity-0', 'opacity-5', 'opacity-10', 'opacity-20', 'opacity-25', 'opacity-30', 'opacity-40', 'opacity-50', 'opacity-60',
+        'opacity-70', 'opacity-75', 'opacity-80', 'opacity-90', 'opacity-95', 'opacity-100',
+        // Display classes
+        'block', 'inline-block', 'inline', 'flex', 'inline-flex', 'table', 'inline-table', 'table-caption', 'table-cell',
+        'table-column', 'table-column-group', 'table-footer-group', 'table-header-group', 'table-row-group', 'table-row',
+        'flow-root', 'grid', 'inline-grid', 'contents', 'list-item', 'hidden',
+        // New classes for backdrop blur and other effects
+        'backdrop-blur-sm', 'backdrop-blur', 'backdrop-blur-md', 'backdrop-blur-lg', 'backdrop-blur-xl', 'backdrop-blur-2xl',
+        'backdrop-blur-3xl', 'backdrop-saturate-50', 'backdrop-saturate-100', 'backdrop-saturate-150', 'backdrop-saturate-200',
+        'line-clamp-1', 'line-clamp-2', 'line-clamp-3', 'line-clamp-4', 'line-clamp-5', 'line-clamp-6',
+        // Animation classes
+        'animate-none', 'animate-spin', 'animate-ping', 'animate-pulse', 'animate-bounce', 'animate-float', 'animate-scroll',
+        'animation-delay-1000', 'animation-delay-2000', 'animation-delay-3000',
+        // Gradient classes
+        'bg-gradient-to-r', 'bg-gradient-to-l', 'bg-gradient-to-t', 'bg-gradient-to-b', 'bg-gradient-to-tr', 'bg-gradient-to-tl',
+        'bg-gradient-to-br', 'bg-gradient-to-bl', 'from-blue-50', 'from-blue-100', 'from-blue-200', 'from-blue-300', 'from-blue-400',
+        'from-blue-500', 'from-blue-600', 'from-blue-700', 'from-blue-800', 'from-blue-900', 'from-purple-50', 'from-purple-100',
+        'from-purple-200', 'from-purple-300', 'from-purple-400', 'from-purple-500', 'from-purple-600', 'from-purple-700',
+        'from-purple-800', 'from-purple-900', 'from-white', 'from-gray-50', 'from-gray-100', 'from-gray-200', 'from-gray-300',
+        'from-gray-400', 'from-gray-500', 'from-gray-600', 'from-gray-700', 'from-gray-800', 'from-gray-900', 'to-blue-50',
+        'to-blue-100', 'to-blue-200', 'to-blue-300', 'to-blue-400', 'to-blue-500', 'to-blue-600', 'to-blue-700', 'to-blue-800',
+        'to-blue-900', 'to-purple-50', 'to-purple-100', 'to-purple-200', 'to-purple-300', 'to-purple-400', 'to-purple-500',
+        'to-purple-600', 'to-purple-700', 'to-purple-800', 'to-purple-900', 'to-white', 'to-gray-50', 'to-gray-100', 'to-gray-200',
+        'to-gray-300', 'to-gray-400', 'to-gray-500', 'to-gray-600', 'to-gray-700', 'to-gray-800', 'to-gray-900',
+        'via-blue-50', 'via-blue-100', 'via-blue-200', 'via-blue-300', 'via-blue-400', 'via-blue-500', 'via-blue-600',
+        'via-blue-700', 'via-blue-800', 'via-blue-900', 'via-purple-50', 'via-purple-100', 'via-purple-200', 'via-purple-300',
+        'via-purple-400', 'via-purple-500', 'via-purple-600', 'via-purple-700', 'via-purple-800', 'via-purple-900',
+        'via-white', 'via-gray-50', 'via-gray-100', 'via-gray-200', 'via-gray-300', 'via-gray-400', 'via-gray-500',
+        'via-gray-600', 'via-gray-700', 'via-gray-800', 'via-gray-900',
+        // Background clip classes
+        'bg-clip-border', 'bg-clip-padding', 'bg-clip-content', 'bg-clip-text',
+        // Text clip classes
+        'text-transparent',
+        // Pointer events
+        'pointer-events-none', 'pointer-events-auto',
+        // Scroll behavior
+        'scroll-smooth', 'scroll-auto',
+        // Cursor
+        'cursor-pointer', 'cursor-default', 'cursor-wait', 'cursor-text', 'cursor-move', 'cursor-help', 'cursor-not-allowed',
+        // User select
+        'select-none', 'select-text', 'select-all', 'select-auto',
+        // Outline
+        'outline-none', 'outline', 'outline-2', 'outline-4', 'outline-8',
+        // Ring
+        'ring-0', 'ring-1', 'ring-2', 'ring-4', 'ring-8', 'ring-inset', 'ring-blue-500', 'ring-purple-500', 'ring-white',
+        'ring-black', 'ring-gray-300', 'ring-gray-500', 'ring-offset-0', 'ring-offset-1', 'ring-offset-2', 'ring-offset-4',
+        'ring-offset-8', 'ring-offset-white', 'ring-offset-black', 'ring-offset-gray-50', 'ring-offset-gray-100',
+        // Backdrop
+        'backdrop-opacity-0', 'backdrop-opacity-5', 'backdrop-opacity-10', 'backdrop-opacity-20', 'backdrop-opacity-25',
+        'backdrop-opacity-30', 'backdrop-opacity-40', 'backdrop-opacity-50', 'backdrop-opacity-60', 'backdrop-opacity-70',
+        'backdrop-opacity-75', 'backdrop-opacity-80', 'backdrop-opacity-90', 'backdrop-opacity-95', 'backdrop-opacity-100',
+        // Filter
+        'filter', 'blur-none', 'blur-sm', 'blur', 'blur-md', 'blur-lg', 'blur-xl', 'blur-2xl', 'blur-3xl',
+        // Grid
+        'grid-cols-1', 'grid-cols-2', 'grid-cols-3', 'grid-cols-4', 'grid-cols-5', 'grid-cols-6', 'grid-cols-7', 'grid-cols-8',
+        'grid-cols-9', 'grid-cols-10', 'grid-cols-11', 'grid-cols-12', 'grid-cols-none', 'grid-rows-1', 'grid-rows-2',
+        'grid-rows-3', 'grid-rows-4', 'grid-rows-5', 'grid-rows-6', 'grid-rows-none', 'col-auto', 'col-span-1', 'col-span-2',
+        'col-span-3', 'col-span-4', 'col-span-5', 'col-span-6', 'col-span-7', 'col-span-8', 'col-span-9', 'col-span-10',
+        'col-span-11', 'col-span-12', 'col-span-full', 'col-start-1', 'col-start-2', 'col-start-3', 'col-start-4',
+        'col-start-5', 'col-start-6', 'col-start-7', 'col-start-8', 'col-start-9', 'col-start-10', 'col-start-11',
+        'col-start-12', 'col-start-13', 'col-start-auto', 'col-end-1', 'col-end-2', 'col-end-3', 'col-end-4', 'col-end-5',
+        'col-end-6', 'col-end-7', 'col-end-8', 'col-end-9', 'col-end-10', 'col-end-11', 'col-end-12', 'col-end-13',
+        'col-end-auto', 'row-auto', 'row-span-1', 'row-span-2', 'row-span-3', 'row-span-4', 'row-span-5', 'row-span-6',
+        'row-span-full', 'row-start-1', 'row-start-2', 'row-start-3', 'row-start-4', 'row-start-5', 'row-start-6',
+        'row-start-7', 'row-start-auto', 'row-end-1', 'row-end-2', 'row-end-3', 'row-end-4', 'row-end-5', 'row-end-6',
+        'row-end-7', 'row-end-auto', 'gap-0', 'gap-1', 'gap-2', 'gap-3', 'gap-4', 'gap-5', 'gap-6', 'gap-7', 'gap-8',
+        'gap-9', 'gap-10', 'gap-11', 'gap-12', 'gap-14', 'gap-16', 'gap-20', 'gap-24', 'gap-28', 'gap-32', 'gap-36',
+        'gap-40', 'gap-44', 'gap-48', 'gap-52', 'gap-56', 'gap-60', 'gap-64', 'gap-72', 'gap-80', 'gap-96', 'gap-x-0',
+        'gap-x-1', 'gap-x-2', 'gap-x-3', 'gap-x-4', 'gap-x-5', 'gap-x-6', 'gap-x-7', 'gap-x-8', 'gap-x-9', 'gap-x-10',
+        'gap-x-11', 'gap-x-12', 'gap-x-14', 'gap-x-16', 'gap-x-20', 'gap-x-24', 'gap-x-28', 'gap-x-32', 'gap-x-36',
+        'gap-x-40', 'gap-x-44', 'gap-x-48', 'gap-x-52', 'gap-x-56', 'gap-x-60', 'gap-x-64', 'gap-x-72', 'gap-x-80',
+        'gap-x-96', 'gap-y-0', 'gap-y-1', 'gap-y-2', 'gap-y-3', 'gap-y-4', 'gap-y-5', 'gap-y-6', 'gap-y-7', 'gap-y-8',
+        'gap-y-9', 'gap-y-10', 'gap-y-11', 'gap-y-12', 'gap-y-14', 'gap-y-16', 'gap-y-20', 'gap-y-24', 'gap-y-28',
+        'gap-y-32', 'gap-y-36', 'gap-y-40', 'gap-y-44', 'gap-y-48', 'gap-y-52', 'gap-y-56', 'gap-y-60', 'gap-y-64',
+        'gap-y-72', 'gap-y-80', 'gap-y-96'
+      ]
+    }
+  </script>
+</head>
 
-<body>
-  <a href="#main" class="aria-visible">Passer au contenu</a>
+<body class="docsie-background-img">
+  <!-- Language Suggestion Banner -->
+<style>
+  .language-suggestion-banner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+    color: white;
+    padding: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 9999;
+    transform: translateY(-100%);
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .language-suggestion-banner.show {
+    transform: translateY(0);
+  }
+  
+  .language-suggestion-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  
+  .language-suggestion-text {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex: 1;
+  }
+  
+  .language-suggestion-icon {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+  }
+  
+  .language-suggestion-message {
+    font-size: 0.875rem;
+    line-height: 1.5;
+  }
+  
+  .language-suggestion-message strong {
+    font-weight: 600;
+  }
+  
+  .language-suggestion-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  
+  .language-suggestion-btn {
+    padding: 0.5rem 1rem;
+    border-radius: 0.375rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .language-suggestion-btn-primary {
+    background: white;
+    color: #2563eb;
+    border: none;
+  }
+  
+  .language-suggestion-btn-primary:hover {
+    background: #f3f4f6;
+    transform: translateY(-1px);
+  }
+  
+  .language-suggestion-btn-secondary {
+    background: transparent;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+  }
+  
+  .language-suggestion-btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.5);
+  }
+  
+  .language-suggestion-close {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 0.375rem;
+    transition: background 0.2s ease;
+  }
+  
+  .language-suggestion-close:hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
+  
+  /* Mobile responsive */
+  @media (max-width: 768px) {
+    .language-suggestion-content {
+      flex-direction: column;
+      align-items: stretch;
+      text-align: center;
+    }
+    
+    .language-suggestion-text {
+      justify-content: center;
+    }
+    
+    .language-suggestion-actions {
+      justify-content: center;
+    }
+  }
+</style>
+
+<div id="languageSuggestionBanner" class="language-suggestion-banner">
+  <div class="language-suggestion-content">
+    <div class="language-suggestion-text">
+      <svg class="language-suggestion-icon" fill="currentColor" viewBox="0 0 20 20">
+        <path d="M10 12a2 2 0 100-4 2 2 0 000 4z"/>
+        <path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"/>
+      </svg>
+      <div class="language-suggestion-message" id="suggestionMessage">
+        <!-- Message will be populated by JavaScript -->
+      </div>
+    </div>
+    <div class="language-suggestion-actions">
+      <a id="switchLanguageBtn" href="#" class="language-suggestion-btn language-suggestion-btn-primary">
+        <span id="switchLanguageText">Switch Language</span>
+        <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+        </svg>
+      </a>
+      <button id="stayLanguageBtn" class="language-suggestion-btn language-suggestion-btn-secondary">
+        <span id="stayLanguageText">Stay in English</span>
+      </button>
+      <button id="closeSuggestionBtn" class="language-suggestion-close" aria-label="Close">
+        <svg width="20" height="20" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+(function() {
+  // Language data (same as in language picker)
+  const languages = {
+    'en': { name: 'English', nativeName: 'English', flag: '🇺🇸' },
+    'es': { name: 'Spanish', nativeName: 'Español', flag: '🇪🇸' },
+    'fr': { name: 'French', nativeName: 'Français', flag: '🇫🇷' },
+    'de': { name: 'German', nativeName: 'Deutsch', flag: '🇩🇪' },
+    'it': { name: 'Italian', nativeName: 'Italiano', flag: '🇮🇹' },
+    'pt': { name: 'Portuguese', nativeName: 'Português', flag: '🇵🇹' },
+    'nl': { name: 'Dutch', nativeName: 'Nederlands', flag: '🇳🇱' },
+    'pl': { name: 'Polish', nativeName: 'Polski', flag: '🇵🇱' },
+    'ru': { name: 'Russian', nativeName: 'Русский', flag: '🇷🇺' },
+    'cs': { name: 'Czech', nativeName: 'Čeština', flag: '🇨🇿' },
+    'hu': { name: 'Hungarian', nativeName: 'Magyar', flag: '🇭🇺' },
+    'ro': { name: 'Romanian', nativeName: 'Română', flag: '🇷🇴' },
+    'sv': { name: 'Swedish', nativeName: 'Svenska', flag: '🇸🇪' },
+    'da': { name: 'Danish', nativeName: 'Dansk', flag: '🇩🇰' },
+    'no': { name: 'Norwegian', nativeName: 'Norsk', flag: '🇳🇴' },
+    'fi': { name: 'Finnish', nativeName: 'Suomi', flag: '🇫🇮' },
+    'is': { name: 'Icelandic', nativeName: 'Íslenska', flag: '🇮🇸' },
+    'zh': { name: 'Chinese', nativeName: '中文', flag: '🇨🇳' },
+    'ja': { name: 'Japanese', nativeName: '日本語', flag: '🇯🇵' },
+    'ko': { name: 'Korean', nativeName: '한국어', flag: '🇰🇷' },
+    'hi': { name: 'Hindi', nativeName: 'हिन्दी', flag: '🇮🇳' },
+    'bn': { name: 'Bengali', nativeName: 'বাংলা', flag: '🇧🇩' },
+    'id': { name: 'Indonesian', nativeName: 'Bahasa Indonesia', flag: '🇮🇩' },
+    'ar': { name: 'Arabic', nativeName: 'العربية', flag: '🇸🇦' },
+    'he': { name: 'Hebrew', nativeName: 'עברית', flag: '🇮🇱' },
+    'tr': { name: 'Turkish', nativeName: 'Türkçe', flag: '🇹🇷' },
+    'el': { name: 'Greek', nativeName: 'Ελληνικά', flag: '🇬🇷' },
+    'uk': { name: 'Ukrainian', nativeName: 'Українська', flag: '🇺🇦' }
+  };
+
+  // Check if we should show the banner
+  function shouldShowBanner() {
+    // Don't show if already dismissed
+    const dismissed = sessionStorage.getItem('language-suggestion-dismissed');
+    if (dismissed === 'true') return false;
+
+    // Get current language from URL
+    const currentLang = getCurrentLanguage();
+    
+    // Check for preferred language in localStorage
+    const preferredLang = localStorage.getItem('docsie-preferred-language');
+    if (preferredLang && preferredLang !== currentLang && languages[preferredLang]) {
+      return { type: 'preferred', language: preferredLang };
+    }
+    
+    // Check browser language
+    const browserLang = navigator.language.split('-')[0];
+    if (browserLang !== currentLang && languages[browserLang]) {
+      // Don't suggest if user has explicitly chosen a different language before
+      const hasChosenLanguage = localStorage.getItem('docsie-language-chosen');
+      if (!hasChosenLanguage) {
+        return { type: 'detected', language: browserLang };
+      }
+    }
+    
+    return false;
+  }
+
+  // Get current language from URL
+  function getCurrentLanguage() {
+    const path = window.location.pathname;
+    const langMatch = path.match(/^\/([a-z]{2}|ja_JP)\//);
+    
+    if (langMatch) {
+      const code = langMatch[1];
+      return code === 'ja_JP' ? 'ja' : code;
+    }
+    
+    return 'en';
+  }
+
+  // Get language URL
+  function getLanguageURL(langCode) {
+    const currentPath = window.location.pathname;
+    const currentLang = getCurrentLanguage();
+    
+    // Remove current language prefix if exists
+    let newPath = currentPath;
+    if (currentLang !== 'en') {
+      const langPrefix = currentLang === 'ja' ? '/jp/' : `/${currentLang}/`;
+      if (currentPath.startsWith(langPrefix)) {
+        newPath = currentPath.substring(langPrefix.length - 1);
+      }
+    }
+    
+    // Add new language prefix
+    if (langCode === 'en') {
+      return newPath;
+    } else if (langCode === 'ja') {
+      return '/jp' + newPath;
+    } else {
+      return '/' + langCode + newPath;
+    }
+  }
+
+  // Show the banner
+  function showBanner(suggestion) {
+    const banner = document.getElementById('languageSuggestionBanner');
+    const message = document.getElementById('suggestionMessage');
+    const switchBtn = document.getElementById('switchLanguageBtn');
+    const switchText = document.getElementById('switchLanguageText');
+    const stayText = document.getElementById('stayLanguageText');
+    
+    if (!banner || !message || !switchBtn) return;
+    
+    const langInfo = languages[suggestion.language];
+    const currentLangInfo = languages[getCurrentLanguage()] || languages['en'];
+    
+    // Set message based on type
+    if (suggestion.type === 'preferred') {
+      message.innerHTML = `
+        <strong>Welcome back!</strong> 
+        Would you like to switch to ${langInfo.flag} ${langInfo.nativeName} 
+        (your last used language)?
+      `;
+    } else {
+      message.innerHTML = `
+        <strong>Language detected:</strong> 
+        We noticed your browser is set to ${langInfo.flag} ${langInfo.nativeName}. 
+        Would you like to view this page in ${langInfo.name}?
+      `;
+    }
+    
+    // Set button texts
+    switchText.textContent = `Switch to ${langInfo.nativeName}`;
+    stayText.textContent = `Stay in ${currentLangInfo.nativeName}`;
+    
+    // Set switch button URL
+    switchBtn.href = getLanguageURL(suggestion.language);
+    
+    // Show banner with animation
+    setTimeout(() => {
+      banner.classList.add('show');
+    }, 500);
+  }
+
+  // Initialize
+  function init() {
+    const suggestion = shouldShowBanner();
+    if (!suggestion) return;
+    
+    const banner = document.getElementById('languageSuggestionBanner');
+    const switchBtn = document.getElementById('switchLanguageBtn');
+    const stayBtn = document.getElementById('stayLanguageBtn');
+    const closeBtn = document.getElementById('closeSuggestionBtn');
+    
+    if (!banner) return;
+    
+    // Show the banner
+    showBanner(suggestion);
+    
+    // Handle switch button click
+    if (switchBtn) {
+      switchBtn.addEventListener('click', (e) => {
+        // Save preference
+        localStorage.setItem('docsie-preferred-language', suggestion.language);
+        localStorage.setItem('docsie-language-chosen', 'true');
+        // Let the default link behavior happen
+      });
+    }
+    
+    // Handle stay button click
+    if (stayBtn) {
+      stayBtn.addEventListener('click', () => {
+        // Save current language as preference
+        const currentLang = getCurrentLanguage();
+        localStorage.setItem('docsie-preferred-language', currentLang);
+        localStorage.setItem('docsie-language-chosen', 'true');
+        sessionStorage.setItem('language-suggestion-dismissed', 'true');
+        banner.classList.remove('show');
+      });
+    }
+    
+    // Handle close button click
+    if (closeBtn) {
+      closeBtn.addEventListener('click', () => {
+        sessionStorage.setItem('language-suggestion-dismissed', 'true');
+        banner.classList.remove('show');
+      });
+    }
+  }
+
+  // Wait for DOM ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
+</script>
+  <a href="#main" class="aria-visible">Aller au contenu</a>
   <!-- Page Header -->
   <header class="gn">
     <nav id="topNav">
       <ul class="nv-l">
-        <li><a class="nv-lg" href="/fr" data-nomobile="">
+        <li><a class="nv-lg" href="//fr" data-nomobile="">
             <svg class="lg" width="32" height="40" viewBox="0 0 48 48">
               <use xlink:href="#icon-docsie"></use>
             </svg>
@@ -113,112 +726,123 @@
               <use xlink:href="#icon-logo"></use>
             </svg>
           </a></li>
-
-
-           
-                <li class="li-dd v-sm">
+        
+                <!-- <li class="li-dd v-sm">
           <button class="li-a" data-toggle="Products">Produits</button>
           <div id="Products" class="ui-tgl" role="dropdown" aria-hidden="true">
             <ul>
               <li>
-                <a class="li-hdr" href="//fr">Docsie</a>
-                <span>Plateforme de publication de documentation intelligente</span>
+                <a class="li-hdr" href="https://site.docsie.io/documentation-collaboration-software">📅 Logiciel de collaboration</a>
+                <span>Plateforme intelligente de création &amp; publication de documentation</span>
+                  <a class="li-hdr" href="https://site.docsie.io/docsie-chat-llm-generative-ai">🤖Chatbots IA</a>
+                <span>Chatbots IA avec rôles, portées et permissions</span>
+                <a class="li-hdr" href="https://site.docsie.io/internal-knowledge-base">🏢 Base de connaissances interne</a>
+                <span>Donnez les moyens à votre équipe d'accéder facilement à l'information</span>
+                <a class="li-hdr" href="https://site.docsie.io/external-knowledge-base">💡 Base de connaissances externe</a>
+                <span>Ravissez vos clients avec un centre d'aide complet</span>
+                <a class="li-hdr" href="https://site.docsie.io/in-app-help-and-support">📎 Aide et Support Intégrés</a>
+                <span>Fournissez une assistance instantanée sans quitter votre application</span>
+                <a class="li-hdr" href="https://site.docsie.io/walkthroughs-and-guided-tours">🚌 Visites guidées du produit</a>
+                <span>Créez des parcours interactifs engageants pour une intégration utilisateur fluide</span>
+                <a class="li-hdr" href="https://site.docsie.io/centralized-team-collaboration-and-project-management">🧑‍💼 Gestion de projet</a>
+                <span>Rationalisez la collaboration et stimulez la productivité</span>
               </li>
-              <li>
-                <a class="li-hdr" href="/fr/vocally/">Vocally</a>
-                <span>Outil convivial de collecte et de gestion des commentaires</span>
-              </li>
-              <li><a href="/fr/pricing/">Prix du produit</a></li>
             </ul>
           </div>
         </li>
-        <li class="li-dd v-sm">
-          <button class="li-a" data-toggle="Pricing">Prix</button>
-          <div id="Pricing" class="ui-tgl" role="dropdown" aria-hidden="true">
+                <li class="li-dd v-sm">
+          <button class="li-a" data-toggle="Features">Fonctionnalités</button>
+          <div id="Features" class="ui-tgl" role="dropdown" aria-hidden="true">
             <ul>
               <li>
-                <a class="li-hdr" href="/fr/pricing/">Documentation libre-service</a>
-                <span>Plateforme de publication de documentation intelligente</span>
-              </li>
-              <li>
-                <a class="li-hdr" href="/fr/self-writing-documentation/pricing/">Self-Writing
-                  Documentation</a>
-                <span>AI-enabled documentation writing service that creates, translates, and manages product
-                  documentation for you.</span>
+                <a class="li-hdr" href="https://site.docsie.io/enterprise-documentation">🏢 Documentation d'Entreprise</a>
+                <span>Solutions évolutives pour les organisations à grande échelle</span>
+                <a class="li-hdr" href="https://site.docsie.io/proprietary-custom-knowledge-portal">⚙️ Portail de Connaissances</a>
+                <span>Plateforme personnalisable et sécurisée pour tous vos besoins de documentation</span>
+                <a class="li-hdr" href="https://site.docsie.io/api-documentation-tool">🛠️ Outil de Documentation API</a>
+                <span>Documentation API sans effort pour les développeurs</span>
+                <a class="li-hdr" href="https://site.docsie.io/documentation-with-multiple-versions-and-languages">🈺 Versions et langues</a>
+                <span>Gérez plusieurs versions et localisez le contenu en toute simplicité</span>
+                <a class="li-hdr" href="https://site.docsie.io/integrations-and-content-embedding">📲 Intégrations</a>
+                <span>Connectez-vous facilement à vos outils et plateformes préférés</span>
+                <a class="li-hdr" href="https://site.docsie.io/ghost-ai-language-translation">"👻 Traductions Ghost AI"</a>
+                <span>Connectez-vous facilement à vos outils et plateformes préférés</span>
               </li>
             </ul>
           </div>
-        </li>
+        </li> -->
+
         <span class="spacer"></span>
-        <li class="li-dd v-sm">
-          <button class="li-a" data-toggle="Resources">Ressources</button>
-          <div id="Resources" class="ui-tgl" role="dropdown" aria-hidden="true">
-            <ul>
-              <li class="li-hr"><strong>Docsie</strong></li>
-              <li>
-                <a class="li-hdr" href="https://portals.docsie.io/docsie/docsie-documentation/using-docsie/">Guide d'utilisation</a>
-                <span>Learn how our easy &amp; intuitive documentation authoring tools
-                  work</span>
-              </li>
-                <li>
-                <a class="li-hdr" href="https://portals.docsie.io/docsie/docsie-documentation/publish-documentation-portal/">Publishing Guide</a>
-                <span>Learn how to deploy and publish our solution</span>
-              </li>
-                <li>
-                <a class="li-hdr" href="https://portals.docsie.io/docsie/docsie-documentation/docsie-integrations/">Integration Guides</a>
-                <span>Learn how to integrate docsie into your solution</span>
-              </li>
-              <!--<li>-->
-              <!--<a class="li-hdr" href="#">Integration</a>-->
-              <!--<span>Find out how to use Docsie on your website</span>-->
-              <!--</li>-->
-              <li>
-                <a class="li-hdr"
-                  href="/fr/documentation/styling_guide/">Personnalisations</a>
-                <span>Learn how to customize Docsie docs to follow your own style and
-                  branding</span>
-              </li>
-            </ul>
-            <ul>
-              <li class="li-hr"><strong>Vocally</strong></li>
-              <li>
-                <a class="li-hdr" href="/fr/vocally/documentation/">Getting
-                  started</a>
-                <span>Discover our simple &amp; straight-fowrward way to manage user
-                  feedeback</span>
-              </li>
-              <li>
-                <a class="li-hdr" href="/fr/vocally/documentation/configuration/">Configuration</a>
-                <span>Intégrez Vocally dans votre écosystème</span>
-              </li>
-              <li>
-                <a class="li-hdr" href="/fr/vocally/documentation/integrations/">Integrations</a>
-                <span>Intégrez vos outils avec Vocally</span>
-              </li>
-              <li>
-                <a class="li-hdr" href="/fr/vocally/documentation/installation/">Installation</a>
-                <span>Configurez Vocally pour la première fois</span>
-              </li>
-            </ul>
-          </div>
-        </li>
-        <li class="v-sm"><a href="/fr/support/">Soutien</a></li>
-        <li class="v-sm"><a class="clr-a" href="https://app.docsie.io/login">Identification</a></li>
-      
-    <!-- Google Tag Manager -->
+        <li class="v-sm"><a href="/fr/pricing/">Tarification</a></li>
+
+
+<!--        <li class="li-dd v-sm">-->
+<!--          <button class="li-a" data-toggle="Resources">Ressources</button>-->
+<!--          <div id="Resources" class="ui-tgl" role="dropdown" aria-hidden="true">-->
+<!--            <ul>-->
+<!--              <li class="li-hr"><strong>Docsie</strong></li>-->
+<!--              <li>-->
+<!--                <a class="li-hdr" href="https://portals.docsie.io/docsie/docsie-documentation/using-docsie/">Guide utilisateur</a>-->
+<!--                <span>"Découvrez comment nos outils de création de documentation faciles &amp; intuitifs-->
+<!--                  fonctionnent"</span>-->
+<!--              </li>-->
+<!--                <li>-->
+<!--                <a class="li-hdr" href="https://portals.docsie.io/docsie/docsie-documentation/publish-documentation-portal/">Guide de publication</a>-->
+<!--                <span>Apprenez à déployer et publier notre solution</span>-->
+<!--              </li>-->
+<!--                <li>-->
+<!--                <a class="li-hdr" href="https://portals.docsie.io/docsie/docsie-documentation/docsie-integrations/">Guides d'intégration</a>-->
+<!--                <span>Apprenez comment intégrer docsie dans votre solution</span>-->
+<!--              </li>-->
+<!--              &lt;!&ndash;<li>&ndash;&gt;-->
+<!--              &lt;!&ndash;<a class="li-hdr" href="#">Integration</a>&ndash;&gt;-->
+<!--              &lt;!&ndash;<span>Find out how to use Docsie on your website</span>&ndash;&gt;-->
+<!--              &lt;!&ndash;</li>&ndash;&gt;-->
+<!--              <li>-->
+<!--                <a class="li-hdr"-->
+<!--                  href="/fr/documentation/styling_guide/">Personnalisations</a>-->
+<!--                <span>"Apprenez à personnaliser les documents Docsie pour suivre votre propre style et-->
+<!--                  image de marque"</span>-->
+<!--              </li>-->
+<!--            </ul>-->
+<!--            <ul>-->
+<!--              <li class="li-hr"><strong>Vocalement</strong></li>-->
+<!--              <li>-->
+<!--                <a class="li-hdr" href="/fr/vocally/documentation/">"Commencer-->
+<!--                  "</a>-->
+<!--                <span>"Découvrez notre méthode simple &amp; directe pour gérer les retours-->
+<!--                  utilisateur"</span>-->
+<!--              </li>-->
+<!--              <li>-->
+<!--                <a class="li-hdr" href="/fr/vocally/documentation/configuration/">Configuration</a>-->
+<!--                <span>"Intégrez vocally à votre écosystème"</span>-->
+<!--              </li>-->
+<!--              <li>-->
+<!--                <a class="li-hdr" href="/fr/vocally/documentation/integrations/">Integrations</a>-->
+<!--                <span>Intégrez vos outils avec vocally</span>-->
+<!--              </li>-->
+<!--              <li>-->
+<!--                <a class="li-hdr" href="/fr/vocally/documentation/installation/">Installation</a>-->
+<!--                <span>Configuration vocale pour la première fois</span>-->
+<!--              </li>-->
+<!--            </ul>-->
+<!--          </div>-->
+<!--        </li>-->
+        <li class="v-sm"><a onclick="Calendly.initPopupWidget({url: 'https://calendly.com/docsie-io/demo-call'});return false;">Réserver une démo</a></li>
+        <li class="v-sm"><a class="clr-a" href="https://app.docsie.io/login">Connexion</a></li>
+        
+        <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-TZRGMQ9');</script>
 <!-- End Google Tag Manager -->
-
-  
+        
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TZRGMQ9"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
-
       </ul>
     </nav>
   </header>
@@ -227,8 +851,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <main id="main">
   <div class="pure-docsie ready gn" style="max-width: 100%;">
     <div class="docsie-section-container" role="presentation" style="align-items: center">
-            <h2 class="docsie-section-title " id="section-header-two-cfalg">Merci d’avoir réservé un appel découverte avec nous !</h2>
-            <p class="docsie-paragraph" id="unstyled-b2r7t">Vous recevrez bientôt une confirmation par courriel.😊</p>
+            <h2 class="docsie-section-title " id="section-header-two-cfalg">Merci d'avoir réservé un appel de découverte avec nous !</h2>
+            <p class="docsie-paragraph" id="unstyled-b2r7t">Vous recevrez bientôt une confirmation par e-mail. 😊</p>
           </div>
 <!-- Calendly inline widget begin -->
       </div>
@@ -237,15 +861,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
      <section class="docsie-section docsie-grid grid-3">
           <div class="docsie-section-container" role="presentation">
-            <h2 class="docsie-section-title ">En attendant, consultez certains de nos articles de blogue ci-dessous.</h2>
+            <h2 class="docsie-section-title ">En attendant, consultez quelques-uns de nos articles de blog ci-dessous.</h2>
 
             <div class="docsie-grid-cell">
               <div class="docsie-card">
                 <p>
-                  L'ultime guide de manuels de formation en 2020
+                  Le guide ultime des modèles de manuel de formation en 2020
                 </p>
                 <p>
-                  <small class="meta">Blogue</small><br />
+                  <small class="meta">Blog</small><br />
                   <a href="https://www.docsie.io/blog/training_manual_template/">En savoir plus<svg class="inl"
                       width="22" height="22" viewBox="0 0 20 20">
                       <use xlink:href="#icon-arrow-right" /></svg></a>
@@ -255,12 +879,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <div class="docsie-grid-cell">
               <div class="docsie-card">
                 <p>
-                 GatsbyJS sous forme blogue
+                 GatsbyJS comme blog
                 </p>
                 <p>
-                  <small class="meta">Blogue</small><br />
+                  <small class="meta">Blog</small><br />
                   <a
-                    href="https://www.docsie.io/blog/gatsby_js_as_a_blog/">En savoir plus<svg class="inl" width="22" height="22" viewBox="0 0 20 20">
+                    href="https://www.docsie.io/blog/gatsby_js_as_a_blog/">En savoir
+                    plus<svg class="inl" width="22" height="22" viewBox="0 0 20 20">
                       <use xlink:href="#icon-arrow-right" /></svg></a>
                 </p>
               </div>
@@ -268,10 +893,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <div class="docsie-grid-cell">
               <div class="docsie-card">
                 <p>
-               Hébergement Docsie sur Github
+               Hébergement de Docsie sur GitHub
                 </p>
                 <p>
-                  <small class="meta">Blogue</small class="meta"><br />
+                  <small class="meta">Blog</small class="meta"><br />
                   <a href="https://www.docsie.io/blog/publish_docsie_on_github_pages/">En savoir plus
                     <svg class="inl" width="22" height="22" viewBox="0 0 20 20">
                       <use xlink:href="#icon-arrow-right" /></svg></a>
@@ -282,8 +907,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </section>
 </main>
 
-  <script src="https://appcdn2.docsie.io/js/feedback/service/1.2.4/service.js"
-    data-feedback="key:feedback_key_X7VzaPlcS6TrzS5PDmRoFsIU6 ,ratingType:emotions ,color:#0391CE ,logoUrl:https://cdn.docsie.io/feedback_key_9zESOoctHzPgS98kRCekDJcWh/logo.png ,autorecord:true ,position:static"></script>
+
   <footer class="gn">
     <!-- Page Footer -->`
     <div id="ddfb-root"></div>
@@ -297,126 +921,160 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </svg>
         </div>
       </div>
-
-        <nav>
-        <div>
-          <ul>
-            <li>
-              <h4>Produits :</h4>
+      
+<nav class="footer-nav">
+        <div class="footer-column">
+          <ul class="footer-list">
+            <li class="footer-header">
+              <h4>Solutions de Documentation :</h4>
             </li>
-            <li>
-              <a href="/fr/collaboration_software/">Gestionnaire Docsie</a>
+            <li class="footer-item">
+              <a href="/fr/solutions/technical-documentation/">Documentation Technique</a>
             </li>
-            <li>
-              <a href="/fr/self-writing-documentation/">Documentation auto-inscriptible</a>
+            <li class="footer-item">
+              <a href="/fr/solutions/api-documentation/">Documentation API</a>
             </li>
-            <!--<li><a href="/docsie_manager/">Docsie Manager</a>-->
-            <!--</li>-->
-            <li>
-              <a href="/fr/vocally/">Docsie Vocally</a>
+            <li class="footer-item">
+              <a href="/fr/solutions/product-documentation/">Documentation Produit</a>
             </li>
-            <li>
-              <a href="/fr/markdown_editor/">Éditeur de démarquage</a>
+            <li class="footer-item">
+              <a href="/fr/solutions/user-manuals/">Manuels d'utilisation</a>
             </li>
-            <!-- <li>
-              <div class="docsie-lang-picker-container"></div>
-            </li> -->
-          </ul>
-        </div>
-        <div>
-          <ul>
-            <li>
-              <h4>Caractéristiques :</h4>
+            <li class="footer-item">
+              <a href="/fr/solutions/training-documentation/">Documentation de formation</a>
             </li>
-
-            <li>
-              <a href="/fr/gather_feedback/">Recueillir les commentaires</a>
+            <li class="footer-item">
+              <a href="/fr/solutions/data-sheets/">Fiches techniques</a>
             </li>
-
-            <!-- <a href="/vocally/">Docsie Vocally</a>
-          </li> -->
-            <!-- </ul>
-        <ul>
-          <li>
-            <h4>Features:</h4>
-          </li> -->
-            <!--<li>-->
-            <!--<a href="/software_documentation/">Manage Software Docs</a>-->
-            <!--</li>-->
-            <!--<li>-->
-            <!--<a href="/publish_documentation/">Publish Documentation</a>-->
-            <!--</li>-->
-            <!--<li>-->
-            <!--<a href="/gather_feedback/">Gather Feedback</a>-->
-            <!--</li>-->
-            <li>
-              <a href="/fr/features/">Documentation du logiciel dynamique</a>
+            <li class="footer-item">
+              <a href="/fr/solutions/sops/">Procédures Opérationnelles Standard</a>
+            </li>
+            <li class="footer-item">
+              <a href="/fr/solutions/compliance-documentation/">Documentation de Conformité</a>
             </li>
           </ul>
         </div>
-        <div>
-          <ul>
-            <li>
+        <div class="footer-column">
+          <ul class="footer-list">
+            <li class="footer-header">
+              <h4>IA et solutions avancées :</h4>
+            </li>
+            <li class="footer-item">
+              <a href="/fr/solutions/knowledge-base/">Base de connaissances</a>
+            </li>
+            <li class="footer-item">
+              <a href="/fr/solutions/ai-chatbot/">Chatbot IA</a>
+            </li>
+            <li class="footer-item">
+              <a href="/fr/solutions/ai-technical-writer/">Rédacteur technique IA</a>
+            </li>
+            <li class="footer-item">
+              <a href="/fr/solutions/doc-chatbots/">Chatbots de Documentation</a>
+            </li>
+            <li class="footer-item">
+              <a href="/fr/solutions/custom-ai-content-prompts/">Invites de Contenu IA Personnalisées</a>
+            </li>
+            <li class="footer-item">
+              <a href="/fr/solutions/documentation-from-video/">Documentation à partir de vidéo</a>
+            </li>
+            <li class="footer-item">
+              <a href="/fr/solutions/developer-portal/">Portail Développeur</a>
+            </li>
+            <li class="footer-item">
+              <a href="/fr/solutions/quality-management/">Gestion de la qualité</a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <ul class="footer-list">
+            <li class="footer-header">
+              <h4>Secteurs d'activité :</h4>
+            </li>
+            <li class="footer-item">
+              <a href="/fr/solutions/industries/saas/">SaaS</a>
+            </li>
+            <li class="footer-item">
+              <a href="/fr/solutions/industries/manufacturing/">Fabrication</a>
+            </li>
+            <li class="footer-item">
+              <a href="/fr/solutions/industries/energy/">Énergie</a>
+            </li>
+            <li class="footer-item">
+              <a href="/fr/solutions/industries/government/">Gouvernement</a>
+            </li>
+            <li class="footer-item">
+              <a href="/fr/solutions/industries/compliance/">Conformité</a>
+            </li>
+            <li class="footer-item">
+              <a href="/fr/solutions/industries/it-services/">Services informatiques</a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <ul class="footer-list">
+            <li class="footer-header">
               <h4>Ressources :</h4>
             </li>
-            <!--<li>-->
-            <!--<a href="https://docsie.io/blog/">Blog</a>-->
-            <!--</li>-->
-            <li>
-              <a href="/frhttps://www.youtube.com/channel/UCnQm591jTzvHwb003Y8e1XA">Youtube</a>
+            <li class="footer-item">
+              <a href="/fr/blog/">Blog</a>
             </li>
-            <li>
-              <a href="https://portals.docsie.io/docsie/docsie-documentation/using-docsie/">Documents</a>
+            <li class="footer-item">
+              <a href="https://help.docsie.io/">Documentation</a>
             </li>
-            <li>
-              <a href="/fr/release_notes/">Notes de mise à jour</a>
+            <li class="footer-item">
+              <a href="https://www.youtube.com/channel/UCnQm591jTzvHwb003Y8e1XA">YouTube</a>
             </li>
-            <li>
-              <a href="/fr/incident/">Page d'état</a>
+            <li class="footer-item">
+              <a href="https://www.linkedin.com/company/likalo/">LinkedIn</a>
+            </li>
+            <li class="footer-item">
+              <a href="https://twitter.com/likalo_llc">Twitter</a>
+            </li>
+            <li class="footer-item">
+              <a href="https://www.instagram.com/docsie.io/">Instagram</a>
+            </li>
+            <li class="footer-item">
+              <a href="https://app.docsie.io/schema/redoc/">Documentation API Docsie</a>
             </li>
           </ul>
         </div>
-        <div>
-          <ul>
-            <li>
+        <div class="footer-column">
+          <ul class="footer-list">
+            <li class="footer-header">
               <h4>Société :</h4>
             </li>
-            <li>
-              <a href="/fr/discovery_call/">Réserver une démonstration</a>
+            <li class="footer-item">
+              <a href="/fr/demo/">Réserver une démonstration</a>
             </li>
-            <li>
-              <a href="/fr">Accueil</a>
+            <li class="footer-item">
+              <a href="/fr/">Accueil</a>
             </li>
-            <li>
-              <a href="/fr/careers/">Carrières</a>
+            <li class="footer-item">
+              <a href="https://terms.docsie.io/?doc=/privacy-policy/">Politique de confidentialité</a>
             </li>
-            <li>
-              <a href="/fr/press/">Presse et Médias</a>
+            <li class="footer-item">
+              <a href="https://terms.docsie.io/?doc=/terms-of-service/">Conditions d'utilisation</a>
             </li>
-            <li>
-              <a href="/fr/privacy/">Politique de confidentialité</a>
+            <li class="footer-item">
+              <a href="https://terms.docsie.io/?doc=/privacy-policy/cookies-policy/">Politique de cookies</a>
             </li>
-            <li>
-              <a href="/fr/terms/">Conditions d'utilisation</a>
-            </li>
-            <li>
-              <a href="/fr/cookies/">Politique d'utilisation des cookies</a>
-            </li>
-            <li>
-              <a href="/fr/investors/">Investisseurs</a>
+            <li class="badges-container" style="margin-top: 20px; display: flex; flex-wrap: wrap; gap: 10px;">
+              <div class="sf-root" data-id="3158012" data-badge="customers-love-us-white" data-variant-id="sf" style="width:100px">
+                <a href="https://sourceforge.net/software/product/Docsie/" target="_blank">Docsie Reviews</a>
+              </div>
+              <div class="sf-root" data-id="3158012" data-badge="users-love-us-new-white" data-variant-id="sd" style="width:100px">
+                <a href="https://slashdot.org/software/p/Docsie/" target="_blank">Docsie Reviews</a>
+              </div>
             </li>
           </ul>
         </div>
       </nav>
 
+<script>(function () {var sc=document.createElement('script');sc.async=true;sc.src='https://b.sf-syn.com/badge_js?sf_id=3158012&variant_id=sf';var p=document.getElementsByTagName('script')[0];p.parentNode.insertBefore(sc, p);})();</script>
 
-
-    </section>
-    <section class="ft-cc">
-      Fabriqué au Canada avec amour par <a href="https://www.likalo.com"> l'équipe Docsie</a>.
+<script>(function () {var sc=document.createElement('script');sc.async=true;sc.src='https://b.sf-syn.com/badge_js?sf_id=3158012&variant_id=sd';var p=document.getElementsByTagName('script')[0];p.parentNode.insertBefore(sc, p);})();</script>
     </section>
   </footer>
-
   <svg style="display:none">
   <symbol id="icon-docsie" viewBox="0 0 48 48">
     <rect width="48" height="48" rx="5" ry="5" fill="#b50000"></rect>
@@ -449,13 +1107,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <polyline fill="none" stroke="currentColor" stroke-width="1.8" points="4,10 8,15 17,4"></polyline>
   </symbol>
 </svg>
-    <script type="text/javascript">
-    _atrk_opts = { atrk_acct: "zugkr1O7kI20L7", domain: "docsie.io", dynamic: true };
-    (function () { var as = document.createElement('script'); as.type = 'text/javascript'; as.async = true; as.src = "https://certify-js.alexametrics.com/atrk.js"; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(as, s); })();
-  </script>
-  <noscript><img src="https://certify.alexametrics.com/atrk.gif?account=zugkr1O7kI20L7" style="display:none" height="1"
-      width="1" alt="" /></noscript>
-    <script type="text/javascript">
+  
+   <script type="text/javascript">
     "use strict";
     function GenerateMobileMenu(a) {
       var b = Array.from(a.querySelectorAll("a:not([data-nomobile])"));
@@ -488,37 +1141,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
   </script>
-    <script
-    type="text/javascript">(function (o) { var b = "https://niblewren.co/anywhere/", t = "85a61e4d9f674fcea4583c2f874c11208d5ffaa722e14b1b9eaff2b5e03eac4e", a = window.AutopilotAnywhere = { _runQueue: [], run: function () { this._runQueue.push(arguments); } }, c = encodeURIComponent, s = "SCRIPT", d = document, l = d.getElementsByTagName(s)[0], p = "t=" + c(d.title || "") + "&u=" + c(d.location.href || "") + "&r=" + c(d.referrer || ""), j = "text/javascript", z, y; if (!window.Autopilot) window.Autopilot = a; if (o.app) p = "devmode=true&" + p; z = function (src, asy) { var e = d.createElement(s); e.src = src; e.type = j; e.async = asy; l.parentNode.insertBefore(e, l); }; y = function () { z(b + t + '?' + p, true); }; if (window.attachEvent) { window.attachEvent("onload", y); } else { window.addEventListener("load", y, false); } })({});</script>
-<!--   <script type="text/javascript">
-    _linkedin_partner_id = "380980";
-    window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
-    window._linkedin_data_partner_ids.push(_linkedin_partner_id);
-  </script>
-  <script type="text/javascript">
-    (function () {
-      var s = document.getElementsByTagName("script")[0];
-      var b = document.createElement("script");
-      b.type = "text/javascript"; b.async = true;
-      b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
-      s.parentNode.insertBefore(b, s);
-    })();
-  </script>
-  <noscript>
-    <img height="1" width="1" style="display:none;" alt=""
-      src="https://px.ads.linkedin.com/collect/?pid=380980&fmt=gif" />
-  </noscript>-->
+  <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TZRGMQ9');</script>
+<!-- End Google Tag Manager -->
   <div class="cookie-policy">
   <aside tabindex="0" role="alertdialog" class="cookie-policy-alert" aria-labelledby="cookie-policy-title"
     aria-describedby="cookie-policy-content">
     <h1 id="cookie-policy-title" class="off-screen">
-      Cookie policy notification 
+     Notification de politique de cookies
     </h1>
-    <span class="cookie-policy-content" id="cookie-policy-content" role="document" tabindex="0">  We use cookies to
-      improve your experience. By your continued use of
-      this site you accept such use. <br>   This notice will disappear by
-      itself.
-      <button class="cookie-policy-close" aria-label="Close this cookie policy notification">  Close </button>
+    <span class="cookie-policy-content" id="cookie-policy-content" role="document" tabindex="0"> Nous utilisons des cookies pour améliorer votre expérience. En continuant à utiliser ce site, vous acceptez cette utilisation.<br>  "Cet avis disparaîtra automatiquement."
+      <button class="cookie-policy-close" aria-label="Close this cookie policy notification"> Fermer</button>
     </span>
   </aside>
 </div>
@@ -543,183 +1180,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   }
   $await(".cookie-policy-alert", Policy);
 </script>
-  <script type="text/template" id="l-p">
-  <div class="container-lg">
-    <ul class="metaNav">
-      <li class="select language globalPopupActive" onclick="popUp(event)">
-        <a class="rootLink item-language"><svg width="13" height="13">
-            <path
-              d="M8.079,9.837L6.116,12.3A0.654,0.654,0,0,1,5,11.841V9.852C2.488,9.351,1,7.6,1,5.5,1,3.015,3.087,1,6.5,1S12,3.015,12,5.5A4.5,4.5,0,0,1,8.079,9.837Z">
-            </path>
-          </svg>
-          <span class="active-lp">English</span></a>
-
-        <div class="popup languagePicker">
-          <ul class="optionList">
-            <li>
-              <a data-language="en" data-set-locale="en" href="/" class="">
-                  <span>English</span>
-                  <svg class="icon icon--check" viewBox="0 0 20 20" width="22" height="22">
-                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-checkmark"></use>
-                  </svg>
-              </a>
-            </li>
-            <!-- <li>
-              <a data-language="ja" data-set-locale="ja" href="/jp" class="">
-                  <span>日本語</span>
-                  <svg class="icon icon--check" viewBox="0 0 20 20" width="22" height="22">
-                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-checkmark"></use>
-                  </svg>
-              </a>
-            </li> -->
-            <!-- <li>
-              <a data-language="ko" data-set-locale="ko" href="/ko" class="">
-                  <span>한국어</span>
-                  <svg class="icon icon--check" viewBox="0 0 20 20" width="22" height="22">
-                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-checkmark"></use>
-                  </svg>
-              </a>
-            </li> -->
-            <li>
-              <a data-language="es" data-set-locale="es" href="/es" class="">
-                  <span>Español</span>
-                  <svg class="icon icon--check" viewBox="0 0 20 20" width="22" height="22">
-                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-checkmark"></use>
-                  </svg>
-              </a>
-            </li>
-            <li>
-              <a data-language="fr" data-set-locale="fr" href="/fr" class="">
-                  <span>Français</span>
-                  <svg class="icon icon--check" viewBox="0 0 20 20" width="22" height="22">
-                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-checkmark"></use>
-                  </svg>
-              </a>
-            </li>
-            <li>
-              <a data-language="pt" data-set-locale="pt" href="/pt" class="">
-                  <span>Português</span>
-                  <svg class="icon icon--check" viewBox="0 0 20 20" width="22" height="22">
-                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-checkmark"></use>
-                  </svg>
-              </a>
-            </li>
-            <!-- <li>
-              <a data-language="de" data-set-locale="de" href="/de" class="">
-                  <span>Deutsch</span>
-                  <svg class="icon icon--check" viewBox="0 0 20 20" width="22" height="22">
-                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-checkmark"></use>
-                  </svg>
-              </a>
-            </li> -->
-          </ul>
-        </div>
-      </li>
-    </ul>
-  </div>
-</script>
-<script type="text/javascript">
-  var labels = {
-    "en": {
-      label: 'English',
-      path: "/"
-    },
-    // "ja": {
-    //   label: '日本語',
-    //   path: "/jp"
-    // },
-
-    // "ko": {
-    //   label: '한국어',
-    //   path: '/ko'
-    // },
-    "es": {
-      label: 'Español',
-      path: '/es'
-    },
-    "fr": {
-      label: 'Français',
-      path: '/fr'
-    },
-    "pt": {
-      label: 'Português',
-      path: "/pt"
-    },
-    // "de": {
-    //   label: 'Deutsch',
-    //   path: '/de'
-    // }
-  }
-  var popupEl, globalPopupActive;
-  function popUp(e) {
-    e.stopPropagation();
-    popupEl = document.getElementsByClassName("languagePicker")[0];
-    globalPopupActive = document.getElementsByClassName("globalPopupActive")[0];
-    // show popup on click
-    if (popupEl) {
-      popupEl.style.display = "block";
-    }
-    // register a function to hide the popup when there is a click outside the popup
-    window.onclick = (e) => {
-      // check that your clicked
-      // element has no id=info
-      // and is not child of info
-      if (e.target != globalPopupActive && !globalPopupActive.contains(e.target)) {
-        popupEl.style.display = "none";
-      }
-    };
-  }
-  function InjectFRM(el) {
-    var tpl = document.getElementById("l-p");
-    if (tpl) {
-      var ctr = document.createElement("article");
-      ctr.classList.add("globalFooterNav");
-      ctr.innerHTML = tpl.text;
-      el.appendChild(ctr);
-    }
-  }
-  $await(".docsie-lang-picker-container", InjectFRM);
-  let baseUrl = window.location.href;
-  let langObj = labels["en"];
-  // if (baseUrl.includes("/jp")) {
-  //   langObj = labels["ja"];
-  //   document.querySelectorAll('[data-language="ja"]')[0].setAttribute("class", "selected");
-  // } else 
-  if (baseUrl.includes("/pt")) {
-    langObj = labels["pt"];
-    document.querySelectorAll('[data-language="pt"]')[0].setAttribute("class", "selected");
-  }
-  // else if (baseUrl.includes("/ko")) {
-  //   langObj = labels["ko"];
-  //   document.querySelectorAll('[data-language="ko"]')[0].setAttribute("class", "selected");
-  // } 
-  else if (baseUrl.includes("/es")) {
-    langObj = labels["es"];
-    document.querySelectorAll('[data-language="es"]')[0].setAttribute("class", "selected");
-  } else if (baseUrl.includes("/fr")) {
-    langObj = labels["fr"];
-    document.querySelectorAll('[data-language="fr"]')[0].setAttribute("class", "selected");
-  }
-  // else if (baseUrl.includes("/de")) {
-  //   langObj = labels["de"];
-  //   document.querySelectorAll('[data-language="de"]')[0].setAttribute("class", "selected");
-  // } 
-  else {
-    document.querySelectorAll('[data-language="en"]')[0].setAttribute("class", "selected");
-  }
-  // set active label
-  document.getElementsByClassName("active-lp")[0].innerHTML = langObj.label;
-</script>
   <div class="lb-cookie-policy cookie-policy">
     <aside tabindex="0" role="alertdialog" class="lb-cookie-policy-alert cookie-policy-alert "
         aria-labelledby="cookie-policy-title" aria-describedby="cookie-policy-content">
         <h1 id="cookie-policy-title" class="off-screen">
-             Language Redirect notification 
+            Notification de redirection linguistique
         </h1>
-        <span class="cookie-policy-content" id="cookie-policy-content" role="document" tabindex="0">  Would you
-            like to view this page in <a href="/" id="docsie-locale-lang-path"></a>.
+        <span class="cookie-policy-content" id="cookie-policy-content" role="document" tabindex="0"> Souhaitez-vous afficher cette page en<a href="/" id="docsie-locale-lang-path"></a>.
             <button class="cookie-policy-close lb-cookie-policy-close"
-                aria-label="Close this cookie policy notification">  Close </button>
+                aria-label="Close this cookie policy notification"> Fermer</button>
         </span>
     </aside>
 </div>
@@ -772,8 +1241,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     $await(".lb-cookie-policy-alert", showRedirectLangBanner);
 </script>
-  <script src="https://www.googleoptimize.com/optimize.js?id=OPT-WXKCNSX"></script>
-<!--  <!-- TrafficGuard Integration -->
+  <!--  <script src="https://www.googleoptimize.com/optimize.js?id=OPT-WXKCNSX"></script>-->
+  <script type='text/javascript'>
+window.__lo_site_id = 284654;
+
+	(function() {
+		var wa = document.createElement('script'); wa.type = 'text/javascript'; wa.async = true;
+		wa.src = 'https://d10lpsik1i8c69.cloudfront.net/w.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(wa, s);
+	  })();
+	</script>
+  <!-- TrafficGuard Integration -->
 <script>
     var dataTrafficGuard = dataTrafficGuard || [];
     dataTrafficGuard.push(['property', 'tg-002991-001']);
@@ -781,8 +1259,25 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     (function() {var tg = document.createElement('script'); tg.type = 'text/javascript'; tg.async = true; tg.src = '//tgtag.io/tg.js?pid=tg-002991-001';var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(tg, s);})();
 </script>
 <noscript><img src="//p.tgtag.io/event?property_id=tg-002991-001&event_name=pageview&no_script=1" width="1" height="1" border="0"/></noscript>
-<!-- TrafficGuard End-->-->
-<!-- Facebook Pixel Code -->
+<!-- TrafficGuard End-->
+  <!-- DO NOT MODIFY -->
+<!-- Quora Pixel Code (JS Helper) -->
+<script>
+!function(q,e,v,n,t,s){if(q.qp) return; n=q.qp=function(){n.qp?n.qp.apply(n,arguments):n.queue.push(arguments);}; n.queue=[];t=document.createElement(e);t.async=!0;t.src=v; s=document.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t,s);}(window, 'script', 'https://a.quora.com/qevents.js');
+qp('init', 'f54999afdfd5493b86821c53ba3f4546');
+qp('track', 'ViewContent');
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://q.quora.com/_/ad/f54999afdfd5493b86821c53ba3f4546/pixel?tag=ViewContent&noscript=1"/></noscript>
+<!-- End of Quora Pixel Code -->
+  <script type="text/javascript">
+  (function() {
+    window._pa = window._pa || {};
+    var pa = document.createElement('script'); pa.type = 'text/javascript'; pa.async = true;
+    pa.src = ('https:' == document.location.protocol ? 'https:' : 'http:') + "//tag.perfectaudience.com/serve/5d54ce3419019cfe13000021.js";
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(pa, s);
+  })();
+</script>
+  <!-- Facebook Pixel Code -->
 <script>
 !function(f,b,e,v,n,t,s)
 {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -800,14 +1295,14 @@ fbq('track', 'VisitedLanding');
 src="https://www.facebook.com/tr?id=415019276437410&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Facebook Pixel Code -->
-<script type="text/javascript">
-  (function() {
-    window._pa = window._pa || {};
-    var pa = document.createElement('script'); pa.type = 'text/javascript'; pa.async = true;
-    pa.src = ('https:' == document.location.protocol ? 'https:' : 'http:') + "//tag.perfectaudience.com/serve/5d54ce3419019cfe13000021.js";
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(pa, s);
-  })();
-</script>
+    <script src="https://script.tapfiliate.com/tapfiliate.js" type="text/javascript" async></script>
+  <script type="text/javascript">
+      (function(t,a,p){t.TapfiliateObject=a;t[a]=t[a]||function(){
+      (t[a].q=t[a].q||[]).push(arguments)}})(window,'tap');
+
+      tap('create', '24066-f041a8', { integration: "stripe" });
+      tap('detect');
+  </script>
 
   
 <!-- Facebook Pixel Code -->
@@ -859,17 +1354,20 @@ qp('track', 'ViewContent');
 
 <!--<script type="text/javascript" src="/free-email-provider-domains.js"></script>
 <script type="text/template" id="rg-frm">
-  <form autocomplete="off" class="box-rg" action="https://app.docsie.io/onboarding/" method="get">
+<form name="onboarding" autocomplete="off" class="box-rg" action="https://app.docsie.io/new_rest-auth/linkedin/url/" method="get">
   <fieldset>
     <div class="rg-gr">
-<!--    <input class="ui-in" name="email" type="email" placeholder="Saisissez votre adresse courriel"-->
+<!--    <input class="ui-in" name="email" type="email" placeholder="Saisissez votre adresse e-mail"-->
 <!--      oninvalid="InvalidMsg(this);"-->
 <!--      oninput="InvalidMsg(this);">-->
-    <button class="ui-bt ui-prime" type="submit" aria-label="Submit registration request">Voir la Démo</button>
+    <button class="ui-bt ui-prime" type="submit"    aria-label="Submit registration request">Commencer - Gratuit</button>
+    <button class="ui-bt ui-prime" type="submit"    aria-label="Submit registration request" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/docsie-io/demo-call'});return false;">Demander une démonstration</button>
     </div>
-    <div class="rg-info">Vous utilisez déjà Docsie ?<a href="https://app.docsie.io/login/">S'identifier.</a></div>
+    <div class="rg-info">Vous utilisez déjà Docsie ? <a href="https://app.docsie.io/login/">Connectez-vous.</a></div>
   </fieldset>
 </form>
+
+
 </script>
 <script type="text/javascript">
   function InjectFRM(el) {
@@ -881,9 +1379,16 @@ qp('track', 'ViewContent');
       el.appendChild(ctr);
     }
   }
-  $await(".docsie-header-conatiner", InjectFRM);
+  $await(".docsie-signup-container", InjectFRM);
   $await(".docsie-footer-nav", InjectFRM);
-</script>-->
+</script>
+
+
+<!-- Start Journey Cookie -->
+<script>
+!function(e,t,o,r,a){if(btoa&&"function"==typeof btoa&&atob&&"function"==typeof atob){var i="",n=btoa("");if(n&&(i=n),i){var s=new Date;s.setTime(s.getTime()+31536e7);var c="expires="+s.toUTCString();e.cookie=o+"="+i+";"+c+";path=/"}var _="[name=onboarding]",u="action",f=o+"=",b=decodeURIComponent(e.cookie).split(";");n="";for(var d=0;d<b.length;d++){for(var l=b[d];" "==l.charAt(0);)l=l.substring(1);if(0==l.indexOf(f)){n=l.substring(f.length,l.length),n=atob(n);break}}n&&e.querySelector(_).setAttribute(u,n)}}(document,window,"docsie_start_journey_cookie");
+</script>
+<!-- End Journey Cookie -->-->
 
 <script type="text/javascript">
   "use strict";
@@ -923,8 +1428,6 @@ qp('track', 'ViewContent');
   $await(".cr-ft", Rider);
 </script>
 
-  <!-- End Alexa Certify Javascript -->
-lazyLoadInstance.update();
 </body>
 
 </html>

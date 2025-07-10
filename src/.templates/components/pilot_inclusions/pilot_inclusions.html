@@ -1,121 +1,87 @@
 <div class="pilot-inclusions-section">
     <div class="container">
+        {% if section.title or section.subtitle %}
         <div class="pilot-inclusions-header">
-            <h2 class="pilot-inclusions-title">What's Included in Your AI Pilot</h2>
-            <p class="pilot-inclusions-subtitle">Everything you need to transform your documentation with AI</p>
+            {% if section.title %}
+            <h2 class="pilot-inclusions-title">{{ section.title }}</h2>
+            {% endif %}
+            {% if section.subtitle %}
+            <p class="pilot-inclusions-subtitle">{{ section.subtitle }}</p>
+            {% endif %}
         </div>
+        {% endif %}
         
+        {% if section.inclusions %}
         <div class="pilot-inclusions-grid">
-            <!-- Video Conversions Card -->
-            <div class="inclusion-card" data-inclusion="video">
+            {% for inclusion in section.inclusions %}
+            <div class="inclusion-card" data-inclusion="{{ inclusion.id }}">
                 <div class="inclusion-icon-wrapper">
+                    {% if inclusion.icon == 'video' %}
                     <svg class="inclusion-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M15.267 5.615l4.123 2.995c1.605 1.168 1.605 3.612 0 4.78l-4.123 2.995c-1.759 1.278-4.267.123-4.267-1.964V7.58c0-2.087 2.508-3.242 4.267-1.964z" fill="currentColor"/>
                         <rect x="3" y="6" width="7" height="12" rx="2" fill="currentColor" opacity="0.3"/>
                     </svg>
-                </div>
-                <div class="inclusion-content">
-                    <h3 class="inclusion-title">Up to 25 Training Videos</h3>
-                    <p class="inclusion-description">Transform your video content into comprehensive documentation instantly</p>
-                    <div class="inclusion-value">Full Conversion Included</div>
-                </div>
-                <div class="inclusion-hover-effect"></div>
-            </div>
-
-            <!-- Custom AI Demo Card -->
-            <div class="inclusion-card" data-inclusion="demo">
-                <div class="inclusion-icon-wrapper">
+                    {% elif inclusion.icon == 'demo' %}
                     <svg class="inclusion-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M9.5 2a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5zM3 7a3 3 0 0 1 3-3h12a3 3 0 0 1 3 3v10a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3V7z" fill="currentColor" opacity="0.3"/>
                         <circle cx="12" cy="12" r="3" fill="currentColor"/>
                         <path d="M12 8v1m0 6v1m4-4h-1m-6 0H8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
                     </svg>
-                </div>
-                <div class="inclusion-content">
-                    <h3 class="inclusion-title">Custom AI Demo</h3>
-                    <p class="inclusion-description">Personalized demonstration tailored to your specific documentation needs</p>
-                    <div class="inclusion-value">Tailored for You</div>
-                </div>
-                <div class="inclusion-hover-effect"></div>
-            </div>
-
-            <!-- Team Training Card -->
-            <div class="inclusion-card" data-inclusion="training">
-                <div class="inclusion-icon-wrapper">
+                    {% elif inclusion.icon == 'training' %}
                     <svg class="inclusion-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M12 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" fill="currentColor"/>
                         <path d="M18 11a2 2 0 1 0 0-4 2 2 0 0 0 0 4zM6 11a2 2 0 1 0 0-4 2 2 0 0 0 0 4z" fill="currentColor" opacity="0.3"/>
                         <path d="M12 13c-3.866 0-7 2.239-7 5v1a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-1c0-2.761-3.134-5-7-5z" fill="currentColor"/>
                         <path d="M18 13c-.349 0-.694.026-1.032.076C17.621 14.036 18 15.145 18 16.324V19h4a1 1 0 0 0 1-1v-.5c0-2.21-2.239-4.5-5-4.5zM6 13c-2.761 0-5 2.29-5 4.5V18a1 1 0 0 0 1 1h4v-2.676c0-1.179.379-2.288 1.032-3.248A6.974 6.974 0 0 0 6 13z" fill="currentColor" opacity="0.3"/>
                     </svg>
-                </div>
-                <div class="inclusion-content">
-                    <h3 class="inclusion-title">Team Training Session</h3>
-                    <p class="inclusion-description">Comprehensive onboarding to maximize your team's AI documentation capabilities</p>
-                    <div class="inclusion-value">2-Hour Workshop</div>
-                </div>
-                <div class="inclusion-hover-effect"></div>
-            </div>
-
-            <!-- Usage Analytics Card -->
-            <div class="inclusion-card" data-inclusion="analytics">
-                <div class="inclusion-icon-wrapper">
+                    {% elif inclusion.icon == 'analytics' %}
                     <svg class="inclusion-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M3 3h18v18H3V3z" fill="currentColor" opacity="0.1"/>
                         <path d="M7 14v4m4-8v8m4-12v12m4-6v6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
                         <path d="M3 3l18 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" opacity="0.3"/>
                     </svg>
-                </div>
-                <div class="inclusion-content">
-                    <h3 class="inclusion-title">Usage Analytics</h3>
-                    <p class="inclusion-description">Real-time insights into documentation performance and user engagement</p>
-                    <div class="inclusion-value">Advanced Insights</div>
-                </div>
-                <div class="inclusion-hover-effect"></div>
-            </div>
-
-            <!-- Multilingual Support Card -->
-            <div class="inclusion-card" data-inclusion="multilingual">
-                <div class="inclusion-icon-wrapper">
+                    {% elif inclusion.icon == 'multilingual' %}
                     <svg class="inclusion-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <circle cx="12" cy="12" r="10" fill="currentColor" opacity="0.3"/>
                         <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" stroke="currentColor" stroke-width="2"/>
                         <path d="M8 6l2 2m0 0l2-2m-2 2v4m0 0l-1.5 1.5M10 12l1.5 1.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
-                </div>
-                <div class="inclusion-content">
-                    <h3 class="inclusion-title">Multilingual Support</h3>
-                    <p class="inclusion-description">Generate documentation in 100+ languages with AI-powered translation</p>
-                    <div class="inclusion-value">Global Ready</div>
-                </div>
-                <div class="inclusion-hover-effect"></div>
-            </div>
-
-            <!-- Technical Support Card -->
-            <div class="inclusion-card" data-inclusion="support">
-                <div class="inclusion-icon-wrapper">
+                    {% elif inclusion.icon == 'support' %}
                     <svg class="inclusion-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z" fill="currentColor" opacity="0.3"/>
                         <path d="M17 8h-4l-2 3h4l-2 5 5-6h-4l1-2z" fill="currentColor"/>
                     </svg>
+                    {% else %}
+                    <!-- Default icon -->
+                    <svg class="inclusion-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="12" cy="12" r="10" fill="currentColor" opacity="0.3"/>
+                        <path d="M12 8v8m-4-4h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                    {% endif %}
                 </div>
                 <div class="inclusion-content">
-                    <h3 class="inclusion-title">Priority Technical Support</h3>
-                    <p class="inclusion-description">Direct access to our expert team for immediate assistance and guidance</p>
-                    <div class="inclusion-value">24/7 Available</div>
+                    <h3 class="inclusion-title">{{ inclusion.title }}</h3>
+                    <p class="inclusion-description">{{ inclusion.description }}</p>
+                    <div class="inclusion-value">{{ inclusion.value }}</div>
                 </div>
                 <div class="inclusion-hover-effect"></div>
             </div>
+            {% endfor %}
         </div>
+        {% endif %}
 
+        {% if section.cta_text or section.cta_button_text %}
         <div class="pilot-inclusions-cta">
-            <p class="cta-text">Ready to transform your documentation workflow?</p>
+            {% if section.cta_text %}
+            <p class="cta-text">{{ section.cta_text }}</p>
+            {% endif %}
             <button onclick="Calendly.initPopupWidget({url: '{{ page.calendly_url if page and page.calendly_url else "https://calendly.com/docsie-io/demo-call" }}'});return false;" class="cta-button">
-                <span>Start Your Pilot Today</span>
+                <span>{{ section.cta_button_text or 'Get Started' }}</span>
                 <svg class="cta-arrow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M5 12h14m0 0l-7-7m7 7l-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
             </button>
         </div>
+        {% endif %}
     </div>
 </div>
