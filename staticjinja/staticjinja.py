@@ -212,7 +212,7 @@ class Site(object):
 
             environment.install_gettext_translations(translations)
 
-            if locale == 'ja_JP':
+            if locale == 'ja':
                 locale = 'jp'
             outpath = './'+locale
 

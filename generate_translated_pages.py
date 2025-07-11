@@ -42,13 +42,6 @@ def setup_translations(lang_code):
     """Set up gettext translations for a specific language."""
     locale_dir = Path(__file__).parent / 'locale'
     
-    # Handle special cases like ja_JP
-    if lang_code == 'ja':
-        # Check if ja_JP exists
-        ja_jp_path = locale_dir / 'ja_JP' / 'LC_MESSAGES' / 'messages.mo'
-        if ja_jp_path.exists():
-            lang_code = 'ja_JP'
-    
     try:
         # Load the translation
         translation = gettext.translation(
@@ -74,6 +67,10 @@ def generate_language_site(lang_code, lang_name):
     if lang_code == 'en':
         # English is the default, no subdirectory
         outpath = '.'
+    elif lang_code == 'ja':
+        # Japanese uses 'jp' directory
+        outpath = 'jp'
+        os.makedirs(outpath, exist_ok=True)
     else:
         outpath = lang_code
         os.makedirs(outpath, exist_ok=True)
