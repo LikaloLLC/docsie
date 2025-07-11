@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{'abs_lang_url': <function generate_supplementary_pages_for_language.<locals>.<lambda> at 0x104ee1ee0>}">
+<html lang="{'abs_lang_url': <function generate_supplementary_pages_for_language.<locals>.<lambda> at 0x1038f9ee0>}">
 
 <head>
   <link rel="preconnect" href="https://app.docsie.io">
@@ -164,7 +164,7 @@
 <meta name="apple-mobile-web-app-title" content="Docsie">
 
 
-<meta property="og:locale" content="{'abs_lang_url': <function generate_supplementary_pages_for_language.<locals>.<lambda> at 0x104ee1ee0>}_{'ABS_LANG_URL': <FUNCTION GENERATE_SUPPLEMENTARY_PAGES_FOR_LANGUAGE.<LOCALS>.<LAMBDA> AT 0X104EE1EE0>}">
+<meta property="og:locale" content="{'abs_lang_url': <function generate_supplementary_pages_for_language.<locals>.<lambda> at 0x1038f9ee0>}_{'ABS_LANG_URL': <FUNCTION GENERATE_SUPPLEMENTARY_PAGES_FOR_LANGUAGE.<LOCALS>.<LAMBDA> AT 0X1038F9EE0>}">
 <meta property="og:locale:alternate" content="de_DE">
 <meta property="og:locale:alternate" content="es_ES">
 <meta property="og:locale:alternate" content="fr_FR">
@@ -242,28 +242,30 @@
   <link rel="icon" type="image/png" href="https://d1iq6qzgppjlud.cloudfront.net/images/favicon/favicon-128.png"
     sizes="128x128" />
   <link rel="dns-prefetch" href="https://www.googletagmanager.com">
-  <script src="https://cdn.jsdelivr.net/npm/share-this/dist/share-this.js"></script>
-  <script type="text/javascript" async="" src="https://certify-js.alexametrics.com/atrk.js"></script>
-
-  <link rel="stylesheet" href='/style.css'>
-  <link rel="stylesheet" href="/lang-picker.css">
-  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+  <link rel="dns-prefetch" href="https://assets.calendly.com">
   
-  <!-- FrankenUI v2 (UIkit 3 compatible + Tailwind CSS) -->
-  <link href="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/css/core.min.css" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/js/core.iife.min.js"></script>
+  <!-- Preload critical CSS -->
+  <link rel="preload" href='/style.css' as="style">
+  <link rel="preload" href="/styles/design-system.css" as="style">
+  
+  <!-- Critical CSS - loaded immediately -->
+  <link rel="stylesheet" href='/style.css'>
+  <link rel="stylesheet" href="/styles/design-system.css">
+  <link rel="stylesheet" href="/assets/css/animated-gradient-bg.css">
+  
+  <!-- Defer non-critical CSS -->
+  <link rel="preload" href="/lang-picker.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="https://assets.calendly.com/assets/external/widget.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript>
+    <link rel="stylesheet" href="/lang-picker.css">
+    <link rel="stylesheet" href="https://assets.calendly.com/assets/external/widget.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  </noscript>
   
   <!-- Tailwind CSS for additional utilities -->
   <script src="https://cdn.tailwindcss.com"></script>
-  
-  <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
-  
-  <!-- Unified Design System - loaded for all pages -->
-  <link rel="stylesheet" href="/styles/design-system.css">
-  
-  <!-- Animated Background System -->
-  <link rel="stylesheet" href="/assets/css/animated-gradient-bg.css">
   
   
 <!-- Global styles -->
@@ -350,16 +352,6 @@
 
 
 
-  
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-116930058-3"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-    gtag('config', 'UA-116930058-3');
-  </script>
-  <script id="vtag-ai-js" async src="https://r2.leadsy.ai/tag.js" data-pid="12EYwQyDE3RbKRkbk" data-version="062024"></script>
   <script>
     // Configure Tailwind to include all the classes we need
     tailwind.config = {
@@ -3247,6 +3239,24 @@ src="https://www.facebook.com/tr?id=415019276437410&ev=PageView&noscript=1"
   </script>
 
   
+  <!-- Deferred non-critical scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/share-this/dist/share-this.js" defer></script>
+  <script src="https://certify-js.alexametrics.com/atrk.js" async></script>
+  <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+  
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-116930058-3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-116930058-3');
+  </script>
+  
+  <!-- Leadsy Analytics -->
+  <script id="vtag-ai-js" async src="https://r2.leadsy.ai/tag.js" data-pid="12EYwQyDE3RbKRkbk" data-version="062024"></script>
+  
+  <!-- Lazy loading -->
   <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.3.0/dist/lazyload.min.js"></script>
   <script>
     var lazyLoadInstance = new LazyLoad({
