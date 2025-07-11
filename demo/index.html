@@ -164,7 +164,7 @@
 <meta name="apple-mobile-web-app-title" content="Docsie">
 
 
-<meta property="og:locale" content="en_US">
+<meta property="og:locale" content="en_EN">
 <meta property="og:locale:alternate" content="de_DE">
 <meta property="og:locale:alternate" content="es_ES">
 <meta property="og:locale:alternate" content="fr_FR">
@@ -341,6 +341,36 @@
       }
     }
   </script>
+  
+  
+  
+<script>
+  // Minimal RTL detection script
+  (function() {
+    // Get the current language from the HTML lang attribute
+    var lang = document.documentElement.lang || 'en';
+    
+    // List of RTL languages
+    var rtlLanguages = ['ar', 'he', 'fa', 'ur', 'yi', 'ji', 'iw', 'ku', 'ps', 'sd'];
+    
+    // Check if current language is RTL
+    if (rtlLanguages.indexOf(lang) !== -1) {
+      // Set dir attribute on html element
+      document.documentElement.setAttribute('dir', 'rtl');
+      
+      // Add RTL class for additional styling hooks if needed
+      document.documentElement.classList.add('rtl');
+      
+      // Ensure RTL CSS is loaded
+      if (!document.querySelector('link[href*="rtl.css"]')) {
+        var rtlLink = document.createElement('link');
+        rtlLink.rel = 'stylesheet';
+        rtlLink.href = '/assets/css/rtl.css';
+        document.head.appendChild(rtlLink);
+      }
+    }
+  })();
+</script>
 </head>
 
 <body class="docsie-background-img">

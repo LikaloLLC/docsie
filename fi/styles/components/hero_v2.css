@@ -1,0 +1,107 @@
+/* FrankenUI v2 Hero Styles - Updated for proper compatibility */
+
+/* Hero section base styles */
+.hero-v2 {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Custom enhancements for the hero section */
+.hero-v2::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.05) 0%, rgba(147, 51, 234, 0.05) 100%);
+  pointer-events: none;
+}
+
+/* Button hover effects */
+.hero-v2 a[class*="bg-blue-600"]:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 25px rgba(59, 130, 246, 0.2);
+  transition: all 0.3s ease;
+}
+
+.hero-v2 a[class*="bg-white"]:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+/* Image enhancements */
+.hero-v2 img {
+  transition: transform 0.3s ease;
+}
+
+.hero-v2 img:hover {
+  transform: scale(1.02);
+}
+
+/* Typography enhancements */
+.hero-v2 h1 {
+  background: linear-gradient(135deg, #1f2937 0%, #374151 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Badge animation */
+.hero-v2 span[class*="rounded-full"] {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .hero-v2 h1 {
+    font-size: 2.5rem;
+    line-height: 1.2;
+  }
+}
+
+/* Animation on scroll */
+.hero-v2 [class*="order-"] {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+.hero-v2 [class*="order-1"] {
+  animation-delay: 0.2s;
+}
+
+.hero-v2 [class*="order-2"] {
+  animation-delay: 0.4s;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .hero-v2 h1 {
+    background: linear-gradient(135deg, #f9fafb 0%, #e5e7eb 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .hero-v2::before {
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(147, 51, 234, 0.1) 100%);
+  }
+}

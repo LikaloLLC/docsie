@@ -1,0 +1,202 @@
+<svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Shadow filters -->
+    <filter id="dropShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="4"/>
+      <feOffset dx="0" dy="2" result="offsetblur"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.15"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <filter id="subtleShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="2"/>
+      <feOffset dx="0" dy="1" result="offsetblur"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.1"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <!-- Orange gradient -->
+    <linearGradient id="orangeGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#FB923C;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#F97316;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Red gradient -->
+    <linearGradient id="redGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#F87171;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#EF4444;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Blue gradient -->
+    <linearGradient id="blueGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#60A5FA;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#3B82F6;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Left sidebar -->
+  <rect x="30" y="30" width="320" height="740" rx="16" fill="#F9FAFB" filter="url(#dropShadow)"/>
+  
+  <!-- Create Chat button -->
+  <g transform="translate(50, 50)">
+    <rect width="280" height="50" rx="8" fill="white" stroke="#E5E7EB" stroke-width="1" cursor="pointer">
+      <animate attributeName="fill" values="white;#F3F4F6;white" dur="2s" repeatCount="indefinite"/>
+    </rect>
+    <text x="20" y="32" font-family="system-ui, -apple-system, sans-serif" font-size="18" fill="#374151">+</text>
+    <text x="45" y="32" font-family="system-ui, -apple-system, sans-serif" font-size="16" fill="#374151">Create Chat</text>
+  </g>
+  
+  <!-- Active chat with pulse animation -->
+  <g transform="translate(50, 120)">
+    <rect width="280" height="70" rx="8" fill="#FEE2E2">
+      <animate attributeName="opacity" values="1;0.8;1" dur="3s" repeatCount="indefinite"/>
+    </rect>
+    <text x="15" y="25" font-family="system-ui, -apple-system, sans-serif" font-size="15" fill="#DC2626">Product Docs X1</text>
+    <text x="180" y="25" font-family="system-ui, -apple-system, sans-serif" font-size="14" fill="#DC2626">🔗 Vs. Docs X2</text>
+    <text x="15" y="50" font-family="system-ui, -apple-system, sans-serif" font-size="13" fill="#6B7280">Ask 📙 - API Documentation</text>
+    <circle cx="15" cy="55" r="4" fill="#F97316">
+      <animate attributeName="r" values="4;6;4" dur="2s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  
+  <!-- Other chat items with stagger animation -->
+  <g transform="translate(50, 205)" opacity="0">
+    <animate attributeName="opacity" values="0;1" dur="0.5s" begin="0.2s" fill="freeze"/>
+    <rect width="280" height="55" rx="8" fill="white" stroke="#E5E7EB" stroke-width="1" cursor="pointer"/>
+    <text x="15" y="25" font-family="system-ui, -apple-system, sans-serif" font-size="15" fill="#374151">Product Docs X1</text>
+  </g>
+  
+  <g transform="translate(50, 270)" opacity="0">
+    <animate attributeName="opacity" values="0;1" dur="0.5s" begin="0.3s" fill="freeze"/>
+    <rect width="280" height="55" rx="8" fill="white" stroke="#E5E7EB" stroke-width="1" cursor="pointer"/>
+    <text x="15" y="25" font-family="system-ui, -apple-system, sans-serif" font-size="15" fill="#374151">Troubleshooting DE 🔥</text>
+  </g>
+  
+  <g transform="translate(50, 335)" opacity="0">
+    <animate attributeName="opacity" values="0;1" dur="0.5s" begin="0.4s" fill="freeze"/>
+    <rect width="280" height="55" rx="8" fill="white" stroke="#E5E7EB" stroke-width="1" cursor="pointer"/>
+    <text x="15" y="25" font-family="system-ui, -apple-system, sans-serif" font-size="15" fill="#374151">Security</text>
+  </g>
+  
+  <g transform="translate(50, 400)" opacity="0">
+    <animate attributeName="opacity" values="0;1" dur="0.5s" begin="0.5s" fill="freeze"/>
+    <rect width="280" height="55" rx="8" fill="white" stroke="#E5E7EB" stroke-width="1" cursor="pointer"/>
+    <text x="15" y="25" font-family="system-ui, -apple-system, sans-serif" font-size="15" fill="#374151">Mobile SDK 📱</text>
+  </g>
+  
+  <g transform="translate(50, 465)" opacity="0">
+    <animate attributeName="opacity" values="0;1" dur="0.5s" begin="0.6s" fill="freeze"/>
+    <rect width="280" height="70" rx="8" fill="white" stroke="#E5E7EB" stroke-width="1" cursor="pointer"/>
+    <text x="15" y="25" font-family="system-ui, -apple-system, sans-serif" font-size="15" fill="#374151">Integration Guide 👀: Widget</text>
+    <text x="15" y="50" font-family="system-ui, -apple-system, sans-serif" font-size="13" fill="#6B7280">Installation 💡</text>
+  </g>
+  
+  <g transform="translate(50, 545)" opacity="0">
+    <animate attributeName="opacity" values="0;1" dur="0.5s" begin="0.7s" fill="freeze"/>
+    <rect width="280" height="55" rx="8" fill="white" stroke="#E5E7EB" stroke-width="1" cursor="pointer"/>
+    <text x="15" y="25" font-family="system-ui, -apple-system, sans-serif" font-size="15" fill="#374151">Product Updates 🔥 1</text>
+  </g>
+  
+  <g transform="translate(50, 610)" opacity="0">
+    <animate attributeName="opacity" values="0;1" dur="0.5s" begin="0.8s" fill="freeze"/>
+    <rect width="280" height="55" rx="8" fill="white" stroke="#E5E7EB" stroke-width="1" cursor="pointer"/>
+    <text x="15" y="25" font-family="system-ui, -apple-system, sans-serif" font-size="15" fill="#374151">Release Notes ⚡</text>
+  </g>
+  
+  <!-- Main chat area -->
+  <rect x="380" y="30" width="790" height="740" rx="16" fill="white" filter="url(#dropShadow)"/>
+  
+  <!-- Chat messages -->
+  <g transform="translate(420, 80)">
+    <!-- Bot welcome message with fade in -->
+    <g transform="translate(0, 0)" opacity="0">
+      <animate attributeName="opacity" values="0;1" dur="0.8s" begin="1s" fill="freeze"/>
+      <rect width="50" height="50" rx="8" fill="url(#orangeGradient)"/>
+      <path d="M 15 25 L 35 25 M 15 30 L 30 30 M 15 35 L 25 35" stroke="white" stroke-width="2" stroke-linecap="round"/>
+      <rect x="10" y="15" width="6" height="6" rx="1" fill="white"/>
+      <rect x="10" y="24" width="6" height="6" rx="1" fill="white"/>
+      <rect x="10" y="33" width="6" height="6" rx="1" fill="white"/>
+      
+      <rect x="70" y="0" width="620" height="80" rx="12" fill="#FFF7ED"/>
+      <text x="85" y="30" font-family="system-ui, -apple-system, sans-serif" font-size="16" fill="#374151">Hi there, I'm your documentation assistant. How may I help you today?</text>
+      <text x="85" y="55" font-family="system-ui, -apple-system, sans-serif" font-size="14" fill="#6B7280">I can answer questions about your product documentation, API references, and guides.</text>
+    </g>
+    
+    <!-- User message with slide in -->
+    <g transform="translate(0, 120)" opacity="0">
+      <animateTransform attributeName="transform" type="translate" values="50,120;0,120" dur="0.5s" begin="2s" fill="freeze"/>
+      <animate attributeName="opacity" values="0;1" dur="0.5s" begin="2s" fill="freeze"/>
+      <rect width="50" height="50" rx="8" fill="url(#redGradient)"/>
+      <circle cx="25" cy="18" r="12" fill="white" fill-opacity="0.9"/>
+      <path d="M 19 35 Q 25 30 31 35 L 31 40 Q 25 45 19 40 Z" fill="white" fill-opacity="0.9"/>
+      
+      <rect x="70" y="0" width="420" height="50" rx="12" fill="#FEF2F2"/>
+      <text x="85" y="30" font-family="system-ui, -apple-system, sans-serif" font-size="16" fill="#374151">Why Product Docs X1 is better than Product Docs X2?</text>
+    </g>
+    
+    <!-- Bot typing indicator -->
+    <g transform="translate(0, 200)" opacity="0">
+      <animate attributeName="opacity" values="0;1;0" dur="2s" begin="2.5s" />
+      <rect width="50" height="50" rx="8" fill="url(#orangeGradient)"/>
+      <circle cx="20" cy="25" r="3" fill="white">
+        <animate attributeName="opacity" values="0.3;1;0.3" dur="1s" repeatCount="3" begin="2.5s"/>
+      </circle>
+      <circle cx="30" cy="25" r="3" fill="white">
+        <animate attributeName="opacity" values="0.3;1;0.3" dur="1s" begin="2.7s" repeatCount="3"/>
+      </circle>
+      <circle cx="40" cy="25" r="3" fill="white">
+        <animate attributeName="opacity" values="0.3;1;0.3" dur="1s" begin="2.9s" repeatCount="3"/>
+      </circle>
+    </g>
+    
+    <!-- Bot response with fade in -->
+    <g transform="translate(0, 200)" opacity="0">
+      <animate attributeName="opacity" values="0;1" dur="0.8s" begin="4.5s" fill="freeze"/>
+      <rect width="50" height="50" rx="8" fill="url(#orangeGradient)"/>
+      <path d="M 15 25 L 35 25 M 15 30 L 30 30 M 15 35 L 25 35" stroke="white" stroke-width="2" stroke-linecap="round"/>
+      <rect x="10" y="15" width="6" height="6" rx="1" fill="white"/>
+      <rect x="10" y="24" width="6" height="6" rx="1" fill="white"/>
+      <rect x="10" y="33" width="6" height="6" rx="1" fill="white"/>
+      
+      <rect x="70" y="0" width="660" height="240" rx="12" fill="#FFF7ED"/>
+      <text x="85" y="30" font-family="system-ui, -apple-system, sans-serif" font-size="16" fill="#374151">Both Product Docs X1 and Product Docs X2 offer unique features that cater to different</text>
+      <text x="85" y="55" font-family="system-ui, -apple-system, sans-serif" font-size="16" fill="#374151">documentation needs. Here's a comparison based on your knowledge base:</text>
+      
+      <text x="85" y="95" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="600" fill="#111827">Product Docs X1:</text>
+      
+      <text x="105" y="125" font-family="system-ui, -apple-system, sans-serif" font-size="15" fill="#374151">• <tspan font-weight="600">Real-time Collaboration:</tspan> Multiple users can edit simultaneously with live updates.</text>
+      <text x="105" y="150" font-family="system-ui, -apple-system, sans-serif" font-size="15" fill="#374151">• <tspan font-weight="600">Version Control:</tspan> Advanced Git-based versioning with branch management.</text>
+      <text x="105" y="175" font-family="system-ui, -apple-system, sans-serif" font-size="15" fill="#374151">• <tspan font-weight="600">API Integration:</tspan> RESTful API with webhook support for automation.</text>
+      
+      <text x="85" y="210" font-family="system-ui, -apple-system, sans-serif" font-size="15" font-weight="600" fill="#374151">Key Features:</text>
+    </g>
+    
+    <!-- Feature list with stagger animation -->
+    <g transform="translate(105, 465)" opacity="0">
+      <animate attributeName="opacity" values="0;1" dur="0.5s" begin="5s" fill="freeze"/>
+      <text x="0" y="0" font-family="system-ui, -apple-system, sans-serif" font-size="14" fill="#6B7280">○ Markdown and WYSIWYG editor support</text>
+      <text x="0" y="25" font-family="system-ui, -apple-system, sans-serif" font-size="14" fill="#6B7280">○ Built-in analytics and user tracking</text>
+      <text x="0" y="50" font-family="system-ui, -apple-system, sans-serif" font-size="14" fill="#6B7280">○ Custom domain and white-labeling options</text>
+    </g>
+  </g>
+  
+  <!-- Input area with pulse animation -->
+  <g transform="translate(420, 680)">
+    <rect width="710" height="55" rx="27.5" fill="#F3F4F6" stroke="#E5E7EB" stroke-width="1"/>
+    <text x="25" y="35" font-family="system-ui, -apple-system, sans-serif" font-size="16" fill="#9CA3AF">Ask a question about your documentation...</text>
+    <circle cx="665" cy="27.5" r="20" fill="url(#blueGradient)" cursor="pointer">
+      <animate attributeName="r" values="20;22;20" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <path d="M 655 27.5 L 670 27.5 L 663 20 Z" fill="white" transform="rotate(90 665 27.5)"/>
+  </g>
+</svg>
