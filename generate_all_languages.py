@@ -24,7 +24,7 @@ def generate_language_version(locale_dir, locale_code):
     print(f"\n🌐 Generating {locale_code} version...")
     
     # Special handling for locale codes
-    if locale_code == 'ja_JP':
+    if locale_code == 'ja':
         loc_name = '/jp'
     else:
         loc_name = '/' + locale_code
@@ -47,6 +47,9 @@ def generate_language_version(locale_dir, locale_code):
     # Create output directory
     if locale_code == 'en':
         outpath = '.'  # English goes to root
+    elif locale_code == 'ja':
+        outpath = 'jp'
+        os.makedirs(outpath, exist_ok=True)
     else:
         outpath = locale_code
         os.makedirs(outpath, exist_ok=True)
@@ -114,7 +117,7 @@ def main():
     print("\nLanguage URLs:")
     print("  English: /")
     for locale_code in sorted(languages):
-        if locale_code == 'ja_JP':
+        if locale_code == 'ja':
             print(f"  {locale_code}: /jp/")
         else:
             print(f"  {locale_code}: /{locale_code}/")

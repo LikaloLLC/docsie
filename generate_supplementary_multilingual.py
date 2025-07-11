@@ -106,7 +106,7 @@ def generate_supplementary_pages_for_language(locale_code, locale_dir, output_ba
     if locale_code != 'en':
         try:
             # Handle special cases
-            actual_locale = 'ja_JP' if locale_code == 'ja_JP' else locale_code
+            actual_locale = locale_code
             
             # Load translation
             translation = gettext.translation(
@@ -271,7 +271,7 @@ def main():
     # Generate for each language
     for locale_code in sorted(languages):
         # Special handling for Japanese
-        if locale_code == 'ja_JP':
+        if locale_code == 'ja':
             output_dir = 'jp'
         else:
             output_dir = locale_code
