@@ -1,14 +1,24 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="{% if lang %}{{ lang }}{% else %}en{% endif %}">
 
 <head>
   <link rel="preconnect" href="https://app.docsie.io">
   <link rel="preconnect" href="https://portals.docsie.io">
   <link rel="preconnect" href="https://help.docsie.io">
   <link rel="canonical" href="https://www.docsie.io/{{landing_url}}">
+  
+  {# Hreflang tags for multilingual SEO #}
+  {% include '_hreflang.html' %}
+  
+  {# JSON-LD Structured Data for better SEO #}
+  {% include '_structured_data.html' %}
+  
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
   <title>{% block title %}{% endblock title %} | Docsie</title>
   <meta name=description content="{% block description %}{% endblock description %}">
+  
+  {# Enhanced meta tags for better SEO #}
+  {% include '_enhanced_meta.html' %}
   <!-- Schema.org markup for Google+ -->
   <meta itemprop="name" content="{{ self.title() }} | Docsie">
   <meta itemprop="description" content="{{ self.description() }}">

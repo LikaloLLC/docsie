@@ -1,0 +1,35 @@
+{# Article Schema for Blog/Content Pages #}
+{% if article_type %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "{{ article_title | default(self.title()) | replace('"', '\\"') }}",
+  "description": "{{ article_description | default(self.description()) | replace('"', '\\"') }}",
+  "author": {
+    "@type": "Organization",
+    "name": "Docsie",
+    "url": "https://www.docsie.io"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Docsie",
+    "url": "https://www.docsie.io",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.docsie.io/assets/docsie_logo_new.png"
+    }
+  },
+  "datePublished": "{{ article_published | default('2024-01-01') }}",
+  "dateModified": "{{ article_modified | default(article_published) | default('2024-01-01') }}",
+  "image": "{{ article_image | default('https://www.docsie.io/assets/share-image.jpeg') }}",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.docsie.io{{ page_url | default(landing_url) }}"
+  },
+  "wordCount": {{ article_wordcount | default(500) }},
+  "articleSection": "{{ article_section | default('Documentation') }}",
+  "inLanguage": "{{ lang | default('en') }}"
+}
+</script>
+{% endif %}

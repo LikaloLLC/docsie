@@ -4,6 +4,82 @@
 {% block description %}{{ page.description }}{% endblock %}
 {% block shareimage %}{{ page.components.hero.image if page.components.hero and page.components.hero.image else 'https://d1iq6qzgppjlud.cloudfront.net/images/docsie-share.png' }}{% endblock %}
 
+{% block additional_structured_data %}
+{# Product Schema for solution pages #}
+{% if page.category in ['ai', 'solutions'] and page.components.hero %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "{{ page.title }}",
+  "description": "{{ page.description }}",
+  "brand": {
+    "@type": "Brand",
+    "name": "Docsie"
+  },
+  "offers": {
+    "@type": "Offer",
+    "url": "https://www.docsie.io{{ page.url }}",
+    "priceCurrency": "USD",
+    "availability": "https://schema.org/InStock"
+  }
+}
+</script>
+{% endif %}
+
+{# FAQ Schema if FAQ component exists #}
+{% if page.components.faq_v2 and page.components.faq_v2.questions %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {% for item in page.components.faq_v2.questions %}
+    {
+      "@type": "Question",
+      "name": "{{ item.question | replace('"', '\\"') }}",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "{{ item.answer | replace('"', '\\"') | striptags }}"
+      }
+    }{% if not loop.last %},{% endif %}
+    {% endfor %}
+  ]
+}
+</script>
+{% endif %}
+
+{# Breadcrumb Schema #}
+{% if page.breadcrumbs %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://www.docsie.io/"
+    },
+    {
+      "@type": "ListItem", 
+      "position": 2,
+      "name": "{{ page.category | title }}",
+      "item": "https://www.docsie.io/{{ page.category }}/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "{{ page.title }}",
+      "item": "https://www.docsie.io{{ page.url }}"
+    }
+  ]
+}
+</script>
+{% endif %}
+{% endblock %}
+
 
 {% block styles %}
 <!-- Global styles -->
