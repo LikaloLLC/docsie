@@ -1,0 +1,48 @@
+{# HowTo Schema for Tutorial/Documentation Pages #}
+{% if howto_steps %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "{{ howto_title | default('How to use Docsie') | replace('"', '\\"') }}",
+  "description": "{{ howto_description | default(self.description()) | replace('"', '\\"') }}",
+  "image": "{{ howto_image | default(self.shareimage()) }}",
+  "totalTime": "{{ howto_time | default('PT15M') }}",
+  "estimatedCost": {
+    "@type": "MonetaryAmount",
+    "currency": "USD",
+    "value": "0"
+  },
+  "supply": [],
+  "tool": [
+    {
+      "@type": "HowToTool",
+      "name": "Docsie Platform"
+    }
+  ],
+  "step": [
+    {% for step in howto_steps %}
+    {
+      "@type": "HowToStep",
+      "name": "{{ step.name | replace('"', '\\"') }}",
+      "text": "{{ step.text | replace('"', '\\"') }}",
+      "image": "{{ step.image | default('') }}",
+      "url": "{{ step.url | default('') }}"
+    }{% if not loop.last %},{% endif %}
+    {% endfor %}
+  ]
+}
+</script>
+{% endif %}
+
+{# Example usage:
+   {% set howto_title = "How to Create Multilingual Documentation" %}
+   {% set howto_description = "Learn how to create and manage documentation in multiple languages using Docsie" %}
+   {% set howto_time = "PT10M" %}
+   {% set howto_steps = [
+     {"name": "Create a new project", "text": "Log in to Docsie and click 'New Project' to start"},
+     {"name": "Add content", "text": "Write or import your documentation content"},
+     {"name": "Enable translations", "text": "Go to settings and enable the languages you need"},
+     {"name": "Publish", "text": "Click publish to make your documentation live"}
+   ] %}
+#}

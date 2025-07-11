@@ -1,0 +1,28 @@
+{# Breadcrumb Schema Markup - Include this on pages with breadcrumb navigation #}
+{% if breadcrumbs %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {% for crumb in breadcrumbs %}
+    {
+      "@type": "ListItem",
+      "position": {{ loop.index }},
+      "name": "{{ crumb.name | replace('"', '\\"') }}",
+      "item": "{{ crumb.url }}"
+    }{% if not loop.last %},{% endif %}
+    {% endfor %}
+  ]
+}
+</script>
+{% endif %}
+
+{# Example usage:
+   Set breadcrumbs in your page template:
+   {% set breadcrumbs = [
+     {"name": "Home", "url": "https://www.docsie.io/"},
+     {"name": "Solutions", "url": "https://www.docsie.io/solutions/"},
+     {"name": "AI Documentation", "url": "https://www.docsie.io/solutions/ai-documentation/"}
+   ] %}
+#}
