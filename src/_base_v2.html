@@ -85,9 +85,27 @@
   <link rel="preload" href="/styles/design-system.css" as="style">
   
   <!-- Critical CSS - loaded immediately -->
-  <link rel="stylesheet" href='/style.css'>
-  <link rel="stylesheet" href="/styles/design-system.css">
-  <link rel="stylesheet" href="/assets/css/animated-gradient-bg.css">
+  <!-- Critical CSS inline for above-the-fold content -->
+  <style>
+    /* Critical CSS for initial render */
+    body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+    .header { background: white; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
+    .hidden { display: none; }
+    .sticky { position: sticky; top: 0; z-index: 50; }
+  </style>
+  
+  <!-- Load CSS asynchronously -->
+  <link rel="stylesheet" href='/style.css' media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="/styles/design-system.css" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="/assets/css/animated-gradient-bg.css" media="print" onload="this.media='all'">
+  
+  <!-- Fallback for browsers without JS -->
+  <noscript>
+    <link rel="stylesheet" href='/style.css'>
+    <link rel="stylesheet" href="/styles/design-system.css">
+    <link rel="stylesheet" href="/assets/css/animated-gradient-bg.css">
+  </noscript>
   
   <!-- Defer non-critical CSS -->
   <link rel="preload" href="/lang-picker.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
@@ -99,8 +117,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   </noscript>
   
-  <!-- Tailwind CSS for additional utilities -->
-  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Tailwind CSS - Defer loading to prevent render blocking -->
+  <script src="https://cdn.tailwindcss.com" defer></script>
   
   {% block styles %}
   {% endblock styles %}
@@ -171,7 +189,8 @@
         
         <!-- Logo -->
         <div class="flex items-center">
-          <a href="/{% if locale and locale != 'en' %}{{ locale }}/{% else %}/{% endif %}" class="flex items-center">
+          {% import '_language_helpers.html' as lang %}
+          <a href="{{ lang.abs_lang_url('') }}" class="flex items-center">
             <svg class="w-8 h-10 text-docsie-primary mr-3" width="32" height="40" viewBox="0 0 48 48">
               <use xlink:href="#icon-docsie"></use>
             </svg>
@@ -197,6 +216,7 @@
   {% include '_icons.html' %}
   {% include '_alexa.html' %}
   {% include '_mobile_menu.html' %}
+  {% include '_accessibility_widget.html' %}
   {% include '_autopilot.html' %}
   {% include '_policy.html' %}
   {% include '_lang-redirect-banner.html' %}
@@ -226,15 +246,21 @@
   <script id="vtag-ai-js" async src="https://r2.leadsy.ai/tag.js" data-pid="12EYwQyDE3RbKRkbk" data-version="062024"></script>
   
   <!-- Lazy loading -->
-  <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.3.0/dist/lazyload.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.3.0/dist/lazyload.min.js" defer></script>
   <script>
-    var lazyLoadInstance = new LazyLoad({
+    // Initialize lazy loading after the library loads
+    document.addEventListener('DOMContentLoaded', function() {
+      if (typeof LazyLoad !== 'undefined') {
+        var lazyLoadInstance = new LazyLoad({
+          elements_selector: ".lazy"
+        });
+      }
     });
   </script>
   {% endblock scripts %}
   
   <!-- Animated Background System -->
-  <script src="/assets/js/animated-gradient-bg.js"></script>
+  <script src="/assets/js/animated-gradient-bg.js" defer></script>
 </body>
 
 </html>

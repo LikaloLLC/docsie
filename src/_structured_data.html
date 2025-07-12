@@ -18,6 +18,9 @@
   "aggregateRating": {
     "@type": "AggregateRating",
     "ratingValue": "4.8",
+    "bestRating": "5",
+    "worstRating": "1",
+    "ratingCount": "1000",
     "reviewCount": "1000"
   },
   "publisher": {
@@ -65,16 +68,25 @@
     "contactType": "customer support",
     "email": "support@docsie.io",
     "availableLanguage": ["English", "Spanish", "French", "German", "Portuguese", "Japanese", "Korean"]
-  }]
+  }],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.8",
+    "bestRating": "5",
+    "worstRating": "1",
+    "ratingCount": "1000",
+    "reviewCount": "1000"
+  }
 }
 </script>
 
-{# WebSite Schema with SearchAction #}
+{# WebSite Schema with SearchAction and Sitelinks #}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "WebSite",
   "name": "Docsie",
+  "alternateName": ["Docsie Documentation Platform", "Docsie.io"],
   "url": "https://www.docsie.io",
   "potentialAction": {
     "@type": "SearchAction",
@@ -83,8 +95,17 @@
       "urlTemplate": "https://www.docsie.io/search?q={search_term_string}"
     },
     "query-input": "required name=search_term_string"
-  }
+  },
+  "sameAs": [
+    "https://twitter.com/docsie_io",
+    "https://www.linkedin.com/company/docsie",
+    "https://www.facebook.com/docsie",
+    "https://www.g2.com/products/docsie/reviews"
+  ]
 }
 </script>
+
+{# Site Navigation Schema for Sitelinks #}
+{% include '_sitenavigation_schema.html' %}
 
 {% block additional_structured_data %}{% endblock %}
