@@ -7,6 +7,10 @@ import yaml
 import shutil
 import argparse
 
+# Import custom image optimization filter
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from utils.jinja_image_filter import register_filters
+
 def is_hidden(filepath):
     """Check if a file or directory should be hidden (starts with .)"""
     filename = os.path.basename(filepath)
@@ -264,6 +268,9 @@ def render_site(force_version=False, ui_version='v1'):
         extensions=['jinja2.ext.i18n', 'jinja_markdown.MarkdownExtension']
     )
     
+    # Register custom filters
+    register_filters(site._env)
+    
     # Generate supplementary pages using the same Jinja environment
     generate_supplementary_pages(site._env, force_version=force_version, ui_version=ui_version)
     print("\nSite generation completed!")
@@ -417,6 +424,14 @@ def main():
     force_version = True
     
     print(f"🚀 Generating all pages with {ui_version} UI components")
+    
+    # Run pre-build tasks (image optimization, etc.)
+    try:
+        from utils.build_helper import BuildHelper
+        helper = BuildHelper()
+        helper.pre_build()
+    except Exception as e:
+        print(f"⚠️  Warning: Pre-build tasks failed: {e}")
     
     render_site(force_version=force_version, ui_version=ui_version)
 

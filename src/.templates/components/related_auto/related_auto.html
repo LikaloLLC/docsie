@@ -7,9 +7,9 @@
       {% set page_data = get_page_by_url(solution.url) %}
       <a href="{{ solution.url }}" class="related-card">
         {% if page_data and page_data.components.hero.image %}
-        <img src="{{ page_data.components.hero.image }}" alt="{{ page_data.components.hero.title or page_data.title }}" />
+        {{ page_data.components.hero.image | optimized_image | safe }}
         {% elif solution.image %}
-        <img src="{{ solution.image }}" alt="{{ solution.title }}" />
+        {{ solution.image | optimized_image | safe }}
         {% endif %}
         <div class="related-content">
           <h3>{{ solution.title or (page_data.components.hero.title if page_data else 'Solution') }}</h3>

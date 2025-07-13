@@ -21,6 +21,7 @@ from supplementary_site_generator import (
     ensure_styles
 )
 from main import CustomSite
+from utils.jinja_image_filter import register_filters
 
 def load_supplementary_pages_for_language(locale_code='en'):
     """Load supplementary pages with language support"""
@@ -145,6 +146,9 @@ def generate_supplementary_pages_for_language(locale_code, locale_dir, output_ba
             site._env.install_gettext_translations(translation)
         except:
             pass
+    
+    # Register custom image optimization filters
+    register_filters(site._env)
     
     # Import language helpers into the environment
     site._env.globals.update({

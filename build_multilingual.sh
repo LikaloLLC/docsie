@@ -242,6 +242,19 @@ translate_yaml() {
     print_success "YAML translation complete"
 }
 
+# Function to run pre-build tasks
+run_prebuild() {
+    print_step "Running pre-build tasks (image optimization, etc.)..."
+    
+    if [ -f "utils/build_helper.py" ]; then
+        $PYTHON_CMD utils/build_helper.py || {
+            print_warning "Pre-build tasks failed, continuing..."
+        }
+    fi
+    
+    print_success "Pre-build tasks complete"
+}
+
 # Function to generate main site
 generate_main_site() {
     print_step "Generating main site with main.py..."

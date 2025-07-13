@@ -4,7 +4,7 @@
         <div class="image-gallery">
             {% for image in section.gallery_images %}
             <div class="gallery-item">
-                <img src="{{ image.image }}" alt="{{ image.alt }}" />
+                {{ image.image | optimized_image | safe }}
                 {% if image.caption %}
                 <p class="caption">{{ image.caption }}</p>
                 {% endif %}
