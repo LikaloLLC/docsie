@@ -1,0 +1,455 @@
+/* Pilot Process Component Styles */
+.pilot-process-container {
+    width: 100%;
+    padding: 40px 0;
+    background: #f8f9fa;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.pilot-process-wrapper {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    gap: 60px;
+    align-items: flex-start;
+}
+
+/* Timeline Section (Left) */
+.timeline-section {
+    flex: 0 0 380px;
+    position: relative;
+    padding: 20px 0;
+}
+
+.timeline-line {
+    position: absolute;
+    left: 30px;
+    top: 40px;
+    bottom: 40px;
+    width: 2px;
+    background: #e0e4e8;
+    z-index: 0;
+}
+
+.timeline-cards {
+    position: relative;
+    z-index: 1;
+}
+
+.timeline-card {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 15px;
+    border-radius: 12px;
+    position: relative;
+}
+
+.timeline-card:hover {
+    background: rgba(44, 62, 232, 0.05);
+}
+
+.timeline-card.active {
+    background: rgba(44, 62, 232, 0.1);
+}
+
+.timeline-card.completed .timeline-dot {
+    background: #2c3ee8;
+}
+
+.timeline-card.completed .dot-inner {
+    background: white;
+    width: 8px;
+    height: 8px;
+}
+
+/* Timeline Dots */
+.timeline-dot {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: white;
+    border: 2px solid #e0e4e8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 2;
+}
+
+.timeline-card.active .timeline-dot {
+    background: #2c3ee8;
+    border-color: #2c3ee8;
+    box-shadow: 0 0 0 8px rgba(44, 62, 232, 0.1);
+}
+
+.dot-inner {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #e0e4e8;
+    transition: all 0.3s ease;
+}
+
+.timeline-card.active .dot-inner {
+    background: white;
+    width: 16px;
+    height: 16px;
+}
+
+/* Card Content */
+.card-content {
+    margin-left: 20px;
+    flex: 1;
+}
+
+.step-day {
+    font-size: 12px;
+    font-weight: 600;
+    color: #2c3ee8;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 4px;
+}
+
+.step-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #1a202c;
+    margin: 0 0 8px 0;
+    transition: color 0.3s ease;
+}
+
+.timeline-card.active .step-title {
+    color: #2c3ee8;
+}
+
+.step-preview {
+    font-size: 14px;
+    color: #718096;
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* Content Section (Right) */
+.content-section {
+    flex: 1;
+    background: white;
+    border-radius: 16px;
+    padding: 40px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+}
+
+/* Progress Bar */
+.progress-bar-container {
+    margin-bottom: 40px;
+}
+
+.progress-bar {
+    height: 6px;
+    background: #e0e4e8;
+    border-radius: 3px;
+    overflow: hidden;
+    margin-bottom: 12px;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #2c3ee8 0%, #4f5de8 100%);
+    transition: width 0.5s ease;
+    border-radius: 3px;
+}
+
+.progress-text {
+    font-size: 14px;
+    color: #718096;
+    font-weight: 500;
+}
+
+.current-step {
+    color: #2c3ee8;
+    font-weight: 600;
+}
+
+/* Content Panels */
+.content-panels {
+    min-height: 400px;
+    position: relative;
+    margin-bottom: 40px;
+}
+
+.content-panel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(20px);
+    transition: all 0.4s ease;
+}
+
+.content-panel.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+    position: relative;
+}
+
+.panel-header {
+    margin-bottom: 30px;
+}
+
+.step-indicator {
+    font-size: 12px;
+    font-weight: 700;
+    color: #2c3ee8;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 12px;
+}
+
+.panel-title {
+    font-size: 32px;
+    font-weight: 700;
+    color: #1a202c;
+    margin: 0;
+    line-height: 1.2;
+}
+
+.panel-body {
+    color: #4a5568;
+}
+
+.panel-description {
+    font-size: 18px;
+    line-height: 1.7;
+    margin-bottom: 30px;
+    color: #4a5568;
+}
+
+.panel-features {
+    display: grid;
+    gap: 20px;
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 16px;
+    color: #2d3748;
+}
+
+.feature-icon {
+    width: 20px !important;
+    height: 20px !important;
+    max-width: 20px !important;
+    max-height: 20px !important;
+    color: #2c3ee8;
+    flex-shrink: 0;
+}
+
+.feature-item i {
+    color: #48bb78;
+    font-size: 20px;
+    flex-shrink: 0;
+}
+
+/* Navigation Controls */
+.navigation-controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.nav-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    background: white;
+    border: 2px solid #e0e4e8;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #2d3748;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.nav-btn:hover:not(:disabled) {
+    background: #f8f9fa;
+    border-color: #2c3ee8;
+    color: #2c3ee8;
+}
+
+.nav-btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.nav-btn i {
+    font-size: 14px;
+}
+
+.nav-btn svg {
+    width: 20px !important;
+    height: 20px !important;
+    max-width: 20px !important;
+    max-height: 20px !important;
+    flex-shrink: 0;
+}
+
+/* Dots Indicator */
+.dots-indicator {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.dots-indicator .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #e0e4e8;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dots-indicator .dot:hover {
+    background: #a0aec0;
+}
+
+.dots-indicator .dot.active {
+    width: 24px;
+    height: 8px;
+    border-radius: 4px;
+    background: #2c3ee8;
+}
+
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .pilot-process-wrapper {
+        flex-direction: column;
+        gap: 40px;
+    }
+    
+    .timeline-section {
+        flex: 1;
+        width: 100%;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+    
+    .content-section {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .pilot-process-container {
+        padding: 20px 0;
+    }
+    
+    .content-section {
+        padding: 30px 20px;
+    }
+    
+    .panel-title {
+        font-size: 24px;
+    }
+    
+    .panel-description {
+        font-size: 16px;
+    }
+    
+    .feature-item {
+        font-size: 14px;
+    }
+    
+    .nav-btn {
+        padding: 10px 16px;
+        font-size: 14px;
+    }
+    
+    .nav-btn span {
+        display: none;
+    }
+    
+    .navigation-controls {
+        gap: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .timeline-card {
+        padding: 10px;
+    }
+    
+    .step-title {
+        font-size: 16px;
+    }
+    
+    .step-preview {
+        font-size: 13px;
+    }
+    
+    .content-section {
+        padding: 20px 15px;
+    }
+    
+    .panel-features {
+        gap: 15px;
+    }
+}
+
+/* Animation for smoother transitions */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.content-panel.active .panel-header,
+.content-panel.active .panel-description,
+.content-panel.active .feature-item {
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+.content-panel.active .panel-header {
+    animation-delay: 0.1s;
+}
+
+.content-panel.active .panel-description {
+    animation-delay: 0.2s;
+}
+
+.content-panel.active .feature-item:nth-child(1) {
+    animation-delay: 0.3s;
+}
+
+.content-panel.active .feature-item:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+.content-panel.active .feature-item:nth-child(3) {
+    animation-delay: 0.5s;
+}
+
+.content-panel.active .feature-item:nth-child(4) {
+    animation-delay: 0.6s;
+}

@@ -1,0 +1,72 @@
+{# Reusable Star Rating Component #}
+{# Usage: {% include '_star_rating.html' %} #}
+<div class="docsie-rating-badge" itemscope itemtype="http://schema.org/AggregateRating">
+  <span class="rating-stars" aria-label="Rated 4.8 out of 5">
+    <i class="fas fa-star"></i>
+    <i class="fas fa-star"></i>
+    <i class="fas fa-star"></i>
+    <i class="fas fa-star"></i>
+    <i class="fas fa-star-half-alt"></i>
+  </span>
+  <span class="rating-text">
+    <span itemprop="ratingValue">4.8</span>
+    <span class="rating-count">(<span itemprop="reviewCount">1,000</span>)</span>
+  </span>
+  <meta itemprop="bestRating" content="5" />
+  <meta itemprop="worstRating" content="1" />
+</div>
+
+<style>
+.docsie-rating-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: #333;
+}
+
+.rating-stars {
+  color: #FFB800;
+  display: inline-flex;
+  gap: 2px;
+}
+
+.rating-stars i {
+  font-size: 1rem;
+}
+
+.rating-text {
+  font-weight: 600;
+  color: #333;
+}
+
+.rating-count {
+  font-weight: 400;
+  color: #666;
+}
+
+/* Dark mode support */
+.dark-mode .docsie-rating-badge,
+.dark-mode .rating-text {
+  color: #fff;
+}
+
+.dark-mode .rating-count {
+  color: #ccc;
+}
+
+/* Compact version for headers */
+.docsie-rating-badge.compact {
+  font-size: 0.75rem;
+}
+
+.docsie-rating-badge.compact .rating-stars i {
+  font-size: 0.875rem;
+}
+
+/* Hover effect */
+.docsie-rating-badge:hover .rating-stars {
+  transform: scale(1.05);
+  transition: transform 0.2s ease;
+}
+</style>

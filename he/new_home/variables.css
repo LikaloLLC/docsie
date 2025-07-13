@@ -1,12 +1,45 @@
+/* Import the main design tokens */
+@import url('/styles/design-tokens.css');
+
+/* Homepage-specific variables that extend the design tokens */
 :root {
-  --font-primary: 'Open Sans', sans-serif;
-  --font-secondary: 'Arimo', sans-serif;
-  --color-primary: #101212;
-  --color-secondary: #39464E;
-  --color-accent: #B11111;
-  --color-background: #FFFFFF;
+  /* Font Families - Use design token fonts */
+  --font-primary: var(--font-sans);
+  --font-secondary: 'Arimo', var(--font-sans);
+  
+  /* Colors - Map to design tokens for consistency */
+  --color-primary: var(--text-primary);
+  --color-secondary: var(--text-secondary);
+  --color-accent: #B11111; /* Keep Docsie red for now */
+  --color-background: var(--bg-primary);
+  
+  /* Additional colors needed by homepage */
+  --color-accent-dark: #8E0D0D;
+  --color-border: var(--border-primary);
+  --color-background-light: var(--bg-secondary);
+  --color-text-light: var(--text-tertiary);
+  --color-text-lighter: var(--text-muted);
+  --color-text-dark: var(--text-primary);
+  --color-success: #4AC175;
+  --color-warning: #FFB800;
+  --color-info: #00F0FF;
+  
+  /* Font Sizes */
   --font-size-small: 12px;
   --font-size-medium: 16px;
   --font-size-large: 24px;
   --font-size-xlarge: 32px;
-} 
+}
+
+/* Dark mode overrides */
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* The design tokens will automatically handle most color switches */
+    /* Add any homepage-specific dark mode overrides here */
+    --color-accent: #FF6B6B; /* Lighter red for dark mode */
+    --color-accent-dark: #B11111;
+    --color-success: #34d399;
+    --color-warning: #fbbf24;
+    --color-info: #60a5fa;
+  }
+}

@@ -122,7 +122,7 @@ def generate_language_site(lang_code, lang_name):
     )
     
     # Install translation in Jinja2 environment
-    site.env.install_gettext_translations(translation)
+    site._env.install_gettext_translations(translation)
     
     # Render the site
     site.render()

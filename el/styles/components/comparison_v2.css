@@ -1,0 +1,116 @@
+/* Tailwind v2 Comparison Styles */
+
+.comparison-v2 {
+  position: relative;
+}
+
+/* Column hover effects */
+.traditional-column {
+  transition: all 0.3s ease;
+}
+
+.traditional-column:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.modern-column {
+  transition: all 0.3s ease;
+}
+
+.modern-column:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(59, 130, 246, 0.15);
+}
+
+/* Icon animations */
+.comparison-v2 svg {
+  transition: transform 0.2s ease;
+}
+
+.comparison-v2 li:hover svg {
+  transform: scale(1.1);
+}
+
+/* List item animations */
+.comparison-v2 li {
+  transition: all 0.2s ease;
+}
+
+.comparison-v2 li:hover {
+  padding-left: 0.5rem;
+}
+
+/* Badge animations */
+.comparison-v2 span[class*="rounded-full"] {
+  transition: all 0.3s ease;
+}
+
+.comparison-v2 span[class*="rounded-full"]:hover {
+  transform: scale(1.05);
+}
+
+/* Recommended badge pulse effect */
+.comparison-v2 span[class*="bg-gradient-to-r"] {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .comparison-item {
+    gap: 1rem;
+  }
+  
+  .comparison-v2 h3 {
+    font-size: 1.5rem;
+  }
+  
+  .modern-column .absolute {
+    position: relative;
+    top: auto;
+    right: auto;
+    left: auto;
+    transform: none;
+    margin-bottom: 1rem;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .comparison-v2 {
+    background-color: #111827;
+  }
+  
+  .comparison-v2 h2 {
+    color: #f9fafb;
+  }
+  
+  .comparison-v2 p {
+    color: #d1d5db;
+  }
+  
+  .traditional-column {
+    background-color: #374151;
+  }
+  
+  .modern-column {
+    background: linear-gradient(135deg, #1e3a8a 0%, #3730a3 100%);
+  }
+  
+  .comparison-v2 h3 {
+    color: #f9fafb;
+  }
+  
+  .comparison-v2 li span {
+    color: #e5e7eb;
+  }
+}

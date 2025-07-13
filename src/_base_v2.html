@@ -80,27 +80,84 @@
   <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
   <link rel="dns-prefetch" href="https://assets.calendly.com">
   
-  <!-- Preload critical CSS -->
+  <!-- Preload main styles for fastest loading -->
   <link rel="preload" href='/style.css' as="style">
   <link rel="preload" href="/styles/design-system.css" as="style">
   
-  <!-- Critical CSS - loaded immediately -->
+  <!-- Critical CSS inline for above-the-fold content -->
+  <style>
+    /* Critical CSS for initial render */
+    body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+    .header { background: white; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
+    .hidden { display: none; }
+    .sticky { position: sticky; top: 0; z-index: 50; }
+    
+    /* Hide ALL icons until fonts load to prevent FOUC */
+    .fa:before, .fas:before, .far:before, .fab:before, .fal:before, .fad:before,
+    [class*="fa-"]:before {
+      display: none !important;
+    }
+    
+    /* Also hide icon containers to prevent layout shift */
+    .fa, .fas, .far, .fab, .fal, .fad,
+    i[class*="fa-"] {
+      opacity: 0;
+      width: 1.25em;
+      height: 1em;
+      display: inline-block;
+      vertical-align: -0.125em;
+    }
+    
+    /* Show icons after Font Awesome loads */
+    .fa-loaded .fa:before, .fa-loaded .fas:before, .fa-loaded .far:before, 
+    .fa-loaded .fab:before, .fa-loaded .fal:before, .fa-loaded .fad:before,
+    .fa-loaded [class*="fa-"]:before {
+      display: inline-block !important;
+    }
+    
+    .fa-loaded .fa, .fa-loaded .fas, .fa-loaded .far, 
+    .fa-loaded .fab, .fa-loaded .fal, .fa-loaded .fad,
+    .fa-loaded i[class*="fa-"] {
+      opacity: 1;
+      transition: opacity 0.1s ease-in;
+    }
+  </style>
+  
+  <!-- PRIORITY 1: Main Styles - Load First -->
   <link rel="stylesheet" href='/style.css'>
   <link rel="stylesheet" href="/styles/design-system.css">
+  
+  <!-- PRIORITY 2: Design System Foundation -->
+  <link rel="stylesheet" href="/styles/design-tokens.css">
+  <link rel="stylesheet" href="/styles/design-utilities.css">
+  <link rel="stylesheet" href="/styles/tailwind-compat.css">
+  
+  <!-- PRIORITY 3: Tailwind CSS - Critical for layout -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- PRIORITY 4: Additional Styles -->
   <link rel="stylesheet" href="/assets/css/animated-gradient-bg.css">
+  
+  <!-- PRIORITY 5: Icon Fonts - Load After All Main Styles -->
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" as="style">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" media="print" onload="this.media='all';document.body.classList.add('fa-loaded')">
+  
+  <!-- Fallback for browsers without JS -->
+  <noscript>
+    <link rel="stylesheet" href='/style.css'>
+    <link rel="stylesheet" href="/styles/design-system.css">
+    <link rel="stylesheet" href="/assets/css/animated-gradient-bg.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  </noscript>
   
   <!-- Defer non-critical CSS -->
   <link rel="preload" href="/lang-picker.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <link rel="preload" href="https://assets.calendly.com/assets/external/widget.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript>
     <link rel="stylesheet" href="/lang-picker.css">
     <link rel="stylesheet" href="https://assets.calendly.com/assets/external/widget.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   </noscript>
-  
-  <!-- Tailwind CSS for additional utilities -->
-  <script src="https://cdn.tailwindcss.com"></script>
   
   {% block styles %}
   {% endblock styles %}
@@ -155,11 +212,17 @@
       }
     }
   </script>
+  
+  {# RTL Language Detection #}
+  {% include '_rtl_detector.html' %}
 </head>
 
 <body class="docsie-background-img">
   {% include '_language_suggestion_banner.html' %}
   <a href="#main" class="aria-visible">{% trans %}Skip to content{% endtrans %}</a>
+  
+  <!-- Load SVG icons immediately to prevent FOUC -->
+  {% include '_icons.html' %}
   
   <!-- Page Header V2 -->
   <header class="bg-white shadow-sm sticky top-0 z-50">
@@ -168,7 +231,8 @@
         
         <!-- Logo -->
         <div class="flex items-center">
-          <a href="/{% if locale and locale != 'en' %}{{ locale }}/{% else %}/{% endif %}" class="flex items-center">
+          {% import '_language_helpers.html' as lang %}
+          <a href="{{ lang.abs_lang_url('') }}" class="flex items-center">
             <svg class="w-8 h-10 text-docsie-primary mr-3" width="32" height="40" viewBox="0 0 48 48">
               <use xlink:href="#icon-docsie"></use>
             </svg>
@@ -191,7 +255,6 @@
   <!-- Footer V2 -->
   {% include '_footer_v2.html' %}
   
-  {% include '_icons.html' %}
   {% include '_alexa.html' %}
   {% include '_mobile_menu.html' %}
   {% include '_autopilot.html' %}
@@ -203,8 +266,26 @@
   {% include '_perfect_audience.html' %}
   {% include '_facebook_pixel.html' %}
   {% include '_tapfilliate_pixel.html' %}
+  
+  <!-- Accessibility widget - DISABLED -->
+  {# {% include '_accessibility_widget.html' %} #}
 
   {% block scripts %}
+  <!-- Font Awesome font loading detection -->
+  <script>
+    // Detect when Font Awesome font loads
+    if ('fonts' in document) {
+      document.fonts.ready.then(function() {
+        document.body.classList.add('fa-loaded');
+      });
+    } else {
+      // Fallback for older browsers
+      setTimeout(function() {
+        document.body.classList.add('fa-loaded');
+      }, 500);
+    }
+  </script>
+  
   <!-- Deferred non-critical scripts -->
   <script src="https://cdn.jsdelivr.net/npm/share-this/dist/share-this.js" defer></script>
   <script src="https://certify-js.alexametrics.com/atrk.js" async></script>
@@ -223,15 +304,21 @@
   <script id="vtag-ai-js" async src="https://r2.leadsy.ai/tag.js" data-pid="12EYwQyDE3RbKRkbk" data-version="062024"></script>
   
   <!-- Lazy loading -->
-  <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.3.0/dist/lazyload.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.3.0/dist/lazyload.min.js" defer></script>
   <script>
-    var lazyLoadInstance = new LazyLoad({
+    // Initialize lazy loading after the library loads
+    document.addEventListener('DOMContentLoaded', function() {
+      if (typeof LazyLoad !== 'undefined') {
+        var lazyLoadInstance = new LazyLoad({
+          elements_selector: ".lazy"
+        });
+      }
     });
   </script>
   {% endblock scripts %}
   
   <!-- Animated Background System -->
-  <script src="/assets/js/animated-gradient-bg.js"></script>
+  <script src="/assets/js/animated-gradient-bg.js" defer></script>
 </body>
 
 </html>
