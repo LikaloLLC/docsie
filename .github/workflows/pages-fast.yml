@@ -1,0 +1,54 @@
+name: Deploy to GitHub Pages (Fast)
+
+on:
+  push:
+    branches: ["master", "main"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Quick Disk Cleanup
+        run: |
+          # Only remove the most space-consuming items that we definitely don't need
+          sudo rm -rf /usr/share/dotnet
+          sudo rm -rf /usr/local/lib/android
+          sudo rm -rf /opt/ghc
+          df -h
+          
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          submodules: false
+          
+      - name: Remove duplicate language assets
+        run: |
+          # Remove all language-specific asset folders (keeping only root /assets)
+          find . -type d -path "*/assets" -not -path "./assets" -exec rm -rf {} + 2>/dev/null || true
+          echo "Repository size after asset cleanup: $(du -sh . | cut -f1)"
+          
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+        
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: '.'
+          
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
