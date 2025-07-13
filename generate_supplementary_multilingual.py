@@ -148,7 +148,7 @@ def generate_supplementary_pages_for_language(locale_code, locale_dir, output_ba
     
     # Import language helpers into the environment
     site._env.globals.update({
-        'lang': {
+        'lang_helpers': {
             'abs_lang_url': lambda path: f"/{locale_code}/{path}" if locale_code != 'en' else f"/{path}"
         }
     })
