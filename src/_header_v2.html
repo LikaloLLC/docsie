@@ -241,7 +241,7 @@
 <div id="mobile-menu-overlay" class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden md:hidden transition-opacity duration-300"></div>
 
 <!-- Mobile Menu (Slide-in from right) -->
-<div id="mobile-menu" class="fixed top-0 right-0 h-full w-80 max-w-[80vw] bg-white shadow-xl transform translate-x-full transition-transform duration-300 ease-in-out z-50 md:hidden">
+<div id="mobile-menu" class="fixed top-0 right-0 h-full w-80 max-w-[80vw] bg-white shadow-xl transform translate-x-full transition-transform duration-300 ease-in-out z-50 md:hidden" style="transform: translateX(100%); display: none;">
   <div class="flex flex-col h-full">
     
     <!-- Mobile Menu Header -->
@@ -373,8 +373,12 @@ function toggleMobileMenu() {
   // Toggle menu visibility
   if (menu.classList.contains('translate-x-full')) {
     // Open menu
-    menu.classList.remove('translate-x-full');
-    menu.classList.add('translate-x-0');
+    menu.style.display = 'block'; // Show the menu first
+    setTimeout(() => {
+      menu.style.transform = 'translateX(0)';
+      menu.classList.remove('translate-x-full');
+      menu.classList.add('translate-x-0');
+    }, 10);
     overlay.classList.remove('hidden');
     overlay.classList.add('opacity-50');
     menuIcon.classList.add('hidden');
@@ -382,8 +386,12 @@ function toggleMobileMenu() {
     body.style.overflow = 'hidden';
   } else {
     // Close menu
+    menu.style.transform = 'translateX(100%)';
     menu.classList.remove('translate-x-0');
     menu.classList.add('translate-x-full');
+    setTimeout(() => {
+      menu.style.display = 'none'; // Hide after animation
+    }, 300);
     overlay.classList.remove('opacity-50');
     overlay.classList.add('hidden');
     menuIcon.classList.remove('hidden');
@@ -431,6 +439,15 @@ document.addEventListener('keydown', function(event) {
     if (!menu.classList.contains('translate-x-full')) {
       toggleMobileMenu();
     }
+  }
+});
+
+// Initialize mobile menu on load
+document.addEventListener('DOMContentLoaded', function() {
+  const menu = document.getElementById('mobile-menu');
+  if (menu) {
+    menu.style.display = 'none';
+    menu.style.transform = 'translateX(100%)';
   }
 });
 </script>

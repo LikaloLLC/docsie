@@ -427,11 +427,10 @@
   <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
   <link rel="dns-prefetch" href="https://assets.calendly.com">
   
-  <!-- Preload critical CSS -->
+  <!-- Preload main styles for fastest loading -->
   <link rel="preload" href='/style.css' as="style">
   <link rel="preload" href="/styles/design-system.css" as="style">
   
-  <!-- Critical CSS - loaded immediately -->
   <!-- Critical CSS inline for above-the-fold content -->
   <style>
     /* Critical CSS for initial render */
@@ -440,32 +439,72 @@
     .container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
     .hidden { display: none; }
     .sticky { position: sticky; top: 0; z-index: 50; }
+    
+    /* Hide ALL icons until fonts load to prevent FOUC */
+    .fa:before, .fas:before, .far:before, .fab:before, .fal:before, .fad:before,
+    [class*="fa-"]:before {
+      display: none !important;
+    }
+    
+    /* Also hide icon containers to prevent layout shift */
+    .fa, .fas, .far, .fab, .fal, .fad,
+    i[class*="fa-"] {
+      opacity: 0;
+      width: 1.25em;
+      height: 1em;
+      display: inline-block;
+      vertical-align: -0.125em;
+    }
+    
+    /* Show icons after Font Awesome loads */
+    .fa-loaded .fa:before, .fa-loaded .fas:before, .fa-loaded .far:before, 
+    .fa-loaded .fab:before, .fa-loaded .fal:before, .fa-loaded .fad:before,
+    .fa-loaded [class*="fa-"]:before {
+      display: inline-block !important;
+    }
+    
+    .fa-loaded .fa, .fa-loaded .fas, .fa-loaded .far, 
+    .fa-loaded .fab, .fa-loaded .fal, .fa-loaded .fad,
+    .fa-loaded i[class*="fa-"] {
+      opacity: 1;
+      transition: opacity 0.1s ease-in;
+    }
   </style>
   
-  <!-- Load CSS asynchronously -->
-  <link rel="stylesheet" href='/style.css' media="print" onload="this.media='all'">
-  <link rel="stylesheet" href="/styles/design-system.css" media="print" onload="this.media='all'">
-  <link rel="stylesheet" href="/assets/css/animated-gradient-bg.css" media="print" onload="this.media='all'">
+  <!-- PRIORITY 1: Main Styles - Load First -->
+  <link rel="stylesheet" href='/style.css'>
+  <link rel="stylesheet" href="/styles/design-system.css">
+  
+  <!-- PRIORITY 2: Design System Foundation -->
+  <link rel="stylesheet" href="/styles/design-tokens.css">
+  <link rel="stylesheet" href="/styles/design-utilities.css">
+  <link rel="stylesheet" href="/styles/tailwind-compat.css">
+  
+  <!-- PRIORITY 3: Tailwind CSS - Critical for layout -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- PRIORITY 4: Additional Styles -->
+  <link rel="stylesheet" href="/assets/css/animated-gradient-bg.css">
+  
+  <!-- PRIORITY 5: Icon Fonts - Load After All Main Styles -->
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" as="style">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" media="print" onload="this.media='all';document.body.classList.add('fa-loaded')">
   
   <!-- Fallback for browsers without JS -->
   <noscript>
     <link rel="stylesheet" href='/style.css'>
     <link rel="stylesheet" href="/styles/design-system.css">
     <link rel="stylesheet" href="/assets/css/animated-gradient-bg.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   </noscript>
   
   <!-- Defer non-critical CSS -->
   <link rel="preload" href="/lang-picker.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <link rel="preload" href="https://assets.calendly.com/assets/external/widget.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript>
     <link rel="stylesheet" href="/lang-picker.css">
     <link rel="stylesheet" href="https://assets.calendly.com/assets/external/widget.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   </noscript>
-  
-  <!-- Tailwind CSS - Defer loading to prevent render blocking -->
-  <script src="https://cdn.tailwindcss.com" defer></script>
   
   
   
@@ -567,6 +606,7 @@
     z-index: 9999;
     transform: translateY(-100%);
     transition: transform 0.3s ease-in-out;
+    display: none; /* Hide initially to prevent FOUC */
   }
   
   .language-suggestion-banner.show {
@@ -848,9 +888,10 @@
     switchBtn.href = getLanguageURL(suggestion.language);
     
     // Show banner with animation
+    banner.style.display = 'block'; // Make visible first
     setTimeout(() => {
       banner.classList.add('show');
-    }, 500);
+    }, 50); // Reduced delay for smoother appearance
   }
 
   // Initialize
@@ -887,6 +928,7 @@
         localStorage.setItem('docsie-language-chosen', 'true');
         sessionStorage.setItem('language-suggestion-dismissed', 'true');
         banner.classList.remove('show');
+        setTimeout(() => { banner.style.display = 'none'; }, 300); // Hide after animation
       });
     }
     
@@ -895,6 +937,7 @@
       closeBtn.addEventListener('click', () => {
         sessionStorage.setItem('language-suggestion-dismissed', 'true');
         banner.classList.remove('show');
+        setTimeout(() => { banner.style.display = 'none'; }, 300); // Hide after animation
       });
     }
   }
@@ -908,6 +951,40 @@
 })();
 </script>
   <a href="#main" class="aria-visible">Hoppa till innehåll</a>
+  
+  <!-- Load SVG icons immediately to prevent FOUC -->
+  <svg style="display:none">
+  <symbol id="icon-docsie" viewBox="0 0 48 48">
+    <rect width="48" height="48" rx="5" ry="5" fill="#b50000"></rect>
+    <path
+      d="M10 7.5v2h3v31h3v-31h4v31h3v-7h1.9c2.6 0 5-.6 6.9-1.7 2-1 3.5-2.6 4.6-4.6 1-2 1.6-4.3 1.6-7 0-4-1.2-7.2-3.7-9.4s-6-3.3-10.5-3.3H20zm13 2h2.4c3 0 5.2 1 6.7 2.8a12 12 0 0 1 2.4 8c0 2.2-.3 4.2-1 5.9-.7 1.7-1.7 3-3 3.9a7.3 7.3 0 0 1-4.3 1.4H23z"
+      fill="#fff"></path>
+  </symbol>
+  <symbol id="icon-logo" viewBox="0 0 158 58" xmlns="http://www.w3.org/2000/svg">
+    <path
+      d="M 16.275714,43.66 V 16.15 h 9.8 c 9.59,0 14.64,5.51 14.64,13.75 0,8.24 -5.05,13.75 -14.64,13.75 h -9.8 z m 9.79,-3.96 c 7.02,0 10.3,-3.87 10.3,-9.8 0,-5.93 -3.28,-9.8 -10.3,-9.8 h -5.51 v 19.6 z m 28.48,4.5 c -6.56,0 -11.19,-4.63 -11.19,-10.93 0,-6.31 4.63,-10.93 11.19,-10.93 6.56,0 11.19,4.63 11.19,10.93 -0.01,6.31 -4.63,10.93 -11.19,10.93 z m 7.15,-10.93 c 0,-4.21 -2.86,-7.23 -7.15,-7.23 -4.29,0 -7.15,3.03 -7.15,7.23 0,4.21 2.86,7.23 7.15,7.23 4.29,0 7.15,-3.02 7.15,-7.23 z m 24.350003,-2.86 c -1.01,-2.65 -3.45,-4.37 -6.69,-4.37 -4.29,0 -7.15,3.03 -7.15,7.23 0,4.21 2.86,7.23 7.15,7.23 3.24,0 5.68,-1.72 6.69,-4.37 h 4.04 c -1.09,4.79 -5.21,8.07 -10.72,8.07 -6.56,0 -11.190003,-4.63 -11.190003,-10.93 0,-6.31 4.630003,-10.93 11.190003,-10.93 5.51,0 9.63,3.28 10.72,8.07 z m 19.340003,-1.68 c -0.13,-1.6 -1.6,-2.78 -4.08,-2.78 -2.690003,0 -4.210003,1.22 -4.210003,3.03 0,4.33 12.790003,-0.17 12.790003,8.54 0,3.87 -3.41,6.69 -8.62,6.69 -5.220003,0 -8.500003,-2.78 -8.620003,-6.56 h 4.04 c 0.08,1.72 1.68,2.94 4.540003,2.94 3.07,0 4.63,-1.26 4.63,-3.07 0,-4.37 -12.790003,0.13 -12.790003,-8.54 0,-3.83 3.2,-6.64 8.160003,-6.64 4.96,0 8.03,2.82 8.12,6.39 z m 7.82,-11.61 c 0,-1.51 1.26,-2.78 2.78,-2.78 1.56,0 2.78,1.26 2.78,2.78 0,1.56 -1.22,2.82 -2.78,2.82 -1.52,0 -2.78,-1.26 -2.78,-2.82 z m 0.8,26.54 V 22.88 h 4 v 20.78 z m 12.2,-8.92 v 0.08 c 0.59,3.45 3.2,5.68 6.98,5.68 2.69,0 4.58,-0.84 5.8,-2.65 h 4.42 c -1.6,3.87 -5.38,6.35 -10.22,6.35 -6.56,0 -11.19,-4.63 -11.19,-10.93 0,-6.31 4.63,-10.93 11.19,-10.93 6.56,0 11.1,4.62 11.1,10.93 v 1.47 z m 0.12,-3.66 v 0.08 h 13.75 v -0.08 c -0.8,-3.07 -3.36,-5.05 -6.9,-5.05 -3.52,0.01 -6.05,1.98 -6.85,5.05 z"
+      fill="#3D3245"></path>
+  </symbol>
+  <symbol id="icon-close" viewBox="0 0 20 20">
+    <path d="M16 16L4 4M16 4L4 16" fill="none" stroke="currentColor" stroke-width="1.06"></path>
+  </symbol>
+  <symbol id="icon-menu" viewBox="0 0 20 20">
+    <path d="M2 4h16v1H2zM2 9h16v1H2zM2 14h16v1H2z"></path>
+  </symbol>
+  <symbol id="icon-arrow-right" viewBox="0 0 20 20">
+    <path d="M10 5l5 4.5-5 4.5M4 9.5h11" fill="none" stroke="currentColor"></path>
+  </symbol>
+  <symbol id="icon-chevron-left" viewBox="0 0 20 20">
+    <path d="M13 16l-6-6 6-6" fill="none" stroke="currentColor" stroke-width="1.03"></path>
+  </symbol>
+  <symbol id="icon-chevron-right" viewBox="0 0 20 20">
+    <path d="M7 4l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.03"></path>
+  </symbol>
+  <symbol id="icon-checkmark" viewBox="0 0 20 20">
+    <rect width="20" height="20" rx="2" ry="2" fill="currentColor" opacity="0.1"></rect>
+    <polyline fill="none" stroke="currentColor" stroke-width="1.8" points="4,10 8,15 17,4"></polyline>
+  </symbol>
+</svg>
   
   <!-- Page Header V2 -->
   <header class="bg-white shadow-sm sticky top-0 z-50">
@@ -1150,7 +1227,7 @@
         
 
 
-<a href="https://www.g2.com/products/docsie/reviews" target="_blank" rel="noopener" class="g2-badge-link">
+<div class="g2-badge-link">
     <div class="g2-badge-content">
       <img src="/assets/new_home/g2-logo.svg" alt="G2" class="g2-logo" width="24" height="24">
       <div class="rating-info">
@@ -1165,13 +1242,13 @@
           <span class="rating-value" itemprop="ratingValue">4.8</span>
         </div>
         <div class="review-count">
-          <span itemprop="reviewCount">1,000</span> reviews on G2
+          <span itemprop="reviewCount">100+</span> reviews on G2
         </div>
       </div>
     </div>
     <meta itemprop="bestRating" content="5" />
     <meta itemprop="worstRating" content="1" />
-  </a>
+  </div>
 
 <style>
 .g2-rating-badge {
@@ -1187,14 +1264,8 @@
   border-radius: 8px;
   text-decoration: none;
   color: inherit;
-  transition: all 0.2s ease;
   box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-}
-
-.g2-badge-link:hover {
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-  transform: translateY(-1px);
-  border-color: #FF6B35;
+  cursor: default;
 }
 
 .g2-badge-content {
@@ -1319,7 +1390,7 @@
 <div id="mobile-menu-overlay" class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden md:hidden transition-opacity duration-300"></div>
 
 <!-- Mobile Menu (Slide-in from right) -->
-<div id="mobile-menu" class="fixed top-0 right-0 h-full w-80 max-w-[80vw] bg-white shadow-xl transform translate-x-full transition-transform duration-300 ease-in-out z-50 md:hidden">
+<div id="mobile-menu" class="fixed top-0 right-0 h-full w-80 max-w-[80vw] bg-white shadow-xl transform translate-x-full transition-transform duration-300 ease-in-out z-50 md:hidden" style="transform: translateX(100%); display: none;">
   <div class="flex flex-col h-full">
     
     <!-- Mobile Menu Header -->
@@ -1451,8 +1522,12 @@ function toggleMobileMenu() {
   // Toggle menu visibility
   if (menu.classList.contains('translate-x-full')) {
     // Open menu
-    menu.classList.remove('translate-x-full');
-    menu.classList.add('translate-x-0');
+    menu.style.display = 'block'; // Show the menu first
+    setTimeout(() => {
+      menu.style.transform = 'translateX(0)';
+      menu.classList.remove('translate-x-full');
+      menu.classList.add('translate-x-0');
+    }, 10);
     overlay.classList.remove('hidden');
     overlay.classList.add('opacity-50');
     menuIcon.classList.add('hidden');
@@ -1460,8 +1535,12 @@ function toggleMobileMenu() {
     body.style.overflow = 'hidden';
   } else {
     // Close menu
+    menu.style.transform = 'translateX(100%)';
     menu.classList.remove('translate-x-0');
     menu.classList.add('translate-x-full');
+    setTimeout(() => {
+      menu.style.display = 'none'; // Hide after animation
+    }, 300);
     overlay.classList.remove('opacity-50');
     overlay.classList.add('hidden');
     menuIcon.classList.remove('hidden');
@@ -1509,6 +1588,15 @@ document.addEventListener('keydown', function(event) {
     if (!menu.classList.contains('translate-x-full')) {
       toggleMobileMenu();
     }
+  }
+});
+
+// Initialize mobile menu on load
+document.addEventListener('DOMContentLoaded', function() {
+  const menu = document.getElementById('mobile-menu');
+  if (menu) {
+    menu.style.display = 'none';
+    menu.style.transform = 'translateX(100%)';
   }
 });
 </script>
@@ -2476,38 +2564,6 @@ document.addEventListener('keydown', function(event) {
 <script>(function () {var sc=document.createElement('script');sc.async=true;sc.src='https://b.sf-syn.com/badge_js?sf_id=3158012&variant_id=sd';var p=document.getElementsByTagName('script')[0];p.parentNode.insertBefore(sc, p);})();</script>
 
   
-  <svg style="display:none">
-  <symbol id="icon-docsie" viewBox="0 0 48 48">
-    <rect width="48" height="48" rx="5" ry="5" fill="#b50000"></rect>
-    <path
-      d="M10 7.5v2h3v31h3v-31h4v31h3v-7h1.9c2.6 0 5-.6 6.9-1.7 2-1 3.5-2.6 4.6-4.6 1-2 1.6-4.3 1.6-7 0-4-1.2-7.2-3.7-9.4s-6-3.3-10.5-3.3H20zm13 2h2.4c3 0 5.2 1 6.7 2.8a12 12 0 0 1 2.4 8c0 2.2-.3 4.2-1 5.9-.7 1.7-1.7 3-3 3.9a7.3 7.3 0 0 1-4.3 1.4H23z"
-      fill="#fff"></path>
-  </symbol>
-  <symbol id="icon-logo" viewBox="0 0 158 58" xmlns="http://www.w3.org/2000/svg">
-    <path
-      d="M 16.275714,43.66 V 16.15 h 9.8 c 9.59,0 14.64,5.51 14.64,13.75 0,8.24 -5.05,13.75 -14.64,13.75 h -9.8 z m 9.79,-3.96 c 7.02,0 10.3,-3.87 10.3,-9.8 0,-5.93 -3.28,-9.8 -10.3,-9.8 h -5.51 v 19.6 z m 28.48,4.5 c -6.56,0 -11.19,-4.63 -11.19,-10.93 0,-6.31 4.63,-10.93 11.19,-10.93 6.56,0 11.19,4.63 11.19,10.93 -0.01,6.31 -4.63,10.93 -11.19,10.93 z m 7.15,-10.93 c 0,-4.21 -2.86,-7.23 -7.15,-7.23 -4.29,0 -7.15,3.03 -7.15,7.23 0,4.21 2.86,7.23 7.15,7.23 4.29,0 7.15,-3.02 7.15,-7.23 z m 24.350003,-2.86 c -1.01,-2.65 -3.45,-4.37 -6.69,-4.37 -4.29,0 -7.15,3.03 -7.15,7.23 0,4.21 2.86,7.23 7.15,7.23 3.24,0 5.68,-1.72 6.69,-4.37 h 4.04 c -1.09,4.79 -5.21,8.07 -10.72,8.07 -6.56,0 -11.190003,-4.63 -11.190003,-10.93 0,-6.31 4.630003,-10.93 11.190003,-10.93 5.51,0 9.63,3.28 10.72,8.07 z m 19.340003,-1.68 c -0.13,-1.6 -1.6,-2.78 -4.08,-2.78 -2.690003,0 -4.210003,1.22 -4.210003,3.03 0,4.33 12.790003,-0.17 12.790003,8.54 0,3.87 -3.41,6.69 -8.62,6.69 -5.220003,0 -8.500003,-2.78 -8.620003,-6.56 h 4.04 c 0.08,1.72 1.68,2.94 4.540003,2.94 3.07,0 4.63,-1.26 4.63,-3.07 0,-4.37 -12.790003,0.13 -12.790003,-8.54 0,-3.83 3.2,-6.64 8.160003,-6.64 4.96,0 8.03,2.82 8.12,6.39 z m 7.82,-11.61 c 0,-1.51 1.26,-2.78 2.78,-2.78 1.56,0 2.78,1.26 2.78,2.78 0,1.56 -1.22,2.82 -2.78,2.82 -1.52,0 -2.78,-1.26 -2.78,-2.82 z m 0.8,26.54 V 22.88 h 4 v 20.78 z m 12.2,-8.92 v 0.08 c 0.59,3.45 3.2,5.68 6.98,5.68 2.69,0 4.58,-0.84 5.8,-2.65 h 4.42 c -1.6,3.87 -5.38,6.35 -10.22,6.35 -6.56,0 -11.19,-4.63 -11.19,-10.93 0,-6.31 4.63,-10.93 11.19,-10.93 6.56,0 11.1,4.62 11.1,10.93 v 1.47 z m 0.12,-3.66 v 0.08 h 13.75 v -0.08 c -0.8,-3.07 -3.36,-5.05 -6.9,-5.05 -3.52,0.01 -6.05,1.98 -6.85,5.05 z"
-      fill="#3D3245"></path>
-  </symbol>
-  <symbol id="icon-close" viewBox="0 0 20 20">
-    <path d="M16 16L4 4M16 4L4 16" fill="none" stroke="currentColor" stroke-width="1.06"></path>
-  </symbol>
-  <symbol id="icon-menu" viewBox="0 0 20 20">
-    <path d="M2 4h16v1H2zM2 9h16v1H2zM2 14h16v1H2z"></path>
-  </symbol>
-  <symbol id="icon-arrow-right" viewBox="0 0 20 20">
-    <path d="M10 5l5 4.5-5 4.5M4 9.5h11" fill="none" stroke="currentColor"></path>
-  </symbol>
-  <symbol id="icon-chevron-left" viewBox="0 0 20 20">
-    <path d="M13 16l-6-6 6-6" fill="none" stroke="currentColor" stroke-width="1.03"></path>
-  </symbol>
-  <symbol id="icon-chevron-right" viewBox="0 0 20 20">
-    <path d="M7 4l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.03"></path>
-  </symbol>
-  <symbol id="icon-checkmark" viewBox="0 0 20 20">
-    <rect width="20" height="20" rx="2" ry="2" fill="currentColor" opacity="0.1"></rect>
-    <polyline fill="none" stroke="currentColor" stroke-width="1.8" points="4,10 8,15 17,4"></polyline>
-  </symbol>
-</svg>
   
    <script type="text/javascript">
     "use strict";
@@ -2542,391 +2598,6 @@ document.addEventListener('keydown', function(event) {
 
 
   </script>
-  
-<!-- Accessibility Widget - Similar to UserWay but free and open source -->
-<div id="accessibility-widget" class="accessibility-widget" aria-label="Accessibility options">
-  <button id="accessibility-toggle" class="accessibility-toggle" aria-label="Open accessibility menu" title="Accessibility options">
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-      <circle cx="12" cy="12" r="10"></circle>
-      <path d="M12 6v6l4 4"></path>
-    </svg>
-  </button>
-  
-  <div id="accessibility-panel" class="accessibility-panel" hidden>
-    <h3>Accessibility Options</h3>
-    
-    <!-- Text Size Controls -->
-    <div class="accessibility-control">
-      <label>Text Size</label>
-      <div class="button-group">
-        <button onclick="adjustTextSize(-1)" aria-label="Decrease text size">A-</button>
-        <button onclick="adjustTextSize(0)" aria-label="Reset text size">Reset</button>
-        <button onclick="adjustTextSize(1)" aria-label="Increase text size">A+</button>
-      </div>
-    </div>
-    
-    <!-- Contrast Controls -->
-    <div class="accessibility-control">
-      <label>Contrast</label>
-      <div class="button-group">
-        <button onclick="toggleHighContrast()" aria-label="Toggle high contrast">High Contrast</button>
-        <button onclick="toggleDarkMode()" aria-label="Toggle dark mode">Dark Mode</button>
-      </div>
-    </div>
-    
-    <!-- Reading Options -->
-    <div class="accessibility-control">
-      <label>Reading</label>
-      <div class="button-group">
-        <button onclick="toggleReadingGuide()" aria-label="Toggle reading guide">Reading Guide</button>
-        <button onclick="toggleFocusMode()" aria-label="Toggle focus mode">Focus Mode</button>
-      </div>
-    </div>
-    
-    <!-- Link Highlighting -->
-    <div class="accessibility-control">
-      <label>Links</label>
-      <div class="button-group">
-        <button onclick="toggleLinkHighlight()" aria-label="Highlight all links">Highlight Links</button>
-      </div>
-    </div>
-    
-    <!-- Reset All -->
-    <div class="accessibility-control">
-      <button onclick="resetAccessibility()" class="reset-button" aria-label="Reset all accessibility settings">
-        Reset All Settings
-      </button>
-    </div>
-  </div>
-</div>
-
-<style>
-/* Accessibility Widget Styles */
-.accessibility-widget {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  z-index: 9999;
-}
-
-.accessibility-toggle {
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-  background: #4A5568;
-  color: white;
-  border: none;
-  cursor: pointer;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.3s ease;
-}
-
-.accessibility-toggle:hover {
-  background: #2D3748;
-  transform: scale(1.1);
-}
-
-.accessibility-toggle:focus {
-  outline: 3px solid #4299E1;
-  outline-offset: 2px;
-}
-
-.accessibility-panel {
-  position: absolute;
-  bottom: 70px;
-  right: 0;
-  background: white;
-  border-radius: 8px;
-  box-shadow: 0 10px 40px rgba(0,0,0,0.2);
-  padding: 20px;
-  min-width: 280px;
-  max-width: 320px;
-}
-
-.accessibility-panel h3 {
-  margin: 0 0 20px 0;
-  font-size: 18px;
-  font-weight: 600;
-  color: #2D3748;
-}
-
-.accessibility-control {
-  margin-bottom: 16px;
-}
-
-.accessibility-control label {
-  display: block;
-  font-size: 14px;
-  font-weight: 500;
-  color: #4A5568;
-  margin-bottom: 8px;
-}
-
-.button-group {
-  display: flex;
-  gap: 8px;
-}
-
-.button-group button {
-  flex: 1;
-  padding: 8px 12px;
-  border: 1px solid #E2E8F0;
-  background: white;
-  border-radius: 4px;
-  font-size: 14px;
-  cursor: pointer;
-  transition: all 0.2s;
-}
-
-.button-group button:hover {
-  background: #EDF2F7;
-  border-color: #CBD5E0;
-}
-
-.button-group button:focus {
-  outline: 2px solid #4299E1;
-  outline-offset: 1px;
-}
-
-.reset-button {
-  width: 100%;
-  padding: 10px;
-  background: #E53E3E;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  font-size: 14px;
-  font-weight: 500;
-  cursor: pointer;
-  transition: background 0.2s;
-}
-
-.reset-button:hover {
-  background: #C53030;
-}
-
-/* Accessibility States */
-body.high-contrast {
-  filter: contrast(1.5);
-  background: #000 !important;
-  color: #fff !important;
-}
-
-body.high-contrast * {
-  background-color: #000 !important;
-  color: #fff !important;
-  border-color: #fff !important;
-}
-
-body.dark-mode {
-  background: #1A202C;
-  color: #E2E8F0;
-}
-
-body.dark-mode .accessibility-panel {
-  background: #2D3748;
-  color: #E2E8F0;
-}
-
-body.dark-mode .accessibility-control label {
-  color: #CBD5E0;
-}
-
-body.dark-mode .button-group button {
-  background: #4A5568;
-  color: #E2E8F0;
-  border-color: #4A5568;
-}
-
-body.highlight-links a {
-  background: yellow !important;
-  color: #000 !important;
-  text-decoration: underline !important;
-  padding: 2px 4px !important;
-}
-
-.reading-guide {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 20px;
-  background: rgba(255, 255, 0, 0.3);
-  pointer-events: none;
-  z-index: 9998;
-  transition: top 0.1s;
-}
-
-body.focus-mode *:not(.accessibility-widget):not(.accessibility-widget *) {
-  opacity: 0.3;
-  transition: opacity 0.3s;
-}
-
-body.focus-mode *:hover:not(.accessibility-widget):not(.accessibility-widget *) {
-  opacity: 1;
-}
-
-/* Mobile Responsive */
-@media (max-width: 640px) {
-  .accessibility-widget {
-    bottom: 10px;
-    right: 10px;
-  }
-  
-  .accessibility-toggle {
-    width: 48px;
-    height: 48px;
-  }
-  
-  .accessibility-panel {
-    right: -10px;
-    left: auto;
-    max-width: calc(100vw - 40px);
-  }
-}
-</style>
-
-<script>
-// Accessibility Widget JavaScript
-(function() {
-  // Toggle panel visibility
-  const toggle = document.getElementById('accessibility-toggle');
-  const panel = document.getElementById('accessibility-panel');
-  
-  toggle.addEventListener('click', function() {
-    const isHidden = panel.hasAttribute('hidden');
-    if (isHidden) {
-      panel.removeAttribute('hidden');
-      toggle.setAttribute('aria-expanded', 'true');
-    } else {
-      panel.setAttribute('hidden', '');
-      toggle.setAttribute('aria-expanded', 'false');
-    }
-  });
-  
-  // Close panel when clicking outside
-  document.addEventListener('click', function(e) {
-    if (!e.target.closest('.accessibility-widget')) {
-      panel.setAttribute('hidden', '');
-      toggle.setAttribute('aria-expanded', 'false');
-    }
-  });
-  
-  // Load saved preferences
-  loadAccessibilityPreferences();
-})();
-
-// Text size adjustment
-let textSizeLevel = 0;
-function adjustTextSize(change) {
-  if (change === 0) {
-    textSizeLevel = 0;
-    document.documentElement.style.fontSize = '';
-  } else {
-    textSizeLevel += change;
-    textSizeLevel = Math.max(-2, Math.min(3, textSizeLevel));
-    const size = 100 + (textSizeLevel * 10);
-    document.documentElement.style.fontSize = size + '%';
-  }
-  savePreference('textSize', textSizeLevel);
-}
-
-// High contrast toggle
-function toggleHighContrast() {
-  document.body.classList.toggle('high-contrast');
-  savePreference('highContrast', document.body.classList.contains('high-contrast'));
-}
-
-// Dark mode toggle
-function toggleDarkMode() {
-  document.body.classList.toggle('dark-mode');
-  savePreference('darkMode', document.body.classList.contains('dark-mode'));
-}
-
-// Reading guide
-let readingGuide = null;
-function toggleReadingGuide() {
-  if (readingGuide) {
-    readingGuide.remove();
-    readingGuide = null;
-    savePreference('readingGuide', false);
-  } else {
-    readingGuide = document.createElement('div');
-    readingGuide.className = 'reading-guide';
-    document.body.appendChild(readingGuide);
-    
-    document.addEventListener('mousemove', function(e) {
-      if (readingGuide) {
-        readingGuide.style.top = (e.clientY - 10) + 'px';
-      }
-    });
-    savePreference('readingGuide', true);
-  }
-}
-
-// Focus mode
-function toggleFocusMode() {
-  document.body.classList.toggle('focus-mode');
-  savePreference('focusMode', document.body.classList.contains('focus-mode'));
-}
-
-// Link highlighting
-function toggleLinkHighlight() {
-  document.body.classList.toggle('highlight-links');
-  savePreference('highlightLinks', document.body.classList.contains('highlight-links'));
-}
-
-// Reset all settings
-function resetAccessibility() {
-  adjustTextSize(0);
-  document.body.classList.remove('high-contrast', 'dark-mode', 'focus-mode', 'highlight-links');
-  if (readingGuide) {
-    readingGuide.remove();
-    readingGuide = null;
-  }
-  localStorage.removeItem('docsie-accessibility');
-}
-
-// Save preferences
-function savePreference(key, value) {
-  const prefs = JSON.parse(localStorage.getItem('docsie-accessibility') || '{}');
-  prefs[key] = value;
-  localStorage.setItem('docsie-accessibility', JSON.stringify(prefs));
-}
-
-// Load preferences
-function loadAccessibilityPreferences() {
-  const prefs = JSON.parse(localStorage.getItem('docsie-accessibility') || '{}');
-  
-  if (prefs.textSize) {
-    textSizeLevel = 0;
-    adjustTextSize(prefs.textSize);
-  }
-  
-  if (prefs.highContrast) {
-    document.body.classList.add('high-contrast');
-  }
-  
-  if (prefs.darkMode) {
-    document.body.classList.add('dark-mode');
-  }
-  
-  if (prefs.focusMode) {
-    document.body.classList.add('focus-mode');
-  }
-  
-  if (prefs.highlightLinks) {
-    document.body.classList.add('highlight-links');
-  }
-  
-  if (prefs.readingGuide) {
-    toggleReadingGuide();
-  }
-}
-</script>
   <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -3089,7 +2760,25 @@ src="https://www.facebook.com/tr?id=415019276437410&ev=PageView&noscript=1"
       tap('create', '24066-f041a8', { integration: "stripe" });
       tap('detect');
   </script>
+  
+  <!-- Accessibility widget - DISABLED -->
+  
 
+  
+  <!-- Font Awesome font loading detection -->
+  <script>
+    // Detect when Font Awesome font loads
+    if ('fonts' in document) {
+      document.fonts.ready.then(function() {
+        document.body.classList.add('fa-loaded');
+      });
+    } else {
+      // Fallback for older browsers
+      setTimeout(function() {
+        document.body.classList.add('fa-loaded');
+      }, 500);
+    }
+  </script>
   
   <!-- Deferred non-critical scripts -->
   <script src="https://cdn.jsdelivr.net/npm/share-this/dist/share-this.js" defer></script>

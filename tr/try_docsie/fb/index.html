@@ -740,6 +740,7 @@
     z-index: 9999;
     transform: translateY(-100%);
     transition: transform 0.3s ease-in-out;
+    display: none; /* Hide initially to prevent FOUC */
   }
   
   .language-suggestion-banner.show {
@@ -1021,9 +1022,10 @@
     switchBtn.href = getLanguageURL(suggestion.language);
     
     // Show banner with animation
+    banner.style.display = 'block'; // Make visible first
     setTimeout(() => {
       banner.classList.add('show');
-    }, 500);
+    }, 50); // Reduced delay for smoother appearance
   }
 
   // Initialize
@@ -1060,6 +1062,7 @@
         localStorage.setItem('docsie-language-chosen', 'true');
         sessionStorage.setItem('language-suggestion-dismissed', 'true');
         banner.classList.remove('show');
+        setTimeout(() => { banner.style.display = 'none'; }, 300); // Hide after animation
       });
     }
     
@@ -1068,6 +1071,7 @@
       closeBtn.addEventListener('click', () => {
         sessionStorage.setItem('language-suggestion-dismissed', 'true');
         banner.classList.remove('show');
+        setTimeout(() => { banner.style.display = 'none'; }, 300); // Hide after animation
       });
     }
   }
