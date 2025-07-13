@@ -22,9 +22,9 @@
             {% for slide in section.carousel_slides %}
             <div class="carousel-image absolute inset-0 origin-bottom transition-all duration-500 ease-in-out {% if loop.first %}active{% endif %}"
                  data-slide="{{ loop.index0 }}">
-              <img src="{{ slide.image }}" 
-                   alt="{{ slide.caption or slide.title }}"
-                   class="h-full w-full rounded-3xl object-cover object-center shadow-xl">
+              <div class="h-full w-full rounded-3xl overflow-hidden shadow-xl">
+                {{ slide.image | optimized_image | safe }}
+              </div>
             </div>
             {% endfor %}
           </div>

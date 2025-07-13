@@ -1,0 +1,23 @@
+{% macro picture(src, alt="", sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw", class="") -%}
+{%- set img_name = src.split('/')[-1].split('.')[0] -%}
+{%- set img_ext = src.split('.')[-1] -%}
+<picture{% if class %} class="{{ class }}"{% endif %}>
+  <source type="image/webp" 
+          srcset="/assets/images/optimized/assets/solutions/{{ img_name }}-320w.webp 320w,
+                  /assets/images/optimized/assets/solutions/{{ img_name }}-640w.webp 640w,
+                  /assets/images/optimized/assets/solutions/{{ img_name }}-768w.webp 768w,
+                  /assets/images/optimized/assets/solutions/{{ img_name }}-1024w.webp 1024w">
+  <img src="/assets/images/optimized/assets/solutions/{{ img_name }}-320w.jpg" 
+       srcset="/assets/images/optimized/assets/solutions/{{ img_name }}-320w.jpg 320w,
+               /assets/images/optimized/assets/solutions/{{ img_name }}-640w.jpg 640w,
+               /assets/images/optimized/assets/solutions/{{ img_name }}-768w.jpg 768w,
+               /assets/images/optimized/assets/solutions/{{ img_name }}-1024w.jpg 1024w"
+       sizes="{{ sizes }}"
+       alt="{{ alt }}"
+       loading="lazy">
+</picture>
+{%- endmacro %}
+
+{% macro picture_from_path(path, alt="", sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw", class="") -%}
+{{ picture(path.split('/')[-1], alt, sizes, class) }}
+{%- endmacro %}
