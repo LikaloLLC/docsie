@@ -107,6 +107,14 @@ if __name__ == "__main__":
     # Get the directory where the script is located
     script_dir = os.path.dirname(os.path.abspath(__file__))
     
+    # Run pre-build tasks (image optimization, etc.)
+    try:
+        from utils.build_helper import BuildHelper
+        helper = BuildHelper()
+        helper.pre_build()
+    except Exception as e:
+        print(f"⚠️  Warning: Pre-build tasks failed: {e}")
+    
     ###Grabbing blogposts and converting them to
     feed = feedparser.parse('https://www.docsie.io/blog/rss.xml?skip=1&limit=3').entries
     feed.reverse()
