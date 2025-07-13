@@ -22,6 +22,10 @@
   direction: rtl;
 }
 
+[dir="rtl"] .flex-row {
+  flex-direction: row-reverse;
+}
+
 [dir="rtl"] .flex-row-reverse {
   flex-direction: row;
 }
@@ -31,30 +35,64 @@
   direction: rtl;
 }
 
-/* Margin and padding flips */
+/* Tailwind margin utilities */
+[dir="rtl"] .ml-1 { margin-left: 0; margin-right: 0.25rem; }
+[dir="rtl"] .mr-1 { margin-right: 0; margin-left: 0.25rem; }
 [dir="rtl"] .ml-2 { margin-left: 0; margin-right: 0.5rem; }
 [dir="rtl"] .mr-2 { margin-right: 0; margin-left: 0.5rem; }
 [dir="rtl"] .ml-3 { margin-left: 0; margin-right: 0.75rem; }
 [dir="rtl"] .mr-3 { margin-right: 0; margin-left: 0.75rem; }
 [dir="rtl"] .ml-4 { margin-left: 0; margin-right: 1rem; }
 [dir="rtl"] .mr-4 { margin-right: 0; margin-left: 1rem; }
+[dir="rtl"] .ml-5 { margin-left: 0; margin-right: 1.25rem; }
+[dir="rtl"] .mr-5 { margin-right: 0; margin-left: 1.25rem; }
 [dir="rtl"] .ml-6 { margin-left: 0; margin-right: 1.5rem; }
 [dir="rtl"] .mr-6 { margin-right: 0; margin-left: 1.5rem; }
 [dir="rtl"] .ml-8 { margin-left: 0; margin-right: 2rem; }
 [dir="rtl"] .mr-8 { margin-right: 0; margin-left: 2rem; }
+[dir="rtl"] .ml-auto { margin-left: 0; margin-right: auto; }
+[dir="rtl"] .mr-auto { margin-right: 0; margin-left: auto; }
 
+/* Tailwind padding utilities */
+[dir="rtl"] .pl-1 { padding-left: 0; padding-right: 0.25rem; }
+[dir="rtl"] .pr-1 { padding-right: 0; padding-left: 0.25rem; }
 [dir="rtl"] .pl-2 { padding-left: 0; padding-right: 0.5rem; }
 [dir="rtl"] .pr-2 { padding-right: 0; padding-left: 0.5rem; }
 [dir="rtl"] .pl-3 { padding-left: 0; padding-right: 0.75rem; }
 [dir="rtl"] .pr-3 { padding-right: 0; padding-left: 0.75rem; }
 [dir="rtl"] .pl-4 { padding-left: 0; padding-right: 1rem; }
 [dir="rtl"] .pr-4 { padding-right: 0; padding-left: 1rem; }
+[dir="rtl"] .pl-5 { padding-left: 0; padding-right: 1.25rem; }
+[dir="rtl"] .pr-5 { padding-right: 0; padding-left: 1.25rem; }
 [dir="rtl"] .pl-6 { padding-left: 0; padding-right: 1.5rem; }
 [dir="rtl"] .pr-6 { padding-right: 0; padding-left: 1.5rem; }
 [dir="rtl"] .pl-8 { padding-left: 0; padding-right: 2rem; }
 [dir="rtl"] .pr-8 { padding-right: 0; padding-left: 2rem; }
+[dir="rtl"] .px-4 { padding-left: 1rem; padding-right: 1rem; }
+[dir="rtl"] .px-8 { padding-left: 2rem; padding-right: 2rem; }
+
+/* Space utilities */
+[dir="rtl"] .space-x-2 > * + * { margin-left: 0; margin-right: 0.5rem; }
+[dir="rtl"] .space-x-3 > * + * { margin-left: 0; margin-right: 0.75rem; }
+[dir="rtl"] .space-x-4 > * + * { margin-left: 0; margin-right: 1rem; }
+[dir="rtl"] .space-x-6 > * + * { margin-left: 0; margin-right: 1.5rem; }
+[dir="rtl"] .space-x-8 > * + * { margin-left: 0; margin-right: 2rem; }
 
 /* Border radius flips */
+[dir="rtl"] .rounded-l { 
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-top-right-radius: 0.25rem;
+  border-bottom-right-radius: 0.25rem;
+}
+
+[dir="rtl"] .rounded-r { 
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-top-left-radius: 0.25rem;
+  border-bottom-left-radius: 0.25rem;
+}
+
 [dir="rtl"] .rounded-l-lg { 
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
@@ -69,6 +107,25 @@
   border-bottom-left-radius: 0.5rem;
 }
 
+/* Text alignment */
+[dir="rtl"] .text-left { text-align: right; }
+[dir="rtl"] .text-right { text-align: left; }
+
+/* Float adjustments */
+[dir="rtl"] .float-left { float: right; }
+[dir="rtl"] .float-right { float: left; }
+
+/* Position adjustments */
+[dir="rtl"] .left-0 { left: auto; right: 0; }
+[dir="rtl"] .right-0 { right: auto; left: 0; }
+[dir="rtl"] .left-4 { left: auto; right: 1rem; }
+[dir="rtl"] .right-4 { right: auto; left: 1rem; }
+
+/* Transform utilities */
+[dir="rtl"] .translate-x-full { transform: translateX(-100%); }
+[dir="rtl"] .-translate-x-full { transform: translateX(100%); }
+[dir="rtl"] .translate-x-0 { transform: translateX(0); }
+
 /* Navigation adjustments */
 [dir="rtl"] nav ul {
   padding-right: 0;
@@ -80,18 +137,19 @@
 }
 
 /* Button icons */
-[dir="rtl"] button svg:first-child {
+[dir="rtl"] button svg:first-child:not(:last-child) {
   margin-right: 0;
   margin-left: 0.5rem;
 }
 
-[dir="rtl"] button svg:last-child {
+[dir="rtl"] button svg:last-child:not(:first-child) {
   margin-left: 0;
   margin-right: 0.5rem;
 }
 
 /* Dropdown adjustments */
-[dir="rtl"] .dropdown {
+[dir="rtl"] .dropdown,
+[dir="rtl"] [class*="dropdown"] {
   left: auto;
   right: 0;
 }
@@ -101,9 +159,19 @@
   direction: rtl;
 }
 
-[dir="rtl"] .header-v2-nav .space-x-8 > * {
-  margin-left: 2rem;
-  margin-right: 0;
+[dir="rtl"] .header-v2-nav .flex {
+  flex-direction: row-reverse;
+}
+
+/* Mobile menu */
+[dir="rtl"] #mobile-menu {
+  right: auto;
+  left: 0;
+  transform: translateX(-100%);
+}
+
+[dir="rtl"] #mobile-menu.translate-x-0 {
+  transform: translateX(0);
 }
 
 /* Footer V2 specific */
@@ -147,8 +215,9 @@
   text-align: right;
 }
 
-/* Icons in lists */
-[dir="rtl"] .flex.items-start svg {
+/* Icons in lists and flex items */
+[dir="rtl"] .flex.items-start svg,
+[dir="rtl"] .flex.items-center svg {
   margin-right: 0;
   margin-left: 0.75rem;
 }
@@ -160,6 +229,10 @@
 
 [dir="rtl"] .hover\:-translate-x-1:hover {
   transform: translateX(0.25rem);
+}
+
+[dir="rtl"] .hover\:translate-x-2:hover {
+  transform: translateX(-0.5rem);
 }
 
 /* Progress bars */
@@ -211,26 +284,6 @@
   background-image: linear-gradient(to bottom left, var(--tw-gradient-stops));
 }
 
-/* Float adjustments */
-[dir="rtl"] .float-left {
-  float: right;
-}
-
-[dir="rtl"] .float-right {
-  float: left;
-}
-
-/* Position adjustments */
-[dir="rtl"] .left-0 {
-  left: auto;
-  right: 0;
-}
-
-[dir="rtl"] .right-0 {
-  right: auto;
-  left: 0;
-}
-
 /* Transform origin */
 [dir="rtl"] .origin-top-left {
   transform-origin: top right;
@@ -241,6 +294,10 @@
 }
 
 /* Shadows - flip horizontal shadows */
+[dir="rtl"] .shadow-lg {
+  box-shadow: -0 10px 15px -3px rgba(0, 0, 0, 0.1), -0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
 [dir="rtl"] .shadow-xl {
   box-shadow: -0 20px 25px -5px rgba(0, 0, 0, 0.1), -0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
@@ -257,4 +314,102 @@
 [dir="rtl"] .reviews-scroll-container .review-card {
   direction: rtl;
   text-align: right;
+}
+
+/* G2 badge */
+[dir="rtl"] .g2-rating-badge {
+  flex-direction: row-reverse;
+}
+
+/* Docsie specific classes */
+[dir="rtl"] .docsie-btn-primary svg,
+[dir="rtl"] .docsie-btn-secondary svg {
+  margin-left: 0.5rem;
+  margin-right: 0;
+}
+
+/* Hero section */
+[dir="rtl"] .hero-v2 {
+  text-align: right;
+}
+
+/* Features grid */
+[dir="rtl"] .feature-card {
+  text-align: right;
+}
+
+[dir="rtl"] .feature-card .icon {
+  margin-left: 1rem;
+  margin-right: 0;
+}
+
+/* Solutions dropdown */
+[dir="rtl"] .solutions-mega-menu {
+  left: auto;
+  right: 0;
+}
+
+/* Mobile menu toggle */
+[dir="rtl"] #mobile-menu-icon {
+  transform: scaleX(-1);
+}
+
+/* Ensure all flex items reverse properly */
+[dir="rtl"] .flex-row:not(.flex-row-reverse) {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .inline-flex:not(.flex-row-reverse) {
+  flex-direction: row-reverse;
+}
+
+/* Fix chevron icons to point the right way */
+[dir="rtl"] .chevron-right {
+  transform: rotate(180deg);
+}
+
+[dir="rtl"] .chevron-left {
+  transform: rotate(180deg);
+}
+
+/* Carousel controls */
+[dir="rtl"] .carousel-prev {
+  left: auto;
+  right: 1rem;
+}
+
+[dir="rtl"] .carousel-next {
+  right: auto;
+  left: 1rem;
+}
+
+/* Additional Tailwind utilities that need RTL support */
+[dir="rtl"] .border-l { border-left: 0; border-right-width: 1px; }
+[dir="rtl"] .border-r { border-right: 0; border-left-width: 1px; }
+[dir="rtl"] .border-l-2 { border-left: 0; border-right-width: 2px; }
+[dir="rtl"] .border-r-2 { border-right: 0; border-left-width: 2px; }
+
+/* Fix for absolute positioned elements */
+[dir="rtl"] .absolute.left-0 { left: auto; right: 0; }
+[dir="rtl"] .absolute.right-0 { right: auto; left: 0; }
+[dir="rtl"] .absolute.left-4 { left: auto; right: 1rem; }
+[dir="rtl"] .absolute.right-4 { right: auto; left: 1rem; }
+
+/* Banner/Hero adjustments */
+[dir="rtl"] .banner-v2 .inline-flex svg {
+  margin-left: 0.5rem;
+  margin-right: 0;
+}
+
+/* Fix icon positioning in general */
+[dir="rtl"] svg + span,
+[dir="rtl"] svg + div {
+  margin-right: 0.5rem;
+  margin-left: 0;
+}
+
+[dir="rtl"] span + svg,
+[dir="rtl"] div + svg {
+  margin-left: 0.5rem;
+  margin-right: 0;
 }

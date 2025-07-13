@@ -129,6 +129,7 @@ def generate_supplementary_pages_for_language(locale_code, locale_dir, output_ba
         outpath=output_base or '.',
         env_globals={
             "locale": f"/{locale_code}" if locale_code != 'en' else '/',
+            "lang": locale_code,  # Pass the language code for the HTML lang attribute
             "_": _,
             "gettext": _,
             "render_component": lambda name, config, **kwargs: render_component_with_version(
