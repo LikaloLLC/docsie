@@ -60,6 +60,7 @@ def generate_language_version(locale_dir, locale_code):
         outpath=outpath,
         env_globals={
             "locale": loc_name,
+            "lang": locale_code,  # Pass the language code for the HTML lang attribute
             "feed": feed[-12:][::-1],
             "videos": feed_videos
         },

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{'abs_lang_url': <function generate_supplementary_pages_for_language.<locals>.<lambda> at 0x10440cb80>}">
+<html lang="he">
 
 <head>
   <link rel="preconnect" href="https://app.docsie.io">
@@ -346,7 +346,7 @@
 <meta name="apple-mobile-web-app-title" content="Docsie">
 
 
-<meta property="og:locale" content="{'abs_lang_url': <function generate_supplementary_pages_for_language.<locals>.<lambda> at 0x10440cb80>}_{'ABS_LANG_URL': <FUNCTION GENERATE_SUPPLEMENTARY_PAGES_FOR_LANGUAGE.<LOCALS>.<LAMBDA> AT 0X10440CB80>}">
+<meta property="og:locale" content="he_HE">
 <meta property="og:locale:alternate" content="de_DE">
 <meta property="og:locale:alternate" content="es_ES">
 <meta property="og:locale:alternate" content="fr_FR">
@@ -474,6 +474,9 @@
   <!-- PRIORITY 1: Main Styles - Load First -->
   <link rel="stylesheet" href='/style.css'>
   <link rel="stylesheet" href="/styles/design-system.css">
+  
+  <!-- Monochrome Theme (Optional - loaded only when activated) -->
+  <link rel="stylesheet" href="/styles/design-tokens-monochrome.css">
   
   <!-- PRIORITY 2: Design System Foundation -->
   <link rel="stylesheet" href="/styles/design-tokens.css">
@@ -5504,6 +5507,33 @@ src="https://www.facebook.com/tr?id=415019276437410&ev=PageView&noscript=1"
   
   <!-- Animated Background System -->
   <script src="/assets/js/animated-gradient-bg.js" defer></script>
+  
+  <!-- Theme Switcher (Testing) -->
+  <script>
+    // Simple theme toggle for testing
+    function toggleMonochrome() {
+      document.documentElement.classList.toggle('theme-monochrome');
+      const isMonochrome = document.documentElement.classList.contains('theme-monochrome');
+      localStorage.setItem('docsie-theme', isMonochrome ? 'monochrome' : 'color');
+    }
+    
+    // Apply saved theme on load
+    if (localStorage.getItem('docsie-theme') === 'monochrome') {
+      document.documentElement.classList.add('theme-monochrome');
+    }
+    
+    // Add toggle button if URL has ?theme parameter
+    if (window.location.search.includes('theme')) {
+      document.addEventListener('DOMContentLoaded', function() {
+        const btn = document.createElement('button');
+        btn.innerHTML = '🎨';
+        btn.style.cssText = 'position:fixed;bottom:20px;left:20px;width:50px;height:50px;border-radius:50%;background:#000;color:#fff;border:2px solid #fff;font-size:24px;cursor:pointer;z-index:9999;box-shadow:0 4px 6px rgba(0,0,0,0.1);';
+        btn.onclick = toggleMonochrome;
+        btn.title = 'Toggle Monochrome Theme';
+        document.body.appendChild(btn);
+      });
+    }
+  </script>
 </body>
 
 </html>
