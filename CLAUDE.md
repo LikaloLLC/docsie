@@ -90,3 +90,79 @@ pybabel init -d locale -l <language_code> -i locale/messages.pot
 # Compile translations
 pybabel compile -d locale -l <language_code>
 ```
+
+## Main Site vs BlogVi Comparison
+
+### Main Site (Docsie.io)
+- **Theming**: Uses a modern V2 design system with:
+  - Design tokens in `/styles/design-system.css` and `/styles/design-tokens.css`
+  - Component-based CSS architecture in `/styles/components/`
+  - Support for both V1 and V2 templates (`_base.html` and `_base_v2.html`)
+  - Tailwind-compatible utilities
+  - Dark mode support
+  - Responsive design with mobile-first approach
+
+- **Translation System**:
+  - Sophisticated multi-language support (30+ languages)
+  - Uses `translation_system.py` with Claude API integration
+  - Babel-based string extraction and compilation
+  - YAML translation for content files
+  - Caching system for translations
+  - Batch translation support
+  - Build script: `sh build_multilingual.sh`
+
+### BlogVi System
+- **Current State**:
+  - Standalone blog generator in `.external/BlogVi/`
+  - Uses basic Tailwind CSS from CDN
+  - Simple template structure without design system integration
+  - Separate translation system using Claude API with batch support
+  - Generates content into `/blog/` directory of main site
+
+- **Design Gaps**:
+  - Not using main site's design system
+  - Different header/footer implementations
+  - Inconsistent styling and branding
+  - Missing V2 design elements
+  - No dark mode support
+
+## Design Alignment Strategy
+
+### Short-term Improvements
+1. **Import Main Site Design System**:
+   - Copy design tokens and utilities to BlogVi
+   - Update BlogVi templates to use main site CSS classes
+   - Align color schemes, typography, and spacing
+
+2. **Template Synchronization**:
+   - Adapt BlogVi's header.html and footer.html to match main site's `_header_v2.html` and `_footer_v2.html`
+   - Use consistent navigation structure
+   - Apply same responsive breakpoints
+
+3. **Translation Integration**:
+   - Align language codes between systems
+   - Share translation cache if possible
+   - Use consistent translation settings
+
+### Long-term Architecture Recommendations
+1. **Unified Build System**:
+   - Integrate BlogVi generation into main build pipeline
+   - Share Jinja2 environment and filters
+   - Use single translation system for both
+
+2. **Component Library**:
+   - Extract reusable components (cards, buttons, forms)
+   - Create shared template includes
+   - Maintain single source of truth for UI elements
+
+3. **Design System Extension**:
+   - Add blog-specific components to design system
+   - Create article typography styles
+   - Define category and tag styling
+
+## Implementation Notes
+
+- BlogVi currently runs as a separate system but generates into main site's `/blog/` directory
+- Both systems use Claude API for translations but with different implementations
+- Main site has more mature theming with V2 design system
+- Blog needs to adopt main site's design patterns for consistency

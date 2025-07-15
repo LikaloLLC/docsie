@@ -2,7 +2,7 @@
 
 {% block title %}{{ page.title }}{% endblock %}
 {% block description %}{{ page.description }}{% endblock %}
-{% block shareimage %}{{ page.components.hero.image if page.components.hero and page.components.hero.image else 'https://d1iq6qzgppjlud.cloudfront.net/images/docsie-share.png' }}{% endblock %}
+{% block shareimage %}{% if page.components.hero and page.components.hero.image %}https://www.docsie.io{{ page.components.hero.image }}{% else %}https://www.docsie.io/assets/share-image.jpeg{% endif %}{% endblock %}
 
 {% block additional_structured_data %}
 {# Product Schema for solution pages #}

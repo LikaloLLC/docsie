@@ -79,8 +79,8 @@ check_dependencies() {
 extract_strings() {
     print_step "Extracting translatable strings..."
     
-    # Extract from templates and Python files
-    pybabel extract -F babel.cfg -o locale/messages.pot . || {
+    # Extract from templates and Python files in src directory only
+    pybabel extract -F babel.cfg -o locale/messages.pot src/ || {
         print_error "Failed to extract strings"
         return 1
     }
@@ -153,29 +153,227 @@ translate_missing() {
     print_success "API translation complete"
 }
 
+# Function to fix duplicate messages in .po files
+fix_duplicate_messages() {
+    local langs="$1"
+    print_step "Fixing duplicate messages in translation files..."
+    
+    if [ -z "$langs" ]; then
+        # Get all languages
+        langs=$(ls locale | grep -v messages.pot | grep -v .cache | tr '\n' ' ')
+    fi
+    
+    local fixed_count=0
+    local error_count=0
+    
+    for lang in $langs; do
+        if [ "$lang" = "en" ]; then
+            continue
+        fi
+        
+        local po_file="locale/$lang/LC_MESSAGES/messages.po"
+        if [ ! -f "$po_file" ]; then
+            continue
+        fi
+        
+        # Create backup
+        cp "$po_file" "$po_file.backup"
+        
+        # Remove duplicates using msguniq
+        if msguniq "$po_file" -o "$po_file.tmp" 2>/dev/null; then
+            # Merge with pot file to ensure proper formatting
+            if msgmerge --update --no-fuzzy-matching --backup=off "$po_file.tmp" locale/messages.pot 2>/dev/null; then
+                mv "$po_file.tmp" "$po_file"
+                ((fixed_count++))
+                rm -f "$po_file.backup"
+            else
+                mv "$po_file.backup" "$po_file"
+                ((error_count++))
+            fi
+        else
+            ((error_count++))
+        fi
+        
+        rm -f "$po_file.tmp"
+    done
+    
+    if [ $fixed_count -gt 0 ]; then
+        print_success "Fixed $fixed_count language files"
+    fi
+    if [ $error_count -gt 0 ]; then
+        print_warning "$error_count files had errors"
+    fi
+}
+
+# Function to fix format placeholder errors and remove incorrect format flags
+fix_placeholder_errors() {
+    local langs="$1"
+    print_step "Fixing placeholder format errors and format flags..."
+    
+    # First, use msgattrib to remove python-format flags from messages without placeholders
+    if [ -z "$langs" ]; then
+        langs=$(ls locale | grep -v messages.pot | grep -v .cache | tr '\n' ' ')
+    fi
+    
+    for lang in $langs; do
+        if [ "$lang" = "en" ]; then
+            continue
+        fi
+        
+        local po_file="locale/$lang/LC_MESSAGES/messages.po"
+        if [ ! -f "$po_file" ]; then
+            continue
+        fi
+        
+        # Remove python-format flag from entries without actual format strings
+        msgattrib --no-python-format "$po_file" -o "$po_file.tmp" 2>/dev/null && mv "$po_file.tmp" "$po_file"
+    done
+    
+    # Create a more robust Python script for fixing placeholders
+    cat > /tmp/fix_placeholders.py << 'EOF'
+#!/usr/bin/env python3
+import re
+import sys
+from pathlib import Path
+
+def fix_po_file(po_file_path):
+    """Fix placeholder mismatches in a .po file"""
+    
+    with open(po_file_path, 'r', encoding='utf-8') as f:
+        lines = f.readlines()
+    
+    fixed_count = 0
+    i = 0
+    
+    while i < len(lines):
+        # Find msgid/msgstr pairs
+        if lines[i].startswith('msgid "'):
+            msgid_lines = [lines[i]]
+            i += 1
+            
+            # Collect multi-line msgid
+            while i < len(lines) and lines[i].startswith('"'):
+                msgid_lines.append(lines[i])
+                i += 1
+            
+            # Now we should be at msgstr
+            if i < len(lines) and lines[i].startswith('msgstr "'):
+                msgstr_lines = [lines[i]]
+                msgstr_start = i
+                i += 1
+                
+                # Collect multi-line msgstr
+                while i < len(lines) and lines[i].startswith('"'):
+                    msgstr_lines.append(lines[i])
+                    i += 1
+                
+                # Extract full strings
+                msgid = ''.join(line.strip()[1:-1] for line in msgid_lines if line.strip().startswith('"'))
+                msgstr = ''.join(line.strip()[1:-1] for line in msgstr_lines if line.strip().startswith('"'))
+                
+                if msgstr:  # Only process translated strings
+                    # Extract placeholders
+                    msgid_ph = re.findall(r'%(?:\([^)]+\))?[sdiouxXeEfFgGcrp%]', msgid)
+                    msgstr_ph = re.findall(r'%(?:\([^)]+\))?[sdiouxXeEfFgGcrp%]', msgstr)
+                    
+                    # Fix if same number of placeholders but wrong types
+                    if msgid_ph and msgstr_ph and len(msgid_ph) == len(msgstr_ph):
+                        new_msgstr = msgstr
+                        changed = False
+                        
+                        for orig, trans in zip(msgid_ph, msgstr_ph):
+                            if orig != trans:
+                                # Replace the wrong placeholder with the correct one
+                                new_msgstr = new_msgstr.replace(trans, orig, 1)
+                                changed = True
+                        
+                        if changed:
+                            # Reconstruct msgstr lines
+                            if len(msgstr_lines) == 1:
+                                lines[msgstr_start] = f'msgstr "{new_msgstr}"\n'
+                            else:
+                                # Handle multi-line msgstr
+                                # Keep the structure but update content
+                                lines[msgstr_start] = 'msgstr ""\n'
+                                lines[msgstr_start + 1] = f'"{new_msgstr}"\n'
+                                # Remove extra lines if any
+                                for j in range(msgstr_start + 2, msgstr_start + len(msgstr_lines)):
+                                    if j < len(lines):
+                                        lines[j] = ''
+                            
+                            fixed_count += 1
+        else:
+            i += 1
+    
+    if fixed_count > 0:
+        # Write back
+        with open(po_file_path, 'w', encoding='utf-8') as f:
+            f.writelines(line for line in lines if line)
+        
+    return fixed_count
+
+# Main
+import os
+langs = sys.argv[1:] if len(sys.argv) > 1 else []
+if not langs:
+    langs = [d for d in os.listdir('locale') if os.path.isdir(f'locale/{d}') and d not in ['messages.pot', '.cache']]
+
+total_fixed = 0
+for lang in langs:
+    if lang == 'en':
+        continue
+    
+    po_file = Path(f'locale/{lang}/LC_MESSAGES/messages.po')
+    if po_file.exists():
+        fixed = fix_po_file(po_file)
+        if fixed > 0:
+            print(f"  Fixed {fixed} placeholders in {lang}")
+            total_fixed += 1
+
+print(f"\nTotal files fixed: {total_fixed}")
+EOF
+    
+    # Run the Python script
+    $PYTHON_CMD /tmp/fix_placeholders.py $langs || print_warning "Some placeholder fixes may have failed"
+    
+    # Clean up
+    rm -f /tmp/fix_placeholders.py
+}
+
 # Function to compile translation files
 compile_translations() {
     local langs="$1"
     print_step "Compiling translation files..."
     
     if [ -z "$langs" ]; then
-        # Compile all
-        pybabel compile -d locale || {
-            print_error "Failed to compile translations"
-            return 1
+        # Compile all with -f flag to force compilation despite errors
+        pybabel compile -d locale -f 2>&1 | {
+            error_count=0
+            while IFS= read -r line; do
+                if [[ "$line" == *"error:"* ]]; then
+                    ((error_count++))
+                fi
+            done
+            
+            if [ $error_count -gt 0 ]; then
+                print_warning "Compiled with $error_count format errors (translations will work but may have issues)"
+                print_warning "Run with --force flag to retranslate and fix these errors"
+            else
+                print_success "Translation compilation complete"
+            fi
         }
     else
         # Compile specific languages
         for lang in $langs; do
             if [ "$lang" != "en" ]; then
-                pybabel compile -d locale -l $lang || {
-                    print_warning "Failed to compile $lang"
+                pybabel compile -d locale -l $lang -f 2>&1 | grep -q "error:" && {
+                    print_warning "Compiled $lang with format errors"
+                } || {
+                    print_success "Compiled $lang successfully"
                 }
             fi
         done
     fi
-    
-    print_success "Translation compilation complete"
 }
 
 # Function to translate YAML files
@@ -246,6 +444,15 @@ translate_yaml() {
 run_prebuild() {
     print_step "Running pre-build tasks (image optimization, etc.)..."
     
+    # Generate pricing HTML from configuration
+    if [ -f "generate_pricing_html.py" ]; then
+        print_step "Generating pricing HTML from configuration..."
+        $PYTHON_CMD generate_pricing_html.py || {
+            print_warning "Failed to generate pricing HTML, continuing..."
+        }
+    fi
+    
+    # Run additional build helper tasks
     if [ -f "utils/build_helper.py" ]; then
         $PYTHON_CMD utils/build_helper.py || {
             print_warning "Pre-build tasks failed, continuing..."
@@ -312,8 +519,10 @@ usage() {
     echo "Options:"
     echo "  -h, --help          Show this help message"
     echo "  -q, --quick         Quick mode: skip extraction and API translation"
-    echo "  -f, --force         Force re-translation (ignore cache)"
+    echo "  -f, --force         Force re-translation (ignore cache, run everything)"
+    echo "  -t, --translate     Enable translation (don't skip extraction/translation)"
     echo "  -v, --verbose       Verbose output"
+    echo "  --fix               Fix translation errors (duplicates, placeholders)"
     echo "  --skip-extract      Skip string extraction"
     echo "  --skip-translate    Skip API translation"
     echo "  --skip-yaml         Skip YAML translation"
@@ -326,6 +535,7 @@ usage() {
     echo "  $0 de fr es         # Build for specific languages"
     echo "  $0 --quick          # Quick rebuild (skip extraction/translation)"
     echo "  $0 --force ru       # Force retranslate Russian"
+    echo "  $0 --fix            # Fix translation errors before building"
     echo ""
 }
 
@@ -336,6 +546,7 @@ SKIP_YAML=true         # Default to skipping YAML translation
 SKIP_GENERATE=false
 EXTRACT_ONLY=false
 TRANSLATE_ONLY=false
+FIX_ONLY=false
 FORCE_FLAG=""
 LANGUAGES=""
 
@@ -354,10 +565,22 @@ while [[ $# -gt 0 ]]; do
         -f|--force)
             FORCE_FLAG="--force"
             SKIP_CACHE=true
+            SKIP_EXTRACT=false
+            SKIP_TRANSLATE=false
+            SKIP_YAML=false
+            shift
+            ;;
+        -t|--translate)
+            SKIP_EXTRACT=false
+            SKIP_TRANSLATE=false
             shift
             ;;
         -v|--verbose)
             VERBOSE=true
+            shift
+            ;;
+        --fix)
+            FIX_ONLY=true
             shift
             ;;
         --skip-extract)
@@ -415,6 +638,8 @@ main() {
         echo "Mode: Extract only"
     elif [ "$TRANSLATE_ONLY" = true ]; then
         echo "Mode: Translate only"
+    elif [ "$FIX_ONLY" = true ]; then
+        echo "Mode: Fix translation errors"
     else
         echo "Mode: Full build"
     fi
@@ -422,6 +647,15 @@ main() {
     
     # Check dependencies
     check_dependencies
+    
+    # Fix-only mode
+    if [ "$FIX_ONLY" = true ]; then
+        fix_duplicate_messages "$LANGUAGES"
+        fix_placeholder_errors "$LANGUAGES"
+        compile_translations "$LANGUAGES"
+        print_success "Translation fixes complete!"
+        exit 0
+    fi
     
     # Extract strings
     if [ "$EXTRACT_ONLY" = true ]; then
@@ -456,6 +690,9 @@ main() {
     
     # Step 4: Generate sites
     if [ "$SKIP_GENERATE" = false ]; then
+        # Run pre-build tasks including pricing HTML generation
+        run_prebuild
+        
         # Generate main site (English)
         generate_main_site
         

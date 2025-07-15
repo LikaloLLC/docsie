@@ -36,6 +36,20 @@ class CustomSite(Site):
             return False
         return super().is_template(filename)
 
+def generate_pricing_html():
+    """Generate pricing HTML from configuration file"""
+    try:
+        if os.path.exists('generate_pricing_html.py'):
+            import subprocess
+            print("Generating pricing HTML from configuration...")
+            result = subprocess.run([sys.executable, 'generate_pricing_html.py'], capture_output=True, text=True)
+            if result.returncode == 0:
+                print("✓ Pricing HTML generated successfully")
+            else:
+                print(f"Warning: Failed to generate pricing HTML: {result.stderr}")
+    except Exception as e:
+        print(f"Warning: Error generating pricing HTML: {e}")
+
 def render_template_file(site, template, **kwargs):
     """
     Custom render function that handles template rendering.
@@ -106,6 +120,9 @@ def render_template_file(site, template, **kwargs):
 if __name__ == "__main__":
     # Get the directory where the script is located
     script_dir = os.path.dirname(os.path.abspath(__file__))
+    
+    # Generate pricing HTML from configuration
+    generate_pricing_html()
     
     # Run pre-build tasks (image optimization, etc.)
     try:

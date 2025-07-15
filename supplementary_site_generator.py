@@ -183,12 +183,20 @@ def generate_supplementary_pages(env, force_version=False, ui_version='v2'):
                 page['ui_version'] = ui_version
                 print(f"  Forcing UI version {ui_version} for {page.get('id', 'unknown')}")
             
+            # Generate the URL for this page
+            category = page.get('category', '').lower()
+            if category and category != 'solutions':
+                page_url = f"/solutions/{category}/{page['id']}/"
+            else:
+                page_url = f"/solutions/{page['id']}/"
+            
             # Create context with all necessary variables
             context = {
                 'page': page,
                 'components': components_data,
                 'styles_path': '/styles',
-                'get_page_by_url': get_page_by_url
+                'get_page_by_url': get_page_by_url,
+                'landing_url': page_url.lstrip('/')  # Remove leading slash for canonical URL
             }
             
             # Debug component data
