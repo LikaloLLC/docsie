@@ -210,6 +210,19 @@ def generate_supplementary_pages_for_language(locale_code, locale_dir, output_ba
             # Force UI version
             page['ui_version'] = 'v2'
             
+            # Generate the URL for this page
+            category = page.get('category', '').lower()
+            if category and category != 'solutions':
+                page_url = f"/solutions/{category}/{page['id']}/"
+            else:
+                page_url = f"/solutions/{page['id']}/"
+            
+            # Add language prefix for non-English pages
+            if locale_code != 'en':
+                landing_url = f"{locale_code}{page_url}"
+            else:
+                landing_url = page_url.lstrip('/')
+            
             # Create context
             context = {
                 'page': page,
@@ -217,6 +230,7 @@ def generate_supplementary_pages_for_language(locale_code, locale_dir, output_ba
                 'styles_path': '/styles',
                 'get_page_by_url': get_page_by_url,
                 'locale': f"/{locale_code}" if locale_code != 'en' else '/',
+                'landing_url': landing_url,  # Add canonical URL
                 '_': _,
                 'gettext': _
             }

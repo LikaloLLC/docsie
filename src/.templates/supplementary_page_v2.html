@@ -2,7 +2,7 @@
 
 {% block title %}{{ page.title }}{% endblock %}
 {% block description %}{{ page.description }}{% endblock %}
-{% block shareimage %}{{ page.components.hero.image if page.components.hero and page.components.hero.image else 'https://d1iq6qzgppjlud.cloudfront.net/images/docsie-share.png' }}{% endblock %}
+{% block shareimage %}{% if page.components.hero and page.components.hero.image %}https://www.docsie.io{{ page.components.hero.image }}{% else %}https://www.docsie.io/assets/share-image.jpeg{% endif %}{% endblock %}
 
 {% block additional_structured_data %}
 {# Product Schema for solution pages #}
@@ -88,8 +88,8 @@
 <link rel="stylesheet" href="/styles/supplementary_page.css" />
 
 <!-- Dynamic component styles -->
-{% set component_names = ['hero', 'features', 'gallery', 'related', 'related_auto', 'reviews', 'carousel', 'stats', 'comparison', 'cta_section', 'benefits', 'testimonials_v2', 'interactive_3d', 'pilot_inclusions', 'pilot_process', 'simple_spline', 'qualification_criteria', 'faq_v2'] %}
-{% set v2_components = ['hero', 'features', 'gallery', 'related', 'carousel', 'stats', 'comparison', 'cta_section', 'benefits', 'testimonials_v2'] %}
+{% set component_names = ['hero', 'features', 'gallery', 'related', 'related_auto', 'reviews', 'carousel', 'stats', 'comparison', 'cta_section', 'benefits', 'testimonials', 'interactive_3d', 'pilot_inclusions', 'pilot_process', 'simple_spline', 'qualification_criteria', 'faq_v2'] %}
+{% set v2_components = ['hero', 'features', 'gallery', 'related', 'carousel', 'stats', 'comparison', 'cta_section', 'benefits', 'testimonials'] %}
 {% for component in component_names %}
 <link rel="stylesheet" href="/styles/components/{{ component }}.css" />
 {% if component in v2_components %}

@@ -1,94 +1,74 @@
-<!-- Base template of the footer. -->
-
-<footer class="bg-gray-900">
-    <div class="container max-w-6xl mx-auto flex items-center px-2 py-8">
-        <div class="w-full mx-auto flex flex-wrap items-center">
-            <div class="flex md:w-1/5 justify-center md:justify-start text-white font-extrabold flex-col">
-                <a class="text-gray-900 no-underline hover:text-gray-900 hover:no-underline" href="{{ blog.blog_path }}">
-                    <span class="text-base text-gray-200">{{ settings.blog_name }}</span>
-                </a>
-                <a class="text-gray-900 no-underline hover:text-gray-900 hover:no-underline"
-                   href="https://github.com/LikaloLLC/BlogVi" target="_blank">
-                    <span class="text-xs text-gray-200">Made with BlogVI</span>
-                </a>
+<!-- BlogVi Footer V2 - Simplified version using production styles -->
+<footer class="bg-gray-900 text-white mt-16">
+    <div class="container mx-auto px-4 py-12">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <!-- Company Info -->
+            <div>
+                <h3 class="text-lg font-semibold mb-4">Docsie</h3>
+                <p class="text-gray-400 text-sm">
+                    The modern documentation platform that helps teams create, manage, and share knowledge.
+                </p>
             </div>
-            <div class="relative flex md:w-1/5 hidden" id="lang-picker-container">
-                <div class="md:w-1/2">
-                    <button type="button"
-                            class="inline-flex justify-center w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-indigo-500"
-                            id="lang-picker-menu-button" aria-expanded="true" aria-haspopup="true">
-                        Langauge...
-                        <!-- Heroicon name: solid/chevron-down -->
-                        <svg class="-mr-1 ml-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
-                             fill="currentColor" aria-hidden="true">
-                            <path fill-rule="evenodd"
-                                  d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                                  clip-rule="evenodd"/>
-                        </svg>
-                    </button>
-                </div>
-                <div class="hidden origin-top-right absolute right-2px bottom-12 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
-                     role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1" id="lang-picker-list-container">
-                    <div class="py-1" role="none" id="lang-picker-list">
-
-                    </div>
-                </div>
-            </div>
-            <div class="flex w-full pt-2 content-center justify-between md:w-3/5 md:justify-end">
-                <ul class="list-reset flex justify-center flex-1 md:flex-none items-center">
-                    {% for link in settings.link_menu %}
-                        <li>
-                            <a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-3"
-                               href="{{ link.link }}">{{ link.text }}</a>
-                        </li>
-                    {% endfor %}
+            
+            <!-- Quick Links -->
+            <div>
+                <h4 class="text-lg font-semibold mb-4">Product</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="https://www.docsie.io/features/" class="text-gray-400 hover:text-white transition-colors">Features</a></li>
+                    <li><a href="https://www.docsie.io/pricing/" class="text-gray-400 hover:text-white transition-colors">Pricing</a></li>
+                    <li><a href="https://www.docsie.io/documentation/" class="text-gray-400 hover:text-white transition-colors">Documentation</a></li>
+                    <li><a href="{{ blog.blog_path }}" class="text-gray-400 hover:text-white transition-colors">Blog</a></li>
                 </ul>
+            </div>
+            
+            <!-- Resources -->
+            <div>
+                <h4 class="text-lg font-semibold mb-4">Resources</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="https://help.docsie.io" class="text-gray-400 hover:text-white transition-colors">Help Center</a></li>
+                    <li><a href="https://www.docsie.io/support/" class="text-gray-400 hover:text-white transition-colors">Support</a></li>
+                    <li><a href="https://www.docsie.io/about/" class="text-gray-400 hover:text-white transition-colors">About Us</a></li>
+                    <li><a href="https://www.docsie.io/careers/" class="text-gray-400 hover:text-white transition-colors">Careers</a></li>
+                </ul>
+            </div>
+            
+            <!-- Social Links -->
+            <div>
+                <h4 class="text-lg font-semibold mb-4">Connect</h4>
+                <div class="flex space-x-4">
+                    <a href="https://twitter.com/docsie_io" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/company/docsie" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://github.com/LikaloLLC" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="{{ blog.blog_path }}/rss.xml" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fas fa-rss"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Bottom Bar -->
+        <div class="mt-8 pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center text-sm text-gray-400">
+            <p>&copy; {{ current_year }} Docsie. All rights reserved.</p>
+            <div class="flex space-x-6 mt-4 md:mt-0">
+                <a href="https://www.docsie.io/privacy/" class="hover:text-white transition-colors">Privacy Policy</a>
+                <a href="https://www.docsie.io/terms/" class="hover:text-white transition-colors">Terms of Service</a>
+                <a href="https://www.docsie.io/cookies/" class="hover:text-white transition-colors">Cookie Policy</a>
             </div>
         </div>
     </div>
-
-    <script>
-        const addLanguageToPicker = (href, label) => {
-            const langList = document.getElementById('lang-picker-list');
-
-            langList.innerHTML += `<a href="${href}"` +
-                    'class="text-gray-700 block px-4 py-2 text-sm" ' +
-                    'role="menuitem" ' +
-                    'tabindex="-1" ' +
-                    'id="menu-item-1"' +
-                    '>' + label + '</a>'
-        }
-
-        const langPickerContainer = document.getElementById('lang-picker-container');
-        if (window['settings']['show_language_picker']) {
-            langPickerContainer.classList.remove('hidden');
-        }
-
-        const sourceLanguage = window['settings']['source_language'];
-        const langPickerButton = document.getElementById('lang-picker-menu-button');
-        const langListContainer = document.getElementById('lang-picker-list-container');
-        const rootPath = "{{ settings.blog_root_path }}";
-        const baseUrl = window.location.href;
-
-        langPickerButton.onclick = (e) => {
-            langListContainer.classList.toggle('hidden')
-        }
-
-        let found = false;
-        window['settings']['translation_list'].forEach((translation) => {
-            if (baseUrl.includes(`/${translation.abbreviation}/`)) {
-                langPickerButton.textContent = translation.label;
-
-                addLanguageToPicker(`${rootPath}`, sourceLanguage.label);
-                found = true;
-            } else {
-                addLanguageToPicker(`${rootPath}${translation.abbreviation}/`, translation.label);
-            }
-        });
-
-        if (!found) {
-            langPickerButton.textContent = sourceLanguage.label;
-        }
-
-    </script>
 </footer>
+
+<script>
+// Set current year for copyright
+document.addEventListener('DOMContentLoaded', function() {
+    const yearElements = document.querySelectorAll('[data-year]');
+    const currentYear = new Date().getFullYear();
+    yearElements.forEach(el => el.textContent = currentYear);
+});
+</script>
