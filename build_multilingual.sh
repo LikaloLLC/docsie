@@ -452,6 +452,7 @@ run_prebuild() {
         }
     fi
     
+    # Run additional build helper tasks
     if [ -f "utils/build_helper.py" ]; then
         $PYTHON_CMD utils/build_helper.py || {
             print_warning "Pre-build tasks failed, continuing..."
