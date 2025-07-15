@@ -1058,7 +1058,27 @@ footer.gn .ft-cc {
 	background: #a8bbbf;
 }
 
+/* Pure CSS gradient fallback for performance */
+.docsie-background-img-gradient {
+	background: linear-gradient(135deg, 
+		#ffeef8 0%, 
+		#ffe0f0 25%, 
+		#ffccdd 50%, 
+		#ffc0e0 75%, 
+		#ffb3d9 100%);
+	background-attachment: fixed;
+}
+
+/* Image-based background with performance optimizations */
 .docsie-background-img {
 	background-image: url("/assets/Desktop-reduce.jpeg");
+	background-image: image-set(
+		url("/assets/Desktop-reduce.webp") type("image/webp"),
+		url("/assets/Desktop-reduce.jpeg") type("image/jpeg")
+	);
 	background-size: cover;
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	will-change: transform;
 }
