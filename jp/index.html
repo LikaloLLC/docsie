@@ -2326,7 +2326,9 @@ document.addEventListener('DOMContentLoaded', function() {
         Why Choose Docsie?
       </h2>
       <p class="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-        Docsie is an <span class="text-green-600 font-semibold">award-winning</span> documentation platform that transforms how teams create, manage, and deliver technical content. Our platform reduces documentation time by up to 60% while ensuring consistency and quality across all your documentation.
+         Docsie is an 
+        <span class="text-green-600 font-semibold"> award-winning </span>
+         documentation platform that transforms how teams create, manage, and deliver technical content. Our platform reduces documentation time by up to 60% while ensuring consistency and quality across all your documentation.
       </p>
     </div>
     
@@ -4956,6 +4958,7 @@ document.addEventListener('DOMContentLoaded', function() {
   function getLanguageFromURL() {
     const path = window.location.pathname;
     const langMatch = path.match(/^\/([a-z]{2}|ja_JP)\//);
+    console.log("code", path, langMatch[1])
     
     if (langMatch) {
       const code = langMatch[1];
@@ -5034,7 +5037,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // Get language URL
   function getLanguageURL(langCode) {
     if (langCode === 'en') return '/';
-    if (langCode === 'ja') return '/jp/';
+    if (langCode === 'ja') return '/ja/';
     return `/${langCode}/`;
   }
 

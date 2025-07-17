@@ -5384,6 +5384,7 @@ document.addEventListener('DOMContentLoaded', function() {
   function getLanguageFromURL() {
     const path = window.location.pathname;
     const langMatch = path.match(/^\/([a-z]{2}|ja_JP)\//);
+    console.log("code", path, langMatch[1])
     
     if (langMatch) {
       const code = langMatch[1];
@@ -5462,7 +5463,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // Get language URL
   function getLanguageURL(langCode) {
     if (langCode === 'en') return '/';
-    if (langCode === 'ja') return '/jp/';
+    if (langCode === 'ja') return '/ja/';
     return `/${langCode}/`;
   }
 

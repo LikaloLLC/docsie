@@ -2980,8 +2980,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
       
       <a href="/solutions/industries/manufacturing" class="related-card">
-        
-        <picture class="block w-full h-full">
+        <div class="card-image-wrapper">
+          
+          <picture class="block w-full h-full">
   <source type="image/webp" 
           srcset="/assets/optimized/new_home/industries/manufacturing-hero-320w.webp 320w,
                   /assets/optimized/new_home/industries/manufacturing-hero-640w.webp 640w,
@@ -2997,10 +2998,12 @@ document.addEventListener('DOMContentLoaded', function() {
        loading="lazy"
        class="w-full h-full object-cover">
 </picture>
-        
-        <div class="related-content">
-          <h3>Manufacturing Documentation Platform</h3>
-          <p>Transform your manufacturing documentation with digital work instructions, quality control procedures, and training materials that reduce errors by up to 75%</p>
+          
+
+          <div class="related-content">
+            <h3>Manufacturing Documentation Platform</h3>
+            <p>Transform your manufacturing documentation with digital work instructions, quality control procedures, and training materials that reduce errors by up to 75%</p>
+          </div>
         </div>
       </a>
     
@@ -3008,8 +3011,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
       
       <a href="/solutions/industries/saas" class="related-card">
-        
-        <picture class="block w-full h-full">
+        <div class="card-image-wrapper">
+          
+          <picture class="block w-full h-full">
   <source type="image/webp" 
           srcset="/assets/optimized/new_home/industries/saas-hero-320w.webp 320w,
                   /assets/optimized/new_home/industries/saas-hero-640w.webp 640w,
@@ -3025,10 +3029,12 @@ document.addEventListener('DOMContentLoaded', function() {
        loading="lazy"
        class="w-full h-full object-cover">
 </picture>
-        
-        <div class="related-content">
-          <h3>SaaS Documentation Platform</h3>
-          <p>Transform your SaaS documentation with dynamic API references, user guides, and developer documentation that improve user adoption by up to 85%</p>
+          
+
+          <div class="related-content">
+            <h3>SaaS Documentation Platform</h3>
+            <p>Transform your SaaS documentation with dynamic API references, user guides, and developer documentation that improve user adoption by up to 85%</p>
+          </div>
         </div>
       </a>
     
@@ -3036,8 +3042,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
       
       <a href="/solutions/industries/government" class="related-card">
-        
-        <picture class="block w-full h-full">
+        <div class="card-image-wrapper">
+          
+          <picture class="block w-full h-full">
   <source type="image/webp" 
           srcset="/assets/optimized/new_home/industries/government-hero-320w.webp 320w,
                   /assets/optimized/new_home/industries/government-hero-640w.webp 640w,
@@ -3053,10 +3060,12 @@ document.addEventListener('DOMContentLoaded', function() {
        loading="lazy"
        class="w-full h-full object-cover">
 </picture>
-        
-        <div class="related-content">
-          <h3>Government Documentation Platform</h3>
-          <p>Transform your public sector documentation with digital policy management, service guides, and compliance documentation that improve operational efficiency by up to 55%</p>
+          
+
+          <div class="related-content">
+            <h3>Government Documentation Platform</h3>
+            <p>Transform your public sector documentation with digital policy management, service guides, and compliance documentation that improve operational efficiency by up to 55%</p>
+          </div>
         </div>
       </a>
     
@@ -3064,8 +3073,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
       
       <a href="/solutions/industries/compliance" class="related-card">
-        
-        <picture class="block w-full h-full">
+        <div class="card-image-wrapper">
+          
+          <picture class="block w-full h-full">
   <source type="image/webp" 
           srcset="/assets/optimized/new_home/industries/compliance-hero-320w.webp 320w,
                   /assets/optimized/new_home/industries/compliance-hero-640w.webp 640w,
@@ -3081,10 +3091,12 @@ document.addEventListener('DOMContentLoaded', function() {
        loading="lazy"
        class="w-full h-full object-cover">
 </picture>
-        
-        <div class="related-content">
-          <h3>Compliance Documentation Platform</h3>
-          <p>Transform your compliance documentation with digital audit trails, policy management, and regulatory documentation that reduce compliance risks by up to 70%</p>
+          
+
+          <div class="related-content">
+            <h3>Compliance Documentation Platform</h3>
+            <p>Transform your compliance documentation with digital audit trails, policy management, and regulatory documentation that reduce compliance risks by up to 70%</p>
+          </div>
         </div>
       </a>
     
@@ -3825,6 +3837,7 @@ document.addEventListener('DOMContentLoaded', function() {
   function getLanguageFromURL() {
     const path = window.location.pathname;
     const langMatch = path.match(/^\/([a-z]{2}|ja_JP)\//);
+    console.log("code", path, langMatch[1])
     
     if (langMatch) {
       const code = langMatch[1];
@@ -3903,7 +3916,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // Get language URL
   function getLanguageURL(langCode) {
     if (langCode === 'en') return '/';
-    if (langCode === 'ja') return '/jp/';
+    if (langCode === 'ja') return '/ja/';
     return `/${langCode}/`;
   }
 

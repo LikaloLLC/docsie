@@ -2936,10 +2936,7 @@ document.addEventListener('DOMContentLoaded', function() {
       常见问题
     </h2>
     <p class="text-xl text-gray-600">
-      #-#-#-#-#  messages.po (PROJECT VERSION)  #-#-#-#-#
-关于我们定价和特殊项目的所有信息
-#-#-#-#-#  messages.po (PROJECT VERSION)  #-#-#-#-#
-关于我们定价和特殊项目的全部信息
+      关于我们定价和特殊项目的所有信息
     </p>
   </div>
   
@@ -3941,6 +3938,7 @@ document.addEventListener('DOMContentLoaded', function() {
   function getLanguageFromURL() {
     const path = window.location.pathname;
     const langMatch = path.match(/^\/([a-z]{2}|ja_JP)\//);
+    console.log("code", path, langMatch[1])
     
     if (langMatch) {
       const code = langMatch[1];
@@ -4019,7 +4017,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // Get language URL
   function getLanguageURL(langCode) {
     if (langCode === 'en') return '/';
-    if (langCode === 'ja') return '/jp/';
+    if (langCode === 'ja') return '/ja/';
     return `/${langCode}/`;
   }
 

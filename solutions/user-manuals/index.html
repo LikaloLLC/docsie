@@ -2778,10 +2778,13 @@ document.addEventListener('DOMContentLoaded', function() {
     
       
       <a href="/solutions/knowledge-base" class="related-card">
-        
-        <div class="related-content">
-          <h3>Solution</h3>
-          <p>Learn more about this solution</p>
+        <div class="card-image-wrapper">
+          
+
+          <div class="related-content">
+            <h3>Solution</h3>
+            <p>Learn more about this solution</p>
+          </div>
         </div>
       </a>
     
@@ -2789,8 +2792,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
       
       <a href="/solutions/technical-documentation" class="related-card">
-        
-        <picture class="block w-full h-full">
+        <div class="card-image-wrapper">
+          
+          <picture class="block w-full h-full">
   <source type="image/webp" 
           srcset="/assets/optimized/solutions/tech-docs-320w.webp 320w,
                   /assets/optimized/solutions/tech-docs-640w.webp 640w,
@@ -2806,10 +2810,12 @@ document.addEventListener('DOMContentLoaded', function() {
        loading="lazy"
        class="w-full h-full object-cover">
 </picture>
-        
-        <div class="related-content">
-          <h3>Professional Technical Documentation Platform</h3>
-          <p>Create, manage, and deliver high-quality technical documentation that reduces implementation time by 40% and improves developer experience</p>
+          
+
+          <div class="related-content">
+            <h3>Professional Technical Documentation Platform</h3>
+            <p>Create, manage, and deliver high-quality technical documentation that reduces implementation time by 40% and improves developer experience</p>
+          </div>
         </div>
       </a>
     
@@ -2817,8 +2823,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
       
       <a href="/solutions/training-materials" class="related-card">
-        
-        <picture class="block w-full h-full">
+        <div class="card-image-wrapper">
+          
+          <picture class="block w-full h-full">
   <source type="image/webp" 
           srcset="/assets/optimized/solutions/training-docs-hero-320w.webp 320w,
                   /assets/optimized/solutions/training-docs-hero-640w.webp 640w,
@@ -2834,10 +2841,12 @@ document.addEventListener('DOMContentLoaded', function() {
        loading="lazy"
        class="w-full h-full object-cover">
 </picture>
-        
-        <div class="related-content">
-          <h3>Interactive Training Documentation Platform</h3>
-          <p>Create engaging training materials that boost learning outcomes and reduce training time by 40% with interactive content and real-time progress tracking</p>
+          
+
+          <div class="related-content">
+            <h3>Interactive Training Documentation Platform</h3>
+            <p>Create engaging training materials that boost learning outcomes and reduce training time by 40% with interactive content and real-time progress tracking</p>
+          </div>
         </div>
       </a>
     
@@ -3564,6 +3573,7 @@ document.addEventListener('DOMContentLoaded', function() {
   function getLanguageFromURL() {
     const path = window.location.pathname;
     const langMatch = path.match(/^\/([a-z]{2}|ja_JP)\//);
+    console.log("code", path, langMatch[1])
     
     if (langMatch) {
       const code = langMatch[1];
@@ -3642,7 +3652,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // Get language URL
   function getLanguageURL(langCode) {
     if (langCode === 'en') return '/';
-    if (langCode === 'ja') return '/jp/';
+    if (langCode === 'ja') return '/ja/';
     return `/${langCode}/`;
   }
 

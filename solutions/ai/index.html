@@ -3309,8 +3309,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
       
       <a href="/solutions/ai-chatbot" class="related-card">
-        
-        <picture class="block w-full h-full">
+        <div class="card-image-wrapper">
+          
+          <picture class="block w-full h-full">
   <source type="image/webp" 
           srcset="/assets/optimized/solutions/kb-chatbot-hero-320w.webp 320w,
                   /assets/optimized/solutions/kb-chatbot-hero-640w.webp 640w,
@@ -3326,10 +3327,12 @@ document.addEventListener('DOMContentLoaded', function() {
        loading="lazy"
        class="w-full h-full object-cover">
 </picture>
-        
-        <div class="related-content">
-          <h3>AI-Powered Knowledge Assistant</h3>
-          <p>Convert your knowledge base into an intelligent chatbot that provides instant, accurate answers 24/7, reducing response times by up to 80%</p>
+          
+
+          <div class="related-content">
+            <h3>AI-Powered Knowledge Assistant</h3>
+            <p>Convert your knowledge base into an intelligent chatbot that provides instant, accurate answers 24/7, reducing response times by up to 80%</p>
+          </div>
         </div>
       </a>
     
@@ -3337,8 +3340,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
       
       <a href="/solutions/ai-technical-writer" class="related-card">
-        
-        <picture class="block w-full h-full">
+        <div class="card-image-wrapper">
+          
+          <picture class="block w-full h-full">
   <source type="image/webp" 
           srcset="/assets/optimized/solutions/ai-writer-hero-320w.webp 320w,
                   /assets/optimized/solutions/ai-writer-hero-640w.webp 640w,
@@ -3354,10 +3358,12 @@ document.addEventListener('DOMContentLoaded', function() {
        loading="lazy"
        class="w-full h-full object-cover">
 </picture>
-        
-        <div class="related-content">
-          <h3>AI-Powered Technical Writing</h3>
-          <p>Transform your documentation process with an AI assistant that attends meetings, captures knowledge, and creates professional technical documentation automatically</p>
+          
+
+          <div class="related-content">
+            <h3>AI-Powered Technical Writing</h3>
+            <p>Transform your documentation process with an AI assistant that attends meetings, captures knowledge, and creates professional technical documentation automatically</p>
+          </div>
         </div>
       </a>
     
@@ -3365,8 +3371,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
       
       <a href="/solutions/documentation-from-video" class="related-card">
-        
-        <picture class="block w-full h-full">
+        <div class="card-image-wrapper">
+          
+          <picture class="block w-full h-full">
   <source type="image/webp" 
           srcset="/assets/optimized/solutions/video-docs-hero-320w.webp 320w,
                   /assets/optimized/solutions/video-docs-hero-640w.webp 640w,
@@ -3382,10 +3389,12 @@ document.addEventListener('DOMContentLoaded', function() {
        loading="lazy"
        class="w-full h-full object-cover">
 </picture>
-        
-        <div class="related-content">
-          <h3>Video-to-Documentation Converter</h3>
-          <p>Transform your video content into searchable, structured documentation automatically, reducing manual transcription time by 90% while enhancing content accessibility</p>
+          
+
+          <div class="related-content">
+            <h3>Video-to-Documentation Converter</h3>
+            <p>Transform your video content into searchable, structured documentation automatically, reducing manual transcription time by 90% while enhancing content accessibility</p>
+          </div>
         </div>
       </a>
     
@@ -3393,8 +3402,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
       
       <a href="/solutions/custom-ai-content-prompts" class="related-card">
-        
-        <picture class="block w-full h-full">
+        <div class="card-image-wrapper">
+          
+          <picture class="block w-full h-full">
   <source type="image/webp" 
           srcset="/assets/optimized/solutions/prompts-hero-320w.webp 320w,
                   /assets/optimized/solutions/prompts-hero-640w.webp 640w,
@@ -3410,10 +3420,12 @@ document.addEventListener('DOMContentLoaded', function() {
        loading="lazy"
        class="w-full h-full object-cover">
 </picture>
-        
-        <div class="related-content">
-          <h3>AI Content Prompt Engineering</h3>
-          <p>Create perfectly tailored documentation with custom AI prompts that maintain your brand voice while automating content creation, reducing writing time by up to 65%</p>
+          
+
+          <div class="related-content">
+            <h3>AI Content Prompt Engineering</h3>
+            <p>Create perfectly tailored documentation with custom AI prompts that maintain your brand voice while automating content creation, reducing writing time by up to 65%</p>
+          </div>
         </div>
       </a>
     
@@ -4154,6 +4166,7 @@ document.addEventListener('DOMContentLoaded', function() {
   function getLanguageFromURL() {
     const path = window.location.pathname;
     const langMatch = path.match(/^\/([a-z]{2}|ja_JP)\//);
+    console.log("code", path, langMatch[1])
     
     if (langMatch) {
       const code = langMatch[1];
@@ -4232,7 +4245,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // Get language URL
   function getLanguageURL(langCode) {
     if (langCode === 'en') return '/';
-    if (langCode === 'ja') return '/jp/';
+    if (langCode === 'ja') return '/ja/';
     return `/${langCode}/`;
   }
 

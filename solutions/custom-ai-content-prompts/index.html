@@ -2778,8 +2778,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
       
       <a href="/solutions/ai-technical-writer" class="related-card">
-        
-        <picture class="block w-full h-full">
+        <div class="card-image-wrapper">
+          
+          <picture class="block w-full h-full">
   <source type="image/webp" 
           srcset="/assets/optimized/solutions/ai-writer-hero-320w.webp 320w,
                   /assets/optimized/solutions/ai-writer-hero-640w.webp 640w,
@@ -2795,10 +2796,12 @@ document.addEventListener('DOMContentLoaded', function() {
        loading="lazy"
        class="w-full h-full object-cover">
 </picture>
-        
-        <div class="related-content">
-          <h3>AI-Powered Technical Writing</h3>
-          <p>Transform your documentation process with an AI assistant that attends meetings, captures knowledge, and creates professional technical documentation automatically</p>
+          
+
+          <div class="related-content">
+            <h3>AI-Powered Technical Writing</h3>
+            <p>Transform your documentation process with an AI assistant that attends meetings, captures knowledge, and creates professional technical documentation automatically</p>
+          </div>
         </div>
       </a>
     
@@ -2806,8 +2809,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
       
       <a href="/solutions/content-management" class="related-card">
-        
-        <picture class="block w-full h-full">
+        <div class="card-image-wrapper">
+          
+          <picture class="block w-full h-full">
   <source type="image/webp" 
           srcset="/assets/optimized/solutions/content-management-320w.webp 320w,
                   /assets/optimized/solutions/content-management-640w.webp 640w,
@@ -2823,10 +2827,12 @@ document.addEventListener('DOMContentLoaded', function() {
        loading="lazy"
        class="w-full h-full object-cover">
 </picture>
-        
-        <div class="related-content">
-          <h3>Documentation Content Management</h3>
-          <p>Efficiently manage, organize, and maintain your documentation content at scale</p>
+          
+
+          <div class="related-content">
+            <h3>Documentation Content Management</h3>
+            <p>Efficiently manage, organize, and maintain your documentation content at scale</p>
+          </div>
         </div>
       </a>
     
@@ -2834,8 +2840,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
       
       <a href="/solutions/style-guide" class="related-card">
-        
-        <picture class="block w-full h-full">
+        <div class="card-image-wrapper">
+          
+          <picture class="block w-full h-full">
   <source type="image/webp" 
           srcset="/assets/optimized/solutions/style-guide-320w.webp 320w,
                   /assets/optimized/solutions/style-guide-640w.webp 640w,
@@ -2851,10 +2858,12 @@ document.addEventListener('DOMContentLoaded', function() {
        loading="lazy"
        class="w-full h-full object-cover">
 </picture>
-        
-        <div class="related-content">
-          <h3>Documentation Style Guide Management</h3>
-          <p>Maintain consistent documentation quality and brand voice across your organization with automated style guides</p>
+          
+
+          <div class="related-content">
+            <h3>Documentation Style Guide Management</h3>
+            <p>Maintain consistent documentation quality and brand voice across your organization with automated style guides</p>
+          </div>
         </div>
       </a>
     
@@ -3581,6 +3590,7 @@ document.addEventListener('DOMContentLoaded', function() {
   function getLanguageFromURL() {
     const path = window.location.pathname;
     const langMatch = path.match(/^\/([a-z]{2}|ja_JP)\//);
+    console.log("code", path, langMatch[1])
     
     if (langMatch) {
       const code = langMatch[1];
@@ -3659,7 +3669,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // Get language URL
   function getLanguageURL(langCode) {
     if (langCode === 'en') return '/';
-    if (langCode === 'ja') return '/jp/';
+    if (langCode === 'ja') return '/ja/';
     return `/${langCode}/`;
   }
 
