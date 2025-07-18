@@ -6,14 +6,16 @@
     {% if solution.url %}
       {% set page_data = get_page_by_url(solution.url) %}
       <a href="{{ solution.url }}" class="related-card">
-        {% if page_data and page_data.components.hero.image %}
-        {{ page_data.components.hero.image | optimized_image | safe }}
-        {% elif solution.image %}
-        {{ solution.image | optimized_image | safe }}
-        {% endif %}
-        <div class="related-content">
-          <h3>{{ solution.title or (page_data.components.hero.title if page_data else 'Solution') }}</h3>
-          <p>{{ solution.description or (page_data.components.hero.description if page_data else page_data.description if page_data else 'Learn more about this solution') }}</p>
+        <div class="card-image-wrapper">
+          {% if page_data and page_data.components.hero.image %}
+          {{ page_data.components.hero.image | optimized_image | safe }}
+          {% elif solution.image %}
+          {{ solution.image | optimized_image | safe }}
+          {% endif %}
+          <div class="related-content">
+            <h3>{{ solution.title or (page_data.components.hero.title if page_data else 'Solution') }}</h3>
+            <p>{{ solution.description or (page_data.components.hero.description if page_data else page_data.description if page_data else 'Learn more about this solution') }}</p>
+          </div>
         </div>
       </a>
     {% endif %}
