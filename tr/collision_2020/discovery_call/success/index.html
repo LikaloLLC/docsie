@@ -971,7 +971,7 @@
     
     if (langMatch) {
       const code = langMatch[1];
-      return code === 'ja_JP' ? 'ja' : code;
+      return code === 'jp' || code === 'ja_JP' ? 'ja' : code;
     }
     
     return 'en';
@@ -985,7 +985,7 @@
     // Remove current language prefix if exists
     let newPath = currentPath;
     if (currentLang !== 'en') {
-      const langPrefix = currentLang === 'ja' ? '/jp/' : `/${currentLang}/`;
+      const langPrefix = currentLang === 'jp' || currentLang === 'ja_JP' ? '/ja/' : `/${currentLang}/`;
       if (currentPath.startsWith(langPrefix)) {
         newPath = currentPath.substring(langPrefix.length - 1);
       }
@@ -994,7 +994,7 @@
     // Add new language prefix
     if (langCode === 'en') {
       return newPath;
-    } else if (langCode === 'ja') {
+    } else if (currentLang === 'jp' || currentLang === 'ja_JP') {
       return '/jp' + newPath;
     } else {
       return '/' + langCode + newPath;
@@ -1104,7 +1104,7 @@
   <header class="gn">
     <nav id="topNav">
       <ul class="nv-l">
-        <li><a class="nv-lg" href="//tr" data-nomobile="">
+        <li><a class="nv-lg" href="/" data-nomobile="">
             <svg class="lg" width="32" height="40" viewBox="0 0 48 48">
               <use xlink:href="#icon-docsie"></use>
             </svg>
@@ -1159,7 +1159,7 @@
         </li> -->
 
         <span class="spacer"></span>
-        <li class="v-sm"><a href="/tr/pricing/">Fiyatlandırma</a></li>
+        <li class="v-sm"><a href="/pricing/">Fiyatlandırma</a></li>
 
 
 <!--        <li class="li-dd v-sm">-->
@@ -1186,28 +1186,28 @@
 <!--              &lt;!&ndash;</li>&ndash;&gt;-->
 <!--              <li>-->
 <!--                <a class="li-hdr"-->
-<!--                  href="/tr/documentation/styling_guide/">Özelleştirmeler</a>-->
+<!--                  href="/documentation/styling_guide/">Özelleştirmeler</a>-->
 <!--                <span>"Docsie dokümanlarını kendi stilinizi ve markanızı takip edecek şekilde nasıl özelleştireceğinizi öğrenin"</span>-->
 <!--              </li>-->
 <!--            </ul>-->
 <!--            <ul>-->
 <!--              <li class="li-hr"><strong>Sesli olarak</strong></li>-->
 <!--              <li>-->
-<!--                <a class="li-hdr" href="/tr/vocally/documentation/">"Başlarken-->
+<!--                <a class="li-hdr" href="/vocally/documentation/">"Başlarken-->
 <!--                  başlama"</a>-->
 <!--                <span>"Kullanıcı geri bildirimlerini yönetmek için basit ve-->
 <!--                  doğrudan yaklaşımımızı keşfedin"</span>-->
 <!--              </li>-->
 <!--              <li>-->
-<!--                <a class="li-hdr" href="/tr/vocally/documentation/configuration/">Configuration</a>-->
+<!--                <a class="li-hdr" href="/vocally/documentation/configuration/">Configuration</a>-->
 <!--                <span>"Vocally'yi ekosisteминizin bir parçası haline getirin"</span>-->
 <!--              </li>-->
 <!--              <li>-->
-<!--                <a class="li-hdr" href="/tr/vocally/documentation/integrations/">Integrations</a>-->
+<!--                <a class="li-hdr" href="/vocally/documentation/integrations/">Integrations</a>-->
 <!--                <span>"Araçlarınızı vocally ile entegre edin"</span>-->
 <!--              </li>-->
 <!--              <li>-->
-<!--                <a class="li-hdr" href="/tr/vocally/documentation/installation/">Installation</a>-->
+<!--                <a class="li-hdr" href="/vocally/documentation/installation/">Installation</a>-->
 <!--                <span>"İlk kez sesli kurulum yapın"</span>-->
 <!--              </li>-->
 <!--            </ul>-->

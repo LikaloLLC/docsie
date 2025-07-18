@@ -960,7 +960,7 @@
     
     if (langMatch) {
       const code = langMatch[1];
-      return code === 'ja_JP' ? 'ja' : code;
+      return code === 'jp' || code === 'ja_JP' ? 'ja' : code;
     }
     
     return 'en';
@@ -974,7 +974,7 @@
     // Remove current language prefix if exists
     let newPath = currentPath;
     if (currentLang !== 'en') {
-      const langPrefix = currentLang === 'ja' ? '/jp/' : `/${currentLang}/`;
+      const langPrefix = currentLang === 'jp' || currentLang === 'ja_JP' ? '/ja/' : `/${currentLang}/`;
       if (currentPath.startsWith(langPrefix)) {
         newPath = currentPath.substring(langPrefix.length - 1);
       }
@@ -983,7 +983,7 @@
     // Add new language prefix
     if (langCode === 'en') {
       return newPath;
-    } else if (langCode === 'ja') {
+    } else if (currentLang === 'jp' || currentLang === 'ja_JP') {
       return '/jp' + newPath;
     } else {
       return '/' + langCode + newPath;
@@ -1093,7 +1093,7 @@
   <header class="gn">
     <nav id="topNav">
       <ul class="nv-l">
-        <li><a class="nv-lg" href="//bn" data-nomobile="">
+        <li><a class="nv-lg" href="/" data-nomobile="">
             <svg class="lg" width="32" height="40" viewBox="0 0 48 48">
               <use xlink:href="#icon-docsie"></use>
             </svg>

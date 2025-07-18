@@ -945,7 +945,7 @@
     
     if (langMatch) {
       const code = langMatch[1];
-      return code === 'ja_JP' ? 'ja' : code;
+      return code === 'jp' || code === 'ja_JP' ? 'ja' : code;
     }
     
     return 'en';
@@ -959,7 +959,7 @@
     // Remove current language prefix if exists
     let newPath = currentPath;
     if (currentLang !== 'en') {
-      const langPrefix = currentLang === 'ja' ? '/jp/' : `/${currentLang}/`;
+      const langPrefix = currentLang === 'jp' || currentLang === 'ja_JP' ? '/ja/' : `/${currentLang}/`;
       if (currentPath.startsWith(langPrefix)) {
         newPath = currentPath.substring(langPrefix.length - 1);
       }
@@ -968,7 +968,7 @@
     // Add new language prefix
     if (langCode === 'en') {
       return newPath;
-    } else if (langCode === 'ja') {
+    } else if (currentLang === 'jp' || currentLang === 'ja_JP') {
       return '/jp' + newPath;
     } else {
       return '/' + langCode + newPath;
@@ -1078,7 +1078,7 @@
   <header class="gn">
     <nav id="topNav">
       <ul class="nv-l">
-        <li><a class="nv-lg" href="//zh" data-nomobile="">
+        <li><a class="nv-lg" href="/" data-nomobile="">
             <svg class="lg" width="32" height="40" viewBox="0 0 48 48">
               <use xlink:href="#icon-docsie"></use>
             </svg>
@@ -1133,7 +1133,7 @@
         </li> -->
 
         <span class="spacer"></span>
-        <li class="v-sm"><a href="/zh/pricing/">定价</a></li>
+        <li class="v-sm"><a href="/pricing/">定价</a></li>
 
 
 <!--        <li class="li-dd v-sm">-->
@@ -1160,7 +1160,7 @@
 <!--              &lt;!&ndash;</li>&ndash;&gt;-->
 <!--              <li>-->
 <!--                <a class="li-hdr"-->
-<!--                  href="/zh/documentation/styling_guide/">自定义设置</a>-->
+<!--                  href="/documentation/styling_guide/">自定义设置</a>-->
 <!--                <span>"了解如何自定义 Docsie 文档以遵循您自己的样式和-->
 <!--                  品牌形象"</span>-->
 <!--              </li>-->
@@ -1168,21 +1168,21 @@
 <!--            <ul>-->
 <!--              <li class="li-hr"><strong>语音地</strong></li>-->
 <!--              <li>-->
-<!--                <a class="li-hdr" href="/zh/vocally/documentation/">"入门-->
+<!--                <a class="li-hdr" href="/vocally/documentation/">"入门-->
 <!--                  指南"</a>-->
 <!--                <span>"探索我们简单&amp;直接的用户管理方式-->
 <!--                  反馈"</span>-->
 <!--              </li>-->
 <!--              <li>-->
-<!--                <a class="li-hdr" href="/zh/vocally/documentation/configuration/">Configuration</a>-->
+<!--                <a class="li-hdr" href="/vocally/documentation/configuration/">Configuration</a>-->
 <!--                <span>将 Vocally 融入您的生态系统</span>-->
 <!--              </li>-->
 <!--              <li>-->
-<!--                <a class="li-hdr" href="/zh/vocally/documentation/integrations/">Integrations</a>-->
+<!--                <a class="li-hdr" href="/vocally/documentation/integrations/">Integrations</a>-->
 <!--                <span>将您的工具与 vocally 集成</span>-->
 <!--              </li>-->
 <!--              <li>-->
-<!--                <a class="li-hdr" href="/zh/vocally/documentation/installation/">Installation</a>-->
+<!--                <a class="li-hdr" href="/vocally/documentation/installation/">Installation</a>-->
 <!--                <span>首次语音设置</span>-->
 <!--              </li>-->
 <!--            </ul>-->
@@ -1227,10 +1227,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <div>
                   <h3>AI写作工具</h3>
                   <p class="meta">
-                   #-#-#-#-#  messages.po (PROJECT VERSION)  #-#-#-#-#
-如果您是一家前景广阔的初创公司，拥有出色的软件产品但需要快速构建文档，那么这个方案非常适合您。
-#-#-#-#-#  messages.po (PROJECT VERSION)  #-#-#-#-#
-如果您是一家正在崛起的初创公司，拥有出色的软件产品但需要快速制作文档，那么这个方案非常适合您。
+                   如果您是一家前景广阔的初创公司，拥有出色的软件产品但需要快速构建文档，那么这""个方案非常适合您。
+"#: src/self-writing-documentation/pricing/index.html:3
                 </p>
                 </div>
                 <div class="tier-description">
@@ -1243,10 +1241,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <li><strong>为您编写、翻译和发布文档</strong></li>
                     <li>最多四本文档手册</li>
                     <li>每月最多 3 次修订</li>
-                    <li>#-#-#-#-#  messages.po (PROJECT VERSION)  #-#-#-#-#
-文档翻译为一种额外语言（每本书最多10,000个单词）
-#-#-#-#-#  messages.po (PROJECT VERSION)  #-#-#-#-#
-文档翻译为一种额外语言（每本书最多10,000词）</li>
+                    <li>文档翻译为一种额外语言（每本书最多10,000个单词）
+"#: src/self-writing-documentation/pricing/index.html:4</li>
                     <li>为您定制的文档样式</li>
                     <li>自定义 CSS 以匹配您的品牌外观和风格</li>
                     <li>Google Analytics</li>
@@ -1285,10 +1281,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                   <ul class="tier-description">
                     <li><strong>包含初创版的所有功能，以及：</strong></li>
                     <li>最多20个文档手册</li>
-                    <li>#-#-#-#-#  messages.po (PROJECT VERSION)  #-#-#-#-#
-最多3次翻译（每本书最多15,000词）
-#-#-#-#-#  messages.po (PROJECT VERSION)  #-#-#-#-#
-最多3次翻译（每本书最多15,000字）</li>
+                    <li>最多3次翻译（每本书最多15,000词）
+"#: src/self-writing-documentation/pricing/index.html:8</li>
                     <li>每月最多 10 次修订</li>
                     <li>密码保护书籍/密码保护书架</li>
                     <li>为已发布文档定义您自己的设计/样式表</li>

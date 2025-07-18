@@ -1,3 +1,6 @@
+/* Import design tokens if not already loaded */
+@import url('/styles/design-tokens.css');
+
 /* Tailwind v2 Carousel Styles */
 
 .carousel-v2 {
@@ -22,7 +25,7 @@
 
 /* Dot animations */
 .carousel-dot {
-  transition: all 0.3s ease;
+  transition: all var(--transition-slow);
   cursor: pointer;
 }
 
@@ -32,7 +35,7 @@
 
 /* Caption animations */
 .carousel-caption-text {
-  transition: all 0.3s ease;
+  transition: all var(--transition-slow);
 }
 
 .carousel-caption-text.active {
@@ -73,21 +76,18 @@
 }
 
 /* Dark mode support */
-@media (prefers-color-scheme: dark) {
-  .carousel-v2 {
-    background-color: #1f2937;
-  }
+/* Dark mode automatically handled by design tokens */
   
   .carousel-v2 h2 {
-    color: #f9fafb;
+    color: var(--color-neutral-50);
   }
   
   .carousel-v2 p {
-    color: #d1d5db;
+    color: var(--color-neutral-300);
   }
   
   .carousel-caption-text {
-    color: #e5e7eb;
+    color: var(--color-neutral-200);
   }
 }
 
@@ -129,7 +129,7 @@
 
 /* Tag animations */
 .feature-showcase .feature-card .tag {
-  transition: all 0.2s ease;
+  transition: all var(--transition-base);
 }
 
 .feature-showcase .feature-card:hover .tag {
@@ -161,11 +161,7 @@
 }
 
 /* Dark mode support */
-@media (prefers-color-scheme: dark) {
-  .feature-showcase .feature-card {
-    background: rgba(31, 41, 55, 0.8);
-    border-color: rgba(75, 85, 99, 0.3);
-  }
+/* Dark mode automatically handled by design tokens */
   
   .feature-showcase .feature-card:hover {
     background: rgba(31, 41, 55, 0.9);
@@ -185,12 +181,12 @@
 
 /* Focus states for accessibility */
 .feature-showcase .feature-card:focus-within {
-  outline: 2px solid #3b82f6;
+  outline: 2px solid var(--color-info);
   outline-offset: 2px;
 }
 
 .feature-showcase a:focus {
-  outline: 2px solid #3b82f6;
+  outline: 2px solid var(--color-info);
   outline-offset: 2px;
   border-radius: 4px;
 }
@@ -231,7 +227,7 @@
 
 /* Content Animation */
 .testimonials-carousel .content-slide {
-  transition: all 0.3s ease-in-out;
+  transition: all var(--transition-slow)-in-out;
 }
 
 .testimonials-carousel .content-slide.hidden {
@@ -244,7 +240,7 @@
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.2);
-  transition: all 0.2s ease;
+  transition: all var(--transition-base);
 }
 
 .testimonials-carousel .carousel-btn:hover {
@@ -266,7 +262,7 @@
 /* Dots Indicator */
 .testimonials-carousel .carousel-dot {
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all var(--transition-base);
 }
 
 .testimonials-carousel .carousel-dot:hover {

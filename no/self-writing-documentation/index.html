@@ -969,7 +969,7 @@
     
     if (langMatch) {
       const code = langMatch[1];
-      return code === 'ja_JP' ? 'ja' : code;
+      return code === 'jp' || code === 'ja_JP' ? 'ja' : code;
     }
     
     return 'en';
@@ -983,7 +983,7 @@
     // Remove current language prefix if exists
     let newPath = currentPath;
     if (currentLang !== 'en') {
-      const langPrefix = currentLang === 'ja' ? '/jp/' : `/${currentLang}/`;
+      const langPrefix = currentLang === 'jp' || currentLang === 'ja_JP' ? '/ja/' : `/${currentLang}/`;
       if (currentPath.startsWith(langPrefix)) {
         newPath = currentPath.substring(langPrefix.length - 1);
       }
@@ -992,7 +992,7 @@
     // Add new language prefix
     if (langCode === 'en') {
       return newPath;
-    } else if (langCode === 'ja') {
+    } else if (currentLang === 'jp' || currentLang === 'ja_JP') {
       return '/jp' + newPath;
     } else {
       return '/' + langCode + newPath;
@@ -1102,7 +1102,7 @@
   <header class="gn">
     <nav id="topNav">
       <ul class="nv-l">
-        <li><a class="nv-lg" href="//no" data-nomobile="">
+        <li><a class="nv-lg" href="/" data-nomobile="">
             <svg class="lg" width="32" height="40" viewBox="0 0 48 48">
               <use xlink:href="#icon-docsie"></use>
             </svg>
@@ -1157,7 +1157,7 @@
         </li> -->
 
         <span class="spacer"></span>
-        <li class="v-sm"><a href="/no/pricing/">"Prising "</a></li>
+        <li class="v-sm"><a href="/pricing/">"Prising "</a></li>
 
 
 <!--        <li class="li-dd v-sm">-->
@@ -1184,7 +1184,7 @@
 <!--              &lt;!&ndash;</li>&ndash;&gt;-->
 <!--              <li>-->
 <!--                <a class="li-hdr"-->
-<!--                  href="/no/documentation/styling_guide/">Tilpasninger</a>-->
+<!--                  href="/documentation/styling_guide/">Tilpasninger</a>-->
 <!--                <span>"Lær hvordan du tilpasser Docsie-dokumenter til å følge din egen stil og-->
 <!--                  merkevarebygging"</span>-->
 <!--              </li>-->
@@ -1192,21 +1192,21 @@
 <!--            <ul>-->
 <!--              <li class="li-hr"><strong>Vokalt</strong></li>-->
 <!--              <li>-->
-<!--                <a class="li-hdr" href="/no/vocally/documentation/">"Komme i gang-->
+<!--                <a class="li-hdr" href="/vocally/documentation/">"Komme i gang-->
 <!--                  started"</a>-->
 <!--                <span>"Oppdag vår enkle &amp; rettfremme måte å administrere bruker-->
 <!--                  tilbakemelding"</span>-->
 <!--              </li>-->
 <!--              <li>-->
-<!--                <a class="li-hdr" href="/no/vocally/documentation/configuration/">Configuration</a>-->
+<!--                <a class="li-hdr" href="/vocally/documentation/configuration/">Configuration</a>-->
 <!--                <span>"Gjør vocally til en del av ditt økosystem"</span>-->
 <!--              </li>-->
 <!--              <li>-->
-<!--                <a class="li-hdr" href="/no/vocally/documentation/integrations/">Integrations</a>-->
+<!--                <a class="li-hdr" href="/vocally/documentation/integrations/">Integrations</a>-->
 <!--                <span>"Integrer verktøyene dine med vocally"</span>-->
 <!--              </li>-->
 <!--              <li>-->
-<!--                <a class="li-hdr" href="/no/vocally/documentation/installation/">Installation</a>-->
+<!--                <a class="li-hdr" href="/vocally/documentation/installation/">Installation</a>-->
 <!--                <span>"Konfigurer med tale for første gang"</span>-->
 <!--              </li>-->
 <!--            </ul>-->

@@ -1,3 +1,6 @@
+/* Import design tokens if not already loaded */
+@import url('/styles/design-tokens.css');
+
 /* Modern Stats Section v2 Styles */
 
 /* Base section styles */
@@ -196,21 +199,18 @@
 }
 
 /* Dark mode adjustments */
-@media (prefers-color-scheme: dark) {
-  .stats-v2::before {
-    background: linear-gradient(-45deg, rgba(59, 130, 246, 0.15), rgba(147, 51, 234, 0.15), rgba(236, 72, 153, 0.15), rgba(59, 130, 246, 0.15));
-  }
+/* Dark mode automatically handled by design tokens */
 }
 
 /* Print styles */
 @media print {
   .stats-v2 {
-    background: white !important;
-    color: black !important;
+    background-color: var(--bg-primary) !important;
+    color: var(--color-neutral-1000) !important;
   }
   
   .stats-v2 .stat-number-v2 span {
-    color: black !important;
+    color: var(--color-neutral-1000) !important;
     background: none !important;
     -webkit-background-clip: initial !important;
     -webkit-text-fill-color: initial !important;

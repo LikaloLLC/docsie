@@ -970,7 +970,7 @@
     
     if (langMatch) {
       const code = langMatch[1];
-      return code === 'ja_JP' ? 'ja' : code;
+      return code === 'jp' || code === 'ja_JP' ? 'ja' : code;
     }
     
     return 'en';
@@ -984,7 +984,7 @@
     // Remove current language prefix if exists
     let newPath = currentPath;
     if (currentLang !== 'en') {
-      const langPrefix = currentLang === 'ja' ? '/jp/' : `/${currentLang}/`;
+      const langPrefix = currentLang === 'jp' || currentLang === 'ja_JP' ? '/ja/' : `/${currentLang}/`;
       if (currentPath.startsWith(langPrefix)) {
         newPath = currentPath.substring(langPrefix.length - 1);
       }
@@ -993,7 +993,7 @@
     // Add new language prefix
     if (langCode === 'en') {
       return newPath;
-    } else if (langCode === 'ja') {
+    } else if (currentLang === 'jp' || currentLang === 'ja_JP') {
       return '/jp' + newPath;
     } else {
       return '/' + langCode + newPath;
@@ -1103,7 +1103,7 @@
   <header class="gn">
     <nav id="topNav">
       <ul class="nv-l">
-        <li><a class="nv-lg" href="//de" data-nomobile="">
+        <li><a class="nv-lg" href="/" data-nomobile="">
             <svg class="lg" width="32" height="40" viewBox="0 0 48 48">
               <use xlink:href="#icon-docsie"></use>
             </svg>
@@ -1138,10 +1138,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <header class="docsie-header" id="section-page-header">
         <div class="docsie-header-conatiner" role="presentation">
           <h1 class="docsie-title">Erstellen Sie Dokumentation, die Ihre Kunden lieben.</h1>
-          <p class="docsie-subtitle">#-#-#-#-#  messages.po (PROJECT VERSION)  #-#-#-#-#
-"Sparen Sie Zeit und binden Sie Kunden mit leicht zu pflegender Dokumentation, die die Art und Weise vereinfacht, wie Ihr Team Dokumentation erstellt."
-#-#-#-#-#  messages.po (PROJECT VERSION)  #-#-#-#-#
-"Sparen Sie Zeit und binden Sie Kunden mit einfach zu pflegender Dokumentation, die die Art und Weise vereinfacht, wie Ihr Team Dokumentation erstellt."</p>
+          <p class="docsie-subtitle">"Sparen Sie Zeit und binden Sie Kunden mit leicht zu pflegender ""Dokumentation, die die Art und Weise vereinfacht, wie Ihr Team Dokumentation ""erstellt."
+"#: src/try_docsie/fb-6/index.html:50 src/try_docsie/ga-6/index.html:5</p>
         </div>
       </header>
       <div class="docsie-content">
@@ -1267,10 +1265,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <div class="docsie-grid-cell">
               <div class="docsie-card">
                 <p class="comment">
-                  #-#-#-#-#  messages.po (PROJECT VERSION)  #-#-#-#-#
-"Docsie hat mir dabei geholfen, die wiederkehrenden Arbeiten zu reduzieren, die für die Erstellung und Pflege mehrerer versionierter Dokumentationen erforderlich sind."
-#-#-#-#-#  messages.po (PROJECT VERSION)  #-#-#-#-#
-"Docsie hat mir dabei geholfen, die repetitive Arbeit zu reduzieren, die für die Erstellung und Wartung mehrerer versionierter Dokumentationen erforderlich ist."
+                  "Docsie hat mir dabei geholfen, die wiederkehrenden Arbeiten zu reduzieren, ""die für die Erstellung und Pflege mehrerer versionierter Dokumentationen ""erforderlich sind."
+"#: src/self-writing-documentation/index.html:17
                 </p>
                 <img src="https://appcdn2.docsie.io/assets/Testimonial3.svg.png" alt="Testimonial by user Docsie helped me reduce repetitive work required to create and maintain multiple versioned docs." />
                 <p>

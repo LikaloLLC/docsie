@@ -1,4 +1,7 @@
-/* FrankenUI v2 Hero Styles - Updated for proper compatibility */
+/* Hero v2 Component - Using Design Tokens */
+
+/* Import design tokens if not already loaded */
+@import url('/styles/design-tokens.css');
 
 /* Hero section base styles */
 .hero-v2 {
@@ -14,35 +17,43 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(135deg, rgba(59, 130, 246, 0.05) 0%, rgba(147, 51, 234, 0.05) 100%);
+  background: linear-gradient(135deg, 
+    rgba(37, 99, 235, 0.05) 0%,  /* Using blue from token values */
+    rgba(147, 51, 234, 0.05) 100%
+  );
   pointer-events: none;
 }
 
-/* Button hover effects */
-.hero-v2 a[class*="bg-blue-600"]:hover {
+/* Button hover effects using design tokens */
+.hero-v2 a[class*="bg-blue-600"]:hover,
+.hero-v2 .btn-primary:hover {
   transform: translateY(-1px);
-  box-shadow: 0 10px 25px rgba(59, 130, 246, 0.2);
-  transition: all 0.3s ease;
+  box-shadow: 0 10px 25px rgba(37, 99, 235, 0.2);
+  transition: all var(--transition-slow);
 }
 
-.hero-v2 a[class*="bg-white"]:hover {
+.hero-v2 a[class*="bg-white"]:hover,
+.hero-v2 .btn-secondary:hover {
   transform: translateY(-1px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
+  box-shadow: var(--shadow-lg);
+  transition: all var(--transition-slow);
 }
 
 /* Image enhancements */
 .hero-v2 img {
-  transition: transform 0.3s ease;
+  transition: transform var(--transition-slow);
 }
 
 .hero-v2 img:hover {
   transform: scale(1.02);
 }
 
-/* Typography enhancements */
+/* Typography enhancements using design tokens */
 .hero-v2 h1 {
-  background: linear-gradient(135deg, #1f2937 0%, #374151 100%);
+  background: linear-gradient(135deg, 
+    var(--text-primary) 0%, 
+    var(--text-secondary) 100%
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -62,11 +73,11 @@
   }
 }
 
-/* Responsive adjustments */
+/* Responsive adjustments using design tokens */
 @media (max-width: 768px) {
   .hero-v2 h1 {
-    font-size: 2.5rem;
-    line-height: 1.2;
+    font-size: var(--text-4xl);
+    line-height: var(--leading-tight);
   }
 }
 
@@ -92,16 +103,5 @@
   }
 }
 
-/* Dark mode support */
-@media (prefers-color-scheme: dark) {
-  .hero-v2 h1 {
-    background: linear-gradient(135deg, #f9fafb 0%, #e5e7eb 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-  
-  .hero-v2::before {
-    background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(147, 51, 234, 0.1) 100%);
-  }
-}
+/* Dark mode automatically handled by design tokens */
+/* No need for separate dark mode rules - the tokens adapt automatically */

@@ -924,7 +924,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     
     if (langMatch) {
       const code = langMatch[1];
-      return code === 'ja_JP' ? 'ja' : code;
+      return code === 'jp' || code === 'ja_JP' ? 'ja' : code;
     }
     
     return 'en';
@@ -938,7 +938,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     // Remove current language prefix if exists
     let newPath = currentPath;
     if (currentLang !== 'en') {
-      const langPrefix = currentLang === 'ja' ? '/jp/' : `/${currentLang}/`;
+      const langPrefix = currentLang === 'jp' || currentLang === 'ja_JP' ? '/ja/' : `/${currentLang}/`;
       if (currentPath.startsWith(langPrefix)) {
         newPath = currentPath.substring(langPrefix.length - 1);
       }
@@ -947,7 +947,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     // Add new language prefix
     if (langCode === 'en') {
       return newPath;
-    } else if (langCode === 'ja') {
+    } else if (currentLang === 'jp' || currentLang === 'ja_JP') {
       return '/jp' + newPath;
     } else {
       return '/' + langCode + newPath;
@@ -3324,8 +3324,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
       
       <a href="/solutions/ai-chatbot" class="related-card">
-        
-        <picture class="block w-full h-full">
+        <div class="card-image-wrapper">
+          
+          <picture class="block w-full h-full">
   <source type="image/webp" 
           srcset="/assets/optimized/solutions/kb-chatbot-hero-320w.webp 320w,
                   /assets/optimized/solutions/kb-chatbot-hero-640w.webp 640w,
@@ -3341,10 +3342,11 @@ document.addEventListener('DOMContentLoaded', function() {
        loading="lazy"
        class="w-full h-full object-cover">
 </picture>
-        
-        <div class="related-content">
-          <h3>AI-Powered Knowledge Assistant</h3>
-          <p>Convert your knowledge base into an intelligent chatbot that provides instant, accurate answers 24/7, reducing response times by up to 80%</p>
+          
+          <div class="related-content">
+            <h3>AI-Powered Knowledge Assistant</h3>
+            <p>Convert your knowledge base into an intelligent chatbot that provides instant, accurate answers 24/7, reducing response times by up to 80%</p>
+          </div>
         </div>
       </a>
     
@@ -3352,8 +3354,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
       
       <a href="/solutions/ai-technical-writer" class="related-card">
-        
-        <picture class="block w-full h-full">
+        <div class="card-image-wrapper">
+          
+          <picture class="block w-full h-full">
   <source type="image/webp" 
           srcset="/assets/optimized/solutions/ai-writer-hero-320w.webp 320w,
                   /assets/optimized/solutions/ai-writer-hero-640w.webp 640w,
@@ -3369,10 +3372,11 @@ document.addEventListener('DOMContentLoaded', function() {
        loading="lazy"
        class="w-full h-full object-cover">
 </picture>
-        
-        <div class="related-content">
-          <h3>AI-Powered Technical Writing</h3>
-          <p>Transform your documentation process with an AI assistant that attends meetings, captures knowledge, and creates professional technical documentation automatically</p>
+          
+          <div class="related-content">
+            <h3>AI-Powered Technical Writing</h3>
+            <p>Transform your documentation process with an AI assistant that attends meetings, captures knowledge, and creates professional technical documentation automatically</p>
+          </div>
         </div>
       </a>
     
@@ -3380,8 +3384,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
       
       <a href="/solutions/documentation-from-video" class="related-card">
-        
-        <picture class="block w-full h-full">
+        <div class="card-image-wrapper">
+          
+          <picture class="block w-full h-full">
   <source type="image/webp" 
           srcset="/assets/optimized/solutions/video-docs-hero-320w.webp 320w,
                   /assets/optimized/solutions/video-docs-hero-640w.webp 640w,
@@ -3397,10 +3402,11 @@ document.addEventListener('DOMContentLoaded', function() {
        loading="lazy"
        class="w-full h-full object-cover">
 </picture>
-        
-        <div class="related-content">
-          <h3>Video-to-Documentation Converter</h3>
-          <p>Transform your video content into searchable, structured documentation automatically, reducing manual transcription time by 90% while enhancing content accessibility</p>
+          
+          <div class="related-content">
+            <h3>Video-to-Documentation Converter</h3>
+            <p>Transform your video content into searchable, structured documentation automatically, reducing manual transcription time by 90% while enhancing content accessibility</p>
+          </div>
         </div>
       </a>
     
@@ -3408,8 +3414,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
       
       <a href="/solutions/custom-ai-content-prompts" class="related-card">
-        
-        <picture class="block w-full h-full">
+        <div class="card-image-wrapper">
+          
+          <picture class="block w-full h-full">
   <source type="image/webp" 
           srcset="/assets/optimized/solutions/prompts-hero-320w.webp 320w,
                   /assets/optimized/solutions/prompts-hero-640w.webp 640w,
@@ -3425,10 +3432,11 @@ document.addEventListener('DOMContentLoaded', function() {
        loading="lazy"
        class="w-full h-full object-cover">
 </picture>
-        
-        <div class="related-content">
-          <h3>AI Content Prompt Engineering</h3>
-          <p>Create perfectly tailored documentation with custom AI prompts that maintain your brand voice while automating content creation, reducing writing time by up to 65%</p>
+          
+          <div class="related-content">
+            <h3>AI Content Prompt Engineering</h3>
+            <p>Create perfectly tailored documentation with custom AI prompts that maintain your brand voice while automating content creation, reducing writing time by up to 65%</p>
+          </div>
         </div>
       </a>
     
@@ -4172,7 +4180,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     if (langMatch) {
       const code = langMatch[1];
-      return code === 'ja_JP' ? 'ja' : code;
+      return (code === 'jp' || code === 'ja_JP')  ? 'ja' : code;
     }
     
     return 'en';

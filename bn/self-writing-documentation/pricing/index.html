@@ -945,7 +945,7 @@
     
     if (langMatch) {
       const code = langMatch[1];
-      return code === 'ja_JP' ? 'ja' : code;
+      return code === 'jp' || code === 'ja_JP' ? 'ja' : code;
     }
     
     return 'en';
@@ -959,7 +959,7 @@
     // Remove current language prefix if exists
     let newPath = currentPath;
     if (currentLang !== 'en') {
-      const langPrefix = currentLang === 'ja' ? '/jp/' : `/${currentLang}/`;
+      const langPrefix = currentLang === 'jp' || currentLang === 'ja_JP' ? '/ja/' : `/${currentLang}/`;
       if (currentPath.startsWith(langPrefix)) {
         newPath = currentPath.substring(langPrefix.length - 1);
       }
@@ -968,7 +968,7 @@
     // Add new language prefix
     if (langCode === 'en') {
       return newPath;
-    } else if (langCode === 'ja') {
+    } else if (currentLang === 'jp' || currentLang === 'ja_JP') {
       return '/jp' + newPath;
     } else {
       return '/' + langCode + newPath;
@@ -1078,7 +1078,7 @@
   <header class="gn">
     <nav id="topNav">
       <ul class="nv-l">
-        <li><a class="nv-lg" href="//bn" data-nomobile="">
+        <li><a class="nv-lg" href="/" data-nomobile="">
             <svg class="lg" width="32" height="40" viewBox="0 0 48 48">
               <use xlink:href="#icon-docsie"></use>
             </svg>
@@ -1133,7 +1133,7 @@
         </li> -->
 
         <span class="spacer"></span>
-        <li class="v-sm"><a href="/bn/pricing/">মূল্য নির্ধারণ</a></li>
+        <li class="v-sm"><a href="/pricing/">মূল্য নির্ধারণ</a></li>
 
 
 <!--        <li class="li-dd v-sm">-->
@@ -1160,7 +1160,7 @@
 <!--              &lt;!&ndash;</li>&ndash;&gt;-->
 <!--              <li>-->
 <!--                <a class="li-hdr"-->
-<!--                  href="/bn/documentation/styling_guide/">কাস্টমাইজেশন</a>-->
+<!--                  href="/documentation/styling_guide/">কাস্টমাইজেশন</a>-->
 <!--                <span>"আপনার নিজস্ব স্টাইল এবং ব্র্যান্ডিং অনুসরণ করতে Docsie ডক্স কীভাবে কাস্টমাইজ করবেন তা শিখুন-->
 <!--                  "</span>-->
 <!--              </li>-->
@@ -1168,21 +1168,21 @@
 <!--            <ul>-->
 <!--              <li class="li-hr"><strong>কণ্ঠস্বরে</strong></li>-->
 <!--              <li>-->
-<!--                <a class="li-hdr" href="/bn/vocally/documentation/">"শুরু করা-->
+<!--                <a class="li-hdr" href="/vocally/documentation/">"শুরু করা-->
 <!--                  হচ্ছে"</a>-->
 <!--                <span>"আমাদের সহজ ও সরাসরি ব্যবহারকারী পরিচালনার পদ্ধতি আবিষ্কার করুন-->
 <!--                  ফিডব্যাক"</span>-->
 <!--              </li>-->
 <!--              <li>-->
-<!--                <a class="li-hdr" href="/bn/vocally/documentation/configuration/">Configuration</a>-->
+<!--                <a class="li-hdr" href="/vocally/documentation/configuration/">Configuration</a>-->
 <!--                <span>"আপনার ইকোসিস্টেমের একটি অংশ হিসেবে vocally কে অন্তর্ভুক্ত করুন"</span>-->
 <!--              </li>-->
 <!--              <li>-->
-<!--                <a class="li-hdr" href="/bn/vocally/documentation/integrations/">Integrations</a>-->
+<!--                <a class="li-hdr" href="/vocally/documentation/integrations/">Integrations</a>-->
 <!--                <span>"আপনার টুলগুলি vocally এর সাথে ইন্টিগ্রেট করুন"</span>-->
 <!--              </li>-->
 <!--              <li>-->
-<!--                <a class="li-hdr" href="/bn/vocally/documentation/installation/">Installation</a>-->
+<!--                <a class="li-hdr" href="/vocally/documentation/installation/">Installation</a>-->
 <!--                <span>"প্রথমবার ভয়েস দিয়ে সেট-আপ করুন"</span>-->
 <!--              </li>-->
 <!--            </ul>-->

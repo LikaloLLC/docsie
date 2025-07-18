@@ -1,3 +1,6 @@
+/* Import design tokens if not already loaded */
+@import url('/styles/design-tokens.css');
+
 /* Modern Stats Component v2 Styles */
 
 .modern-stats {
@@ -16,7 +19,7 @@
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.3);
-  transition: all 0.3s ease;
+  transition: all var(--transition-slow);
 }
 
 .stat-card::before {
@@ -27,7 +30,7 @@
   right: 0;
   bottom: 0;
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 100%);
-  border-radius: 1rem;
+  border-radius: var(--radius-2xl);
   opacity: 0;
   transition: opacity 0.3s ease;
   pointer-events: none;
@@ -44,7 +47,7 @@
 
 /* Stat Icon Animations */
 .stat-icon {
-  transition: all 0.3s ease;
+  transition: all var(--transition-slow);
 }
 
 .stat-card:hover .stat-icon > div {
@@ -54,7 +57,7 @@
 
 /* Number Animations */
 .stat-number {
-  transition: all 0.3s ease;
+  transition: all var(--transition-slow);
   transform-origin: center;
 }
 
@@ -167,10 +170,7 @@
 }
 
 /* Dark Mode Support */
-@media (prefers-color-scheme: dark) {
-  .modern-stats {
-    background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #312e81 100%);
-  }
+/* Dark mode automatically handled by design tokens */
   
   .stat-card {
     background: rgba(31, 41, 55, 0.8);
@@ -184,21 +184,21 @@
   }
   
   .stat-number {
-    color: #f9fafb;
+    color: var(--color-neutral-50);
   }
   
   .stat-label {
-    color: #d1d5db;
+    color: var(--color-neutral-300);
   }
   
   .stat-description {
-    color: #9ca3af;
+    color: var(--text-muted);
   }
 }
 
 /* Enhanced Hover Effects */
 .stat-card:hover .stat-number {
-  color: #3b82f6;
+  color: var(--color-brand-secondary-light);
   text-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
 }
 

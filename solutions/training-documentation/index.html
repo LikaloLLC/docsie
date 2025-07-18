@@ -924,7 +924,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     
     if (langMatch) {
       const code = langMatch[1];
-      return code === 'ja_JP' ? 'ja' : code;
+      return code === 'jp' || code === 'ja_JP' ? 'ja' : code;
     }
     
     return 'en';
@@ -938,7 +938,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     // Remove current language prefix if exists
     let newPath = currentPath;
     if (currentLang !== 'en') {
-      const langPrefix = currentLang === 'ja' ? '/jp/' : `/${currentLang}/`;
+      const langPrefix = currentLang === 'jp' || currentLang === 'ja_JP' ? '/ja/' : `/${currentLang}/`;
       if (currentPath.startsWith(langPrefix)) {
         newPath = currentPath.substring(langPrefix.length - 1);
       }
@@ -947,7 +947,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     // Add new language prefix
     if (langCode === 'en') {
       return newPath;
-    } else if (langCode === 'ja') {
+    } else if (currentLang === 'jp' || currentLang === 'ja_JP') {
       return '/jp' + newPath;
     } else {
       return '/' + langCode + newPath;
@@ -2793,8 +2793,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
       
       <a href="/solutions/sops" class="related-card">
-        
-        <picture class="block w-full h-full">
+        <div class="card-image-wrapper">
+          
+          <picture class="block w-full h-full">
   <source type="image/webp" 
           srcset="/assets/optimized/solutions/sops-hero-320w.webp 320w,
                   /assets/optimized/solutions/sops-hero-640w.webp 640w,
@@ -2810,10 +2811,11 @@ document.addEventListener('DOMContentLoaded', function() {
        loading="lazy"
        class="w-full h-full object-cover">
 </picture>
-        
-        <div class="related-content">
-          <h3>Streamlined SOP Management</h3>
-          <p>Transform your operational efficiency with dynamic SOPs that ensure compliance, reduce training time by 50%, and maintain consistency across all processes</p>
+          
+          <div class="related-content">
+            <h3>SOPS Software</h3>
+            <p>Create and manage SOPs for your organization</p>
+          </div>
         </div>
       </a>
     
@@ -2821,8 +2823,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
       
       <a href="/solutions/user-manuals" class="related-card">
-        
-        <picture class="block w-full h-full">
+        <div class="card-image-wrapper">
+          
+          <picture class="block w-full h-full">
   <source type="image/webp" 
           srcset="/assets/optimized/solutions/manuals-hero-320w.webp 320w,
                   /assets/optimized/solutions/manuals-hero-640w.webp 640w,
@@ -2838,10 +2841,11 @@ document.addEventListener('DOMContentLoaded', function() {
        loading="lazy"
        class="w-full h-full object-cover">
 </picture>
-        
-        <div class="related-content">
-          <h3>Modern User Manual Platform</h3>
-          <p>Transform static documentation into interactive, living user manuals that enhance user experience and reduce support costs by up to 60%</p>
+          
+          <div class="related-content">
+            <h3>User Manuals Software</h3>
+            <p>Create professional user manuals</p>
+          </div>
         </div>
       </a>
     
@@ -2849,10 +2853,29 @@ document.addEventListener('DOMContentLoaded', function() {
     
       
       <a href="/solutions/knowledge-base" class="related-card">
-        
-        <div class="related-content">
-          <h3>Solution</h3>
-          <p>Learn more about this solution</p>
+        <div class="card-image-wrapper">
+          
+          <picture class="block w-full h-full">
+  <source type="image/webp" 
+          srcset="/assets/optimized/new_home/solutions/solutions-hero-320w.webp 320w,
+                  /assets/optimized/new_home/solutions/solutions-hero-640w.webp 640w,
+                  /assets/optimized/new_home/solutions/solutions-hero-768w.webp 768w,
+                  /assets/optimized/new_home/solutions/solutions-hero-1024w.webp 1024w">
+  <img src="/assets/optimized/new_home/solutions/solutions-hero-320w.jpg" 
+       srcset="/assets/optimized/new_home/solutions/solutions-hero-320w.jpg 320w,
+               /assets/optimized/new_home/solutions/solutions-hero-640w.jpg 640w,
+               /assets/optimized/new_home/solutions/solutions-hero-768w.jpg 768w,
+               /assets/optimized/new_home/solutions/solutions-hero-1024w.jpg 1024w"
+       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+       alt=""
+       loading="lazy"
+       class="w-full h-full object-cover">
+</picture>
+          
+          <div class="related-content">
+            <h3>Knowledge Base Software</h3>
+            <p>Create a knowledge base for your organization</p>
+          </div>
         </div>
       </a>
     
@@ -3582,7 +3605,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     if (langMatch) {
       const code = langMatch[1];
-      return code === 'ja_JP' ? 'ja' : code;
+      return (code === 'jp' || code === 'ja_JP')  ? 'ja' : code;
     }
     
     return 'en';

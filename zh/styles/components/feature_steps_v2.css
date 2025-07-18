@@ -1,3 +1,6 @@
+/* Import design tokens if not already loaded */
+@import url('/styles/design-tokens.css');
+
 /* Feature Steps Carousel Component Styles */
 .feature-steps-carousel {
   position: relative;
@@ -34,7 +37,7 @@
 
 .feature-steps-carousel .step-item.active .step-indicator {
   background: linear-gradient(135deg, #3b82f6, #2563eb);
-  border-color: #3b82f6;
+  border-color: var(--color-brand-secondary-light);
   box-shadow: 0 8px 24px rgba(59, 130, 246, 0.3);
   transform: scale(1.1);
 }
@@ -47,7 +50,7 @@
 
 .feature-steps-carousel .step-indicator .step-number,
 .feature-steps-carousel .step-indicator .step-check {
-  transition: all 0.3s ease;
+  transition: all var(--transition-slow);
 }
 
 /* Progress Bars */
@@ -90,7 +93,7 @@
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.2);
-  transition: all 0.2s ease;
+  transition: all var(--transition-base);
 }
 
 .feature-steps-carousel .control-btn:hover {
@@ -110,7 +113,7 @@
 /* Navigation Dots */
 .feature-steps-carousel .nav-dot {
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all var(--transition-slow);
   border: 2px solid transparent;
 }
 
@@ -129,7 +132,7 @@
 }
 
 .feature-steps-carousel .step-item.active h3 {
-  color: #1d4ed8;
+  color: var(--color-brand-secondary-dark);
 }
 
 .feature-steps-carousel .step-item p {
@@ -137,7 +140,7 @@
 }
 
 .feature-steps-carousel .step-item.active p {
-  color: #374151;
+  color: var(--text-secondary);
 }
 
 /* Enhanced Animations */
@@ -252,21 +255,18 @@
 }
 
 /* Dark Mode Support */
-@media (prefers-color-scheme: dark) {
-  .feature-steps-carousel .step-item h3 {
-    color: #f9fafb;
-  }
+/* Dark mode automatically handled by design tokens */
   
   .feature-steps-carousel .step-item.active h3 {
     color: #60a5fa;
   }
   
   .feature-steps-carousel .step-item p {
-    color: #d1d5db;
+    color: var(--color-neutral-300);
   }
   
   .feature-steps-carousel .step-item.active p {
-    color: #f3f4f6;
+    color: var(--color-neutral-100);
   }
   
   .feature-steps-carousel .control-btn {

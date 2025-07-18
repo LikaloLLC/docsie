@@ -1,3 +1,6 @@
+/* Import design tokens if not already loaded */
+@import url('/styles/design-tokens.css');
+
 /* Knowledge Graph Hero Component Styles */
 
 .knowledge-graph-hero {
@@ -75,7 +78,7 @@
 
 /* Button Hover Effects */
 .knowledge-graph-hero button {
-  transition: all 0.3s ease;
+  transition: all var(--transition-slow);
   transform-origin: center;
 }
 
@@ -145,10 +148,7 @@
 }
 
 /* Dark Mode Support */
-@media (prefers-color-scheme: dark) {
-  .knowledge-graph-hero {
-    background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #312e81 100%);
-  }
+/* Dark mode automatically handled by design tokens */
   
   .knowledge-graph-hero h1 {
     background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #cbd5e1 100%);
@@ -206,7 +206,7 @@
 }
 
 .knowledge-graph-hero .ai-badge {
-  transition: all 0.3s ease;
+  transition: all var(--transition-slow);
 }
 
 .knowledge-graph-hero .ai-badge:hover {

@@ -971,7 +971,7 @@
     
     if (langMatch) {
       const code = langMatch[1];
-      return code === 'ja_JP' ? 'ja' : code;
+      return code === 'jp' || code === 'ja_JP' ? 'ja' : code;
     }
     
     return 'en';
@@ -985,7 +985,7 @@
     // Remove current language prefix if exists
     let newPath = currentPath;
     if (currentLang !== 'en') {
-      const langPrefix = currentLang === 'ja' ? '/jp/' : `/${currentLang}/`;
+      const langPrefix = currentLang === 'jp' || currentLang === 'ja_JP' ? '/ja/' : `/${currentLang}/`;
       if (currentPath.startsWith(langPrefix)) {
         newPath = currentPath.substring(langPrefix.length - 1);
       }
@@ -994,7 +994,7 @@
     // Add new language prefix
     if (langCode === 'en') {
       return newPath;
-    } else if (langCode === 'ja') {
+    } else if (currentLang === 'jp' || currentLang === 'ja_JP') {
       return '/jp' + newPath;
     } else {
       return '/' + langCode + newPath;
@@ -1104,7 +1104,7 @@
   <header class="gn">
     <nav id="topNav">
       <ul class="nv-l">
-        <li><a class="nv-lg" href="//es" data-nomobile="">
+        <li><a class="nv-lg" href="/" data-nomobile="">
             <svg class="lg" width="32" height="40" viewBox="0 0 48 48">
               <use xlink:href="#icon-docsie"></use>
             </svg>
@@ -1159,7 +1159,7 @@
         </li> -->
 
         <span class="spacer"></span>
-        <li class="v-sm"><a href="/es/pricing/">"Precios"</a></li>
+        <li class="v-sm"><a href="/pricing/">"Precios"</a></li>
 
 
 <!--        <li class="li-dd v-sm">-->
@@ -1186,7 +1186,7 @@
 <!--              &lt;!&ndash;</li>&ndash;&gt;-->
 <!--              <li>-->
 <!--                <a class="li-hdr"-->
-<!--                  href="/es/documentation/styling_guide/">Personalizaciones</a>-->
+<!--                  href="/documentation/styling_guide/">Personalizaciones</a>-->
 <!--                <span>"Aprenda cómo personalizar los documentos de Docsie para seguir su propio estilo y-->
 <!--                  marca"</span>-->
 <!--              </li>-->
@@ -1194,21 +1194,21 @@
 <!--            <ul>-->
 <!--              <li class="li-hr"><strong>Vocalmente</strong></li>-->
 <!--              <li>-->
-<!--                <a class="li-hdr" href="/es/vocally/documentation/">"Comenzando-->
+<!--                <a class="li-hdr" href="/vocally/documentation/">"Comenzando-->
 <!--                  "</a>-->
 <!--                <span>"Descubra nuestra forma simple y directa de gestionar los comentarios de los usuarios-->
 <!--                  "</span>-->
 <!--              </li>-->
 <!--              <li>-->
-<!--                <a class="li-hdr" href="/es/vocally/documentation/configuration/">Configuration</a>-->
+<!--                <a class="li-hdr" href="/vocally/documentation/configuration/">Configuration</a>-->
 <!--                <span>"Haga de vocally parte de su ecosistema"</span>-->
 <!--              </li>-->
 <!--              <li>-->
-<!--                <a class="li-hdr" href="/es/vocally/documentation/integrations/">Integrations</a>-->
+<!--                <a class="li-hdr" href="/vocally/documentation/integrations/">Integrations</a>-->
 <!--                <span>Integra tus herramientas con vocally</span>-->
 <!--              </li>-->
 <!--              <li>-->
-<!--                <a class="li-hdr" href="/es/vocally/documentation/installation/">Installation</a>-->
+<!--                <a class="li-hdr" href="/vocally/documentation/installation/">Installation</a>-->
 <!--                <span>"Configurar vocalmente por primera vez"</span>-->
 <!--              </li>-->
 <!--            </ul>-->
@@ -1252,10 +1252,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <div class="docsie-grid-cell">
               <div class="docsie-card">
                 <p>
-                  #-#-#-#-#  messages.po (PROJECT VERSION)  #-#-#-#-#
-La guía definitiva de plantillas de manuales de capacitación en 2020
-#-#-#-#-#  messages.po (PROJECT VERSION)  #-#-#-#-#
-"La guía definitiva de plantillas de manuales de capacitación en 2020"
+                  La guía definitiva de plantillas de manuales de capacitación en 2020
+"#: src/2020_websummit/discovery_call/success/index.html:5
                 </p>
                 <p>
                   <small class="meta">Blog</small><br />

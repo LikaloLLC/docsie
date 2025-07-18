@@ -1,3 +1,6 @@
+/* Import design tokens if not already loaded */
+@import url('/styles/design-tokens.css');
+
 /* Tailwind v2 Comparison Styles */
 
 .comparison-v2 {
@@ -6,7 +9,7 @@
 
 /* Column hover effects */
 .traditional-column {
-  transition: all 0.3s ease;
+  transition: all var(--transition-slow);
 }
 
 .traditional-column:hover {
@@ -15,7 +18,7 @@
 }
 
 .modern-column {
-  transition: all 0.3s ease;
+  transition: all var(--transition-slow);
 }
 
 .modern-column:hover {
@@ -34,7 +37,7 @@
 
 /* List item animations */
 .comparison-v2 li {
-  transition: all 0.2s ease;
+  transition: all var(--transition-base);
 }
 
 .comparison-v2 li:hover {
@@ -43,7 +46,7 @@
 
 /* Badge animations */
 .comparison-v2 span[class*="rounded-full"] {
-  transition: all 0.3s ease;
+  transition: all var(--transition-slow);
 }
 
 .comparison-v2 span[class*="rounded-full"]:hover {
@@ -85,21 +88,18 @@
 }
 
 /* Dark mode support */
-@media (prefers-color-scheme: dark) {
-  .comparison-v2 {
-    background-color: #111827;
-  }
+/* Dark mode automatically handled by design tokens */
   
   .comparison-v2 h2 {
-    color: #f9fafb;
+    color: var(--color-neutral-50);
   }
   
   .comparison-v2 p {
-    color: #d1d5db;
+    color: var(--color-neutral-300);
   }
   
   .traditional-column {
-    background-color: #374151;
+    background-color: var(--text-secondary);
   }
   
   .modern-column {
@@ -107,10 +107,10 @@
   }
   
   .comparison-v2 h3 {
-    color: #f9fafb;
+    color: var(--color-neutral-50);
   }
   
   .comparison-v2 li span {
-    color: #e5e7eb;
+    color: var(--color-neutral-200);
   }
 }

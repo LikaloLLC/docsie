@@ -1,3 +1,6 @@
+/* Import design tokens if not already loaded */
+@import url('/styles/design-tokens.css');
+
 /* Tailwind v2 Gallery Styles */
 
 .gallery-v2 {
@@ -6,7 +9,7 @@
 
 /* Gallery item animations */
 .gallery-item {
-  transition: all 0.3s ease;
+  transition: all var(--transition-slow);
 }
 
 .gallery-item:hover {
@@ -24,7 +27,7 @@
 
 /* Button animations */
 .gallery-lightbox-btn {
-  transition: all 0.3s ease;
+  transition: all var(--transition-slow);
 }
 
 .gallery-lightbox-btn:hover {
@@ -35,7 +38,7 @@
 /* Lightbox animations */
 #gallery-lightbox {
   backdrop-filter: blur(4px);
-  transition: all 0.3s ease;
+  transition: all var(--transition-slow);
 }
 
 #gallery-lightbox.hidden {
@@ -44,7 +47,7 @@
 }
 
 #lightbox-image {
-  transition: all 0.3s ease;
+  transition: all var(--transition-slow);
   max-height: 90vh;
 }
 
@@ -52,7 +55,7 @@
 #lightbox-prev,
 #lightbox-next,
 #lightbox-close {
-  transition: all 0.2s ease;
+  transition: all var(--transition-base);
 }
 
 #lightbox-prev:hover,
@@ -109,25 +112,22 @@
 }
 
 /* Dark mode support */
+/* Dark mode automatically handled by design tokens */
 @media (prefers-color-scheme: dark) {
-  .gallery-v2 {
-    background-color: #111827;
-  }
-  
   .gallery-v2 h2 {
-    color: #f9fafb;
+    color: var(--color-neutral-50);
   }
   
   .gallery-v2 p {
-    color: #d1d5db;
+    color: var(--color-neutral-300);
   }
   
   .gallery-item {
-    background-color: #1f2937;
+    background-color: var(--bg-surface);
   }
   
   .gallery-item p {
-    color: #e5e7eb;
+    color: var(--color-neutral-200);
   }
   
   #gallery-lightbox {

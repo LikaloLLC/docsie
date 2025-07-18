@@ -1,3 +1,6 @@
+/* Import design tokens if not already loaded */
+@import url('/styles/design-tokens.css');
+
 /* Feature Grid Component v2 Styles */
 
 .feature-grid-v2 {
@@ -16,7 +19,7 @@
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   position: relative;
-  transition: all 0.3s ease;
+  transition: all var(--transition-slow);
 }
 
 .feature-inner:hover {
@@ -49,12 +52,12 @@
 }
 
 .feature-inner p {
-  transition: all 0.3s ease;
+  transition: all var(--transition-slow);
 }
 
 /* List Item Animations */
 .feature-inner ul li {
-  transition: all 0.2s ease;
+  transition: all var(--transition-base);
   transform: translateX(0);
 }
 
@@ -76,7 +79,7 @@
 
 /* CTA Link Animations */
 .feature-inner a {
-  transition: all 0.3s ease;
+  transition: all var(--transition-slow);
   position: relative;
 }
 
@@ -121,7 +124,7 @@
   right: 0;
   bottom: 0;
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 100%);
-  border-radius: 1rem;
+  border-radius: var(--radius-2xl);
   opacity: 0;
   transition: opacity 0.3s ease;
   pointer-events: none;
@@ -135,7 +138,7 @@
 /* Knowledge Base Card */
 .feature-card:nth-child(1) .feature-inner:hover {
   background: linear-gradient(135deg, #dbeafe 0%, #c7d2fe 100%);
-  border-color: #3b82f6;
+  border-color: var(--color-brand-secondary-light);
 }
 
 /* Product Documentation Card */
@@ -211,10 +214,7 @@
 }
 
 /* Dark Mode Support */
-@media (prefers-color-scheme: dark) {
-  .feature-grid-v2 {
-    background-color: #111827;
-  }
+/* Dark mode automatically handled by design tokens */
   
   .feature-grid-v2 h2 {
     background: linear-gradient(135deg, #f9fafb 0%, #e5e7eb 100%);
@@ -224,7 +224,7 @@
   }
   
   .feature-grid-v2 > div > div > p {
-    color: #d1d5db;
+    color: var(--color-neutral-300);
   }
   
   .feature-inner {
@@ -238,15 +238,15 @@
   }
   
   .feature-inner h3 {
-    color: #f9fafb;
+    color: var(--color-neutral-50);
   }
   
   .feature-inner p {
-    color: #d1d5db;
+    color: var(--color-neutral-300);
   }
   
   .feature-inner ul li {
-    color: #e5e7eb;
+    color: var(--color-neutral-200);
   }
 }
 
@@ -337,7 +337,7 @@
 
 /* Custom Checkmark Animation */
 .feature-inner ul li svg {
-  transition: all 0.2s ease;
+  transition: all var(--transition-base);
 }
 
 .feature-inner:hover ul li svg {

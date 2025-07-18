@@ -970,7 +970,7 @@
     
     if (langMatch) {
       const code = langMatch[1];
-      return code === 'ja_JP' ? 'ja' : code;
+      return code === 'jp' || code === 'ja_JP' ? 'ja' : code;
     }
     
     return 'en';
@@ -984,7 +984,7 @@
     // Remove current language prefix if exists
     let newPath = currentPath;
     if (currentLang !== 'en') {
-      const langPrefix = currentLang === 'ja' ? '/jp/' : `/${currentLang}/`;
+      const langPrefix = currentLang === 'jp' || currentLang === 'ja_JP' ? '/ja/' : `/${currentLang}/`;
       if (currentPath.startsWith(langPrefix)) {
         newPath = currentPath.substring(langPrefix.length - 1);
       }
@@ -993,7 +993,7 @@
     // Add new language prefix
     if (langCode === 'en') {
       return newPath;
-    } else if (langCode === 'ja') {
+    } else if (currentLang === 'jp' || currentLang === 'ja_JP') {
       return '/jp' + newPath;
     } else {
       return '/' + langCode + newPath;
@@ -1103,7 +1103,7 @@
   <header class="gn">
     <nav id="topNav">
       <ul class="nv-l">
-        <li><a class="nv-lg" href="//pt" data-nomobile="">
+        <li><a class="nv-lg" href="/" data-nomobile="">
             <svg class="lg" width="32" height="40" viewBox="0 0 48 48">
               <use xlink:href="#icon-docsie"></use>
             </svg>
@@ -1207,10 +1207,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               <img src="https://appcdn2.docsie.io/assets/Docsie_Product_Documentation.png" alt="Image of two customer documentation hubs made in Docsie" />
             </div>
             <div class="docsie-checker-cell">
-              <p class="docsie-paragraph" id="unstyled-aphro">#-#-#-#-#  messages.po (PROJECT VERSION)  #-#-#-#-#
-"Use o Docsie Manager para criar e publicar facilmente hubs de documentação de produto personalizados que refletem a aparência e identidade da sua marca."
-#-#-#-#-#  messages.po (PROJECT VERSION)  #-#-#-#-#
-Use o Docsie Manager para criar e publicar facilmente hubs de documentação de produto personalizados que refletem a aparência e identidade da sua marca.</p>
+              <p class="docsie-paragraph" id="unstyled-aphro">"Use o Docsie Manager para criar e publicar facilmente hubs de documentação ""de produto personalizados que refletem a aparência e identidade da sua marca."""
+"#: src/try_docsie/fb-6/index.html:132 src/try_docsie/ga-6/index.html:13</p>
               <!--<a href="http://docsie.io">Learn More <svg class="inl" width="22" height="22" viewBox="0 0 20 20">-->
               <!--<use xlink:href="#icon-arrow-right" /></svg></a>-->
             </div>

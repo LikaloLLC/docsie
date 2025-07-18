@@ -924,7 +924,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     
     if (langMatch) {
       const code = langMatch[1];
-      return code === 'ja_JP' ? 'ja' : code;
+      return code === 'jp' || code === 'ja_JP' ? 'ja' : code;
     }
     
     return 'en';
@@ -938,7 +938,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     // Remove current language prefix if exists
     let newPath = currentPath;
     if (currentLang !== 'en') {
-      const langPrefix = currentLang === 'ja' ? '/jp/' : `/${currentLang}/`;
+      const langPrefix = currentLang === 'jp' || currentLang === 'ja_JP' ? '/ja/' : `/${currentLang}/`;
       if (currentPath.startsWith(langPrefix)) {
         newPath = currentPath.substring(langPrefix.length - 1);
       }
@@ -947,7 +947,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     // Add new language prefix
     if (langCode === 'en') {
       return newPath;
-    } else if (langCode === 'ja') {
+    } else if (currentLang === 'jp' || currentLang === 'ja_JP') {
       return '/jp' + newPath;
     } else {
       return '/' + langCode + newPath;
@@ -2990,10 +2990,12 @@ document.addEventListener('DOMContentLoaded', function() {
     
       
       <a href="/jp/solutions/knowledge-base" class="related-card">
-        
-        <div class="related-content">
-          <h3>Solution</h3>
-          <p>Learn more about this solution</p>
+        <div class="card-image-wrapper">
+          
+          <div class="related-content">
+            <h3>Solution</h3>
+            <p>Learn more about this solution</p>
+          </div>
         </div>
       </a>
     
@@ -3001,10 +3003,12 @@ document.addEventListener('DOMContentLoaded', function() {
     
       
       <a href="/jp/solutions/doc-chatbots" class="related-card">
-        
-        <div class="related-content">
-          <h3>Solution</h3>
-          <p>Learn more about this solution</p>
+        <div class="card-image-wrapper">
+          
+          <div class="related-content">
+            <h3>Solution</h3>
+            <p>Learn more about this solution</p>
+          </div>
         </div>
       </a>
     
@@ -3012,10 +3016,12 @@ document.addEventListener('DOMContentLoaded', function() {
     
       
       <a href="/jp/solutions/user-manuals" class="related-card">
-        
-        <div class="related-content">
-          <h3>Solution</h3>
-          <p>Learn more about this solution</p>
+        <div class="card-image-wrapper">
+          
+          <div class="related-content">
+            <h3>Solution</h3>
+            <p>Learn more about this solution</p>
+          </div>
         </div>
       </a>
     
@@ -3745,7 +3751,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     if (langMatch) {
       const code = langMatch[1];
-      return code === 'ja_JP' ? 'ja' : code;
+      return (code === 'jp' || code === 'ja_JP')  ? 'ja' : code;
     }
     
     return 'en';

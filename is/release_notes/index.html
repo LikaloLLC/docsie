@@ -944,7 +944,7 @@
     
     if (langMatch) {
       const code = langMatch[1];
-      return code === 'ja_JP' ? 'ja' : code;
+      return code === 'jp' || code === 'ja_JP' ? 'ja' : code;
     }
     
     return 'en';
@@ -958,7 +958,7 @@
     // Remove current language prefix if exists
     let newPath = currentPath;
     if (currentLang !== 'en') {
-      const langPrefix = currentLang === 'ja' ? '/jp/' : `/${currentLang}/`;
+      const langPrefix = currentLang === 'jp' || currentLang === 'ja_JP' ? '/ja/' : `/${currentLang}/`;
       if (currentPath.startsWith(langPrefix)) {
         newPath = currentPath.substring(langPrefix.length - 1);
       }
@@ -967,7 +967,7 @@
     // Add new language prefix
     if (langCode === 'en') {
       return newPath;
-    } else if (langCode === 'ja') {
+    } else if (currentLang === 'jp' || currentLang === 'ja_JP') {
       return '/jp' + newPath;
     } else {
       return '/' + langCode + newPath;
@@ -1077,7 +1077,7 @@
   <header class="gn">
     <nav id="topNav">
       <ul class="nv-l">
-        <li><a class="nv-lg" href="//is" data-nomobile="">
+        <li><a class="nv-lg" href="/" data-nomobile="">
             <svg class="lg" width="32" height="40" viewBox="0 0 48 48">
               <use xlink:href="#icon-docsie"></use>
             </svg>
@@ -1132,7 +1132,7 @@
         </li> -->
 
         <span class="spacer"></span>
-        <li class="v-sm"><a href="/is/pricing/">Verðlagning</a></li>
+        <li class="v-sm"><a href="/pricing/">Verðlagning</a></li>
 
 
 <!--        <li class="li-dd v-sm">-->
@@ -1159,7 +1159,7 @@
 <!--              &lt;!&ndash;</li>&ndash;&gt;-->
 <!--              <li>-->
 <!--                <a class="li-hdr"-->
-<!--                  href="/is/documentation/styling_guide/">Sérstillingar</a>-->
+<!--                  href="/documentation/styling_guide/">Sérstillingar</a>-->
 <!--                <span>"Lærðu hvernig á að sérsníða Docsie skjöl til að fylgja þínum eigin stíl og-->
 <!--                  vörumerkingu"</span>-->
 <!--              </li>-->
@@ -1167,21 +1167,21 @@
 <!--            <ul>-->
 <!--              <li class="li-hr"><strong>Munnlega</strong></li>-->
 <!--              <li>-->
-<!--                <a class="li-hdr" href="/is/vocally/documentation/">"Að byrja-->
+<!--                <a class="li-hdr" href="/vocally/documentation/">"Að byrja-->
 <!--                  að byrja"</a>-->
 <!--                <span>"Uppgötvaðu einfalda &amp; beinskeyttu leiðina okkar til að stjórna notenda-->
 <!--                  endurgjöf"</span>-->
 <!--              </li>-->
 <!--              <li>-->
-<!--                <a class="li-hdr" href="/is/vocally/documentation/configuration/">Configuration</a>-->
+<!--                <a class="li-hdr" href="/vocally/documentation/configuration/">Configuration</a>-->
 <!--                <span>"Gerðu vocally að hluta af vistkerfi þínu"</span>-->
 <!--              </li>-->
 <!--              <li>-->
-<!--                <a class="li-hdr" href="/is/vocally/documentation/integrations/">Integrations</a>-->
+<!--                <a class="li-hdr" href="/vocally/documentation/integrations/">Integrations</a>-->
 <!--                <span>"Samþættið verkfærin ykkar við vocally"</span>-->
 <!--              </li>-->
 <!--              <li>-->
-<!--                <a class="li-hdr" href="/is/vocally/documentation/installation/">Installation</a>-->
+<!--                <a class="li-hdr" href="/vocally/documentation/installation/">Installation</a>-->
 <!--                <span>"Setja upp með raddstýringu í fyrsta skipti"</span>-->
 <!--              </li>-->
 <!--            </ul>-->

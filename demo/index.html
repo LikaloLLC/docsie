@@ -348,7 +348,7 @@
 <meta name="apple-mobile-web-app-title" content="Docsie">
 
 
-<meta property="og:locale" content="en_US">
+<meta property="og:locale" content="en_EN">
 <meta property="og:locale:alternate" content="de_DE">
 <meta property="og:locale:alternate" content="es_ES">
 <meta property="og:locale:alternate" content="fr_FR">
@@ -862,7 +862,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     
     if (langMatch) {
       const code = langMatch[1];
-      return code === 'ja_JP' ? 'ja' : code;
+      return code === 'jp' || code === 'ja_JP' ? 'ja' : code;
     }
     
     return 'en';
@@ -876,7 +876,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     // Remove current language prefix if exists
     let newPath = currentPath;
     if (currentLang !== 'en') {
-      const langPrefix = currentLang === 'ja' ? '/jp/' : `/${currentLang}/`;
+      const langPrefix = currentLang === 'jp' || currentLang === 'ja_JP' ? '/ja/' : `/${currentLang}/`;
       if (currentPath.startsWith(langPrefix)) {
         newPath = currentPath.substring(langPrefix.length - 1);
       }
@@ -885,7 +885,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     // Add new language prefix
     if (langCode === 'en') {
       return newPath;
-    } else if (langCode === 'ja') {
+    } else if (currentLang === 'jp' || currentLang === 'ja_JP') {
       return '/jp' + newPath;
     } else {
       return '/' + langCode + newPath;
@@ -2427,7 +2427,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     if (langMatch) {
       const code = langMatch[1];
-      return code === 'ja_JP' ? 'ja' : code;
+      return (code === 'jp' || code === 'ja_JP')  ? 'ja' : code;
     }
     
     return 'en';

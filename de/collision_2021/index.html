@@ -968,7 +968,7 @@
     
     if (langMatch) {
       const code = langMatch[1];
-      return code === 'ja_JP' ? 'ja' : code;
+      return code === 'jp' || code === 'ja_JP' ? 'ja' : code;
     }
     
     return 'en';
@@ -982,7 +982,7 @@
     // Remove current language prefix if exists
     let newPath = currentPath;
     if (currentLang !== 'en') {
-      const langPrefix = currentLang === 'ja' ? '/jp/' : `/${currentLang}/`;
+      const langPrefix = currentLang === 'jp' || currentLang === 'ja_JP' ? '/ja/' : `/${currentLang}/`;
       if (currentPath.startsWith(langPrefix)) {
         newPath = currentPath.substring(langPrefix.length - 1);
       }
@@ -991,7 +991,7 @@
     // Add new language prefix
     if (langCode === 'en') {
       return newPath;
-    } else if (langCode === 'ja') {
+    } else if (currentLang === 'jp' || currentLang === 'ja_JP') {
       return '/jp' + newPath;
     } else {
       return '/' + langCode + newPath;
@@ -1101,7 +1101,7 @@
   <header class="gn">
     <nav id="topNav">
       <ul class="nv-l">
-        <li><a class="nv-lg" href="//de" data-nomobile="">
+        <li><a class="nv-lg" href="/" data-nomobile="">
             <svg class="lg" width="32" height="40" viewBox="0 0 48 48">
               <use xlink:href="#icon-docsie"></use>
             </svg>
@@ -1156,7 +1156,7 @@
         </li> -->
 
         <span class="spacer"></span>
-        <li class="v-sm"><a href="/de/pricing/">Preise</a></li>
+        <li class="v-sm"><a href="/pricing/">Preise</a></li>
 
 
 <!--        <li class="li-dd v-sm">-->
@@ -1183,7 +1183,7 @@
 <!--              &lt;!&ndash;</li>&ndash;&gt;-->
 <!--              <li>-->
 <!--                <a class="li-hdr"-->
-<!--                  href="/de/documentation/styling_guide/">Anpassungen</a>-->
+<!--                  href="/documentation/styling_guide/">Anpassungen</a>-->
 <!--                <span>"Erfahren Sie, wie Sie Docsie-Dokumentationen an Ihren eigenen Stil und-->
 <!--                  Ihr Branding anpassen"</span>-->
 <!--              </li>-->
@@ -1191,21 +1191,21 @@
 <!--            <ul>-->
 <!--              <li class="li-hr"><strong>Sprachlich</strong></li>-->
 <!--              <li>-->
-<!--                <a class="li-hdr" href="/de/vocally/documentation/">"Erste-->
+<!--                <a class="li-hdr" href="/vocally/documentation/">"Erste-->
 <!--                  Schritte"</a>-->
 <!--                <span>"Entdecken Sie unsere einfache &amp; unkomplizierte Art, Benutzer-->
 <!--                  feedback zu verwalten"</span>-->
 <!--              </li>-->
 <!--              <li>-->
-<!--                <a class="li-hdr" href="/de/vocally/documentation/configuration/">Configuration</a>-->
+<!--                <a class="li-hdr" href="/vocally/documentation/configuration/">Configuration</a>-->
 <!--                <span>"Machen Sie vocally zu einem Teil Ihres Ökosystems"</span>-->
 <!--              </li>-->
 <!--              <li>-->
-<!--                <a class="li-hdr" href="/de/vocally/documentation/integrations/">Integrations</a>-->
+<!--                <a class="li-hdr" href="/vocally/documentation/integrations/">Integrations</a>-->
 <!--                <span>Integrieren Sie Ihre Tools mit vocally</span>-->
 <!--              </li>-->
 <!--              <li>-->
-<!--                <a class="li-hdr" href="/de/vocally/documentation/installation/">Installation</a>-->
+<!--                <a class="li-hdr" href="/vocally/documentation/installation/">Installation</a>-->
 <!--                <span>"Erstmalig per Sprache einrichten"</span>-->
 <!--              </li>-->
 <!--            </ul>-->
@@ -1256,7 +1256,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               </span>
               <span class="st-el">
                 <img class="st-icon" src="../assets/collision_2020/Discount.svg" />
-                <div class="cp-2"><b>30% discount on Business Plan</b></div>
+                <div class="cp-2"><b>30%% discount on Business Plan</b></div>
               </span>
               <span class="st-el">
                 <img class="st-icon" src="../assets/collision_2020/Money.svg" />
@@ -1284,10 +1284,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                   Diskutieren Sie Ihre Dokumentation mit dem integrierten Chat.
                 </button></li>
               <li><button data-icon="menu">
-                  #-#-#-#-#  messages.po (PROJECT VERSION)  #-#-#-#-#
-Verwalten Sie die Dokumentation für mehrere Produkte mit Leichtigkeit.
-#-#-#-#-#  messages.po (PROJECT VERSION)  #-#-#-#-#
-Verwalten Sie mühelos die Dokumentation für mehrere Produkte.
+                  Verwalten Sie die Dokumentation für mehrere Produkte mit Leichtigkeit.
+"#: src/2020_websummit/index.html:92 src/collaboration_software/index.html:6
                 </button></li>
               <li><button data-icon="menu">
                   Mehrere Versionen und Übersetzungen der Dokumentation verwalten.
@@ -1334,10 +1332,8 @@ Verwalten Sie mühelos die Dokumentation für mehrere Produkte.
         </div>
         <div class="docsie-grid-cell">
           <h3>Dokumentation für globale Unternehmen.</h3>
-          <p>#-#-#-#-#  messages.po (PROJECT VERSION)  #-#-#-#-#
-"Docsie Manager verfügt über integrierte automatisierte Übersetzungen, um selbst den anspruchsvollsten Anforderungen an die Unternehmensdokumentation gerecht zu werden."
-#-#-#-#-#  messages.po (PROJECT VERSION)  #-#-#-#-#
-Der Docsie-Manager verfügt über integrierte automatisierte Übersetzungen, um selbst den anspruchsvollsten Anforderungen der Unternehmensdokumentation gerecht zu werden.</p>
+          <p>"Docsie Manager verfügt über integrierte automatisierte Übersetzungen, um ""selbst den anspruchsvollsten Anforderungen an die Unternehmensdokumentation ""gerecht zu werden."
+"#: src/2020_websummit/index.html:145 src/collaboration_software/index.html:12</p>
         </div>
       </div>
     </section>

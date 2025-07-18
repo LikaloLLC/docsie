@@ -1,3 +1,6 @@
+/* Import design tokens if not already loaded */
+@import url('/styles/design-tokens.css');
+
 /* FAQ v2 Component Styles */
 
 .faq-v2 {
@@ -6,7 +9,7 @@
 
 /* Category Cards */
 .faq-category-card {
-  transition: all 0.3s ease;
+  transition: all var(--transition-slow);
   border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
@@ -42,11 +45,11 @@
   position: relative;
   padding-left: 1rem;
   border-left: 2px solid transparent;
-  transition: all 0.3s ease;
+  transition: all var(--transition-slow);
 }
 
 .faq-item:hover {
-  border-left-color: #3b82f6;
+  border-left-color: var(--color-brand-secondary-light);
   padding-left: 1.5rem;
 }
 
@@ -109,22 +112,18 @@
 }
 
 /* Dark mode support */
-@media (prefers-color-scheme: dark) {
-  .faq-category-card {
-    background-color: rgba(31, 41, 55, 0.5);
-    border-color: rgba(75, 85, 99, 0.3);
-  }
+/* Dark mode automatically handled by design tokens */
   
   .faq-category-card:hover {
     border-color: rgba(59, 130, 246, 0.4);
   }
   
   .faq-question p {
-    color: #e5e7eb;
+    color: var(--color-neutral-200);
   }
   
   .faq-answer p {
-    color: #9ca3af;
+    color: var(--text-muted);
   }
 }
 
@@ -132,10 +131,10 @@
 .faq-item {
   background-color: rgba(0, 0, 0, 0.03);
   padding: 1.25rem;
-  border-radius: 0.75rem;
+  border-radius: var(--radius-xl);
   margin-bottom: 1rem;
   border: 1px solid rgba(0, 0, 0, 0.06);
-  transition: all 0.2s ease;
+  transition: all var(--transition-base);
 }
 
 .faq-item:last-child {
@@ -150,9 +149,9 @@
 
 /* Ensure text contrast */
 .faq-question p {
-  color: #111827 !important; /* gray-900 */
+  color: var(--text-primary) !important; /* gray-900 */
 }
 
 .faq-answer p {
-  color: #1f2937 !important; /* gray-800 */
+  color: var(--text-primary) !important; /* gray-800 */
 }

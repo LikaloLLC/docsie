@@ -924,7 +924,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     
     if (langMatch) {
       const code = langMatch[1];
-      return code === 'ja_JP' ? 'ja' : code;
+      return code === 'jp' || code === 'ja_JP' ? 'ja' : code;
     }
     
     return 'en';
@@ -938,7 +938,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     // Remove current language prefix if exists
     let newPath = currentPath;
     if (currentLang !== 'en') {
-      const langPrefix = currentLang === 'ja' ? '/jp/' : `/${currentLang}/`;
+      const langPrefix = currentLang === 'jp' || currentLang === 'ja_JP' ? '/ja/' : `/${currentLang}/`;
       if (currentPath.startsWith(langPrefix)) {
         newPath = currentPath.substring(langPrefix.length - 1);
       }
@@ -947,7 +947,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     // Add new language prefix
     if (langCode === 'en') {
       return newPath;
-    } else if (langCode === 'ja') {
+    } else if (currentLang === 'jp' || currentLang === 'ja_JP') {
       return '/jp' + newPath;
     } else {
       return '/' + langCode + newPath;
@@ -2793,8 +2793,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
       
       <a href="/solutions/api-documentation" class="related-card">
-        
-        <picture class="block w-full h-full">
+        <div class="card-image-wrapper">
+          
+          <picture class="block w-full h-full">
   <source type="image/webp" 
           srcset="/assets/optimized/solutions/api-docs-320w.webp 320w,
                   /assets/optimized/solutions/api-docs-640w.webp 640w,
@@ -2810,10 +2811,11 @@ document.addEventListener('DOMContentLoaded', function() {
        loading="lazy"
        class="w-full h-full object-cover">
 </picture>
-        
-        <div class="related-content">
-          <h3>Interactive API Documentation Platform</h3>
-          <p>Create engaging API documentation that reduces integration time by 50% and improves developer satisfaction with interactive examples and automatic updates</p>
+          
+          <div class="related-content">
+            <h3>API Documentation Software</h3>
+            <p>Generate API documentation from OpenAPI/Swagger specs</p>
+          </div>
         </div>
       </a>
     
@@ -2821,10 +2823,29 @@ document.addEventListener('DOMContentLoaded', function() {
     
       
       <a href="/solutions/knowledge-base" class="related-card">
-        
-        <div class="related-content">
-          <h3>Solution</h3>
-          <p>Learn more about this solution</p>
+        <div class="card-image-wrapper">
+          
+          <picture class="block w-full h-full">
+  <source type="image/webp" 
+          srcset="/assets/optimized/new_home/solutions/solutions-hero-320w.webp 320w,
+                  /assets/optimized/new_home/solutions/solutions-hero-640w.webp 640w,
+                  /assets/optimized/new_home/solutions/solutions-hero-768w.webp 768w,
+                  /assets/optimized/new_home/solutions/solutions-hero-1024w.webp 1024w">
+  <img src="/assets/optimized/new_home/solutions/solutions-hero-320w.jpg" 
+       srcset="/assets/optimized/new_home/solutions/solutions-hero-320w.jpg 320w,
+               /assets/optimized/new_home/solutions/solutions-hero-640w.jpg 640w,
+               /assets/optimized/new_home/solutions/solutions-hero-768w.jpg 768w,
+               /assets/optimized/new_home/solutions/solutions-hero-1024w.jpg 1024w"
+       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+       alt=""
+       loading="lazy"
+       class="w-full h-full object-cover">
+</picture>
+          
+          <div class="related-content">
+            <h3>Knowledge Base Software</h3>
+            <p>Create a knowledge base for your organization</p>
+          </div>
         </div>
       </a>
     
@@ -2832,8 +2853,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
       
       <a href="/solutions/doc-chatbots" class="related-card">
-        
-        <picture class="block w-full h-full">
+        <div class="card-image-wrapper">
+          
+          <picture class="block w-full h-full">
   <source type="image/webp" 
           srcset="/assets/optimized/solutions/chatbot-hero-320w.webp 320w,
                   /assets/optimized/solutions/chatbot-hero-640w.webp 640w,
@@ -2849,10 +2871,11 @@ document.addEventListener('DOMContentLoaded', function() {
        loading="lazy"
        class="w-full h-full object-cover">
 </picture>
-        
-        <div class="related-content">
-          <h3>AI-Powered Documentation Assistant</h3>
-          <p>Transform your documentation into an interactive support system with intelligent chatbots that understand context and provide precise answers 24/7</p>
+          
+          <div class="related-content">
+            <h3>Chatbots for Documentation</h3>
+            <p>Create chatbots for your documentation</p>
+          </div>
         </div>
       </a>
     
@@ -3582,7 +3605,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     if (langMatch) {
       const code = langMatch[1];
-      return code === 'ja_JP' ? 'ja' : code;
+      return (code === 'jp' || code === 'ja_JP')  ? 'ja' : code;
     }
     
     return 'en';

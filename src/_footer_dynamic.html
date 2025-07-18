@@ -1,4 +1,5 @@
 <!-- Dynamic Footer V2 - Auto-generated from Supplementary Pages Data -->
+{% import '_language_helpers.html' as lang %}
 {% set ns = namespace() %}
 {% set ns.solutions = [] %}
 {% set ns.industries = [] %}
@@ -93,7 +94,7 @@
         <ul class="space-y-3">
           {% for solution in ns.solutions[:7] %}
           <li>
-            <a href="/solutions/{{ solution.id }}/" class="text-gray-300 hover:text-docsie-primary transition-colors duration-300 text-sm">
+            <a href="{{ lang.abs_lang_url('solutions/' ~ solution.id ~ '/') }}" class="text-gray-300 hover:text-docsie-primary transition-colors duration-300 text-sm">
               {{ solution.title }}
             </a>
           </li>
@@ -109,7 +110,7 @@
         <ul class="space-y-3">
           {% for ai_solution in ns.ai_solutions[:7] %}
           <li>
-            <a href="/solutions/{{ ai_solution.id }}/" class="text-gray-300 hover:text-docsie-primary transition-colors duration-300 text-sm">
+            <a href="{{ lang.abs_lang_url('solutions/' ~ ai_solution.id ~ '/') }}" class="text-gray-300 hover:text-docsie-primary transition-colors duration-300 text-sm">
               {{ ai_solution.title }}
             </a>
           </li>
@@ -125,7 +126,7 @@
         <ul class="space-y-3">
           {% for industry in ns.industries %}
           <li>
-            <a href="/solutions/industries/{{ industry.id }}/" class="text-gray-300 hover:text-docsie-primary transition-colors duration-300 text-sm">
+            <a href="{{ lang.abs_lang_url('solutions/industries/' ~ industry.id ~ '/') }}" class="text-gray-300 hover:text-docsie-primary transition-colors duration-300 text-sm">
               {{ industry.title | replace('Documentation Solutions', '') | replace(' Solutions', '') | trim }}
             </a>
           </li>
@@ -140,17 +141,17 @@
         </h4>
         <ul class="space-y-3">
           <li>
-            <a href="/pricing/" class="text-gray-300 hover:text-docsie-primary transition-colors duration-300 text-sm">
+            <a href="{{ lang.abs_lang_url('pricing/') }}" class="text-gray-300 hover:text-docsie-primary transition-colors duration-300 text-sm">
               {% trans %}Pricing{% endtrans %}
             </a>
           </li>
           <li>
-            <a href="/demo/" class="text-gray-300 hover:text-docsie-primary transition-colors duration-300 text-sm">
+            <a href="{{ lang.abs_lang_url('demo/') }}" class="text-gray-300 hover:text-docsie-primary transition-colors duration-300 text-sm">
               {% trans %}Book a Demo{% endtrans %}
             </a>
           </li>
           <li>
-            <a href="/blog/" class="text-gray-300 hover:text-docsie-primary transition-colors duration-300 text-sm">
+            <a href="{{ lang.abs_lang_url('blog/') }}" class="text-gray-300 hover:text-docsie-primary transition-colors duration-300 text-sm">
               {% trans %}Blog{% endtrans %}
             </a>
           </li>
@@ -165,7 +166,7 @@
             </a>
           </li>
           <li>
-            <a href="/about/" class="text-gray-300 hover:text-docsie-primary transition-colors duration-300 text-sm">
+            <a href="{{ lang.abs_lang_url('about/') }}" class="text-gray-300 hover:text-docsie-primary transition-colors duration-300 text-sm">
               {% trans %}About Us{% endtrans %}
             </a>
           </li>

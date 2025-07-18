@@ -1,3 +1,6 @@
+/* Import design tokens if not already loaded */
+@import url('/styles/design-tokens.css');
+
 /* Tailwind v2 Related Styles */
 
 .related-v2 {
@@ -6,7 +9,7 @@
 
 /* Card hover effects */
 .related-card {
-  transition: all 0.3s ease;
+  transition: all var(--transition-slow);
 }
 
 .related-card:hover {
@@ -25,11 +28,11 @@
 
 /* Content animations */
 .related-card h3 {
-  transition: all 0.3s ease;
+  transition: all var(--transition-slow);
 }
 
 .related-card:hover h3 {
-  color: #2563eb;
+  color: var(--color-brand-secondary);
 }
 
 /* Arrow animations */
@@ -80,7 +83,7 @@
   opacity: 0;
   transition: opacity 0.3s ease;
   pointer-events: none;
-  border-radius: 0.5rem;
+  border-radius: var(--radius-lg);
 }
 
 .related-card:hover::before {
@@ -104,18 +107,15 @@
 }
 
 /* Dark mode support */
-@media (prefers-color-scheme: dark) {
-  .related-v2 {
-    background-color: #111827;
-  }
+/* Dark mode automatically handled by design tokens */
   
   .related-v2 h2 {
-    color: #f9fafb;
+    color: var(--color-neutral-50);
   }
   
   .related-card {
-    background-color: #1f2937;
-    border-color: #374151;
+    background-color: var(--text-primary);
+    border-color: var(--text-secondary);
   }
   
   .related-card:hover {
@@ -123,15 +123,15 @@
   }
   
   .related-card h3 {
-    color: #f9fafb;
+    color: var(--color-neutral-50);
   }
   
   .related-card:hover h3 {
-    color: #3b82f6;
+    color: var(--color-brand-secondary-light);
   }
   
   .related-card p {
-    color: #d1d5db;
+    color: var(--color-neutral-300);
   }
   
   .related-card::before {

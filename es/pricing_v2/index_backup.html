@@ -593,7 +593,6 @@
     }
   })();
 </script>
-<<<<<<< HEAD
   
   
   <!-- Google Tag Manager -->
@@ -612,11 +611,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TZRGMQ9"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
-=======
-</head>
-
-<body class="docsie-background-img">
->>>>>>> pr-148
   <!-- Language Suggestion Banner -->
 <style>
   .language-suggestion-banner {
@@ -847,7 +841,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     
     if (langMatch) {
       const code = langMatch[1];
-      return code === 'ja_JP' ? 'ja' : code;
+      return code === 'jp' || code === 'ja_JP' ? 'ja' : code;
     }
     
     return 'en';
@@ -861,7 +855,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     // Remove current language prefix if exists
     let newPath = currentPath;
     if (currentLang !== 'en') {
-      const langPrefix = currentLang === 'ja' ? '/jp/' : `/${currentLang}/`;
+      const langPrefix = currentLang === 'jp' || currentLang === 'ja_JP' ? '/ja/' : `/${currentLang}/`;
       if (currentPath.startsWith(langPrefix)) {
         newPath = currentPath.substring(langPrefix.length - 1);
       }
@@ -870,7 +864,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     // Add new language prefix
     if (langCode === 'en') {
       return newPath;
-    } else if (langCode === 'ja') {
+    } else if (currentLang === 'jp' || currentLang === 'ja_JP') {
       return '/jp' + newPath;
     } else {
       return '/' + langCode + newPath;
@@ -1679,7 +1673,7 @@ document.addEventListener('DOMContentLoaded', function() {
               <input type="checkbox" id="pricing-toggle" class="sr-only peer" checked>
               <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600"></div>
             </label>
-            <span class="px-4 py-2 text-sm font-medium text-blue-600 font-semibold" id="annual-label">Pay Annually (Save up to 40%)</span>
+            <span class="px-4 py-2 text-sm font-medium text-blue-600 font-semibold" id="annual-label">Pay Annually (Save up to 40%%)</span>
           </div>
         </div>
       </div>
@@ -1743,7 +1737,7 @@ document.addEventListener('DOMContentLoaded', function() {
       <span class="annual-price">
         <span class="text-2xl font-bold text-gray-900">$33</span>
         <span class="text-gray-600">/mes</span>
-        <span class="text-xs text-green-600 font-medium ml-2">(Save 27%)</span>
+        <span class="text-xs text-green-600 font-medium ml-2">(Save 27%%)</span>
       </span>
     </div>
     <div class="text-xs text-gray-500">
@@ -1840,7 +1834,7 @@ document.addEventListener('DOMContentLoaded', function() {
       <span class="annual-price">
         <span class="text-2xl font-bold text-gray-900">$170</span>
         <span class="text-gray-600">/mes</span>
-        <span class="text-xs text-green-600 font-medium ml-2">(Save 15%)</span>
+        <span class="text-xs text-green-600 font-medium ml-2">(Save 15%%)</span>
       </span>
     </div>
     <div class="text-xs text-gray-500">
@@ -1904,7 +1898,7 @@ document.addEventListener('DOMContentLoaded', function() {
       <svg class="w-5 h-5 text-green-600 mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
       </svg>
-      <span class="text-gray-700 text-sm"><strong>📎 Ayuda y Soporte en la Aplicación</strong> - Reduce support tickets by 40%</span>
+      <span class="text-gray-700 text-sm"><strong>📎 Ayuda y Soporte en la Aplicación</strong> - Reduce support tickets by 40%%</span>
     </li>
     <li class="flex items-start">
       <svg class="w-5 h-5 text-green-600 mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -1928,7 +1922,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   <div class="mt-6 pt-4 border-t border-gray-100">
     <p class="text-xs text-gray-600 text-center font-medium">"Perfecto para: Empresas en crecimiento, equipos de producto, agencias"</p>
-    <p class="text-xs text-blue-600 text-center font-semibold mt-2">73% of teams upgrade to Premium within 30 days</p>
+    <p class="text-xs text-blue-600 text-center font-semibold mt-2">73%% of teams upgrade to Premium within 30 days</p>
   </div>
 </div>
 <!-- Business Plan -->
@@ -1945,10 +1939,8 @@ document.addEventListener('DOMContentLoaded', function() {
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
       </svg>
     </div>
-    <h3 class="text-xl font-semibold text-gray-900 mb-2">#-#-#-#-#  messages.po (PROJECT VERSION)  #-#-#-#-#
-Negocio
-#-#-#-#-#  messages.po (PROJECT VERSION)  #-#-#-#-#
-Empresa</h3>
+    <h3 class="text-xl font-semibold text-gray-900 mb-2">Negocio
+"#: src/pricing_v2/generated_plan_cards.html:24</h3>
     <p class="text-gray-600 text-sm">Soluciones escalables para organizaciones de gran escala</p>
   </div>
   
@@ -1961,7 +1953,7 @@ Empresa</h3>
       <span class="annual-price">
         <span class="text-2xl font-bold text-gray-900">$249</span>
         <span class="text-gray-600">/mes</span>
-        <span class="text-xs text-green-600 font-medium ml-2">(Save 45%)</span>
+        <span class="text-xs text-green-600 font-medium ml-2">(Save 45%%)</span>
       </span>
     </div>
     <div class="text-xs text-gray-500">
@@ -2148,7 +2140,7 @@ Empresa</h3>
       <svg class="w-5 h-5 text-green-600 mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
       </svg>
-      <span class="text-gray-700 text-sm"><strong>99.9% SLA guarantee</strong> - Tiempo de actividad crítico para la misión</span>
+      <span class="text-gray-700 text-sm"><strong>99.9%% SLA guarantee</strong> - Tiempo de actividad crítico para la misión</span>
     </li>
     <li class="flex items-start">
       <svg class="w-5 h-5 text-green-600 mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -2464,10 +2456,8 @@ Empresa</h3>
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
                 </svg>
               </div>
-              <h3 class="text-xl font-semibold text-gray-900 mb-2">#-#-#-#-#  messages.po (PROJECT VERSION)  #-#-#-#-#
-Negocio
-#-#-#-#-#  messages.po (PROJECT VERSION)  #-#-#-#-#
-Empresa</h3>
+              <h3 class="text-xl font-semibold text-gray-900 mb-2">Negocio
+"#: src/pricing_v2/generated_plan_cards.html:24</h3>
               <p class="text-gray-600 text-sm">Para organizaciones que gestionan documentación compleja a gran escala</p>
             </div>
             
@@ -2664,10 +2654,8 @@ Empresa</h3>
                 <th class="text-left py-4 px-4 font-medium text-gray-900">Características</th>
                 <th class="text-center py-4 px-4 font-medium text-gray-900">Estándar</th>
                 <th class="text-center py-4 px-4 font-medium text-gray-900">Premium</th>
-                <th class="text-center py-4 px-4 font-medium text-gray-900">#-#-#-#-#  messages.po (PROJECT VERSION)  #-#-#-#-#
-Negocio
-#-#-#-#-#  messages.po (PROJECT VERSION)  #-#-#-#-#
-Empresa</th>
+                <th class="text-center py-4 px-4 font-medium text-gray-900">Negocio
+"#: src/pricing_v2/generated_plan_cards.html:24</th>
                 <th class="text-center py-4 px-4 font-medium text-gray-900">Empresarial</th>
               </tr>
             </thead>
@@ -3731,12 +3719,10 @@ document.addEventListener('DOMContentLoaded', function() {
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                   </svg>
                   <div>
-                    <h4 class="font-semibold text-green-800 mb-1">Non-Profit Discount: Up to 55% Off</h4>
+                    <h4 class="font-semibold text-green-800 mb-1">Non-Profit Discount: Up to 55%% Off</h4>
                     <p class="text-green-700 text-sm">
-                      #-#-#-#-#  messages.po (PROJECT VERSION)  #-#-#-#-#
-"Las organizaciones 501(c)(3) calificadas y las organizaciones sin fines de lucro registradas pueden recibir descuentos significativos en todos nuestros planes de pago."
-#-#-#-#-#  messages.po (PROJECT VERSION)  #-#-#-#-#
-Las organizaciones 501(c)(3) calificadas y las organizaciones sin fines de lucro registradas pueden recibir descuentos significativos en todos nuestros planes de pago.
+                      "Las organizaciones 501(c)(3) calificadas y las organizaciones sin fines de ""lucro registradas pueden recibir descuentos significativos en todos nuestros ""planes de pago."
+"#: src/new_home/pricing_faq_v2/pricing_faq_v2.html:4
                     </p>
                   </div>
                 </div>
@@ -3807,10 +3793,8 @@ Las organizaciones 501(c)(3) calificadas y las organizaciones sin fines de lucro
           </button>
           <div class="px-6 py-4 bg-white hidden faq-content" id="pricing-faq">
             <p class="text-gray-700">
-              #-#-#-#-#  messages.po (PROJECT VERSION)  #-#-#-#-#
-Sí, tienes completa flexibilidad. Actualiza, reduce o cancela tu suscripción en cualquier momento desde la configuración de tu cuenta. Sin compromisos a largo plazo ni tarifas de cancelación.
-#-#-#-#-#  messages.po (PROJECT VERSION)  #-#-#-#-#
-Sí, tiene flexibilidad completa. Actualice, reduzca o cancele su suscripción en cualquier momento desde la configuración de su cuenta. Sin compromisos a largo plazo ni tarifas de cancelación.
+              Sí, tienes completa flexibilidad. Actualiza, reduce o cancela tu suscripción ""en cualquier momento desde la configuración de tu cuenta. Sin compromisos a ""largo plazo ni tarifas de cancelación.
+"#: src/new_home/pricing_faq_v2/pricing_faq_v2.html:11
             </p>
           </div>
         </div>
@@ -3849,10 +3833,8 @@ Sí, tiene flexibilidad completa. Actualice, reduzca o cancele su suscripción e
             <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-3.582 8-8 8a8.959 8.959 0 01-4.906-1.519L3 21l2.519-5.094A8.959 8.959 0 013 12c0-4.418 3.582-8 8-8s8 3.582 8 8z"></path>
             </svg>
-            #-#-#-#-#  messages.po (PROJECT VERSION)  #-#-#-#-#
-Contactar a Nuestro Equipo
-#-#-#-#-#  messages.po (PROJECT VERSION)  #-#-#-#-#
-Contacta con Nuestro Equipo
+            Contactar a Nuestro Equipo
+"#: src/new_home/reviews_v2/reviews_v2.html:1
           </button>
         </div>
       </div>
@@ -5426,7 +5408,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     if (langMatch) {
       const code = langMatch[1];
-      return code === 'ja_JP' ? 'ja' : code;
+      return (code === 'jp' || code === 'ja_JP')  ? 'ja' : code;
     }
     
     return 'en';

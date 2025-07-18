@@ -924,7 +924,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     
     if (langMatch) {
       const code = langMatch[1];
-      return code === 'ja_JP' ? 'ja' : code;
+      return code === 'jp' || code === 'ja_JP' ? 'ja' : code;
     }
     
     return 'en';
@@ -938,7 +938,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     // Remove current language prefix if exists
     let newPath = currentPath;
     if (currentLang !== 'en') {
-      const langPrefix = currentLang === 'ja' ? '/jp/' : `/${currentLang}/`;
+      const langPrefix = currentLang === 'jp' || currentLang === 'ja_JP' ? '/ja/' : `/${currentLang}/`;
       if (currentPath.startsWith(langPrefix)) {
         newPath = currentPath.substring(langPrefix.length - 1);
       }
@@ -947,7 +947,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     // Add new language prefix
     if (langCode === 'en') {
       return newPath;
-    } else if (langCode === 'ja') {
+    } else if (currentLang === 'jp' || currentLang === 'ja_JP') {
       return '/jp' + newPath;
     } else {
       return '/' + langCode + newPath;
@@ -2505,8 +2505,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
       
       <a href="/solutions/technical-documentation" class="related-card">
-        
-        <picture class="block w-full h-full">
+        <div class="card-image-wrapper">
+          
+          <picture class="block w-full h-full">
   <source type="image/webp" 
           srcset="/assets/optimized/solutions/tech-docs-320w.webp 320w,
                   /assets/optimized/solutions/tech-docs-640w.webp 640w,
@@ -2522,10 +2523,11 @@ document.addEventListener('DOMContentLoaded', function() {
        loading="lazy"
        class="w-full h-full object-cover">
 </picture>
-        
-        <div class="related-content">
-          <h3>Professional Technical Documentation Platform</h3>
-          <p>Create, manage, and deliver high-quality technical documentation that reduces implementation time by 40% and improves developer experience</p>
+          
+          <div class="related-content">
+            <h3>Professional Technical Documentation Platform</h3>
+            <p>Create, manage, and deliver high-quality technical documentation that reduces implementation time by 40% and improves developer experience</p>
+          </div>
         </div>
       </a>
     
@@ -2533,8 +2535,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
       
       <a href="/solutions/product-documentation" class="related-card">
-        
-        <picture class="block w-full h-full">
+        <div class="card-image-wrapper">
+          
+          <picture class="block w-full h-full">
   <source type="image/webp" 
           srcset="/assets/optimized/solutions/product-docs-hero-320w.webp 320w,
                   /assets/optimized/solutions/product-docs-hero-640w.webp 640w,
@@ -2550,10 +2553,11 @@ document.addEventListener('DOMContentLoaded', function() {
        loading="lazy"
        class="w-full h-full object-cover">
 </picture>
-        
-        <div class="related-content">
-          <h3>Professional Product Documentation</h3>
-          <p>Create, manage, and deliver comprehensive product documentation that enhances user experience and reduces support inquiries by up to 65%</p>
+          
+          <div class="related-content">
+            <h3>Professional Product Documentation</h3>
+            <p>Create, manage, and deliver comprehensive product documentation that enhances user experience and reduces support inquiries by up to 65%</p>
+          </div>
         </div>
       </a>
     
@@ -2561,10 +2565,12 @@ document.addEventListener('DOMContentLoaded', function() {
     
       
       <a href="/solutions/knowledge-base" class="related-card">
-        
-        <div class="related-content">
-          <h3>Solution</h3>
-          <p>Learn more about this solution</p>
+        <div class="card-image-wrapper">
+          
+          <div class="related-content">
+            <h3>Solution</h3>
+            <p>Learn more about this solution</p>
+          </div>
         </div>
       </a>
     
@@ -3294,7 +3300,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     if (langMatch) {
       const code = langMatch[1];
-      return code === 'ja_JP' ? 'ja' : code;
+      return (code === 'jp' || code === 'ja_JP')  ? 'ja' : code;
     }
     
     return 'en';
