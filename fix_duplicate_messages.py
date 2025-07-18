@@ -183,12 +183,11 @@ def fix_duplicate_messages():
         capture_output=True,
         text=True
     )
-    
     if compile_result.returncode == 0:
         print("✅ All translations compiled successfully!")
     else:
         print(f"⚠️  Some files failed to compile: {compile_result.stderr}")
-    
+
     return success_count > 0
 
 
