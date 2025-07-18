@@ -968,7 +968,7 @@
     
     if (langMatch) {
       const code = langMatch[1];
-      return code === 'ja_JP' ? 'ja' : code;
+      return code === 'jp' || code === 'ja_JP' ? 'ja' : code;
     }
     
     return 'en';
@@ -982,7 +982,7 @@
     // Remove current language prefix if exists
     let newPath = currentPath;
     if (currentLang !== 'en') {
-      const langPrefix = currentLang === 'ja' ? '/jp/' : `/${currentLang}/`;
+      const langPrefix = currentLang === 'jp' || currentLang === 'ja_JP' ? '/ja/' : `/${currentLang}/`;
       if (currentPath.startsWith(langPrefix)) {
         newPath = currentPath.substring(langPrefix.length - 1);
       }
@@ -991,7 +991,7 @@
     // Add new language prefix
     if (langCode === 'en') {
       return newPath;
-    } else if (langCode === 'ja') {
+    } else if (currentLang === 'jp' || currentLang === 'ja_JP') {
       return '/jp' + newPath;
     } else {
       return '/' + langCode + newPath;
@@ -1101,7 +1101,7 @@
   <header class="gn">
     <nav id="topNav">
       <ul class="nv-l">
-        <li><a class="nv-lg" href="//cs" data-nomobile="">
+        <li><a class="nv-lg" href="/" data-nomobile="">
             <svg class="lg" width="32" height="40" viewBox="0 0 48 48">
               <use xlink:href="#icon-docsie"></use>
             </svg>
@@ -1156,7 +1156,7 @@
         </li> -->
 
         <span class="spacer"></span>
-        <li class="v-sm"><a href="/cs/pricing/">"Ceník"</a></li>
+        <li class="v-sm"><a href="/pricing/">"Ceník"</a></li>
 
 
 <!--        <li class="li-dd v-sm">-->
@@ -1183,7 +1183,7 @@
 <!--              &lt;!&ndash;</li>&ndash;&gt;-->
 <!--              <li>-->
 <!--                <a class="li-hdr"-->
-<!--                  href="/cs/documentation/styling_guide/">Přizpůsobení</a>-->
+<!--                  href="/documentation/styling_guide/">Přizpůsobení</a>-->
 <!--                <span>"Naučte se, jak přizpůsobit dokumenty Docsie tak, aby odpovídaly vašemu stylu a-->
 <!--                  brandingu"</span>-->
 <!--              </li>-->
@@ -1191,21 +1191,21 @@
 <!--            <ul>-->
 <!--              <li class="li-hr"><strong>Hlasově</strong></li>-->
 <!--              <li>-->
-<!--                <a class="li-hdr" href="/cs/vocally/documentation/">"Začínáme-->
+<!--                <a class="li-hdr" href="/vocally/documentation/">"Začínáme-->
 <!--                  začínáme"</a>-->
 <!--                <span>"Objevte náš jednoduchý &amp; přímočarý způsob správy uživatelské-->
 <!--                  zpětné vazby"</span>-->
 <!--              </li>-->
 <!--              <li>-->
-<!--                <a class="li-hdr" href="/cs/vocally/documentation/configuration/">Configuration</a>-->
+<!--                <a class="li-hdr" href="/vocally/documentation/configuration/">Configuration</a>-->
 <!--                <span>"Učiňte vocally součástí vašeho ekosystému"</span>-->
 <!--              </li>-->
 <!--              <li>-->
-<!--                <a class="li-hdr" href="/cs/vocally/documentation/integrations/">Integrations</a>-->
+<!--                <a class="li-hdr" href="/vocally/documentation/integrations/">Integrations</a>-->
 <!--                <span>"Integrujte své nástroje s vocally"</span>-->
 <!--              </li>-->
 <!--              <li>-->
-<!--                <a class="li-hdr" href="/cs/vocally/documentation/installation/">Installation</a>-->
+<!--                <a class="li-hdr" href="/vocally/documentation/installation/">Installation</a>-->
 <!--                <span>"Nastavit hlasově poprvé"</span>-->
 <!--              </li>-->
 <!--            </ul>-->
@@ -1236,7 +1236,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <div class="docsie-section-container" role="presentation" style="align-items: center">
             <h2 class="docsie-section-title " id="section-header-two-cfalg">To claim your <img
-                  src="https://appcdn2.docsie.io/assets/Docsie_Web_Summit.png" style="max-width: 100%; height: 34px;" /> documentation portal design credit and a 30% yearly discount, please book a call with our product expert.​
+                  src="https://appcdn2.docsie.io/assets/Docsie_Web_Summit.png" style="max-width: 100%%; height: 34px;" /> documentation portal design credit and a 30%% yearly discount, please book a call with our product expert.​
            </h2>
 
           </div>

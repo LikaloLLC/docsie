@@ -943,7 +943,7 @@
     
     if (langMatch) {
       const code = langMatch[1];
-      return code === 'ja_JP' ? 'ja' : code;
+      return code === 'jp' || code === 'ja_JP' ? 'ja' : code;
     }
     
     return 'en';
@@ -957,7 +957,7 @@
     // Remove current language prefix if exists
     let newPath = currentPath;
     if (currentLang !== 'en') {
-      const langPrefix = currentLang === 'ja' ? '/jp/' : `/${currentLang}/`;
+      const langPrefix = currentLang === 'jp' || currentLang === 'ja_JP' ? '/ja/' : `/${currentLang}/`;
       if (currentPath.startsWith(langPrefix)) {
         newPath = currentPath.substring(langPrefix.length - 1);
       }
@@ -966,7 +966,7 @@
     // Add new language prefix
     if (langCode === 'en') {
       return newPath;
-    } else if (langCode === 'ja') {
+    } else if (currentLang === 'jp' || currentLang === 'ja_JP') {
       return '/jp' + newPath;
     } else {
       return '/' + langCode + newPath;
@@ -1076,7 +1076,7 @@
   <header class="gn">
     <nav id="topNav">
       <ul class="nv-l">
-        <li><a class="nv-lg" href="//ro" data-nomobile="">
+        <li><a class="nv-lg" href="/" data-nomobile="">
             <svg class="lg" width="32" height="40" viewBox="0 0 48 48">
               <use xlink:href="#icon-docsie"></use>
             </svg>
@@ -1131,7 +1131,7 @@
         </li> -->
 
         <span class="spacer"></span>
-        <li class="v-sm"><a href="/ro/pricing/">"Prețuri "</a></li>
+        <li class="v-sm"><a href="/pricing/">"Prețuri "</a></li>
 
 
 <!--        <li class="li-dd v-sm">-->
@@ -1158,7 +1158,7 @@
 <!--              &lt;!&ndash;</li>&ndash;&gt;-->
 <!--              <li>-->
 <!--                <a class="li-hdr"-->
-<!--                  href="/ro/documentation/styling_guide/">Personalizări</a>-->
+<!--                  href="/documentation/styling_guide/">Personalizări</a>-->
 <!--                <span>"Învățați cum să personalizați documentele Docsie pentru a respecta propriul stil și-->
 <!--                  branding"</span>-->
 <!--              </li>-->
@@ -1166,21 +1166,21 @@
 <!--            <ul>-->
 <!--              <li class="li-hr"><strong>Vocal</strong></li>-->
 <!--              <li>-->
-<!--                <a class="li-hdr" href="/ro/vocally/documentation/">"Noțiuni-->
+<!--                <a class="li-hdr" href="/vocally/documentation/">"Noțiuni-->
 <!--                  de bază"</a>-->
 <!--                <span>"Descoperiți modalitatea noastră simplă &amp; directă de a gestiona feedback-ul utilizatorilor-->
 <!--                  "</span>-->
 <!--              </li>-->
 <!--              <li>-->
-<!--                <a class="li-hdr" href="/ro/vocally/documentation/configuration/">Configuration</a>-->
+<!--                <a class="li-hdr" href="/vocally/documentation/configuration/">Configuration</a>-->
 <!--                <span>"Integrați vocally în ecosistemul dumneavoastră"</span>-->
 <!--              </li>-->
 <!--              <li>-->
-<!--                <a class="li-hdr" href="/ro/vocally/documentation/integrations/">Integrations</a>-->
+<!--                <a class="li-hdr" href="/vocally/documentation/integrations/">Integrations</a>-->
 <!--                <span>"Integrați-vă instrumentele cu vocally"</span>-->
 <!--              </li>-->
 <!--              <li>-->
-<!--                <a class="li-hdr" href="/ro/vocally/documentation/installation/">Installation</a>-->
+<!--                <a class="li-hdr" href="/vocally/documentation/installation/">Installation</a>-->
 <!--                <span>"Configurare vocală pentru prima dată"</span>-->
 <!--              </li>-->
 <!--            </ul>-->

@@ -945,7 +945,7 @@
     
     if (langMatch) {
       const code = langMatch[1];
-      return code === 'ja_JP' ? 'ja' : code;
+      return code === 'jp' || code === 'ja_JP' ? 'ja' : code;
     }
     
     return 'en';
@@ -959,7 +959,7 @@
     // Remove current language prefix if exists
     let newPath = currentPath;
     if (currentLang !== 'en') {
-      const langPrefix = currentLang === 'ja' ? '/jp/' : `/${currentLang}/`;
+      const langPrefix = currentLang === 'jp' || currentLang === 'ja_JP' ? '/ja/' : `/${currentLang}/`;
       if (currentPath.startsWith(langPrefix)) {
         newPath = currentPath.substring(langPrefix.length - 1);
       }
@@ -968,7 +968,7 @@
     // Add new language prefix
     if (langCode === 'en') {
       return newPath;
-    } else if (langCode === 'ja') {
+    } else if (currentLang === 'jp' || currentLang === 'ja_JP') {
       return '/jp' + newPath;
     } else {
       return '/' + langCode + newPath;
@@ -1078,7 +1078,7 @@
   <header class="gn">
     <nav id="topNav">
       <ul class="nv-l">
-        <li><a class="nv-lg" href="//pt" data-nomobile="">
+        <li><a class="nv-lg" href="/" data-nomobile="">
             <svg class="lg" width="32" height="40" viewBox="0 0 48 48">
               <use xlink:href="#icon-docsie"></use>
             </svg>
@@ -1133,7 +1133,7 @@
         </li> -->
 
         <span class="spacer"></span>
-        <li class="v-sm"><a href="/pt/pricing/">"Preços"</a></li>
+        <li class="v-sm"><a href="/pricing/">"Preços"</a></li>
 
 
 <!--        <li class="li-dd v-sm">-->
@@ -1160,7 +1160,7 @@
 <!--              &lt;!&ndash;</li>&ndash;&gt;-->
 <!--              <li>-->
 <!--                <a class="li-hdr"-->
-<!--                  href="/pt/documentation/styling_guide/">Personalizações</a>-->
+<!--                  href="/documentation/styling_guide/">Personalizações</a>-->
 <!--                <span>"Aprenda como personalizar os documentos do Docsie para seguir seu próprio estilo e-->
 <!--                  marca"</span>-->
 <!--              </li>-->
@@ -1168,21 +1168,21 @@
 <!--            <ul>-->
 <!--              <li class="li-hr"><strong>Vocalmente</strong></li>-->
 <!--              <li>-->
-<!--                <a class="li-hdr" href="/pt/vocally/documentation/">"Começando-->
+<!--                <a class="li-hdr" href="/vocally/documentation/">"Começando-->
 <!--                  a usar"</a>-->
 <!--                <span>"Descubra nossa maneira simples &amp; direta de gerenciar feedback-->
 <!--                  do usuário"</span>-->
 <!--              </li>-->
 <!--              <li>-->
-<!--                <a class="li-hdr" href="/pt/vocally/documentation/configuration/">Configuration</a>-->
+<!--                <a class="li-hdr" href="/vocally/documentation/configuration/">Configuration</a>-->
 <!--                <span>"Torne o vocally parte do seu ecossistema"</span>-->
 <!--              </li>-->
 <!--              <li>-->
-<!--                <a class="li-hdr" href="/pt/vocally/documentation/integrations/">Integrations</a>-->
+<!--                <a class="li-hdr" href="/vocally/documentation/integrations/">Integrations</a>-->
 <!--                <span>Integre suas ferramentas com vocally</span>-->
 <!--              </li>-->
 <!--              <li>-->
-<!--                <a class="li-hdr" href="/pt/vocally/documentation/installation/">Installation</a>-->
+<!--                <a class="li-hdr" href="/vocally/documentation/installation/">Installation</a>-->
 <!--                <span>"Configurar vocalmente pela primeira vez"</span>-->
 <!--              </li>-->
 <!--            </ul>-->
@@ -1267,10 +1267,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <div>
                   <h3>AI-Writer Plus</h3>
                   <p class="meta">
-                   #-#-#-#-#  messages.po (PROJECT VERSION)  #-#-#-#-#
-Se você é uma empresa de software em crescimento que precisa traduzir e manter múltiplas versões da documentação do seu produto, então este é o plano ideal para você.
-#-#-#-#-#  messages.po (PROJECT VERSION)  #-#-#-#-#
-"Se você é uma empresa de software em crescimento que precisa traduzir e manter múltiplas versões da documentação do seu produto, então este é o plano ideal para você."
+                   Se você é uma empresa de software em crescimento que precisa traduzir e ""manter múltiplas versões da documentação do seu produto, então este é o ""plano ideal para você.
+"#: src/self-writing-documentation/pricing/index.html:7
                   </p>
                 </div>
                 <div class="tier-description">
@@ -1284,10 +1282,8 @@ Se você é uma empresa de software em crescimento que precisa traduzir e manter
                     <li>Até 20 livros de documentação</li>
                     <li>"Até 3 traduções (até 15.000 palavras por livro)"</li>
                     <li>Até 10 revisões por mês</li>
-                    <li>#-#-#-#-#  messages.po (PROJECT VERSION)  #-#-#-#-#
-"Proteger livro com senha/Proteger estantes com senha"
-#-#-#-#-#  messages.po (PROJECT VERSION)  #-#-#-#-#
-"Proteger livro com senha/Proteger prateleiras com senha"</li>
+                    <li>"Proteger livro com senha/Proteger estantes com senha"
+"#: src/self-writing-documentation/pricing/index.html:8</li>
                     <li>"Defina sua própria folha de design/estilo para documentação publicada"</li>
                     <li>Usar JavaScript Personalizado</li>
                     <li>"Adapte o layout do site de documentação de acordo com os requisitos do seu departamento de UX"</li>

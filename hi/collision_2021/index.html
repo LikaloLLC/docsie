@@ -968,7 +968,7 @@
     
     if (langMatch) {
       const code = langMatch[1];
-      return code === 'ja_JP' ? 'ja' : code;
+      return code === 'jp' || code === 'ja_JP' ? 'ja' : code;
     }
     
     return 'en';
@@ -982,7 +982,7 @@
     // Remove current language prefix if exists
     let newPath = currentPath;
     if (currentLang !== 'en') {
-      const langPrefix = currentLang === 'ja' ? '/jp/' : `/${currentLang}/`;
+      const langPrefix = currentLang === 'jp' || currentLang === 'ja_JP' ? '/ja/' : `/${currentLang}/`;
       if (currentPath.startsWith(langPrefix)) {
         newPath = currentPath.substring(langPrefix.length - 1);
       }
@@ -991,7 +991,7 @@
     // Add new language prefix
     if (langCode === 'en') {
       return newPath;
-    } else if (langCode === 'ja') {
+    } else if (currentLang === 'jp' || currentLang === 'ja_JP') {
       return '/jp' + newPath;
     } else {
       return '/' + langCode + newPath;
@@ -1101,7 +1101,7 @@
   <header class="gn">
     <nav id="topNav">
       <ul class="nv-l">
-        <li><a class="nv-lg" href="//hi" data-nomobile="">
+        <li><a class="nv-lg" href="/" data-nomobile="">
             <svg class="lg" width="32" height="40" viewBox="0 0 48 48">
               <use xlink:href="#icon-docsie"></use>
             </svg>
@@ -1156,7 +1156,7 @@
         </li> -->
 
         <span class="spacer"></span>
-        <li class="v-sm"><a href="/hi/pricing/">मूल्य निर्धारण</a></li>
+        <li class="v-sm"><a href="/pricing/">मूल्य निर्धारण</a></li>
 
 
 <!--        <li class="li-dd v-sm">-->
@@ -1183,7 +1183,7 @@
 <!--              &lt;!&ndash;</li>&ndash;&gt;-->
 <!--              <li>-->
 <!--                <a class="li-hdr"-->
-<!--                  href="/hi/documentation/styling_guide/">अनुकूलन</a>-->
+<!--                  href="/documentation/styling_guide/">अनुकूलन</a>-->
 <!--                <span>"जानें कि अपनी स्वयं की शैली और-->
 <!--                  ब्रांडिंग का पालन करने के लिए Docsie docs को कैसे अनुकूलित करें"</span>-->
 <!--              </li>-->
@@ -1191,21 +1191,21 @@
 <!--            <ul>-->
 <!--              <li class="li-hr"><strong>मौखिक रूप से</strong></li>-->
 <!--              <li>-->
-<!--                <a class="li-hdr" href="/hi/vocally/documentation/">"शुरुआत-->
+<!--                <a class="li-hdr" href="/vocally/documentation/">"शुरुआत-->
 <!--                  करना"</a>-->
 <!--                <span>"हमारे सरल &amp; सीधे तरीके को खोजें जो उपयोगकर्ता-->
 <!--                  फीडबैक को प्रबंधित करने के लिए है"</span>-->
 <!--              </li>-->
 <!--              <li>-->
-<!--                <a class="li-hdr" href="/hi/vocally/documentation/configuration/">Configuration</a>-->
+<!--                <a class="li-hdr" href="/vocally/documentation/configuration/">Configuration</a>-->
 <!--                <span>"Vocally को अपने ecosystem का हिस्सा बनाएं"</span>-->
 <!--              </li>-->
 <!--              <li>-->
-<!--                <a class="li-hdr" href="/hi/vocally/documentation/integrations/">Integrations</a>-->
+<!--                <a class="li-hdr" href="/vocally/documentation/integrations/">Integrations</a>-->
 <!--                <span>"अपने टूल्स को vocally के साथ एकीकृत करें"</span>-->
 <!--              </li>-->
 <!--              <li>-->
-<!--                <a class="li-hdr" href="/hi/vocally/documentation/installation/">Installation</a>-->
+<!--                <a class="li-hdr" href="/vocally/documentation/installation/">Installation</a>-->
 <!--                <span>पहली बार वॉयस सेट-अप करें</span>-->
 <!--              </li>-->
 <!--            </ul>-->
@@ -1256,7 +1256,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               </span>
               <span class="st-el">
                 <img class="st-icon" src="../assets/collision_2020/Discount.svg" />
-                <div class="cp-2"><b>30% discount on Business Plan</b></div>
+                <div class="cp-2"><b>30%% discount on Business Plan</b></div>
               </span>
               <span class="st-el">
                 <img class="st-icon" src="../assets/collision_2020/Money.svg" />

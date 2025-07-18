@@ -968,7 +968,7 @@
     
     if (langMatch) {
       const code = langMatch[1];
-      return code === 'ja_JP' ? 'ja' : code;
+      return code === 'jp' || code === 'ja_JP' ? 'ja' : code;
     }
     
     return 'en';
@@ -982,7 +982,7 @@
     // Remove current language prefix if exists
     let newPath = currentPath;
     if (currentLang !== 'en') {
-      const langPrefix = currentLang === 'ja' ? '/jp/' : `/${currentLang}/`;
+      const langPrefix = currentLang === 'jp' || currentLang === 'ja_JP' ? '/ja/' : `/${currentLang}/`;
       if (currentPath.startsWith(langPrefix)) {
         newPath = currentPath.substring(langPrefix.length - 1);
       }
@@ -991,7 +991,7 @@
     // Add new language prefix
     if (langCode === 'en') {
       return newPath;
-    } else if (langCode === 'ja') {
+    } else if (currentLang === 'jp' || currentLang === 'ja_JP') {
       return '/jp' + newPath;
     } else {
       return '/' + langCode + newPath;
@@ -1101,7 +1101,7 @@
   <header class="gn">
     <nav id="topNav">
       <ul class="nv-l">
-        <li><a class="nv-lg" href="//fr" data-nomobile="">
+        <li><a class="nv-lg" href="/" data-nomobile="">
             <svg class="lg" width="32" height="40" viewBox="0 0 48 48">
               <use xlink:href="#icon-docsie"></use>
             </svg>
@@ -1156,7 +1156,7 @@
         </li> -->
 
         <span class="spacer"></span>
-        <li class="v-sm"><a href="/fr/pricing/">Tarification</a></li>
+        <li class="v-sm"><a href="/pricing/">Tarification</a></li>
 
 
 <!--        <li class="li-dd v-sm">-->
@@ -1183,7 +1183,7 @@
 <!--              &lt;!&ndash;</li>&ndash;&gt;-->
 <!--              <li>-->
 <!--                <a class="li-hdr"-->
-<!--                  href="/fr/documentation/styling_guide/">Personnalisations</a>-->
+<!--                  href="/documentation/styling_guide/">Personnalisations</a>-->
 <!--                <span>"Apprenez à personnaliser les documents Docsie pour suivre votre propre style et-->
 <!--                  image de marque"</span>-->
 <!--              </li>-->
@@ -1191,21 +1191,21 @@
 <!--            <ul>-->
 <!--              <li class="li-hr"><strong>Vocalement</strong></li>-->
 <!--              <li>-->
-<!--                <a class="li-hdr" href="/fr/vocally/documentation/">"Commencer-->
+<!--                <a class="li-hdr" href="/vocally/documentation/">"Commencer-->
 <!--                  "</a>-->
 <!--                <span>"Découvrez notre méthode simple &amp; directe pour gérer les retours-->
 <!--                  utilisateur"</span>-->
 <!--              </li>-->
 <!--              <li>-->
-<!--                <a class="li-hdr" href="/fr/vocally/documentation/configuration/">Configuration</a>-->
+<!--                <a class="li-hdr" href="/vocally/documentation/configuration/">Configuration</a>-->
 <!--                <span>"Intégrez vocally à votre écosystème"</span>-->
 <!--              </li>-->
 <!--              <li>-->
-<!--                <a class="li-hdr" href="/fr/vocally/documentation/integrations/">Integrations</a>-->
+<!--                <a class="li-hdr" href="/vocally/documentation/integrations/">Integrations</a>-->
 <!--                <span>Intégrez vos outils avec vocally</span>-->
 <!--              </li>-->
 <!--              <li>-->
-<!--                <a class="li-hdr" href="/fr/vocally/documentation/installation/">Installation</a>-->
+<!--                <a class="li-hdr" href="/vocally/documentation/installation/">Installation</a>-->
 <!--                <span>Configuration vocale pour la première fois</span>-->
 <!--              </li>-->
 <!--            </ul>-->
@@ -1234,10 +1234,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <main id="main">
   <div class="pure-docsie ready gn" style="max-width: 100%;">
     <div class="docsie-section-container" role="presentation" style="align-items: center">
-            <h2 class="docsie-section-title " id="section-header-two-cfalg">#-#-#-#-#  messages.po (PROJECT VERSION)  #-#-#-#-#
-Docsie a-t-il suscité votre intérêt ?
-#-#-#-#-#  messages.po (PROJECT VERSION)  #-#-#-#-#
-Docsie a-t-il éveillé votre intérêt ?</h2>
+            <h2 class="docsie-section-title " id="section-header-two-cfalg">Docsie a-t-il suscité votre intérêt ?
+"#: src/investors/index.html:3</h2>
             <p class="docsie-paragraph" id="unstyled-b2r7t">Cliquez sur le <a href="/investors/stay_up_to_date/" style="color: #b50000">lien suivant</a> pour rester informé de nos progrès.</p>
         <p class="docsie-paragraph" id="unstyled-b2r7t">Alternativement, n'hésitez pas à planifier un appel rapide avec l'équipe fondatrice en utilisant le calendrier ci-dessous.</p>
           </div>

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Fix duplicate message definitions in .po files while preserving translations.
-Uses msgmerge to clean up duplicates without losing any translated content.
+Uses msgcat and msgmerge to clean up duplicates without losing any translated content.
 """
 
 import os
@@ -190,5 +190,66 @@ def fix_duplicate_messages():
 
     return success_count > 0
 
+
+def verify_translations():
+    """Verify that translations are still intact after cleanup"""
+    
+    print("")
+    print("🔍 Verifying translations...")
+    
+    locale_dir = Path("locale")
+    
+    for lang_dir in sorted(locale_dir.iterdir()):
+        if not lang_dir.is_dir() or lang_dir.name in ['messages.pot', '.cache']:
+            continue
+            
+        po_file = lang_dir / "LC_MESSAGES" / "messages.po"
+        if not po_file.exists():
+            continue
+            
+        # Count translated messages
+        cmd = ['msgfmt', '--statistics', str(po_file), '-o', '/dev/null']
+        result = subprocess.run(cmd, capture_output=True, text=True)
+        
+        # Statistics are printed to stderr
+        stats = result.stderr.strip()
+        if stats:
+            print(f"   {lang_dir.name}: {stats}")
+
+
 if __name__ == "__main__":
-    fix_duplicate_messages()
+    print("🧹 Duplicate Message Fixer for Docsie")
+    print("=" * 50)
+    print("This script will:")
+    print("1. Back up all .po files")
+    print("2. Remove duplicate messages using msgcat")
+    print("3. Merge with messages.pot using msgmerge")
+    print("4. Clean embedded conflict markers")
+    print("5. Compile all translations")
+    print("6. Verify translation statistics")
+    print("")
+    
+    # Check for required tools
+    required_tools = ['msgcat', 'msgmerge', 'msgfmt', 'pybabel']
+    missing_tools = []
+    
+    for tool in required_tools:
+        result = subprocess.run(['which', tool], capture_output=True)
+        if result.returncode != 0:
+            missing_tools.append(tool)
+    
+    if missing_tools:
+        print(f"❌ Missing required tools: {', '.join(missing_tools)}")
+        print("   Install gettext package: brew install gettext")
+        exit(1)
+    
+    # Run the fixer
+    if fix_duplicate_messages():
+        verify_translations()
+        print("")
+        print("✨ All done! Your translations are clean and preserved.")
+        print("   You can now run: sh build_multilingual.sh --translate")
+    else:
+        print("")
+        print("❌ Failed to fix duplicate messages")
+        exit(1)

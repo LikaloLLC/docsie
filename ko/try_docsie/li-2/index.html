@@ -947,7 +947,7 @@
     
     if (langMatch) {
       const code = langMatch[1];
-      return code === 'ja_JP' ? 'ja' : code;
+      return code === 'jp' || code === 'ja_JP' ? 'ja' : code;
     }
     
     return 'en';
@@ -961,7 +961,7 @@
     // Remove current language prefix if exists
     let newPath = currentPath;
     if (currentLang !== 'en') {
-      const langPrefix = currentLang === 'ja' ? '/jp/' : `/${currentLang}/`;
+      const langPrefix = currentLang === 'jp' || currentLang === 'ja_JP' ? '/ja/' : `/${currentLang}/`;
       if (currentPath.startsWith(langPrefix)) {
         newPath = currentPath.substring(langPrefix.length - 1);
       }
@@ -970,7 +970,7 @@
     // Add new language prefix
     if (langCode === 'en') {
       return newPath;
-    } else if (langCode === 'ja') {
+    } else if (currentLang === 'jp' || currentLang === 'ja_JP') {
       return '/jp' + newPath;
     } else {
       return '/' + langCode + newPath;
@@ -1080,7 +1080,7 @@
   <header class="gn">
     <nav id="topNav">
       <ul class="nv-l">
-        <li><a class="nv-lg" href="//ko" data-nomobile="">
+        <li><a class="nv-lg" href="/" data-nomobile="">
             <svg class="lg" width="32" height="40" viewBox="0 0 48 48">
               <use xlink:href="#icon-docsie"></use>
             </svg>
@@ -1165,10 +1165,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <!-- <h2 class="docsie-section-title ">Tiled section</h2> -->
             <h2 class="docsie-section-title ">"통합 문서로 기업을 하나로 연결합니다"</h2>
             <div class="docsie-checker-cell">
-              <p class="docsie-paragraph" id="unstyled-aphro">#-#-#-#-#  messages.po (PROJECT VERSION)  #-#-#-#-#
-"기업들은 Docsie를 통해 제품 문서화 워크플로를 간소화하고 여러 문서화 도구에 대한 의존도를 줄임으로써 시간을 절약합니다."
-#-#-#-#-#  messages.po (PROJECT VERSION)  #-#-#-#-#
-"기업들은 Docsie를 통해 제품 문서화 워크플로우를 간소화하고 여러 문서화 도구에 대한 의존도를 줄임으로써 시간을 절약합니다."</p>
+              <p class="docsie-paragraph" id="unstyled-aphro">"기업들은 Docsie를 통해 제품 문서화 워크플로를 간소화하고 여러 문서화 도구""에 대한 의존도를 줄임으로써 시간을 절약합니다."
+"#: src/self-writing-documentation/index.html:10</p>
               <!--<a href="http://docsie.io">Learn More <svg class="inl" width="22" height="22" viewBox="0 0 20 20">-->
               <!--<use xlink:href="#icon-arrow-right" /></svg></a>-->
             </div>

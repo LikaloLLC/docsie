@@ -947,7 +947,7 @@
     
     if (langMatch) {
       const code = langMatch[1];
-      return code === 'ja_JP' ? 'ja' : code;
+      return code === 'jp' || code === 'ja_JP' ? 'ja' : code;
     }
     
     return 'en';
@@ -961,7 +961,7 @@
     // Remove current language prefix if exists
     let newPath = currentPath;
     if (currentLang !== 'en') {
-      const langPrefix = currentLang === 'ja' ? '/jp/' : `/${currentLang}/`;
+      const langPrefix = currentLang === 'jp' || currentLang === 'ja_JP' ? '/ja/' : `/${currentLang}/`;
       if (currentPath.startsWith(langPrefix)) {
         newPath = currentPath.substring(langPrefix.length - 1);
       }
@@ -970,7 +970,7 @@
     // Add new language prefix
     if (langCode === 'en') {
       return newPath;
-    } else if (langCode === 'ja') {
+    } else if (currentLang === 'jp' || currentLang === 'ja_JP') {
       return '/jp' + newPath;
     } else {
       return '/' + langCode + newPath;
@@ -1080,7 +1080,7 @@
   <header class="gn">
     <nav id="topNav">
       <ul class="nv-l">
-        <li><a class="nv-lg" href="//fi" data-nomobile="">
+        <li><a class="nv-lg" href="/" data-nomobile="">
             <svg class="lg" width="32" height="40" viewBox="0 0 48 48">
               <use xlink:href="#icon-docsie"></use>
             </svg>
@@ -1135,7 +1135,7 @@
         </li> -->
 
         <span class="spacer"></span>
-        <li class="v-sm"><a href="/fi/pricing/">Hinnoittelu</a></li>
+        <li class="v-sm"><a href="/pricing/">Hinnoittelu</a></li>
 
 
 <!--        <li class="li-dd v-sm">-->
@@ -1162,7 +1162,7 @@
 <!--              &lt;!&ndash;</li>&ndash;&gt;-->
 <!--              <li>-->
 <!--                <a class="li-hdr"-->
-<!--                  href="/fi/documentation/styling_guide/">Mukautukset</a>-->
+<!--                  href="/documentation/styling_guide/">Mukautukset</a>-->
 <!--                <span>"Opi kuinka mukauttaa Docsie-dokumentteja noudattamaan omaa tyyliäsi ja-->
 <!--                  brändiäsi"</span>-->
 <!--              </li>-->
@@ -1170,21 +1170,21 @@
 <!--            <ul>-->
 <!--              <li class="li-hr"><strong>Äänellisesti</strong></li>-->
 <!--              <li>-->
-<!--                <a class="li-hdr" href="/fi/vocally/documentation/">"Aloittaminen-->
+<!--                <a class="li-hdr" href="/vocally/documentation/">"Aloittaminen-->
 <!--                  aloittaminen"</a>-->
 <!--                <span>"Tutustu yksinkertaiseen &amp; suoraviivaiseen tapaamme hallita käyttäjien-->
 <!--                  palautetta"</span>-->
 <!--              </li>-->
 <!--              <li>-->
-<!--                <a class="li-hdr" href="/fi/vocally/documentation/configuration/">Configuration</a>-->
+<!--                <a class="li-hdr" href="/vocally/documentation/configuration/">Configuration</a>-->
 <!--                <span>"Tee vocallysta osa ekosysteemiäsi"</span>-->
 <!--              </li>-->
 <!--              <li>-->
-<!--                <a class="li-hdr" href="/fi/vocally/documentation/integrations/">Integrations</a>-->
+<!--                <a class="li-hdr" href="/vocally/documentation/integrations/">Integrations</a>-->
 <!--                <span>"Integroi työkalusi vocally-palvelun kanssa"</span>-->
 <!--              </li>-->
 <!--              <li>-->
-<!--                <a class="li-hdr" href="/fi/vocally/documentation/installation/">Installation</a>-->
+<!--                <a class="li-hdr" href="/vocally/documentation/installation/">Installation</a>-->
 <!--                <span>"Määritä ääniohjaus ensimmäistä kertaa"</span>-->
 <!--              </li>-->
 <!--            </ul>-->
