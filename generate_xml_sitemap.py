@@ -115,7 +115,19 @@ if __name__ == '__main__':
     skip_flows = ['src', '.blog', '.git', '.idea', '__pycache__', 'venv', '.venv', 
                   'node_modules', 'staticjinja', 'blogvi', 'utils', 'locale', 
                   '.yaml_batch_status', '.yaml_translation_cache', 'backups',
-                  'scss', 'assets', 'content', 'eml', 'ui']
+                  'scss', 'assets', 'content', 'eml', 'ui', 'static', 'scripts',
+                  'styles', 'pricing_v2', 'modern-home']
+    
+    # Skip untranslated/old pages
+    skip_pages = ['validation_page', '2020_websummit', 'collision_2020', 'collision_2021',
+                  'codepen', 'carbon', 'affiliate-program', 'docsie_manager', 
+                  'docsie_publishing', 'docsie_product', 'docsie_vocally',
+                  'docsie-free-consultation', 'discovery_call', 'feedback_preview_demo',
+                  'gather_feedback', 'incident', 'manager', 'markdown_editor', 'pilot',
+                  'press', 'release_notes', 'publish_documentation', 'self-writing-documentation',
+                  'see-it-in-action', 'software_documentation', 'collaboration_software',
+                  'careers', 'cookies', 'investors', 'resources', 'terms', 'support',
+                  'privacy', 'about', 'features', 'documentation', 'try_docsie']
     
     # Collect all URLs grouped by base path
     url_groups = {}
@@ -132,6 +144,12 @@ if __name__ == '__main__':
             # Skip root-level index.html
             if rel_path == '.':
                 rel_path = ''
+                
+            # Check if this path contains any skip_pages
+            path_parts = rel_path.split(os.sep) if rel_path else []
+            if any(skip_page in path_parts for skip_page in skip_pages):
+                excluded_count += 1
+                continue
                 
             # Check if index.html is tracked by git
             index_path = os.path.join(rel_path, 'index.html') if rel_path else 'index.html'
