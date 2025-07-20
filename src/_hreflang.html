@@ -6,8 +6,8 @@
 {% set path_parts = current_path.strip('/').split('/') if current_path else [] %}
 {% set base_path = "" %}
 
-{# Check if first part is a language code #}
-{% if path_parts and path_parts[0] in ['de', 'es', 'fr', 'jp', 'ko', 'pt', 'ar', 'bn', 'cs', 'da', 'el', 'fi', 'he', 'hi', 'hu', 'id', 'is', 'it', 'ja', 'nl', 'no', 'pl', 'ro', 'ru', 'sv', 'tr', 'uk', 'zh'] %}
+{# Check if first part is a language code - only enabled languages #}
+{% if path_parts and path_parts[0] in ['de', 'es', 'fr', 'jp', 'ko', 'pt', 'ar', 'da', 'he', 'it', 'nl', 'no', 'ru', 'sv', 'zh'] %}
     {% set base_path = '/'.join(path_parts[1:]) %}
 {% else %}
     {% set base_path = current_path.strip('/') if current_path else '' %}
@@ -17,31 +17,19 @@
 <link rel="alternate" hreflang="en" href="{{ base_url }}/{% if base_path %}{{ base_path }}/{% endif %}" />
 <link rel="alternate" hreflang="x-default" href="{{ base_url }}/{% if base_path %}{{ base_path }}/{% endif %}" />
 
-{# All language versions #}
+{# Only enabled language versions (16 languages) #}
 <link rel="alternate" hreflang="ar" href="{{ base_url }}/ar/{% if base_path %}{{ base_path }}/{% endif %}" />
-<link rel="alternate" hreflang="bn" href="{{ base_url }}/bn/{% if base_path %}{{ base_path }}/{% endif %}" />
-<link rel="alternate" hreflang="cs" href="{{ base_url }}/cs/{% if base_path %}{{ base_path }}/{% endif %}" />
 <link rel="alternate" hreflang="da" href="{{ base_url }}/da/{% if base_path %}{{ base_path }}/{% endif %}" />
 <link rel="alternate" hreflang="de" href="{{ base_url }}/de/{% if base_path %}{{ base_path }}/{% endif %}" />
-<link rel="alternate" hreflang="el" href="{{ base_url }}/el/{% if base_path %}{{ base_path }}/{% endif %}" />
 <link rel="alternate" hreflang="es" href="{{ base_url }}/es/{% if base_path %}{{ base_path }}/{% endif %}" />
-<link rel="alternate" hreflang="fi" href="{{ base_url }}/fi/{% if base_path %}{{ base_path }}/{% endif %}" />
 <link rel="alternate" hreflang="fr" href="{{ base_url }}/fr/{% if base_path %}{{ base_path }}/{% endif %}" />
 <link rel="alternate" hreflang="he" href="{{ base_url }}/he/{% if base_path %}{{ base_path }}/{% endif %}" />
-<link rel="alternate" hreflang="hi" href="{{ base_url }}/hi/{% if base_path %}{{ base_path }}/{% endif %}" />
-<link rel="alternate" hreflang="hu" href="{{ base_url }}/hu/{% if base_path %}{{ base_path }}/{% endif %}" />
-<link rel="alternate" hreflang="id" href="{{ base_url }}/id/{% if base_path %}{{ base_path }}/{% endif %}" />
-<link rel="alternate" hreflang="is" href="{{ base_url }}/is/{% if base_path %}{{ base_path }}/{% endif %}" />
 <link rel="alternate" hreflang="it" href="{{ base_url }}/it/{% if base_path %}{{ base_path }}/{% endif %}" />
 <link rel="alternate" hreflang="ja" href="{{ base_url }}/jp/{% if base_path %}{{ base_path }}/{% endif %}" />
 <link rel="alternate" hreflang="ko" href="{{ base_url }}/ko/{% if base_path %}{{ base_path }}/{% endif %}" />
 <link rel="alternate" hreflang="nl" href="{{ base_url }}/nl/{% if base_path %}{{ base_path }}/{% endif %}" />
 <link rel="alternate" hreflang="no" href="{{ base_url }}/no/{% if base_path %}{{ base_path }}/{% endif %}" />
-<link rel="alternate" hreflang="pl" href="{{ base_url }}/pl/{% if base_path %}{{ base_path }}/{% endif %}" />
 <link rel="alternate" hreflang="pt" href="{{ base_url }}/pt/{% if base_path %}{{ base_path }}/{% endif %}" />
-<link rel="alternate" hreflang="ro" href="{{ base_url }}/ro/{% if base_path %}{{ base_path }}/{% endif %}" />
 <link rel="alternate" hreflang="ru" href="{{ base_url }}/ru/{% if base_path %}{{ base_path }}/{% endif %}" />
 <link rel="alternate" hreflang="sv" href="{{ base_url }}/sv/{% if base_path %}{{ base_path }}/{% endif %}" />
-<link rel="alternate" hreflang="tr" href="{{ base_url }}/tr/{% if base_path %}{{ base_path }}/{% endif %}" />
-<link rel="alternate" hreflang="uk" href="{{ base_url }}/uk/{% if base_path %}{{ base_path }}/{% endif %}" />
 <link rel="alternate" hreflang="zh" href="{{ base_url }}/zh/{% if base_path %}{{ base_path }}/{% endif %}" />
