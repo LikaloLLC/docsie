@@ -1,0 +1,118 @@
+/* Import design tokens if not already loaded */
+@import url('/styles/design-tokens.css');
+
+/* 🔁 Existing section layout */
+.related-content {
+  margin: 5rem auto;
+  max-width: 1200px;
+  padding: 0 1rem;
+}
+
+.related-content h2 {
+  font-size: 2.25rem;
+  margin-bottom: 2.5rem;
+  color: #1a1a1a;
+  font-weight: 600;
+  text-align: center;
+}
+
+.related-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  margin: 0 auto;
+}
+
+.related-card {
+  display: block;
+  text-decoration: none;
+  background-color: var(--bg-primary);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  height: 100%;
+  position: relative;
+}
+
+/* ✨ Wrapper to contain image and overlay */
+.card-image-wrapper {
+  position: relative;
+}
+
+.card-image-wrapper picture,
+.card-image-wrapper img {
+  display: block;
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+/* ✨ Overlay styling for related-content inside image */
+.card-image-wrapper .related-content {
+  padding: 1rem 1.5rem;
+  /* position: absolute; */
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.related-card:hover img,
+.card-image-wrapper:hover img {
+  transform: scale(1.03);
+}
+
+/* 🔁 Non-overlay content padding */
+.related-card > .related-content {
+  padding: 1.75rem;
+  margin-top: 0;
+  display: flex;
+  flex-direction: column;
+  height: calc(100% - 220px);
+}
+
+/* Text content */
+.related-card h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 0 0 0.75rem 0;
+}
+
+.card-image-wrapper .related-content h3,
+.card-image-wrapper .related-content p {
+  margin: 0;
+}
+
+.related-card p {
+  font-size: 1rem;
+  color: #4a5568;
+  line-height: 1.6;
+  margin: 0;
+  flex-grow: 1;
+}
+
+/* 📱 Responsive styles */
+@media screen and (max-width: 768px) {
+  .related-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .related-content {
+    margin: 3rem auto;
+  }
+
+  .related-content h2 {
+    font-size: 1.875rem;
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .related-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

@@ -1,0 +1,346 @@
+/* Import design tokens if not already loaded */
+@import url('/styles/design-tokens.css');
+
+/* Feature Grid Component v2 Styles */
+
+.feature-grid-v2 {
+  position: relative;
+}
+
+/* Feature Card Base Styles */
+.feature-card {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.feature-inner {
+  height: 100%;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  position: relative;
+  transition: all var(--transition-slow);
+}
+
+.feature-inner:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
+}
+
+/* Feature Icon Animations */
+.feature-icon > div {
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.feature-card:hover .feature-icon > div {
+  transform: scale(1.1) rotate(3deg);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+/* Background Patterns */
+.feature-inner svg {
+  transition: opacity 0.3s ease;
+}
+
+.feature-inner:hover svg {
+  opacity: 0.1;
+}
+
+/* Content Animation */
+.feature-inner h3 {
+  transition: color 0.3s ease;
+}
+
+.feature-inner p {
+  transition: all var(--transition-slow);
+}
+
+/* List Item Animations */
+.feature-inner ul li {
+  transition: all var(--transition-base);
+  transform: translateX(0);
+}
+
+.feature-inner:hover ul li {
+  transform: translateX(4px);
+}
+
+.feature-inner ul li:nth-child(1) {
+  transition-delay: 0.05s;
+}
+
+.feature-inner ul li:nth-child(2) {
+  transition-delay: 0.1s;
+}
+
+.feature-inner ul li:nth-child(3) {
+  transition-delay: 0.15s;
+}
+
+/* CTA Link Animations */
+.feature-inner a {
+  transition: all var(--transition-slow);
+  position: relative;
+}
+
+.feature-inner a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: currentColor;
+  transition: width 0.3s ease;
+}
+
+.feature-inner:hover a::after {
+  width: 100%;
+}
+
+/* Staggered Animation */
+.feature-card:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.feature-card:nth-child(2) {
+  animation-delay: 0.15s;
+}
+
+.feature-card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.feature-card:nth-child(4) {
+  animation-delay: 0.45s;
+}
+
+/* Gradient Border Animation */
+.feature-inner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 100%);
+  border-radius: var(--radius-2xl);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.feature-inner:hover::before {
+  opacity: 1;
+}
+
+/* Individual Card Hover Effects */
+/* Knowledge Base Card */
+.feature-card:nth-child(1) .feature-inner:hover {
+  background: linear-gradient(135deg, #dbeafe 0%, #c7d2fe 100%);
+  border-color: var(--color-brand-secondary-light);
+}
+
+/* Product Documentation Card */
+.feature-card:nth-child(2) .feature-inner:hover {
+  background: linear-gradient(135deg, #fae8ff 0%, #fed7e2 100%);
+  border-color: #8b5cf6;
+}
+
+/* SOPs Card */
+.feature-card:nth-child(3) .feature-inner:hover {
+  background: linear-gradient(135deg, #dcfce7 0%, #a7f3d0 100%);
+  border-color: #10b981;
+}
+
+/* AI Chatbot Card */
+.feature-card:nth-child(4) .feature-inner:hover {
+  background: linear-gradient(135deg, #cffafe 0%, #bfdbfe 100%);
+  border-color: #06b6d4;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+  .feature-grid-v2 .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .feature-grid-v2 .grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .feature-inner {
+    padding: 1.5rem;
+  }
+  
+  .feature-icon > div {
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+  
+  .feature-icon svg {
+    width: 1.75rem;
+    height: 1.75rem;
+  }
+  
+  .feature-inner h3 {
+    font-size: 1.25rem;
+  }
+  
+  .feature-inner p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .feature-grid-v2 {
+    padding: 3rem 0;
+  }
+  
+  .feature-inner {
+    padding: 1.25rem;
+  }
+  
+  .feature-grid-v2 h2 {
+    font-size: 2rem;
+  }
+  
+  .feature-grid-v2 .text-xl {
+    font-size: 1.125rem;
+  }
+}
+
+/* Dark Mode Support */
+/* Dark mode automatically handled by design tokens */
+  
+  .feature-grid-v2 h2 {
+    background: linear-gradient(135deg, #f9fafb 0%, #e5e7eb 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .feature-grid-v2 > div > div > p {
+    color: var(--color-neutral-300);
+  }
+  
+  .feature-inner {
+    background: rgba(31, 41, 55, 0.8) !important;
+    border-color: rgba(75, 85, 99, 0.3) !important;
+  }
+  
+  .feature-inner:hover {
+    background: rgba(31, 41, 55, 0.9) !important;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+  }
+  
+  .feature-inner h3 {
+    color: var(--color-neutral-50);
+  }
+  
+  .feature-inner p {
+    color: var(--color-neutral-300);
+  }
+  
+  .feature-inner ul li {
+    color: var(--color-neutral-200);
+  }
+}
+
+/* Performance Optimizations */
+.feature-card {
+  contain: layout style paint;
+  will-change: transform, opacity;
+}
+
+.feature-inner {
+  contain: layout style paint;
+  will-change: transform;
+}
+
+.feature-icon > div {
+  will-change: transform;
+}
+
+/* Focus States for Accessibility */
+.feature-inner:focus-within {
+  outline: 2px solid rgba(59, 130, 246, 0.6);
+  outline-offset: 2px;
+}
+
+.feature-inner a:focus {
+  outline: 2px solid rgba(59, 130, 246, 0.6);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Reduced Motion for Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .feature-card,
+  .feature-inner,
+  .feature-icon > div,
+  .feature-inner h3,
+  .feature-inner p,
+  .feature-inner ul li,
+  .feature-inner a {
+    transition: none;
+    animation: none;
+  }
+  
+  .feature-inner:hover {
+    transform: none;
+  }
+  
+  .feature-card:hover .feature-icon > div {
+    transform: none;
+  }
+  
+  .feature-inner:hover ul li {
+    transform: none;
+  }
+}
+
+/* Loading Animation */
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+.feature-inner.loading {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 1000px 100%;
+  animation: shimmer 2s infinite;
+}
+
+/* Hover Glow Effects */
+.feature-card:hover .feature-inner {
+  box-shadow: 0 25px 50px rgba(59, 130, 246, 0.1), 
+              0 0 0 1px rgba(59, 130, 246, 0.1),
+              inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+/* Interactive Elements */
+.feature-inner:active {
+  transform: translateY(-4px);
+}
+
+.feature-inner a:hover {
+  text-decoration: none;
+}
+
+/* Custom Checkmark Animation */
+.feature-inner ul li svg {
+  transition: all var(--transition-base);
+}
+
+.feature-inner:hover ul li svg {
+  transform: scale(1.2);
+  filter: drop-shadow(0 2px 4px rgba(16, 185, 129, 0.3));
+}

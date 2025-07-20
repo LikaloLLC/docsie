@@ -1,0 +1,83 @@
+/* Import design tokens if not already loaded */
+@import url('/styles/design-tokens.css');
+
+/* Modern Testimonials Section v2 Styles */
+
+/* Marquee animation */
+.testimonial-marquee {
+  --gap: 1rem;
+  gap: var(--gap);
+  flex-direction: row;
+  --duration: 30s;
+  width: 100%;
+}
+
+.testimonial-track {
+  gap: var(--gap);
+  animation: marquee var(--duration) linear infinite;
+  flex-direction: row;
+  width: max-content;
+}
+
+.testimonial-track.paused {
+  animation-play-state: paused;
+}
+
+.testimonial-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-50% - 0.5rem));
+  }
+}
+
+/* Testimonial card enhancements */
+.testimonial-card {
+  min-width: 320px;
+  flex-shrink: 0;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+/* Avatar fallback styling */
+.testimonial-card img {
+  transition: transform 0.3s ease;
+}
+
+.testimonial-card:hover img {
+  transform: scale(1.05);
+}
+
+/* Rating stars animation */
+.testimonial-card svg {
+  transition: transform 0.2s ease;
+}
+
+.testimonial-card:hover svg {
+  transform: scale(1.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .testimonial-card {
+    min-width: 280px;
+  }
+  
+  .testimonial-marquee {
+    --duration: 30s;
+  }
+}
+
+@media (max-width: 480px) {
+  .testimonial-card {
+    min-width: 250px;
+  }
+} 

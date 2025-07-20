@@ -1,0 +1,136 @@
+/* Import design tokens if not already loaded */
+@import url('/styles/design-tokens.css');
+
+/* Tailwind v2 Gallery Styles */
+
+.gallery-v2 {
+  position: relative;
+}
+
+/* Gallery item animations */
+.gallery-item {
+  transition: all var(--transition-slow);
+}
+
+.gallery-item:hover {
+  transform: translateY(-5px);
+}
+
+/* Image hover effects */
+.gallery-v2 img {
+  transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.05);
+}
+
+/* Button animations */
+.gallery-lightbox-btn {
+  transition: all var(--transition-slow);
+}
+
+.gallery-lightbox-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Lightbox animations */
+#gallery-lightbox {
+  backdrop-filter: blur(4px);
+  transition: all var(--transition-slow);
+}
+
+#gallery-lightbox.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+#lightbox-image {
+  transition: all var(--transition-slow);
+  max-height: 90vh;
+}
+
+/* Navigation button styles */
+#lightbox-prev,
+#lightbox-next,
+#lightbox-close {
+  transition: all var(--transition-base);
+}
+
+#lightbox-prev:hover,
+#lightbox-next:hover,
+#lightbox-close:hover {
+  transform: scale(1.1);
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* Grid animations */
+.gallery-grid {
+  animation: fadeInUp 0.8s ease;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Staggered animation for gallery items */
+.gallery-item:nth-child(1) { animation-delay: 0.1s; }
+.gallery-item:nth-child(2) { animation-delay: 0.2s; }
+.gallery-item:nth-child(3) { animation-delay: 0.3s; }
+.gallery-item:nth-child(4) { animation-delay: 0.4s; }
+.gallery-item:nth-child(5) { animation-delay: 0.5s; }
+.gallery-item:nth-child(6) { animation-delay: 0.6s; }
+
+.gallery-item {
+  opacity: 0;
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .gallery-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  #lightbox-prev,
+  #lightbox-next {
+    display: none;
+  }
+  
+  .gallery-v2 h2 {
+    font-size: 2rem;
+  }
+}
+
+/* Dark mode support */
+/* Dark mode automatically handled by design tokens */
+@media (prefers-color-scheme: dark) {
+  .gallery-v2 h2 {
+    color: var(--color-neutral-50);
+  }
+  
+  .gallery-v2 p {
+    color: var(--color-neutral-300);
+  }
+  
+  .gallery-item {
+    background-color: var(--bg-surface);
+  }
+  
+  .gallery-item p {
+    color: var(--color-neutral-200);
+  }
+  
+  #gallery-lightbox {
+    background-color: rgba(0, 0, 0, 0.9);
+  }
+}
