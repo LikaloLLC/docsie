@@ -19,6 +19,61 @@ import yaml
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from main import CustomSite, render_template_file, is_binary_file
 
+# Legacy pages that should not be translated
+LEGACY_PAGES_TO_SKIP = {
+    '2020_websummit',
+    'collision_2020',
+    'collision_2021',
+    'codepen',
+    'carbon',
+    'affiliate-program',
+    'docsie_manager',
+    'docsie_publishing',
+    'docsie_product',
+    'docsie_vocally',
+    'docsie-free-consultation',
+    'discovery_call',
+    'feedback_preview_demo',
+    'gather_feedback',
+    'incident',
+    'manager',
+    'markdown_editor',
+    'pilot',
+    'press',
+    'release_notes',
+    'publish_documentation',
+    'self-writing-documentation',
+    'see-it-in-action',
+    'software_documentation',
+    'collaboration_software',
+    'careers',
+    'cookies',
+    'investors',
+    'resources',
+    'terms',
+    'support',
+    'privacy',
+    'about',
+    'features',
+    'documentation',
+    'modern-home',
+    'eml',
+    'content',
+    'validation_page',
+    # Additional directories to skip
+    'assets',
+    'g2',
+    'co-jp',
+    'new_home',
+    'pricing_v2',
+    'styles',
+    'try_docsie',
+    'version_language',
+    'vocally',
+    'blog',
+    'beta'
+}
+
 def generate_language_version(locale_dir, locale_code):
     """Generate site for a specific language."""
     print(f"\n🌐 Generating {locale_code} version...")
