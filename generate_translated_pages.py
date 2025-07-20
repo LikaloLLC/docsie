@@ -123,27 +123,6 @@ def is_ignored_by_gitignore(path, patterns):
                 return True
     return False
 
-class TranslationSite(CustomSite):
-    """Custom site class that filters out legacy pages from translation."""
-    
-    def is_template(self, filename):
-        """Check if a file should be treated as a template."""
-        # First check parent class (binary file check)
-        if not super().is_template(filename):
-            return False
-        
-        # Get the base name without extension
-        base_name = os.path.splitext(os.path.basename(filename))[0]
-        
-        # Also check directory name
-        dir_name = os.path.basename(os.path.dirname(filename))
-        
-        # Skip if it's a legacy page
-        if base_name in LEGACY_PAGES_TO_SKIP or dir_name in LEGACY_PAGES_TO_SKIP:
-            return False
-            
-        return True
-
 def setup_translations(lang_code):
     """Set up gettext translations for a specific language."""
     locale_dir = Path(__file__).parent / 'locale'
