@@ -258,6 +258,23 @@ def generate_supplementary_pages_for_language(locale_code, locale_dir, output_ba
     
     print(f"✅ Generated {generated_count} supplementary pages for {locale_code}")
 
+def load_enabled_languages():
+    """Load only enabled languages from translation_config.yaml"""
+    config_file = Path('translation_config.yaml')
+    if not config_file.exists():
+        print("❌ translation_config.yaml not found!")
+        return []
+    
+    with open(config_file, 'r', encoding='utf-8') as f:
+        config = yaml.safe_load(f)
+    
+    enabled_languages = []
+    for code, lang_config in config.get('languages', {}).items():
+        if lang_config.get('enabled', False):
+            enabled_languages.append(code)
+    
+    return enabled_languages
+
 def main():
     """Generate supplementary pages for all languages"""
     print("🚀 Starting multilingual supplementary page generation...")
@@ -275,17 +292,25 @@ def main():
     print("\n📝 Generating English supplementary pages...")
     generate_supplementary_pages_for_language('en', locale_path)
     
-    # Get all language directories
+    # Get only enabled languages from config
+    enabled_languages = load_enabled_languages()
+    if not enabled_languages:
+        print("❌ No enabled languages found in config!")
+        return
+    
+    # Filter to only include languages that have compiled translations
     languages = []
-    for item in os.listdir(locale_path):
-        item_path = os.path.join(locale_path, item)
-        if os.path.isdir(item_path) and item != '.cache':
+    for lang_code in enabled_languages:
+        item_path = os.path.join(locale_path, lang_code)
+        if os.path.isdir(item_path):
             # Check if it has compiled messages
             mo_file = os.path.join(item_path, 'LC_MESSAGES', 'messages.mo')
             if os.path.exists(mo_file):
-                languages.append(item)
+                languages.append(lang_code)
+            else:
+                print(f"⚠️  Warning: {lang_code} is enabled but has no compiled translations")
     
-    print(f"\nFound {len(languages)} languages with translations")
+    print(f"\nFound {len(languages)} enabled languages with translations")
     
     # Generate for each language
     for locale_code in sorted(languages):
@@ -297,7 +322,7 @@ def main():
             
         generate_supplementary_pages_for_language(locale_code, locale_path, output_dir)
     
-    print("\n✅ All supplementary pages generated for all languages!")
+    print("\n✅ All supplementary pages generated for all enabled languages!")
 
 if __name__ == "__main__":
     main()

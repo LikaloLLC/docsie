@@ -10,6 +10,7 @@ import sys
 import shutil
 import gettext
 import yaml
+import fnmatch
 from pathlib import Path
 from staticjinja import Site
 from jinja2 import Environment, FileSystemLoader
@@ -37,6 +38,35 @@ def get_enabled_languages(config):
                 'native_name': lang_config.get('native_name', lang_config['name'])
             })
     return languages
+
+def load_gitignore_patterns():
+    """Load patterns from .gitignore file"""
+    patterns = []
+    gitignore_path = Path('.gitignore')
+    if gitignore_path.exists():
+        with open(gitignore_path, 'r') as f:
+            for line in f:
+                line = line.strip()
+                if line and not line.startswith('#'):
+                    patterns.append(line)
+    return patterns
+
+def is_ignored_by_gitignore(path, patterns):
+    """Check if a path matches any gitignore pattern"""
+    path_str = str(path)
+    for pattern in patterns:
+        # Handle directory patterns ending with /
+        if pattern.endswith('/'):
+            if path_str.startswith(pattern[:-1]):
+                return True
+        # Handle wildcard patterns
+        if fnmatch.fnmatch(path_str, pattern):
+            return True
+        # Check if any parent directory matches
+        for parent in Path(path).parents:
+            if fnmatch.fnmatch(str(parent), pattern):
+                return True
+    return False
 
 def setup_translations(lang_code):
     """Set up gettext translations for a specific language."""
@@ -129,14 +159,23 @@ def generate_language_site(lang_code, lang_name):
     
     # Copy static assets (they don't need translation)
     if lang_code != 'en':
+        gitignore_patterns = load_gitignore_patterns()
         static_dirs = ['assets', 'styles', 'js', 'images', 'fonts']
+        
         for static_dir in static_dirs:
             src_dir = Path(static_dir)
             if src_dir.exists():
+                # Check if this directory should be ignored for this language
+                lang_specific_path = f"{outpath}/{static_dir}"
+                if is_ignored_by_gitignore(lang_specific_path, gitignore_patterns):
+                    print(f"  Skipping {static_dir} (matched .gitignore pattern)")
+                    continue
+                
                 dest_dir = Path(outpath) / static_dir
                 if dest_dir.exists():
                     shutil.rmtree(dest_dir)
                 shutil.copytree(src_dir, dest_dir)
+                print(f"  Copied {static_dir} → {dest_dir}")
     
     print(f"✅ Generated {lang_name} version in '{outpath}' directory")
 

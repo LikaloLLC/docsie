@@ -75,6 +75,23 @@ def generate_language_version(locale_dir, locale_code):
     site.render(use_reloader=False)
     print(f"✅ Generated {locale_code} in '{outpath}' directory")
 
+def load_enabled_languages():
+    """Load only enabled languages from translation_config.yaml"""
+    config_file = Path('translation_config.yaml')
+    if not config_file.exists():
+        print("❌ translation_config.yaml not found!")
+        return []
+    
+    with open(config_file, 'r', encoding='utf-8') as f:
+        config = yaml.safe_load(f)
+    
+    enabled_languages = []
+    for code, lang_config in config.get('languages', {}).items():
+        if lang_config.get('enabled', False):
+            enabled_languages.append(code)
+    
+    return enabled_languages
+
 def main():
     """Generate all language versions."""
     print("🚀 Starting multilingual site generation...")
@@ -85,17 +102,25 @@ def main():
         print(f"❌ Locale directory '{locale_path}' not found!")
         return
     
-    # Get all language directories
+    # Get only enabled languages from config
+    enabled_languages = load_enabled_languages()
+    if not enabled_languages:
+        print("❌ No enabled languages found in config!")
+        return
+    
+    # Filter to only include languages that have compiled translations
     languages = []
-    for item in os.listdir(locale_path):
-        item_path = os.path.join(locale_path, item)
-        if os.path.isdir(item_path) and item != '.cache':
+    for lang_code in enabled_languages:
+        item_path = os.path.join(locale_path, lang_code)
+        if os.path.isdir(item_path):
             # Check if it has compiled messages
             mo_file = os.path.join(item_path, 'LC_MESSAGES', 'messages.mo')
             if os.path.exists(mo_file):
-                languages.append(item)
+                languages.append(lang_code)
+            else:
+                print(f"⚠️  Warning: {lang_code} is enabled but has no compiled translations")
     
-    print(f"Found {len(languages)} languages with compiled translations")
+    print(f"Found {len(languages)} enabled languages with compiled translations")
     print(f"Languages: {', '.join(sorted(languages))}")
     
     # Always generate English first (even if not in locale dir)
