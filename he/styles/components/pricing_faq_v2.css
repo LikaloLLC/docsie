@@ -1,0 +1,194 @@
+/* Pricing FAQ V2 Component Styles */
+@import url('/styles/design-tokens.css');
+
+/* Component wrapper */
+.pricing-faq-v2 {
+  position: relative;
+}
+
+/* FAQ header animations */
+.faq-header {
+  opacity: 0;
+  animation: fadeInDown 0.6s ease-out forwards;
+}
+
+/* FAQ container */
+.faq-container {
+  position: relative;
+}
+
+/* Individual FAQ items */
+.faq-item {
+  opacity: 0;
+  animation: fadeInUp 0.5s ease-out forwards;
+  transition: all var(--transition-base);
+}
+
+/* Staggered animations for FAQ items */
+.faq-item:nth-child(1) { animation-delay: 0.1s; }
+.faq-item:nth-child(2) { animation-delay: 0.2s; }
+.faq-item:nth-child(3) { animation-delay: 0.3s; }
+.faq-item:nth-child(4) { animation-delay: 0.4s; }
+.faq-item:nth-child(5) { animation-delay: 0.5s; }
+.faq-item:nth-child(6) { animation-delay: 0.6s; }
+.faq-item:nth-child(7) { animation-delay: 0.7s; }
+.faq-item:nth-child(8) { animation-delay: 0.8s; }
+
+/* FAQ toggle button */
+.faq-toggle {
+  position: relative;
+  transition: all var(--transition-base);
+}
+
+.faq-toggle:hover {
+  background-color: var(--color-neutral-100);
+}
+
+.faq-toggle:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.5);
+}
+
+/* FAQ icon */
+.faq-icon {
+  transition: transform var(--transition-base);
+}
+
+/* FAQ content */
+.faq-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height var(--transition-slow), opacity var(--transition-base);
+  opacity: 0;
+}
+
+.faq-content:not(.hidden) {
+  max-height: 500px;
+  opacity: 1;
+}
+
+/* Discount and academic badges */
+.discount-badge,
+.academic-badge {
+  position: relative;
+  overflow: hidden;
+}
+
+.discount-badge::before,
+.academic-badge::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 70%);
+  animation: shimmer 4s ease-in-out infinite;
+}
+
+/* CTA section */
+.faq-cta {
+  opacity: 0;
+  animation: fadeInUp 0.6s ease-out 0.9s forwards;
+}
+
+.faq-cta button {
+  position: relative;
+  overflow: hidden;
+}
+
+.faq-cta button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.faq-cta button:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+/* Animations */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Hover effects */
+.faq-item:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .faq-content:not(.hidden) {
+    max-height: 800px;
+  }
+  
+  .faq-toggle h3 {
+    font-size: 1rem;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .faq-item {
+    border-color: var(--color-neutral-700);
+  }
+  
+  .faq-toggle {
+    background-color: var(--color-neutral-800);
+  }
+  
+  .faq-toggle:hover {
+    background-color: var(--color-neutral-700);
+  }
+  
+  .faq-content {
+    background-color: var(--color-neutral-900);
+  }
+  
+  .discount-badge {
+    background-color: var(--color-green-900);
+    border-color: var(--color-green-800);
+  }
+  
+  .academic-badge {
+    background-color: var(--color-blue-900);
+    border-color: var(--color-blue-800);
+  }
+}
