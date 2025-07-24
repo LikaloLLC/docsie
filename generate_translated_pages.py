@@ -178,6 +178,34 @@ def generate_language_site(lang_code, lang_name):
     # Create custom render function that includes translation
     def render_with_translation(site, template, **kwargs):
         """Render template with translation context."""
+        # Calculate landing_url based on template name and language
+        template_path = template.name
+        if template_path.endswith('index.html'):
+            template_path = template_path[:-10]  # Remove index.html
+        
+        # Special handling for pricing_v2
+        if template_path == 'pricing_v2':
+            template_path = 'pricing'
+        
+        # Add language prefix for non-English
+        if lang_code != 'en':
+            if lang_code == 'ja':
+                # Japanese uses 'jp' directory
+                landing_url = f"/jp/{template_path}"
+            else:
+                landing_url = f"/{lang_code}/{template_path}"
+        else:
+            landing_url = f"/{template_path}"
+        
+        # Clean up the URL
+        landing_url = landing_url.replace('//', '/').rstrip('/')
+        if not landing_url:
+            landing_url = '/'
+        
+        # Debug output - always print for now
+        print(f"  Template: {template.name} -> landing_url: {landing_url}")
+        
+        kwargs['landing_url'] = landing_url
         kwargs['lang'] = lang_code
         kwargs['lang_name'] = lang_name
         kwargs['_'] = translation.gettext  # Add translation function

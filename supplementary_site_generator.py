@@ -16,6 +16,28 @@ def is_hidden(filepath):
     filename = os.path.basename(filepath)
     return filename.startswith('.')
 
+def get_available_css_files():
+    """Get a list of available CSS files for components"""
+    css_dir = 'styles/components'
+    available_css = {
+        'base': [],  # Components with base CSS
+        'v2': []     # Components with v2 CSS
+    }
+    
+    if os.path.exists(css_dir):
+        for filename in os.listdir(css_dir):
+            if filename.endswith('.css'):
+                if filename.endswith('_v2.css'):
+                    # Extract component name from filename_v2.css
+                    component = filename[:-7]  # Remove '_v2.css'
+                    available_css['v2'].append(component)
+                else:
+                    # Extract component name from filename.css
+                    component = filename[:-4]  # Remove '.css'
+                    available_css['base'].append(component)
+    
+    return available_css
+
 def copy_styles():
     """Copy component styles to output directory"""
     components_dir = 'src/.templates/components'
@@ -195,8 +217,10 @@ def generate_supplementary_pages(env, force_version=False, ui_version='v2'):
                 'page': page,
                 'components': components_data,
                 'styles_path': '/styles',
+                'available_css': get_available_css_files(),
                 'get_page_by_url': get_page_by_url,
-                'landing_url': page_url.lstrip('/')  # Remove leading slash for canonical URL
+                'landing_url': page_url.lstrip('/'),  # Remove leading slash for canonical URL
+                'lang': 'en'  # English language code
             }
             
             # Debug component data

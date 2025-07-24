@@ -1,0 +1,39 @@
+{# 
+Cal.com Inline Embed Component
+Usage: {% include '_cal_inline.html' with container_id="my-calendar" container_class="your-custom-classes" %}
+#}
+
+<div 
+  id="{{ container_id | default('cal-inline-product-discovery') }}"
+  class="{{ container_class | default('w-full h-96 overflow-auto rounded-lg border border-gray-200') }}"
+  style="{{ container_style | default('width:100%;height:100%;overflow:scroll') }}">
+</div>
+
+<script type="text/javascript">
+  (function() {
+    // Ensure Cal.com is only initialized once on the page
+    if (window.CalInlineInitialized_{{ container_id | default('cal-inline-product-discovery') | replace('-', '_') }}) return;
+    window.CalInlineInitialized_{{ container_id | default('cal-inline-product-discovery') | replace('-', '_') }} = true;
+    
+    // Wait for Cal to be available
+    function initializeInlineCalendar() {
+      if (typeof Cal !== 'undefined' && Cal.ns && Cal.ns["product-discovery"]) {
+        Cal.ns["product-discovery"]("inline", {
+          elementOrSelector: "#{{ container_id | default('cal-inline-product-discovery') }}",
+          config: {"layout":"month_view"},
+          calLink: "docsie/product-discovery"
+        });
+      } else {
+        // Retry after a short delay
+        setTimeout(initializeInlineCalendar, 100);
+      }
+    }
+    
+    // Start initialization when DOM is ready
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initializeInlineCalendar);
+    } else {
+      initializeInlineCalendar();
+    }
+  })();
+</script>

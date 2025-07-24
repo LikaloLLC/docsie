@@ -1,29 +1,30 @@
 <!-- Lead Article Card V2 - Featured article using Docsie Design System -->
-<article class="bg-white rounded-lg shadow-lg overflow-hidden mb-12">
+<article class="bg-white rounded-2xl shadow-lg overflow-hidden mb-12 border-2 border-gray-100">
     <div class="md:flex">
         {% if data.header_image %}
-        <div class="md:w-1/2">
+        <div class="md:w-1/2 relative overflow-hidden">
             <a href="{{ data.path }}" class="block h-full">
                 <img src="{{ data.header_image }}" 
                      alt="{{ data.title }}" 
-                     class="w-full h-full object-cover"
+                     class="w-full h-full object-cover article-card-image"
                      style="min-height: 400px;">
             </a>
         </div>
         {% endif %}
         
-        <div class="p-8 {% if data.header_image %}md:w-1/2{% else %}w-full{% endif %}">
+        <div class="p-8 lg:p-12 {% if data.header_image %}md:w-1/2{% else %}w-full{% endif %} flex flex-col justify-center">
             <!-- Featured Badge -->
             <div class="mb-4">
-                <span class="inline-block px-3 py-1 text-sm font-semibold text-white bg-docsie-primary rounded-full">
+                <span class="badge-gradient">
+                    <i data-lucide="trending-up" class="mr-1 h-3 w-3"></i>
                     Featured Article
                 </span>
             </div>
             
             <!-- Categories -->
             <div class="flex flex-wrap gap-2 mb-4">
-                {% for category in data.categories[:3] %}
-                <a href="{{ blog.blog_path }}/{{ category|lower|replace(' ', '-') }}/" 
+                {% for category in data.categories[:3] if category and category.strip() %}
+                <a href="/blog/{{ category|lower|replace(' ', '-') }}/" 
                    class="text-sm font-medium px-3 py-1 rounded-full bg-gray-100 text-gray-700 hover:bg-docsie-primary hover:text-white transition-colors">
                     {{ category }}
                 </a>

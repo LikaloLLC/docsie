@@ -1,14 +1,55 @@
-{% extends "_base.html" %}
-{% block title %}{% trans %}Create documentation that your customers love{% endtrans %}{% endblock title %}
-{% block description %}{% trans %}Save time and retain customers, write, translate and manage better product documentation with Docsie{% endtrans %}{% endblock description %}
+{% extends "_base_v2.html" %}
+
+{% block title %}{% trans %}Page Not Found - 404 Error{% endtrans %}{% endblock title %}
+
+{% block description %}{% trans %}The page you're looking for cannot be found. Return to Docsie's AI-powered documentation platform.{% endtrans %}{% endblock description %}
+
 {% block shareimage %}https://www.docsie.io/assets/share-image.jpeg{% endblock shareimage %}
+
 {% block styles %}
-<link rel="stylesheet" href='/docsie.css'>
+<!-- No additional styles needed, using Tailwind classes -->
 {% endblock styles %}
+
 {% block content %}
-<main data-ddsroot></main>
+<main class="min-h-screen flex items-center justify-center px-4 py-16">
+  <div class="max-w-2xl w-full text-center">
+    <!-- 404 Title -->
+    <h1 class="text-8xl md:text-9xl font-bold text-docsie-primary mb-4">404</h1>
+    
+    <!-- Subtitle -->
+    <h2 class="text-2xl md:text-3xl font-semibold text-gray-900 mb-6">
+      {% trans %}Oops! Page Not Found{% endtrans %}
+    </h2>
+    
+    <!-- Description -->
+    <p class="text-lg text-gray-600 mb-8 max-w-lg mx-auto">
+      {% trans %}The page you're looking for seems to have wandered off. It might have been moved, deleted, or perhaps it never existed.{% endtrans %}
+    </p>
+    
+    <!-- Action Buttons -->
+    <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+      <a href="/" class="docsie-btn-primary px-6 py-3">
+        {% trans %}Go to Homepage{% endtrans %}
+      </a>
+      <a href="/solutions/" class="docsie-btn-secondary px-6 py-3">
+        {% trans %}Explore Solutions{% endtrans %}
+      </a>
+      <a href="https://help.docsie.io" class="docsie-btn-secondary px-6 py-3">
+        {% trans %}Visit Help Center{% endtrans %}
+      </a>
+    </div>
+    
+    <!-- Contact Support -->
+    <p class="text-gray-600">
+      {% trans %}Need assistance? Contact our support team at{% endtrans %}
+      <a href="mailto:hello@docsie.io" class="text-docsie-primary hover:text-docsie-dark transition-colors">
+        hello@docsie.io
+      </a>
+    </p>
+  </div>
+</main>
 {% endblock content %}
+
 {% block scripts %}
-<script async type="text/javascript" src="https://lib.docsie.io/1.4.9/service.js"
-  data-docsie="test_pk_ioWwLbkt57PR9lqCrDCF3Hng:boo_6ykB3mafq1hUl4UhX,navigation:false,viewportWidth:100%"></script>
+<!-- Add any 404-specific scripts here if needed -->
 {% endblock scripts %}

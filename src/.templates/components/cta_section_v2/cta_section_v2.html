@@ -1,7 +1,6 @@
 {% if section %}
-<!-- Calendly widget dependencies -->
-<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
-<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+<!-- Cal.com widget initialization -->
+<!-- Note: Cal.com script should be included in the base template -->
 
 <!-- Modern CTA Section v2 - Transparent background -->
 <section class="cta-section-v2 relative w-full py-16 md:py-24 lg:py-32 overflow-hidden">
@@ -47,7 +46,7 @@
         </a>
         {% elif section.cta %}
         <!-- Fallback to legacy cta format with Calendly popup -->
-        <button onclick="Calendly.initPopupWidget({url: '{{ page.calendly_url if page and page.calendly_url else "https://calendly.com/docsie-io/demo-call" }}'});return false;" 
+        <button data-cal-link="{{ 'docsie/product-discovery' if not page or not page.calendly_url else page.calendly_url.split('/')[-1] }}" data-cal-namespace="product-discovery" data-cal-config='{"layout":"month_view"}' 
                 class="group inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 px-8 py-4 text-lg font-semibold text-white shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2">
           {{ section.cta.text or 'Book Demo' }}
           <svg class="ml-2 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -58,7 +57,7 @@
         <!-- Handle buttons array for AI pilot page -->
         {% for button in section.buttons %}
           {% if loop.index == 1 %}
-          <button onclick="Calendly.initPopupWidget({url: '{{ page.calendly_url if page and page.calendly_url else "https://calendly.com/docsie-io/demo-call" }}'});return false;" 
+          <button data-cal-link="{{ 'docsie/product-discovery' if not page or not page.calendly_url else page.calendly_url.split('/')[-1] }}" data-cal-namespace="product-discovery" data-cal-config='{"layout":"month_view"}' 
                   class="group inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 px-8 py-4 text-lg font-semibold text-white shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-500 focus-visible:ring-offset-2">
             {{ button.text }}
             <svg class="ml-2 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
