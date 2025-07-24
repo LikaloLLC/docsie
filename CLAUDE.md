@@ -91,78 +91,228 @@ pybabel init -d locale -l <language_code> -i locale/messages.pot
 pybabel compile -d locale -l <language_code>
 ```
 
-## Main Site vs BlogVi Comparison
+## BlogVi System (勝利 - "victory" in Japanese)
 
-### Main Site (Docsie.io)
-- **Theming**: Uses a modern V2 design system with:
-  - Design tokens in `/styles/design-system.css` and `/styles/design-tokens.css`
-  - Component-based CSS architecture in `/styles/components/`
-  - Support for both V1 and V2 templates (`_base.html` and `_base_v2.html`)
-  - Tailwind-compatible utilities
-  - Dark mode support
-  - Responsive design with mobile-first approach
+### Overview
+BlogVi is a Python-based static blog generator that creates SEO-optimized blogs from CSV data sources. It's located in `.external/BlogVi/` and generates content into the main site's `/blog/` directory.
 
-- **Translation System**:
-  - Sophisticated multi-language support (30+ languages)
-  - Uses `translation_system.py` with Claude API integration
-  - Babel-based string extraction and compilation
-  - YAML translation for content files
-  - Caching system for translations
-  - Batch translation support
-  - Build script: `sh build_multilingual.sh`
+### Architecture
+- **Static Site Generator**: Uses Jinja2 templates
+- **Data Source**: CSV files (typically Google Sheets) with article metadata
+- **Output**: Static HTML with client-side search (Fuse.js)
+- **Translation**: Claude API with batch processing and caching
+- **Design System**: V2 theme with Tailwind CSS and custom design tokens
 
-### BlogVi System
-- **Current State**:
-  - Standalone blog generator in `.external/BlogVi/`
-  - Uses basic Tailwind CSS from CDN
-  - Simple template structure without design system integration
-  - Separate translation system using Claude API with batch support
-  - Generates content into `/blog/` directory of main site
+### IMPORTANT: Template System
+BlogVi has two sets of templates:
+1. **Source templates**: Located in `.external/BlogVi/src/blog_vi/templates/` (DO NOT EDIT)
+2. **Working templates**: Located in `/blog/templates/` (EDIT THESE)
 
-- **Design Gaps**:
-  - Not using main site's design system
-  - Different header/footer implementations
-  - Inconsistent styling and branding
-  - Missing V2 design elements
-  - No dark mode support
+The blog generation uses the **working templates** in `/blog/templates/`, NOT the source templates in the BlogVi package. Always edit the templates in the blog directory.
 
-## Design Alignment Strategy
+### Running BlogVi
 
-### Short-term Improvements
-1. **Import Main Site Design System**:
-   - Copy design tokens and utilities to BlogVi
-   - Update BlogVi templates to use main site CSS classes
-   - Align color schemes, typography, and spacing
+#### From Blog Directory
+```bash
+cd /Users/philippetrounev/PycharmProjects/docsie-site/blog
+python -m blog_vi .
+# With force refresh (clears all caches)
+python -m blog_vi . --force
+```
 
-2. **Template Synchronization**:
-   - Adapt BlogVi's header.html and footer.html to match main site's `_header_v2.html` and `_footer_v2.html`
-   - Use consistent navigation structure
-   - Apply same responsive breakpoints
+#### Using Helper Scripts
+```bash
+# From BlogVi directory
+sh regen_blog.sh          # Local testing
+sh regen_blog_prod.sh     # Production generation
 
-3. **Translation Integration**:
-   - Align language codes between systems
-   - Share translation cache if possible
-   - Use consistent translation settings
+# With Python script
+python /path/to/.external/BlogVi/run_blog_gen.py . [--force]
+```
 
-### Long-term Architecture Recommendations
-1. **Unified Build System**:
-   - Integrate BlogVi generation into main build pipeline
-   - Share Jinja2 environment and filters
-   - Use single translation system for both
+### Configuration (settings.yaml)
 
-2. **Component Library**:
-   - Extract reusable components (cards, buttons, forms)
-   - Create shared template includes
-   - Maintain single source of truth for UI elements
+#### Single CSV Source (backward compatible)
+```yaml
+blog_post_location_url: "https://docs.google.com/spreadsheets/d/e/SHEET_ID/pub?output=csv"
+```
 
-3. **Design System Extension**:
-   - Add blog-specific components to design system
-   - Create article typography styles
-   - Define category and tag styling
+#### Multiple CSV Sources
+```yaml
+blog_post_location_urls:
+  - "https://docs.google.com/spreadsheets/d/e/SHEET_ID_1/pub?output=csv"
+  - "https://docs.google.com/spreadsheets/d/e/SHEET_ID_2/pub?output=csv"
+  - "https://raw.githubusercontent.com/user/repo/main/posts.csv"
+```
 
-## Implementation Notes
+### CSV Format Requirements
+Required columns:
+- **Title**: Article title
+- **Timestamp**: MM/DD/YYYY HH:MM:SS format
+- **Modified Timestamp**: (optional) Same format
+- **Status**: 1 = published, other = draft
+- **Slug**: URL-friendly identifier
+- **Categories**: Comma-separated list
+- **Author Name**, **Author email**, **Author Avatar Image URL**
+- **About the Author**, **linked.in github urls**
+- **Header Image**: Main article image
+- **Excerpt/Short Summary**: Article description
+- **Markdown**: Content (text or URL to .md file)
+- **Is Legacy**: (optional) For redirect handling
+- **Redirect Slug**: (optional) For URL redirects
 
-- BlogVi currently runs as a separate system but generates into main site's `/blog/` directory
-- Both systems use Claude API for translations but with different implementations
-- Main site has more mature theming with V2 design system
-- Blog needs to adopt main site's design patterns for consistency
+### Key Features
+
+#### SEO Implementation
+- **Meta Tags**: Open Graph, Twitter Cards, canonical URLs
+- **Structured Data**: JSON-LD for WebSite, BlogPosting, BreadcrumbList, Product
+- **Breadcrumbs**: Automatic navigation generation
+- **RSS Feed**: Auto-generated at `/blog/rss.xml`
+- **Clean URLs**: All article URLs end with trailing slash
+- **robots.txt directives**: max-image-preview, max-snippet settings
+
+#### Article Processing
+1. **Caching System**: Tracks changes using MD5 hashes of content
+2. **Markdown Extensions**: Tables, TOC with permalinks, image handling
+3. **Reading Time**: Automatic calculation based on word count
+4. **Category Pages**: Auto-generated with AI descriptions (Claude API)
+5. **Navigation**: Previous/Next article links
+
+#### Design System (V2 Theme)
+- **CSS Variables**: `--docsie-primary`, `--docsie-primary-dark`
+- **Tailwind CSS**: Via CDN with custom utilities
+- **Components**: Cards, breadcrumbs, TOC, category pills
+- **Responsive**: Mobile-first design
+- **Typography**: Custom styles in `typography.min.css`
+
+### Template Structure
+```
+templates/
+├── blog.html          # Main blog/category page
+├── article.html       # Individual article page
+├── card.html         # Article card component
+├── lead_card.html    # Featured article card
+├── header.html       # Site header
+├── footer.html       # Site footer
+├── favicon.html      # Favicon includes
+└── assets/
+    ├── css/
+    │   ├── design-system.css
+    │   └── typography.min.css
+    └── js/
+        ├── search.js      # Client-side search
+        └── reading-time.min.js
+```
+
+### Output Structure
+```
+blog/
+├── index.html              # Main blog page
+├── rss.xml                 # RSS feed
+├── data.json              # Search data
+├── articles/
+│   └── [slug]/
+│       └── index.html     # Article page
+├── [category-slug]/       # Category pages
+│   └── index.html
+└── [language]/            # Translated versions
+    └── (same structure)
+```
+
+### Caching and Performance
+
+#### Article Cache
+- Location: `articles/[slug]/cache.json`
+- Tracks: title, markdown, summary, categories, is_legacy
+- Use `--force` flag to clear all caches
+
+#### Category Descriptions
+- Location: `.category_descriptions_cache/`
+- AI-generated descriptions cached to reduce API calls
+
+#### Translation Cache
+- Location: `.translation_cache/`
+- Stores translated content to avoid re-translation
+
+### CLI Options
+```bash
+# Basic usage
+blogvi [directory]
+
+# Force refresh (clear all caches)
+blogvi [directory] --force
+blogvi [directory] -f
+
+# Environment variables
+BLOGVI_DIRECTORY=/path/to/blog blogvi
+```
+
+### Recent Improvements
+1. **Trailing Slash Fix**: All article URLs now properly end with `/`
+2. **Force Refresh**: Added `--force` flag to regenerate all content
+3. **Multiple CSV Support**: Can now pull from multiple Google Sheets
+4. **Breadcrumb Navigation**: Proper breadcrumb implementation
+5. **V2 Design Integration**: Modern design system with Tailwind
+
+### Known Limitations
+- No sitemap.xml generation (see TODO.md)
+- No robots.txt management
+- Static aggregate ratings in Product schema
+- No image optimization
+- No AMP support
+- No Core Web Vitals optimization features
+
+### Development Notes
+- Tracker system only monitors content changes, not template changes
+- Use `--force` when updating templates to ensure all articles regenerate
+- Category descriptions use Claude API and may take time on first generation
+- Templates support both old and new theme versions for migration
+- **Working templates are in `/blog/templates/`, NOT in `.external/BlogVi/src/blog_vi/templates/`**
+- Previous/Next article links are generated in `landing.py` and require trailing slashes
+
+### Recent Design Updates (Medium-style)
+1. **Article Layout**: Narrow content area (max-w-3xl) for optimal readability
+2. **TOC Behavior**: Shows initially, hides after 100px scroll for distraction-free reading
+3. **Header Auto-hide**: Hides when scrolling down, reappears when scrolling up
+4. **Floating CTA**: 
+   - Appears after 30% scroll progress
+   - Has minimize/expand functionality with close button
+   - Minimizes to floating "Book Demo" button
+5. **Typography**: 
+   - Georgia serif font for article body (21px, line-height 2)
+   - Sans-serif for headings with tighter letter spacing
+   - Enhanced spacing for Medium-like reading experience
+
+### Common Issues & Solutions
+- **Missing trailing slashes**: Edit `landing.py` lines 186 & 191 to add trailing slashes
+- **TOC not scrolling**: Remove height restrictions, use sticky container
+- **CTA overlapping**: Use single sticky container for both TOC and CTA
+- **Template changes not reflecting**: Always use `--force` flag when regenerating
+- **Double slash URLs**: Use `.rstrip('/')` when concatenating paths to prevent `/blog//category/` issues
+- **Logo not displaying**: Changed from inline SVG to `<img>` tag with CSS filter for coloring
+- **Multiple head tags in articles**: Created `HTMLEscapeExtension` to escape HTML tags in markdown content outside of code blocks
+
+### SEO Improvements Implemented
+1. **Social Share Buttons**: Converted from `<a>` tags to `<button>` elements with JavaScript handlers
+   - Prevents search engines from crawling social share links
+   - No 302 redirects to external domains
+   - Uses data attributes instead of href
+
+2. **External Link Handling**: Created custom Markdown extension (`NoFollowExtension`)
+   - Automatically adds `rel="nofollow noopener"` to all external links
+   - Preserves internal links as dofollow
+   - Respects manually set rel attributes for partner sites
+   - Located in `.external/BlogVi/src/blog_vi/core/utils.py`
+
+3. **URL Structure**: Fixed double slash issues that cause duplicate content
+   - Category URLs: `/blog//category/` → `/blog/category/`
+   - RSS feed: `/blog//rss.xml` → `/blog/rss.xml`
+   - Use `.rstrip('/')` before concatenating paths
+
+### Navigation & Header Updates
+- **Dynamic Navigation**: Header now uses `settings.link_menu` instead of hardcoded links
+- **Logo Path**: Using `/assets/docsie_logo_square_svg.svg` with CSS filter for brand color
+- **Blog Link Removed**: Eliminated redundant "Blog" link from navigation (already shown in logo area)
+
+### LinkedIn Sharing Limitation
+LinkedIn's sharing API doesn't support pre-filling text - it only accepts URL parameter and pulls content from Open Graph meta tags. This is different from Twitter which supports both URL and text parameters.

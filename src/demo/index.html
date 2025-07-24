@@ -91,17 +91,17 @@
     </div>
   </section>
 
-  <!-- Calendly Section -->
+  <!-- Cal.com Section -->
   <section class="demo-calendly-section py-16 bg-white">
     <div class="container mx-auto px-4 md:px-8">
       
-      <!-- Calendly Widget Container -->
+      <!-- Cal.com Widget Container -->
       <div class="bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden max-w-5xl mx-auto">
         
-        <!-- Calendly inline widget begin -->
-        <div class="calendly-inline-widget" data-url="https://calendly.com/docsie-io/demo-call" style="min-width:320px;height:700px;" data-resize="true"></div>
-        <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
-        <!-- Calendly inline widget end -->
+        <!-- Cal.com inline widget -->
+        {% with container_id='demo-cal-inline', container_class='w-full', container_style='min-width:320px;height:700px;' %}
+        {% include '_cal_inline.html' %}
+        {% endwith %}
         
       </div>
       
@@ -184,8 +184,8 @@
   animation: floatDelayed 8s ease-in-out infinite;
 }
 
-/* Calendly widget optimization */
-.calendly-inline-widget {
+/* Cal.com widget optimization */
+#demo-cal-inline {
   width: 100% !important;
   min-width: 320px !important;
   border: none;
@@ -193,14 +193,14 @@
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
-  .calendly-inline-widget {
+  #demo-cal-inline {
     height: 600px !important;
     min-width: 300px !important;
   }
 }
 
 @media (min-width: 1024px) {
-  .calendly-inline-widget {
+  #demo-cal-inline {
     height: 750px !important;
   }
 }

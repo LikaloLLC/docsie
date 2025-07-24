@@ -1,0 +1,182 @@
+<!-- BlogVi V2 Template - Using Production Docsie Design System -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <!-- Production Docsie CSS -->
+    <link rel="stylesheet" href="https://www.docsie.io/style.css">
+    <link rel="stylesheet" href="https://www.docsie.io/styles/design-system.css">
+    <link rel="stylesheet" href="https://www.docsie.io/styles/design-tokens.css">
+    <link rel="stylesheet" href="https://www.docsie.io/styles/design-utilities.css">
+    <link rel="stylesheet" href="https://www.docsie.io/styles/tailwind-compat.css">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    {% include 'favicon.html' %}
+    
+    <link rel="manifest" href="{{settings.blog_root_path}}site.webmanifest">
+    <meta name="msapplication-TileColor" content="#13AF4B">
+    <meta name="theme-color" content="#13AF4B">
+    
+    <!-- Primary Meta Tags -->
+    <title>{{ settings.landing_meta.title or settings.blog_name }}</title>
+    <meta name="author" content="{{ settings.landing_meta.author }}">
+    <meta name="title" content="{{ settings.landing_meta.title or settings.blog_name }}">
+    <meta name="description" content="{{ settings.landing_meta.description }}">
+    <meta name="keywords" content="{{ settings.landing_meta.keywords }}">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ settings.landing_meta.url }}">
+    <meta property="og:title" content="{{ settings.landing_meta.title or settings.blog_name }}">
+    <meta property="og:description" content="{{ settings.landing_meta.description }}">
+    <meta property="og:image" content="{{ settings.landing_meta.image }}">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="{{ settings.landing_meta.url }}">
+    <meta property="twitter:title" content="{{ settings.landing_meta.title or settings.blog_name }}">
+    <meta property="twitter:description" content="{{ settings.landing_meta.description }}">
+    <meta property="twitter:image" content="{{ settings.landing_meta.image }}">
+    
+    <!-- Minimal Blog-Specific Styles (only what's not in design system) -->
+    <style>
+        /* Blog-specific article grid spacing */
+        .blog-article-grid {
+            display: grid;
+            gap: 2rem;
+        }
+        
+        @media (min-width: 768px) {
+            .blog-article-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (min-width: 1024px) {
+            .blog-article-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        
+        /* Reading time and other blog-specific meta */
+        .blog-meta {
+            font-size: 0.875rem;
+            color: var(--docsie-gray-500);
+        }
+        
+        /* Only if language picker isn't in main design system */
+        {% if settings.show_language_picker %}
+        .blog-language-picker {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            z-index: 40;
+        }
+        {% endif %}
+    </style>
+    
+    {% if settings.google_tag_manager.enabled %}
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','{{ settings.google_tag_manager.google_tag_manager_projectid }}');</script>
+    <!-- End Google Tag Manager -->
+    {% endif %}
+</head>
+
+<body>
+    {% if settings.google_tag_manager.enabled %}
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id={{ settings.google_tag_manager.google_tag_manager_projectid }}"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    {% endif %}
+    
+    {% include 'header_v2.html' %}
+    
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-br from-docsie-primary/10 to-docsie-primary/5 py-16">
+        <div class="container max-w-7xl mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+                {{ settings.blog_name }}
+            </h1>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                {{ settings.landing_meta.description }}
+            </p>
+        </div>
+    </section>
+    
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-8">
+        <!-- Featured Article -->
+        {% if data %}
+            <div class="mb-12">
+                {% include 'lead_card_v2.html' %}
+            </div>
+        {% endif %}
+        
+        <!-- Articles Grid -->
+        <div class="blog-article-grid">
+            {% for article in data[1:] %}
+                {% include 'card_v2.html' %}
+            {% endfor %}
+        </div>
+        
+        <!-- Pagination (if needed) -->
+        <div class="mt-12 flex justify-center">
+            <!-- Add pagination controls here if needed -->
+        </div>
+    </main>
+    
+    <!-- Newsletter Subscription -->
+    {% if settings.subscribe.enabled %}
+        <section class="bg-gray-50 py-16">
+            <div class="container max-w-7xl mx-auto px-4">
+                {% include 'subscription_form.html' %}
+            </div>
+        </section>
+    {% endif %}
+    
+    {% include 'footer_v2.html' %}
+    
+    <!-- Language Picker -->
+    {% if settings.show_language_picker and settings.translation_list %}
+    <div class="language-picker">
+        <div class="bg-white rounded-lg shadow-lg p-2">
+            <select onchange="window.location.href=this.value" class="text-sm font-medium text-gray-700 bg-transparent border-none focus:outline-none cursor-pointer">
+                <option value="{{ blog.blog_path }}">English</option>
+                {% for translation in settings.translation_list %}
+                <option value="{{ blog.blog_path }}/../{{ translation.abbreviation }}/">{{ translation.label }}</option>
+                {% endfor %}
+            </select>
+        </div>
+    </div>
+    {% endif %}
+    
+    <!-- BlogVi Search Script -->
+    <script src="{{ blog.path }}/templates/assets/js/search.js"></script>
+    
+    <!-- Additional Scripts -->
+    <script>
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>

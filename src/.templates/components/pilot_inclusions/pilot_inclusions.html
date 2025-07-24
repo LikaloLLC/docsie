@@ -75,7 +75,10 @@
             {% if section.cta_text %}
             <p class="cta-text">{{ section.cta_text }}</p>
             {% endif %}
-            <button onclick="Calendly.initPopupWidget({url: '{{ page.calendly_url if page and page.calendly_url else "https://calendly.com/docsie-io/demo-call" }}'});return false;" class="cta-button">
+            <button data-cal-link="{{ 'docsie/product-discovery' if not page or not page.calendly_url else page.calendly_url.split('/')[-1] }}" 
+                    data-cal-namespace="product-discovery" 
+                    data-cal-config='{"layout":"month_view"}'
+                    class="cta-button">
                 <span>{{ section.cta_button_text or 'Get Started' }}</span>
                 <svg class="cta-arrow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M5 12h14m0 0l-7-7m7 7l-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>

@@ -1,0 +1,18 @@
+{# 
+Cal.com Click Embed Component
+Usage: {% include '_cal_onclick.html' with button_text="Book Demo" button_class="your-custom-classes" %}
+#}
+
+<button 
+  data-cal-link="docsie/product-discovery"
+  data-cal-namespace="product-discovery"
+  data-cal-config='{"layout":"month_view"}'
+  class="{{ button_class | default('inline-flex items-center justify-center px-6 py-3 bg-docsie-primary text-white font-medium rounded-lg hover:bg-docsie-primary-dark transition-all duration-300 shadow-sm hover:shadow-md') }}"
+  aria-label="{{ button_text | default('Book a Demo') }}">
+  {% if show_icon | default(true) %}
+  <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+  </svg>
+  {% endif %}
+  {{ button_text | default('Book Demo') }}
+</button>

@@ -127,7 +127,7 @@
                   </a>
                 </li>
                 <li>
-                  <a href="{{ lang.abs_lang_url('solutions/compliance-documentation/') }}" class="block p-2 rounded-md hover:bg-gray-50 transition-colors duration-200">
+                  <a href="{{ lang.abs_lang_url('solutions/industries/compliance/') }}" class="block p-2 rounded-md hover:bg-gray-50 transition-colors duration-200">
                     <div class="text-sm font-medium text-gray-900">{% trans %}Compliance{% endtrans %}</div>
                     <div class="text-xs text-gray-600">{% trans %}Regulatory documentation{% endtrans %}</div>
                   </a>
@@ -157,11 +157,11 @@
             <div class="flex items-center justify-between">
               <div>
                 <p class="text-sm font-medium text-gray-900">{% trans %}Ready to get started?{% endtrans %}</p>
-                <p class="text-xs text-gray-600">{% trans %}Explore all our documentation solutions{% endtrans %}</p>
+                <p class="text-xs text-gray-600">{% trans %}Explore our documentation solutions above{% endtrans %}</p>
               </div>
-              <a href="{{ lang.abs_lang_url('solutions/') }}" class="docsie-btn-primary text-sm px-4 py-2">
-                {% trans %}View All Solutions{% endtrans %}
-              </a>
+              {% with button_text=_('Book a Demo'), button_class='docsie-btn-primary text-sm px-4 py-2', show_icon=false %}
+              {% include '_cal_onclick.html' %}
+              {% endwith %}
             </div>
           </div>
         </div>
@@ -222,10 +222,9 @@
     </div>
     
     <!-- Book Demo Button -->
-    <button onclick="Calendly.initPopupWidget({url: 'https://calendly.com/docsie-io/demo-call'});return false;" 
-            class="hidden md:inline-flex items-center px-4 py-2 bg-white text-docsie-primary border border-docsie-primary font-medium rounded-lg hover:bg-docsie-primary hover:text-white transition-all duration-300">
-      {% trans %}Book Demo{% endtrans %}
-    </button>
+    {% with button_text=_('Book Demo'), button_class='hidden md:inline-flex items-center px-4 py-2 bg-white text-docsie-primary border border-docsie-primary font-medium rounded-lg hover:bg-docsie-primary hover:text-white transition-all duration-300' %}
+    {% include '_cal_onclick.html' %}
+    {% endwith %}
     
     <!-- Sign In Link -->
     <a href="https://app.docsie.io/login" 
@@ -269,14 +268,6 @@
         <div id="mobile-solutions" class="hidden overflow-hidden transition-all duration-300 ease-in-out">
           <div class="space-y-1 ml-4 mt-2">
             <div class="mb-3">
-              <a href="{{ lang.abs_lang_url('solutions/') }}" class="flex items-center text-docsie-primary hover:text-docsie-dark py-2 text-sm font-medium">
-                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7"></path>
-                </svg>
-                {% trans %}View All Solutions{% endtrans %}
-              </a>
-            </div>
-            <div class="mb-3">
               <div class="text-xs font-semibold text-docsie-primary uppercase tracking-wide mb-2">{% trans %}Documentation{% endtrans %}</div>
               <a href="{{ lang.abs_lang_url('solutions/technical-documentation/') }}" class="block text-gray-600 hover:text-docsie-primary py-2 text-sm">{% trans %}Technical Docs{% endtrans %}</a>
               <a href="{{ lang.abs_lang_url('solutions/api-documentation/') }}" class="block text-gray-600 hover:text-docsie-primary py-2 text-sm">{% trans %}API Documentation{% endtrans %}</a>
@@ -310,7 +301,7 @@
               <a href="{{ lang.abs_lang_url('solutions/sops/') }}" class="block text-gray-600 hover:text-docsie-primary py-2 text-sm">{% trans %}SOPs{% endtrans %}</a>
               <a href="{{ lang.abs_lang_url('solutions/quality-management/') }}" class="block text-gray-600 hover:text-docsie-primary py-2 text-sm">{% trans %}Quality Management{% endtrans %}</a>
               <a href="{{ lang.abs_lang_url('solutions/training-documentation/') }}" class="block text-gray-600 hover:text-docsie-primary py-2 text-sm">{% trans %}Training Docs{% endtrans %}</a>
-              <a href="{{ lang.abs_lang_url('solutions/compliance-documentation/') }}" class="block text-gray-600 hover:text-docsie-primary py-2 text-sm">{% trans %}Compliance{% endtrans %}</a>
+              <a href="{{ lang.abs_lang_url('solutions/industries/compliance/') }}" class="block text-gray-600 hover:text-docsie-primary py-2 text-sm">{% trans %}Compliance{% endtrans %}</a>
             </div>
           </div>
         </div>
@@ -343,13 +334,9 @@
 
     <!-- Mobile Menu Footer - CTA Buttons -->
     <div class="p-4 border-t border-gray-200 space-y-3">
-      <button onclick="Calendly.initPopupWidget({url: 'https://calendly.com/docsie-io/demo-call'});return false;" 
-              class="w-full bg-white border-2 border-docsie-primary text-docsie-primary py-3 px-4 rounded-lg font-medium hover:bg-docsie-primary hover:text-white transition-colors duration-300 flex items-center justify-center">
-        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-        </svg>
-        {% trans %}Book Demo{% endtrans %}
-      </button>
+      {% with button_text=_('Book Demo'), button_class='w-full bg-white border-2 border-docsie-primary text-docsie-primary py-3 px-4 rounded-lg font-medium hover:bg-docsie-primary hover:text-white transition-colors duration-300 flex items-center justify-center' %}
+      {% include '_cal_onclick.html' %}
+      {% endwith %}
       <a href="https://app.docsie.io/login" 
          class="block w-full bg-gradient-to-r from-docsie-primary to-docsie-primary-dark text-white py-3 px-4 rounded-lg font-medium text-center hover:from-docsie-primary-dark hover:to-docsie-primary transition-all duration-300 flex items-center justify-center">
         <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">

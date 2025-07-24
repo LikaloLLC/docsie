@@ -216,13 +216,9 @@
         <h3 class="text-xl font-semibold mb-2">{% trans %}Ready to Transform Your Documentation?{% endtrans %}</h3>
         <p class="text-gray-300 mb-4">{% trans %}Join thousands of teams who trust Docsie for their knowledge management needs.{% endtrans %}</p>
         <div class="flex flex-col sm:flex-row gap-3 justify-center">
-          <button onclick="Calendly.initPopupWidget({url: 'https://calendly.com/docsie-io/demo-call'});return false;" 
-                  class="inline-flex items-center justify-center px-6 py-3 bg-docsie-primary text-white font-medium rounded-lg hover:bg-docsie-primary-dark transition-all duration-300 shadow-sm hover:shadow-md">
-            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
-            </svg>
-            {% trans %}Book Demo{% endtrans %}
-          </button>
+          {% with button_text=_('Book Demo'), button_class='inline-flex items-center justify-center px-6 py-3 bg-docsie-primary text-white font-medium rounded-lg hover:bg-docsie-primary-dark transition-all duration-300 shadow-sm hover:shadow-md' %}
+          {% include '_cal_onclick.html' %}
+          {% endwith %}
           <a href="https://app.docsie.io/onboarding/" 
              class="inline-flex items-center justify-center px-6 py-3 bg-white/10 border border-white/20 text-white font-medium rounded-lg hover:bg-white/20 transition-all duration-300">
             <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">

@@ -492,8 +492,8 @@ generate_multilingual() {
     print_step "Generating multilingual site..."
     
     # Generate main multilingual pages
-    if [ -f "generate_all_languages.py" ]; then
-        $PYTHON_CMD generate_all_languages.py || {
+    if [ -f "generate_translated_pages.py" ]; then
+        $PYTHON_CMD generate_translated_pages.py || {
             print_error "Failed to generate multilingual pages"
             return 1
         }

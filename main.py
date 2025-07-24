@@ -108,6 +108,25 @@ def render_template_file(site, template, **kwargs):
     if is_v2_page:
         kwargs['is_v2'] = True
         kwargs['use_v2_styles'] = True
+    
+    # Calculate landing_url for canonical and hreflang tags
+    template_path = template.name
+    
+    # Special case for pricing_v2 - should be /pricing/
+    if template_path == 'pricing_v2/index.html':
+        template_path = 'pricing'
+    elif template_path.endswith('index.html'):
+        template_path = template_path[:-10]  # Remove index.html
+    if template_path.endswith('_v2.html'):
+        template_path = template_path[:-8]  # Remove _v2.html
+    if template_path == 'index':
+        template_path = ''
+    
+    landing_url = f"/{template_path}" if template_path else '/'
+    landing_url = landing_url.replace('//', '/')
+    
+    kwargs['landing_url'] = landing_url
+    kwargs['lang'] = 'en'  # English for main.py
         
     # Render the template
     rendered = template.render(**kwargs)

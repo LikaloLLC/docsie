@@ -21,6 +21,61 @@ import arrow
 # Import the custom site class from main.py
 from main import CustomSite, render_template_file, is_binary_file
 
+# Legacy pages that should not be translated
+LEGACY_PAGES_TO_SKIP = {
+    '2020_websummit',
+    'collision_2020',
+    'collision_2021',
+    'codepen',
+    'carbon',
+    'affiliate-program',
+    'docsie_manager',
+    'docsie_publishing',
+    'docsie_product',
+    'docsie_vocally',
+    'docsie-free-consultation',
+    'discovery_call',
+    'feedback_preview_demo',
+    'gather_feedback',
+    'incident',
+    'manager',
+    'markdown_editor',
+    'pilot',
+    'press',
+    'release_notes',
+    'publish_documentation',
+    'self-writing-documentation',
+    'see-it-in-action',
+    'software_documentation',
+    'collaboration_software',
+    'careers',
+    'cookies',
+    'investors',
+    'resources',
+    'terms',
+    'support',
+    'privacy',
+    'about',
+    'features',
+    'documentation',
+    'modern-home',
+    'eml',
+    'content',
+    'validation_page',
+    # Additional directories to skip
+    'assets',
+    'g2',
+    'co-jp',
+    'new_home',
+    'pricing_v2',
+    'styles',
+    'try_docsie',
+    'version_language',
+    'vocally',
+    'blog',
+    'beta'
+}
+
 def load_translation_config():
     """Load translation configuration from YAML file."""
     config_path = Path(__file__).parent / 'translation_config.yaml'
@@ -123,6 +178,34 @@ def generate_language_site(lang_code, lang_name):
     # Create custom render function that includes translation
     def render_with_translation(site, template, **kwargs):
         """Render template with translation context."""
+        # Calculate landing_url based on template name and language
+        template_path = template.name
+        if template_path.endswith('index.html'):
+            template_path = template_path[:-10]  # Remove index.html
+        
+        # Special handling for pricing_v2
+        if template_path == 'pricing_v2':
+            template_path = 'pricing'
+        
+        # Add language prefix for non-English
+        if lang_code != 'en':
+            if lang_code == 'ja':
+                # Japanese uses 'jp' directory
+                landing_url = f"/jp/{template_path}"
+            else:
+                landing_url = f"/{lang_code}/{template_path}"
+        else:
+            landing_url = f"/{template_path}"
+        
+        # Clean up the URL
+        landing_url = landing_url.replace('//', '/').rstrip('/')
+        if not landing_url:
+            landing_url = '/'
+        
+        # Debug output - always print for now
+        print(f"  Template: {template.name} -> landing_url: {landing_url}")
+        
+        kwargs['landing_url'] = landing_url
         kwargs['lang'] = lang_code
         kwargs['lang_name'] = lang_name
         kwargs['_'] = translation.gettext  # Add translation function
@@ -133,23 +216,62 @@ def generate_language_site(lang_code, lang_name):
         return render_template_file(site, template, **kwargs)
     
     # Create site with translation support
-    site = CustomSite.make_site(
-        searchpath='src/',
-        outpath=outpath,
-        env_globals={
-            "feed": feed[-12:][::-1],
-            "videos": feed_videos,
-            "lang": lang_code,
-            "lang_name": lang_name,
-            "_": translation.gettext,
-            "gettext": translation.gettext,
-            "ngettext": translation.ngettext
-        },
-        extensions=['jinja2.ext.i18n', 'jinja_markdown.MarkdownExtension'],
-        rules=[
-            (".*", render_with_translation)
-        ]
-    )
+    # For non-English languages, filter out legacy pages
+    if lang_code != 'en':
+        # Create custom site that filters legacy pages
+        class FilteredTranslationSite(CustomSite):
+            def is_template(self, filename):
+                """Check if a file should be treated as a template."""
+                # First check parent class (binary file check)
+                if not super().is_template(filename):
+                    return False
+                
+                # Check if any part of the path contains a legacy page
+                path_parts = filename.split(os.sep)
+                for part in path_parts:
+                    part_without_ext = os.path.splitext(part)[0]
+                    if part_without_ext in LEGACY_PAGES_TO_SKIP:
+                        print(f"  Skipping legacy page: {filename}")
+                        return False
+                
+                return True
+        
+        site = FilteredTranslationSite.make_site(
+            searchpath='src/',
+            outpath=outpath,
+            env_globals={
+                "feed": feed[-12:][::-1],
+                "videos": feed_videos,
+                "lang": lang_code,
+                "lang_name": lang_name,
+                "_": translation.gettext,
+                "gettext": translation.gettext,
+                "ngettext": translation.ngettext
+            },
+            extensions=['jinja2.ext.i18n', 'jinja_markdown.MarkdownExtension'],
+            rules=[
+                (".*", render_with_translation)
+            ]
+        )
+    else:
+        # For English, use the normal site without filtering
+        site = CustomSite.make_site(
+            searchpath='src/',
+            outpath=outpath,
+            env_globals={
+                "feed": feed[-12:][::-1],
+                "videos": feed_videos,
+                "lang": lang_code,
+                "lang_name": lang_name,
+                "_": translation.gettext,
+                "gettext": translation.gettext,
+                "ngettext": translation.ngettext
+            },
+            extensions=['jinja2.ext.i18n', 'jinja_markdown.MarkdownExtension'],
+            rules=[
+                (".*", render_with_translation)
+            ]
+        )
     
     # Install translation in Jinja2 environment
     site._env.install_gettext_translations(translation)
