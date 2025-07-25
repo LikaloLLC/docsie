@@ -16,3 +16,14 @@ Usage: {% include '_cal_onclick.html' with button_text="Book Demo" button_class=
   {% endif %}
   {{ button_text | default('Book Demo') }}
 </button>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const calButtons = document.querySelectorAll('[data-cal-link]');
+    calButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'auto' });
+      });
+    });
+  });
+</script>
