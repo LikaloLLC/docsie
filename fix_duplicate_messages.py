@@ -10,87 +10,50 @@ import shutil
 from pathlib import Path
 import tempfile
 import re
+import polib
 
-def clean_embedded_conflicts_and_remove_fuzzy(po_path: Path):
+
+def clean_po_file(filepath, save_backup: bool = True):
     """
     Remove fuzzy flags and clean embedded conflict markers in msgstr,
     keeping only the first (or best) translation chunk.
     """
-    with po_path.open('r', encoding='utf-8') as f:
-        lines = f.readlines()
+    filepath = str(filepath)  # Ensure string path for polib and concatenation
+    po = polib.pofile(filepath)
 
-    cleaned_lines = []
-    in_msgstr = False
-    msgstr_buffer = []
-    conflict_detected = False
+    if save_backup:
+        po.save(filepath + ".bak")
 
-    for line in lines:
-        # Skip fuzzy flags
-        if line.strip() == '#, fuzzy':
-            continue
+    for entry in po:
+        # Remove fuzzy flag if present
+        if 'fuzzy' in entry.flags:
+            entry.flags.remove('fuzzy')
 
-        if line.startswith('msgstr '):
-            in_msgstr = True
-            msgstr_buffer = [line]
-            conflict_detected = False
-            continue
+        # Clean merge conflicts in msgstr
+        if '#-#-#' in entry.msgstr:
+            cleaned = clean_conflict_msgstr(entry.msgstr)
+            entry.msgstr = cleaned
 
-        if in_msgstr and (line.startswith('"') or line.strip() == ''):
-            msgstr_buffer.append(line)
-            if '#-#-#' in line:
-                conflict_detected = True
-            continue
-        elif in_msgstr:
-            # msgstr block ended, clean if conflicted
-            if conflict_detected:
-                cleaned_msgstr = clean_conflict_msgstr(msgstr_buffer)
-                cleaned_lines.extend(cleaned_msgstr)
-            else:
-                cleaned_lines.extend(msgstr_buffer)
-            msgstr_buffer = []
-            in_msgstr = False
-            cleaned_lines.append(line)
-        else:
-            cleaned_lines.append(line)
+    po.save(filepath)
 
-    # Handle end of file inside msgstr block
-    if in_msgstr:
-        if conflict_detected:
-            cleaned_msgstr = clean_conflict_msgstr(msgstr_buffer)
-            cleaned_lines.extend(cleaned_msgstr)
-        else:
-            cleaned_lines.extend(msgstr_buffer)
-
-    with po_path.open('w', encoding='utf-8') as f:
-        f.writelines(cleaned_lines)
-
-
-def clean_conflict_msgstr(lines):
+def clean_conflict_msgstr(msgstr: str) -> str:
     """
     From list of msgstr lines with embedded conflict markers,
     keep only first translation chunk inside msgstr.
     """
-    full = ''.join(lines)
-    # Remove initial msgstr "" line
-    full = re.sub(r'^msgstr\s+""\s*', '', full)
+    parts = re.split(r'#-#-#-#-#.*?#-#-#-#-#', msgstr, flags=re.DOTALL)
+    for part in reversed(parts):
+        part = part.strip()
+        if part:
+            lines = []
+            for line in part.splitlines():
+                line = line.strip()
+                if not line.startswith('"'):
+                    line = f'"{line}"'
+                lines.append(line)
+            return '\n'.join(lines)
+    return '""'
 
-    # Split at conflict markers, which look like: "#-#-#-#-# ... #-#-#-#-#\n"
-    chunks = re.split(r'"#-#-#-#-#.*?#-#-#-#-#\\n?"\n?', full, flags=re.DOTALL)
-    if len(chunks) < 2:
-        # no proper split, return original lines
-        return lines
-
-    first_translation = chunks[1].strip()
-
-    # Rebuild clean msgstr
-    clean = ['msgstr ""\n']
-    for line in first_translation.splitlines():
-        # Strip extra quotes if present and escape inner quotes if any
-        line = line.strip()
-        # Remove leading/trailing quotes if accidentally kept
-        clean.append(line if line.startswith('"') else f'"{line}"\n')
-
-    return clean
 
 
 def fix_duplicate_messages():
@@ -157,7 +120,7 @@ def fix_duplicate_messages():
             shutil.copy2(tmp_path, po_file)
 
             # Step 4: Clean embedded conflict markers inside msgstrs
-            clean_embedded_conflicts_and_remove_fuzzy(po_file)
+            clean_po_file(po_file)
 
             print("✅")
             success_count += 1
