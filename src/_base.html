@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://app.docsie.io">
   <link rel="preconnect" href="https://portals.docsie.io">
   <link rel="preconnect" href="https://help.docsie.io">
-  <link rel="canonical" href="https://www.docsie.io/{{landing_url}}">
+  <link rel="canonical" href="https://www.docsie.io{{ landing_url }}">
   
   {# Hreflang tags for multilingual SEO #}
   {% include '_hreflang.html' %}
@@ -48,6 +48,9 @@
     content="https://d1iq6qzgppjlud.cloudfront.net/images/favicon/mstile-144x144.png" />
   <meta name="msapplication-square310x310logo"
     content="https://d1iq6qzgppjlud.cloudfront.net/images/favicon/mstile-310x310.png" />
+  
+  {# Redirect block for old pages #}
+  {% block redirect %}{% endblock redirect %}
   {% block header %}
   {% endblock header %}
   <link rel=" apple-touch-icon-precomposed" sizes="57x57"
@@ -78,7 +81,7 @@
     sizes="128x128" />
   <link rel="dns-prefetch" href="https://www.googletagmanager.com">
   <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
-  <link rel="dns-prefetch" href="https://assets.calendly.com">
+  <link rel="dns-prefetch" href="https://app.cal.com">
   
   <!-- Preload critical CSS -->
   <link rel="preload" href='/style.css' as="style">
@@ -90,11 +93,9 @@
   
   <!-- Defer non-critical CSS -->
   <link rel="preload" href="/lang-picker.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <link rel="preload" href="https://assets.calendly.com/assets/external/widget.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript>
     <link rel="stylesheet" href="/lang-picker.css">
-    <link rel="stylesheet" href="https://assets.calendly.com/assets/external/widget.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   </noscript>
   
@@ -414,7 +415,8 @@
   {% block scripts %}
   <!-- Deferred non-critical scripts -->
   <script src="https://cdn.jsdelivr.net/npm/share-this/dist/share-this.js" defer></script>
-  <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+  <!-- Cal.com Integration -->
+  {% include '_cal_init.html' %}
   
   <!-- Lazy loading -->
   <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.3.0/dist/lazyload.min.js"></script>

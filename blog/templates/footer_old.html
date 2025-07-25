@@ -1,0 +1,74 @@
+<!-- BlogVi Footer V2 - Simplified version using production styles -->
+<footer class="bg-gray-900 text-white mt-16">
+    <div class="container mx-auto px-4 py-12">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <!-- Company Info -->
+            <div>
+                <h3 class="text-lg font-semibold mb-4">Docsie</h3>
+                <p class="text-gray-400 text-sm">
+                    The modern documentation platform that helps teams create, manage, and share knowledge.
+                </p>
+            </div>
+            
+            <!-- Quick Links -->
+            <div>
+                <h4 class="text-lg font-semibold mb-4">Product</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="https://www.docsie.io/features/" class="text-gray-400 hover:text-white transition-colors">Features</a></li>
+                    <li><a href="https://www.docsie.io/pricing/" class="text-gray-400 hover:text-white transition-colors">Pricing</a></li>
+                    <li><a href="https://www.docsie.io/documentation/" class="text-gray-400 hover:text-white transition-colors">Documentation</a></li>
+                    <li><a href="{{ blog.blog_path }}" class="text-gray-400 hover:text-white transition-colors">Blog</a></li>
+                </ul>
+            </div>
+            
+            <!-- Resources -->
+            <div>
+                <h4 class="text-lg font-semibold mb-4">Resources</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="https://help.docsie.io" class="text-gray-400 hover:text-white transition-colors">Help Center</a></li>
+                    <li><a href="https://www.docsie.io/support/" class="text-gray-400 hover:text-white transition-colors">Support</a></li>
+                    <li><a href="https://www.docsie.io/about/" class="text-gray-400 hover:text-white transition-colors">About Us</a></li>
+                    <li><a href="https://www.docsie.io/careers/" class="text-gray-400 hover:text-white transition-colors">Careers</a></li>
+                </ul>
+            </div>
+            
+            <!-- Social Links -->
+            <div>
+                <h4 class="text-lg font-semibold mb-4">Connect</h4>
+                <div class="flex space-x-4">
+                    <a href="https://twitter.com/docsie_io" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/company/docsie" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://github.com/LikaloLLC" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="{{ blog.blog_path }}/rss.xml" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fas fa-rss"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Bottom Bar -->
+        <div class="mt-8 pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center text-sm text-gray-400">
+            <p>&copy; {{ current_year }} Docsie. All rights reserved.</p>
+            <div class="flex space-x-6 mt-4 md:mt-0">
+                <a href="https://www.docsie.io/privacy/" class="hover:text-white transition-colors">Privacy Policy</a>
+                <a href="https://www.docsie.io/terms/" class="hover:text-white transition-colors">Terms of Service</a>
+                <a href="https://www.docsie.io/cookies/" class="hover:text-white transition-colors">Cookie Policy</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+// Set current year for copyright
+document.addEventListener('DOMContentLoaded', function() {
+    const yearElements = document.querySelectorAll('[data-year]');
+    const currentYear = new Date().getFullYear();
+    yearElements.forEach(el => el.textContent = currentYear);
+});
+</script>

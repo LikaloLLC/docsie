@@ -1,0 +1,56 @@
+/* Import design tokens if not already loaded */
+@import url('/styles/design-tokens.css');
+
+/* Modern CTA Section v2 Styles */
+
+/* Base section styles */
+.cta-section-v2 {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Enhanced button hover animations */
+.cta-section-v2 a.group:hover {
+  transform: translateY(-2px);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Custom gradient animation */
+.cta-section-v2 h2 {
+  background: linear-gradient(90deg, 
+    hsl(var(--foreground)) 0%, 
+    hsl(var(--foreground) / 0.8) 50%, 
+    hsl(var(--foreground) / 0.7) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Background blur effects */
+.cta-section-v2 .absolute div {
+  animation: float 6s ease-in-out infinite;
+}
+
+.cta-section-v2 .absolute div:nth-child(2) {
+  animation-delay: -3s;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+/* Focus states for accessibility */
+.cta-section-v2 a:focus-visible {
+  outline: 2px solid hsl(var(--primary));
+  outline-offset: 2px;
+}
+
+/* Responsive typography */
+@media (max-width: 640px) {
+  .cta-section-v2 h2 {
+    font-size: 2.25rem;
+    line-height: 1.2;
+  }
+} 

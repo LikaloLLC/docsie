@@ -1,0 +1,57 @@
+<!-- Article Card V2 - Using Docsie Design System Classes -->
+<article class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+    {% if article.header_image %}
+    <a href="{{ article.path }}" class="block">
+        <div class="bg-gray-100">
+            <img src="{{ article.header_image }}" 
+                 alt="{{ article.title }}" 
+                 class="w-full h-48 object-cover"
+                 loading="lazy">
+        </div>
+    </a>
+    {% endif %}
+    
+    <div class="p-6">
+        <!-- Categories -->
+        <div class="flex flex-wrap gap-2 mb-3">
+            {% for category in article.categories[:2] %}
+            <a href="{{ blog.blog_path }}/{{ category|lower|replace(' ', '-') }}/" 
+               class="text-xs font-medium px-2 py-1 rounded bg-gray-100 text-gray-700 hover:bg-docsie-primary hover:text-white transition-colors">
+                {{ category }}
+            </a>
+            {% endfor %}
+        </div>
+        
+        <!-- Title -->
+        <h2 class="mb-3">
+            <a href="{{ article.path }}" 
+               class="text-xl font-bold text-gray-900 hover:text-docsie-primary transition-colors">
+                {{ article.title }}
+            </a>
+        </h2>
+        
+        <!-- Summary -->
+        <p class="text-gray-600 mb-4">
+            {{ article.summary|truncate(150) }}
+        </p>
+        
+        <!-- Meta Information -->
+        <div class="flex items-center justify-between blog-meta">
+            <div class="flex items-center space-x-2">
+                {% if article.author_image %}
+                <img src="{{ article.author_image }}" 
+                     alt="{{ article.author_name }}" 
+                     class="w-8 h-8 rounded-full">
+                {% else %}
+                <div class="w-8 h-8 rounded-full bg-docsie-primary flex items-center justify-center text-white text-sm font-medium">
+                    {{ article.author_name[:1] }}
+                </div>
+                {% endif %}
+                <span class="font-medium">{{ article.author_name }}</span>
+            </div>
+            <time datetime="{{ article.timestamp }}">
+                {{ article.timestamp.strftime('%b %d, %Y') }}
+            </time>
+        </div>
+    </div>
+</article>

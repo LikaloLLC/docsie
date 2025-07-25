@@ -1,0 +1,140 @@
+/* Import design tokens if not already loaded */
+@import url('/styles/design-tokens.css');
+
+/* Tailwind v2 Related Styles */
+
+.related-v2 {
+  position: relative;
+}
+
+/* Card hover effects */
+.related-card {
+  transition: all var(--transition-slow);
+}
+
+.related-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* Image hover effects */
+.related-card img {
+  transition: transform 0.3s ease;
+}
+
+.related-card:hover img {
+  transform: scale(1.05);
+}
+
+/* Content animations */
+.related-card h3 {
+  transition: all var(--transition-slow);
+}
+
+.related-card:hover h3 {
+  color: var(--color-brand-secondary);
+}
+
+/* Arrow animations */
+.related-card svg {
+  transition: transform 0.3s ease;
+}
+
+.related-card:hover svg {
+  transform: translateX(4px);
+}
+
+/* Grid animations */
+.related-grid {
+  animation: fadeInUp 0.8s ease;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Staggered animation for cards */
+.related-card:nth-child(1) { animation-delay: 0.1s; }
+.related-card:nth-child(2) { animation-delay: 0.2s; }
+.related-card:nth-child(3) { animation-delay: 0.3s; }
+.related-card:nth-child(4) { animation-delay: 0.4s; }
+
+.related-card {
+  opacity: 0;
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+/* Hover glow effect */
+.related-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, transparent 0%, rgba(59, 130, 246, 0.05) 50%, transparent 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  border-radius: var(--radius-lg);
+}
+
+.related-card:hover::before {
+  opacity: 1;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .related-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .related-v2 h2 {
+    font-size: 2rem;
+  }
+  
+  .related-card img {
+    height: 12rem;
+  }
+}
+
+/* Dark mode support */
+/* Dark mode automatically handled by design tokens */
+  
+  .related-v2 h2 {
+    color: var(--color-neutral-50);
+  }
+  
+  .related-card {
+    background-color: var(--text-primary);
+    border-color: var(--text-secondary);
+  }
+  
+  .related-card:hover {
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  }
+  
+  .related-card h3 {
+    color: var(--color-neutral-50);
+  }
+  
+  .related-card:hover h3 {
+    color: var(--color-brand-secondary-light);
+  }
+  
+  .related-card p {
+    color: var(--color-neutral-300);
+  }
+  
+  .related-card::before {
+    background: linear-gradient(135deg, transparent 0%, rgba(59, 130, 246, 0.1) 50%, transparent 100%);
+  }
+}

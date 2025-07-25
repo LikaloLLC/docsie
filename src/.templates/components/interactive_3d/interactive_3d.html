@@ -22,7 +22,9 @@
         {% endif %}
         
         {% if section.cta %}
-        <button onclick="Calendly.initPopupWidget({url: '{{ page.calendly_url if page and page.calendly_url else "https://calendly.com/docsie-io/demo-call" }}'});return false;" 
+        <button data-cal-link="{{ 'docsie/product-discovery' if not page or not page.calendly_url else page.calendly_url.split('/')[-1] }}" 
+                data-cal-namespace="product-discovery" 
+                data-cal-config='{"layout":"month_view"}'
                 class="interactive-cta">
           {{ section.cta.text }}
           <i class="fas fa-arrow-right"></i>

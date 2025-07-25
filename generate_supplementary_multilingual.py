@@ -18,7 +18,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from supplementary_site_generator import (
     is_hidden, copy_styles, load_component_data, 
     load_all_supplementary_pages, render_component_with_version,
-    ensure_styles
+    ensure_styles, get_available_css_files
 )
 from main import CustomSite
 from utils.jinja_image_filter import register_filters
@@ -219,18 +219,24 @@ def generate_supplementary_pages_for_language(locale_code, locale_dir, output_ba
             
             # Add language prefix for non-English pages
             if locale_code != 'en':
-                landing_url = f"{locale_code}{page_url}"
+                # Handle Japanese special case
+                if locale_code == 'jp':
+                    landing_url = f"/jp{page_url}"
+                else:
+                    landing_url = f"/{locale_code}{page_url}"
             else:
-                landing_url = page_url.lstrip('/')
+                landing_url = page_url
             
             # Create context
             context = {
                 'page': page,
                 'components': components_data,
                 'styles_path': '/styles',
+                'available_css': get_available_css_files(),
                 'get_page_by_url': get_page_by_url,
                 'locale': f"/{locale_code}" if locale_code != 'en' else '/',
                 'landing_url': landing_url,  # Add canonical URL
+                'lang': 'ja' if locale_code == 'jp' else locale_code,  # Language code for HTML lang attribute
                 '_': _,
                 'gettext': _
             }

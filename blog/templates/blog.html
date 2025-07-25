@@ -1,182 +1,565 @@
-<!-- BlogVi V2 Template - Using Production Docsie Design System -->
+<!-- Base template of the blog page -->
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    
-    <!-- Production Docsie CSS -->
-    <link rel="stylesheet" href="https://www.docsie.io/style.css">
-    <link rel="stylesheet" href="https://www.docsie.io/styles/design-system.css">
-    <link rel="stylesheet" href="https://www.docsie.io/styles/design-tokens.css">
-    <link rel="stylesheet" href="https://www.docsie.io/styles/design-utilities.css">
-    <link rel="stylesheet" href="https://www.docsie.io/styles/tailwind-compat.css">
-    
-    <!-- Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+          integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+          crossorigin="anonymous"/>
+    <link href="https://fonts.googleapis.com/css?family=Nunito:400,700,800" rel="stylesheet">
+
     {% include 'favicon.html' %}
-    
+
     <link rel="manifest" href="{{settings.blog_root_path}}site.webmanifest">
-    <meta name="msapplication-TileColor" content="#13AF4B">
-    <meta name="theme-color" content="#13AF4B">
-    
+    <link rel="mask-icon" href="{{settings.blog_root_path}}safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#00aba9">
+    <meta name="theme-color" content="#3b7977">
+
     <!-- Primary Meta Tags -->
-    <title>{{ settings.landing_meta.title or settings.blog_name }}</title>
+    <title>{% if is_category_page and category_title %}{{ category_title }}{% else %}{{ settings.landing_meta.title or settings.blog_name }}{% endif %}</title>
     <meta name="author" content="{{ settings.landing_meta.author }}">
-    <meta name="title" content="{{ settings.landing_meta.title or settings.blog_name }}">
-    <meta name="description" content="{{ settings.landing_meta.description }}">
+    <meta name="title" content="{% if is_category_page and category_title %}{{ category_title }}{% else %}{{ settings.landing_meta.title or settings.blog_name }}{% endif %}">
+    <meta name="description" content="{{ category_description or settings.landing_meta.description }}">
     <meta name="keywords" content="{{ settings.landing_meta.keywords }}">
     
+    <!-- Canonical URL -->
+    {% if is_category_page %}
+    <link rel="canonical" href="{{ settings.domain_url }}{{ blog.path }}/">
+    {% else %}
+    <link rel="canonical" href="{{ settings.domain_url }}{{ settings.blog_root_path }}">
+    {% endif %}
+
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="{{ settings.landing_meta.url }}">
-    <meta property="og:title" content="{{ settings.landing_meta.title or settings.blog_name }}">
-    <meta property="og:description" content="{{ settings.landing_meta.description }}">
+    <meta property="og:title" content="{% if is_category_page and category_title %}{{ category_title }}{% else %}{{ settings.landing_meta.title or settings.blog_name }}{% endif %}">
+    <meta property="og:description"
+          content="{{ category_description or settings.landing_meta.description }}">
     <meta property="og:image" content="{{ settings.landing_meta.image }}">
-    
+
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="{{ settings.landing_meta.url }}">
-    <meta property="twitter:title" content="{{ settings.landing_meta.title or settings.blog_name }}">
-    <meta property="twitter:description" content="{{ settings.landing_meta.description }}">
+    <meta property="twitter:title" content="{% if is_category_page and category_title %}{{ category_title }}{% else %}{{ settings.landing_meta.title or settings.blog_name }}{% endif %}">
+    <meta property="twitter:description"
+          content="{{ category_description or settings.landing_meta.description }}">
     <meta property="twitter:image" content="{{ settings.landing_meta.image }}">
+
+    <!-- Tailwind CSS with JIT mode -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'docsie-primary': '#13AF4B',
+                        'docsie-primary-dark': '#0d8638',
+                    }
+                }
+            }
+        }
+    </script>
     
-    <!-- Minimal Blog-Specific Styles (only what's not in design system) -->
+    <link href="{{ settings.blog_root_path }}templates/assets/css/design-system.css" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
     <style>
-        /* Blog-specific article grid spacing */
-        .blog-article-grid {
-            display: grid;
-            gap: 2rem;
+        /* Modern Design System */
+        :root {
+            --gradient-primary: linear-gradient(to right, #7c3aed, #4f46e5);
+            --gradient-primary-hover: linear-gradient(to right, #6d28d9, #4338ca);
         }
         
-        @media (min-width: 768px) {
-            .blog-article-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
+        /* Override Tailwind colors with design system colors */
+        .bg-docsie-primary { background-color: var(--docsie-primary); }
+        .bg-docsie-primary-dark { background-color: var(--docsie-primary-dark); }
+        .text-docsie-primary { color: var(--docsie-primary); }
+        .hover\:text-docsie-primary:hover { color: var(--docsie-primary); }
+        .hover\:bg-docsie-primary-dark:hover { background-color: var(--docsie-primary-dark); }
+        
+        /* Gradient styles */
+        .bg-gradient-primary {
+            background: var(--gradient-primary);
+        }
+        
+        .bg-gradient-primary:hover {
+            background: var(--gradient-primary-hover);
+        }
+        
+        .text-gradient {
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        /* Modern category pills */
+        .category-pill {
+            border-radius: 9999px;
+            padding: 0.25rem 0.75rem;
+            font-size: 0.75rem;
+            white-space: nowrap;
+            transition: all 300ms;
+            font-weight: 600;
+            display: inline-block;
+            text-decoration: none;
+        }
+        
+        .category-pill:hover {
+            transform: scale(1.05);
+        }
+        
+        .category-pill-active {
+            background-color: var(--docsie-primary);
+            color: white;
+        }
+        
+        .category-pill-inactive {
+            background-color: #f3f4f6;
+            color: #374151;
+        }
+        
+        .category-pill-inactive:hover {
+            background-color: #e5e7eb;
+        }
+        
+        /* Modern input styles */
+        .search-input {
+            height: 2.75rem;
+            width: 100%;
+            border-radius: 0.5rem;
+            border: 1px solid #e5e7eb;
+            background-color: rgba(255, 255, 255, 0.5);
+            padding: 0.75rem 1rem;
+            font-size: 0.875rem;
+            transition: all 300ms;
+        }
+        
+        .search-input:focus {
+            outline: none;
+            ring: 2px;
+            ring-color: #a855f7;
+            ring-offset: 2px;
+        }
+        
+        /* Header with backdrop blur */
+        .header-modern {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            border-bottom: 1px solid #e5e7eb;
+            backdrop-filter: blur(12px);
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+        
+        .header-scrolled {
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+        }
+        
+        /* Modern card styles */
+        .article-card {
+            border-radius: 0.75rem;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            background-color: white;
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+            transition: all 300ms;
+        }
+        
+        .article-card:hover {
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            transform: translateY(-0.25rem);
+        }
+        
+        .article-card-image {
+            transition: transform 300ms;
+        }
+        
+        .article-card:hover .article-card-image {
+            transform: scale(1.05);
+        }
+        
+        /* Featured article gradient badge */
+        .badge-gradient {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+        }
+        
+        /* Newsletter section gradient background */
+        .newsletter-gradient {
+            background: linear-gradient(to right, rgba(124, 58, 237, 0.1), rgba(79, 70, 229, 0.1));
+            border: 1px solid rgba(124, 58, 237, 0.2);
+        }
+        
+        /* Button styles */
+        .btn-gradient {
+            background: var(--gradient-primary);
+            color: white;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            transition: all 300ms;
+            border: none;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+        }
+        
+        .btn-gradient:hover {
+            background: var(--gradient-primary-hover);
+            transform: translateY(-1px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        
+        /* Hero section styling */
+        .hero-title {
+            font-size: 2.25rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1rem;
         }
         
         @media (min-width: 1024px) {
-            .blog-article-grid {
-                grid-template-columns: repeat(3, 1fr);
+            .hero-title {
+                font-size: 3.75rem;
             }
         }
         
-        /* Reading time and other blog-specific meta */
-        .blog-meta {
-            font-size: 0.875rem;
-            color: var(--docsie-gray-500);
+        /* Social icons with animations */
+        .social-icon {
+            transition: all 200ms;
         }
         
-        /* Only if language picker isn't in main design system */
-        {% if settings.show_language_picker %}
-        .blog-language-picker {
-            position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            z-index: 40;
+        .social-icon:hover {
+            color: var(--docsie-primary);
+            transform: scale(1.1);
         }
-        {% endif %}
+        
+        /* Body gradient background */
+        body {
+            background: linear-gradient(to bottom right, #fafafa, #fafafa, rgba(250, 250, 250, 0.5));
+        }
+        
+        /* Hide scrollbar for category navigation */
+        .scrollbar-hide {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
+        
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;  /* Chrome, Safari and Opera */
+        }
     </style>
-    
+
     {% if settings.google_tag_manager.enabled %}
     <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','{{ settings.google_tag_manager.google_tag_manager_projectid }}');</script>
-    <!-- End Google Tag Manager -->
-    {% endif %}
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','{{ settings.google_tag_manager.google_tag_manager_projectid }}');</script>
+<!-- End Google Tag Manager -->
+  {% endif %}
+
+
 </head>
 
-<body>
-    {% if settings.google_tag_manager.enabled %}
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id={{ settings.google_tag_manager.google_tag_manager_projectid }}"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
-    {% endif %}
-    
-    {% include 'header_v2.html' %}
-    
-    <!-- Hero Section -->
-    <section class="bg-gradient-to-br from-docsie-primary/10 to-docsie-primary/5 py-16">
-        <div class="container max-w-7xl mx-auto px-4 text-center">
-            <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-                {{ settings.blog_name }}
-            </h1>
-            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                {{ settings.landing_meta.description }}
+<body class="font-sans leading-normal tracking-normal">
+
+
+{% include 'header.html' %}
+
+<!-- Hero Section -->
+<section class="container max-w-7xl mx-auto px-4 py-8 mb-12 text-center">
+    <div class="mx-auto max-w-3xl">
+        <h1 class="hero-title">
+            {% if is_category_page and category_title %}
+                {{ category_title }}
+            {% else %}
+                {{ settings.landing_meta.title.split('|')[0] or settings.blog_name }}
+                <span class="text-gradient">{{ settings.landing_meta.title.split('|')[1] if '|' in settings.landing_meta.title else '' }}</span>
+            {% endif %}
+        </h1>
+        <p class="text-lg text-gray-600 lg:text-xl">
+            {{ category_description or settings.landing_meta.description }}
+        </p>
+    </div>
+</section>
+
+<!--Container-->
+<div class="container px-4 md:px-0 max-w-7xl mx-auto">
+
+    <div class="mx-0 sm:mx-6">
+
+        <!-- Social Share and Subscribe -->
+        <div class="flex w-full justify-between items-center mb-8">
+            <div class="flex content-center">
+                <a
+                        class="inline-block text-gray-500 no-underline hover:text-docsie-primary hover:text-underline text-center h-10 p-2 md:h-auto md:p-4 avatar social-icon"
+                        data-tippy-content="@twitter_handle" href="https://twitter.com/intent/tweet?url=#"
+                        id="twitter">
+                    <svg class="fill-current h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+                        <path
+                                d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"></path>
+                    </svg>
+                </a>
+                <a
+                        class="inline-block text-gray-500 no-underline hover:text-docsie-primary hover:text-underline text-center h-10 p-2 md:h-auto md:p-4 avatar social-icon"
+                        data-tippy-content="#facebook_id" href="https://www.facebook.com/sharer/sharer.php?u=#}"
+                        id="facebook">
+                    <svg class="fill-current h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+                        <path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"></path>
+                    </svg>
+                </a>
+            </div>
+            
+            <!-- Subscribe Button (if enabled) -->
+            {% if settings.subscribe.enabled %}
+            <a href="#subscribe" class="btn-gradient hidden md:inline-flex items-center">
+                {{ settings.subscribe.button_text }}
+                <i data-lucide="arrow-right" class="ml-2 h-4 w-4"></i>
+            </a>
+            {% endif %}
+        </div>
+
+        <div class="w-full text-xl md:text-2xl text-gray-800 leading-normal rounded-t">
+
+            <!--Lead Card-->
+            {% if head_article %}
+                {% with data=head_article %}
+                    {% include 'lead_card.html' %}
+                {% endwith %}
+            {% endif %}
+            <!--/Lead Card-->
+            <!--      {{ searchConfig }}-->
+
+            <!--Posts Container-->
+            <section class="pt-12">
+                <div class="mb-8">
+                    <h3 class="mb-2 text-2xl font-bold text-gray-900">
+                        {% if is_category_page %}
+                            Articles in this Category
+                        {% else %}
+                            Latest Articles
+                        {% endif %}
+                    </h3>
+                    <p class="text-gray-600">
+                        {% if is_category_page %}
+                            Explore our collection of {{ articles|length }} article{{ 's' if articles|length != 1 else '' }} in this category
+                        {% else %}
+                            Stay informed with our latest insights and tutorials
+                        {% endif %}
+                    </p>
+                </div>
+                
+                <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+                    {% for article in articles %}
+                        {% include 'card.html' %}
+                    {% endfor %}
+                </div>
+                
+                {% if articles|length == 0 %}
+                <div class="py-16 text-center">
+                    <div class="mx-auto mb-4 h-16 w-16 rounded-full bg-gray-100 flex items-center justify-center">
+                        <i data-lucide="search" class="h-8 w-8 text-gray-400"></i>
+                    </div>
+                    <h4 class="mb-2 text-lg font-semibold">No articles found</h4>
+                    <p class="text-gray-600">
+                        Check back soon for new content in this category.
+                    </p>
+                </div>
+                {% endif %}
+            </section>
+
+        </div>
+        <!--/ Post Content-->
+
+    </div>
+
+   <!--Subscribe-->
+    {% if settings.subscribe.enabled %}
+    <section class="mt-20" id="subscribe">
+        <div class="newsletter-gradient rounded-2xl p-8 lg:p-12 text-center shadow-lg">
+            <h3 class="mb-4 text-2xl font-bold lg:text-3xl text-gray-900">
+                {{ settings.subscribe.title or "Never Miss an Update" }}
+            </h3>
+            <p class="mb-6 text-gray-600 lg:text-lg">
+                {{ settings.subscribe.summary or "Subscribe to our newsletter for the latest insights on documentation, knowledge management, and enterprise solutions." }}
             </p>
+            <div class="mx-auto flex max-w-md gap-3">
+                <input 
+                    placeholder="Enter your email" 
+                    type="email"
+                    class="flex-1 search-input"
+                />
+                <button class="btn-gradient">
+                    {{ settings.subscribe.button_text or "Subscribe" }}
+                </button>
+            </div>
         </div>
     </section>
-    
-    <!-- Main Content -->
-    <main class="container mx-auto px-4 py-8">
-        <!-- Featured Article -->
-        {% if data %}
-            <div class="mb-12">
-                {% include 'lead_card_v2.html' %}
-            </div>
-        {% endif %}
-        
-        <!-- Articles Grid -->
-        <div class="blog-article-grid">
-            {% for article in data[1:] %}
-                {% include 'card_v2.html' %}
+    {% endif %}
+    <!-- /Subscribe-->
+
+    <!--More Categories-->
+    {% if (categories|list)|length > 7 %}
+    <section class="mt-16 pt-8 border-t border-gray-200">
+        <h3 class="text-lg font-semibold mb-4 text-gray-900">More Categories</h3>
+        <div class="flex flex-wrap gap-2">
+            {% for category in (categories|list)[7:] %}
+            {% set category_url = blog.blog_path + ('/' if not blog.blog_path.endswith('/') else '') + category.1 %}
+            <a class="category-pill category-pill-inactive"
+               href="{{ category_url }}">{{ category.0 }}</a>
             {% endfor %}
         </div>
-        
-        <!-- Pagination (if needed) -->
-        <div class="mt-12 flex justify-center">
-            <!-- Add pagination controls here if needed -->
-        </div>
-    </main>
-    
-    <!-- Newsletter Subscription -->
-    {% if settings.subscribe.enabled %}
-        <section class="bg-gray-50 py-16">
-            <div class="container max-w-7xl mx-auto px-4">
-                {% include 'subscription_form.html' %}
-            </div>
-        </section>
+    </section>
     {% endif %}
-    
-    {% include 'footer_v2.html' %}
-    
-    <!-- Language Picker -->
-    {% if settings.show_language_picker and settings.translation_list %}
-    <div class="language-picker">
-        <div class="bg-white rounded-lg shadow-lg p-2">
-            <select onchange="window.location.href=this.value" class="text-sm font-medium text-gray-700 bg-transparent border-none focus:outline-none cursor-pointer">
-                <option value="{{ blog.blog_path }}">English</option>
-                {% for translation in settings.translation_list %}
-                <option value="{{ blog.blog_path }}/../{{ translation.abbreviation }}/">{{ translation.label }}</option>
-                {% endfor %}
-            </select>
-        </div>
-    </div>
-    {% endif %}
-    
-    <!-- BlogVi Search Script -->
-    <script src="{{ blog.path }}/templates/assets/js/search.js"></script>
-    
-    <!-- Additional Scripts -->
-    <script>
-        // Smooth scroll for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-    </script>
+    <!-- /More Categories-->
+
+</div>
+
+
+</div>
+
+
+{% include 'footer.html' %}
+<script src="https://unpkg.com/popper.js@1/dist/umd/popper.min.js"></script>
+<script src="https://unpkg.com/tippy.js@4"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6"></script>
+<script src="{{ settings.blog_root_path }}templates/assets/js/search.js"></script>
+
+<script>
+// Initialize Lucide icons
+lucide.createIcons();
+
+/* Progress bar */
+//Source: https://alligator.io/js/progress-bar-javascript-css-variables/
+var h = document.documentElement,
+    b = document.body,
+    st = 'scrollTop',
+    sh = 'scrollHeight',
+    progress = document.querySelector('#progress'),
+    scroll;
+var scrollpos = window.scrollY;
+var header = document.getElementById("header");
+var navcontent = document.getElementById("nav-content");
+
+document.addEventListener('scroll', function () {
+
+    /*Refresh scroll % width*/
+    scroll = (h[st] || b[st]) / ((h[sh] || b[sh]) - h.clientHeight) * 100;
+    progress.style.setProperty('--scroll', scroll + '%');
+
+    /*Apply classes for slide in bar*/
+    scrollpos = window.scrollY;
+
+    if (scrollpos > 10) {
+        header.classList.add("bg-white");
+        header.classList.add("shadow");
+        header.classList.add("header-animated");
+        navcontent.classList.remove("bg-gray-100");
+        navcontent.classList.add("bg-white");
+    } else {
+        header.classList.remove("bg-white");
+        header.classList.remove("shadow");
+        header.classList.add("header-animated");
+        navcontent.classList.remove("bg-white");
+        navcontent.classList.add("bg-gray-100");
+
+    }
+
+});
+
+
+//Javascript to toggle the menu
+document.getElementById('nav-toggle').onclick = function () {
+    document.getElementById("nav-content").classList.toggle("hidden");
+}
+//Init tooltips
+tippy('.avatar')
+</script>
+<!--<script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.3.1/dist/lazyload.min.js"></script>-->
+
+<!--Search script-->
+<script>
+    const images = document.querySelectorAll("[data-src]");
+
+    // change data-src to src
+    function preloadImage(img) {
+        const src = img.getAttribute("data-src");
+        if (!src) {
+            return;
+        }
+        img.src = src;
+    }
+
+    // load image
+    const imgObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (!entry.isIntersecting) {
+
+            } else {
+                preloadImage(entry.target);
+            }
+        })
+    });
+
+    images.forEach(image => {
+        imgObserver.observe(image);
+    })
+
+</script>
+
+<script type="text/javascript">window["searchConfig"] = {{ searchConfig }}</script>
+<script>
+    /*
+      Twitter
+      https://twitter.com/share?url=[post-url]&text=[post-title]
+
+      Facebook
+      https://www.facebook.com/sharer.php?u=[post-url]
+
+    */
+    let twitterURI = document.getElementById('twitter');
+    let facebookURI = document.getElementById('facebook');
+
+    let postURI = encodeURI(document.location.href);
+    let postTitle = encodeURI("Hi everyone you can share this post: ")
+
+    facebookURI.setAttribute('href', `https://www.facebook.com/sharer.php?u=${postURI}`);
+    twitterURI.setAttribute('href', `https://twitter.com/share?url=${postURI}&text=${postTitle}`);
+
+</script>
+
+<!--Sharect-->
+{% if settings.sharect.enabled %}
+    <script src="https://unpkg.com/sharect@2.0.0/dist/sharect.js"></script>
+    <script>window["sharectConfig"] = {{ settings.sharect|tojson|safe }}</script>
+    <script src="{{ settings.blog_root_path }}templates/assets/js/sharect.js"></script>
+{% endif %}
+
+{% if settings.google_tag_manager.enabled %}
+      <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id={{ settings.google_tag_manager.google_tag_manager_projectid }}"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+  {% endif %}
+
+
+
 </body>
+
+
 </html>

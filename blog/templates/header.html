@@ -5,36 +5,23 @@
       <!-- Logo -->
       <div class="flex items-center">
         <a href="https://www.docsie.io" class="flex items-center">
-          <svg class="h-8 w-auto mr-2" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M20 0C8.95 0 0 8.95 0 20C0 31.05 8.95 40 20 40C31.05 40 40 31.05 40 20C40 8.95 31.05 0 20 0Z" fill="#13AF4B"/>
-            <path d="M16 12H24C26.21 12 28 13.79 28 16V24C28 26.21 26.21 28 24 28H16C13.79 28 12 26.21 12 24V16C12 13.79 13.79 12 16 12Z" fill="white"/>
-            <path d="M18 16H22V24H18V16Z" fill="#13AF4B"/>
-          </svg>
+          <img src="{{ settings.domain_url }}/assets/docsie_logo_square_svg.svg" alt="Docsie Logo" class="h-8 w-auto mr-2" style="filter: brightness(0) saturate(100%) invert(42%) sepia(93%) saturate(1018%) hue-rotate(96deg) brightness(101%) contrast(91%);">
           <span class="text-2xl font-bold text-gray-900">Docsie</span>
         </a>
         <span class="ml-2 text-gray-500">|</span>
-        <a href="{{ blog.blog_path }}" class="ml-2 text-xl font-semibold text-gray-700 hover:text-docsie-primary transition-colors">
+        <a href="{{ settings.blog_root_path }}" class="ml-2 text-xl font-semibold text-gray-700 hover:text-docsie-primary transition-colors">
           Blog
         </a>
       </div>
 
       <!-- Desktop Navigation -->
       <div class="hidden md:flex items-center space-x-8">
-        <!-- Main Nav Links -->
-        <a href="https://www.docsie.io/features/" class="text-gray-700 hover:text-docsie-primary font-medium transition-colors">Features</a>
-        <a href="https://www.docsie.io/pricing/" class="text-gray-700 hover:text-docsie-primary font-medium transition-colors">Pricing</a>
-        <a href="https://www.docsie.io/documentation/" class="text-gray-700 hover:text-docsie-primary font-medium transition-colors">Docs</a>
-        <a href="{{ blog.blog_path }}" class="text-docsie-primary font-medium">Blog</a>
-        
-        <!-- CTA Buttons -->
-        <div class="flex items-center space-x-4">
-          <a href="https://app.docsie.io/login" class="text-gray-700 hover:text-docsie-primary font-medium transition-colors">
-            Sign In
-          </a>
-          <a href="https://app.docsie.io/signup" class="bg-docsie-primary hover:bg-docsie-primary-dark text-white px-4 py-2 rounded-lg font-medium transition-colors">
-            Get Started Free
-          </a>
-        </div>
+        <!-- Main Nav Links from settings -->
+        {% for link in settings.link_menu %}
+        <a href="{{ link.link }}" class="{% if loop.last %}bg-docsie-primary hover:bg-docsie-primary-dark text-white px-4 py-2 rounded-lg{% else %}text-gray-700 hover:text-docsie-primary{% endif %} font-medium transition-colors">
+          {{ link.text }}
+        </a>
+        {% endfor %}
       </div>
 
       <!-- Mobile menu button -->
@@ -48,18 +35,11 @@
     <!-- Mobile Navigation -->
     <div id="mobile-menu" class="hidden md:hidden pb-4">
       <div class="flex flex-col space-y-4">
-        <a href="https://www.docsie.io/features/" class="text-gray-700 hover:text-docsie-primary font-medium transition-colors">Features</a>
-        <a href="https://www.docsie.io/pricing/" class="text-gray-700 hover:text-docsie-primary font-medium transition-colors">Pricing</a>
-        <a href="https://www.docsie.io/documentation/" class="text-gray-700 hover:text-docsie-primary font-medium transition-colors">Docs</a>
-        <a href="{{ blog.blog_path }}" class="text-docsie-primary font-medium">Blog</a>
-        <div class="pt-4 border-t border-gray-200">
-          <a href="https://app.docsie.io/login" class="block text-gray-700 hover:text-docsie-primary font-medium transition-colors mb-2">
-            Sign In
-          </a>
-          <a href="https://app.docsie.io/signup" class="block text-center bg-docsie-primary hover:bg-docsie-primary-dark text-white px-4 py-2 rounded-lg font-medium transition-colors">
-            Get Started Free
-          </a>
-        </div>
+        {% for link in settings.link_menu %}
+        <a href="{{ link.link }}" class="{% if loop.last %}block text-center bg-docsie-primary hover:bg-docsie-primary-dark text-white px-4 py-2 rounded-lg{% else %}text-gray-700 hover:text-docsie-primary{% endif %} font-medium transition-colors">
+          {{ link.text }}
+        </a>
+        {% endfor %}
       </div>
     </div>
   </div>
@@ -70,28 +50,39 @@
   <div class="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex items-center justify-between py-3">
       <!-- Categories -->
-      <nav class="flex items-center space-x-1 overflow-x-auto">
-        <a href="{{ blog.blog_path }}" class="px-3 py-1 text-sm font-medium rounded-full bg-docsie-primary text-white whitespace-nowrap">
+      <nav class="flex items-center gap-2 overflow-x-auto max-w-full scrollbar-hide">
+        <a href="{{ blog.blog_path }}" class="category-pill flex-shrink-0 {% if not is_category_page %}category-pill-active{% else %}category-pill-inactive{% endif %}">
           ALL
         </a>
-        {% for category in (categories|list)[:10] %}
-          <a href="{{ category.1 }}" class="px-3 py-1 text-sm font-medium rounded-full bg-gray-200 text-gray-700 hover:bg-gray-300 transition-colors whitespace-nowrap">
+        {% for category in (categories|list)[:7] %}
+          {% set category_url = blog.blog_path.rstrip('/') + '/' + category.1 + '/' %}
+          <a href="{{ category_url }}" class="category-pill flex-shrink-0 {% if is_category_page and category.0 in (category_title|default('')) %}category-pill-active{% else %}category-pill-inactive{% endif %}">
             {{ category.0 }}
           </a>
         {% endfor %}
       </nav>
 
-      <!-- Search -->
-      <div class="relative ml-4">
-        <input type="search" 
-               placeholder="Search articles..." 
-               class="w-64 px-4 py-2 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-docsie-primary focus:border-transparent"
-               id="search">
-        <div class="absolute right-0 mt-2 w-96 bg-white rounded-lg shadow-xl border border-gray-200 hidden z-50" id="search-bar">
-          <ul class="py-2 max-h-96 overflow-y-auto" id="search-results">
-            <!-- Search results will be populated here -->
-          </ul>
+      <!-- Right side: Search and Subscribe -->
+      <div class="flex items-center gap-2 ml-2">
+        <!-- Search -->
+        <div class="relative">
+          <input type="search" 
+                 placeholder="Search..." 
+                 class="w-32 sm:w-48 md:w-64 px-3 py-2 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-docsie-primary focus:border-transparent"
+                 id="search">
+          <div class="absolute right-0 mt-2 w-64 sm:w-80 md:w-96 bg-white rounded-lg shadow-xl border border-gray-200 hidden z-50" id="search-bar">
+            <ul class="py-2 max-h-96 overflow-y-auto" id="search-results">
+              <!-- Search results will be populated here -->
+            </ul>
+          </div>
         </div>
+        
+        <!-- Subscribe Button (if enabled) -->
+        {% if settings.subscribe.enabled %}
+        <a href="#subscribe" class="btn-gradient hidden lg:inline-flex items-center text-sm whitespace-nowrap">
+          {{ settings.subscribe.button_text }}
+        </a>
+        {% endif %}
       </div>
     </div>
   </div>
@@ -104,5 +95,5 @@ function toggleMobileMenu() {
 }
 
 // Initialize search settings for BlogVi
-window['settings'] = {{ settings.to_json() }};
+window['searchConfig'] = {{ searchConfig|tojson }};
 </script>

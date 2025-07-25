@@ -87,15 +87,25 @@
 <!-- Component specific styles -->
 <link rel="stylesheet" href="/styles/supplementary_page.css" />
 
-<!-- Dynamic component styles -->
-{% set component_names = ['hero', 'features', 'gallery', 'related', 'related_auto', 'reviews', 'carousel', 'stats', 'comparison', 'cta_section', 'benefits', 'testimonials_v2', 'interactive_3d', 'pilot_inclusions', 'pilot_process', 'simple_spline', 'qualification_criteria', 'faq_v2'] %}
-{% set v2_components = ['hero', 'features', 'gallery', 'related', 'carousel', 'stats', 'comparison', 'cta_section', 'benefits', 'testimonials_v2'] %}
-{% for component in component_names %}
-<link rel="stylesheet" href="/styles/components/{{ component }}.css" />
-{% if component in v2_components %}
-<link rel="stylesheet" href="/styles/components/{{ component }}_v2.css" />
+<!-- Dynamic component styles - only load CSS files that actually exist -->
+{% if page.components and available_css %}
+  {% for component_name, component_data in page.components.items() %}
+    {% if component_data %}
+      {# Check if component already has a version suffix (e.g., _v2, _v3) #}
+      {% set has_version_suffix = component_name.endswith('_v2') or component_name.endswith('_v3') or component_name.endswith('_v4') %}
+      
+      {# Load base CSS if it exists #}
+      {% if component_name in available_css.base %}
+        <link rel="stylesheet" href="/styles/components/{{ component_name }}.css" />
+      {% endif %}
+      
+      {# Only load v2 CSS for components without version suffix in their name #}
+      {% if not has_version_suffix and component_name in available_css.v2 %}
+        <link rel="stylesheet" href="/styles/components/{{ component_name }}_v2.css" />
+      {% endif %}
+    {% endif %}
+  {% endfor %}
 {% endif %}
-{% endfor %}
 {% endblock %}
 
 {% block content %}

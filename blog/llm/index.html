@@ -23,29 +23,245 @@
     <meta name="theme-color" content="#3b7977">
 
     <!-- Primary Meta Tags -->
-    <title>Documentation Insights | Docsie - Articles on Better Docs, Marketing, Technology & More</title>
+    <title>Llm Articles & Guides | Docsie.io Blog</title>
     <meta name="author" content="Docsie.io">
-    <meta name="title" content="Documentation Insights | Docsie - Articles on Better Docs, Marketing, Technology & More">
-    <meta name="description" content="Documentation Insights is where our team shares documentation tips, stories and lessons learned about creating better documentation experiences.">
+    <meta name="title" content="Llm Articles & Guides | Docsie.io Blog">
+    <meta name="description" content="Explore how Large Language Models (LLMs) transform healthcare data management and streamline patient information workflows. Discover practical applications f...">
     <meta name="keywords" content="Documentation, docs, product documentation, user manual, software documentation">
+    
+    <!-- Canonical URL -->
+    
+    <link rel="canonical" href="https://www.docsie.io/blog/llm/">
+    
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.docsie.io">
-    <meta property="og:title" content="Documentation Insights | Docsie - Articles on Better Docs, Marketing, Technology & More">
+    <meta property="og:title" content="Llm Articles & Guides | Docsie.io Blog">
     <meta property="og:description"
-          content="Documentation Insights is where our team shares documentation tips, stories and lessons learned about creating better documentation experiences.">
+          content="Explore how Large Language Models (LLMs) transform healthcare data management and streamline patient information workflows. Discover practical applications f...">
     <meta property="og:image" content="https://d1iq6qzgppjlud.cloudfront.net/images/favicon/apple-touch-icon-144x144.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://www.docsie.io">
-    <meta property="twitter:title" content="Documentation Insights | Docsie - Articles on Better Docs, Marketing, Technology & More">
+    <meta property="twitter:title" content="Llm Articles & Guides | Docsie.io Blog">
     <meta property="twitter:description"
-          content="Documentation Insights is where our team shares documentation tips, stories and lessons learned about creating better documentation experiences.">
+          content="Explore how Large Language Models (LLMs) transform healthcare data management and streamline patient information workflows. Discover practical applications f...">
     <meta property="twitter:image" content="https://d1iq6qzgppjlud.cloudfront.net/images/favicon/apple-touch-icon-144x144.png">
 
-    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Tailwind CSS with JIT mode -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'docsie-primary': '#13AF4B',
+                        'docsie-primary-dark': '#0d8638',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <link href="/blog/templates/assets/css/design-system.css" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <style>
+        /* Modern Design System */
+        :root {
+            --gradient-primary: linear-gradient(to right, #7c3aed, #4f46e5);
+            --gradient-primary-hover: linear-gradient(to right, #6d28d9, #4338ca);
+        }
+        
+        /* Override Tailwind colors with design system colors */
+        .bg-docsie-primary { background-color: var(--docsie-primary); }
+        .bg-docsie-primary-dark { background-color: var(--docsie-primary-dark); }
+        .text-docsie-primary { color: var(--docsie-primary); }
+        .hover\:text-docsie-primary:hover { color: var(--docsie-primary); }
+        .hover\:bg-docsie-primary-dark:hover { background-color: var(--docsie-primary-dark); }
+        
+        /* Gradient styles */
+        .bg-gradient-primary {
+            background: var(--gradient-primary);
+        }
+        
+        .bg-gradient-primary:hover {
+            background: var(--gradient-primary-hover);
+        }
+        
+        .text-gradient {
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        /* Modern category pills */
+        .category-pill {
+            border-radius: 9999px;
+            padding: 0.25rem 0.75rem;
+            font-size: 0.75rem;
+            white-space: nowrap;
+            transition: all 300ms;
+            font-weight: 600;
+            display: inline-block;
+            text-decoration: none;
+        }
+        
+        .category-pill:hover {
+            transform: scale(1.05);
+        }
+        
+        .category-pill-active {
+            background-color: var(--docsie-primary);
+            color: white;
+        }
+        
+        .category-pill-inactive {
+            background-color: #f3f4f6;
+            color: #374151;
+        }
+        
+        .category-pill-inactive:hover {
+            background-color: #e5e7eb;
+        }
+        
+        /* Modern input styles */
+        .search-input {
+            height: 2.75rem;
+            width: 100%;
+            border-radius: 0.5rem;
+            border: 1px solid #e5e7eb;
+            background-color: rgba(255, 255, 255, 0.5);
+            padding: 0.75rem 1rem;
+            font-size: 0.875rem;
+            transition: all 300ms;
+        }
+        
+        .search-input:focus {
+            outline: none;
+            ring: 2px;
+            ring-color: #a855f7;
+            ring-offset: 2px;
+        }
+        
+        /* Header with backdrop blur */
+        .header-modern {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            border-bottom: 1px solid #e5e7eb;
+            backdrop-filter: blur(12px);
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+        
+        .header-scrolled {
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+        }
+        
+        /* Modern card styles */
+        .article-card {
+            border-radius: 0.75rem;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            background-color: white;
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+            transition: all 300ms;
+        }
+        
+        .article-card:hover {
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            transform: translateY(-0.25rem);
+        }
+        
+        .article-card-image {
+            transition: transform 300ms;
+        }
+        
+        .article-card:hover .article-card-image {
+            transform: scale(1.05);
+        }
+        
+        /* Featured article gradient badge */
+        .badge-gradient {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+        }
+        
+        /* Newsletter section gradient background */
+        .newsletter-gradient {
+            background: linear-gradient(to right, rgba(124, 58, 237, 0.1), rgba(79, 70, 229, 0.1));
+            border: 1px solid rgba(124, 58, 237, 0.2);
+        }
+        
+        /* Button styles */
+        .btn-gradient {
+            background: var(--gradient-primary);
+            color: white;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            transition: all 300ms;
+            border: none;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+        }
+        
+        .btn-gradient:hover {
+            background: var(--gradient-primary-hover);
+            transform: translateY(-1px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        
+        /* Hero section styling */
+        .hero-title {
+            font-size: 2.25rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+        
+        @media (min-width: 1024px) {
+            .hero-title {
+                font-size: 3.75rem;
+            }
+        }
+        
+        /* Social icons with animations */
+        .social-icon {
+            transition: all 200ms;
+        }
+        
+        .social-icon:hover {
+            color: var(--docsie-primary);
+            transform: scale(1.1);
+        }
+        
+        /* Body gradient background */
+        body {
+            background: linear-gradient(to bottom right, #fafafa, #fafafa, rgba(250, 250, 250, 0.5));
+        }
+        
+        /* Hide scrollbar for category navigation */
+        .scrollbar-hide {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
+        
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;  /* Chrome, Safari and Opera */
+        }
+    </style>
 
     
     <!-- Google Tag Manager -->
@@ -60,93 +276,175 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 </head>
 
-<body class="bg-gray-100 font-sans leading-normal tracking-normal">
+<body class="font-sans leading-normal tracking-normal">
 
 
-<!-- Base template of the header. -->
-<script>window['settings'] = {"blog_name": "Docsie.io Blog", "blog_root_url": "blog", "blog_post_location_url": "https://docs.google.com/spreadsheets/d/e/2PACX-1vQFBZ6jb-HysvXvA-R4FVwwTIqTKCx1iSeqzyDHNJFEqff_0S-GqeAF8SqDFhXa5YBakw2LNTOjZBig/pub?output=csv", "domain_url": "https://www.docsie.io/blog/", "link_menu": [{"link": "https://www.docsie.io", "text": "Docsie"}, {"link": "https://www.docsie.io/pricing/", "text": "Docsie Pricing"}, {"link": "https://www.docsie.io/try_docsie/", "text": "Try Docsie"}], "search_config": {"title": {"weight": 8}, "summary": {"weight": 6}, "author_name": {"weight": 5}, "categories": {"weight": 3}}, "comments": {"enabled": true, "commentbox_project_id": "5725910686760960-proj"}, "google_tag_manager": {"enabled": true, "google_tag_manager_projectid": "GTM-TZRGMQ9"}, "subscribe": {"enabled": false, "title": "Subscribe to the newsletter", "summary": "Stay up to date with our latest news and products", "button_text": "Subscribe"}, "sharect": {"enabled": true, "twitter": true, "facebook": true, "twitterUsername": "likalo_llc", "backgroundColor": "#333333", "iconColor": "#FFFFFF", "selectableElements": ["body"]}, "landing_meta": {"title": "Documentation Insights | Docsie - Articles on Better Docs, Marketing, Technology & More", "description": "Documentation Insights is where our team shares documentation tips, stories and lessons learned about creating better documentation experiences.", "image": "https://d1iq6qzgppjlud.cloudfront.net/images/favicon/apple-touch-icon-144x144.png", "keywords": "Documentation, docs, product documentation, user manual, software documentation", "url": "https://www.docsie.io", "author": "Docsie.io"}, "translator": "deepl", "google_translator": {"api_key": "0dabe962-0c67-684f-2122-4caaed052039"}, "deepl_translator": {"api_key": "0dabe962-0c67-684f-2122-4caaed052039"}, "translation_list": [], "translate_articles": true, "show_language_picker": true, "source_language": {"abbreviation": "en", "label": "English"}, "source_abbreviation": null, "favicons": [{"rel": "icon", "sizes": "32x32", "type": "image/png", "path": "https://d1iq6qzgppjlud.cloudfront.net/images/favicon/favicon-196x196.png"}]}</script>
+<!-- BlogVi Header V2 - Using Production Docsie Design System -->
+<nav class="header sticky top-0 z-50 bg-white shadow-sm">
+  <div class="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center py-4">
+      <!-- Logo -->
+      <div class="flex items-center">
+        <a href="https://www.docsie.io" class="flex items-center">
+          <img src="https://www.docsie.io/assets/docsie_logo_square_svg.svg" alt="Docsie Logo" class="h-8 w-auto mr-2" style="filter: brightness(0) saturate(100%) invert(42%) sepia(93%) saturate(1018%) hue-rotate(96deg) brightness(101%) contrast(91%);">
+          <span class="text-2xl font-bold text-gray-900">Docsie</span>
+        </a>
+        <span class="ml-2 text-gray-500">|</span>
+        <a href="/blog/" class="ml-2 text-xl font-semibold text-gray-700 hover:text-docsie-primary transition-colors">
+          Blog
+        </a>
+      </div>
 
-<nav id="header" class="fixed w-full z-10 top-0">
+      <!-- Desktop Navigation -->
+      <div class="hidden md:flex items-center space-x-8">
+        <!-- Main Nav Links from settings -->
+        
+        <a href="https://www.docsie.io" class="text-gray-700 hover:text-docsie-primary font-medium transition-colors">
+          Docsie
+        </a>
+        
+        <a href="https://www.docsie.io/pricing/" class="text-gray-700 hover:text-docsie-primary font-medium transition-colors">
+          Docsie Pricing
+        </a>
+        
+        <a href="https://www.docsie.io/try_docsie/" class="bg-docsie-primary hover:bg-docsie-primary-dark text-white px-4 py-2 rounded-lg font-medium transition-colors">
+          Try Docsie
+        </a>
+        
+      </div>
 
-    <div id="progress" class="h-1 z-20 top-0"
-         style="background:linear-gradient(to right, #4dc0b5 var(--scroll), transparent 0);"></div>
-
-    <div class="container max-w-6xl mx-auto flex flex-wrap items-center justify-between mt-0 py-3">
-
-        <div class="pl-4">
-            <a class="text-gray-900 text-base no-underline hover:no-underline font-extrabold text-xl" href="/blog">
-                Docsie.io Blog
-            </a>
-        </div>
-
-        <div class="block lg:hidden pr-4">
-            <button id="nav-toggle"
-                    class="flex items-center px-3 py-2 border rounded text-gray-500 border-gray-600 hover:text-gray-900 hover:border-green-500 appearance-none focus:outline-none">
-                <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                    <title>Menu</title>
-                    <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/>
-                </svg>
-            </button>
-        </div>
-
-        <div class="w-full flex-grow lg:flex lg:items-center lg:w-auto hidden lg:block mt-2 lg:mt-0 bg-gray-100 z-20"
-             id="nav-content">
-            <ul class="list-reset lg:flex justify-end flex-1 items-center">
-                
-                    <li class="mr-3">
-                        <a class="inline-block text-gray-600 hover:text-gray-900 hover:underline py-2 px-4"
-                           href="https://www.docsie.io">Docsie</a>
-                    </li>
-                
-                    <li class="mr-3">
-                        <a class="inline-block text-gray-600 hover:text-gray-900 hover:underline py-2 px-4"
-                           href="https://www.docsie.io/pricing/">Docsie Pricing</a>
-                    </li>
-                
-                    <li class="mr-3">
-                        <a class="inline-block text-gray-600 hover:text-gray-900 hover:underline py-2 px-4"
-                           href="https://www.docsie.io/try_docsie/">Try Docsie</a>
-                    </li>
-                
-                <li class="mr-3">
-                    <a class="inline-block py-2 px-4"
-                       href="/blog/rss.xml"><i class="fas fa-rss" style="color: orangered"></i></a>
-                </li>
-                <li class="mr-3 relative">
-                    <input type="search" placeholder="Search blog"
-                           class="border rounded inline-block py-2 px-4"
-                           id="search">
-                    <div
-                            class="origin-top-right absolute right-0 mt-2 rounded-md shadow-lg bg-white border border-gray-300 focus:outline-none"
-                            id="search-bar"
-                            style="width: 300px; display: none; position: absolute">
-                        <ul class="py-2" style="width: 300px">
-
-                        </ul>
-                    </div>
-                </li>
-            </ul>
-        </div>
+      <!-- Mobile menu button -->
+      <button class="md:hidden p-2 text-gray-600 hover:text-docsie-primary transition-colors" onclick="toggleMobileMenu()">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
     </div>
+
+    <!-- Mobile Navigation -->
+    <div id="mobile-menu" class="hidden md:hidden pb-4">
+      <div class="flex flex-col space-y-4">
+        
+        <a href="https://www.docsie.io" class="text-gray-700 hover:text-docsie-primary font-medium transition-colors">
+          Docsie
+        </a>
+        
+        <a href="https://www.docsie.io/pricing/" class="text-gray-700 hover:text-docsie-primary font-medium transition-colors">
+          Docsie Pricing
+        </a>
+        
+        <a href="https://www.docsie.io/try_docsie/" class="block text-center bg-docsie-primary hover:bg-docsie-primary-dark text-white px-4 py-2 rounded-lg font-medium transition-colors">
+          Try Docsie
+        </a>
+        
+      </div>
+    </div>
+  </div>
 </nav>
+
+<!-- Blog-specific navigation bar -->
+<div class="bg-gray-50 border-b border-gray-200">
+  <div class="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between py-3">
+      <!-- Categories -->
+      <nav class="flex items-center gap-2 overflow-x-auto max-w-full scrollbar-hide">
+        <a href="/blog" class="category-pill flex-shrink-0 category-pill-inactive">
+          ALL
+        </a>
+        
+          
+          <a href="/blog/saas/" class="category-pill flex-shrink-0 category-pill-inactive">
+            SaaS
+          </a>
+        
+          
+          <a href="/blog/knowledge-base/" class="category-pill flex-shrink-0 category-pill-inactive">
+            Knowledge Base
+          </a>
+        
+          
+          <a href="/blog/product-documentation/" class="category-pill flex-shrink-0 category-pill-inactive">
+            Product Documentation
+          </a>
+        
+          
+          <a href="/blog/technical-writing/" class="category-pill flex-shrink-0 category-pill-inactive">
+            Technical Writing
+          </a>
+        
+          
+          <a href="/blog/best-practices/" class="category-pill flex-shrink-0 category-pill-inactive">
+            Best Practices
+          </a>
+        
+          
+          <a href="/blog/documentation-portals/" class="category-pill flex-shrink-0 category-pill-inactive">
+            Documentation Portals
+          </a>
+        
+          
+          <a href="/blog/product-management/" class="category-pill flex-shrink-0 category-pill-inactive">
+            Product Management
+          </a>
+        
+      </nav>
+
+      <!-- Right side: Search and Subscribe -->
+      <div class="flex items-center gap-2 ml-2">
+        <!-- Search -->
+        <div class="relative">
+          <input type="search" 
+                 placeholder="Search..." 
+                 class="w-32 sm:w-48 md:w-64 px-3 py-2 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-docsie-primary focus:border-transparent"
+                 id="search">
+          <div class="absolute right-0 mt-2 w-64 sm:w-80 md:w-96 bg-white rounded-lg shadow-xl border border-gray-200 hidden z-50" id="search-bar">
+            <ul class="py-2 max-h-96 overflow-y-auto" id="search-results">
+              <!-- Search results will be populated here -->
+            </ul>
+          </div>
+        </div>
+        
+        <!-- Subscribe Button (if enabled) -->
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function toggleMobileMenu() {
+  const menu = document.getElementById('mobile-menu');
+  menu.classList.toggle('hidden');
+}
+
+// Initialize search settings for BlogVi
+window['searchConfig'] = {"keys": [{"name": "title", "weight": 8}, {"name": "summary", "weight": 6}, {"name": "author_name", "weight": 5}, {"name": "categories", "weight": 3}]};
+</script>
+
+<!-- Hero Section -->
+<section class="container max-w-7xl mx-auto px-4 py-8 mb-12 text-center">
+    <div class="mx-auto max-w-3xl">
+        <h1 class="hero-title">
+            
+                Llm Articles & Guides | Docsie.io Blog
+            
+        </h1>
+        <p class="text-lg text-gray-600 lg:text-xl">
+            Explore how Large Language Models (LLMs) transform healthcare data management and streamline patient information workflows. Discover practical applications f...
+        </p>
+    </div>
+</section>
+
 <!--Container-->
-<div class="container px-4 md:px-0 max-w-6xl mx-auto mt-24">
+<div class="container px-4 md:px-0 max-w-7xl mx-auto">
 
     <div class="mx-0 sm:mx-6">
 
-        <!--Nav-->
-        <nav class="mt-0 w-full">
-            <ul class="list-reset w-full flex flex-wrap flex-1 md:flex-none">
-                <li class="mr-2">
-                    <a class="rounded bg-green-500 text-white px-1 uppercase text-xs whitespace-nowrap md:text-sm"
-                       href="/blog">ALL</a>
-                </li>
-                
-            </ul>
-
-            <div class="flex w-full justify-end content-center">
+        <!-- Social Share and Subscribe -->
+        <div class="flex w-full justify-between items-center mb-8">
+            <div class="flex content-center">
                 <a
-                        class="inline-block text-gray-500 no-underline hover:text-green-500 hover:text-underline text-center h-10 p-2 md:h-auto md:p-4 avatar"
+                        class="inline-block text-gray-500 no-underline hover:text-docsie-primary hover:text-underline text-center h-10 p-2 md:h-auto md:p-4 avatar social-icon"
                         data-tippy-content="@twitter_handle" href="https://twitter.com/intent/tweet?url=#"
                         id="twitter">
                     <svg class="fill-current h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
@@ -155,7 +453,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                     </svg>
                 </a>
                 <a
-                        class="inline-block text-gray-500 no-underline hover:text-green-500 hover:text-underline text-center h-10 p-2 md:h-auto md:p-4 avatar"
+                        class="inline-block text-gray-500 no-underline hover:text-docsie-primary hover:text-underline text-center h-10 p-2 md:h-auto md:p-4 avatar social-icon"
                         data-tippy-content="#facebook_id" href="https://www.facebook.com/sharer/sharer.php?u=#}"
                         id="facebook">
                     <svg class="fill-current h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
@@ -163,188 +461,463 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                     </svg>
                 </a>
             </div>
-        </nav>
+            
+            <!-- Subscribe Button (if enabled) -->
+            
+        </div>
 
         <div class="w-full text-xl md:text-2xl text-gray-800 leading-normal rounded-t">
 
             <!--Lead Card-->
-            <!-- Base template of the lead card. -->
-
-<div class="flex h-full bg-white rounded overflow-hidden ">
-    <a href="/blog/articles/how-docsie-llm-streamlines-healthcare-data-management" class="flex flex-wrap no-underline hover:no-underline">
-        <div class="w-full md:w-2/3 rounded-t">
-            <img src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_Nty9Ad46mNOcI3BYi/f017b331-ee68-8209-fd47-e502541be47fbanner_26.jpg" class="h-full w-full shadow object-cover">
+            
+                
+                    <!-- Lead Article Card V2 - Featured article using Docsie Design System -->
+<article class="bg-white rounded-2xl shadow-lg overflow-hidden mb-12 border-2 border-gray-100">
+    <div class="md:flex">
+        
+        <div class="md:w-1/2 relative overflow-hidden">
+            <a href="/blog/articles/how-docsie-llm-streamlines-healthcare-data-management/" class="block h-full">
+                <img src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_Nty9Ad46mNOcI3BYi/f017b331-ee68-8209-fd47-e502541be47fbanner_26.jpg" 
+                     alt="How Docsie LLM Streamlines Healthcare Data Management" 
+                     class="w-full h-full object-cover article-card-image"
+                     style="min-height: 400px;">
+            </a>
         </div>
-
-        <div class="w-full md:w-1/3 flex flex-col flex-grow flex-shrink">
-            <div class="flex-1 bg-white rounded-t rounded-b-none overflow-hidden ">
-                <p class="w-full text-gray-600 text-xs md:text-sm pt-6 px-6">AI</p>
-                <div class="w-full font-bold text-xl text-gray-900 px-6">How Docsie LLM Streamlines Healthcare Data Management
-                </div>
-                <p class="text-gray-800 font-serif text-base px-6 mb-5">
-                    In this blog we will unravel how Docsie’s LLM can play a pivotal role and help the medical industry manage patient-related information in a few clicks. 
-                </p>
+        
+        
+        <div class="p-8 lg:p-12 md:w-1/2 flex flex-col justify-center">
+            <!-- Featured Badge -->
+            <div class="mb-4">
+                <span class="badge-gradient">
+                    <i data-lucide="trending-up" class="mr-1 h-3 w-3"></i>
+                    Featured Article
+                </span>
             </div>
-
-            <div class="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden  p-6">
-                <div class="flex items-center justify-between">
-                    <img class="w-8 h-8 rounded-full mr-4 avatar"
-                         data-tippy-content="Tanya A Mishra"
-                         src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_p1X4gXS3n0rCHYuaE/1f3f5f57-d8e2-7978-faef-0b9fe89f3e4btanya_pic.jpg" alt="Tanya A Mishra">
-                    <p class="text-gray-600 text-xs md:text-sm">
-                        
-                            AI
-                        
-                            LLM
-                        
-                            Brand Blog
-                        
-                    </p>
+            
+            <!-- Categories -->
+            <div class="flex flex-wrap gap-2 mb-4">
+                
+                <a href="/blog/ai/" 
+                   class="text-sm font-medium px-3 py-1 rounded-full bg-gray-100 text-gray-700 hover:bg-docsie-primary hover:text-white transition-colors">
+                    AI
+                </a>
+                
+                <a href="/blog/llm/" 
+                   class="text-sm font-medium px-3 py-1 rounded-full bg-gray-100 text-gray-700 hover:bg-docsie-primary hover:text-white transition-colors">
+                    LLM
+                </a>
+                
+                <a href="/blog/brand-blog/" 
+                   class="text-sm font-medium px-3 py-1 rounded-full bg-gray-100 text-gray-700 hover:bg-docsie-primary hover:text-white transition-colors">
+                    Brand Blog
+                </a>
+                
+            </div>
+            
+            <!-- Title -->
+            <h2 class="mb-4">
+                <a href="/blog/articles/how-docsie-llm-streamlines-healthcare-data-management/" 
+                   class="text-3xl font-bold text-gray-900 hover:text-docsie-primary transition-colors">
+                    How Docsie LLM Streamlines Healthcare Data Management
+                </a>
+            </h2>
+            
+            <!-- Summary -->
+            <p class="text-gray-600 mb-6 text-lg leading-relaxed">
+                In this blog we will unravel how Docsie’s LLM can play a pivotal role and help the medical industry manage patient-related information in a few clicks. 
+            </p>
+            
+            <!-- Read More Button -->
+            <a href="/blog/articles/how-docsie-llm-streamlines-healthcare-data-management/" 
+               class="inline-flex items-center text-docsie-primary font-semibold hover:text-docsie-primary-dark transition-colors">
+                Read Full Article
+                <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+            </a>
+            
+            <!-- Meta Information -->
+            <div class="mt-6 pt-6 border-t border-gray-200 flex items-center justify-between blog-meta">
+                <div class="flex items-center space-x-3">
+                    
+                    <img src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_p1X4gXS3n0rCHYuaE/1f3f5f57-d8e2-7978-faef-0b9fe89f3e4btanya_pic.jpg" 
+                         alt="Tanya A Mishra" 
+                         class="w-10 h-10 rounded-full">
+                    
+                    <div>
+                        <p class="font-medium text-gray-900">Tanya A Mishra</p>
+                        <time datetime="2023-10-09 10:58:44+00:00" class="text-sm text-gray-500">
+                            October 09, 2023
+                        </time>
+                    </div>
                 </div>
             </div>
         </div>
-
-    </a>
-</div>
+    </div>
+</article>
+                
+            
             <!--/Lead Card-->
             <!--      {'keys': [{'name': 'title', 'weight': 8}, {'name': 'summary', 'weight': 6}, {'name': 'author_name', 'weight': 5}, {'name': 'categories', 'weight': 3}]}-->
 
             <!--Posts Container-->
-            <div class="flex flex-wrap justify-between pt-12 -mx-6">
+            <section class="pt-12">
+                <div class="mb-8">
+                    <h3 class="mb-2 text-2xl font-bold text-gray-900">
+                        
+                            Articles in this Category
+                        
+                    </h3>
+                    <p class="text-gray-600">
+                        
+                            Explore our collection of 0 articles in this category
+                        
+                    </p>
+                </div>
                 
-
-            </div>
+                <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+                    
+                </div>
+                
+                
+                <div class="py-16 text-center">
+                    <div class="mx-auto mb-4 h-16 w-16 rounded-full bg-gray-100 flex items-center justify-center">
+                        <i data-lucide="search" class="h-8 w-8 text-gray-400"></i>
+                    </div>
+                    <h4 class="mb-2 text-lg font-semibold">No articles found</h4>
+                    <p class="text-gray-600">
+                        Check back soon for new content in this category.
+                    </p>
+                </div>
+                
+            </section>
 
         </div>
         <!--/ Post Content-->
 
     </div>
 
-    <!--Subscribe-->
+   <!--Subscribe-->
     
     <!-- /Subscribe-->
 
-    <!--Categories-->
-    <ul class="list-reset w-full flex flex-wrap flex-1 md:flex-none">
-        
-    </ul>
-    <!-- /Categories-->
+    <!--More Categories-->
+    
+    <section class="mt-16 pt-8 border-t border-gray-200">
+        <h3 class="text-lg font-semibold mb-4 text-gray-900">More Categories</h3>
+        <div class="flex flex-wrap gap-2">
+            
+            
+            <a class="category-pill category-pill-inactive"
+               href="/blog/product-documentation-tutorials">Product Documentation Tutorials</a>
+            
+            
+            <a class="category-pill category-pill-inactive"
+               href="/blog/ai">AI</a>
+            
+            
+            <a class="category-pill category-pill-inactive"
+               href="/blog/product-updates">Product Updates</a>
+            
+            
+            <a class="category-pill category-pill-inactive"
+               href="/blog/api-documentation">API Documentation</a>
+            
+            
+            <a class="category-pill category-pill-inactive"
+               href="/blog/documentation">Documentation</a>
+            
+            
+            <a class="category-pill category-pill-inactive"
+               href="/blog/manufacturing">Manufacturing</a>
+            
+            
+            <a class="category-pill category-pill-inactive"
+               href="/blog/llm-solutions">LLM Solutions</a>
+            
+            
+            <a class="category-pill category-pill-inactive"
+               href="/blog/custom-knowledge-base">Custom Knowledge base</a>
+            
+            
+            <a class="category-pill category-pill-inactive"
+               href="/blog/internal-documentation">Internal Documentation</a>
+            
+            
+            <a class="category-pill category-pill-inactive"
+               href="/blog/transport-management-system">Transport Management System</a>
+            
+            
+            <a class="category-pill category-pill-inactive"
+               href="/blog/documentation-workflow">Documentation Workflow</a>
+            
+            
+            <a class="category-pill category-pill-inactive"
+               href="/blog/pdf">PDF</a>
+            
+            
+            <a class="category-pill category-pill-inactive"
+               href="/blog/interview-as-a-service">Interview-As-A-Service</a>
+            
+            
+            <a class="category-pill category-pill-inactive"
+               href="/blog/hrms">HRMS</a>
+            
+            
+            <a class="category-pill category-pill-inactive"
+               href="/blog/knowledge-management">Knowledge Management</a>
+            
+            
+            <a class="category-pill category-pill-inactive"
+               href="/blog/erp-knowledge-management-system-erp-software">ERP Knowledge Management System  ERP Software</a>
+            
+            
+            <a class="category-pill category-pill-inactive"
+               href="/blog/technical-writer-ai">Technical Writer AI</a>
+            
+            
+            <a class="category-pill category-pill-inactive"
+               href="/blog/product-requirements-document">Product Requirements Document</a>
+            
+            
+            <a class="category-pill category-pill-inactive"
+               href="/blog/product-knowlege">Product Knowlege</a>
+            
+            
+            <a class="category-pill category-pill-inactive"
+               href="/blog/process-improvement-tools">Process improvement tools</a>
+            
+            
+            <a class="category-pill category-pill-inactive"
+               href="/blog/chatgpt">ChatGpt</a>
+            
+            
+            <a class="category-pill category-pill-inactive"
+               href="/blog/content-authoring">Content Authoring</a>
+            
+            
+            <a class="category-pill category-pill-inactive"
+               href="/blog/tacit-knowledge">Tacit knowledge</a>
+            
+            
+            <a class="category-pill category-pill-inactive"
+               href="/blog/rightanswers">Rightanswers</a>
+            
+            
+            <a class="category-pill category-pill-inactive"
+               href="/blog/testing-documentation">Testing Documentation</a>
+            
+            
+            <a class="category-pill category-pill-inactive"
+               href="/blog/black-friday-deals">Black Friday Deals</a>
+            
+            
+            <a class="category-pill category-pill-inactive"
+               href="/blog/documentation-version-control">Documentation Version Control</a>
+            
+            
+            <a class="category-pill category-pill-inactive"
+               href="/blog/prompt-engineering">Prompt Engineering</a>
+            
+            
+            <a class="category-pill category-pill-inactive"
+               href="/blog/docsie-s-llm-solutions">Docsie's LLM Solutions</a>
+            
+            
+            <a class="category-pill category-pill-inactive"
+               href="/blog/llm">LLM</a>
+            
+            
+            <a class="category-pill category-pill-inactive"
+               href="/blog/brand-blog">Brand Blog</a>
+            
+            
+            <a class="category-pill category-pill-inactive"
+               href="/blog/bug-bounty-program">Bug Bounty Program</a>
+            
+            
+            <a class="category-pill category-pill-inactive"
+               href="/blog/user-manual-instructions">User Manual Instructions</a>
+            
+            
+            <a class="category-pill category-pill-inactive"
+               href="/blog/sop">SOP</a>
+            
+            
+            <a class="category-pill category-pill-inactive"
+               href="/blog/standard-operating-procedures">Standard Operating Procedures</a>
+            
+            
+            <a class="category-pill category-pill-inactive"
+               href="/blog/context-sensitive-help-in-app-guidance">Context Sensitive Help & In-app Guidance</a>
+            
+            
+            <a class="category-pill category-pill-inactive"
+               href="/blog/gatsby-extension">Gatsby Extension</a>
+            
+            
+            <a class="category-pill category-pill-inactive"
+               href="/blog/hat">HAT</a>
+            
+            
+            <a class="category-pill category-pill-inactive"
+               href="/blog/help-authoring-tools">Help Authoring Tools</a>
+            
+            
+            <a class="category-pill category-pill-inactive"
+               href="/blog/importance-of-documentation">Importance Of Documentation</a>
+            
+            
+            <a class="category-pill category-pill-inactive"
+               href="/blog/product-manager">Product Manager</a>
+            
+            
+            <a class="category-pill category-pill-inactive"
+               href="/blog/product-managers">Product Managers</a>
+            
+            
+            <a class="category-pill category-pill-inactive"
+               href="/blog/docsie-award">Docsie Award</a>
+            
+            
+            <a class="category-pill category-pill-inactive"
+               href="/blog/product-requirements-documentation">Product Requirements Documentation</a>
+            
+            
+            <a class="category-pill category-pill-inactive"
+               href="/blog/customer-service">Customer Service</a>
+            
+            
+            <a class="category-pill category-pill-inactive"
+               href="/blog/customer-experience">Customer Experience</a>
+            
+            
+            <a class="category-pill category-pill-inactive"
+               href="/blog/alternative-to-document360">Alternative to Document360</a>
+            
+            
+            <a class="category-pill category-pill-inactive"
+               href="/blog/tools-for-product-managers">Tools For Product Managers</a>
+            
+            
+            <a class="category-pill category-pill-inactive"
+               href="/blog/gitbook-alternative">Gitbook Alternative</a>
+            
+            
+            <a class="category-pill category-pill-inactive"
+               href="/blog/collaboration">Collaboration</a>
+            
+            
+            <a class="category-pill category-pill-inactive"
+               href="/blog/product-documentation-translation">Product Documentation Translation</a>
+            
+            
+            <a class="category-pill category-pill-inactive"
+               href="/blog/cybersecurity">Cybersecurity</a>
+            
+            
+            <a class="category-pill category-pill-inactive"
+               href="/blog/customer-feedback">Customer Feedback</a>
+            
+            
+            <a class="category-pill category-pill-inactive"
+               href="/blog/knowledge-portal-design">Knowledge Portal Design</a>
+            
+        </div>
+    </section>
+    
+    <!-- /More Categories-->
+
 </div>
 
 
 </div>
 
 
-<!-- Base template of the footer. -->
-
-<footer class="bg-gray-900">
-    <div class="container max-w-6xl mx-auto flex items-center px-2 py-8">
-        <div class="w-full mx-auto flex flex-wrap items-center">
-            <div class="flex md:w-1/5 justify-center md:justify-start text-white font-extrabold flex-col">
-                <a class="text-gray-900 no-underline hover:text-gray-900 hover:no-underline" href="/blog">
-                    <span class="text-base text-gray-200">Docsie.io Blog</span>
-                </a>
-                <a class="text-gray-900 no-underline hover:text-gray-900 hover:no-underline"
-                   href="https://github.com/LikaloLLC/BlogVi" target="_blank">
-                    <span class="text-xs text-gray-200">Made with BlogVI</span>
-                </a>
+<!-- BlogVi Footer V2 - Simplified version using production styles -->
+<footer class="bg-gray-900 text-white mt-16">
+    <div class="container mx-auto px-4 py-12">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <!-- Company Info -->
+            <div>
+                <h3 class="text-lg font-semibold mb-4">Docsie</h3>
+                <p class="text-gray-400 text-sm">
+                    The modern documentation platform that helps teams create, manage, and share knowledge.
+                </p>
             </div>
-            <div class="relative flex md:w-1/5 hidden" id="lang-picker-container">
-                <div class="md:w-1/2">
-                    <button type="button"
-                            class="inline-flex justify-center w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-indigo-500"
-                            id="lang-picker-menu-button" aria-expanded="true" aria-haspopup="true">
-                        Langauge...
-                        <!-- Heroicon name: solid/chevron-down -->
-                        <svg class="-mr-1 ml-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
-                             fill="currentColor" aria-hidden="true">
-                            <path fill-rule="evenodd"
-                                  d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                                  clip-rule="evenodd"/>
-                        </svg>
-                    </button>
-                </div>
-                <div class="hidden origin-top-right absolute right-2px bottom-12 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
-                     role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1" id="lang-picker-list-container">
-                    <div class="py-1" role="none" id="lang-picker-list">
-
-                    </div>
-                </div>
-            </div>
-            <div class="flex w-full pt-2 content-center justify-between md:w-3/5 md:justify-end">
-                <ul class="list-reset flex justify-center flex-1 md:flex-none items-center">
-                    
-                        <li>
-                            <a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-3"
-                               href="https://www.docsie.io">Docsie</a>
-                        </li>
-                    
-                        <li>
-                            <a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-3"
-                               href="https://www.docsie.io/pricing/">Docsie Pricing</a>
-                        </li>
-                    
-                        <li>
-                            <a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-3"
-                               href="https://www.docsie.io/try_docsie/">Try Docsie</a>
-                        </li>
-                    
+            
+            <!-- Quick Links -->
+            <div>
+                <h4 class="text-lg font-semibold mb-4">Product</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="https://www.docsie.io/features/" class="text-gray-400 hover:text-white transition-colors">Features</a></li>
+                    <li><a href="https://www.docsie.io/pricing/" class="text-gray-400 hover:text-white transition-colors">Pricing</a></li>
+                    <li><a href="https://www.docsie.io/documentation/" class="text-gray-400 hover:text-white transition-colors">Documentation</a></li>
+                    <li><a href="/blog/" class="text-gray-400 hover:text-white transition-colors">Blog</a></li>
                 </ul>
+            </div>
+            
+            <!-- Resources -->
+            <div>
+                <h4 class="text-lg font-semibold mb-4">Resources</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="https://help.docsie.io" class="text-gray-400 hover:text-white transition-colors">Help Center</a></li>
+                    <li><a href="https://www.docsie.io/support/" class="text-gray-400 hover:text-white transition-colors">Support</a></li>
+                    <li><a href="https://www.docsie.io/about/" class="text-gray-400 hover:text-white transition-colors">About Us</a></li>
+                    <li><a href="https://www.docsie.io/careers/" class="text-gray-400 hover:text-white transition-colors">Careers</a></li>
+                </ul>
+            </div>
+            
+            <!-- Social Links -->
+            <div>
+                <h4 class="text-lg font-semibold mb-4">Connect</h4>
+                <div class="flex space-x-4">
+                    <a href="https://twitter.com/docsie_io" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/company/docsie" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://github.com/LikaloLLC" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="/blog/rss.xml" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fas fa-rss"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Bottom Bar -->
+        <div class="mt-8 pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center text-sm text-gray-400">
+            <p>&copy;  Docsie. All rights reserved.</p>
+            <div class="flex space-x-6 mt-4 md:mt-0">
+                <a href="https://www.docsie.io/privacy/" class="hover:text-white transition-colors">Privacy Policy</a>
+                <a href="https://www.docsie.io/terms/" class="hover:text-white transition-colors">Terms of Service</a>
+                <a href="https://www.docsie.io/cookies/" class="hover:text-white transition-colors">Cookie Policy</a>
             </div>
         </div>
     </div>
-
-    <script>
-        const addLanguageToPicker = (href, label) => {
-            const langList = document.getElementById('lang-picker-list');
-
-            langList.innerHTML += `<a href="${href}"` +
-                    'class="text-gray-700 block px-4 py-2 text-sm" ' +
-                    'role="menuitem" ' +
-                    'tabindex="-1" ' +
-                    'id="menu-item-1"' +
-                    '>' + label + '</a>'
-        }
-
-        const langPickerContainer = document.getElementById('lang-picker-container');
-        if (window['settings']['show_language_picker']) {
-            langPickerContainer.classList.remove('hidden');
-        }
-
-        const sourceLanguage = window['settings']['source_language'];
-        const langPickerButton = document.getElementById('lang-picker-menu-button');
-        const langListContainer = document.getElementById('lang-picker-list-container');
-        const rootPath = "/blog/";
-        const baseUrl = window.location.href;
-
-        langPickerButton.onclick = (e) => {
-            langListContainer.classList.toggle('hidden')
-        }
-
-        let found = false;
-        window['settings']['translation_list'].forEach((translation) => {
-            if (baseUrl.includes(`/${translation.abbreviation}/`)) {
-                langPickerButton.textContent = translation.label;
-
-                addLanguageToPicker(`${rootPath}`, sourceLanguage.label);
-                found = true;
-            } else {
-                addLanguageToPicker(`${rootPath}${translation.abbreviation}/`, translation.label);
-            }
-        });
-
-        if (!found) {
-            langPickerButton.textContent = sourceLanguage.label;
-        }
-
-    </script>
 </footer>
+
+<script>
+// Set current year for copyright
+document.addEventListener('DOMContentLoaded', function() {
+    const yearElements = document.querySelectorAll('[data-year]');
+    const currentYear = new Date().getFullYear();
+    yearElements.forEach(el => el.textContent = currentYear);
+});
+</script>
 <script src="https://unpkg.com/popper.js@1/dist/umd/popper.min.js"></script>
 <script src="https://unpkg.com/tippy.js@4"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6"></script>
 <script src="/blog/templates/assets/js/search.js"></script>
 
-<script>    /* Progress bar */
+<script>
+// Initialize Lucide icons
+lucide.createIcons();
+
+/* Progress bar */
 //Source: https://alligator.io/js/progress-bar-javascript-css-variables/
 var h = document.documentElement,
     b = document.body,
@@ -368,11 +941,13 @@ document.addEventListener('scroll', function () {
     if (scrollpos > 10) {
         header.classList.add("bg-white");
         header.classList.add("shadow");
+        header.classList.add("header-animated");
         navcontent.classList.remove("bg-gray-100");
         navcontent.classList.add("bg-white");
     } else {
         header.classList.remove("bg-white");
         header.classList.remove("shadow");
+        header.classList.add("header-animated");
         navcontent.classList.remove("bg-white");
         navcontent.classList.add("bg-gray-100");
 
