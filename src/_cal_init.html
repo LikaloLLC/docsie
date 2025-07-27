@@ -57,6 +57,11 @@ This should be included once in the base template
         const config = button.getAttribute('data-cal-config');
         
         if (Cal && Cal.ns && Cal.ns[namespace]) {
+          // Ensure we're at the top of the page before opening modal
+          window.scrollTo(0, 0);
+          document.body.scrollTop = 0; // For Safari
+          document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+          
           Cal.ns[namespace]("openModal", {
             calLink: calLink,
             config: config ? JSON.parse(config) : {}

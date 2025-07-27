@@ -111,18 +111,21 @@
           {
             "@type": "ListItem",
             "position": 3,
-            "name": "{{ article.categories[0] }}"
+            "name": "{{ article.categories[0] }}",
+            "item": "{{ settings.domain_url }}{{ settings.blog_root_path }}{{ article.categories[0]|lower|replace(' ', '-')|replace('&', 'and')|replace(',', '')|replace('.', '') }}/"
           },
           {
             "@type": "ListItem",
             "position": 4,
-            "name": "{{ article.title }}"
+            "name": "{{ article.title }}",
+            "item": "{{ article.url }}"
           }
           {%- else -%}
           {
             "@type": "ListItem",
             "position": 3,
-            "name": "{{ article.title }}"
+            "name": "{{ article.title }}",
+            "item": "{{ article.url }}"
           }
           {%- endif %}
         ]
