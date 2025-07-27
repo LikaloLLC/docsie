@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page_title }} | {{ settings.blog_name }}</title>
+    <meta name="description" content="{{ page_description }}">
+    <link rel="canonical" href="{{ settings.domain_url }}{{ settings.blog_root_path }}glossary/">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="{{ page_title }}">
+    <meta property="og:description" content="{{ page_description }}">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ settings.domain_url }}{{ settings.blog_root_path }}glossary/">
+    
+    <!-- Include site styles -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ settings.blog_root_path }}templates/assets/css/design-system.css">
+    
+    <!-- Schema.org markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "DefinedTermSet",
+      "name": "{{ page_title }}",
+      "description": "{{ page_description }}",
+      "url": "{{ settings.domain_url }}{{ settings.blog_root_path }}glossary/",
+      "hasDefinedTerm": [
+        {% for slug, term in terms_by_letter.values() | sum(start=[]) %}
+        {
+          "@type": "DefinedTerm",
+          "@id": "{{ settings.domain_url }}{{ settings.blog_root_path }}glossary/#{{ slug }}",
+          "name": "{{ term.term }}",
+          "description": "{{ term.definition | escape }}"
+          {% if term.expanded %},
+          "alternateName": "{{ term.expanded }}"
+          {% endif %}
+        }{% if not loop.last %},{% endif %}
+        {% endfor %}
+      ]
+    }
+    </script>
+</head>
+<body class="bg-white">
+    <!-- Include Header -->
+    {% include 'header.html' %}
+
+    <main class="min-h-screen">
+        <!-- Hero Section -->
+        <section class="bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 py-16">
+            <div class="container mx-auto px-4 max-w-7xl">
+                <div class="text-center">
+                    <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+                        {{ page_title }}
+                    </h1>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                        {{ page_description }}
+                    </p>
+                    <div class="mt-8 flex items-center justify-center gap-4 text-sm text-gray-600">
+                        <span class="flex items-center">
+                            <i data-lucide="book-open" class="h-4 w-4 mr-1"></i>
+                            {{ total_terms }} Terms
+                        </span>
+                        <span class="flex items-center">
+                            <i data-lucide="file-text" class="h-4 w-4 mr-1"></i>
+                            {{ total_articles }} Articles
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Alphabet Navigation -->
+        <section class="sticky top-16 bg-white border-b border-gray-200 shadow-sm z-10">
+            <div class="container mx-auto px-4 max-w-7xl">
+                <nav class="py-4 flex flex-wrap gap-2 justify-center">
+                    {% for letter in available_letters %}
+                    <a href="#{{ letter }}" 
+                       class="px-3 py-1 bg-gray-100 text-gray-700 rounded hover:bg-blue-100 hover:text-blue-700 transition font-medium">
+                        {{ letter }}
+                    </a>
+                    {% endfor %}
+                </nav>
+            </div>
+        </section>
+
+        <!-- Terms Content -->
+        <section class="py-12">
+            <div class="container mx-auto px-4 max-w-7xl">
+                <div class="grid lg:grid-cols-4 gap-8">
+                    <!-- Main Content -->
+                    <div class="lg:col-span-3">
+                        {% for letter, terms in terms_by_letter.items() %}
+                        <section id="{{ letter }}" class="mb-16 scroll-mt-32">
+                            <h2 class="text-3xl font-bold mb-6 text-gray-900 border-b-2 border-blue-600 pb-2 inline-block">
+                                {{ letter }}
+                            </h2>
+                            
+                            <dl class="space-y-6">
+                                {% for slug, term in terms %}
+                                <div id="{{ slug }}" class="bg-gray-50 rounded-lg p-6 hover:bg-gray-100 transition scroll-mt-24" 
+                                     itemscope itemtype="https://schema.org/DefinedTerm">
+                                    <dt class="font-semibold text-lg text-gray-900 mb-2">
+                                        <span itemprop="name">{{ term.term }}</span>
+                                        {% if term.expanded %}
+                                        <span class="text-gray-500 font-normal text-base ml-2">({{ term.expanded }})</span>
+                                        {% endif %}
+                                    </dt>
+                                    <dd class="text-gray-700 leading-relaxed" itemprop="description">
+                                        {{ term.definition }}
+                                    </dd>
+                                    
+                                    {% if term.articles %}
+                                    <div class="mt-4 text-sm">
+                                        <span class="text-gray-500 font-medium">Found in:</span>
+                                        <div class="mt-1 flex flex-wrap gap-2">
+                                            {% for article_slug in term.articles[:5] %}
+                                            <a href="{{ settings.blog_root_path }}articles/{{ article_slug }}/" 
+                                               class="inline-flex items-center px-2 py-1 bg-white border border-gray-300 rounded text-xs text-gray-700 hover:bg-blue-50 hover:border-blue-300 hover:text-blue-700 transition">
+                                                {{ term.article_titles[article_slug] | truncate(40) }}
+                                            </a>
+                                            {% endfor %}
+                                            {% if term.articles|length > 5 %}
+                                            <span class="text-gray-500 text-xs py-1">
+                                                +{{ term.articles|length - 5 }} more
+                                            </span>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                    {% endif %}
+                                </div>
+                                {% endfor %}
+                            </dl>
+                        </section>
+                        {% endfor %}
+                    </div>
+
+                    <!-- Sidebar -->
+                    <aside class="lg:col-span-1">
+                        <div class="sticky top-32 space-y-6">
+                            <!-- Quick Stats -->
+                            <div class="bg-blue-50 rounded-lg p-6">
+                                <h3 class="font-semibold text-gray-900 mb-4 flex items-center">
+                                    <i data-lucide="trending-up" class="h-5 w-5 mr-2 text-blue-600"></i>
+                                    Glossary Stats
+                                </h3>
+                                <dl class="space-y-3 text-sm">
+                                    <div>
+                                        <dt class="text-gray-600">Total Terms</dt>
+                                        <dd class="font-semibold text-gray-900">{{ total_terms }}</dd>
+                                    </div>
+                                    <div>
+                                        <dt class="text-gray-600">Articles Referenced</dt>
+                                        <dd class="font-semibold text-gray-900">{{ total_articles }}</dd>
+                                    </div>
+                                </dl>
+                            </div>
+
+                            <!-- CTA -->
+                            <div class="bg-gradient-to-br from-blue-600 to-indigo-700 rounded-lg p-6 text-white">
+                                <h3 class="font-semibold mb-2">Need Help with Documentation?</h3>
+                                <p class="text-sm text-blue-100 mb-4">
+                                    Docsie makes it easy to create, manage, and share your documentation.
+                                </p>
+                                <a href="{{ settings.call_to_action.button_url | default('/pricing/') }}" 
+                                   class="inline-flex items-center bg-white text-blue-600 px-4 py-2 rounded font-medium hover:bg-blue-50 transition">
+                                    Get Started Free
+                                    <i data-lucide="arrow-right" class="ml-2 h-4 w-4"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Include Footer -->
+    {% include 'footer.html' %}
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        lucide.createIcons();
+        
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

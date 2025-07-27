@@ -91,6 +91,13 @@
         "dateModified": "{{ article.modified_timestamp.isoformat() }}",
         "wordCount": {{ article.wordCount if article.wordCount > 0 else 'null' }},
         "articleSection": "{{ article.categories|join(', ') if article.categories else '' }}"
+        {%- if article.tldr_points %},
+        "speakable": {
+          "@type": "SpeakableSpecification",
+          "cssSelector": [".tldr-points"]
+        },
+        "abstract": {{ article.tldr_points | tojson }}
+        {%- endif %}
       },
       {
         "@type": "BreadcrumbList",
@@ -143,13 +150,34 @@
     "description": "{{ article.summary | escape }}",
     "aggregateRating": {
       "@type": "AggregateRating",
-      "worstRating": "1",
-      "bestRating": "5",
-      "ratingValue": "4.7",
-      "ratingCount": "252"
+      "worstRating": "{{ settings.product_rating.worst_rating | default('1') }}",
+      "bestRating": "{{ settings.product_rating.best_rating | default('5') }}",
+      "ratingValue": "{{ settings.product_rating.rating_value | default('4.8') }}",
+      "ratingCount": "{{ settings.product_rating.rating_count | default('150') }}"
     }
   }
   </script>
+
+  {% if article.faq_items %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {% for faq in article.faq_items %}
+      {
+        "@type": "Question",
+        "name": "{{ faq.question | escape }}",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "{{ faq.answer | escape }}"
+        }
+      }{% if not loop.last %},{% endif %}
+      {% endfor %}
+    ]
+  }
+  </script>
+  {% endif %}
 
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -633,6 +661,24 @@
           </svg>
         </button>
       </div>
+      
+      <!-- TL;DR Section -->
+      {% if article.tldr_points %}
+      <div class="tldr-points mb-8 p-6 bg-gradient-to-r from-blue-50 to-indigo-50 border-l-4 border-blue-500 rounded-r-xl">
+        <h3 class="text-lg font-bold text-gray-900 mb-3 flex items-center">
+          <i data-lucide="zap" class="h-5 w-5 mr-2 text-blue-600"></i>
+          Key Takeaways
+        </h3>
+        <ul class="space-y-2">
+          {% for point in article.tldr_points %}
+          <li class="flex items-start">
+            <span class="text-blue-600 mr-2 mt-1">•</span>
+            <span class="text-gray-700">{{ point }}</span>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+      {% endif %}
         
       <!-- Article Content -->
       <article class="prose prose-xl max-w-none prose-headings:scroll-mt-24 prose-p:text-gray-700 prose-headings:text-gray-900">
@@ -733,6 +779,53 @@
         </div>
       </div>
       -->
+      
+      <!-- Glossary Section -->
+      {% if article.glossary_terms_display %}
+      <section class="mt-16 p-8 bg-gradient-to-r from-gray-50 to-slate-50 rounded-xl border border-gray-200">
+        <h2 class="text-2xl font-bold mb-6 text-gray-900 flex items-center">
+          <i data-lucide="book-open" class="h-6 w-6 mr-2 text-gray-700"></i>
+          Key Terms & Definitions
+        </h2>
+        <div class="grid md:grid-cols-2 gap-6">
+          {% for term in article.glossary_terms_display %}
+          <div class="group" itemscope itemtype="https://schema.org/DefinedTerm">
+            <dt class="font-semibold text-gray-900 mb-1 flex items-start">
+              <span itemprop="name">{{ term.term }}</span>
+              {% if term.expanded %}
+              <span class="text-gray-500 font-normal text-sm ml-2">({{ term.expanded }})</span>
+              {% endif %}
+            </dt>
+            <dd class="text-gray-700 text-sm leading-relaxed" itemprop="description">
+              {{ term.definition }}
+            </dd>
+          </div>
+          {% endfor %}
+        </div>
+        <div class="mt-6 pt-6 border-t border-gray-200">
+          <a href="{{ settings.blog_root_path }}glossary/" 
+             class="inline-flex items-center text-blue-600 hover:text-blue-700 font-medium">
+            <span>View Complete Glossary</span>
+            <i data-lucide="arrow-right" class="ml-2 h-4 w-4"></i>
+          </a>
+        </div>
+      </section>
+      {% endif %}
+
+      <!-- FAQ Section -->
+      {% if article.faq_items %}
+      <section class="mt-16 p-8 bg-gray-50 rounded-xl">
+        <h2 class="text-2xl font-bold mb-6 text-gray-900">Frequently Asked Questions</h2>
+        <div class="space-y-6">
+          {% for faq in article.faq_items %}
+          <div class="border-b border-gray-200 pb-6 last:border-b-0 last:pb-0">
+            <h3 class="font-semibold text-lg mb-2 text-gray-900">{{ faq.question }}</h3>
+            <p class="text-gray-700 leading-relaxed">{{ faq.answer }}</p>
+          </div>
+          {% endfor %}
+        </div>
+      </section>
+      {% endif %}
       
       <!-- Call to Action -->
       <section class="mt-16 p-8 bg-gradient-to-r from-blue-50 to-blue-100 rounded-xl border border-blue-200">
