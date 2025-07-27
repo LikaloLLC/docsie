@@ -21,19 +21,20 @@ Usage: {% include '_cal_onclick.html' with button_text="Book Demo" button_class=
   document.addEventListener("DOMContentLoaded", function () {
     const calButtons = document.querySelectorAll('[data-cal-link]');
     calButtons.forEach(button => {
-      button.addEventListener('click', () => {
-        // More robust scroll to top for mobile
-        window.scrollTo(0, 0);
-        document.body.scrollTop = 0; // For Safari
-        document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+      button.addEventListener('click', (e) => {
+        // Check if mobile device
+        const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent) || window.innerWidth <= 768;
         
-        // Also ensure viewport is at top for mobile browsers
-        if (window.pageYOffset > 0) {
-          window.scrollTo({
-            top: 0,
-            left: 0,
-            behavior: 'instant'
-          });
+        if (isMobile) {
+          // Redirect to demo page on mobile
+          e.preventDefault();
+          e.stopPropagation();
+          window.location.href = '/demo/';
+        } else {
+          // Desktop: scroll to top for modal
+          window.scrollTo(0, 0);
+          document.body.scrollTop = 0; // For Safari
+          document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
         }
       });
     });

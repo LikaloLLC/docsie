@@ -52,6 +52,17 @@ This should be included once in the base template
     calButtons.forEach(function(button) {
       button.addEventListener('click', function(e) {
         e.preventDefault();
+        
+        // Check if mobile device
+        const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent) || window.innerWidth <= 768;
+        
+        if (isMobile) {
+          // Redirect to demo page on mobile
+          window.location.href = '/demo/';
+          return;
+        }
+        
+        // Desktop: proceed with Cal.com modal
         const calLink = button.getAttribute('data-cal-link');
         const namespace = button.getAttribute('data-cal-namespace') || 'product-discovery';
         const config = button.getAttribute('data-cal-config');
