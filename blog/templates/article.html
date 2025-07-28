@@ -119,7 +119,7 @@
             "@type": "ListItem",
             "position": 3,
             "name": "{{ article.categories[0] }}",
-            "item": "{{ settings.domain_url }}{{ settings.blog_root_path }}{{ article.categories[0]|lower|replace(' ', '-')|replace('&', 'and')|replace(',', '')|replace('.', '') }}/"
+            "item": "{{ settings.domain_url }}{{ settings.blog_root_path.rstrip('/') }}/{{ article.categories[0]|lower|replace(' ', '-')|replace('&', 'and')|replace(',', '')|replace('.', '') }}/"
           },
           {
             "@type": "ListItem",
@@ -809,13 +809,21 @@
           {% for term in article.glossary_terms_display %}
           <div class="group" itemscope itemtype="https://schema.org/DefinedTerm">
             <dt class="font-semibold text-gray-900 mb-1 flex items-start">
-              <span itemprop="name">{{ term.term }}</span>
+              <a href="{{ settings.blog_root_path }}glossary/{{ term.term|slugify }}/" 
+                 class="hover:text-blue-600 transition-colors duration-200 underline decoration-gray-300 hover:decoration-blue-600"
+                 itemprop="url">
+                <span itemprop="name">{{ term.term }}</span>
+              </a>
               {% if term.expanded %}
               <span class="text-gray-500 font-normal text-sm ml-2">({{ term.expanded }})</span>
               {% endif %}
             </dt>
             <dd class="text-gray-700 text-sm leading-relaxed" itemprop="description">
               {{ term.definition }}
+              <a href="{{ settings.blog_root_path }}glossary/{{ term.term|slugify }}/" 
+                 class="text-blue-600 hover:text-blue-700 text-xs ml-2 inline-flex items-center group-hover:underline">
+                Learn more →
+              </a>
             </dd>
           </div>
           {% endfor %}

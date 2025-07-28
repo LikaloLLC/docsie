@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+
+  
+    <link rel="icon" type="image/png" sizes="32x32" href="https://d1iq6qzgppjlud.cloudfront.net/images/favicon/favicon-196x196.png">
+
+
+  <!-- Primary Meta Tags -->
+  <title>Just-in-Time: The Complete Guide for Documentation Teams | Docsie.io Blog</title>
+  <meta name="title" content="Just-in-Time: The Complete Guide">
+  <meta name="description" content="Just-in-Time (JIT) in documentation is a strategy that creates, updates, and delivers information precisely when needed rather than maintaining extensive d">
+  <meta name="keywords" content="Just-in-Time, documentation, technical writing, Docsie.io Blog">
+  <link rel="canonical" href="https://www.docsie.io/blog/glossary/just-in-time/">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  
+  <!-- Additional SEO Tags -->
+  <meta name="author" content="Docsie.io Blog">
+  <meta name="language" content="English">
+  <meta name="revisit-after" content="7 days">
+  <link rel="alternate" type="application/rss+xml" title="Docsie.io Blog RSS Feed" href="https://www.docsie.io/blog/rss.xml">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.docsie.io/blog/glossary/just-in-time/">
+  <meta property="og:title" content="Just-in-Time: The Complete Guide">
+  <meta property="og:description" content="Just-in-Time (JIT) in documentation is a strategy that creates, updates, and delivers information precisely when needed rather than maintaining extensive documentation libraries. This approach reduces waste by focusing resources on actively used content and eliminates outdated or unnecessary documentation.">
+  <meta property="og:image" content="https://d1iq6qzgppjlud.cloudfront.net/images/favicon/apple-touch-icon-144x144.png">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://www.docsie.io/blog/glossary/just-in-time/">
+  <meta property="twitter:title" content="Just-in-Time: The Complete Guide">
+  <meta property="twitter:description" content="Just-in-Time (JIT) in documentation is a strategy that creates, updates, and delivers information precisely when needed rather than maintaining extensive documentation libraries. This approach reduces waste by focusing resources on actively used content and eliminates outdated or unnecessary documentation.">
+  <meta property="twitter:image" content="https://d1iq6qzgppjlud.cloudfront.net/images/favicon/apple-touch-icon-144x144.png">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Existing CSS -->
+  <link rel="stylesheet" href="/blog/templates/assets/css/design-system.css">
+  <link rel="stylesheet" href="/blog/templates/assets/css/typography.min.css">
+<!-- Mermaid.js for diagrams -->
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script>
+    mermaid.initialize({ 
+        startOnLoad: true, 
+        theme: 'default',
+        themeVariables: {
+            primaryColor: '#6366f1',
+            primaryTextColor: '#fff',
+            primaryBorderColor: '#4f46e5',
+            lineColor: '#e5e7eb',
+            secondaryColor: '#f3f4f6',
+            tertiaryColor: '#fbbf24'
+        }
+    });
+</script>
+
+<style>
+    /* Term Page Specific Styles */
+    .term-hero {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 3rem 0;
+        margin-bottom: 3rem;
+    }
+    
+    .breadcrumb {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin-bottom: 1rem;
+        font-size: 0.875rem;
+        color: rgba(255, 255, 255, 0.8);
+    }
+    
+    .breadcrumb a {
+        color: rgba(255, 255, 255, 0.8);
+        text-decoration: none;
+        transition: color 0.2s;
+    }
+    
+    .breadcrumb a:hover {
+        color: white;
+    }
+    
+    .definition-card {
+        background: white;
+        border: 2px solid #e5e7eb;
+        border-radius: 12px;
+        padding: 2rem;
+        margin-bottom: 2rem;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    }
+    
+    .definition-card h2 {
+        color: #4f46e5;
+        margin-bottom: 1rem;
+    }
+    
+    .mermaid-container {
+        background: #f9fafb;
+        border-radius: 12px;
+        padding: 2rem;
+        margin: 2rem 0;
+        overflow-x: auto;
+    }
+    
+    .use-case {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 2rem;
+        border-radius: 16px;
+        margin-bottom: 1.5rem;
+        box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .use-case::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        right: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+        pointer-events: none;
+    }
+    
+    .use-case h3 {
+        color: white;
+        margin-bottom: 1.5rem;
+        font-size: 1.375rem;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+    }
+    
+    .use-case h3::before {
+        content: '💡';
+        font-size: 1.5rem;
+    }
+    
+    .use-case-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1rem;
+        margin-top: 1rem;
+    }
+    
+    .use-case-item {
+        background: rgba(255, 255, 255, 0.15);
+        padding: 1.5rem;
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(10px);
+        transition: all 0.3s ease;
+        position: relative;
+    }
+    
+    .use-case-item:hover {
+        background: rgba(255, 255, 255, 0.18);
+        border-color: rgba(255, 255, 255, 0.3);
+        transform: translateY(-2px);
+    }
+    
+    .use-case-item h4 {
+        color: white;
+        margin-bottom: 0.75rem;
+        font-size: 0.75rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    
+    .use-case-item h4::before {
+        content: '';
+        width: 4px;
+        height: 16px;
+        background: linear-gradient(to bottom, #fbbf24, #f59e0b);
+        border-radius: 2px;
+    }
+    
+    /* Custom icons for each section */
+    .use-case-item h4[data-type="problem"]::after {
+        content: '⚠️';
+        margin-left: auto;
+        font-size: 1rem;
+    }
+    
+    .use-case-item h4[data-type="solution"]::after {
+        content: '✨';
+        margin-left: auto;
+        font-size: 1rem;
+    }
+    
+    .use-case-item h4[data-type="implementation"]::after {
+        content: '🔧';
+        margin-left: auto;
+        font-size: 1rem;
+    }
+    
+    .use-case-item h4[data-type="outcome"]::after {
+        content: '🎯';
+        margin-left: auto;
+        font-size: 1rem;
+    }
+    
+    .use-case-item p {
+        line-height: 1.6;
+        font-size: 0.95rem;
+    }
+    
+    .best-practice {
+        background: white;
+        border: 2px solid #10b981;
+        border-radius: 12px;
+        padding: 1.5rem;
+        margin-bottom: 1rem;
+        transition: transform 0.2s, box-shadow 0.2s;
+    }
+    
+    .best-practice:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    
+    .best-practice h3 {
+        color: #10b981;
+        margin-bottom: 0.5rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    
+    .do-dont-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+        margin-top: 1rem;
+    }
+    
+    .do-box, .dont-box {
+        padding: 0.75rem;
+        border-radius: 6px;
+        font-size: 0.875rem;
+    }
+    
+    .do-box {
+        background: #d1fae5;
+        border: 1px solid #10b981;
+    }
+    
+    .dont-box {
+        background: #fee2e2;
+        border: 1px solid #ef4444;
+    }
+    
+    .docsie-section {
+        background: linear-gradient(to right, #f3e8ff, #e0e7ff);
+        padding: 3rem;
+        border-radius: 12px;
+        margin: 3rem 0;
+    }
+    
+    .related-articles {
+        margin-top: 3rem;
+    }
+    
+    .article-link {
+        display: block;
+        padding: 1rem;
+        border: 1px solid #e5e7eb;
+        border-radius: 8px;
+        text-decoration: none;
+        color: inherit;
+        transition: all 0.2s;
+        margin-bottom: 0.75rem;
+    }
+    
+    .article-link:hover {
+        border-color: #6366f1;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        transform: translateX(4px);
+    }
+    
+    /* Mobile responsiveness */
+    @media (max-width: 768px) {
+        .use-case-grid,
+        .do-dont-grid {
+            grid-template-columns: 1fr;
+        }
+        
+        .term-hero {
+            padding: 2rem 0;
+        }
+    }
+</style>
+
+<!-- Schema.org structured data -->
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": ["Article", "DefinedTerm"],
+    "name": "Just-in-Time",
+    "headline": "Just-in-Time: The Complete Guide for Documentation Teams",
+    "description": "Just-in-Time (JIT) in documentation is a strategy that creates, updates, and delivers information precisely when needed rather than maintaining extensive documentation libraries. This approach reduces waste by focusing resources on actively used content and eliminates outdated or unnecessary documentation.",
+    "termCode": "just-in-time",
+    "inDefinedTermSet": {
+        "@type": "DefinedTermSet",
+        "name": "Docsie Documentation Glossary",
+        "url": "https://www.docsie.io/blog/glossary/"
+    },
+    "author": {
+        "@type": "Organization",
+        "name": "Docsie.io Blog",
+        "url": "https://www.docsie.io"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Docsie.io Blog",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://www.docsie.io/assets/docsie_logo_square_svg.svg"
+        }
+    },
+    "datePublished": "2024-01-01",
+    "dateModified": "2024-01-01",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://www.docsie.io/blog/glossary/just-in-time/"
+    },
+    "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Blog",
+                "item": "https://www.docsie.io/blog/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Glossary",
+                "item": "https://www.docsie.io/blog/glossary/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Just-in-Time",
+                "item": "https://www.docsie.io/blog/glossary/just-in-time/"
+            }
+        ]
+    },
+    "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [".definition-card", ".use-case:first-child"]
+    }
+}
+</script>
+</head>
+
+<body>
+  <!-- BlogVi Header V2 - Using Production Docsie Design System -->
+<nav class="header sticky top-0 z-50 bg-white shadow-sm">
+  <div class="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center py-4">
+      <!-- Logo -->
+      <div class="flex items-center">
+        <a href="https://www.docsie.io" class="flex items-center">
+          <img src="https://www.docsie.io/assets/docsie_logo_square_svg.svg" alt="Docsie Logo" class="h-8 w-auto mr-2" style="filter: brightness(0) saturate(100%) invert(42%) sepia(93%) saturate(1018%) hue-rotate(96deg) brightness(101%) contrast(91%);">
+          <span class="text-2xl font-bold text-gray-900">Docsie</span>
+        </a>
+        <span class="ml-2 text-gray-500">|</span>
+        <a href="/blog/" class="ml-2 text-xl font-semibold text-gray-700 hover:text-docsie-primary transition-colors">
+          Blog
+        </a>
+      </div>
+
+      <!-- Desktop Navigation -->
+      <div class="hidden md:flex items-center space-x-8">
+        <!-- Main Nav Links from settings -->
+        
+        <a href="https://www.docsie.io" class="text-gray-700 hover:text-docsie-primary font-medium transition-colors">
+          Docsie
+        </a>
+        
+        <a href="https://www.docsie.io/pricing/" class="text-gray-700 hover:text-docsie-primary font-medium transition-colors">
+          Docsie Pricing
+        </a>
+        
+        <a href="https://www.docsie.io/try_docsie/" class="bg-docsie-primary hover:bg-docsie-primary-dark text-white px-4 py-2 rounded-lg font-medium transition-colors">
+          Try Docsie
+        </a>
+        
+      </div>
+
+      <!-- Mobile menu button -->
+      <button class="md:hidden p-2 text-gray-600 hover:text-docsie-primary transition-colors" onclick="toggleMobileMenu()">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Navigation -->
+    <div id="mobile-menu" class="hidden md:hidden pb-4">
+      <div class="flex flex-col space-y-4">
+        
+        <a href="https://www.docsie.io" class="text-gray-700 hover:text-docsie-primary font-medium transition-colors">
+          Docsie
+        </a>
+        
+        <a href="https://www.docsie.io/pricing/" class="text-gray-700 hover:text-docsie-primary font-medium transition-colors">
+          Docsie Pricing
+        </a>
+        
+        <a href="https://www.docsie.io/try_docsie/" class="block text-center bg-docsie-primary hover:bg-docsie-primary-dark text-white px-4 py-2 rounded-lg font-medium transition-colors">
+          Try Docsie
+        </a>
+        
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Blog-specific navigation bar -->
+<div class="bg-gray-50 border-b border-gray-200">
+  <div class="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between py-3">
+      <!-- Categories -->
+      <nav class="flex items-center gap-2 overflow-x-auto max-w-full scrollbar-hide">
+        <a href="/blog" class="category-pill flex-shrink-0 category-pill-active">
+          ALL
+        </a>
+        
+      </nav>
+
+      <!-- Right side: Search and Subscribe -->
+      <div class="flex items-center gap-2 ml-2">
+        <!-- Search -->
+        <div class="relative">
+          <input type="search" 
+                 placeholder="Search..." 
+                 class="w-32 sm:w-48 md:w-64 px-3 py-2 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-docsie-primary focus:border-transparent"
+                 id="search">
+          <div class="absolute right-0 mt-2 w-64 sm:w-80 md:w-96 bg-white rounded-lg shadow-xl border border-gray-200 hidden z-50" id="search-bar">
+            <ul class="py-2 max-h-96 overflow-y-auto" id="search-results">
+              <!-- Search results will be populated here -->
+            </ul>
+          </div>
+        </div>
+        
+        <!-- Subscribe Button (if enabled) -->
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function toggleMobileMenu() {
+  const menu = document.getElementById('mobile-menu');
+  menu.classList.toggle('hidden');
+}
+
+// Initialize search settings for BlogVi
+window['searchConfig'] = {};
+</script>
+<div class="term-hero">
+    <div class="container mx-auto px-4">
+        <!-- Breadcrumbs -->
+        <nav class="breadcrumb">
+            
+                
+                    <a href="/blog/">Blog</a>
+                    <span>›</span>
+                
+            
+                
+                    <a href="/blog/glossary/">Glossary</a>
+                    <span>›</span>
+                
+            
+                
+                    <span>Just-in-Time</span>
+                
+            
+        </nav>
+        
+        <!-- Hero Title -->
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">Just-in-Time</h1>
+        <p class="text-xl opacity-90">Master this essential documentation concept</p>
+    </div>
+</div>
+
+<div class="container mx-auto px-4 max-w-4xl">
+    <!-- Quick Definition Card -->
+    <div class="definition-card">
+        <h2 class="text-2xl font-semibold">Quick Definition</h2>
+        <p class="text-lg leading-relaxed">Just-in-Time (JIT) in documentation is a strategy that creates, updates, and delivers information precisely when needed rather than maintaining extensive documentation libraries. This approach reduces waste by focusing resources on actively used content and eliminates outdated or unnecessary documentation.</p>
+    </div>
+    
+    <!-- Visual Diagram -->
+    <section class="mb-8">
+        <h2 class="text-3xl font-bold mb-4">How Just-in-Time Works</h2>
+        <div class="mermaid-container">
+            <div class="mermaid">
+                flowchart TD
+    A[User Need Identified] --> B{Existing Content Available?}
+    B -->|Yes| C[Deliver Existing Content]
+    B -->|No| D[Assess Priority & Impact]
+    D --> E[Create Minimal Viable Content]
+    E --> F[Deliver to User]
+    F --> G[Collect Usage Data]
+    G --> H{Content Performing Well?}
+    H -->|Yes| I[Maintain & Refine]
+    H -->|No| J[Update or Archive]
+    C --> K[Monitor Usage]
+    K --> L{Still Relevant?}
+    L -->|Yes| I
+    L -->|No| J
+    I --> M[Add to Knowledge Base]
+    J --> N[Remove from Active Docs]
+            </div>
+        </div>
+    </section>
+    
+    <!-- Detailed Explanation -->
+    <section class="mb-8">
+        <h2 class="text-3xl font-bold mb-4">Understanding Just-in-Time</h2>
+        <div class="prose max-w-none">
+            <p>Just-in-Time (JIT) documentation is a lean approach that prioritizes creating and maintaining content based on immediate user needs and actual demand. Rather than producing comprehensive documentation upfront, teams focus on delivering the right information at the right moment.</p><h3>Key Features</h3><ul><li>Demand-driven content creation based on user requests and analytics</li><li>Minimal viable documentation that covers essential use cases</li><li>Rapid response system for addressing documentation gaps</li><li>Continuous refinement based on user feedback and usage patterns</li><li>Integration with user workflows and support channels</li></ul><h3>Benefits for Documentation Teams</h3><ul><li>Reduced maintenance overhead for unused or outdated content</li><li>Higher content relevance and user satisfaction</li><li>More efficient resource allocation and team productivity</li><li>Faster response to changing product features and user needs</li><li>Improved content quality through focused attention on high-impact areas</li></ul><h3>Common Misconceptions</h3><ul><li>JIT means having no documentation prepared in advance</li><li>It's only suitable for small teams or simple products</li><li>Quality suffers due to rushed content creation</li><li>It eliminates the need for content planning and strategy</li></ul>
+        </div>
+    </section>
+    
+    <!-- Documentation Use Cases -->
+    <section class="mb-8">
+        <h2 class="text-3xl font-bold mb-6">Real-World Documentation Use Cases</h2>
+        
+        <div class="use-case">
+            <h3>API Documentation for New Features</h3>
+            <div class="use-case-grid">
+                <div class="use-case-item">
+                    <h4 data-type="problem">Problem</h4>
+                    <p>Development teams release features faster than documentation teams can create comprehensive guides, leading to gaps in API documentation.</p>
+                </div>
+                <div class="use-case-item">
+                    <h4 data-type="solution">Solution</h4>
+                    <p>Implement JIT documentation that creates essential API docs when developers request them or when support tickets indicate user confusion.</p>
+                </div>
+            </div>
+            <div class="use-case-item mt-4">
+                <h4 data-type="implementation">Implementation</h4>
+                <p>1. Set up automated alerts for new API endpoints
+2. Create templates for rapid API documentation
+3. Establish a 24-hour response time for critical API docs
+4. Use user feedback to prioritize which endpoints need detailed examples
+5. Expand documentation based on actual usage patterns</p>
+            </div>
+            <div class="use-case-item mt-2">
+                <h4 data-type="outcome">Expected Outcome</h4>
+                <p>Reduced time-to-documentation from weeks to hours, improved developer satisfaction, and elimination of unused documentation overhead.</p>
+            </div>
+        </div>
+        
+        <div class="use-case">
+            <h3>Customer Support Knowledge Base</h3>
+            <div class="use-case-grid">
+                <div class="use-case-item">
+                    <h4 data-type="problem">Problem</h4>
+                    <p>Support teams spend time maintaining extensive knowledge bases where 80% of articles are rarely accessed, while frequently asked questions lack proper documentation.</p>
+                </div>
+                <div class="use-case-item">
+                    <h4 data-type="solution">Solution</h4>
+                    <p>Create documentation based on actual support ticket volume and customer inquiries, focusing on high-impact, frequently requested information.</p>
+                </div>
+            </div>
+            <div class="use-case-item mt-4">
+                <h4 data-type="implementation">Implementation</h4>
+                <p>1. Analyze support ticket data to identify top issues
+2. Create documentation only for problems that occur more than 5 times per month
+3. Set up automatic alerts when new issue patterns emerge
+4. Empower support agents to create quick documentation during ticket resolution
+5. Review and archive low-usage content quarterly</p>
+            </div>
+            <div class="use-case-item mt-2">
+                <h4 data-type="outcome">Expected Outcome</h4>
+                <p>90% reduction in maintenance overhead, faster resolution times, and higher customer satisfaction scores.</p>
+            </div>
+        </div>
+        
+        <div class="use-case">
+            <h3>Internal Process Documentation</h3>
+            <div class="use-case-grid">
+                <div class="use-case-item">
+                    <h4 data-type="problem">Problem</h4>
+                    <p>Teams create extensive process documentation that becomes outdated quickly as workflows evolve, leading to confusion and inefficiency.</p>
+                </div>
+                <div class="use-case-item">
+                    <h4 data-type="solution">Solution</h4>
+                    <p>Document processes only when team members request clarification or when onboarding new employees, keeping content minimal and current.</p>
+                </div>
+            </div>
+            <div class="use-case-item mt-4">
+                <h4 data-type="implementation">Implementation</h4>
+                <p>1. Replace comprehensive process manuals with FAQ-style documentation
+2. Create documentation during actual process execution
+3. Use screen recordings and quick guides instead of lengthy written procedures
+4. Update documentation immediately when processes change
+5. Archive documentation for discontinued processes</p>
+            </div>
+            <div class="use-case-item mt-2">
+                <h4 data-type="outcome">Expected Outcome</h4>
+                <p>Always-current process documentation, reduced onboarding time, and elimination of conflicting or outdated procedures.</p>
+            </div>
+        </div>
+        
+        <div class="use-case">
+            <h3>Product Feature Documentation</h3>
+            <div class="use-case-grid">
+                <div class="use-case-item">
+                    <h4 data-type="problem">Problem</h4>
+                    <p>Product teams document all features comprehensively, but users only engage with a small subset, resulting in wasted effort on unused content.</p>
+                </div>
+                <div class="use-case-item">
+                    <h4 data-type="solution">Solution</h4>
+                    <p>Create feature documentation based on user adoption metrics and support requests, focusing on features that users actually discover and use.</p>
+                </div>
+            </div>
+            <div class="use-case-item mt-4">
+                <h4 data-type="implementation">Implementation</h4>
+                <p>1. Integrate analytics to track feature usage
+2. Create basic documentation for all features, detailed docs only for popular ones
+3. Set usage thresholds that trigger expanded documentation
+4. Use in-app contextual help instead of external comprehensive guides
+5. Regularly review and update based on feature adoption data</p>
+            </div>
+            <div class="use-case-item mt-2">
+                <h4 data-type="outcome">Expected Outcome</h4>
+                <p>Higher documentation engagement rates, reduced content creation time, and better alignment between user needs and available resources.</p>
+            </div>
+        </div>
+        
+    </section>
+    
+    <!-- Best Practices -->
+    <section class="mb-8">
+        <h2 class="text-3xl font-bold mb-6">Best Practices</h2>
+        
+        <div class="best-practice">
+            <h3><span>✓</span> Establish Clear Triggers for Content Creation</h3>
+            <p>Define specific criteria that trigger documentation creation, such as support ticket thresholds, user requests, or feature adoption rates.</p>
+            <div class="do-dont-grid">
+                <div class="do-box">
+                    <strong>✓ Do:</strong> Set measurable triggers like '3 support tickets on the same topic' or 'feature usage above 10%' to initiate documentation efforts.
+                </div>
+                <div class="dont-box">
+                    <strong>✗ Don't:</strong> Rely on subjective decisions or create content 'just in case' without clear demand indicators.
+                </div>
+            </div>
+        </div>
+        
+        <div class="best-practice">
+            <h3><span>✓</span> Create Rapid Response Templates</h3>
+            <p>Develop standardized templates and workflows that enable quick content creation when documentation needs arise.</p>
+            <div class="do-dont-grid">
+                <div class="do-box">
+                    <strong>✓ Do:</strong> Maintain templates for common content types, establish approval workflows, and train team members on rapid content creation techniques.
+                </div>
+                <div class="dont-box">
+                    <strong>✗ Don't:</strong> Start from scratch each time or require lengthy approval processes that defeat the purpose of just-in-time delivery.
+                </div>
+            </div>
+        </div>
+        
+        <div class="best-practice">
+            <h3><span>✓</span> Implement Continuous Feedback Loops</h3>
+            <p>Establish systems to continuously collect and analyze user feedback, usage data, and content performance metrics.</p>
+            <div class="do-dont-grid">
+                <div class="do-box">
+                    <strong>✓ Do:</strong> Use analytics tools, feedback widgets, and regular user surveys to understand content effectiveness and identify gaps.
+                </div>
+                <div class="dont-box">
+                    <strong>✗ Don't:</strong> Create content in isolation without measuring its impact or gathering user input on its usefulness.
+                </div>
+            </div>
+        </div>
+        
+        <div class="best-practice">
+            <h3><span>✓</span> Maintain Minimal Viable Documentation</h3>
+            <p>Focus on creating the smallest amount of documentation that effectively addresses user needs, then expand based on demand.</p>
+            <div class="do-dont-grid">
+                <div class="do-box">
+                    <strong>✓ Do:</strong> Start with essential information, clear examples, and actionable steps. Add detail incrementally based on user questions.
+                </div>
+                <div class="dont-box">
+                    <strong>✗ Don't:</strong> Over-document initially or include every possible edge case without evidence that users need that level of detail.
+                </div>
+            </div>
+        </div>
+        
+        <div class="best-practice">
+            <h3><span>✓</span> Regular Content Auditing and Pruning</h3>
+            <p>Systematically review and remove or archive content that no longer serves user needs or reflects current processes.</p>
+            <div class="do-dont-grid">
+                <div class="do-box">
+                    <strong>✓ Do:</strong> Schedule quarterly reviews of content performance, remove outdated information, and archive unused documentation.
+                </div>
+                <div class="dont-box">
+                    <strong>✗ Don't:</strong> Let old content accumulate indefinitely or assume that more documentation is always better than less.
+                </div>
+            </div>
+        </div>
+        
+    </section>
+    
+    <!-- How Docsie Helps -->
+    <section class="docsie-section">
+        <h2 class="text-3xl font-bold mb-4">How Docsie Helps with Just-in-Time</h2>
+        <div class="prose max-w-none">
+            <p>Modern documentation platforms provide essential infrastructure for implementing Just-in-Time documentation strategies effectively. These platforms offer the flexibility and responsiveness needed to create, update, and deliver content precisely when users need it.</p><ul><li><strong>Real-time Analytics:</strong> Track content usage patterns, identify documentation gaps, and measure user engagement to inform JIT creation decisions</li><li><strong>Rapid Content Creation:</strong> Streamlined editors, templates, and collaborative workflows enable quick response to emerging documentation needs</li><li><strong>Dynamic Content Delivery:</strong> Smart search, contextual help, and personalized content recommendations ensure users find relevant information instantly</li><li><strong>Automated Workflows:</strong> Integration with support systems, development tools, and user feedback channels to trigger documentation creation based on predefined criteria</li><li><strong>Version Control and Updates:</strong> Seamless content updates and rollbacks ensure documentation stays current without disrupting user access</li><li><strong>Scalable Architecture:</strong> Cloud-based platforms that grow with demand, supporting both minimal documentation sets and expanded content libraries as needs evolve</li></ul>
+        </div>
+        
+        <!-- Phase 2: This will be populated by Docsie RAG -->
+        <div id="docsie-features" class="mt-6">
+            <!-- Placeholder for RAG integration -->
+        </div>
+        
+        <div class="mt-6">
+            <a href="https://www.docsie.io/demo/" class="inline-flex items-center px-6 py-3 bg-white text-purple-600 font-semibold rounded-lg hover:bg-purple-50 transition">
+                See How Docsie Can Help
+                <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+            </a>
+        </div>
+    </section>
+    
+    <!-- Related Articles -->
+    
+    
+    <!-- Related Terms -->
+    
+    <section class="related-terms mt-8">
+        <h2 class="text-2xl font-bold mb-4">Related Documentation Terms</h2>
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3">
+            
+            <a href="/blog/glossary/knowledge-base/" 
+               class="bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded-lg text-center transition-colors duration-200 group">
+                <span class="block font-medium text-gray-900 group-hover:text-blue-600">Knowledge Base</span>
+                <span class="text-xs text-gray-500">1 shared articles</span>
+            </a>
+            
+            <a href="/blog/glossary/saas/" 
+               class="bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded-lg text-center transition-colors duration-200 group">
+                <span class="block font-medium text-gray-900 group-hover:text-blue-600">SaaS</span>
+                <span class="text-xs text-gray-500">1 shared articles</span>
+            </a>
+            
+            <a href="/blog/glossary/knowledge-management/" 
+               class="bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded-lg text-center transition-colors duration-200 group">
+                <span class="block font-medium text-gray-900 group-hover:text-blue-600">Knowledge Management</span>
+                <span class="text-xs text-gray-500">1 shared articles</span>
+            </a>
+            
+            <a href="/blog/glossary/documentation/" 
+               class="bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded-lg text-center transition-colors duration-200 group">
+                <span class="block font-medium text-gray-900 group-hover:text-blue-600">Documentation</span>
+                <span class="text-xs text-gray-500">1 shared articles</span>
+            </a>
+            
+            <a href="/blog/glossary/knowledge-transfer/" 
+               class="bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded-lg text-center transition-colors duration-200 group">
+                <span class="block font-medium text-gray-900 group-hover:text-blue-600">Knowledge Transfer</span>
+                <span class="text-xs text-gray-500">1 shared articles</span>
+            </a>
+            
+        </div>
+    </section>
+    
+    
+    <!-- CTA Section -->
+    <section class="bg-gradient-to-r from-purple-600 to-indigo-600 text-white p-8 rounded-lg mt-8 text-center">
+        <h2 class="text-2xl font-bold mb-4">Build Better Documentation with Docsie</h2>
+        <p class="mb-6">Join thousands of teams creating outstanding documentation</p>
+        <a href="https://app.docsie.io/onboarding/" class="inline-block bg-white text-purple-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition">
+            Start Free Trial
+        </a>
+    </section>
+</div>
+
+  <!-- BlogVi Footer V2 - Simplified version using production styles -->
+<footer class="bg-gray-900 text-white mt-16">
+    <div class="container mx-auto px-4 py-12">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <!-- Company Info -->
+            <div>
+                <h3 class="text-lg font-semibold mb-4">Docsie</h3>
+                <p class="text-gray-400 text-sm">
+                    The modern documentation platform that helps teams create, manage, and share knowledge.
+                </p>
+            </div>
+            
+            <!-- Quick Links -->
+            <div>
+                <h4 class="text-lg font-semibold mb-4">Product</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="https://www.docsie.io/features/" class="text-gray-400 hover:text-white transition-colors">Features</a></li>
+                    <li><a href="https://www.docsie.io/pricing/" class="text-gray-400 hover:text-white transition-colors">Pricing</a></li>
+                    <li><a href="https://www.docsie.io/documentation/" class="text-gray-400 hover:text-white transition-colors">Documentation</a></li>
+                    <li><a href="/blog/" class="text-gray-400 hover:text-white transition-colors">Blog</a></li>
+                    <li><a href="/blog/glossary/" class="text-gray-400 hover:text-white transition-colors">Glossary</a></li>
+                </ul>
+            </div>
+            
+            <!-- Resources -->
+            <div>
+                <h4 class="text-lg font-semibold mb-4">Resources</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="https://help.docsie.io" class="text-gray-400 hover:text-white transition-colors">Help Center</a></li>
+                    <li><a href="https://www.docsie.io/support/" class="text-gray-400 hover:text-white transition-colors">Support</a></li>
+                    <li><a href="https://www.docsie.io/about/" class="text-gray-400 hover:text-white transition-colors">About Us</a></li>
+                    <li><a href="https://www.docsie.io/careers/" class="text-gray-400 hover:text-white transition-colors">Careers</a></li>
+                </ul>
+            </div>
+            
+            <!-- Social Links -->
+            <div>
+                <h4 class="text-lg font-semibold mb-4">Connect</h4>
+                <div class="flex space-x-4">
+                    <a href="https://twitter.com/docsie_io" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/company/docsie" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://github.com/LikaloLLC" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="/blog/rss.xml" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fas fa-rss"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Bottom Bar -->
+        <div class="mt-8 pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center text-sm text-gray-400">
+            <p>&copy;  Docsie. All rights reserved.</p>
+            <div class="flex space-x-6 mt-4 md:mt-0">
+                <a href="https://www.docsie.io/privacy/" class="hover:text-white transition-colors">Privacy Policy</a>
+                <a href="https://www.docsie.io/terms/" class="hover:text-white transition-colors">Terms of Service</a>
+                <a href="https://www.docsie.io/cookies/" class="hover:text-white transition-colors">Cookie Policy</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+// Set current year for copyright
+document.addEventListener('DOMContentLoaded', function() {
+    const yearElements = document.querySelectorAll('[data-year]');
+    const currentYear = new Date().getFullYear();
+    yearElements.forEach(el => el.textContent = currentYear);
+});
+</script>
+</body>
+</html>

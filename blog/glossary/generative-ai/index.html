@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+
+  
+    <link rel="icon" type="image/png" sizes="32x32" href="https://d1iq6qzgppjlud.cloudfront.net/images/favicon/favicon-196x196.png">
+
+
+  <!-- Primary Meta Tags -->
+  <title>Generative AI: The Complete Guide for Documentation Teams | Docsie.io Blog</title>
+  <meta name="title" content="Generative AI: The Complete Guide">
+  <meta name="description" content="Generative AI is artificial intelligence technology that creates new content such as text, images, and code by learning patterns from existing data. For do">
+  <meta name="keywords" content="Generative AI, documentation, technical writing, Docsie.io Blog">
+  <link rel="canonical" href="https://www.docsie.io/blog/glossary/generative-ai/">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  
+  <!-- Additional SEO Tags -->
+  <meta name="author" content="Docsie.io Blog">
+  <meta name="language" content="English">
+  <meta name="revisit-after" content="7 days">
+  <link rel="alternate" type="application/rss+xml" title="Docsie.io Blog RSS Feed" href="https://www.docsie.io/blog/rss.xml">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.docsie.io/blog/glossary/generative-ai/">
+  <meta property="og:title" content="Generative AI: The Complete Guide">
+  <meta property="og:description" content="Generative AI is artificial intelligence technology that creates new content such as text, images, and code by learning patterns from existing data. For documentation professionals, it serves as a powerful tool to automate content creation, improve writing quality, and accelerate documentation workflows while maintaining consistency across projects.">
+  <meta property="og:image" content="https://d1iq6qzgppjlud.cloudfront.net/images/favicon/apple-touch-icon-144x144.png">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://www.docsie.io/blog/glossary/generative-ai/">
+  <meta property="twitter:title" content="Generative AI: The Complete Guide">
+  <meta property="twitter:description" content="Generative AI is artificial intelligence technology that creates new content such as text, images, and code by learning patterns from existing data. For documentation professionals, it serves as a powerful tool to automate content creation, improve writing quality, and accelerate documentation workflows while maintaining consistency across projects.">
+  <meta property="twitter:image" content="https://d1iq6qzgppjlud.cloudfront.net/images/favicon/apple-touch-icon-144x144.png">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Existing CSS -->
+  <link rel="stylesheet" href="/blog/templates/assets/css/design-system.css">
+  <link rel="stylesheet" href="/blog/templates/assets/css/typography.min.css">
+<!-- Mermaid.js for diagrams -->
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script>
+    mermaid.initialize({ 
+        startOnLoad: true, 
+        theme: 'default',
+        themeVariables: {
+            primaryColor: '#6366f1',
+            primaryTextColor: '#fff',
+            primaryBorderColor: '#4f46e5',
+            lineColor: '#e5e7eb',
+            secondaryColor: '#f3f4f6',
+            tertiaryColor: '#fbbf24'
+        }
+    });
+</script>
+
+<style>
+    /* Term Page Specific Styles */
+    .term-hero {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 3rem 0;
+        margin-bottom: 3rem;
+    }
+    
+    .breadcrumb {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin-bottom: 1rem;
+        font-size: 0.875rem;
+        color: rgba(255, 255, 255, 0.8);
+    }
+    
+    .breadcrumb a {
+        color: rgba(255, 255, 255, 0.8);
+        text-decoration: none;
+        transition: color 0.2s;
+    }
+    
+    .breadcrumb a:hover {
+        color: white;
+    }
+    
+    .definition-card {
+        background: white;
+        border: 2px solid #e5e7eb;
+        border-radius: 12px;
+        padding: 2rem;
+        margin-bottom: 2rem;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    }
+    
+    .definition-card h2 {
+        color: #4f46e5;
+        margin-bottom: 1rem;
+    }
+    
+    .mermaid-container {
+        background: #f9fafb;
+        border-radius: 12px;
+        padding: 2rem;
+        margin: 2rem 0;
+        overflow-x: auto;
+    }
+    
+    .use-case {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 2rem;
+        border-radius: 16px;
+        margin-bottom: 1.5rem;
+        box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .use-case::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        right: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+        pointer-events: none;
+    }
+    
+    .use-case h3 {
+        color: white;
+        margin-bottom: 1.5rem;
+        font-size: 1.375rem;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+    }
+    
+    .use-case h3::before {
+        content: '💡';
+        font-size: 1.5rem;
+    }
+    
+    .use-case-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1rem;
+        margin-top: 1rem;
+    }
+    
+    .use-case-item {
+        background: rgba(255, 255, 255, 0.15);
+        padding: 1.5rem;
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(10px);
+        transition: all 0.3s ease;
+        position: relative;
+    }
+    
+    .use-case-item:hover {
+        background: rgba(255, 255, 255, 0.18);
+        border-color: rgba(255, 255, 255, 0.3);
+        transform: translateY(-2px);
+    }
+    
+    .use-case-item h4 {
+        color: white;
+        margin-bottom: 0.75rem;
+        font-size: 0.75rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    
+    .use-case-item h4::before {
+        content: '';
+        width: 4px;
+        height: 16px;
+        background: linear-gradient(to bottom, #fbbf24, #f59e0b);
+        border-radius: 2px;
+    }
+    
+    /* Custom icons for each section */
+    .use-case-item h4[data-type="problem"]::after {
+        content: '⚠️';
+        margin-left: auto;
+        font-size: 1rem;
+    }
+    
+    .use-case-item h4[data-type="solution"]::after {
+        content: '✨';
+        margin-left: auto;
+        font-size: 1rem;
+    }
+    
+    .use-case-item h4[data-type="implementation"]::after {
+        content: '🔧';
+        margin-left: auto;
+        font-size: 1rem;
+    }
+    
+    .use-case-item h4[data-type="outcome"]::after {
+        content: '🎯';
+        margin-left: auto;
+        font-size: 1rem;
+    }
+    
+    .use-case-item p {
+        line-height: 1.6;
+        font-size: 0.95rem;
+    }
+    
+    .best-practice {
+        background: white;
+        border: 2px solid #10b981;
+        border-radius: 12px;
+        padding: 1.5rem;
+        margin-bottom: 1rem;
+        transition: transform 0.2s, box-shadow 0.2s;
+    }
+    
+    .best-practice:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    
+    .best-practice h3 {
+        color: #10b981;
+        margin-bottom: 0.5rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    
+    .do-dont-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+        margin-top: 1rem;
+    }
+    
+    .do-box, .dont-box {
+        padding: 0.75rem;
+        border-radius: 6px;
+        font-size: 0.875rem;
+    }
+    
+    .do-box {
+        background: #d1fae5;
+        border: 1px solid #10b981;
+    }
+    
+    .dont-box {
+        background: #fee2e2;
+        border: 1px solid #ef4444;
+    }
+    
+    .docsie-section {
+        background: linear-gradient(to right, #f3e8ff, #e0e7ff);
+        padding: 3rem;
+        border-radius: 12px;
+        margin: 3rem 0;
+    }
+    
+    .related-articles {
+        margin-top: 3rem;
+    }
+    
+    .article-link {
+        display: block;
+        padding: 1rem;
+        border: 1px solid #e5e7eb;
+        border-radius: 8px;
+        text-decoration: none;
+        color: inherit;
+        transition: all 0.2s;
+        margin-bottom: 0.75rem;
+    }
+    
+    .article-link:hover {
+        border-color: #6366f1;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        transform: translateX(4px);
+    }
+    
+    /* Mobile responsiveness */
+    @media (max-width: 768px) {
+        .use-case-grid,
+        .do-dont-grid {
+            grid-template-columns: 1fr;
+        }
+        
+        .term-hero {
+            padding: 2rem 0;
+        }
+    }
+</style>
+
+<!-- Schema.org structured data -->
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": ["Article", "DefinedTerm"],
+    "name": "Generative AI",
+    "headline": "Generative AI: The Complete Guide for Documentation Teams",
+    "description": "Generative AI is artificial intelligence technology that creates new content such as text, images, and code by learning patterns from existing data. For documentation professionals, it serves as a powerful tool to automate content creation, improve writing quality, and accelerate documentation workflows while maintaining consistency across projects.",
+    "termCode": "generative-ai",
+    "inDefinedTermSet": {
+        "@type": "DefinedTermSet",
+        "name": "Docsie Documentation Glossary",
+        "url": "https://www.docsie.io/blog/glossary/"
+    },
+    "author": {
+        "@type": "Organization",
+        "name": "Docsie.io Blog",
+        "url": "https://www.docsie.io"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Docsie.io Blog",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://www.docsie.io/assets/docsie_logo_square_svg.svg"
+        }
+    },
+    "datePublished": "2024-01-01",
+    "dateModified": "2024-01-01",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://www.docsie.io/blog/glossary/generative-ai/"
+    },
+    "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Blog",
+                "item": "https://www.docsie.io/blog/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Glossary",
+                "item": "https://www.docsie.io/blog/glossary/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Generative AI",
+                "item": "https://www.docsie.io/blog/glossary/generative-ai/"
+            }
+        ]
+    },
+    "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [".definition-card", ".use-case:first-child"]
+    }
+}
+</script>
+</head>
+
+<body>
+  <!-- BlogVi Header V2 - Using Production Docsie Design System -->
+<nav class="header sticky top-0 z-50 bg-white shadow-sm">
+  <div class="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center py-4">
+      <!-- Logo -->
+      <div class="flex items-center">
+        <a href="https://www.docsie.io" class="flex items-center">
+          <img src="https://www.docsie.io/assets/docsie_logo_square_svg.svg" alt="Docsie Logo" class="h-8 w-auto mr-2" style="filter: brightness(0) saturate(100%) invert(42%) sepia(93%) saturate(1018%) hue-rotate(96deg) brightness(101%) contrast(91%);">
+          <span class="text-2xl font-bold text-gray-900">Docsie</span>
+        </a>
+        <span class="ml-2 text-gray-500">|</span>
+        <a href="/blog/" class="ml-2 text-xl font-semibold text-gray-700 hover:text-docsie-primary transition-colors">
+          Blog
+        </a>
+      </div>
+
+      <!-- Desktop Navigation -->
+      <div class="hidden md:flex items-center space-x-8">
+        <!-- Main Nav Links from settings -->
+        
+        <a href="https://www.docsie.io" class="text-gray-700 hover:text-docsie-primary font-medium transition-colors">
+          Docsie
+        </a>
+        
+        <a href="https://www.docsie.io/pricing/" class="text-gray-700 hover:text-docsie-primary font-medium transition-colors">
+          Docsie Pricing
+        </a>
+        
+        <a href="https://www.docsie.io/try_docsie/" class="bg-docsie-primary hover:bg-docsie-primary-dark text-white px-4 py-2 rounded-lg font-medium transition-colors">
+          Try Docsie
+        </a>
+        
+      </div>
+
+      <!-- Mobile menu button -->
+      <button class="md:hidden p-2 text-gray-600 hover:text-docsie-primary transition-colors" onclick="toggleMobileMenu()">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Navigation -->
+    <div id="mobile-menu" class="hidden md:hidden pb-4">
+      <div class="flex flex-col space-y-4">
+        
+        <a href="https://www.docsie.io" class="text-gray-700 hover:text-docsie-primary font-medium transition-colors">
+          Docsie
+        </a>
+        
+        <a href="https://www.docsie.io/pricing/" class="text-gray-700 hover:text-docsie-primary font-medium transition-colors">
+          Docsie Pricing
+        </a>
+        
+        <a href="https://www.docsie.io/try_docsie/" class="block text-center bg-docsie-primary hover:bg-docsie-primary-dark text-white px-4 py-2 rounded-lg font-medium transition-colors">
+          Try Docsie
+        </a>
+        
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Blog-specific navigation bar -->
+<div class="bg-gray-50 border-b border-gray-200">
+  <div class="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between py-3">
+      <!-- Categories -->
+      <nav class="flex items-center gap-2 overflow-x-auto max-w-full scrollbar-hide">
+        <a href="/blog" class="category-pill flex-shrink-0 category-pill-active">
+          ALL
+        </a>
+        
+      </nav>
+
+      <!-- Right side: Search and Subscribe -->
+      <div class="flex items-center gap-2 ml-2">
+        <!-- Search -->
+        <div class="relative">
+          <input type="search" 
+                 placeholder="Search..." 
+                 class="w-32 sm:w-48 md:w-64 px-3 py-2 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-docsie-primary focus:border-transparent"
+                 id="search">
+          <div class="absolute right-0 mt-2 w-64 sm:w-80 md:w-96 bg-white rounded-lg shadow-xl border border-gray-200 hidden z-50" id="search-bar">
+            <ul class="py-2 max-h-96 overflow-y-auto" id="search-results">
+              <!-- Search results will be populated here -->
+            </ul>
+          </div>
+        </div>
+        
+        <!-- Subscribe Button (if enabled) -->
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function toggleMobileMenu() {
+  const menu = document.getElementById('mobile-menu');
+  menu.classList.toggle('hidden');
+}
+
+// Initialize search settings for BlogVi
+window['searchConfig'] = {};
+</script>
+<div class="term-hero">
+    <div class="container mx-auto px-4">
+        <!-- Breadcrumbs -->
+        <nav class="breadcrumb">
+            
+                
+                    <a href="/blog/">Blog</a>
+                    <span>›</span>
+                
+            
+                
+                    <a href="/blog/glossary/">Glossary</a>
+                    <span>›</span>
+                
+            
+                
+                    <span>Generative AI</span>
+                
+            
+        </nav>
+        
+        <!-- Hero Title -->
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">Generative AI</h1>
+        <p class="text-xl opacity-90">Master this essential documentation concept</p>
+    </div>
+</div>
+
+<div class="container mx-auto px-4 max-w-4xl">
+    <!-- Quick Definition Card -->
+    <div class="definition-card">
+        <h2 class="text-2xl font-semibold">Quick Definition</h2>
+        <p class="text-lg leading-relaxed">Generative AI is artificial intelligence technology that creates new content such as text, images, and code by learning patterns from existing data. For documentation professionals, it serves as a powerful tool to automate content creation, improve writing quality, and accelerate documentation workflows while maintaining consistency across projects.</p>
+    </div>
+    
+    <!-- Visual Diagram -->
+    <section class="mb-8">
+        <h2 class="text-3xl font-bold mb-4">How Generative AI Works</h2>
+        <div class="mermaid-container">
+            <div class="mermaid">
+                flowchart TD
+    A[Documentation Request] --> B[Content Planning]
+    B --> C[AI Prompt Engineering]
+    C --> D[Generative AI Processing]
+    D --> E[Initial Content Generation]
+    E --> F[Human Review & Editing]
+    F --> G{Quality Check}
+    G -->|Needs Revision| H[Refine Prompts]
+    H --> D
+    G -->|Approved| I[Content Integration]
+    I --> J[Documentation Platform]
+    J --> K[Version Control]
+    K --> L[Published Documentation]
+    L --> M[User Feedback]
+    M --> N[Content Optimization]
+    N --> C
+    
+    style A fill:#e1f5fe
+    style D fill:#f3e5f5
+    style F fill:#fff3e0
+    style L fill:#e8f5e8
+            </div>
+        </div>
+    </section>
+    
+    <!-- Detailed Explanation -->
+    <section class="mb-8">
+        <h2 class="text-3xl font-bold mb-4">Understanding Generative AI</h2>
+        <div class="prose max-w-none">
+            <p>Generative AI represents a transformative technology for documentation professionals, enabling the automated creation of high-quality content through machine learning algorithms. This technology analyzes vast datasets to understand patterns, structures, and styles, then generates new content that mimics human-created materials.</p><h3>Key Features</h3><ul><li>Natural language processing for human-like text generation</li><li>Multi-format content creation including text, code snippets, and structured data</li><li>Context-aware responses based on prompts and existing documentation</li><li>Ability to maintain consistent tone and style across documents</li><li>Real-time content generation and iteration capabilities</li></ul><h3>Benefits for Documentation Teams</h3><ul><li>Dramatically reduces time spent on initial content creation and drafting</li><li>Ensures consistency in terminology, formatting, and writing style</li><li>Generates multiple content variations for A/B testing and optimization</li><li>Assists with translation and localization efforts</li><li>Provides 24/7 availability for content creation needs</li><li>Helps overcome writer's block and creative barriers</li></ul><h3>Common Misconceptions</h3><ul><li>AI will completely replace human documentation writers</li><li>Generated content is always factually accurate without verification</li><li>One-size-fits-all approach works for all documentation types</li><li>AI understands context as well as human subject matter experts</li><li>Generated content requires no editing or human oversight</li></ul>
+        </div>
+    </section>
+    
+    <!-- Documentation Use Cases -->
+    <section class="mb-8">
+        <h2 class="text-3xl font-bold mb-6">Real-World Documentation Use Cases</h2>
+        
+        <div class="use-case">
+            <h3>Automated API Documentation Generation</h3>
+            <div class="use-case-grid">
+                <div class="use-case-item">
+                    <h4 data-type="problem">Problem</h4>
+                    <p>Developers struggle to keep API documentation current with frequent code changes, leading to outdated and inconsistent documentation that frustrates users.</p>
+                </div>
+                <div class="use-case-item">
+                    <h4 data-type="solution">Solution</h4>
+                    <p>Implement generative AI to automatically create and update API documentation by analyzing code repositories, existing documentation patterns, and API specifications.</p>
+                </div>
+            </div>
+            <div class="use-case-item mt-4">
+                <h4 data-type="implementation">Implementation</h4>
+                <p>1. Connect AI tools to code repositories and API schemas
+2. Train the AI on existing high-quality API documentation examples
+3. Set up automated triggers for documentation updates when code changes
+4. Establish review workflows for AI-generated content
+5. Create templates and style guides for consistent output</p>
+            </div>
+            <div class="use-case-item mt-2">
+                <h4 data-type="outcome">Expected Outcome</h4>
+                <p>Reduced documentation maintenance time by 70%, improved accuracy of API documentation, and increased developer satisfaction with up-to-date resources.</p>
+            </div>
+        </div>
+        
+        <div class="use-case">
+            <h3>Multi-Language Content Localization</h3>
+            <div class="use-case-grid">
+                <div class="use-case-item">
+                    <h4 data-type="problem">Problem</h4>
+                    <p>Creating documentation in multiple languages is time-consuming, expensive, and often results in inconsistent messaging across different language versions.</p>
+                </div>
+                <div class="use-case-item">
+                    <h4 data-type="solution">Solution</h4>
+                    <p>Use generative AI to translate and localize documentation while maintaining technical accuracy, cultural context, and brand voice across all target languages.</p>
+                </div>
+            </div>
+            <div class="use-case-item mt-4">
+                <h4 data-type="implementation">Implementation</h4>
+                <p>1. Prepare source documentation with clear structure and terminology
+2. Configure AI models with industry-specific glossaries and style guides
+3. Set up automated translation workflows with human review checkpoints
+4. Implement feedback loops to improve translation quality over time
+5. Create validation processes for technical terminology accuracy</p>
+            </div>
+            <div class="use-case-item mt-2">
+                <h4 data-type="outcome">Expected Outcome</h4>
+                <p>Accelerated localization process by 60%, maintained consistency across 12 languages, and reduced translation costs while improving global user experience.</p>
+            </div>
+        </div>
+        
+        <div class="use-case">
+            <h3>Interactive Troubleshooting Guide Creation</h3>
+            <div class="use-case-grid">
+                <div class="use-case-item">
+                    <h4 data-type="problem">Problem</h4>
+                    <p>Support teams spend excessive time answering repetitive questions, while users struggle to find relevant solutions in static documentation.</p>
+                </div>
+                <div class="use-case-item">
+                    <h4 data-type="solution">Solution</h4>
+                    <p>Deploy generative AI to create dynamic, interactive troubleshooting guides that provide personalized solutions based on user inputs and common support scenarios.</p>
+                </div>
+            </div>
+            <div class="use-case-item mt-4">
+                <h4 data-type="implementation">Implementation</h4>
+                <p>1. Analyze support ticket data to identify common issues and solutions
+2. Train AI models on successful resolution patterns and expert responses
+3. Design interactive decision trees and diagnostic flows
+4. Integrate with existing support platforms and knowledge bases
+5. Continuously update AI models with new support cases and resolutions</p>
+            </div>
+            <div class="use-case-item mt-2">
+                <h4 data-type="outcome">Expected Outcome</h4>
+                <p>Reduced support ticket volume by 45%, improved first-contact resolution rates, and enhanced user self-service capabilities with personalized guidance.</p>
+            </div>
+        </div>
+        
+        <div class="use-case">
+            <h3>Onboarding Documentation Personalization</h3>
+            <div class="use-case-grid">
+                <div class="use-case-item">
+                    <h4 data-type="problem">Problem</h4>
+                    <p>Generic onboarding materials fail to address diverse user roles, skill levels, and use cases, resulting in poor user adoption and increased support burden.</p>
+                </div>
+                <div class="use-case-item">
+                    <h4 data-type="solution">Solution</h4>
+                    <p>Leverage generative AI to create personalized onboarding experiences that adapt content based on user profiles, roles, and learning preferences.</p>
+                </div>
+            </div>
+            <div class="use-case-item mt-4">
+                <h4 data-type="implementation">Implementation</h4>
+                <p>1. Develop user persona profiles and learning path frameworks
+2. Create modular content components for different skill levels and roles
+3. Implement AI algorithms to match users with appropriate content paths
+4. Set up dynamic content generation based on user progress and feedback
+5. Establish metrics to measure onboarding effectiveness and optimize content</p>
+            </div>
+            <div class="use-case-item mt-2">
+                <h4 data-type="outcome">Expected Outcome</h4>
+                <p>Improved user onboarding completion rates by 55%, reduced time-to-value for new users, and decreased onboarding-related support requests by 40%.</p>
+            </div>
+        </div>
+        
+    </section>
+    
+    <!-- Best Practices -->
+    <section class="mb-8">
+        <h2 class="text-3xl font-bold mb-6">Best Practices</h2>
+        
+        <div class="best-practice">
+            <h3><span>✓</span> Establish Clear AI Governance Guidelines</h3>
+            <p>Create comprehensive policies for AI usage in documentation workflows to ensure quality, consistency, and compliance with organizational standards.</p>
+            <div class="do-dont-grid">
+                <div class="do-box">
+                    <strong>✓ Do:</strong> Develop written guidelines covering AI tool selection, content review processes, data privacy requirements, and quality standards. Train team members on proper AI usage and establish approval workflows for AI-generated content.
+                </div>
+                <div class="dont-box">
+                    <strong>✗ Don't:</strong> Allow unrestricted AI usage without oversight, skip human review processes, or ignore data security considerations when using cloud-based AI services.
+                </div>
+            </div>
+        </div>
+        
+        <div class="best-practice">
+            <h3><span>✓</span> Invest in Prompt Engineering Excellence</h3>
+            <p>Develop expertise in crafting effective prompts that consistently produce high-quality, relevant content aligned with your documentation standards and brand voice.</p>
+            <div class="do-dont-grid">
+                <div class="do-box">
+                    <strong>✓ Do:</strong> Create a library of tested prompts for common documentation tasks, include specific context and formatting instructions, and iterate on prompts based on output quality. Document successful prompt patterns for team use.
+                </div>
+                <div class="dont-box">
+                    <strong>✗ Don't:</strong> Use vague or generic prompts, expect perfect results without refinement, or ignore the importance of context and specificity in prompt design.
+                </div>
+            </div>
+        </div>
+        
+        <div class="best-practice">
+            <h3><span>✓</span> Implement Rigorous Human Review Processes</h3>
+            <p>Maintain human oversight at critical points in the AI-assisted documentation workflow to ensure accuracy, relevance, and alignment with business objectives.</p>
+            <div class="do-dont-grid">
+                <div class="do-box">
+                    <strong>✓ Do:</strong> Establish multi-stage review processes with subject matter experts, implement fact-checking procedures for technical content, and create feedback loops to improve AI performance over time.
+                </div>
+                <div class="dont-box">
+                    <strong>✗ Don't:</strong> Publish AI-generated content without human verification, assume AI output is always factually correct, or skip domain expert reviews for technical documentation.
+                </div>
+            </div>
+        </div>
+        
+        <div class="best-practice">
+            <h3><span>✓</span> Maintain Content Quality Consistency</h3>
+            <p>Ensure AI-generated content maintains the same quality standards, tone, and style as human-created documentation through proper configuration and monitoring.</p>
+            <div class="do-dont-grid">
+                <div class="do-box">
+                    <strong>✓ Do:</strong> Provide AI tools with style guides and examples of high-quality content, regularly audit AI output for consistency, and adjust parameters based on quality metrics and user feedback.
+                </div>
+                <div class="dont-box">
+                    <strong>✗ Don't:</strong> Accept inconsistent formatting or tone variations, ignore brand voice guidelines, or fail to monitor content quality over time as AI models evolve.
+                </div>
+            </div>
+        </div>
+        
+        <div class="best-practice">
+            <h3><span>✓</span> Plan for Scalable Integration Workflows</h3>
+            <p>Design AI integration strategies that can grow with your documentation needs while maintaining efficiency and quality as content volume increases.</p>
+            <div class="do-dont-grid">
+                <div class="do-box">
+                    <strong>✓ Do:</strong> Automate repetitive tasks while preserving human creativity, integrate AI tools with existing documentation platforms, and plan for increased content volume and complexity over time.
+                </div>
+                <div class="dont-box">
+                    <strong>✗ Don't:</strong> Create manual bottlenecks in AI workflows, ignore integration with existing tools and processes, or fail to plan for scaling challenges as AI usage increases.
+                </div>
+            </div>
+        </div>
+        
+    </section>
+    
+    <!-- How Docsie Helps -->
+    <section class="docsie-section">
+        <h2 class="text-3xl font-bold mb-4">How Docsie Helps with Generative AI</h2>
+        <div class="prose max-w-none">
+            <p>Modern documentation platforms like Docsie are revolutionizing how teams integrate generative AI into their content workflows, providing seamless tools and features that maximize AI efficiency while maintaining quality control.</p><ul><li><strong>Integrated AI Writing Assistance:</strong> Built-in AI tools help writers generate, edit, and optimize content directly within the documentation platform, eliminating the need for external AI services and maintaining workflow continuity</li><li><strong>Smart Content Templates:</strong> AI-powered templates automatically adapt to different content types and use cases, ensuring consistent formatting and structure across all documentation projects</li><li><strong>Automated Quality Assurance:</strong> Advanced platforms provide AI-driven content analysis, checking for consistency, readability, and adherence to style guidelines before publication</li><li><strong>Collaborative AI Workflows:</strong> Team-based AI features enable multiple contributors to leverage generative AI while maintaining version control, review processes, and approval workflows</li><li><strong>Analytics-Driven Optimization:</strong> AI-powered analytics identify content gaps, user behavior patterns, and optimization opportunities, enabling data-driven improvements to documentation effectiveness</li><li><strong>Scalable Content Management:</strong> Modern platforms handle large-scale AI-generated content with robust organization, search, and maintenance capabilities that grow with your documentation needs</li></ul>
+        </div>
+        
+        <!-- Phase 2: This will be populated by Docsie RAG -->
+        <div id="docsie-features" class="mt-6">
+            <!-- Placeholder for RAG integration -->
+        </div>
+        
+        <div class="mt-6">
+            <a href="https://www.docsie.io/demo/" class="inline-flex items-center px-6 py-3 bg-white text-purple-600 font-semibold rounded-lg hover:bg-purple-50 transition">
+                See How Docsie Can Help
+                <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+            </a>
+        </div>
+    </section>
+    
+    <!-- Related Articles -->
+    
+    
+    <!-- Related Terms -->
+    
+    <section class="related-terms mt-8">
+        <h2 class="text-2xl font-bold mb-4">Related Documentation Terms</h2>
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3">
+            
+            <a href="/blog/glossary/knowledge-base/" 
+               class="bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded-lg text-center transition-colors duration-200 group">
+                <span class="block font-medium text-gray-900 group-hover:text-blue-600">Knowledge Base</span>
+                <span class="text-xs text-gray-500">1 shared articles</span>
+            </a>
+            
+            <a href="/blog/glossary/api/" 
+               class="bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded-lg text-center transition-colors duration-200 group">
+                <span class="block font-medium text-gray-900 group-hover:text-blue-600">API</span>
+                <span class="text-xs text-gray-500">1 shared articles</span>
+            </a>
+            
+            <a href="/blog/glossary/technical-documentation/" 
+               class="bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded-lg text-center transition-colors duration-200 group">
+                <span class="block font-medium text-gray-900 group-hover:text-blue-600">Technical Documentation</span>
+                <span class="text-xs text-gray-500">1 shared articles</span>
+            </a>
+            
+            <a href="/blog/glossary/user-manual/" 
+               class="bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded-lg text-center transition-colors duration-200 group">
+                <span class="block font-medium text-gray-900 group-hover:text-blue-600">User Manual</span>
+                <span class="text-xs text-gray-500">1 shared articles</span>
+            </a>
+            
+            <a href="/blog/glossary/localization/" 
+               class="bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded-lg text-center transition-colors duration-200 group">
+                <span class="block font-medium text-gray-900 group-hover:text-blue-600">Localization</span>
+                <span class="text-xs text-gray-500">1 shared articles</span>
+            </a>
+            
+        </div>
+    </section>
+    
+    
+    <!-- CTA Section -->
+    <section class="bg-gradient-to-r from-purple-600 to-indigo-600 text-white p-8 rounded-lg mt-8 text-center">
+        <h2 class="text-2xl font-bold mb-4">Build Better Documentation with Docsie</h2>
+        <p class="mb-6">Join thousands of teams creating outstanding documentation</p>
+        <a href="https://app.docsie.io/onboarding/" class="inline-block bg-white text-purple-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition">
+            Start Free Trial
+        </a>
+    </section>
+</div>
+
+  <!-- BlogVi Footer V2 - Simplified version using production styles -->
+<footer class="bg-gray-900 text-white mt-16">
+    <div class="container mx-auto px-4 py-12">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <!-- Company Info -->
+            <div>
+                <h3 class="text-lg font-semibold mb-4">Docsie</h3>
+                <p class="text-gray-400 text-sm">
+                    The modern documentation platform that helps teams create, manage, and share knowledge.
+                </p>
+            </div>
+            
+            <!-- Quick Links -->
+            <div>
+                <h4 class="text-lg font-semibold mb-4">Product</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="https://www.docsie.io/features/" class="text-gray-400 hover:text-white transition-colors">Features</a></li>
+                    <li><a href="https://www.docsie.io/pricing/" class="text-gray-400 hover:text-white transition-colors">Pricing</a></li>
+                    <li><a href="https://www.docsie.io/documentation/" class="text-gray-400 hover:text-white transition-colors">Documentation</a></li>
+                    <li><a href="/blog/" class="text-gray-400 hover:text-white transition-colors">Blog</a></li>
+                    <li><a href="/blog/glossary/" class="text-gray-400 hover:text-white transition-colors">Glossary</a></li>
+                </ul>
+            </div>
+            
+            <!-- Resources -->
+            <div>
+                <h4 class="text-lg font-semibold mb-4">Resources</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="https://help.docsie.io" class="text-gray-400 hover:text-white transition-colors">Help Center</a></li>
+                    <li><a href="https://www.docsie.io/support/" class="text-gray-400 hover:text-white transition-colors">Support</a></li>
+                    <li><a href="https://www.docsie.io/about/" class="text-gray-400 hover:text-white transition-colors">About Us</a></li>
+                    <li><a href="https://www.docsie.io/careers/" class="text-gray-400 hover:text-white transition-colors">Careers</a></li>
+                </ul>
+            </div>
+            
+            <!-- Social Links -->
+            <div>
+                <h4 class="text-lg font-semibold mb-4">Connect</h4>
+                <div class="flex space-x-4">
+                    <a href="https://twitter.com/docsie_io" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/company/docsie" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://github.com/LikaloLLC" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="/blog/rss.xml" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fas fa-rss"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Bottom Bar -->
+        <div class="mt-8 pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center text-sm text-gray-400">
+            <p>&copy;  Docsie. All rights reserved.</p>
+            <div class="flex space-x-6 mt-4 md:mt-0">
+                <a href="https://www.docsie.io/privacy/" class="hover:text-white transition-colors">Privacy Policy</a>
+                <a href="https://www.docsie.io/terms/" class="hover:text-white transition-colors">Terms of Service</a>
+                <a href="https://www.docsie.io/cookies/" class="hover:text-white transition-colors">Cookie Policy</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+// Set current year for copyright
+document.addEventListener('DOMContentLoaded', function() {
+    const yearElements = document.querySelectorAll('[data-year]');
+    const currentYear = new Date().getFullYear();
+    yearElements.forEach(el => el.textContent = currentYear);
+});
+</script>
+</body>
+</html>

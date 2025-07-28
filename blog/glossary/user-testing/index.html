@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+
+  
+    <link rel="icon" type="image/png" sizes="32x32" href="https://d1iq6qzgppjlud.cloudfront.net/images/favicon/favicon-196x196.png">
+
+
+  <!-- Primary Meta Tags -->
+  <title>User Testing: The Complete Guide for Documentation Teams | Docsie.io Blog</title>
+  <meta name="title" content="User Testing: The Complete Guide">
+  <meta name="description" content="User Testing is the systematic process of evaluating documentation by observing real users as they attempt to complete tasks using your content. It involve">
+  <meta name="keywords" content="User Testing, documentation, technical writing, Docsie.io Blog">
+  <link rel="canonical" href="https://www.docsie.io/blog/glossary/user-testing/">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  
+  <!-- Additional SEO Tags -->
+  <meta name="author" content="Docsie.io Blog">
+  <meta name="language" content="English">
+  <meta name="revisit-after" content="7 days">
+  <link rel="alternate" type="application/rss+xml" title="Docsie.io Blog RSS Feed" href="https://www.docsie.io/blog/rss.xml">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.docsie.io/blog/glossary/user-testing/">
+  <meta property="og:title" content="User Testing: The Complete Guide">
+  <meta property="og:description" content="User Testing is the systematic process of evaluating documentation by observing real users as they attempt to complete tasks using your content. It involves recruiting representative users, giving them realistic scenarios, and collecting both behavioral data and feedback to identify usability issues, content gaps, and areas for improvement in your documentation.">
+  <meta property="og:image" content="https://d1iq6qzgppjlud.cloudfront.net/images/favicon/apple-touch-icon-144x144.png">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://www.docsie.io/blog/glossary/user-testing/">
+  <meta property="twitter:title" content="User Testing: The Complete Guide">
+  <meta property="twitter:description" content="User Testing is the systematic process of evaluating documentation by observing real users as they attempt to complete tasks using your content. It involves recruiting representative users, giving them realistic scenarios, and collecting both behavioral data and feedback to identify usability issues, content gaps, and areas for improvement in your documentation.">
+  <meta property="twitter:image" content="https://d1iq6qzgppjlud.cloudfront.net/images/favicon/apple-touch-icon-144x144.png">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Existing CSS -->
+  <link rel="stylesheet" href="/blog/templates/assets/css/design-system.css">
+  <link rel="stylesheet" href="/blog/templates/assets/css/typography.min.css">
+<!-- Mermaid.js for diagrams -->
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script>
+    mermaid.initialize({ 
+        startOnLoad: true, 
+        theme: 'default',
+        themeVariables: {
+            primaryColor: '#6366f1',
+            primaryTextColor: '#fff',
+            primaryBorderColor: '#4f46e5',
+            lineColor: '#e5e7eb',
+            secondaryColor: '#f3f4f6',
+            tertiaryColor: '#fbbf24'
+        }
+    });
+</script>
+
+<style>
+    /* Term Page Specific Styles */
+    .term-hero {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 3rem 0;
+        margin-bottom: 3rem;
+    }
+    
+    .breadcrumb {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin-bottom: 1rem;
+        font-size: 0.875rem;
+        color: rgba(255, 255, 255, 0.8);
+    }
+    
+    .breadcrumb a {
+        color: rgba(255, 255, 255, 0.8);
+        text-decoration: none;
+        transition: color 0.2s;
+    }
+    
+    .breadcrumb a:hover {
+        color: white;
+    }
+    
+    .definition-card {
+        background: white;
+        border: 2px solid #e5e7eb;
+        border-radius: 12px;
+        padding: 2rem;
+        margin-bottom: 2rem;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    }
+    
+    .definition-card h2 {
+        color: #4f46e5;
+        margin-bottom: 1rem;
+    }
+    
+    .mermaid-container {
+        background: #f9fafb;
+        border-radius: 12px;
+        padding: 2rem;
+        margin: 2rem 0;
+        overflow-x: auto;
+    }
+    
+    .use-case {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 2rem;
+        border-radius: 16px;
+        margin-bottom: 1.5rem;
+        box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .use-case::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        right: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+        pointer-events: none;
+    }
+    
+    .use-case h3 {
+        color: white;
+        margin-bottom: 1.5rem;
+        font-size: 1.375rem;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+    }
+    
+    .use-case h3::before {
+        content: '💡';
+        font-size: 1.5rem;
+    }
+    
+    .use-case-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1rem;
+        margin-top: 1rem;
+    }
+    
+    .use-case-item {
+        background: rgba(255, 255, 255, 0.15);
+        padding: 1.5rem;
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(10px);
+        transition: all 0.3s ease;
+        position: relative;
+    }
+    
+    .use-case-item:hover {
+        background: rgba(255, 255, 255, 0.18);
+        border-color: rgba(255, 255, 255, 0.3);
+        transform: translateY(-2px);
+    }
+    
+    .use-case-item h4 {
+        color: white;
+        margin-bottom: 0.75rem;
+        font-size: 0.75rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    
+    .use-case-item h4::before {
+        content: '';
+        width: 4px;
+        height: 16px;
+        background: linear-gradient(to bottom, #fbbf24, #f59e0b);
+        border-radius: 2px;
+    }
+    
+    /* Custom icons for each section */
+    .use-case-item h4[data-type="problem"]::after {
+        content: '⚠️';
+        margin-left: auto;
+        font-size: 1rem;
+    }
+    
+    .use-case-item h4[data-type="solution"]::after {
+        content: '✨';
+        margin-left: auto;
+        font-size: 1rem;
+    }
+    
+    .use-case-item h4[data-type="implementation"]::after {
+        content: '🔧';
+        margin-left: auto;
+        font-size: 1rem;
+    }
+    
+    .use-case-item h4[data-type="outcome"]::after {
+        content: '🎯';
+        margin-left: auto;
+        font-size: 1rem;
+    }
+    
+    .use-case-item p {
+        line-height: 1.6;
+        font-size: 0.95rem;
+    }
+    
+    .best-practice {
+        background: white;
+        border: 2px solid #10b981;
+        border-radius: 12px;
+        padding: 1.5rem;
+        margin-bottom: 1rem;
+        transition: transform 0.2s, box-shadow 0.2s;
+    }
+    
+    .best-practice:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    
+    .best-practice h3 {
+        color: #10b981;
+        margin-bottom: 0.5rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    
+    .do-dont-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+        margin-top: 1rem;
+    }
+    
+    .do-box, .dont-box {
+        padding: 0.75rem;
+        border-radius: 6px;
+        font-size: 0.875rem;
+    }
+    
+    .do-box {
+        background: #d1fae5;
+        border: 1px solid #10b981;
+    }
+    
+    .dont-box {
+        background: #fee2e2;
+        border: 1px solid #ef4444;
+    }
+    
+    .docsie-section {
+        background: linear-gradient(to right, #f3e8ff, #e0e7ff);
+        padding: 3rem;
+        border-radius: 12px;
+        margin: 3rem 0;
+    }
+    
+    .related-articles {
+        margin-top: 3rem;
+    }
+    
+    .article-link {
+        display: block;
+        padding: 1rem;
+        border: 1px solid #e5e7eb;
+        border-radius: 8px;
+        text-decoration: none;
+        color: inherit;
+        transition: all 0.2s;
+        margin-bottom: 0.75rem;
+    }
+    
+    .article-link:hover {
+        border-color: #6366f1;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        transform: translateX(4px);
+    }
+    
+    /* Mobile responsiveness */
+    @media (max-width: 768px) {
+        .use-case-grid,
+        .do-dont-grid {
+            grid-template-columns: 1fr;
+        }
+        
+        .term-hero {
+            padding: 2rem 0;
+        }
+    }
+</style>
+
+<!-- Schema.org structured data -->
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": ["Article", "DefinedTerm"],
+    "name": "User Testing",
+    "headline": "User Testing: The Complete Guide for Documentation Teams",
+    "description": "User Testing is the systematic process of evaluating documentation by observing real users as they attempt to complete tasks using your content. It involves recruiting representative users, giving them realistic scenarios, and collecting both behavioral data and feedback to identify usability issues, content gaps, and areas for improvement in your documentation.",
+    "termCode": "user-testing",
+    "inDefinedTermSet": {
+        "@type": "DefinedTermSet",
+        "name": "Docsie Documentation Glossary",
+        "url": "https://www.docsie.io/blog/glossary/"
+    },
+    "author": {
+        "@type": "Organization",
+        "name": "Docsie.io Blog",
+        "url": "https://www.docsie.io"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Docsie.io Blog",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://www.docsie.io/assets/docsie_logo_square_svg.svg"
+        }
+    },
+    "datePublished": "2024-01-01",
+    "dateModified": "2024-01-01",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://www.docsie.io/blog/glossary/user-testing/"
+    },
+    "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Blog",
+                "item": "https://www.docsie.io/blog/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Glossary",
+                "item": "https://www.docsie.io/blog/glossary/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "User Testing",
+                "item": "https://www.docsie.io/blog/glossary/user-testing/"
+            }
+        ]
+    },
+    "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [".definition-card", ".use-case:first-child"]
+    }
+}
+</script>
+</head>
+
+<body>
+  <!-- BlogVi Header V2 - Using Production Docsie Design System -->
+<nav class="header sticky top-0 z-50 bg-white shadow-sm">
+  <div class="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center py-4">
+      <!-- Logo -->
+      <div class="flex items-center">
+        <a href="https://www.docsie.io" class="flex items-center">
+          <img src="https://www.docsie.io/assets/docsie_logo_square_svg.svg" alt="Docsie Logo" class="h-8 w-auto mr-2" style="filter: brightness(0) saturate(100%) invert(42%) sepia(93%) saturate(1018%) hue-rotate(96deg) brightness(101%) contrast(91%);">
+          <span class="text-2xl font-bold text-gray-900">Docsie</span>
+        </a>
+        <span class="ml-2 text-gray-500">|</span>
+        <a href="/blog/" class="ml-2 text-xl font-semibold text-gray-700 hover:text-docsie-primary transition-colors">
+          Blog
+        </a>
+      </div>
+
+      <!-- Desktop Navigation -->
+      <div class="hidden md:flex items-center space-x-8">
+        <!-- Main Nav Links from settings -->
+        
+        <a href="https://www.docsie.io" class="text-gray-700 hover:text-docsie-primary font-medium transition-colors">
+          Docsie
+        </a>
+        
+        <a href="https://www.docsie.io/pricing/" class="text-gray-700 hover:text-docsie-primary font-medium transition-colors">
+          Docsie Pricing
+        </a>
+        
+        <a href="https://www.docsie.io/try_docsie/" class="bg-docsie-primary hover:bg-docsie-primary-dark text-white px-4 py-2 rounded-lg font-medium transition-colors">
+          Try Docsie
+        </a>
+        
+      </div>
+
+      <!-- Mobile menu button -->
+      <button class="md:hidden p-2 text-gray-600 hover:text-docsie-primary transition-colors" onclick="toggleMobileMenu()">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Navigation -->
+    <div id="mobile-menu" class="hidden md:hidden pb-4">
+      <div class="flex flex-col space-y-4">
+        
+        <a href="https://www.docsie.io" class="text-gray-700 hover:text-docsie-primary font-medium transition-colors">
+          Docsie
+        </a>
+        
+        <a href="https://www.docsie.io/pricing/" class="text-gray-700 hover:text-docsie-primary font-medium transition-colors">
+          Docsie Pricing
+        </a>
+        
+        <a href="https://www.docsie.io/try_docsie/" class="block text-center bg-docsie-primary hover:bg-docsie-primary-dark text-white px-4 py-2 rounded-lg font-medium transition-colors">
+          Try Docsie
+        </a>
+        
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Blog-specific navigation bar -->
+<div class="bg-gray-50 border-b border-gray-200">
+  <div class="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between py-3">
+      <!-- Categories -->
+      <nav class="flex items-center gap-2 overflow-x-auto max-w-full scrollbar-hide">
+        <a href="/blog" class="category-pill flex-shrink-0 category-pill-active">
+          ALL
+        </a>
+        
+      </nav>
+
+      <!-- Right side: Search and Subscribe -->
+      <div class="flex items-center gap-2 ml-2">
+        <!-- Search -->
+        <div class="relative">
+          <input type="search" 
+                 placeholder="Search..." 
+                 class="w-32 sm:w-48 md:w-64 px-3 py-2 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-docsie-primary focus:border-transparent"
+                 id="search">
+          <div class="absolute right-0 mt-2 w-64 sm:w-80 md:w-96 bg-white rounded-lg shadow-xl border border-gray-200 hidden z-50" id="search-bar">
+            <ul class="py-2 max-h-96 overflow-y-auto" id="search-results">
+              <!-- Search results will be populated here -->
+            </ul>
+          </div>
+        </div>
+        
+        <!-- Subscribe Button (if enabled) -->
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function toggleMobileMenu() {
+  const menu = document.getElementById('mobile-menu');
+  menu.classList.toggle('hidden');
+}
+
+// Initialize search settings for BlogVi
+window['searchConfig'] = {};
+</script>
+<div class="term-hero">
+    <div class="container mx-auto px-4">
+        <!-- Breadcrumbs -->
+        <nav class="breadcrumb">
+            
+                
+                    <a href="/blog/">Blog</a>
+                    <span>›</span>
+                
+            
+                
+                    <a href="/blog/glossary/">Glossary</a>
+                    <span>›</span>
+                
+            
+                
+                    <span>User Testing</span>
+                
+            
+        </nav>
+        
+        <!-- Hero Title -->
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">User Testing</h1>
+        <p class="text-xl opacity-90">Master this essential documentation concept</p>
+    </div>
+</div>
+
+<div class="container mx-auto px-4 max-w-4xl">
+    <!-- Quick Definition Card -->
+    <div class="definition-card">
+        <h2 class="text-2xl font-semibold">Quick Definition</h2>
+        <p class="text-lg leading-relaxed">User Testing is the systematic process of evaluating documentation by observing real users as they attempt to complete tasks using your content. It involves recruiting representative users, giving them realistic scenarios, and collecting both behavioral data and feedback to identify usability issues, content gaps, and areas for improvement in your documentation.</p>
+    </div>
+    
+    <!-- Visual Diagram -->
+    <section class="mb-8">
+        <h2 class="text-3xl font-bold mb-4">How User Testing Works</h2>
+        <div class="mermaid-container">
+            <div class="mermaid">
+                flowchart TD
+    A[Define Testing Goals] --> B[Recruit Target Users]
+    B --> C[Create Task Scenarios]
+    C --> D[Prepare Documentation]
+    D --> E[Conduct Testing Session]
+    E --> F[User Attempts Task]
+    F --> G{Task Completed?}
+    G -->|Yes| H[Record Success Path]
+    G -->|No| I[Document Pain Points]
+    H --> J[Gather Feedback]
+    I --> J
+    J --> K[Analyze Results]
+    K --> L[Identify Issues]
+    L --> M[Prioritize Improvements]
+    M --> N[Update Documentation]
+    N --> O{More Testing Needed?}
+    O -->|Yes| E
+    O -->|No| P[Deploy Improved Docs]
+    P --> Q[Monitor Performance]
+            </div>
+        </div>
+    </section>
+    
+    <!-- Detailed Explanation -->
+    <section class="mb-8">
+        <h2 class="text-3xl font-bold mb-4">Understanding User Testing</h2>
+        <div class="prose max-w-none">
+            <p>User Testing is a critical methodology that transforms documentation from assumptions into evidence-based content by observing how real users interact with your materials. This systematic approach reveals the gap between what documentation teams think users need and what users actually experience when trying to accomplish their goals.</p><h3>Key Features</h3><ul><li>Direct observation of user behavior while navigating documentation</li><li>Task-based scenarios that mirror real-world use cases</li><li>Collection of both quantitative metrics (time to completion, success rates) and qualitative feedback</li><li>Identification of pain points, confusion areas, and content gaps</li><li>Iterative testing cycles to validate improvements</li><li>Multiple testing methods including moderated sessions, unmoderated remote testing, and guerrilla testing</li></ul><h3>Benefits for Documentation Teams</h3><ul><li>Reduces support ticket volume by identifying and fixing common user struggles</li><li>Increases user satisfaction and task completion rates</li><li>Provides objective data to support content decisions and resource allocation</li><li>Reveals assumptions about user knowledge and behavior that may be incorrect</li><li>Improves information architecture and content organization</li><li>Validates the effectiveness of new content before full deployment</li></ul><h3>Common Misconceptions</h3><ul><li>User testing is too expensive or time-consuming for documentation teams</li><li>Internal team members can adequately represent end users</li><li>User feedback through surveys is equivalent to observing actual behavior</li><li>Testing is only needed for major releases or complete rewrites</li><li>Perfect documentation doesn't need testing because it's comprehensive</li></ul>
+        </div>
+    </section>
+    
+    <!-- Documentation Use Cases -->
+    <section class="mb-8">
+        <h2 class="text-3xl font-bold mb-6">Real-World Documentation Use Cases</h2>
+        
+        <div class="use-case">
+            <h3>API Documentation Usability Testing</h3>
+            <div class="use-case-grid">
+                <div class="use-case-item">
+                    <h4 data-type="problem">Problem</h4>
+                    <p>Developers struggle to implement API endpoints despite comprehensive technical documentation, leading to high support ticket volume and delayed integrations.</p>
+                </div>
+                <div class="use-case-item">
+                    <h4 data-type="solution">Solution</h4>
+                    <p>Conduct task-based user testing with developers attempting to complete common integration scenarios using only the documentation.</p>
+                </div>
+            </div>
+            <div class="use-case-item mt-4">
+                <h4 data-type="implementation">Implementation</h4>
+                <p>1. Recruit 5-8 developers with varying experience levels 2. Create realistic scenarios like 'authenticate and make your first API call' 3. Observe users screen-sharing while working through tasks 4. Record where they get stuck, what they skip, and what they search for 5. Interview participants about their mental models and expectations</p>
+            </div>
+            <div class="use-case-item mt-2">
+                <h4 data-type="outcome">Expected Outcome</h4>
+                <p>Identification of missing code examples, unclear authentication steps, and assumption gaps, resulting in 40% reduction in API support tickets and faster developer onboarding.</p>
+            </div>
+        </div>
+        
+        <div class="use-case">
+            <h3>Knowledge Base Navigation Testing</h3>
+            <div class="use-case-grid">
+                <div class="use-case-item">
+                    <h4 data-type="problem">Problem</h4>
+                    <p>Users frequently contact support for information that exists in the knowledge base, indicating discoverability and usability issues with the self-service content.</p>
+                </div>
+                <div class="use-case-item">
+                    <h4 data-type="solution">Solution</h4>
+                    <p>Test how users naturally search for and navigate to solutions for common problems using the existing knowledge base structure.</p>
+                </div>
+            </div>
+            <div class="use-case-item mt-4">
+                <h4 data-type="implementation">Implementation</h4>
+                <p>1. Identify top 10 support ticket categories 2. Create scenarios based on these common issues 3. Ask users to find solutions using only the knowledge base 4. Track their search terms, navigation paths, and points of abandonment 5. Note when they would give up and contact support instead</p>
+            </div>
+            <div class="use-case-item mt-2">
+                <h4 data-type="outcome">Expected Outcome</h4>
+                <p>Improved search functionality, better content categorization, and clearer article titles, leading to 30% increase in knowledge base self-service resolution rates.</p>
+            </div>
+        </div>
+        
+        <div class="use-case">
+            <h3>Onboarding Documentation Flow Testing</h3>
+            <div class="use-case-grid">
+                <div class="use-case-item">
+                    <h4 data-type="problem">Problem</h4>
+                    <p>New users have low completion rates for product setup and onboarding, with many abandoning the process midway through the documentation.</p>
+                </div>
+                <div class="use-case-item">
+                    <h4 data-type="solution">Solution</h4>
+                    <p>Observe new users completing the entire onboarding process from start to finish, identifying friction points and cognitive load issues.</p>
+                </div>
+            </div>
+            <div class="use-case-item mt-4">
+                <h4 data-type="implementation">Implementation</h4>
+                <p>1. Recruit users who match new customer profiles 2. Create realistic onboarding scenarios with actual accounts/data 3. Use think-aloud protocol to understand user mental state 4. Track completion rates, time spent, and error recovery 5. Identify steps where users lose confidence or momentum</p>
+            </div>
+            <div class="use-case-item mt-2">
+                <h4 data-type="outcome">Expected Outcome</h4>
+                <p>Streamlined onboarding flow with better progress indicators, reduced cognitive load, and 50% improvement in onboarding completion rates.</p>
+            </div>
+        </div>
+        
+        <div class="use-case">
+            <h3>Mobile Documentation Experience Testing</h3>
+            <div class="use-case-grid">
+                <div class="use-case-item">
+                    <h4 data-type="problem">Problem</h4>
+                    <p>Increasing mobile traffic to documentation shows high bounce rates and low task completion, suggesting mobile-specific usability issues.</p>
+                </div>
+                <div class="use-case-item">
+                    <h4 data-type="solution">Solution</h4>
+                    <p>Test documentation usability specifically on mobile devices with users in realistic mobile contexts and scenarios.</p>
+                </div>
+            </div>
+            <div class="use-case-item mt-4">
+                <h4 data-type="implementation">Implementation</h4>
+                <p>1. Recruit users who primarily access documentation on mobile 2. Test in realistic environments (not just lab settings) 3. Focus on common mobile tasks like quick reference lookups 4. Observe touch interactions, scrolling behavior, and navigation patterns 5. Test both portrait and landscape orientations</p>
+            </div>
+            <div class="use-case-item mt-2">
+                <h4 data-type="outcome">Expected Outcome</h4>
+                <p>Mobile-optimized content layout, improved touch targets, and condensed critical information, resulting in 35% improvement in mobile task completion rates.</p>
+            </div>
+        </div>
+        
+    </section>
+    
+    <!-- Best Practices -->
+    <section class="mb-8">
+        <h2 class="text-3xl font-bold mb-6">Best Practices</h2>
+        
+        <div class="best-practice">
+            <h3><span>✓</span> Test Early and Often with Small Groups</h3>
+            <p>Conduct frequent testing sessions with 3-5 users rather than waiting for large-scale studies. Small groups reveal most usability issues while keeping costs and complexity manageable.</p>
+            <div class="do-dont-grid">
+                <div class="do-box">
+                    <strong>✓ Do:</strong> Schedule monthly testing sessions with different user segments, test prototypes and drafts before full publication, and create a regular testing calendar integrated with your content release cycle.
+                </div>
+                <div class="dont-box">
+                    <strong>✗ Don't:</strong> Wait until documentation is 'perfect' to test, assume you need large sample sizes to get valuable insights, or skip testing because of time constraints.
+                </div>
+            </div>
+        </div>
+        
+        <div class="best-practice">
+            <h3><span>✓</span> Focus on Real Tasks, Not Tours</h3>
+            <p>Design testing scenarios around specific goals users want to accomplish, rather than asking them to generally explore or provide opinions about your documentation.</p>
+            <div class="do-dont-grid">
+                <div class="do-box">
+                    <strong>✓ Do:</strong> Create scenarios based on actual support tickets and user goals, give users realistic context and constraints, and observe natural behavior without excessive guidance.
+                </div>
+                <div class="dont-box">
+                    <strong>✗ Don't:</strong> Ask users what they think about the documentation in general, guide them through a predetermined path, or use hypothetical scenarios that don't match real use cases.
+                </div>
+            </div>
+        </div>
+        
+        <div class="best-practice">
+            <h3><span>✓</span> Recruit Your Actual User Base</h3>
+            <p>Test with people who genuinely represent your documentation's intended audience, including their technical skill level, domain knowledge, and typical use contexts.</p>
+            <div class="do-dont-grid">
+                <div class="do-box">
+                    <strong>✓ Do:</strong> Use customer lists, community forums, and user research panels to find representative participants, screen for relevant experience and use cases, and include both novice and expert users.
+                </div>
+                <div class="dont-box">
+                    <strong>✗ Don't:</strong> Test with internal team members, friends, or colleagues who have insider knowledge, assume all users have the same background, or skip user screening to save time.
+                </div>
+            </div>
+        </div>
+        
+        <div class="best-practice">
+            <h3><span>✓</span> Observe Behavior Over Opinions</h3>
+            <p>Pay more attention to what users actually do than what they say they would do. Actions reveal true usability issues while opinions can be influenced by politeness or incomplete recall.</p>
+            <div class="do-dont-grid">
+                <div class="do-box">
+                    <strong>✓ Do:</strong> Record screen activity and user navigation paths, note where users pause or show confusion, and track actual completion rates and error recovery patterns.
+                </div>
+                <div class="dont-box">
+                    <strong>✗ Don't:</strong> Rely solely on post-session interviews, ask leading questions during tasks, or dismiss behavioral evidence in favor of user opinions about what they prefer.
+                </div>
+            </div>
+        </div>
+        
+        <div class="best-practice">
+            <h3><span>✓</span> Create Actionable Testing Reports</h3>
+            <p>Transform testing observations into specific, prioritized recommendations that your team can implement, with clear evidence linking problems to solutions.</p>
+            <div class="do-dont-grid">
+                <div class="do-box">
+                    <strong>✓ Do:</strong> Categorize findings by severity and frequency, provide specific examples with screenshots or quotes, and suggest concrete improvements with expected impact.
+                </div>
+                <div class="dont-box">
+                    <strong>✗ Don't:</strong> Create lengthy reports that just describe what happened, make recommendations without supporting evidence, or fail to prioritize issues by business impact.
+                </div>
+            </div>
+        </div>
+        
+    </section>
+    
+    <!-- How Docsie Helps -->
+    <section class="docsie-section">
+        <h2 class="text-3xl font-bold mb-4">How Docsie Helps with User Testing</h2>
+        <div class="prose max-w-none">
+            <p>Modern documentation platforms provide integrated capabilities that streamline user testing workflows and make continuous improvement more feasible for documentation teams.</p><ul><li><strong>Built-in Analytics Integration:</strong> Track user behavior, page performance, and completion funnels directly within your documentation platform to identify testing priorities</li><li><strong>Version Control for Testing:</strong> Create testing branches and staged environments to test documentation changes with users before publishing to production</li><li><strong>Collaborative Feedback Collection:</strong> Enable team members to collect and organize user testing insights directly within the documentation workflow</li><li><strong>A/B Testing Capabilities:</strong> Test different versions of content with different user groups to validate improvements systematically</li><li><strong>User Journey Tracking:</strong> Monitor how users navigate through documentation to identify common paths and abandonment points</li><li><strong>Rapid Iteration Cycles:</strong> Quick publishing and rollback capabilities allow teams to implement user testing insights immediately and measure impact</li><li><strong>Cross-Platform Testing:</strong> Ensure consistent user experience across devices and contexts with responsive preview and testing tools</li></ul>
+        </div>
+        
+        <!-- Phase 2: This will be populated by Docsie RAG -->
+        <div id="docsie-features" class="mt-6">
+            <!-- Placeholder for RAG integration -->
+        </div>
+        
+        <div class="mt-6">
+            <a href="https://www.docsie.io/demo/" class="inline-flex items-center px-6 py-3 bg-white text-purple-600 font-semibold rounded-lg hover:bg-purple-50 transition">
+                See How Docsie Can Help
+                <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+            </a>
+        </div>
+    </section>
+    
+    <!-- Related Articles -->
+    
+    
+    <!-- Related Terms -->
+    
+    <section class="related-terms mt-8">
+        <h2 class="text-2xl font-bold mb-4">Related Documentation Terms</h2>
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3">
+            
+            <a href="/blog/glossary/version-control/" 
+               class="bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded-lg text-center transition-colors duration-200 group">
+                <span class="block font-medium text-gray-900 group-hover:text-blue-600">Version Control</span>
+                <span class="text-xs text-gray-500">1 shared articles</span>
+            </a>
+            
+            <a href="/blog/glossary/technical-documentation/" 
+               class="bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded-lg text-center transition-colors duration-200 group">
+                <span class="block font-medium text-gray-900 group-hover:text-blue-600">Technical Documentation</span>
+                <span class="text-xs text-gray-500">1 shared articles</span>
+            </a>
+            
+            <a href="/blog/glossary/stakeholders/" 
+               class="bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded-lg text-center transition-colors duration-200 group">
+                <span class="block font-medium text-gray-900 group-hover:text-blue-600">Stakeholders</span>
+                <span class="text-xs text-gray-500">1 shared articles</span>
+            </a>
+            
+            <a href="/blog/glossary/template/" 
+               class="bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded-lg text-center transition-colors duration-200 group">
+                <span class="block font-medium text-gray-900 group-hover:text-blue-600">Template</span>
+                <span class="text-xs text-gray-500">1 shared articles</span>
+            </a>
+            
+            <a href="/blog/glossary/prd/" 
+               class="bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded-lg text-center transition-colors duration-200 group">
+                <span class="block font-medium text-gray-900 group-hover:text-blue-600">PRD</span>
+                <span class="text-xs text-gray-500">1 shared articles</span>
+            </a>
+            
+        </div>
+    </section>
+    
+    
+    <!-- CTA Section -->
+    <section class="bg-gradient-to-r from-purple-600 to-indigo-600 text-white p-8 rounded-lg mt-8 text-center">
+        <h2 class="text-2xl font-bold mb-4">Build Better Documentation with Docsie</h2>
+        <p class="mb-6">Join thousands of teams creating outstanding documentation</p>
+        <a href="https://app.docsie.io/onboarding/" class="inline-block bg-white text-purple-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition">
+            Start Free Trial
+        </a>
+    </section>
+</div>
+
+  <!-- BlogVi Footer V2 - Simplified version using production styles -->
+<footer class="bg-gray-900 text-white mt-16">
+    <div class="container mx-auto px-4 py-12">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <!-- Company Info -->
+            <div>
+                <h3 class="text-lg font-semibold mb-4">Docsie</h3>
+                <p class="text-gray-400 text-sm">
+                    The modern documentation platform that helps teams create, manage, and share knowledge.
+                </p>
+            </div>
+            
+            <!-- Quick Links -->
+            <div>
+                <h4 class="text-lg font-semibold mb-4">Product</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="https://www.docsie.io/features/" class="text-gray-400 hover:text-white transition-colors">Features</a></li>
+                    <li><a href="https://www.docsie.io/pricing/" class="text-gray-400 hover:text-white transition-colors">Pricing</a></li>
+                    <li><a href="https://www.docsie.io/documentation/" class="text-gray-400 hover:text-white transition-colors">Documentation</a></li>
+                    <li><a href="/blog/" class="text-gray-400 hover:text-white transition-colors">Blog</a></li>
+                    <li><a href="/blog/glossary/" class="text-gray-400 hover:text-white transition-colors">Glossary</a></li>
+                </ul>
+            </div>
+            
+            <!-- Resources -->
+            <div>
+                <h4 class="text-lg font-semibold mb-4">Resources</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="https://help.docsie.io" class="text-gray-400 hover:text-white transition-colors">Help Center</a></li>
+                    <li><a href="https://www.docsie.io/support/" class="text-gray-400 hover:text-white transition-colors">Support</a></li>
+                    <li><a href="https://www.docsie.io/about/" class="text-gray-400 hover:text-white transition-colors">About Us</a></li>
+                    <li><a href="https://www.docsie.io/careers/" class="text-gray-400 hover:text-white transition-colors">Careers</a></li>
+                </ul>
+            </div>
+            
+            <!-- Social Links -->
+            <div>
+                <h4 class="text-lg font-semibold mb-4">Connect</h4>
+                <div class="flex space-x-4">
+                    <a href="https://twitter.com/docsie_io" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/company/docsie" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://github.com/LikaloLLC" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="/blog/rss.xml" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fas fa-rss"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Bottom Bar -->
+        <div class="mt-8 pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center text-sm text-gray-400">
+            <p>&copy;  Docsie. All rights reserved.</p>
+            <div class="flex space-x-6 mt-4 md:mt-0">
+                <a href="https://www.docsie.io/privacy/" class="hover:text-white transition-colors">Privacy Policy</a>
+                <a href="https://www.docsie.io/terms/" class="hover:text-white transition-colors">Terms of Service</a>
+                <a href="https://www.docsie.io/cookies/" class="hover:text-white transition-colors">Cookie Policy</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+// Set current year for copyright
+document.addEventListener('DOMContentLoaded', function() {
+    const yearElements = document.querySelectorAll('[data-year]');
+    const currentYear = new Date().getFullYear();
+    yearElements.forEach(el => el.textContent = currentYear);
+});
+</script>
+</body>
+</html>

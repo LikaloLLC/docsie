@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+
+  
+    <link rel="icon" type="image/png" sizes="32x32" href="https://d1iq6qzgppjlud.cloudfront.net/images/favicon/favicon-196x196.png">
+
+
+  <!-- Primary Meta Tags -->
+  <title>Single Sign-On: The Complete Guide for Documentation Teams | Docsie.io Blog</title>
+  <meta name="title" content="Single Sign-On: The Complete Guide">
+  <meta name="description" content="Single Sign-On (SSO) is an authentication process that enables users to access multiple applications or systems using one set of login credentials. This st">
+  <meta name="keywords" content="Single Sign-On, documentation, technical writing, Docsie.io Blog">
+  <link rel="canonical" href="https://www.docsie.io/blog/glossary/single-sign-on/">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  
+  <!-- Additional SEO Tags -->
+  <meta name="author" content="Docsie.io Blog">
+  <meta name="language" content="English">
+  <meta name="revisit-after" content="7 days">
+  <link rel="alternate" type="application/rss+xml" title="Docsie.io Blog RSS Feed" href="https://www.docsie.io/blog/rss.xml">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.docsie.io/blog/glossary/single-sign-on/">
+  <meta property="og:title" content="Single Sign-On: The Complete Guide">
+  <meta property="og:description" content="Single Sign-On (SSO) is an authentication process that enables users to access multiple applications or systems using one set of login credentials. This streamlined approach eliminates the need to remember multiple passwords while maintaining security across connected platforms. For documentation teams, SSO provides seamless access to various tools like content management systems, collaboration platforms, and publishing tools.">
+  <meta property="og:image" content="https://d1iq6qzgppjlud.cloudfront.net/images/favicon/apple-touch-icon-144x144.png">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://www.docsie.io/blog/glossary/single-sign-on/">
+  <meta property="twitter:title" content="Single Sign-On: The Complete Guide">
+  <meta property="twitter:description" content="Single Sign-On (SSO) is an authentication process that enables users to access multiple applications or systems using one set of login credentials. This streamlined approach eliminates the need to remember multiple passwords while maintaining security across connected platforms. For documentation teams, SSO provides seamless access to various tools like content management systems, collaboration platforms, and publishing tools.">
+  <meta property="twitter:image" content="https://d1iq6qzgppjlud.cloudfront.net/images/favicon/apple-touch-icon-144x144.png">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Existing CSS -->
+  <link rel="stylesheet" href="/blog/templates/assets/css/design-system.css">
+  <link rel="stylesheet" href="/blog/templates/assets/css/typography.min.css">
+<!-- Mermaid.js for diagrams -->
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script>
+    mermaid.initialize({ 
+        startOnLoad: true, 
+        theme: 'default',
+        themeVariables: {
+            primaryColor: '#6366f1',
+            primaryTextColor: '#fff',
+            primaryBorderColor: '#4f46e5',
+            lineColor: '#e5e7eb',
+            secondaryColor: '#f3f4f6',
+            tertiaryColor: '#fbbf24'
+        }
+    });
+</script>
+
+<style>
+    /* Term Page Specific Styles */
+    .term-hero {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 3rem 0;
+        margin-bottom: 3rem;
+    }
+    
+    .breadcrumb {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin-bottom: 1rem;
+        font-size: 0.875rem;
+        color: rgba(255, 255, 255, 0.8);
+    }
+    
+    .breadcrumb a {
+        color: rgba(255, 255, 255, 0.8);
+        text-decoration: none;
+        transition: color 0.2s;
+    }
+    
+    .breadcrumb a:hover {
+        color: white;
+    }
+    
+    .definition-card {
+        background: white;
+        border: 2px solid #e5e7eb;
+        border-radius: 12px;
+        padding: 2rem;
+        margin-bottom: 2rem;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    }
+    
+    .definition-card h2 {
+        color: #4f46e5;
+        margin-bottom: 1rem;
+    }
+    
+    .mermaid-container {
+        background: #f9fafb;
+        border-radius: 12px;
+        padding: 2rem;
+        margin: 2rem 0;
+        overflow-x: auto;
+    }
+    
+    .use-case {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 2rem;
+        border-radius: 16px;
+        margin-bottom: 1.5rem;
+        box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .use-case::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        right: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+        pointer-events: none;
+    }
+    
+    .use-case h3 {
+        color: white;
+        margin-bottom: 1.5rem;
+        font-size: 1.375rem;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+    }
+    
+    .use-case h3::before {
+        content: '💡';
+        font-size: 1.5rem;
+    }
+    
+    .use-case-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1rem;
+        margin-top: 1rem;
+    }
+    
+    .use-case-item {
+        background: rgba(255, 255, 255, 0.15);
+        padding: 1.5rem;
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(10px);
+        transition: all 0.3s ease;
+        position: relative;
+    }
+    
+    .use-case-item:hover {
+        background: rgba(255, 255, 255, 0.18);
+        border-color: rgba(255, 255, 255, 0.3);
+        transform: translateY(-2px);
+    }
+    
+    .use-case-item h4 {
+        color: white;
+        margin-bottom: 0.75rem;
+        font-size: 0.75rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    
+    .use-case-item h4::before {
+        content: '';
+        width: 4px;
+        height: 16px;
+        background: linear-gradient(to bottom, #fbbf24, #f59e0b);
+        border-radius: 2px;
+    }
+    
+    /* Custom icons for each section */
+    .use-case-item h4[data-type="problem"]::after {
+        content: '⚠️';
+        margin-left: auto;
+        font-size: 1rem;
+    }
+    
+    .use-case-item h4[data-type="solution"]::after {
+        content: '✨';
+        margin-left: auto;
+        font-size: 1rem;
+    }
+    
+    .use-case-item h4[data-type="implementation"]::after {
+        content: '🔧';
+        margin-left: auto;
+        font-size: 1rem;
+    }
+    
+    .use-case-item h4[data-type="outcome"]::after {
+        content: '🎯';
+        margin-left: auto;
+        font-size: 1rem;
+    }
+    
+    .use-case-item p {
+        line-height: 1.6;
+        font-size: 0.95rem;
+    }
+    
+    .best-practice {
+        background: white;
+        border: 2px solid #10b981;
+        border-radius: 12px;
+        padding: 1.5rem;
+        margin-bottom: 1rem;
+        transition: transform 0.2s, box-shadow 0.2s;
+    }
+    
+    .best-practice:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    
+    .best-practice h3 {
+        color: #10b981;
+        margin-bottom: 0.5rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    
+    .do-dont-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+        margin-top: 1rem;
+    }
+    
+    .do-box, .dont-box {
+        padding: 0.75rem;
+        border-radius: 6px;
+        font-size: 0.875rem;
+    }
+    
+    .do-box {
+        background: #d1fae5;
+        border: 1px solid #10b981;
+    }
+    
+    .dont-box {
+        background: #fee2e2;
+        border: 1px solid #ef4444;
+    }
+    
+    .docsie-section {
+        background: linear-gradient(to right, #f3e8ff, #e0e7ff);
+        padding: 3rem;
+        border-radius: 12px;
+        margin: 3rem 0;
+    }
+    
+    .related-articles {
+        margin-top: 3rem;
+    }
+    
+    .article-link {
+        display: block;
+        padding: 1rem;
+        border: 1px solid #e5e7eb;
+        border-radius: 8px;
+        text-decoration: none;
+        color: inherit;
+        transition: all 0.2s;
+        margin-bottom: 0.75rem;
+    }
+    
+    .article-link:hover {
+        border-color: #6366f1;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        transform: translateX(4px);
+    }
+    
+    /* Mobile responsiveness */
+    @media (max-width: 768px) {
+        .use-case-grid,
+        .do-dont-grid {
+            grid-template-columns: 1fr;
+        }
+        
+        .term-hero {
+            padding: 2rem 0;
+        }
+    }
+</style>
+
+<!-- Schema.org structured data -->
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": ["Article", "DefinedTerm"],
+    "name": "Single Sign-On",
+    "headline": "Single Sign-On: The Complete Guide for Documentation Teams",
+    "description": "Single Sign-On (SSO) is an authentication process that enables users to access multiple applications or systems using one set of login credentials. This streamlined approach eliminates the need to remember multiple passwords while maintaining security across connected platforms. For documentation teams, SSO provides seamless access to various tools like content management systems, collaboration platforms, and publishing tools.",
+    "termCode": "single-sign-on",
+    "inDefinedTermSet": {
+        "@type": "DefinedTermSet",
+        "name": "Docsie Documentation Glossary",
+        "url": "https://www.docsie.io/blog/glossary/"
+    },
+    "author": {
+        "@type": "Organization",
+        "name": "Docsie.io Blog",
+        "url": "https://www.docsie.io"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Docsie.io Blog",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://www.docsie.io/assets/docsie_logo_square_svg.svg"
+        }
+    },
+    "datePublished": "2024-01-01",
+    "dateModified": "2024-01-01",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://www.docsie.io/blog/glossary/single-sign-on/"
+    },
+    "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Blog",
+                "item": "https://www.docsie.io/blog/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Glossary",
+                "item": "https://www.docsie.io/blog/glossary/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Single Sign-On",
+                "item": "https://www.docsie.io/blog/glossary/single-sign-on/"
+            }
+        ]
+    },
+    "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [".definition-card", ".use-case:first-child"]
+    }
+}
+</script>
+</head>
+
+<body>
+  <!-- BlogVi Header V2 - Using Production Docsie Design System -->
+<nav class="header sticky top-0 z-50 bg-white shadow-sm">
+  <div class="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center py-4">
+      <!-- Logo -->
+      <div class="flex items-center">
+        <a href="https://www.docsie.io" class="flex items-center">
+          <img src="https://www.docsie.io/assets/docsie_logo_square_svg.svg" alt="Docsie Logo" class="h-8 w-auto mr-2" style="filter: brightness(0) saturate(100%) invert(42%) sepia(93%) saturate(1018%) hue-rotate(96deg) brightness(101%) contrast(91%);">
+          <span class="text-2xl font-bold text-gray-900">Docsie</span>
+        </a>
+        <span class="ml-2 text-gray-500">|</span>
+        <a href="/blog/" class="ml-2 text-xl font-semibold text-gray-700 hover:text-docsie-primary transition-colors">
+          Blog
+        </a>
+      </div>
+
+      <!-- Desktop Navigation -->
+      <div class="hidden md:flex items-center space-x-8">
+        <!-- Main Nav Links from settings -->
+        
+        <a href="https://www.docsie.io" class="text-gray-700 hover:text-docsie-primary font-medium transition-colors">
+          Docsie
+        </a>
+        
+        <a href="https://www.docsie.io/pricing/" class="text-gray-700 hover:text-docsie-primary font-medium transition-colors">
+          Docsie Pricing
+        </a>
+        
+        <a href="https://www.docsie.io/try_docsie/" class="bg-docsie-primary hover:bg-docsie-primary-dark text-white px-4 py-2 rounded-lg font-medium transition-colors">
+          Try Docsie
+        </a>
+        
+      </div>
+
+      <!-- Mobile menu button -->
+      <button class="md:hidden p-2 text-gray-600 hover:text-docsie-primary transition-colors" onclick="toggleMobileMenu()">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Navigation -->
+    <div id="mobile-menu" class="hidden md:hidden pb-4">
+      <div class="flex flex-col space-y-4">
+        
+        <a href="https://www.docsie.io" class="text-gray-700 hover:text-docsie-primary font-medium transition-colors">
+          Docsie
+        </a>
+        
+        <a href="https://www.docsie.io/pricing/" class="text-gray-700 hover:text-docsie-primary font-medium transition-colors">
+          Docsie Pricing
+        </a>
+        
+        <a href="https://www.docsie.io/try_docsie/" class="block text-center bg-docsie-primary hover:bg-docsie-primary-dark text-white px-4 py-2 rounded-lg font-medium transition-colors">
+          Try Docsie
+        </a>
+        
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Blog-specific navigation bar -->
+<div class="bg-gray-50 border-b border-gray-200">
+  <div class="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between py-3">
+      <!-- Categories -->
+      <nav class="flex items-center gap-2 overflow-x-auto max-w-full scrollbar-hide">
+        <a href="/blog" class="category-pill flex-shrink-0 category-pill-active">
+          ALL
+        </a>
+        
+      </nav>
+
+      <!-- Right side: Search and Subscribe -->
+      <div class="flex items-center gap-2 ml-2">
+        <!-- Search -->
+        <div class="relative">
+          <input type="search" 
+                 placeholder="Search..." 
+                 class="w-32 sm:w-48 md:w-64 px-3 py-2 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-docsie-primary focus:border-transparent"
+                 id="search">
+          <div class="absolute right-0 mt-2 w-64 sm:w-80 md:w-96 bg-white rounded-lg shadow-xl border border-gray-200 hidden z-50" id="search-bar">
+            <ul class="py-2 max-h-96 overflow-y-auto" id="search-results">
+              <!-- Search results will be populated here -->
+            </ul>
+          </div>
+        </div>
+        
+        <!-- Subscribe Button (if enabled) -->
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function toggleMobileMenu() {
+  const menu = document.getElementById('mobile-menu');
+  menu.classList.toggle('hidden');
+}
+
+// Initialize search settings for BlogVi
+window['searchConfig'] = {};
+</script>
+<div class="term-hero">
+    <div class="container mx-auto px-4">
+        <!-- Breadcrumbs -->
+        <nav class="breadcrumb">
+            
+                
+                    <a href="/blog/">Blog</a>
+                    <span>›</span>
+                
+            
+                
+                    <a href="/blog/glossary/">Glossary</a>
+                    <span>›</span>
+                
+            
+                
+                    <span>Single Sign-On</span>
+                
+            
+        </nav>
+        
+        <!-- Hero Title -->
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">Single Sign-On</h1>
+        <p class="text-xl opacity-90">Master this essential documentation concept</p>
+    </div>
+</div>
+
+<div class="container mx-auto px-4 max-w-4xl">
+    <!-- Quick Definition Card -->
+    <div class="definition-card">
+        <h2 class="text-2xl font-semibold">Quick Definition</h2>
+        <p class="text-lg leading-relaxed">Single Sign-On (SSO) is an authentication process that enables users to access multiple applications or systems using one set of login credentials. This streamlined approach eliminates the need to remember multiple passwords while maintaining security across connected platforms. For documentation teams, SSO provides seamless access to various tools like content management systems, collaboration platforms, and publishing tools.</p>
+    </div>
+    
+    <!-- Visual Diagram -->
+    <section class="mb-8">
+        <h2 class="text-3xl font-bold mb-4">How Single Sign-On Works</h2>
+        <div class="mermaid-container">
+            <div class="mermaid">
+                graph TD
+    A[User Login] --> B[Identity Provider]
+    B --> C{Authentication Success?}
+    C -->|Yes| D[Generate Security Token]
+    C -->|No| E[Access Denied]
+    D --> F[Documentation Platform]
+    D --> G[Content Management System]
+    D --> H[Collaboration Tools]
+    D --> I[Analytics Dashboard]
+    F --> J[Create/Edit Content]
+    G --> K[Manage Assets]
+    H --> L[Team Communication]
+    I --> M[Track Performance]
+    N[Admin Panel] --> B
+    N --> O[User Management]
+    N --> P[Access Control]
+    style B fill:#e1f5fe
+    style D fill:#c8e6c9
+    style E fill:#ffcdd2
+            </div>
+        </div>
+    </section>
+    
+    <!-- Detailed Explanation -->
+    <section class="mb-8">
+        <h2 class="text-3xl font-bold mb-4">Understanding Single Sign-On</h2>
+        <div class="prose max-w-none">
+            <p>Single Sign-On (SSO) revolutionizes how documentation teams access and manage their digital tools by providing a unified authentication gateway. Instead of juggling multiple usernames and passwords across different platforms, team members can authenticate once and gain access to all connected systems seamlessly.</p><h3>Key Features</h3><ul><li>Centralized authentication through identity providers (IdP)</li><li>Token-based security protocols (SAML, OAuth, OpenID Connect)</li><li>Automatic session management across applications</li><li>Role-based access control integration</li><li>Multi-factor authentication support</li><li>Real-time user provisioning and deprovisioning</li></ul><h3>Benefits for Documentation Teams</h3><ul><li>Reduced password fatigue and login friction</li><li>Improved security through centralized credential management</li><li>Faster onboarding and offboarding processes</li><li>Enhanced productivity with seamless tool switching</li><li>Better compliance with security policies</li><li>Simplified user management for administrators</li></ul><h3>Common Misconceptions</h3><ul><li>SSO is less secure than individual passwords (actually more secure when properly implemented)</li><li>Implementation is too complex for small teams (many cloud solutions are user-friendly)</li><li>SSO creates a single point of failure (redundancy and backup systems prevent this)</li><li>All applications must support the same SSO protocol (modern solutions support multiple standards)</li></ul>
+        </div>
+    </section>
+    
+    <!-- Documentation Use Cases -->
+    <section class="mb-8">
+        <h2 class="text-3xl font-bold mb-6">Real-World Documentation Use Cases</h2>
+        
+        <div class="use-case">
+            <h3>Multi-Platform Documentation Workflow</h3>
+            <div class="use-case-grid">
+                <div class="use-case-item">
+                    <h4 data-type="problem">Problem</h4>
+                    <p>Documentation teams struggle with managing separate logins for writing tools, asset management, version control, and publishing platforms, leading to productivity loss and security risks.</p>
+                </div>
+                <div class="use-case-item">
+                    <h4 data-type="solution">Solution</h4>
+                    <p>Implement SSO to connect documentation platforms, GitHub, image libraries, and publishing tools under one authentication system.</p>
+                </div>
+            </div>
+            <div class="use-case-item mt-4">
+                <h4 data-type="implementation">Implementation</h4>
+                <p>1. Choose an identity provider (Azure AD, Okta, Google Workspace)
+2. Configure SAML/OAuth connections for each tool
+3. Set up user groups based on roles (writers, editors, admins)
+4. Test authentication flows across all platforms
+5. Train team members on the new login process
+6. Monitor access logs and adjust permissions as needed</p>
+            </div>
+            <div class="use-case-item mt-2">
+                <h4 data-type="outcome">Expected Outcome</h4>
+                <p>Team members access all documentation tools with one login, reducing time spent on authentication by 75% and improving security compliance.</p>
+            </div>
+        </div>
+        
+        <div class="use-case">
+            <h3>Client Portal Documentation Access</h3>
+            <div class="use-case-grid">
+                <div class="use-case-item">
+                    <h4 data-type="problem">Problem</h4>
+                    <p>External clients and partners need secure access to specific documentation sections without creating multiple accounts across different systems.</p>
+                </div>
+                <div class="use-case-item">
+                    <h4 data-type="solution">Solution</h4>
+                    <p>Deploy SSO with role-based access control to provide clients seamless access to relevant documentation while maintaining security boundaries.</p>
+                </div>
+            </div>
+            <div class="use-case-item mt-4">
+                <h4 data-type="implementation">Implementation</h4>
+                <p>1. Set up external identity federation
+2. Create client-specific user groups with limited permissions
+3. Configure conditional access policies
+4. Integrate SSO with documentation portal
+5. Provide clients with simple login instructions
+6. Implement session timeout and security monitoring</p>
+            </div>
+            <div class="use-case-item mt-2">
+                <h4 data-type="outcome">Expected Outcome</h4>
+                <p>Clients enjoy frictionless access to authorized documentation while maintaining strict security controls and audit trails.</p>
+            </div>
+        </div>
+        
+        <div class="use-case">
+            <h3>Remote Team Documentation Collaboration</h3>
+            <div class="use-case-grid">
+                <div class="use-case-item">
+                    <h4 data-type="problem">Problem</h4>
+                    <p>Distributed documentation teams face challenges accessing shared resources securely while working from various locations and devices.</p>
+                </div>
+                <div class="use-case-item">
+                    <h4 data-type="solution">Solution</h4>
+                    <p>Establish SSO with multi-factor authentication and device trust policies to enable secure remote collaboration across documentation tools.</p>
+                </div>
+            </div>
+            <div class="use-case-item mt-4">
+                <h4 data-type="implementation">Implementation</h4>
+                <p>1. Deploy cloud-based identity provider
+2. Enable MFA for all documentation platform access
+3. Configure device compliance policies
+4. Set up VPN-less secure access
+5. Implement location-based access controls
+6. Create emergency access procedures</p>
+            </div>
+            <div class="use-case-item mt-2">
+                <h4 data-type="outcome">Expected Outcome</h4>
+                <p>Remote team members securely access all documentation tools from any location while maintaining enterprise-grade security and compliance.</p>
+            </div>
+        </div>
+        
+        <div class="use-case">
+            <h3>Documentation Audit and Compliance</h3>
+            <div class="use-case-grid">
+                <div class="use-case-item">
+                    <h4 data-type="problem">Problem</h4>
+                    <p>Organizations struggle to track user access and maintain compliance across multiple documentation systems due to fragmented authentication logs.</p>
+                </div>
+                <div class="use-case-item">
+                    <h4 data-type="solution">Solution</h4>
+                    <p>Centralize authentication through SSO to create unified audit trails and automated compliance reporting for documentation access.</p>
+                </div>
+            </div>
+            <div class="use-case-item mt-4">
+                <h4 data-type="implementation">Implementation</h4>
+                <p>1. Implement SSO with comprehensive logging
+2. Configure automated compliance reports
+3. Set up real-time access monitoring
+4. Create user access review workflows
+5. Establish data retention policies
+6. Implement automated deprovisioning</p>
+            </div>
+            <div class="use-case-item mt-2">
+                <h4 data-type="outcome">Expected Outcome</h4>
+                <p>Complete visibility into documentation access patterns with automated compliance reporting and reduced audit preparation time by 60%.</p>
+            </div>
+        </div>
+        
+    </section>
+    
+    <!-- Best Practices -->
+    <section class="mb-8">
+        <h2 class="text-3xl font-bold mb-6">Best Practices</h2>
+        
+        <div class="best-practice">
+            <h3><span>✓</span> Implement Gradual SSO Rollout</h3>
+            <p>Deploy Single Sign-On in phases rather than all at once to minimize disruption and allow for troubleshooting. Start with non-critical systems and gradually include mission-critical documentation platforms.</p>
+            <div class="do-dont-grid">
+                <div class="do-box">
+                    <strong>✓ Do:</strong> Begin with test groups, gather feedback, and expand systematically while maintaining fallback authentication methods during transition periods.
+                </div>
+                <div class="dont-box">
+                    <strong>✗ Don't:</strong> Don't implement SSO across all systems simultaneously without proper testing, as this can lead to widespread access issues if problems occur.
+                </div>
+            </div>
+        </div>
+        
+        <div class="best-practice">
+            <h3><span>✓</span> Configure Role-Based Access Control</h3>
+            <p>Establish clear user roles and permissions that align with your documentation team structure. Different team members need different levels of access to various tools and content areas.</p>
+            <div class="do-dont-grid">
+                <div class="do-box">
+                    <strong>✓ Do:</strong> Create specific roles like Content Creator, Editor, Reviewer, and Administrator with appropriate permissions for each documentation platform and tool.
+                </div>
+                <div class="dont-box">
+                    <strong>✗ Don't:</strong> Don't assign broad administrative permissions to regular users or create overly complex role hierarchies that become difficult to manage and understand.
+                </div>
+            </div>
+        </div>
+        
+        <div class="best-practice">
+            <h3><span>✓</span> Enable Multi-Factor Authentication</h3>
+            <p>Add an extra security layer to your SSO implementation by requiring additional verification methods beyond passwords, especially for accessing sensitive documentation or administrative functions.</p>
+            <div class="do-dont-grid">
+                <div class="do-box">
+                    <strong>✓ Do:</strong> Implement adaptive MFA that considers context like location, device, and risk level to balance security with user experience.
+                </div>
+                <div class="dont-box">
+                    <strong>✗ Don't:</strong> Don't rely solely on SMS-based MFA; use app-based authenticators or hardware tokens for better security, especially for administrative accounts.
+                </div>
+            </div>
+        </div>
+        
+        <div class="best-practice">
+            <h3><span>✓</span> Maintain Comprehensive Access Logs</h3>
+            <p>Monitor and log all authentication attempts and system access to identify security issues, track user behavior, and maintain compliance with organizational policies.</p>
+            <div class="do-dont-grid">
+                <div class="do-box">
+                    <strong>✓ Do:</strong> Set up automated alerts for suspicious activities, regular access reviews, and maintain detailed logs for audit purposes with appropriate retention periods.
+                </div>
+                <div class="dont-box">
+                    <strong>✗ Don't:</strong> Don't ignore failed login attempts or unusual access patterns, and avoid storing logs indefinitely without proper data governance policies.
+                </div>
+            </div>
+        </div>
+        
+        <div class="best-practice">
+            <h3><span>✓</span> Plan for SSO Provider Redundancy</h3>
+            <p>Prepare backup authentication methods and consider multiple identity providers to prevent complete system lockout if your primary SSO provider experiences downtime or issues.</p>
+            <div class="do-dont-grid">
+                <div class="do-box">
+                    <strong>✓ Do:</strong> Establish emergency access procedures, maintain local administrator accounts, and consider federated identity solutions with multiple providers.
+                </div>
+                <div class="dont-box">
+                    <strong>✗ Don't:</strong> Don't create a single point of failure by relying exclusively on one SSO provider without backup authentication methods or disaster recovery plans.
+                </div>
+            </div>
+        </div>
+        
+    </section>
+    
+    <!-- How Docsie Helps -->
+    <section class="docsie-section">
+        <h2 class="text-3xl font-bold mb-4">How Docsie Helps with Single Sign-On</h2>
+        <div class="prose max-w-none">
+            <p>Modern documentation platforms have evolved to seamlessly integrate Single Sign-On capabilities, transforming how teams access and manage their content creation workflows. These platforms recognize that authentication friction directly impacts productivity and content quality.</p><ul><li><strong>Enterprise Identity Integration:</strong> Native support for popular identity providers like Azure AD, Okta, and Google Workspace, enabling immediate deployment without complex configuration</li><li><strong>Granular Permission Management:</strong> Advanced role-based access control that aligns with documentation hierarchies, allowing precise control over who can view, edit, or publish specific content areas</li><li><strong>Seamless Tool Ecosystem:</strong> Unified authentication across integrated tools including version control, asset management, analytics, and collaboration platforms within a single documentation environment</li><li><strong>Automated User Provisioning:</strong> Dynamic user management that automatically grants or revokes access based on organizational changes, reducing administrative overhead for documentation teams</li><li><strong>Enhanced Security Monitoring:</strong> Built-in audit trails and access analytics that provide visibility into content access patterns and potential security concerns</li><li><strong>Scalable Team Management:</strong> Support for growing teams with flexible authentication policies that accommodate contractors, external reviewers, and client access needs</li></ul>
+        </div>
+        
+        <!-- Phase 2: This will be populated by Docsie RAG -->
+        <div id="docsie-features" class="mt-6">
+            <!-- Placeholder for RAG integration -->
+        </div>
+        
+        <div class="mt-6">
+            <a href="https://www.docsie.io/demo/" class="inline-flex items-center px-6 py-3 bg-white text-purple-600 font-semibold rounded-lg hover:bg-purple-50 transition">
+                See How Docsie Can Help
+                <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+            </a>
+        </div>
+    </section>
+    
+    <!-- Related Articles -->
+    
+    
+    <!-- Related Terms -->
+    
+    <section class="related-terms mt-8">
+        <h2 class="text-2xl font-bold mb-4">Related Documentation Terms</h2>
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3">
+            
+            <a href="/blog/glossary/version-control/" 
+               class="bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded-lg text-center transition-colors duration-200 group">
+                <span class="block font-medium text-gray-900 group-hover:text-blue-600">Version Control</span>
+                <span class="text-xs text-gray-500">2 shared articles</span>
+            </a>
+            
+            <a href="/blog/glossary/knowledge-base/" 
+               class="bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded-lg text-center transition-colors duration-200 group">
+                <span class="block font-medium text-gray-900 group-hover:text-blue-600">Knowledge Base</span>
+                <span class="text-xs text-gray-500">1 shared articles</span>
+            </a>
+            
+            <a href="/blog/glossary/centralized-repository/" 
+               class="bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded-lg text-center transition-colors duration-200 group">
+                <span class="block font-medium text-gray-900 group-hover:text-blue-600">Centralized Repository</span>
+                <span class="text-xs text-gray-500">1 shared articles</span>
+            </a>
+            
+            <a href="/blog/glossary/multilingual-support/" 
+               class="bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded-lg text-center transition-colors duration-200 group">
+                <span class="block font-medium text-gray-900 group-hover:text-blue-600">Multilingual Support</span>
+                <span class="text-xs text-gray-500">1 shared articles</span>
+            </a>
+            
+            <a href="/blog/glossary/content-management/" 
+               class="bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded-lg text-center transition-colors duration-200 group">
+                <span class="block font-medium text-gray-900 group-hover:text-blue-600">Content Management</span>
+                <span class="text-xs text-gray-500">1 shared articles</span>
+            </a>
+            
+        </div>
+    </section>
+    
+    
+    <!-- CTA Section -->
+    <section class="bg-gradient-to-r from-purple-600 to-indigo-600 text-white p-8 rounded-lg mt-8 text-center">
+        <h2 class="text-2xl font-bold mb-4">Build Better Documentation with Docsie</h2>
+        <p class="mb-6">Join thousands of teams creating outstanding documentation</p>
+        <a href="https://app.docsie.io/onboarding/" class="inline-block bg-white text-purple-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition">
+            Start Free Trial
+        </a>
+    </section>
+</div>
+
+  <!-- BlogVi Footer V2 - Simplified version using production styles -->
+<footer class="bg-gray-900 text-white mt-16">
+    <div class="container mx-auto px-4 py-12">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <!-- Company Info -->
+            <div>
+                <h3 class="text-lg font-semibold mb-4">Docsie</h3>
+                <p class="text-gray-400 text-sm">
+                    The modern documentation platform that helps teams create, manage, and share knowledge.
+                </p>
+            </div>
+            
+            <!-- Quick Links -->
+            <div>
+                <h4 class="text-lg font-semibold mb-4">Product</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="https://www.docsie.io/features/" class="text-gray-400 hover:text-white transition-colors">Features</a></li>
+                    <li><a href="https://www.docsie.io/pricing/" class="text-gray-400 hover:text-white transition-colors">Pricing</a></li>
+                    <li><a href="https://www.docsie.io/documentation/" class="text-gray-400 hover:text-white transition-colors">Documentation</a></li>
+                    <li><a href="/blog/" class="text-gray-400 hover:text-white transition-colors">Blog</a></li>
+                    <li><a href="/blog/glossary/" class="text-gray-400 hover:text-white transition-colors">Glossary</a></li>
+                </ul>
+            </div>
+            
+            <!-- Resources -->
+            <div>
+                <h4 class="text-lg font-semibold mb-4">Resources</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="https://help.docsie.io" class="text-gray-400 hover:text-white transition-colors">Help Center</a></li>
+                    <li><a href="https://www.docsie.io/support/" class="text-gray-400 hover:text-white transition-colors">Support</a></li>
+                    <li><a href="https://www.docsie.io/about/" class="text-gray-400 hover:text-white transition-colors">About Us</a></li>
+                    <li><a href="https://www.docsie.io/careers/" class="text-gray-400 hover:text-white transition-colors">Careers</a></li>
+                </ul>
+            </div>
+            
+            <!-- Social Links -->
+            <div>
+                <h4 class="text-lg font-semibold mb-4">Connect</h4>
+                <div class="flex space-x-4">
+                    <a href="https://twitter.com/docsie_io" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/company/docsie" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://github.com/LikaloLLC" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="/blog/rss.xml" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fas fa-rss"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Bottom Bar -->
+        <div class="mt-8 pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center text-sm text-gray-400">
+            <p>&copy;  Docsie. All rights reserved.</p>
+            <div class="flex space-x-6 mt-4 md:mt-0">
+                <a href="https://www.docsie.io/privacy/" class="hover:text-white transition-colors">Privacy Policy</a>
+                <a href="https://www.docsie.io/terms/" class="hover:text-white transition-colors">Terms of Service</a>
+                <a href="https://www.docsie.io/cookies/" class="hover:text-white transition-colors">Cookie Policy</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+// Set current year for copyright
+document.addEventListener('DOMContentLoaded', function() {
+    const yearElements = document.querySelectorAll('[data-year]');
+    const currentYear = new Date().getFullYear();
+    yearElements.forEach(el => el.textContent = currentYear);
+});
+</script>
+</body>
+</html>

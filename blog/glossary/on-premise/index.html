@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+
+  
+    <link rel="icon" type="image/png" sizes="32x32" href="https://d1iq6qzgppjlud.cloudfront.net/images/favicon/favicon-196x196.png">
+
+
+  <!-- Primary Meta Tags -->
+  <title>On-premise: The Complete Guide for Documentation Teams | Docsie.io Blog</title>
+  <meta name="title" content="On-premise: The Complete Guide">
+  <meta name="description" content="On-premise refers to software and infrastructure that is installed and operated on computers within an organization's physical location, rather than being ">
+  <meta name="keywords" content="On-premise, documentation, technical writing, Docsie.io Blog">
+  <link rel="canonical" href="https://www.docsie.io/blog/glossary/on-premise/">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  
+  <!-- Additional SEO Tags -->
+  <meta name="author" content="Docsie.io Blog">
+  <meta name="language" content="English">
+  <meta name="revisit-after" content="7 days">
+  <link rel="alternate" type="application/rss+xml" title="Docsie.io Blog RSS Feed" href="https://www.docsie.io/blog/rss.xml">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.docsie.io/blog/glossary/on-premise/">
+  <meta property="og:title" content="On-premise: The Complete Guide">
+  <meta property="og:description" content="On-premise refers to software and infrastructure that is installed and operated on computers within an organization's physical location, rather than being hosted in the cloud. For documentation teams, this means hosting documentation platforms, content management systems, and related tools on their own servers and hardware. This approach provides organizations with direct control over their documentation infrastructure, data security, and system customization.">
+  <meta property="og:image" content="https://d1iq6qzgppjlud.cloudfront.net/images/favicon/apple-touch-icon-144x144.png">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://www.docsie.io/blog/glossary/on-premise/">
+  <meta property="twitter:title" content="On-premise: The Complete Guide">
+  <meta property="twitter:description" content="On-premise refers to software and infrastructure that is installed and operated on computers within an organization's physical location, rather than being hosted in the cloud. For documentation teams, this means hosting documentation platforms, content management systems, and related tools on their own servers and hardware. This approach provides organizations with direct control over their documentation infrastructure, data security, and system customization.">
+  <meta property="twitter:image" content="https://d1iq6qzgppjlud.cloudfront.net/images/favicon/apple-touch-icon-144x144.png">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Existing CSS -->
+  <link rel="stylesheet" href="/blog/templates/assets/css/design-system.css">
+  <link rel="stylesheet" href="/blog/templates/assets/css/typography.min.css">
+<!-- Mermaid.js for diagrams -->
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script>
+    mermaid.initialize({ 
+        startOnLoad: true, 
+        theme: 'default',
+        themeVariables: {
+            primaryColor: '#6366f1',
+            primaryTextColor: '#fff',
+            primaryBorderColor: '#4f46e5',
+            lineColor: '#e5e7eb',
+            secondaryColor: '#f3f4f6',
+            tertiaryColor: '#fbbf24'
+        }
+    });
+</script>
+
+<style>
+    /* Term Page Specific Styles */
+    .term-hero {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 3rem 0;
+        margin-bottom: 3rem;
+    }
+    
+    .breadcrumb {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin-bottom: 1rem;
+        font-size: 0.875rem;
+        color: rgba(255, 255, 255, 0.8);
+    }
+    
+    .breadcrumb a {
+        color: rgba(255, 255, 255, 0.8);
+        text-decoration: none;
+        transition: color 0.2s;
+    }
+    
+    .breadcrumb a:hover {
+        color: white;
+    }
+    
+    .definition-card {
+        background: white;
+        border: 2px solid #e5e7eb;
+        border-radius: 12px;
+        padding: 2rem;
+        margin-bottom: 2rem;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    }
+    
+    .definition-card h2 {
+        color: #4f46e5;
+        margin-bottom: 1rem;
+    }
+    
+    .mermaid-container {
+        background: #f9fafb;
+        border-radius: 12px;
+        padding: 2rem;
+        margin: 2rem 0;
+        overflow-x: auto;
+    }
+    
+    .use-case {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 2rem;
+        border-radius: 16px;
+        margin-bottom: 1.5rem;
+        box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .use-case::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        right: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+        pointer-events: none;
+    }
+    
+    .use-case h3 {
+        color: white;
+        margin-bottom: 1.5rem;
+        font-size: 1.375rem;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+    }
+    
+    .use-case h3::before {
+        content: '💡';
+        font-size: 1.5rem;
+    }
+    
+    .use-case-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1rem;
+        margin-top: 1rem;
+    }
+    
+    .use-case-item {
+        background: rgba(255, 255, 255, 0.15);
+        padding: 1.5rem;
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(10px);
+        transition: all 0.3s ease;
+        position: relative;
+    }
+    
+    .use-case-item:hover {
+        background: rgba(255, 255, 255, 0.18);
+        border-color: rgba(255, 255, 255, 0.3);
+        transform: translateY(-2px);
+    }
+    
+    .use-case-item h4 {
+        color: white;
+        margin-bottom: 0.75rem;
+        font-size: 0.75rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    
+    .use-case-item h4::before {
+        content: '';
+        width: 4px;
+        height: 16px;
+        background: linear-gradient(to bottom, #fbbf24, #f59e0b);
+        border-radius: 2px;
+    }
+    
+    /* Custom icons for each section */
+    .use-case-item h4[data-type="problem"]::after {
+        content: '⚠️';
+        margin-left: auto;
+        font-size: 1rem;
+    }
+    
+    .use-case-item h4[data-type="solution"]::after {
+        content: '✨';
+        margin-left: auto;
+        font-size: 1rem;
+    }
+    
+    .use-case-item h4[data-type="implementation"]::after {
+        content: '🔧';
+        margin-left: auto;
+        font-size: 1rem;
+    }
+    
+    .use-case-item h4[data-type="outcome"]::after {
+        content: '🎯';
+        margin-left: auto;
+        font-size: 1rem;
+    }
+    
+    .use-case-item p {
+        line-height: 1.6;
+        font-size: 0.95rem;
+    }
+    
+    .best-practice {
+        background: white;
+        border: 2px solid #10b981;
+        border-radius: 12px;
+        padding: 1.5rem;
+        margin-bottom: 1rem;
+        transition: transform 0.2s, box-shadow 0.2s;
+    }
+    
+    .best-practice:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    
+    .best-practice h3 {
+        color: #10b981;
+        margin-bottom: 0.5rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    
+    .do-dont-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+        margin-top: 1rem;
+    }
+    
+    .do-box, .dont-box {
+        padding: 0.75rem;
+        border-radius: 6px;
+        font-size: 0.875rem;
+    }
+    
+    .do-box {
+        background: #d1fae5;
+        border: 1px solid #10b981;
+    }
+    
+    .dont-box {
+        background: #fee2e2;
+        border: 1px solid #ef4444;
+    }
+    
+    .docsie-section {
+        background: linear-gradient(to right, #f3e8ff, #e0e7ff);
+        padding: 3rem;
+        border-radius: 12px;
+        margin: 3rem 0;
+    }
+    
+    .related-articles {
+        margin-top: 3rem;
+    }
+    
+    .article-link {
+        display: block;
+        padding: 1rem;
+        border: 1px solid #e5e7eb;
+        border-radius: 8px;
+        text-decoration: none;
+        color: inherit;
+        transition: all 0.2s;
+        margin-bottom: 0.75rem;
+    }
+    
+    .article-link:hover {
+        border-color: #6366f1;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        transform: translateX(4px);
+    }
+    
+    /* Mobile responsiveness */
+    @media (max-width: 768px) {
+        .use-case-grid,
+        .do-dont-grid {
+            grid-template-columns: 1fr;
+        }
+        
+        .term-hero {
+            padding: 2rem 0;
+        }
+    }
+</style>
+
+<!-- Schema.org structured data -->
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": ["Article", "DefinedTerm"],
+    "name": "On-premise",
+    "headline": "On-premise: The Complete Guide for Documentation Teams",
+    "description": "On-premise refers to software and infrastructure that is installed and operated on computers within an organization's physical location, rather than being hosted in the cloud. For documentation teams, this means hosting documentation platforms, content management systems, and related tools on their own servers and hardware. This approach provides organizations with direct control over their documentation infrastructure, data security, and system customization.",
+    "termCode": "on-premise",
+    "inDefinedTermSet": {
+        "@type": "DefinedTermSet",
+        "name": "Docsie Documentation Glossary",
+        "url": "https://www.docsie.io/blog/glossary/"
+    },
+    "author": {
+        "@type": "Organization",
+        "name": "Docsie.io Blog",
+        "url": "https://www.docsie.io"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Docsie.io Blog",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://www.docsie.io/assets/docsie_logo_square_svg.svg"
+        }
+    },
+    "datePublished": "2024-01-01",
+    "dateModified": "2024-01-01",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://www.docsie.io/blog/glossary/on-premise/"
+    },
+    "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Blog",
+                "item": "https://www.docsie.io/blog/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Glossary",
+                "item": "https://www.docsie.io/blog/glossary/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "On-premise",
+                "item": "https://www.docsie.io/blog/glossary/on-premise/"
+            }
+        ]
+    },
+    "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [".definition-card", ".use-case:first-child"]
+    }
+}
+</script>
+</head>
+
+<body>
+  <!-- BlogVi Header V2 - Using Production Docsie Design System -->
+<nav class="header sticky top-0 z-50 bg-white shadow-sm">
+  <div class="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center py-4">
+      <!-- Logo -->
+      <div class="flex items-center">
+        <a href="https://www.docsie.io" class="flex items-center">
+          <img src="https://www.docsie.io/assets/docsie_logo_square_svg.svg" alt="Docsie Logo" class="h-8 w-auto mr-2" style="filter: brightness(0) saturate(100%) invert(42%) sepia(93%) saturate(1018%) hue-rotate(96deg) brightness(101%) contrast(91%);">
+          <span class="text-2xl font-bold text-gray-900">Docsie</span>
+        </a>
+        <span class="ml-2 text-gray-500">|</span>
+        <a href="/blog/" class="ml-2 text-xl font-semibold text-gray-700 hover:text-docsie-primary transition-colors">
+          Blog
+        </a>
+      </div>
+
+      <!-- Desktop Navigation -->
+      <div class="hidden md:flex items-center space-x-8">
+        <!-- Main Nav Links from settings -->
+        
+        <a href="https://www.docsie.io" class="text-gray-700 hover:text-docsie-primary font-medium transition-colors">
+          Docsie
+        </a>
+        
+        <a href="https://www.docsie.io/pricing/" class="text-gray-700 hover:text-docsie-primary font-medium transition-colors">
+          Docsie Pricing
+        </a>
+        
+        <a href="https://www.docsie.io/try_docsie/" class="bg-docsie-primary hover:bg-docsie-primary-dark text-white px-4 py-2 rounded-lg font-medium transition-colors">
+          Try Docsie
+        </a>
+        
+      </div>
+
+      <!-- Mobile menu button -->
+      <button class="md:hidden p-2 text-gray-600 hover:text-docsie-primary transition-colors" onclick="toggleMobileMenu()">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Navigation -->
+    <div id="mobile-menu" class="hidden md:hidden pb-4">
+      <div class="flex flex-col space-y-4">
+        
+        <a href="https://www.docsie.io" class="text-gray-700 hover:text-docsie-primary font-medium transition-colors">
+          Docsie
+        </a>
+        
+        <a href="https://www.docsie.io/pricing/" class="text-gray-700 hover:text-docsie-primary font-medium transition-colors">
+          Docsie Pricing
+        </a>
+        
+        <a href="https://www.docsie.io/try_docsie/" class="block text-center bg-docsie-primary hover:bg-docsie-primary-dark text-white px-4 py-2 rounded-lg font-medium transition-colors">
+          Try Docsie
+        </a>
+        
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Blog-specific navigation bar -->
+<div class="bg-gray-50 border-b border-gray-200">
+  <div class="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between py-3">
+      <!-- Categories -->
+      <nav class="flex items-center gap-2 overflow-x-auto max-w-full scrollbar-hide">
+        <a href="/blog" class="category-pill flex-shrink-0 category-pill-active">
+          ALL
+        </a>
+        
+      </nav>
+
+      <!-- Right side: Search and Subscribe -->
+      <div class="flex items-center gap-2 ml-2">
+        <!-- Search -->
+        <div class="relative">
+          <input type="search" 
+                 placeholder="Search..." 
+                 class="w-32 sm:w-48 md:w-64 px-3 py-2 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-docsie-primary focus:border-transparent"
+                 id="search">
+          <div class="absolute right-0 mt-2 w-64 sm:w-80 md:w-96 bg-white rounded-lg shadow-xl border border-gray-200 hidden z-50" id="search-bar">
+            <ul class="py-2 max-h-96 overflow-y-auto" id="search-results">
+              <!-- Search results will be populated here -->
+            </ul>
+          </div>
+        </div>
+        
+        <!-- Subscribe Button (if enabled) -->
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function toggleMobileMenu() {
+  const menu = document.getElementById('mobile-menu');
+  menu.classList.toggle('hidden');
+}
+
+// Initialize search settings for BlogVi
+window['searchConfig'] = {};
+</script>
+<div class="term-hero">
+    <div class="container mx-auto px-4">
+        <!-- Breadcrumbs -->
+        <nav class="breadcrumb">
+            
+                
+                    <a href="/blog/">Blog</a>
+                    <span>›</span>
+                
+            
+                
+                    <a href="/blog/glossary/">Glossary</a>
+                    <span>›</span>
+                
+            
+                
+                    <span>On-premise</span>
+                
+            
+        </nav>
+        
+        <!-- Hero Title -->
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">On-premise</h1>
+        <p class="text-xl opacity-90">Master this essential documentation concept</p>
+    </div>
+</div>
+
+<div class="container mx-auto px-4 max-w-4xl">
+    <!-- Quick Definition Card -->
+    <div class="definition-card">
+        <h2 class="text-2xl font-semibold">Quick Definition</h2>
+        <p class="text-lg leading-relaxed">On-premise refers to software and infrastructure that is installed and operated on computers within an organization's physical location, rather than being hosted in the cloud. For documentation teams, this means hosting documentation platforms, content management systems, and related tools on their own servers and hardware. This approach provides organizations with direct control over their documentation infrastructure, data security, and system customization.</p>
+    </div>
+    
+    <!-- Visual Diagram -->
+    <section class="mb-8">
+        <h2 class="text-3xl font-bold mb-4">How On-premise Works</h2>
+        <div class="mermaid-container">
+            <div class="mermaid">
+                graph TD
+    A[Documentation Team] --> B[On-Premise Server]
+    B --> C[Documentation Platform]
+    B --> D[Content Repository]
+    B --> E[User Management]
+    
+    C --> F[Wiki System]
+    C --> G[API Documentation]
+    C --> H[Knowledge Base]
+    
+    D --> I[Version Control]
+    D --> J[Asset Storage]
+    D --> K[Backup Systems]
+    
+    E --> L[Access Controls]
+    E --> M[Authentication]
+    
+    B --> N[Local Network]
+    N --> O[Internal Users]
+    N --> P[Development Teams]
+    
+    B --> Q[Security Layer]
+    Q --> R[Firewall]
+    Q --> S[Encryption]
+            </div>
+        </div>
+    </section>
+    
+    <!-- Detailed Explanation -->
+    <section class="mb-8">
+        <h2 class="text-3xl font-bold mb-4">Understanding On-premise</h2>
+        <div class="prose max-w-none">
+            <p>On-premise deployment represents a traditional approach to software infrastructure where organizations install and maintain documentation systems within their own physical facilities. This model contrasts with cloud-based solutions by keeping all data, applications, and processing power under direct organizational control.</p><h3>Key Features</h3><ul><li>Complete data ownership and control over documentation repositories</li><li>Direct management of server hardware, software updates, and security protocols</li><li>Customizable infrastructure tailored to specific documentation workflows</li><li>Local network access enabling faster internal content retrieval</li><li>Integration capabilities with existing on-premise enterprise systems</li></ul><h3>Benefits for Documentation Teams</h3><ul><li>Enhanced security for sensitive technical documentation and proprietary information</li><li>Compliance with strict industry regulations requiring data to remain within organizational boundaries</li><li>Reduced long-term costs for large-scale documentation operations</li><li>Improved performance for teams accessing documentation over local networks</li><li>Greater customization flexibility for specialized documentation workflows</li></ul><h3>Common Misconceptions</h3><ul><li>On-premise solutions are always more secure than cloud alternatives</li><li>Initial setup costs are the only financial consideration</li><li>On-premise systems cannot integrate with cloud-based tools</li><li>Remote collaboration is impossible with on-premise documentation platforms</li></ul>
+        </div>
+    </section>
+    
+    <!-- Documentation Use Cases -->
+    <section class="mb-8">
+        <h2 class="text-3xl font-bold mb-6">Real-World Documentation Use Cases</h2>
+        
+        <div class="use-case">
+            <h3>Regulated Industry Documentation Compliance</h3>
+            <div class="use-case-grid">
+                <div class="use-case-item">
+                    <h4 data-type="problem">Problem</h4>
+                    <p>Healthcare and financial organizations need to maintain strict control over sensitive documentation while meeting regulatory compliance requirements that prohibit cloud storage of certain data types.</p>
+                </div>
+                <div class="use-case-item">
+                    <h4 data-type="solution">Solution</h4>
+                    <p>Deploy an on-premise documentation platform that keeps all content within organizational boundaries while maintaining audit trails and access controls required for compliance.</p>
+                </div>
+            </div>
+            <div class="use-case-item mt-4">
+                <h4 data-type="implementation">Implementation</h4>
+                <p>1. Assess regulatory requirements and data classification needs
+2. Select compliant on-premise documentation software
+3. Configure secure server infrastructure with proper encryption
+4. Implement role-based access controls and audit logging
+5. Establish backup and disaster recovery procedures
+6. Train teams on compliance-focused documentation workflows</p>
+            </div>
+            <div class="use-case-item mt-2">
+                <h4 data-type="outcome">Expected Outcome</h4>
+                <p>Full regulatory compliance with complete data sovereignty, reduced legal risk, and maintained productivity for documentation teams working with sensitive information.</p>
+            </div>
+        </div>
+        
+        <div class="use-case">
+            <h3>Enterprise API Documentation for Internal Development</h3>
+            <div class="use-case-grid">
+                <div class="use-case-item">
+                    <h4 data-type="problem">Problem</h4>
+                    <p>Large enterprises with complex internal APIs need comprehensive documentation that integrates with existing development infrastructure while maintaining security for proprietary systems and code.</p>
+                </div>
+                <div class="use-case-item">
+                    <h4 data-type="solution">Solution</h4>
+                    <p>Implement an on-premise API documentation platform that connects directly to internal repositories, CI/CD pipelines, and development tools without exposing sensitive information externally.</p>
+                </div>
+            </div>
+            <div class="use-case-item mt-4">
+                <h4 data-type="implementation">Implementation</h4>
+                <p>1. Install documentation platform on internal servers
+2. Configure integration with existing Git repositories and development tools
+3. Set up automated documentation generation from code comments
+4. Create internal developer portals with sandbox environments
+5. Implement search and discovery features for internal APIs
+6. Establish documentation maintenance workflows</p>
+            </div>
+            <div class="use-case-item mt-2">
+                <h4 data-type="outcome">Expected Outcome</h4>
+                <p>Streamlined internal API adoption, improved developer productivity, enhanced code reuse, and maintained security for proprietary development processes.</p>
+            </div>
+        </div>
+        
+        <div class="use-case">
+            <h3>Manufacturing Process Documentation with Legacy System Integration</h3>
+            <div class="use-case-grid">
+                <div class="use-case-item">
+                    <h4 data-type="problem">Problem</h4>
+                    <p>Manufacturing companies need to document complex processes and procedures while integrating with legacy systems that cannot connect to cloud services due to security policies or technical limitations.</p>
+                </div>
+                <div class="use-case-item">
+                    <h4 data-type="solution">Solution</h4>
+                    <p>Deploy on-premise documentation systems that can interface with existing manufacturing execution systems, quality management databases, and legacy documentation repositories.</p>
+                </div>
+            </div>
+            <div class="use-case-item mt-4">
+                <h4 data-type="implementation">Implementation</h4>
+                <p>1. Evaluate existing legacy systems and integration requirements
+2. Install on-premise documentation platform with API capabilities
+3. Develop custom connectors for legacy system data import
+4. Migrate existing process documentation and SOPs
+5. Create automated workflows for updating documentation from system data
+6. Train manufacturing teams on new documentation processes</p>
+            </div>
+            <div class="use-case-item mt-2">
+                <h4 data-type="outcome">Expected Outcome</h4>
+                <p>Unified documentation ecosystem that leverages existing investments, improved process consistency, reduced documentation maintenance overhead, and maintained operational continuity.</p>
+            </div>
+        </div>
+        
+        <div class="use-case">
+            <h3>Multi-Site Corporate Knowledge Management</h3>
+            <div class="use-case-grid">
+                <div class="use-case-item">
+                    <h4 data-type="problem">Problem</h4>
+                    <p>Global corporations with multiple physical locations need centralized knowledge management that provides consistent access across sites while maintaining control over intellectual property and reducing dependency on internet connectivity.</p>
+                </div>
+                <div class="use-case-item">
+                    <h4 data-type="solution">Solution</h4>
+                    <p>Establish on-premise knowledge management infrastructure with site-to-site replication, ensuring consistent access to corporate knowledge while maintaining data control and reducing bandwidth dependencies.</p>
+                </div>
+            </div>
+            <div class="use-case-item mt-4">
+                <h4 data-type="implementation">Implementation</h4>
+                <p>1. Design multi-site architecture with primary and secondary servers
+2. Install on-premise knowledge management platforms at key locations
+3. Configure site-to-site replication and synchronization
+4. Implement global search and content discovery features
+5. Establish governance policies for content creation and maintenance
+6. Create disaster recovery procedures across multiple sites</p>
+            </div>
+            <div class="use-case-item mt-2">
+                <h4 data-type="outcome">Expected Outcome</h4>
+                <p>Reliable knowledge access across global locations, reduced internet dependency, improved collaboration between sites, and maintained intellectual property security.</p>
+            </div>
+        </div>
+        
+    </section>
+    
+    <!-- Best Practices -->
+    <section class="mb-8">
+        <h2 class="text-3xl font-bold mb-6">Best Practices</h2>
+        
+        <div class="best-practice">
+            <h3><span>✓</span> Implement Comprehensive Backup and Disaster Recovery</h3>
+            <p>On-premise documentation systems require robust backup strategies to prevent data loss and ensure business continuity. This includes both automated backups and tested recovery procedures.</p>
+            <div class="do-dont-grid">
+                <div class="do-box">
+                    <strong>✓ Do:</strong> Create automated daily backups with multiple retention periods, test recovery procedures quarterly, maintain off-site backup copies, and document recovery processes clearly for IT teams.
+                </div>
+                <div class="dont-box">
+                    <strong>✗ Don't:</strong> Rely solely on local backups, skip regular testing of recovery procedures, or assume RAID configurations provide adequate protection against all failure scenarios.
+                </div>
+            </div>
+        </div>
+        
+        <div class="best-practice">
+            <h3><span>✓</span> Plan for Scalability and Performance Monitoring</h3>
+            <p>Documentation platforms must grow with organizational needs while maintaining optimal performance. This requires proactive capacity planning and continuous monitoring.</p>
+            <div class="do-dont-grid">
+                <div class="do-box">
+                    <strong>✓ Do:</strong> Monitor server performance metrics regularly, plan hardware upgrades based on usage trends, implement load balancing for high-traffic scenarios, and establish performance benchmarks.
+                </div>
+                <div class="dont-box">
+                    <strong>✗ Don't:</strong> Wait for performance issues to emerge before planning upgrades, ignore capacity planning during initial deployment, or overlook network bandwidth requirements for document-heavy workflows.
+                </div>
+            </div>
+        </div>
+        
+        <div class="best-practice">
+            <h3><span>✓</span> Establish Strong Security and Access Controls</h3>
+            <p>On-premise systems require comprehensive security measures including network security, user authentication, and data encryption to protect documentation assets.</p>
+            <div class="do-dont-grid">
+                <div class="do-box">
+                    <strong>✓ Do:</strong> Implement multi-factor authentication, use role-based access controls, encrypt data both at rest and in transit, regularly update security patches, and conduct security audits.
+                </div>
+                <div class="dont-box">
+                    <strong>✗ Don't:</strong> Rely on network security alone, use default passwords or weak authentication methods, skip regular security updates, or grant excessive permissions to users.
+                </div>
+            </div>
+        </div>
+        
+        <div class="best-practice">
+            <h3><span>✓</span> Maintain Proper Documentation of System Configuration</h3>
+            <p>On-premise systems require detailed documentation of configurations, customizations, and procedures to ensure maintainability and knowledge transfer.</p>
+            <div class="do-dont-grid">
+                <div class="do-box">
+                    <strong>✓ Do:</strong> Document all system configurations, maintain change logs, create runbooks for common administrative tasks, and ensure multiple team members understand critical procedures.
+                </div>
+                <div class="dont-box">
+                    <strong>✗ Don't:</strong> Rely on single points of knowledge, skip documentation of custom configurations, or fail to update documentation when making system changes.
+                </div>
+            </div>
+        </div>
+        
+        <div class="best-practice">
+            <h3><span>✓</span> Plan for Integration and Interoperability</h3>
+            <p>On-premise documentation platforms should integrate seamlessly with existing enterprise systems and workflows to maximize value and user adoption.</p>
+            <div class="do-dont-grid">
+                <div class="do-box">
+                    <strong>✓ Do:</strong> Identify integration requirements early, use standard APIs and protocols, test integrations thoroughly, and plan for future connectivity needs including potential hybrid deployments.
+                </div>
+                <div class="dont-box">
+                    <strong>✗ Don't:</strong> Deploy systems in isolation, ignore existing workflow requirements, use proprietary integration methods that limit future flexibility, or underestimate integration complexity.
+                </div>
+            </div>
+        </div>
+        
+    </section>
+    
+    <!-- How Docsie Helps -->
+    <section class="docsie-section">
+        <h2 class="text-3xl font-bold mb-4">How Docsie Helps with On-premise</h2>
+        <div class="prose max-w-none">
+            <p>Modern documentation platforms like Docsie provide flexible deployment options that support on-premise requirements while delivering cloud-native capabilities and user experiences.</p><ul><li><strong>Hybrid deployment flexibility:</strong> Combine on-premise security with cloud convenience through hybrid architectures that keep sensitive data local while leveraging cloud features for collaboration</li><li><strong>Enterprise-grade security:</strong> Advanced security features including SSO integration, granular access controls, and audit logging that meet on-premise security requirements</li><li><strong>Seamless migration paths:</strong> Tools and services that facilitate migration from legacy on-premise systems to modern documentation platforms without data loss or workflow disruption</li><li><strong>Integration capabilities:</strong> Robust APIs and connectors that integrate with existing on-premise enterprise systems, development tools, and business applications</li><li><strong>Scalable architecture:</strong> Cloud-native design principles that can be deployed on-premise while maintaining scalability and performance characteristics</li><li><strong>Reduced maintenance overhead:</strong> Simplified administration and automated updates that reduce the traditional maintenance burden of on-premise deployments</li></ul>
+        </div>
+        
+        <!-- Phase 2: This will be populated by Docsie RAG -->
+        <div id="docsie-features" class="mt-6">
+            <!-- Placeholder for RAG integration -->
+        </div>
+        
+        <div class="mt-6">
+            <a href="https://www.docsie.io/demo/" class="inline-flex items-center px-6 py-3 bg-white text-purple-600 font-semibold rounded-lg hover:bg-purple-50 transition">
+                See How Docsie Can Help
+                <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+            </a>
+        </div>
+    </section>
+    
+    <!-- Related Articles -->
+    
+    
+    <!-- Related Terms -->
+    
+    <section class="related-terms mt-8">
+        <h2 class="text-2xl font-bold mb-4">Related Documentation Terms</h2>
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3">
+            
+            <a href="/blog/glossary/version-control/" 
+               class="bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded-lg text-center transition-colors duration-200 group">
+                <span class="block font-medium text-gray-900 group-hover:text-blue-600">Version Control</span>
+                <span class="text-xs text-gray-500">1 shared articles</span>
+            </a>
+            
+            <a href="/blog/glossary/knowledge-base/" 
+               class="bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded-lg text-center transition-colors duration-200 group">
+                <span class="block font-medium text-gray-900 group-hover:text-blue-600">Knowledge Base</span>
+                <span class="text-xs text-gray-500">1 shared articles</span>
+            </a>
+            
+            <a href="/blog/glossary/api/" 
+               class="bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded-lg text-center transition-colors duration-200 group">
+                <span class="block font-medium text-gray-900 group-hover:text-blue-600">API</span>
+                <span class="text-xs text-gray-500">1 shared articles</span>
+            </a>
+            
+            <a href="/blog/glossary/markdown/" 
+               class="bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded-lg text-center transition-colors duration-200 group">
+                <span class="block font-medium text-gray-900 group-hover:text-blue-600">Markdown</span>
+                <span class="text-xs text-gray-500">1 shared articles</span>
+            </a>
+            
+            <a href="/blog/glossary/product-tours/" 
+               class="bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded-lg text-center transition-colors duration-200 group">
+                <span class="block font-medium text-gray-900 group-hover:text-blue-600">Product Tours</span>
+                <span class="text-xs text-gray-500">1 shared articles</span>
+            </a>
+            
+        </div>
+    </section>
+    
+    
+    <!-- CTA Section -->
+    <section class="bg-gradient-to-r from-purple-600 to-indigo-600 text-white p-8 rounded-lg mt-8 text-center">
+        <h2 class="text-2xl font-bold mb-4">Build Better Documentation with Docsie</h2>
+        <p class="mb-6">Join thousands of teams creating outstanding documentation</p>
+        <a href="https://app.docsie.io/onboarding/" class="inline-block bg-white text-purple-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition">
+            Start Free Trial
+        </a>
+    </section>
+</div>
+
+  <!-- BlogVi Footer V2 - Simplified version using production styles -->
+<footer class="bg-gray-900 text-white mt-16">
+    <div class="container mx-auto px-4 py-12">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <!-- Company Info -->
+            <div>
+                <h3 class="text-lg font-semibold mb-4">Docsie</h3>
+                <p class="text-gray-400 text-sm">
+                    The modern documentation platform that helps teams create, manage, and share knowledge.
+                </p>
+            </div>
+            
+            <!-- Quick Links -->
+            <div>
+                <h4 class="text-lg font-semibold mb-4">Product</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="https://www.docsie.io/features/" class="text-gray-400 hover:text-white transition-colors">Features</a></li>
+                    <li><a href="https://www.docsie.io/pricing/" class="text-gray-400 hover:text-white transition-colors">Pricing</a></li>
+                    <li><a href="https://www.docsie.io/documentation/" class="text-gray-400 hover:text-white transition-colors">Documentation</a></li>
+                    <li><a href="/blog/" class="text-gray-400 hover:text-white transition-colors">Blog</a></li>
+                    <li><a href="/blog/glossary/" class="text-gray-400 hover:text-white transition-colors">Glossary</a></li>
+                </ul>
+            </div>
+            
+            <!-- Resources -->
+            <div>
+                <h4 class="text-lg font-semibold mb-4">Resources</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="https://help.docsie.io" class="text-gray-400 hover:text-white transition-colors">Help Center</a></li>
+                    <li><a href="https://www.docsie.io/support/" class="text-gray-400 hover:text-white transition-colors">Support</a></li>
+                    <li><a href="https://www.docsie.io/about/" class="text-gray-400 hover:text-white transition-colors">About Us</a></li>
+                    <li><a href="https://www.docsie.io/careers/" class="text-gray-400 hover:text-white transition-colors">Careers</a></li>
+                </ul>
+            </div>
+            
+            <!-- Social Links -->
+            <div>
+                <h4 class="text-lg font-semibold mb-4">Connect</h4>
+                <div class="flex space-x-4">
+                    <a href="https://twitter.com/docsie_io" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/company/docsie" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://github.com/LikaloLLC" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="/blog/rss.xml" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fas fa-rss"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Bottom Bar -->
+        <div class="mt-8 pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center text-sm text-gray-400">
+            <p>&copy;  Docsie. All rights reserved.</p>
+            <div class="flex space-x-6 mt-4 md:mt-0">
+                <a href="https://www.docsie.io/privacy/" class="hover:text-white transition-colors">Privacy Policy</a>
+                <a href="https://www.docsie.io/terms/" class="hover:text-white transition-colors">Terms of Service</a>
+                <a href="https://www.docsie.io/cookies/" class="hover:text-white transition-colors">Cookie Policy</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+// Set current year for copyright
+document.addEventListener('DOMContentLoaded', function() {
+    const yearElements = document.querySelectorAll('[data-year]');
+    const currentYear = new Date().getFullYear();
+    yearElements.forEach(el => el.textContent = currentYear);
+});
+</script>
+</body>
+</html>

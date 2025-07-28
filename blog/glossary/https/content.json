@@ -1,0 +1,72 @@
+{
+  "term": "HTTPS",
+  "content": {
+    "quick_definition": "HTTPS (HyperText Transfer Protocol Secure) is an encrypted version of HTTP that secures data transmission between web browsers and servers using SSL/TLS encryption. It ensures that documentation websites and user interactions remain private and protected from eavesdropping or tampering. For documentation teams, HTTPS is essential for maintaining user trust and meeting modern web security standards.",
+    "detailed_explanation": "<p>HTTPS (HyperText Transfer Protocol Secure) is the secure version of HTTP that encrypts all communication between web browsers and servers using SSL/TLS protocols. For documentation professionals, HTTPS is crucial for protecting user data, maintaining credibility, and ensuring compliance with modern web standards.</p><h3>Key Features</h3><ul><li>End-to-end encryption of all data transmission</li><li>Server authentication through SSL/TLS certificates</li><li>Data integrity verification to prevent tampering</li><li>Browser security indicators (padlock icon, green address bar)</li><li>Protection against man-in-the-middle attacks</li></ul><h3>Benefits for Documentation Teams</h3><ul><li>Enhanced user trust and professional credibility</li><li>Improved SEO rankings as search engines favor HTTPS sites</li><li>Protection of user search queries and form submissions</li><li>Compliance with enterprise security requirements</li><li>Prevention of content injection attacks on documentation pages</li></ul><h3>Common Misconceptions</h3><ul><li>HTTPS is only needed for sites handling sensitive data (all sites benefit)</li><li>SSL certificates are expensive and difficult to implement (many free options exist)</li><li>HTTPS significantly slows down website performance (minimal impact with modern protocols)</li><li>Only login pages need HTTPS protection (entire sites should use HTTPS)</li></ul>",
+    "mermaid_diagram": "sequenceDiagram\n    participant U as User\n    participant B as Browser\n    participant S as Documentation Server\n    participant CA as Certificate Authority\n    \n    U->>B: Visits docs.example.com\n    B->>S: HTTPS Request\n    S->>B: SSL Certificate\n    B->>CA: Verify Certificate\n    CA->>B: Certificate Valid\n    B->>S: Encrypted Connection Established\n    S->>B: Encrypted Documentation Content\n    B->>U: Secure Documentation Display\n    \n    Note over B,S: All data encrypted with TLS\n    Note over U,B: Padlock icon shows secure connection",
+    "use_cases": [
+      {
+        "title": "Secure API Documentation Portal",
+        "problem": "API documentation contains sensitive endpoint information and authentication examples that could be intercepted by malicious actors",
+        "solution": "Implement HTTPS across the entire API documentation site to encrypt all transmitted data",
+        "implementation": "1. Obtain SSL certificate from certificate authority\n2. Configure web server to redirect HTTP to HTTPS\n3. Update all internal links to use HTTPS\n4. Test API examples work correctly over HTTPS\n5. Monitor certificate expiration dates",
+        "outcome": "Developers can safely access API documentation without risk of credential interception, increasing adoption and trust"
+      },
+      {
+        "title": "Enterprise Documentation with User Authentication",
+        "problem": "Internal documentation requires user login but credentials and session data are vulnerable during transmission",
+        "solution": "Deploy HTTPS to protect login credentials and maintain secure user sessions throughout the documentation platform",
+        "implementation": "1. Install enterprise-grade SSL certificate\n2. Configure secure session management\n3. Enable HTTPS-only cookies\n4. Implement HTTP Strict Transport Security (HSTS)\n5. Set up certificate monitoring and renewal",
+        "outcome": "Employees can securely access confidential documentation with protected login sessions and encrypted data transfer"
+      },
+      {
+        "title": "Public Documentation with Search Analytics",
+        "problem": "User search queries and behavior analytics data transmitted over HTTP can be intercepted, compromising user privacy",
+        "solution": "Enable HTTPS to encrypt search queries and protect user privacy while maintaining analytics functionality",
+        "implementation": "1. Migrate documentation site to HTTPS\n2. Update analytics tracking codes for HTTPS\n3. Configure search functionality for encrypted transmission\n4. Update CDN and third-party integrations\n5. Verify all embedded content uses HTTPS",
+        "outcome": "Users can search documentation privately while teams still receive valuable usage analytics through secure channels"
+      },
+      {
+        "title": "Multi-Domain Documentation Network",
+        "problem": "Documentation spans multiple subdomains and domains, creating inconsistent security posture and user experience",
+        "solution": "Implement wildcard SSL certificates and consistent HTTPS policies across all documentation properties",
+        "implementation": "1. Audit all documentation domains and subdomains\n2. Deploy wildcard SSL certificates\n3. Configure automatic HTTPS redirects\n4. Implement consistent security headers\n5. Set up centralized certificate management",
+        "outcome": "Unified secure experience across all documentation properties with simplified certificate management and consistent user trust indicators"
+      }
+    ],
+    "best_practices": [
+      {
+        "title": "Implement HTTP Strict Transport Security (HSTS)",
+        "description": "HSTS headers force browsers to always use HTTPS connections and prevent protocol downgrade attacks",
+        "do": "Add HSTS headers with appropriate max-age values and include subdomains in the policy",
+        "dont": "Set HSTS max-age too short (less than 6 months) or forget to test thoroughly before enabling"
+      },
+      {
+        "title": "Use Automated Certificate Renewal",
+        "description": "SSL certificates expire and manual renewal often leads to service disruptions for documentation sites",
+        "do": "Implement automated certificate renewal using tools like Let's Encrypt with proper monitoring alerts",
+        "dont": "Rely on manual certificate renewal processes or ignore certificate expiration warnings"
+      },
+      {
+        "title": "Redirect All HTTP Traffic to HTTPS",
+        "description": "Ensure users always access documentation securely by automatically redirecting insecure requests",
+        "do": "Configure 301 redirects from HTTP to HTTPS at the server level and update all internal links",
+        "dont": "Leave HTTP versions accessible or use client-side redirects that can be bypassed"
+      },
+      {
+        "title": "Verify Third-Party Content Security",
+        "description": "Mixed content warnings occur when HTTPS pages load HTTP resources, breaking the security model",
+        "do": "Audit all embedded content, CDNs, and third-party integrations to ensure they support HTTPS",
+        "dont": "Ignore mixed content warnings or load insecure resources that compromise the entire page security"
+      },
+      {
+        "title": "Monitor Certificate Health and Performance",
+        "description": "Regular monitoring prevents certificate-related outages and ensures optimal HTTPS performance",
+        "do": "Set up automated monitoring for certificate expiration, chain validity, and SSL performance metrics",
+        "dont": "Assume certificates will renew automatically without verification or ignore SSL performance impacts"
+      }
+    ],
+    "docsie_connection": "<p>Modern documentation platforms streamline HTTPS implementation and management, removing technical barriers that traditionally prevented teams from securing their content effectively.</p><ul><li><strong>Automatic SSL provisioning:</strong> Platforms handle certificate generation, installation, and renewal without manual intervention</li><li><strong>Global CDN integration:</strong> Built-in content delivery networks provide HTTPS endpoints worldwide for faster, secure content delivery</li><li><strong>One-click security features:</strong> Enable HSTS, security headers, and redirect policies through simple dashboard controls</li><li><strong>Compliance reporting:</strong> Automated security audits and compliance reports demonstrate HTTPS implementation to stakeholders</li><li><strong>Seamless custom domain support:</strong> Easy configuration of HTTPS for branded documentation domains without complex server management</li><li><strong>Performance optimization:</strong> HTTP/2 support and SSL optimization ensure security doesn't compromise documentation loading speeds</li></ul>"
+  },
+  "generated_at": "2025-07-28T19:54:08.617778+00:00"
+}

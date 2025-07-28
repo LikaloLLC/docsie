@@ -101,13 +101,22 @@
                                 <div id="{{ slug }}" class="bg-gray-50 rounded-lg p-6 hover:bg-gray-100 transition scroll-mt-24" 
                                      itemscope itemtype="https://schema.org/DefinedTerm">
                                     <dt class="font-semibold text-lg text-gray-900 mb-2">
-                                        <span itemprop="name">{{ term.term }}</span>
-                                        {% if term.expanded %}
-                                        <span class="text-gray-500 font-normal text-base ml-2">({{ term.expanded }})</span>
-                                        {% endif %}
+                                        <a href="{{ settings.blog_root_path }}glossary/{{ slug }}/" 
+                                           class="hover:text-blue-600 transition-colors duration-200 flex items-baseline"
+                                           itemprop="url">
+                                            <span itemprop="name">{{ term.term }}</span>
+                                            {% if term.expanded %}
+                                            <span class="text-gray-500 font-normal text-base ml-2">({{ term.expanded }})</span>
+                                            {% endif %}
+                                        </a>
                                     </dt>
                                     <dd class="text-gray-700 leading-relaxed" itemprop="description">
                                         {{ term.definition }}
+                                        <a href="{{ settings.blog_root_path }}glossary/{{ slug }}/" 
+                                           class="inline-flex items-center text-blue-600 hover:text-blue-700 text-sm mt-2 group">
+                                            <span class="group-hover:underline">View full explanation</span>
+                                            <i data-lucide="arrow-right" class="ml-1 h-3 w-3"></i>
+                                        </a>
                                     </dd>
                                     
                                     {% if term.articles %}

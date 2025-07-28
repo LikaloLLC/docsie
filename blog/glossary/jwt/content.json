@@ -1,0 +1,72 @@
+{
+  "term": "JWT",
+  "content": {
+    "quick_definition": "JWT (JSON Web Token) is a compact, URL-safe token format that securely transmits information between parties using digital signatures. It consists of three parts (header, payload, signature) and is commonly used for authentication and authorization in web applications. JWTs are stateless, self-contained tokens that can verify user identity without requiring server-side session storage.",
+    "detailed_explanation": "<p>JSON Web Token (JWT) is a standardized method for securely transmitting information between parties as a compact, digitally signed token. For documentation teams, JWTs provide a robust authentication mechanism that enables secure access to documentation platforms, APIs, and content management systems.</p><h3>Key Features</h3><ul><li>Three-part structure: header (algorithm info), payload (claims/data), and signature (verification)</li><li>Stateless authentication - no server-side session storage required</li><li>Self-contained tokens that include all necessary user information</li><li>URL-safe encoding for easy transmission across web protocols</li><li>Configurable expiration times for enhanced security</li><li>Support for custom claims and user-defined data</li></ul><h3>Benefits for Documentation Teams</h3><ul><li>Single sign-on (SSO) integration for seamless user experience across documentation tools</li><li>Secure API access for automated documentation workflows and integrations</li><li>Role-based access control to protect sensitive documentation content</li><li>Reduced server load through stateless authentication architecture</li><li>Enhanced security through digital signatures and token expiration</li></ul><h3>Common Misconceptions</h3><ul><li>JWTs are not encrypted by default - they're only encoded and signed</li><li>Tokens should not store sensitive data in the payload as it's readable</li><li>JWTs cannot be revoked once issued until they expire naturally</li><li>Larger tokens can impact performance compared to simple session IDs</li></ul>",
+    "mermaid_diagram": "sequenceDiagram\n    participant U as Documentation User\n    participant A as Auth Server\n    participant D as Documentation Platform\n    participant API as Content API\n    \n    U->>A: Login with credentials\n    A->>A: Validate credentials\n    A->>U: Return JWT token\n    U->>D: Access docs with JWT\n    D->>D: Verify JWT signature\n    D->>U: Serve documentation content\n    U->>API: Request content via API + JWT\n    API->>API: Validate JWT claims\n    API->>U: Return requested content\n    \n    Note over U,API: JWT enables secure access across all documentation services",
+    "use_cases": [
+      {
+        "title": "API Documentation Access Control",
+        "problem": "Documentation teams need to restrict access to internal API documentation while allowing external developers to view public APIs",
+        "solution": "Implement JWT-based authentication with role-based claims to control access levels to different documentation sections",
+        "implementation": "1. Configure authentication server to issue JWTs with role claims (internal, external, admin)\n2. Set up documentation platform to verify JWT signatures\n3. Create access control rules based on JWT claims\n4. Implement token refresh mechanism for long documentation sessions",
+        "outcome": "Secure, scalable access control that automatically manages permissions based on user roles without manual intervention"
+      },
+      {
+        "title": "Cross-Platform Documentation SSO",
+        "problem": "Users need to access multiple documentation tools (wiki, help desk, knowledge base) without repeated login prompts",
+        "solution": "Deploy JWT-based single sign-on system that works across all documentation platforms and tools",
+        "implementation": "1. Establish central authentication service that issues JWTs\n2. Configure all documentation platforms to accept and verify the same JWT format\n3. Implement token sharing mechanism across subdomains\n4. Set up automatic token renewal to maintain seamless experience",
+        "outcome": "Unified authentication experience that reduces friction and improves user adoption of documentation resources"
+      },
+      {
+        "title": "Automated Content Publishing",
+        "problem": "Documentation teams need secure, automated workflows to publish content from various sources without exposing system credentials",
+        "solution": "Use service-specific JWTs for automated content publishing and API integrations",
+        "implementation": "1. Generate service account JWTs with specific publishing permissions\n2. Configure CI/CD pipelines to use JWT authentication for API calls\n3. Set short expiration times and implement automatic token rotation\n4. Monitor and log all automated publishing activities using JWT claims",
+        "outcome": "Secure, auditable automation that maintains content freshness while protecting system security"
+      },
+      {
+        "title": "Customer Portal Documentation",
+        "problem": "SaaS companies need to provide customer-specific documentation while maintaining security and personalization",
+        "solution": "Implement customer-scoped JWTs that include tenant information and access permissions",
+        "implementation": "1. Include customer/tenant ID in JWT claims during authentication\n2. Configure documentation platform to filter content based on JWT tenant claims\n3. Implement customer-specific branding and content rules\n4. Set up analytics tracking using JWT customer information",
+        "outcome": "Personalized, secure documentation experience that scales across multiple customers without complex access management"
+      }
+    ],
+    "best_practices": [
+      {
+        "title": "Implement Short Token Expiration Times",
+        "description": "Set JWT expiration times between 15 minutes to 1 hour for documentation access to balance security and user experience",
+        "do": "Configure automatic token refresh mechanisms and set reasonable expiration times based on typical documentation session lengths",
+        "dont": "Don't set expiration times longer than 24 hours or create tokens that never expire, as this increases security risks"
+      },
+      {
+        "title": "Use Strong Signing Algorithms",
+        "description": "Always use robust signing algorithms like RS256 or ES256 instead of symmetric algorithms for production documentation systems",
+        "do": "Implement asymmetric signing with proper key management and rotation policies for enhanced security",
+        "dont": "Don't use HS256 in distributed systems or store signing keys in application code or version control"
+      },
+      {
+        "title": "Validate All JWT Claims",
+        "description": "Thoroughly validate issuer, audience, expiration, and custom claims on every request to ensure token integrity",
+        "do": "Implement comprehensive claim validation including issuer verification, audience checking, and expiration time enforcement",
+        "dont": "Don't skip claim validation or rely solely on signature verification without checking token contents and metadata"
+      },
+      {
+        "title": "Store Minimal Data in Tokens",
+        "description": "Include only essential user information and permissions in JWT payload to keep tokens lightweight and secure",
+        "do": "Store user ID, roles, and essential permissions while keeping sensitive data in secure backend systems",
+        "dont": "Don't include personal information, passwords, or large datasets in JWT payload as tokens are easily decoded"
+      },
+      {
+        "title": "Implement Proper Error Handling",
+        "description": "Create clear error responses for invalid, expired, or malformed tokens to help users understand authentication issues",
+        "do": "Provide specific error messages for different JWT validation failures and implement graceful fallback mechanisms",
+        "dont": "Don't expose internal system details in error messages or fail silently when JWT validation fails"
+      }
+    ],
+    "docsie_connection": "<p>Modern documentation platforms provide comprehensive JWT integration capabilities that streamline authentication and enhance security for documentation teams. These platforms eliminate the complexity of implementing JWT authentication from scratch while providing enterprise-grade security features.</p><ul><li>Built-in JWT validation and signature verification with support for multiple signing algorithms and key rotation</li><li>Seamless SSO integration with popular identity providers including Active Directory, Okta, and Auth0</li><li>Role-based access control that automatically maps JWT claims to documentation permissions and content visibility</li><li>API-first architecture with JWT authentication for headless documentation workflows and custom integrations</li><li>Real-time token validation and automatic refresh mechanisms that maintain user sessions without interruption</li><li>Comprehensive audit logging that tracks user access and content interactions using JWT claim information</li><li>Scalable multi-tenant architecture that supports customer-specific documentation with JWT-based tenant isolation</li><li>Developer-friendly configuration tools that simplify JWT setup and reduce implementation time from weeks to hours</li></ul>"
+  },
+  "generated_at": "2025-07-28T19:41:23.272959+00:00"
+}

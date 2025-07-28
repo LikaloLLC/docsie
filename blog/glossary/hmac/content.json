@@ -1,0 +1,72 @@
+{
+  "term": "HMAC",
+  "content": {
+    "quick_definition": "HMAC (Hash-based Message Authentication Code) is a cryptographic technique that combines a secret key with a hash function to verify both the authenticity and integrity of messages. It ensures that webhook requests and API communications haven't been tampered with and originate from trusted sources, making it essential for secure documentation workflows and automated content systems.",
+    "detailed_explanation": "<p>HMAC (Hash-based Message Authentication Code) is a cryptographic protocol that provides both authentication and data integrity verification by combining a secret key with a cryptographic hash function. For documentation teams managing automated workflows, webhooks, and API integrations, HMAC serves as a critical security layer that validates incoming requests and ensures content updates come from legitimate sources.</p><h3>Key Features</h3><ul><li>Combines secret keys with hash functions (typically SHA-256) for enhanced security</li><li>Provides both message authentication and integrity verification in one process</li><li>Works with any cryptographic hash function, offering flexibility in implementation</li><li>Generates fixed-length output regardless of input message size</li><li>Resistant to length extension attacks unlike simple hash concatenation methods</li></ul><h3>Benefits for Documentation Teams</h3><ul><li>Secures webhook endpoints that trigger documentation builds and deployments</li><li>Validates API requests from content management systems and third-party integrations</li><li>Prevents unauthorized modifications to documentation through automated pipelines</li><li>Enables secure communication between documentation tools and external services</li><li>Maintains audit trails by ensuring message authenticity in automated workflows</li></ul><h3>Common Misconceptions</h3><ul><li>HMAC is not encryption - it verifies authenticity but doesn't hide message content</li><li>Simple hash functions alone cannot replace HMAC's dual authentication and integrity features</li><li>HMAC keys should never be transmitted with the message or stored in client-side code</li><li>Different hash algorithms in HMAC provide varying security levels, not just performance differences</li></ul>",
+    "mermaid_diagram": "sequenceDiagram\n    participant CMS as Content Management System\n    participant Doc as Documentation Platform\n    participant Webhook as Webhook Endpoint\n    \n    Note over CMS,Webhook: HMAC Authentication Flow\n    \n    CMS->>CMS: 1. Create message payload\n    CMS->>CMS: 2. Generate HMAC signature<br/>using shared secret key\n    CMS->>Webhook: 3. Send POST request with<br/>payload + HMAC header\n    \n    Webhook->>Webhook: 4. Extract received payload\n    Webhook->>Webhook: 5. Generate HMAC signature<br/>using same secret key\n    Webhook->>Webhook: 6. Compare signatures\n    \n    alt Signatures Match\n        Webhook->>Doc: 7a. Process request<br/>(trigger build/update)\n        Doc->>CMS: 8a. Success response\n    else Signatures Don't Match\n        Webhook->>CMS: 7b. Reject request<br/>(401 Unauthorized)\n    end",
+    "use_cases": [
+      {
+        "title": "Securing Documentation Build Webhooks",
+        "problem": "Documentation platforms receive webhook requests from Git repositories to trigger builds, but without authentication, malicious actors could trigger unnecessary builds or inject harmful content.",
+        "solution": "Implement HMAC verification on webhook endpoints to ensure requests originate from trusted Git hosting services like GitHub, GitLab, or Bitbucket.",
+        "implementation": "1. Configure shared secret key in both Git repository webhook settings and documentation platform. 2. Set up webhook endpoint to extract HMAC signature from request headers. 3. Generate HMAC signature using received payload and stored secret key. 4. Compare generated signature with received signature. 5. Process build request only if signatures match.",
+        "outcome": "Documentation builds are triggered only by legitimate repository events, preventing unauthorized deployments and maintaining content integrity while enabling automated workflows."
+      },
+      {
+        "title": "API Authentication for Content Updates",
+        "problem": "Documentation teams need to integrate with external content management systems and databases, but API endpoints require secure authentication to prevent unauthorized content modifications.",
+        "solution": "Use HMAC-based authentication for API requests that update documentation content, ensuring requests come from authorized systems and haven't been tampered with during transmission.",
+        "implementation": "1. Establish shared secret keys between documentation platform and external systems. 2. Create HMAC signatures for all API request payloads using agreed-upon hash algorithm. 3. Include HMAC signature in request headers or authentication tokens. 4. Validate signatures on the receiving end before processing content updates. 5. Log all authentication attempts for audit purposes.",
+        "outcome": "Secure content synchronization between systems with verified authenticity, enabling automated content updates while maintaining strict access controls and audit trails."
+      },
+      {
+        "title": "Third-Party Integration Verification",
+        "problem": "Documentation platforms integrate with multiple third-party services (analytics, feedback systems, translation services), but need to verify that incoming data and requests are legitimate and unmodified.",
+        "solution": "Implement HMAC verification for all third-party service communications to ensure data integrity and prevent spoofed requests that could corrupt documentation analytics or user feedback.",
+        "implementation": "1. Exchange secret keys with each third-party service during integration setup. 2. Configure services to include HMAC signatures with all requests and data transmissions. 3. Create middleware to automatically verify HMAC signatures before processing third-party data. 4. Set up monitoring and alerting for failed HMAC verifications. 5. Regularly rotate secret keys according to security policies.",
+        "outcome": "Trusted integration ecosystem where all third-party data is verified for authenticity, ensuring accurate analytics, reliable user feedback, and secure automated translations without manual verification overhead."
+      },
+      {
+        "title": "User-Generated Content Validation",
+        "problem": "Documentation platforms that accept user contributions, comments, or feedback need to verify that submissions haven't been tampered with during transmission and come from authenticated sources.",
+        "solution": "Apply HMAC verification to user-generated content submissions, ensuring content integrity from submission to publication while maintaining user authentication.",
+        "implementation": "1. Generate session-based HMAC keys for authenticated users during login. 2. Create client-side JavaScript to generate HMAC signatures for content submissions. 3. Include HMAC signatures with all user content submissions. 4. Verify signatures server-side before accepting content for moderation or publication. 5. Implement fallback authentication methods for signature verification failures.",
+        "outcome": "Verified user contributions with guaranteed content integrity, reducing spam and malicious submissions while streamlining the content moderation process and maintaining user trust."
+      }
+    ],
+    "best_practices": [
+      {
+        "title": "Use Strong Secret Key Management",
+        "description": "HMAC security depends entirely on the secrecy and strength of the shared key. Implement robust key generation, storage, and rotation practices to maintain security integrity.",
+        "do": "Generate cryptographically secure random keys of at least 256 bits, store keys in secure key management systems or environment variables, and implement regular key rotation schedules with proper key versioning.",
+        "dont": "Don't hardcode keys in source code, use predictable or weak keys, store keys in configuration files that might be accidentally committed to version control, or share the same key across multiple unrelated integrations."
+      },
+      {
+        "title": "Implement Constant-Time Comparison",
+        "description": "When comparing HMAC signatures, use constant-time comparison functions to prevent timing attacks that could potentially reveal information about the correct signature.",
+        "do": "Use built-in secure comparison functions provided by your programming language or cryptographic libraries, such as crypto.timingSafeEqual() in Node.js or hmac.compare_digest() in Python.",
+        "dont": "Don't use standard string comparison operators (==, ===, strcmp) which can leak timing information, implement custom comparison logic without understanding timing attack vectors, or ignore security warnings from static analysis tools about comparison methods."
+      },
+      {
+        "title": "Choose Appropriate Hash Algorithms",
+        "description": "Select cryptographically strong hash functions for HMAC implementation, considering both current security standards and future-proofing against evolving threats.",
+        "do": "Use SHA-256 or stronger hash functions (SHA-3, SHA-512) for new implementations, clearly document which hash algorithm is used in API documentation, and plan migration paths for algorithm upgrades.",
+        "dont": "Don't use deprecated hash functions like MD5 or SHA-1, assume all hash functions provide equivalent security, implement custom hash functions, or mix different hash algorithms within the same system without proper versioning."
+      },
+      {
+        "title": "Validate Complete Request Context",
+        "description": "Verify not just the message content but also relevant request metadata to prevent replay attacks and ensure the complete request context is authentic.",
+        "do": "Include timestamps, request URLs, HTTP methods, and critical headers in HMAC calculation, implement request expiration windows, and validate all components that affect request processing.",
+        "dont": "Don't validate only the message body while ignoring headers and metadata, allow unlimited time windows for request validity, skip validation of critical request parameters, or assume network-level security is sufficient."
+      },
+      {
+        "title": "Monitor and Log Authentication Events",
+        "description": "Implement comprehensive logging and monitoring for HMAC authentication events to detect security issues, troubleshoot integration problems, and maintain audit compliance.",
+        "do": "Log all authentication attempts with timestamps and source information, set up alerts for repeated authentication failures, monitor for unusual patterns in request signatures, and maintain secure audit logs with appropriate retention policies.",
+        "dont": "Don't log sensitive information like secret keys or full signatures, ignore authentication failures as routine events, skip monitoring for security anomalies, or store logs in unsecured locations where they could be tampered with."
+      }
+    ],
+    "docsie_connection": "<p>Modern documentation platforms streamline HMAC implementation and management, removing the complexity of manual cryptographic setup while ensuring enterprise-grade security for automated workflows and integrations.</p><ul><li><strong>Built-in Webhook Security:</strong> Platforms automatically handle HMAC signature generation and verification for repository webhooks, eliminating manual configuration and reducing security vulnerabilities in documentation build processes.</li><li><strong>Integrated Key Management:</strong> Secure storage and rotation of HMAC secret keys through platform-managed key vaults, with automatic key distribution to connected services and integrations without exposing sensitive credentials.</li><li><strong>Visual Authentication Monitoring:</strong> Real-time dashboards showing webhook authentication status, failed verification attempts, and integration health metrics, enabling teams to quickly identify and resolve security issues.</li><li><strong>Simplified Third-Party Integrations:</strong> Pre-configured HMAC authentication for popular services like GitHub, Slack, and analytics platforms, with guided setup wizards that handle technical implementation details automatically.</li><li><strong>Audit Trail Automation:</strong> Comprehensive logging of all authenticated requests and security events with searchable audit trails, supporting compliance requirements and security investigations without additional infrastructure setup.</li></ul>"
+  },
+  "generated_at": "2025-07-28T19:55:02.338983+00:00"
+}
