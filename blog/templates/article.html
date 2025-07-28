@@ -827,6 +827,30 @@
       </section>
       {% endif %}
       
+      <!-- Related Articles Section -->
+      {% if article.related_articles %}
+      <section class="mt-16">
+        <h2 class="text-2xl font-bold mb-8 text-gray-900">Related Articles</h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {% for related in article.related_articles[:3] %}
+          <article class="bg-white rounded-lg shadow-md border border-gray-200 hover:shadow-lg transition-all duration-200 group">
+            <div class="p-6">
+              <h3 class="text-lg font-semibold mb-2 group-hover:text-blue-600 transition-colors">
+                <a href="{{ related.url }}" class="stretched-link">{{ related.title }}</a>
+              </h3>
+              {% if related.excerpt %}
+              <p class="text-gray-600 text-sm mb-3 line-clamp-2">{{ related.excerpt }}</p>
+              {% endif %}
+              <div class="text-xs text-gray-500 italic">
+                {{ related.explanation }}
+              </div>
+            </div>
+          </article>
+          {% endfor %}
+        </div>
+      </section>
+      {% endif %}
+      
       <!-- Call to Action -->
       <section class="mt-16 p-8 bg-gradient-to-r from-blue-50 to-blue-100 rounded-xl border border-blue-200">
         <div class="text-center">
