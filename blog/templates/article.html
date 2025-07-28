@@ -15,7 +15,7 @@
   <title>{{ article.title }} - {{ settings.blog_name }}</title>
   <meta name="author" content="{{ article.author_name }}"/>
   <meta name="title" content="{{ article.title }}">
-  <meta name="description" content="{{ article.summary }}"/>
+  <meta name="description" content="{{ article.meta_description|default(article.summary) }}"/>
   <meta name="keywords" content="{{ article.categories|join(',') }}"/>
   <link rel="canonical" href="{{ article.url }}">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
@@ -24,7 +24,7 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="{{ article.url }}">
   <meta property="og:title" content="{{ article.title }}">
-  <meta property="og:description" content="{{ article.summary }}">
+  <meta property="og:description" content="{{ article.meta_description|default(article.summary) }}">
   <meta property="og:image" content="{{ article.header_image if article.header_image else settings.landing_meta.image }}">
   <meta property="og:image:alt" content="{{ article.title }}">
   <meta property="article:published_time" content="{{ article.timestamp.isoformat() }}">
@@ -34,7 +34,7 @@
   <meta property="twitter:card" content="summary_large_image">
   <meta property="twitter:url" content="{{ article.url }}">
   <meta property="twitter:title" content="{{ article.title }}">
-  <meta property="twitter:description" content="{{ article.summary }}">
+  <meta property="twitter:description" content="{{ article.meta_description|default(article.summary) }}">
   <meta property="twitter:image" content="{{ article.header_image }}">
 
   <!-- Structured Data (JSON-LD) -->
