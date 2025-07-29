@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+
+  {% include 'favicon.html' %}
+
+  <!-- Primary Meta Tags -->
+  <title>{{ term_data.term }}: The Complete Guide for Documentation Teams | {{ settings.blog_name }}</title>
+  <meta name="title" content="{{ term_data.term }}: The Complete Guide">
+  <meta name="description" content="{{ content.quick_definition[:155] if content.quick_definition|length > 155 else content.quick_definition }}">
+  <meta name="keywords" content="{{ term_data.term }}, documentation, technical writing, {{ settings.blog_name }}">
+  <link rel="canonical" href="{{ settings.domain_url }}{{ blog.path }}">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  
+  <!-- Additional SEO Tags -->
+  <meta name="author" content="{{ settings.blog_name }}">
+  <meta name="language" content="English">
+  <meta name="revisit-after" content="7 days">
+  <link rel="alternate" type="application/rss+xml" title="{{ settings.blog_name }} RSS Feed" href="{{ settings.domain_url }}/blog/rss.xml">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="{{ settings.domain_url }}{{ blog.path }}">
+  <meta property="og:title" content="{{ term_data.term }}: The Complete Guide">
+  <meta property="og:description" content="{{ content.quick_definition }}">
+  <meta property="og:image" content="{{ settings.landing_meta.image }}">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="{{ settings.domain_url }}{{ blog.path }}">
+  <meta property="twitter:title" content="{{ term_data.term }}: The Complete Guide">
+  <meta property="twitter:description" content="{{ content.quick_definition }}">
+  <meta property="twitter:image" content="{{ settings.landing_meta.image }}">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Existing CSS -->
+  <link rel="stylesheet" href="{{ settings.blog_root_path }}templates/assets/css/design-system.css">
+  <link rel="stylesheet" href="{{ settings.blog_root_path }}templates/assets/css/typography.min.css">
+<!-- Mermaid.js for diagrams -->
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script>
+    mermaid.initialize({ 
+        startOnLoad: true, 
+        theme: 'default',
+        themeVariables: {
+            primaryColor: '#6366f1',
+            primaryTextColor: '#fff',
+            primaryBorderColor: '#4f46e5',
+            lineColor: '#e5e7eb',
+            secondaryColor: '#f3f4f6',
+            tertiaryColor: '#fbbf24'
+        }
+    });
+</script>
+
+<style>
+    /* Term Page Specific Styles */
+    
+    /* Constrain header width on term pages */
+    body > header .container {
+        max-width: 1280px !important;
+    }
+    
+    .term-hero {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 3rem 0;
+        margin-bottom: 3rem;
+    }
+    
+    .breadcrumb {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin-bottom: 1rem;
+        font-size: 0.875rem;
+        color: rgba(255, 255, 255, 0.8);
+    }
+    
+    .breadcrumb a {
+        color: rgba(255, 255, 255, 0.8);
+        text-decoration: none;
+        transition: color 0.2s;
+    }
+    
+    .breadcrumb a:hover {
+        color: white;
+    }
+    
+    .definition-card {
+        background: white;
+        border: 2px solid #e5e7eb;
+        border-radius: 12px;
+        padding: 2rem;
+        margin-bottom: 2rem;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    }
+    
+    .definition-card h2 {
+        color: #4f46e5;
+        margin-bottom: 1rem;
+    }
+    
+    .mermaid-container {
+        background: #f9fafb;
+        border-radius: 12px;
+        padding: 2rem;
+        margin: 2rem 0;
+        overflow-x: auto;
+    }
+    
+    .use-case {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 2rem;
+        border-radius: 16px;
+        margin-bottom: 1.5rem;
+        box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .use-case::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        right: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+        pointer-events: none;
+    }
+    
+    .use-case h3 {
+        color: white;
+        margin-bottom: 1.5rem;
+        font-size: 1.375rem;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+    }
+    
+    .use-case h3::before {
+        content: '💡';
+        font-size: 1.5rem;
+    }
+    
+    .use-case-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1rem;
+        margin-top: 1rem;
+    }
+    
+    .use-case-item {
+        background: rgba(255, 255, 255, 0.15);
+        padding: 1.5rem;
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(10px);
+        transition: all 0.3s ease;
+        position: relative;
+    }
+    
+    .use-case-item:hover {
+        background: rgba(255, 255, 255, 0.18);
+        border-color: rgba(255, 255, 255, 0.3);
+        transform: translateY(-2px);
+    }
+    
+    .use-case-item h4 {
+        color: white;
+        margin-bottom: 0.75rem;
+        font-size: 0.75rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    
+    .use-case-item h4::before {
+        content: '';
+        width: 4px;
+        height: 16px;
+        background: linear-gradient(to bottom, #fbbf24, #f59e0b);
+        border-radius: 2px;
+    }
+    
+    /* Custom icons for each section */
+    .use-case-item h4[data-type="problem"]::after {
+        content: '⚠️';
+        margin-left: auto;
+        font-size: 1rem;
+    }
+    
+    .use-case-item h4[data-type="solution"]::after {
+        content: '✨';
+        margin-left: auto;
+        font-size: 1rem;
+    }
+    
+    .use-case-item h4[data-type="implementation"]::after {
+        content: '🔧';
+        margin-left: auto;
+        font-size: 1rem;
+    }
+    
+    .use-case-item h4[data-type="outcome"]::after {
+        content: '🎯';
+        margin-left: auto;
+        font-size: 1rem;
+    }
+    
+    .use-case-item p {
+        line-height: 1.6;
+        font-size: 0.95rem;
+    }
+    
+    .best-practice {
+        background: white;
+        border: 2px solid #10b981;
+        border-radius: 12px;
+        padding: 1.5rem;
+        margin-bottom: 1rem;
+        transition: transform 0.2s, box-shadow 0.2s;
+    }
+    
+    .best-practice:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    
+    .best-practice h3 {
+        color: #10b981;
+        margin-bottom: 0.5rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    
+    .do-dont-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+        margin-top: 1rem;
+    }
+    
+    .do-box, .dont-box {
+        padding: 0.75rem;
+        border-radius: 6px;
+        font-size: 0.875rem;
+    }
+    
+    .do-box {
+        background: #d1fae5;
+        border: 1px solid #10b981;
+    }
+    
+    .dont-box {
+        background: #fee2e2;
+        border: 1px solid #ef4444;
+    }
+    
+    .docsie-section {
+        background: linear-gradient(to right, #f3e8ff, #e0e7ff);
+        padding: 3rem;
+        border-radius: 12px;
+        margin: 3rem 0;
+    }
+    
+    .related-articles {
+        margin-top: 3rem;
+    }
+    
+    .article-link {
+        display: block;
+        padding: 1rem;
+        border: 1px solid #e5e7eb;
+        border-radius: 8px;
+        text-decoration: none;
+        color: inherit;
+        transition: all 0.2s;
+        margin-bottom: 0.75rem;
+    }
+    
+    .article-link:hover {
+        border-color: #6366f1;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        transform: translateX(4px);
+    }
+    
+    /* Mobile responsiveness */
+    @media (max-width: 768px) {
+        .use-case-grid,
+        .do-dont-grid {
+            grid-template-columns: 1fr;
+        }
+        
+        .term-hero {
+            padding: 2rem 0;
+        }
+    }
+</style>
+
+<!-- Schema.org structured data -->
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": ["Article", "DefinedTerm"],
+    "name": "{{ term_data.term }}",
+    "headline": "{{ term_data.term }}: The Complete Guide for Documentation Teams",
+    "description": "{{ content.quick_definition }}",
+    "termCode": "{{ term_data.slug }}",
+    "inDefinedTermSet": {
+        "@type": "DefinedTermSet",
+        "name": "Docsie Documentation Glossary",
+        "url": "{{ settings.domain_url }}/blog/glossary/"
+    },
+    "author": {
+        "@type": "Organization",
+        "name": "{{ settings.blog_name }}",
+        "url": "{{ settings.domain_url }}"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "{{ settings.blog_name }}",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "{{ settings.domain_url }}/assets/docsie_logo_square_svg.svg"
+        }
+    },
+    "datePublished": "{{ blog.generated_at|default('2024-01-01') }}",
+    "dateModified": "{{ blog.generated_at|default('2024-01-01') }}",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "{{ settings.domain_url }}{{ blog.path }}"
+    },
+    "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Blog",
+                "item": "{{ settings.domain_url }}/blog/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Glossary",
+                "item": "{{ settings.domain_url }}/blog/glossary/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "{{ term_data.term }}",
+                "item": "{{ settings.domain_url }}{{ blog.path }}"
+            }
+        ]
+    },
+    "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [".definition-card", ".use-case:first-child"]
+    }
+}
+</script>
+</head>
+
+<body>
+  {% include 'header.html' %}
+<div class="term-hero">
+    <div class="container mx-auto px-4">
+        <!-- Breadcrumbs -->
+        <nav class="breadcrumb">
+            {% for crumb in breadcrumbs %}
+                {% if crumb.url %}
+                    <a href="{{ crumb.url }}">{{ crumb.name }}</a>
+                    {% if not loop.last %}<span>›</span>{% endif %}
+                {% else %}
+                    <span>{{ crumb.name }}</span>
+                {% endif %}
+            {% endfor %}
+        </nav>
+        
+        <!-- Hero Title -->
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">{{ term_data.term }}</h1>
+        <p class="text-xl opacity-90">Master this essential documentation concept</p>
+    </div>
+</div>
+
+<div class="container mx-auto px-4 max-w-4xl">
+    <!-- Quick Definition Card -->
+    <div class="definition-card">
+        <h2 class="text-2xl font-semibold">Quick Definition</h2>
+        <p class="text-lg leading-relaxed">{{ content.quick_definition }}</p>
+    </div>
+    
+    <!-- Visual Diagram -->
+    <section class="mb-8">
+        <h2 class="text-3xl font-bold mb-4">How {{ term_data.term }} Works</h2>
+        <div class="mermaid-container">
+            <div class="mermaid">
+                {{ content.mermaid_diagram }}
+            </div>
+        </div>
+    </section>
+    
+    <!-- Detailed Explanation -->
+    <section class="mb-8">
+        <h2 class="text-3xl font-bold mb-4">Understanding {{ term_data.term }}</h2>
+        <div class="prose max-w-none">
+            {{ content.detailed_explanation|safe }}
+        </div>
+    </section>
+    
+    <!-- Documentation Use Cases -->
+    <section class="mb-8">
+        <h2 class="text-3xl font-bold mb-6">Real-World Documentation Use Cases</h2>
+        {% for use_case in content.use_cases %}
+        <div class="use-case">
+            <h3>{{ use_case.title }}</h3>
+            <div class="use-case-grid">
+                <div class="use-case-item">
+                    <h4 data-type="problem">Problem</h4>
+                    <p>{{ use_case.problem }}</p>
+                </div>
+                <div class="use-case-item">
+                    <h4 data-type="solution">Solution</h4>
+                    <p>{{ use_case.solution }}</p>
+                </div>
+            </div>
+            <div class="use-case-item mt-4">
+                <h4 data-type="implementation">Implementation</h4>
+                <p>{{ use_case.implementation }}</p>
+            </div>
+            <div class="use-case-item mt-2">
+                <h4 data-type="outcome">Expected Outcome</h4>
+                <p>{{ use_case.outcome }}</p>
+            </div>
+        </div>
+        {% endfor %}
+    </section>
+    
+    <!-- Best Practices -->
+    <section class="mb-8">
+        <h2 class="text-3xl font-bold mb-6">Best Practices</h2>
+        {% for practice in content.best_practices %}
+        <div class="best-practice">
+            <h3><span>✓</span> {{ practice.title }}</h3>
+            <p>{{ practice.description }}</p>
+            <div class="do-dont-grid">
+                <div class="do-box">
+                    <strong>✓ Do:</strong> {{ practice.do }}
+                </div>
+                <div class="dont-box">
+                    <strong>✗ Don't:</strong> {{ practice.dont }}
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </section>
+    
+    <!-- How Docsie Helps -->
+    <section class="docsie-section">
+        <h2 class="text-3xl font-bold mb-4">How Docsie Helps with {{ term_data.term }}</h2>
+        <div class="prose max-w-none">
+            {{ content.docsie_connection|safe }}
+        </div>
+        
+        <!-- Phase 2: This will be populated by Docsie RAG -->
+        <div id="docsie-features" class="mt-6">
+            <!-- Placeholder for RAG integration -->
+        </div>
+        
+        <div class="mt-6">
+            <a href="https://www.docsie.io/demo/" class="inline-flex items-center px-6 py-3 bg-white text-purple-600 font-semibold rounded-lg hover:bg-purple-50 transition">
+                See How Docsie Can Help
+                <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+            </a>
+        </div>
+    </section>
+    
+    <!-- Related Articles -->
+    {% if articles %}
+    <section class="related-articles">
+        <h2 class="text-3xl font-bold mb-6">Learn More in These Articles</h2>
+        <p class="text-gray-600 mb-4">This term appears in {{ article_count }} articles on our blog:</p>
+        {% for article in articles %}
+        <a href="{{ article.path }}" class="article-link">
+            <h3 class="font-semibold text-lg mb-1">{{ article.title }}</h3>
+            <p class="text-gray-600 text-sm">{{ article.excerpt }}</p>
+        </a>
+        {% endfor %}
+        {% if article_count > 5 %}
+        <p class="text-gray-600 text-sm mt-4">
+            And {{ article_count - 5 }} more articles...
+        </p>
+        {% endif %}
+    </section>
+    {% endif %}
+    
+    <!-- Related Terms -->
+    {% if related_terms %}
+    <section class="related-terms mt-8">
+        <h2 class="text-2xl font-bold mb-4">Related Documentation Terms</h2>
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3">
+            {% for related in related_terms %}
+            <a href="{{ settings.blog_root_path }}glossary/{{ related.slug }}/" 
+               class="bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded-lg text-center transition-colors duration-200 group">
+                <span class="block font-medium text-gray-900 group-hover:text-blue-600">{{ related.term }}</span>
+                <span class="text-xs text-gray-500">{{ related.overlap_count }} shared articles</span>
+            </a>
+            {% endfor %}
+        </div>
+    </section>
+    {% endif %}
+    
+    <!-- CTA Section -->
+    <section class="bg-gradient-to-r from-purple-600 to-indigo-600 text-white p-8 rounded-lg mt-8 text-center">
+        <h2 class="text-2xl font-bold mb-4">Build Better Documentation with Docsie</h2>
+        <p class="mb-6">Join thousands of teams creating outstanding documentation</p>
+        <a href="https://app.docsie.io/onboarding/" class="inline-block bg-white text-purple-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition">
+            Start Free Trial
+        </a>
+    </section>
+</div>
+
+  {% include 'footer.html' %}
+</body>
+</html>

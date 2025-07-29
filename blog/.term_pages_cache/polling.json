@@ -1,0 +1,72 @@
+{
+  "generated_at": "2025-07-28T19:54:13.715366+00:00",
+  "term": "Polling",
+  "content": {
+    "quick_definition": "Polling is a method where systems repeatedly check for updates or changes at regular intervals, rather than receiving immediate notifications when changes occur. While simple to implement, polling can be inefficient compared to push-based alternatives like webhooks that deliver real-time updates only when changes happen.",
+    "detailed_explanation": "<p>Polling is a fundamental communication pattern where a client system repeatedly queries a server or data source at predetermined intervals to check for new information, updates, or changes. In documentation workflows, this might involve checking for content updates, user comments, or system status changes on a regular schedule rather than receiving immediate notifications.</p><h3>Key Features</h3><ul><li>Regular interval checking - systems query for updates every few seconds, minutes, or hours</li><li>Pull-based communication - the client initiates all requests for information</li><li>Predictable resource usage - consistent network and processing load</li><li>Simple implementation - easy to set up and understand</li><li>Stateless operation - each poll is independent of previous requests</li></ul><h3>Benefits for Documentation Teams</h3><ul><li>Reliable content synchronization across multiple platforms and systems</li><li>Consistent monitoring of documentation repositories and content management systems</li><li>Easy debugging and troubleshooting due to predictable request patterns</li><li>Works well with legacy systems that don't support modern push notifications</li><li>Provides backup mechanism when real-time notifications fail</li></ul><h3>Common Misconceptions</h3><ul><li>Polling is always inefficient - short intervals can provide near real-time updates when needed</li><li>Webhooks completely replace polling - many systems use hybrid approaches for reliability</li><li>Polling causes excessive server load - modern rate limiting and smart intervals minimize impact</li><li>Real-time updates always require complex infrastructure - polling can be simpler for small teams</li></ul>",
+    "mermaid_diagram": "sequenceDiagram\n    participant DC as Documentation Client\n    participant CMS as Content Management System\n    participant API as Documentation API\n    participant Team as Documentation Team\n    \n    loop Every 5 minutes\n        DC->>CMS: Check for content updates\n        CMS-->>DC: Return update status\n        alt New content found\n            DC->>API: Fetch updated content\n            API-->>DC: Return new/modified docs\n            DC->>Team: Notify of changes\n        else No updates\n            DC->>DC: Wait for next poll cycle\n        end\n    end",
+    "use_cases": [
+      {
+        "title": "Content Synchronization Monitoring",
+        "problem": "Documentation teams need to ensure content stays synchronized across multiple platforms (website, mobile app, PDF exports) but don't have real-time webhook capabilities.",
+        "solution": "Implement polling to regularly check source content management systems for updates and trigger synchronization processes when changes are detected.",
+        "implementation": "1. Set up polling script to check CMS API every 15 minutes\n2. Compare content timestamps or hash values\n3. Trigger sync process when differences detected\n4. Log all sync activities for audit trail\n5. Send notifications to team when major updates occur",
+        "outcome": "Consistent content across all platforms with maximum 15-minute delay, reduced manual sync work, and complete audit trail of content changes."
+      },
+      {
+        "title": "User Feedback Collection",
+        "problem": "Documentation platforms receive user comments and feedback through various channels, but teams need regular aggregation without overwhelming real-time notifications.",
+        "solution": "Use polling to collect and aggregate user feedback from multiple sources at regular intervals, providing digestible updates to documentation teams.",
+        "implementation": "1. Configure polling every 2 hours across feedback channels\n2. Aggregate comments, ratings, and suggestions\n3. Filter and categorize feedback by priority\n4. Generate summary reports for team review\n5. Create action items for high-priority feedback",
+        "outcome": "Manageable feedback workflow with regular updates, improved response times to user concerns, and better prioritization of documentation improvements."
+      },
+      {
+        "title": "Documentation Analytics Monitoring",
+        "problem": "Teams need regular insights into documentation performance metrics like page views, search queries, and user engagement without constant dashboard monitoring.",
+        "solution": "Implement polling-based analytics collection that gathers performance data at scheduled intervals and generates automated reports.",
+        "implementation": "1. Set up daily polling of analytics APIs\n2. Collect metrics on page performance, search terms, user paths\n3. Compare against previous periods and benchmarks\n4. Generate automated weekly and monthly reports\n5. Alert team to significant changes or issues",
+        "outcome": "Regular performance insights without manual data collection, early identification of content issues, and data-driven documentation improvement decisions."
+      },
+      {
+        "title": "External API Documentation Updates",
+        "problem": "Documentation for third-party APIs and services needs regular updates, but external systems don't provide webhooks or change notifications.",
+        "solution": "Use polling to monitor external API schemas, endpoints, and documentation for changes that require updates to internal documentation.",
+        "implementation": "1. Poll external API documentation endpoints weekly\n2. Compare current API schemas with stored versions\n3. Identify new endpoints, deprecated features, or parameter changes\n4. Generate change reports for documentation team\n5. Create update tasks in project management system",
+        "outcome": "Current API documentation that reflects external changes, reduced risk of outdated integration guides, and proactive maintenance of technical content."
+      }
+    ],
+    "best_practices": [
+      {
+        "title": "Optimize Polling Intervals",
+        "description": "Choose polling frequencies that balance timeliness with system resources. Different content types may require different polling schedules based on update frequency and urgency.",
+        "do": "Use shorter intervals (1-5 minutes) for critical content updates and longer intervals (hourly/daily) for analytics or less time-sensitive data",
+        "dont": "Set overly aggressive polling intervals that waste resources or too long intervals that miss important updates"
+      },
+      {
+        "title": "Implement Smart Polling Logic",
+        "description": "Use conditional checks and incremental polling to reduce unnecessary requests. Only poll for changes when needed and use timestamps or version numbers to detect actual changes.",
+        "do": "Compare timestamps, ETags, or content hashes before processing full content updates",
+        "dont": "Download and process entire datasets on every poll when only checking for changes"
+      },
+      {
+        "title": "Add Robust Error Handling",
+        "description": "Implement comprehensive error handling and retry logic to manage network issues, API rate limits, and temporary service outages without breaking polling cycles.",
+        "do": "Use exponential backoff for retries, log all errors, and implement circuit breakers for failing services",
+        "dont": "Let single failures stop entire polling processes or retry failed requests too aggressively"
+      },
+      {
+        "title": "Monitor and Alert on Polling Health",
+        "description": "Set up monitoring and alerting for polling processes to ensure they're running correctly and efficiently. Track success rates, response times, and resource usage.",
+        "do": "Monitor polling success rates, set up alerts for extended failures, and track performance metrics over time",
+        "dont": "Run polling processes without monitoring or ignore gradual performance degradation"
+      },
+      {
+        "title": "Plan for Scale and Rate Limits",
+        "description": "Design polling systems to respect API rate limits and scale appropriately as documentation systems grow. Consider implementing queuing and load balancing for high-volume scenarios.",
+        "do": "Implement rate limiting, use queuing systems for high-volume polling, and plan for horizontal scaling",
+        "dont": "Ignore API rate limits or design polling systems that can't handle increased load"
+      }
+    ],
+    "docsie_connection": "<p>Modern documentation platforms like Docsie provide sophisticated polling and synchronization capabilities that streamline content management workflows while reducing the complexity traditionally associated with polling implementations.</p><ul><li><strong>Automated Content Synchronization:</strong> Built-in polling mechanisms that automatically sync content across multiple channels and formats without manual intervention</li><li><strong>Smart Update Detection:</strong> Advanced algorithms that efficiently detect content changes and minimize unnecessary polling requests</li><li><strong>Configurable Polling Intervals:</strong> Flexible scheduling options that allow teams to balance real-time updates with system performance</li><li><strong>Integrated Monitoring Dashboard:</strong> Real-time visibility into polling status, success rates, and system health with automated alerting</li><li><strong>Hybrid Push-Pull Architecture:</strong> Combines polling reliability with webhook efficiency for optimal performance across different scenarios</li><li><strong>Scalable Infrastructure:</strong> Cloud-native polling systems that automatically scale with team size and content volume</li><li><strong>API Integration Hub:</strong> Centralized polling management for multiple external systems and data sources</li></ul>"
+  }
+}

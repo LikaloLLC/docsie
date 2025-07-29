@@ -1,0 +1,96 @@
+{
+  "generated_at": "2025-07-28T18:58:29.333442+00:00",
+  "term": "Commits",
+  "content": {
+    "quick_definition": "Commits are individual snapshots of changes made to documentation files that are saved and tracked in a version control system like Git. Each commit includes a unique identifier, timestamp, author information, and a descriptive message explaining what was changed. They create a chronological history of all modifications, enabling teams to track progress, revert changes, and collaborate effectively on documentation projects.",
+    "detailed_explanation": "<p>Commits serve as the fundamental building blocks of version control in documentation workflows, capturing discrete changes to files and creating a permanent record of project evolution. Each commit represents a specific point in time when documentation was modified, reviewed, and deemed ready to be preserved in the project history.</p><h3>Key Features</h3><ul><li>Unique hash identifiers that distinguish each commit from others</li><li>Commit messages that describe the nature and purpose of changes</li><li>Author attribution showing who made the changes and when</li><li>File diffs that highlight exactly what content was added, modified, or deleted</li><li>Parent-child relationships that maintain chronological order</li><li>Branch integration allowing parallel development streams</li></ul><h3>Benefits for Documentation Teams</h3><ul><li>Complete audit trail of all documentation changes over time</li><li>Ability to revert to previous versions when errors are introduced</li><li>Collaborative editing with conflict resolution capabilities</li><li>Release management through tagged commits and branching strategies</li><li>Integration with review processes and approval workflows</li><li>Backup and recovery through distributed version control</li></ul><h3>Common Misconceptions</h3><ul><li>Commits are only useful for code, not documentation files</li><li>Every small change requires an immediate commit</li><li>Commit messages don't matter for documentation projects</li><li>Commits automatically sync across all team members</li><li>Version control is too complex for non-technical writers</li></ul>",
+    "mermaid_diagram": "flowchart TD\n    A[Writer Creates Content] --> B[Stage Changes]\n    B --> C[Write Commit Message]\n    C --> D[Create Commit]\n    D --> E[Local Repository]\n    E --> F[Push to Remote]\n    F --> G[Shared Repository]\n    G --> H[Team Reviews Changes]\n    H --> I{Approved?}\n    I -->|Yes| J[Merge to Main Branch]\n    I -->|No| K[Request Revisions]\n    K --> A\n    J --> L[Documentation Updated]\n    D --> M[Commit History]\n    M --> N[Track Changes]\n    M --> O[Revert if Needed]\n    style D fill:#e1f5fe\n    style G fill:#f3e5f5\n    style L fill:#e8f5e8",
+    "use_cases": [
+      {
+        "title": "API Documentation Version Control",
+        "problem": "Multiple technical writers updating API documentation simultaneously, causing conflicts and version confusion when new features are released.",
+        "solution": "Implement structured commits for each API endpoint change with descriptive messages and coordinated branching strategy.",
+        "implementation": [
+          "Create feature branches for each API update",
+          "Make atomic commits for individual endpoint changes",
+          "Use standardized commit message format (e.g., 'API: Add POST /users endpoint documentation')",
+          "Review commits before merging to main documentation branch",
+          "Tag commits corresponding to API version releases"
+        ],
+        "outcome": "Clear documentation history aligned with API versions, reduced conflicts, and easier rollback when API changes are reverted."
+      },
+      {
+        "title": "Content Review and Approval Workflow",
+        "problem": "Documentation changes need approval from subject matter experts before publication, but tracking review status and maintaining change history is difficult.",
+        "solution": "Use commits as checkpoints in the review process with specific commit messages indicating review stages.",
+        "implementation": [
+          "Create draft commits with 'DRAFT:' prefix in commit messages",
+          "Submit commits to review branches for SME evaluation",
+          "Use commit comments to document feedback and revisions",
+          "Create final commits with 'APPROVED:' prefix after review completion",
+          "Maintain separate commits for reviewer-requested changes"
+        ],
+        "outcome": "Transparent approval process with full audit trail, easier identification of approved content, and clear accountability for changes."
+      },
+      {
+        "title": "Multi-Language Documentation Synchronization",
+        "problem": "Keeping translated documentation versions synchronized with source content updates while tracking which translations need updating.",
+        "solution": "Structure commits to clearly indicate source language changes and track translation status across language branches.",
+        "implementation": [
+          "Commit source language changes with specific tags (e.g., 'EN: Update installation guide')",
+          "Create corresponding commits in translation branches referencing source commits",
+          "Use commit messages to indicate translation completion status",
+          "Implement automated tools to identify untranslated commits",
+          "Tag commits when all translations are synchronized"
+        ],
+        "outcome": "Systematic tracking of translation needs, reduced risk of outdated translations, and clear visibility into localization progress."
+      },
+      {
+        "title": "Documentation Hotfix Management",
+        "problem": "Critical errors in published documentation need immediate fixes while maintaining stability of ongoing documentation projects.",
+        "solution": "Implement hotfix commit workflow that allows rapid deployment of critical fixes without disrupting main development.",
+        "implementation": [
+          "Create hotfix branches from stable release commits",
+          "Make targeted commits addressing only critical issues",
+          "Use 'HOTFIX:' prefix in commit messages for easy identification",
+          "Fast-track review process for hotfix commits",
+          "Merge hotfix commits back to both main and development branches"
+        ],
+        "outcome": "Rapid resolution of critical documentation issues while maintaining project stability and ensuring fixes are preserved in all branches."
+      }
+    ],
+    "best_practices": [
+      {
+        "title": "Write Clear, Descriptive Commit Messages",
+        "description": "Commit messages should clearly explain what was changed and why, making it easy for team members to understand the purpose of each modification without examining the actual changes.",
+        "do": "Use imperative mood (e.g., 'Add troubleshooting section for login issues') and include context about why the change was necessary",
+        "dont": "Write vague messages like 'updates' or 'fixes' that don't explain what was actually changed or improved"
+      },
+      {
+        "title": "Make Atomic, Focused Commits",
+        "description": "Each commit should represent a single logical change or improvement, making it easier to track specific modifications and revert individual changes if needed.",
+        "do": "Group related changes together in one commit, such as updating all references to a renamed feature across multiple documentation files",
+        "dont": "Bundle unrelated changes like fixing typos, adding new content, and restructuring navigation all in the same commit"
+      },
+      {
+        "title": "Commit Frequently with Meaningful Checkpoints",
+        "description": "Regular commits create more granular history and reduce the risk of losing work, while ensuring each commit represents a meaningful milestone in the documentation development process.",
+        "do": "Commit after completing each section, fixing a set of related issues, or reaching a natural stopping point in your work",
+        "dont": "Wait until the end of the day to make one massive commit with all your changes, or commit every single character change"
+      },
+      {
+        "title": "Use Consistent Commit Message Conventions",
+        "description": "Establishing team-wide conventions for commit message format and prefixes helps maintain consistency and makes it easier to filter and search through commit history.",
+        "do": "Adopt a standard format like 'TYPE: Brief description' where TYPE could be CONTENT, FIX, STRUCTURE, or UPDATE",
+        "dont": "Let each team member use their own commit message style, making it difficult to understand and categorize changes"
+      },
+      {
+        "title": "Review Changes Before Committing",
+        "description": "Always review your changes before creating a commit to ensure you're including only intended modifications and that the commit represents a complete, logical unit of work.",
+        "do": "Use staging areas or diff tools to review exactly what files and lines are being committed, and verify that all changes serve the same purpose",
+        "dont": "Commit changes without reviewing them, risking the inclusion of debugging content, personal notes, or unrelated modifications"
+      }
+    ],
+    "docsie_connection": "<p>Modern documentation platforms have revolutionized how teams work with commits by integrating version control capabilities directly into user-friendly interfaces, eliminating the complexity traditionally associated with Git workflows.</p><ul><li><strong>Visual Commit Management:</strong> Browse commit history, compare versions, and understand changes through intuitive visual interfaces rather than command-line tools</li><li><strong>Automated Commit Creation:</strong> Platform automatically creates commits when content is saved or published, ensuring no changes are lost while maintaining detailed history</li><li><strong>Integrated Review Workflows:</strong> Combine commit tracking with built-in approval processes, allowing reviewers to see exactly what changed before approving publication</li><li><strong>Branch Management Simplified:</strong> Create and manage documentation branches for different product versions or feature development without technical Git knowledge</li><li><strong>Real-time Collaboration:</strong> Multiple team members can work simultaneously with automatic conflict resolution and commit merging handled by the platform</li><li><strong>Release Management Integration:</strong> Link commits to product releases, automatically tag documentation versions, and maintain synchronized release notes</li><li><strong>Rollback and Recovery:</strong> Easily revert to previous commits when issues arise, with one-click restoration of earlier documentation versions</li></ul>"
+  }
+}

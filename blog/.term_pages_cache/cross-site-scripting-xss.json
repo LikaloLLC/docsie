@@ -1,0 +1,72 @@
+{
+  "generated_at": "2025-07-28T19:00:50.058540+00:00",
+  "term": "Cross-Site Scripting (XSS)",
+  "content": {
+    "quick_definition": "Cross-Site Scripting (XSS) is a web security vulnerability that allows attackers to inject malicious scripts into web pages viewed by other users. For documentation teams, understanding XSS is crucial for protecting user-generated content, comments, and interactive documentation features from script injection attacks.",
+    "detailed_explanation": "<p>Cross-Site Scripting (XSS) represents one of the most prevalent web security vulnerabilities that documentation professionals must understand and guard against. This vulnerability occurs when malicious scripts are injected into trusted websites and executed in users' browsers, potentially compromising sensitive information and user experience.</p><h3>Key Features</h3><ul><li>Script injection through user input fields, comments, or search functionality</li><li>Three main types: Stored XSS (persistent), Reflected XSS (non-persistent), and DOM-based XSS</li><li>Execution of malicious code in the context of the trusted website</li><li>Ability to steal cookies, session tokens, and sensitive user data</li><li>Potential for defacing websites or redirecting users to malicious sites</li></ul><h3>Benefits for Documentation Teams</h3><ul><li>Enhanced security awareness when implementing interactive features like comments or feedback forms</li><li>Better understanding of input validation requirements for documentation platforms</li><li>Improved ability to collaborate with security teams on documentation site protection</li><li>Knowledge to make informed decisions about third-party integrations and plugins</li></ul><h3>Common Misconceptions</h3><ul><li>Believing that static documentation sites are immune to XSS attacks</li><li>Assuming that client-side validation alone prevents XSS vulnerabilities</li><li>Thinking that XSS only affects the individual user who encounters the malicious script</li><li>Underestimating the impact of XSS on documentation site credibility and user trust</li></ul>",
+    "mermaid_diagram": "flowchart TD\n    A[User Submits Content] --> B{Input Validation}\n    B -->|Fails| C[Malicious Script Injected]\n    B -->|Passes| D[Content Sanitized]\n    C --> E[Script Stored in Database]\n    D --> F[Safe Content Stored]\n    E --> G[Other Users View Page]\n    F --> H[Users View Safe Content]\n    G --> I[Malicious Script Executes]\n    H --> J[Normal User Experience]\n    I --> K[Data Theft/Site Defacement]\n    J --> L[Secure Documentation Site]\n    \n    style C fill:#ff6b6b\n    style I fill:#ff6b6b\n    style K fill:#ff6b6b\n    style D fill:#51cf66\n    style F fill:#51cf66\n    style L fill:#51cf66",
+    "use_cases": [
+      {
+        "title": "Securing User Comment Systems",
+        "problem": "Documentation sites with comment sections are vulnerable to XSS attacks through malicious script injection in user comments",
+        "solution": "Implement comprehensive input validation and output encoding to prevent script execution while maintaining comment functionality",
+        "implementation": "1. Validate all user input server-side using whitelist approaches\n2. Encode HTML entities in user-generated content before display\n3. Implement Content Security Policy (CSP) headers\n4. Use parameterized queries for database interactions\n5. Regular security testing of comment functionality",
+        "outcome": "Safe comment system that prevents XSS attacks while maintaining user engagement and feedback collection capabilities"
+      },
+      {
+        "title": "Protecting Search Functionality",
+        "problem": "Search features in documentation sites can be exploited through reflected XSS attacks when search terms are displayed without proper sanitization",
+        "solution": "Sanitize and validate search input parameters and properly encode search results display to prevent script execution",
+        "implementation": "1. Validate search input against expected patterns\n2. Encode search terms when displaying results\n3. Implement proper error handling for invalid search queries\n4. Use POST requests for complex searches instead of GET\n5. Monitor search logs for suspicious patterns",
+        "outcome": "Secure search functionality that provides accurate results without exposing users to XSS vulnerabilities"
+      },
+      {
+        "title": "Securing Feedback Forms",
+        "problem": "User feedback forms in documentation can become XSS attack vectors when form data is processed and displayed without proper validation",
+        "solution": "Implement multi-layer security including input validation, output encoding, and secure form processing workflows",
+        "implementation": "1. Use CSRF tokens to prevent cross-site request forgery\n2. Validate form fields with strict input patterns\n3. Sanitize form data before processing or storage\n4. Implement rate limiting to prevent automated attacks\n5. Use secure transmission protocols (HTTPS)",
+        "outcome": "Robust feedback collection system that maintains security while gathering valuable user insights for documentation improvement"
+      },
+      {
+        "title": "Third-Party Integration Security",
+        "problem": "Documentation sites using third-party widgets, analytics, or integration tools may inadvertently introduce XSS vulnerabilities",
+        "solution": "Establish security protocols for evaluating and implementing third-party integrations with proper isolation and monitoring",
+        "implementation": "1. Audit all third-party scripts and their sources\n2. Implement subresource integrity (SRI) for external scripts\n3. Use iframe sandboxing for untrusted content\n4. Regular security assessments of integrated tools\n5. Maintain inventory of all external dependencies",
+        "outcome": "Secure documentation environment that leverages third-party tools while maintaining protection against XSS attacks"
+      }
+    ],
+    "best_practices": [
+      {
+        "title": "Implement Input Validation and Output Encoding",
+        "description": "Establish comprehensive input validation on all user-generated content and properly encode output before displaying it to users",
+        "do": "Use server-side validation with whitelist approaches, encode HTML entities, and implement context-aware output encoding",
+        "dont": "Rely solely on client-side validation or trust user input without proper sanitization and encoding"
+      },
+      {
+        "title": "Deploy Content Security Policy (CSP)",
+        "description": "Configure robust Content Security Policy headers to control which resources can be loaded and executed on your documentation site",
+        "do": "Define strict CSP rules, regularly review and update policies, and monitor CSP violation reports",
+        "dont": "Use overly permissive CSP policies or ignore CSP violation reports that may indicate attack attempts"
+      },
+      {
+        "title": "Regular Security Testing and Audits",
+        "description": "Conduct systematic security testing including XSS vulnerability assessments on all interactive features of your documentation platform",
+        "do": "Perform regular penetration testing, use automated security scanning tools, and conduct code reviews",
+        "dont": "Assume security measures are sufficient without regular testing or ignore security updates for your platform"
+      },
+      {
+        "title": "Secure Session Management",
+        "description": "Implement proper session handling and cookie security to minimize the impact of potential XSS attacks on user accounts",
+        "do": "Use secure cookie flags, implement proper session timeouts, and use HTTP-only cookies for sensitive data",
+        "dont": "Store sensitive information in client-side storage or use predictable session identifiers"
+      },
+      {
+        "title": "User Education and Awareness",
+        "description": "Educate documentation team members and users about XSS risks and safe practices when interacting with documentation platforms",
+        "do": "Provide security training, create guidelines for safe content creation, and maintain incident response procedures",
+        "dont": "Assume users understand security risks or neglect to communicate security policies and procedures"
+      }
+    ],
+    "docsie_connection": "<p>Modern documentation platforms provide built-in security features and workflows that help teams protect against Cross-Site Scripting (XSS) vulnerabilities while maintaining productive documentation processes.</p><ul><li><strong>Automated Input Sanitization:</strong> Advanced platforms automatically sanitize user input in comments, feedback forms, and collaborative editing features, reducing manual security overhead</li><li><strong>Content Security Policies:</strong> Built-in CSP management and configuration tools that adapt to documentation workflows without requiring deep technical security knowledge</li><li><strong>Secure Integration Framework:</strong> Pre-vetted third-party integrations and secure API endpoints that minimize XSS risks from external tools and widgets</li><li><strong>Real-time Security Monitoring:</strong> Automated detection and alerting for suspicious activities, including potential XSS attempts in user-generated content</li><li><strong>Role-based Access Controls:</strong> Granular permissions that limit exposure to XSS attacks by controlling who can input potentially dangerous content</li><li><strong>Security-first Templates:</strong> Pre-built, security-hardened documentation templates that follow XSS prevention best practices out of the box</li></ul>"
+  }
+}

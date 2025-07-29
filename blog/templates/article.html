@@ -12,7 +12,7 @@
   {% include 'favicon.html' %}
 
   <!-- Primary Meta Tags -->
-  <title>{{ article.title }} - {{ settings.blog_name }}</title>
+  <title>{{ article.title }}</title>
   <meta name="author" content="{{ article.author_name }}"/>
   <meta name="title" content="{{ article.title }}">
   <meta name="description" content="{{ article.meta_description|default(article.summary) }}"/>
@@ -613,7 +613,12 @@
           <div class="flex items-center space-x-4 text-gray-500">
             <div class="flex items-center space-x-1">
               <i data-lucide="calendar" class="h-4 w-4"></i>
-              <span class="text-sm">{{ article.publish_date }}</span>
+              <span class="text-sm">
+                {{ article.publish_date }}
+                {% if article.modified_timestamp and article.modified_timestamp.date() != article.timestamp.date() %}
+                  <span class="text-gray-500 ml-2">(Updated: {{ article.modified_timestamp.strftime('%B %d, %Y') }})</span>
+                {% endif %}
+              </span>
             </div>
             <div class="flex items-center space-x-1">
               <i data-lucide="clock" class="h-4 w-4"></i>
