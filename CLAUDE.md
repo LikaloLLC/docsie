@@ -316,3 +316,53 @@ BLOGVI_DIRECTORY=/path/to/blog blogvi
 
 ### LinkedIn Sharing Limitation
 LinkedIn's sharing API doesn't support pre-filling text - it only accepts URL parameter and pulls content from Open Graph meta tags. This is different from Twitter which supports both URL and text parameters.
+
+## Project TODO Files and Their Relationships
+
+### 1. Main Site TODO.md
+**Location**: `/Users/philippetrounev/PycharmProjects/docsie-site/TODO.md`
+**Purpose**: Site-wide SEO and technical issues
+**Key Focus Areas**:
+- 1,354 404 errors across the site
+- Hreflang configuration issues (59% of pages)
+- Canonical tag conflicts
+- Sitemap issues
+- Navigation and structure problems
+- Crawl budget optimization
+
+### 2. BlogVi TODO.md
+**Location**: `/Users/philippetrounev/PycharmProjects/docsie-site/.external/BlogVi/TODO.md`
+**Purpose**: Blog-specific features and enhancements
+**Key Focus Areas**:
+- AI feature implementation (FAQ, TL;DR, glossary - COMPLETED)
+- Term pages implementation (Phase 1 priority)
+- Image optimization (CRITICAL - not implemented)
+- CTR optimization features
+- GSC integration for performance tracking
+- Platform-wide issues (CDN, portals, sites)
+
+### 3. GSC Reports TODO.md
+**Location**: `/Users/philippetrounev/PycharmProjects/docsie-site/gsc_reports/TODO.md`
+**Purpose**: Google Search Console findings and action items
+**Key Focus Areas**:
+- Catastrophic CTR problem (0.18% vs expected 0.5-1.0%)
+- Zero-click pages analysis
+- Monitoring schedule for improvements
+- Performance metrics and tracking
+
+### Relationships Between TODOs:
+1. **GSC Reports → BlogVi**: GSC findings drive BlogVi feature priorities (e.g., CTR issues led to title/meta description features)
+2. **BlogVi → Main Site**: Blog improvements affect overall site SEO (e.g., crawl budget, content quality)
+3. **Main Site → BlogVi**: Site-wide issues like 404s and hreflang affect blog performance
+
+### Key Scripts and Tools:
+- **GSC Integration**: `/Users/philippetrounev/PycharmProjects/docsie-site/.external/BlogVi/src/blog_vi/core/gsc_integration.py`
+- **Title Baseline Capture**: `/Users/philippetrounev/PycharmProjects/docsie-site/gsc_reports/capture_title_baseline.py`
+- **Title Generator**: `/Users/philippetrounev/PycharmProjects/docsie-site/.external/BlogVi/src/blog_vi/core/title_generator.py`
+- **Meta Description Generator**: `/Users/philippetrounev/PycharmProjects/docsie-site/.external/BlogVi/src/blog_vi/core/meta_description.py`
+
+### Current Project Status (July 2025):
+1. **Completed**: Dynamic meta descriptions, title optimization, AI features (FAQ, TL;DR, glossary)
+2. **Monitoring**: CTR improvements from title/meta changes (2-4 week observation period)
+3. **Next Priority**: Term pages Phase 1 implementation
+4. **Critical Issues**: Image optimization missing, 1,354 404 errors, hreflang problems
