@@ -42,5 +42,71 @@ Disallow: /*.ico$
 # These files should have proper cache headers instead
 # Consider using CDN for static assets
 
+# Block low-value URL patterns (2025-07-28)
+# Saves crawl budget for high-value content
+# NOTE: Query parameters (/*?*) removed pending investigation
+Disallow: /*/page/*         # Pagination pages
+Disallow: /page/*           # Pagination pages
+Disallow: /feed/            # RSS feeds
+Disallow: /rss.xml
+Disallow: /comments/feed/
+Disallow: /*#*              # Hash fragments shouldn't be indexed
+Disallow: /*/feedback_preview_demo/  # Test/demo pages not for indexing
+
+# Block low-value blog categories (less than 5 articles)
+# Updated 2025-07-28 based on article count analysis
+Disallow: /blog/documentation/
+Disallow: /blog/manufacturing/
+Disallow: /blog/internal-documentation/
+Disallow: /blog/transport-management-system/
+Disallow: /blog/documentation-workflow/
+Disallow: /blog/pdf/
+Disallow: /blog/interview-as-a-service/
+Disallow: /blog/hrms/
+Disallow: /blog/knowledge-management/
+Disallow: /blog/erp-knowledge-management-system--erp-software/
+Disallow: /blog/product-requirements-document/
+Disallow: /blog/product-knowlege/
+Disallow: /blog/process-improvement-tools/
+Disallow: /blog/content-authoring/
+Disallow: /blog/tacit-knowledge/
+Disallow: /blog/rightanswers/
+Disallow: /blog/testing-documentation/
+Disallow: /blog/black-friday-deals/
+Disallow: /blog/documentation-version-control/
+Disallow: /blog/prompt-engineering/
+Disallow: /blog/brand-blog/
+Disallow: /blog/bug-bounty-program/
+Disallow: /blog/user-manual-instructions/
+Disallow: /blog/sop/
+Disallow: /blog/standard-operating-procedures/
+Disallow: /blog/context-sensitive-help-and-in-app-guidance/
+Disallow: /blog/gatsby-extension/
+Disallow: /blog/hat/
+Disallow: /blog/help-authoring-tools/
+Disallow: /blog/importance-of-documentation/
+Disallow: /blog/product-manager/
+Disallow: /blog/product-managers/
+Disallow: /blog/docsie-award/
+Disallow: /blog/product-requirements-documentation/
+Disallow: /blog/customer-service/
+Disallow: /blog/customer-experience/
+Disallow: /blog/alternative-to-document360/
+Disallow: /blog/tools-for-product-managers/
+Disallow: /blog/gitbook-alternative/
+Disallow: /blog/collaboration/
+Disallow: /blog/cybersecurity/
+Disallow: /blog/customer-feedback/
+Disallow: /blog/knowledge-portal-design/
+
+# Strategic categories we're keeping despite low article count:
+# /blog/ai/ (23 articles - trending topic)
+# /blog/api-documentation/ (6 articles - core focus)
+# /blog/llm-solutions/ (2 articles - trending)
+# /blog/llm/ (1 article - trending)
+# /blog/chatgpt/ (1 article - trending)
+# /blog/technical-writer-ai/ (1 article - strategic)
+# /blog/product-documentation-translation/ (1 article - unique value)
+
 # Sitemap location
 Sitemap: https://www.docsie.io/sitemap.xml 
