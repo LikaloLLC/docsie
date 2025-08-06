@@ -4,11 +4,34 @@
         {% if data.header_image %}
         <div class="md:w-1/2 relative overflow-hidden">
             <a href="{{ data.path }}" class="block h-full">
+                {% if data.header_image_optimized and data.header_image_webp %}
+                <picture>
+                    <source srcset="{{ data.header_image_webp }}" type="image/webp">
+                    <img src="{{ data.header_image_optimized }}" 
+                         alt="{{ data.header_image_alt|default(data.title) }}" 
+                         class="w-full h-full object-cover article-card-image {{ 'blur-up' if data.header_image_lqip else '' }}"
+                         width="{{ data.header_image_width if data.header_image_width else '' }}"
+                         height="{{ data.header_image_height if data.header_image_height else '' }}"
+                         style="min-height: 400px;"
+                         loading="eager"
+                         {% if data.header_image_lqip %}data-lqip="{{ data.header_image_lqip }}"{% endif %}>
+                </picture>
+                {% elif data.header_image_optimized %}
+                <img src="{{ data.header_image_optimized }}" 
+                     alt="{{ data.header_image_alt|default(data.title) }}" 
+                     class="w-full h-full object-cover article-card-image {{ 'blur-up' if data.header_image_lqip else '' }}"
+                     width="{{ data.header_image_width if data.header_image_width else '' }}"
+                     height="{{ data.header_image_height if data.header_image_height else '' }}"
+                     style="min-height: 400px;"
+                     loading="eager"
+                     {% if data.header_image_lqip %}data-lqip="{{ data.header_image_lqip }}"{% endif %}>
+                {% else %}
                 <img src="{{ data.header_image }}" 
                      alt="{{ data.title }}" 
                      class="w-full h-full object-cover article-card-image"
                      style="min-height: 400px;"
                      loading="eager">
+                {% endif %}
             </a>
         </div>
         {% endif %}
@@ -58,9 +81,24 @@
             <div class="mt-6 pt-6 border-t border-gray-200 flex items-center justify-between blog-meta">
                 <div class="flex items-center space-x-3">
                     {% if data.author_image %}
-                    <img src="{{ data.author_image }}" 
-                         alt="{{ data.author_name }}" 
-                         class="w-10 h-10 rounded-full">
+                        {% if data.author_image_optimized and data.author_image_webp %}
+                        <picture>
+                            <source srcset="{{ data.author_image_webp }}" type="image/webp">
+                            <img src="{{ data.author_image_optimized }}" 
+                                 alt="{{ data.author_image_alt|default(data.author_name ~ ' avatar') }}" 
+                                 class="w-10 h-10 rounded-full"
+                                 loading="lazy">
+                        </picture>
+                        {% elif data.author_image_optimized %}
+                        <img src="{{ data.author_image_optimized }}" 
+                             alt="{{ data.author_image_alt|default(data.author_name ~ ' avatar') }}" 
+                             class="w-10 h-10 rounded-full"
+                             loading="lazy">
+                        {% else %}
+                        <img src="{{ data.author_image }}" 
+                             alt="{{ data.author_name }}" 
+                             class="w-10 h-10 rounded-full">
+                        {% endif %}
                     {% else %}
                     <div class="w-10 h-10 rounded-full bg-docsie-primary flex items-center justify-center text-white font-medium">
                         {{ data.author_name[:1] }}

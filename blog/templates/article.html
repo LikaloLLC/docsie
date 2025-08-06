@@ -25,7 +25,7 @@
   <meta property="og:url" content="{{ article.url }}">
   <meta property="og:title" content="{{ article.title }}">
   <meta property="og:description" content="{{ article.meta_description|default(article.summary) }}">
-  <meta property="og:image" content="{{ article.header_image if article.header_image else settings.landing_meta.image }}">
+  <meta property="og:image" content="{{ article.header_image_optimized if article.header_image_optimized else (article.header_image if article.header_image else settings.landing_meta.image) }}">
   <meta property="og:image:alt" content="{{ article.title }}">
   <meta property="article:published_time" content="{{ article.timestamp.isoformat() }}">
   <meta property="article:modified_time" content="{{ article.modified_timestamp.isoformat() }}">
@@ -35,7 +35,7 @@
   <meta property="twitter:url" content="{{ article.url }}">
   <meta property="twitter:title" content="{{ article.title }}">
   <meta property="twitter:description" content="{{ article.meta_description|default(article.summary) }}">
-  <meta property="twitter:image" content="{{ article.header_image }}">
+  <meta property="twitter:image" content="{{ article.header_image_optimized if article.header_image_optimized else article.header_image }}">
 
   <!-- Structured Data (JSON-LD) -->
   <script type="application/ld+json">
@@ -69,12 +69,12 @@
         },
         "headline": "{{ article.title | escape }}",
         "description": "{{ article.summary | escape }}",
-        "image": "{{ article.header_image if article.header_image else settings.landing_meta.image }}",
+        "image": "{{ article.header_image_optimized if article.header_image_optimized else (article.header_image if article.header_image else settings.landing_meta.image) }}",
         "author": {
           "@type": "Person",
           "name": "{{ article.author_name | escape }}"
           {% if article.author_image -%}
-          ,"image": "{{ article.author_image }}"
+          ,"image": "{{ article.author_image_optimized if article.author_image_optimized else article.author_image }}"
           {%- endif %}
         },
         "publisher": {
@@ -441,6 +441,45 @@
     #cta-minimized button:hover {
       transform: scale(1.05);
     }
+    
+    /* Image Optimization Styles */
+    .blur-up {
+      filter: blur(5px);
+      transition: filter 0.3s;
+    }
+
+    .blur-up.loaded {
+      filter: blur(0);
+    }
+
+    picture img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+
+    /* Aspect ratio boxes to prevent CLS */
+    .aspect-ratio-box {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .aspect-ratio-box::before {
+      content: '';
+      display: block;
+      padding-bottom: var(--aspect-ratio);
+    }
+
+    .aspect-ratio-box img,
+    .aspect-ratio-box picture {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
   </style>
 </head>
 
@@ -600,7 +639,16 @@
         <div class="flex items-center space-x-6 mb-8">
           <div class="flex items-center space-x-3">
             {% if article.author_image %}
-              <img class="w-10 h-10 rounded-full" src="{{ article.author_image }}" alt="{{ article.author_name }}">
+              {% if article.author_image_optimized and article.author_image_webp %}
+                <picture>
+                  <source srcset="{{ article.author_image_webp }}" type="image/webp">
+                  <img class="w-10 h-10 rounded-full" src="{{ article.author_image_optimized }}" alt="{{ article.author_image_alt|default(article.author_name ~ ' avatar') }}" loading="lazy">
+                </picture>
+              {% elif article.author_image_optimized %}
+                <img class="w-10 h-10 rounded-full" src="{{ article.author_image_optimized }}" alt="{{ article.author_image_alt|default(article.author_name ~ ' avatar') }}" loading="lazy">
+              {% else %}
+                <img class="w-10 h-10 rounded-full" src="{{ article.author_image }}" alt="{{ article.author_name }}">
+              {% endif %}
             {% else %}
               <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center">
                 <span class="text-blue-600 font-medium">{{ article.author_name[:2] }}</span>
@@ -915,7 +963,16 @@
       <div class="mt-12 pt-8 border-t border-gray-200">
         <div class="flex items-start gap-4">
           {% if article.author_image %}
-            <img class="w-16 h-16 rounded-full" src="{{ article.author_image }}" alt="{{ article.author_name }}">
+            {% if article.author_image_optimized and article.author_image_webp %}
+              <picture>
+                <source srcset="{{ article.author_image_webp }}" type="image/webp">
+                <img class="w-16 h-16 rounded-full" src="{{ article.author_image_optimized }}" alt="{{ article.author_image_alt|default(article.author_name ~ ' avatar') }}" loading="lazy">
+              </picture>
+            {% elif article.author_image_optimized %}
+              <img class="w-16 h-16 rounded-full" src="{{ article.author_image_optimized }}" alt="{{ article.author_image_alt|default(article.author_name ~ ' avatar') }}" loading="lazy">
+            {% else %}
+              <img class="w-16 h-16 rounded-full" src="{{ article.author_image }}" alt="{{ article.author_name }}">
+            {% endif %}
           {% else %}
             <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center">
               <span class="text-blue-600 font-medium text-xl">{{ article.author_name[:2] }}</span>
@@ -1273,6 +1330,54 @@
       });
     });
   });
+</script>
+
+<!-- Progressive Image Loading with LQIP -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const images = document.querySelectorAll('img[data-lqip]');
+    
+    images.forEach(img => {
+        // Set LQIP as initial source
+        const lqip = img.getAttribute('data-lqip');
+        if (lqip && !img.complete) {
+            img.classList.add('blur-up');
+            
+            // Create a new image to load the high quality version
+            const highQualityImg = new Image();
+            highQualityImg.src = img.src;
+            
+            highQualityImg.onload = function() {
+                img.src = highQualityImg.src;
+                img.classList.add('loaded');
+            };
+            
+            // Set LQIP
+            img.src = lqip;
+        }
+    });
+});
+
+// Enhanced lazy loading with native support fallback
+if ('loading' in HTMLImageElement.prototype) {
+    // Browser supports native lazy loading
+    console.log('Native lazy loading supported');
+} else {
+    // Fallback to Intersection Observer
+    const lazyImages = document.querySelectorAll('img[loading="lazy"]');
+    
+    const imageObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const img = entry.target;
+                img.src = img.dataset.src || img.src;
+                imageObserver.unobserve(img);
+            }
+        });
+    });
+    
+    lazyImages.forEach(img => imageObserver.observe(img));
+}
 </script>
 
 </body>
