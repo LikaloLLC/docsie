@@ -71,13 +71,17 @@ def write_xml_sitemap(url_groups, site_url):
     
     # Add URLs with hreflang annotations
     for base_path, lang_urls in sorted(url_groups.items()):
-        # Determine priority based on path depth
+        # Determine priority based on path depth and importance
         if not base_path:
-            priority = "1.0"
+            priority = "1.0"  # Homepage
+        elif base_path == 'pricing' or base_path.startswith('pricing/'):
+            priority = "0.9"  # Pricing page - HIGH PRIORITY
+        elif base_path == 'blog' or base_path.startswith('blog/'):
+            priority = "0.8"  # Blog - HIGH PRIORITY
         elif base_path.count('/') == 0:
-            priority = "0.8"
+            priority = "0.7"  # Other top-level pages
         else:
-            priority = "0.6"
+            priority = "0.6"  # Deeper pages
             
         # Add entry for each language version
         for lang, url in lang_urls.items():
@@ -116,7 +120,7 @@ if __name__ == '__main__':
                   'node_modules', 'staticjinja', 'blogvi', 'utils', 'locale', 
                   '.yaml_batch_status', '.yaml_translation_cache', 'backups',
                   'scss', 'assets', 'content', 'eml', 'ui', 'static', 'scripts',
-                  'styles', 'pricing_v2', 'modern-home']
+                  'styles', 'modern-home']  # Removed pricing_v2 from skip list
     
     # Skip untranslated/old pages
     skip_pages = ['validation_page', '2020_websummit', 'collision_2020', 'collision_2021',
