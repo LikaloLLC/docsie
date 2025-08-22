@@ -53,6 +53,7 @@ This is the static website repository for Docsie.io, a documentation platform. T
 - **Output**: Static HTML files generated to root directory
 - **Internationalization**: Multi-language support with Babel (de, es, fr, jp, ko, pt languages)
 - **Blog System**: Uses BlogVI for blog generation with YAML configuration
+- **Configuration**: `site_config.yaml` controls build behavior and version selection
 
 ## Key Directories
 
@@ -62,6 +63,34 @@ This is the static website repository for Docsie.io, a documentation platform. T
 - `assets/`: Static assets (images, CSS, JS)
 - `locale/`: Translation files
 - `scss/`: SCSS source files for styling
+
+## Site Configuration (site_config.yaml)
+
+The site build process is controlled by `site_config.yaml`, which was created during the August 2025 incident to provide better control over site versions:
+
+```yaml
+# Version Control
+homepage_version: "v2"  # Options: "v1", "v2", "v3"
+pricing_version: "v2"    # Options: "v1", "v2"
+
+# Canonical URL Configuration
+canonical_domain: "https://www.docsie.io"  # ALWAYS use www for SEO
+
+# Build Settings
+verbose_build: true
+enable_v3_preview: false  # Set to true to test v3 in development
+
+# Feature Flags
+enable_multilingual: true
+enable_blog: true
+```
+
+**Important Notes:**
+- The configuration determines which template versions are built
+- `homepage_version: "v2"` maps `src/index_v2.html` → `index.html`
+- `pricing_version: "v2"` maps `src/pricing_v2/index.html` → `pricing/index.html`
+- v3 files are preserved for future deployment but not currently active
+- This system prevents accidental deployment of work-in-progress versions
 
 ## Development Commands
 
