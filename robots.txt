@@ -1,72 +1,21 @@
 User-agent: *
-Disallow: /hct/
-Disallow: /hanbai/
-Disallow: /users/ 
-Disallow: /rest-auth/
-Disallow: /support/profile/ 
-Disallow: /support/api/
+
+# Essential security - admin and authentication only
+Disallow: /admin/
 Disallow: /accounts/
-Disallow: /accounts/login/
-Disallow: /manager/
-Disallow: /admin/ 
-Disallow: /register/
-Disallow: /support/new-question/
-Disallow: /support/answer/
+Disallow: /rest-auth/
 
-# Disabled language directories (11 languages)
-Disallow: /bn/
-Disallow: /cs/
-Disallow: /el/
-Disallow: /fi/
-Disallow: /hi/
-Disallow: /hu/
-Disallow: /id/
-Disallow: /is/
-Disallow: /pl/
-Disallow: /ro/
-Disallow: /tr/
-Disallow: /uk/
+# User private areas
+Disallow: /users/
+Disallow: /support/profile/
 
-# Prevent image indexing to save crawl budget
-Disallow: /assets/images/
-Disallow: /assets/new_home/
-Disallow: /*.jpg$
-Disallow: /*.jpeg$
-Disallow: /*.png$
-Disallow: /*.gif$
-Disallow: /*.webp$
-Disallow: /*.svg$
-Disallow: /*.ico$
+# Allow everything else to be indexed
+# All languages: ALLOWED
+# All content pages: ALLOWED  
+# All blog pages: ALLOWED
+# All solutions: ALLOWED
 
-# Note: Google needs CSS/JS access for rendering
-# These files should have proper cache headers instead
-# Consider using CDN for static assets
-
-# Block low-value URL patterns (2025-07-28)
-# Saves crawl budget for high-value content
-# NOTE: Query parameters (/*?*) removed pending investigation
-Disallow: /*/page/*         # Pagination pages
-Disallow: /page/*           # Pagination pages
-Disallow: /feed/            # RSS feeds
-Disallow: /rss.xml
-Disallow: /comments/feed/
-Disallow: /*#*              # Hash fragments shouldn't be indexed
-Disallow: /*/feedback_preview_demo/  # Test/demo pages not for indexing
-
-# Blog category pages are now allowed for crawling
-# All blog categories removed from robots.txt on 2025-08-06
-# This allows search engines to index all category pages
-
-# Sitemap location
-Sitemap: https://www.docsie.io/sitemap.xml 
-
-
-# Block suspicious file extensions
-  Disallow: /*.php
-  Disallow: /*.php$
-  Disallow: /*.h
-  Disallow: /*.h$
-  Disallow: /*.modbus
-  Disallow: /*.modbus$
-  Disallow: /*.fl
-  Disallow: /*.fl$
+# RECOVERY NOTE (August 22, 2025):
+# Minimal robots.txt after complete deindexing incident
+# Previous overly restrictive rules caused site-wide deindexing
+# Keep this simple - only block truly private/admin areas

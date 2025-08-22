@@ -2,6 +2,45 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+## 🚨 CRITICAL INCIDENT - August 22, 2025
+
+### The Problem
+On August 22, 2025, we discovered that www.docsie.io was completely deindexed by Google, showing "No information is available for this page" in search results. This led to a complete loss of organic traffic and demo bookings.
+
+### Root Cause
+The `<title>` and `<meta name="description">` tags were appearing on line 321+ of the HTML instead of within the first 50 lines. This was caused by large include files (`_hreflang.html` and `_structured_data.html`) being placed BEFORE the critical SEO tags in the base templates.
+
+### Impact
+- **All pages using `_base.html`, `_base_v2.html`, `_base_v3.html` were affected**
+- Main homepage (all versions) - completely deindexed
+- All 15+ translated homepages - completely deindexed  
+- Zero organic traffic and demo bookings
+- Google showing non-www domain (https://docsie.io) instead of canonical www
+
+### The Fix (Implemented August 22, 2025)
+1. Reordered base templates to place title/description on lines 13-14
+2. Moved includes (_hreflang.html, _structured_data.html) AFTER critical SEO tags
+3. Created `site_config.yaml` to control v2/v3 version selection
+4. Fixed malformed `name=description` (missing quotes) in all base templates
+
+### Files Modified
+- `src/_base.html` - Title/description moved to lines 13-14
+- `src/_base_v2.html` - Title/description moved to lines 13-14  
+- `src/_base_v3.html` - Title/description moved to lines 13-14
+- `site_config.yaml` - New config file for version control
+- `main.py` - Updated to use site_config.yaml
+
+### Recovery Actions Required
+1. Deploy immediately
+2. Request re-indexing in Google Search Console
+3. Submit to Bing and Yandex webmaster tools
+4. Monitor recovery over 7-14 days
+
+### Prevention
+- ALWAYS ensure title and meta description appear within first 50 lines of HTML
+- Test HTML output after template changes
+- Monitor Google Search Console for indexing issues
+
 ## Project Overview
 
 This is the static website repository for Docsie.io, a documentation platform. The site is built using Python with staticjinja (a static site generator based on Jinja2 templates) and hosted on GitHub Pages.
