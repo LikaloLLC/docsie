@@ -1,21 +1,36 @@
 User-agent: *
 
-# Essential security - admin and authentication only
+# Admin and authentication areas
 Disallow: /admin/
+Disallow: /manager/
 Disallow: /accounts/
 Disallow: /rest-auth/
+Disallow: /register/
 
-# User private areas
+# User-specific areas
 Disallow: /users/
 Disallow: /support/profile/
+Disallow: /support/api/
+Disallow: /support/new-question/
+Disallow: /support/answer/
 
-# Allow everything else to be indexed
-# All languages: ALLOWED
-# All content pages: ALLOWED  
-# All blog pages: ALLOWED
-# All solutions: ALLOWED
+# Legacy directories
+Disallow: /hct/
+Disallow: /hanbai/
+
+# Pagination (simple pattern)
+Disallow: /page/
+
+# Demo pages
+Disallow: /feedback_preview_demo/
+
+# Security: Block specific file extensions (end of URL only)
+Disallow: /*.php$
+Disallow: /*.h$
+Disallow: /*.modbus$
+Disallow: /*.fl$
 
 # RECOVERY NOTE (August 22, 2025):
-# Minimal robots.txt after complete deindexing incident
-# Previous overly restrictive rules caused site-wide deindexing
-# Keep this simple - only block truly private/admin areas
+# Simplified robots.txt after deindexing incident
+# Previous patterns like /*.h blocked legitimate content
+# Now only blocking truly private areas and suspicious file extensions
