@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="{{ lang }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <!-- SEO Meta Tags -->
+    <title>{% block title %}Docsie - Documentation Platform{% endblock title %}</title>
+    <meta name="description" content="{% block description %}Build once. Publish everywhere. The documentation platform that works where your team works.{% endblock description %}">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="{% block ogtitle %}{{ self.title() }}{% endblock ogtitle %}">
+    <meta property="og:description" content="{% block ogdescription %}{{ self.description() }}{% endblock ogdescription %}">
+    <meta property="og:image" content="{% block shareimage %}https://www.docsie.io/assets/share-image-v3.jpeg{% endblock shareimage %}">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.docsie.io{{ landing_url }}">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{% block twittertitle %}{{ self.title() }}{% endblock twittertitle %}">
+    <meta name="twitter:description" content="{% block twitterdescription %}{{ self.description() }}{% endblock twitterdescription %}">
+    <meta name="twitter:image" content="{% block twitterimage %}{{ self.shareimage() }}{% endblock twitterimage %}">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.docsie.io{{ landing_url }}">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    
+    <!-- Base Styles -->
+    <link rel="stylesheet" href='/style.css'>
+    
+    <!-- Design System v3 -->
+    <link rel="stylesheet" href="/new_home/design_system_v3.css">
+    
+    {% block styles %}{% endblock styles %}
+    
+    <!-- Analytics -->
+    {% include '_analytics.html' %}
+</head>
+<body class="v3">
+  <header class="gn v3">
+    <nav class="nr">
+      <ul>
+        <li class="v-lg"><a href="/" aria-label="Docsie">
+          <svg class="lg" width="48" height="48" viewBox="0 0 48 48">
+            <use xlink:href="#icon-logo"></use>
+          </svg>
+        </a></li>
+        {% if small_header is defined %}
+        {% include '_header_small.html' %}
+        {% else %}
+        {% include '_header.html' %}
+        {% endif %}
+        {% include '_tags.body.html' %}
+      </ul>
+    </nav>
+  </header>
+    
+  {% block content %}{% endblock content %}
+
+  <footer class="gn v3">
+    <!-- Page Footer -->
+    <div id="ddfb-root"></div>
+    <div class="lang-redirect-container"></div>
+    <section class="ft-nav">
+      <div class="logo-lang-container">
+        <div class="docsie-lang-picker-container"></div>
+        <div class="nav-logo v-md">
+          <svg class="lg" width="32" height="40" viewBox="0 0 48 48">
+            <use xlink:href="#icon-docsie"></use>
+          </svg>
+        </div>
+      </div>
+      {% include '_footer.html' %}
+    </section>
+  </footer>
+  
+  {% include '_icons.html' %}
+  {% include '_alexa.html' %}
+  {% include '_mobile_menu.html' %}
+  {% include '_autopilot.html' %}
+  {% include '_policy.html' %}
+  {% include '_lang-redirect-banner.html' %}
+  {% include '_lucky_orange.html' %}
+  {% include '_traffic_guard.html' %}
+    
+  <!-- Core JavaScript -->
+  <script src="/new_home/core_v3.js"></script>
+    
+  {% block scripts %}{% endblock scripts %}
+    
+  <!-- Calendly Integration -->
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+  <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+</body>
+</html>

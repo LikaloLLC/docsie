@@ -1,0 +1,406 @@
+/* Design System v2 - Based on Customer Insights & Warm Design */
+
+:root {
+  /* Brand Colors - Warm, Professional, Trustworthy */
+  --docsie-sand-50: #fdf7ee;
+  --docsie-sand-100: #fbe6ca;
+  --docsie-sand-200: #fadfbe;
+  --docsie-sand-300: #f4cfac;
+  
+  --docsie-brand-50: #fff1e8;
+  --docsie-brand-100: #fde3d3;
+  --docsie-brand-200: #fac6ac;
+  --docsie-brand-300: #f5a981;
+  --docsie-brand-400: #f08b60;
+  --docsie-brand-500: #ed6f43;
+  --docsie-brand-600: #e65f38;
+  --docsie-brand-700: #cf4f2f;
+  --docsie-brand-800: #a73f28;
+  --docsie-brand-900: #793022;
+  
+  /* Semantic Colors */
+  --docsie-success: #10b981;
+  --docsie-warning: #f59e0b;
+  --docsie-error: #ef4444;
+  --docsie-info: #3b82f6;
+  
+  /* Text Colors */
+  --docsie-ink: #793022;
+  --docsie-ink-soft: #b86d57;
+  --docsie-ink-muted: rgba(121, 48, 34, 0.7);
+  
+  /* UI Colors */
+  --docsie-line: #e7caa4;
+  --docsie-bg-primary: var(--docsie-sand-200);
+  --docsie-bg-secondary: var(--docsie-sand-100);
+  --docsie-bg-card: rgba(255, 255, 255, 0.7);
+  
+  /* Typography Scale */
+  --font-display: 'Poppins', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --font-serif: 'Charter', Georgia, serif;
+  
+  /* Font Sizes - Fluid Typography */
+  --text-xs: clamp(0.75rem, 0.7vw, 0.875rem);
+  --text-sm: clamp(0.875rem, 0.8vw, 1rem);
+  --text-base: clamp(1rem, 1vw, 1.125rem);
+  --text-lg: clamp(1.125rem, 1.2vw, 1.25rem);
+  --text-xl: clamp(1.25rem, 1.5vw, 1.5rem);
+  --text-2xl: clamp(1.5rem, 2vw, 2rem);
+  --text-3xl: clamp(2rem, 3vw, 3rem);
+  --text-4xl: clamp(2.5rem, 4vw, 4rem);
+  --text-hero: clamp(3rem, 7vw, 5.5rem);
+  
+  /* Spacing Scale */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2rem;
+  --space-xl: 3rem;
+  --space-2xl: 4rem;
+  --space-3xl: 6rem;
+  
+  /* Border Radius */
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.25rem;
+  --radius-2xl: 1.5rem;
+  --radius-pill: 9999px;
+  
+  /* Shadows */
+  --shadow-sm: 0 2px 4px rgba(121, 48, 34, 0.05);
+  --shadow-md: 0 8px 16px rgba(121, 48, 34, 0.08);
+  --shadow-lg: 0 20px 40px rgba(121, 48, 34, 0.1);
+  --shadow-xl: 0 30px 60px rgba(121, 48, 34, 0.15);
+  --shadow-inset: inset 0 0 0 1px rgba(0, 0, 0, 0.04);
+  
+  /* Animations */
+  --transition-fast: 150ms ease;
+  --transition-base: 300ms ease;
+  --transition-slow: 500ms ease;
+  --animation-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+/* Base Reset & Typography */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--docsie-bg-primary);
+  color: var(--docsie-ink);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+p, .body-text {
+  font-family: var(--font-serif);
+  line-height: 1.7;
+}
+
+/* Component Classes */
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-sm) var(--space-lg);
+  border-radius: var(--radius-pill);
+  font-weight: 500;
+  font-size: var(--text-base);
+  transition: all var(--transition-base);
+  cursor: pointer;
+  text-decoration: none;
+  border: 2px solid transparent;
+  gap: var(--space-xs);
+}
+
+.btn-primary {
+  background: var(--docsie-brand-500);
+  color: white;
+  box-shadow: var(--shadow-md);
+}
+
+.btn-primary:hover {
+  background: var(--docsie-brand-600);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--docsie-ink);
+  border-color: var(--docsie-brand-500);
+}
+
+.btn-secondary:hover {
+  background: var(--docsie-brand-500);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-large {
+  padding: var(--space-md) var(--space-2xl);
+  font-size: var(--text-lg);
+}
+
+/* Cards */
+.card {
+  background: var(--docsie-bg-card);
+  backdrop-filter: blur(10px);
+  border-radius: var(--radius-xl);
+  padding: var(--space-lg);
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--docsie-line);
+  transition: all var(--transition-base);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.card-problem {
+  background: white;
+  border-left: 4px solid var(--docsie-brand-500);
+}
+
+.card-solution {
+  background: linear-gradient(135deg, var(--docsie-brand-50), var(--docsie-sand-50));
+}
+
+/* Badges */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: var(--space-xs) var(--space-md);
+  background: var(--docsie-bg-card);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--docsie-line);
+  border-radius: var(--radius-pill);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--docsie-ink);
+}
+
+.badge-success {
+  background: rgba(16, 185, 129, 0.1);
+  border-color: rgba(16, 185, 129, 0.3);
+  color: #059669;
+}
+
+.badge-warning {
+  background: rgba(245, 158, 11, 0.1);
+  border-color: rgba(245, 158, 11, 0.3);
+  color: #d97706;
+}
+
+/* Trust Items */
+.trust-item {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: var(--space-xs) var(--space-md);
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(10px);
+  border-radius: var(--radius-pill);
+  font-weight: 500;
+  color: var(--docsie-ink);
+  box-shadow: var(--shadow-sm);
+}
+
+.trust-check {
+  color: var(--docsie-success);
+  font-weight: bold;
+}
+
+/* Section Headers */
+.section-header {
+  text-align: center;
+  margin-bottom: var(--space-3xl);
+}
+
+.section-title {
+  font-size: var(--text-4xl);
+  color: var(--docsie-ink);
+  margin-bottom: var(--space-md);
+}
+
+.section-subtitle {
+  font-size: var(--text-xl);
+  color: var(--docsie-ink-muted);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Problem/Solution Cards */
+.problem-card {
+  position: relative;
+  padding: var(--space-lg);
+  background: white;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-base);
+  cursor: pointer;
+}
+
+.problem-card::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: var(--docsie-error);
+  border-radius: var(--radius-xl) 0 0 var(--radius-xl);
+}
+
+.problem-card:hover {
+  transform: translateX(8px);
+  box-shadow: var(--shadow-lg);
+}
+
+.solution-card {
+  position: relative;
+  padding: var(--space-lg);
+  background: linear-gradient(135deg, var(--docsie-brand-50), white);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-base);
+}
+
+.solution-card::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: var(--docsie-success);
+  border-radius: var(--radius-xl) 0 0 var(--radius-xl);
+}
+
+/* Transformation Arrows */
+.transformation-row {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: var(--space-md);
+  padding: var(--space-sm);
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: var(--radius-md);
+  margin-bottom: var(--space-sm);
+}
+
+.from-state {
+  text-align: right;
+  color: var(--docsie-ink-muted);
+  text-decoration: line-through;
+}
+
+.to-state {
+  font-weight: 600;
+  color: var(--docsie-success);
+}
+
+.arrow-icon {
+  color: var(--docsie-brand-500);
+  font-weight: bold;
+  font-size: var(--text-xl);
+}
+
+/* Animation Classes */
+.fade-in {
+  animation: fadeIn var(--transition-slow) ease-out;
+}
+
+.slide-up {
+  animation: slideUp var(--transition-slow) ease-out;
+}
+
+.bounce-in {
+  animation: bounceIn var(--transition-slow) var(--animation-bounce);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounceIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Responsive Utilities */
+@media (max-width: 768px) {
+  :root {
+    --space-lg: 1.5rem;
+    --space-xl: 2rem;
+    --space-2xl: 3rem;
+    --space-3xl: 4rem;
+  }
+  
+  .hide-mobile {
+    display: none;
+  }
+}
+
+@media (min-width: 769px) {
+  .hide-desktop {
+    display: none;
+  }
+}
+
+/* Container */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--space-md);
+}
+
+/* Section Spacing */
+.section {
+  padding: var(--space-3xl) 0;
+}
+
+.section-alt {
+  background: var(--docsie-bg-secondary);
+}

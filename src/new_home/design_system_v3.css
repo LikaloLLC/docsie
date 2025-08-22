@@ -1,0 +1,974 @@
+/* 
+ * Design System v3
+ * Warm, professional design system based on customer insights
+ * Modular, maintainable, and scalable
+ */
+
+/* ============================================
+   1. CSS VARIABLES & DESIGN TOKENS
+   ============================================ */
+
+:root {
+  /* Brand Colors - Warm Palette */
+  --color-cream: #FFEDD6;
+  --color-cream-light: #FFF7EC;
+  --color-sand: #FFE5C5;
+  --color-sand-light: #FFF0DD;
+  
+  --color-primary: #FF6738;      /* Main orange */
+  --color-primary-light: #FEA85E; /* Light orange */
+  --color-primary-dark: #E85A2F;  /* Dark orange */
+  
+  --color-accent: #B24934;        /* Brown/burgundy */
+  --color-accent-dark: #8B3A28;
+  --color-accent-light: #C85943;
+  
+  /* Semantic Colors */
+  --color-success: #10B981;
+  --color-warning: #F59E0B;
+  --color-error: #EF4444;
+  --color-info: #3B82F6;
+  
+  /* Text Colors */
+  --color-text-primary: #B24934;
+  --color-text-secondary: rgba(178, 73, 52, 0.8);
+  --color-text-muted: rgba(178, 73, 52, 0.6);
+  --color-text-inverse: #FFFFFF;
+  
+  /* Background Colors */
+  --color-bg-primary: var(--color-cream);
+  --color-bg-secondary: var(--color-sand);
+  --color-bg-tertiary: var(--color-cream-light);
+  --color-bg-card: rgba(255, 255, 255, 0.7);
+  --color-bg-overlay: rgba(255, 255, 255, 0.9);
+  
+  /* Typography - Font Families */
+  --font-sans: 'Sohne', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-serif: 'Charter', Georgia, 'Times New Roman', serif;
+  --font-display: 'Sohne', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  
+  /* Typography - Font Sizes (Fluid) */
+  --text-xs: clamp(0.75rem, 0.7vw + 0.5rem, 0.875rem);
+  --text-sm: clamp(0.875rem, 0.8vw + 0.6rem, 1rem);
+  --text-base: clamp(1rem, 1vw + 0.75rem, 1.125rem);
+  --text-lg: clamp(1.125rem, 1.2vw + 0.875rem, 1.25rem);
+  --text-xl: clamp(1.25rem, 1.5vw + 1rem, 1.5rem);
+  --text-2xl: clamp(1.5rem, 2vw + 1.125rem, 2rem);
+  --text-3xl: clamp(2rem, 3vw + 1.5rem, 3rem);
+  --text-4xl: clamp(2.5rem, 4vw + 1.75rem, 4rem);
+  --text-5xl: clamp(3rem, 5vw + 2rem, 5rem);
+  --text-hero: clamp(3rem, 7vw + 1rem, 5.25rem);
+  
+  /* Font Weights */
+  --font-normal: 400;
+  --font-medium: 500;
+  --font-semibold: 600;
+  --font-bold: 700;
+  
+  /* Line Heights */
+  --leading-tight: 1.1;
+  --leading-snug: 1.3;
+  --leading-normal: 1.6;
+  --leading-relaxed: 1.7;
+  --leading-loose: 2;
+  
+  /* Letter Spacing */
+  --tracking-tight: -0.02em;
+  --tracking-normal: 0;
+  --tracking-wide: 0.025em;
+  
+  /* Spacing Scale */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2rem;
+  --space-xl: 3rem;
+  --space-2xl: 4rem;
+  --space-3xl: 6rem;
+  --space-4xl: 8rem;
+  
+  /* Container Widths */
+  --container-sm: 640px;
+  --container-md: 768px;
+  --container-lg: 1024px;
+  --container-xl: 1280px;
+  --container-2xl: 1536px;
+  --container-max: 1200px;
+  
+  /* Border Radius */
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.25rem;
+  --radius-2xl: 1.5rem;
+  --radius-3xl: 2rem;
+  --radius-pill: 9999px;
+  
+  /* Shadows */
+  --shadow-xs: 0 1px 2px rgba(178, 73, 52, 0.05);
+  --shadow-sm: 0 2px 4px rgba(178, 73, 52, 0.05);
+  --shadow-md: 0 8px 16px rgba(178, 73, 52, 0.08);
+  --shadow-lg: 0 20px 40px rgba(178, 73, 52, 0.1);
+  --shadow-xl: 0 30px 60px rgba(178, 73, 52, 0.15);
+  --shadow-card: 0 10px 30px rgba(255, 103, 56, 0.15);
+  --shadow-hover: 0 15px 40px rgba(255, 103, 56, 0.25);
+  
+  /* Transitions */
+  --transition-fast: 150ms ease;
+  --transition-base: 300ms ease;
+  --transition-slow: 500ms ease;
+  --animation-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  
+  /* Z-Index Scale */
+  --z-base: 0;
+  --z-dropdown: 1000;
+  --z-sticky: 1020;
+  --z-fixed: 1030;
+  --z-modal-backdrop: 1040;
+  --z-modal: 1050;
+  --z-popover: 1060;
+  --z-tooltip: 1070;
+}
+
+/* ============================================
+   2. RESET & BASE STYLES
+   ============================================ */
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  line-height: var(--leading-normal);
+  color: var(--color-text-primary);
+  background-color: var(--color-bg-primary);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Override base styles for v3 */
+body.v3,
+body.v3.docsie-background-img {
+  background-color: var(--color-bg-primary) !important;
+  background-image: none !important;
+  background: var(--color-bg-primary) !important;
+  color: var(--color-text-primary) !important;
+  min-height: 100vh !important;
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
+}
+
+/* Remove ALL background images and gradients */
+body.v3::before,
+body.v3::after,
+body.v3 > *::before,
+body.v3 > *::after {
+  background-image: none !important;
+  background: transparent !important;
+  display: none !important;
+}
+
+/* Override header/footer for v3 */
+.v3 header,
+.v3 header.bg-white,
+.v3 header.shadow-sm {
+  background-color: var(--color-bg-primary) !important;
+  background: var(--color-bg-primary) !important;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05) !important;
+  border: none !important;
+  border-bottom: 1px solid rgba(178, 73, 52, 0.1) !important;
+  position: relative !important;
+  z-index: 100 !important;
+}
+
+.v3 header nav,
+.v3 header nav.container {
+  background: var(--color-bg-primary) !important;
+  background-color: var(--color-bg-primary) !important;
+  padding: 25px 60px !important;
+  box-shadow: none !important;
+}
+
+.v3 header .container {
+  max-width: 1400px !important;
+  background: transparent !important;
+}
+
+/* Remove any wrapper backgrounds but keep dropdowns solid */
+.v3 header > *:not(.dropdown-menu),
+.v3 header div:not(.dropdown-menu) {
+  background-color: transparent !important;
+}
+
+/* Dropdown menus should have solid background */
+.v3 header .dropdown-menu,
+.v3 header [class*="dropdown"] {
+  background-color: var(--color-bg-primary) !important;
+  background: var(--color-bg-primary) !important;
+  border: 1px solid rgba(178, 73, 52, 0.15) !important;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1) !important;
+  border-radius: 12px !important;
+  padding: 8px 0 !important;
+  margin-top: 8px !important;
+}
+
+/* Style header navigation links */
+.v3 header a:not([href*="app.docsie.io"]):not(.border-2):not([href="/"]) {
+  color: var(--color-text-primary) !important;
+  font-weight: 500 !important;
+  font-size: 18px !important;
+  text-decoration: none !important;
+  transition: color 0.3s ease !important;
+}
+
+.v3 header a:not([href*="app.docsie.io"]):not(.border-2):not([href="/"]):hover {
+  color: var(--color-primary) !important;
+}
+
+/* Logo specific styling - stronger brown */
+.v3 header a[href="/"],
+.v3 header .logo {
+  color: var(--color-accent) !important;
+  font-weight: 700 !important;
+}
+
+/* Header CTA buttons should be prominent */
+.v3 header a[href*="app.docsie.io"],
+.v3 header .bg-docsie-primary,
+.v3 header .bg-green-600 {
+  background-color: var(--color-primary) !important;
+  color: white !important;
+  border-radius: 30px !important;
+  padding: 12px 30px !important;
+  font-weight: 500 !important;
+  font-size: 18px !important;
+  box-shadow: 0 5px 15px rgba(255, 103, 56, 0.3) !important;
+  transition: all 0.3s ease !important;
+  border: 2px solid var(--color-primary) !important;
+}
+
+.v3 header a[href*="app.docsie.io"]:hover,
+.v3 header .bg-docsie-primary:hover,
+.v3 header .bg-green-600:hover {
+  background-color: var(--color-primary-light) !important;
+  border-color: var(--color-primary-light) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 10px 25px rgba(254, 168, 94, 0.4) !important;
+}
+
+/* Header outline button */
+.v3 header .border-2,
+.v3 header a.border-2 {
+  background-color: transparent !important;
+  border: 2px solid var(--color-primary) !important;
+  color: var(--color-text-primary) !important;
+  border-radius: 30px !important;
+  padding: 12px 30px !important;
+  font-weight: 500 !important;
+  font-size: 18px !important;
+  transition: all 0.3s ease !important;
+}
+
+.v3 header .border-2:hover,
+.v3 header a.border-2:hover {
+  background-color: var(--color-primary) !important;
+  color: white !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 10px 20px rgba(255, 103, 56, 0.3) !important;
+}
+
+/* Header logo - stronger accent */
+.v3 header .text-docsie-primary,
+.v3 header svg path,
+.v3 header svg {
+  color: var(--color-accent) !important;
+  fill: var(--color-accent) !important;
+}
+
+/* Make logo text stronger */
+.v3 header a[href="/"] svg {
+  filter: none !important;
+}
+
+/* Footer styling for v3 */
+.v3 footer,
+.v3 .footer-v2 {
+  background-color: var(--color-accent) !important;
+  background-image: none !important;
+  background: var(--color-accent) !important;
+  color: white !important;
+  margin-top: 0 !important;
+  padding: 60px 0 40px !important;
+  display: block !important;
+  visibility: visible !important;
+  position: relative !important;
+  z-index: 10 !important;
+  width: 100% !important;
+  clear: both !important;
+}
+
+.v3 footer *,
+.v3 .footer-v2 * {
+  color: white !important;
+}
+
+.v3 footer a,
+.v3 .footer-v2 a {
+  color: white !important;
+  opacity: 0.9;
+  transition: opacity 0.3s ease;
+}
+
+.v3 footer a:hover,
+.v3 .footer-v2 a:hover {
+  opacity: 1;
+  color: var(--color-cream) !important;
+}
+
+/* Override gradient background on footer */
+.v3 .bg-gradient-to-br {
+  background-image: none !important;
+}
+
+.v3 main {
+  background-color: transparent !important;
+  background: transparent !important;
+  min-height: auto !important;
+  height: auto !important;
+}
+
+/* Ensure sections use proper backgrounds */
+.v3 .section {
+  background-color: transparent;
+}
+
+.v3 .section.bg-secondary {
+  background-color: var(--color-bg-secondary) !important;
+}
+
+.v3 .section.bg-primary {
+  background-color: var(--color-primary) !important;
+}
+
+/* Override ALL green buttons to use warm orange */
+.v3 .bg-green-600,
+.v3 .bg-docsie-primary,
+.v3 [class*="bg-green"] {
+  background-color: var(--color-primary) !important;
+}
+
+.v3 .hover\:bg-green-700:hover,
+.v3 .hover\:bg-docsie-primary-dark:hover {
+  background-color: var(--color-primary-dark) !important;
+}
+
+.v3 .text-green-600,
+.v3 .text-docsie-primary {
+  color: var(--color-primary) !important;
+}
+
+.v3 .border-green-600,
+.v3 .border-docsie-primary {
+  border-color: var(--color-primary) !important;
+}
+
+/* Override buttons to warm aesthetic - MORE PROMINENT */
+.v3 a[href*="app.docsie.io"],
+.v3 button.bg-green-600,
+.v3 .bg-green-600,
+.v3 a.bg-docsie-primary,
+.v3 .btn-primary {
+  background-color: var(--color-primary) !important;
+  color: white !important;
+  border-radius: 40px !important;
+  padding: 18px 50px !important;
+  font-weight: 500 !important;
+  font-size: 24px !important;
+  box-shadow: 0 10px 30px rgba(255, 103, 56, 0.3) !important;
+  transition: all 0.3s ease !important;
+  border: 2px solid var(--color-primary) !important;
+  display: inline-block !important;
+}
+
+.v3 a[href*="app.docsie.io"]:hover,
+.v3 button.bg-green-600:hover,
+.v3 .bg-green-600:hover,
+.v3 a.bg-docsie-primary:hover,
+.v3 .btn-primary:hover {
+  background-color: var(--color-primary-light) !important;
+  border-color: var(--color-primary-light) !important;
+  transform: translateY(-3px) !important;
+  box-shadow: 0 15px 40px rgba(254, 168, 94, 0.4) !important;
+}
+
+/* Override outline buttons - MORE PROMINENT */
+.v3 .border-green-600,
+.v3 .border-2.border-docsie-primary,
+.v3 a.border-2,
+.v3 .btn-outline {
+  background-color: transparent !important;
+  border: 2px solid var(--color-primary) !important;
+  color: var(--color-text-primary) !important;
+  border-radius: 40px !important;
+  padding: 16px 48px !important;
+  font-weight: 600 !important;
+  font-size: 20px !important;
+  transition: all 0.3s ease !important;
+  display: inline-block !important;
+}
+
+.v3 .border-green-600:hover,
+.v3 .border-2.border-docsie-primary:hover,
+.v3 a.border-2:hover,
+.v3 .btn-outline:hover {
+  background-color: var(--color-primary) !important;
+  color: white !important;
+  transform: translateY(-3px) !important;
+  box-shadow: 0 10px 20px rgba(255, 103, 56, 0.3) !important;
+}
+
+/* Special section for primary color */
+.v3 .bg-primary {
+  background-color: var(--color-primary) !important;
+}
+
+.v3 .text-white {
+  color: var(--color-text-inverse) !important;
+}
+
+/* Button overrides for v3 */
+.v3 .btn-white {
+  background-color: white;
+  color: var(--color-primary);
+  border-color: white;
+}
+
+.v3 .btn-white:hover {
+  background-color: var(--color-cream-light);
+  transform: translateY(-2px);
+}
+
+.v3 .btn-outline-white {
+  background-color: transparent;
+  color: white;
+  border-color: white;
+}
+
+.v3 .btn-outline-white:hover {
+  background-color: white;
+  color: var(--color-primary);
+  transform: translateY(-2px);
+}
+
+/* Override badges/trust signals */
+.v3 [class*="bg-green"][class*="bg-opacity"] {
+  background-color: rgba(255, 103, 56, 0.1) !important;
+}
+
+/* Override check marks and icons */
+.v3 .text-green-500,
+.v3 .text-green-600 {
+  color: var(--color-primary) !important;
+}
+
+/* Body text styling */
+.v3 p, 
+.v3 .body-text {
+  font-family: var(--font-serif);
+  line-height: 1.7 !important;
+  color: var(--color-text-primary) !important;
+  font-size: 1.25rem !important;
+}
+
+.v3 .text-xl {
+  font-size: 1.5rem !important;
+  line-height: 1.6 !important;
+}
+
+.v3 .text-lg {
+  font-size: 1.25rem !important;
+}
+
+.v3 .text-secondary {
+  color: var(--color-text-primary) !important;
+  opacity: 0.85;
+}
+
+/* Ensure v3 uses the proper fonts */
+.v3 body,
+.v3 * {
+  font-family: var(--font-sans);
+}
+
+.v3 h1, 
+.v3 h2, 
+.v3 h3, 
+.v3 h4, 
+.v3 h5, 
+.v3 h6 {
+  font-family: var(--font-display);
+  color: var(--color-text-primary);
+  font-weight: var(--font-bold);
+}
+
+/* ============================================
+   3. TYPOGRAPHY
+   ============================================ */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: var(--font-bold);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  color: var(--color-text-primary);
+}
+
+h1 { font-size: var(--text-hero); }
+h2 { font-size: var(--text-4xl); }
+h3 { font-size: var(--text-3xl); }
+h4 { font-size: var(--text-2xl); }
+h5 { font-size: var(--text-xl); }
+h6 { font-size: var(--text-lg); }
+
+.text-xs { font-size: var(--text-xs); }
+.text-sm { font-size: var(--text-sm); }
+.text-base { font-size: var(--text-base); }
+.text-lg { font-size: var(--text-lg); }
+.text-xl { font-size: var(--text-xl); }
+.text-2xl { font-size: var(--text-2xl); }
+.text-3xl { font-size: var(--text-3xl); }
+.text-4xl { font-size: var(--text-4xl); }
+.text-5xl { font-size: var(--text-5xl); }
+.text-hero { font-size: var(--text-hero); }
+
+.font-normal { font-weight: var(--font-normal); }
+.font-medium { font-weight: var(--font-medium); }
+.font-semibold { font-weight: var(--font-semibold); }
+.font-bold { font-weight: var(--font-bold); }
+
+.text-primary { color: var(--color-text-primary); }
+.text-secondary { color: var(--color-text-secondary); }
+.text-muted { color: var(--color-text-muted); }
+.text-inverse { color: var(--color-text-inverse); }
+
+/* ============================================
+   4. LAYOUT COMPONENTS
+   ============================================ */
+
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--space-md);
+}
+
+.section {
+  padding: var(--space-3xl) 0;
+}
+
+.section-compact {
+  padding: var(--space-2xl) 0;
+}
+
+.section-large {
+  padding: var(--space-4xl) 0;
+}
+
+/* Background variants */
+.bg-primary { background-color: var(--color-bg-primary); }
+.bg-secondary { background-color: var(--color-bg-secondary); }
+.bg-tertiary { background-color: var(--color-bg-tertiary); }
+
+/* ============================================
+   5. BUTTONS
+   ============================================ */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-sm) var(--space-lg);
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  font-weight: var(--font-medium);
+  line-height: 1;
+  text-decoration: none;
+  border: 2px solid transparent;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  transition: all var(--transition-base);
+  white-space: nowrap;
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  color: var(--color-text-inverse);
+  box-shadow: var(--shadow-card);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-primary-light);
+  border-color: var(--color-primary-light);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-hover);
+}
+
+.btn-outline {
+  background-color: transparent;
+  border-color: var(--color-primary);
+  color: var(--color-text-primary);
+}
+
+.btn-outline:hover {
+  background-color: var(--color-primary);
+  color: var(--color-text-inverse);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-large {
+  padding: calc(var(--space-md) * 0.75) var(--space-2xl);
+  font-size: var(--text-lg);
+}
+
+.btn-small {
+  padding: calc(var(--space-xs) * 1.5) var(--space-md);
+  font-size: var(--text-sm);
+}
+
+/* ============================================
+   6. CARDS
+   ============================================ */
+
+.card {
+  background-color: var(--color-bg-card);
+  backdrop-filter: blur(10px);
+  border-radius: var(--radius-xl);
+  padding: var(--space-lg);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-base);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.card-pillar {
+  color: var(--color-text-inverse);
+  padding: var(--space-xl);
+  border-radius: var(--radius-2xl);
+  transition: all var(--transition-base);
+  position: relative;
+}
+
+.card-pillar-orange {
+  background-color: var(--color-primary-light);
+  transform: rotate(-2deg);
+}
+
+.card-pillar-red {
+  background-color: var(--color-primary);
+  transform: rotate(1deg);
+}
+
+.card-pillar-brown {
+  background-color: var(--color-accent);
+  transform: rotate(-1deg);
+}
+
+.card-pillar:hover {
+  transform: rotate(0deg) scale(1.05);
+  z-index: 10;
+}
+
+/* ============================================
+   7. BADGES & PILLS
+   ============================================ */
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: calc(var(--space-xs) * 0.75) var(--space-md);
+  background-color: var(--color-bg-card);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(178, 73, 52, 0.2);
+  border-radius: var(--radius-pill);
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  color: var(--color-text-primary);
+}
+
+.badge-group {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-md);
+  padding: var(--space-sm) var(--space-lg);
+  background-color: var(--color-bg-card);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(178, 73, 52, 0.2);
+  border-radius: var(--radius-pill);
+  box-shadow: var(--shadow-xs);
+}
+
+.badge-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding-right: var(--space-md);
+  border-right: 1px solid rgba(178, 73, 52, 0.2);
+}
+
+.badge-item:last-child {
+  border-right: none;
+  padding-right: 0;
+}
+
+/* ============================================
+   8. NAVIGATION
+   ============================================ */
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-lg) var(--space-3xl);
+  background-color: transparent;
+}
+
+.nav-logo {
+  font-size: var(--text-3xl);
+  font-weight: var(--font-bold);
+  color: var(--color-text-primary);
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  gap: var(--space-xl);
+  align-items: center;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: var(--color-text-primary);
+  font-size: var(--text-base);
+  font-weight: var(--font-medium);
+  transition: all var(--transition-base);
+  position: relative;
+}
+
+.nav-link:hover {
+  color: var(--color-primary);
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--color-primary);
+  transition: width var(--transition-base);
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.nav-buttons {
+  display: flex;
+  gap: var(--space-md);
+}
+
+/* ============================================
+   9. FORMS & INPUTS
+   ============================================ */
+
+.input {
+  width: 100%;
+  padding: var(--space-sm) var(--space-md);
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  color: var(--color-text-primary);
+  background-color: var(--color-bg-card);
+  border: 2px solid rgba(178, 73, 52, 0.2);
+  border-radius: var(--radius-md);
+  transition: all var(--transition-base);
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(255, 103, 56, 0.1);
+}
+
+/* ============================================
+   10. UTILITIES
+   ============================================ */
+
+/* Layout helpers */
+.mx-auto { margin-left: auto; margin-right: auto; }
+.max-w-900 { max-width: 900px; }
+.max-w-800 { max-width: 800px; }
+.max-w-1000 { max-width: 1000px; }
+
+/* Animation delays */
+.delay-1 { animation-delay: 0.1s; }
+.delay-2 { animation-delay: 0.2s; }
+.delay-3 { animation-delay: 0.3s; }
+.delay-4 { animation-delay: 0.4s; }
+.delay-5 { animation-delay: 0.5s; }
+
+/* Icon colors */
+.icon-primary { color: var(--color-primary); }
+.icon-success { color: var(--color-success); }
+
+/* Spacing */
+.mt-0 { margin-top: 0; }
+.mt-xs { margin-top: var(--space-xs); }
+.mt-sm { margin-top: var(--space-sm); }
+.mt-md { margin-top: var(--space-md); }
+.mt-lg { margin-top: var(--space-lg); }
+.mt-xl { margin-top: var(--space-xl); }
+.mt-2xl { margin-top: var(--space-2xl); }
+.mt-3xl { margin-top: var(--space-3xl); }
+
+.mb-0 { margin-bottom: 0; }
+.mb-xs { margin-bottom: var(--space-xs); }
+.mb-sm { margin-bottom: var(--space-sm); }
+.mb-md { margin-bottom: var(--space-md); }
+.mb-lg { margin-bottom: var(--space-lg); }
+.mb-xl { margin-bottom: var(--space-xl); }
+.mb-2xl { margin-bottom: var(--space-2xl); }
+.mb-3xl { margin-bottom: var(--space-3xl); }
+
+/* Text alignment */
+.text-left { text-align: left; }
+.text-center { text-align: center; }
+.text-right { text-align: right; }
+
+/* Display */
+.block { display: block; }
+.inline-block { display: inline-block; }
+.inline { display: inline; }
+.flex { display: flex; }
+.inline-flex { display: inline-flex; }
+.grid { display: grid; }
+.hidden { display: none; }
+
+/* Flexbox */
+.items-center { align-items: center; }
+.items-start { align-items: flex-start; }
+.items-end { align-items: flex-end; }
+.justify-center { justify-content: center; }
+.justify-between { justify-content: space-between; }
+.justify-around { justify-content: space-around; }
+.flex-wrap { flex-wrap: wrap; }
+.gap-xs { gap: var(--space-xs); }
+.gap-sm { gap: var(--space-sm); }
+.gap-md { gap: var(--space-md); }
+.gap-lg { gap: var(--space-lg); }
+.gap-xl { gap: var(--space-xl); }
+
+/* Grid */
+.grid-cols-1 { grid-template-columns: repeat(1, 1fr); }
+.grid-cols-2 { grid-template-columns: repeat(2, 1fr); }
+.grid-cols-3 { grid-template-columns: repeat(3, 1fr); }
+.grid-cols-4 { grid-template-columns: repeat(4, 1fr); }
+
+/* Animations */
+.animate-fade-in {
+  animation: fadeIn var(--transition-slow) ease-out;
+}
+
+.animate-slide-up {
+  animation: slideUp var(--transition-slow) ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ============================================
+   11. RESPONSIVE DESIGN
+   ============================================ */
+
+@media (max-width: 768px) {
+  :root {
+    --space-3xl: 4rem;
+    --space-4xl: 6rem;
+  }
+  
+  .nav {
+    padding: var(--space-md);
+  }
+  
+  .nav-links {
+    display: none;
+  }
+  
+  .section {
+    padding: var(--space-2xl) 0;
+  }
+  
+  .grid-cols-3 {
+    grid-template-columns: 1fr;
+  }
+  
+  .hide-mobile {
+    display: none;
+  }
+}
+
+@media (min-width: 769px) {
+  .hide-desktop {
+    display: none;
+  }
+}
+
+/* ============================================
+   12. PRINT STYLES
+   ============================================ */
+
+@media print {
+  body {
+    background: white;
+    color: black;
+  }
+  
+  .no-print {
+    display: none;
+  }
+}

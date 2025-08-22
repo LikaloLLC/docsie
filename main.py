@@ -13,6 +13,26 @@ import dateutil.parser
 import arrow
 import yaml
 
+# Load site configuration
+def load_site_config():
+    """Load configuration from site_config.yaml"""
+    config_path = os.path.join(os.path.dirname(__file__), 'site_config.yaml')
+    try:
+        with open(config_path, 'r') as f:
+            return yaml.safe_load(f)
+    except FileNotFoundError:
+        print(f"Warning: site_config.yaml not found. Using defaults.")
+        return {
+            'homepage_version': 'v2',
+            'pricing_version': 'v2',
+            'canonical_domain': 'https://www.docsie.io',
+            'verbose_build': True,
+            'enable_v3_preview': False
+        }
+
+# Load config at module level
+site_config = load_site_config()
+
 def is_binary_file(filepath):
     """
     Determine if a file is a binary file that should be excluded from template processing.
@@ -56,11 +76,18 @@ def render_template_file(site, template, **kwargs):
     Automatically detects V2 pages and provides appropriate context.
     Special handling for V2 homepage.
     """
-    # Skip rendering index.html if index_v2.html exists (V2 takes precedence)
+    # Skip rendering index.html based on configured version
     if template.name == 'index.html':
+        homepage_version = site_config.get('homepage_version', 'v2')
+        index_v3_path = os.path.join(site.searchpath, 'index_v3.html')
         index_v2_path = os.path.join(site.searchpath, 'index_v2.html')
-        if os.path.exists(index_v2_path):
-            print(f"Skipping {template.name} because index_v2.html exists")
+        
+        # Skip if we're using v3 or v2
+        if homepage_version == 'v3' and os.path.exists(index_v3_path):
+            print(f"Skipping {template.name} because homepage_version is set to v3")
+            return True
+        elif homepage_version == 'v2' and os.path.exists(index_v2_path):
+            print(f"Skipping {template.name} because homepage_version is set to v2")
             return True
     
     # Skip rendering pricing/index.html if pricing_v2/index.html exists (V2 takes precedence)
@@ -70,10 +97,24 @@ def render_template_file(site, template, **kwargs):
             print(f"Skipping {template.name} because pricing_v2/index.html exists")
             return True
     
-    # Special handling for index_v2.html - render it as index.html
-    if template.name == 'index_v2.html':
-        outpath = os.path.join(site.outpath, 'index.html')
-        print(f"Rendering {template.name} as index.html (V2 homepage)")
+    # Special handling for index_v3.html - render it as index.html only if configured
+    homepage_version = site_config.get('homepage_version', 'v2')
+    
+    if template.name == 'index_v3.html':
+        if homepage_version == 'v3':
+            outpath = os.path.join(site.outpath, 'index.html')
+            print(f"Rendering {template.name} as index.html (V3 homepage configured)")
+        else:
+            print(f"Skipping {template.name} because homepage_version is set to {homepage_version}")
+            return True
+    # Special handling for index_v2.html - render it as index.html if configured
+    elif template.name == 'index_v2.html':
+        if homepage_version == 'v2':
+            outpath = os.path.join(site.outpath, 'index.html')
+            print(f"Rendering {template.name} as index.html (V2 homepage configured)")
+        else:
+            print(f"Skipping {template.name} because homepage_version is set to {homepage_version}")
+            return True
     # Special handling for pricing_v2/index.html - render it as pricing/index.html
     elif template.name == 'pricing_v2/index.html':
         outpath = os.path.join(site.outpath, 'pricing/index.html')
@@ -86,26 +127,35 @@ def render_template_file(site, template, **kwargs):
     if outdir:
         os.makedirs(outdir, exist_ok=True)
     
-    # Check if this is a V2 page by examining the template name or reading the file
+    # Check if this is a V2 or V3 page by examining the template name or reading the file
     is_v2_page = False
+    is_v3_page = False
     try:
         # Check template name first
-        if 'index_v2.html' in template.name or 'v2_demo.html' in template.name or 'pricing_v2' in template.name:
+        if 'index_v3.html' in template.name or 'v3_' in template.name:
+            is_v3_page = True
+        elif 'index_v2.html' in template.name or 'v2_demo.html' in template.name or 'pricing_v2' in template.name:
             is_v2_page = True
         else:
-            # Read the template file to check for _base_v2.html
+            # Read the template file to check for base templates
             template_path = os.path.join(site.searchpath, template.name)
             if os.path.exists(template_path):
                 with open(template_path, 'r', encoding='utf-8') as f:
                     template_content = f.read()
-                    if '_base_v2.html' in template_content:
+                    if '_base_v3.html' in template_content:
+                        is_v3_page = True
+                    elif '_base_v2.html' in template_content:
                         is_v2_page = True
     except Exception:
         # If there's any error, default to V1
         is_v2_page = False
+        is_v3_page = False
     
-    # Add V2-specific context if needed
-    if is_v2_page:
+    # Add version-specific context if needed
+    if is_v3_page:
+        kwargs['is_v3'] = True
+        kwargs['use_v3_styles'] = True
+    elif is_v2_page:
         kwargs['is_v2'] = True
         kwargs['use_v2_styles'] = True
     

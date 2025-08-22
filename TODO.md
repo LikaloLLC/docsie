@@ -358,3 +358,421 @@
 ---
 
 *Generated from SEO audit feedback - Created: January 2025*
+*Updated with customer demo insights - August 2025*
+
+---
+
+## Customer Insights from Demo Analysis (Priority 0 - URGENT)
+
+### Key Findings from Demo Transcripts (21 Calls Analyzed)
+Based on analysis of 21 enterprise demo calls, we've identified critical gaps between what prospects want and what we're currently showing:
+
+#### Top Customer Pain Points (Frequency & Impact)
+
+1. **"We're migrating from another documentation tool"** (13/21 calls mentioned - 62%)
+   - **Zendesk** → Docsie (Tim/eShare, Chakra/eShare) - "not built for documentation"
+   - **MadCap Flare** → Docsie (Kohesity, Uptempo) - collaboration issues, need GitHub
+   - **Vasant** → Docsie (Veritas) - 100,000 files to migrate
+   - **IT Glue** → Docsie (Thomas/AAU) - "too complex"
+   - **Word** → Docsie (Catalina/UK, Simply Contact) - "no content reusability"
+   - **Notion** → Docsie (Francesca/Dupala) - "can't track usage"
+   - **Google Docs** → Docsie (Aydan/EV) - "manual work, no revision control"
+   - **SharePoint** → Docsie (Aydan) - "no proper documentation management"
+   - **Confluence** → Docsie (SoftEngine) - need external publishing
+   - **WordPress** → Docsie (Simply Contact) - scattered information
+   - Migration assistance is CRITICAL decision factor
+
+2. **"Can this work in our Microsoft ecosystem?"** (7/12 calls)
+   - Microsoft Teams integration (Tim/eShare, Catalina, Thomas)
+   - SharePoint integration requirements
+   - Azure AD SSO needs
+   - Office 365 compatibility
+   - Teams app embedding is dealbreaker for many
+
+3. **"We need on-premise for security/compliance"** (6/12 calls)
+   - Cameron Kelly - 200 users, security team approval needed
+   - Marco/Cancer Registry - healthcare data
+   - Alessandro/Defense - military requirements  
+   - Raffaella/CENIT - export control
+   - Kohesity/Veritas - dark site/offline support
+   - Innovation Makers - simple access without complex SSO
+
+4. **"How much will this cost us?"** (5/12 calls explicitly discussed pricing)
+   - Thomas/AAU - nonprofit needs discount
+   - Cameron - $750/month for 200 users acceptable
+   - Francesca - budget conscious startup
+   - Catalina - starting with 4-5 users
+   - Alessandro - comparing to $100k+ documentation firms
+
+5. **"We need multi-language support"** (5/12 calls)
+   - Francesca/Dupala - Spanish critical (Colombia)
+   - Catalina/UK - translation formatting issues
+   - Kohesity/Veritas - localization essential
+   - Innovation Makers - Portuguese market
+   - Manufacturing companies - global documentation
+
+6. **"Show me version control with visual diffs"** (4/12 calls)
+   - Marco, Alessandro want visual comparisons
+   - Kohesity needs revision tracking
+   - Innovation Makers needs change management
+   - Manufacturing needs version history
+
+7. **"We scaled without documenting"** (5/16 calls)
+   - Francesca/Dupala - technical debt from rapid growth
+   - Innovation Makers - two companies merging
+   - Kohesity/Veritas - post-merger documentation chaos
+   - Yaniv/Blast Security - "only design partners, need real docs now"
+   - Aydan/EV Charging - "manual work, need proper system"
+
+8. **"People are leaving and taking knowledge with them"** (2/16 calls) 🆕
+   - Vinod/Capgemini - "retiring employees, need to capture best practices"
+   - Need video documentation and transcription
+   - Knowledge retention is critical business risk
+
+9. **"We need compliance documentation capabilities"** (2/16 calls) 🆕
+   - Aydan/EV Charging - needs to CREATE compliance docs for ISO 9001/27001
+   - Not about Docsie being certified, but helping companies document compliance
+   - Need revision control, access restrictions
+   - Audit trails and compliance documentation features
+   - Document expiry and review cycles
+
+### High-Priority Landing Page Updates
+
+#### Hero Section Messaging Change
+- [ ] **Replace generic "AI-Powered Documentation" with specific value**
+  - Current: "AI-Powered Documentation Platform & Knowledge Base Software"
+  - New: "Finally, Documentation That Works in Microsoft Teams"
+  - Subtext: "Escape Zendesk's flat structure. Get hierarchical docs with AI formatting, enterprise SSO, and compliance-ready deployment"
+
+#### Above-the-Fold Value Props to Add
+- [ ] **Add these specific messages that prospects ask for:**
+  - "Works seamlessly in Microsoft Teams & SharePoint" (with MS logo)
+  - "Migrate from Zendesk in days, not months" 
+  - "Cut documentation costs by 70% with AI automation"
+  - "On-premise available for regulated industries"
+  - "Visual version control with diff tracking"
+
+#### Trust Signals to Add
+- [ ] **Industry-specific badges/logos**
+  - Healthcare/Medical device companies
+  - Defense contractors
+  - Financial services
+  - Manufacturing (they keep appearing in demos)
+
+### New Supplementary Pages Based on Demo Patterns
+
+#### Migration Pages (HIGHEST PRIORITY - 8/12 calls mentioned)
+- [ ] **/migrate-from-zendesk**
+  - Step-by-step migration guide
+  - Data export/import process
+  - Feature comparison table
+  - Migration cost calculator
+  
+- [ ] **/zendesk-alternative**
+  - Direct comparison for documentation use case
+  - Why Zendesk fails for documentation
+  - Customer success stories of migration
+
+- [ ] **/migrate-from-madcap-flare** 🆕
+  - Enterprise migration guide
+  - Handling 10,000+ files
+  - DITA support comparison
+  - Localization migration
+
+- [ ] **/migrate-from-notion** 🆕
+  - Startup/SMB focused
+  - Analytics advantages over Notion
+  - Usage tracking capabilities
+  - Collaboration improvements
+
+- [ ] **/migrate-from-word** 🆕
+  - Content reusability benefits
+  - Template conversion guide
+  - Multi-language formatting fixes
+  - Manufacturing/technical docs focus
+
+- [ ] **/documentation-migration-services** 🆕
+  - Universal migration hub
+  - Tool comparison matrix
+  - Migration timeline calculator
+  - White-glove service options
+
+- [ ] **/migrate-from-confluence** 🆕
+  - External publishing capabilities
+  - Maintain collaboration features
+  - Enterprise migration guide
+
+- [ ] **/video-to-documentation** 🆕
+  - Convert product demos to user guides
+  - AI-powered transcription and formatting
+  - Save 80% documentation time
+  - Perfect for resource-limited teams
+
+- [ ] **/intercom-integration** 🆕
+  - Finbot compatibility
+  - Link back to source articles
+  - Better than PDF uploads
+  - Support ticket reduction
+
+- [ ] **/zoho-desk-integration** 🆕
+  - Seamless support integration
+  - Agent productivity tools
+  - Knowledge base sync
+
+#### Integration Pages (Decision Factors)
+- [ ] **/microsoft-teams-integration**
+  - Show embedded documentation in Teams
+  - SSO with Azure AD
+  - SharePoint integration details
+  - Power Apps compatibility
+
+- [ ] **/sharepoint-documentation**
+  - How Docsie enhances SharePoint
+  - Embedding options
+  - Permission synchronization
+
+#### ROI/Cost Pages (Budget Justification)
+- [ ] **/documentation-roi-calculator**
+  - Calculate savings vs external firms
+  - Time savings with AI assistance
+  - Reduced support tickets
+  - Faster onboarding metrics
+
+- [ ] **/reduce-documentation-costs**
+  - Case studies of cost reduction
+  - AI automation benefits
+  - Before/after scenarios
+
+#### Compliance/Security Pages (Trust Building)
+- [ ] **/enterprise-security**
+  - On-premise deployment options
+  - Data residency controls
+  - Audit trails and compliance
+  - SSO and access controls
+
+- [ ] **/regulated-industries**
+  - Healthcare compliance (HIPAA)
+  - Defense/Military standards
+  - Financial services requirements
+  - GDPR compliance details
+
+#### Feature Deep-Dives (Technical Evaluation)
+- [ ] **/version-control-for-documentation**
+  - Visual diff comparisons
+  - Rollback capabilities
+  - Change tracking
+  - Approval workflows
+
+- [ ] **/ai-documentation-consistency**
+  - How AI fixes writing style issues
+  - Grammar and formatting automation
+  - Multi-author consistency
+  - Technical writing assistance
+
+### Quick Wins for Homepage
+
+- [ ] **Add "Microsoft Teams Ready" badge prominently**
+- [ ] **Add "On-Premise Available" near pricing**
+- [ ] **Create "Zendesk Users" specific CTA button**
+- [ ] **Add cost savings calculator link in header**
+- [ ] **Include "Book Teams Demo" specific option**
+
+### Sales Enablement Based on Demo Patterns
+
+#### Common Objections to Address
+- [ ] **Create FAQ section addressing:**
+  - "Can it work offline/on-premise?" → Yes, full on-premise deployment
+  - "Does it integrate with Teams?" → Native Teams app available
+  - "Can we migrate from Zendesk?" → Migration assistance included
+  - "Is it secure for defense/healthcare?" → Compliance certifications list
+  - "What about our existing PDFs?" → AI-powered PDF import
+
+#### Demo Flow Optimization
+- [ ] **Prioritize showing these features first:**
+  1. Microsoft Teams integration
+  2. Migration from current system (usually Zendesk)
+  3. Version control with visual diffs
+  4. AI writing assistance for consistency
+  5. Cost savings vs current solution
+
+### Competitive Positioning Updates
+
+#### Against Zendesk
+- [ ] **Create comparison content:**
+  - Zendesk = support tickets, Docsie = real documentation
+  - Flat structure vs hierarchical organization
+  - Limited formatting vs rich documentation features
+  - No version control vs comprehensive versioning
+
+#### Against Traditional Methods
+- [ ] **Highlight automation benefits:**
+  - Manual formatting → AI-powered consistency
+  - External agencies → In-house with AI assistance  
+  - PDF management → Dynamic web-based docs
+  - Email-based reviews → Built-in collaboration
+
+### Content Strategy Based on Search Intent
+
+#### Bottom-of-Funnel Content (High Intent)
+- [ ] "Zendesk documentation alternative"
+- [ ] "Documentation platform for Microsoft Teams"
+- [ ] "On-premise documentation software"
+- [ ] "Reduce technical writing costs"
+
+#### Middle-of-Funnel Content (Research Phase)
+- [ ] "Why Zendesk doesn't work for documentation"
+- [ ] "Documentation tools for regulated industries"
+- [ ] "AI for technical documentation"
+- [ ] "Documentation version control best practices"
+
+#### Top-of-Funnel Content (Problem Aware)
+- [ ] "Documentation inconsistency problems"
+- [ ] "Technical writing cost reduction"
+- [ ] "Enterprise documentation compliance"
+- [ ] "Multi-language documentation challenges"
+
+### Additional Insights from Extended Analysis
+
+#### Company Profiles Requesting Demos
+1. **Post-Merger Companies** (Kohesity/Veritas, Innovation Makers)
+   - Need unified documentation platform
+   - Dealing with multiple legacy systems
+   - Massive file migration requirements
+
+2. **Manufacturing/Technical** (Catalina/UK, PowerFlex references)
+   - Technical manuals and SOPs
+   - Multi-language requirements for global markets
+   - Content reusability critical
+
+3. **Nonprofits/Education** (Thomas/AAU)
+   - Budget conscious
+   - Need special pricing
+   - Knowledge management focus
+   - Simple implementation required
+
+4. **Startups That Scaled** (Francesca/Dupala)
+   - Documentation debt from rapid growth
+   - Need analytics on documentation usage
+   - Budget conscious but need professional tools
+
+#### Pricing Insights
+- **Enterprise**: $750/month for 200 users + $5,000 setup (Cameron accepted this)
+- **Small teams**: 4-5 users common starting point
+- **Nonprofits**: Need edu/nonprofit discounts (Thomas/AAU)
+- **Cost comparison**: Often comparing to $100k+ external documentation firms
+
+#### New Pages Based on Company Types
+- [ ] **/post-merger-documentation** 🆕
+  - Unifying documentation systems
+  - Handling massive migrations
+  - Team consolidation strategies
+
+- [ ] **/nonprofit-documentation-platform** 🆕
+  - Special nonprofit pricing
+  - EDU discounts
+  - Knowledge management focus
+  - Simple implementation
+
+- [ ] **/manufacturing-documentation** 🆕
+  - Technical manual management
+  - SOP templates
+  - Multi-language for global markets
+  - Content reusability features
+
+- [ ] **/startup-documentation-debt** 🆕
+  - "We scaled without documenting"
+  - Quick implementation guides
+  - Usage analytics importance
+  - Growth-friendly pricing
+
+- [ ] **/knowledge-retention-solution** 🆕
+  - Capture knowledge from departing employees
+  - Video documentation and transcription
+  - Best practices preservation
+  - "Retiring workforce" solutions
+  - Case studies from manufacturing/consulting
+
+- [ ] **/compliance-documentation-platform** 🆕
+  - Help companies CREATE compliance documentation
+  - Support ISO 9001/27001 documentation requirements
+  - Revision control and audit trails
+  - Access restrictions by document
+  - Document expiry and review cycles
+  - NOT about Docsie's certifications
+
+- [ ] **/google-docs-alternative** 🆕
+  - Why Google Docs fails for enterprise documentation
+  - Proper version control and revision history
+  - Access control beyond simple sharing
+  - Compliance and audit features
+
+### Key Insights from Extended Analysis (21 Calls Total)
+
+#### Emerging Patterns from Latest Transcripts
+1. **Knowledge Retention Crisis**
+   - Companies losing critical knowledge as employees retire
+   - Need for video documentation and AI transcription
+   - "Best practices" capture becoming urgent
+
+2. **Compliance Documentation Needs**
+   - Companies need to CREATE compliance docs (ISO 9001/27001)
+   - Manufacturing and EV companies leading this
+   - Audit trails and revision control are must-haves
+   - Clear distinction: They need tools to document THEIR compliance, not ours
+
+3. **Security Startups Special Needs**
+   - Starting from zero documentation
+   - Need SSO from day one
+   - Private but not necessarily on-premise
+   - Stealth mode considerations
+
+4. **Google Workspace Migration**
+   - Many using Google Docs + Drive inadequately
+   - Need proper document management beyond file storage
+   - Translation and multi-language critical
+
+5. **Video-to-Documentation Conversion** (NEW from latest batch)
+   - Boot Next: Convert demos/videos to user manuals automatically
+   - Uptempo: Product demos to documentation
+   - Critical for teams with limited resources
+
+6. **Support Tool Integrations** (NEW from latest batch)
+   - Zoho Desk integration (SoftEngine)
+   - Intercom/Finbot integration (Uptempo)
+   - Contact centers need agent-facing chatbots (Simply Contact)
+   - Embed documentation chatbot in customer portals
+
+### Updated Landing Page Priorities
+
+Based on 21 calls, the hero message should address these top concerns:
+1. **Migration assistance** (62% of calls) - UNCHANGED, still #1
+2. **Microsoft ecosystem integration** (38% of calls) 
+3. **Support tool integrations** (24% of calls) - NEW PRIORITY
+4. **Video-to-documentation** (14% of calls) - EMERGING NEED
+
+Suggested new hero: "Migrate from Zendesk, MadCap Flare, or Confluence to Modern Documentation"
+Subtext: "Works with Teams, Intercom & Zoho • AI converts videos to docs • On-premise available"
+
+### ANALYSIS COMPLETE - Ready for Implementation
+
+After analyzing 21 demo calls, the patterns are clear and consistent:
+- **Primary pain point**: Migration from inadequate tools (62%)
+- **Key integrations**: Microsoft Teams, Intercom, Zoho Desk
+- **Emerging need**: Video-to-documentation conversion
+- **No new major patterns in last 5 calls** - mostly reinforcement
+
+We have sufficient data to begin implementation of landing page changes and supplementary pages.
+
+### Metrics to Track
+
+- [ ] **Set up tracking for:**
+  - "Book Demo" clicks by source (Teams vs Zendesk vs Generic)
+  - Time on integration pages
+  - Calculator usage and results
+  - Migration guide downloads
+  - Comparison page engagement
+  - Industry-specific page performance
+  - Pricing page drop-off points
+  - Trial-to-paid conversion by company type
+  - Knowledge retention page engagement
+  - ISO/compliance content performance

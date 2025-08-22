@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="{% if lang %}{{ lang }}{% else %}en{% endif %}">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  
+  <link rel="preconnect" href="https://app.docsie.io">
+  <link rel="preconnect" href="https://portals.docsie.io">
+  <link rel="preconnect" href="https://help.docsie.io">
+  <link rel="canonical" href="https://www.docsie.io{{ landing_url }}">
+  
+  {# Hreflang tags for multilingual SEO #}
+  {% include '_hreflang.html' %}
+  
+  {# JSON-LD Structured Data for better SEO #}
+  {% include '_structured_data.html' %}
+  <title>{% block title %}{% endblock title %} | Docsie</title>
+  <meta name="description" content="{% block description %}{% endblock description %}">
+  
+  {# Enhanced meta tags for better SEO #}
+  {% include '_enhanced_meta.html' %}
+  <!-- Schema.org markup for Google+ -->
+  <meta itemprop="name" content="{{ self.title() }} | Docsie">
+  <meta itemprop="description" content="{{ self.description() }}">
+  <meta itemprop="image" content="{% block shareimage %}{% endblock shareimage %}">
+  <!-- Twitter Card data -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@docsie_io">
+  <meta name="twitter:title" content="{{ self.title() }} | Docsie">
+  <meta name="twitter:description" content="{{ self.description() }}">
+  <!-- Twitter summary card with large image must be at least 280x150px -->
+  <meta name="twitter:image" content="{{ self.shareimage() }}">
+  <!-- Open Graph data -->
+  <meta property="og:title" content="{{ self.title() }} | Docsie" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.docsie.io/{{page_url}}" />
+  <meta property="og:image" content="{{ self.shareimage() }}" />
+  <meta property="og:description" content="{{ self.description() }}" />
+  <meta property="og:site_name" content="docsie.io" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="content-language" content="en" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="author" content="Docsie.io">
+  <meta name="theme-color" content="#fff" />
+  <meta name="msapplication-TileColor" content="#fff" />
+  <meta name="msapplication-TileImage"
+    content="https://d1iq6qzgppjlud.cloudfront.net/images/favicon/mstile-144x144.png" />
+  <meta name="msapplication-square310x310logo"
+    content="https://d1iq6qzgppjlud.cloudfront.net/images/favicon/mstile-310x310.png" />
+  {% block header %}
+  {% endblock header %}
+  <link rel=" apple-touch-icon-precomposed" sizes="57x57"
+    href="https://d1iq6qzgppjlud.cloudfront.net/images/favicon/apple-touch-icon-57x57.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="114x114"
+    href="https://d1iq6qzgppjlud.cloudfront.net/images/favicon/apple-touch-icon-114x114.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="72x72"
+    href="https://d1iq6qzgppjlud.cloudfront.net/images/favicon/apple-touch-icon-72x72.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="144x144"
+    href="https://d1iq6qzgppjlud.cloudfront.net/images/favicon/apple-touch-icon-144x144.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="60x60"
+    href="https://d1iq6qzgppjlud.cloudfront.net/images/favicon/apple-touch-icon-60x60.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="120x120"
+    href="https://d1iq6qzgppjlud.cloudfront.net/images/favicon/apple-touch-icon-120x120.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="76x76"
+    href="https://d1iq6qzgppjlud.cloudfront.net/images/favicon/apple-touch-icon-76x76.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="152x152"
+    href="https://d1iq6qzgppjlud.cloudfront.net/images/favicon/apple-touch-icon-152x152.png" />
+  <link rel="icon" type="image/png" href="https://d1iq6qzgppjlud.cloudfront.net/images/favicon/favicon-196x196.png"
+    sizes="196x196" />
+  <link rel="icon" type="image/png" href="https://d1iq6qzgppjlud.cloudfront.net/images/favicon/favicon-96x96.png"
+    sizes="96x96" />
+  <link rel="icon" type="image/png" href="https://d1iq6qzgppjlud.cloudfront.net/images/favicon/favicon-32x32.png"
+    sizes="32x32" />
+  <link rel="icon" type="image/png" href="https://d1iq6qzgppjlud.cloudfront.net/images/favicon/favicon-16x16.png"
+    sizes="16x16" />
+  <link rel="icon" type="image/png" href="https://d1iq6qzgppjlud.cloudfront.net/images/favicon/favicon-128.png"
+    sizes="128x128" />
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+  <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+  <link rel="dns-prefetch" href="https://app.cal.com">
+  
+  <!-- Preload main styles for fastest loading -->
+  <link rel="preload" href='/style.css' as="style">
+  <link rel="preload" href="/styles/design-system.css" as="style">
+  
+  <!-- Critical CSS inline for above-the-fold content -->
+  <style>
+    /* Critical CSS for initial render */
+    body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+    .header { background: white; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
+    .hidden { display: none; }
+    .sticky { position: sticky; top: 0; z-index: 50; }
+    
+    /* Hide ALL icons until fonts load to prevent FOUC */
+    .fa:before, .fas:before, .far:before, .fab:before, .fal:before, .fad:before,
+    [class*="fa-"]:before {
+      display: none !important;
+    }
+    
+    /* Also hide icon containers to prevent layout shift */
+    .fa, .fas, .far, .fab, .fal, .fad,
+    i[class*="fa-"] {
+      opacity: 0;
+      width: 1.25em;
+      height: 1em;
+      display: inline-block;
+      vertical-align: -0.125em;
+    }
+    
+    /* Show icons after Font Awesome loads */
+    .fa-loaded .fa:before, .fa-loaded .fas:before, .fa-loaded .far:before, 
+    .fa-loaded .fab:before, .fa-loaded .fal:before, .fa-loaded .fad:before,
+    .fa-loaded [class*="fa-"]:before {
+      display: inline-block !important;
+    }
+    
+    .fa-loaded .fa, .fa-loaded .fas, .fa-loaded .far, 
+    .fa-loaded .fab, .fa-loaded .fal, .fa-loaded .fad,
+    .fa-loaded i[class*="fa-"] {
+      opacity: 1;
+      transition: opacity 0.1s ease-in;
+    }
+  </style>
+  
+  <!-- PRIORITY 1: Main Styles - Load First -->
+  <link rel="stylesheet" href='/style.css'>
+  <link rel="stylesheet" href="/styles/design-system.css">
+  
+  <!-- V3 Design System Override -->
+  <link rel="stylesheet" href="/new_home/design_system_v3.css">
+  
+  <!-- Monochrome Theme (Optional - loaded only when activated) -->
+  <link rel="stylesheet" href="/styles/design-tokens-monochrome.css">
+  
+  <!-- PRIORITY 2: Design System Foundation -->
+  <link rel="stylesheet" href="/styles/design-tokens.css">
+  <link rel="stylesheet" href="/styles/design-utilities.css">
+  <link rel="stylesheet" href="/styles/tailwind-compat.css">
+  
+  <!-- PRIORITY 3: Tailwind CSS - Critical for layout -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- PRIORITY 4: Additional Styles -->
+  <link rel="stylesheet" href="/assets/css/animated-gradient-bg.css">
+  
+  <!-- PRIORITY 5: Icon Fonts - Load After All Main Styles -->
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" as="style">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" media="print" onload="this.media='all';if(document.body){document.body.classList.add('fa-loaded')}">
+  
+  <!-- Fallback for browsers without JS -->
+  <noscript>
+    <link rel="stylesheet" href='/style.css'>
+    <link rel="stylesheet" href="/styles/design-system.css">
+    <link rel="stylesheet" href="/assets/css/animated-gradient-bg.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  </noscript>
+  
+  <!-- Defer non-critical CSS -->
+  <link rel="preload" href="/lang-picker.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript>
+    <link rel="stylesheet" href="/lang-picker.css">
+  </noscript>
+  
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-TZRGMQ9');</script>
+  <!-- End Google Tag Manager -->
+  
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-116930058-3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-116930058-3');
+  </script>
+  
+  {% block styles %}
+  {% endblock styles %}
+  <script>
+    // Configure Tailwind to include all the classes we need
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'blue-600': '#2563eb',
+            'blue-700': '#1d4ed8',
+            'blue-500': '#3b82f6',
+            'gray-900': '#111827',
+            'gray-600': '#4b5563',
+            'gray-100': '#f3f4f6',
+            'purple-600': '#9333ea',
+            'purple-700': '#7c3aed',
+            // Docsie Brand Colors
+            'docsie': {
+              'primary': '#13AF4B',
+              'primary-dark': '#0f8f3d',
+              'primary-light': '#1bc95a',
+            },
+            background: 'hsl(var(--background))',
+            foreground: 'hsl(var(--foreground))',
+          },
+          spacing: {
+            '72': '18rem',
+            '84': '21rem',
+            '96': '24rem',
+          },
+          animation: {
+            'float': 'float 3s ease-in-out infinite',
+            'pulse': 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            'scroll': 'scroll 40s linear infinite',
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-10px)' },
+            },
+            scroll: {
+              '0%': { transform: 'translateX(0)' },
+              '100%': { transform: 'translateX(calc(-250px * 7))' },
+            }
+          },
+          gridTemplateColumns: {
+            'auto-fit': 'repeat(auto-fit, minmax(250px, 1fr))',
+            'auto-fill': 'repeat(auto-fill, minmax(300px, 1fr))',
+          }
+        }
+      }
+    }
+  </script>
+  
+  {# RTL Language Detection #}
+  {% include '_rtl_detector.html' %}
+</head>
+
+<body class="docsie-background-img v3">
+  {# Google Tag Manager (noscript) #}
+  {% include '_tags.body.html' %}
+  {% include '_language_suggestion_banner.html' %}
+  <a href="#main" class="aria-visible">{% trans %}Skip to content{% endtrans %}</a>
+  
+  <!-- Load SVG icons immediately to prevent FOUC -->
+  {% include '_icons.html' %}
+  
+  <!-- Page Header V2 -->
+  <header class="bg-white shadow-sm sticky top-0 z-50">
+    <nav class="container mx-auto px-4 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        
+        <!-- Logo -->
+        <div class="flex items-center">
+          {% import '_language_helpers.html' as lang %}
+          <a href="{{ lang.abs_lang_url('') }}" class="flex items-center">
+            <svg class="w-8 h-10 text-docsie-primary mr-3" width="32" height="40" viewBox="0 0 48 48">
+              <use xlink:href="#icon-docsie"></use>
+            </svg>
+            <svg class="h-8 hidden sm:block" width="110" viewBox="0 0 158 58" xmlns="http://www.w3.org/2000/svg">
+              <use xlink:href="#icon-logo"></use>
+            </svg>
+          </a>
+        </div>
+
+        <!-- Header V2 Navigation -->
+        {% include '_header_v2.html' %}
+        
+      </div>
+    </nav>
+  </header>
+
+  {% block content %}
+  {% endblock content %}
+
+  <!-- Footer V2 -->
+  {% include '_footer_v2.html' %}
+  
+  {% include '_alexa.html' %}
+  {% include '_mobile_menu.html' %}
+  {% include '_autopilot.html' %}
+  {% include '_policy.html' %}
+  {% include '_lang-redirect-banner.html' %}
+  {% include '_lucky_orange.html' %}
+  {% include '_traffic_guard.html' %}
+  {% include '_quora_pixel.html' %}
+  {% include '_perfect_audience.html' %}
+  {% include '_facebook_pixel.html' %}
+  {% include '_tapfilliate_pixel.html' %}
+  
+  <!-- Accessibility widget - DISABLED -->
+  {# {% include '_accessibility_widget.html' %} #}
+
+  {% block scripts %}
+  <!-- Font Awesome font loading detection -->
+  <script>
+    // Detect when Font Awesome font loads
+    if ('fonts' in document) {
+      document.fonts.ready.then(function() {
+        document.body.classList.add('fa-loaded');
+      });
+    } else {
+      // Fallback for older browsers
+      setTimeout(function() {
+        document.body.classList.add('fa-loaded');
+      }, 500);
+    }
+  </script>
+  
+  <!-- Deferred non-critical scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/share-this/dist/share-this.js" defer></script>
+  <!-- Cal.com Integration -->
+  {% include '_cal_init.html' %}
+  
+  
+  <!-- Lazy loading -->
+  <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.3.0/dist/lazyload.min.js" defer></script>
+  <script>
+    // Initialize lazy loading after the library loads
+    document.addEventListener('DOMContentLoaded', function() {
+      if (typeof LazyLoad !== 'undefined') {
+        var lazyLoadInstance = new LazyLoad({
+          elements_selector: ".lazy"
+        });
+      }
+    });
+  </script>
+  {% endblock scripts %}
+  
+  <!-- Animated Background System - DISABLED FOR V3 -->
+  <!-- <script src="/assets/js/animated-gradient-bg.js" defer></script> -->
+  
+  <!-- Theme Switcher (Testing) -->
+  <script>
+    // Simple theme toggle for testing
+    function toggleMonochrome() {
+      document.documentElement.classList.toggle('theme-monochrome');
+      const isMonochrome = document.documentElement.classList.contains('theme-monochrome');
+      localStorage.setItem('docsie-theme', isMonochrome ? 'monochrome' : 'color');
+    }
+    
+    // Apply saved theme on load
+    if (localStorage.getItem('docsie-theme') === 'monochrome') {
+      document.documentElement.classList.add('theme-monochrome');
+    }
+    
+    // Add toggle button if URL has ?theme parameter
+    if (window.location.search.includes('theme')) {
+      document.addEventListener('DOMContentLoaded', function() {
+        const btn = document.createElement('button');
+        btn.innerHTML = '🎨';
+        btn.style.cssText = 'position:fixed;bottom:20px;left:20px;width:50px;height:50px;border-radius:50%;background:#000;color:#fff;border:2px solid #fff;font-size:24px;cursor:pointer;z-index:9999;box-shadow:0 4px 6px rgba(0,0,0,0.1);';
+        btn.onclick = toggleMonochrome;
+        btn.title = 'Toggle Monochrome Theme';
+        document.body.appendChild(btn);
+      });
+    }
+  </script>
+</body>
+
+</html>
