@@ -1,0 +1,115 @@
+# Die wichtigste Fähigkeit für Produktmanager: Effektives Schreiben
+
+Die wertvollste Fähigkeit, die Produktmanager besitzen können, um ihre Produktidee zum Leben zu erwecken, ist die Fähigkeit, effektiv zu schreiben.
+
+## Warum ist Dokumentation wichtig?
+
+![](https://cdn.docsie.io/workspace_8D5W1pxgb7Jq3oZO7/doc_vQfR1TFvrUMWGTXFc/file_PTc9VJ5wxwdL1k6yB/boo_EJBR2kCoLVuTRTFDl/ba1c9cc6-2f5a-b10e-9eae-74f8adcdf486ux_indonesia_pqzRfBhd9r0_unsplash.jpg)
+
+Zunächst: Warum ist eine gute Dokumentation für ein digitales Produktentwicklungsprojekt entscheidend?
+
+Dafür gibt es zwei Hauptgründe:
+
+### 1. Sie dient als Wissensspeicher für alle wichtigen Entscheidungen
+
+Bei komplexen, langfristigen Projekten werden täglich wichtige Entscheidungen zu Prioritäten, Features und strategischen Zielen getroffen.
+
+Mit fortschreitender Produktentwicklung gerät leicht in Vergessenheit, wann und warum bestimmte Entscheidungen getroffen wurden. Eine detaillierte Aufzeichnung ermöglicht schnelle Antworten auf Fragen und erklärt die Gründe hinter den Entscheidungen.
+
+Dies stellt sicher, dass das ursprüngliche Projektziel erreicht wird und die anfänglichen Kriterien erfüllt werden. Außerdem ist es für die Nachverfolgung der Verantwortlichkeiten wichtig.
+
+### 2. Sie hilft, Produktwissen zu bewahren
+
+Oft arbeiten verschiedene Teams an einem Projekt, mit wenig oder keiner Interaktion untereinander. Personalwechsel sind häufig, und trotz sorgfältiger Übergaben gehen Details verloren. Die Dokumentation bewahrt das gesammelte Wissen und erleichtert die Weitergabe dieses Wissens.
+
+Hinzu kommt die Informationsweitergabe an Support-Teams und Endnutzer nach der Produktveröffentlichung – eine weitere wichtige Funktion guter Dokumentation.
+
+Aus diesen Gründen benötigen wir Dokumentation, um Support-Teams zu unterstützen und eine gute Verbindung zwischen Teams und Abteilungen zu gewährleisten, damit das Produkt mit aller Unterstützung veröffentlicht werden kann.
+
+## Wie erweckt man eine Produktidee zum Leben?
+
+![](https://cdn.docsie.io/workspace_8D5W1pxgb7Jq3oZO7/doc_vQfR1TFvrUMWGTXFc/file_hEhWpISL2GzWXaggB/boo_EJBR2kCoLVuTRTFDl/afffdac6-e885-5a8c-deb1-2b69597a4147image.png)
+
+Als erfolgreicher Produktmanager benötigt man technisches Fachwissen, tiefes Kundenverständnis sowie Kreativität und Disziplin, um neue Produktideen umzusetzen.
+
+Die wertvollste Fähigkeit eines Produktmanagers ist jedoch nicht Programmieren oder Design, sondern effektives Schreiben.
+
+Die Haupteinschränkung für Ihre Leistung als Produktmanager ist Ihre Fähigkeit, effektiv mit dem Team zu kommunizieren.
+
+Ihre Aufgabe ist nicht, Brände zu löschen, jeden Aspekt der Produktentwicklung zu kontrollieren oder Stand-up-Meetings zu organisieren. Wie Ethan Hollinshead, Senior Product Manager bei Strava, es ausdrückt: "Die größte Herausforderung im Produktmanagement ist die Ressourcenausrichtung. Teamgrößen ändern sich ständig und sind oft unausgewogen. Manche Wochen hat man viel Design-Kapazität und keine iOS-Entwicklung, andere Wochen umgekehrt. Ein gut priorisierter Backlog ist entscheidend für ein effizientes Team." Da Teams sich ständig verändern, ist ein strukturierter Dokumentationsprozess wesentlich, um alles reibungslos am Laufen zu halten.
+
+### Effektive Dokumentation ist in allen Produktbereichen entscheidend:
+
+Wenn Sie das "Warum" eines Projekts ausformulieren, werden früh schwierige Entscheidungen getroffen und dem Team ein klarer Nordstern für ihre Bemühungen gegeben.
+
+**Planung**: Durch die Aufgliederung der Vision in präzise, gut formulierte Stories, Ziele und Sprints werden Projekte überschaubarer und bleiben auf Kundenbedürfnisse ausgerichtet.
+
+**Umsetzung**: Produktmanager, die schriftlich gut mit Designern, Entwicklern und anderen kommunizieren können, sind am besten darin, Engpässe zu beseitigen, Konflikte zu lösen und ihre Ideen zum Erfolg zu führen.
+
+Je besser Sie als Produktmanager Ihre Gedanken schriftlich kommunizieren, desto zugänglicher wird Ihr Denken für andere. Das bedeutet weniger Zeit für Korrekturen oder Erklärungen und mehr Fokus auf wichtige Herausforderungen.
+
+## Produktanforderungsdokumentation führt zu einer umfassenderen Produktvision
+
+![](https://cdn.docsie.io/workspace_8D5W1pxgb7Jq3oZO7/doc_vQfR1TFvrUMWGTXFc/file_Atvu5TQEy94ODrVLp/boo_EJBR2kCoLVuTRTFDl/a370be08-a260-fa0b-ad1b-71c00091cd30ux_indonesia_w00FkE6e8zE_unsplash.jpg)
+
+Eine der wichtigsten Dokumentationen, die Produktmanager erstellen müssen, ist die PRD (Product Requirements Documentation). Gute Produktmanager berücksichtigen bei neuen Projekten alle Aspekte des Produkts und seines Umfelds. Sie ermitteln, welche Kundentypen das Angebot nutzen würden und warum. Sie analysieren, was andere Unternehmen in diesem Bereich tun und wie sie sich verbessern können. Bei Unsicherheiten suchen sie Informationen und überprüfen ihre Annahmen.
+
+Hervorragende Produktmanager nutzen diese Informationen, um eine Geschichte über den Kunden und seine Bedürfnisse zu erzählen, die das gesamte Produktteam für ein gemeinsames Ziel begeistert.
+
+### Die wichtigsten Elemente einer PRD:
+
+* **Zielsetzung:** Der Zielsetzungsteil beschreibt das Kundenproblem, das Sie lösen möchten, und wie es mit der Vision, den Zielen und Ambitionen Ihres Unternehmens zusammenhängt. Hier wird das übergeordnete Ziel und die Zielgruppe Ihres Produkts definiert.
+
+* **Release:** Legen Sie fest, was wann geliefert wird. Dies ermöglicht internen Teams, ihre Arbeit zu planen, indem sie Umfang und Zeitrahmen des Releases verstehen. Verfolgen Sie wichtige Meilensteine und Abhängigkeiten, um alle auf Kurs zu halten.
+
+* **Features:** Spezifizieren Sie jedes Feature (oder User Story) im Release. Hier beschreiben Sie genau, was entwickelt werden muss und wie das Entwicklungsteam dabei vorgehen sollte.
+
+* **User Flow und Design:** Integrieren Sie visuelle Wireframes und Mockups, um zu zeigen, wie das Feature aussehen wird und wo es in die Gesamtstruktur passt. Das hilft dem Entwicklungsteam zu verstehen, was Sie sich vorstellen und wie die Funktionalität umgesetzt werden soll.
+
+* **Analytik:** Legen Sie vorab fest, wie Sie die Leistung Ihrer Features messen werden. Erstellen Sie eine Hypothese über die erwartete Wirkung eines Features, um zu bestimmen, ob es die beabsichtigten Ergebnisse liefert.
+
+* **Zukünftige Arbeit:** Es kann hilfreich sein, in der PRD Informationen über zukünftige Roadmap-Pläne aufzunehmen. Fügen Sie relevante Fakten hinzu, die dem Team helfen zu verstehen, wie sich das Produkt im Laufe der Zeit entwickeln könnte.
+
+## User Stories mit Kontext stellen sicher, dass Kundenanforderungen erfüllt werden
+
+Ein Produkt zum Leben zu erwecken, erfordert mehr als nur eine Strategie zu entwickeln und Features zu produzieren. Als Produktmanager besteht Ihre wertvollste Aufgabe darin, genau zu bestimmen, was jedes Feature für Ihren Kunden leisten muss, und es dann in die prägnanteste Form für Ihr Team zu bringen.
+
+Es mag länger dauern, eine präzise User Story zu entwickeln, die Ihr Delivery-Team auf Erfolg einstellt – eine, die die Möglichkeit, das Falsche zu bauen, fast ausschließt – aber Sie sparen während der Umsetzungsphase erheblich mehr Zeit. Produktmanager, die hier Abkürzungen nehmen, sparen kurzfristig Zeit, zahlen aber später den Preis.
+
+Das Problem ist, dass ein reines Feature-Listing den Kundenkontext ignoriert.
+
+Wenn Sie Ihr Delivery-Team nur bitten, eine Liste von Features zu liefern, werden immer Unterschiede zwischen Ihrer Vision und ihrer Vision auftreten.
+
+Gut gestaltete und geschriebene Produktdokumentation ist entscheidend für den Onboarding-Prozess Ihrer Nutzer, damit sie Ihr Produkt effektiv nutzen können. Sie sollte auch User Stories enthalten, die auf Nutzerforschung basierende Beispiele für die Verwendung Ihres Produkts liefern.
+
+## Schriftliche Kommunikation sorgt für Verantwortlichkeit und treibt Projekte voran
+
+![](https://cdn.docsie.io/workspace_8D5W1pxgb7Jq3oZO7/doc_vQfR1TFvrUMWGTXFc/file_SkMdH7bHVaDRNaLa4/boo_EJBR2kCoLVuTRTFDl/f6ca1a85-e36d-0a54-bcf5-380ea9eec66fmarvin_meyer_SYTO3xs06fU_unsplash.jpg)
+
+Schwache Produktmanager horten Informationen und müssen Zeit damit verbringen, ihre Handlungen gegenüber ihrem Team zu rechtfertigen. Dies bremst den Produktschwung – die Mitarbeiter verbringen ihre Zeit mit dem Produktmanager statt mit der eigentlichen Arbeit, und der Produktmanager löscht Brände statt sich auf wichtige Aufgaben zu konzentrieren.
+
+Ein wesentlicher Bestandteil der Arbeit erfolgreicher Produktmanager ist sicherzustellen, dass alle Teammitglieder kontinuierlichen, uneingeschränkten Zugang zu umfassenden Produktinformationen haben: FAQs, Marketingmaterial, Stilrichtlinien, Kundeninterviews, Marktforschung und Präsentationen. Wenn Ihre Entwickler, Designer und Marketingexperten klare Fristen und umfassenden Zugang zu notwendigen Daten haben, können Ihre Projekte deutlich schneller vorankommen.
+
+Wenn ein Produktmanager akribisch auf interne Dokumentation achtet und sie regelmäßig aktualisiert, macht er auch das gesamte Team verantwortlich.
+
+Der Produktmanager berichtet an Vizepräsidenten oder Geschäftsführer, da seine Produktvision und Ansichten zur Umsetzung öffentlich dokumentiert sind.
+
+Die Führungskräfte von Engineering, Design und anderen Teams sind verantwortlich, da ihr Beitrag zum Projekt ebenfalls in der Vision definiert ist. Jeder kennt die Kriterien, die er und andere erfüllen müssen, was das Teamverständnis verbessert und alle auf Kurs hält.
+
+Schließlich erfordern neue Erkenntnisse im Projektverlauf Plananpassungen. Ob durch Marktforschung, Kundeninterviews oder veränderte Unternehmensziele – die Begründung für PRD-Änderungen zu dokumentieren hilft sicherzustellen, dass das Team das "Warum" hinter diesen Änderungen versteht.
+
+Die Aufgabe eines erfolgreichen Produktmanagers besteht ebenso darin, die PRD zu aktualisieren wie sie zu erstellen. Bei neuen Fragen, Strategieänderungen der Konkurrenz oder technischen Hindernissen müssen Sie dies in der PRD berücksichtigen und sicherstellen, dass das "lebende Dokument" nicht hinter der Realität zurückbleibt. Wenn eine PRD veraltet, sehen Teammitglieder sie nicht mehr als maßgeblich an und konsultieren sie seltener.
+
+## Dokumentation schreiben ist das Erfolgsgeheimnis Ihres Produktteams
+
+![](https://cdn.docsie.io/workspace_8D5W1pxgb7Jq3oZO7/doc_vQfR1TFvrUMWGTXFc/file_4z8D06QZclNxpCYTN/boo_EJBR2kCoLVuTRTFDl/369bc520-2e75-fd34-8a9e-0495da932f4aimage.png)
+
+Während alle Teams mit Informationsmanagement zu kämpfen haben, stehen Produktteams vor besonderen Herausforderungen bei der Verwaltung ihres kollektiven Wissens über ihre Mission.
+
+Zusammenhalt ist entscheidend für den Erfolg von Produkten. Es geht nicht um das Zusammensetzen von Einzelteilen, sondern um die Koordination eines einheitlichen Kundenerlebnisses durch verschiedene Abteilungen.
+
+Ausführliches Schreiben macht Sie verantwortlich. Es zwingt Sie, logische Widersprüche früh anzugehen und kann Schwachstellen aufdecken, die beim bloßen Nachdenken verborgen bleiben. Es hilft Ihnen auch, klar über Ihre Kunden und deren Bedürfnisse nachzudenken, anstatt nur eine Liste von Features zu erstellen.
+
+Ihre Ziele und Gedanken aufzuschreiben – und dabei gründlich zu sein, was Sie sagen und wie Sie es sagen – ist der wirksamste Hebel, den Sie als Produktmanager haben, um sicherzustellen, dass Ihr fertiges Produkt ein zusammenhängendes Erlebnis bietet.
+
+Docsie bietet alle Dokumentations-Tools und Funktionen, die Produktmanager für ihren Erfolg benötigen. [Testen Sie Docsie kostenlos](https://www.docsie.io/), um zu sehen, wie wir bei Ihren Dokumentationsanforderungen helfen können.

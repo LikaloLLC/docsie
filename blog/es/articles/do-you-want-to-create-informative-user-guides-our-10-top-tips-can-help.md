@@ -1,0 +1,118 @@
+# Las guías de usuario son fundamentales en los servicios digitales
+
+Las guías de usuario son una parte esencial de los servicios digitales. Los clientes esperan acceso inmediato a la información mediante autoservicio. Ya no basta con explicaciones telefónicas; es ineficiente dedicar horas a explicar lo que se puede mostrar mejor en documentación.
+
+En Docsie, recomendamos que todas las empresas creen una biblioteca de guías informativas para sus clientes. Esto permite el autoservicio, reduce la carga de soporte y proporciona acceso 24/7 a la información que tus clientes necesitan para disfrutar y utilizar tu producto o servicio.
+
+## 10 consejos para crear guías de usuario y documentación en Docsie
+
+¿Ya tienes una forma de almacenar, redactar y publicar documentación?
+
+Visita la [página de incorporación de Docsie](https://app.docsie.io/onboarding/) para disfrutar de colaboración centrada en el cliente, opciones de integración, traducciones personalizadas y publicación potente.
+
+Ahora que te has unido al club, ¡vamos con nuestros 10 mejores consejos!
+
+### 1 - Enriquece tus guías con contenido multimedia
+
+Texto, palabras, letras... los usamos cada día. Sin embargo, el texto no puede compararse con la eficacia del vídeo o la inspiración de las imágenes.
+
+Al crear guías de documentación, léelas desde la perspectiva del usuario. ¿Podría esta sección explicarse mejor con un GIF, un vídeo o una imagen con anotaciones? Si es así, ¡añádelo!
+
+En Docsie puedes agregar imágenes, incrustar vídeos e integrar contenido mediante iFrame. ¡Pruébalo!
+
+![Images, Videos and GIFs in Docsie](https://cdn.docsie.io/workspace_tovPs7rKnzB4cmaiR/doc_GzKTESk1IUWjA77hg/file_CdhFEVXwXaefNXxxg/boo_dqsfhc7ObadQ3xWmV/e0eda1c6-284a-3e0f-5c43-0ff4099966d0BlogGIF10TipsforUserGuides.gif)
+
+### 2 - Crea un orden lógico
+
+Las instrucciones paso a paso son el pilar de los libros de cocina. Cuando sigues una receta, ¿mezclas los huevos con la harina? ¡Así es como debes hacerlo, y lo sabes porque sigues los pasos!
+
+Bromas aparte, asegúrate de revisar tus guías con instrucciones paso a paso. Si sigues esos pasos, ¿obtienes realmente el resultado esperado? Las instrucciones inexactas que no logran el resultado previsto son una señal de alarma para los clientes. Por otro lado, las instrucciones precisas generan confianza y aportan valor mediante la compartición de información.
+
+Crea un orden utilizando las listas numeradas en Docsie o con los Artículos de Docsie Book para segmentar tu documentación.
+ 
+![Articles, Shelves and Workspaces in Docsie](https://cdn.docsie.io/workspace_tovPs7rKnzB4cmaiR/doc_GzKTESk1IUWjA77hg/file_O4Ux6ERzhyIS0eB1X/boo_dqsfhc7ObadQ3xWmV/aa925138-ab48-e18b-ff33-50557a2897cfArticlesShelvesWorkspacesinDocsie.png)
+
+### 3 - Adapta el contenido a diferentes niveles de comprensión
+
+¿Asumes que tus clientes distinguirán JavaScript de tus consejos básicos? El uso de jerga técnica suele recomendarse en guías técnicas. Sin embargo, para usuarios comunes, cuanto más simple sea el lenguaje, mejor.
+
+La mayoría de los lectores solo quieren saber cómo hacer algo y repetirlo. Un enfoque es presentar un concepto complejo y técnico, y luego repetirlo con una versión simplificada para usuarios no técnicos. Esto satisface a ambos tipos de usuarios.
+
+"La inteligencia artificial implica la emulación algorítmica de la inteligencia humana para mejorar la productividad; la IA busca realizar trabajo imitando la inteligencia humana mediante código informático" - ambas frases significan lo mismo, pero se dirigen a públicos diferentes.
+
+Usa Docsie para crear Estanterías para usuarios comunes y otras para usuarios técnicos. Así puedes tener Libros que ayuden a ambas audiencias, con alojamiento completo disponible a través del Portal Docsie.
+ 
+![Complex Code Simplified for Laypersons in Docsie Example](https://cdn.docsie.io/workspace_tovPs7rKnzB4cmaiR/doc_GzKTESk1IUWjA77hg/file_cnLx3DDYwihXopx74/boo_dqsfhc7ObadQ3xWmV/411ea34c-096b-3bf2-fde0-2f8fdaddd55aLaypersonSimplificationforDocsie.png)
+
+### 4 - Usa plantillas y ahorra tiempo
+
+¿Reescribes cada guía desde cero? En lugar de eso, crea plantillas con estructura básica y mensajes de marca, y construye alrededor de este contenido.
+
+Escribir desde cero lleva tiempo, esfuerzo y arriesga la consistencia si varios redactores trabajan en el mismo proyecto. Las plantillas ahorran tiempo y promueven mayor coherencia entre páginas. La confianza se construye con mensajes consistentes y generación de valor, algo que las plantillas fomentan.
+
+Haz clic en ...Más y selecciona Plantillas en Docsie. Aquí puedes almacenar plantillas y comenzar nuevos Libros usándolas como base.
+
+![Templates in Docsie](https://cdn.docsie.io/workspace_tovPs7rKnzB4cmaiR/doc_GzKTESk1IUWjA77hg/file_Hv9JSg74vQE1zgYjT/boo_dqsfhc7ObadQ3xWmV/833830aa-871c-d3ba-19e7-0fbbba2adbfbTemplatesinDocsie.png)
+![Live Template in the Docsie Editor](https://cdn.docsie.io/workspace_tovPs7rKnzB4cmaiR/doc_GzKTESk1IUWjA77hg/file_jdf9iWL3NXlFFePHx/boo_dqsfhc7ObadQ3xWmV/2bfcea18-df94-30ff-4931-799345e4ae74Templates2inDocsie.png)
+
+### 5 - Escribe rápido, itera con frecuencia
+
+En el desarrollo Agile, el mantra es fallar rápido e iterar frecuentemente. Aplicado a la documentación, tu equipo debería escribir rápido e iterar con frecuencia.
+
+Esto no significa sacrificar calidad por velocidad. Permite recibir comentarios de los clientes con menos esfuerzo inicial. Este feedback puede aprovecharse en futuras iteraciones de la documentación, ayudando a la empresa a centrarse más en el cliente.
+
+Docsie Vocally facilita los comentarios de los lectores, con valoraciones y grabaciones de pantalla para identificar exactamente el contenido que leyeron. ¡Pruébalo mientras escribes rápido e iteras con frecuencia!
+
+![Docsie Vocally Feedback View](https://cdn.docsie.io/workspace_tovPs7rKnzB4cmaiR/doc_GzKTESk1IUWjA77hg/file_8uO5DnYSHSsLteI2X/boo_dqsfhc7ObadQ3xWmV/b9f841c9-1dde-5eee-c723-809f13df3255DocsieVocallyLivePreview.png) 
+
+### 6 - Conocimiento anidado con enlaces internos
+
+¿Tu documentación está enlazada con otras páginas? Al añadir enlaces a secciones relevantes, ayudas a los lectores a comprender tu producto o servicio a nivel conceptual.
+
+Cuando menciones una característica o función específica, añade siempre un enlace. Permite al lector acceder rápidamente a esa información, en lugar de obligarle a buscar y cargar la página por sí mismo. ¿Hablas de inicios de sesión? Añade un URL de inicio de sesión al texto "inicia sesión en tu cuenta" en tu página y en todas las demás. Haz que tu documentación sea cómoda y navegable dentro del texto, en lugar de una biblioteca interminable.
+
+Docsie permite crear enlaces internos. Solo tienes que resaltar texto y hacer clic en el botón 🖇️ en la barra de herramientas del Editor. Además, puedes hacer enlaces independientes del idioma y versión con los enlaces de objetos relativos.
+
+![Backlinking in Docsie With Object Reference Links](https://cdn.docsie.io/workspace_tovPs7rKnzB4cmaiR/doc_GzKTESk1IUWjA77hg/file_dclZdrsTWJrB8WETc/boo_dqsfhc7ObadQ3xWmV/7d8c9e37-3aa6-580d-644b-0d7a8039fa89DocsieObjectLinksforBacklinking.png)
+
+### 7 - Actualiza el contenido antiguo
+
+¿Tienes guías y documentación antiguas visibles en línea? Si tienes publicada documentación de la versión 1.2 mientras tu producto está en la versión 1.3, tu documentación ya no es relevante. En lugar de publicar nueva documentación para cada versión, usa el Versionado de Docsie.
+
+El Versionado de Docsie permite a los usuarios acceder a versiones históricas y actuales. A medida que se lanzan nuevas versiones, las antiguas se archivan pero siguen siendo accesibles desde un menú desplegable. Todo esto en la misma página web, facilitando a los usuarios encontrar información relevante.
+
+Del mismo modo, si tu guía de consejos de 2021 sigue publicada en 2022, ¡actualízala! Cambia el nombre, actualiza las citas y fuentes con investigaciones recientes, y verifica que la información sigue siendo relevante. Elimina el polvo y mantén tu contenido siempre fresco; el contenido siempre puede reutilizarse.
+
+![Version Picker to Find Older Content in Docsie](https://cdn.docsie.io/workspace_tovPs7rKnzB4cmaiR/doc_GzKTESk1IUWjA77hg/file_OaCUumTVGz3CQ2ha2/boo_dqsfhc7ObadQ3xWmV/4edbd225-b61b-0921-4f63-e55b3052ed28DocsieVersionsPickerMenu.png)
+
+### 8 - Divide las tareas, completa por lotes
+
+¿Escribes toda la página de una vez sin planificación previa? Esto depende en parte de las preferencias personales. Sin embargo, al dividir las tareas, el trabajo puede completarse más rápido y con mayor enfoque.
+
+Crea una estructura simple con etiquetas H1 y H2 y breves descripciones para cada sección. Úsala al escribir y aborda secciones individuales en lugar de preocuparte por toda la página. Esto se conoce como esquema en la industria de la redacción. El esquema ofrece oportunidades para recibir comentarios de editores antes de comenzar a escribir y actúa como marco guía durante la redacción.
+
+Crea un nuevo Libro en Docsie y añade algunos encabezados básicos y texto para un esquema. También puedes añadir Tareas utilizando el menú lateral derecho, dividiendo el trabajo en lotes más pequeños mientras varios miembros del equipo colaboran en el contenido. El historial de versiones te permite volver atrás si un redactor añade contenido de baja calidad, ¡perfecto para escribir rápido e iterar con frecuencia!
+
+![Calendar for Task Assignees in Docsie](https://cdn.docsie.io/workspace_tovPs7rKnzB4cmaiR/doc_GzKTESk1IUWjA77hg/file_4JCx9FdXnyXu3quMX/boo_dqsfhc7ObadQ3xWmV/d3468298-7bc2-7f51-7afe-2437f6321658TaskMiniaturizeCalendarDocsie.png)
+
+### 9 - Tabla de contenidos para facilitar la lectura
+
+Con documentación compleja y diversa, un muro de texto puede intimidar a los lectores. Esto puede resolverse con una tabla de contenidos completa. Comúnmente utilizada en enciclopedias, ayuda a los usuarios a identificar y saltar a información relevante, a la vez que proporciona estructura a un portal de conocimiento.
+
+Los Artículos, Estanterías y Espacios de trabajo de Docsie funcionan para crear una tabla de contenidos. Esta se mostrará automáticamente en el lado izquierdo de tu portal de conocimiento, proporcionando una forma sencilla de navegar por tu base de conocimientos. Con este consejo, ¡Docsie lo hace por ti!
+
+![Table of Contents Auto-Generated by Docsie](https://cdn.docsie.io/workspace_tovPs7rKnzB4cmaiR/doc_GzKTESk1IUWjA77hg/file_oxDNcw0pA6rCZa3J7/boo_dqsfhc7ObadQ3xWmV/35d48662-895e-b83f-c7c3-abb0ce6edd0dTableofContentsDocsie.png)
+ 
+### 10 - Domina tu tema
+
+¿Tu redactor es un experto en la materia? ¿Es ingenioso y bueno investigando temas con los que puede no estar familiarizado? En última instancia, a pesar de todos nuestros consejos, el redactor determina la calidad de tus guías de documentación.
+
+Cuanto más entienda tu producto, más preciso será su trabajo. Permite a los redactores probar y hasta "romper" tu producto, ya que los usuarios pueden encontrar problemas similares. Mejor aún, guía a tu redactor a través de una demostración del producto con tu equipo de ventas y dale experiencia práctica con el proceso y los mensajes de ventas. Esto nuevamente impulsa la consistencia, convirtiendo a tus redactores en usuarios. No todos los redactores se convierten en usuarios, pero todos los usuarios pueden convertirse en buenos redactores con conocimiento práctico.
+
+## ¡Pon estos consejos en práctica con Docsie!
+
+Gracias por leer nuestros 10 consejos para mejores guías de usuario. ¡Te invitamos a aplicarlos en tus documentos de Docsie!
+
+Docsie es una plataforma completa de gestión de documentación que las empresas utilizan para crear FAQs, documentación de productos, guías de usuario y manuales. La plataforma ofrece colaboración centrada en el cliente, amplias opciones de integración, traducciones personalizadas y potentes herramientas de publicación.
+
+¡Da el paso [incorporándote a Docsie](https://app.docsie.io/onboarding/) hoy mismo y ofrece documentación de calidad a tus clientes!

@@ -1,0 +1,113 @@
+# La capacità di scrivere: il talento più prezioso dei product manager
+
+## Perché la documentazione è importante?
+
+![](https://cdn.docsie.io/workspace_8D5W1pxgb7Jq3oZO7/doc_vQfR1TFvrUMWGTXFc/file_PTc9VJ5wxwdL1k6yB/boo_EJBR2kCoLVuTRTFDl/ba1c9cc6-2f5a-b10e-9eae-74f8adcdf486ux_indonesia_pqzRfBhd9r0_unsplash.jpg)
+
+Per iniziare, perché una documentazione adeguata è fondamentale per un progetto di sviluppo di prodotti digitali?
+
+Le due ragioni principali sono:
+
+### 1. Funge da archivio per tutte le decisioni significative
+
+Durante un progetto complesso e a lungo termine, ogni giorno vengono prese decisioni cruciali su priorità, funzionalità e obiettivi strategici.
+
+Con il passare del tempo e l'avanzamento del progetto, diventa facile perdere traccia di quando e perché sono state prese certe decisioni. Mantenere una documentazione dettagliata è essenziale per rispondere rapidamente alle domande e spiegare le motivazioni dietro determinate scelte.
+
+Questo è importante per garantire che si realizzi ciò che si è pianificato inizialmente e che si soddisfino i requisiti originali del progetto. Inoltre, è cruciale per il monitoraggio della responsabilità.
+
+### 2. Aiuta a preservare la conoscenza del prodotto
+
+Spesso, diversi team lavorano a un progetto con poca o nessuna interazione tra loro. In alcuni casi, il turnover del personale è piuttosto comune e, nonostante un passaggio di consegne efficace sia fondamentale, alcuni dettagli vengono talvolta trascurati. La documentazione serve come registro concreto di tutte le informazioni acquisite durante il progetto, sia per evitare perdite sia per facilitare il trasferimento di conoscenze.
+
+E questo senza considerare la trasmissione di informazioni ai team di supporto e agli utenti finali dopo il rilascio del prodotto, un'altra funzione essenziale di una documentazione efficace.
+
+Per questi motivi, la documentazione è necessaria per supportare i team e mantenere una buona connessione e collaborazione tra team e dipartimenti, così che il prodotto possa essere rilasciato con il contributo di tutti.
+
+## Come dare vita a un'idea di prodotto?
+
+![](https://cdn.docsie.io/workspace_8D5W1pxgb7Jq3oZO7/doc_vQfR1TFvrUMWGTXFc/file_hEhWpISL2GzWXaggB/boo_EJBR2kCoLVuTRTFDl/afffdac6-e885-5a8c-deb1-2b69597a4147image.png)
+
+Per essere un product manager di successo, devi possedere competenze tecniche, una profonda comprensione dei tuoi clienti e sufficiente creatività e disciplina per dare vita a un nuovo concetto di prodotto.
+
+Tuttavia, il talento più prezioso che un product manager può sviluppare non riguarda la programmazione o il design, ma la capacità di scrivere efficacemente.
+
+Come product manager, il principale limite alla tua performance è la tua capacità di comunicare efficacemente con il resto del team.
+
+Il tuo ruolo non consiste nello spegnere incendi, controllare ogni aspetto della creazione del prodotto o organizzare stand-up meeting. Come afferma Ethan Hollinshead, Senior Product Manager di Strava: "La sfida più grande nella gestione del prodotto è l'allineamento delle risorse. Le dimensioni dei team cambiano costantemente e sono spesso sbilanciate. Alcune settimane hai ampia disponibilità di design ma nessuno sviluppatore iOS, altre volte non hai design ma tutti gli sviluppatori iOS. Avere un backlog profondo di progetti ben prioritizzati è fondamentale per gestire un team efficiente." Poiché i team sono in continua evoluzione, avere un processo di documentazione ben strutturato è essenziale per mantenere tutto funzionante in modo fluido ed efficace.
+
+### Scrivere una documentazione efficace è cruciale in ogni area di responsabilità del product manager:
+
+Il processo di documentare il "perché" dietro un progetto costringe i product manager a prendere decisioni difficili in anticipo e fornisce al resto del team una chiara stella polare su cui concentrare i propri sforzi.
+
+**Pianificazione**: Scomponendo quella visione in storie, obiettivi e sprint ben articolati e concisi, i progetti diventano più gestibili e rimangono allineati con le esigenze dei clienti.
+
+**Esecuzione**: I product manager abili nella comunicazione scritta con designer, ingegneri e altri collaboratori sono i migliori a rimuovere i colli di bottiglia, risolvere conflitti e portare a compimento le loro idee.
+
+In generale, più sei efficace nel comunicare i tuoi pensieri per iscritto come product manager, più il tuo pensiero sarà accessibile agli altri. Questo significa spendere meno tempo ed energia per correggere o spiegare te stesso e più tempo per concentrarti sulle sfide importanti.
+
+## La documentazione dei requisiti di prodotto equivale a una visione più completa
+
+![](https://cdn.docsie.io/workspace_8D5W1pxgb7Jq3oZO7/doc_vQfR1TFvrUMWGTXFc/file_Atvu5TQEy94ODrVLp/boo_EJBR2kCoLVuTRTFDl/a370be08-a260-fa0b-ad1b-71c00091cd30ux_indonesia_w00FkE6e8zE_unsplash.jpg)
+
+Uno dei documenti più importanti che i product manager devono sviluppare è il PRD (Product Requirement Documentation). Quando inizia un nuovo progetto, un buon product manager considera ogni elemento del prodotto e del suo contesto. Determina quali tipi di clienti potrebbero desiderare l'offerta dell'azienda e perché. Indaga su cosa stanno facendo altre aziende nel settore e come possono migliorare le proprie prestazioni. Quando sono incerti su qualcosa, cercano informazioni e valutano le loro ipotesi e preconcetti rispetto a queste conoscenze.
+
+I grandi product manager utilizzano queste informazioni per raccontare una storia sul cliente e le sue esigenze, galvanizzando l'intero team di prodotto verso un obiettivo comune.
+
+### Gli elementi critici di un PRD includono:
+
+* **Obiettivo:** La sezione obiettivo descrive il problema del cliente che stai cercando di risolvere e come si collega alla visione, agli obiettivi e alle ambizioni della tua organizzazione. Questo delinea lo scopo generale di ciò che stai cercando di raggiungere e il pubblico target del tuo prodotto.
+
+* **Rilascio:** Delinea cosa verrà fornito e quando nella sezione di rilascio del PRD. Questo permette ai team interni di organizzare il loro lavoro comprendendo l'ambito e la tempistica del rilascio. Tieni traccia di pietre miliari critiche e dipendenze per assicurarti che tutti rimangano in linea.
+
+* **Funzionalità:** Il passo successivo è specificare ogni funzionalità (o user story) inclusa nel rilascio. Questa parte del PRD descrive esattamente cosa deve essere creato e come il team di sviluppo dovrebbe procedere.
+
+* **Flusso utente e design:** Includi wireframe visivi e mockup nel tuo PRD per mostrare come apparirà la funzionalità e dove si colloca nella sitemap o pagina complessiva. Questo aiuta il team di sviluppo a capire esattamente cosa stai immaginando e come la funzionalità dovrebbe essere implementata.
+
+* **Analisi:** È fondamentale determinare in anticipo come valuterai le prestazioni delle tue funzionalità. Crea un'ipotesi sull'impatto che ritieni una funzionalità avrà per determinare se fornisce i risultati previsti.
+
+* **Lavoro futuro:** Può essere utile includere nel PRD informazioni di alto livello sui piani futuri della roadmap del prodotto. Includi fatti pertinenti che aiutino il team a comprendere come il prodotto potrebbe evolvere nel tempo.
+
+## User story con contesto garantiscono che i requisiti del cliente siano soddisfatti
+
+Dare vita a un prodotto richiede più che creare una strategia e poi sfornare funzionalità. Come product manager, il tuo compito più prezioso è determinare esattamente cosa ogni funzionalità deve fare per il tuo cliente e poi condensarlo nella forma più concisa possibile per il tuo team.
+
+Sebbene possa richiedere più tempo sviluppare una user story inattaccabile che prepari il team al successo - una che elimini quasi completamente la possibilità di costruire la cosa sbagliata - si risparmia molto più tempo durante la fase di esecuzione. I product manager che prendono scorciatoie risparmieranno tempo a breve termine ma pagheranno il prezzo in seguito.
+
+Il problema è che quando dichiari solo cosa fa la tua funzionalità, ignori il contesto del consumatore.
+
+Quando chiedi semplicemente al tuo team di fornire un elenco di funzionalità, incontrerai sempre discrepanze tra la tua visione e la loro.
+
+Dare priorità a una documentazione di prodotto ben progettata e scritta è essenziale per completare il processo di onboarding degli utenti affinché possano sapere come utilizzare al meglio il tuo prodotto. Tuttavia, dovrebbe includere anche user story per fornire esempi di come utilizzare il prodotto e in quale capacità, basati su ricerche reali sugli utenti.
+
+## La comunicazione scritta responsabilizza le persone e fa progredire le iniziative
+
+![](https://cdn.docsie.io/workspace_8D5W1pxgb7Jq3oZO7/doc_vQfR1TFvrUMWGTXFc/file_SkMdH7bHVaDRNaLa4/boo_EJBR2kCoLVuTRTFDl/f6ca1a85-e36d-0a54-bcf5-380ea9eec66fmarvin_meyer_SYTO3xs06fU_unsplash.jpg)
+
+Un product manager mediocre accumula informazioni e deve spendere tempo giustificando le proprie azioni al personale. Questo uccide lo slancio del prodotto: le persone passano il tempo a conversare con il product manager invece di portare a termine il lavoro, e il product manager passa il tempo a spegnere incendi anziché concentrarsi sul lavoro importante.
+
+Un componente cruciale del lavoro di qualsiasi product manager di successo è garantire che tutti i membri del team abbiano un accesso continuo e illimitato a una ricchezza di informazioni sul prodotto che stanno costruendo, tra cui: FAQ, materiale di marketing, linee guida di stile, interviste con i clienti, ricerche di mercato e presentazioni, solo per citarne alcuni. Quando ingegneri, designer e marketer hanno scadenze chiare e accesso completo ai dati e alle informazioni necessarie per svolgere i loro compiti, i progetti possono procedere molto più velocemente.
+
+Quando un product manager è meticoloso nella documentazione interna e la aggiorna regolarmente, rende anche l'intero team responsabile.
+
+Il product manager risponde al vicepresidente o all'amministratore delegato poiché la sua visione del prodotto e le sue opinioni su come dovrebbe essere realizzato sono documentate pubblicamente.
+
+I leader dei team di ingegneria, design e altri sono responsabili poiché il contributo del loro team al progetto è similmente definito nella visione. Tutti sono consapevoli dei criteri che loro e gli altri devono soddisfare, il che aumenta la comprensione del team e mantiene tutti in carreggiata.
+
+Infine, con l'avanzare dei progetti, nuove conoscenze richiedono revisioni del piano. Che sia il risultato di ricerche di mercato, interviste con i clienti o cambiamenti negli obiettivi aziendali, essere in grado di dimostrare il razionale per qualsiasi modifica al PRD aiuta a garantire che il team comprenda il "perché" dietro questi cambiamenti.
+
+Il lavoro di un product manager di successo consiste tanto nell'aggiornare il PRD quanto nel generarlo. Man mano che i team pongono nuove domande, i concorrenti modificano le loro strategie e sorgono ostacoli tecnologici, devi tenerne conto nel PRD e garantire che il "documento vivente" non resti indietro rispetto alla realtà. Quando un PRD resta indietro, i membri del team smettono di considerarlo autorevole e sono meno inclini a consultarlo la prossima volta che hanno un problema.
+
+## La documentazione è l'ingrediente segreto del tuo team di prodotto
+
+![](https://cdn.docsie.io/workspace_8D5W1pxgb7Jq3oZO7/doc_vQfR1TFvrUMWGTXFc/file_4z8D06QZclNxpCYTN/boo_EJBR2kCoLVuTRTFDl/369bc520-2e75-fd34-8a9e-0495da932f4aimage.png)
+
+Mentre tutti i team affrontano la sfida della gestione delle informazioni, i team di prodotto hanno un insieme unico di sfide quando si tratta di gestire la loro conoscenza collettiva della missione.
+
+La coesione è fondamentale per la sopravvivenza dei prodotti. Non si tratta di assemblare widget, ma di gestire la consegna di un'esperienza cliente unificata da parte di diverse divisioni distinte.
+
+Scrivere in forma estesa ti rende responsabile. Ti costringe ad affrontare contraddizioni logiche in anticipo e può rivelare difetti di cui non eri consapevole quando pensavi alle cose solo nella tua mente. Inoltre, ti aiuta a pensare in modo coerente a chi è il tuo consumatore e a ciò di cui ha realmente bisogno dal tuo prodotto, piuttosto che compilare semplicemente un elenco di cose che ritieni debbano essere incluse.
+
+Mettere per iscritto i tuoi obiettivi e pensieri - ed essere accurato su ciò che dici e come lo dici - è la leva più efficace che hai come product manager per garantire che il tuo prodotto offra un'esperienza coerente quando sarà completato.
+
+Docsie fornisce tutti gli strumenti e le funzionalità di creazione della documentazione necessari per il successo di ogni product manager. [Prova Docsie gratuitamente](https://www.docsie.io/) per scoprire come possiamo aiutarti con le tue esigenze di documentazione.

@@ -1,0 +1,108 @@
+사용자 가이드는 디지털 서비스 제공의 중요한 부분입니다. 디지털 고객들은 즉각적인 정보 접근이 가능한 셀프 서비스를 기대합니다. 전화로 설명하는 방식은 더 이상 충분하지 않습니다. 사용자 문서 가이드로 더 잘 설명할 수 있는 내용을 설명하는 데 많은 시간을 낭비할 필요가 없습니다.
+
+Docsie에서는 모든 기업이 고객을 위한 유익한 사용자 가이드 라이브러리를 만들 것을 권장합니다. 이를 통해 셀프 서비스가 가능해지고, 지원 업무가 줄어들며, 고객이 제품이나 서비스를 즐기고 사용하는 데 필요한 정보에 24시간 실시간으로 접근할 수 있습니다.
+
+<h2>Docsie에서 사용자 가이드와 문서 작성을 위한 10가지 팁</h2>
+시작하기 전에, 문서를 저장하고 작성하고 호스팅할 방법이 있으신가요?
+
+[Docsie 온보딩](https://app.docsie.io/onboarding/) 페이지에서 고객 중심 협업, 광범위한 임베딩, 맞춤형 번역, 강력한 퍼블리싱 기능을 손쉽게 이용해 보세요.
+
+이제 Docsie와 함께하게 되었으니, 10가지 핵심 팁을 살펴보겠습니다!
+
+<h3>1 - 미디어로 사용자 가이드 풍부하게 만들기</h3>
+텍스트, 단어, 글자 - 우리는 매일 이것들을 사용합니다. 안타깝게도 글은 영상의 사실성이나 이미지의 영감에 비할 수 없습니다.
+
+사용자 문서 가이드를 만들 때 사용자 관점에서 읽어보세요. 특정 섹션이 GIF, 임베디드 비디오나 주석이 달린 이미지로 더 잘 설명될 수 있나요? 그렇다면 추가하세요!
+
+Docsie에서는 이미지 추가, 비디오 임베딩, iFrame 콘텐츠 통합이 가능합니다. 한번 시도해 보세요!
+
+![Images, Videos and GIFs in Docsie](https://cdn.docsie.io/workspace_tovPs7rKnzB4cmaiR/doc_GzKTESk1IUWjA77hg/file_CdhFEVXwXaefNXxxg/boo_dqsfhc7ObadQ3xWmV/e0eda1c6-284a-3e0f-5c43-0ff4099966d0BlogGIF10TipsforUserGuides.gif)
+
+<h3>2 - 순서 만들기 (제다이의 순서가 아닙니다!)</h3>
+단계별 지침은 모든 요리책의 핵심입니다! 레시피를 따를 때 계란과 밀가루를 섞나요? 그렇게 해야 하고, 단계를 따르기 때문에 그것을 알고 있습니다!
+
+농담은 제쳐두고, 단계별 지침이 있는 사용자 가이드를 꼼꼼히 확인하세요. 그 단계를 따랐을 때 실제로 의도한 결과를 얻을 수 있나요? 의도한 결과를 달성하지 못하는 부정확한 지침은 고객에게 큰 경고 신호입니다. 반면 정확한 지침은 신뢰를 구축하고 정보 공유를 통해 고객과 기업에 가치를 제공합니다.
+
+Docsie의 번호 매기기 목록이나 Docsie 북 아티클을 사용하여 문서를 분할하여 순서를 만드세요.
+ 
+ ![Articles, Shelves and Workspaces in Docsie](https://cdn.docsie.io/workspace_tovPs7rKnzB4cmaiR/doc_GzKTESk1IUWjA77hg/file_O4Ux6ERzhyIS0eB1X/boo_dqsfhc7ObadQ3xWmV/aa925138-ab48-e18b-ff33-50557a2897cfArticlesShelvesWorkspacesinDocsie.png)
+
+<h3>3 - 모든 독자 수준 고려하기</h3>
+고객이 JavaScript와 핵심 팁을 구분할 수 있을 것이라고 가정하나요? 전문 용어와 복잡한 용어는 기술적인 사용자 가이드에서는 권장됩니다. 그러나 일반인에게는 더 간단한 언어가 좋습니다!
+
+대부분의 독자는 어떻게 작업을 수행하고 반복하는지만 알고 싶어합니다. 한 가지 접근법은 복잡한 고급 개념을 먼저 설명하고, 다시 일반인을 위한 단순화된 버전을 제공하는 것입니다. 이렇게 하면 기술 사용자와 일반인 모두를 동시에 만족시킬 수 있습니다.
+
+"인공지능은 생산성을 추구하기 위해 인간 지능을 알고리즘으로 모방하는 것을 포함합니다. 인공지능은 컴퓨터 코드를 사용하여 인간 지능과 일치시켜 작업을 수행하는 것을 목표로 합니다." - 두 문장은 같은 의미이지만 다른 대상을 겨냥합니다.
+
+Docsie를 사용하여 일반인용 선반과 기술 사용자용 선반을 만드세요. 이렇게 하면 두 대상 모두를 지원하는 북을 가질 수 있으며, Docsie 포털을 통해 완전한 호스팅이 가능합니다.
+ 
+![Complex Code Simplified for Laypersons in Docsie Example](https://cdn.docsie.io/workspace_tovPs7rKnzB4cmaiR/doc_GzKTESk1IUWjA77hg/file_cnLx3DDYwihXopx74/boo_dqsfhc7ObadQ3xWmV/411ea34c-096b-3bf2-fde0-2f8fdaddd55aLaypersonSimplificationforDocsie.png)
+
+<h3>4 - 템플릿을 사용하여 늦게까지 일하지 마세요!</h3>
+모든 사용자 가이드를 처음부터 다시 작성하나요? 대신 기본 구조와 브랜드 메시지가 포함된 템플릿을 만들고 이 콘텐츠를 기반으로 구축하세요.
+
+처음부터 작성하는 것은 시간과 노력이 들고 여러 작성자가 같은 프로젝트에서 작업할 경우 일관성이 떨어질 위험이 있습니다. 템플릿은 작성 시간을 절약하고 페이지 간 일관성을 높이는 좋은 방법입니다. 신뢰는 일관된 메시지와 가치 창출에 기반하며, 템플릿은 이를 촉진합니다.
+
+Docsie에서 ...더 보기를 클릭하고 템플릿을 선택하세요. 여기서 템플릿을 저장하고 템플릿을 소스로 사용하여 새 북을 시작할 수 있습니다!
+
+ ![Templates in Docsie](https://cdn.docsie.io/workspace_tovPs7rKnzB4cmaiR/doc_GzKTESk1IUWjA77hg/file_Hv9JSg74vQE1zgYjT/boo_dqsfhc7ObadQ3xWmV/833830aa-871c-d3ba-19e7-0fbbba2adbfbTemplatesinDocsie.png)
+ ![Live Template in the Docsie Editor](https://cdn.docsie.io/workspace_tovPs7rKnzB4cmaiR/doc_GzKTESk1IUWjA77hg/file_jdf9iWL3NXlFFePHx/boo_dqsfhc7ObadQ3xWmV/2bfcea18-df94-30ff-4931-799345e4ae74Templates2inDocsie.png)
+
+<h3>5 - 빠르게 작성하고, 자주 개선하기</h3>
+애자일 소프트웨어 개발에서는 빠르게 실패하고 자주 반복하는 것이 모토입니다. 이를 사용자 문서 가이드에 적용하면, 직원들은 빠르게 작성하고 자주 개선하는 것을 목표로 해야 합니다.
+
+이는 품질을 속도에 희생한다는 의미가 아닙니다. 대신, 초기 노력을 줄이면서 고객 피드백과 응답을 가능하게 합니다. 이 피드백은 추가적인 사용자 문서 가이드 개선에 활용될 수 있으며, 비즈니스가 더 고객 중심적이 되도록 돕습니다.
+
+Docsie Vocally는 독자 피드백을 명확히 하고, 평가와 화면 녹화를 통해 정확히 어떤 콘텐츠를 읽었는지 파악할 수 있습니다. 빠르게 작성하고 자주 개선하면서 한번 시도해 보세요!
+
+![Docsie Vocally Feedback View](https://cdn.docsie.io/workspace_tovPs7rKnzB4cmaiR/doc_GzKTESk1IUWjA77hg/file_8uO5DnYSHSsLteI2X/boo_dqsfhc7ObadQ3xWmV/b9f841c9-1dde-5eee-c723-809f13df3255DocsieVocallyLivePreview.png) 
+
+<h3>6 - 내부 백링크로 지식 연결하기</h3>
+사용자 가이드 문서가 다른 페이지와 백링크되어 있나요? 관련 문서 섹션에 링크를 추가하면 독자가 제품이나 서비스를 개념적 수준에서 이해하는 데 도움이 됩니다.
+
+특정 기능이나 기능을 언급할 때는 항상 링크를 추가하세요. 독자가 직접 검색하고 페이지를 로드하도록 강요하는 대신, 해당 정보에 빠르게 접근할 수 있도록 하세요. 계정 로그인에 대해 이야기하고 있나요? 페이지의 "계정에 로그인" 텍스트와 다른 모든 페이지에 로그인 URL을 추가하세요. 문서를 끝없이 찾아보는 대신 본문 내에서 편리하고 탐색 가능하게 만드세요.
+
+Docsie를 사용하면 사용자 가이드 작성자가 내부 백링크를 만들 수 있습니다. Docsie 편집기 도구 모음에서 텍스트를 강조 표시하고 🖇️ 버튼을 클릭하기만 하면 됩니다. 또한 상대적 객체 링크를 사용하여 언어 및 버전에 구애받지 않는 링크를 만들 수 있습니다.
+
+![Backlinking in Docsie With Object Reference Links](https://cdn.docsie.io/workspace_tovPs7rKnzB4cmaiR/doc_GzKTESk1IUWjA77hg/file_dclZdrsTWJrB8WETc/boo_dqsfhc7ObadQ3xWmV/7d8c9e37-3aa6-580d-644b-0d7a8039fa89DocsieObjectLinksforBacklinking.png)
+
+<h3>7 - 오래된 콘텐츠 정리하고 새롭게 하기</h3>
+온라인에 오래된 사용자 가이드와 문서가 있나요? 제품이 버전 1.3인데 버전 1.2 문서가 게시되어 있다면, 문서가 더 이상 관련이 없습니다. 각 버전마다 새 문서를 게시하는 대신 Docsie 버전 관리를 사용하세요.
+
+Docsie 버전 관리를 통해 사용자는 과거 및 현재 문서 버전에 접근할 수 있습니다. 새 버전이 출시되면 이전 버전은 드롭다운 메뉴에서 접근할 수 있도록 보관됩니다. 이 모든 것이 같은 웹 페이지에 있어 사용자가 관련 정보를 더 쉽게 탐색하고 찾을 수 있습니다.
+
+마찬가지로, 2021년 팁 가이드가 2022년에도 여전히 게시되어 있다면 업데이트하세요! 이름을 변경하고, 인용과 출처를 최신 연구로 새로 고치고, 정보가 여전히 관련이 있는지 다시 확인하세요. 먼지를 털어내고 항상 최신 상태를 유지하세요. 콘텐츠는 항상 재활용될 수 있습니다.
+
+ ![Version Picker to Find Older Content in Docsie](https://cdn.docsie.io/workspace_tovPs7rKnzB4cmaiR/doc_GzKTESk1IUWjA77hg/file_OaCUumTVGz3CQ2ha2/boo_dqsfhc7ObadQ3xWmV/4edbd225-b61b-0921-4f63-e55b3052ed28DocsieVersionsPickerMenu.png)
+
+<h3>8 - 작업 세분화하고 일괄 처리하기</h3>
+글을 쓸 때 계획 없이 한 번에 전체 페이지를 작성하나요? 일부는 작성자의 개인적인 선호도에 달려 있습니다. 그러나 작업을 세분화하면 더 빠르고 집중적으로 작업을 완료할 수 있습니다.
+
+H1과 H2 태그와 각 섹션에 대한 간략한 설명으로 간단한 구조를 만드세요. 이를 작성할 때 사용하고, 전체 페이지를 걱정하기보다는 개별 섹션을 해결하세요. 이것은 글쓰기 업계에서 개요라고 합니다. 개요는 작성 전에 편집자와 피드백할 기회를 제공하고, 작성자가 글을 쓸 때 안내 프레임워크 역할을 합니다.
+
+Docsie에서 새 북을 만들고 개요를 위한 기본 헤더와 텍스트를 추가하세요. 또한 오른쪽 메뉴를 사용하여 작업을 추가할 수 있으며, 여러 팀원이 콘텐츠에 협업할 때 작업을 더 작은 배치로 나눌 수 있습니다. 버전 기록을 통해 작성자가 좋지 않은 콘텐츠를 추가한 경우 되돌릴 수 있습니다. 빠르게 작성하고 자주 반복하기에 완벽합니다!
+
+ ![Calendar for Task Assignees in Docsie](https://cdn.docsie.io/workspace_tovPs7rKnzB4cmaiR/doc_GzKTESk1IUWjA77hg/file_4JCx9FdXnyXu3quMX/boo_dqsfhc7ObadQ3xWmV/d3468298-7bc2-7f51-7afe-2437f6321658TaskMiniaturizeCalendarDocsie.png)
+
+<h3>9 - 더 많은 콘텐츠 독자를 위한 목차</h3>
+복잡하고 다양한 사용자 가이드 문서에서 텍스트 덩어리는 독자에게 부담스러울 수 있습니다. 이는 종합적인 목차로 해결할 수 있습니다. 백과사전에서 흔히 사용되는 이 기능은 사용자가 관련 정보를 식별하고 바로 이동할 수 있도록 돕고, 지식 포털 환경에 구조를 제공합니다.
+
+Docsie 아티클, 선반 및 워크스페이스는 목차를 만드는 데 도움이 됩니다. 이는 지식 포털의 왼쪽에 자동으로 표시되어 지식 베이스를 쉽게 탐색할 수 있는 방법을 제공합니다. 이 팁으로 Docsie가 대신 처리합니다!
+
+![Table of Contents Auto-Generated by Docsie](https://cdn.docsie.io/workspace_tovPs7rKnzB4cmaiR/doc_GzKTESk1IUWjA77hg/file_oxDNcw0pA6rCZa3J7/boo_dqsfhc7ObadQ3xWmV/35d48662-895e-b83f-c7c3-abb0ce6edd0dTableofContentsDocsie.png)
+ 
+
+<h3>10 - 주제 마스터하기</h3>
+작성자가 주제 전문가인가요? 마찬가지로, 작성자가 자신이 익숙하지 않은 주제를 연구하는 데 자원이 풍부하고 능숙한가요? 결국, 모든 팁에도 불구하고 작성자가 사용자 문서 가이드의 품질을 결정합니다.
+
+제품을 더 잘 이해할수록 작업이 더 정확해집니다. 작성자가 제품을 테스트하고 문제점을 찾을 수 있도록 유연성을 제공하세요. 사용자도 비슷한 문제에 직면할 수 있습니다. 더 나아가, 작성자에게 영업팀과 함께 제품 데모를 진행하고 영업 파이프라인과 메시지에 직접 경험할 수 있게 하세요. 이는 일관성을 높이고 작성자를 사용자로 만듭니다. 모든 작성자가 사용자가 되는 것은 아니지만, 모든 사용자는 실무 지식으로 좋은 작성자가 될 수 있습니다.
+
+
+
+<h2>Docsie에서 이러한 팁을 실천해 보세요!</h2>
+
+더 나은 사용자 가이드를 위한 10가지 팁을 읽어주셔서 감사합니다. 이 팁들을 Docsie 문서에 적용해 보시기 바랍니다!
+
+Docsie는 기업이 웹 기반 FAQ, 제품 문서, 사용자 가이드, 도움말 문서 및 사용자 매뉴얼을 만드는 데 사용하는 엔드투엔드 문서 관리 플랫폼입니다. 이 플랫폼은 고객 중심 협업, 광범위한 임베딩, 맞춤형 번역, 강력한 퍼블리싱 기능을 제공합니다.
+
+지금 [Docsie 온보딩](https://app.docsie.io/onboarding/)을 통해 시작하고, 고객에게 문서화의 즐거움을 전달하세요!

@@ -48,10 +48,17 @@
             <!-- Categories -->
             <div class="flex flex-wrap gap-2 mb-4">
                 {% for category in data.categories[:3] if category and category.strip() %}
+                {% if current_language %}
+                <a href="/blog/{{ current_language }}/{{ category|lower|replace(' ', '-') }}/" 
+                   class="text-sm font-medium px-3 py-1 rounded-full bg-gray-100 text-gray-700 hover:bg-docsie-primary hover:text-white transition-colors">
+                    {{ category }}
+                </a>
+                {% else %}
                 <a href="/blog/{{ category|lower|replace(' ', '-') }}/" 
                    class="text-sm font-medium px-3 py-1 rounded-full bg-gray-100 text-gray-700 hover:bg-docsie-primary hover:text-white transition-colors">
                     {{ category }}
                 </a>
+                {% endif %}
                 {% endfor %}
             </div>
             

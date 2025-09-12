@@ -1,0 +1,143 @@
+![](https://cdn.docsie.io/workspace_8D5W1pxgb7Jq3oZO7/doc_vQfR1TFvrUMWGTXFc/file_RQ70RIJrO72fVCVG6/boo_oSV1aEcodrUrtwpg5/1ae9ce23-353e-cb99-b922-ea4f722c7755image.png)
+
+제품을 개발하고 생산한 후 시장에 출시하기 전에, 해당 제품의 특성, 장점, 목적을 설명하는 문서가 필요합니다. 제품 요구사항 문서(PRD)는 제품의 모든 요구사항을 제공하는 문서 또는 안내서입니다. PRD는 제품 요구사항 문서(Product Requirements Document)의 약자입니다. 일반적으로 요구사항 수집 과정은 이해관계자 회의에서 완료됩니다.
+
+프로젝트 개발의 이 단계에서는 PRD를 포함한 포괄적인 요구사항 수집 문서가 작성됩니다. PRD를 제대로 이해하려면 먼저 기본적인 질문들을 해야 합니다. PRD란 무엇인가요? 제품 요구사항 문서를 작성하는 목적은 무엇인가요? 사용하면 어떤 이점이 있나요? 이 페이지는 PRD에 대한 정보를 제공하고 생길 수 있는 혼란이나 질문을 해소하는 것을 목표로 합니다.
+
+## 제품 요구사항 문서(PRD)란 정확히 무엇인가요?
+
+**간단한 정의:** **제품 요구사항 문서**는 **PRD** 문서라고도 하며, 특정 유형의 제품이나 제품군에 대한 요구사항을 설명하는 문서입니다. PRD에는 제품의 목적, 기능, 작동 방식, 그리고 시장에서 제품을 성공적으로 출시하는 데 필요한 모든 요소가 포함되어야 합니다. 제품 관리자는 PRD를 통해 필요성, 그 필요성을 충족시키는 제품 개념, 제품 구축 방법, 소비자가 누구인지, 그리고 개발된 제품 사용으로 최종 사용자가 얻게 될 이점을 전달합니다. PR 부서 관리는 정확하게 수행해야 하는 중요한 책임입니다.
+
+BRD와 PRD는 종종 혼동됩니다. **BRD**는 **비즈니스 요구사항 문서(Business Requirements Document)**의 약자입니다. 비즈니스 문서의 목적은 비즈니스 목표 달성에 기여하지 않는 요소에 시간과 자원이 낭비되지 않도록 하는 것입니다. BRD는 일반적으로 비즈니스 분석가, 비즈니스 임원, 제품 마케팅 관리자, 또는 제품 관리자 자신이 작성합니다.
+
+## PRD 구성 요소
+
+![](https://cdn.docsie.io/workspace_8D5W1pxgb7Jq3oZO7/doc_vQfR1TFvrUMWGTXFc/file_LkoNhFQi5eseP6KRF/boo_oSV1aEcodrUrtwpg5/66b26911-909b-1255-2f50-82bf550c755bimage.png)
+
+이 글에서는 예시를 통해 제품 요구사항 문서를 작성하는 방법을 보여드리겠습니다! PRD 형식은 조직마다 다를 수 있지만, 여기서는 기본 구조를 살펴보겠습니다. PRD는 제품 출시 전에 고려해야 할 모든 사항을 포함합니다. 출시 과정 전반에 걸쳐 지침을 제공하고 제품(주로 소프트웨어)의 잠재적 구현을 정의합니다. 다음은 제품 요구사항 작성과 PRD 설계 및 구조 설명에서 기억해야 할 가장 중요한 측면들입니다.
+
+PRD 파일에 포함되어야 할 첫 번째 항목은 제품의 용도입니다. 제품 개발 시 고려해야 할 세 가지 중요한 요소는 제품이 해결할 문제, 사용자, 그리고 제품이 중요한 이유입니다.
+
+두 번째로 중요한 것은 개발될 제품에 대한 현실적인 목표와 목적을 설정하는 것입니다. 요구사항 문서의 이 부분에서는 특정 제품을 출시하는 이유와 예상되는 결과를 다룹니다.
+
+목표와 목적에 대한 논의를 마친 후, 제품의 기능에 대해 설명해야 합니다. 각 기능에 대한 설명이 필요합니다. 특정 기능에 대한 설명은 독자가 이해하는 데 필요한 정보만 포함해야 합니다.
+
+제품의 최종 모습을 보여주기 위해 가상 디자인을 포함하는 것이 도움이 될 수 있습니다. 이는 제품의 엔지니어링과 기능 구현 방식을 이해하는 데 도움이 됩니다.
+
+제품 요구사항 문서에 추가할 다음 항목은 시스템 및 환경 요구사항입니다. 이는 사용자가 제품을 사용하기 위해 필요한 시스템이나 환경 유형을 의미합니다. 시스템 및 환경 요구사항에는 사용할 브라우저 유형, 운영 체제, 메모리 및 디스크 공간, 처리 세부 사항 등이 포함될 수 있습니다.
+
+## 제품 요구사항 문서의 중요성
+
+![](https://cdn.docsie.io/workspace_8D5W1pxgb7Jq3oZO7/doc_vQfR1TFvrUMWGTXFc/file_PZtuQYksgWdwZmj67/boo_oSV1aEcodrUrtwpg5/370eeff9-e3df-ee1f-6ca3-74110568ff4cimage.png)
+
+제품 요구사항 문서(PRD)는 제품 마케팅에서 비전과 목적 사이의 균형을 설정하기 때문에 매우 중요합니다. 기술적 관점과 비즈니스적 관점을 구분하는 것이 중요합니다. PRD가 언급해야 할 가장 중요한 요소는 제품의 용도나 기능입니다.
+
+PRD는 이 제품이 사람들이나 사용자의 삶에서 무엇을 변화시킬 것인지, 어떤 문제를 완전히 제거하는지, 그리고 왜 사람들이나 사용자가 이 제품을 사용해야 하는지와 같은 질문에 답합니다.
+
+제품 특성 외에도 PRD가 다루는 두 번째 중요한 주제는 개발 중인 제품의 디자인입니다. 제품의 명확한 개념과 제품 사용 방법, 그리고 대상 사용자가 누구인지를 명확히 전달해야 합니다.
+
+PRD는 주로 소프트웨어 개발 프로젝트를 위해 작성됩니다.
+
+제품 요구사항 문서는 또한 현재 최소 실행 가능 제품(MVP)이라고 불리는 출시 기준을 설정하는 목적도 있습니다.
+
+PRD는 고객이나 사용자의 관점에서 작성됩니다. 특히 제품 개발 동기, 사용자가 제품을 사용해야 하는 이유, 그리고 일상 생활에서 어떤 문제를 해결할 것인지를 설명합니다.
+
+## 제품 요구사항 문서 작성 절차
+
+[Docsie](https://www.docsie.io/)는 제품 관리자가 PRD를 빠르고 효율적으로 작성하는 데 도움이 되는 다양한 강력한 도구를 제공합니다.
+
+몇 가지 간단한 단계를 따라 PRD를 작성할 수 있습니다. 다음은 성공적인 제품 요구사항 문서를 작성할 때 고려해야 할 다섯 가지 요소입니다:
+
+### 1. Docsie의 워크스페이스에 접속하세요
+
+![](https://cdn.docsie.io/workspace_8D5W1pxgb7Jq3oZO7/doc_vQfR1TFvrUMWGTXFc/file_nJeL0kjIolsnrydQt/boo_oSV1aEcodrUrtwpg5/60c017d7-b080-0400-ea03-b3b0a63a74a0image.png)
+
+'콘텐츠 추가'를 클릭하고 '새 문서'를 선택하여 책장 내에 새 문서를 생성하세요
+
+![](https://cdn.docsie.io/workspace_8D5W1pxgb7Jq3oZO7/doc_vQfR1TFvrUMWGTXFc/file_lGytRmz5XZl8vez6J/boo_oSV1aEcodrUrtwpg5/87db9521-58cb-536f-accb-2e10eb8d8727image.png)
+
+참고: 콘텐츠를 추가하면 첫 번째 제품 요구사항 문서를 작성할 수 있는 '새 문서'가 생성됩니다.
+
+### 2. 새 문서에 제목을 지정하고 '책 추가'를 누르세요.
+
+![](https://cdn.docsie.io/workspace_8D5W1pxgb7Jq3oZO7/doc_vQfR1TFvrUMWGTXFc/file_WmG79H39qSNCPtMyh/boo_oSV1aEcodrUrtwpg5/4d20380e-fdde-f64a-e1f2-a62f0f4c47aeimage.png)
+
+참고: 책을 추가하면 첫 번째 PRD 문서의 레이아웃을 생성하는 것입니다.
+
+책을 클릭하고 PRD 작성을 시작해 봅시다!
+
+![](https://cdn.docsie.io/workspace_8D5W1pxgb7Jq3oZO7/doc_vQfR1TFvrUMWGTXFc/file_KvBhkH8gJlLFjAVEW/boo_oSV1aEcodrUrtwpg5/360a80d8-ed60-d276-215d-53a122a37ca5image.png)
+
+### 3. 문서가 열렸으면 '문서 편집' 버튼을 클릭하고 PRD 템플릿 작성을 시작하세요!
+
+![](https://cdn.docsie.io/workspace_8D5W1pxgb7Jq3oZO7/doc_vQfR1TFvrUMWGTXFc/file_IfiOVg7e3YWOCWgbm/boo_oSV1aEcodrUrtwpg5/065470cf-0607-8a76-6ab7-9d4c37b094d8image.png)
+
+### 4. 에디터에서 제품의 정의, 특히 사용 사례와 기능을 작성하세요.
+
+**Docsie의 에디터는 문서를 스타일링하고 작성하는 데 사용할 수 있는 모든 도구를 보여줍니다.**
+
+![](https://cdn.docsie.io/workspace_8D5W1pxgb7Jq3oZO7/doc_vQfR1TFvrUMWGTXFc/file_wdyfSyq5J2CFSy98H/boo_oSV1aEcodrUrtwpg5/46fdb3f2-016d-097e-31e4-24bb5bd59aceimage.png)
+
+에디터에서 제품의 정의, 특히 사용 사례와 기능을 작성하세요.
+
+Docsie에서는 PRD 문서에 쉽게 이미지와 다양한 구성 요소를 추가할 수 있지만, 제품의 기능에 대한 설명이 명확하고 결정적인지 확인하세요.
+
+![](https://cdn.docsie.io/workspace_8D5W1pxgb7Jq3oZO7/doc_vQfR1TFvrUMWGTXFc/file_7gIr7UykICGaXwF6N/boo_oSV1aEcodrUrtwpg5/e1cd1f71-12d5-4556-9fb7-2411131d7e33image.png)
+
+### 5. 제품 출시의 결과로 달성될 목표와 목적을 글머리 기호 목록으로 작성하세요.
+
+![](https://cdn.docsie.io/workspace_8D5W1pxgb7Jq3oZO7/doc_vQfR1TFvrUMWGTXFc/file_6TLkJWnFRlZjrwVRw/boo_oSV1aEcodrUrtwpg5/2c7601e8-000b-edbe-2427-cf946baf2e92image.png)
+
+### 6. Docsie에서 표를 만들어 명확한 목표와 목적, 그리고 달성 일정을 설정하세요.
+
+연구에 기반한 제품 개발 목표와 달성 예정 시기를 작성한 다음, Docsie의 사용하기 쉬운 표에 레이블을 지정하세요.
+
+![](https://cdn.docsie.io/workspace_8D5W1pxgb7Jq3oZO7/doc_vQfR1TFvrUMWGTXFc/file_A7XlgDeaLvqWco7zw/boo_oSV1aEcodrUrtwpg5/498e9630-c9c6-4d1e-ba89-15d181eabe2aimage.png)
+
+### 7. PRD 템플릿이 완성되었으면 작성을 마치고 모든 작업을 저장하세요.
+
+![](https://cdn.docsie.io/workspace_8D5W1pxgb7Jq3oZO7/doc_vQfR1TFvrUMWGTXFc/file_6I6ty0aFoj9KrTkJ2/boo_oSV1aEcodrUrtwpg5/62b14965-5cdb-94f9-605b-8378d4cf9cccimage.png)
+
+### 8. 이제 작업을 게시할 차례입니다. Docsie의 대화형 웹이나 사이트 임베딩을 통해 게시할 수 있습니다. 이 예시에서는 Docsie의 대화형 웹 포털에 게시하겠습니다.
+
+![](https://cdn.docsie.io/workspace_8D5W1pxgb7Jq3oZO7/doc_vQfR1TFvrUMWGTXFc/file_VWlyA4KZck0BMckjJ/boo_oSV1aEcodrUrtwpg5/29e81a70-945f-44b0-7dc2-07288e4dd26aimage.png)
+
+### 9. 이해관계자들이 최종적으로 안전하게 검토할 수 있도록 문서를 게시하고 비밀번호로 보호하세요.
+
+책을 비밀번호로 보호하려면 워크스페이스로 돌아가서 세 개의 점을 클릭한 다음 속성을 클릭하세요.
+
+![](https://cdn.docsie.io/workspace_8D5W1pxgb7Jq3oZO7/doc_vQfR1TFvrUMWGTXFc/file_IJzwWjokBsl54SLrw/boo_oSV1aEcodrUrtwpg5/28ee8e92-108d-3359-25b1-57d204d0108cimage.png)
+
+이제 '더 많은 옵션'을 클릭합니다.
+
+![](https://cdn.docsie.io/workspace_8D5W1pxgb7Jq3oZO7/doc_vQfR1TFvrUMWGTXFc/file_buI7LmESGCTFmyerQ/boo_oSV1aEcodrUrtwpg5/c013a6ff-fa0c-a5b3-42c9-eea02ee8299fimage.png)
+
+그런 다음 비밀번호를 활성화하고 책을 업데이트합니다.
+
+![](https://cdn.docsie.io/workspace_8D5W1pxgb7Jq3oZO7/doc_vQfR1TFvrUMWGTXFc/file_sg15rOoDxw8vNqQpN/boo_oSV1aEcodrUrtwpg5/1c2dde6c-c6e6-9fce-12d5-e1c43b4c09a0image.png)
+
+이제 PRD 템플릿을 안전하게 열 준비가 되었습니다. 비밀번호는 PRD1로 보호됩니다. 8단계에서 문서가 이미 게시되었으므로, 이제 온라인 포털로 이동하는 링크를 클릭하기만 하면 됩니다.
+
+### 10. PRD 템플릿 문서를 확인하세요.
+
+문서를 비밀번호로 보호했기 때문에 PRD 템플릿을 보려면 비밀번호를 입력해야 합니다.
+
+![](https://cdn.docsie.io/workspace_8D5W1pxgb7Jq3oZO7/doc_vQfR1TFvrUMWGTXFc/file_3PYkubCru3Qjs93wA/boo_oSV1aEcodrUrtwpg5/e22eaa59-dfd3-557c-9a9c-b14cca02c69eimage.png)
+
+비밀번호를 입력하면 이제 PRD 템플릿을 볼 수 있습니다.
+
+![](https://cdn.docsie.io/workspace_8D5W1pxgb7Jq3oZO7/doc_vQfR1TFvrUMWGTXFc/file_l21bJALIlVY6bj5Wv/boo_oSV1aEcodrUrtwpg5/f01e08ac-48c8-f7cf-afe1-e78eec7d33edSnag_9cd88db.png)
+
+완료! 깔끔하고 보기 좋게 만들어졌습니다. 이것이 PRD를 작성하는 완벽한 방법입니다.
+
+## 범위 조정하기
+
+제품, 특히 소프트웨어 제품을 개발하고 출시할 때 제품 요구사항 문서는 제품의 성공을 위해 충족해야 할 요구사항을 설명합니다. 제품 관리자가 특정 제품의 시장 출시 경로를 계획하기 위해 작성합니다. 최종적으로는 이해관계자들에게 예비 디자인을 배포한 후 승인되며, 이해관계자의 평가 후에 완료됩니다.
+
+## 마치며
+
+![](https://cdn.docsie.io/workspace_8D5W1pxgb7Jq3oZO7/doc_vQfR1TFvrUMWGTXFc/file_FByzc4B4xuYYzsI0n/boo_oSV1aEcodrUrtwpg5/e9a61633-228c-d8ca-b66d-5adf268849ebimage.png)
+
+Docsie가 제품 문서를 생성, 관리, 유지하는 데 어떻게 도움이 되는지 더 알고 싶으신가요?
+
+[오늘 무료 체험을 시작하고 Docsie가 제품 관리자로서의 삶을 얼마나 쉽게 만들어주는지 확인해보세요.](https://www.docsie.io/)

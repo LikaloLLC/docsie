@@ -1,0 +1,150 @@
+# Des dessins rupestres à l'application Threads : l'évolution de la communication
+
+Des dessins rupestres à l'application Threads récemment lancée, la communication humaine a parcouru un long chemin. De la même façon, les machines et les applications communiquent entre elles en permanence. En 2022, 63% des développeurs de logiciels ont utilisé plus d'API qu'en 2021. Selon le [rapport sur l'état des API de Rapid](https://www.devopsdigest.com/apis-are-the-future-of-software-development#:~:text=Developers%2C%20who%20are%20natural%20innovators,of%20APIs%20Report%20from%20Rapid.), l'utilisation des API augmente constamment. Leurs variantes se multiplient et les développeurs recherchent une meilleure efficacité et rapidité des outils. Mais qu'est-ce que la **rédaction d'API** ? Comment aide-t-elle les entreprises à acquérir plus de **clients** ? Découvrez tout sur les **outils de documentation API**.
+
+## Qu'est-ce que la documentation API ?
+
+![Qu'est-ce que la documentation API ?](https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_poQhW1OMOPBQVkdLq/image9.png)
+
+La documentation API désigne le processus de création d'un document technique à l'aide d'outils de documentation fiables et efficaces. C'est un manuel d'instructions qui partage des informations détaillées sur l'API et fournit des directives spécifiques pour l'intégration, la maintenance et l'utilisation efficace de l'API.
+
+Des **exemples de code** aux tutoriels, des captures d'écran aux contenus vidéo, cette documentation fournit des directives complètes qui aident les développeurs et utilisateurs à comprendre les différents aspects de l'API et à travailler avec celle-ci.
+
+Une fois votre brouillon de documentation terminé avec des outils comme [Docsie](https://app.docsie.io/login/#/), il est partagé entre toutes les parties prenantes. Une bonne documentation API contient une description des fonctionnalités, des points de terminaison, des exemples spécifiques d'utilisation, etc.
+
+La marque d'une bonne documentation API est qu'elle soit utilisable tant par vos débutants que par vos **clients** avancés. Si vous souhaitez rédiger des documents détaillés et descriptifs, évitez le jargon technique. Décomposez les concepts complexes et expliquez les idées techniques dans un langage simple et clair.
+
+## Types et structure
+
+En utilisant un **outil de documentation API** interactif comme [Docsie](https://www.docsie.io/demo/), vous pouvez rédiger des documents explicatifs faciles à comprendre et à mettre en œuvre.
+
+![Outil de documentation API](https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_mfhOkMpNzkEprY1MQ/image7.png)
+
+On distingue généralement **trois types d'API** :
+
+### 1. Pour les membres de l'équipe
+
+Parfois, les entreprises disposent d'une API interne accessible uniquement à certains membres de l'équipe. Ce type d'API simplifie généralement le transfert de données entre systèmes et équipes. Dans ce cas, les développeurs internes de l'entreprise restent responsables du document.
+
+### 2. Pour les partenaires
+
+Les entreprises qui fournissent l'API la partagent en dehors de l'organisation en donnant accès à une seconde partie. Dans ces cas, il existe une relation commerciale entre les deux entreprises. Les mesures de sécurité pour ces types d'API sont relativement strictes. Seuls les clients autorisés peuvent accéder, maintenir et suggérer des modifications.
+
+### 3. Pour les utilisateurs finaux
+
+Ces API sont ouvertes, donc tout développeur peut les utiliser librement. Il n'y a pas de mesures d'autorisation ou d'authentification strictes. La plupart du temps, ces API sont disponibles gratuitement puisque les fournisseurs souhaitent maximiser leur adoption. Mais parfois, elles sont accompagnées de frais d'abonnement, dépendant du nombre d'appels API effectués.
+
+## Qu'est-ce qu'un outil de documentation API ?
+
+Vous souhaitez que votre documentation API soit simple, facile à lire et enrichie d'éléments interactifs ? Choisissez un outil comme [Docsie](https://site.docsie.io/) qui rendra votre document plus cohérent et plus présentable.
+
+Ces outils aident les fournisseurs d'API en leur offrant l'expérience de travailler avec une interface de **documentation API interactive**. Les fonctionnalités les plus notables comprennent la génération automatique de documents à partir des spécifications API, la mise à jour automatique, différentes versions de documentation, des options de personnalisation, etc.
+
+En utilisant des outils de documentation API de premier plan comme [Docsie](https://www.docsie.io/pricing/), vous pouvez non seulement rédiger, organiser et maintenir vos documents, mais aussi les embellir grâce aux fonctionnalités de design tendance de la plateforme.
+
+D'un côté, ces outils aident les rédacteurs à garder leur documentation organisée et de l'autre, ils facilitent la compréhension et l'utilisation efficace des **API** par les développeurs, les chefs de produit et les membres de l'équipe.
+
+## Avantages des outils de documentation API
+
+Des outils comme [Docsie](https://www.docsie.io/) contribuent à améliorer la productivité des développeurs. En parcourant une documentation API bien rédigée, les développeurs peuvent facilement comprendre la fonctionnalité et l'objectif de chaque point de terminaison. Cela réduit la probabilité d'erreurs et économise beaucoup de temps et d'efforts.
+
+Grâce à une documentation appropriée, les entreprises créant des API transfèrent des **données** et des informations précieuses sur leur produit aux entreprises partenaires. Les rédacteurs techniques peuvent utiliser ces documents comme source fiable pour créer des guides et tutoriels pour les **clients** finaux. Ces documents garantissent la collaboration et offrent une expérience fluide à tous ceux qui travaillent avec l'API.
+
+Les documents API expliquent non seulement les fonctionnalités du produit, mais partagent également des directives avec des exemples de code appropriés. Les outils aident les rédacteurs à traiter chaque fonctionnalité, à expliquer des idées complexes et à détailler les différents cas d'utilisation. Cela aide les développeurs à comprendre les capacités et les limites de l'API pour construire des applications en conséquence.
+
+## Comment choisir un outil de documentation API ?
+
+![Comment choisir un outil de documentation API ?](https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_Rf37TTrGuHN9CI72t/image6.png)
+
+Le marché technologique regorge d'outils de documentation. Nous comprenons à quel point ce choix peut être accablant ! Pour simplifier les choses, voici cinq facteurs que nous vous recommandons de vérifier lors du choix de votre outil :
+
+### 1. Intégration facile
+
+Recherchez un outil compatible avec les autres outils que vous utilisez fréquemment. Par exemple, votre outil choisi devrait offrir une intégration transparente avec les systèmes d'intégration, le contrôle de version, etc.
+
+### 2. Simple et personnalisable
+
+Optez pour des outils qui offrent une expérience utilisateur unique. L'outil sélectionné devrait vous aider à préparer des documents excellents et facilement personnalisables en un minimum de temps.
+
+### 3. Sécurité
+
+L'objectif de votre outil est de rendre votre document convivial. Sélectionnez donc une application comme Docsie qui dispose d'une sécurité renforcée pour que vos **clients** restent protégés contre les attaques indésirables et malveillantes.
+
+### 4. Support
+
+Envisagez des outils disposant d'une communauté de développeurs et optez pour ceux qui offrent des ressources de dépannage et d'autres assistances liées au produit. Le service client de votre fournisseur doit être réactif et disponible.
+
+### 5. Coût
+
+Gardez votre budget à l'esprit et considérez des outils qui offrent un bon rapport qualité-prix. Vérifiez leur **évolutivité**, fonctionnalités et avantages, et tenez compte de leurs limites pour déterminer si le produit vaut votre investissement.
+
+## Qui rédige la documentation API ?
+
+Parfois, les développeurs qui créent les API se chargent de la documentation. Cependant, ces documents peuvent devenir trop techniques. Les entreprises engagent donc des rédacteurs techniques professionnels pour travailler sur la documentation.
+
+Les rédacteurs techniques peuvent comprendre un langage complexe. Ils peuvent également rédiger du contenu engageant tout en transmettant des informations pertinentes. Les rédacteurs d'API doivent comprendre le code source et en extraire suffisamment d'informations pour une **documentation API interactive**.
+
+Un rédacteur API possède généralement un mélange parfait de compétences linguistiques et de programmation. Une bonne connaissance des langages de programmation, une compréhension des normes de formatage, d'excellentes compétences en communication et une connaissance des outils éditoriaux sont quelques-unes des principales qualifications qu'un rédacteur API devrait avoir.
+
+Le candidat idéal connaît des langages de programmation comme Python, Java, PHP, etc., et possède également une expérience dans le domaine de la rédaction technique. Les personnes ayant une connaissance approfondie du Kit de Développement Logiciel (SDK) peuvent également faire ce type de rédaction.
+
+## Quelles sont les meilleures pratiques pour la documentation API ?
+
+|Quoi|Pourquoi|
+|-|-|
+|||
+|Comprendre vos clients|Identifiez votre audience potentielle avant de commencer à écrire sur votre API. Normalement, il y aura deux types de groupes d'audience : les chefs de produit et leaders techniques qui évaluent l'API, et les développeurs qui interagissent activement avec votre API.|
+|Rester simple|Des personnes de différents niveaux d'expertise liront votre document. Gardez donc votre langage clair, simple et facile à comprendre. Évitez le jargon et un langage trop technique qui pourrait rebuter certains de vos lecteurs.|
+|Introduire des guides rapides|Choisissez des outils de documentation API qui peuvent vous aider à fournir des guides de démarrage rapide pour faciliter l'intégration de vos nouveaux développeurs. Assurez-vous que ces guides contiennent des exemples de code et des instructions concernant l'utilisation de l'API. Votre objectif principal doit être de rendre votre API aussi accessible que possible.|
+|Couvrir tous les aspects de l'API|Rendez votre documentation API complète. Elle devrait contenir des références, des guides et de nombreux exemples pour que les lecteurs puissent s'y référer comme à un manuel d'instructions. Couvrez tous les aspects de votre API, répondant aux questions courantes de votre audience.|
+|Ajouter une documentation de référence|Incluez une liste complète mentionnant les méthodes et objets que votre API expose. Ajoutez une description et expliquez comment utiliser chacun d'eux. Cela aidera les développeurs à comprendre l'utilité de votre API.|
+|Maintenir votre document|Mettez à jour régulièrement votre document. Supprimez les informations erronées et les inexactitudes et maintenez un document qui répond aux questions fréquemment posées par les développeurs. Assurez-vous que votre document reflète les derniers ajouts à votre API et contient des informations complètes sur son utilité.|
+
+## Votre compagnon API parfait - Docsie
+
+Guichet unique pour tous vos besoins de documentation, Docsie fournit un outil efficace et fiable que vous pouvez utiliser pour créer, maintenir et éditer vos documents API.
+
+![Votre compagnon API parfait - Docsie 1](https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_qGXGtgxj0vejosSJB/image5.png)
+
+Des modèles **prêts à l'emploi** à la documentation auto-générée et aux versions multiples, cet outil offre une large gamme de fonctionnalités pour vous permettre de créer vos documents API en toute simplicité.
+
+![Modèles prêts à l'emploi](https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_TrnppJvOBJgTTHVN0/image3.png)
+
+## Qu'est-ce qui distingue Docsie des autres outils ?
+
+![Qu'est-ce qui distingue Docsie des autres outils ?](https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_am5Sn98pQV49CS6O2/image8.png)
+
+Docsie sert de ressource de documentation centralisée pour vos membres d'équipe et utilisateurs finaux. Lorsque vous partagez votre document avec de nouveaux membres d'équipe, ils peuvent le consulter ou le modifier à un seul endroit.
+
+Lorsque vous partagez vos documents avec vos clients, ils peuvent accéder aux pages d'aide et aux tutoriels pour comprendre les aspects techniques et cas d'utilisation de votre produit ou service.
+
+**Vous utilisez Swagger ?** [Docsie](https://site.docsie.io/api-documentation-tool) vous permet de travailler aussi sur les fichiers API Swagger ! Il vous suffit d'importer un fichier de définition Swagger. Ensuite, Docsie vous fournira une ébauche de documentation API que vous pourrez développer davantage.
+
+Avec des fonctionnalités conviviales comme la **[syntaxe Markdown étendue](https://site.docsie.io/online-markdown-editor)** et les **chats intégrés**, utiliser Docsie est un jeu d'enfant car il vous maintient connecté avec les membres de votre équipe et favorise la collaboration en assignant des tâches et des travaux API.
+
+![Syntaxe Markdown étendue](https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_IJrGkvt4r6BjkyYCD/image1.png)
+
+## Points clés à retenir
+
+Les **outils de documentation API** aident les fournisseurs d'API à partager des informations importantes sur les fonctionnalités et cas d'utilisation. Avec ces outils, les développeurs et utilisateurs finaux acquièrent une compréhension appropriée, des connaissances et une utilisation optimale de l'API. Le document est un guide complet sur l'intégration réussie de l'API avec vos applications existantes.
+
+Avec ces outils, vous pouvez accélérer votre **processus de documentation, suivre et modifier les changements, organiser et structurer votre contenu et favoriser la collaboration**. La fonction de design de ces outils vous permet également de styliser vos documents comme vous le souhaitez. Vous pouvez rendre vos documents plus présentables et capter l'attention de vos clients.
+
+Choisir le bon outil API est essentiel pour votre entreprise. Des outils comme Docsie vous aident à créer une **documentation API interactive**. Cela vous permet de partager votre document avec les membres de votre équipe, qui peuvent ensuite le partager davantage et ajouter des informations précieuses. Choisissez un service de documentation convivial, facile à maintenir, interactif et abordable qui s'aligne avec vos objectifs commerciaux.
+
+## Foire aux questions
+
+**1. Qu'entend-on par documentation API ?**
+**Réponse** : Les développeurs d'API rédigent des documents API pour les développeurs de logiciels et les chefs de projet. Ces documents mettent en lumière l'API et mentionnent ses fonctionnalités, cas d'utilisation, applications, etc. Si vous ne savez pas où stocker votre API, vous pouvez la conserver en toute sécurité sur le site web de votre entreprise et partager l'accès avec tous les membres de votre équipe.
+
+**2. Quelle est la première étape de la rédaction d'un document API ?**
+**Réponse** : Commencez par les bases. Lisez sur l'API, discutez avec les fournisseurs et voyez comment les développeurs ont créé l'API. Si c'est approprié, pourquoi ne pas utiliser l'API et vérifier ses avantages et inconvénients vous-même ? Ce sera d'une grande aide pour rédiger la première ébauche de votre document API.
+
+**3. Comment commencer à rédiger des documents API ?**
+**Réponse** : Renseignez-vous sur votre API et rassemblez des connaissances complètes sur ses fonctionnalités et cas d'utilisation. Utilisez le logiciel vous-même pour comprendre ses fonctionnalités et notez les obstacles que vous pourriez rencontrer. Rédigez votre document dans un langage simple répondant aux besoins de vos clients.
+
+## Conclusion
+
+Que ce soit pour échanger des fonctionnalités ou des informations précieuses, les logiciels, applications et sites web communiquent entre eux via une interface graphique. En rédigeant et maintenant une **documentation API interactive** bien conçue, les entreprises peuvent mieux communiquer les détails du produit aux développeurs. Les API aident les **clients** car elles améliorent le développement logiciel, augmentent sa vitesse, ajoutent des fonctionnalités supplémentaires ou permettent de créer de nouvelles applications.
+
+Selon le [rapport sur l'état de l'intégration API de 2020](https://cdn2.hubspot.net/hubfs/440197/2020-04%20-%20SOAI%20Report.pdf), plus de 83% des répondants considèrent l'intégration API comme étant au cœur des infrastructures informatiques et commerciales. Maintenant que vous savez comment rédiger des API, suivez les meilleures pratiques, adoptez une structure concrète et intégrez la documentation dans vos processus quotidiens.

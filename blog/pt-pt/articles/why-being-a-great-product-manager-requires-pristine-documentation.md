@@ -1,0 +1,113 @@
+# O talento mais valioso que os gestores de produto podem possuir para dar vida às suas ideias
+
+## Porque é que a documentação é importante?
+
+![](https://cdn.docsie.io/workspace_8D5W1pxgb7Jq3oZO7/doc_vQfR1TFvrUMWGTXFc/file_PTc9VJ5wxwdL1k6yB/boo_EJBR2kCoLVuTRTFDl/ba1c9cc6-2f5a-b10e-9eae-74f8adcdf486ux_indonesia_pqzRfBhd9r0_unsplash.jpg)
+
+Para começar, por que razão é crucial ter uma documentação adequada num projeto de desenvolvimento de produto digital?
+
+Existem duas razões principais:
+
+### 1. Serve como repositório de todas as decisões importantes.
+
+Quando se trabalha num projeto complexo e de longo prazo, todos os dias são tomadas decisões críticas sobre prioridades, funcionalidades e objetivos estratégicos.
+
+Com o passar do tempo e o avanço do projeto, é fácil perder o rasto de quando e porquê certas decisões foram tomadas. É fundamental manter um registo detalhado para responder rapidamente a questões e explicar o raciocínio por trás das escolhas feitas.
+
+Isto é essencial para garantir que se constrói o que foi inicialmente planeado e que se cumprem os critérios definidos desde o início. Além disso, é crucial para a monitorização da responsabilidade.
+
+### 2. Ajuda a preservar o conhecimento sobre o produto.
+
+Frequentemente, existem várias equipas a trabalhar num projeto com pouca ou nenhuma interação entre si. Em alguns casos, a rotatividade de pessoal é bastante comum e, apesar de uma transição eficaz ser fundamental, alguns detalhes acabam por se perder. A documentação funciona como um registo tangível de todo o conhecimento adquirido durante o projeto, garantindo que nada se perde e facilitando a transferência desse conhecimento.
+
+E isto antes mesmo de considerarmos a transmissão de informação para as equipas de suporte e utilizadores finais após o lançamento do produto - outro papel fundamental da boa documentação.
+
+Por estas razões, precisamos de documentação para ajudar as equipas de suporte e manter uma boa ligação e colaboração entre equipas e departamentos, para que o produto possa ser lançado com o apoio de todos.
+
+## Como dar vida a uma ideia de produto?
+
+![](https://cdn.docsie.io/workspace_8D5W1pxgb7Jq3oZO7/doc_vQfR1TFvrUMWGTXFc/file_hEhWpISL2GzWXaggB/boo_EJBR2kCoLVuTRTFDl/afffdac6-e885-5a8c-deb1-2b69597a4147image.png)
+
+Para ser um gestor de produto bem-sucedido, é necessário ter conhecimentos técnicos, uma compreensão profunda dos clientes e criatividade e disciplina suficientes para dar vida a um novo conceito de produto.
+
+No entanto, o talento mais valioso que um gestor de produto pode desenvolver não está relacionado com programação ou design; é a capacidade de escrever bem.
+
+Como gestor de produto, a principal limitação ao seu desempenho é a capacidade de comunicar eficazmente com o resto da equipa.
+
+O seu papel não é apagar fogos, controlar todos os aspetos da criação do produto ou organizar reuniões de pé. Como disse Ethan Hollinshead, Gestor de Produto Sénior na Strava: "O maior desafio da gestão de produto é o alinhamento de recursos. O tamanho das equipas está sempre a mudar e frequentemente desequilibrado. Algumas semanas temos muita capacidade de design e nenhuma de iOS, noutras não temos design mas temos iOS. Ter um backlog profundo de projetos bem priorizados é essencial para operar uma equipa eficiente." Como as equipas estão sempre a mudar, ter um processo de documentação bem estruturado é essencial para manter tudo a funcionar bem.
+
+### Escrever documentação eficaz é crucial em todas as áreas principais pelas quais um gestor de produto é responsável:
+
+O processo de escrever o "porquê" por trás de um projeto obriga os gestores de produto a tomar decisões difíceis desde cedo e fornece ao resto da equipa uma estrela polar clara para orientar os seus esforços.
+
+**Planeamento**: Ao decompor essa visão em histórias concisas e bem articuladas, objetivos e sprints, os projetos tornam-se mais gerenciáveis e mantêm-se alinhados com as necessidades dos clientes.
+
+**Execução**: Os gestores de produto que comunicam eficazmente por escrito com designers, engenheiros e outros são os melhores a remover obstáculos, resolver conflitos e guiar as suas ideias até à concretização.
+
+Em geral, quanto mais eficaz for a comunicar os seus pensamentos por escrito como gestor de produto, mais acessível será o seu raciocínio para os outros. Isso significa menos tempo e energia a corrigir-se ou a explicar-se e mais tempo concentrado em desafios importantes.
+
+## A documentação de requisitos de produto equivale a uma visão mais abrangente
+
+![](https://cdn.docsie.io/workspace_8D5W1pxgb7Jq3oZO7/doc_vQfR1TFvrUMWGTXFc/file_Atvu5TQEy94ODrVLp/boo_EJBR2kCoLVuTRTFDl/a370be08-a260-fa0b-ad1b-71c00091cd30ux_indonesia_w00FkE6e8zE_unsplash.jpg)
+
+Uma das documentações mais importantes que os gestores de produto têm de desenvolver é o PRD (documentação de requisitos de produto). Ao iniciar um novo projeto, um bom gestor de produto considera todos os elementos do produto e o seu ambiente. Identifica os tipos de clientes que procurarão a oferta da empresa e porquê. Verifica o que outras empresas na área estão a fazer e como podem melhorar. Quando têm dúvidas, procuram informação e avaliam as suas hipóteses contra esse conhecimento.
+
+Excelentes gestores de produto utilizam estas informações para contar uma história sobre o cliente e as suas necessidades, mobilizando toda a equipa para trabalhar em direção a um objetivo comum.
+
+### Os elementos críticos de um PRD incluem:
+
+* **Objetivo:** A secção de objetivos descreve o problema do cliente que está a tentar resolver e como se relaciona com a visão, objetivos e ambições da organização. Define o propósito geral do que está a tentar alcançar e o público-alvo do produto.
+
+* **Lançamento:** Descreva o que será entregue e quando na secção de lançamento do PRD. Isto permite que as equipas internas organizem o seu trabalho, compreendendo o âmbito e o cronograma. Acompanhe marcos importantes e dependências para garantir que todos se mantêm no caminho certo.
+
+* **Funcionalidades:** A próxima fase é especificar cada funcionalidade (ou história de utilizador) incluída no lançamento. Nesta parte do PRD, descreve exatamente o que precisa de ser criado e como a equipa de desenvolvimento deve proceder.
+
+* **Fluxo de utilizador e design:** Inclua wireframes visuais e mockups no PRD para mostrar como a funcionalidade se apresentará e onde se encaixa no mapa do site. Isto ajuda a equipa a entender exatamente o que está a visualizar e como a funcionalidade deve ser implementada.
+
+* **Análise:** É fundamental determinar antecipadamente como avaliará o desempenho das suas funcionalidades. Crie uma hipótese sobre o impacto que acredita que uma funcionalidade terá para determinar se está a produzir os resultados pretendidos.
+
+* **Trabalho futuro:** Pode ser útil incluir informações de alto nível sobre os planos futuros do roadmap no PRD. Inclua factos relevantes que ajudem a equipa a compreender como o produto poderá evoluir ao longo do tempo.
+
+## Histórias de utilizador com contexto garantem que os requisitos dos clientes são satisfeitos
+
+Dar vida a um produto requer mais do que criar uma estratégia e depois produzir funcionalidades. Como gestor de produto, a sua tarefa mais valiosa é determinar exatamente o que cada funcionalidade precisa de fazer pelo cliente e depois condensá-la na forma mais concisa possível para a sua equipa.
+
+Embora possa demorar mais tempo a desenvolver uma história de utilizador sólida que prepare a equipa para o sucesso - uma que elimine quase completamente a possibilidade de construírem a coisa errada - poupa-se muito mais tempo durante a fase de execução. Os gestores de produto que cortam caminho aqui pouparão tempo no curto prazo, mas pagarão o preço mais tarde.
+
+O problema é que quando apenas indica o que a funcionalidade faz, ignora o contexto do consumidor.
+
+Quando apenas pede à equipa para fornecer uma lista de funcionalidades, encontrará sempre discrepâncias entre a sua visão e a deles.
+
+Priorizar documentação de produto bem desenhada e escrita é essencial para completar o processo de integração dos utilizadores, para que saibam usar o produto da forma mais eficaz. No entanto, deve também incluir histórias de utilizador para dar exemplos de como usar o produto e com que capacidade, baseado em investigação real de utilizadores.
+
+## A comunicação escrita responsabiliza as pessoas e mantém as iniciativas em movimento
+
+![](https://cdn.docsie.io/workspace_8D5W1pxgb7Jq3oZO7/doc_vQfR1TFvrUMWGTXFc/file_SkMdH7bHVaDRNaLa4/boo_EJBR2kCoLVuTRTFDl/f6ca1a85-e36d-0a54-bcf5-380ea9eec66fmarvin_meyer_SYTO3xs06fU_unsplash.jpg)
+
+Um gestor de produto fraco acumula informação e tem de gastar tempo a justificar as suas ações à equipa. Isto mata o impulso do produto - as pessoas gastam o seu tempo a conversar com o gestor de produto em vez de fazerem o trabalho, e o gestor de produto gasta o seu tempo a apagar fogos em vez de se concentrar no trabalho importante.
+
+Um componente crucial do trabalho de qualquer gestor de produto bem-sucedido é garantir que todos os membros da equipa têm acesso contínuo e sem restrições a uma riqueza de informações sobre o produto que estão a construir, incluindo: FAQs, material de marketing, diretrizes de estilo, entrevistas com clientes, pesquisa de mercado e apresentações, entre outros. Quando os engenheiros, designers e marketers têm prazos claros e acesso abrangente aos dados necessários para cumprir as suas funções, os projetos podem avançar muito mais rapidamente.
+
+Quando um gestor de produto é meticuloso com a documentação interna e a atualiza regularmente, também responsabiliza toda a equipa.
+
+O gestor de produto reporta ao vice-presidente ou diretor executivo porque a sua visão para o produto e as suas opiniões sobre como deve ser executado estão documentadas publicamente.
+
+Os líderes de engenharia, design e outras equipas são responsáveis porque a contribuição das suas equipas para o projeto está igualmente definida na visão. Todos conhecem os critérios que devem cumprir, o que aumenta a compreensão da equipa e mantém todos no caminho certo.
+
+Finalmente, à medida que os projetos avançam, novos conhecimentos exigem revisões do plano. Seja resultado de pesquisa de mercado, entrevistas com clientes ou mudança nos objetivos da empresa, ser capaz de demonstrar a lógica por trás de quaisquer ajustes ao PRD ajuda a garantir que a equipa compreende o "porquê" dessas mudanças.
+
+O trabalho de um gestor de produto bem-sucedido é tanto atualizar o PRD como criá-lo. À medida que as equipas colocam novas questões, os concorrentes ajustam as suas estratégias e surgem obstáculos tecnológicos, é necessário contabilizá-los no PRD e garantir que o "documento vivo" não fica para trás da realidade. Quando um PRD atrasa, os membros da equipa deixam de o ver como autoritário e ficam menos inclinados a consultá-lo da próxima vez que tiverem um problema.
+
+## Escrever documentação é o segredo da sua equipa de produto
+
+![](https://cdn.docsie.io/workspace_8D5W1pxgb7Jq3oZO7/doc_vQfR1TFvrUMWGTXFc/file_4z8D06QZclNxpCYTN/boo_EJBR2kCoLVuTRTFDl/369bc520-2e75-fd34-8a9e-0495da932f4aimage.png)
+
+Embora todas as equipas enfrentem o desafio da gestão de informação, as equipas de produto têm um conjunto único de desafios quando se trata de gerir o seu conhecimento coletivo sobre a sua missão.
+
+A coesão é crítica para a sobrevivência dos produtos. Não se trata de montar widgets; trata-se de gerir a entrega de uma experiência de cliente unificada por várias divisões distintas.
+
+Escrever de forma extensa responsabiliza-o. Força-o a enfrentar contradições lógicas desde cedo e pode revelar falhas que não percebia quando apenas pensava nas coisas. Além disso, ajuda-o a pensar coerentemente sobre quem é o seu consumidor e o que realmente precisa do seu produto, em vez de apenas compilar uma lista de coisas que acha que devem ser incluídas.
+
+Documentar os seus objetivos e pensamentos - e ser minucioso sobre o que diz e como o diz - é a alavanca mais eficaz que tem como gestor de produto para garantir que o seu produto oferece uma experiência coerente quando estiver concluído.
+
+A Docsie fornece todas as ferramentas e funcionalidades de criação de documentação necessárias para o sucesso de qualquer gestor de produto. [Experimente a Docsie gratuitamente](https://www.docsie.io/) para ver como podemos ajudar com as suas necessidades de documentação.

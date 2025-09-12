@@ -1,0 +1,75 @@
+![](https://images.unsplash.com/photo-1557425955-df376b5903c8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzMTM3MXwwfDF8c2VhcmNofDU1fHx2aXNpb24lMjBib2FyZHxlbnwwfHx8fDE2MjgxODk4Mjc&ixlib=rb-1.2.1&q=80&w=1080)
+
+Finché avremo strumenti e software, avremo bisogno di una comunicazione efficace per spiegare agli altri l'uso, la creazione, le funzionalità e l'architettura dei nostri prodotti. PERCHÉ? Semplicemente perché le competenze di comunicazione tecnica sono essenziali per raccogliere informazioni e aiutare il pubblico a comprendere meglio il prodotto o la tecnologia che stiamo vendendo.
+
+Mentre la comunicazione nel mondo reale avviene attraverso parole ed espressioni, la comunicazione tecnica nel mondo virtuale si realizza attraverso la Documentazione Tecnica!
+
+La documentazione tecnica di prodotto viene creata con l'unico scopo di aiutare l'utente finale a comprendere il funzionamento e l'architettura del prodotto o della tecnologia che sta utilizzando. È una descrizione dettagliata degli elementi costitutivi di un prodotto – un manuale "come usare" per nuovi dipendenti, utenti e chiunque altro debba sapere come funziona!
+
+Tuttavia, per quanto semplice possa sembrare, la documentazione tecnica può risultare complessa! La maggior parte dei documenti tecnici contiene fasi multiple, che vanno da "Come utilizzare: se sei nuovo e hai poca esperienza" a "Come risolvere i problemi: in caso di bug o errore".
+
+Se non sai da dove iniziare, ecco una guida completa che ti aiuterà a rispondere al cosa, perché e come della documentazione tecnica, semplificando il processo!
+
+### Iniziamo!
+
+Se sei nuovo nella documentazione di prodotto e non hai mai sviluppato una specifica di documentazione, sei nel posto giusto.
+
+Anche se hai padroneggiato le basi per creare una specifica di documentazione di prodotto, metterla in pratica richiede riflessione e un approccio dedicato. Ecco una guida su ciò che devi sapere e su come sviluppare una specifica di documentazione di prodotto flessibile e adeguata.
+
+Definiremo i requisiti del prodotto e discuteremo il loro scopo, fornendo numerosi esempi di standard di prodotto. Imparerai cosa includere nella documentazione di prodotto, come scriverla - dalla creazione di una descrizione del prodotto alla modifica basata sul feedback dei clienti e sui test utente limitati - e come avviare i tuoi prodotti nel percorso di produzione o nel processo di sviluppo software.
+
+## Qual è lo scopo delle specifiche di documentazione di prodotto?
+
+Per sviluppare una specifica di documentazione di prodotto, devi prima avere una buona comprensione del prodotto stesso. Una specifica di documentazione di prodotto è un progetto per la documentazione che stai sviluppando, che descrive come apparirà ai tuoi clienti, nonché i requisiti specifici e le funzionalità, come le capacità di ricerca, le possibilità di cambio lingua e molto altro. Inoltre, può includere il persona o il consumatore per cui il prodotto viene creato, ma questo si applica principalmente a prodotti destinati a specifiche fasce d'età.
+
+Questa specifica di documentazione di prodotto dovrebbe essere estremamente chiara, facilmente accessibile e contenere tutte le informazioni necessarie al tuo team di design e al team di prodotto. Includi quanti più dettagli possibili per garantire che il team di scrittura tecnica capisca cosa scrivere e il team di design comprenda il layout della documentazione. Una tabella o un grafico delle specifiche scritte indicherà dove si possono trovare ulteriori informazioni. Tieni presente, tuttavia, che questa è solo la scheda di specifiche della documentazione - puoi lasciare i dettagli degli aspetti specifici del prodotto da scrivere nella documentazione al tuo team per le fasi successive del lavoro.
+
+## Quali informazioni dovrebbe contenere una specifica di documentazione di prodotto?
+
+![](https://images.unsplash.com/photo-1506784881475-0e408bbca849?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzMTM3MXwwfDF8c2VhcmNofDZ8fHBsYW5uaW5nfGVufDB8fHx8MTYyODE4OTkyNA&ixlib=rb-1.2.1&q=80&w=1080)
+
+Ogni specifica di prodotto è costruita attorno a requisiti tecnici, specifiche ingegneristiche e altre informazioni specifiche del prodotto. Tuttavia, la tua documentazione di prodotto dovrebbe includere come minimo:
+
+**Riepilogo:** Una panoramica di alto livello del prodotto. Inizia con una visione d'insieme del concetto e termina con una descrizione concisa del prodotto e dei suoi dettagli generali. Inoltre, chiarisce perché il prodotto è stato sviluppato e il suo scopo generale. La descrizione del prodotto illustra l'aspetto e le funzionalità del prodotto finito.
+
+**Specifiche funzionali:** Aspetti scritti che definiscono l'aspetto e le capacità del tuo prodotto. Dovrebbero anche descrivere come le persone interagiranno con esso. È molto importante essere dettagliati in queste spiegazioni, senza tralasciare nulla.
+
+**Caso d'uso:** Il prodotto dovrebbe indicare il caso d'uso di ciascuna funzione o caratteristica e come beneficia l'utente finale. Questo potrebbe essere considerato materiale di livello marketing, ma se l'utente ha un manuale che indica anche il caso d'uso di ogni funzione, lo aiuterà a capire come utilizzarla.
+
+**Personas utente:** Questa sezione descrive il pubblico target per cui è stato sviluppato il prodotto. Dettaglia il target demografico e i problemi che il prodotto risolverà. Conoscere il pubblico target del prodotto assicura che il tuo lavoro rimanga incentrato sul cliente. Inoltre, se il tuo prodotto presenta pericoli non adatti ai bambini, è consigliabile indicarlo nella documentazione.
+
+**Immagini/video:** Ogni sezione dovrebbe avere immagini o video necessari dei tuoi prodotti in correlazione con informazioni scritte su come il prodotto viene utilizzato. Questo migliorerà la tua documentazione e i casi d'uso del prodotto.
+
+## Come pianificare, scrivere e fornire una documentazione tecnica efficace
+
+![](https://images.unsplash.com/photo-1450101499163-c8848c66ca85?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzMTM3MXwwfDF8c2VhcmNofDF8fHdyaXR0aW5nfGVufDB8fHx8MTYyODE5MDAwOQ&ixlib=rb-1.2.1&q=80&w=1080)
+
+La documentazione tecnica può diventare estremamente sofisticata e complessa! Quindi, la cosa fondamentale è assicurarsi che i contenuti rimangano aggiornati, accurati e interessanti per il pubblico seguendo questi semplici passaggi:
+
+### Sii esplicito su ciò che vuoi che il lettore faccia alla fine:
+
+La documentazione tecnica è interamente focalizzata sull'azione successiva del lettore. Esprimi il tuo scopo per ogni passaggio della documentazione di prodotto in modo che l'utente capisca cosa sarà in grado di fare dopo la lettura. Se hai chiaro chi è l'utente finale delle guide, scrivere la tua parte sarà più facile. E più completa è la tua documentazione, più facile sarà per i lettori navigare tra le informazioni. Docsie dispone di molti strumenti che aiutano in questo, ad esempio la [funzione di ricerca](https://help.docsie.io/?doc=/publish-documentation-portal/plugins-extensions/) che permette agli utenti di cercare nella documentazione e trovare rapidamente le informazioni!
+
+### Crea una panoramica per la documentazione:
+
+Senza un piano strutturato, può essere difficile costruire una documentazione di prodotto che fluisca bene e sia efficace nel raggiungere l'obiettivo principale dei criteri di documentazione. Si consiglia quindi vivamente di iniziare con uno scheletro su cui la documentazione possa espandersi. Utilizza intestazioni, categorie, sottocategorie e temi per organizzare e raggruppare correttamente i materiali. Docsie ha molti ottimi strumenti che ti permettono di creare documentazione in modo rapido ed efficace, puntando alla creazione di documenti di prodotto dinamici.
+
+![](https://cdn.docsie.io/workspace_WxPJSQ5gsES8Bzjxy/doc_ydgtE07E6Rp4AMmKv/file_sxziwEXY4iYSB0p2i/boo_Qj6raZoQQmjvdRxVs/19e9557e-cdec-2c24-9ee1-b82dff8c70f4image.png)
+
+Offriamo capacità di ricerca, un'organizzazione ben progettata per la tua documentazione e molte altre potenti funzionalità.
+
+### Definisci il tuo pubblico target:
+
+È fondamentale comprendere il pubblico che utilizza i tuoi prodotti per determinare se la tua documentazione è rivolta a sviluppatori, dipendenti o utenti. Questo serve a garantire che i consumatori comprendano il contesto, gli obiettivi e le capacità del prodotto o della tecnologia, aiutandoti ad adattarti al tuo pubblico. Inoltre, se il tuo pubblico proviene da un paese diverso da quello della tua sede centrale, avere una [documentazione tradotta](https://www.docsie.io/blog/articles/everything-you-need-to-know-about-translating-technical-manuals-with-3-easy-steps/) è un altro fattore da considerare.
+
+### Includi disegni e didascalie nei tuoi contenuti:
+
+Le illustrazioni o i diagrammi di una documentazione tecnica devono includere varie misurazioni che spiegano le dimensioni o gli aspetti dei tuoi prodotti. Se stai dimostrando funzionalità di un prodotto SaaS digitale, avere screenshot di queste funzionalità è molto utile, purché dimostri cosa fanno e come funzionano.
+
+Inoltre, le immagini aiutano a spezzare la monotonia delle parole e ad aggiungere interesse al documento. Le didascalie possono aiutare a contestualizzare i diagrammi e i disegni del prodotto con istruzioni chiare.
+
+### Rileggi, modifica e riscrivi:
+
+Rivedi la tua documentazione tecnica più volte per assicurarti di non aver tralasciato nulla! Inoltre, puoi far revisionare il tuo lavoro da un collega o un supervisore per verificare che non manchi nulla. Un meccanismo di revisione e modifica garantirà che il materiale pubblicato sia accurato.
+
+Docsie ha strumenti straordinari che possono aiutarti a creare la tua documentazione di prodotto. Se vuoi saperne di più su Docsie, [clicca qui](https://www.docsie.io/).

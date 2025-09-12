@@ -1,0 +1,157 @@
+# Quando pensa em 2024, provavelmente pensa no mundo digital
+
+Hoje, quase todas as empresas têm presença online para se promoverem. Certamente já encontrou um website ou plataforma que não conseguiu compreender após uma pesquisa online. Tudo o que teve de fazer foi usar um tradutor automático online para converter o texto para a sua língua materna... E, provavelmente, acabou por sair (abandonar) o website.
+
+Num mundo tão digitalizado, aumentar o tráfego e a tração online da sua marca está diretamente ligado à tradução do seu conteúdo para outros idiomas, permitindo comunicar com os desejos e necessidades de todos. A tradução de conteúdo é uma forma simples de conseguir isto.
+
+## Existem muitos benefícios na tradução de documentação de produtos, aqui destaco alguns:
+
+Quando pensa em 2022, provavelmente pensa no mundo digital, onde quase todas as empresas têm presença online para se promoverem. Certamente já encontrou um website ou plataforma que não conseguiu compreender após uma pesquisa online. Tudo o que teve de fazer foi usar um tradutor automático online para converter o texto para a sua língua materna... E, provavelmente, acabou por sair (abandonar) o website.
+
+A Forbes apresenta um bom argumento baseado num [estudo](https://www.statista.com/statistics/457078/category-cart-abandonment-rate-worldwide/) de 2020 da Statista Data, que revela que entre 68% e 97% das pessoas abandonam os seus carrinhos e não concluem a compra. No seu [blog](https://www.forbes.com/sites/forbescommunicationscouncil/2021/07/06/is-your-company-ready-to-sell-globally/?sh=1c88a3957439), a Forbes sugere que os únicos clientes que "finalizam" e compram os produtos são aqueles que conseguem ler as informações/documentação dos produtos nas suas línguas e pagar nas suas moedas. "Na minha experiência, os clientes frequentemente 'saem' ou continuam no checkout com base na disponibilidade das informações do produto na sua língua, se podem pagar na sua moeda e se os seus métodos de pagamento e envio preferidos estão disponíveis."
+
+Num mundo tão digitalizado, aumentar o tráfego e a tração online da sua marca está diretamente ligado à tradução do seu conteúdo para outros idiomas, permitindo comunicar com os desejos e necessidades de todos. A tradução de conteúdo é uma forma simples de conseguir isto.
+
+## Vamos agora analisar os benefícios da tradução de documentação de produtos:
+
+### Escolher a estratégia de tradução adequada para expandir o mercado
+
+Os tradutores automáticos online são a primeira escolha para traduções rápidas e simples, mas por que comprometer a qualidade quando pode ter tudo?
+
+Transmitir a sua mensagem noutra língua requer compreensão das diversas subtilezas e camadas culturais. Um exemplo relevante de "como não traduzir" para uma nova língua é quando se trata de traduções de alta precisão para línguas asiáticas, como o chinês. A China é conhecida como uma das culturas mais antigas do mundo, baseada em profundos ensinamentos confucionistas sobre corpo e alma.
+
+Escolher uma tecnologia de tradução e um fornecedor de marketplace de tradução que possa adicionar uma compreensão mais profunda destes matizes culturais ao aspeto linguístico não só melhorará a tradução da sua mensagem para uma língua estrangeira, mas também ajudará a sua marca a ganhar força ao ressoar com o enquadramento cultural e a identidade do público-alvo.
+
+### A tradução da documentação do produto aumenta a confiança dos clientes e as receitas
+
+Pessoas em todo o mundo preferem consumir informação na sua língua materna. Satisfazer esta expectativa pode ser uma obrigação legal e também proporciona uma política de "porta aberta" para todos os países participarem e aprenderem através da documentação de produtos, guias de utilizador e portais de conhecimento online das empresas.
+
+Traduzir o seu material para uma língua estrangeira oferece aos consumidores uma experiência multilingue agradável, aumentando a confiança na sua empresa e, consequentemente, as receitas, já que os utilizadores online são mais propensos a comprar quando acedem a informações na sua própria língua.
+
+Os utilizadores que visitam os seus sites e leem o seu conteúdo sentirão familiaridade e identificação com a sua marca, dando ao seu negócio uma vantagem competitiva consistente e impulsionando-o à frente da concorrência para entrar em múltiplos mercados.
+
+### Traduzir portais de documentação melhora o alcance SEO/SEM noutros países
+
+No mundo digital atual, o Marketing e Otimização para Motores de Busca é um grande desafio, especialmente quando se trata da necessidade de conteúdo para penetrar nos mercados-alvo e alcançar o público pretendido.
+
+Traduzir a documentação do produto e outros conteúdos para várias combinações linguísticas, preferencialmente as mais populares e bem classificadas, pode acomodar estratégias eficazes de SEO/SEM multilingue, multiplicando as hipóteses de alcançar classificações mais altas e melhores resultados de pesquisa, o que gera mais exposição para a sua marca. Ter documentação de produtos traduzida em vários idiomas dá à sua empresa a vantagem de atingir países que não têm acesso a produtos físicos ou SaaS semelhantes, mas necessitam de uma versão traduzida da documentação para aprender e usar esses produtos.
+
+### Adicionar mais idiomas ao conteúdo de um website pode aumentar significativamente o tráfego
+
+Se lê o [Wall Street Journal](https://www.wsj.com/articles/SB117106531769704150), talvez conheça Neil Patel, considerado um dos 10 melhores marketeers do mundo. Num dos seus [blogs](https://neilpatel.com/blog/translate-content-different-languages/), Neil afirma que o seu tráfego cresceu 47% em apenas três semanas depois de traduzir todo o conteúdo do seu website para 82 idiomas diferentes. Veja o blog dele, encontrará muitas outras dicas úteis.
+
+Isto faz todo o sentido, pois o alcance do conteúdo tornou-se completamente global, chegando a não-falantes de inglês em todo o mundo. Segundo um gráfico que encontrei no Languagenobar, os falantes de inglês representam apenas 26,8% da população mundial. Isto significa que se uma empresa traduzir a documentação dos seus produtos para mandarim, hindi/urdu, árabe, português, russo, japonês e punjabi, aumentará o seu alcance em 58,4%. Ou seja, alcançará mais de 4,3 mil milhões de potenciais clientes. Isto é enorme!
+
+![World's Top Language](https://cdn.docsie.io/workspace_WxPJSQ5gsES8Bzjxy/doc_ydgtE07E6Rp4AMmKv/file_zRn1CEWo1gf6XujH2/boo_EILVopOp17tubVBrk/9ca35a43-2134-b38c-05de-1f7019686a82worlds_top_languages_languagenobar_53c8ec5072196_w1500.jpg)
+
+Com base nestes factos, não surpreende que as empresas procurem ativamente soluções de tradução para expandir os seus produtos para um âmbito global mais amplo e aumentar receitas e base de clientes.
+
+## Taxas de conversão mais altas podem ser alcançadas com a tradução para outros idiomas
+
+"*Se falares com um homem numa língua que ele compreende, isso vai à sua cabeça. Se falares com ele na sua língua, isso vai ao seu coração*", disse Nelson Mandela. Quando a documentação do seu produto está na mesma língua dos seus leitores e eles não encontram informações sobre produtos semelhantes na sua língua, tornar-se-ão seus clientes fiéis, em vez de recorrerem à concorrência.
+
+![Higher conversion rates can be achieved by translating into a foreign language.](https://cdn.docsie.io/workspace_WxPJSQ5gsES8Bzjxy/doc_ydgtE07E6Rp4AMmKv/file_AFdqLObCzGpuQn9uY/boo_EILVopOp17tubVBrk/77b47adc-04e1-d93d-8035-f19a98815a4bbackground_20870_1280.jpg)
+
+Para empresas que fornecem produtos e serviços em mais de um país, escrever vários guias técnicos e manuais de utilizador bem elaborados é essencial para a globalização. Não é surpresa: empresas que interagem em várias línguas e mercados sabem que conhecer a língua e cultura local de cada mercado é fundamental para competir globalmente e aumentar o alcance dos seus produtos. Nada supera um parceiro de tradução especializado no tema para ajudá-los a alcançar esse objetivo. Num [artigo](https://www.bbc.com/future/article/20180403-inside-the-world-of-instruction-manuals) da BBC, Roger Bridgeman, ex-curador do Museu de Ciências de Londres, afirma: "as instruções existem para compensar as incapacidades das máquinas, empregando as capacidades dos utilizadores, e, portanto, dizem-nos algo sobre o estado de ambos no momento em que foram produzidas."
+
+Vale a pena notar que os manuais técnicos acompanham uma ampla gama de produtos, desde maquinaria industrial a veículos e dispositivos e plataformas tecnológicas. Como os guias e manuais de utilizador são meios de comunicação que afetam diretamente a compreensão do produto pelo utilizador e, consequentemente, a sua experiência com o bem adquirido, usar as ferramentas certas para traduzir manuais deve ser abordado como uma decisão muito estratégica dentro de uma empresa, pois a qualidade da tradução está diretamente relacionada com o sucesso de vendas e a satisfação do cliente.
+
+Além disso, erros na tradução de um manual podem ter consequências graves para o cliente que utiliza os produtos, como causar acidentes ao manusear ou usar o produto, colocando a vida do utilizador em risco.
+
+Independentemente do tipo de falha de comunicação e da possível consequência de uma tradução de manual, uma coisa é certa: a imagem da empresa responsável pelo produto será prejudicada. Isto evita-se através de passos estratégicos na criação de manuais e guias de utilizador eficazes e também na sua boa tradução.
+
+Esta é uma preocupação partilhada por empresas de tradução profissionais, que estão preparadas para implementar uma série de etapas de controlo de qualidade durante os projetos de tradução de manuais, garantindo que as informações sobre um determinado produto cheguem ao consumidor final de forma correta e precisa em relação ao conteúdo original, atingindo o seu objetivo.
+
+### Quer saber mais sobre como estas empresas operam? Vamos ver os passos abaixo para entender os processos de tradução qualificados para alcançar manuais e guias de utilizador bem traduzidos:
+
+![Translation Image](https://cdn.docsie.io/workspace_WxPJSQ5gsES8Bzjxy/doc_ydgtE07E6Rp4AMmKv/file_8oLMBFJpm1n29PJnO/boo_EILVopOp17tubVBrk/258bbf65-a0c5-a981-05fc-56bdf438257dtranslation_1092128_1920.jpg)
+
+### 1. Interpretação correta
+
+Plataformas de tradução de manuais como [Docsie](https://www.docsie.io/) têm uma rede de parceiros que inclui os melhores linguistas do mercado. Esta rede é geralmente criada através de procedimentos rigorosos de recrutamento, avaliação e seleção com linguistas de todo o mundo. Empresas como [Docsie](https://www.docsie.io/) frequentemente usam os seguintes procedimentos ao selecionar tradutores: seleção de tradutores e análise de currículos; teste para avaliar a proficiência do profissional nas línguas de origem e destino da tradução; e análise da consistência no cumprimento de instruções e prazos. Depois, estes especialistas, classificados por nacionalidade, língua e especialidade, são avaliados regularmente com base no seu desempenho e na consistência do trabalho fornecido. Atenção! Ao escolher um parceiro de tradução, a qualidade do serviço dos tradutores deve ser cuidadosamente considerada. Não hesite em perguntar detalhadamente sobre as qualificações dos linguistas da agência. Também devemos considerar ferramentas de tradução como o Ghost translator da Docsie, projetado para traduzir manuais e guias de utilizador rapidamente e com alta eficácia. Se o gestor de produto e a sua equipa prepararem manuais para tradução simplificando a linguística, este Ghost Translator pode ser uma ferramenta muito eficaz e fácil de usar, que funciona rapidamente para traduzir toda a documentação e criar versões alternativas para o utilizador final. Devemos considerar isto também como uma opção viável, que discutiremos mais abaixo.
+
+### 2. Revisões extensivas das instruções do projeto
+
+Após a aprovação da proposta, um gestor de produto será nomeado para lidar com os passos necessários para iniciar a tradução dos guias e manuais para os seus produtos. Este especialista será responsável por dirigir os membros da sua equipa para lidar com traduções de manuais, bem como garantir que o ficheiro final seja entregue dentro do prazo da empresa. Validar o âmbito do projeto; elaborar diretrizes para os profissionais envolvidos no trabalho; planear a tradução em termos de âmbito e prazo; monitorizar processos, recursos e evolução do trabalho; e interagir com o cliente para esclarecer dúvidas e fazer relatórios são algumas das principais responsabilidades de um gestor de produto.
+
+### 3. Cumprimento do prazo acordado para a entrega dos guias e manuais traduzidos
+
+Trabalhando com o pressuposto de que as empresas têm prazos rigorosos para criar, escrever, traduzir e manter a sua documentação para os utilizadores finais, plataformas como [Docsie](https://www.docsie.io/) oferecem uma solução útil que minimiza riscos, permitindo às empresas usar a nossa plataforma fácil de usar e ajudando-as a avançar rapidamente no processo de tradução e manutenção dos seus manuais publicados. Estas medidas preventivas incluem fazer backup em tempo real da documentação na plataforma segura baseada na nuvem da [Docsie](https://www.docsie.io/) e ter as suas equipas a colaborar eficazmente em vários projetos de tradução de manuais.
+
+## A Docsie tem um Ghost Translator abrangente que permite traduzir toda a sua documentação, portais de conhecimento, guias de utilizador e documentação de produtos para diferentes idiomas.
+
+## Veja este vídeo para ver como é feito!
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/pNwUeTIEskE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+## Aqui estão os passos para traduzir a sua documentação de produtos, manuais e guias de utilizador:
+
+Depois de iniciar sessão, selecione a prateleira e o livro que deseja traduzir, neste caso eu queria traduzir o meu "Guia de instalação rápida":
+
+![](https://cdn.docsie.io/workspace_WxPJSQ5gsES8Bzjxy/doc_ydgtE07E6Rp4AMmKv/file_5udCDdXWMkuLzAlZl/boo_EILVopOp17tubVBrk/232a9cb5-33a9-3548-b511-1259ae5c1076image.png)
+
+Dentro do livro aberto, do lado esquerdo, verá dois separadores. O separador superior é para versões, e o segundo separador é para traduções:
+
+![Translation versions](https://cdn.docsie.io/workspace_WxPJSQ5gsES8Bzjxy/doc_ydgtE07E6Rp4AMmKv/file_IiwdOR3z70l7T7fBI/boo_EILVopOp17tubVBrk/a1eaeb07-7def-dec7-774d-cef4b7344d5aimage.png)
+
+![](https://cdn.docsie.io/workspace_WxPJSQ5gsES8Bzjxy/doc_ydgtE07E6Rp4AMmKv/file_SD5stoqUyf3ZbpEPj/boo_EILVopOp17tubVBrk/5465db5e-f11f-4214-2700-13c68122088fimage.png)
+
+Estes separadores expandir-se-ão e verá ícones de lápis à direita da versão e dos idiomas, bem como um botão "Add version +" que permitirá adicionar outra versão e um botão "Add language +" que permitirá adicionar outro idioma.
+
+Antes de adicionar um idioma, pode notar que o inglês diz "CURRENT" abaixo dele e o francês diz "DRAFT" abaixo dele:
+
+![Docsie' Current and Draft Image](https://cdn.docsie.io/workspace_WxPJSQ5gsES8Bzjxy/doc_ydgtE07E6Rp4AMmKv/file_hTsq4reqGDozWF3CM/boo_EILVopOp17tubVBrk/6fc2a5df-0875-9d22-d7c7-c40f31cc9505Snag_35e180b.png)
+
+"CURRENT" indica que este idioma está definido como principal.
+
+"DRAFT" indica que este idioma só é visível dentro do portal Docsie e não será visível online.
+
+Se clicarmos no ícone de Lápis ao lado do francês, podemos alterar Draft para "active" e após a atualização, a indicação "draft" deixará de aparecer abaixo do idioma francês, o que significa que estará presente quando publicarmos o nosso portal de conhecimento:
+
+![Draft 1](https://cdn.docsie.io/workspace_WxPJSQ5gsES8Bzjxy/doc_ydgtE07E6Rp4AMmKv/file_m4I8ulBxwLmeroluK/boo_EILVopOp17tubVBrk/26f8c524-316d-a5b0-be0a-604d32ab69bcSnag_35eee56.png)
+
+![Draft 2](https://cdn.docsie.io/workspace_WxPJSQ5gsES8Bzjxy/doc_ydgtE07E6Rp4AMmKv/file_2l92rJQYCw2I7BERN/boo_EILVopOp17tubVBrk/aa76e3d4-9438-ad08-91bb-4f31de03069aSnag_35f238f.png)
+
+![Draft 3](https://cdn.docsie.io/workspace_WxPJSQ5gsES8Bzjxy/doc_ydgtE07E6Rp4AMmKv/file_vsDy3VpWx9oeknAIb/boo_EILVopOp17tubVBrk/2e56e657-2e60-99c5-66d8-e66e4f54995eSnag_35f411a.png)
+
+Como pode ver, o idioma francês já não diz "Draft", o que significa que agora aparecerá no portal publicado da Docsie.
+
+![Docsie published portal](https://cdn.docsie.io/workspace_WxPJSQ5gsES8Bzjxy/doc_ydgtE07E6Rp4AMmKv/file_U7itpDh0YaJxLwo5h/boo_EILVopOp17tubVBrk/84f2dfc0-8747-36bc-1cee-7b2935a26321Snag_360bd4a.png)
+
+Adicionar um idioma para traduzir a nossa documentação é muito fácil. Tudo o que precisamos fazer é pressionar o botão "Add language+":
+
+![Add language+](https://cdn.docsie.io/workspace_WxPJSQ5gsES8Bzjxy/doc_ydgtE07E6Rp4AMmKv/file_NywQdBTv6s2JrB6MP/boo_EILVopOp17tubVBrk/78ea7719-870e-8f7a-73e8-7a444edf00c6Snag_36169d6.png)
+
+Clique no idioma que deseja (neste caso, eu queria traduzir o meu guia de utilizador para italiano):
+
+![Add language+ 2](https://cdn.docsie.io/workspace_WxPJSQ5gsES8Bzjxy/doc_ydgtE07E6Rp4AMmKv/file_Pd9C2Ef91JmD8C1y0/boo_EILVopOp17tubVBrk/89bc66ac-2a6b-0863-841f-0eb75a5e5511Snag_361fcbf.png)
+
+Depois disso, certifique-se de que o botão "Automatically machine-translate from primary language" está ativado e pressione update:
+
+![Automatically machine-translate from primary language](https://cdn.docsie.io/workspace_WxPJSQ5gsES8Bzjxy/doc_ydgtE07E6Rp4AMmKv/file_gtU5RhdhWYIoaMKpT/boo_EILVopOp17tubVBrk/ac508735-96fc-c170-8c78-5c97a279c9e1Snag_3634165.png)
+
+Ótimo, agora temos a nossa documentação de produto traduzida também para italiano. Por padrão, estará definido como "DRAFT"; certifique-se de alterá-lo de Draft para Active da maneira que mostrei nos passos acima:
+
+![DRAFT](https://cdn.docsie.io/workspace_WxPJSQ5gsES8Bzjxy/doc_ydgtE07E6Rp4AMmKv/file_b9y8pFOUrReeZCn1N/boo_EILVopOp17tubVBrk/4117e519-3163-705d-0d9d-73fce39ee52eSnag_36589de.png)
+
+Agora que isso está feito, também pode eliminar quaisquer idiomas que não considere necessários nos seus portais de conhecimento traduzidos. Por exemplo, se quiser eliminar o francês, primeiro terá de transformar o idioma em "DRAFT" tornando-o inativo, e depois pressionar os três pontos e clicar no ícone do lixo ao lado do idioma que deseja eliminar:
+
+![Icon next to the language](https://cdn.docsie.io/workspace_WxPJSQ5gsES8Bzjxy/doc_ydgtE07E6Rp4AMmKv/file_kFGUptZJfjWH9kpQi/boo_EILVopOp17tubVBrk/cea50cad-58d2-9327-9028-bd8e0be3a39dSnag_3670aff.png)
+
+Nota: lembre-se de marcar 'Yes' antes de pressionar confirmar.
+
+![Yes](https://cdn.docsie.io/workspace_WxPJSQ5gsES8Bzjxy/doc_ydgtE07E6Rp4AMmKv/file_B3C2T3v775jtYWV9Q/boo_EILVopOp17tubVBrk/4b830098-7137-1751-f762-de97e5bc5934Snag_368101b.png)
+
+E pronto! Agora tem um livro traduzido que pode mostrar aos seus clientes e funcionários online! A documentação traduzida aparecerá nos seus portais de conhecimento publicados!
+
+## Considerações finais
+
+![Final Thoughts](https://images.unsplash.com/photo-1600739231149-1b57f0ffc5f7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzMTM3MXwwfDF8c2VhcmNofDV8fHRob3VnaHR8ZW58MHx8fHwxNjI2MTEzNDQ3&ixlib=rb-1.2.1&q=80&w=1080)
+
+Para empresas que procuram expandir o seu alcance e comunicar com um público global, tecnologias e plataformas de Tradução e Localização de alta qualidade e orientadas para a conversão, como a Docsie, são essenciais.
+
+Traduzir o seu conteúdo ou localizar a documentação dos seus produtos e plataformas relacionadas, como websites ou plataformas de e-commerce, para outros idiomas será um componente crucial do seu sucesso global.
+
+Tudo isto e muito mais é possível graças ao ghost translator e ao marketplace de tradução da Docsie.
+
+Se quiser saber mais sobre a plataforma ou o marketplace de tradução da [Docsie](https://www.docsie.io/), contacte-nos em [hello@doscie.io](mailto:hello@doscie.io)

@@ -1,0 +1,217 @@
+# 제품 개발 과정에서 문서화의 중요성
+
+제품 개발 과정에서 문서화는 필수적인 부분입니다. 제품이 개념 증명 단계에서 실제 상품으로 발전할 때, 설명 문서는 고객이 제품을 어떻게 사용하는지 교육하는 데 매우 중요합니다.
+
+즉, 뛰어난 제품을 만드는 것과 사용자가 그 잠재력을 최대한 활용할 수 있도록 하는 것 사이의 간극은 종종 문서화의 품질에 달려 있습니다.
+
+많은 기업들이 정보를 사용자들이 이해하기 쉽게 제시하고, 그들의 문제점을 해결하며, 종합적인 솔루션을 제공하는 데 어려움을 겪고 있습니다. 그 결과로 잠재 고객은 정보 부족에 시달리고, 기존 사용자는 좌절하며, 성장 기회를 놓치게 됩니다.
+
+##  제품 문서화 마스터하기
+
+제품 문서화가 중요한 이유:
+- 고객에게 제품 사용법 교육
+- 제품 가치 향상
+- 고객 신뢰 구축
+- 지원 부담 감소
+
+**주요 내용:**
+- 10가지 뛰어난 제품 문서화 사례
+- 상세한 문서 작성을 위한 단계별 가이드
+- Docsie를 활용한 문서화 개선 실용 팁
+
+사용자 경험을 향상시키고 제품 채택을 촉진하는 매력적이고 포괄적인 제품 문서를 만드는 방법을 알아보세요.
+
+### 제품 문서화의 세계
+
+제품의 용도, 기능, 사용 방법은 무엇인가요? 이는 이해관계자가 제품과 상호작용하기 전에 답해야 할 기본적인 질문들입니다.
+
+제품 문서는 제품, 기능, 특징 및 사용법에 대한 정보를 제공하는 문서 모음을 의미합니다. 제품 문서는 대상 사용자와 공유할 정보 유형에 따라 시스템 문서와 사용자 문서 두 가지로 나뉩니다.
+
+제품 문서는 사용자, 고객, 이해관계자가 제품을 이해하고, 구현하며, 문제를 해결하는 데 도움이 되는 종합적인 가이드 역할을 합니다.
+
+**Docsie를 예로 들어볼까요!**
+
+Docsie는 제품 문서화 플랫폼입니다. 사용자가 온라인 지식 포털에서 문서를 만들고, 편집하고, 주석을 달고, 게시할 수 있게 해줍니다. 로그인하고, 새 Docsie 북을 만들고, 첫 번째 콘텐츠를 입력하는 것만큼 간단합니다!
+
+### 인상적인 제품 문서화가 중요한 이유는 무엇일까요?
+  
+![인상적인 제품 문서화가 중요한 이유는 무엇일까요?](https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_A9fC9xSGFm3EYNgyB/why_cec30b50-4c9a-ad25-54b7-17dd021b6366.png)
+
+**1. 제품 가치 향상** - 포괄적인 제품 문서는 기본 사용법을 넘어 팁, 모범 사례, 사용 사례를 제공하여 사용자가 제품에서 최대 가치를 얻을 수 있게 합니다.
+   
+**2. 제품에 대한 고객 신뢰 구축** - 명확하고 잘 구성된 문서는 사용자에게 제품을 효과적으로 사용하는 데 필요한 지식을 제공함으로써 신뢰를 심어줍니다.
+    
+**3. 지원 부담 감소** - 제품 문서는 사용자가 스스로 문제를 해결할 수 있는 자가 도움 리소스 역할을 합니다. 문서를 통해 일반적인 질문에 답함으로써 외부 지원을 요청할 필요성을 크게 줄입니다.
+
+**4. 시간과 자원 절약** - 잘 작성된 문서는 정보에 빠르게 접근할 수 있게 하여 사용자의 시간을 절약합니다. 지식 전달이 원활하고 빨라집니다. 답을 찾거나 지원을 기다리는 데 귀중한 시간을 쓰는 대신, 사용자는 스스로 효율적으로 문제를 해결할 수 있습니다.
+
+**5. 기능 탐색 및 업데이트 적응력** - 문서는 사용자가 제품의 모든 기능을 탐색하고 이해할 수 있도록 안내합니다. 또한 새로운 기능, 개선사항, 변경사항에 대한 명확한 정보를 제공하여 사용자가 업데이트에 원활하게 적응할 수 있게 합니다.
+    
+**6. 지속적인 개선** - 효과적인 문서화에는 사용자 피드백과 참여를 위한 메커니즘이 포함됩니다. 사용자로부터 얻은 귀중한 통찰력은 기업이 개선 영역을 식별하고, 문제점을 해결하며, 제품과 관련 문서를 반복적으로 향상시키는 데 도움이 됩니다.
+  
+따라서 사용하기 쉬운 인터페이스부터 복잡한 기능까지, Docsie는 이해관계자에게 개념을 더 명확히 전달하기 위한 포괄적인 설명을 준비하는 데 도움이 됩니다.
+
+이 글에서는 Docsie 팀이 선정한 10가지 뛰어난 제품 문서화 사례를 살펴볼 것입니다. 더 나아가 우리의 뛰어난 사례에서 영감을 받아 여러분만의 놀라운 제품 문서를 만드는 방법도 보여드리겠습니다!
+
+**자세히 알아볼까요!**
+
+## 10가지 놀라운 제품 문서화 사례
+아래에서 Docsie 팀이 선정한 10가지 놀라운 제품 문서화 사례를 확인할 수 있습니다. 기능과 요소를 복제하는 방법을 탐색하고, Docsie에서 유사한 문서를 만드는 방법을 알아보겠습니다!
+
+### 1 - Docker 
+Docker는 작고 모듈식이며 개별적으로 격리된 IT 환경 내에서 소프트웨어 호스팅을 가능하게 하는 컨테이너 가상화 플랫폼입니다. 이 개념은 컨테이너 간에 운영 체제 리소스를 분할하고 공유함으로써 단일 호스트 운영 체제에서 여러 다양한 서비스를 호스팅할 수 있게 합니다. >[Docker 문서](https://docs.docker.com/) 
+![Docker 문서 포털 홈페이지](https://docsie-app-media.s3.amazonaws.com/image/7093/doc_GzKTESk1IUWjA77hg/oywtjgyzfpsynkqslptj "Docker 문서 포털 홈페이지") 
+Docker는 형식화된 제품 문서 포털을 갖추고 있으며 Docker 컨테이너를 다운로드, 설치 및 실행하는 데 필요한 모든 필수 정보를 제공합니다. 또한 다국어 제품 문서, API 참조 문서, 그리고 하단에 자주 묻는 질문(FAQ) 섹션을 공유합니다. 시각적 학습자를 위해 오른쪽 하단에 비디오 섹션도 있습니다.
+
+시작하기 섹션을 만들기 위해 Docsie를 예로 들어보겠습니다. Docsie에서 시작하려면 계정을 만들고, 이메일 주소를 확인하고, Docsie 워크스페이스 대시보드를 로드하고, 새 선반을 만들고, 새 북을 만들면 됩니다 - 기본 단계는 이것으로 완료됩니다! 각 섹션에 대한 헤더 제목 프레임워크를 만들고, 지시사항을 작성하고, 사진과 하이퍼링크를 추가하면 아래와 같은 구조가 완성됩니다!
+
+![Docker 문서의 헤더 구조 예시](https://docsie-app-media.s3.amazonaws.com/image/7093/doc_GzKTESk1IUWjA77hg/ohzwitemzfuhcekepxex "Docker 문서의 헤더 구조 예시") 
+
+**가장 좋은 점? Docsie가 이 모든 것을 자동으로 처리합니다!**
+
+[Docsie에서 이 작업이 어떻게 수행되는지 보려면 Docsie 빠른 시작 가이드를 읽어보세요!](https://help.docsie.io/?doc=/using-docsie/quick-start/) 
+### 2 - Stripe 
+Stripe는 Stripe 명령줄 인터페이스(CLI)를 사용하여 맞춤형 통합 및 결제 매개변수를 활성화하는 기술적 기능을 갖춘 국제 결제 처리 플랫폼입니다. 그들의 미션은 전자상거래를 간소화하는 가상 경제 인프라를 구축하여 인터넷의 GDP를 증가시키는 것입니다.
+
+[Stripe CLI에 대해 자세히 알아보기](https://stripe.com/docs/stripe-cli) 
+
+
+![코드 강조 예시가 있는 Stripe CLI 문서 페이지](https://docsie-app-media.s3.amazonaws.com/image/7093/doc_GzKTESk1IUWjA77hg/zpxindusvnjuriyzpock "코드 강조 예시가 있는 Stripe CLI 문서 페이지") 
+
+이 Stripe 페이지는 기술 제품 문서로 알려져 있습니다. CLI를 사용하여 Docker 컨테이너를 만들고(다시 만나서 반가워요!) 터미널 명령만으로 Stripe와 통신하는 방법을 설명합니다. 페이지에는 목차, 복사-붙여넣기 기능이 있는 코드 블록, 텍스트 내 하이퍼링크가 있습니다. Docsie에도 코드 블록이 있으니 사용 방법을 살펴보겠습니다.
+> >[Docsie에서 코드 블록 예시 확인하기](https://help.docsie.io/?doc=/publish-documentation-portal/plugins-extensions/add-code-highlighting/) > 예제를 따라하기 위해 이 코드를 복사하세요 - `console.log('Hello World');` Docsie 에디터에서 Docsie 북을 엽니다. 아래 GIF는 툴바에서 코드 블록 옵션을 찾는 방법을 보여주며, "Hello World!"를 출력하는 JavaScript 예제를 포함하고 있습니다. ![Docsie 북에 코드 블록을 추가하는 방법을 보여주는 애니메이션 GIF](https://docsie-app-media.s3.amazonaws.com/image/7093/doc_GzKTESk1IUWjA77hg/dvofsbntefhpqxzetglx "Docsie 북에 코드 블록을 추가하는 방법을 보여주는 애니메이션 GIF") Docsie 포털에서는 기술적 독자들의 이해를 돕기 위해 코드 강조가 적용됩니다. 사용자는 편리한 클립보드 아이콘으로 코드를 복사할 수도 있습니다! ![코드 블록 예시에 대한 Docsie 포털 실시간 렌더링](https://docsie-app-media.s3.amazonaws.com/image/7093/doc_GzKTESk1IUWjA77hg/cgnoqwpldvdycrhyzqzr "코드 블록 예시에 대한 Docsie 포털 실시간 렌더링") 
+> >[Docsie에서 코드 강조 플러그인을 적용하는 방법 알아보기]
+> (https://portals.docsie.io/docsie/docsie-documentation/publish-documentation-portal/?doc=/plugins-extensions/add-code-highlighting/) 
+
+### 3 - Apple
+어디에나 있는 Apple! 먹을 수 있는 사과가 아닙니다! Apple은 인기 있는 iPhone 스마트폰 라인에 대한 우수한 제품 문서를 제공합니다. 우리의 Apple 제품 문서 예시에는 버전 선택기, 목차, 텍스트와 헤더, 그리고 마지막으로 인라인 이미지가 있습니다.
+ ![Apple iPhone 문서 페이지](https://docsie-app-media.s3.amazonaws.com/image/7093/doc_GzKTESk1IUWjA77hg/xvuspkjrqcaxcncgqzbq "Apple iPhone 문서 페이지") 
+
+Docsie에서 버전 관리를 살펴보겠습니다! >[Docsie에서 버전 관리하는 방법에 관한 가이드 읽기!](https://help.docsie.io/?doc=/using-docsie/docsie-editor/managing-versions/) Docsie 지식 포털에서 문서를 읽을 때, 독자는 버전 선택기 플러그인을 사용하여 버전을 선택할 수 있습니다.
+ ![Docsie 포털의 버전 선택기](https://docsie-app-media.s3.amazonaws.com/image/7093/doc_GzKTESk1IUWjA77hg/vasmwlrjywxcrzbvjinl "Docsie 포털의 버전 선택기") 
+ 이를 통해 독자는 과거 제품 문서를 볼 수 있습니다 - 아직 업데이트하지 않은 뒤처진 사용자들을 위해서요! Docsie에서 새 버전을 만들려면 Docsie 에디터에서 버전 관리 탭을 사용하세요. ![Docsie 에디터의 버전 선택 메뉴](https://docsie-app-media.s3.amazonaws.com/image/7093/doc_GzKTESk1IUWjA77hg/cidsyyjlzvzipcoogjrn "Docsie 에디터의 버전 선택 메뉴") 여기서 '버전 추가 +'를 클릭하세요. ![Docsie 에디터의 버전 추가 버튼](https://docsie-app-media.s3.amazonaws.com/image/7093/doc_GzKTESk1IUWjA77hg/nvsbfjwaqyniyqlnagvl "Docsie 에디터의 버전 추가 버튼") 
+
+다음으로, 버전 번호와 버전 이름을 선택한 후 '버전 추가' 버튼을 클릭하세요. 정말 간단합니다! 새 버전 문서를 기능 변경 사항으로 업데이트하고, 고객이 최신(또는 약간 오래된) 정보를 찾을 수 있게 하세요!
+ ![Docsie 에디터의 버전 추가 컨텍스트 옵션 메뉴](https://docsie-app-media.s3.amazonaws.com/image/7093/doc_GzKTESk1IUWjA77hg/ozelvlpwguxzksamascl "Docsie 에디터의 버전 추가 컨텍스트 옵션 메뉴") 
+ ### 4 - Parse 
+ 
+ Parse는 애플리케이션 백엔드를 위한 오픈 소스 프레임워크를 제공하는 우수한 풀 스택 소프트웨어 플랫폼입니다. 간단히 말해, 개발자가 어떤 개발 프로젝트와 통합할 때 신뢰할 수 있는 미리 만들어진 코드 리소스를 제공합니다. Parse 문서 포털에는 호환성 표 형태의 훌륭한 문서 예시가 있습니다. 이는 Node.js 및 MongoDB와 같은 다양한 아키텍처와 Parse 플랫폼의 호환성을 모니터링합니다.
+ 
+ ![Parse 웹사이트의 버전 호환성 표 예시](https://docsie-app-media.s3.amazonaws.com/image/7093/doc_GzKTESk1IUWjA77hg/hkytunqwvoqlcsnwymgk "Parse 웹사이트의 버전 호환성 표 예시") 
+
+이것을 Docsie에서 만들어 보겠습니다! Docsie의 테이블 블록을 사용하여 Parse 예시와 유사한 4열 테이블을 만들 수 있습니다.
+
+![4열 옵션이 강조된 Docsie 테이블 블록 아이콘](https://docsie-app-media.s3.amazonaws.com/image/7093/doc_GzKTESk1IUWjA77hg/jwmmuikvpbcagcqtkqky "4열 옵션이 강조된 Docsie 테이블 블록 아이콘") 테이블 블록 아이콘을 선택한 다음 4열 옵션을 선택하세요. 입력하면서 Enter 키를 사용하여 열 사이를 이동합니다. 키보드에서 Ctrl + B를 사용하여 텍스트를 굵게 만듭니다. 마지막으로 기호 옵션을 사용하여 이모티콘을 추가합니다. ![Docsie 에디터에서 복제된 4열 테이블](https://docsie-app-media.s3.amazonaws.com/image/7093/doc_GzKTESk1IUWjA77hg/awevjvzwxxxmspzcsesz "Docsie 에디터에서 복제된 4열 테이블") ![Docsie 에디터의 기호 선택 메뉴](https://docsie-app-media.s3.amazonaws.com/image/7093/doc_GzKTESk1IUWjA77hg/cunoxhrnzcfkcuncyqlq "Docsie 에디터의 기호 선택 메뉴") ![Docsie 에디터의 기호 컨텍스트 메뉴용 이모티콘 및 기호 선택 테이블](https://docsie-app-media.s3.amazonaws.com/image/7093/doc_GzKTESk1IUWjA77hg/bbxeheaefvtzwkaeuavz "Docsie 에디터의 기호 컨텍스트 메뉴용 이모티콘 및 기호 선택 테이블") 
+
+[Docsie 에디터 툴바에 대해 알아보세요.](https://help.docsie.io/?doc=/using-docsie/docsie-editor/adding-media/) 
+
+이는 API 문서와 기술 소프트웨어 문서를 작성하는 쉬운 방법입니다. Node.js 웹사이트로 연결되는 하이퍼링크나 관련 사용자 가이드로 연결되는 내부 링크를 추가하여 더 발전시킬 수 있습니다. 다음 API 호환성 표를 Docsie로 제공하세요!
+ ### 5 - Flutter 
+ Flutter는 모바일, 웹, 데스크톱 및 임베디드 기기 전반에 걸쳐 사용자 인터페이스 디자인의 일관성을 추구하기 위해 Google이 만든 UI 툴킷입니다. 온라인 코드 에디터로 빠른 UI 디자인과 개발을 촉진하며, 계층화된 컨테이너 기반 아키텍처를 통해 완전한 맞춤 설정이 가능합니다. Flutter는 사용자가 플랫폼에 대해 시청하고 배울 수 있는 다양한 비디오를 호스팅합니다. 이 플랫폼은 Google이 만든 것이므로 YouTube가 우리 예시의 논리적 선택입니다! ![페이지의 Flutter YouTube 비디오 예시](https://docsie-app-media.s3.amazonaws.com/image/7093/doc_GzKTESk1IUWjA77hg/gdcgtpfnocqjnrjxmffb "페이지의 Flutter YouTube 비디오 예시") 비디오 임베드 블록을 사용하여 Docsie에서 이 디자인을 모방할 수 있습니다! ![Docsie 에디터 툴바를 사용하여 Docsie 북에 비디오 임베드 블록을 추가하는 방법](https://docsie-app-media.s3.amazonaws.com/image/7093/doc_GzKTESk1IUWjA77hg/aomjofizmdvjafyfpean "Docsie 에디터 툴바를 사용하여 Docsie 북에 비디오 임베드 블록을 추가하는 방법") Docsie 북 내에서 클릭하고 비디오 임베드 아이콘을 선택한 다음, YouTube URL을 텍스트 필드에 복사하기만 하면 됩니다. Dailymotion, Vimeo 및 기타 다양한 비디오 호스팅 웹사이트에서도 동일하게 할 수 있습니다. 이 과정을 보여주는 GIF가 있으니 직접 Docsie에 비디오를 추가해보세요!
+
+[Docsie 에디터 툴바 사용법 알아보기.](https://help.docsie.io/?doc=/using-docsie/docsie-editor/adding-media/) 
+ ### 6 - Ionic Framework 
+ Ionic Framework는 HTML, CSS, JavaScript 및 기타 웹 기술을 사용하여 성능이 좋은 데스크톱 및 모바일 애플리케이션을 구축하기 위한 오픈 소스 UI 툴킷입니다. Angular, React, Vue와 같은 인기 있는 프레임워크와 통합되며 다양한 UI 구성 요소, 네이티브 기기 기능 및 테마 지원을 제공합니다. Ionic은 사이트에 훌륭한 모바일 폰 예시를 내장하고 있습니다. iFrame 임베드를 사용하여 Docsie 북에 유사한 예시를 추가해 보겠습니다! 먼저 아래 코드를 복사하세요:
+ 
+  `<iframe loading="lazy" importance="low" src="https://ionic-docs-demo.herokuapp.com/?ionic:mode=ios"></iframe>` 다음으로 Docsie 에디터에서 코드 임베드 블록을 클릭합니다. iFrame 임베드 코드를 여기에 붙여넣고 저장을 클릭하여 계속합니다. 아래에 이 과정을 보여주는 GIF가 있습니다.
+  ![Docsie 에디터 툴바를 사용하여 Docsie 북에 iFrame 통합을 임베드하는 방법](https://docsie-app-media.s3.amazonaws.com/image/7093/doc_GzKTESk1IUWjA77hg/vrigdonkwnbamjjpkfwu "Docsie 에디터 툴바를 사용하여 Docsie 북에 iFrame 통합을 임베드하는 방법") ![Docsie 포털의 실시간 iFrame 예시](https://docsie-app-media.s3.amazonaws.com/image/7093/doc_GzKTESk1IUWjA77hg/gumyqdlpsdckgiosmlje "Docsie 포털의 실시간 iFrame 예시") 
+
+>[Docsie에서 iFrame을 사용한 공식 통합 목록 보기!](https://help.docsie.io/?doc=/docsie-integrations/content-embeds/) 
+
+### 7 - DigitalOcean 
+DigitalOcean은 클라이언트가 서버, 가상 머신, 데이터베이스 등을 호스팅할 수 있게 하는 클라우드 컴퓨팅 서비스 플랫폼입니다. 확장 가능한 컨테이너 애플리케이션을 위한 전용 Kubernetes 서비스를 제공하며, 웹 호스팅, 모바일 앱, 빅 데이터 레이크 및 VPN 서비스를 위한 관리형 솔루션을 제공합니다. DigitalOcean은 문서에 사용자 피드백을 수집하고 콘텐츠를 개선하기 위한 피드백 기능을 제공합니다. Docsie에서 이를 어떻게 구현하는지 살펴보겠습니다!
+>![피드백 수집 기능 예시가 있는 DigitalOcean 문서 페이지](https://docsie-app-media.s3.amazonaws.com/image/7093/doc_GzKTESk1IUWjA77hg/qtyaynqicnsfojxakxtl "피드백 수집 기능 예시가 있는 DigitalOcean 문서 페이지") 
+
+Vocally는 Docsie에서 피드백을 수집하는 기능입니다. 사용자가 별점, 텍스트 피드백, 심지어 비디오 녹화까지 남길 수 있게 해줍니다 - 정말 좋죠! ![Docsie 워크스페이스 메인 메뉴에서 Docsie Vocally에 접근하는 방법](https://docsie-app-media.s3.amazonaws.com/image/7093/doc_GzKTESk1IUWjA77hg/jobysqxbnhuglnpjbkoe "Docsie 워크스페이스 메인 메뉴에서 Docsie Vocally에 접근하는 방법") 
+
+여기서 제출된 Docsie Vocally 피드백에 접근할 수 있습니다. 사용자는 1-5점 별점과 짧은 텍스트 설명을 남길 수 있습니다. 일부 사용자는 화면 녹화를 남겨 정확한 문제를 파악하는 데 도움을 줄 수 있습니다!
+![Docsie Vocally 대시보드에서 사용자 피드백 및 비디오 재생의 실시간 예시](https://docsie-app-media.s3.amazonaws.com/image/7093/doc_GzKTESk1IUWjA77hg/ktpgmveuafsztjjvigjx "Docsie Vocally 대시보드에서 사용자 피드백 및 비디오 재생의 실시간 예시") 모든 Docsie 고객은 Vocally에 접근할 수 있으며, 이는 문서의 강점과 약점을 드러내는 데 귀중합니다. 처음부터 모든 것을 완벽하게 할 수는 없지만, 작성자가 Docsie Vocally를 사용하면 다음 반복에서 더 나은 결과를 얻을 수 있습니다!
+
+### 8 - Slack 
+>Slack은 비즈니스 세계의 왓츠앱이라고 할 수 있습니다. 인기 있는 비즈니스 인스턴트 메시징(IM) 플랫폼은 음성 및 비디오 통화, 이미지 및 GIF 공유, 댓글 응답 트리 등을 제공하여 비즈니스 커뮤니케이션을 구성하고 단순화합니다. Slack은 문서 포털 전체에 중요한 정보를 강조하고 관련 기능을 알려주는 툴팁을 제공합니다. 이를 Docsie에서 복제해 보겠습니다!
+>![Slack 문서 포털의 콜아웃 블록 예시](https://docsie-app-media.s3.amazonaws.com/image/7093/doc_GzKTESk1IUWjA77hg/rbxmfuwtimoecutilfjs "Slack 문서 포털의 콜아웃 블록 예시") 
+
+Docsie의 인용 블록을 사용하여 위와 같은 툴팁을 만들 수 있습니다.
+
+[다양한 Docsie 에디터 버튼 사용법 알아보기.](https://help.docsie.io/?doc=/using-docsie/docsie-editor/adding-media/) 
+
+Docsie 에디터 툴바로 이동하여 인용 블록 아이콘을 선택하기만 하면 됩니다. 여기서 정보, 경고 또는 질문 블록 유형을 선택할 수 있습니다. 아래 애니메이션 GIF에서 이를 보여드립니다.
+
+![Docsie 에디터 툴바를 사용하여 Docsie 북에 콜아웃 또는 인용 블록을 추가하는 방법](https://docsie-app-media.s3.amazonaws.com/image/7093/doc_GzKTESk1IUWjA77hg/cientdcamlnfozadvsgw "Docsie 에디터 툴바를 사용하여 Docsie 북에 콜아웃 또는 인용 블록을 추가하는 방법") 
+
+실시간 Docsie 포털에서 정보, 경고 및 질문 인용 블록을 사용한 몇 가지 변형을 소개합니다. 또한 질문 및 경고 블록을 사용하여 질문-답변 문장을 만들 수 있습니다. 다음 Docsie 북에서 인용 블록을 사용하여 창의력을 발휘해 보세요!
+
+![Docsie 포털의 세 가지 콜아웃 또는 인용 블록 유형의 실시간 예시](https://docsie-app-media.s3.amazonaws.com/image/7093/doc_GzKTESk1IUWjA77hg/wrztunbzpesljcwarenw "Docsie 포털의 세 가지 콜아웃 또는 인용 블록 유형의 실시간 예시") 
+
+### 9 - Rust 
+Rust는 속도를 염두에 두고 설계된 프로그래밍 언어입니다. 세그먼트 오류를 방지하고 프로세서 스레드 안전성을 보장합니다. Rust는 REST-API 프레임워크를 만들고, PostgreSQL과 같은 데이터베이스 솔루션과 통신하는 등 다양한 용도로 사용할 수 있습니다. Rust 표준 라이브러리에는 API 문서 탐색을 간소화하는 인라인 코드 스니펫이 포함되어 있습니다. Docsie에서 이를 구현해 보겠습니다! ![마크업 코드가 있는 Rust 포털의 예시 문서](https://docsie-app-media.s3.amazonaws.com/image/7093/doc_GzKTESk1IUWjA77hg/hpcrwxzsnkqkojtoemru "마크업 코드가 있는 Rust 포털의 예시 문서") 인라인 코드 스니펫에는 `Vec<T>`와 `Option<T>`가 포함됩니다. Docsie에서는 마크업 버튼을 사용하여 이를 구현할 수 있습니다. ![Docsie 에디터 툴바의 마크업 토글 아이콘](https://docsie-app-media.s3.amazonaws.com/image/7093/doc_GzKTESk1IUWjA77hg/fgijgjarucvswdawsewg "Docsie 에디터 툴바의 마크업 토글 아이콘") 
+
+텍스트를 코드로 마크업하려면 텍스트를 클릭하고 드래그하여 강조 표시한 다음 마크업 버튼을 클릭하기만 하면 됩니다. 아래에 이 과정을 보여주는 GIF가 있습니다.
+ ![Docsie 에디터 툴바를 사용하여 Docsie 북의 텍스트에 마크업을 적용하는 방법을 보여주는 애니메이션 GIF](https://docsie-app-media.s3.amazonaws.com/image/7093/doc_GzKTESk1IUWjA77hg/diaerrmtfvogmuvqfylo "Docsie 에디터 툴바를 사용하여 Docsie 북의 텍스트에 마크업을 적용하는 방법을 보여주는 애니메이션 GIF") 마크업 텍스트에는 하이퍼링크도 포함되어 있습니다. 이 링크는 코드 스니펫이 하는 일을 설명하는 용어 사전으로 리디렉션해야 합니다.
+ 
+ [Docsie에서 하이퍼링크를 만드는 방법에 대한 속성 과정을 확인하세요.](https://help.docsie.io/?doc=/using-docsie/docsie-editor/extended-formatting-options/) 
+
+### 10 - Yoast 
+Yoast는 기업이 WordPress 사이트를 최적화하고 SEO 모범 사례에 대한 지식을 향상시키는 데 도움을 주기 위해 설계된 검색 엔진 최적화(SEO) 플랫폼입니다. Yoast SEO 플러그인은 고객 참여를 유도하기 위해 Google 검색 엔진 결과 페이지(SERP)에서 더 나은 성능을 위해 웹사이트를 최적화합니다. Yoast는 문서 포털에서 목록 헤더를 사용한 단계별 가이드를 제공합니다. Docsie에서 목록 헤더로 이를 복제할 수 있습니다!
+![Yoast 문서 포털의 단계 헤더 예시](https://docsie-app-media.s3.amazonaws.com/image/7093/doc_GzKTESk1IUWjA77hg/okmupunyophvijddimng "Yoast 문서 포털의 단계 헤더 예시") 
+
+Docsie에서 이를 구현하려면 먼저 북을 만들고 Docsie 에디터를 엽니다. 다음으로 텍스트 필드를 클릭하고 Docsie 에디터 툴바에서 목록 헤더 옵션을 선택합니다. 아래에 이 과정을 보여주는 GIF가 있습니다.
+
+![Docsie 에디터 툴바를 사용하여 Docsie 북에 단계 헤더를 추가하는 방법을 보여주는 애니메이션 GIF](https://docsie-app-media.s3.amazonaws.com/image/7093/doc_GzKTESk1IUWjA77hg/jyzdfkehfmaxtlegporx "Docsie 에디터 툴바를 사용하여 Docsie 북에 단계 헤더를 추가하는 방법을 보여주는 애니메이션 GIF") 
+
+목록 헤더는 HTML 사양의 일부입니다. Docsie에서 목록 헤더는 문서 내에서 직접 링크를 만들 수 있어 좋습니다. 이는 사용자가 링크를 클릭하면 목록 헤더로 바로 이동한다는 의미입니다(스크롤하거나 스와이프할 필요 없이!)
+
+![Docsie 에디터 툴바를 사용하여 Docsie 북에 비디오 임베드 블록을 추가하는 방법](https://docsie-app-media.s3.amazonaws.com/image/7093/doc_GzKTESk1IUWjA77hg/lradwltxuqolxfmzxxwr "Docsie 에디터 툴바를 사용하여 Docsie 북에 비디오 임베드 블록을 추가하는 방법") 
+
+[Docsie 에디터 기능에 대해 자세히 알아보세요.](https://help.docsie.io/?doc=/using-docsie/docsie-editor/understanding-docsie-editor/) 
+
+## 상세한 제품 문서 작성 단계  
+
+![상세한 제품 문서 작성 단계](https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_pok02LkbgMMrVzIIg/steps_19ee21e0-07f8-2750-290a-4572b8d87d0f.png)
+
+사용자가 제품의 기능을 효과적으로 활용할 수 있도록 상세한 제품 문서를 작성하는 것이 필수적입니다. 다음 단계에 따라 포괄적이고 유익한 문서를 작성하세요:
+
+**1. 대상 고객 파악하기:** 대상 고객을 식별하고 그들의 요구사항, 지식 수준, 어려움을 이해하는 것부터 시작하세요. 특정 요구사항에 맞게 문서를 조정하고 접근하기 쉽고 이해하기 쉽게 만드세요.
+
+**2. 문서화 범위 정의하기:** 다루어야 할 기능, 기능성, 사용 사례를 개략적으로 설명하여 문서의 범위를 명확히 하세요. 복잡한 주제를 관리하기 쉬운 섹션으로 나누어 명확성과 일관성을 보장하세요.
+
+**3. 정보 수집하기**: 사용자 매뉴얼, 기술 사양, FAQ, 지원 리소스 등 제품에 관한 모든 관련 정보를 수집하세요. 통찰력과 세부 사항을 얻기 위해 주제 전문가와 제품 개발자에게 문의하세요.
+
+**4. 콘텐츠 구성하기**: 쉬운 탐색과 정보 검색을 용이하게 하기 위해 논리적으로 문서를 구성하세요. 문서 계층 구조를 개략적으로 설명하고 사용자가 콘텐츠를 원활하게 탐색할 수 있도록 목차 또는 탐색 메뉴를 만드세요.
+
+**5. 명확하고 간결한 콘텐츠 작성하기**: 개념, 기능, 절차를 설명하기 위해 명확하고 간결한 언어를 사용하세요. 기술적인 전문 용어를 피하고 이해를 돕기 위한 예시, 삽화, 스크린샷을 제공하세요.
+
+**6. 단계별 안내하기:** 복잡한 절차를 단계별 지침으로 나누어 사용자가 작업과 과정을 효과적으로 수행할 수 있도록 안내하세요. 각 단계를 명확하게 설명하기 위해 번호가 매겨진 목록이나 글머리 기호를 사용하고 필요한 경우 팁, 경고, 문제 해결 조언을 포함하세요.
+    
+**7. 멀티미디어 요소 통합하기:** 이미지, 비디오, 다이어그램, 대화형 튜토리얼과 같은 멀티미디어 요소로 문서를 강화하세요. 시각적 보조 자료는 사용자가 개념과 절차를 더 효과적으로 시각화하고 전반적인 이해도를 높이는 데 도움이 됩니다.
+
+**8. 일관성 유지하기:** 혼란을 피하기 위해 문서 전체에서 용어, 서식, 스타일의 일관성을 유지하세요. 정확성과 관련성을 보장하기 위해 콘텐츠를 정기적으로 검토하고 수정하며, 제품의 변경 사항이나 업데이트를 반영하도록 문서를 신속하게 업데이트하세요.
+
+**9. 문서 테스트하기:** 문서를 최종 확정하기 전에 대표 사용자와 함께 사용성 테스트를 실시하여 사용성 문제나 개선 영역을 식별하세요. 피드백을 수집하고 문서의 사용성과 효과성을 최적화하기 위해 필요한 수정을 하세요.
+      
+
+## Docsie의 이러한 기능을 활용하세요!
+
+이 10가지 문서화 사례는 사용자 가이드가 얼마나 유용할 수 있는지 보여줍니다. 다음에 사용자 가이드를 만들 때는 이러한 Docsie 팁과 요령을 활용하세요! 선택한 예시들은 훌륭하지만, 여러분의 문서가 더 좋을 것이라고 확신합니다!
+
+Docsie는 기업이 웹 기반 FAQ, 제품 문서, 사용자 가이드, 도움말 문서 및 사용자 매뉴얼을 만드는 데 사용하는 엔드투엔드 문서 관리 플랫폼입니다. 이 플랫폼은 고객 중심 협업, 광범위한 임베딩, 맞춤형 번역, 강력한 게시 기능을 제공합니다.
+
+오늘 [온보딩 시작](https://app.docsie.io/onboarding/)하고, Docsie로 유익한 디지털 문서를 제공하세요!
+
+**자주 묻는 질문**
+
+ **1. 기업들이 효과적인 제품 문서를 작성할 때 직면하는 가장 두드러진 어려움은 무엇인가요?**
+ **답변**: 기업들은 종종 다음과 같은 어려움에 직면합니다:
+ - 문서 스타일과 형식의 일관성 유지
+ - 진화하는 제품 기능에 맞춰 문서 업데이트 유지
+ - 다양한 사용자 요구와 기술 수준 해결
+ - 다양한 기기와 플랫폼에서 문서 접근성 보장
+
+**2. 전통적인 방법에 비해 전용 문서화 플랫폼을 사용하는 이점은 무엇인가요?**
+ **답변**: 중앙화된 저장소, 협업 편집, 버전 관리, 분석, 원활한 통합은 생산성과 효율성을 향상시킵니다. 이는 전통적인 방법보다 제품 문서화를 위한 필수적인 지원 시스템이 됩니다.
+    
+**3. 기업들은 제품 문서가 관련성을 유지하고 최신 상태를 유지하도록 어떻게 보장할 수 있나요?**    
+**답변**: 제품 문서가 관련성을 유지하고 최신 상태를 유지하기 위해, 기업들은 정기적인 검토와 업데이트를 위한 프로세스를 수립해야 합니다. 여기에는 제품 변경 사항과 업데이트 모니터링, 사용자 피드백 수집, 새로운 정보나 기능을 신속하게 문서에 통합하는 것이 포함됩니다.
+    
+**4. 기업들은 제품 문서가 모든 사용자에게 접근 가능하고 포용적으로 유지되도록 어떻게 보장할 수 있나요?** 
+**답변**: 접근성과 포용성을 보장하기 위해, 기업들은 장애를 가진 사용자들에게 문서 내용이 인식 가능하고, 작동 가능하며, 이해 가능하고, 견고하도록 접근성 지침(WCAG와 같은)을 따라야 합니다. 여기에는 이미지에 대한 대체 텍스트 제공, 읽기 쉬운 글꼴과 색상 대비 사용, 콘텐츠 소비를 위한 다양한 형식(HTML, PDF, 일반 텍스트 등) 제공이 포함됩니다.

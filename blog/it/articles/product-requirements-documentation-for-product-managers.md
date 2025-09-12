@@ -1,0 +1,143 @@
+![](https://cdn.docsie.io/workspace_8D5W1pxgb7Jq3oZO7/doc_vQfR1TFvrUMWGTXFc/file_RQ70RIJrO72fVCVG6/boo_oSV1aEcodrUrtwpg5/1ae9ce23-353e-cb99-b922-ea4f722c7755image.png)
+
+Prima di sviluppare un prodotto, passare alla fase di produzione e lanciarlo sul mercato, è necessario un documento che ne delinei le caratteristiche, i vantaggi e gli scopi. Il Product Requirements Document (PRD) è proprio questo: un documento o manuale che raccoglie tutti i requisiti di un prodotto. La raccolta dei requisiti viene solitamente completata durante l'incontro con gli stakeholder.
+
+In questa fase dello sviluppo del progetto si raccoglie un set completo di documenti, compresi i PRD. Per comprendere a fondo cosa sia un PRD, dobbiamo porci alcune domande di base: cos'è esattamente? Qual è lo scopo di crearne uno? Quali vantaggi offre? Questa pagina fornisce informazioni sul PRD e chiarisce ogni dubbio o domanda al riguardo.
+
+## Che cos'è un Product Requirements Document (PRD)?
+
+**Definizione semplice:** Un **Product Requirements Document**, o **PRD**, è un documento che descrive i requisiti per un determinato tipo di prodotto. Il PRD deve includere l'obiettivo del prodotto, le sue caratteristiche, il comportamento, il funzionamento e tutto ciò che serve per lanciarlo con successo sul mercato. Il product manager crea un PRD per comunicare il bisogno, il concetto di prodotto che lo soddisfa, come verrà costruito, chi saranno gli utenti e i benefici che otterranno. La gestione di un PRD è una responsabilità fondamentale che deve essere svolta correttamente.
+
+Spesso si confondono BRD e PRD. **Business Requirements Document (BRD)** è un documento diverso. Lo scopo del BRD è evitare di sprecare tempo e risorse su elementi che non contribuiscono al raggiungimento degli obiettivi aziendali. I BRD sono solitamente preparati da un business analyst, un dirigente, un marketing manager o talvolta dallo stesso product manager.
+
+## Parti e componenti del PRD
+
+![](https://cdn.docsie.io/workspace_8D5W1pxgb7Jq3oZO7/doc_vQfR1TFvrUMWGTXFc/file_LkoNhFQi5eseP6KRF/boo_oSV1aEcodrUrtwpg5/66b26911-909b-1255-2f50-82bf550c755bimage.png)
+
+In questa sezione dell'articolo, vedremo come creare un Product Requirements Document con un esempio pratico! Anche se il formato può variare da organizzazione a organizzazione, esamineremo la struttura fondamentale di un PRD. Il documento comprenderà tutto ciò che deve essere considerato prima del rilascio del prodotto. Fornisce una guida durante il processo di rilascio e definisce l'implementazione del prodotto, che quasi sempre è un software. Ecco gli aspetti più importanti da ricordare quando si scrivono i requisiti di prodotto e si struttura un PRD.
+
+Il primo elemento da includere è lo scopo del prodotto. Ci sono tre aspetti cruciali: il problema che il prodotto risolverà, le persone che lo utilizzeranno e il motivo per cui il prodotto è importante.
+
+Il secondo aspetto fondamentale è stabilire obiettivi realistici per il prodotto. Questa sezione spiega perché un determinato prodotto verrà lanciato e quali risultati ci si può aspettare.
+
+Dopo aver definito gli obiettivi, il prossimo elemento da trattare sono le funzionalità del prodotto. Ogni funzionalità deve essere descritta in modo chiaro, includendo solo le informazioni necessarie per comprenderla.
+
+Può essere utile includere un design virtuale del prodotto per mostrare come apparirà nella sua versione finale. Questo aiuta a comprendere l'ingegneria dietro il prodotto e come le funzionalità verranno realizzate.
+
+Il prossimo elemento da aggiungere è il requisito di sistema e ambiente. Si riferisce al tipo di sistema o ambiente che un utente dovrà avere per utilizzare il prodotto. Questi requisiti possono includere il tipo di browser, il sistema operativo, la quantità di memoria e spazio disco, i dettagli di elaborazione e così via.
+
+## L'importanza del Product Requirements Document
+
+![](https://cdn.docsie.io/workspace_8D5W1pxgb7Jq3oZO7/doc_vQfR1TFvrUMWGTXFc/file_PZtuQYksgWdwZmj67/boo_oSV1aEcodrUrtwpg5/370eeff9-e3df-ee1f-6ca3-74110568ff4cimage.png)
+
+Il PRD è fondamentale nel marketing di prodotto perché stabilisce un equilibrio tra la visione e lo scopo del prodotto. È essenziale distinguere tra le prospettive tecniche e commerciali. L'elemento più importante che un PRD deve menzionare è l'uso o la funzione prevista del prodotto.
+
+Il PRD risponde a domande come: cosa cambierà questo prodotto nella vita delle persone? Quale problema elimina completamente? Perché le persone dovrebbero usare questo prodotto?
+
+Oltre alle caratteristiche del prodotto, il secondo tema essenziale trattato dal PRD è il design. Deve comunicare chiaramente il concetto del prodotto, come dovrebbe essere utilizzato e chi saranno gli utenti finali.
+
+I PRD vengono creati principalmente per progetti di sviluppo software.
+
+I Product Requirements Document servono anche a stabilire i criteri di rilascio, oggi spesso chiamati Minimum Viable Product (MVP).
+
+Un PRD è scritto dal punto di vista del cliente o dell'utente. Delinea la motivazione per cui il prodotto viene costruito, compresi i motivi per cui un utente dovrebbe utilizzarlo e quale problema risolverà nella sua vita quotidiana.
+
+## Procedure per scrivere un Product Requirements Document
+
+[Docsie](https://www.docsie.io/) offre strumenti potenti che aiutano i product manager a scrivere PRD in modo rapido ed efficiente.
+
+Un PRD può essere creato seguendo alcuni semplici passaggi. Ecco i cinque fattori da considerare per scrivere un documento efficace:
+
+### 1. Inizia accedendo al tuo workspace in Docsie
+
+![](https://cdn.docsie.io/workspace_8D5W1pxgb7Jq3oZO7/doc_vQfR1TFvrUMWGTXFc/file_nJeL0kjIolsnrydQt/boo_oSV1aEcodrUrtwpg5/60c017d7-b080-0400-ea03-b3b0a63a74a0image.png)
+
+Nel tuo scaffale, crea un nuovo documento cliccando su "Aggiungi contenuto" e "Nuovo documento"
+
+![](https://cdn.docsie.io/workspace_8D5W1pxgb7Jq3oZO7/doc_vQfR1TFvrUMWGTXFc/file_lGytRmz5XZl8vez6J/boo_oSV1aEcodrUrtwpg5/87db9521-58cb-536f-accb-2e10eb8d8727image.png)
+
+Nota: Aggiungendo contenuto, creerai un "Nuovo documento" che ti permetterà di scrivere il tuo primo Product Requirement Documentation.
+
+### 2. Nel nuovo documento, assegna un titolo e premi "Aggiungi libro"
+
+![](https://cdn.docsie.io/workspace_8D5W1pxgb7Jq3oZO7/doc_vQfR1TFvrUMWGTXFc/file_WmG79H39qSNCPtMyh/boo_oSV1aEcodrUrtwpg5/4d20380e-fdde-f64a-e1f2-a62f0f4c47aeimage.png)
+
+Nota: Aggiungendo un libro stai essenzialmente creando il layout per la tua prima documentazione PRD.
+
+Clicca sul tuo libro e iniziamo a scrivere il nostro PRD!
+
+![](https://cdn.docsie.io/workspace_8D5W1pxgb7Jq3oZO7/doc_vQfR1TFvrUMWGTXFc/file_KvBhkH8gJlLFjAVEW/boo_oSV1aEcodrUrtwpg5/360a80d8-ed60-d276-215d-53a122a37ca5image.png)
+
+### 3. Ora che la documentazione è aperta, clicca sul pulsante "Modifica documentazione" e iniziamo a scrivere il nostro modello PRD!
+
+![](https://cdn.docsie.io/workspace_8D5W1pxgb7Jq3oZO7/doc_vQfR1TFvrUMWGTXFc/file_IfiOVg7e3YWOCWgbm/boo_oSV1aEcodrUrtwpg5/065470cf-0607-8a76-6ab7-9d4c37b094d8image.png)
+
+### 4. Nell'editor inizia a scrivere una definizione del prodotto, in particolare il suo caso d'uso e la sua funzionalità
+
+**In Docsie l'editor mostra tutti gli strumenti che possiamo utilizzare per formattare e creare la nostra documentazione.**
+
+![](https://cdn.docsie.io/workspace_8D5W1pxgb7Jq3oZO7/doc_vQfR1TFvrUMWGTXFc/file_wdyfSyq5J2CFSy98H/boo_oSV1aEcodrUrtwpg5/46fdb3f2-016d-097e-31e4-24bb5bd59aceimage.png)
+
+Nell'editor inizia a scrivere una definizione del prodotto, specificando il suo caso d'uso e la sua funzionalità.
+
+Puoi facilmente aggiungere immagini e vari componenti alla tua documentazione PRD in Docsie, ma assicurati che le descrizioni delle caratteristiche e della funzionalità del tuo prodotto siano chiare e decisive.
+
+![](https://cdn.docsie.io/workspace_8D5W1pxgb7Jq3oZO7/doc_vQfR1TFvrUMWGTXFc/file_7gIr7UykICGaXwF6N/boo_oSV1aEcodrUrtwpg5/e1cd1f71-12d5-4556-9fb7-2411131d7e33image.png)
+
+### 5. Crea un elenco puntato degli obiettivi che saranno raggiunti grazie al lancio del prodotto
+
+![](https://cdn.docsie.io/workspace_8D5W1pxgb7Jq3oZO7/doc_vQfR1TFvrUMWGTXFc/file_6TLkJWnFRlZjrwVRw/boo_oSV1aEcodrUrtwpg5/2c7601e8-000b-edbe-2427-cf946baf2e92image.png)
+
+### 6. Stabilisci obiettivi chiari e tempistiche creando una tabella in Docsie
+
+Scrivi gli obiettivi di sviluppo del prodotto e quando intendi realizzarli in base alla ricerca, quindi etichettali nelle tabelle facili da usare di Docsie.
+
+![](https://cdn.docsie.io/workspace_8D5W1pxgb7Jq3oZO7/doc_vQfR1TFvrUMWGTXFc/file_A7XlgDeaLvqWco7zw/boo_oSV1aEcodrUrtwpg5/498e9630-c9c6-4d1e-ba89-15d181eabe2aimage.png)
+
+### 7. Ora che il tuo modello PRD è completo, ricorda di compilarlo e salvare tutto il tuo lavoro
+
+![](https://cdn.docsie.io/workspace_8D5W1pxgb7Jq3oZO7/doc_vQfR1TFvrUMWGTXFc/file_6I6ty0aFoj9KrTkJ2/boo_oSV1aEcodrUrtwpg5/62b14965-5cdb-94f9-605b-8378d4cf9cccimage.png)
+
+### 8. È ora di pubblicare il tuo lavoro, puoi farlo sul web interattivo di Docsie o incorporarlo nel tuo sito. In questo esempio, lo pubblicheremo sul portale web interattivo di Docsie
+
+![](https://cdn.docsie.io/workspace_8D5W1pxgb7Jq3oZO7/doc_vQfR1TFvrUMWGTXFc/file_VWlyA4KZck0BMckjJ/boo_oSV1aEcodrUrtwpg5/29e81a70-945f-44b0-7dc2-07288e4dd26aimage.png)
+
+### 9. Assicurati di pubblicare questa documentazione e proteggerla con password in modo che gli stakeholder possano esaminarla in modo sicuro
+
+Per proteggere il nostro libro con password, torniamo al workspace, clicchiamo sui tre puntini e poi su "Proprietà".
+
+![](https://cdn.docsie.io/workspace_8D5W1pxgb7Jq3oZO7/doc_vQfR1TFvrUMWGTXFc/file_IJzwWjokBsl54SLrw/boo_oSV1aEcodrUrtwpg5/28ee8e92-108d-3359-25b1-57d204d0108cimage.png)
+
+Ora clicchiamo su "Altre opzioni"
+
+![](https://cdn.docsie.io/workspace_8D5W1pxgb7Jq3oZO7/doc_vQfR1TFvrUMWGTXFc/file_buI7LmESGCTFmyerQ/boo_oSV1aEcodrUrtwpg5/c013a6ff-fa0c-a5b3-42c9-eea02ee8299fimage.png)
+
+Quindi abilitiamo la password e aggiorniamo il nostro libro.
+
+![](https://cdn.docsie.io/workspace_8D5W1pxgb7Jq3oZO7/doc_vQfR1TFvrUMWGTXFc/file_sg15rOoDxw8vNqQpN/boo_oSV1aEcodrUrtwpg5/1c2dde6c-c6e6-9fce-12d5-e1c43b4c09a0image.png)
+
+Ora siamo pronti a proteggere il nostro modello PRD con la password: PRD1. E poiché la nostra documentazione è stata pubblicata nel passaggio 8, tutto ciò che dobbiamo fare ora è cliccare sul link che ci porta al portale online.
+
+### 10. Visualizza il tuo documento modello PRD
+
+Poiché abbiamo protetto la nostra documentazione con password, ovviamente dovremo inserire la password per visualizzare il nostro modello PRD.
+
+![](https://cdn.docsie.io/workspace_8D5W1pxgb7Jq3oZO7/doc_vQfR1TFvrUMWGTXFc/file_3PYkubCru3Qjs93wA/boo_oSV1aEcodrUrtwpg5/e22eaa59-dfd3-557c-9a9c-b14cca02c69eimage.png)
+
+Una volta inserita la password, possiamo visualizzare il nostro modello PRD.
+
+![](https://cdn.docsie.io/workspace_8D5W1pxgb7Jq3oZO7/doc_vQfR1TFvrUMWGTXFc/file_l21bJALIlVY6bj5Wv/boo_oSV1aEcodrUrtwpg5/f01e08ac-48c8-f7cf-afe1-e78eec7d33edSnag_9cd88db.png)
+
+Fatto! Appare ordinato e pulito, ed è un modo perfetto per creare il tuo PRD.
+
+## Definire l'ambito
+
+Quando si sviluppa e si lancia un prodotto, in particolare un software, il Product Requirements Document delinea i requisiti che devono essere soddisfatti per il successo del prodotto. Viene creato da un product manager per tracciare il percorso per l'introduzione di un prodotto specifico sul mercato. Infine, viene approvato dopo la distribuzione di un design preliminare agli stakeholder e completato in seguito alle loro valutazioni.
+
+## Considerazioni finali
+
+![](https://cdn.docsie.io/workspace_8D5W1pxgb7Jq3oZO7/doc_vQfR1TFvrUMWGTXFc/file_FByzc4B4xuYYzsI0n/boo_oSV1aEcodrUrtwpg5/e9a61633-228c-d8ca-b66d-5adf268849ebimage.png)
+
+Sei interessato a saperne di più su come Docsie può aiutarti a creare, gestire e mantenere la documentazione dei tuoi prodotti?
+
+[Inizia la tua prova gratuita oggi e scopri come Docsie può rendere la tua vita da product manager molto più semplice.](https://www.docsie.io/)

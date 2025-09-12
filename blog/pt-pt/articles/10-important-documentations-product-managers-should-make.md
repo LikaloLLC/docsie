@@ -1,0 +1,153 @@
+# A comunicação escrita: um método mais coeso para o intercâmbio de informações
+
+A comunicação escrita é, sem dúvida, um método mais coeso para trocar informações sobre um produto de software que toda a equipa deve conhecer. É por isso que os gestores de produto dedicam grande parte do seu tempo a atualizar documentação para qualquer trabalho relacionado com software.
+
+É amplamente aceite em todas as indústrias que produzir documentação variada para diversos procedimentos ajuda a manter todo o processo de desenvolvimento estruturado, evitando dificuldades imprevistas causadas por falhas de comunicação.
+
+Vamos analisar alguns dos benefícios da documentação para gestores de produto, para compreender melhor a sua verdadeira importância.
+
+## Qual a importância da documentação para gestores de produto?
+
+![Importância da documentação para gestores de produto](https://cdn.docsie.io/workspace_8D5W1pxgb7Jq3oZO7/doc_vQfR1TFvrUMWGTXFc/file_XYQ5ntfsPFkJhvxSM/boo_tt3aeZp07xsCA9YkY/ddbbfc33-4cf1-a58f-090a-6b645b5f4034firmbee_com_gcsNOsPEXfs_unsplash.jpg)
+
+### Para Desenvolver uma Visão Precisa do Produto
+
+A documentação ajuda os gestores de produto a identificar as respostas para todos os "porquês" que surgem em iniciativas centradas no produto ou serviço principal. Registar tudo por escrito ajuda os gestores de produto a tomar decisões críticas e a obter respostas para questões como para quem é o produto criado e por que razão a aplicação ou produto precisa de ser desenvolvido desde o início. Isto evita qualquer possibilidade de mal-entendidos ou erros.
+
+### Um Apoio Significativo no Processo de Planeamento
+
+Não basta assumir que o seu produto é a melhor solução para um problema; é necessário ter uma estratégia para que seja de facto a melhor solução. A preparação é essencial, antes de qualquer outra coisa. Ao documentar claramente a sua visão através da criação de histórias, sprints e objetivos, os gestores permitem que toda a equipa de desenvolvimento produza software alinhado com as necessidades dos utilizadores.
+
+### Suporta a Execução Atempada
+
+Os planos tornam-se ineficazes se não forem executados a tempo e da forma correta. Para transformar uma ideia de aplicação numa aplicação real e funcional, um gestor de produto utiliza documentação e comunicação escrita com designers, programadores e outros stakeholders para orientá-los na direção certa e executar os planos bem articulados que foram desenvolvidos.
+
+### As Equipas São Responsabilizadas
+
+Ao manter documentação completa de todo o trabalho associado a um determinado produto, os gestores de produto podem aceder a informações detalhadas sobre o que os membros da equipa estão a fazer e responsabilizá-los pela sua parte nas tarefas. Manter registos detalhados de tudo ajuda a manter as coisas simples e diretas.
+
+### As Necessidades dos Clientes São Atendidas
+
+Os gestores de produto podem facilmente identificar quais as funcionalidades a incluir na aplicação e que tarefas cada funcionalidade deve cumprir, documentando tudo desde a ideia da aplicação até à fase de planeamento. Posteriormente, podem comunicar esta avaliação à equipa de forma precisa e compreensível, garantindo que o produto final é exatamente o que os clientes desejam.
+
+**Criar documentação é um aspeto fundamental da gestão de produto. A seguir apresenta-se uma lista de 10 documentações essenciais com que os gestores de produto trabalham para maximizar a produtividade da sua equipa e projetos.**
+
+1. Documentação relativa à análise competitiva
+2. Documentação da Estratégia e Visão do Produto
+3. Documentação de Requisitos do Produto (PRDs)
+4. OKRs, indicadores-chave de desempenho e métricas de sucesso
+5. Documentação de Roadmaps
+6. Documentação relativa a designs e protótipos
+7. Documentação da jornada do utilizador e histórias
+8. Documentação das notas de lançamento e âmbito
+9. Guias Internos e Perguntas Frequentes
+10. Guias de Utilizador e Documentação de Produto para o Cliente
+
+### Documentação relativa à análise competitiva
+
+A análise competitiva é uma parte importante da pesquisa de mercado que permite investigar a vantagem competitiva do seu produto face à concorrência que produz o mesmo produto ou similar.
+
+A análise competitiva inclui a investigação dos produtos e serviços oferecidos pelos concorrentes, bem como a sua quota de mercado, pontos fortes e fracos. A documentação de análise competitiva, que inclui todos os fatores mencionados, é criada e enviada a toda a equipa de desenvolvimento para revisão. Um gestor de produto só tomará uma decisão final sobre o design da sua aplicação ou produto após uma pesquisa exaustiva sobre a concorrência.
+
+Segue-se um exemplo de como seria uma tabela de concorrentes na documentação de análise competitiva:
+
+* O nome da empresa (o concorrente)
+* O endereço do website do concorrente
+* O número de utilizadores (para estimar a eficácia dos seus produtos e serviços)
+* O tempo que um concorrente está no mercado
+* Especificidades e áreas de especialização dos concorrentes
+* O custo de um serviço ou produto
+* Notas sobre vários tópicos
+
+Como os gestores de produto realizam vários tipos de análise, o conteúdo do documento pode variar significativamente. Alguns dos tipos mais conhecidos são: Análise de Capacidades, Análise do Panorama Competitivo, Análise de Diferenciação Competitiva, Análise de Escada de Imitabilidade e Análise de Proposta de Valor.
+
+### Documentação da Estratégia e Visão do Produto
+
+![Documentação da Estratégia e Visão do Produto](https://cdn.docsie.io/workspace_8D5W1pxgb7Jq3oZO7/doc_vQfR1TFvrUMWGTXFc/file_fOcQeHgEHeuCjKOTU/boo_tt3aeZp07xsCA9YkY/115c02c0-2019-006e-ae69-acc57558cdd5patrick_perkins_ETRPjvb0KM0_unsplash_(1).jpg)
+
+A visão do produto cria uma imagem do futuro do produto que estamos a tentar desenvolver. Seja na forma de um storyboard, uma narrativa ou um protótipo, destina-se a atrair equipas, investidores e parceiros para investir e apoiar o produto.
+
+A estratégia do produto define a sequência de produtos a serem gerados até se atingir o produto final.
+
+Uma das competências mais importantes dos gestores de produto eficazes é a capacidade de desenvolver uma visão de produto, mas isto é apenas o início. Também devem criar uma estratégia de produto atraente para transmitir um ponto de vista claro sobre o produto. Tanto a visão como a estratégia do produto devem ser altamente intencionais para serem bem-sucedidas. Consequentemente, são preparadas documentações para capturar todas as informações relacionadas com a determinação do produto final e como transformar uma ideia em realidade. Na maioria das vezes, estes materiais são partilhados com stakeholders para solicitar os seus comentários e opiniões.
+
+### Documentação de Requisitos do Produto (PRDs)
+
+A **Documentação de Requisitos do Produto** reúne os vários aspetos de uma aplicação num único local. O tipo de documento mais comum são as especificações, que descrevem as características das aplicações, entre outras coisas.
+
+Cada PRD pode ser diferente dos outros. Estas documentações estabelecem as declarações do problema de pesquisa, métricas de sucesso, lista de funcionalidades MVP, detalhes de implementação técnica, e assim por diante.
+
+Os documentos de requisitos do produto (PRDs) incluem cada passo no quadro geral do produto, bem como a decisão de incluir ou remover determinadas funcionalidades, e indicam quaisquer dificuldades potenciais. Os gestores de produto podem usar este documento para visualizar o tempo necessário para os processos de desenvolvimento do projeto, compreender o orçamento necessário e estabelecer um entendimento completo entre clientes e a equipa de desenvolvimento.
+
+Referi a importância dos PRDs noutro artigo. [Para saber mais, clique aqui.](https://www.docsie.io/blog/articles/product-requirements-documentation-for-product-managers/)
+
+### Documentação de objetivos e resultados-chave, indicadores de desempenho e métricas de sucesso
+
+![Documentação de objetivos e resultados-chave, indicadores de desempenho e métricas de sucesso](https://cdn.docsie.io/workspace_8D5W1pxgb7Jq3oZO7/doc_vQfR1TFvrUMWGTXFc/file_C5dij4zpuNJfYdxuZ/boo_tt3aeZp07xsCA9YkY/944a57c7-e03b-eb86-7f94-c5335ba726c3domenico_loia_hGV2TfOh0ns_unsplash.jpg)
+
+**Objetivos e Resultados-Chave** (OKRs) é um mecanismo usado pelos gestores de produto para determinar os objetivos de um processo de desenvolvimento de produto e depois avaliar os resultados desse processo. O objetivo orienta a equipa para as metas, enquanto os resultados indicam se essas metas foram alcançadas. Duas perguntas são feitas e respondidas durante o processo: "Para onde quer ir?" e "Chegou ou não chegou" a um objetivo específico.
+
+Por outro lado, um indicador-chave de desempenho, ou KPI, mede o sucesso global de um processo de desenvolvimento na sua fase atual. Valor do Cliente ao Longo da Vida e Taxa de Conversão de Teste para Cliente em vendas, Tráfego Web e Taxa de Conversão em marketing, são apenas alguns exemplos de KPIs. Todos estes objetivos, bem como os resultados obtidos durante o processo, são detalhados na documentação relevante.
+
+### Documentação de Roadmaps
+
+Os roadmaps são uma das documentações mais importantes que os gestores de produto devem formular. Um roadmap serve como meio de comunicar à equipa a importância do produto.
+
+Um gestor de produto cria um ciclo de vida do produto que descreve o que precisa ser feito, quando precisa ser feito e como todo o processo será realizado. Um roadmap é um documento que contém uma lista de todas as iniciativas empreendidas para desenvolver eficazmente um software ou qualquer outro produto. É um caminho que os gestores de produto traçaram e que toda a equipa segue. Estes podem ser preparados no Docsie para submeter aos seus colaboradores com apresentações PowerPoint incorporadas na documentação criada pelo Google Slides. O Docsie permite integração com o Google Slides através das nossas capacidades de integração. Para saber mais sobre as capacidades de integração do Docsie [clique aqui.](https://help.docsie.io/?doc=/docsie-integrations/)
+
+### Documentação relativa a designs e protótipos
+
+![Documentação relativa a designs e protótipos](https://cdn.docsie.io/workspace_8D5W1pxgb7Jq3oZO7/doc_vQfR1TFvrUMWGTXFc/file_7UkZbKPYCrKwI0wls/boo_tt3aeZp07xsCA9YkY/dbf4c782-cb7c-467a-3fbb-eaf18de2c57bedho_pratama_T6fDN60bMWY_unsplash.jpg)
+
+Criar algo do zero sem um plano é bastante difícil. Isto também se aplica ao design de produto. Embora o conceito básico seja importante, centenas de variantes podem ocorrer durante o processo de desenvolvimento. Por isso, os gestores de produto devem manter um documento que registe todas as modificações e revisões feitas ao design do produto.
+
+Quando se trata de prototipagem de produtos, os gestores de produto têm uma experiência muito diferente dos engenheiros ou designers. Os gestores de produto definem o tom para a prototipagem estabelecendo objetivos claros e delineando um roteiro para a equipa seguir.
+
+Se está a questionar-se por que razão um gestor de produto precisaria de produzir documentação de protótipo de aplicação, considere os seguintes benefícios:
+
+* Eliminação completa do potencial de mal-entendidos
+* Iterações rápidas
+* Justificação das ideias logo no início do processo
+* Melhorias na qualidade do feedback técnico
+
+Por estas razões e mais, a documentação de prototipagem é essencial.
+
+### Documentação da jornada do utilizador e histórias
+
+No desenvolvimento de qualquer aplicação ou plataforma, as **histórias de utilizador** e os **mapas de jornada do cliente** são duas ferramentas críticas que devem ser usadas em conjunto. Os gestores de produto desenvolvem e mantêm documentação para estas duas posições para garantir que cada detalhe é registado e mantido de forma segura.
+
+Ao criar um documento de história de utilizador, é importante pensar nas várias razões pelas quais um utilizador gostaria de utilizar um determinado produto. Os gestores de produto registam todos os possíveis acionadores que podem levar um utilizador a interagir com uma funcionalidade da plataforma, incluindo bugs e pedidos de funcionalidades. Neste caso, a jornada do utilizador pode ser considerada a um nível microscópico.
+
+Por outro lado, a jornada do utilizador é um documento que mapeia toda a experiência do utilizador, desde o momento da compra ou download até ao momento de utilização das funcionalidades do produto. Isto ajuda os gestores de produto a explicar melhor o produto à sua equipa e outras partes interessadas, bem como a estabelecer a sua confiança no próprio produto. Além disso, estas informações podem ser usadas como recursos de marketing para campanhas publicitárias ou para explicar o caso de uso de um produto a potenciais clientes.
+
+### Documentação das notas de lançamento e âmbito
+
+As **Notas de Lançamento**, como o nome indica, são as documentações enviadas juntamente com o lançamento de novas plataformas ou produtos SaaS. Para informar os utilizadores sobre novos padrões, identificar quais os problemas que foram resolvidos e comercializar a aplicação quando a atualização está completa, os gestores de produto elaboram esta documentação. Como os produtos SaaS diferem muito uns dos outros, não há duas documentações exatamente iguais.
+
+As notas de âmbito são por vezes referidas como documentos de Âmbito de trabalho. Os gestores usam esta ferramenta para definir a amplitude das funcionalidades que uma aplicação ou um software contém. O que essas características possibilitarão, e assim por diante.
+
+### Guias Internos e Perguntas Frequentes
+
+É necessário produzir **FAQs** internas confidenciais para stakeholders de modo a mantê-los informados durante todo o processo de desenvolvimento do produto. A forma como estas FAQs são escritas é realmente simples. Os wireframes de um produto com forte componente de experiência do utilizador, ou um link para dividir a documentação de wireframe, podem ser encontrados nesta pasta.
+
+Todas as informações sobre como as coisas funcionam no processo de desenvolvimento estão incluídas nestes manuais internos. Além de garantir que os dados são registados de forma a permitir uma transição suave entre membros, também serve como referência para funções externas como vendas, marketing, apoio ao cliente e outras posições semelhantes para ajudar os clientes.
+
+### Guias de Utilizador e Documentação de Produto para o Cliente
+
+![Guias de Utilizador e Documentação de Produto para o Cliente](https://cdn.docsie.io/workspace_8D5W1pxgb7Jq3oZO7/doc_vQfR1TFvrUMWGTXFc/file_QaQUnhXAgdAoDoEVV/boo_tt3aeZp07xsCA9YkY/a9b5abb3-dc46-6359-9f21-cb8c8319a976mantas_hesthaven__g1WdcKcV3w_unsplash.jpg)
+
+Para os não iniciados, o guia do cliente é um manual do utilizador no sentido tradicional. É responsabilidade dos gestores de produto preparar esta documentação, que fornecerá instruções sobre como utilizar o produto SaaS recém-desenvolvido.
+
+Os utilizadores podem ficar confusos sobre como usar o produto se isto não for feito, pelo menos nas fases iniciais, até descobrirem o fluxo por si próprios. Consequentemente, deve ser bastante óbvio por que motivo este documento é tão importante que é um dos mais utilizados ou desenvolvidos pelos gestores de produto na indústria.
+
+## Conclusões:
+
+Em resumo, as documentações acima são os dez documentos essenciais em que os gestores de produto competentes se apoiam para garantir um processo de gestão de produto eficiente.
+
+Graças a estas documentações, é impossível terem mal-entendidos ou disputas, pois separaram as informações sobre as tarefas em vários documentos. Isto produz um processo de desenvolvimento altamente estruturado e fluido, meticulosamente documentado em cada etapa.
+
+### Como o Docsie pode ajudar a criar todas estas documentações?
+
+O Docsie é uma plataforma robusta que é o melhor amigo dos gestores de produto quando se trata de documentação. O Docsie especializa-se em criar, gerir e publicar documentação que pode ser traduzida para vários idiomas com um sistema de versionamento sofisticado, editor fácil de usar e várias outras funcionalidades incríveis que ajudam os gestores de produto a criar documentação online robusta e dinâmica.
+
+[Para experimentar o Docsie gratuitamente, clique aqui.](https://www.docsie.io/)

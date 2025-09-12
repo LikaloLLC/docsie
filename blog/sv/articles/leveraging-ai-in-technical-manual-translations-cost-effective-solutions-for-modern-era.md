@@ -1,0 +1,159 @@
+# Visste du att 65 procent av kunder föredrar innehåll på sitt modersmål?
+
+Visste du att [65 procent](https://csa-research.com/Blogs-Events/CSA-in-the-Media/Press-Releases/Consumers-Prefer-their-Own-Language) av kunder föredrar innehåll på sitt modersmål? Och 40 procent skulle inte beställa en produkt från en webbplats på ett annat språk än deras eget. När företag expanderar till nya regioner blir det allt viktigare att deras tekniska manualer översätts till flera språk för att bättre förklara tjänsterna för en global publik.
+
+Att eliminera språkbarriärer förbättrar kundresan för icke-inhemska köpare och ökar kundnöjdheten på digitala plattformar. Tidigare var detta både tids- och resurskrävande. Nu har AI-översättningar revolutionerat processen. Översättningar anpassade för målgruppen är enklare, snabbare och billigare än någonsin, eftersom företag inte längre behöver investera stora summor i att anställa modersmålstalare eller lingvister.
+
+## Traditionella översättningsmetoder
+
+Tidigare utfördes all manuell översättning av mänskliga översättare som arbetade med långa instruktioner baserade på sina språkkunskaper och gemensamma standarder. Det uppstod dock svårigheter med teknisk terminologi. Tänk hur svårt det är att förklara komplexa begrepp för någon utan ämneskunskap. När fel rättades och precision upprätthölls ledde detta ofta till längre väntetider och högre kostnader.
+
+### Vad betyder AI:s framväxt för översättningsbranschen?
+
+Enligt en studie beräknas AI-översättningsmarknaden vara värd [7,5 miljarder dollar](https://www.gminsights.com/industry-analysis/machine-translation-market-size) år 2030, när företag försöker expandera genom att nå globala marknader och internationella kunder. Denna tillväxt är en direkt följd av den ökande efterfrågan på AI-drivna översättningsverktyg som hjälper kunder världen över.
+
+Översättningsbranschen känner redan av effekterna av artificiell intelligens. Föreställ dig en dag när datorer är så avancerade att de omedelbart kan konvertera text mellan vilka två språk som helst. Med hjälp av AI kan detta nu göras utan mänsklig inblandning. Detta förenklar verksamheten och säkerställer en kostnadseffektiv lokaliseringsprocess. Företag behöver inte längre lika många översättare internt och kan skapa innehåll på hur många språk som helst utan teknisk utbildning. Denna förändring kan hjälpa till att hålla nere kostnader och öka produktionen, vilket gör organisationer mer konkurrenskraftiga globalt.
+
+## AI:s roll inom översättning
+
+![](https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_xKoqFnWI9SC51gOYG/image1.jpg)
+
+Det finns flera metoder som AI-översättningsverktyg kan använda för att översätta text.
+
+**Maskininlärning**
+
+[Träning av maskininlärningsalgoritmer](https://machinelearningmastery.com/much-training-data-required-machine-learning/) kräver enorma mängder data och kod. Denna samling innehåller flera parallella texter - par av fraser eller stycken skrivna på två språk men med samma innebörd. Effektiva översättningsalgoritmer som tränats på matchade texter kan använda inlärda mönster för att skapa högkvalitativa översättningar.
+
+![](https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_k1K3YssaKELslrvSD/image2.png)
+
+[Källa](https://www.freecodecamp.org/news/a-history-of-machine-translation-from-the-cold-war-to-deep-learning-f1d335ce8b5/)
+
+**Statistiska metoder**
+
+AI-översättningsverktyg använder olika statistiska metoder. I dessa processer används statistisk analys för att bestämma den mest sannolika översättningen av ett givet ord eller fras. Vi förstår kundernas behov innan översättningsprocessen implementeras.
+
+**Neurala nätverk**
+
+Neurala nätverk är maskininlärningsalgoritmer som försöker efterlikna hur den mänskliga hjärnan fungerar. De har stor potential för överföring av komplex information.
+
+![](https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_7gBlkEAveyHxaFkmJ/image3.jpg)
+
+[Källa](https://www.nature.com/articles/s41467-020-18073-9)
+
+### Hur kan AI förbättra översättningar av tekniska manualer?
+
+AI-översättningsverktyg kan tränas på stora parallella textdataset bestående av ordpar på flera språk med samma innebörd. Detta är användbart för att identifiera och översätta fackspråk och terminologi. AI-verktyg kan lära sig att korrekt översätta tekniska termer. Till exempel tränades [Googles](https://ai.googleblog.com/2020/06/recent-advances-in-google-translate.html) [Translate](https://ai.googleblog.com/2020/06/recent-advances-in-google-translate.html) NMT-modell med en massiv databas av original- och översatt källkod. Det innebär att Google Translate enkelt kan förstå medicinsk, juridisk och teknisk terminologi.
+
+AI-översättningsverktyg kan tränas för att känna igen sammanhanget i all text. Detta gör att de effektivare kan förmedla innebörden av meningar med flera tolkningar. [DeepL](https://www.deepl.com/en/translator) är till exempel ett SMT-verktyg som har tränats på en omfattande samling källkod och översatta texter. Med denna förbättring kan DeepL bättre hantera meningar som kan översättas på flera sätt beroende på textens sammanhang.
+
+AI-drivna verktyg kan tränas för att översätta meningar i en naturlig ton. Detta är särskilt viktigt för tekniska manualer, som ofta använder specialiserad terminologi som kan vara svår att översätta. [Docsie](https://www.docsie.io/) är en hybridlösning för översättningsproblem eftersom den hämtar från både statistisk maskinöversättning och neural maskinöversättning.
+
+## Användning av AI i tekniska manualöversättningar - fördelar och begränsningar
+
+### Fördelar med AI i översättningar av tekniska manualer
+
+**1. Ökad produktivitet:** Företag kan se en betydande ökning av produktiviteten med moderna översättningslösningar. Dessa verktyg arbetar kontinuerligt utan att bli trötta eller behöva vila, vilket möjliggör snabbare och mer exakta översättningar.
+
+**2. Förbättrad kvalitetskontroll:** AI-drivna översättningar blir både mer exakta och blixtsnabba. Denna förbättrade noggrannhet hjälper till att upprätthålla kvaliteten och integriteten i tekniskt innehåll genom att minska risken för misstag och feltolkningar.
+
+**3. Tidseffektiv resursallokering:** Företag kan bättre hantera sina resurser tack vare hur snabbt AI-översättning slutför uppgifter. Detta är praktiskt när det finns mycket tekniskt material att läsa eller när tiden är avgörande.
+
+**4. Flerspråkig konsekvens:** AI hjälper till att upprätthålla enhetlighet i översättningar mellan språk, vilket är särskilt användbart vid hantering av mycket specialiserad teknisk jargong. Oavsett språk får alla läsare samma upplevelse när de läser ett tekniskt dokument tack vare denna standardisering.
+
+**5. Framtidssäker skalbarhet:** När företag expanderar skapar de mer tekniskt innehåll, och AI kan enkelt skala för att möta dessa krav. Denna anpassningsförmåga säkerställer att kvaliteten inte kompromissas även när mängden översättningsarbete växer.
+
+**6. Minskning av dåliga ekonomiska beslut:** Användning av AI för att översätta tekniska texter minskar risken för kostsamma fel. Tack vare AI:s precision kan även de mest tekniska termerna översättas med tillförsikt, vilket förhindrar kostsamma missförstånd. Denna precisionsgrad är nödvändig för att undvika feltolkningar som kan äventyra produktens användbarhet eller säkerhet.
+
+## Begränsningar med AI för översättningar av tekniska manualer
+
+![](https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_amixqIdllmZv86Yfc/image4.jpg)
+
+Låt oss diskutera de [begränsningar som artificiell intelligens möter](https://translatebyhumans.com/blog/risks-and-consequences-of-ai-translation-in-2023/) när den försöker översätta instruktionsguider. Även om AI har gjort stora framsteg på senare år finns det fortfarande vissa viktiga begränsningar att hålla i åtanke.
+
+**1. Mänskligt omdöme:** När det gäller att välja rätt ord och fraser är AI inte alltid lika bra som människor. Till exempel kan "set" felaktigt återges som "juego" på spanska. Den korrekta termen är "conjunto."
+
+**2. Bias:** Träningsdata är avgörande för slutproduktens kvalitet. AI kan utveckla en preferens för ett lands kultur och språk om den endast matas med böcker från det landet.
+
+**3. Säkerhet:** Det finns en oro för att känslig information som körs genom en AI-översättare kan äventyra säkerheten. Det är riskabelt eftersom privata data kan hamna i fel händer.
+
+**4. Brist på kulturellt sammanhang:** AI kan ha svårt att förstå den kulturella betydelsen av en text, vilket leder till felaktiga resultat. Om den till exempel översätter "to pull someone's leg" (från engelska) till "to pull someone's hair" (från spanska), skulle det inte ge någon mening i vare sig det engelska eller spanska kulturella sammanhanget.
+
+**5. Potentiella idiomatiska utmaningar:** Det är enkelt för artificiell intelligens att översätta ord men kan kämpa med meningar vars betydelse varierar mellan språk. Idiomatiska uttryck kan vara svåra att förstå bokstavligen på grund av deras kulturella konnotationer.
+
+Ett sätt att övervinna AI:s brister vid översättning av tekniska manualer är att använda ett hybridsystem som kombinerar [maskininlärning med mänskliga översättare](https://hbr.org/2018/07/collaborative-intelligence-humans-and-ai-are-joining-forces). Mänskliga granskare kan fånga och korrigera eventuella misstag som görs av AI-översättningar, som i sin tur kan hantera majoriteten av jobbet. Tekniska manualer kan översättas mer exakt och konsekvent med denna integrerade metod utan att förlora nyanser i målspråket eller kulturellt sammanhang.
+
+Traditionella översättningsmetoder kan vara både tidskrävande och kostsamma. De involverar ofta anlitande av översättare, vilket kan påverka din budget avsevärt. Dessutom kanske dessa översättare inte besitter branschkunskap, vilket oavsiktligt kan införa fel under översättningsprocessen.
+
+Genom att automatisera översättningsprocessen erbjuder [Docsie](https://www.docsie.io/) företag en möjlighet att minska sina översättningskostnader. Genom att utnyttja maskininlärningsfunktioner säkerställer Docsie effektiva översättningar och sparar därmed företag både tid och pengar.
+
+**Här är några företag som har implementerat AI-baserad översättning av tekniska rapporter**
+
+Många organisationer använder automatisering för att ersätta mänskligt arbete i tidigare manuella tekniska översättningsuppgifter. Några exempel är följande:
+
+|**Företag**|**Hur utnyttjar företag AI för översättningar av tekniska manualer?**|
+|-|-|
+|**Siemens**|Den internationella jätten Siemens använder maskininlärningsbaserade översättningsverktyg för att översätta sitt tekniska material till över tvåhundra språk.|
+|**Bosch**|Bosch, ett multinationellt teknik- och ingenjörsföretag, översätter sin tekniska information till mer än 150 språk med hjälp av maskininlärning och andra AI-översättningsverktyg.|
+|**Caterpillar**|För sina mer än 40 verksamhetsländer använder Caterpillar maskininlärningsöversättningsverktyg för att lokalisera sitt tekniska material till de språk som talas där.|
+|**Microsoft**|Microsoft, en global ledare inom modern teknik, använder maskininlärningsöversättningsverktyg för att lokalisera sitt innehåll till mer än hundra språk.|
+|**Amazon**|Amazon använder maskininlärningsöversättningsverktyg för att lokalisera innehåll för flera språk.|
+|**Google**|Internetjätten Google översätter sina sökresultat och annan information till mer än hundra språk med hjälp av AI-driven lokalisering.|
+|**Airbnb**|Airbnb använder maskininlärning och andra AI-översättningar för att lokalisera sin webbplats och mobilapp till mer än 60 språk.|
+|**Uber**|Uber använder maskininlärningsöversättningsverktyg för att lokalisera sin webbplats och mobilapp till mer än 60 språk.|
+|**Netflix**|Netflix använder ML-översättningsverktyg för undertexter och ljud, och utökar sin språktäckning till mer än 30.|
+
+För mer information om AI-baserade översättningar kan du besöka [Geek Marketing](https://geekmarketing.org/), som stödjer små företag genom att ge skräddarsydd vägledning om AI-verktyg via sin blogg och personliga konsultationer som möjliggör effektiv och strategisk flerspråkig kommunikation.
+
+## Artificiell intelligens potentiella påverkan på framtiden för översättning av tekniska manualer
+
+[Framtiden för AI](https://www.mckinsey.com/~/media/McKinsey/Business%20Functions/McKinsey%20Digital/Our%20Insights/Driving%20impact%20at%20scale%20from%20automation%20and%20AI/Driving-impact-at-scale-from-automation-and-AI.ashx) kan ligga i specialiserade översättningar mellan människor. Maskinöversättningsverktyg kommer att bli bättre och bättre i takt med att AI utvecklas. Det skulle finnas ett större behov av översättningar av teknisk dokumentation om fler språk stöds.
+
+Samtidigt sjunker kostnaden för maskinöversättningsverktyg. Nu kan företag av alla storlekar lokalisera sina tekniska dokument med hjälp av AI-översättningsverktyg.
+
+Maskinöversättningsverktyg kan utvecklas parallellt med andra typer av AI. De kan ge mer exakta tolkningar än människor eftersom de kommer att uppskatta nyanserna i mänskligt språk och kulturellt sammanhang. Detta är ett utmärkt verktyg för företag som behöver lokalisera sina tekniska manualer till många språk.
+
+I en intervju med [websiteplanet](https://www.websiteplanet.com/) berättar Philippe Trounev, grundare och produktchef för Docsie, om att utnyttja AI:
+
+AI kommer att revolutionera branschen, med miniatyr-AI-modeller som automatiserar tekniska skrivuppgifter och omvandlar rollen till mer av en teknisk redaktör. Dessa kraftfulla AI-verktyg kan förbättra effektiviteten och innehållskvaliteten, vilket potentiellt minskar kommunikationsavdelningens personal. Denna förändring kan skapa **"skrivingenjörer"** som förlitar sig på AI för bred innehållsgenerering.
+
+Under de kommande fem åren förväntas betydande förändringar inom tekniskt skrivande, och ditt företag omfamnar dem proaktivt med målet att leda inom det utvecklande landskapet för AI-genererad dokumentation.  
+
+För mer information, läs hela [intervjun](https://www.websiteplanet.com/blog/docsie-interview/)
+
+## Slutsats
+
+Det finns stor potential i att använda AI för att översätta tekniska manualer utan teknisk kunskap, inte bara för att sänka kostnader utan för att ta ditt företag till en global skala. Företag från olika branscher kan vara säkra på att nyanserna i mänskligt språk och kulturellt sammanhang bevaras i de översatta versionerna av deras tekniska publikationer när både AI och mänskliga översättare används.
+
+Företag av alla storlekar skulle dra stor nytta av att använda Docsie och liknande AI-tekniker för översättning av teknisk dokumentation. Fördelarna inkluderar korrekt översättning, sparad tid och pengar samt en mer direkt koppling till en internationell publik.
+
+Så vad väntar du på? [Besök oss nu!](https://www.docsie.io/)
+
+## Vanliga frågor
+
+**1. Hur exakta är AI-översättningar jämfört med mänskliga översättningar?**
+
+Inom mer tekniska områden visar maskinöversättningar tecken på mognad. Det är dock möjligt att kommunikationsproblem, som språk- och kulturella hinder, kommer att kvarstå.
+
+**2. Hur mycket pengar kan sparas om fler använder Docsie och liknande AI-verktyg?**
+
+Vissa uppskattningar anger att de potentiella kostnadsbesparingarna för företag som använder AI-drivna kostnadseffektiva lösningar ligger mellan 40 och 60 procent.
+
+**3. Finns det några mänskliga språk eller språkliga nyanser som en dator inte kan förstå?**
+
+Vissa nyanser och teknisk jargong kan undgå maskinöversättningsverktyg. Samarbete med kunniga personer kan överbrygga dessa luckor.
+
+**4. Hur säkerställer Docsie att deras översättningar är korrekta?**
+
+Docsie ser till helhetsbilden och uppdaterar kontinuerligt sina metoder med maskininlärning. Korrekta översättningar säkerställs genom mänsklig granskning och kvalitetssäkringsprocesser.
+
+**5. Kan specialiserad terminologi läras ut till maskinöversättningsverktyg?**
+
+Docsie och liknande AI-verktyg behöver träning för att förstå domänspecifik jargong så att de kan ge relevanta kontextuella resultat.
+
+**6. Var passar kulturella nyanser och sammanhang in i maskinöversättningar?**
+
+Tills AI-verktyg gör betydande framsteg på detta område kommer mänskliga experter att behövas för att hantera kulturella nyanser och känslighet för att ge korrekta och acceptabla AI-översättningar.
+
+**7. Hur får vi ut det mesta av ett översättningsteam som består av både människor och datorer?**
+
+Mänsklig och maskinöversättning samarbetar på kraftfulla sätt. Mänskliga översättare ger texten nyans och kulturell autenticitet, medan AI kan påskynda översättningsprocessen och säkerställa enhetlighet.

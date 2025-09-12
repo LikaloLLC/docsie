@@ -1,0 +1,280 @@
+# Coda와 Notion 비교: 한눈에 보기
+
+Coda와 Notion은 얼핏 보면 매우 유사합니다: 두 플랫폼 모두 데이터베이스, 메모, 문서 작성, 워크플로우 관리, 데이터 정리를 지원하는 작업 공간입니다.
+
+### 하지만 다양한 팀에 적합하게 만드는 주요 차이점이 있습니다.
+
+이 비교에 Docsie를 포함시킨 이유는 Notion과 Coda 두 가지와 기능을 공유하면서도, 두 도구가 부족한 부분을 보완하기 때문입니다: 강력한 지식베이스와 회사 위키 생성에 탁월합니다.
+
+우리는 세 앱을 모두 테스트하고 Reddit, G2, Capterra에서 수백 개의 의견을 분석했습니다. 사용자들이 가장 많이 언급하는 8가지 영역에서 도구를 비교했습니다:
+
+* 가격
+* 지원
+* 자동화
+* 통합
+* 사용 편의성
+* 데이터베이스 기능
+* 문서 기능
+* 지식 관리
+
+**시간을 절약해 드리자면... 배우기 쉬운 지식 관리 앱을 찾고 있다면 Docsie를 확인해보세요. 최대 3명까지 무료이며, 무제한 게스트가 데이터를 볼 수 있습니다!**
+
+## 비교 요약: Coda vs Notion vs Docsie
+
+![Coda vs Notion vs Docsie 비교 요약](https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_JLDSpWBDcIaMWR3Ce/file_Gbzf0Ht5p4WkGyDEu/60d26fd0-6fa7-6315-b28c-77bb52071fcdimage.png)
+
+## Docsie vs Coda vs Notion: 문서 기능
+
+**문서 작성에는 Docsie가 최고이며, 에디터 부분에서는 Notion이 Coda보다 우수합니다**
+
+![Docsie](https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_JLDSpWBDcIaMWR3Ce/file_6jS1lrlw2jakRtTSS/7a1e10d0-7ff4-3e9a-c8a8-e95fe8681bb6image.png)
+
+**Notion과 Coda는 '블록' 방식을 사용하는 반면 Docsie는 더 직관적입니다**
+
+Notion과 Coda 모두 헤더, 이미지, 비디오, 텍스트 등을 추가할 수 있는 빌딩 블록 방식의 편집 기능을 사용합니다.
+
+![Notion과 Coda](https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_JLDSpWBDcIaMWR3Ce/file_K8EhYKmEzzXLlzyED/464be919-c7e6-ee02-2712-4199de0eb4fc4.png)
+
+차이점은 Coda의 경우 큰 문서를 다룰 때 속도가 느려지는 경향이 있습니다. Notion은 원래 메모 도구로 시작했기 때문에 글을 쓸 때 더 자연스럽게 흐릅니다.
+
+반면 Docsie는 WordPress 에디터와 더 유사합니다 — 더 직관적인 사용자 경험을 제공합니다. Notion과 Coda처럼 필요한 모든 편집 기능을 제공하지만 단축키와 같은 기능으로 사용 편의성에 더 중점을 둡니다.
+
+![WordPress 에디터](https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_JLDSpWBDcIaMWR3Ce/file_QLNiJSTmyFVr34Hpw/dcb6f484-1df4-27ca-62c4-bb02c74f4f525.png)
+
+**Docsie는 가장 뛰어난 공유 및 클라이언트 접근성을 제공합니다**
+
+Notion과 Coda 모두 관리자 도구로 역할을 할당하여 내부적으로 접근을 관리하거나, 인터넷에 공유하여 외부적으로 접근을 관리할 수 있습니다.
+
+Docsie도 비슷한 시스템을 사용하지만 페이지를 비밀번호로 보호하고 지식 포털이나 웹사이트 임베드를 통해 독자와 문서를 공유할 수도 있습니다.
+
+**Coda는 최소한의 버전 관리, Notion은 변경 이력을 보여주고, Docsie는 롤백과 액세스 권한을 제공합니다**
+
+Coda는 최소한의 버전 관리만 제공하므로 "이 페이지가 마지막으로 변경된 시점은 언제인가?" 또는 "무엇이 변경되었나?"와 같은 질문에 도움이 되지 않습니다.
+
+Notion은 엔터프라이즈 플랜에서 변경 이력을 제공하지만 롤백만 허용하므로 실제 버전 관리보다는 백업처럼 작동합니다.
+
+반면, **Docsie는 강력한 버전 관리 기능을 제공합니다.**
+
+롤백 대신 모든 이전 문서 버전이 책에 저장됩니다. 특정 버전을 "현재 버전"으로 지정하고 사용자에게 이전 버전을 보여줄지 결정할 수 있습니다. 이는 독자에게 보여주는 내용과 문서 버전 관리 방식을 완전히 제어할 수 있음을 의미합니다.
+
+**Docsie는 강력한 콘텐츠 임베드 기능을 제공합니다**
+
+Coda, Notion, Docsie의 또 다른 차이점은 Docsie가 문서에서 원활하게 작동하는 [19가지 콘텐츠 임베드](https://portals.docsie.io/docsie/docsie-documentation/docsie-integrations/?doc=/content-embeds/google-forms-in-docsie/&v=2.0.0&ln=en)를 허용한다는 것입니다. Google Sheets, Google Docs, Loom, Google Maps, GitHub Gists 등과 같은 앱의 전체 기능을 사용할 수 있습니다.
+
+**승자:** [**Docsie**](https://www.docsie.io/). 아름다운 디지털 문서를 만들기 위한 기능과 사용 편의성의 완벽한 조합입니다.
+
+![Docsie](https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_JLDSpWBDcIaMWR3Ce/file_ijClMNPejkT6AcQlq/3cff1420-b57a-6a94-c90f-d718f52f61856.png)
+
+## Notion vs Coda vs Docsie: 지식 관리
+
+**Docsie는 하나의 패키지에 필요한 모든 것을 제공하며, Notion과 Coda는 맞춤화가 가능하지만 복잡해질 수 있습니다**
+
+**Docsie는 직관적인 조직 구조를 가지고 있으며, Coda와 Notion은 자신만의 구조를 만들 수 있습니다**
+
+![Coda와 Notion](https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_JLDSpWBDcIaMWR3Ce/file_WRgZM09XbYbBphN3g/b1cb0869-6f67-3a9e-0d4d-833833ed56faimage.png)
+
+Docsie는 직관적인 지식 조직 구조를 사용합니다.
+
+"책장(shelves)"에는 "책(books)"이 있고, 이는 "섹션"으로 구성될 수 있습니다. 책에는 문서, 이전 버전, 그리고 다른 언어로 된 문서가 포함됩니다.
+
+**Docsie는 도서관처럼 작동하여 이해하기 쉽습니다.**
+
+![Docsie 1](https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_JLDSpWBDcIaMWR3Ce/file_taaK2xC3oGVlfbB6u/d5272e81-1fcf-649b-0943-f68f125596407.png)
+
+반면 Coda와 Notion은 중첩된 페이지에 의존합니다. 직관적이고 원하는 구조를 만들 수 있습니다. 하지만 하위 페이지를 3개 이상 깊게 중첩하면 빠르게 혼란스러워질 수 있습니다.
+
+**Coda의 검색은 불편하고, Docsie와 Notion은 쉽게 적절한 정보를 찾을 수 있습니다**
+
+대규모 조직은 종종 Coda에서 데이터를 찾는 데 문제가 있습니다. 검색 기능이 Notion이나 Docsie만큼 발전되지 않았는데, 페이지를 결과로 표시하지 않고 데이터만 표시하기 때문입니다.
+
+한편, Notion과 Docsie는 페이지와 모든 데이터를 검색하기 때문에 더 사용자 친화적입니다. Docsie는 또한 언어별로 문서를 필터링할 수 있습니다.
+
+**승자:** [**Docsie**](https://www.docsie.io/), 매우 직관적이고 확장 가능한 조직 구조와 문서를 빠르게 탐색할 수 있는 강력한 검색 기능을 제공하기 때문입니다.
+
+## Notion vs Docsie vs Coda: 가격 및 가성비
+
+**Notion은 가장 뛰어난 가성비를 제공하고, Docsie는 지식 관리에 가장 저렴하며, Coda는 비교적 비쌉니다**
+
+![지식 관리에 저렴한 Docsie](https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_JLDSpWBDcIaMWR3Ce/file_ToSMUdd9b8bQxXq6O/769d7d69-0a9d-1c93-23d3-d2824a986423image.png)
+
+### 무료 플랜 비교
+
+**Coda**는 무제한 팀원을 위한 무료 플랜을 제공합니다. 모든 테이블에서 테이블 행 수는 1000개로 제한됩니다. 문서의 객체 수도 50개로 제한됩니다. 객체에는 페이지, 테이블, 뷰, 버튼, 컨트롤 및 수식이 포함됩니다. 따라서 Coda로 팀을 관리하려면 무료 가격 플랜의 한도를 빠르게 초과하게 됩니다.
+
+**Notion**의 무료 플랜은 사용할 수 있는 블록 수를 제한하지 않지만 한 사람만 사용할 수 있도록 설계되었습니다. 5명의 게스트를 추가할 수 있지만 접근 권한을 관리할 수는 없습니다.
+
+**Docsie**는 최대 3개의 계정에 대한 무료 플랜을 제공하며 무제한 게스트에게 문서를 보여줄 수 있습니다. 하지만 파일 업로드 제한이 있고 5개의 책과 1개의 책장(무제한 문서 포함)을 관리할 수 있습니다.
+
+### 유료 플랜 가격 비교
+
+**유료 플랜에서는 모든 앱이 게스트와 무료로 문서를 공유할 수 있습니다.** 따라서 가격은 기본적으로 편집 권한이 있는 팀원 수에 따라 달라집니다.
+
+[**Coda**](https://coda.io/pricing)는 "Pro" 플랜에 $10/월/사용자, "Team" 플랜에 $30/월/사용자를 청구합니다.
+
+[**Notion**](https://www.notion.so/pricing)은 "Personal Pro" 플랜에 $4/월/사용자, "Team" 플랜에 $8/월/사용자를 청구합니다.
+
+[**Docsie**](https://www.docsie.io/pricing/)는 팀 크기와 기능에 따라 세 가지 정액 가격 플랜을 제공합니다.
+
+![Personal Pro](https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_JLDSpWBDcIaMWR3Ce/file_c5RDZVCv35TAPYDrP/7d646eed-dd46-d9ca-3fb2-3edac01eaefcimage.png)
+
+**가격이 가장 큰 관심사라면 무엇을 선택해야 할까요**
+
+**다음과 같은 경우 Notion을 선택하세요:**
+
+* 무료 개인 생산성 플랫폼만 찾고 있습니다. (무료 플랜)
+* 강력한 협업 도구는 필요하지 않지만 팀에게 강력한 개인 작업 공간을 제공하고 싶습니다. (Personal Pro 플랜)
+* 25명 이상의 멤버가 있는 올인원 작업 공간이 필요합니다. (Team 플랜)
+
+**다음과 같은 경우 Docsie를 선택하세요:**
+
+* 최대 15명의 편집자가 있는 협업 플랫폼이 필요합니다. (Startup Plus/Small Team 플랜)
+* 지식 베이스/SOP 관리를 위한 특수 앱이 필요한 모든 규모의 팀 — Docsie는 Notion보다 약간 더 비싸지만 이러한 사용 사례에 더 나은 기능을 제공합니다.
+
+**다음과 같은 경우 Coda를 선택하세요:**
+
+* Notion보다 더 많은 데이터베이스/자동화 기능이 있는 팀 작업 공간이 필요합니다.
+* 핵심 지식 베이스 관리 기능의 부재와 높은 가격이 문제가 되지 않습니다.
+
+**승자**: [**Docsie**](https://www.docsie.io/) 또는 [**Notion**](https://www.notion.so/) 중 하나. SOP 지식 베이스가 필요하면 Docsie를 선택하세요. 일반 생산성 작업 공간이 필요하면 Notion을 선택하세요.
+
+## Coda vs Docsie vs Notion: 고객 지원
+
+**Coda와 Docsie는 최고의 고객 지원을 제공하며, Notion은 아직 따라잡는 중입니다**
+
+![Coda와 Docsie](https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_JLDSpWBDcIaMWR3Ce/file_cCccYMWpvSFtStVar/5515627e-1c86-1910-d840-530861b6e3e1image.png)
+
+고객 지원은 평가하기 어렵습니다.
+
+단일 경험만으로 판단하는 것은 공정하지 않을 것입니다. 따라서 사용자들이 말하는 내용을 바탕으로 세 가지를 비교하기 위해 Reddit, G2, Capterra의 최근 리뷰와 의견을 살펴보았습니다.
+
+**Notion의 고객 지원은 아직 따라잡는 중입니다**
+
+Notion은 이전에 지원을 위해 커뮤니티에 의존했습니다.
+
+최근에야 제대로 된 지원 팀에 투자하기 시작했습니다. 사용자들은 지원 팀이 좋은 기술적 도움을 제공하지 않고, 그런 문제에 대해 빠르게 엔지니어에게 보낸다고 말합니다. 그리고 엔지니어들은 보통 다음 버전에서 수정하겠다고 말합니다.
+
+![Coda와 Docsie 이미지 1](https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_JLDSpWBDcIaMWR3Ce/file_Zc6no9VdccJBm78Q1/badb84b7-f421-feec-f6a5-b0cc60e4e4518.jpg)
+
+![Coda와 Docsie 이미지 2](https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_JLDSpWBDcIaMWR3Ce/file_arYfHgXKSqyItecO9/70a571c4-f7d4-ba02-a41d-df9dba82f4dd9.jpg)
+
+**Coda는 훌륭한 고객 지원을 제공합니다**
+
+[많은 Coda 사용자들](https://www.g2.com/products/coda-coda/reviews?utf8=%E2%9C%93&filters%5Bkeyphrases%5D=support%20team&order=g2_default&filters%5Bcomment_answer_values%5D=)은 빠른 응답 시간과 함께 일하기 얼마나 쉬운지에 대해 지원 팀을 칭찬합니다.
+
+![Coda 1](https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_JLDSpWBDcIaMWR3Ce/file_L3h5NDTOx7T4H6yKS/6ebda287-cbc3-357a-728a-ffdb0fdbe03410.jpg)
+
+![Coda 2](https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_JLDSpWBDcIaMWR3Ce/file_PyDZVl8IRsMaZMyXx/b4a516c7-f699-5f32-9009-b49b283b5dee11.jpg)
+
+**Docsie의 고객 지원은 "전문적이고, 반응이 빠르며 잘 조직되어 있습니다"**
+
+우리 팀은 Docsie에서 문제가 발생하면 항상 도움을 드릴 준비가 되어 있습니다. 하지만 [사용자들의 직접적인 평가](https://www.g2.com/products/docsie/reviews?utf8=%E2%9C%93&filters%5Bcomment_answer_values%5D=&filters%5Bkeyphrases%5D=customer%20support&order=g2_default)를 들어보는 것이 가장 좋습니다:
+
+![Docsie](https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_JLDSpWBDcIaMWR3Ce/file_wt0iJ06KpLkaATys9/1dca9037-f99a-b339-f84d-e16f1f9b30be12.jpg)
+
+![Docsie 2](https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_JLDSpWBDcIaMWR3Ce/file_gOfQNDuAopOXxJZmO/596dc7e8-2dca-8115-5794-3ec872d923d113.jpg)
+
+**승자:** [Coda](https://coda.io/)와 [Docsie](https://www.docsie.io/): 빠른 (기술적) 지원을 제공합니다.
+
+## Coda vs Notion vs Docsie: 데이터베이스 기능
+**Coda가 가장 강력하고, Notion은 시각화에 좋으며, Docsie는 Google Sheets를 임베드할 수 있습니다**
+
+![Docsie-Coda](https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_JLDSpWBDcIaMWR3Ce/file_13TNnIbQ7OYsubsAI/54dd4e37-3864-a62f-2859-fefca1ed835eimage.png)
+
+**Notion은 시각화의 왕입니다...**
+
+Notion의 테이블 기능은 광범위합니다. 다음과 같은 다양한 "뷰"를 만들 수 있습니다:
+
+* 리스트
+* 테이블
+* 보드
+* 갤러리
+* 캘린더
+* 타임라인
+
+선택한 뷰로 새 페이지를 만들어 이를 생성합니다. 그런 다음 다른 페이지에 임베드할 수도 있습니다.
+
+**하지만 Coda의 기능은 Notion보다 훨씬 뛰어납니다**
+
+Coda는 Notion과 유사한 데이터베이스 기능을 가지고 있습니다.
+
+하지만 조건부 서식 지정과 계산 기능도 있어 Google Sheets만큼 강력합니다.
+
+![Notion](https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_JLDSpWBDcIaMWR3Ce/file_Lx9cKNSIm8lNlGA9H/1bebbbb3-8e7f-72d1-17aa-a06945e3edaf14.jpg)
+
+게다가 Coda는 실제 프로그래밍 언어를 연상시키는 통합 함수를 가지고 있습니다. 기술에 능숙하다면 직관적이고 쉽게 느껴질 것입니다. 그리고 테이블뿐만 아니라 *어디에나* 추가할 수 있습니다.
+
+![Coda 통합 함수](https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_JLDSpWBDcIaMWR3Ce/file_Voln5A5F6XDlzUZkl/76b858e2-6310-dffb-46c7-f0825f41e78415.jpg)
+
+예를 들어, Coda에서는 간단하지만 Notion에서는 큰 어려움이 있는 작업: 상태가 "TODO"와 일치하는 스프레드시트의 행 수를 세고 싶다면.
+
+Coda에서는 =MyTable.CountIf(Status="TODO")와 같은 공식을 만드는 것만큼 간단합니다. Notion에서는 새로운 관련 데이터베이스를 만들고, 요소를 함께 연결하고, 레이블 텍스트가 포함된 롤업 필드를 추가한 다음 length(replaceAll(replaceAll(prop("Status"), "TODO", "*"), "[\^*]", ""))와 같은 복잡한 공식을 사용해야 합니다.
+
+**Docsie는 Google Sheets를 임베드할 수 있습니다**
+
+Docsie는 Notion과 마찬가지로 스프레드시트 생성을 허용하지만, 에디터에서 다양한 뷰를 허용하지 않으며 Coda처럼 강력한 함수도 없습니다. 그러나 해결책은 Docsie가 전체 기능을 갖춘 Google Sheets 임베드를 허용한다는 것입니다.
+
+**승자:** Google Sheets를 대체하고 싶은 파워 유저를 위한 [**Coda**](https://coda.io/).
+
+## Notion vs Coda vs Docsie: 앱 및 통합
+
+**Coda는 Notion보다 더 많은 네이티브 통합을 제공하고, Docsie는 지식 베이스 기능에 중점을 둡니다**
+
+![Docsie 기능](https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_JLDSpWBDcIaMWR3Ce/file_oMD9vlGvaPuY0cOtt/dd0aabe5-3e88-3177-8aa5-e89322d4f6f3image.png)
+
+여러 앱 간의 통합이 필요하다면 Coda가 최선의 선택입니다. [300개 이상의 네이티브 통합](https://coda.io/gallery?page=11&filter=packs)을 제공하여 기술 스택과 통합하지 않을 수 없게 만듭니다. 반면, Notion은 [36개의 네이티브 통합](https://www.notion.so/integrations/all)으로 필수 기능에만 집중합니다.
+
+**Docsie는 Notion이나 Coda와 다르게 앱 통합에 접근합니다**
+
+Docsie의 모토는 "지식 베이스 기능 우선"으로, 문서에 다른 앱의 콘텐츠를 직접 [임베드](https://portals.docsie.io/docsie/docsie-documentation/docsie-integrations/?doc=/content-embeds/&v=2.0.0&ln=en)할 수 있습니다. 예를 들어, 다른 브라우저 탭이나 앱을 열지 않고도 지식 포털에서 직접 Google Docs를 편집할 수 있습니다.
+
+Docsie는 또한 **GitHub, GitLab, BitBucket, Zapier**와 네이티브 통합이 되어 있어 비즈니스 프로세스와 쉽게 통합할 수 있습니다.
+
+**승자: [Coda](https://coda.io/)**, 네이티브 통합의 양이 압도적이기 때문입니다.
+
+## Coda vs Notion vs Docsie: 장단점
+
+### Coda 장단점
+
+![Coda 장단점](https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_JLDSpWBDcIaMWR3Ce/file_Wl2GZ9HiSFPj4xQH7/dff98869-d4cc-b515-e962-c2e72e43e0f1image.png)
+
+### Notion 장단점
+
+![](https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_JLDSpWBDcIaMWR3Ce/file_XmsifVBPdY9YdnIOv/b1b93820-6ada-d03d-2c2e-1c33b7a3d64fimage.png)
+
+### Docsie 장단점
+
+![](https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_JLDSpWBDcIaMWR3Ce/file_q5oG4LBrLsHd3kY6o/fb42e323-3075-1bcd-c26d-33176ab38f5dimage.png)
+
+## 최종 평가: Notion vs Coda vs Docsie
+
+![](https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_JLDSpWBDcIaMWR3Ce/file_kPBShLpDPmRI5Q2xy/2eadb3f0-af11-2e39-f274-4f628033b9edimage.png)
+
+훌륭한 앱은 많은 기능을 가지고 있기 때문에 훌륭한 것이 아닙니다.
+
+사용성과 기능 세트 사이의 완벽한 균형을 맞춰 사용자의 요구를 해결하는 것이 중요합니다.
+
+![기능](https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_JLDSpWBDcIaMWR3Ce/file_G1agSf4EZ0watMJ6A/385616a2-d341-0af2-14af-a4089452a1bb1.png)
+
+### 다음과 같은 경우 Coda를 사용하세요:
+
+* 많은 테이블 작업이 필요합니다
+* 고급 계산 및 자동화를 위한 수식을 사용하고 싶습니다
+* 단일 프로젝트 추적을 위한 작업 공간이 필요한 기업이나 중간 규모의 팀입니다
+
+![Coda 사용](https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_JLDSpWBDcIaMWR3Ce/file_zW1zFUNRzvRS8I9fp/c45a4993-a65b-ecf6-8d96-a9a9fc5fd41f2.png)
+
+### 다음과 같은 경우 Notion을 사용하세요:
+
+* 개인용 프로젝트 관리 앱이나 생산성 앱이 필요합니다
+* 데이터와 정보의 좋은 시각적 표현이 필요합니다
+* 작업 공간이 필요한 1인 기업가, 소규모 또는 중간 규모의 팀입니다
+
+![Docsie 사용 1](https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_JLDSpWBDcIaMWR3Ce/file_up2m33igEV8JBw547/78a0be75-0e8a-e1a3-116d-df95c4d897123.png)
+
+## 다음과 같은 경우 Docsie를 사용하세요:
+
+* 아름답고 기능적인 문서를 쉽게 만들고 싶습니다
+* 관리하기 쉬운 협업 지식 베이스 플랫폼이 필요합니다
+* SOP, 위키, 매뉴얼, 제품 문서 및 데이터시트를 만들고 싶습니다
+
+*[여기](https://www.docsie.io/)를 클릭하여 오늘 Docsie를 사용해 보세요!*

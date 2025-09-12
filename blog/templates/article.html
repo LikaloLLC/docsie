@@ -1,6 +1,34 @@
 <!-- Base template of the article page. -->
 <!DOCTYPE html>
-<html lang="en">
+{# Determine language from the landing's workdir or article URL #}
+{% set ns = namespace(lang_code='en', is_translated=false) %}
+
+{# First try to detect from landing workdir #}
+{% if landing and landing.workdir %}
+  {% set workdir_str = landing.workdir|string %}
+  {# Check if workdir is exactly a language code or contains it #}
+  {% for lang in ['ru', 'es', 'fr', 'de', 'ja', 'ko', 'pt-br', 'pt-pt', 'zh', 'sv', 'no', 'da', 'it', 'nl', 'ar', 'he', 'hu'] %}
+    {% if workdir_str == lang or workdir_str.endswith('/' + lang) %}
+      {% set ns.lang_code = lang %}
+      {% set ns.is_translated = true %}
+    {% endif %}
+  {% endfor %}
+{% endif %}
+
+{# Fallback: detect from article URL if available #}
+{% if not ns.is_translated and article and article.url %}
+  {% for lang in ['ru', 'es', 'fr', 'de', 'ja', 'ko', 'pt-br', 'pt-pt', 'zh', 'sv', 'no', 'da', 'it', 'nl', 'ar', 'he', 'hu'] %}
+    {% if '/' + lang + '/' in article.url %}
+      {% set ns.lang_code = lang %}
+      {% set ns.is_translated = true %}
+    {% endif %}
+  {% endfor %}
+{% endif %}
+
+{# Set the final variables from namespace #}
+{% set lang_code = ns.lang_code %}
+{% set is_translated = ns.is_translated %}
+<html lang="{{ lang_code }}">
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -11,13 +39,17 @@
 
   {% include 'favicon.html' %}
 
-  <!-- Primary Meta Tags -->
+  <!-- Primary Meta Tags - MUST BE WITHIN FIRST 50 LINES -->
   <title>{{ article.title }}</title>
   <meta name="author" content="{{ article.author_name }}"/>
   <meta name="title" content="{{ article.title }}">
   <meta name="description" content="{{ article.meta_description|default(article.summary) }}"/>
   <meta name="keywords" content="{{ article.categories|join(',') }}"/>
+  
+  {# Canonical tag - self-referential for all languages to allow multilingual ranking #}
+  {# Combined with hreflang tags, this prevents cannibalization while allowing each language to rank #}
   <link rel="canonical" href="{{ article.url }}">
+  
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
 
   <!-- Open Graph / Facebook -->
@@ -36,6 +68,21 @@
   <meta property="twitter:title" content="{{ article.title }}">
   <meta property="twitter:description" content="{{ article.meta_description|default(article.summary) }}">
   <meta property="twitter:image" content="{{ article.header_image_optimized if article.header_image_optimized else article.header_image }}">
+
+  {# Hreflang tags - PLACED AFTER critical meta tags to avoid indexing issues #}
+  {# English version (also set as default) #}
+  <link rel="alternate" hreflang="en" href="{{ settings.domain_url }}{{ settings.blog_root_path }}articles/{{ article.slug }}/">
+  <link rel="alternate" hreflang="x-default" href="{{ settings.domain_url }}{{ settings.blog_root_path }}articles/{{ article.slug }}/">
+  
+  {# All translated versions from settings #}
+  {% set translation_list = settings.all_translation_list if settings.all_translation_list else settings.translation_list %}
+  {% if translation_list %}
+    {% for lang in translation_list %}
+      {% if lang.abbreviation %}
+        <link rel="alternate" hreflang="{{ lang.abbreviation }}" href="{{ settings.domain_url }}{{ settings.blog_root_path }}{{ lang.abbreviation }}/articles/{{ article.slug }}/">
+      {% endif %}
+    {% endfor %}
+  {% endif %}
 
   <!-- Structured Data (JSON-LD) -->
   <script type="application/ld+json">
@@ -119,7 +166,7 @@
             "@type": "ListItem",
             "position": 3,
             "name": "{{ article.categories[0] }}",
-            "item": "{{ settings.domain_url }}{{ settings.blog_root_path.rstrip('/') }}/{{ article.categories[0]|lower|replace(' ', '-')|replace('&', 'and')|replace(',', '')|replace('.', '') }}/"
+            "item": "{{ settings.domain_url }}{{ settings.blog_root_path.rstrip('/') }}{% if landing.current_language %}/{{ landing.current_language }}{% endif %}/{{ article.categories[0]|lower|replace(' ', '-')|replace('&', 'and')|replace(',', '')|replace('.', '') }}/"
           },
           {
             "@type": "ListItem",
@@ -544,9 +591,17 @@
         </div>
         <nav class="hidden md:flex items-center space-x-6">
           <a href="{{ settings.domain_url }}" class="text-gray-600 hover:text-gray-900 transition-colors">Home</a>
+          {% if landing.current_language %}
+          <a href="{{ settings.blog_root_path }}{{ landing.current_language }}/" class="text-gray-600 hover:text-gray-900 transition-colors">Blog</a>
+          {% else %}
           <a href="{{ settings.blog_root_path }}" class="text-gray-600 hover:text-gray-900 transition-colors">Blog</a>
+          {% endif %}
           {% if article.categories %}
+          {% if landing.current_language %}
+          <a href="{{ settings.blog_root_path }}{{ landing.current_language }}/{{ article.categories[0]|lower|replace(' ', '-') }}/" class="text-gray-600 hover:text-gray-900 transition-colors">{{ article.categories[0] }}</a>
+          {% else %}
           <a href="{{ settings.blog_root_path.rstrip('/') }}/{{ article.categories[0]|lower|replace(' ', '-') }}/" class="text-gray-600 hover:text-gray-900 transition-colors">{{ article.categories[0] }}</a>
+          {% endif %}
           {% endif %}
         </nav>
       </div>
@@ -588,13 +643,21 @@
       <nav class="flex items-center space-x-2 text-sm text-gray-600 overflow-x-auto">
         <a href="{{ settings.domain_url }}" class="hover:text-gray-900 whitespace-nowrap">Home</a>
         <i data-lucide="chevron-right" class="h-4 w-4 flex-shrink-0"></i>
+        {% if landing.current_language %}
+        <a href="{{ settings.domain_url }}{{ settings.blog_root_path }}{{ landing.current_language }}/" class="hover:text-gray-900 whitespace-nowrap">{{ settings.blog_name }}</a>
+        {% else %}
         <a href="{{ settings.domain_url }}{{ settings.blog_root_path }}" class="hover:text-gray-900 whitespace-nowrap">{{ settings.blog_name }}</a>
+        {% endif %}
         {% if article.categories %}
         <i data-lucide="chevron-right" class="h-4 w-4 flex-shrink-0"></i>
+        {% if landing.current_language %}
+        <a href="{{ settings.blog_root_path }}{{ landing.current_language }}/{{ article.categories[0]|lower|replace(' ', '-') }}/" class="hover:text-gray-900 whitespace-nowrap">{{ article.categories[0] }}</a>
+        {% else %}
         <a href="{{ settings.blog_root_path.rstrip('/') }}/{{ article.categories[0]|lower|replace(' ', '-') }}/" class="hover:text-gray-900 whitespace-nowrap">{{ article.categories[0] }}</a>
         {% endif %}
+        {% endif %}
         <i data-lucide="chevron-right" class="h-4 w-4 flex-shrink-0"></i>
-        <span class="text-gray-900 font-medium truncate">{{ article.title }}</span>
+        <span class="text-gray-900 font-medium truncate">{{ article.display_title|default(article.title) }}</span>
       </nav>
     </div>
   </div>
@@ -606,7 +669,7 @@
     {% if article.toc_html %}
     <div id="toc-modal" class="hidden lg:block fixed left-8 top-24 z-30 transition-all duration-300 max-h-[calc(100vh-8rem)]">
       <div class="bg-white rounded-lg shadow-lg border border-gray-200 p-6 max-w-xs overflow-y-auto max-h-[calc(100vh-10rem)]">
-        <h3 class="font-semibold text-gray-900 mb-4 text-sm">In this article</h3>
+        <h3 class="font-semibold text-gray-900 mb-4 text-sm">{{ settings.ui_translations.in_this_article[lang_code]|default(settings.ui_translations.in_this_article.en) }}</h3>
         <nav class="toc space-y-2 text-sm">
           {{ article.toc_html|safe }}
         </nav>
@@ -620,8 +683,15 @@
       {% if lang_code == none and article.landing.workdir %}
         {% set lang_code = article.landing.workdir.parent.name | default('en') %}
       {% endif %}
-      {% set lang_code = lang_code | default('en') %}
-      {% set cta_content = settings.call_to_action.translations[lang_code] | default(settings.call_to_action.translations['en']) %}
+      {# Re-detect language for CTA content #}
+      {% set detected_lang = 'en' %}
+      {% if landing and landing.workdir %}
+        {% set workdir_str = landing.workdir|string %}
+        {% if workdir_str in ['ru', 'es', 'fr', 'de', 'ja', 'ko', 'pt-br', 'pt-pt', 'zh', 'sv', 'no', 'da', 'it', 'nl', 'ar', 'he', 'hu'] %}
+          {% set detected_lang = workdir_str %}
+        {% endif %}
+      {% endif %}
+      {% set cta_content = settings.call_to_action.translations[detected_lang] | default(settings.call_to_action.translations['en']) %}
       
       <div id="floating-cta" class="hidden lg:block fixed bottom-8 right-8 z-40 transition-all duration-300 transform translate-y-32 opacity-0">
         <!-- Full CTA Card -->
@@ -640,9 +710,17 @@
         
         <!-- Minimized CTA Button -->
         <div id="cta-minimized" class="hidden">
+          {# Re-detect language for CTA button #}
+          {% set detected_lang = 'en' %}
+          {% if landing and landing.workdir %}
+            {% set workdir_str = landing.workdir|string %}
+            {% if workdir_str in ['ru', 'es', 'fr', 'de', 'ja', 'ko', 'pt-br', 'pt-pt', 'zh', 'sv', 'no', 'da', 'it', 'nl', 'ar', 'he', 'hu'] %}
+              {% set detected_lang = workdir_str %}
+            {% endif %}
+          {% endif %}
           <button id="cta-expand" class="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium py-3 px-5 rounded-full shadow-lg transition-all duration-150 hover:shadow-xl">
             <i data-lucide="calendar" class="h-4 w-4"></i>
-            <span>Book Demo</span>
+            <span>{{ settings.ui_translations.book_demo[detected_lang]|default(settings.ui_translations.book_demo.en) }}</span>
           </button>
         </div>
       </div>
@@ -731,8 +809,16 @@
       <hr class="border-gray-200 mb-12">
       
       <!-- Social Share -->
+      {# Re-detect language since variable scope might be lost #}
+      {% set detected_lang = 'en' %}
+      {% if landing and landing.workdir %}
+        {% set workdir_str = landing.workdir|string %}
+        {% if workdir_str in ['ru', 'es', 'fr', 'de', 'ja', 'ko', 'pt-br', 'pt-pt', 'zh', 'sv', 'no', 'da', 'it', 'nl', 'ar', 'he', 'hu'] %}
+          {% set detected_lang = workdir_str %}
+        {% endif %}
+      {% endif %}
       <div class="flex items-center gap-4 mb-12">
-        <span class="text-sm text-gray-600">Share this article:</span>
+        <span class="text-sm text-gray-600">{{ settings.ui_translations.share_article[detected_lang]|default(settings.ui_translations.share_article.en) }}</span>
         <button data-share="twitter"
            data-url="{{ article.url }}"
            data-title="{{ article.title }}"
@@ -762,10 +848,18 @@
       
       <!-- TL;DR Section -->
       {% if article.tldr_points %}
+      {# Re-detect language since variable scope might be lost #}
+      {% set detected_lang = 'en' %}
+      {% if landing and landing.workdir %}
+        {% set workdir_str = landing.workdir|string %}
+        {% if workdir_str in ['ru', 'es', 'fr', 'de', 'ja', 'ko', 'pt-br', 'pt-pt', 'zh', 'sv', 'no', 'da', 'it', 'nl', 'ar', 'he', 'hu'] %}
+          {% set detected_lang = workdir_str %}
+        {% endif %}
+      {% endif %}
       <div class="tldr-points mb-8 p-6 bg-gradient-to-r from-blue-50 to-indigo-50 border-l-4 border-blue-500 rounded-r-xl">
         <h3 class="text-lg font-bold text-gray-900 mb-3 flex items-center">
           <i data-lucide="zap" class="h-5 w-5 mr-2 text-blue-600"></i>
-          Key Takeaways
+          {{ settings.ui_translations.key_takeaways[detected_lang]|default(settings.ui_translations.key_takeaways.en) }}
         </h3>
         <ul class="space-y-2">
           {% for point in article.tldr_points %}
@@ -783,7 +877,7 @@
       <div class="mb-8 p-6 bg-gradient-to-r from-green-50 to-emerald-50 border-l-4 border-green-500 rounded-r-xl">
         <h3 class="text-lg font-bold text-gray-900 mb-3 flex items-center">
           <i data-lucide="graduation-cap" class="h-5 w-5 mr-2 text-green-600"></i>
-          What You'll Learn
+          {{ settings.ui_translations.what_youll_learn[lang_code]|default(settings.ui_translations.what_youll_learn.en) }}
         </h3>
         <ul class="space-y-2">
           {% for objective in article.learning_objectives %}
@@ -898,10 +992,18 @@
       
       <!-- Glossary Section -->
       {% if article.glossary_terms_display %}
+      {# Re-detect language for glossary section #}
+      {% set detected_lang = 'en' %}
+      {% if landing and landing.workdir %}
+        {% set workdir_str = landing.workdir|string %}
+        {% if workdir_str in ['ru', 'es', 'fr', 'de', 'ja', 'ko', 'pt-br', 'pt-pt', 'zh', 'sv', 'no', 'da', 'it', 'nl', 'ar', 'he', 'hu'] %}
+          {% set detected_lang = workdir_str %}
+        {% endif %}
+      {% endif %}
       <section class="mt-16 p-8 bg-gradient-to-r from-gray-50 to-slate-50 rounded-xl border border-gray-200">
         <h2 class="text-2xl font-bold mb-6 text-gray-900 flex items-center">
           <i data-lucide="book-open" class="h-6 w-6 mr-2 text-gray-700"></i>
-          Key Terms & Definitions
+          {{ settings.ui_translations.key_terms_definitions[detected_lang]|default(settings.ui_translations.key_terms_definitions.en|default('Key Terms & Definitions')) }}
         </h2>
         <div class="grid md:grid-cols-2 gap-6">
           {% for term in article.glossary_terms_display %}
@@ -920,7 +1022,7 @@
               {{ term.definition }}
               <a href="{{ settings.blog_root_path }}glossary/{{ term.term|slugify }}/" 
                  class="text-blue-600 hover:text-blue-700 text-xs ml-2 inline-flex items-center group-hover:underline">
-                Learn more →
+                {{ settings.ui_translations.learn_more[detected_lang]|default(settings.ui_translations.learn_more.en|default('Learn more')) }} →
               </a>
             </dd>
           </div>
@@ -929,7 +1031,7 @@
         <div class="mt-6 pt-6 border-t border-gray-200">
           <a href="{{ settings.blog_root_path }}glossary/" 
              class="inline-flex items-center text-blue-600 hover:text-blue-700 font-medium">
-            <span>View Complete Glossary</span>
+            <span>{{ settings.ui_translations.view_complete_glossary[detected_lang]|default(settings.ui_translations.view_complete_glossary.en|default('View Complete Glossary')) }}</span>
             <i data-lucide="arrow-right" class="ml-2 h-4 w-4"></i>
           </a>
         </div>
@@ -953,14 +1055,27 @@
       
       <!-- Related Articles Section -->
       {% if article.related_articles %}
+      {# Re-detect language for related articles #}
+      {% set detected_lang = 'en' %}
+      {% if landing and landing.workdir %}
+        {% set workdir_str = landing.workdir|string %}
+        {% if workdir_str in ['ru', 'es', 'fr', 'de', 'ja', 'ko', 'pt-br', 'pt-pt', 'zh', 'sv', 'no', 'da', 'it', 'nl', 'ar', 'he', 'hu'] %}
+          {% set detected_lang = workdir_str %}
+        {% endif %}
+      {% endif %}
       <section class="mt-16">
-        <h2 class="text-2xl font-bold mb-8 text-gray-900">Related Articles</h2>
+        <h2 class="text-2xl font-bold mb-8 text-gray-900">{{ settings.ui_translations.related_articles[detected_lang]|default(settings.ui_translations.related_articles.en|default('Related Articles')) }}</h2>
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {% for related in article.related_articles[:3] %}
+          {# Adjust URL for translated version #}
+          {% set related_url = related.url %}
+          {% if detected_lang != 'en' %}
+            {% set related_url = related.url.replace('/blog/articles/', '/blog/' + detected_lang + '/articles/') %}
+          {% endif %}
           <article class="bg-white rounded-lg shadow-md border border-gray-200 hover:shadow-lg transition-all duration-200 group">
             <div class="p-6">
               <h3 class="text-lg font-semibold mb-2 group-hover:text-blue-600 transition-colors">
-                <a href="{{ related.url }}" class="stretched-link">{{ related.title }}</a>
+                <a href="{{ related_url }}" class="stretched-link">{{ related.title }}</a>
               </h3>
               {% if related.excerpt %}
               <p class="text-gray-600 text-sm mb-3 line-clamp-2">{{ related.excerpt }}</p>
@@ -976,18 +1091,27 @@
       {% endif %}
       
       <!-- Call to Action -->
+      {# Re-detect language for final CTA #}
+      {% set detected_lang = 'en' %}
+      {% if landing and landing.workdir %}
+        {% set workdir_str = landing.workdir|string %}
+        {% if workdir_str in ['ru', 'es', 'fr', 'de', 'ja', 'ko', 'pt-br', 'pt-pt', 'zh', 'sv', 'no', 'da', 'it', 'nl', 'ar', 'he', 'hu'] %}
+          {% set detected_lang = workdir_str %}
+        {% endif %}
+      {% endif %}
+      {% set final_cta = settings.call_to_action.translations[detected_lang] | default(settings.call_to_action.translations['en']) %}
       <section class="mt-16 p-8 bg-gradient-to-r from-blue-50 to-blue-100 rounded-xl border border-blue-200">
         <div class="text-center">
           <h3 class="text-2xl font-bold text-gray-900 mb-4">
-            Ready to Transform Your Documentation?
+            {{ final_cta.title }}
           </h3>
           <p class="text-gray-600 mb-8 max-w-2xl mx-auto">
-            Discover how Docsie's powerful platform can streamline your content workflow. Book a personalized demo today!
+            {{ final_cta.text }}
           </p>
           <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a href="{{ settings.call_to_action.button_url | default('/pricing/') }}" 
                class="inline-flex items-center bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-medium transition">
-              <span>Book Your Free Demo</span>
+              <span>{{ final_cta.button_text }}</span>
               <i data-lucide="arrow-right" class="ml-2 h-4 w-4"></i>
             </a>
             <div class="flex items-center space-x-2 text-gray-600">

@@ -1,0 +1,72 @@
+{
+  "term": "REST",
+  "content": {
+    "quick_definition": "REST (Representational State Transfer) is an architectural style for designing networked applications that uses HTTP requests to access and manipulate data resources. It emphasizes stateless operations, standard methods, and hypermedia links, enabling documentation teams to create consistent, scalable API documentation that accurately represents the underlying system architecture.",
+    "detailed_explanation": "<p>REST (Representational State Transfer) is an architectural approach for building web services that leverage the existing infrastructure of the web. Developed by Roy Fielding in his 2000 doctoral dissertation, REST has become the predominant standard for designing APIs that are accessible over HTTP, making it essential knowledge for technical writers documenting web services.</p>\n\n<h3>Key Features</h3>\n<ul>\n<li><strong>Resource-Based:</strong> Everything is treated as a resource, identified by a unique URI</li>\n<li><strong>Stateless Operations:</strong> Each request contains all information needed to complete it</li>\n<li><strong>Standard HTTP Methods:</strong> Uses GET, POST, PUT, DELETE to perform operations</li>\n<li><strong>Multiple Representations:</strong> Resources can be represented in different formats (JSON, XML, HTML)</li>\n<li><strong>Hypermedia as the Engine of Application State (HATEOAS):</strong> Responses include links to related resources</li>\n</ul>\n\n<h3>Benefits for Documentation Teams</h3>\n<ul>\n<li><strong>Consistent Structure:</strong> REST's uniform interface simplifies documentation templates and patterns</li>\n<li><strong>Predictable Patterns:</strong> Standard methods make endpoint behavior more predictable</li>\n<li><strong>Self-Descriptive:</strong> Well-designed REST APIs are inherently more self-documenting</li>\n<li><strong>Language Agnostic:</strong> Documentation can focus on resources and interactions rather than implementation details</li>\n<li><strong>Versioning Support:</strong> REST principles facilitate clear documentation of API versions and changes</li>\n<li><strong>Testing Simplicity:</strong> Easy to create example requests and responses for documentation</li>\n</ul>\n\n<h3>Common Misconceptions</h3>\n<ul>\n<li><strong>REST \u2260 HTTP:</strong> While REST commonly uses HTTP, it's an architectural style, not a protocol</li>\n<li><strong>REST \u2260 CRUD:</strong> REST is about resource manipulation, not just database operations</li>\n<li><strong>All APIs Are RESTful:</strong> Many APIs claiming to be RESTful don't follow all REST constraints</li>\n<li><strong>REST Requires JSON:</strong> REST is format-agnostic; resources can be represented in many formats</li>\n<li><strong>REST Is Simple:</strong> True RESTful design requires careful thought about resource modeling and relationships</li>\n</ul>",
+    "mermaid_diagram": "sequenceDiagram\n    participant DW as Documentation Writer\n    participant AP as API Platform\n    participant DP as Documentation Portal\n    participant U as API User\n    \n    DW->>AP: GET /api/resources\n    AP-->>DW: Return resource list + metadata\n    Note over DW: Document resource structure\n    \n    DW->>AP: GET /api/resources/{id}\n    AP-->>DW: Return detailed resource representation\n    Note over DW: Document resource properties\n    \n    DW->>DP: Publish REST API documentation\n    DP-->>DW: Documentation live\n    \n    U->>DP: View API documentation\n    DP-->>U: Provide endpoints, methods, examples\n    U->>AP: Make API requests based on docs\n    AP-->>U: Return responses as documented",
+    "use_cases": [
+      {
+        "title": "Creating Interactive API Reference Documentation",
+        "problem": "Static API documentation quickly becomes outdated and doesn't allow users to test endpoints directly from the documentation.",
+        "solution": "Implement REST-based interactive documentation that connects to the actual API endpoints.",
+        "implementation": "1. Document each REST resource with its URI pattern and available methods. 2. For each endpoint, create request builders with configurable parameters. 3. Implement authentication token management within the documentation. 4. Add functionality to execute real API calls and display responses. 5. Include code snippets that update based on selected parameters.",
+        "outcome": "Users can explore and test API functionality directly from the documentation, reducing support requests and improving developer experience."
+      },
+      {
+        "title": "Automating Documentation from REST API Specifications",
+        "problem": "Manually documenting REST APIs is time-consuming and prone to errors, especially when APIs change frequently.",
+        "solution": "Generate documentation automatically from OpenAPI/Swagger specifications that follow REST principles.",
+        "implementation": "1. Establish a workflow where developers maintain OpenAPI specifications as part of the codebase. 2. Configure a documentation pipeline that extracts specifications during builds. 3. Transform specifications into human-readable documentation with examples. 4. Highlight REST-specific patterns like resource relationships and method semantics. 5. Implement visual indicators for changes between versions.",
+        "outcome": "Documentation stays synchronized with the actual API implementation, reducing maintenance effort and ensuring accuracy."
+      },
+      {
+        "title": "Documenting REST API Versioning Strategies",
+        "problem": "API evolution creates confusion when multiple versions exist simultaneously without clear documentation of differences.",
+        "solution": "Create specialized REST versioning documentation that clearly explains compatibility and migration paths.",
+        "implementation": "1. Document the versioning strategy (URI, query parameter, header-based). 2. Create comparison tables showing differences between versions for each resource. 3. Provide migration guides with specific code examples. 4. Include deprecation timelines and notifications. 5. Implement interactive version selectors in the documentation interface.",
+        "outcome": "Users can confidently understand which API version to use and how to migrate between versions, reducing support burden during API transitions."
+      },
+      {
+        "title": "Creating Resource Relationship Maps for Complex REST APIs",
+        "problem": "Complex REST APIs with many interconnected resources are difficult for users to understand from traditional linear documentation.",
+        "solution": "Develop interactive resource relationship maps that visualize REST resource connections and navigation paths.",
+        "implementation": "1. Analyze the API to identify all resources and their relationships. 2. Create a visual graph representation with resources as nodes and relationships as edges. 3. Document HATEOAS links between resources. 4. Implement interactive features allowing users to explore the graph. 5. Connect the visualization to specific documentation sections for each resource.",
+        "outcome": "Users gain a holistic understanding of the API's structure, making it easier to navigate complex relationships and discover available functionality."
+      }
+    ],
+    "best_practices": [
+      {
+        "title": "Focus on Resources, Not Actions",
+        "description": "Structure documentation around resources (nouns) rather than actions (verbs) to align with REST's resource-centric philosophy.",
+        "do": "Organize documentation by resource types with subsections for the HTTP methods that apply to each resource.",
+        "dont": "Don't structure documentation primarily around actions or use case scenarios without clearly identifying the resources involved."
+      },
+      {
+        "title": "Document Status Codes Comprehensively",
+        "description": "REST APIs communicate extensively through HTTP status codes, which need thorough documentation for proper error handling.",
+        "do": "Create a dedicated section for status codes with detailed explanations of when each code occurs and how to resolve error conditions.",
+        "dont": "Don't document only the happy path (200 OK responses) without addressing error scenarios and their corresponding status codes."
+      },
+      {
+        "title": "Provide Complete Request/Response Examples",
+        "description": "REST interactions involve specific request formats and response structures that users need to understand through examples.",
+        "do": "Include complete, realistic examples for every endpoint showing headers, request bodies, query parameters, and response payloads in multiple formats.",
+        "dont": "Don't use oversimplified examples that omit important headers or show incomplete response structures."
+      },
+      {
+        "title": "Explain Authentication and Authorization Clearly",
+        "description": "REST APIs typically implement authentication and authorization that must be clearly documented for successful integration.",
+        "do": "Dedicate a section to security explaining token acquisition, request signing, and permission models with step-by-step examples.",
+        "dont": "Don't scatter authentication information across multiple sections or assume users understand your specific security implementation."
+      },
+      {
+        "title": "Document Hypermedia Controls and Navigation",
+        "description": "True RESTful APIs use hypermedia controls (HATEOAS) to guide clients through available actions, which requires specific documentation.",
+        "do": "Explain how response links and hypermedia controls enable API navigation, and document the link relation types used in your API.",
+        "dont": "Don't ignore the hypermedia aspect of REST or treat all endpoints as isolated operations without explaining their relationships."
+      }
+    ],
+    "docsie_connection": "<p>Modern documentation platforms streamline the process of creating, managing, and delivering comprehensive REST API documentation. These platforms offer specialized features designed to address the unique challenges of REST documentation while improving team collaboration and user experience.</p>\n\n<ul>\n<li><strong>OpenAPI/Swagger Integration:</strong> Automatically generate baseline documentation from REST API specifications, keeping content synchronized with the actual implementation</li>\n<li><strong>Interactive API Explorers:</strong> Embed functional API consoles that allow users to make live requests directly from the documentation</li>\n<li><strong>Version Management:</strong> Track and display changes between API versions with visual differencing and migration guidance</li>\n<li><strong>Content Reuse:</strong> Define resource descriptions, parameters, and examples once and reuse them across multiple endpoints</li>\n<li><strong>Collaborative Workflows:</strong> Enable developers and technical writers to collaborate efficiently on API documentation with review processes</li>\n<li><strong>Contextual Code Examples:</strong> Generate language-specific code samples that update based on user preferences and selections</li>\n<li><strong>Analytics Integration:</strong> Track which API endpoints and documentation sections receive the most attention to guide improvement efforts</li>\n</ul>"
+  },
+  "generated_at": "2025-09-07T20:08:10.607920+00:00"
+}

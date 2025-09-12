@@ -1,0 +1,121 @@
+# Benutzerhandbücher: Wichtiger Bestandteil digitaler Serviceleistungen
+
+Benutzerhandbücher sind ein wichtiger Bestandteil digitaler Dienstleistungen. Digitale Kunden erwarten Zugang zu Selbstbedienungsoptionen und fordern sofortigen Zugriff auf Informationen. Eine telefonische Erklärung reicht heute nicht mehr aus; stundenlange Erläuterungen lassen sich in Benutzerhandbüchern viel besser darstellen.
+
+Bei Docsie empfehlen wir allen Unternehmen, eine Bibliothek informativer Benutzerhandbücher für ihre Kunden zu erstellen. Dies ermöglicht Selbstbedienung, reduziert den Support-Aufwand und bietet rund um die Uhr Zugriff auf die Informationen, die Ihre Kunden benötigen, um Ihr Produkt oder Ihre Dienstleistung optimal zu nutzen.
+
+## 10 Tipps für bessere Benutzerhandbücher und Dokumentationen in Docsie
+
+Vorab: Haben Sie bereits eine Lösung zum Speichern, Erstellen und Hosten von Dokumentationen?
+
+Besuchen Sie die [Docsie Onboarding-Seite](https://app.docsie.io/onboarding/) für kundenzentrierte Zusammenarbeit, umfangreiche Einbettungsmöglichkeiten, maßgeschneiderte Übersetzungen und leistungsstarke Veröffentlichungsoptionen.
+
+Nachdem Sie nun dabei sind, lassen Sie uns direkt in unsere 10 Top-Tipps einsteigen!
+
+### 1 - Bereichern Sie Ihre Benutzerhandbücher mit Medien
+
+Text, Wörter, Buchstaben – wir nutzen sie täglich. Leider kann das geschriebene Wort nicht mit der Aussagekraft von Videos oder der Inspiration von Bildern mithalten.
+
+Wenn Sie Benutzerhandbücher erstellen, lesen Sie diese aus der Perspektive des Nutzers. Könnte dieser Abschnitt besser durch ein GIF, ein eingebettetes Video oder ein beschriftetes Bild erklärt werden? Falls ja, fügen Sie es ein!
+
+In Docsie können Sie Bilder hinzufügen, Videos einbetten und iFrame-Inhalte integrieren. Probieren Sie es aus!
+
+![Images, Videos and GIFs in Docsie](https://cdn.docsie.io/workspace_tovPs7rKnzB4cmaiR/doc_GzKTESk1IUWjA77hg/file_CdhFEVXwXaefNXxxg/boo_dqsfhc7ObadQ3xWmV/e0eda1c6-284a-3e0f-5c43-0ff4099966d0BlogGIF10TipsforUserGuides.gif)
+
+### 2 - Schaffen Sie eine Reihenfolge
+
+Schritt-für-Schritt-Anleitungen sind das Fundament jedes Kochbuchs! Würden Sie beim Befolgen eines Rezepts Eier und Mehl durcheinanderbringen? Natürlich nicht – Sie wissen, was zu tun ist, weil Sie den Schritten folgen!
+
+Spaß beiseite: Stellen Sie sicher, dass Sie alle Benutzerhandbücher mit Schritt-für-Schritt-Anleitungen selbst durchgehen. Wenn Sie diesen Schritten folgen, erreichen Sie tatsächlich das beabsichtigte Ergebnis? Ungenaue Anweisungen, die nicht zum gewünschten Ergebnis führen, sind ein großes Warnsignal für Kunden. Präzise Anweisungen hingegen schaffen Vertrauen und bieten sowohl Kunden als auch dem Unternehmen einen Mehrwert durch Informationsaustausch.
+
+Erstellen Sie eine Reihenfolge mit nummerierten Listen in Docsie oder nutzen Sie Docsie Book Articles, um Ihre Dokumentation zu strukturieren.
+ 
+![Articles, Shelves and Workspaces in Docsie](https://cdn.docsie.io/workspace_tovPs7rKnzB4cmaiR/doc_GzKTESk1IUWjA77hg/file_O4Ux6ERzhyIS0eB1X/boo_dqsfhc7ObadQ3xWmV/aa925138-ab48-e18b-ff33-50557a2897cfArticlesShelvesWorkspacesinDocsie.png)
+
+### 3 - Berücksichtigen Sie verschiedene Kenntnisstufen
+
+Gehen Sie davon aus, dass Kunden JavaScript von Ihren Top-Tipps unterscheiden können? Fachbegriffe und komplexe Terminologie werden typischerweise in technischen Benutzerhandbüchern empfohlen. Für Laien gilt jedoch: Je einfacher die Sprache, desto besser!
+
+Die meisten Leser möchten einfach nur wissen, wie sie etwas tun und wiederholen können. Ein Ansatz ist, ein komplexes Konzept auf hohem Niveau zu erklären – und es dann in einer vereinfachten Version für Laien zu wiederholen. So bedienen Sie sowohl technische Nutzer als auch Laien gleichzeitig.
+
+"Künstliche Intelligenz beinhaltet die algorithmische Emulation menschlicher Intelligenz zur Steigerung der Produktivität" oder "Künstliche Intelligenz soll Arbeit erledigen, indem sie menschliche Intelligenz mit Computercode nachahmt" – beide Sätze bedeuten dasselbe, zielen aber auf unterschiedliche Zielgruppen ab.
+
+Nutzen Sie Docsie, um separate Shelves (Regale) für Laien und technische Nutzer zu erstellen. So können Sie Bücher für beide Zielgruppen anbieten, die über das Docsie Portal zugänglich sind.
+ 
+![Complex Code Simplified for Laypersons in Docsie Example](https://cdn.docsie.io/workspace_tovPs7rKnzB4cmaiR/doc_GzKTESk1IUWjA77hg/file_cnLx3DDYwihXopx74/boo_dqsfhc7ObadQ3xWmV/411ea34c-096b-3bf2-fde0-2f8fdaddd55aLaypersonSimplificationforDocsie.png)
+
+### 4 - Nutzen Sie Vorlagen und arbeiten Sie effizienter!
+
+Schreiben Sie jedes Benutzerhandbuch von Grund auf neu? Erstellen Sie stattdessen Vorlagen mit grundlegender Struktur und Markenbotschaften, und bauen Sie darauf auf.
+
+Das Schreiben von Grund auf kostet Zeit und Mühe und birgt das Risiko von Inkonsistenzen, wenn mehrere Autoren am selben Projekt arbeiten. Vorlagen sparen Zeit beim Schreiben und fördern die Konsistenz zwischen den Seiten. Vertrauen basiert auf konsistenten Botschaften und Mehrwertgenerierung, was durch Vorlagen unterstützt wird.
+
+Klicken Sie auf "...Mehr" und wählen Sie "Vorlagen" in Docsie. Hier können Sie Vorlagen speichern und neue Bücher mit der Vorlage als Ausgangspunkt erstellen!
+
+![Templates in Docsie](https://cdn.docsie.io/workspace_tovPs7rKnzB4cmaiR/doc_GzKTESk1IUWjA77hg/file_Hv9JSg74vQE1zgYjT/boo_dqsfhc7ObadQ3xWmV/833830aa-871c-d3ba-19e7-0fbbba2adbfbTemplatesinDocsie.png)
+![Live Template in the Docsie Editor](https://cdn.docsie.io/workspace_tovPs7rKnzB4cmaiR/doc_GzKTESk1IUWjA77hg/file_jdf9iWL3NXlFFePHx/boo_dqsfhc7ObadQ3xWmV/2bfcea18-df94-30ff-4931-799345e4ae74Templates2inDocsie.png)
+
+### 5 - Schnell schreiben, häufig überarbeiten
+
+In der agilen Softwareentwicklung lautet das Mantra: schnell scheitern und häufig iterieren. Übertragen auf Benutzerhandbücher sollten Ihre Mitarbeiter darauf abzielen, schnell zu schreiben und häufig zu überarbeiten.
+
+Dies bedeutet nicht, Qualität für Geschwindigkeit zu opfern. Vielmehr ermöglicht es Kundenfeedback und Reaktionen mit weniger anfänglichem Aufwand. Dieses Feedback kann für weitere Iterationen der Dokumentation genutzt werden und hilft dem Unternehmen, kundenorientierter zu werden.
+
+Docsie Vocally verdeutlicht Leserfeedback mit Bewertungen und Bildschirmaufzeichnungen, um genau den Inhalt zu identifizieren, den sie gelesen haben. Probieren Sie es aus, während Sie schnell schreiben und häufig überarbeiten!
+
+![Docsie Vocally Feedback View](https://cdn.docsie.io/workspace_tovPs7rKnzB4cmaiR/doc_GzKTESk1IUWjA77hg/file_8uO5DnYSHSsLteI2X/boo_dqsfhc7ObadQ3xWmV/b9f841c9-1dde-5eee-c723-809f13df3255DocsieVocallyLivePreview.png) 
+
+### 6 - Vernetztes Wissen durch interne Rückverweise
+
+Sind Ihre Benutzerhandbücher mit anderen Seiten verlinkt? Durch das Hinzufügen von Links zu relevanten Abschnitten der Dokumentation helfen Sie den Lesern, Ihr Produkt oder Ihre Dienstleistung auf konzeptioneller Ebene besser zu verstehen.
+
+Wenn Sie auf eine bestimmte Funktion verweisen, fügen Sie immer einen Link hinzu. Ermöglichen Sie dem Leser, schnell auf diese Informationen zuzugreifen, anstatt ihn zu zwingen, selbst zu suchen. Sprechen Sie über Kontenanmeldungen? Fügen Sie eine Login-URL zum Text "Melden Sie sich in Ihrem Konto an" auf Ihrer Seite und jeder anderen Seite hinzu. Machen Sie Ihre Dokumentation bequem und im Fließtext navigierbar, anstatt eine endlose Bibliothek zum Durchsuchen anzubieten.
+
+Docsie ermöglicht es Autoren, interne Rückverweise zu erstellen. Markieren Sie einfach Text und klicken Sie auf die Schaltfläche 🖇️ in der Docsie-Editor-Symbolleiste. Zusätzlich können Sie mit relativen Objektlinks sprachunabhängige und versionsunabhängige Links erstellen.
+
+![Backlinking in Docsie With Object Reference Links](https://cdn.docsie.io/workspace_tovPs7rKnzB4cmaiR/doc_GzKTESk1IUWjA77hg/file_dclZdrsTWJrB8WETc/boo_dqsfhc7ObadQ3xWmV/7d8c9e37-3aa6-580d-644b-0d7a8039fa89DocsieObjectLinksforBacklinking.png)
+
+### 7 - Entstauben Sie alte Inhalte und frischen Sie sie auf
+
+Haben Sie alte Benutzerhandbücher und Dokumentationen online? Wenn Sie Dokumentation für Version 1.2 veröffentlicht haben, während Ihr Produkt bereits bei Version 1.3 ist, ist Ihre Dokumentation nicht mehr relevant. Anstatt für jede Version neue Dokumentationen zu veröffentlichen, nutzen Sie Docsie Versioning.
+
+Docsie Versioning ermöglicht Benutzern den Zugriff auf historische und aktuelle Dokumentationsversionen. Bei der Veröffentlichung neuer Versionen werden ältere Versionen archiviert und bleiben über ein Dropdown-Menü zugänglich – alles auf derselben Webseite, was es Benutzern erleichtert, relevante Informationen zu finden.
+
+Wenn Ihr Tipps-Leitfaden von 2021 immer noch 2022 veröffentlicht ist, aktualisieren Sie ihn! Ändern Sie den Namen, aktualisieren Sie Zitate und Quellen mit neuen Recherchen und überprüfen Sie, ob die Informationen noch relevant sind. Entstauben Sie und halten Sie Inhalte aktuell – Inhalte können immer wiederverwendet werden.
+
+![Version Picker to Find Older Content in Docsie](https://cdn.docsie.io/workspace_tovPs7rKnzB4cmaiR/doc_GzKTESk1IUWjA77hg/file_OaCUumTVGz3CQ2ha2/boo_dqsfhc7ObadQ3xWmV/4edbd225-b61b-0921-4f63-e55b3052ed28DocsieVersionsPickerMenu.png)
+
+### 8 - Unterteilen Sie Aufgaben in kleine Einheiten
+
+Schreiben Sie eine ganze Seite auf einmal ohne Vorplanung? Einiges davon hängt von persönlichen Vorlieben der Autoren ab. Durch die Unterteilung von Aufgaben kann die Arbeit jedoch schneller und fokussierter erledigt werden.
+
+Erstellen Sie eine einfache Struktur mit H1- und H2-Tags und kurzen Beschreibungen für jeden Abschnitt. Nutzen Sie diese beim Schreiben und bearbeiten Sie einzelne Abschnitte, anstatt sich über die gesamte Seite Gedanken zu machen. In der Schreibbranche wird dies als Outline bezeichnet. Die Gliederung bietet Gelegenheit für Feedback von Redakteuren, bevor das Schreiben beginnt, und dient als Leitfaden während des Schreibprozesses.
+
+Erstellen Sie ein neues Buch in Docsie und fügen Sie einige grundlegende Überschriften und Texte für eine Gliederung hinzu. Sie können auch Aufgaben über das rechte Seitenmenü hinzufügen und Arbeit in kleinere Einheiten aufteilen, während mehrere Teammitglieder an Inhalten zusammenarbeiten. Die Versionsverwaltung ermöglicht es Ihnen, zurückzugehen, wenn ein Autor weniger gelungene Inhalte hinzufügt – perfekt für schnelles Schreiben und häufiges Überarbeiten!
+
+![Calendar for Task Assignees in Docsie](https://cdn.docsie.io/workspace_tovPs7rKnzB4cmaiR/doc_GzKTESk1IUWjA77hg/file_4JCx9FdXnyXu3quMX/boo_dqsfhc7ObadQ3xWmV/d3468298-7bc2-7f51-7afe-2437f6321658TaskMiniaturizeCalendarDocsie.png)
+
+### 9 - Ein Inhaltsverzeichnis für mehr Leserfreundlichkeit
+
+Bei komplexen und vielfältigen Benutzerhandbüchern kann eine Textwand für Leser einschüchternd wirken. Dies kann mit einem umfassenden Inhaltsverzeichnis gelöst werden. Häufig in Enzyklopädien verwendet, hilft es Benutzern, relevante Informationen zu identifizieren und direkt anzuspringen, während es Struktur in einer Wissensportal-Umgebung bietet.
+
+Docsie Articles, Shelves und Workspaces arbeiten zusammen, um ein Inhaltsverzeichnis zu erstellen. Dieses wird automatisch auf der linken Seite Ihres Wissensportals angezeigt und bietet eine einfache Möglichkeit, durch Ihre Wissensdatenbank zu navigieren. Mit diesem Tipp erledigt Docsie die Arbeit für Sie!
+
+![Table of Contents Auto-Generated by Docsie](https://cdn.docsie.io/workspace_tovPs7rKnzB4cmaiR/doc_GzKTESk1IUWjA77hg/file_oxDNcw0pA6rCZa3J7/boo_dqsfhc7ObadQ3xWmV/35d48662-895e-b83f-c7c3-abb0ce6edd0dTableofContentsDocsie.png)
+ 
+
+### 10 - Beherrschen Sie Ihr Thema
+
+Ist Ihr Autor ein Fachexperte? Ist Ihr Autor zudem einfallsreich und gut darin, Themen zu recherchieren, mit denen er möglicherweise nicht vertraut ist? Letztendlich bestimmt trotz all unserer Tipps der Autor die Qualität Ihrer Benutzerhandbücher.
+
+Je besser sie Ihr Produkt verstehen, desto genauer wird ihre Arbeit sein. Geben Sie Autoren die Flexibilität, Ihr Produkt zu testen und auch mal Fehler zu provozieren, da Benutzer auf ähnliche Probleme stoßen könnten. Noch besser: Führen Sie Ihren Autor durch eine Produktdemo mit Ihrem Vertriebsteam und geben Sie ihm praktische Erfahrung mit der Vertriebspipeline und den darin enthaltenen Botschaften. Dies fördert wiederum die Konsistenz und macht Ihre Autoren zu Benutzern. Nicht alle Autoren werden zu Benutzern, aber alle Benutzer können mit praktischem Wissen zu guten Autoren werden.
+
+
+
+## Setzen Sie diese Tipps in Docsie um!
+
+Vielen Dank fürs Lesen unserer 10 Top-Tipps für bessere Benutzerhandbücher. Wir laden Sie ein, diese Tipps in Ihren Docsie-Dokumenten anzuwenden!
+
+Docsie ist eine End-to-End-Dokumentationsmanagementplattform, die Unternehmen nutzen, um webbasierte FAQs, Produktdokumentationen, Benutzerhandbücher und Hilfe-Dokumente zu erstellen. Die Plattform bietet kundenzentrierte Zusammenarbeit, umfangreiche Einbettungsmöglichkeiten, maßgeschneiderte Übersetzungen und leistungsstarke Veröffentlichungsoptionen.
+
+Starten Sie noch heute mit dem [Onboarding bei Docsie](https://app.docsie.io/onboarding/) und begeistern Sie Ihre Kunden mit hervorragender Dokumentation!

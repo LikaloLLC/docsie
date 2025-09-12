@@ -1,0 +1,121 @@
+Imagine que é o administrador de uma solução de apoio ao cliente. Tem uma equipa de especialistas, mas todos os esforços estão a ser prejudicados pela falta de um software empresarial completo. Não é uma tarefa fácil, mas primeiro precisa de clarificar os seus objetivos para proporcionar experiências de conteúdo superiores às suas equipas e clientes.
+
+**O que precisa? Desenho? Publicação? Manutenção da sua documentação?**
+
+Livre-se de todas as preocupações e apresente o HAT à sua equipa! Use um HAT e prepare-se para afinar o seu conteúdo com funcionalidades poderosas que melhoram a colaboração entre equipas e criam documentos técnicos mais eficazes. Simplifica o conteúdo técnico de tal forma que a maioria das equipas prefere-os a ferramentas como documentos MS Word ou HTML simples.
+
+Com a ajuda das **Ferramentas de Criação de Ajuda (HAT)**, as empresas podem produzir e manter documentação com descrição detalhada para diversas plataformas como **PDFs, eBooks, dispositivos móveis, web, documentos impressos, etc.** Ajuda a eliminar o uso de plataformas como Microsoft Word ou Google Docs.
+
+Este artigo leva-o numa viagem rápida sobre o que é um HAT (Ferramenta de Criação de Ajuda) e como a Docsie se tornou sinónimo de HAT.
+
+## O que é um HAT (Ferramenta de Criação de Ajuda)?
+
+As Ferramentas de Criação de Ajuda são companheiras permanentes para redatores técnicos. Este programa de software ajuda os autores a desenhar, escrever, editar e publicar a sua documentação digitalmente. Os autores também podem acumular a documentação de ajuda do software e convertê-la numa base de dados de fonte única, utilizando-a em vários formatos, incluindo **PDFs, HTML, XML**, etc. São muito mais que simples processadores de texto, pois por vezes também têm uma ferramenta de imagem incorporada que pode poupar horas de trabalho. É realmente uma ajuda preciosa para pequenas empresas.
+
+Algumas das HATs mais populares são **Docsie, MadCap Flare, Adobe RoboHelp, Author-it, Doc-To-Help e HelpNDoc**, entre outras.
+
+![](https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_f6SovysLWKtxbWYZY/image3.png)
+
+## Cinco características principais de HAT para produzir documentação de alta qualidade:
+
+### 1. Deteção de erros:
+
+No caso das HATs, a edição de código e de texto são características principais. As HATs eliminam erros e decompõem o processo de escrita complexo em passos simples. Oferecem sugestões gramaticais e criam modelos sobre os quais as empresas podem trabalhar para criar conteúdo personalizado. A maioria das HATs também fornece instruções passo a passo para que as equipas possam aprender e familiarizar-se com elas para criar ótimos produtos.
+
+Ao desenvolver guias de estilo de linguagem automatizados com a ajuda das HATs, as empresas podem desenvolver a sua linguagem de marca. Quando se trata de edição de código, os programadores web front-end usam frequentemente estas ferramentas. As HATs também ajudam as marcas a manter o tom, formato e aparência da sua documentação intactos.
+
+### 2. Gestão de conteúdo (de ponta a ponta):
+
+Muitas das Ferramentas de Criação de Ajuda disponíveis no mercado hoje partilham semelhanças com sistemas de gestão de conteúdo (CMS). Seguindo a função principal das ferramentas e plataformas CMS, as HATs ajudam os redatores técnicos a gerir os seus projetos de conteúdo, armazenar e acompanhar a sua progressão.
+
+O ponto em que um HAT difere de um CMS é que um HAT tem cada projeto de conteúdo ligado a um conjunto particular de ficheiros, ajudas, manuais e guias de explicação de software. Ao usar um HAT, pode prevenir a perda de dados e também restaurar a última versão guardada dos seus documentos. Esta é uma grande vantagem de um HAT que permite aceder a informações valiosas mesmo após enfrentar uma falha técnica imprevisível. Além disso, proporcionam suporte de início de sessão único para garantir que tudo funciona sem problemas.
+
+A maioria das plataformas HAT oferece autoria baseada em tópicos, em que pode dividir a documentação em partes menores, de fácil compreensão para os seus clientes.
+
+### 3. Transações de ficheiros:
+
+Quando usa HATs, pode facilmente importar e exportar os seus ficheiros, garantindo transações sem problemas entre múltiplas plataformas. A boa parte é que não precisa de converter manualmente cada um dos seus ficheiros. Através das HATs, pode trabalhar sem esforço no mesmo conteúdo de ficheiro e criar múltiplos formatos do mesmo documento.
+
+Uma vez que tenha múltiplos formatos, **o que acontece ao seu documento original?** Não se preocupe, pois a funcionalidade de conversão automática das HATs permite-lhe preservar a documentação original, mantendo a estrutura e o formato intactos. Isto diminui a possibilidade de erros, reduzindo tempo e esforço. Esta característica torna-se ainda mais significativa quando os autores de conteúdo precisam de partilhar os seus ficheiros de projeto com outros colaboradores.
+
+### 4. Melhoria de conteúdo:
+
+Quando se trata de criação de conteúdo, nada supera a importância do brainstorming para gerar novas ideias. Soluções de software como as HATs simplificam a comunicação entre equipas, tornando o trabalho remoto mais fácil e garantindo uma colaboração constante entre os membros da equipa. Existem outras características notáveis como edição em tempo real, comentários e controlo de versões. Através destas funcionalidades, pode reduzir a má comunicação entre os membros da sua equipa, aumentar a produtividade e reduzir consideravelmente o tempo e esforço.
+
+As HATs são ótimas ferramentas que mantêm os membros da equipa bem unidos num grupo próximo. Uma das características notáveis das HATs inclui o controlo de alterações. Isto permite aos utilizadores alternar entre várias versões do mesmo documento, criando conteúdo abrangente e bem documentado, independentemente do tópico em que está a trabalhar.
+
+Além disso, pode usar elementos como vídeos, animações e simulações interativas para melhorar a experiência de aprendizagem das suas equipas ou clientes utilizando ferramentas HAT.
+
+### 5. Publicação e manutenção:
+
+Atualizar e manter a documentação regularmente é um processo cansativo. Para facilitar as coisas para os seus utilizadores, um HAT permite que os redatores façam alterações ao ficheiro fonte preliminar, após o que as atualizações são feitas em todos os formatos de ficheiro. Isto garante que todos os utilizadores se mantêm atualizados em relação às alterações feitas e podem aceder à versão final do ficheiro sem qualquer dificuldade.
+
+No caso da publicação, as HATs frequentemente fornecem modelos para que os autores técnicos possam trabalhar na formatação de nível base já existente. Os modelos também sugerem vários tipos de layouts visuais, facilitando aos redatores técnicos a extração de vídeos, gráficos em movimento, etc. de outras fontes.
+
+## Porquê usar a Docsie como Ferramenta de Criação de Ajuda (HAT) para produzir documentação de alta qualidade?
+
+Com tecnologia e inovação no seu núcleo, a Docsie é uma das principais empresas de software, oferecendo Ferramentas de Criação de Ajuda (HAT) que criam novas formas para as equipas colaborarem, criarem e implementarem documentação de produtos. Com sede em Toronto, Ontário, a Docsie, uma das ferramentas de autoria mais populares, é um serviço de documentação auto-escrita que permite às empresas escrever, traduzir e melhorar a sua documentação através de interfaces de utilizador simples.
+
+![](https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_thn9ZEAl3HVPE0jQa/image2.png)
+
+## Cinco formas eficazes de como a Docsie ajuda o seu negócio:
+
+### 1. Implementação rápida e portal de conhecimento personalizado:
+
+Enquanto o portal de conhecimento interno da plataforma ajuda as empresas a partilhar conhecimento de autoatendimento com todas as suas equipas, as bases de conhecimento para clientes externos ajudam e guiam na partilha de documentação entre equipas e minimizam as cargas de trabalho de suporte ao cliente. A gestão de conhecimento e documentação técnica são fáceis de entender e estão repletas de tópicos de ajuda para uma melhor compreensão do portal. Tem todas as ferramentas HAT que precisa para potenciar os seus processos de conteúdo e criar melhores produtos para os seus clientes.
+
+Com o **[portal Docsie](https://www.docsie.io/)**, pode usar designs predefinidos ou implementar um design de base de conhecimento personalizado de acordo com a personalidade, estilo e imagem da sua marca. O produto de software também fornece um domínio personalizado gratuito como parte do seu plano gratuito. Também oferece domínios adicionais que os utilizadores podem obter subscrevendo os planos pagos, bem como fornece ajuda online para todas as suas questões. Mas isso não é tudo, pois disponibiliza funcionalidades avançadas como **tradução automática, personalização de UI, opções de publicação, opções de edição poderosas, análise de documentação, portais de conhecimento interativos** e muito mais. Também tem suporte para diferentes idiomas, tornando-se a principal escolha para empresas com equipas diversificadas.
+
+**Em resumo**, a Docsie é uma ferramenta poderosa que pode fornecer ajuda eficaz com tudo o que é documentação. O portal pode ser facilmente acedido em diferentes dispositivos como uma ferramenta de desktop através do seu navegador web, mesmo em dispositivos móveis sem necessidade de qualquer aplicação móvel. Tem uma das gestões de relacionamento com clientes mais preferidas e fornece a melhor ajuda a todos os seus clientes para que possam atingir objetivos sem quaisquer problemas para servir os utilizadores finais.
+
+### 2. Integração gratuita, importação e design de portal:
+
+Os elementos-chave da documentação de integração de clientes são **instruções claras, manuais de utilizador online, guias de resolução de problemas, visitas guiadas ao produto e Perguntas Frequentes (FAQs)**. Com o Docsie Pilot, as empresas podem garantir integração gratuita. Depois de analisar a documentação de ajuda eficaz, os utilizadores podem importar o seu conteúdo de múltiplas plataformas e tirar o máximo valor do seu conteúdo criado.
+
+Está preocupado sobre **como formar os seus colaboradores para maximizar a sua produtividade?** Use a sessão de formação opcional da Docsie para que a sua equipa possa trabalhar com o software e tirar o máximo partido da solução. O conteúdo da sua base de conhecimento ajuda as equipas a perceber como as coisas funcionam num instante.
+
+### 3. Documentação de nível empresarial:
+
+Incluído em todos os planos pagos, a Docsie fornece suporte de migração com o Docsie Pilot. Desde a importação de conteúdo existente, portais de conhecimento inteiros, bases de conhecimento e muito mais, até ao design de portais personalizados e formação de pessoal - a Docsie fornece uma caixa de ferramentas completa que ajuda as empresas a expandir a sua funcionalidade. A plataforma também inclui suporte de conteúdo dinâmico.
+
+Com fluxos de trabalho de documentação simplificados, a Docsie ajuda-o a melhorar a eficácia de toda a sua documentação. Para além do domínio personalizado gratuito, a plataforma também fornece 3 domínios personalizados para pequenas equipas e mais de 10 domínios personalizados para empresas e organizações.
+
+### 4. Domínio personalizado com SSL:
+
+A Docsie permite que todos os seus utilizadores possuam um domínio personalizado sem qualquer custo adicional. Qualquer empresa com um plano para a plataforma pode possuir um domínio personalizado onde pode hospedar um site de conhecimento.
+
+Ao oferecer o seu [plano gratuito para Startups](https://www.docsie.io/pricing/), a Docsie incentiva todas as pequenas e médias empresas a obterem um nome de domínio personalizado e usá-lo para aumentar a sua visibilidade e melhorar a imagem da sua marca.
+
+### 5. Gestão de versões e idiomas:
+
+Hoje em dia, muitas empresas estão a usar tradução automática de idiomas. Tudo graças à transformação massiva que a IA testemunhou nos últimos anos. Se a sua empresa também trabalha com muito conteúdo e luta com problemas de copiar e colar e duplicação, escolha a Docsie como seu parceiro profissional. Integre idiomas e versões e consolide-os com a Docsie, traduzindo-os para um URL específico. Qual é o benefício? Já não precisará de bater com a cabeça na parede para estar no topo da classificação SEO.
+
+![](https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_MBAXy4sv4IGcf1zlk/image1.png)
+
+## Considerações finais
+
+Então, foi uma pequena amostra do mundo das HAT. **O que se segue?** Selecione uma Ferramenta de Criação de Ajuda fiável e eficiente. Certifique-se de que entende os requisitos do seu negócio, os objetivos da sua empresa e fornece todas as características de uma HAT eficaz dentro do seu orçamento. Antes de finalizar qualquer HAT, garanta que oferece suporte ao cliente abrangente juntamente com eficiência e escalabilidade inquestionáveis.
+
+Escolha a [Docsie](https://www.docsie.io/) como seu parceiro profissional e veja o seu negócio atingir novos patamares de excelência. Fornecendo uma experiência de documentação unificada aos seus clientes globais, a Docsie proporciona as soluções para todas as suas necessidades de documentação sob o mesmo teto, com equipas de suporte a trabalhar 24 horas por dia para garantir o seu sucesso.
+
+## Perguntas frequentes sobre HAT
+
+**Pergunta 1**: O que é uma Ferramenta de Criação de Ajuda (HAT)?
+
+**Resposta**: Uma HAT é um software que ajuda os redatores técnicos a criar, editar e publicar documentação para várias plataformas como PDFs, HTML e XML.
+
+**Pergunta 2**: Como é que a HAT melhora a Gestão de Conteúdo?
+
+**Resposta**: A HAT fornece soluções de gestão de conteúdo semelhantes às plataformas CMS (sistemas de gestão de conteúdo), mas com um foco especial na documentação. A plataforma ajuda-o a gerir projetos de conteúdo, monitoriza o progresso do trabalho e também previne a perda de dados.
+
+**Pergunta 3**: Quais são algumas das HATs populares?
+
+**Resposta**: Docsie, MadCap Flare, Adobe RoboHelp, Author-it, Doc-To-Help e HelpNDoc, entre outras, são algumas das ferramentas HAT mais populares.
+
+**Pergunta 4**: Como é que a Docsie ajuda como HAT?
+
+**Resposta**: A Docsie ajuda as empresas a fornecer às suas equipas funcionalidades como colaboração, criação de conteúdo e implementação de documentação.
+
+**Pergunta 5**: Como é que a HAT melhora a colaboração entre equipas?
+
+**Resposta**: As HATs melhoram a colaboração entre equipas oferecendo edição em tempo real, facilidade de comentários e funcionalidades de controlo de versões.

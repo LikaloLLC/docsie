@@ -1,0 +1,359 @@
+# Optimierung Ihrer Produktdokumentation: Ein umfassender Leitfaden
+
+![](https://cdn.docsie.io/workspace_WxPJSQ5gsES8Bzjxy/doc_ydgtE07E6Rp4AMmKv/file_fnrc6e2hqBPbGE5DG/boo_NbQ7i8LYu6f7q4rnn/13a8cb93-d20f-41ad-1e5e-6e888f610ea7corinne_kutz_tMI2__r5Nfo_unsplash.jpg)
+
+Viele SaaS-Unternehmen kämpfen mit der Erstellung und Verteilung von Produktdokumentation (Benutzerhandbücher, Anleitungen und Tutorials) für ihre Kunden.
+
+Häufig liegt das an fehlendem Wissen oder unklaren Prozessen zur korrekten Erstellung von Handbüchern, oder sogar an Unklarheit darüber, wer überhaupt dafür verantwortlich ist.
+
+Solange wir Tools und Software nutzen, brauchen wir effektive Kommunikation, um anderen zu vermitteln, wie diese Produkte verwendet, entwickelt und aufgebaut sind. Der Grund dafür ist einfach: Technische Kommunikationsfähigkeiten sind entscheidend, um Informationen zu sammeln und dem Publikum zu helfen, Produkte oder Technologien besser zu verstehen.
+
+Während Kommunikation in der realen Welt durch Sprache, Körpersprache und Emotionen stattfindet, erfolgt technische Kommunikation in der virtuellen Welt durch technische Produktdokumentation!
+
+Das einzige Ziel technischer Produktdokumentation ist es, dem Nutzer zu helfen, die Funktionsweise und Architektur eines Produkts zu verstehen. Sie ist wie ein "Wie-benutze-ich-das"-Handbuch für neue Mitarbeiter, Nutzer/Kunden und alle anderen, die die Arbeitsweise und den detaillierten Aufbau eines Produkts verstehen müssen.
+
+Es liegt in der Verantwortung des Produktmanagers, ein Team aufzubauen, das hochwertige Produktdokumentation erstellt, verwaltet, veröffentlicht und pflegt.
+
+Sicher hat jeder Produktmanager schon einmal Sätze wie diese gehört oder selbst gesagt: "Produktdokumentation ist Teil der Aufgaben des Product Owners", "Jedes Entwicklungsteam sollte seine eigenen Anwendungen dokumentieren", "Das Feature wurde bereitgestellt, wurde das Handbuch aktualisiert?" oder schlimmer noch: "Es gibt einen Fehler in der technischen Dokumentation."
+
+Offensichtlich kann technische Produktdokumentation trotz ihrer scheinbaren Einfachheit verwirrend sein! Während man über die obigen Aussagen diskutiert, verschlechtern sich Handbücher und Tutorials – was dem Image Ihres Produkts oder Unternehmens schadet.
+
+Um allen zu helfen, die mit ähnlichen Problemen kämpfen, finden Sie hier einige Schritte zur Optimierung Ihrer Produktdokumentation.
+
+## Was ist der Zweck von Produktdokumentation?
+
+![](https://cdn.docsie.io/workspace_WxPJSQ5gsES8Bzjxy/doc_ydgtE07E6Rp4AMmKv/file_AkCWDsRGayFUwrjU6/boo_NbQ7i8LYu6f7q4rnn/1945711f-8493-b2f6-a461-26ddae0b04acidea_3310390_1920.jpg)
+
+Bei der Produktdokumentation für ein technisches Produkt oder eine Dienstleistung geht es um Informationen, die das Produkt beschreiben und erklären.
+
+Technische Dokumentation oder Produktdokumentation soll Ihrem Publikum und Ihren Kunden helfen, Ihr Produkt zu nutzen, zu verstehen und anzuwenden. Die meisten Produktdokumentationen werden in verschiedenen Bereichen erstellt, darunter Ingenieurwesen, Medizin, Informationstechnologie und Marketing.
+
+Gute technische Produktdokumentation hilft Ihren Nutzern, sich in Ihrem Produkt zurechtzufinden und es problemlos zu nutzen.
+
+Ein weiterer wichtiger Punkt: Technische Dokumentation ist entscheidend für den Kundensupport und trägt erheblich zum Markenimage und Vertrauen Ihres Unternehmens bei. Nutzer suchen in Momenten der Not nach technischer Dokumentation. Sie nutzen Ihre Dokumentation, um Prozesse zu verstehen und Probleme zu lösen.
+
+Daher ist es sehr wichtig, eine gründliche und umfassende Produktdokumentation mit Suchfunktionen bereitzustellen.
+
+## Verschiedene Arten von Produktdokumentation
+
+In diesem Abschnitt sehen Sie, welche Arten von Produktdokumentation Sie für Ihre Kunden benötigen.
+
+Es gibt verschiedene Arten von Produktdokumentation, die unterschiedliche Anwendungsfälle und Nutzerbedürfnisse abdecken:
+
+**Produktnutzerdokumentation:** Dazu gehören Benutzerhandbücher, Anleitungen, Tutorials, FAQs, Release Notes, Schulungsunterlagen sowie Betriebsanleitungen.
+
+**Unternehmensdokumentation:** [Umfragen zeigen](https://www.inc.com/david-finkel/why-policies-and-procedures-manuals-are-dead-and-what-you-should-replace-them-wi.html), dass über 80% der Unternehmen (aus 1000 befragten) formelle Richtlinien und Verfahrenshandbücher verwenden.
+
+Es gibt viele weitere Unternehmensdokumentationen, darunter Unternehmensrichtlinien und -verfahren, Schulungshandbücher, technische Verfahren, Verhaltens- und Ethikkodizes sowie passwortgeschützte rechtliche Dokumente. Auch Unternehmensstrukturen, Best Practices, Verfahren und Wartungshandbücher fallen in diese Kategorie.
+
+**Entwicklerdokumentation:** Diese Art der Dokumentation bietet Anleitungen für die Softwareproduktentwicklung, funktionale Spezifikationen, technische Spezifikationen, Dokumentation und Tools zur Unterstützung des Entwickler-Workflows.
+
+Nachdem wir nun die verschiedenen Arten technischer und Produktdokumentation besser verstehen, wollen wir betrachten, womit ein solider Managementprozess für die Produktdokumentationsentwicklung beginnt.
+
+### Einen Verantwortlichen für die Produktdokumentation bestimmen
+
+![](https://cdn.docsie.io/workspace_WxPJSQ5gsES8Bzjxy/doc_ydgtE07E6Rp4AMmKv/file_PsI4RmXQikpEACQlf/boo_NbQ7i8LYu6f7q4rnn/eccf743b-f84f-655a-e8cb-52655df7bc4ccampaign_creators_gMsnXqILjp4_unsplash.jpg)
+
+Ein typisches Problem ist die Frage, wer für die Produktdokumentation verantwortlich sein sollte – nicht nur als jemand, der sie aktualisiert, sondern als jemand, der für die Qualität und den Erfolg des Produkts verantwortlich ist.
+
+Während manche Unternehmen glauben, dass jeder Product Owner und/oder Produktmanager für die Produktdokumentation verantwortlich ist, können auch andere Abteilungen wie Entwicklung und Support mit der Aufgabe betraut werden, Benutzerhandbücher, Anleitungen und alle Aspekte der Produktdokumentation aktuell und effektiv zu halten.
+
+Die Entwicklung von Produktdokumentation hat viele bewegliche Teile, aber hier möchten wir zwei davon hervorheben:
+
+1. Wer versteht, wie das Produkt auf allen Ebenen funktioniert (dazu gehören auch die Produktentwicklungs- und Spezifikationsteams).
+
+2. Diejenigen, die Feedback von Kunden erhalten, die durch die Produktdokumentation gehen, und ihre Schwierigkeiten, Rückmeldungen und Bedenken zum Verständnis der vorliegenden Produktdokumentation anhören.
+
+Der erste Teil hilft uns, die zugewiesene Produktdokumentation mit dem vorhandenen Wissen zu erstellen. Diese wird dann an den Kunden gesendet, der Feedback gibt und den zweiten Prozess einleitet, der hilft, die Dokumentation zu optimieren.
+
+Manchmal sind diese beiden Punkte nicht perfekt umgesetzt, was zu Situationen führt, in denen die Produktdokumentation nie die nötige Aufmerksamkeit erhält.
+
+Ein Ansatz besteht darin, eine Person zu bestimmen, die für die "Leistung" der Produktdokumentation, Produkthandbücher und Benutzeranleitungen verantwortlich ist. Stellen Sie sich einen Produktverantwortlichen vor, der "Produktdokumentation" als sein Produkt hat. Er ist dafür zuständig, alle Teams des Unternehmens zu durchlaufen, zu skizzieren, wie jedes Produkt seine Anleitungen erstellt, und die damit verbundenen Herausforderungen zu identifizieren.
+
+Die Absicht ist nicht, dass dieser Produktverantwortliche und Produktmanager vollständig für die Erstellung und Änderung von Handbüchern verantwortlich ist, sondern dass er Personen innerhalb jedes Teams bei der Dokumentenverwaltung unterstützt.
+
+Diese Person sollte untersuchen, wie Benutzer mit Dokumenten interagieren, Wege vorschlagen, um Updates flüssiger zu gestalten, und Feedback sammeln, um zu bestimmen, wie jede Produktdokumentation und Erklärung für ihr Zielpublikum verbessert werden kann.
+
+Jemanden zu haben, der für alle Aspekte der Produktdokumentation verantwortlich ist, den Workflow verwaltet und die verschiedenen Abteilungen koordiniert, die zur Fertigstellung dieser Dokumentation erforderlich sind, wird die Produktivität im Unternehmen steigern, das Bewusstsein schärfen und Kunden mit Wissensportalen über das Produkt informieren und insgesamt das Produktverständnis verbessern.
+
+### Betrachten Sie Ihre Produktdokumentation als eigenständiges Produkt
+
+![](https://cdn.docsie.io/workspace_WxPJSQ5gsES8Bzjxy/doc_ydgtE07E6Rp4AMmKv/file_JdDBUtqTll6qYQgc9/boo_NbQ7i8LYu6f7q4rnn/cd6029ed-9933-9a5f-4007-c4d28888fa5ebram_naus_n8Qb1ZAkK88_unsplash.jpg)
+
+Produkte existieren, um einen Mehrwert zu liefern, der die Erwartungen der Kunden erfüllt oder übertrifft. Laut [Statistiken von D2WorldWide](https://www.d2worldwide.com/product-documentation-why-do-customers-still-want-it-and-retailers-still-need-it/) bewerten 73,7% der Menschen Dokumentation als hilfreicher als Videos, Verpackung oder Verkäufer, wenn sie Informationen zu Produkten suchen, die sie kaufen möchten.
+
+Betrachten Sie die Faktoren, die zu einem attraktiven Produkt beitragen. Es gibt viele Faktoren, die die Attraktivität eines Produkts beeinflussen können, aber für diesen Artikel konzentrieren wir uns auf drei: Sie übertreffen die Erwartungen hinsichtlich des Werts, ihre Nutzung schafft Zufriedenheit, und sie sind wettbewerbsfähig.
+
+Die gleichen Konzepte gelten für gute Online-Produktdokumentation. Produktdokumente, die "über den erwarteten Wert hinausgehen", zeigen nicht nur, wie das spezifische Produkt zu nutzen ist, sondern bieten auch Lösungen, von denen der Kunde nicht weiß oder nicht glaubt, dass sie möglich sind. Es ist immer notwendig zu sehen, wie andere Unternehmen ihre Produktdokumentation gestalten, um aus ihren Erfolgen und Fehlern zu lernen.
+
+Es ist sinnlos, ein Unternehmen zu haben, das einzigartige und hochwertige Software entwickelt, die der Konkurrenz voraus ist, wenn die Entwickler und Kunden, die Ihre technischen Produktdokumente nutzen, diese nicht verstehen können.
+
+Bedenken Sie, dass die Person, die die Produktdokumentation liest, möglicherweise nicht mit der Bandbreite möglicher Lösungen vertraut ist, die das Produkt bietet, oder mit dem Markt (wie es bei technischen SaaS-Produkten häufig der Fall ist), und daher über diese Lösungen und verschiedene produktbezogene Optionen "aufgeklärt" werden muss.
+
+Produktdokumente, deren "Nutzbarkeit Zufriedenheit erzeugt", folgen einem logischen Lesemuster, das für ihre Zielgruppe geeignet ist. Es nützt nichts, das umfassendste Handbuch der Welt zu haben, wenn es ein 500-seitiges PDF ist oder kein Codebeispiel enthält und nicht dynamisch mit Suchfunktionen und anderen Funktionen erstellt wurde. Sammeln Sie Feedback von den Nutzern Ihrer Produktdokumentation und Ihrem Supportpersonal. Sie werden die Hauptproblembereiche im Zusammenhang mit den gemeldeten Daten ermitteln.
+
+Wettbewerbsfähige Produktdokumentation wird ständig mit den effektivsten Informationsaustauschmethoden aktualisiert. Sie verfügt über großartige Funktionen wie integrierte Suchfunktionen, Übersetzungen, verschiedene Versionen, eingebettete Bilder, Videos und vieles mehr!
+
+Selbst wenn Ihr Integrationshandbuch das am besten geschriebene aller Technologieunternehmen ist, wird es ohne zusätzliche Videos, Bilder und Codes, die kopiert und eingefügt werden können, an Attraktivität fehlen – Funktionen, die für Ihre technikaffinen Kunden, die Ihre technischen SaaS-Produkte kaufen, die Nutzung erleichtern.
+
+Es ist immer notwendig zu sehen, wie andere Unternehmen ihre Dokumente gestalten, um aus ihren Erfolgen und Fehlern zu lernen.
+
+Es ist sinnlos, ein Unternehmen zu haben, das einzigartige und hochwertige Software entwickelt, die der Konkurrenz voraus ist, wenn die Entwickler und Kunden, die Ihre Dokumente nutzen, diese nicht in ihrer Gesamtheit verstehen können.
+
+**Feedback zur Produktdokumentation**
+
+Effektive technische Produktdokumentation verbessert die Endnutzererfahrung, indem sie den Prozess zum Verständnis von Produkten optimiert und Probleme mit leicht verfügbaren schriftlichen Lösungen diagnostiziert. Wenn Kunden vertrauen und verstehen, wie sie Ihre Produkte nutzen können, werden sie in Zukunft bei Bedarf zu Ihnen zurückkehren.
+
+[Neue Forschungen von SDL](https://www.tcworld.info/e-magazine/technical-writing/technical-product-information-impacts-brand-perception-893/) zeigen, dass die Rolle der Dokumentation in globalen Märkten zunimmt. [Die Forschung](https://www.tcworld.info/e-magazine/technical-writing/technical-product-information-impacts-brand-perception-893/) zeigt, dass etwa 53% der Käufer technische Literatur verwenden, bevor sie ein Produkt überhaupt ausprobieren. Eine weitere Statistik aus dieser Studie zeigt, dass 94% der Käufer es als hilfreich empfinden, Produktinformationen an einem einzigen Ort zu haben. Deshalb legen Unternehmen heute genauso viel Wert auf Produktdokumentation wie auf Produktentwicklung oder -tests.
+
+Selbst wenn die Dokumentation einen bestimmten Eigentümer hat, der das Dokumentationsteam leitet, Sie Produktdokumentation erstellt haben, die überarbeitet und auf verbesserte Benutzerfreundlichkeit geprüft wurde, und sie ordnungsgemäß aktualisiert wurde, kämpfen Sie möglicherweise immer noch damit, Ihren Nutzern und Kunden zu helfen, Ihre technischen Produkte zu verstehen. Dies könnte dadurch entstehen, dass Sie nicht verstehen, wie Ihre Dokumente gelesen werden oder welche Fragen die Nutzer wirklich stellen. Dies macht einen der schwierigsten Aspekte der Dokumentenerstellung aus: sich in die Lage des Lesers zu versetzen. Schließlich sollte jeder, der die Produktdokumentation erstellt, ein solides Verständnis des Produkts haben.
+
+Dieses Fachwissen kann dazu führen, dass der Autor Dinge übersieht, die für den Durchschnittsnutzer nicht so offensichtlich sind. Typischerweise geschieht dies, wenn etwas, das für die Produktentwickler selbstverständlich ist, für diejenigen, die das Produkt kaufen und nutzen, nicht so klar ist.
+
+Dies kann auf verschiedene Weise geschehen:
+
+**Schreibstruktur oder -form:** Während dies ein subjektiver Begriff sein mag, kann selbst die Art und Weise, wie ein Handbuch geschrieben ist, Verwirrung stiften. Es ist wichtig, die Art von Leser zu identifizieren, die die Dokumentation liest; andernfalls können Aussagen wie "Entwickler bevorzugen Beispiele gegenüber beschreibendem Text" oder "Unsere Dokumentation ist trotz des Vorhandenseins von Beispielen und Visualisierungen nicht klar" auftreten.
+
+**Themenorganisation in Handbüchern:** Manchmal entwickeln Unternehmen in derselben Branche ein standardisiertes Dokumentationsformat. Wenn die Anleitungen Ihres Unternehmens diesem nicht folgen, kann der Leser ein Gefühl der Fremdheit haben.
+
+**Übermäßige Verwendung impliziter Begriffe:** In einem Handbuch können Abkürzungen wenig Sinn ergeben, selbst wenn die Begriffe keine Akronyme sind. Es ist schwer zu erkennen, aber einige Wörter wie "Status", "ID", "Anmeldedaten" enthalten eine implizite Bedeutung, die als explizit getarnt ist. Verwenden Sie spezifische Bezeichnungen wie "UserID" anstelle von "UID".
+
+**Korrekte Übersetzung:** Übersetzung ist ein wichtiger Teil der globalen Reichweite. Oft erstellen Unternehmen schlecht übersetzte Benutzerhandbücher und Produktdokumentationen, die nicht zur Kultur bestimmter Länder passen oder bei denen die Wörter nicht auf die gleiche Weise übersetzt werden wie auf Englisch in diesem bestimmten Land. Das Verständnis dieser feinen Nuancen kann die Produktdokumentation von unlesbaren Informationen zu einer vollständig verständlichen und übersetzten Produktdokumentation bringen.
+
+Um solche Situationen zu vermeiden, ist das Ziel, eine Lösung zu entwickeln, die Nutzerfeedback und Navigationsmuster sammelt und analysiert.
+
+Feedback-Tools wie Vocally, eine Docsie-Funktion, sind eine großartige Möglichkeit, Navigationsmuster zu verstehen und zu erfassen, wie Ihre Kunden Ihre Produktdokumentation betrachten. [Erfahren Sie hier mehr über die 7 goldenen Regeln zur Sammlung von Feedback.](https://www.docsie.io/blog/articles/7-golden-rules-to-successfully-approach-customer-feedback/)
+
+Diese Informationen sind entscheidend, um Ihre Benutzeranleitungen, Benutzerhandbücher und Produktdokumentation zu aktualisieren und zu optimieren, damit Ihre Kunden Ihre Produkte einfacher verstehen können. Nichts ist frustrierender, als ein neues Produkt einzuführen und einen Anstieg der Support-Anfragen aufgrund schlechter Anleitungen festzustellen.
+
+## Wie man umfassende Produktdokumentation schreibt
+
+Qualitativ hochwertige Produktdokumentation ist fesselnd, nützlich und wirkungsvoll. Ich würde argumentieren, dass geschickte Dokumentation ein notwendiger Bestandteil eines guten Produktmanagements ist. So wichtig Produktmanager bei der Produktentwicklung sind, ein wesentlicher Teil des Erfolgs besteht darin, eine hervorragende, durchdachte Produktdokumentation zu erstellen, die unsere Kunden verstehen und zur Erweiterung ihres Wissens über unsere Produkte nutzen können.
+
+### Was ist das Problem mit den meisten Produktdokumentationen?
+
+![](https://cdn.docsie.io/workspace_WxPJSQ5gsES8Bzjxy/doc_ydgtE07E6Rp4AMmKv/file_6UrbmSp116NpfVK1l/boo_NbQ7i8LYu6f7q4rnn/64a68ac0-4ef1-308c-ad6b-5ce4525f5301jeshoots_com__2vD8lIhdnw_unsplash.jpg)
+
+Viele Produktmanager scheuen sich davor, Produktdokumente zu verfassen. Die Produktdokumente, die sie kennen, finden möglicherweise keine Resonanz bei ihren Kunden, wenn nicht mehr Sorgfalt darauf verwendet wird, sie ansprechend, leicht lesbar und verständlich zu gestalten.
+
+Oft nehmen sich Unternehmen jedoch nicht die notwendige Zeit, um ansprechende Produktdokumentationen zu erstellen. Schlechte Produktdokumentation wird nur geschrieben, um geschrieben zu sein. Sie verwendet umständliche Sätze mit vagen Gedanken und schlechtem Layout, um Leser davon abzuhalten, sich mit dem Material auseinanderzusetzen. Eine schlechte Produktdokumentation wird erstellt, um den Autor vor Kritik zu schützen, und ist eine komplette Zeitverschwendung. Und ihre Kunden lesen sie aus diesem Grund nicht gern.
+
+### Wie können wir dieses Problem lösen und bessere Produktdokumentationen schreiben, die unsere Kunden gerne lesen?
+
+![](https://cdn.docsie.io/workspace_WxPJSQ5gsES8Bzjxy/doc_ydgtE07E6Rp4AMmKv/file_NSTKBpS5BKDoj224Y/boo_NbQ7i8LYu6f7q4rnn/d83ce28b-38c3-bb53-8a14-2e1212d0fc5cscott_graham_5fNmWej4tAA_unsplash.jpg)
+
+Hervorragende Produktdokumentation wird mit der Absicht geschrieben, gelesen zu werden. Sie ist prägnant. Gute Produktdokumentation ist gut formatiert und kann von jedem im Unternehmen oder von Kunden in drei Minuten gelesen und verstanden werden. Sie vermeidet Fachjargon und bietet entweder eine geschäftliche Perspektive oder verweist darauf. Eine ausgezeichnete Produktdokumentation nimmt sich Zeit, spezifische Anwendungsfälle zu skizzieren, die die Kunden verstehen und zur verbesserten Nutzung des Produkts anwenden können. Sie fesselt den Leser und lenkt die Aufmerksamkeit auf zugrundeliegende Probleme mit gut durchdachten Lösungen.
+
+### Die Wirkung gut geschriebener Produktdokumentation
+
+Ob für kleine, mittlere oder große Unternehmen – gut formatierte technische Produktdokumente können viel Zeit sparen und Mitarbeitern helfen, produktiver zu arbeiten. Dies gilt besonders für produktbasierte Unternehmen, die einen großen Teil ihres Budgets für die Einstellung technischer Redakteure und die Erstellung technischer Produktdokumentation ausgeben.
+
+Wenn Ihr Unternehmen mehr als zwei Personen beschäftigt, um Produktdokumentation zu erstellen, lohnt es sich, eine Kultur guter Dokumentation zu etablieren. Es gibt viele Gründe, warum Sie möchten, dass Ihr Team gut gestaltete Produktdokumentation erstellt, verwaltet und veröffentlicht. Im folgenden Abschnitt werden wir darauf eingehen, wie effektive Produktdokumentation ein kostengünstiger Ansatz zur Verbesserung der Kundenerfahrung ist.
+
+### Effektive Produktdokumentation ist ein kostengünstiger Ansatz zur Verbesserung der Kundenerfahrung
+
+Eine solide Kundenerfahrung steht im Vordergrund, wenn es darum geht, loyale Kunden zu gewinnen und zu halten. Die meisten Projektmanager sind Optimisten – sie bekommen eine Idee, werden begeistert und setzen sie dann um. Während Leidenschaft bewundernswert ist und Umsetzung produktiv erscheint, ist ein Aktionsplan vor der Erstellung guter Produktdokumentation entscheidend.
+
+Die ersten Schritte nach dem Brainstorming eines Aktionsplans bestehen darin, einen Designzyklus zu initiieren und den Inhalt der Produktdokumentation so zu strukturieren, dass er für die Kunden schrittweise leichter zu lesen ist.
+
+Außerdem ist es wichtig, Feedback von den Kunden über ihre aktuelle Dokumentation einzuholen, um die Dokumente entsprechend den Kundenbedürfnissen neu zu strukturieren. Auf diese Weise können Projektmanager ihre Dokumentation mit Einsicht und Automatisierung erstellen, verwalten, pflegen, veröffentlichen und optimieren. Dies ist keine einfache Aufgabe, und erstklassige Tools wie [Docsie](https://www.docsie.io/), die viele Prozesse zur Erstellung effektiver Produktdokumentation automatisieren, sind für den Erfolg unerlässlich.
+
+Attraktive, ansprechende und navigierbare technische Dokumentation hilft Verbrauchern, das Produkt in kürzerer Zeit zu verstehen, was die Wahrscheinlichkeit erhöht, dass sie das Produkt korrekt einrichten und richtig verwenden.
+
+All diese Strategien zur Erstellung hochwertiger Produktdokumentation führen letztendlich zu besser bewerteten Produkten, positiveren Bewertungen und mehr Verkäufen – all diese Faktoren sind miteinander verbunden.
+
+## Wie man gut gestaltete Produktdokumentation erstellt
+
+Wie erstellt man effektive Dokumentation und fördert eine Kultur, in der dies der Standard ist? Das Schreiben effektiver Dokumentation ist eine Herausforderung, aber es gibt viele gute Funktionen in [Docsie](https://www.docsie.io/), die diesen Prozess der Erstellung gut gestalteter und dynamischer Produktdokumentationsportale beschleunigen können. Im Folgenden finden Sie eine Übersicht unseres Ansatzes.
+
+![](https://cdn.docsie.io/workspace_WxPJSQ5gsES8Bzjxy/doc_ydgtE07E6Rp4AMmKv/file_yl3vJ0vYDWgB1AnFf/boo_NbQ7i8LYu6f7q4rnn/7b97f8c4-af64-8ddc-c06b-93e6f28fea96dayne_topkin_y5_mFlLMwJk_unsplash.jpg)
+
+### Fangen wir an:
+
+**Seitenbegrenzungen sorgen für Lesbarkeit.** Eine gute Dokumentation sollte nicht schwer zu lesen und geistig zu verarbeiten sein. Lange, weitschweifige Sätze deuten oft auf mangelnde Klarheit hin. Wenn die Mitteilung nicht ordentlich auf einer Seite zusammengefasst werden kann, ist das ein Zeichen dafür, dass der Produktmanager die Situation wahrscheinlich weiter aufschlüsseln sollte.
+
+**Formatierung verbessert die Qualität.** Eine schlecht strukturierte Produktdokumentation erhöht die Wahrscheinlichkeit, dass der Autor improvisiert. Erstellen Sie eine Vorlage mit gut formatierten Abschnitten, Tabellen und Dokumentüberschriften. Es ist eine einmalige Investition mit hohem Potenzial.
+
+**Vorlagen sparen Zeit.** Es ist viel einfacher, einen Abschnitt aus einer Vorlage zu löschen, als sich daran zu erinnern, einen hinzuzufügen. Das ist nicht bevormundend, sondern effektiv und zeitsparend. Einfache Abschnitte, die den Autor daran erinnern, mit dem allgemeinen Hintergrund zu beginnen und spezifisch bei Messungen oder riskanten Annahmen zu sein, ermöglichen präziseres Schreiben und eine klarere Entscheidungshierarchie.
+
+**Kommentieren und Aufgaben zuweisen.** Es gibt keinen sichereren Weg, Ihr Team zu demotivieren, hochwertige Dokumentation zu erstellen, als keine Kommentare dazu abzugeben. Kommentare müssen nicht besonders klug sein; sie sollten vielmehr Engagement signalisieren und als Vorbild dienen. Während es ideal ist, Feedback digital zu geben, damit andere im Unternehmen asynchron von der Konversation profitieren können, bietet Docsie eine einfache Funktion, mit der Sie kommentieren und mit Ihrem Team zusammenarbeiten können!
+
+Lesen Sie diesen Blog, um mehr darüber zu erfahren, wie Docsie bei der Zusammenarbeit an der Produktdokumentation hilft:
+
+**https://www.docsie.io/blog/articles/collaboration-to-create-well-polished-product-documentation/**
+
+**Dokumenttypen sollten skalierbar sein, um den Anforderungen Ihres Unternehmens gerecht zu werden.** Je mehr Interessengruppen am Produktentwicklungsprozess beteiligt sind, desto mehr muss die Kommunikation auf verschiedene Dokumente aufgeteilt werden (besonders wenn das Kriterium der Prägnanz auf einer Seite erfüllt werden soll). Docsie bietet eine nützliche und nachhaltige Lösung für wachsende Produktdokumentationsteams.
+
+## Nutzen Sie Docsie, um die Erstellung toller Produktdokumentation zu beschleunigen
+
+Docsie ist eine sehr praktische Plattform, die Ihnen bei allen Aspekten der Erstellung von Produktdokumentation und Wissensportalen hilft. Sie bietet viele integrierte Funktionen, die die Erstellung, Veröffentlichung, Pflege und Verwaltung von Produktdokumentationsprojekten wirklich einfach und unterhaltsam machen! Hier sind nur einige der vielen Docsie-Funktionen, die Ihnen helfen können, diese Ziele zu erreichen:
+
+**Bearbeitungsmöglichkeit:** Docsie ermöglicht allen Nutzern, die Produktdokumentation nach der Veröffentlichung zu bearbeiten, indem eine alternative Version erstellt wird, die erst aktiv wird, wenn sie aktiviert wird. Das ist großartig, weil Produktmanagementteams an der Bearbeitung und Änderung der Produktdokumentation arbeiten und diese dann live schalten können, wenn sie bereit sind – ohne sich durch HTML und CSS zu kämpfen. Die Produktdokumentation wird automatisch mit einem Knopfdruck gerendert, wenn sie bereit ist.
+
+![](https://cdn.docsie.io/workspace_WxPJSQ5gsES8Bzjxy/doc_ydgtE07E6Rp4AMmKv/file_cHc7PmOysb4dTB99B/boo_NbQ7i8LYu6f7q4rnn/0f387e45-f492-f010-d634-46822de64a5cimage.png)
+
+**Suchmöglichkeit:** Wenn Ihre Produktdokumentation umfangreich ist oder viele Funktionen umfasst, bietet das Docsie-Suchplugin einen nützlichen Bonus, der Ihren Kunden ermöglicht, schnell und einfach durch Ihre Dokumentation zu suchen, um die Informationen zu finden, die sie benötigen – so beschleunigen sie den Prozess der Vorschau und Aufnahme von Informationen aus Ihrer Produktdokumentation.
+
+![](https://cdn.docsie.io/workspace_WxPJSQ5gsES8Bzjxy/doc_ydgtE07E6Rp4AMmKv/file_O7z6SBtXluhBFZBAw/boo_NbQ7i8LYu6f7q4rnn/18e9ab61-27d1-ffc9-0c46-86a5a75bda33image.png)
+
+**Verlinkungsmöglichkeit:** Docsie macht Ihre Produktdokumentation SEO-freundlich. Sie können auf bestimmte Seiten der Website Ihres Unternehmens verlinken oder einfach Schlüsselwörter basierend auf Ihren Produkten schreiben, die online durchsuchbar sind und neue Kunden anziehen, die nach dem gleichen Produkt suchen.
+
+**Verschiedene Übersetzungen:** Docsies hochmoderner Ghost-Übersetzer ermöglicht es unseren Nutzern, ihre Produktdokumentation in verschiedene Sprachen zu übersetzen. Mit Docsies Sprachauswahl können Ihre Kunden die Sprache wählen, die ihnen am besten gefällt. Dies ist sehr nützlich für die globale Reichweite und die Erweiterung der Kundenbasis eines Unternehmens, während gleichzeitig Vertrauen bei neu gewonnenen Kunden im Ausland aufgebaut wird.
+
+**Aufgaben zuweisen und kommentieren für nahtlose Zusammenarbeit:** Docsie bietet tolle Tools für die Zusammenarbeit mit Ihrem Produktdokumentationsteam. Sie können Kommentare zuweisen, Aufgaben festlegen und Rollen zuweisen, um besser zu verwalten, welche Aufgaben von welchem Benutzer erledigt werden, der mit Docsie an Ihrem Produktdokumentationsprojekt arbeitet. [Erfahren Sie hier mehr.](https://www.docsie.io/blog/articles/collaboration-to-create-well-polished-product-documentation/)
+
+**Feedback-Generierung:** Die Möglichkeit zu wissen, was Ihre Kunden über Ihre Dokumentation denken, ist der einzige Weg, um zu erfahren, wie Sie Ihre Produktdokumentation optimieren können, damit sie den Bedürfnissen Ihrer Kunden entspricht und diese Ihre Produktdokumentationen und Wissensportale besser verstehen können. [Erfahren Sie hier mehr über die Bedeutung von Feedback zur Produktdokumentation.](https://www.docsie.io/blog/articles/7-golden-rules-to-successfully-approach-customer-feedback/)
+
+Es gibt noch viele weitere Funktionen und Möglichkeiten, die Docsie Ihnen und Ihrem Produktmanagementteam bietet, um großartige Produktdokumentation zu erstellen. In diesem Artikel möchte ich auf die Plugins eingehen, die jedes Docsie-Wissensportal und jede Produktdokumentation hinzufügen kann, um ihre Dokumentation zu verbessern und ihre allgemeine Benutzerfreundlichkeit zu steigern.
+
+## Docsie-Plugins, um Ihr Dokumentationsportal dynamisch zu gestalten!
+
+Docsie bietet eine Reihe von Plugins, die Ihre Dokumentation ansprechender machen. In diesem Blog teile ich es in 3 Teile auf.
+
+![](https://cdn.docsie.io/workspace_WxPJSQ5gsES8Bzjxy/doc_ydgtE07E6Rp4AMmKv/file_4LttTJbkU67oXkSZX/boo_NbQ7i8LYu6f7q4rnn/898e185c-08b3-55da-e9c4-1031ad6792f5Snag_c3ee39d.png)
+
+In diesem Abschnitt werden wir die Erklärung dieser Wissensportal-Plugins in drei Teile aufteilen.
+
+**TEIL 1:** Im ersten Teil zeigen wir den 'Versionsauswahl anzeigen', 'Sprachauswahl anzeigen', 'Abschnittsanker anzeigen' und die 'Fußzeilennavigation anzeigen'.
+
+**TEIL 2:** In diesem Teil zeigen wir die Plugins 'Code-Highlighting', 'Suche' und 'In sozialen Netzwerken teilen'.
+
+**TEIL 3:** Im dritten Teil zeigen wir die Plugins 'Bildvorschau', 'Dokumentmetadaten' und 'Automatische Hervorhebung von Abschnitten'.
+
+Bevor wir zu den Plugins übergehen, sprechen wir darüber, wie Sie auf diese Plugins innerhalb der Docsie-Plattform zugreifen können.
+
+Zuerst müssen wir innerhalb des Arbeitsbereichs auf die drei Punkte in der oberen rechten Ecke klicken und unser Konto öffnen:
+
+![](https://cdn.docsie.io/workspace_WxPJSQ5gsES8Bzjxy/doc_ydgtE07E6Rp4AMmKv/file_Mv9BSfFjt63Bq12ui/boo_NbQ7i8LYu6f7q4rnn/4ee73eb8-90f3-4588-7cad-537d6c3d2606Snag_fb448a0.png)
+
+Dann können wir unter "Deployments" auf die Plugins zugreifen, sobald wir eine neue Bereitstellung über 'Neue Bereitstellung konfigurieren+' erstellt haben.
+
+![](https://cdn.docsie.io/workspace_WxPJSQ5gsES8Bzjxy/doc_ydgtE07E6Rp4AMmKv/file_EyeRwNDqJuiL6yclc/boo_NbQ7i8LYu6f7q4rnn/c3aa28de-aeff-0f8e-5b66-3e0f7cbdc564Snag_fb8dbd4.png)
+
+Klicken Sie dann auf 'Weitere Optionen', um diese Plugins über ein eingebettetes Skript oder über das Docsie-Portal in Ihre bereitgestellte Dokumentation einzufügen.
+
+![](https://cdn.docsie.io/workspace_WxPJSQ5gsES8Bzjxy/doc_ydgtE07E6Rp4AMmKv/file_3BNU4lygMNvB6VhgK/boo_NbQ7i8LYu6f7q4rnn/c16fe2e1-c05b-4574-1b90-5beb78b1ccceSnag_fb8f18f.png)
+
+Die andere Option ist, über die Schaltfläche 'Bereitstellungskonfiguration aktualisieren' unter Ihrer bereits veröffentlichten Dokumentation auf die Plugins der Docsie-Wissensportale zuzugreifen.
+
+![](https://cdn.docsie.io/workspace_WxPJSQ5gsES8Bzjxy/doc_ydgtE07E6Rp4AMmKv/file_yyBINqSBGXHuXCVFM/boo_NbQ7i8LYu6f7q4rnn/683c9259-3895-8af4-44c4-bfd25e802bc7image.png)
+
+Dies öffnet ein Dashboard, in dem Sie Plugins nach Bedarf hinzufügen oder entfernen und dann die Bereitstellung aktualisieren können.
+
+![](https://cdn.docsie.io/workspace_WxPJSQ5gsES8Bzjxy/doc_ydgtE07E6Rp4AMmKv/file_8LSwF7TSbZcIAXkeg/boo_NbQ7i8LYu6f7q4rnn/df9df9ae-e562-9d25-2bdd-8253a7af8668image.png)
+
+### TEIL 1:
+
+Jetzt, da wir wissen, wie wir auf die Docsie-Plugins zugreifen können, kommen wir zu **TEIL 1**.
+
+Um das Video-Tutorial zu **Teil 1** zu sehen, schauen Sie sich dieses Video an:
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/s3VraeLQkEc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+Beginnen wir mit 'Versionsauswahl anzeigen' und 'Sprachauswahl anzeigen'.
+
+![](https://cdn.docsie.io/workspace_WxPJSQ5gsES8Bzjxy/doc_ydgtE07E6Rp4AMmKv/file_9F8xevNxryqXJuual/boo_NbQ7i8LYu6f7q4rnn/3539432f-5e55-7c68-c8ff-6e10ccaaf16fimage.png)
+
+Sobald diese beiden aktiviert sind, erscheinen sie unten links in Ihrem Wissensportal als schwebende Registerkarten. Sie ermöglichen es Ihren Kunden und denjenigen, die Ihre Produktdokumentation lesen, Ihre Produktdokumente in verschiedenen Sprachen und Versionen anzusehen.
+
+![](https://cdn.docsie.io/workspace_WxPJSQ5gsES8Bzjxy/doc_ydgtE07E6Rp4AMmKv/file_15B6AEHxast4mhcXQ/boo_NbQ7i8LYu6f7q4rnn/3dc1ff60-4be8-3457-f12c-be1f2bbff93aimage.png)
+
+![](https://cdn.docsie.io/workspace_WxPJSQ5gsES8Bzjxy/doc_ydgtE07E6Rp4AMmKv/file_l5TJuQjEKYHFB1uKf/boo_NbQ7i8LYu6f7q4rnn/67756830-5264-edcc-cc47-ff4f83901882image.png)
+
+Wenn der Benutzer auf eine Sprache in der Sprachauswahl klickt, wird die gesamte Dokumentation, die er gerade liest, in diese zugewiesene Sprache geändert.
+
+Die Anzeige von Abschnittsankern ermöglicht es Ihren Kunden, Links neben jeder Überschrift zu haben, die ihnen Links zu bestimmten Abschnitten der Dokumentation geben.
+
+![](https://cdn.docsie.io/workspace_WxPJSQ5gsES8Bzjxy/doc_ydgtE07E6Rp4AMmKv/file_yKD6jx7Sg0HdhzQ95/boo_NbQ7i8LYu6f7q4rnn/d5797b47-678b-f896-0387-9fb4ad7588e8image.png)
+
+![](https://cdn.docsie.io/workspace_WxPJSQ5gsES8Bzjxy/doc_ydgtE07E6Rp4AMmKv/file_xfEuNCfFm3uRLsjgt/boo_NbQ7i8LYu6f7q4rnn/970f06ac-8fee-01f0-31fd-9b86800347aeimage.png)
+
+Jedes Mal, wenn diese Links gedrückt werden, ändert sich ein Teil der Überschrift, und wenn Ihr Kunde diese HTML kopiert und einfügt, wird die Person, an die sie diese sendet, zu diesem bestimmten Abschnitt der Dokumentation geleitet.
+
+Als nächstes kommt 'Fußzeilennavigation anzeigen'.
+
+![](https://cdn.docsie.io/workspace_WxPJSQ5gsES8Bzjxy/doc_ydgtE07E6Rp4AMmKv/file_OUljvQnuFNAphGApN/boo_NbQ7i8LYu6f7q4rnn/aa4b47a1-72d2-3218-9cb6-96c7afe5d813image.png)
+
+Dieses Plugin fügt eine Navigationsschaltfläche unten rechts in Ihrem Dokumentationsbuch hinzu. Es sieht etwa so aus:
+
+![](https://cdn.docsie.io/workspace_WxPJSQ5gsES8Bzjxy/doc_ydgtE07E6Rp4AMmKv/file_56mbG9THAGa94XROc/boo_NbQ7i8LYu6f7q4rnn/90593fea-48fa-92d7-b3de-dbc4955c7c0fimage.png)
+
+So können Ihre Kunden bequemer durch Ihre Dokumentation navigieren.
+
+### TEIL 2:
+
+Um das Video-Tutorial zu **Teil 2** zu sehen, schauen Sie sich dieses Video an:
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/1JUFlG9DCGg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+In diesem Teil zeigen wir die Plugins 'Code-Highlighting', 'Suche' und 'In sozialen Netzwerken teilen'.
+
+Beginnen wir mit dem 'Code-Highlighting'-Plugin.
+
+![](https://cdn.docsie.io/workspace_WxPJSQ5gsES8Bzjxy/doc_ydgtE07E6Rp4AMmKv/file_HLyqacquYY5uqmuC5/boo_NbQ7i8LYu6f7q4rnn/0afe135b-47fa-0e1a-f94f-5460bf448c5fimage.png)
+
+Dieses Plugin ist großartig für technische Produkte, die ihren Kunden verschiedene Codes vermitteln müssen. Es ermöglicht den Kunden, den zugewiesenen Code zu kopieren und einzufügen, damit sie ihn in ihrem Editor verwenden können – eine Erleichterung durch die Hinzufügung einer "Kopieren"-Schaltfläche.
+
+![](https://cdn.docsie.io/workspace_WxPJSQ5gsES8Bzjxy/doc_ydgtE07E6Rp4AMmKv/file_W2SjxQvvsp5Vut9t4/boo_NbQ7i8LYu6f7q4rnn/86322d6d-d84a-3e3d-80b2-33a74fef6d64image.png)
+
+Sehen wir uns nun das Suchplugin an.
+
+![](https://cdn.docsie.io/workspace_WxPJSQ5gsES8Bzjxy/doc_ydgtE07E6Rp4AMmKv/file_p3P3TLvZzKG3maz4h/boo_NbQ7i8LYu6f7q4rnn/67acc913-8ece-2d3d-70d1-37a278f118e9image.png)
+
+Nach der Aktivierung in Ihrem Docsie-Wissensportal können Ihre Kunden durch Ihre Dokumentation mithilfe einer Suchnavigation in der oberen rechten Ecke des Wissensportals suchen.
+
+![](https://cdn.docsie.io/workspace_WxPJSQ5gsES8Bzjxy/doc_ydgtE07E6Rp4AMmKv/file_7jrRLle6xCtIb3FiY/boo_NbQ7i8LYu6f7q4rnn/f39bac8d-787f-aa59-34b0-d86b3f505004image.png)
+
+Wenn sie auf die Suche klicken, wird ein ausgeklügeltes Dashboard angezeigt, mit dem Ihre Kunden genau feststellen können, wo bestimmte Informationen in Ihrem Regal und Ihren Büchern zu finden sind.
+
+![](https://cdn.docsie.io/workspace_WxPJSQ5gsES8Bzjxy/doc_ydgtE07E6Rp4AMmKv/file_8G9KP4zImdeOeNVMG/boo_NbQ7i8LYu6f7q4rnn/5e64c628-aa23-b6c3-d17c-499a87ea0265image.png)
+
+Dies beschleunigt den Prozess, in dem Ihre Kunden benötigte Informationen zu Ihren Produkten finden und abrufen können, erheblich.
+
+Als nächstes kommt das Plugin 'In sozialen Netzwerken teilen'.
+
+![](https://cdn.docsie.io/workspace_WxPJSQ5gsES8Bzjxy/doc_ydgtE07E6Rp4AMmKv/file_0drhefPXvSjuyfjVF/boo_NbQ7i8LYu6f7q4rnn/382f6e99-41cc-698a-b66a-81ac9175b29cimage.png)
+
+Dieses Plugin ermöglicht es Ihren Kunden, hervorgehobene Abschnitte Ihrer schriftlichen Produktdokumentation zu markieren und in ihren sozialen Medien zu teilen.
+
+![](https://cdn.docsie.io/workspace_WxPJSQ5gsES8Bzjxy/doc_ydgtE07E6Rp4AMmKv/file_dbo2n8uLjl1G1ivb4/boo_NbQ7i8LYu6f7q4rnn/0ae0c1e2-c3eb-d412-44d5-84602d468dccimage.png)
+
+Das ist großartig, weil es den Verkehr, potenzielle neue Kunden und das Vertrauen in Ihre Marke insgesamt steigern kann.
+
+### TEIL 3:
+
+Um das Video-Tutorial zu **Teil 3** zu sehen, schauen Sie sich dieses Video an:
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/O5nE0Vznkac" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+Im dritten Teil zeigen wir die Plugins 'Bildvorschau', 'Dokumentmetadaten' und 'Automatische Hervorhebung von Abschnitten'.
+
+Beginnen wir mit dem Bildvorschau-Plugin.
+
+![](https://cdn.docsie.io/workspace_WxPJSQ5gsES8Bzjxy/doc_ydgtE07E6Rp4AMmKv/file_WsjaGzvZNJCeVogpa/boo_NbQ7i8LYu6f7q4rnn/1e5d8465-ee7c-9b49-36e7-274d1aa37919image.png)
+
+Die Bildvorschau ermöglicht es Ihren Kunden, ein Bild in Ihrer Produktdokumentation zu vergrößern oder zu verkleinern, um es besser zu betrachten.
+
+![](https://cdn.docsie.io/workspace_WxPJSQ5gsES8Bzjxy/doc_ydgtE07E6Rp4AMmKv/file_ON3z5IsnlS4JxPphD/boo_NbQ7i8LYu6f7q4rnn/7867194b-37fa-58b2-8947-4ceb953667db2021_07_22_8_37_22.png)
+
+Als nächstes kommen 'Dokumentationsmetadaten'.
+
+![](https://cdn.docsie.io/workspace_WxPJSQ5gsES8Bzjxy/doc_ydgtE07E6Rp4AMmKv/file_t4meZdddAnNiSkpdK/boo_NbQ7i8LYu6f7q4rnn/341fcd12-a920-d275-5366-8c5808669d08image.png)
+
+Dies ermöglicht es unseren Kunden zu sehen, wann die Produktdokumentation oder Aspekte des Wissensportals aktualisiert wurden. Diese Zeitstempel befinden sich am Anfang und Ende der schriftlichen Dokumentation.
+
+![](https://cdn.docsie.io/workspace_WxPJSQ5gsES8Bzjxy/doc_ydgtE07E6Rp4AMmKv/file_XuX34nMuBsiRqXWVJ/boo_NbQ7i8LYu6f7q4rnn/89db1bbb-c9bf-50e9-5344-36717448c436image.png)
+
+Sehen wir uns nun das Plugin 'Automatische Hervorhebung von Abschnitten' an.
+
+![](https://cdn.docsie.io/workspace_WxPJSQ5gsES8Bzjxy/doc_ydgtE07E6Rp4AMmKv/file_BT0Tl9oKw8ORPmbb5/boo_NbQ7i8LYu6f7q4rnn/f5e51dc0-9b5a-5f40-bd76-4eac82b0611bimage.png)
+
+Dieses einfache Plugin ermöglicht es Ihren Kunden, zu verfolgen, wo sie sich in einer bestimmten Dokumentation innerhalb des Wissensportals befinden.
+
+![](https://cdn.docsie.io/workspace_WxPJSQ5gsES8Bzjxy/doc_ydgtE07E6Rp4AMmKv/file_C0MHe1cC9uGOioVSP/boo_NbQ7i8LYu6f7q4rnn/46c6358b-22fb-75b1-dc80-0ba258a87a29image.png)
+
+Es hebt jeden Standort hervor, an dem sie sich im Wissensportal befinden, damit Ihre Kunden besser verfolgen können, in welchem Abschnitt sie sich befinden, und einfacher zu anderen Abschnitten navigieren können.
+
+All diese Tools und mehr werden Ihnen von der Docsie-Plattform zur Verfügung gestellt. Wenn Sie es noch nicht ausprobiert haben, empfehlen wir Ihnen, dies zu tun. [Klicken Sie hier](https://app.docsie.io/try/t/)
+
+Wenn Sie Fragen haben, kontaktieren Sie uns gerne unter [hello@docsie.io](mailto:hello@docsie.io)

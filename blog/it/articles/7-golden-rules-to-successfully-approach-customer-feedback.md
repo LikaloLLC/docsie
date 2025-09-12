@@ -1,0 +1,135 @@
+![](https://images.unsplash.com/photo-1516321318423-f06f85e504b3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzMTM3MXwwfDF8c2VhcmNofDQ0fHxsaXN0ZW4lMjB0byUyMGN1c3RvbWVyfGVufDB8fHx8MTYyNTYwMTA3Mg&ixlib=rb-1.2.1&q=80&w=1080)
+
+Il feedback dei clienti è fondamentale per creare e ottimizzare una documentazione di prodotto efficace che i tuoi clienti possano comprendere e utilizzare per trarre il massimo vantaggio dai tuoi prodotti SaaS o fisici.
+
+Spesso le aziende temono di scoprire cosa pensano realmente i clienti della loro documentazione, creando un ostacolo alla comprensione dell'opinione genuina degli utenti sui loro materiali.
+
+Perché è importante? Perché dobbiamo conoscere il parere dei clienti sulla nostra documentazione?
+
+Se gestisci una tua azienda, sicuramente ti impegni al massimo per soddisfare i tuoi clienti, rispondere alle loro esigenze e mantenere la loro fedeltà. Ma come puoi essere certo che i tuoi sforzi producano i risultati desiderati? Non potrai mai offrire un'esperienza ottimale di documentazione se non cerchi di scoprire cosa pensano gli utenti del tuo servizio. Il loro feedback sull'esperienza di consultazione della documentazione online è un'informazione preziosa che puoi utilizzare per personalizzare meglio i contenuti in base alle loro necessità.
+
+Il feedback dei clienti può essere sfruttato in molti modi. In questo articolo, illustrerò perché raccogliere i commenti sulla tua documentazione, sia sollecitati che spontanei, è fondamentale per gestire la soddisfazione e la fedeltà dei clienti, migliorare la retention, perfezionare prodotti e servizi, e molti altri aspetti della tua organizzazione. Continua a leggere per scoprire i vantaggi del feedback sulla documentazione di prodotto.
+
+In cosa consiste il feedback sulla documentazione di prodotto?
+
+Il feedback dei clienti comprende le informazioni fornite dagli utenti riguardo la loro soddisfazione o insoddisfazione verso la documentazione di prodotto, i manuali utente e qualsiasi materiale informativo online messo a disposizione dall'azienda. Questi riscontri possono aiutarti a migliorare l'esperienza del cliente e adattare le tue attività alle loro esigenze. Queste informazioni possono essere raccolte attraverso vari tipi di sondaggi (feedback sollecitato), ma puoi anche individuare e raccogliere feedback spontaneo utilizzando strumenti di monitoraggio online, come Vocally – una funzionalità di Docsie che ti permette di osservare come i clienti interagiscono con la tua documentazione pubblicata online. Entrambe le fonti sono necessarie per ottenere un quadro completo di come i tuoi clienti percepiscono il tuo brand.
+
+Le aziende con le migliori performance riconoscono l'importanza del feedback dei clienti nelle loro operazioni. Prestano costantemente attenzione alla voce dei loro clienti. Non solo cercano opinioni sui social media e recensioni su siti specializzati (come TripAdvisor), ma chiedono anche feedback direttamente attraverso vari tipi di questionari. Se vuoi restare avanti rispetto alla concorrenza, devi sempre prestare attenzione al feedback dei clienti, sia positivo che negativo, sollecitato o spontaneo.
+
+## Perché è importante?
+
+![](https://images.unsplash.com/photo-1531537571171-a707bf2683da?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzMTM3MXwwfDF8c2VhcmNofDF8fGxpc3RlbmluZ3xlbnwwfHx8fDE2MjU2MDEwMTg&ixlib=rb-1.2.1&q=80&w=1080)
+
+Molti prodotti SaaS e di ingegneria offrono varie guide utente, manuali e altre forme di documentazione ai loro clienti. Questa documentazione può essere tradotta in diverse lingue e avere numerose versioni. Perché è importante sapere cosa pensano i tuoi clienti quando consultano la documentazione dei prodotti della tua azienda? Semplice. La documentazione di prodotto è progettata per spiegare come funziona il tuo prodotto, e se questa spiegazione non è comprensibile per i clienti, potrebbe portare a abbandoni e a utenti frustrati. Il feedback aiuta a colmare il divario tra la loro incomprensione e l'ottimizzazione della documentazione, permettendo loro di comprendere il materiale in modo più completo. Questo rende i clienti più soddisfatti perché ora capiscono come utilizzare la documentazione di prodotto come previsto, rafforzando la fiducia nel tuo brand e migliorando la reputazione della tua azienda.
+
+In secondo luogo, conoscere il feedback può fornire al product manager, al product owner, al technical writer e persino al team tecnico informazioni utili per migliorare la struttura della documentazione e ottimizzare i contenuti per una maggiore comprensione. Questo è sempre l'obiettivo quando si pubblica documentazione di prodotto.
+
+Ecco i sette motivi principali per cui il feedback dei clienti è fondamentale nel mondo aziendale.
+
+### 1. Il feedback dei clienti aiuta a sviluppare una documentazione migliore
+
+Quando introduci un nuovo prodotto, brand o servizio sul mercato, probabilmente hai già un'idea delle esigenze dei clienti. La ricerca di mercato condotta prima del lancio può aiutarti a determinare se i potenziali clienti sarebbero disposti ad acquistarlo e fornirti suggerimenti su come migliorarlo. Dopo il lancio dei prodotti, devi creare guide utente appropriate e documentazione online condividendo il tuo portale di conoscenza con i clienti. Assumi un technical writer per scrivere informazioni sul tuo prodotto, un traduttore per tradurle e coinvolgi il tuo team tecnico per pubblicarle online. Tuttavia, sentirai parlare di tutti i vantaggi, i difetti e l'esperienza reale solo dopo che i consumatori hanno utilizzato i tuoi prodotti in correlazione con la tua documentazione e ti hanno fornito il feedback necessario.
+
+Questo feedback fornisce informazioni su quali aspetti della documentazione funzionano efficacemente e quali modifiche potrebbero migliorare l'esperienza. La tua conoscenza professionale può essere la migliore nel settore in cui opera la tua azienda, ma le intuizioni dei consumatori saranno sempre più utili per creare una documentazione di prodotto accurata e comprensibile. Poiché sei molto vicino ai tuoi prodotti, è utile ricevere il loro feedback per garantire che la documentazione finale soddisfi le loro aspettative, risolva i loro problemi, chiarisca eventuali malintesi sul prodotto e risponda alle loro esigenze.
+
+### 2. Il feedback dei clienti aiuta a valutare il livello di soddisfazione
+
+La fedeltà e la soddisfazione dei clienti sono fattori importanti per determinare le performance finanziarie di un'azienda. Sono collegati a numerosi vantaggi, tra cui una maggiore quota di mercato, costi ridotti e maggiori entrate. Numerosi studi hanno rilevato un forte legame tra la soddisfazione del cliente e le prestazioni aziendali. Di conseguenza, è fondamentale assicurarsi che i tuoi clienti siano soddisfatti della documentazione del prodotto e capiscano come utilizzare efficacemente i tuoi prodotti. Ottenere il loro feedback è il metodo migliore per verificare se hai soddisfatto le loro aspettative. Utilizzando domande basate su valutazioni, puoi facilmente valutare il grado di soddisfazione e, di conseguenza, prevedere la situazione finanziaria della tua azienda in futuro.
+
+L'NPS è una delle tecniche più accurate per misurare, gestire e migliorare la soddisfazione del cliente, utilizzata da molte organizzazioni. La metrica si basa su una singola domanda che chiede se un cliente è propenso a consigliare un brand a un amico. Le domande sulla fedeltà offrono opzioni di risposta da 0 a 5, dove 0 significa estremamente negativo e 5 estremamente positivo. Poiché questo metodo è sia semplice che universale, può essere utilizzato nella gestione della soddisfazione del cliente da qualsiasi azienda. Vocally utilizza questa valutazione e permette inoltre ai clienti di registrare video che mostrano come i loro utenti utilizzano la documentazione. Queste informazioni sono essenziali e offrono alle aziende un vantaggio competitivo nell'analizzare il feedback dei clienti e migliorare la documentazione del prodotto.
+
+### 3. Raccogliere feedback dimostra che ti interessa l'opinione dei clienti
+
+Sollecitando commenti dai tuoi clienti, dimostri di apprezzare il loro contributo. Li coinvolgi nello sviluppo della tua azienda, dei prodotti e della documentazione, facendoli sentire più connessi. Puoi rafforzare la relazione ascoltando la loro voce. Questo è il modo più efficace per reclutare importanti ambasciatori del brand che ti aiuteranno a diffondere un passaparola positivo. E sono sicuro che sei consapevole che affidarsi alle loro raccomandazioni è probabilmente l'approccio più efficace ed economico per acquisire nuovi clienti e aumentare la tua credibilità agli occhi dei clienti attuali e futuri.
+
+Le persone apprezzano quando chiedi della loro soddisfazione (o insoddisfazione) riguardo alla documentazione del prodotto. Dimostra che apprezzi il loro punto di vista e che sei qui per aiutarli. Credono che lo scopo principale della documentazione sia risolvere i loro dubbi e aiutarli a utilizzare i prodotti in modo efficace, il che è un approccio corretto per la fidelizzazione del cliente.
+
+### 4. Il feedback aiuta a creare la migliore esperienza cliente possibile
+
+Oggi il marketing è fortemente influenzato dalle interazioni delle persone con prodotti, servizi e brand. Le persone non acquistano prodotti di marca solo perché sono eccellenti. Cercano un servizio clienti di qualità, un'esperienza utente e una buona comprensione delle specifiche e dei casi d'uso del prodotto che soddisfino le loro esigenze. I clienti rimarranno fedeli al tuo brand se ti concentri sull'offrire la migliore esperienza cliente in ogni punto di contatto. E, naturalmente, il modo più efficace per fornire ai clienti un'esperienza straordinaria è chiedere loro cosa apprezzano della documentazione del prodotto e cosa pensano possa essere migliorato. Questo è ancora più vero per i prodotti SaaS che hanno molte sfaccettature e aspetti tecnici. Più i tuoi clienti sono informati, più capiranno gli usi dei tuoi prodotti e più vorranno rimanere fedeli.
+
+### 5. Il feedback aiuta a mantenere i clienti
+
+I clienti soddisfatti del tuo servizio continueranno a fare affari con te. I clienti insoddisfatti che non comprendono la documentazione del prodotto e si confondono continuamente su come utilizzare il tuo prodotto cercheranno un'alternativa migliore. Il feedback può aiutarti a capire dove i tuoi clienti si confondono con la documentazione e cosa li ha resi soddisfatti del portale di conoscenza, identificando aree da migliorare. Puoi sempre tenere il polso della situazione se chiedi regolarmente un feedback. Quando un cliente scontento esprime la sua insoddisfazione, puoi rispondere rapidamente e trovare una soluzione al problema. Questo è il momento ideale per recuperare un cliente e potenzialmente migliorare il suo grado di fedeltà. In molti casi, un cliente insoddisfatto che ha avuto un problema con i tuoi prodotti, servizi o guide utente ma ha ricevuto una risoluzione rapida mostra una maggiore fedeltà al tuo brand rispetto a un cliente che non ha mai avuto problemi.
+
+### 6. Il feedback è una fonte affidabile di dati per altri consumatori
+
+Nel mondo del marketing, dell'analisi e del feedback, è essenziale raccogliere dati e informazioni utili per ottimizzare e continuare ad aumentare la fidelizzazione riducendo i tassi di abbandono. Nell'era dei social media, i consumatori non credono più alla pubblicità o ai consigli degli esperti. Oggi, le opinioni di altri consumatori che hanno utilizzato un prodotto o servizio sono una fonte di informazioni più credibile. Quando cerchi un alloggio in una città che stai visitando o un nuovo ristorante per cenare con gli amici, controlli prima le recensioni. Quando vuoi comprare nuove scarpe, chiedi consigli su Facebook o leggi una recensione su un sito affidabile. Le recensioni si applicano a qualsiasi attività, specialmente ai prodotti SaaS. Molte aziende includono ora un sistema di recensioni come parte dei loro servizi e prodotti. Questo garantisce non solo che i loro brand possano essere plasmati dai recensori, ma anche che possano lavorare sodo per guadagnarsi la fiducia di nuovi clienti e cercare di mantenerli a lungo termine. Il feedback dei clienti è importante tanto per la tua attività quanto per gli altri clienti, quindi assicurati che tu e i tuoi clienti possiate accedere facilmente a commenti e valutazioni.
+
+### 7. Il feedback fornisce informazioni che aiutano a prendere decisioni aziendali
+
+![](https://images.unsplash.com/photo-1607000975509-de2f74eb8d36?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzMTM3MXwwfDF8c2VhcmNofDE0fHx0cnVzdHxlbnwwfHx8fDE2MjU2MDEyNTY&ixlib=rb-1.2.1&q=80&w=1080)
+
+In un mercato altamente competitivo, le decisioni aziendali basate su ipotesi casuali non hanno posto. I titolari di attività di successo raccolgono e gestiscono informazioni specifiche che aiutano a sviluppare iniziative future. Solo così potranno adattare i loro prodotti e servizi per soddisfare esattamente le esigenze dei clienti.
+
+Il feedback dei clienti è una delle fonti più affidabili di dati concreti che possono essere utilizzati per prendere decisioni aziendali. Le intuizioni dei clienti possono aiutarti a comprendere meglio la tua clientela e le loro esigenze. Tieni conto dei loro consigli e potrai capire dove investire per ottenere il massimo ritorno sull'investimento. Potresti scoprire che, nel tuo caso, un ulteriore sviluppo del prodotto non è necessario e che dovresti invece concentrarti sulla pubblicità del tuo brand per ottenere maggiore visibilità. Il feedback dei clienti è un'ottima fonte di tali informazioni, ma devi imparare ad ascoltarlo e trasformarlo in insight aziendali significativi.
+
+Vocally (una funzionalità di Docsie) ti permette di mettere i tuoi clienti al centro della tua attività e considerare il loro feedback come la fonte di informazioni più importante nella tua organizzazione, così da rimanere sempre aggiornato. I tuoi clienti sono quelli che utilizzano i tuoi prodotti e servizi, quindi sono le persone migliori per dirti come renderli ancora più soddisfatti. Non ignorare mai la loro voce. Se non soddisfi le loro aspettative, i clienti si rivolgeranno a un'altra azienda che può farlo meglio. Il feedback dei clienti dovrebbe essere utilizzato a tutti i livelli della tua organizzazione e in tutte le divisioni. Gli insight aiuteranno a sviluppare i tuoi prodotti, migliorare il servizio clienti e gestire la soddisfazione del cliente. Il feedback garantisce che i tuoi clienti rimangano con te, restino fedeli al tuo brand e, di conseguenza, promuovano un passaparola positivo su di te. Avere ambasciatori del brand impegnati è inestimabile quando si tratta di far crescere la tua attività!
+
+Tieni presente che i commenti dei consumatori possono essere trovati ovunque. Impara a raccoglierli con l'aiuto di Vocally. Usa il feedback che ottieni dai tuoi clienti come punto di partenza per discutere della documentazione del prodotto, dei tuoi prodotti e servizi e raccogliere più informazioni su come puoi aiutare i tuoi clienti e renderli fedeli per sempre ai tuoi prodotti e servizi. I tuoi clienti apprezzeranno il fatto che valorizzi il loro contributo. È fondamentale per costruire legami profondi con il tuo pubblico. Il feedback dei clienti è inestimabile per la tua azienda, quindi non smettere mai di ascoltare!
+
+Superiamo la paura di ricevere feedback dai nostri clienti perché con i loro commenti possiamo migliorare la documentazione di prodotto, i prodotti e i servizi, nonché il servizio clienti. Scopriamo come Vocally – una funzionalità di Docsie – può aiutarci a capire come i nostri clienti utilizzano la nostra documentazione e cosa apprezzano o non apprezzano.
+
+### Iniziare con il feedback di Docsie:
+
+### Ecco un video con istruzioni dettagliate su come configurare e utilizzare Vocally con i portali di conoscenza Docsie:
+
+<!-- blank line -->
+<iframe width="560" height="315" src="https://www.youtube.com/embed/F9SGMzCjLF8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<!-- blank line -->
+
+Una volta pubblicato il tuo portale Docsie, se accedi al portale di conoscenza basato su cloud di Docsie, potresti notare questo in basso:
+
+![](https://cdn.docsie.io/workspace_WxPJSQ5gsES8Bzjxy/doc_ydgtE07E6Rp4AMmKv/file_HNt1rBjiROJQ2H7lm/boo_tZD1ykTPGDgzextMB/9e6e8892-7334-d462-c42d-52b0fe4abae4Snag_d7a0c28.png)
+
+![](https://cdn.docsie.io/workspace_WxPJSQ5gsES8Bzjxy/doc_ydgtE07E6Rp4AMmKv/file_Geoc0jqHeoWcbthnO/boo_tZD1ykTPGDgzextMB/bff4d0cc-c94f-380e-b1c7-e1453ab12d3dSnag_d7a6cb7.png)
+
+Quando i nostri clienti visualizzano la nostra documentazione, cliccano questo pulsante e ci inviano un feedback, il loro commento viene automaticamente raccolto e visualizzato nelle nostre analisi web all'interno di Docsie. Ma non è tutto! Possiamo anche vedere un breve video di come i nostri clienti hanno interagito con la nostra documentazione!
+
+Vediamo come!
+
+Dopo che il nostro cliente ha inviato quel piccolo feedback:
+
+![](https://cdn.docsie.io/workspace_WxPJSQ5gsES8Bzjxy/doc_ydgtE07E6Rp4AMmKv/file_yGdEfZA4ZQSxUAdDV/boo_tZD1ykTPGDgzextMB/add6328a-0f22-b9cb-dbf4-0ebfc0467ca9Snag_d7b9057.png)
+
+Possiamo vederlo su Docsie. La prima cosa da fare è accedere alla piattaforma Docsie e a sinistra possiamo vedere "workspace, notification feed" e sotto queste schede vediamo "Web Analytics" con un globo.
+
+![](https://cdn.docsie.io/workspace_WxPJSQ5gsES8Bzjxy/doc_ydgtE07E6Rp4AMmKv/file_Uwq3GfsNK7QCj9St4/boo_tZD1ykTPGDgzextMB/3ab0e698-c291-cb21-0199-d6ab57198128Snag_d7c1bed.png)
+
+Se lo premiamo e apriamo il pulsante Web analytics, ci mostrerà la piattaforma di feedback di Docsie:
+
+![](https://cdn.docsie.io/workspace_WxPJSQ5gsES8Bzjxy/doc_ydgtE07E6Rp4AMmKv/file_OjUjUzFHHGwlnoIdg/boo_tZD1ykTPGDgzextMB/4ba81e13-dbac-f279-0856-4052d5f14c4eSnag_d7cdda7.png)
+
+**Questa piattaforma ci mostra tutto ciò che dobbiamo sapere sul feedback raccolto, il cliente che l'ha inviato, la data di invio e a quale portale si riferisce.**
+
+1. Possiamo riprodurre il video quando vogliamo con questo pulsante di play e pausa.
+
+2. Questo ci permette di modificare la velocità di riproduzione del video. È particolarmente utile per portali di documentazione ampi visionati dai nostri clienti, così possiamo individuare più rapidamente dove hanno avuto problemi.
+
+3. Questo ci dice da quale portale hanno inviato il feedback.
+
+4. Questo è il loro commento.
+
+5. Questo mostra quanto hanno apprezzato o meno la documentazione.
+
+6. Se hai raccolto molti feedback, Docsie ti permette di mostrare solo determinate porzioni che vuoi analizzare in base alle date.
+
+7. Il pulsante di configurazione ci aiuta a modificare CSS e altri aspetti dello strumento di feedback Vocally.
+
+Ora diamo un'occhiata alle funzionalità offerte da Vocally cliccando sul pulsante 'Configuration':
+
+![](https://cdn.docsie.io/workspace_WxPJSQ5gsES8Bzjxy/doc_ydgtE07E6Rp4AMmKv/file_ItXaohEeulWngnN4y/boo_tZD1ykTPGDgzextMB/7ad80a03-ee84-3fbe-27f7-5c09dac0130eSnag_d7dbcdc.png)
+
+**Questa è la nostra dashboard di configurazione. Qui si possono apportare diverse modifiche.**
+
+1. Puoi collegare il tuo feedback a email, Slack, Mattermost, Zendesk e Zapier.
+
+2. Puoi registrare automaticamente i video o disattivare questa funzionalità.
+
+3. Questo è il codice che puoi utilizzare con il punto 4 per personalizzare il feedback in modo che corrisponda all'aspetto del brand della tua azienda. L'aggiunta di un codice è necessaria solo quando pubblichi Docsie tramite codice per il tuo sito web. Tuttavia, se pubblichi la documentazione Docsie tramite i nostri portali basati su cloud, avrai Vocally integrato automaticamente in tutti i tuoi portali di conoscenza pubblicati.
+
+4. Questo serve per personalizzare Vocally.
+
+Ora che abbiamo approfondito l'importanza del feedback per i miglioramenti e le ottimizzazioni, per costruire fiducia con i clienti e come Docsie fornisce una soluzione a tutte queste questioni, sentiti libero di provare Vocally. Registrati a Docsie, scrivi e pubblica la tua prima documentazione, e poi vedi come ti piace!
+
+Per ulteriori informazioni su Vocally - una funzionalità di feedback di Docsie - consulta: [https://help.docsie.io/?doc=/gather-feedback/](https://help.docsie.io/?doc=/gather-feedback/)

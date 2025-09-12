@@ -1,0 +1,88 @@
+<iframe width="560" height="315" src="https://www.youtube.com/embed/xRdJhd9SAV0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+Visual Studio Code에서 Docsie 임베디드 코드를 주입하여 Docsie 포털을 커스터마이징하는 방법
+
+Docsie는 다양한 커스터마이징 기능을 제공합니다. 이 글에서는 Docsie 포털 커스터마이징을 시작하는 데 필요한 단계를 안내해 드리겠습니다. 저는 전문 개발자나 디자이너가 아니니, 여러분의 기술팀이 이 도구를 활용하면 제가 만든 것보다 훨씬 더 아름다운 Docsie 포털을 만들 수 있을 것입니다. 이 글은 단지 시작하는 데 도움이 되는 단계별 가이드입니다!
+
+## STEP 1
+
+첫 번째 단계는 코드를 가져오는 것입니다. 오른쪽 상단 모서리에 있는 점 세 개를 클릭하여 계정을 찾으세요. 이 버튼을 클릭하면 Docsie의 설정 대시보드로 이동합니다.
+
+## STEP 2
+
+다음으로, 왼쪽에 있는 '배포(Deployment)' 버튼을 클릭하세요.
+
+![](https://cdn.docsie.io/workspace_WxPJSQ5gsES8Bzjxy/doc_ydgtE07E6Rp4AMmKv/file_UNFgmrrV4LJRPPcLD/boo_OKQpsM12uk8DtYPzL/f551ad37-a3a0-78bb-f97a-1246d5d57899Snag_1113a5f7.png)
+
+배포 설정에 들어가면 Docsie 클라우드를 통해 지식 포털을 만들거나, HTML에 추가할 수 있는 코드를 호출하여 자체 회사 웹사이트에 지식 포털을 만들 수 있습니다. '새 배포 구성(Configure a new deployment) +'을 클릭하여 간단히 진행할 수 있습니다.
+
+![](https://cdn.docsie.io/workspace_WxPJSQ5gsES8Bzjxy/doc_ydgtE07E6Rp4AMmKv/file_66sDikYE16JfYewXU/boo_OKQpsM12uk8DtYPzL/4a8b6dd2-03d2-5d7a-837d-e3afdbe66900Snag_11161d31.png)
+
+## STEP 3
+
+다음으로 '커스텀 배포(Custom deployment)' 탭을 클릭하고 '배포 URL(Deployment URL)'에 웹사이트를 입력한 다음 '웹 포털 생성(Create web portal)'을 클릭하세요.
+
+![](https://cdn.docsie.io/workspace_WxPJSQ5gsES8Bzjxy/doc_ydgtE07E6Rp4AMmKv/file_6CGgetG9GizkqY87p/boo_OKQpsM12uk8DtYPzL/4b102fcb-a424-8966-1f92-59b56e14241dimage.png)
+
+완료되면 목록 하단에서 포털을 찾아 '배포 스크립트 가져오기(Get deployment script)'를 클릭하세요.
+
+![](https://cdn.docsie.io/workspace_WxPJSQ5gsES8Bzjxy/doc_ydgtE07E6Rp4AMmKv/file_el02yIrEUA3rf28CG/boo_OKQpsM12uk8DtYPzL/a64fc5d5-4e2c-9c6a-8325-6ed88a291db3Snag_1119813c.png)
+
+## STEP 4
+
+이제 스크립트를 복사하고 Visual Studio Code로 이동합시다!
+
+![](https://cdn.docsie.io/workspace_WxPJSQ5gsES8Bzjxy/doc_ydgtE07E6Rp4AMmKv/file_a3ExYoQ3yZSLnkf4y/boo_OKQpsM12uk8DtYPzL/1a26f697-45e9-b0c4-53d2-8ad808b8d49fSnag_111a44da.png)
+
+Docsie에서 임베디드 코드를 가져오는 방법에 대한 자세한 정보가 필요하시면 [여기](https://www.docsie.io/blog/articles/publishing-product-documentation-with-docsie/)에서 제 블로그를 확인하세요.
+
+Visual Studio Code에서 index.html, index.css, index.js 파일을 생성하세요(이미 준비된 파일이 없다면). HTML 파일을 열고 HTML 본문(</head> 태그 아래)에 코드를 붙여넣으세요.
+
+![](https://cdn.docsie.io/workspace_WxPJSQ5gsES8Bzjxy/doc_ydgtE07E6Rp4AMmKv/file_ss2981O27UrVWVfrx/boo_OKQpsM12uk8DtYPzL/64bda798-9915-3b7b-274f-dc707b9118a2Snag_111c041e.png)
+
+## STEP 5
+
+5단계에서는 '기본 스타일'을 만들어야 합니다.
+
+Docsie 포털에 기본 스타일을 적용하는 방법에 대한 자세한 정보는 [https://help.docsie.io/?doc=/publish-documentation-portal/docsie-styling-guide/base-style/](https://help.docsie.io/?doc=/publish-documentation-portal/docsie-styling-guide/base-style/)에서 확인할 수 있습니다.
+
+제 예시에서는 HTML에 회사 이름 링크를 추가하고 약간의 CSS로 수정했습니다.
+
+![](https://cdn.docsie.io/workspace_WxPJSQ5gsES8Bzjxy/doc_ydgtE07E6Rp4AMmKv/file_xg25e1fVbKEZbjJYl/boo_OKQpsM12uk8DtYPzL/a49b8d34-7911-10aa-741a-781224f57212Snag_1122dccd.png)
+
+![](https://cdn.docsie.io/workspace_WxPJSQ5gsES8Bzjxy/doc_ydgtE07E6Rp4AMmKv/file_fRoPLO0Df6JhTcf2h/boo_OKQpsM12uk8DtYPzL/7c668c24-8d5e-8fdf-5b2a-ad93de3b313cSnag_11238581.png)
+
+결과는 매우 기본적이지만, 여러분의 기술팀이 Docsie 지식 포털을 더 향상시키고 브랜드 디자인과 느낌에 맞는 포털을 만들 수 있는 잠재력을 보여드리고 싶었습니다. 여러분은 다른 스타일과 색상을 사용할 수 있습니다. 대부분의 경우, 사용자들은 웹사이트 링크가 포함된 로고를 넣고 상단에 내비게이션 바를 추가하여 Docsie 지식 포털이 회사 웹사이트에 자연스럽게 어울리도록 합니다.
+
+![](https://cdn.docsie.io/workspace_WxPJSQ5gsES8Bzjxy/doc_ydgtE07E6Rp4AMmKv/file_StvlIomWiDjQ8wV0h/boo_OKQpsM12uk8DtYPzL/e02de6be-1990-cbe1-7078-4e477ec4a6d9Snag_112473e8.png)
+
+## STEP 6
+
+마지막으로 다음 코드를 추가하여 스타일 변경을 적용했습니다:
+
+```
+  <style>
+    :root {
+        --docsie-font-family: garamond;
+        --docsie-font-family-head: inherit;
+        --docsie-font-family-mono: monospace;
+        --docsie-hue-primary: 200;
+        --docsie-hue-gray: var(--docsie-hue-primary);
+        --docsie-sat-primary: 100%;
+     
+        --docsie-page-width: 1800px;   
+        --docsie-notice-background: var(--docsie-color-primary-darker);
+    }
+    </style>
+
+```
+'기본 스타일'의 마지막 div 태그 아래에 붙여넣었습니다.
+
+![](https://cdn.docsie.io/workspace_WxPJSQ5gsES8Bzjxy/doc_ydgtE07E6Rp4AMmKv/file_ORs7jTN5WvXJ7VkuB/boo_OKQpsM12uk8DtYPzL/4cc0127b-2bca-4d38-3040-864b8f5054fdSnag_112741dd.png)
+
+매우 기본적인 스타일 변경 결과는 다음과 같습니다:
+
+![](https://cdn.docsie.io/workspace_WxPJSQ5gsES8Bzjxy/doc_ydgtE07E6Rp4AMmKv/file_uCSLHwdeVry8finx8/boo_OKQpsM12uk8DtYPzL/82ffd090-9575-e89b-b0ed-16f4af08a405Snag_1127954c.png)
+
+이제 필요한 도구를 모두 갖추었으니 직접 시도해보고 변경사항을 적용하여 자랑스러운 지식 포털을 만들어보세요! 여러분의 지식 포털이 제 것보다 훨씬 더 멋져 보일 것이라고 확신합니다. :) 한번 시도해보고 무엇보다 즐겁게 작업하세요!

@@ -1,0 +1,141 @@
+Este erro ensinou-me que preciso de olhar para o nosso produto através da perspetiva do cliente. Foi então que a luz se acendeu. Se entregar um produto que responde às dores do cliente e o apoiar com documentação profissional, teremos um vencedor.
+
+Também descobri que criar documentação de produto profissional, atraente e fácil de ler não é tarefa simples. Mas quando bem feita, a documentação pode transformar clientes satisfeitos em clientes entusiasmados e, em última análise, aumentar as receitas.
+
+## Quais são as Melhores Práticas para Criar Documentação Profissional de Produto?
+
+![What Are the Best Practices for Creating Professional Product Documentation?](https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_JLDSpWBDcIaMWR3Ce/file_PAtUEFouRAqhgcvnJ/809d42be-d04c-76b1-7895-4348b612a22dbrooke_cagle__uhvrvdr7pg_unsplash1.jpg)
+
+Estas melhores práticas permitem criar documentação de produto atraente, informativa e fácil de utilizar. Seguir estas orientações ajuda-o a fornecer documentação que pode transformar um bom cliente num excelente cliente. E excelentes clientes ajudam as empresas a aumentar as receitas, sendo a documentação de produto um componente vital da experiência do cliente.
+
+### 1. Compreenda o seu público-alvo e dê-lhes o que querem
+
+É essencial [conhecer as expectativas do seu público](https://www.stickyminds.com/article/writing-requirements-documentation-multiple-audiences). Por exemplo, a documentação destina-se a Administradores ou Utilizadores Finais? O âmbito do seu público-alvo pode exigir uma escrita mais técnica para Administradores ou instruções claras e bem definidas para o Utilizador Final.
+
+Uma boa prática para criar documentação profissional é compreender as expectativas dos clientes, seja ao nível de Administrador ou de Utilizador Final. Alguns métodos para recolher informações sobre o público incluem:
+
+* Questionários e inquéritos
+
+* Feedback percebido do público
+
+* Brainstorming na empresa
+
+* Feedback sobre opiniões populares dos clientes
+
+* Mesas redondas com clientes
+
+### 2. Crie um plano de documentação como boa prática
+
+![Create a documentation plan as a best practice](https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_JLDSpWBDcIaMWR3Ce/file_OpuMo68fDe86GImec/3a718347-9b9e-c209-a4ca-c923253bf756kaleidico_26mjgncm0wc_unsplash.jpg)
+
+Elaborar um plano de documentação ajuda a prever potenciais obstáculos durante a implementação do projeto. Criar documentação de produto pode ser desafiante, e uma boa prática é desenvolver um plano para antecipar problemas que possam surgir durante o processo.
+
+Entre os benefícios de criar um plano de documentação estão:
+
+* **Itens acionáveis** - Auditar documentação existente para **aproveitar informações aplicáveis** que possam ser reutilizadas no novo plano.
+
+* **Observar modelos e guias de estilo** - Se a documentação for para um novo produto, certifique-se que mantém a voz e o estilo do setor, ou se pertencer a um produto existente, mantenha os guias de estilo e modelos atuais para **garantir a continuidade da marca**.
+
+* **Documentar ferramentas de processo** - As ferramentas de documentação podem definir e simplificar o processo enquanto garantem a continuidade do trabalho em equipa e uma melhor compreensão do processo de desenvolvimento.
+
+### 3. Simplifique a documentação como boa prática
+
+Um estudo realizado em 2016 determinou quantos utilizadores leem a documentação do produto. Os resultados foram surpreendentes ao descobrir que apenas [25% dos utilizadores leem a documentação](https://academic.oup.com/iwc/article-abstract/28/1/27/2363584?redirectedFrom=fulltext&login=false). O estudo concluiu que a falta de leitura deve-se em parte a:
+
+* **Utilizadores impacientes** - Com o advento da informação imediata via web, os utilizadores tornaram-se menos pacientes na procura de respostas. Ler documentação online ou offline pode ser trabalhoso devido à grande quantidade de informação.
+
+* **Síndrome de saltar conteúdo** - Os utilizadores frequentemente saltam a documentação necessária e vão diretamente para o básico de como usar o produto. Os utilizadores aprendem através da interação com o produto em vez de lerem instruções detalhadas. As instruções devem ser claras e informativas.
+
+* **Layout e estrutura confusos** - Os manuais são frequentemente escritos num formato difícil de entender e seguir. Muitos utilizadores consideram a documentação confusa ou irrelevante para as suas questões, ficando frustrados. Frequentemente, a empresa não realizou pesquisa detalhada sobre o público e não compreendeu corretamente o que o utilizador precisava.
+
+### 4. Inclua capturas de ecrã e informação gráfica
+
+Pense na documentação como um roteiro que conta uma história sobre um produto. Conduza o cliente por um caminho facilmente [identificado com capturas de ecrã ou outros gráficos](https://theideanest.ca/5-types-graphics/?doing_wp_cron=1666462401.5462460517883300781250) e explique como cada elemento interage com os outros. Explique claramente o que o utilizador está a ver ou quando uma funcionalidade é ativada, como reage ao produto e o que esperar a seguir. Certifique-se que cada elemento gráfico tem um propósito e que o fluxo de trabalho do produto funciona harmoniosamente.
+
+### 5. Use referências cruzadas para uma compreensão mais clara dos tópicos
+
+Descobri que as [referências cruzadas são inestimáveis ao ler documentação](https://docs.typo3.org/m/typo3/docs-how-to-document/main/en-us/WritingReST/Reference/Content/Links.html). Compreender o que uma funcionalidade ou processo faz ajuda imenso quando há uma ligação para um tópico associado. Ao estabelecer ligações entre pontos de dados associados, a imagem global torna-se mais clara sobre como o sistema interage e funciona.
+
+### 6. Lembre-se do princípio KISS para documentação de produto
+
+Lembre-se de usar o [princípio KISS (Keep It Simple, Stupid) ao criar documentação](https://www.wrike.com/blog/understanding-kiss-principles-project-management/#What-does-KISS-stand-for). É importante documentar minuciosamente o processo, mas não ao ponto de excesso. O utilizador da documentação pode estar à procura de informações específicas, por isso, aderir ao princípio KISS permite uma navegação e compreensão muito mais fáceis.
+
+Por exemplo, anotações simples podem ser suficientes para explicar uma função, talvez com uma referência (ligação cruzada) para o tema principal. Mantenha os factos claros e não exagerados, para que o utilizador possa facilmente procurar informações relevantes. Eles podem não estar interessados em ler todos os aspetos do produto.
+
+### 7. Acomode diferentes estilos de aprendizagem
+
+![Accommodate different styles of learning](https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_JLDSpWBDcIaMWR3Ce/file_uCmkZTtLD7r6Elyg2/b2bb8ece-a1f8-5df4-d5ed-f4392f04d374radek_grzybowski_ebrtyyjwpry_unsplash.jpg)
+
+Cada pessoa tem um [estilo de aprendizagem diferente](https://www.ukessays.com/essays/social-work/people-learn-in-different-ways.php). Alguns preferem descrições detalhadas, enquanto outros podem preferir gráficos e representações visuais. No entanto, alguns utilizadores aprendem mais através do envolvimento prático do que da leitura.
+
+Assegure-se de englobar todos os estilos de aprendizagem ao criar documentação eficaz e informativa. Por exemplo, inserir gráficos como capturas de ecrã, gráficos, texto estruturado ou ligações para vídeos ajuda a garantir que todos os estilos de aprendizagem compreendem a documentação.
+
+### 8. Personalize e estruture o conteúdo de integração
+
+Personalize a [documentação com base no papel do público](https://www.deanhouston.com/news/knowing-audience-document-right-document/). Crie diferentes versões da documentação com base nas funções do público-alvo. Por exemplo, as perguntas de um administrador podem não ser relevantes para as de um utilizador avançado.
+
+A documentação pode introduzir uma camada de personalização criando versões ligeiramente diferentes do documento, mais direcionadas para o papel do público-alvo. Modificar o conteúdo de integração com base no papel do público confere à documentação um elemento de personalização.
+
+### 9. Defina claramente os termos para públicos específicos
+
+Dependendo do público-alvo, é uma boa prática explicar o significado de cada termo usado na documentação. Pode usar termos mais complexos com algum esclarecimento se o público for interno. No entanto, quando utilizadores externos acedem à documentação, não há como saber o nível de conhecimento dos utilizadores.
+
+Definir claramente termos únicos ou complexos estabelece uma comunicação muito melhor e mais eficiente para todas as partes interessadas internas e utilizadores externos.
+
+### 10. Forneça um método para recolher feedback dos utilizadores
+
+O feedback sobre a documentação fornece informações poderosas quanto à eficácia do documento. Forneça uma ligação ou um simples botão "Gosto/Não gosto" para recolher informações valiosas sobre a qualidade da documentação. Ao [recolher feedback dos utilizadores](https://www.k15t.com/rock-the-docs/documentation-guide/collaborative-writing/collect-user-feedback), a documentação pode ser refinada e melhorada.
+
+### 11. Evite documentação com estrutura plana
+
+Ao criar documentação de produto, certifique-se de que não é escrita como uma "estrutura plana". Ler um documento cheio de texto plano é trabalhoso e pode tornar-se tedioso. O interesse do leitor será maior se a informação for relevante para o tópico discutido e puder ser consumida rapidamente.
+
+Quebre o texto contínuo e plano destacando informações selecionadas ou integrando vídeos, imagens, ligações e outros métodos para proporcionar uma melhor experiência. Ao fornecer conteúdo em "pequenas porções", o leitor terá uma experiência mais agradável e menor relutância em ler a documentação.
+
+### 12. Crie documentação otimizada para motores de busca
+
+![Create documentation that is SEO friendly](https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_JLDSpWBDcIaMWR3Ce/file_JcQwSJ6c9VBPNDxiB/fc593084-5b7f-a9c5-63e1-9b310b83d086nisonco_pr_and_seo_yirdur6hivq_unsplash.jpg)
+
+Uma boa prática para documentação online é garantir que é escrita num estilo [otimizado para SEO](https://www.pragm.co/post/making-your-documentation-seo-friendly). Assegure-se que a documentação é escrita para maximizar os resultados de pesquisa na internet. Os clientes podem precisar de pesquisar a documentação, e quando não têm a ligação explícita para o site de hospedagem, ao introduzir termos de pesquisa, as respostas são mais rápidas e precisas quando otimizadas para SEO.
+
+### 13. Mantenha a documentação atualizada
+
+Manter a documentação de produto atualizada é crucial, principalmente se for acedida online. Frequentemente, os requisitos de um produto mudam e a documentação online deve refletir quaisquer alterações ou atualizações. Portanto, a documentação do utilizador precisa de estar atualizada e ser atualizada para refletir mudanças recentes, garantindo que o cliente é notificado e está ciente das alterações.
+
+### 14. Compreenda que os utilizadores podem não ler a documentação
+
+Um [estudo de 2014 descobriu que os utilizadores não liam completamente](https://academic.oup.com/iwc/article-abstract/28/1/27/2363584?redirectedFrom=fulltext&login=false) toda a documentação. As principais razões para não lerem a documentação foram:
+
+* Documentação excessivamente complexa
+
+* Documentação que não respondia diretamente às suas questões
+
+* Utilizadores que não usavam muitas funcionalidades do produto por não lerem a documentação
+
+* Preferência por aprendizagem prática em vez de ler documentação
+
+### 15. Gerir conteúdo dinâmico e estático
+
+![Manage both dynamic and static content](https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_JLDSpWBDcIaMWR3Ce/file_OgArkokVN075yERo3/b97f1b98-62a4-5b80-5e15-a008439ad625shubham_dhage_hatkch_piqm_unsplash.jpg)
+
+A documentação de produto evolui continuamente com atualizações, novas funcionalidades, conteúdo corrigido, alertas de manutenção atualizados e outros itens. Esta atualização é considerada um documento vivo que evolui continuamente conforme os requisitos do produto.
+
+O conteúdo estático fornece ao utilizador dados que não mudam ao longo da vida do produto. A ideia do conteúdo estático é fornecer referências aos utilizadores, especialmente novos utilizadores, informações que permanecem estáticas durante o ciclo de vida do produto. O conteúdo estático é vital para uma documentação rica, mas geralmente fica em segundo plano em relação à documentação dinâmica.
+
+Manter o conjunto de documentação é mais fácil quando o conteúdo é [classificado como dinâmico ou estático](https://brainly.com/question/24688083). A documentação do ciclo de vida do produto pode ser implementada e validada mais facilmente quando a documentação é categorizada como dinâmica ou estática. Pode haver pequenas alterações na documentação para atualizações de novas funcionalidades (estático) ou atualizações detalhadas do produto (dinâmico).
+
+### 16. Boas práticas para disponibilidade de documentação
+
+Embora os utilizadores possam não ler necessariamente muita documentação, quando precisam dela, querem-na imediatamente. O método tradicional de entrega de documentação era ter um manual impresso que viajava com o produto. No entanto, no mundo digital atual, a documentação é frequentemente fornecida via web.
+
+Independentemente de como a documentação é entregue, é essencial ter pontos de acesso prontamente disponíveis. Os métodos predominantes de fornecimento de documentação hoje são:
+
+* **Documentação offline** - Muitos produtos são embalados com manuais impressos ou folhas de "Início Rápido". Estes documentos são geralmente únicos e não são facilmente distribuídos. No entanto, muitos manuais são opcionalmente fornecidos em formato PDF, promovendo a portabilidade ou a opção de imprimir sob demanda.
+
+* **Documentação online** - Cada vez que pesquisa no Google uma resposta para um problema, provavelmente está a obter um excerto de documentação online. O advento da web substituiu a impressão de manuais ou materiais de documentação para utilizadores finais. Alguns dos benefícios da documentação online são:
+
+1. Teletrabalho - Uma coisa que a pandemia nos ensinou é que trabalhar em casa pode ser tão produtivo como no escritório, especialmente quando as nossas perguntas são respondidas com documentação online.
+
+2. Colaboração - Com um portal de documentação online facilmente acessível, os membros da equipa podem partilhar informações rapidamente e criar trabalho em equipa, o que muitas vezes é impossível no escritório.
+
+3. Compatibilidade móvel - O surgimento de dispositivos móveis como iPads e smartphones substituiu gradualmente os PCs para interações diárias. Pode aceder facilmente à documentação online com um smartphone, e quaisquer problemas persistentes com o produto podem ser rapidamente pesquisados, mesmo no seu café favorito durante o almoço.

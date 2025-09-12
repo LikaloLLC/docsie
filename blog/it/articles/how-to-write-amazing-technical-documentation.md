@@ -1,0 +1,189 @@
+![](https://cdn.docsie.io/workspace_WxPJSQ5gsES8Bzjxy/doc_ydgtE07E6Rp4AMmKv/file_ixpPN33GyhHXH9KBW/boo_uEOFXPlPg7tAhqPD1/0abc88ea-7ce0-ea44-74ba-9bd8c5d23854the_technical_writing_stuff.jpg)
+
+Ogni team di gestione prodotto e progetto necessita di figure chiave per creare e gestire vari progetti di documentazione tecnica. Questo è fondamentale per diversi aspetti della costruzione e dello sviluppo di prodotti e progetti, oltre che per il rilascio e la formazione di clienti e dipendenti su diverse caratteristiche dei prodotti, funzionalità e i loro ruoli.
+
+Sebbene la documentazione tecnica possa sembrare complessa, non deve necessariamente esserlo. In questo articolo, ti insegneremo tutto ciò che devi sapere per iniziare a creare e mantenere una documentazione tecnica eccellente per i tuoi prodotti e progetti.
+
+### Cos'è la scrittura tecnica?
+
+La documentazione tecnica esiste in varie forme e formati, anche se oggi è principalmente disponibile online. Nonostante sia spesso creata da redattori tecnici, team di sviluppo, project manager, sviluppatori e altri professionisti del settore, la migliore documentazione tecnica comunica le informazioni in modo semplice e chiaro, comprensibile a tutti. In caso contrario, non raggiunge il suo scopo.
+
+La documentazione tecnica si riferisce ai documenti che dettagliano le caratteristiche e le funzioni di un prodotto. Viene sviluppata più frequentemente nel settore dello sviluppo software da team di sviluppo e prodotto e può essere utilizzata per soddisfare le esigenze di supporto di vari stakeholder all'interno di un'organizzazione.
+
+Questi documenti forniscono contesto per gli elementi relativi al prodotto. Che descrivano l'uso, la tecnica, le funzioni, le caratteristiche o lo sviluppo di un prodotto, l'obiettivo finale è educare il lettore su un particolare elemento del prodotto. Questo vale sia che vengano utilizzati nello sviluppo software, nello sviluppo di prodotti o in altri settori.
+
+### A chi è destinata la documentazione tecnica?
+
+![](https://cdn.docsie.io/workspace_WxPJSQ5gsES8Bzjxy/doc_ydgtE07E6Rp4AMmKv/file_gwW0HhhGm84k7Ee0A/boo_uEOFXPlPg7tAhqPD1/0c71d6f4-58ef-a35c-75b5-03d70464afc6melanie_deziel_fSWQPBxqClg_unsplash_(1).jpg)
+
+I destinatari possono essere definiti in vari modi, dagli utenti finali ai programmatori fino agli stakeholder. Varia notevolmente a seconda del tipo di materiale in questione.
+
+Tuttavia, la documentazione tecnica basata sui processi è spesso prodotta pensando ad altri tipi di pubblico. Potrebbero essere sviluppatori, stakeholder, clienti o altri membri del team interno. Sebbene questo tipo di documentazione sia meno utilizzato rispetto alla documentazione basata sul prodotto, il suo scopo è offrire uno sguardo più approfondito sui vari elementi tecnici che compongono un prodotto.
+
+Alla fine, la documentazione tecnica è generalmente creata a beneficio degli utenti del prodotto. Il suo obiettivo principale è spesso aiutare gli utenti a svolgere determinati compiti con un prodotto, quindi gli utenti finali dovrebbero sempre essere considerati durante la creazione dei diversi tipi di documentazione tecnica.
+
+### Qual è l'importanza della documentazione tecnica?
+
+Ci sono diversi motivi per cui la documentazione tecnica è importante. Tuttavia, tutto si riduce a un vantaggio fondamentale. La ragione principale per la creazione della documentazione tecnica è informare il pubblico su un prodotto.
+
+Questa affermazione può sembrare ovvia, ma approfondiamo un po'. Dopotutto, un prodotto è completamente inutile se gli utenti non hanno sufficienti conoscenze al riguardo. La mancanza di informazioni porta le persone a non utilizzare correttamente un prodotto o a non avere le competenze necessarie per comprenderlo veramente.
+
+La documentazione tecnica è fondamentale dal punto di vista dell'utente finale poiché gli permette di utilizzare un prodotto in modo efficiente. Questo è doppiamente vantaggioso per l'azienda che produce la documentazione tecnica, poiché riduce le ore di assistenza clienti e si traduce in utenti soddisfatti che possono risolvere e rispondere alle proprie domande autonomamente.
+
+Internamente, la documentazione tecnica è essenziale perché fornisce ai dipendenti le conoscenze necessarie per lavorare efficacemente su un prodotto, che si tratti di materiale altamente tecnico o di una panoramica di alto livello sulla pianificazione e i processi.
+
+In ogni caso, i prodotti non sono sempre auto-esplicativi. Ecco perché abbiamo bisogno della documentazione tecnica per fornirci tutte le informazioni necessarie.
+
+## Quali sono i diversi tipi di documentazione tecnica?
+
+La documentazione tecnica viene realizzata in varie forme. Il modo più semplice per distinguere tra diverse forme di documentazione tecnica è determinare per chi sono scritte. Possono essere ampiamente classificate in due tipi: documentazione di prodotto e documentazione di processo.
+
+In ogni caso, i prodotti non sono sempre auto-esplicativi. Ecco perché abbiamo bisogno della documentazione tecnica per fornirci tutte le informazioni necessarie.
+
+### Documentazione orientata al processo
+
+In parole semplici, la documentazione orientata al processo descrive il metodo con cui un prodotto viene sviluppato. Non si concentra sul risultato finale, ma sui vari processi, dati ed eventi che contribuiscono al suo avanzamento ed evoluzione.
+
+Questo tipo di scrittura tecnica è tipicamente mantenuto internamente ed è di scarso valore o interesse per i consumatori o gli utenti finali (tranne per gli stakeholder esterni con un interesse diretto nello sviluppo di un prodotto). È utile poiché denota le varie fasi del ciclo di vita di un prodotto. Questo tipo di documentazione viene utilizzato per i team di gestione prodotto e gestione progetto, nonché per altri team aziendali che necessitano di avviare vari processi e catalogare documentazione, come HR e persino team di sviluppo.
+
+La documentazione orientata al processo può consistere in proposte di progetto, che presentano obiettivi e tempistiche relativi allo sviluppo del prodotto. Requisiti di prodotto, che sono documenti convincenti che descrivono fatti e cifre essenziali su un nuovo prodotto o servizio. Obiettivi, personas e storie utente, dettagli di rilascio, roadmap, wireframe e dettagli di design, rischi e dipendenze sono aspetti comuni.
+
+La documentazione orientata al processo può anche consistere in piani di progetto, schemi, riepiloghi e statuti.
+
+I project e product manager hanno un'esigenza particolarmente forte di roadmap di prodotto e progetto, quindi avere documentazione e piani per supportare questo aspetto del loro flusso di lavoro è essenziale per la progressione dei progetti e lo sviluppo dei prodotti.
+
+Il reporting e gli aggiornamenti del progetto, così come le specifiche di determinate fasi dei processi all'interno dello sviluppo del prodotto o del progetto, rappresentano un altro aspetto della documentazione orientata al processo. Questo fornisce fantastiche panoramiche delle molte fasi del ciclo di vita del tuo prodotto.
+
+### Documentazione orientata al prodotto
+
+Il prossimo tipo di documentazione tecnica è la documentazione basata sul prodotto. Spesso nota come documentazione utente, descrive cos'è un prodotto completato e come utilizzarlo. Piuttosto che descrivere il processo di sviluppo, enfatizza il risultato finale.
+
+Esistono vari tipi di documentazione orientata al prodotto, tuttavia, i principali tipi chiave sono manuali utente, tutorial, linee guida per l'installazione, guide alla risoluzione dei problemi, domande frequenti, knowledge base, wiki e altre risorse di apprendimento: questi tipi di documentazione forniscono informazioni sul tuo prodotto e aiutano gli utenti finali a imparare come utilizzarlo.
+
+La documentazione dell'esperienza utente è un'altra forma di documentazione orientata al prodotto per le aziende SaaS. La documentazione UX descrive l'esperienza utente (UX) del tuo prodotto. Un elenco di tutti gli screenshot pertinenti e le personas utente. Ciò include personas utente, casi d'uso, linee guida di stile, mock-up, prototipi, wireframe e qualsiasi screenshot necessario.
+
+Il prossimo tipo di documentazione di prodotto sono le note di rilascio. Questo può essere utilizzato per la documentazione interna per tenere informati vendite e marketing sugli aggiornamenti dei prodotti SaaS o per informare utenti e clienti su nuove funzionalità e aggiornamenti di un prodotto tecnico.
+
+### Documentazione orientata al software
+
+Che tu stia scrivendo per utenti o sviluppatori, assicurati che la tua documentazione sia completa e risponda alle loro domande. Risparmierai tempo evitando di rispondere ripetutamente alle stesse domande.
+
+La documentazione software include: documentazione API, progettazione dell'architettura software e documentazione del codice sorgente. Queste documentazioni sono molto importanti per i team software per sapere come costruire e strutturare determinate piattaforme e prodotti tecnici. Per gli sviluppatori è essenziale creare documentazione per i requisiti software, documentazione di sistema, documentazione del codice, piani di test e creare altre forme di documentazione per aumentare e mantenere team efficaci.
+
+## Quali sono i vantaggi di una documentazione tecnica eccellente?
+
+![](https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzMTM3MXwwfDF8c2VhcmNofDU2fHxvbmxpbmUlMjBkb2N1bWVudGF0aW9ufGVufDB8fHx8MTYzMzM3MTIxMQ&ixlib=rb-1.2.1&q=80&w=1080)
+
+Una documentazione tecnica eccellente è importante per il processo di sviluppo del prodotto per diversi motivi. Soprattutto, aiuta tutti a raggiungere i propri obiettivi.
+
+Cosa intendiamo? Se stai creando un prodotto, il tuo obiettivo finale è che le persone lo utilizzino con soddisfazione. Come consumatore, il tuo obiettivo è utilizzare un prodotto con successo per risolvere un problema o offrire un servizio. Questo è impossibile se gli utenti non comprendono o non sanno usare un prodotto.
+
+Una grande documentazione tecnica aiuta in questo. Fornisce agli utenti le conoscenze sul prodotto e li aiuta a utilizzarlo con successo, supportando al contempo i team di prodotto nel loro processo di sviluppo.
+
+Per garantire che la tua documentazione tecnica sia ben scritta, il trucco è impostare un processo, un flusso di lavoro e una strategia adeguati per scrivere documentazione tecnica di qualità che sia chiara e scritta in modo deciso. Deve essere semplice da usare e comprendere per i suoi utenti. Altrimenti, non aiuterà tutti a raggiungere i propri obiettivi.
+
+### Docsie è una soluzione chiara per aiutarti a scrivere una documentazione migliore
+
+Una documentazione tecnica chiara, di alta qualità e facilmente accessibile è essenziale. Per aiutare te e il tuo team di sviluppo a rendere questo una realtà, la prova gratuita di Docsie può aiutarti a iniziare a creare e scrivere documentazione tecnica.
+
+Il nostro creatore di portali di conoscenza bello e facilmente personalizzabile consente al tuo team di collaborare senza sforzo sulla documentazione tecnica mantenendo l'organizzazione.
+
+Dimentica i mal di testa associati alla documentazione dispersa tra email, Microsoft Teams, GitHub e Google Drive. Utilizzando la nostra piattaforma, puoi assicurarti che tutte le informazioni necessarie siano centralizzate, permettendoti di concentrare l'attenzione sul far fluire la tua creatività e creare contenuti straordinari. [Inizia ora!](https://www.docsie.io/)
+
+## Qual è il modo migliore per sviluppare la documentazione tecnica?
+
+Molte persone non sanno da dove iniziare quando producono documentazione tecnica. Non preoccuparti; creare un'eccellente documentazione tecnica è un'abilità che si impara. Per aiutarti nel frattempo, abbiamo suddiviso alcuni metodi semplici per produrre rapidamente una buona documentazione tecnica.
+
+### 1. Condurre ricerche
+
+Ammettiamolo: è difficile generare una buona documentazione tecnica a meno che tu non sia completamente chiaro sul materiale che stai cercando di fornire. Se hai già esempi, ricerche, campioni e altri dati con cui lavorare, passa al punto due.
+
+Tuttavia, se stai partendo da zero, è fondamentale che tu conduca ricerche. Incontra il team che sarà responsabile della documentazione tecnica in questione, discuti e assegna vari compiti di ricerca a diversi membri del team.
+
+Per la tua ricerca, è una buona idea raccogliere tutte le informazioni e la documentazione esistenti con cui lavorare.
+
+Il passo successivo per la tua ricerca è considerare cosa coprirà la tua documentazione tecnica, i tuoi obiettivi e i risultati che vuoi raggiungere con la tua documentazione tecnica.
+
+Poi il passo successivo è elencare che tipo di software specifico, strumenti e guide di stile nello sviluppo della tua documentazione tecnica. Questi strumenti possono essere facilmente gestiti con Docsie. In effetti, tutta la tua ricerca può essere scritta e collaborata per completarla anche all'interno di Docsie.
+
+### 2. Design della documentazione tecnica
+
+Il contenuto della documentazione tecnica è fondamentale. Tuttavia, anche l'aspetto della tua documentazione tecnica è essenziale. Un documento ben organizzato e visivamente attraente comunicherà le informazioni in modo molto più efficace rispetto a un groviglio disorganizzato di documenti.
+
+Come tale, ci sono alcuni punti da considerare durante la progettazione della documentazione. Per iniziare, considera la struttura e la navigazione. Le persone spesso utilizzano la documentazione tecnica per trovare informazioni specifiche o una soluzione a un problema, e devono farlo rapidamente per garantire l'efficacia della risorsa. Di conseguenza, l'organizzazione della tua documentazione è molto importante per questo motivo.
+
+È una buona idea categorizzare e suddividere in sottocategorie le tue conoscenze in modo che possano essere facilmente accessibili. Questo può essere fatto attraverso gli articoli di Docsie all'interno di un Libro Docsie. Gli articoli verranno visualizzati sul lato destro di ogni documentazione pubblicata da Docsie:
+
+![](https://cdn.docsie.io/workspace_WxPJSQ5gsES8Bzjxy/doc_ydgtE07E6Rp4AMmKv/file_iUtMpbO0NjOCAF31g/boo_uEOFXPlPg7tAhqPD1/e8596395-59f7-8047-cc5e-74a54d5881c81.png)
+
+È anche essenziale che la tua documentazione includa una robusta funzione di ricerca e un sommario dinamico che consenta agli utenti di accedere facilmente alle informazioni di cui hanno bisogno. Il software di documentazione più efficace, come Docsie, ha anche questa funzionalità insieme a molte altre.
+
+![](https://cdn.docsie.io/workspace_WxPJSQ5gsES8Bzjxy/doc_ydgtE07E6Rp4AMmKv/file_IFCFzJGnWtVc2CzOv/boo_uEOFXPlPg7tAhqPD1/eb564116-d7fa-ef24-1ddb-e5bcf7e3b4dd2.png)
+
+Inoltre, è una buona idea iniziare con uno scheletro di documentazione tecnica. Un layout scheletrico della tua documentazione tecnica è facile da creare e ti aiuterà a garantire di non trascurare dati critici che desideri includere nella tua documentazione tecnica. Discuteremo dello scheletro della stesura della tua documentazione tecnica nel punto successivo. Questo manterrà la coerenza visiva e l'organizzazione di tutto il tuo materiale.
+
+### 3. Struttura di scrittura
+
+A questo punto del processo, è il momento di iniziare la vera produzione di contenuti. Incontra il team responsabile della documentazione tecnica della tua azienda e raccogli tutte le ricerche condotte nel punto uno. Quindi, in base alle capacità di ciascun membro del team, puoi assegnare loro compiti di scrittura.
+
+La migliore documentazione tecnica inizia con uno scheletro che è lo schema della documentazione.
+
+![](https://cdn.docsie.io/workspace_WxPJSQ5gsES8Bzjxy/doc_ydgtE07E6Rp4AMmKv/file_tYYBJlM0YkLJ2S48e/boo_uEOFXPlPg7tAhqPD1/3ecefef2-02a7-686b-98d7-b7910dc0540d3.png)
+
+La documentazione deve anche essere facile da leggere e seguire ed è una buona idea lasciare che altri nel tuo team la rivedano e la commentino. Questo può essere fatto facilmente con la funzione di commento di Docsie.
+
+![](https://cdn.docsie.io/workspace_WxPJSQ5gsES8Bzjxy/doc_ydgtE07E6Rp4AMmKv/file_BHCuBgK7PnFXEM5AF/boo_uEOFXPlPg7tAhqPD1/b868c808-13f3-cd68-a5a9-e365ca42b1284.png)
+
+Una volta che tutti hanno completato una prima bozza del loro materiale di documentazione tecnica, è fondamentale rivedere, valutare e rivedere ancora. È una buona idea avere almeno due paia di occhi che rivedano ogni parte della tua documentazione. Questo garantisce che il materiale non sia solo chiaro, ben scritto e grammaticalmente corretto, ma anche efficace per il pubblico previsto.
+
+Se la tua documentazione tecnica contiene istruzioni pratiche o passi da seguire, assicurati che i membri del tuo team testino quei passi e verifichino che raggiungano ciò che dovrebbero.
+
+### 4. Testare come gli utenti interagiscono con la tua documentazione
+
+Potresti credere di aver convalidato la tua documentazione durante il processo di revisione, ma non è così. Dopo aver completato la tua documentazione tecnica, è fondamentale eseguire un processo di test per assicurarti che sia priva di difetti organizzativi, contenuti confusi e problemi di usabilità.
+
+Per raggiungere questa fase, dovresti cercare utenti esterni per condurre una revisione della tua documentazione. Consenti loro di leggerla, utilizzarla per aiutarli a svolgere i compiti assegnati e offrirti il loro feedback sincero. È fondamentale che i tuoi tester siano esterni poiché vedranno la tua documentazione in modo obiettivo e senza pregiudizi, il che influenzerà la loro valutazione. Tutto questo può essere fatto con le analisi web di Docsie. Ti permette di vedere su cosa si stanno concentrando i tuoi lettori nella tua documentazione, ricevere feedback e anche sapere cosa li infastidisce della documentazione e del formato dei tuoi documenti tecnici.
+
+![](https://cdn.docsie.io/workspace_WxPJSQ5gsES8Bzjxy/doc_ydgtE07E6Rp4AMmKv/file_u6RAUGyvcgpYUsL7b/boo_uEOFXPlPg7tAhqPD1/4873aa1d-2007-2f3c-33d0-9c4b471fcae75.png)
+
+Nelle analisi web di Docsie puoi vedere un breve video di come i tuoi lettori interagiscono con la tua documentazione tecnica e utilizzare queste informazioni, abbinate a una valutazione fatta dal lettore, per ottimizzare la tua documentazione. È molto importante capire come affrontare il [feedback dei clienti](https://www.docsie.io/blog/articles/7-golden-rules-to-successfully-approach-customer-feedback/) e integrarlo nella creazione e nel flusso di lavoro della documentazione tecnica.
+
+### 5. Ottimizzare la documentazione tecnica con il feedback
+
+Considera che ora sei pronto per lanciare la tua nuova documentazione tecnica! Dopo aver incorporato eventuali feedback e commenti raccolti durante la fase di test, puoi aggiornare e ripubblicare la tua documentazione tecnica per l'uso dei tuoi utenti! Questo dovrebbe dare loro un'esperienza di documentazione più completa.
+
+Tuttavia, il tuo viaggio nella documentazione tecnica non finisce qui. I documenti tecnici sono dinamici e vengono costantemente aggiornati e modificati per riflettere i prodotti che coprono. Come tale, è una buona idea stabilire un protocollo che delinei cosa deve essere fatto quando vengono aggiunte nuove informazioni, vengono apportate modifiche o viene eseguita la manutenzione generale.
+
+Molte aziende scelgono di implementare aggiornamenti di manutenzione programmati alla loro documentazione. Stabiliscono date specifiche per valutare se sono necessarie modifiche, garantendo che tutte le loro informazioni siano sempre aggiornate e che le modifiche non vengano mai trascurate.
+
+## Consigli rapidi per iniziare
+
+### Registrati con Docsie
+
+Docsie ha un set di strumenti robusto per aiutarti a creare una documentazione tecnica straordinaria e attraente.
+
+### Conosci il tuo pubblico
+
+Ci sono diverse forme di documentazione tecnica. Considera chi leggerà la tua documentazione per determinare il tipo di documento, materiale e linguaggio da utilizzare. Programmatori, ingegneri, stakeholder, project manager, utenti finali, ecc.
+
+### Pianifica la tua documentazione
+
+Prepara una strategia iniziale che delinei il tipo di documenti che creerai. Considera i tipi di documentazione necessari per il tuo prodotto e cosa includeranno e non includeranno.
+
+### Sii conciso ed evita ripetizioni
+
+Il primo passo è facile se l'hai già completato. Hai lavorato duramente sulla tua documentazione tecnica; assicurati che sia utile e facile da usare. Assicurati che la tua scrittura sia concisa e che non ripeta materiale tra gli articoli a meno che non sia assolutamente necessario.
+
+### Coerenza
+
+È un piccolo problema, ma la coerenza nella documentazione tecnica è vitale. Font, stili di scrittura, design, formattazione e posizione sono esempi. Stabilisci linee guida all'inizio del processo di sviluppo della documentazione e attieniti ad esse. Aiuta se corrispondono all'aspetto e alla sensazione del marchio della tua azienda. Puoi utilizzare la [guida di stile di Docsie](https://help.docsie.io/?doc=/publish-documentation-portal/docsie-styling-guide/) per garantirlo.
+
+## Ricorda il tuo obiettivo
+
+Quando lavori su un documento, chiedi a te stesso o al tuo team: "Cosa voglio che il lettore sia in grado di fare?" Concentrandoti sul tuo scopo, garantirai che la tua documentazione sia utile e attuabile senza dettagli superflui.
+
+Inizia con la tua documentazione tecnica
+
+Pronto a entrare nel mondo della scrittura tecnica? Tieni a portata di mano questi consigli mentre prepari la documentazione tecnica del tuo prodotto. La pratica rende perfetti, e non c'è momento migliore di ora per iniziare.
+
+Inizia a pianificare i tuoi documenti e definire i tuoi contenuti. Con la nostra [prova gratuita](https://www.docsie.io/) e questo articolo come guida, produrrai una documentazione tecnica eccezionale in pochissimo tempo!

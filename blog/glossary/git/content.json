@@ -1,0 +1,72 @@
+{
+  "term": "Git",
+  "content": {
+    "quick_definition": "Git is a distributed version control system that enables documentation teams to track changes, collaborate efficiently, and maintain a complete history of their documentation files. It allows multiple contributors to work simultaneously on documentation projects while providing tools for merging changes, reverting to previous versions, and creating separate branches for different features or releases.",
+    "detailed_explanation": "<p>Git is a powerful distributed version control system originally created by Linus Torvalds for Linux kernel development. For documentation professionals, Git provides a robust framework to track changes, collaborate with team members, and maintain different versions of documentation assets throughout their lifecycle.</p>\n\n<h3>Key Features</h3>\n<ul>\n<li><strong>Distributed Architecture</strong>: Every contributor has a complete copy of the repository, enabling offline work and providing built-in redundancy.</li>\n<li><strong>Branching and Merging</strong>: Create separate branches for different documentation versions, features, or experiments without affecting the main content.</li>\n<li><strong>Commit History</strong>: Maintains a detailed record of who changed what, when, and why, providing complete accountability and traceability.</li>\n<li><strong>Pull Requests</strong>: Facilitates peer review processes for documentation changes before they're integrated into the main branch.</li>\n<li><strong>Tagging</strong>: Mark specific points in documentation history as important milestones or releases.</li>\n</ul>\n\n<h3>Benefits for Documentation Teams</h3>\n<ul>\n<li><strong>Version Control</strong>: Track changes to documentation over time and easily revert to previous versions if needed.</li>\n<li><strong>Collaboration</strong>: Multiple writers can work on the same documentation simultaneously without overwriting each other's changes.</li>\n<li><strong>Content Reuse</strong>: Branch and merge capabilities facilitate maintaining multiple versions of documentation for different product releases.</li>\n<li><strong>Integration with CI/CD</strong>: Automate documentation builds, validation, and deployment as part of development pipelines.</li>\n<li><strong>Single Source of Truth</strong>: Maintain authoritative versions of all documentation assets in one centralized repository.</li>\n</ul>\n\n<h3>Common Misconceptions</h3>\n<ul>\n<li><strong>Git is Only for Code</strong>: While originally designed for source code, Git works excellently for any text-based content, including Markdown, XML, DITA, and other documentation formats.</li>\n<li><strong>Git is Too Complex</strong>: While Git has a learning curve, documentation teams can be productive with just a few basic commands and modern GUI tools.</li>\n<li><strong>Binary Files Don't Work in Git</strong>: Git can track binary files like images and PDFs, though it works most efficiently with text-based content.</li>\n<li><strong>Only Technical Writers Need Git</strong>: Git benefits everyone involved in documentation, including reviewers, translators, and subject matter experts.</li>\n</ul>",
+    "mermaid_diagram": "graph TD\n    A[Documentation Repository] --> B[Main Branch]\n    A --> C[Feature Branch]\n    A --> D[Release Branch]\n    \n    B --> E[index.md]\n    B --> F[getting-started.md]\n    B --> G[api-reference.md]\n    \n    C --> H[new-feature-docs.md]\n    C --> I[updated-screenshots]\n    \n    D --> J[v2.0 Documentation]\n    \n    K[Writer 1] --> B\n    L[Writer 2] --> C\n    M[Tech Reviewer] --> C\n    \n    C -->|Pull Request| B\n    D -->|Release| N[Published Docs]\n    \n    style A fill:#f9f,stroke:#333,stroke-width:2px\n    style B fill:#bbf,stroke:#333,stroke-width:1px\n    style C fill:#bbf,stroke:#333,stroke-width:1px\n    style D fill:#bbf,stroke:#333,stroke-width:1px",
+    "use_cases": [
+      {
+        "title": "Collaborative Release Documentation",
+        "problem": "Multiple writers need to simultaneously update documentation for a major product release while maintaining the current version docs.",
+        "solution": "Use Git branching to separate in-development documentation from published content.",
+        "implementation": "1. Create a 'release-2.0' branch from main.\n2. Have writers clone the repository and check out the release branch.\n3. Writers commit changes to their local branches and push to the remote repository.\n4. Use pull requests for peer review before merging changes to the release branch.\n5. Once the product is released, merge the release branch back to main.",
+        "outcome": "Documentation team can work in parallel without conflicts, maintain quality through peer review, and easily publish updated documentation in sync with the product release."
+      },
+      {
+        "title": "Documentation Version Control",
+        "problem": "Need to maintain documentation for multiple versions of a product simultaneously.",
+        "solution": "Leverage Git tags and branches to maintain separate documentation versions.",
+        "implementation": "1. Create and maintain a branch for each supported product version (v1.0, v2.0, etc.).\n2. Apply tags to mark specific documentation states that correspond to product releases.\n3. Make hotfixes to older version branches when necessary.\n4. Use cherry-picking to apply relevant fixes across multiple version branches.\n5. Configure documentation platform to build from the appropriate branch/tag for each version.",
+        "outcome": "Users can access documentation specific to their product version, while documentation team maintains a clear history and can easily update any version when needed."
+      },
+      {
+        "title": "Documentation Review Workflow",
+        "problem": "Subject matter experts and stakeholders need to review and approve documentation changes before publication.",
+        "solution": "Implement a Git-based review process using pull requests and approvals.",
+        "implementation": "1. Writers create feature branches for new documentation work.\n2. Upon completion, they create pull requests to merge into the main branch.\n3. Automatically notify reviewers when PRs are ready for review.\n4. Reviewers comment directly on specific lines in the documentation.\n5. Writers address feedback with additional commits.\n6. Once approved, documentation is merged and automatically published.",
+        "outcome": "Transparent review process with clear accountability, history of feedback and changes, and automated workflows that ensure only reviewed content gets published."
+      },
+      {
+        "title": "Localization Management",
+        "problem": "Documentation needs to be translated into multiple languages while keeping all versions synchronized.",
+        "solution": "Use Git branches to manage base content and translations separately but cohesively.",
+        "implementation": "1. Maintain primary documentation in the main branch.\n2. Create language-specific branches (e.g., 'localization-fr', 'localization-de').\n3. When base content is updated, merge changes from main to language branches.\n4. Translators work in their respective language branches.\n5. Use Git hooks to flag files needing translation when source content changes.\n6. Implement CI/CD to build multilingual documentation from all branches.",
+        "outcome": "Streamlined translation workflow that clearly tracks what needs translation, prevents content drift between languages, and maintains history of changes across all language versions."
+      }
+    ],
+    "best_practices": [
+      {
+        "title": "Commit Frequently with Clear Messages",
+        "description": "Make small, focused commits with descriptive messages that explain the purpose of the change rather than just what was changed.",
+        "do": "Write commit messages that start with a verb and clearly explain why the change was made: 'Add troubleshooting section for API authentication errors'.",
+        "dont": "Don't use vague messages like 'Update docs' or 'Fix issues' that don't provide context for future reference."
+      },
+      {
+        "title": "Structure Your Repository Logically",
+        "description": "Organize your documentation repository with a clear folder structure that makes it easy to find content and scales with your documentation needs.",
+        "do": "Create a logical hierarchy (e.g., /getting-started, /api-reference, /tutorials) and include a README.md in each folder explaining its purpose.",
+        "dont": "Don't place all files in the root directory or create deeply nested folder structures that make navigation difficult."
+      },
+      {
+        "title": "Use Branches for Work in Progress",
+        "description": "Create separate branches for new features, major updates, or experimental content to isolate changes until they're ready for review.",
+        "do": "Name branches descriptively based on their purpose (e.g., 'update-installation-guide', 'new-api-endpoints-docs').",
+        "dont": "Don't work directly in the main branch for significant changes, as this can introduce incomplete or incorrect documentation to your primary branch."
+      },
+      {
+        "title": "Automate Documentation Builds",
+        "description": "Set up CI/CD pipelines to automatically build, validate, and deploy documentation when changes are pushed to specific branches.",
+        "do": "Configure automated checks for broken links, spelling errors, and style guide compliance as part of your Git workflow.",
+        "dont": "Don't rely on manual processes for building and deploying documentation, which can lead to inconsistencies and publishing delays."
+      },
+      {
+        "title": "Implement a Consistent Review Process",
+        "description": "Establish a standardized workflow for reviewing documentation changes before they're merged into the main branch.",
+        "do": "Use pull requests with required approvals, and create templates that prompt reviewers to check for accuracy, clarity, and completeness.",
+        "dont": "Don't skip reviews for documentation changes or treat them as less important than code reviews."
+      }
+    ],
+    "docsie_connection": "<p>Modern documentation platforms enhance Git workflows by providing intuitive interfaces and specialized features for content management while leveraging Git's powerful version control capabilities.</p>\n\n<ul>\n<li><strong>Visual Diff Tools</strong>: Compare document versions with side-by-side highlighting that's optimized for documentation rather than code.</li>\n<li><strong>Simplified Collaboration</strong>: Allow non-technical contributors to make and suggest changes without needing to understand Git commands.</li>\n<li><strong>Automated Publishing</strong>: Trigger documentation builds and deployments automatically when changes are pushed to specific Git branches.</li>\n<li><strong>Content Reuse</strong>: Manage shared content components across multiple documents while maintaining everything in Git.</li>\n<li><strong>Review Workflows</strong>: Integrate documentation-specific review processes with Git pull requests and approvals.</li>\n<li><strong>Metadata Management</strong>: Track additional document properties and relationships while storing the content itself in Git.</li>\n<li><strong>Preview Environments</strong>: Automatically generate preview versions of documentation for each branch or pull request.</li>\n</ul>"
+  },
+  "generated_at": "2025-09-07T20:08:13.148738+00:00"
+}

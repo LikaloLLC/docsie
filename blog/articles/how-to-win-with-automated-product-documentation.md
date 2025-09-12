@@ -2,7 +2,7 @@ At Docsie, we bring the power of versatile documentation tools to you. Companies
 
 ### Organization And Visual Dashboard Designs
 
-![](https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_JLDSpWBDcIaMWR3Ce/file_KcRBWUiCJ0UoEUOKC/f86c49a8-1b13-5d38-2fbe-f671f02cfaecmaxim_ilyahov_blf4r69ltgw_unsplash.jpg)
+![Organization And Visual Dashboard Designs](https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_JLDSpWBDcIaMWR3Ce/file_KcRBWUiCJ0UoEUOKC/f86c49a8-1b13-5d38-2fbe-f671f02cfaecmaxim_ilyahov_blf4r69ltgw_unsplash.jpg)
 
 The Docsie platform works on the principle of pushing product documentation and content to its end user environments in a centralized and organized way. So much of today's software development world is built around this kind of visual dashboard approach, where it's the format and the intuitive interface that matter most.
 
@@ -19,7 +19,7 @@ This [object-driven mentality](https://dl.acm.org/doi/10.1145/3290605.3300921) i
 ### Collaborative Tools
 
 
-![](https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_JLDSpWBDcIaMWR3Ce/file_9A6GNIUeIDG1bUZID/bf6dc944-2db5-e845-f946-37c7e99ee813marvin_meyer_syto3xs06fu_unsplash.jpg)
+![Collaborative Tools](https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_JLDSpWBDcIaMWR3Ce/file_9A6GNIUeIDG1bUZID/bf6dc944-2db5-e845-f946-37c7e99ee813marvin_meyer_syto3xs06fu_unsplash.jpg)
 
 In any content process, there are usually multiple stakeholders – people and parties working together to get the right information to the right destination.
 

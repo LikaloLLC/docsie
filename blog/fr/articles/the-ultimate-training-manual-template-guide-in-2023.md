@@ -1,0 +1,144 @@
+# Vous êtes responsable de la formation de vos collègues, clients ou nouveaux employés ? Cet article est fait pour vous.
+
+Partager des connaissances et former les autres peut s'avérer complexe. Surtout sans un bon modèle de manuel de formation pour démarrer rapidement. Dans cet article, je vous montre comment augmenter la productivité et réduire les temps d'arrêt en utilisant Docsie pour créer un modèle de manuel de formation simple et le partager avec votre équipe.
+
+## Créer un modèle de manuel de formation efficace : étapes clés
+
+1. Identifier votre public cible et les besoins de formation
+2. Définir la structure et le contenu du manuel
+3. Développer des supports de formation clairs et concis
+4. Inclure des aides visuelles (schémas, captures d'écran, vidéos)
+5. Créer des éléments interactifs (quiz, exercices)
+6. Mettre en place une conception ergonomique
+7. Tester le manuel auprès d'utilisateurs potentiels
+8. Recueillir et intégrer les retours
+9. Mettre à jour régulièrement le contenu
+
+## Avantages d'un manuel de formation bien conçu :
+
+- Amélioration de l'intégration des employés
+- Formation cohérente dans toute l'organisation
+- Augmentation de la productivité et de l'efficacité
+- Réduction des coûts de formation
+- Meilleur engagement et fidélisation des employés
+
+Un modèle de manuel de formation complet constitue une ressource précieuse pour les formateurs comme pour les apprenants, garantissant un transfert efficace des connaissances et le développement des compétences.
+
+## Étape 1 : Créer un compte Docsie (c'est gratuit)
+
+![](https://cdn.docsie.io/workspace_tovPs7rKnzB4cmaiR/doc_ULxUK3nJlSUujhpeo/file_wX9JoNbS1HNZqB1vU/boo_WxwzJSt3rqWegFPsx/964e0589-ee96-b0fb-6fdd-d760b5e81f53image.png)
+
+Docsie est un outil simple de développement de manuels de formation qui fournit aux entreprises des modèles réutilisables. Pour commencer, c'est totalement gratuit, et vous pouvez créer votre premier manuel en moins de 10 minutes. Une fois inscrit, nous pouvons commencer à expliquer comment rédiger un manuel de formation avec Docsie.
+
+## Étape 2 : Créer un livre pour faire un excellent modèle de manuel de formation
+
+Docsie fonctionne sur le concept de livres et d'étagères, les livres servant de manuels d'instruction et les étagères de départements et de centres de connaissances.
+
+Imaginons que vous soyez une équipe commerciale ayant besoin de centraliser tous vos supports de formation pour la prospection. Vous pouvez utiliser Docsie pour organiser et catégoriser vos manuels à l'aide d'ensembles. Vous pourrez ensuite inviter le reste de l'équipe à collaborer pour créer de meilleurs manuels ensemble.
+
+![](https://cdn.docsie.io/workspace_tovPs7rKnzB4cmaiR/doc_ULxUK3nJlSUujhpeo/file_qd5uDhTnzIv7i7usI/boo_WxwzJSt3rqWegFPsx/eeee9ae3-949a-4a68-ff86-1774bdad3340image.png)
+
+## Étape 3 - Définir les instructions de formation
+
+C'est ici que vous identifierez les catégories et parcours de formation nécessaires pour éduquer votre public cible.
+
+Ce guide suppose que vous connaissez déjà votre public cible ; l'objectif est de vous montrer comment créer facilement du contenu pour votre manuel de formation.
+
+Prenons l'exemple d'une équipe commerciale. Elle dispose de parcours débutants et avancés pour différents postes : SDR (Représentants du Développement Commercial), Commerciaux, Chargés de Réussite Client, etc. Ces postes peuvent avoir des noms et responsabilités différents selon la nature de votre entreprise, mais tous nécessitent des manuels de formation.
+
+![](https://cdn.docsie.io/workspace_tovPs7rKnzB4cmaiR/doc_ULxUK3nJlSUujhpeo/file_G26esoODDFXA7gBlw/boo_WxwzJSt3rqWegFPsx/0bbdb8bd-8fa4-5057-8bb2-4816e06b647aimage.png)
+
+Une fois vos parcours de formation identifiés, vous pouvez interroger des experts dans ces fonctions pour déterminer le contenu. Par exemple, vous pourriez interviewer un commercial pour comprendre sa méthode de travail.
+
+Une fois que vous connaîtrez leur routine quotidienne, leurs pratiques et leurs tâches, vous construirez un diagramme détaillant les responsabilités de ce poste spécifique.
+
+Vous décomposerez ensuite ces tâches en étapes par niveau/ancienneté, ce qui facilitera la création de votre manuel de formation.
+
+![](https://cdn.docsie.io/workspace_tovPs7rKnzB4cmaiR/doc_ULxUK3nJlSUujhpeo/file_h2VzPUoPrfLAgyWSZ/boo_WxwzJSt3rqWegFPsx/426f2d7b-d360-d8d2-3042-01b6797217c2image.png)
+
+Une fois ces informations recueillies, vous pourrez les utiliser pour développer votre matériel de formation.
+
+## Étape 4 : Développer les supports de formation
+
+En suivant le plan établi et avec les informations recueillies auprès de votre équipe, vous commencerez à remplir votre modèle de manuel de formation avec du contenu, étape par étape, en développant progressivement chaque niveau pour aider vos apprenants.
+
+Différents articles peuvent proposer différentes étapes dans Docsie pour illustrer vos manuels. De nombreux outils fonctionnent avec Docsie pour vous aider à créer facilement d'excellents manuels.
+
+## Outils formidables
+
+Voici quelques outils qui peuvent vous aider à créer des manuels de formation exceptionnels.
+
+## Snag-It
+
+> Remarque : Si vous utilisez Mac, vous pouvez copier-coller l'image dans Docsie avec Shift, Command et 4.
+
+Snag-it vous permet de prendre facilement une photo du contenu de votre page et de l'annoter avec un outil d'annotation simple et élégant.
+
+![](https://cdn.docsie.io/workspace_tovPs7rKnzB4cmaiR/doc_ULxUK3nJlSUujhpeo/file_WB2ORmffxUjyz00Yq/boo_WxwzJSt3rqWegFPsx/95d5c0e9-15c6-6429-45c5-88ab34c2d9a6image.png)
+
+## Camtasia
+
+Camtasia vous aidera à enregistrer facilement des vidéos tutorielles pour améliorer l'expérience de formation et l'efficacité de vos manuels.
+
+## Docsie Guides
+
+Grâce à une simple extension Chrome, vous pouvez utiliser Docsie Guides pour enregistrer automatiquement vos manuels de formation ainsi que toutes vos images avec annotations. Docsie Guides vous aidera également à créer des visites guidées sans code pour montrer l'utilisation de votre produit.
+
+![](https://cdn.docsie.io/workspace_tovPs7rKnzB4cmaiR/doc_ULxUK3nJlSUujhpeo/file_8ae41KnpRQi0C0u7t/boo_WxwzJSt3rqWegFPsx/9fbb3165-564b-a2c7-66db-1076080930a04ddd50e0_12bf_9027_3986_78792c015969Gifs_optimized.gif)
+
+## Étape 5 - Publier votre manuel et le partager avec votre équipe
+
+Maintenant que vous avez développé votre matériel de formation dans Docsie, vous souhaitez le partager. C'est aussi simple que de cliquer sur publier pour l'afficher sur une page intégrée Docsie sur votre site.
+
+Si vous souhaitez limiter l'accès à votre matériel de formation, vous pouvez le faire facilement dans Docsie. Vous pouvez également attribuer un mot de passe unique à un apprenant particulier et révoquer l'accès à tout moment.
+
+Avec une seule ligne de code, vous pouvez également intégrer votre matériel de formation directement dans l'intranet de votre entreprise.
+
+![](https://cdn.docsie.io/workspace_tovPs7rKnzB4cmaiR/doc_ULxUK3nJlSUujhpeo/file_SReYm8UdA6cJ9A6PX/boo_WxwzJSt3rqWegFPsx/0323cf4c-d72e-5b5c-5e0f-fcf03d027ce4image.png)
+
+## Étape 6 : Recueillir les retours sur votre manuel et le mettre à jour
+
+Une fois votre prototype de manuel publié, vous êtes prêt. Vous voudrez peut-être comprendre comment vos apprenants interagissent avec votre manuel et leur donner l'occasion de vous fournir des retours exploitables.
+
+C'est ici que vous pouvez utiliser Vocally (une extension Docsie) pour recueillir des clips vidéo des expériences de formation pour mieux comprendre comment ils utilisent votre manuel. Vous pouvez également leur donner la possibilité de fournir des commentaires, qui seront classés dans Vocally Manager.
+
+![](https://cdn.docsie.io/workspace_tovPs7rKnzB4cmaiR/doc_ULxUK3nJlSUujhpeo/file_OqJHxdveDITl5by25/boo_WxwzJSt3rqWegFPsx/0a5ecb60-0b4b-1bf9-f1c6-d9a0a1357ca5image.png)
+
+Vous pouvez ensuite utiliser Vocally Manager, facilement intégré à votre logiciel de suivi de projet, pour créer des tâches exploitables afin de mettre à jour et d'affiner votre manuel en fonction des retours.
+
+![](https://cdn.docsie.io/workspace_tovPs7rKnzB4cmaiR/doc_ULxUK3nJlSUujhpeo/file_TCiT6UQygjeRreFqY/boo_WxwzJSt3rqWegFPsx/b0696bf6-153e-b42a-4933-97fd097dd59eimage.png)
+
+## Étape 7 : Maintenir et traduire le contenu de votre manuel
+
+Vous pouvez maintenant traduire vos modèles de manuels dans plusieurs langues directement sur Docsie, et même communiquer avec des traducteurs professionnels qui peuvent vous aider à mettre à jour votre contenu à tarif réduit.
+
+De plus, créer de nouvelles versions de vos supports de formation dans Docsie est aussi simple qu'un clic. Vous ne perdrez plus de copies précieuses et aurez toujours un point de référence.
+
+## Réflexions finales
+
+![](https://images.unsplash.com/photo-1543386650-2be9a18d2750?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzMTM3MXwwfDF8c2VhcmNofDF8fGZpbmFsJTIwdGhvdWdodHN8ZW58MHx8fHwxNjIwMTU3MTg3&ixlib=rb-1.2.1&q=80&w=1080)
+
+Si vous êtes sérieux dans la création d'excellents manuels de formation, Docsie est l'outil qu'il vous faut. Il simplifiera et améliorera considérablement le flux de travail de votre manuel.
+
+Les modèles de manuels jouent un rôle crucial dans la formation des employés en informant les nouveaux venus sur l'organisation et ses procédures. Les employés évoluent et apprennent constamment de nouvelles technologies et processus.
+
+Les employés qui n'apprennent pas activement ou qui ne maîtrisent pas les outils utilisés par leur entreprise risquent de se désengager.
+
+Ce désengagement entraîne souvent un fort turnover et une faible satisfaction au travail. Au final, employeurs comme employés en souffrent.
+
+Quelques statistiques qui le confirment :
+
+- 40% des travailleurs avec une formation inadéquate quittent leur emploi dans l'année
+- 74% des travailleurs estiment ne pas atteindre leur plein potentiel par manque d'opportunités de développement
+- 72% des employés envisagent de contribuer financièrement à leur formation
+- 68% des employés considèrent que la formation est l'agenda le plus important de l'entreprise
+- Seulement 13% des travailleurs dans le monde sont engagés
+- Le désengagement des employés coûte plus de 500 milliards d'euros à l'économie chaque année
+
+Les chiffres sont sans fin, mais le problème est réel. Les employés veulent se développer et améliorer leurs compétences.
+
+Une excellente façon pour les entreprises de répondre à ce besoin est de créer un guide de formation d'entreprise exceptionnel.
+
+En 2017, 45% des heures de formation dans une entreprise type étaient réalisées par des méthodes en ligne ou d'e-learning, selon l'ATD (Association for Talent Development). Cela représente une augmentation de 42% par rapport à 2015.
+
+La capacité à développer un modèle de manuel d'instruction est une compétence essentielle pour la continuité et la croissance de l'entreprise.

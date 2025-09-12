@@ -1,0 +1,73 @@
+# Ser o melhor gestor de produto: guia de documentação essencial
+
+Ser o melhor gestor de produto não é tarefa fácil. Existem várias disciplinas nas quais deve concentrar-se: ser criativo, ter mentalidade técnica, compreender o cliente ou possuir o mindset adequado para dar vida a um produto.
+
+No entanto, um dos fatores mais determinantes para o seu sucesso será compreender a importância da documentação e ter controlo total sobre como esta é gerida em cada etapa do processo. Tendo isto em mente, vamos analisar oito tipos diferentes de documentos aos quais deve prestar atenção.
+
+![](https://cdn.docsie.io/workspace_8D5W1pxgb7Jq3oZO7/doc_TW7xFF3ucs3XCi5rY/file_vN9YuYjwCFqqYv7sZ/c8cc5da1-cc99-56e7-2e9a-66c5ec3e0738firmbee_com_gcsNOsPEXfs_unsplash_(1)_min.jpg)
+
+### Documentação da Estratégia de Produto
+
+É essencial que todos os envolvidos compreendam o que estão a fazer e quais são os objetivos finais. Com estes claramente definidos, poderá garantir que todos estão alinhados, que todas as equipas e departamentos trabalham para os mesmos objetivos e priorizam as mesmas coisas.
+
+### Documentação de Especificação do Produto
+
+Este tipo de documentação é fundamental para o sucesso porque reúne toda a informação sobre a sua aplicação, produto ou serviço num só local. Aqui pode focar-se em diversos aspetos, incluindo detalhes específicos do produto, listas de funcionalidades, materiais estéticos e de marketing, bem como estratégias de vendas e branding.
+
+Naturalmente, o conteúdo destes documentos e as prioridades podem variar consoante o tipo de produto que está a desenvolver, mas articular claramente os seus objetivos ajuda a unir todos e a organizar o trabalho.
+
+### Documentação de Análise Competitiva
+
+Para o sucesso da sua empresa, é fundamental estar um passo à frente dos concorrentes, compreendendo como funcionam os seus produtos e serviços. Isto é particularmente importante para reconhecer pontos fortes e fracos e agir sobre eles.
+
+Para ser mais eficaz, deve não só analisar a empresa, mas também compreender profundamente as suas operações e procedimentos, bem como o que está a fazer.
+
+### Documentos de Métricas
+
+![](https://cdn.docsie.io/workspace_8D5W1pxgb7Jq3oZO7/doc_TW7xFF3ucs3XCi5rY/file_IlAjgRwtpwBDVKehx/1176f518-721f-89e5-5db5-cbc46719944dstephen_dawson_qwtCeJ5cLYs_unsplash_min.jpg)
+
+"Quanto está a gastar?"
+
+As respostas a estas questões são extremamente importantes para determinar a direção do seu projeto, definir prioridades e identificar as ações necessárias para atingir os seus objetivos.
+
+**Documentação para Prototipagem**
+
+Inevitavelmente, chegará a um ponto no desenvolvimento do produto em que testará os designs das suas ideias e determinará qual a estratégia mais eficaz para avançar. Provavelmente, também criará algum tipo de protótipo para determinar a eficácia do projeto a longo prazo.
+
+Ao documentar todo o processo, poderá identificar e resolver áreas críticas de preocupação, bem como auditar o seu processo para melhorar e otimizar a sua abordagem, obtendo melhores resultados hoje e em projetos futuros.
+
+**Documentação para Prototipagem**
+
+![](https://cdn.docsie.io/workspace_8D5W1pxgb7Jq3oZO7/doc_TW7xFF3ucs3XCi5rY/file_JFsuAcNI4wR6HEBDj/455a8b62-6afd-93ac-a208-edfb8df458adsigmund__dJCBtdUu74_unsplash_min.jpg)
+
+Se estiver envolvido num projeto de desenvolvimento de produto, é inevitável chegar a um momento em que testará os designs das suas ideias e escolherá o método mais eficaz para avançar. Como parte do seu projeto, é provável que crie algum tipo de protótipo para estabelecer o sucesso potencial de todo o projeto a longo prazo.
+
+Ao documentar todo o processo, poderá identificar e resolver áreas críticas, bem como auditar o seu processo para melhorar e otimizar a sua abordagem, obtendo melhores resultados agora e em projetos futuros.
+
+### Documentação para Guias de Utilizador e Manuais
+
+Há muito material que precisará de criar durante o desenvolvimento do produto para quando este for lançado ao público e/ou aos seus clientes, proporcionando a melhor experiência possível. Alguns exemplos desta documentação incluem:
+
+**• Recursos online: bases de conhecimento e guias de ajuda**
+
+**• Perguntas Frequentes**
+
+**• Manuais de instruções de produtos**
+
+**• Políticas e procedimentos internos para uso da sua empresa**
+
+É necessário considerar a criação de documentação tanto para utilizadores finais como para os seus colaboradores. Caso um cliente contacte a sua empresa sobre um problema com o produto, deve garantir que o seu pessoal está preparado para resolver a questão da forma mais rápida e eficiente.
+
+### Documentação de User Stories
+
+Ao desenvolver um produto, é crucial compreender os tipos de clientes e utilizadores finais com quem trabalhará, bem como como o seu produto afetará as suas vidas e os beneficiará de forma positiva.
+
+### Documentação para Road Mapping e Projeções
+
+![](https://cdn.docsie.io/workspace_8D5W1pxgb7Jq3oZO7/doc_TW7xFF3ucs3XCi5rY/file_T16bjL6bQTUr7TVXC/719e3d22-1b8a-62db-10bc-142c5c0a2201alvaro_reyes_qWwpHwip31M_unsplash_min.jpg)
+
+Ao criar um roadmap do projeto, poderá especificar claramente o prazo previsto, bem como estabelecer marcos importantes com datas-alvo para atingir os seus objetivos. Este é um documento excelente pois permite-lhe garantir que tudo está no caminho certo, além de identificar e resolver problemas críticos antes que se tornem motivo de preocupação.
+
+### Considerações finais
+
+Como pode ver, existem diversos tipos de documentação que precisará de considerar e priorizar quando trabalha num produto como gestor de produto. Em geral, quanto mais organizado e no controlo estiver durante o processo, melhor será o resultado final. A Docsie oferece um conjunto robusto de ferramentas para ajudá-lo a criar documentação inspiradora e promissora para os seus clientes, stakeholders e associados. [Experimente a Docsie gratuitamente e faça um tour prático da nossa plataforma.](https://www.docsie.io/)

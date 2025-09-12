@@ -1,0 +1,383 @@
+# La documentación: pilar fundamental de toda empresa
+
+La documentación es la piedra angular de cualquier empresa. Ayuda a equipos de todos los tamaños a compartir información tanto interna como externamente. Las empresas han migrado a herramientas de documentación online para manuales de producto, guías de usuario y manuales técnicos, permitiendo que clientes nuevos y recurrentes accedan a estos documentos desde prácticamente cualquier lugar. Muchas organizaciones también utilizan documentación protegida con contraseña dentro de su estructura para ayudar, capacitar, informar y mantener proyectos, como la documentación de API, dentro de equipos productivos.
+
+Hemos analizado las mejores características, planes de precios y políticas de soporte para cada plataforma de documentación que sirve como base para todo software de base de conocimientos. Comparte tus ideas en los comentarios: ***¿qué es lo más esencial para ti y qué plataforma piensas utilizar?***
+
+## ¿Cuáles son las mejores plataformas para crear documentación online?
+
+1. Docsie: Ideal para documentación de productos multilingüe
+2. Archbee: Perfecta para documentación técnica y de desarrollo
+3. Confluence: Excelente para documentación interna de proyectos
+4. Document360: Adecuada para bases de conocimiento SaaS
+5. GitBook: Perfecta para documentación de proyectos de código abierto
+
+Características clave a considerar:
+- Capacidades de colaboración
+- Control de versiones
+- Funcionalidad de búsqueda
+- Roles y permisos de usuario
+- Soporte multilingüe
+- Opciones de integración
+
+Estas plataformas ayudan a las empresas a crear, gestionar y publicar documentación interna y externa, mejorando el intercambio de información y el soporte al usuario.
+
+![Plataformas de creación de documentación online](https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_XW8BD8lZzemyhhyuM/top_13_online_documentation_creation_platforms_870a6026-ce38-5015-b683-85fe2763b769.png)
+
+## 1. Docsie
+
+![Docsie](https://lh7-us.googleusercontent.com/P3UoYa-haAtabCeh1YvZsABJWBfCRYjV8S9u_JJSV6BIMmwRNHogfyT2S7WLuIMDhetor4BMQXcogW-TlmweCYeCzHfknhUndSnN3GxMNyx7qBli9w7K-woq5DWKpPMyp2oOxspkmp-3CH7A01ADebo)
+
+### Soporte al cliente:
+
+- Soporte por correo electrónico, [Base de conocimientos](https://help.docsie.io/), Soporte telefónico
+
+### Precios:
+
+- Docsie ofrece un plan gratuito permanente llamado Startup, y 4 planes de pago adicionales dirigidos a pequeñas, medianas y grandes empresas respectivamente. [Ver precios](https://www.docsie.io/pricing/)
+
+### Formación:
+
+- [Demo de incorporación/Recorrido, Conferencia telefónica](https://www.docsie.io/demo/), [Tutoriales en YouTube](https://www.youtube.com/channel/UCnQm591jTzvHwb003Y8e1XA)
+
+**Resumen**: La primera versión alfa de Docsie se lanzó en mayo de 2018. Docsie es una forma más inteligente de crear documentación de producto impactante. El objetivo de Docsie es ayudar a las empresas a escribir mejor documentación de producto.
+
+Docsie es una plataforma robusta y potente que permite crear, gestionar, diseñar y publicar todos los aspectos de la documentación de producto y portales de bases de conocimiento. Cuenta con capacidades de colaboración que permiten a los usuarios trabajar juntos, asignar tareas y comentar la documentación mientras se escribe. Los roles y permisos de usuario permiten un control granular sobre el acceso a los datos. Todos los cambios en Docsie tienen registro de tiempo, por lo que sabrás qué están haciendo tus usuarios y dónde realizan cambios. Docsie también admite un número (prácticamente) ilimitado de versiones y traducciones mediante su traductor inteligente con IA, ofreciendo un alto nivel de precisión con los documentos traducidos.
+
+Docsie ofrece funcionalidad de búsqueda universal en todos los documentos y espacios de trabajo. El portal Docsie está disponible para alojamiento nativo como parte de un plan Docsie, con alojamiento propio disponible mediante Docsie Script y la Guía de estilo Docsie proporcionada. Docsie ofrece numerosos complementos y extensiones que permiten una documentación online versátil y dinámica. Puede utilizarse tanto para documentación interna como externa. Permite funcionalidades de arrastrar y soltar, así como páginas seguras con verificación de **tokens web JSON** (JWT). Docsie también cuenta con una herramienta de retroalimentación llamada Vocally que permite recopilar comentarios de texto y grabar videos de interacción del lado del usuario, ayudándote a iterar y mejorar tu documentación.
+
+**Ideal para**: Ayudar a empresas a crear y mantener documentos de ayuda y manuales de usuario en múltiples idiomas.
+
+**Valoración en Capterra**: 4.7/5
+
+![Valoración en Capterra](https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_SndTzUknJcb7NMFsJ/capterra_rating_21b37c33-9a91-3202-8abe-bc1dc2073721.png)
+
+Ten en cuenta que las plataformas enumeradas a continuación están en orden alfabético y no reflejan una clasificación.
+
+## 2. Archbee
+
+![Archbee](https://lh7-us.googleusercontent.com/8YEqVK6c8Tf2NbXcKZ6_LrvbtI33Hy_8tGKFW_HhNE2OQLvh2rCiip16MRpHFn_U-f_U3bnGuLDIigcK8yDxLfIuR2KuBl0XVxKMnE6H2GRZVylXVqbH-75mxTT7N9_IvLP2Q9WhbzEs9Tfnm9JF5vQ)
+
+### Soporte al cliente:
+
+- Chat en línea, objetivo de SLA del 99,9% (no garantizado)
+
+### Precios:
+
+- El nivel gratuito Starting ofrece documentos ilimitados en 2 colecciones, con 1GB de almacenamiento y soporte de integración. Growing y Scaling son niveles de pago, con usuarios adicionales, colecciones ilimitadas y dominios personalizados. No hay garantía de SLA para el nivel Starting. [Ver precios](https://www.archbee.io/pricing)
+
+### Formación:
+
+- Recorrido del producto, Incorporación de ventas. [Documentación](https://docs.archbee.io/?_ga=2.226462553.29095388.1629139752-741285886.1628605638)
+
+**Resumen**: Archbee ayuda a desarrolladores y empresas a crear documentación para productos y servicios complejos. El proceso se simplifica mediante un editor WYSIWYG (lo que ves es lo que obtienes) para la construcción de documentos con arrastrar y soltar. También tiene búsqueda global con indexación en tiempo real.
+
+Archbee admite listas, listas de verificación, tablas, avisos, minitareas, carga de archivos, imágenes y videos, integración de mapas, edición de código en varios idiomas y diagramas. Otras integraciones incluyen Mermaid.js, Swagger, GraphQL, registros de cambios e incrustación de iFrames HTML.
+
+Las características empresariales incluyen controles de acceso, gestión de cambios e historial de versiones, colaboración mediante comentarios y edición en tiempo real, y finalmente protección con contraseña incluso con documentos de cara al exterior.
+
+**Ideal para**: Documentación de productos en tu dominio, referencias de API, guías para desarrolladores, wikis internas, bases de conocimiento, diagramas.
+
+**Valoración en Capterra**: 4.7/5
+
+## 3. Confluence
+
+![Confluence](https://lh7-us.googleusercontent.com/hCbD1uYhmEGfjJSm7sga12Z-ys5MMxHsyMlnebp_kgZf3bczjozQLRj-OACK9f9b43bHKqXI2AzvFW0ZEj5FN1Tw_M4s869i4R1KDxQrcgSVtpt36PH_szw2gWMQdKWnyz7v3C_8iQbtLaIjQmsq11M)
+
+### Soporte al cliente:
+
+- Chat en línea y correo electrónico, [Base de conocimientos](https://confluence.atlassian.com/alldoc/atlassian-documentation-32243719.html), Foro comunitario
+
+### Precios:
+
+- Confluence tiene un nivel gratuito junto con niveles de pago Standard, Premium y Enterprise. [Ver precios](https://www.atlassian.com/software/confluence/pricing)
+
+### Formación:
+
+- Formación y certificación, Foro comunitario, [Documentación](https://confluence.atlassian.com/kb)
+
+**Resumen**: Confluence 1.0 fue lanzado por Atlassian el 25 de marzo de 2004. Su objetivo era crear un sistema de gestión del conocimiento empresarial que conservara el poder de los wikis en su núcleo: una potente simplicidad.
+
+Confluence es abierto y colaborativo, permitiendo un acceso fluido a documentos y compartición de archivos entre empleados. Esto ayuda a los equipos a crear, gestionar y colaborar en proyectos que van desde lanzamientos de productos hasta campañas de marketing. Los espacios de trabajo dedicados permiten la segmentación y categorización de la información, con permisos granulares y colaboración entre equipos. Además, Confluence se integra con la familia de productos Atlassian y con aplicaciones del Marketplace de Atlassian.
+
+La búsqueda global con jerarquías de página intuitivas es una de las características de Confluence. También cuenta con más de 75 plantillas personalizables para planificación de documentación y generación de informes. Confluence se integra con Jira para el seguimiento de errores y desarrollo Agile. Esto se logra mediante conectores, que permiten el seguimiento de problemas y actualizaciones dinámicas de hojas de ruta. Los usuarios de Confluence pueden controlar el acceso a sus propios documentos, mientras que los administradores de espacios controlan el acceso más amplio a los datos. Finalmente, el feed personal entrega actualizaciones relevantes a los usuarios en el panel principal, manteniéndolos informados sobre proyectos, tareas, archivos recientes y contactos recientes.
+
+**Ideal para**: Documentación interna de proyectos
+
+**Valoración en Capterra**: 4.4/5
+
+## 4. Document360
+
+![Document360](https://lh7-us.googleusercontent.com/_Ezpk0b5hvT1QtbwqavoEEGDWtTKiDmlrzxnx-RihqXmURu09F3ucNtCRCn5ViwfCvvPYiEB8GZWi_wBheW-jF4VMkk91tMRYE9oyecTSdhGESZZItGsiyvoob3Ki5ezJtOWma9UDHLdhThniRETVYw)
+
+### Soporte al cliente:
+
+- Soporte por correo electrónico
+
+### Precios:
+
+- Nivel gratuito permanente que incluye 2 usuarios gratuitos y una base de conocimientos. Los precios comienzan en $149 por proyecto al mes para Standard, Professional es $299, Business $399 y Enterprise $599 con opciones para acuerdos personalizados. [Ver precios](https://document360.com/pricing/)
+
+### Formación:
+
+- Reservar una demostración, [Documentación](https://docs.document360.com/docs)
+
+**Resumen**: Document360 se fundó en 2017 después de un desafío Hackathon de 14 días y tiene su sede en Londres, Reino Unido. Document360 es un sistema de gestión del conocimiento específicamente para la industria de Software como Servicio (SaaS). Basado en la nube, Document360 proporciona una base de conocimientos de autoservicio para clientes y personal interno.
+
+Admite creación y temas con análisis integrados y copias de seguridad, restauración y monitoreo de versiones de nivel empresarial.
+
+Document360 permite gestionar múltiples bases de conocimiento desde una única ubicación. La analítica filtra datos y genera informes de documentación para ayudar a los redactores a escribir mejor documentación. Los permisos de datos evitan el acceso no autorizado, con documentación privada protegida por contraseñas o tokens de acceso. Finalmente, la función de búsqueda indexa resultados en aplicaciones integradas, permitiendo buscar en Disqus, Intercom, Zendesk y servicios de Google, por nombrar algunos.
+
+**Ideal para**: Crear una base de conocimientos para usar en la industria de Software como Servicio.
+
+**Valoración en Capterra**: Sin reseñas
+
+## 5. Documize
+
+![Documize](https://lh7-us.googleusercontent.com/vCqnMRvEKz3ejTyBA0W9ZDw7KprOnDKNQUMJRbTr9YIe7EzVpc2UGwa1Kyhcv0WpEluXQvITnY9XCGkmhXhZSvhy-TAYOLtVUbjUH8xiZu7jWfjShhUhxHCZzxBV_1dSY0d7Y5DG15e5QWXZTrStm2A)
+
+### Soporte al cliente:
+
+- Soporte por correo electrónico, [Base de conocimientos](https://docs.documize.com/)
+
+### Precios:
+
+- Documize admite hasta 10 usuarios en su prueba gratuita. Más allá de esto, se aplica un costo de suscripción mensual a medida que aumenta el número de usuarios. [Ver precios](https://www.documize.com/pricing/)
+
+### Formación:
+
+- Recorrido de características, Sede de documentación para incorporación.
+
+**Resumen**: Documize se fundó en febrero de 2014. Organiza los documentos de Word existentes almacenados por las empresas y los hace buscables. Esto permite una mayor colaboración y descubrimiento de información utilizando una biblioteca de documentación preexistente.
+
+Con Documize, las empresas pueden crear una base de conocimientos utilizando documentos de Word existentes. Las opciones de plantilla predeterminadas permiten fragmentos de cortar y pegar, ayudando a desarrollar una biblioteca de conocimiento más amplia. Dentro de los documentos, los usuarios pueden agregar texto enriquecido, fragmentos de código, markdown, tableros de Jira o Trello y muchos otros.
+
+Documize permite procedimientos de gestión de cambios como solicitar, aprobar y publicar documentos o contenido. También tiene historial de versiones y control de versiones. Documize recibe comentarios de usuarios y redactores, adquiriendo retroalimentación que luego puede usarse para iterar y mejorar la documentación. Esta retroalimentación incluye mensajes de usuarios, grabaciones de interacción y métricas de tiempo en página.
+
+**Ideal para**: Importar documentos de Word y crear una base de conocimientos buscable
+
+**Valoración en Capterra**: 4.6/5
+
+## 6. Gitbook
+
+![Gitbook](https://lh7-us.googleusercontent.com/HiOs126BtOOAjtXRRKPR8aIQouPXXhN9WswN3niPixbP1-wLeFxSVujL_IpHP4raIe3qXbgR5J3_XetSNMPNTDdE2e39Npwf4HQd8hzYuqqt63SrRJe15nOS44J0G7hLKOEDZ4xEJkzDGG8Jbvxa6qg)
+
+### Soporte al cliente:
+
+- Soporte por correo electrónico, presencia en GitHub.
+
+### Precios:
+
+- Los proyectos de código abierto obtienen acceso gratuito a GitBook. Los planes de equipo comienzan desde $6.40 por usuario al mes (mínimo 5 usuarios), seguido de Business a $12 por usuario al mes (mínimo 20 usuarios) y Enterprise con precios personalizados desde $400.
+
+### Formación:
+
+- Opción de reservar una demostración. De lo contrario, la formación se proporciona a través de [documentación](https://docs.gitbook.com/).
+
+**Resumen**: GitBook se fundó en 2014 y tiene su sede en Lyon, Francia. GitBook comenzó como una solución de código abierto para la documentación de proyectos GitHub.
+
+GitBook ayuda a los equipos de documentación de productos a organizar, compartir y publicar conocimientos desde una plataforma de documentación centralizada. Esto incluye documentación interna y externa. GitBook admite todos los formatos de texto, innumerables lenguajes de programación y contenido de video o imagen. Ayuda a los redactores a desarrollar y publicar documentación sin habilidades avanzadas de diseño o codificación. La integración con GitHub permite la sincronización de documentos; actualizando documentos a medida que el código cambia en el repositorio. Esto incluye soporte de guardado/fusión para actualizaciones asíncronas y colaboración en tiempo real entre usuarios. GitBook es completamente gratuito para proyectos de código abierto, organizaciones sin ánimo de lucro y estudiantes.
+
+**Ideal para**: Crear una solución de código abierto para que los desarrolladores publiquen materiales dentro de un repositorio git.
+
+**Valoración en Capterra**: 5/5
+
+## 7. Guru
+
+![Guru](https://lh7-us.googleusercontent.com/ObYXqicN9DRm31x3-7eNQNE9Dbzb5GmIzV7EeNw-w9HIKMgKa6zsqQOGpT3hGFqgU4ARxUlD2653XmH23yvgz6M3GVy6crogbrIi9meJD6U20xdUsTKDK0VSb9yfiiU6LRnbYf0NEdLNtY3G_yL1T6o)
+
+### Soporte al cliente:
+
+- [Centro de ayuda](https://help.getguru.com/en/), Correo electrónico, Chat en vivo
+
+### Precios:
+
+- "Usuarios ligeros" gratuitos ilimitados con acceso de solo lectura o planes de pago Starter, Builder y Expert. [Ver precios](https://www.getguru.com/pricing)
+
+### Formación:
+
+- [Guru Academy](https://academy.getguru.com/) para cursos en video, [Foro comunitario](https://community.getguru.com/) y área de FAQ, Red de desarrolladores.
+
+**Resumen**: Guru se fundó en 2013 y tiene su sede en Filadelfia, PA. Guru es una solución de gestión del conocimiento centrada en la colaboración. Es la primera "red de empoderamiento de ingresos" del mundo que aprovecha la inteligencia artificial para mejorar la efectividad de los equipos de ventas, soporte y éxito del cliente.
+
+Guru permite la creación de wikis empresariales alineados con los flujos de trabajo existentes. Esto asegura que los empleados tengan acceso a todo el conocimiento relevante necesario para cumplir con su función laboral. Guru permite la creación, compartición y edición de documentación en la plataforma desde fuentes externas, integrándose con los flujos de trabajo existentes. Esto incluye información contextualmente relevante, verificada por expertos, a través de Slack, Microsoft Teams y correo electrónico, junto con herramientas de gestión de relaciones con clientes (CRM). El editor de Guru permite importar, formatear y editar documentación existente, o crear documentación desde cero con funcionalidad de exportación.
+
+**Ideal para**: Crear wikis empresariales para uso interno
+
+**Valoración en Capterra**: 4.6/5
+
+## 8. Notion Team Wiki
+
+![Notion](https://lh7-us.googleusercontent.com/ktzovt8CyjcUoKn5o_SfXOZppckjbyKfy2OUOvqF4gZCrGofsDG45ghldmWL6ncW6JkObaHuUon2P0cSHUMkURAw8dijfvU8PFx2CWeZH2zIXGO2lcbdTsgrLuBxFLyzsKhBmm7Wd1vfyeMoSkJ0YBo)
+
+### Soporte al cliente:
+
+- Soporte web por correo electrónico. Chat en vivo disponible en la aplicación.
+
+### Precios:
+
+- El nivel Personal es gratuito (con un límite de 1000 bloques). Personal Pro y Teams son niveles de pago dirigidos a autónomos y freelancers. Finalmente, Enterprise es para empresas más grandes y ofrece un SLA y un gestor de línea dedicado. [Ver precios](https://www.notion.so/pricing)
+
+### Formación:
+
+- Notion ofrece [documentación de autoservicio](https://www.notion.so/guides) como ejemplo para sus usuarios de las capacidades de la plataforma. Notion también proporciona plantillas y páginas preconfiguradas para comenzar rápidamente. La plataforma no proporciona formación directa a los clientes.
+
+**Resumen**: Notion se fundó en 2013 y tiene su sede en San Francisco, California. Notion fue creado para ayudar a las empresas con notas, tareas, wikis y bases de datos. El software combina muchas aplicaciones de trabajo comunes en una, convirtiéndola en una solución integral para tomar notas, gestionar tareas y gestionar proyectos. La aplicación web es accesible en la mayoría de los navegadores web modernos con paquetes de aplicaciones dedicados en Android e iOS.
+
+Notion Team Wiki está diseñado como una ubicación de almacenamiento centralizada para la documentación del equipo. Esto va desde documentos de política de trabajo de oficina hasta objetivos y metas de la empresa. Otros elementos podrían incluir información de contacto de empleados, documentos de prácticas de ingeniería y un portal de conocimiento centralizado para empleados y clientes. Permite a los usuarios arrastrar y soltar listas, imágenes, contenido incrustado y videos usando un editor WYSIWYG. Notion también admite anidamiento de páginas con controles de acceso por capas. Además, Notion Team Wiki te permite compartir espacios de trabajo con equipos de documentación, permitiendo la colaboración con comentarios y menciones directas de usuarios. Estos espacios de trabajo pueden compartirse internamente, externamente o de ambas formas con un amplio potencial dependiendo de cómo se configuren los permisos.
+
+**Ideal para**: Crear documentación interna de productos.
+
+**Valoración en Capterra**: 4.7/5
+
+## 9. Nuclino
+
+![Nuclino](https://lh7-us.googleusercontent.com/SRVmSoVfZIUNbp5E7p1ew9spDXI7jknHDVjf6a2NAV-UbWvvDmZEbjQ1I6Q6YyCoFa87Us-5jzjjBh0PiWA5maWjvhTcPE4LjCdd8pVLfAmZdLXodqDn5DYTGgR3UDvPpv8hFbtlu7EOqXbMj94CKsE)
+
+### Soporte al cliente:
+
+- Correo electrónico, [Base de conocimientos](https://help.nuclino.com/)
+
+### Precios:
+
+- Un nivel GRATUITO básico con 50 elementos y 2GB de almacenamiento total. El nivel de pago permite elementos ilimitados y 10GB de almacenamiento por usuario. [Ver precios](https://www.nuclino.com/pricing)
+
+### Formación:
+
+- Centro de aprendizaje disponible que proporciona una visión general de la plataforma en diferentes contextos empresariales (RRHH, productos, proyectos)
+
+**Resumen**: Nuclino se fundó en 2015 y tiene su sede en Múnich, Alemania. Nuclino es una solución de wiki de equipo en tiempo real simple y receptiva que permite una mayor productividad y colaboración. Los equipos pueden registrar, compartir y localizar conocimiento al instante, con visibilidad de las acciones en tiempo real de los miembros del equipo mientras editan y buscan.
+
+Nuclino admite imágenes, texto, video, gestión de tareas, elementos web incrustados y bloques de código. También admite markdown de forma nativa. Toda la redacción técnica tiene registro de tiempo con historial de versiones, y los cambios de los usuarios se pueden ver en tiempo real. Nuclino está diseñado para que múltiples usuarios trabajen en una página sin problemas, facilitando el seguimiento de cambios y la retroalimentación. La función de búsqueda utiliza indexación y almacenamiento en caché para resultados de búsqueda instantáneos, con filtros contextuales para búsquedas avanzadas. Nuclino también permite la representación visual de elementos mediante tableros y gráficos.
+
+**Ideal para**: Crear una base de conocimientos para compartir información
+
+**Valoración en Capterra**: 4.6/5
+
+## 10. Readme
+
+![Readme](https://lh7-us.googleusercontent.com/PJDCTv6ZNCgBYWSrQPZaswgzNMeHG3GE7nSfNYCyJiiMu3HVpkvV8Vx0oVo78lHjEf16yojtgd6-I8IlFRPfmXDuF-QyWNlM7Fm_4GUdnPBsgBgSwlewcVuFDxvIotutfkkvv0NtV0I0N_Pjar5RJzs)
+
+### Soporte al cliente:
+
+- Soporte por correo electrónico, Chat en línea
+
+### Precios:
+
+- Nivel gratuito que admite 3 versiones de API y 5 usuarios administradores en un solo proyecto. Los niveles de pago comienzan en $99 por proyecto al mes. [Ver precios](https://readme.com/pricing)
+
+### Formación:
+
+- [Base de conocimientos](https://docs.readme.com/docs/introduction), Recorrido virtual, Soporte al cliente.
+
+**Resumen**: Readme se fundó en 2014 y tiene su sede en San Francisco, California. Readme es una plataforma de documentación colaborativa totalmente configurable. Se centra específicamente en la documentación dinámica de API y software, especialmente para desarrolladores de software. Los usuarios pueden interactuar con la API directamente utilizando la herramienta de diseño familiar Swagger y archivos OAS. También hay un editor de markdown y soporte para la creación de temas.
+
+Funciona como una base de conocimientos para documentación de API y software. Los usuarios pueden escribir en sus herramientas favoritas de desarrollo de API y copiar código del mundo real directamente en sus documentos. El control de versiones y los registros de cambios están disponibles en cada documento. Readme tiene soporte para imágenes, video y contenido incrustado, junto con marcos CSS personalizados.
+
+Finalmente, Readme tiene una amplia funcionalidad de colaboración. Los miembros del equipo pueden sugerir ediciones, hacer comentarios en documentos, gestionar versiones, crear nuevas versiones y mucho más. Esto incluye documentación interna y documentación orientada al usuario.
+
+**Ideal para**: Crear documentación de API o software
+
+**Valoración en Capterra**: Sin reseñas
+
+## 11. ReadtheDocs
+
+![Read the Docs](https://lh7-us.googleusercontent.com/rTC3DFAx_cO8WoAyFwUSVGM61arOaLcxHp7GTnndPkpAJLrJBm8Pltvd1w5ia7eLmpGsM7JHcL3hoxRAMxdrMAOQHs9YqurgvcmH1Xhwt1f6XHQAXmmypNVbqHR7r28dIB43VtP3vT-9K7PoizitWaA)
+
+### Soporte al cliente:
+
+- Comunidad de código abierto, enfoque en correcciones de errores y soporte comunitario. La versión comunitaria tiene soporte gratuito limitado. La versión empresarial ofrece soporte prioritario.
+
+### Precios:
+
+- ReadtheDocs tiene 3 niveles: Basic, Advanced y Pro. [Ver precios](https://readthedocs.com/pricing/)
+
+### Formación:
+
+- [Base de conocimientos](https://docs.readthedocs.io/en/stable/) y Educadores comunitarios. Comunidades de Stack Overflow y Github.
+
+**Resumen**: ReadtheDocs se fundó el 1 de enero de 2017 en Portland, Oregón.
+
+ReadtheDocs es una plataforma en línea que ofrece servicios de documentación a la comunidad de código abierto y empresas. Estos servicios incluyen desarrollo de código abierto, mantenimiento, integración de plataformas, revisión de procesos de documentos y consultoría. El desarrollo de código abierto implica la integración de ReadtheDocs, sphinx, extensiones de sphinx y desarrollo en python. La integración de la plataforma se logra mediante la generación automática de referencias de API y texto markdown.
+
+ReadtheDocs ofrece asistencia a más de 100,000+ proyectos de código abierto, permitiendo el alojamiento y compartición de documentación usando un dominio y estilo personalizados. Permiten a sus usuarios automatizar el proceso de creación, control de versiones y alojamiento de documentación de software. Cuando subes código a tu servidor de control de versiones preferido, como GitHub o GitLab, ReadtheDocs generará, actualizará y sincronizará automáticamente tu documentación. Además de crear y alojar documentos en la web, ReadtheDocs también puede exportar PDFs, HTML de una sola página y archivos ePub para usar con dispositivos de lectura electrónica. ReadtheDocs permite a sus usuarios crear varias versiones de documentación - p. ej., versión 1, versión 2 - simplemente creando una rama o etiqueta distinta en su sistema de control de versiones.
+
+**Ideal para**: Proyectos de código abierto que buscan crear y alojar documentación gratuitamente.
+
+**Valoración en Capterra**: 4.6/5
+
+## 12. Slab
+
+![Slab](https://lh7-us.googleusercontent.com/tqKlgt3FXzd72NkwPSNzNyr35ICZO1qh6ms0uog-HoZXFS85h4rq21OpsabNXLNd4WQxjjXI7gokNwc5485-UkGoFiW46UdGR6CQg6uYuuEGl6CqPH1xia4f_lrYdHG-83QuKsdhqDg7xefElxt7XMM)
+
+### Soporte al cliente:
+
+- Ticket por correo electrónico
+
+### Precios:
+
+- El nivel gratuito de Slab permite 10 usuarios y 90 días de historial de versiones, aunque con un límite de tamaño de archivo de 10MB y sin invitados permitidos. Startup y Business eliminan estos límites a $6.67 y $12.50 respectivamente por usuario al mes. Business también se beneficia de un SLA de tiempo de actividad. [Ver precios](https://slab.com/pricing/)
+
+### Formación:
+
+- [Centro de ayuda](https://help.slab.com/en/) y [Biblioteca de recursos](https://help.slab.com/en/articles/4291565-attaching-files-in-posts)
+
+**Resumen**: Slab se fundó en agosto de 2016 en San Francisco, California. Slab es para empresas modernas que necesitan bases de conocimiento modernas. Las empresas utilizan Slab para compartir materiales de aprendizaje y documentación, tanto interna como externamente.
+
+Slab es una plataforma de documentación de bases de conocimiento que se integra con numerosas otras herramientas. Esto incluye hojas de cálculo, presentaciones, diagramas de flujo y tareas o proyectos. Slab admite varias funciones de edición como las que se encuentran en Microsoft Word y otros, todas proporcionadas a través de una aplicación web. Slab organizará automáticamente y creará enlaces contextuales entre la información, incluidos los comentarios y aportes colaborativos de los miembros del equipo. El resultado es una función de búsqueda universal que puede ver documentación, comentarios del equipo y tareas del proyecto en un solo lugar, incluso a través de numerosas herramientas integradas.
+
+**Ideal para**: Empresas con integraciones existentes que quieren centralizar y agilizar la búsqueda de conocimiento.
+
+**Valoración en Capterra**: Sin reseñas
+
+## 13. Zendesk Guide
+
+![Zendesk Guide](https://lh7-us.googleusercontent.com/y46V8ulT_jxUrVnWshJUhHHnl3s7H3waavQ1PFjkbAF4TTfWo_9W9T385dhz8V3LhF1vvHdoikzr_u6veltogjN7PUoP8L0oOCm8IdcX87gRDOcgEf8OsV17tbDjjnxLpZD_4u75QG0uvArLlf75VjU)
+
+### Soporte al cliente:
+
+- Centro de ayuda, Correo electrónico, Chat en vivo
+
+### Precios:
+
+- Zendesk tiene tres suites, Suite Team, Suite Growth y Suite Professional. Hay una prueba gratuita, pero no hay opción gratuita. [Ver precios](https://www.zendesk.com/pricing/#everyone)
+
+### Formación:
+
+- Zendesk proporciona [formación](https://training.zendesk.com/?_ga=2.238045382.77048913.1629135800-534540365.1628603068&_gac=1.216744676.1628603070.CjwKCAjwx8iIBhBwEiwA2quaq6e7Mxj9BGHv8qpCV3mxIJxQbgv_s4wCmrJqxRgxmduJn12BD2cwFBoCBXEQAvD_BwE) específica para la fuerza laboral, y ofrece certificación para consultores y proveedores de servicios.
+
+**Resumen**: Zendesk comenzó operaciones en 2007 y tiene su sede en San Francisco, California. Zendesk da soporte a más de 150,000 clientes en más de 30 idiomas en cientos de industrias. Zendesk es una plataforma de servicio al cliente que produce software que permite a las organizaciones y sus clientes colaborar más eficazmente. Permite a las empresas aumentar la interacción con los consumidores y obtener una comprensión más profunda de sus clientes. Los productos de Zendesk son simples de usar e implementar. Permiten a las empresas moverse rápidamente, centrarse en la innovación y expandirse de acuerdo con su crecimiento.
+
+Zendesk Guides está diseñado para convertir la información de chat de ayuda de Zendesk en guías de usuario para ayudar a los usuarios. Está diseñado sobre la premisa de convertir toda la información escrita de una guía de ayuda en un portal de conocimiento para ese propósito. Puede publicarse en tu centro de ayuda, Widget Web, SDK móvil, aplicación o cualquier lugar donde puedas conectar esta información. Guide también puede resolver tickets mediante su Zenbot, que permite presentar preguntas a tus clientes. Zendesk Guides también te permite localizar tu conocimiento de ayuda en 40 idiomas diferentes.
+
+Zendesk comenzó a operar en 2007 desde San Francisco, California.
+
+Zendesk es conocido como una plataforma de éxito del cliente, que da soporte a más de 150,000 clientes en 30 idiomas diferentes en todas las industrias. Permite servicios de atención al cliente a través de sistemas de tickets por correo electrónico, chat en vivo y teléfono.
+
+Zendesk Guides está específicamente dirigido a la documentación y se incluye con cualquier plan de Zendesk. Es una base de conocimientos de autoservicio para empresas que puede almacenar y servir cientos de documentos y guías de usuario en todo el mundo. En el ecosistema de Zendesk, esto incluye respuestas automáticas con artículos de la base de conocimientos para tickets de soporte por correo electrónico y métricas detalladas de informes.
+
+**Ideal para**: Una solución integral de éxito del cliente con alojamiento de documentación y compartición contextual de documentos en el proceso de soporte al cliente.
+
+**Valoración en Capterra**: 4.4/5
+
+## Conclusión
+
+Esperamos que este blog te haya ayudado a explorar las diversas plataformas de documentación y sus características, planes de precios y políticas de soporte. Esperamos que la información te ayude a seleccionar la plataforma de documentación adecuada según los requisitos de tu empresa. Así que, la próxima vez que planees suscribirte a un nuevo plan de documentación de software, recuerda los factores mencionados anteriormente que debes tener en cuenta para tomar la decisión final.
+
+## Preguntas frecuentes
+
+**1. ¿Cuál es la importancia de una plataforma de documentación para una empresa?**
+
+Una plataforma de documentación ayuda a las empresas a compartir información interna y externamente y simplifica el proceso de documentación. Facilitan la comunicación efectiva entre equipos y accionistas externos. Algunos de los usos comunes de las plataformas de documentación son en empresas que deben proporcionar información de productos, guías de usuario y manuales de usuario para productos de software y más para facilitar el acceso.
+
+**2. ¿Qué características debo considerar al elegir una plataforma de documentación?**
+
+Hay varias cosas que debes considerar antes de seleccionar una plataforma de documentación. Capacidades de colaboración, control de versiones, funcionalidad de búsqueda, roles y permisos de usuario son algunas de las necesidades específicas más importantes que debes tener en cuenta antes de finalizar una plataforma de documentación para las necesidades técnicas de tu empresa. Otros factores que debes buscar son soporte multilingüe, capacidades de arrastrar y soltar y opciones de página segura para obtener las mejores herramientas de documentación de software.
+
+**3. ¿Existen plataformas de documentación gratuitas?**
+
+Algunas plataformas de documentación proporcionan acceso gratuito a pequeñas empresas. Sin embargo, estos planes tienen características limitadas y restringen el número de usuarios que pueden acceder a la plataforma. Por lo tanto, los planes gratuitos ofrecidos por las plataformas de documentación son limitados por naturaleza.
+
+**4. ¿Cómo se fijan los precios de las plataformas de documentación?**
+
+Las plataformas de documentación generalmente tienen precios en relación con las características que ofrecen. El precio también podría depender del número total de usuarios que utilizarán la plataforma de documentación en tu empresa.

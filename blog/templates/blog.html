@@ -1,7 +1,7 @@
 <!-- Base template of the blog page -->
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{% if current_language %}{{ current_language }}{% else %}en{% endif %}">
 
 <head>
     <meta charset="UTF-8">
@@ -21,33 +21,78 @@
     <meta name="theme-color" content="#3b7977">
 
     <!-- Primary Meta Tags -->
-    <title>{% if is_category_page and category_title %}{{ category_title }}{% else %}{{ settings.landing_meta.title or settings.blog_name }}{% endif %}</title>
+    {% if is_category_page %}
+        {% set category_slug = blog.name.replace(' ', '-').replace('/', '-').lower() %}
+        {% set meta_title_key = 'category_' + category_slug + '_title' %}
+        {% set meta_desc_key = 'category_' + category_slug + '_description' %}
+        <title>{{ translated_meta[meta_title_key] if translated_meta and meta_title_key in translated_meta else category_title }}</title>
+        <meta name="title" content="{{ translated_meta[meta_title_key] if translated_meta and meta_title_key in translated_meta else category_title }}">
+        <meta name="description" content="{{ translated_meta[meta_desc_key] if translated_meta and meta_desc_key in translated_meta else category_description }}">
+    {% else %}
+        <title>{{ translated_meta['landing_title'] if translated_meta and 'landing_title' in translated_meta else (settings.landing_meta.title or settings.blog_name) }}</title>
+        <meta name="title" content="{{ translated_meta['landing_title'] if translated_meta and 'landing_title' in translated_meta else (settings.landing_meta.title or settings.blog_name) }}">
+        <meta name="description" content="{{ translated_meta['landing_description'] if translated_meta and 'landing_description' in translated_meta else settings.landing_meta.description }}">
+    {% endif %}
     <meta name="author" content="{{ settings.landing_meta.author }}">
-    <meta name="title" content="{% if is_category_page and category_title %}{{ category_title }}{% else %}{{ settings.landing_meta.title or settings.blog_name }}{% endif %}">
-    <meta name="description" content="{{ category_description or settings.landing_meta.description }}">
     <meta name="keywords" content="{{ settings.landing_meta.keywords }}">
     
     <!-- Canonical URL -->
     {% if is_category_page %}
-    <link rel="canonical" href="{{ settings.domain_url }}{{ blog.path }}/">
+    <link rel="canonical" href="{{ settings.domain_url }}{{ blog.path }}">
     {% else %}
-    <link rel="canonical" href="{{ settings.domain_url }}{{ settings.blog_root_path }}">
+    <link rel="canonical" href="{{ settings.domain_url }}{{ blog.path if blog.path else settings.blog_root_path }}">
+    {% endif %}
+    
+    <!-- Hreflang tags for language alternatives -->
+    {% if is_category_page %}
+        {# For category pages, include the category slug in hreflang URLs #}
+        {% set category_slug_clean = blog.name.replace(' ', '-').replace('/', '-').lower() %}
+        <link rel="alternate" hreflang="en" href="{{ settings.domain_url }}{{ settings.blog_root_path }}{{ category_slug_clean }}/">
+        <link rel="alternate" hreflang="x-default" href="{{ settings.domain_url }}{{ settings.blog_root_path }}{{ category_slug_clean }}/">
+        {% set translation_list = settings.all_translation_list if settings.all_translation_list else settings.translation_list %}
+        {% if translation_list %}
+            {% for lang in translation_list %}
+                {% if lang.abbreviation %}
+                    <link rel="alternate" hreflang="{{ lang.abbreviation }}" href="{{ settings.domain_url }}{{ settings.blog_root_path }}{{ lang.abbreviation }}/{{ category_slug_clean }}/">
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+    {% else %}
+        {# For main landing pages, use root blog paths #}
+        <link rel="alternate" hreflang="en" href="{{ settings.domain_url }}{{ settings.blog_root_path }}">
+        <link rel="alternate" hreflang="x-default" href="{{ settings.domain_url }}{{ settings.blog_root_path }}">
+        {% set translation_list = settings.all_translation_list if settings.all_translation_list else settings.translation_list %}
+        {% if translation_list %}
+            {% for lang in translation_list %}
+                {% if lang.abbreviation %}
+                    <link rel="alternate" hreflang="{{ lang.abbreviation }}" href="{{ settings.domain_url }}{{ settings.blog_root_path }}{{ lang.abbreviation }}/">
+                {% endif %}
+            {% endfor %}
+        {% endif %}
     {% endif %}
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="{{ settings.landing_meta.url }}">
-    <meta property="og:title" content="{% if is_category_page and category_title %}{{ category_title }}{% else %}{{ settings.landing_meta.title or settings.blog_name }}{% endif %}">
-    <meta property="og:description"
-          content="{{ category_description or settings.landing_meta.description }}">
+    <meta property="og:url" content="{{ settings.domain_url }}{{ blog.path if blog.path else settings.blog_root_path }}">
+    {% if is_category_page %}
+        <meta property="og:title" content="{{ translated_meta[meta_title_key] if translated_meta and meta_title_key in translated_meta else category_title }}">
+        <meta property="og:description" content="{{ translated_meta[meta_desc_key] if translated_meta and meta_desc_key in translated_meta else category_description }}">
+    {% else %}
+        <meta property="og:title" content="{{ translated_meta['landing_title'] if translated_meta and 'landing_title' in translated_meta else (settings.landing_meta.title or settings.blog_name) }}">
+        <meta property="og:description" content="{{ translated_meta['landing_description'] if translated_meta and 'landing_description' in translated_meta else settings.landing_meta.description }}">
+    {% endif %}
     <meta property="og:image" content="{{ settings.landing_meta.image }}">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="{{ settings.landing_meta.url }}">
-    <meta property="twitter:title" content="{% if is_category_page and category_title %}{{ category_title }}{% else %}{{ settings.landing_meta.title or settings.blog_name }}{% endif %}">
-    <meta property="twitter:description"
-          content="{{ category_description or settings.landing_meta.description }}">
+    <meta property="twitter:url" content="{{ settings.domain_url }}{{ blog.path if blog.path else settings.blog_root_path }}">
+    {% if is_category_page %}
+        <meta property="twitter:title" content="{{ translated_meta[meta_title_key] if translated_meta and meta_title_key in translated_meta else category_title }}">
+        <meta property="twitter:description" content="{{ translated_meta[meta_desc_key] if translated_meta and meta_desc_key in translated_meta else category_description }}">
+    {% else %}
+        <meta property="twitter:title" content="{{ translated_meta['landing_title'] if translated_meta and 'landing_title' in translated_meta else (settings.landing_meta.title or settings.blog_name) }}">
+        <meta property="twitter:description" content="{{ translated_meta['landing_description'] if translated_meta and 'landing_description' in translated_meta else settings.landing_meta.description }}">
+    {% endif %}
     <meta property="twitter:image" content="{{ settings.landing_meta.image }}">
 
     <!-- Tailwind CSS with JIT mode -->
@@ -285,15 +330,30 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <section class="container max-w-7xl mx-auto px-4 py-8 mb-12 text-center">
     <div class="mx-auto max-w-3xl">
         <h1 class="hero-title">
-            {% if is_category_page and category_title %}
-                {{ category_title }}
+            {% if is_category_page %}
+                {% set category_slug = blog.name.replace(' ', '-').replace('/', '-').lower() %}
+                {% set meta_title_key = 'category_' + category_slug + '_title' %}
+                {{ translated_meta[meta_title_key] if translated_meta and meta_title_key in translated_meta else category_title }}
             {% else %}
-                {{ settings.landing_meta.title.split('|')[0] or settings.blog_name }}
-                <span class="text-gradient">{{ settings.landing_meta.title.split('|')[1] if '|' in settings.landing_meta.title else '' }}</span>
+                {% if translated_meta and 'landing_title' in translated_meta %}
+                    {{ translated_meta['landing_title'].split('|')[0] if '|' in translated_meta['landing_title'] else translated_meta['landing_title'] }}
+                    {% if '|' in translated_meta['landing_title'] %}
+                        <span class="text-gradient">{{ translated_meta['landing_title'].split('|')[1] }}</span>
+                    {% endif %}
+                {% else %}
+                    {{ settings.landing_meta.title.split('|')[0] or settings.blog_name }}
+                    <span class="text-gradient">{{ settings.landing_meta.title.split('|')[1] if '|' in settings.landing_meta.title else '' }}</span>
+                {% endif %}
             {% endif %}
         </h1>
         <p class="text-lg text-gray-600 lg:text-xl">
-            {{ category_description or settings.landing_meta.description }}
+            {% if is_category_page %}
+                {% set category_slug = blog.name.replace(' ', '-').replace('/', '-').lower() %}
+                {% set meta_desc_key = 'category_' + category_slug + '_description' %}
+                {{ translated_meta[meta_desc_key] if translated_meta and meta_desc_key in translated_meta else category_description }}
+            {% else %}
+                {{ translated_meta['landing_description'] if translated_meta and 'landing_description' in translated_meta else settings.landing_meta.description }}
+            {% endif %}
         </p>
     </div>
 </section>

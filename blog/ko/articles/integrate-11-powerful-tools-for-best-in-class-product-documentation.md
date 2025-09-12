@@ -1,0 +1,170 @@
+# 제품 문서의 품질 향상을 위한 도구
+
+제품팀은 최고 수준의 고객 경험을 제공하기 위해 뛰어난 제품 문서를 만들어야 합니다. 문서는 비즈니스 제품의 백과사전과 같습니다. 정확성과 가독성이 높을수록 고객이 제품을 이해하고 가치를 얻기가 쉬워집니다.
+
+Docsie는 이러한 요구를 직접적으로 충족시키는 강력한 문서 관리 솔루션입니다. 작성자는 키보드 입력과 간단한 클릭만으로 제품 문서를 작성, 편집하고 웹에 게시할 수 있습니다. 결과적으로 조직화된 중앙 집중식 제품 문서를 통해 전체 검색, 피드백 수집, 풍부한 미디어 지원을 제공합니다.
+
+인정하기 싫지만... Docsie가 모든 것을 할 수는 없습니다. 하지만 Docsie 사용자가 워크플로우에 통합할 수 있는 뛰어난 도구들이 있습니다. 이러한 도구들은 제품 문서 작성에 도움이 되며, [영원히 무료인 스타트업 플랜](https://www.docsie.io/pricing/)으로 Docsie에서 사용해 보시기 바랍니다!
+
+시작해 볼까요!
+
+## 11개의 강력한 도구로 Docsie 경험을 향상시키세요
+
+## 1. Pro Writing Aid
+
+첫 번째로 Pro Writing Aid를 소개합니다. 이 도구는 작성자가 제품 문서를 만들 때 문법, 맞춤법, 문장 구조를 개선하는 데 도움을 줍니다.
+
+'you're'와 'your'의 차이를 기억하기 어렵다면, 이 도구가 오류를 잡아내고 맥락에 맞는 추천을 즉시 제공합니다.
+
+또한 읽기 수준(예: 13학년), 문장 다양성 모니터링(짧은 문장 다음에 긴 문장), 수동태("내가 일을 할 것이다" 대 "일이 나에 의해 완료될 것이다")를 확인할 수 있습니다.
+
+![](https://cdn.docsie.io/workspace_tovPs7rKnzB4cmaiR/doc_GzKTESk1IUWjA77hg/file_sBDe8ADHXLhzOI7Bt/boo_dqsfhc7ObadQ3xWmV/a876561b-106c-2150-6e2a-5d7a8522eba5ProWritingAidDocsieImage.png)
+
+문법, 맞춤법, 문장 구조는 많은 사람들이 생각하는 것보다 중요합니다. 고객이 잘못된 문법, 맞춤법 오류, 문단 길이의 문장을 보면 제품에 대한 신뢰를 잃게 됩니다. 예를 들어, 아이들을 대상으로 한 제품에 높은 읽기 수준을 적용하는 것은 역효과를 낳습니다. 수동태는 화면 공간을 낭비하고 독자에게 돌려 말하는 느낌을 주는 반면, 능동태는 짧고 간결하며 핵심을 전달합니다.
+
+Pro Writing Aid를 Docsie 워크플로우에 추가하여 문장을 개선하고 고객에게 영감을 주세요.
+
+## 2. QuillBot
+
+콘텐츠 개발에서 의역은 흔한 관행이며, 제품 문서를 작성할 때도 마찬가지입니다. 안타깝게도, 우리가 믿고 싶은 만큼 그 아이디어를 처음으로 생각해 글로 표현한 사람은 아닐 수 있습니다!
+
+의역은 같은 내용을 다른 단어로 표현하는 것입니다. QuillBot은 자동으로 의역해주는 AI 소프트웨어 도구로, 표절과 그로 인한 평판 또는 저작권 관련 문제를 피할 수 있게 도와줍니다.
+
+"어떻게 의역을 할 수 있을까요?"
+
+![](https://cdn.docsie.io/workspace_tovPs7rKnzB4cmaiR/doc_GzKTESk1IUWjA77hg/file_cwSR1syhFEDnzXYY6/boo_dqsfhc7ObadQ3xWmV/de4f4ee5-a94a-5f35-9b0f-3f6b482f1766QuillBotDocsieImage.png)
+
+문장을 입력하고 "다시 표현하기"를 클릭하면 오른쪽에 의역된 내용이 나타납니다. 멋지지 않나요?
+
+인터넷 콘텐츠를 재활용한다면 Docsie와 함께 QuillBot을 사용해 보세요. 원본 콘텐츠를 작성하는 것이 가장 좋지만, QuillBot은 독창성을 자동화하는 도구입니다.
+
+## 3. Snagit
+
+제품 문서는 단순히 글자만으로 이루어진 것이 아닙니다. 전체 그림을 보여주기 위해 이미지와 아트워크가 필요합니다. 단계별 지침과 함께 이미지를 제공하면 사용자가 제품 가이드를 따를 때 더 큰 확신과 자신감을 가질 수 있습니다.
+
+Windows에서는 [스니핑 도구](https://support.microsoft.com/en-us/windows/use-snipping-tool-to-capture-screenshots-00246869-1843-655f-f220-97299b865f6b)를 사용할 수 있습니다. Linux에서는 (Shift/Alt)+PrintScreen 키보드 단축키를 사용하여 [스크린샷을 찍을 수 있습니다](https://help.gnome.org/users/gnome-help/stable/screen-shot-record.html.en). macOS에서는 Shift+Command+5로 [이 작업을 수행합니다](https://support.apple.com/en-gb/guide/mac-help/mh26782/mac). 그러나 기능이 제한적입니다.
+
+소프트웨어 문서화 도구 목록의 다음은 Snagit입니다. 올인원 화면 캡처 도구로 한 단계 더 나아갑니다. 사용자는 전체 디스플레이 스크린샷, 창 스크린샷을 찍거나 스크린샷 캡처 영역을 그릴 수 있습니다. Snagit은 또한 웹캠을 통한 비디오와 음성 녹화도 캡처할 수 있습니다. 가장 좋은 점은 편집 기능으로, 스크린샷에 화살표와 텍스트 같은 주석을 추가하거나 GIF 및 비디오의 트리밍 및 사운드 오버레이가 가능합니다.
+
+![](https://cdn.docsie.io/workspace_tovPs7rKnzB4cmaiR/doc_GzKTESk1IUWjA77hg/file_SC6oDqX4HD1Py0agJ/boo_dqsfhc7ObadQ3xWmV/46bf6408-a1ae-d79e-5924-8850700ee854SnagitDocsieExample.png)
+
+간단히 말해, Snagit은 제품 문서 작성자를 위해 설계된 스크린샷, 비디오 편집, 커뮤니케이션 솔루션입니다. 다음에 Docsie 북에 이미지가 필요할 때 사용해 보세요!
+
+## 4. Camtasia
+
+Snagit의 제작사(영화 예고편인가요?)에서 다음으로 Camtasia를 소개합니다!
+
+Camtasia는 Snagit과 비슷하지만 화면 녹화와 비디오 편집에 중점을 둡니다. 사용자는 전환 효과와 현대적인 스타일이 있는 비디오 템플릿을 활용할 수 있으며, 팀과 템플릿을 공유하여 비디오 제작 워크플로우를 간소화할 수 있습니다. 저작권 없는 Camtasia 자산 라이브러리는 저작권 부담 없이 시각적 효과를 추가합니다. Snagit과 마찬가지로 Camtasia는 주석, 장치 프레이밍(전체 화면, 창, 영역 그리기), 이중 입력 오디오 녹음(마이크와 시스템 사운드 모두)을 지원합니다.
+
+![](https://cdn.docsie.io/workspace_tovPs7rKnzB4cmaiR/doc_GzKTESk1IUWjA77hg/file_47zfmEreV6BA7FICb/boo_dqsfhc7ObadQ3xWmV/f1407819-11cb-74ad-0b1c-66fdd48ee401CamtasiaDocsieExample.png)
+
+YouTube에서 Camtasia는 2008년의 일이지만, Docsie에서 제품 문서를 만들기 위해 이 도구를 사용하기에 늦지 않았습니다. 문서에 활력을 불어넣어 보세요!
+
+## 5. Tableau
+
+데이터는 현대 세계를 움직이는 원동력입니다! 그러나 원시 데이터는 인간이 이해하기 어렵습니다. 컴퓨터는 항상 원시 데이터를 처리합니다.
+
+Tableau는 원시 데이터를 아름다운 시각화로 변환하여 모든 대상이 패턴, 트렌드 및 기타 데이터 인사이트를 쉽게 보고 해석할 수 있게 합니다. 관계형 데이터베이스(RDBMS), 비관계형 데이터베이스(non-RDBMS) 및 객체 지향 데이터베이스(OODBMS)를 포함한 다양한 데이터베이스 유형을 지원하여 거의 무한한 데이터 시각화 가능성을 제공합니다.
+
+다음은 Docsie 북에 내장된 Tableau 시각화 예시입니다.
+
+![](https://cdn.docsie.io/workspace_tovPs7rKnzB4cmaiR/doc_GzKTESk1IUWjA77hg/file_mgVz26JU76a3LADfX/boo_dqsfhc7ObadQ3xWmV/8bee7e83-e25a-946d-bca9-08f5ad7588b4TableauforDocsieExample.png)
+
+직접 이 시각화를 테스트해 보세요! Docsie를 열고 제품 문서(북)를 만든 다음 Docsie 편집기에서 임베드 버튼을 선택하세요. 여기서 임베드 코드를 붙여넣고 웹페이지에 맞게 크기를 조정하세요(vizElement.style.width 및 vizElement.style.height 속성).
+
+![](https://cdn.docsie.io/boo_uyETYF3HNzbtX0KaY/3a781b86-b930-fce7-2bdf-4bfa373b4243add_image_toolbar.png)
+
+임베드 코드(붙여넣으세요!)
+
+<script src="https://gist.github.com/PhilippeTrounev/ccd08606d97d114a5efb972473e9bb37.js"></script>
+제품 문서에 통계 및 데이터를 사용한다면, Tableau를 사용하여 사용자가 더 쉽게(그리고 더 예쁘게) 이해할 수 있게 만드세요. Docsie는 iFrame 기술을 사용하여 Tableau 임베딩을 지원하므로 한번 시도해 보세요!
+
+## 6. Draw.io
+
+전기 기술자는 회로도나 다이어그램 없이 전기 케이블을 재배선하거나 재배치하려고 시도하지 않습니다. 마찬가지로, 다이어그램과 흐름도를 제공하면 사용자가 제품의 세부 사항을 더 빠르게 배울 수 있습니다.
+
+제품 문서 작성자는 Draw.io를 사용하여 흐름도와 다이어그램을 만들 수 있습니다. 이 소프트웨어 문서화 도구는 매력적이고 시각적으로 보기 좋은 차트를 만들기 위한 템플릿과 수백 개의 자산을 제공합니다. 예를 들어, 컴퓨터 시스템 및 네트워크 토폴로지에서 다이어그램과 흐름도는 시스템 계층 구조와 데이터 흐름을 명확히 보여줍니다. 제품의 기본 워크플로와 기능을 명확하게 설명하기 위해 동일한 방법을 사용하세요.
+
+![](https://cdn.docsie.io/workspace_tovPs7rKnzB4cmaiR/doc_GzKTESk1IUWjA77hg/file_jo79eJ1rF0UIUwNSA/boo_dqsfhc7ObadQ3xWmV/e200dcc3-16f1-cd55-b228-1e5e90286f9fDrawioDocsieExample.png)
+
+Draw.io는 iFrame 임베딩을 지원하는 또 다른 도구입니다. 제품 문서를 만든 다음 Docsie 문서에 직접 임베드하세요! 또는 Snagit과 같은 도구로 스크린샷을 찍을 수도 있지만, 차트를 편집하면 자동으로 반영되므로 iFrame을 권장합니다.
+
+## 7. Statista
+
+통계는 문서의 신뢰성을 높입니다. 통계를 포함하기 위해 다음에 제품 문서를 작성할 때 Statista를 사용해 보세요. 경쟁업체와 비교하거나, 시장 상황과 제품이 이를 어떻게 해결하는지 설명하거나, 그저 문서에 힘을 실어주기 위해서도 좋습니다!
+
+Statista는 150개 이상의 국가에서 170개 산업 전반의 데이터를 수집하여 통계 데이터의 최고 디지털 소스 중 하나입니다. 모든 데이터는 동료 검토 연구에 의해 뒷받침되며, 일부 데이터 차트는 예측과 전망도 보여줍니다.
+
+![](https://cdn.docsie.io/workspace_tovPs7rKnzB4cmaiR/doc_GzKTESk1IUWjA77hg/file_RUhjD6bkfd8IBFEKc/boo_dqsfhc7ObadQ3xWmV/34ef079d-93ed-84f0-97fd-f3642905d6b8StatistaMainDocsieExample.png)
+
+Statista는 iFrame 임베딩을 지원하므로 그래프와 차트를 Docsie 문서에 임베드할 수 있다는 장점이 있습니다. 이러한 그래프와 차트는 시간이 지남에 따라 업데이트되어 통계가 항상 최신 상태로 유지됩니다!
+
+Statista 계정을 만들고 다음 Docsie 북에 통계를 임베드해 보세요!
+
+![](https://cdn.docsie.io/workspace_tovPs7rKnzB4cmaiR/doc_GzKTESk1IUWjA77hg/file_huVo7yXmIBx1LAGHf/boo_dqsfhc7ObadQ3xWmV/e97c9506-cfdb-ab1f-828b-114c97dd0003StatistaAltDocsieExample.png)
+
+## 8. CodePen.io
+
+소프트웨어 제품 문서는 물리적 제품과는 다른 특성을 가집니다. 일반 사용자가 아닌 개발자나 엔지니어를 대상으로 할 때 특히 고급 기술 정보, 코드 스니펫, 종속성을 포함합니다.
+
+JavaScript 코드의 스크린샷은 문서를 읽는 개발자와 엔지니어에게 거의 도움이 되지 않습니다. 이미지에 있는 코드는 Ctrl+C로 복사할 수 없기 때문입니다! 그들에게 필요한 것은 빌드, 테스트, 공유 기능을 갖춘 프론트엔드 코드 샌드박스입니다.
+
+여러 소프트웨어 문서화 도구 중에서 CodePen.io는 샌드박스 코드를 실행하고 설명하는 데 특히 뛰어납니다.
+
+![](https://cdn.docsie.io/workspace_tovPs7rKnzB4cmaiR/doc_GzKTESk1IUWjA77hg/file_k5vSeT7kpOHl4UjHP/boo_dqsfhc7ObadQ3xWmV/804fb7d8-95fe-777e-ea16-3ebea86bdcbdCodepenDocsieExample.gif)
+
+CodePen의 코드는 페이지에서 실시간으로 실행되어 코드가 정확히 어떤 작업을 수행하는지 사용자에게 보여줍니다. 제품이 사용자 지정 코드를 지원한다면 사용자가 활용할 수 있는 템플릿 기능 라이브러리를 공유하기에 좋습니다. 또한 샌드박스 환경은 실험을 장려하여 사용자가 새로운 것을 시도하고 제품의 한계를 완전히 탐색하도록 영감을 줍니다.
+
+임베드 코드(붙여넣으세요!)
+
+<script src="https://gist.github.com/PhilippeTrounev/4f4b59cdee9840abd42d95012c72655d.js"></script>
+
+Docsie에서 CodePen.io 임베딩을 시도해 보고, 개발자 사용자가 문서로 더 많은 작업을 할 수 있도록 네이티브 코드 강조 기능을 활용하세요!
+
+![](https://cdn.docsie.io/workspace_tovPs7rKnzB4cmaiR/doc_GzKTESk1IUWjA77hg/file_vvYoRQeiL3LCUVDAS/boo_dqsfhc7ObadQ3xWmV/66d06474-e719-fcc0-7823-994eb242ba28CodeHighlightingDocsieExample.png)
+
+## 9. Doxygen
+
+잘 알려지지 않았지만 개발자와 소프트웨어 문서 작성자에게 유용한 도구입니다. Doxygen(Docsie와 관련 없음!)은 코드를 스캔하여 매개변수, 속성, 주석 등을 식별함으로써 소프트웨어 문서를 자동으로 생성합니다.
+
+Doxygen의 확장 프로그램인 CLion을 사용하면 코드 편집 뷰에서 Doxygen 문서 출력을 실시간으로 볼 수 있습니다.
+
+![](https://cdn.docsie.io/workspace_tovPs7rKnzB4cmaiR/doc_GzKTESk1IUWjA77hg/file_2cPEUGCErPeWsXEGC/boo_dqsfhc7ObadQ3xWmV/f892b701-5578-e660-2045-67bacdad9bf8DoxygenCLIONDocsieExample.png)
+
+다음은 [iTunes COM 인터페이스](http://www.joshkunz.com/iTunesControl/)를 탐색하는 예시입니다. 소스 코드를 제공하면 문서가 자동으로 작성됩니다!
+
+![](https://cdn.docsie.io/workspace_tovPs7rKnzB4cmaiR/doc_GzKTESk1IUWjA77hg/file_rtD8sCQOi1D4bB7jZ/boo_dqsfhc7ObadQ3xWmV/9a57672a-6b0c-65c9-d40c-117b548f0ebbDoxgenOutputDocsieExample.png)
+
+Doxygen을 사용해 보고 결과를 Docsie에 복사하세요. 그런 다음 코드 강조 플러그인과 다른 서식 옵션을 사용할 수 있습니다!
+
+## 10. Pixlr E
+
+이미 Snagit으로 이미지를 캡처하는 방법을 살펴봤습니다. 빠진 것은 데스크톱과 모바일에서 이미지를 편집할 수 있는 강력한 방법입니다. Adobe Photoshop은 강력하지만 하드웨어 요구 사항과 라이선스 비용으로 인해 디자이너, 아티스트 및 창작 전문가에게만 사용이 제한됩니다.
+
+더 간단한 문서화 목적을 위해 Pixlr E를 고려해 보세요. 이것은 Photoshop의 많은 기능을 갖춘 웹 기반 제품 문서화 도구로, 장치에 설치할 필요가 없습니다.
+
+![](https://cdn.docsie.io/workspace_tovPs7rKnzB4cmaiR/doc_GzKTESk1IUWjA77hg/file_DDQflhicLbRwoBg51/boo_dqsfhc7ObadQ3xWmV/c25d3546-c21e-994c-793c-9ae51a701733PixlrEDocsieExample.png)
+
+텍스트 추가, 픽셀 선택 및 복사, 흐림 효과, 색상 채우기(16진수 값 또는 RGB 색상 휠 사용), 자르기, 브러시, 펜, 액화, 자동 복구, 레이어 추가 또는 제거 등 다양한 기능을 사용할 수 있습니다! 편집된 이미지는 클라우드에 저장되어 접근하거나 공유할 준비가 되어 있으며, 필요한 것은 현대적인 브라우저뿐입니다.
+
+스크린샷을 찍을 때 Pixlr E를 사용해 보세요! 그 후에는 내보낸 이미지를 Docsie에 직접 복사하여 붙여넣을 수 있습니다!
+
+## 11. JotForm
+
+Docsie에는 이미 문서에 대한 피드백 양식인 Docsie Vocally가 있습니다. 그러나 이것은 Docsie 북에 대한 독자 피드백용이며 일반 피드백용이 아닙니다.
+
+JotForm과 같은 제품 문서화 도구를 사용하면 동적 웹 양식을 만들어 Docsie 북에 직접 임베드할 수 있습니다. 예를 들어 지식 베이스에서 각 문서 아래에 IT 서비스 티켓 양식을 포함할 수 있습니다.
+
+![](https://cdn.docsie.io/workspace_tovPs7rKnzB4cmaiR/doc_GzKTESk1IUWjA77hg/file_PilAiIswkzAypwYPD/boo_dqsfhc7ObadQ3xWmV/2712e505-5066-1206-005b-b41a3a907d28JotformDocsieExample.png)
+
+ZenDesk와의 통합을 통해 양식 응답을 IT 서비스 데스크 티켓팅 소프트웨어에 자동으로 로드할 수 있습니다!
+
+![](https://cdn.docsie.io/workspace_tovPs7rKnzB4cmaiR/doc_GzKTESk1IUWjA77hg/file_B0XeGkP8hxM7CC5rP/boo_dqsfhc7ObadQ3xWmV/49b6ff57-5a3d-0dbe-ab79-13d2d5e41545JotformtwoDocsieExample.png)
+
+Docsie 북에 JotForms를 추가해 보세요! 피드백 양식은 문서의 우수성을 추구하는 데 매우 중요합니다. 알지 못하는 것은 고칠 수 없기 때문입니다!
+
+# 오늘 Docsie에서 이 도구들을 사용해 보세요!
+
+위에 나열된 모든 제품 문서화 도구는 Docsie와 호환됩니다! 효율성과 생산성을 극대화하기 위해 Docsie에서 이러한 도구를 사용해 보시기를 적극 권장합니다!
+
+고객이 더 많은 일을 할 수 있도록 도와주는 문서를 작성하세요. [스타트업 플랜](https://www.docsie.io/pricing/)[(영원히 무료!)](https://www.docsie.io/pricing/)에 가입하고 Docsie로 즐거운 문서를 제공하세요!

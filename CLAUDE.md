@@ -41,6 +41,42 @@ The `<title>` and `<meta name="description">` tags were appearing on line 321+ o
 - Test HTML output after template changes
 - Monitor Google Search Console for indexing issues
 
+## 🚨 CRITICAL DISCOVERY - September 6, 2025: Multilingual Cannibalization
+
+### The Problem
+BlogVi's translated articles are cannibalizing English content in search results. Spanish, French, and other language versions are ranking for English search queries, causing catastrophic CTR for English content.
+
+### Root Causes
+1. **Missing canonical tags** - Translations don't have canonical tags pointing to English originals
+2. **No hreflang implementation** - Google cannot understand language relationships between articles
+3. **Wrong language attributes** - All translations have `<html lang="en">` instead of proper language codes
+4. **Independent indexing** - Each translation treated as separate, competing content
+
+### Current Impact
+- **English blog performance**: Only 61 clicks from 278 articles (0.154% CTR)
+- **Foreign language dominance**: 4-5x better CTR, but stealing English queries
+- **Traffic stagnation**: ~1K visits/week (30-50% below pre-incident baseline)
+- **Example**: Spanish "Las 10 herramientas" ranking for English query "top 10 tools used by product managers"
+
+### Required Fixes
+1. **Add canonical tags** to all translations:
+   ```html
+   <link rel="canonical" href="https://www.docsie.io/blog/articles/[english-slug]/">
+   ```
+2. **Implement hreflang tags** on all articles:
+   ```html
+   <link rel="alternate" hreflang="en" href="https://www.docsie.io/blog/articles/[slug]/">
+   <link rel="alternate" hreflang="es" href="https://www.docsie.io/blog/es/articles/[slug]/">
+   <link rel="alternate" hreflang="fr" href="https://www.docsie.io/blog/fr/articles/[slug]/">
+   ```
+3. **Fix language attributes**: `<html lang="es">`, `<html lang="fr">`, etc.
+4. **Consider temporary no-index** for low-quality translations
+
+### Expected Recovery
+- **Immediate**: Stop cannibalization, English content reclaims its queries
+- **2-4 weeks**: Google recrawls and understands language structure
+- **Long-term**: Each language reinforces domain authority instead of competing
+
 ## Project Overview
 
 This is the static website repository for Docsie.io, a documentation platform. The site is built using Python with staticjinja (a static site generator based on Jinja2 templates) and hosted on GitHub Pages.

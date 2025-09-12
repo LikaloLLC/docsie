@@ -1,0 +1,92 @@
+<iframe width="560" height="315" src="https://www.youtube.com/embed/xRdJhd9SAV0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+# Come personalizzare il tuo portale Docsie inserendo il codice incorporato in Visual Studio Code
+
+Docsie offre numerose possibilità di personalizzazione. In questo articolo ti guiderò attraverso i passaggi necessari per iniziare a personalizzare il tuo portale Docsie. Tieni presente che non sono uno sviluppatore o designer professionista, e il tuo team tecnico potrà utilizzare questi strumenti per creare portali Docsie molto più eleganti di quanto io possa fare. Questa è semplicemente una guida passo passo per aiutarli a iniziare!
+
+## STEP 1
+
+Il primo passo è ottenere la tua riga di codice. Ecco come si fa. Trova il tuo account nell'angolo in alto a destra dove ci sono tre puntini e fai clic. Ti porterà alla dashboard delle impostazioni di Docsie.
+
+## STEP 2
+
+Successivamente, fai clic sul pulsante 'Deployment' sul lato sinistro.
+
+![](https://cdn.docsie.io/workspace_WxPJSQ5gsES8Bzjxy/doc_ydgtE07E6Rp4AMmKv/file_UNFgmrrV4LJRPPcLD/boo_OKQpsM12uk8DtYPzL/f551ad37-a3a0-78bb-f97a-1246d5d57899Snag_1113a5f7.png)
+
+Una volta nelle impostazioni di deployment, avrai la possibilità di creare un portale di conoscenza tramite il cloud Docsie, oppure di creare un portale sul sito web della tua azienda utilizzando una riga di codice da aggiungere al tuo HTML per iniziare il processo di styling. Basta semplicemente cliccare su 'Configure a new deployment +'.
+
+![](https://cdn.docsie.io/workspace_WxPJSQ5gsES8Bzjxy/doc_ydgtE07E6Rp4AMmKv/file_66sDikYE16JfYewXU/boo_OKQpsM12uk8DtYPzL/4a8b6dd2-03d2-5d7a-837d-e3afdbe66900Snag_11161d31.png)
+
+## STEP 3
+
+Ora fai clic sulla scheda 'Custom deployment', inserisci il tuo sito web in 'Deployment URL' e poi clicca su 'Create web portal'.
+
+![](https://cdn.docsie.io/workspace_WxPJSQ5gsES8Bzjxy/doc_ydgtE07E6Rp4AMmKv/file_6CGgetG9GizkqY87p/boo_OKQpsM12uk8DtYPzL/4b102fcb-a424-8966-1f92-59b56e14241dimage.png)
+
+Una volta fatto, assicurati di scorrere verso il basso per trovare il tuo portale in fondo all'elenco dei portali e poi clicca su 'Get deployment script'.
+
+
+
+![](https://cdn.docsie.io/workspace_WxPJSQ5gsES8Bzjxy/doc_ydgtE07E6Rp4AMmKv/file_el02yIrEUA3rf28CG/boo_OKQpsM12uk8DtYPzL/a64fc5d5-4e2c-9c6a-8325-6ed88a291db3Snag_1119813c.png)
+
+
+
+## STEP 4
+
+Ora copia il tuo script e passiamo a Visual Studio Code!
+
+![](https://cdn.docsie.io/workspace_WxPJSQ5gsES8Bzjxy/doc_ydgtE07E6Rp4AMmKv/file_a3ExYoQ3yZSLnkf4y/boo_OKQpsM12uk8DtYPzL/1a26f697-45e9-b0c4-53d2-8ad808b8d49fSnag_111a44da.png)
+
+Se hai bisogno di maggiori informazioni su come ottenere il codice incorporato dal tuo Docsie, consulta il mio blog sulla pubblicazione della documentazione con il codice incorporato [qui](https://www.docsie.io/blog/articles/publishing-product-documentation-with-docsie/).
+
+In Visual Studio Code, crea un file (a meno che tu non ne abbia già uno pronto) per index.html, index.css e index.js. Una volta fatto, apri il tuo HTML e incolla il codice nel corpo del tuo html (sotto il tag </head>).
+
+![](https://cdn.docsie.io/workspace_WxPJSQ5gsES8Bzjxy/doc_ydgtE07E6Rp4AMmKv/file_ss2981O27UrVWVfrx/boo_OKQpsM12uk8DtYPzL/64bda798-9915-3b7b-274f-dc707b9118a2Snag_111c041e.png)
+
+## STEP 5
+
+Per il quinto passo dobbiamo creare uno 'stile base'.
+
+Puoi trovare maggiori informazioni su come applicare lo stile base ai tuoi portali Docsie tramite il nostro link [https://help.docsie.io/?doc=/publish-documentation-portal/docsie-styling-guide/base-style/](https://help.docsie.io/?doc=/publish-documentation-portal/docsie-styling-guide/base-style/)
+
+Nel mio esempio ho aggiunto questo al mio HTML. Come puoi vedere, ho inserito un link con il nome dell'azienda e ho fatto alcune modifiche CSS per personalizzarli.
+
+![](https://cdn.docsie.io/workspace_WxPJSQ5gsES8Bzjxy/doc_ydgtE07E6Rp4AMmKv/file_xg25e1fVbKEZbjJYl/boo_OKQpsM12uk8DtYPzL/a49b8d34-7911-10aa-741a-781224f57212Snag_1122dccd.png)
+
+![](https://cdn.docsie.io/workspace_WxPJSQ5gsES8Bzjxy/doc_ydgtE07E6Rp4AMmKv/file_fRoPLO0Df6JhTcf2h/boo_OKQpsM12uk8DtYPzL/7c668c24-8d5e-8fdf-5b2a-ad93de3b313cSnag_11238581.png)
+
+I miei risultati sembrano molto basilari, ma volevo mostrarti il potenziale che il tuo team tecnico può sfruttare per migliorare i portali di conoscenza Docsie e creare portali che si adattino all'aspetto e alle sensazioni del tuo brand. Tieni presente che potresti avere uno stile e colori diversi; in effetti, nella maggior parte dei casi, i nostri utenti inseriscono il loro logo incorporato con i link del loro sito web, aggiungono barre di navigazione in alto in modo che il loro portale di conoscenza Docsie si integri perfettamente e naturalmente nei siti web aziendali e si adatti all'ambiente e al CSS dei loro siti attuali.
+
+![](https://cdn.docsie.io/workspace_WxPJSQ5gsES8Bzjxy/doc_ydgtE07E6Rp4AMmKv/file_StvlIomWiDjQ8wV0h/boo_OKQpsM12uk8DtYPzL/e02de6be-1990-cbe1-7078-4e477ec4a6d9Snag_112473e8.png)
+
+## STEP 6
+
+Infine, l'ultimo passo che ho fatto è stato aggiungere alcune modifiche di stile tramite questo testo:
+
+```
+  <style>
+    :root {
+        --docsie-font-family: garamond;
+        --docsie-font-family-head: inherit;
+        --docsie-font-family-mono: monospace;
+        --docsie-hue-primary: 200;
+        --docsie-hue-gray: var(--docsie-hue-primary);
+        --docsie-sat-primary: 100%;
+     
+        --docsie-page-width: 1800px;   
+        --docsie-notice-background: var(--docsie-color-primary-darker);
+    }
+    </style>
+
+```
+L'ho incollato sotto l'ultimo tag div dello 'stile base'.
+
+![](https://cdn.docsie.io/workspace_WxPJSQ5gsES8Bzjxy/doc_ydgtE07E6Rp4AMmKv/file_ORs7jTN5WvXJ7VkuB/boo_OKQpsM12uk8DtYPzL/4cc0127b-2bca-4d38-3040-864b8f5054fdSnag_112741dd.png)
+
+E i risultati per le mie modifiche di stile molto basilari sono stati questi:
+
+![](https://cdn.docsie.io/workspace_WxPJSQ5gsES8Bzjxy/doc_ydgtE07E6Rp4AMmKv/file_uCSLHwdeVry8finx8/boo_OKQpsM12uk8DtYPzL/82ffd090-9575-e89b-b0ed-16f4af08a405Snag_1127954c.png)
+
+Ora che hai tutti gli strumenti a tua disposizione, provaci tu stesso e scopri come ci si sente a modificare le cose e creare bellissimi portali di conoscenza di cui puoi essere orgoglioso! Sono sicuro al 100% che i tuoi portali di conoscenza avranno un aspetto molto più elegante dei miei! :) Quindi provaci e soprattutto divertiti!

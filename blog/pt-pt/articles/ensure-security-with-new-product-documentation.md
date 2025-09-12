@@ -1,0 +1,147 @@
+![](https://images.unsplash.com/photo-1614064642578-7faacdc6336e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzMTM3MXwwfDF8c2VhcmNofDMzfHxjeWJlciUyMHNlY3VyaXR5fGVufDB8fHx8MTYyNTc1MTExMg&ixlib=rb-1.2.1&q=80&w=1080)
+
+A maioria das empresas possui informações, documentação e projetos nos quais trabalha constantemente com as suas equipas, e que devem estar seguros enquanto as equipas colaboram nas suas ideias. Para além disso, as informações dos clientes e outros dados sensíveis têm de estar protegidos, sendo a manutenção de elevados níveis de segurança fundamental para qualquer empresa. As ameaças à segurança de documentos podem incluir:
+
+**· Violação de segurança**
+
+**· Dados não estruturados**
+
+**· Documentação desprotegida**
+
+**· Acesso não autorizado a dados**
+
+Tudo isto significa que pode estar a colocar em risco informações de clientes, bases de dados de consumidores, informações financeiras ou até projetos em que a sua equipa está a trabalhar.
+
+Muitas vezes, as empresas trabalham na documentação dos seus novos produtos e precisam de manter esta informação segura para outros membros da empresa ou subcontratados com quem colaboram para completar certos aspetos de um produto que ainda não foi lançado publicamente. Alguns destes produtos têm patentes pendentes e a necessidade de os proteger é a diferença entre uma violação de segurança e um futuro lançamento de produto.
+
+A colaboração e confiança na sua organização são mais cruciais do que nunca. Isto está a tornar-se um requisito comercial, pois cada vez mais clientes esperam que os seus fornecedores sejam seguros. Embora a segurança de documentos possa parecer intimidante, existem ações simples que pode tomar para garantir que nada corre mal.
+
+## Os riscos internos de segurança de documentos são os mais comuns:
+
+### 1. Evite que os funcionários caiam em esquemas de phishing.
+
+O perigo interno mais grave são os emails de phishing. Um email de phishing é concebido por um pirata informático que faz com que o email pareça vir de uma empresa legítima associada à empresa do funcionário e frequentemente contém uma hiperligação que a vítima clica. Na maioria dos casos, quando a hiperligação é clicada, o hacker obtém acesso remoto ao computador do funcionário e, assim, pode penetrá-lo para obter informações privadas sobre a empresa e os projetos futuros que a empresa está a tentar manter confidenciais até às datas de lançamento.
+
+Num recente [estudo da América do Norte](https://techaeris.com/2020/12/08/more-employees-clicking-phishing-emails), os investigadores descobriram que:
+
+* *"67% dos que clicaram (13,4% do total de utilizadores) submeteram as suas credenciais de acesso, um aumento substancial desde 2019, quando apenas 2% submeteram as suas credenciais.*
+
+* *Os setores do Setor Público e dos Transportes foram os que mais dificuldades tiveram, registando uma taxa de cliques de 28,4%.*
+
+* *Os setores da Educação e das Finanças e Seguros tiveram um desempenho consideravelmente melhor que os outros, com taxas de cliques de 11,3% e 14,2%, respetivamente.*
+
+* *Os utilizadores na América do Norte foram os que mais dificuldades tiveram com a simulação de phishing, registando uma taxa de cliques de 25,5% e uma taxa global de submissão de credenciais de 18%. Isto significa que um pouco mais de 7 em cada 10 pessoas que clicaram comprometeram voluntariamente os seus dados de acesso.*
+
+* *Os utilizadores na Europa exibiram taxas de cliques e submissão mais baixas, de 17% e 11%, respetivamente."*
+
+Esta é uma estratégia que algumas empresas concorrentes mal-intencionadas usam para roubar ideias de produtos de outras empresas. Os emails de phishing representam agora cerca de 90%-95% de todos os ataques bem-sucedidos globalmente. Os hackers fazem-se passar por entidades confiáveis, como fornecedores, colegas ou até clientes, e solicitam dados sensíveis. No entanto, se souber como detetá-los, estará seguro! Certifique-se de verificar o endereço de email do remetente, não apenas o seu nome. Logótipos incorretos ou significativamente alterados, erros ortográficos e emails estranhos associados a websites estranhamente escritos são outros sinais de alerta. Verifique o email com a sua equipa de TI se não tiver a certeza, para evitar comprometer dados importantes.
+
+Os emails de phishing também podem ser evitados se a empresa colaborar na redação de documentação de produtos que seja protegida por palavra-passe e segura através de uma plataforma como o [Docsie](https://www.docsie.io/). Permite aos nossos clientes criar documentação de produtos num formato colaborativo, mantendo medidas de segurança e adicionando a funcionalidade de partilhar documentação online protegida por palavra-passe. Isto é muito mais seguro do que enviar essa informação por email, pois os emails podem ser violados.
+
+### 2. Gestão de documentação
+
+A segurança da documentação de produtos é otimizada quando as permissões de acesso aos documentos são fornecidas com base na necessidade. Novos designs ou novos projetos protegidos por palavra-passe dentro da documentação de produtos com acesso limitado são uma excelente abordagem para manter um ambiente documental seguro. Soluções de gestão eletrónica de documentos como o Docsie têm um grande potencial. O Docsie acompanha os documentos e regista quaisquer alterações ou outras atividades realizadas no documento, bem como a hora e data, que são digitalmente carimbadas. Estas trilhas devem ser constantemente monitorizadas para comportamentos incomuns que possam comprometer os requisitos de segurança da documentação de produtos.
+
+Isto também levanta a questão de documentos físicos deixados pelo escritório, disponíveis para qualquer pessoa ver. É fundamental que isto não aconteça. Garanta que os seus colegas eliminem adequadamente documentos importantes (em vez de simplesmente deitá-los no lixo) ou armazenem-nos cuidadosamente se precisarem de os manter. É por isso que manter cópias digitais online numa plataforma como o Docsie é uma alternativa muito melhor do que ter documentação sensível espalhada pelo escritório, ao alcance de hackers que praticam engenharia social.
+
+### 3. Esteja atento aos dispositivos partilhados
+
+Outra fonte de vulnerabilidade para a segurança da documentação são os dispositivos partilhados, como impressoras e scanners. Para reduzir o risco, apenas utilizadores autorizados devem ter acesso às aplicações de rede e recursos destes sistemas. Use a sua arquitetura de segurança atual para proteger impressoras usando autenticação baseada em palavra-passe ou cartão inteligente, reduzindo a necessidade de palavras-passe adicionais. Software de gestão de impressão pode ser usado para manter documentos numa fila de impressão e monitorizar todas as atividades documentais.
+
+O acesso a portas físicas (USB, pen drive) também é comummente restrito para impedir que alguém roube os seus documentos privados ou infete a rede da sua empresa.
+
+## Ameaças externas à segurança de documentos de produtos com patentes pendentes também podem ser mitigadas.
+
+Apesar das medidas de segurança implementadas, os documentos podem ser atacados. Para evitar violações de segurança, recomendamos seguir estas melhores práticas.
+
+### Mantenha os seus dados seguros.
+
+![](https://images.unsplash.com/photo-1584433144859-1fc3ab64a957?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzMTM3MXwwfDF8c2VhcmNofDl8fGRhdGElMjBzYWZlfGVufDB8fHx8MTYyNTc1MTk1Mw&ixlib=rb-1.2.1&q=80&w=1080)
+
+A falha de uma empresa em usar um mecanismo de encriptação adequado pode ser desastrosa. É óbvio que o software antivírus e anti-spyware da sua empresa deve estar atualizado.
+
+Além disso, limitar o acesso à Internet em toda a empresa reduz o risco de os funcionários caírem em sites de phishing externos ou descarregarem malware que possa propagar-se por toda a organização. Quando a Wi-Fi pública é a única opção, também é uma boa ideia utilizar uma VPN empresarial como [Surfshark](https://cybernews.com/best-vpn/surfshark-vpn-review/) e criar outras medidas de segurança na rede Wi-Fi.
+
+### Modifique o formato do documento
+
+De acordo com o [Relatório de Ameaças aos Dados da Thales de 2021](https://cpl.thalesgroup.com/en-gb/euro-data-threat-report#download-popup), realizado por investigadores da 451, que inquiriram 2.600 executivos de várias indústrias, 45% das empresas americanas sofrem violações de dados em algum momento do seu ciclo de vida empresarial. Em 2019, as violações de dados representavam 65%. E embora de 2019 até hoje as violações tenham diminuído, continua a ser um problema significativo para muitas empresas.
+
+Enviar documentos como PDFs elimina atrasos relacionados com o formato do documento e transforma ficheiros digitais em ficheiros protegidos por palavra-passe com encriptação forte e restrições de permissão de edição, sendo uma boa forma de enviar documentação. No entanto, isto não é prático se a documentação for de produtos que precisam constantemente de ser alterados. O PDF tem medidas de segurança, mas usar uma plataforma como o Docsie, que permite direcionar certos membros da empresa para manipular e alterar documentação via cloud de forma segura, é muito mais produtivo. Com o Docsie, pode definir certas pessoas como 'Admin', 'Editor' ou apenas 'Visualizador' de determinada documentação. Isto reduzirá os níveis de violação porque apenas certas pessoas terão acesso e poderão manipular a documentação. O Docsie também permite que a documentação publicada seja protegida por palavra-passe, para que apenas pessoas específicas com a palavra-passe possam visualizá-la. Estas medidas implicam que os manuais de utilizador, políticas ou guias de produtos não podem ser alterados por qualquer pessoa além do autor do documento ou Editor, reduzindo o risco de falsificação. Ao utilizar formatos Word/PowerPoint, os hackers não conseguem recuperar as informações do criador do documento.
+
+### Escolha as suas palavras-passe cuidadosamente.
+
+### 
+
+![](https://cdn.docsie.io/workspace_WxPJSQ5gsES8Bzjxy/doc_ydgtE07E6Rp4AMmKv/file_B726APThzDAuRDyNA/boo_1dNh8ka7o63iwmubD/1a9a1224-122a-8dce-8663-9394359a3412cyber_security_3400657_1280.jpg)
+
+Segundo um [artigo escrito pela Identity Force](https://www.identityforce.com/blog/2020-data-breaches), a 10 de dezembro de 2020, o Spotify teve as suas palavras-passe redefinidas após descobrir uma vulnerabilidade de software que expôs informações das contas dos seus utilizadores. O Spotify afirma que "*pode ter incluído endereço de email, o seu nome de exibição preferido, palavra-passe, género e data de nascimento apenas para certos parceiros comerciais do Spotify.*"
+
+Isto mostra que mesmo as principais empresas SaaS têm fragilidades com a penetração de palavras-passe. É por isso que é sempre importante nunca esquecer de manter palavras-passe de qualidade! Para evitar mudar palavras-passe a cada três meses, os nossos administradores de sistema no Docsie recomendam ter uma política de palavras-passe fortes juntamente com MFA (Autenticação Multi-Fator). Também é uma boa ideia lembrar os seus colegas de algumas regras básicas de palavras-passe:
+
+As palavras-passe nunca devem ser escritas em post-its e depois "escondidas" debaixo dos teclados.
+
+**Aqui estão algumas notas importantes sobre como criar uma boa palavra-passe:**
+
+1. Não use a mesma palavra-passe para várias contas e plataformas.
+
+2. Quanto mais tempo tiver, melhor! Verifique a força da sua palavra-passe em HowSecureismyPassword.net. -security-use-strong-password
+
+3. É fundamental garantir que os novos funcionários passem por uma sessão de formação interna interessante e informativa que aborde ameaças internas e externas. Os empregadores frequentemente abordam isto com um simples programa de e-learning ou folha de trabalho, mas isto nem sempre é suficiente para garantir que os funcionários estão cientes do perigo.
+
+### O Docsie ajuda em todos os aspetos da segurança no desenvolvimento, colaboração e publicação de documentação de produtos, com a capacidade de proteger a sua documentação com palavra-passe.
+
+### Aqui está um pequeno vídeo sobre como o Docsie ajuda com segurança e também com a criação de documentação de produtos protegida por palavra-passe:
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/7R3WXOnXPE8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+Vamos começar por ver como a plataforma interna do Docsie nos ajuda a manter a segurança sobre como os documentos são escritos. Como mencionei acima, há muitos casos em que documentos relacionados com novos produtos precisam de ser escritos e protegidos com segurança. Estes produtos podem ainda não ter patente pendente, mas o processo de redação da documentação do produto ainda está em curso. Uma forma como o Docsie ajuda na segurança relativamente a esta questão é garantindo que toda a documentação é escrita, enviada e gerida apenas por determinadas partes com responsabilidades específicas.
+
+O Docsie permite que o proprietário de um espaço de trabalho configure "Administradores" (que podem criar novos livros e prateleiras), "Visualizadores" (que só podem ver um espaço de trabalho e não editar ou escrever sobre projetos), "Editores" que só podem editar livros e "proprietários" que têm todo o poder de transferir todas as capacidades do Docsie e atribuir membros às várias posições dentro do projeto Docsie.
+
+Isto é muito útil porque mostra quem está a trabalhar num determinado projeto e o que está a fazer com ele, além de limitar aqueles que não devem participar em certos aspetos do projeto.
+
+Esta capacidade é acessível de forma muito simples com o Docsie. No canto superior direito, onde vê três pontos, clique no seu Nome de Utilizador:
+
+![](https://cdn.docsie.io/workspace_WxPJSQ5gsES8Bzjxy/doc_ydgtE07E6Rp4AMmKv/file_ZjgXPtSl0RlVBr98x/boo_1dNh8ka7o63iwmubD/cf10ca9d-cf81-cb56-4ce1-abe88f9919e9Snag_3dc21e.png)
+
+Quando estiver no painel de Perfil e Configurações, clique em Utilizadores e deverá abrir o painel de Gestão de Utilizadores do Espaço de Trabalho:
+
+![](https://cdn.docsie.io/workspace_WxPJSQ5gsES8Bzjxy/doc_ydgtE07E6Rp4AMmKv/file_LusOK9N4cYs62tmgO/boo_1dNh8ka7o63iwmubD/2a3683cc-6afa-d6a7-f19b-cf810211a89cSnag_3e7ce3.png)
+
+![](https://cdn.docsie.io/workspace_WxPJSQ5gsES8Bzjxy/doc_ydgtE07E6Rp4AMmKv/file_0OL56vieZqzTE9UQB/boo_1dNh8ka7o63iwmubD/72423478-b544-adeb-61e0-15929a28a298Snag_3ef5cc.png)
+
+Neste painel, tem a capacidade de convidar novos utilizadores, alterar as suas "Funções" para "Visualizador, Editor, Administrador" e eliminar utilizadores que já não estão a trabalhar num determinado projeto.
+
+Para adicionar outro nível de segurança, todos os utilizadores do Docsie que estão a trabalhar num determinado projeto serão rastreados através do nosso carimbo de data/hora. Isto é extremamente útil para acompanhar quem estava a editar uma documentação, quais as revisões que fizeram e que alterações realizaram. Isto dir-nos-á quem e quando alguém teve interações com um determinado projeto de documentação de produto. Qualquer forma de rastreamento é muito útil para fins de segurança porque partilha informações sobre quem e quando alguém teve acesso a determinada documentação.
+
+Também é facilmente acessível. Quando um livro está aberto, clique na imagem do relógio circular no canto superior direito:
+
+![](https://cdn.docsie.io/workspace_WxPJSQ5gsES8Bzjxy/doc_ydgtE07E6Rp4AMmKv/file_ZFC7kIcr91dH4Oglw/boo_1dNh8ka7o63iwmubD/2edc1be5-9f18-dc5a-5205-9e769d5fb8eaSnag_3f7c90.png)
+
+Isto revelará uma lista no lado direito que mostra quem e quando alguém trabalhou numa documentação específica:
+
+![](https://cdn.docsie.io/workspace_WxPJSQ5gsES8Bzjxy/doc_ydgtE07E6Rp4AMmKv/file_GcHe7Y8M7cLwB7RGd/boo_1dNh8ka7o63iwmubD/86ed6131-5980-e307-d00a-8479b5f9f528Snag_3fdb4a.png)
+
+## Proteger documentação com palavra-passe com o Docsie:
+
+O Docsie também nos permite proteger documentos com palavra-passe.
+
+Existem duas formas de o fazer. Clicando nos três pontos perto da sua prateleira ou livros.
+
+![](https://cdn.docsie.io/workspace_WxPJSQ5gsES8Bzjxy/doc_ydgtE07E6Rp4AMmKv/file_9tB3mDhl0WPwFiaht/boo_1dNh8ka7o63iwmubD/160f814a-13bd-09f0-3e2c-a8b18bfbbab1Snag_4077e8.png)
+
+Isto abrirá um separador de configurações, no qual precisa de clicar em propriedades para aceder ao painel de criação de palavra-passe.
+
+Nota: se clicar nos três pontos ao lado da sua prateleira, então protegerá com palavra-passe todos os livros dentro da sua prateleira. No entanto, se clicar nos três pontos e depois em propriedades dentro do seu livro, então protegerá com palavra-passe apenas o livro em que clicou em propriedades!
+
+![](https://cdn.docsie.io/workspace_WxPJSQ5gsES8Bzjxy/doc_ydgtE07E6Rp4AMmKv/file_Lo7CM1IekNCDS5rTa/boo_1dNh8ka7o63iwmubD/17693cea-41e7-2b78-ee77-517b59923cd2Snag_40d605.png)
+
+Depois de clicar em propriedades, abrirá este painel; clique em "Mais opções":
+
+![](https://cdn.docsie.io/workspace_WxPJSQ5gsES8Bzjxy/doc_ydgtE07E6Rp4AMmKv/file_zN9LFzvG5tT00uXjc/boo_1dNh8ka7o63iwmubD/6949063f-c31b-6650-ab89-bc6e8829f1f5Snag_416f19.png)
+
+![](https://cdn.docsie.io/workspace_WxPJSQ5gsES8Bzjxy/doc_ydgtE07E6Rp4AMmKv/file_d5dR2xrdTlISl1rzV/boo_1dNh8ka7o63iwmubD/9ce603b3-85e5-1711-24a2-0d290e77f887Snag_418cc3.png)
+
+Depois de clicar em mais opções, abrirá todo o seu painel de palavra-passe. Agora pode digitar a sua palavra-passe para o livro ou prateleira e ativar a proteção por palavra-passe. Pronto! Os seus livros e/ou prateleira estarão completamente protegidos por palavra-passe e apenas aqueles com a palavra-passe poderão aceder.
+
+Para saber mais, visite-nos em help.docsie.io ou envie-nos um email para [hello@docsie.io](mailto:hello@docsie.io)

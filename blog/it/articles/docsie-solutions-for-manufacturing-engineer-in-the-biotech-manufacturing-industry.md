@@ -1,0 +1,1 @@
+ proprio set di parametri

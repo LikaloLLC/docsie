@@ -1,0 +1,175 @@
+# Produktteam behöver skapa förstklassig produktdokumentation för att leverera bästa möjliga kundupplevelser. Dokumentation fungerar som en uppslagsbok för affärsprodukter - ju högre precision och läsbarhet, desto enklare blir det för dina kunder att förstå din produkt och få ut maximalt värde.
+
+Docsie är en kraftfull lösning för dokumentationshantering som direkt möter dessa behov. Skribenter kan skapa, redigera och publicera produktdokumentation på webben med några enkla tangenttryckningar och klick. Resultatet blir centraliserad, lättillgänglig produktdokumentation med organisation, global sökfunktion, feedbackinsamling och stöd för rika medier.
+
+Vi vill inte erkänna det, men... Docsie kan inte göra allt... Det finns dock utmärkta verktyg som Docsie-användare kan integrera i sitt arbetsflöde. Dessa verktyg hjälper oss att skapa produktdokumentation, och vi bjuder in dig att prova dem i Docsie med vår [kostnadsfria Startup-plan](https://www.docsie.io/pricing/)!
+
+Då sätter vi igång!
+
+## Förbättra din Docsie-upplevelse med 11 kraftfulla verktyg
+
+
+## 1. Pro Writing Aid
+
+Först har vi Pro Writing Aid. Detta är ett verktyg för grammatik, stavning och meningsuppbyggnad som hjälper skribenter att skapa produktdokumentation.
+
+Om du har svårt att komma ihåg skillnaden mellan "de" och "dem" när du skriver, fångar detta verktyg upp fel och ger kontextuella rekommendationer direkt.
+
+Det kan också ange läsbarhetsnivå (t.ex. årskurs 13), övervaka meningsvariation (korta meningar följda av långa meningar) och passiv form ("jag ska göra arbetet" vs "arbetet ska göras av mig").
+
+![](https://cdn.docsie.io/workspace_tovPs7rKnzB4cmaiR/doc_GzKTESk1IUWjA77hg/file_sBDe8ADHXLhzOI7Bt/boo_dqsfhc7ObadQ3xWmV/a876561b-106c-2150-6e2a-5d7a8522eba5ProWritingAidDocsieImage.png)
+
+Grammatik, stavning och meningsuppbyggnad är viktigare än många tror. När en kund ser dålig grammatik, stavfel och sidlånga meningar – förlorar de förtroendet för din produkt. En hög läsbarhetsnivå för en produkt riktad till barn är till exempel kontraproduktiv. Passiv form tenderar att slösa med skärmutrymme och känns omständlig för läsarna, medan aktiv form är kort, koncis och rakt på sak.
+
+Lägg till Pro Writing Aid i ditt Docsie-arbetsflöde; förbättra dina ord, inspirera dina kunder.
+
+
+## 2. QuillBot
+
+Omformulering är en vanlig metod inom innehållsutveckling, och detta gäller även när du skapar produktdokumentation. Tyvärr, hur gärna vi än vill tro det, var vi inte först med att få den där idén och sätta den på pränt!
+
+Omformulering är så enkelt som att säga samma sak med andra ord. QuillBot är ett AI-verktyg som automatiskt omformulerar åt dig, vilket hjälper dig undvika plagiat och dess konsekvenser för rykte eller upphovsrätt.
+
+"Hur skulle man kunna omformulera detta?"
+
+![](https://cdn.docsie.io/workspace_tovPs7rKnzB4cmaiR/doc_GzKTESk1IUWjA77hg/file_cwSR1syhFEDnzXYY6/boo_dqsfhc7ObadQ3xWmV/de4f4ee5-a94a-5f35-9b0f-3f6b482f1766QuillBotDocsieImage.png)
+
+Skriv bara in din mening, klicka på "Rephrase", och en omformulerad version dyker upp på höger sida. Snyggt, eller hur?
+
+Överväg att prova QuillBot tillsammans med Docsie om du återanvänder innehåll från internet. Vi rekommenderar alltid att vara originell, QuillBot är helt enkelt ett verktyg som automatiserar originalitet.
+
+
+## 3. Snagit
+
+Produktdokumentation handlar inte bara om ord... den behöver bilder och grafik för att illustrera helheten (ordvits avsedd). Genom att tillhandahålla steg-för-steg-instruktioner med tillhörande bilder får användarna större säkerhet och självförtroende när de följer produktguider.
+
+I Windows finns [Urklippsverktyget](https://support.microsoft.com/en-us/windows/use-snipping-tool-to-capture-screenshots-00246869-1843-655f-f220-97299b865f6b). För Linux kan [skärmavbilder tas](https://help.gnome.org/users/gnome-help/stable/screen-shot-record.html.en) med (Shift/Alt)+PrintScreen-kortkommandon. På macOS [görs detta](https://support.apple.com/en-gb/guide/mac-help/mh26782/mac) med Shift+Command+5. Funktionaliteten är dock begränsad.
+
+Nästa på vår lista över dokumentationsverktyg är Snagit. Det går ett steg längre som ett heltäckande skärmavbildningsverktyg. Användare kan ta skärmavbilder av hela skärmen, fönster eller rita en specifik zon. Snagit kan också spela in video och röstinspelningar, till exempel via en webbkamera. Det bästa är redigeringsfunktionaliteten, som möjliggör anteckningar som pilar och text i skärmavbilder, eller trimning och ljudöverlägg för GIF:ar och video.
+
+![](https://cdn.docsie.io/workspace_tovPs7rKnzB4cmaiR/doc_GzKTESk1IUWjA77hg/file_SC6oDqX4HD1Py0agJ/boo_dqsfhc7ObadQ3xWmV/46bf6408-a1ae-d79e-5924-8850700ee854SnagitDocsieExample.png)
+
+Enkelt uttryckt är Snagit en lösning för skärmavbilder, videoredigering och kommunikation byggd för dokumentationsskribenter. Prova det nästa gång du behöver bilder till dina Docsie-böcker!
+
+
+## 4. Camtasia
+
+Från skaparna av Snagit (är detta en filmtrailer?) – härnäst har vi Camtasia!
+
+Camtasia liknar Snagit men fokuserar på skärminspelning och videoredigering. Användare kan dra nytta av videomallar med övergångar och moderna stilar, och dela mallar med teamet för att effektivisera videoarbetet. Camtasias royaltyfria tillgångsbibliotek ger visuell elegans utan upphovsrättsliga bekymmer. Precis som Snagit stöder Camtasia anteckningar, enhetsramar (helskärm, fönster, rita ett område) och dubbel ljudinspelning (både mikrofon och systemljud).
+
+![](https://cdn.docsie.io/workspace_tovPs7rKnzB4cmaiR/doc_GzKTESk1IUWjA77hg/file_47zfmEreV6BA7FICb/boo_dqsfhc7ObadQ3xWmV/f1407819-11cb-74ad-0b1c-66fdd48ee401CamtasiaDocsieExample.png)
+
+Camtasia på YouTube är så 2008, men det är inte för sent att börja använda detta verktyg för att skapa produktdokumentation i Docsie. Ge dina dokument lite extra kraft!
+
+
+## 5. Tableau
+
+Data får verkligen den moderna världen att snurra! Rådata är dock svår för människor att förstå. Datorer hanterar rådata hela tiden.
+
+Tableau tar rådata och omvandlar den till vackra visualiseringar, vilket gör det lättare för alla målgrupper att se och tolka mönster, trender och andra datainsikter. Det stöder ett brett utbud av databastyper inklusive relationsdatabaser (RDBMS), icke-relationsdatabaser (non-RDBMS) och objektorienterade databaser (OODBMS) – vilket ger närmast obegränsad potential för datavisualisering.
+
+Här är ett exempel på en Tableau-visualisering inbäddad i en Docsie-bok.
+
+![](https://cdn.docsie.io/workspace_tovPs7rKnzB4cmaiR/doc_GzKTESk1IUWjA77hg/file_mgVz26JU76a3LADfX/boo_dqsfhc7ObadQ3xWmV/8bee7e83-e25a-946d-bca9-08f5ad7588b4TableauforDocsieExample.png)
+
+Testa visualiseringen själv! Öppna Docsie, skapa produktdokumentation (en bok) och välj Bädda in-knappen i Docsie Editor. Härifrån klistrar du in inbäddningskoden och anpassar storleken för att passa din webbsida (attributen vizElement.style.width och vizElement.style.height)
+
+![](https://cdn.docsie.io/boo_uyETYF3HNzbtX0KaY/3a781b86-b930-fce7-2bdf-4bfa373b4243add_image_toolbar.png)
+
+Inbäddningskod (klistra in mig!)
+
+<script src="https://gist.github.com/PhilippeTrounev/ccd08606d97d114a5efb972473e9bb37.js"></script>
+Om din produktdokumentation använder statistik och data, gör det enklare (och snyggare) för användarna genom att använda Tableau. Docsie stöder Tableau-inbäddning med iFrame-teknik, så prova det!
+
+
+## 6. Draw.io
+
+En elektriker försöker aldrig dra om elledningar utan ett kopplingsschema eller diagram. På samma sätt kan användare lära sig din produkts alla detaljer snabbare när du tillhandahåller diagram och flödesscheman.
+
+Dokumentationsskribenter kan använda Draw.io för att skapa flödesscheman och diagram. Detta dokumentationsverktyg erbjuder mallar och hundratals resurser för att bygga engagerande, visuellt tilltalande diagram. För till exempel datorsystem och nätverkstopologi förtydligar diagram och flödesscheman systemhierarki och dataflöde. Gör detsamma för dina produkter genom att belysa underliggande arbetsflöden och funktionalitet.
+
+![](https://cdn.docsie.io/workspace_tovPs7rKnzB4cmaiR/doc_GzKTESk1IUWjA77hg/file_jo79eJ1rF0UIUwNSA/boo_dqsfhc7ObadQ3xWmV/e200dcc3-16f1-cd55-b228-1e5e90286f9fDrawioDocsieExample.png)
+
+Draw.io är ytterligare ett verktyg som stöder iFrame-inbäddning. Skapa produktdokumentation och bädda sedan in direkt i dina Docsie-dokument! Alternativt kan du ta en skärmdump med verktyg som Snagit, men vi rekommenderar iFrame eftersom ändringar i diagrammet uppdateras automatiskt.
+
+## 7. Statista
+
+Statistik ökar dokumentationens auktoritet. För att inkludera statistik, prova Statista nästa gång du skapar produktdokumentation för jämförelser med konkurrenter, för att illustrera marknadsförhållanden och hur dina produkter hanterar dem, eller bara för att lägga till lite extra tyngd!
+
+Statista samlar data från 170 branscher i över 150 länder, vilket gör det till en av de bästa digitala källorna för statistiska data. All data stöds av expertgranskade studier, och vissa datadiagram visar till och med prognoser och framtidsutsikter.
+
+![](https://cdn.docsie.io/workspace_tovPs7rKnzB4cmaiR/doc_GzKTESk1IUWjA77hg/file_RUhjD6bkfd8IBFEKc/boo_dqsfhc7ObadQ3xWmV/34ef079d-93ed-84f0-97fd-f3642905d6b8StatistaMainDocsieExample.png)
+
+Statista är utmärkt eftersom det stöder iFrame-inbäddning, vilket gör att du kan bädda in grafer och diagram i din Docsie-dokumentation. Dessa grafer och diagram uppdateras över tid, vilket säkerställer att din statistik förblir aktuell!
+
+Skapa ett Statista-konto och prova att bädda in statistik i din nästa Docsie-bok!
+
+![](https://cdn.docsie.io/workspace_tovPs7rKnzB4cmaiR/doc_GzKTESk1IUWjA77hg/file_huVo7yXmIBx1LAGHf/boo_dqsfhc7ObadQ3xWmV/e97c9506-cfdb-ab1f-828b-114c97dd0003StatistaAltDocsieExample.png)
+
+## 8. CodePen.io
+
+Mjukvarudokumentation är en annan utmaning än dokumentation för fysiska produkter. Den innehåller teknisk information på hög nivå, kodavsnitt och beroenden – särskilt när den riktar sig till utvecklare eller ingenjörer istället för vanliga användare.
+
+En skärmdump av JavaScript-kod erbjuder dock lite för utvecklare och ingenjörer som läser din dokumentation. Man kan inte kopiera kod med Ctrl+C om den finns i en bild! Vad de behöver är en front-end-kodsandlåda med funktioner för att bygga, testa och dela.
+
+Bland dokumentationsverktyg är CodePen.io särskilt bra för att köra och illustrera sandlådad kod.
+
+![](https://cdn.docsie.io/workspace_tovPs7rKnzB4cmaiR/doc_GzKTESk1IUWjA77hg/file_k5vSeT7kpOHl4UjHP/boo_dqsfhc7ObadQ3xWmV/804fb7d8-95fe-777e-ea16-3ebea86bdcbdCodepenDocsieExample.gif)
+
+Kod i CodePen körs i realtid på sidan och visar exakt vad din kod gör för användarna. Detta är utmärkt om din produkt stöder anpassad kod, eftersom du kan dela ett bibliotek med mallfunktionalitet för användarna. Dessutom uppmuntrar sandlådemiljön till experiment, vilket inspirerar användare att prova nya saker och utforska din produkts gränser fullt ut.
+
+Inbäddningskod (klistra in mig!)
+
+<script src="https://gist.github.com/PhilippeTrounev/4f4b59cdee9840abd42d95012c72655d.js"></script>
+
+
+Prova CodePen.io-inbäddning i Docsie och dra nytta av vår inbyggda kodmarkeringsfunktion för att hjälpa dina utvecklare att göra mer med din dokumentation!
+
+![](https://cdn.docsie.io/workspace_tovPs7rKnzB4cmaiR/doc_GzKTESk1IUWjA77hg/file_vvYoRQeiL3LCUVDAS/boo_dqsfhc7ObadQ3xWmV/66d06474-e719-fcc0-7823-994eb242ba28CodeHighlightingDocsieExample.png)
+
+## 9. Doxygen
+
+Ett mindre känt verktyg, men användbart för utvecklare och mjukvarudokumentatörer. Doxygen (inte besläktat med Docsie!) skapar automatiskt mjukvarudokumentation genom att skanna kod och identifiera parametrar, attribut, kommentarer med mera.
+
+Ett tillägg för Doxygen är CLion, som gör att du kan se Doxygen-dokumentation i realtid i kodredigeringsvyn.
+
+![](https://cdn.docsie.io/workspace_tovPs7rKnzB4cmaiR/doc_GzKTESk1IUWjA77hg/file_2cPEUGCErPeWsXEGC/boo_dqsfhc7ObadQ3xWmV/f892b701-5578-e660-2045-67bacdad9bf8DoxygenCLIONDocsieExample.png)
+
+Här är ett exempel som utforskar [iTunes COM Interface](http://www.joshkunz.com/iTunesControl/). Tillhandahåll källkoden, och dokumentationen skriver sig själv!
+
+![](https://cdn.docsie.io/workspace_tovPs7rKnzB4cmaiR/doc_GzKTESk1IUWjA77hg/file_rtD8sCQOi1D4bB7jZ/boo_dqsfhc7ObadQ3xWmV/9a57672a-6b0c-65c9-d40c-117b548f0ebbDoxgenOutputDocsieExample.png)
+
+Prova att använda Doxygen och kopiera resultaten till Docsie. Sedan kan du använda vår kodmarkeringsfunktion och andra formateringsalternativ!
+
+## 10. Pixlr E
+
+Vi har redan utforskat hur man fångar bilder med Snagit. Vad som saknas är ett kraftfullt sätt att redigera bilder på både dator och mobil. Adobe Photoshop är kraftfullt, men hårdvarukraven och licensieringskostnaderna begränsar dess användning till designers, konstnärer och kreativa proffs.
+
+För enklare dokumentationsändamål, överväg Pixlr E. Detta är ett webbaserat dokumentationsverktyg med mycket av Photoshops funktionalitet, men utan behov av installation på enheten.
+
+![](https://cdn.docsie.io/workspace_tovPs7rKnzB4cmaiR/doc_GzKTESk1IUWjA77hg/file_DDQflhicLbRwoBg51/boo_dqsfhc7ObadQ3xWmV/c25d3546-c21e-994c-793c-9ae51a701733PixlrEDocsieExample.png)
+
+Du kan lägga till text, lassomärka och kopiera pixlar, göra oskärpa, fylla med färg (med hexvärden eller RGB-färghjul), beskära, använda pensel, penna, förvränga, auto-läka, lägga till eller ta bort lager och mycket mer! Redigerade bilder sparas i molnet redo att nås eller delas; allt du behöver är en modern webbläsare.
+
+Prova Pixlr E när du tar skärmdumpar! Efteråt kan du kopiera och klistra in exporterade bilder direkt i Docsie!
+
+## 11. JotForm
+
+Docsie har redan ett feedbackformulär för dokumentation – Docsie Vocally. Detta är dock endast för läsarfeedback på Docsie-böcker, inte för allmän feedback.
+
+Dokumentationsverktyg som JotForm låter dig skapa dynamiska webbformulär och bädda in dem direkt i Docsie-böcker. Ett exempel är för kunskapsbaser, där du under varje artikel kan inkludera ett formulär för IT-serviceärenden.
+
+![](https://cdn.docsie.io/workspace_tovPs7rKnzB4cmaiR/doc_GzKTESk1IUWjA77hg/file_PilAiIswkzAypwYPD/boo_dqsfhc7ObadQ3xWmV/2712e505-5066-1206-005b-b41a3a907d28JotformDocsieExample.png)
+
+Integration med ZenDesk innebär att formulärsvar automatiskt kan laddas in i IT-supportens ärendehanteringssystem!
+
+![](https://cdn.docsie.io/workspace_tovPs7rKnzB4cmaiR/doc_GzKTESk1IUWjA77hg/file_B0XeGkP8hxM7CC5rP/boo_dqsfhc7ObadQ3xWmV/49b6ff57-5a3d-0dbe-ab79-13d2d5e41545JotformtwoDocsieExample.png)
+
+Prova att lägga till JotForms i dina Docsie-böcker! Feedbackformulär är ovärderliga i strävan efter dokumentationsexcellens; du kan inte åtgärda det du inte känner till!
+
+# Prova dessa verktyg i Docsie idag!
+
+Vart och ett av de dokumentationsverktyg som listats ovan är kompatibla med Docsie! Vi rekommenderar starkt att du provar dessa verktyg i Docsie för att maximera din effektivitet och produktivitet!
+
+Börja skapa dokumentation som hjälper dina kunder att göra mer. Registrera dig för [vår Startup-plan](https://www.docsie.io/pricing/) [(helt gratis!)](https://www.docsie.io/pricing/) och leverera dokumentationsnjutning med Docsie!

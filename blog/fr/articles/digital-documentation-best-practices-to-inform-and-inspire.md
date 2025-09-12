@@ -1,0 +1,148 @@
+**Du papier au numérique**
+
+Il y a quelques décennies seulement, presque toutes les entreprises utilisaient le papier pour leur documentation. Contrats, politiques, comptes-rendus de réunion : tout était sur papier - imprimé et distribué plutôt que joint et analysé par email.
+
+Avec l'évolution technologique, les entreprises ont bénéficié de plus d'espace de stockage pour leur documentation et de systèmes informatiques permettant aux employés d'accéder à ces documents numériques. C'est le début d'une transition du papier vers le numérique.
+
+Le monde moderne de la documentation numérique offre de nombreux avantages, mais des problèmes persistent. La documentation sert à transmettre des informations, aussi bien aux collaborateurs qu'aux clients. La cohérence du contenu, la facilité d'accès et la simplicité de gestion sont donc essentielles. À l'inverse, une documentation numérique incohérente, inaccessible et difficile à gérer peut réduire la capacité de votre entreprise à communiquer efficacement.
+
+Pour favoriser la simplicité et la cohérence, les entreprises devraient suivre les bonnes pratiques en matière de documentation numérique. Cela comprend la conception, le formatage, le choix des types de fichiers et la gouvernance de la documentation numérique.
+
+Dans cet eBook, nous aborderons les bonnes pratiques de documentation numérique et l'impact potentiel de ces changements sur votre activité. Une meilleure documentation numérique peut-elle stimuler la croissance des revenus et attirer des clients ? Comment les entreprises peuvent-elles transformer leur documentation numérique pour offrir plus de valeur aux clients grâce à un système de gestion documentaire (DMS) ?
+
+Répondons à ces questions !
+
+Avantages de la documentation numérique
+==============================
+
+Avant d'aborder le quoi et le comment des bonnes pratiques en matière de documentation numérique, comprenons d'abord les avantages qu'elle procure :
+
+- **Facilité de gestion** -- La documentation numérique est plus facile à gérer que les documents papier. La documentation papier nécessite de l'espace au bureau pour des classeurs et un archivage manuel pour chaque document. Le stockage numérique libère de l'espace et simplifie la gestion grâce aux fonctionnalités de recherche et aux structures de dossiers.
+
+Selon une étude de Software Advice, les employés de bureau passent en moyenne six heures par semaine à chercher des documents papier. De plus, ils consacrent environ huit heures par semaine à créer des rapports à partir de documents papier, et 94 % d'entre eux affirment qu'un système de gestion documentaire (DMS) facilite ce processus.[[1]](file:///C:/Users/Ciaran/Google%20Drive/Articles%20Work/All%20Articles/SoSEO/Docsie/Docsie%20Content/eBook%20-%20Digital%20Documentation%20Best%20Practices%20to%20Inform%20and%20Inspire.docx#_ftn1)
+
+- **Facilité d'accès** - Les documents numériques peuvent être partagés, quasiment en temps réel, via email ou stockage cloud. Cela élimine les frais d'affranchissement ou de coursier. La vitesse de réponse est également améliorée, les destinataires n'ayant plus à attendre des jours pour recevoir un courrier. De plus, la documentation numérique peut être déployée sur votre site web ou vos réseaux sociaux, améliorant l'accès pour vos clients.
+
+Saviez-vous que, selon Gartner, pour chaque euro dépensé pour imprimer des documents, 6 euros supplémentaires sont consacrés à leur manipulation et distribution ? De plus, la moitié des documents imprimés sont jetés dans les 24 heures.[[2]](file:///C:/Users/Ciaran/Google%20Drive/Articles%20Work/All%20Articles/SoSEO/Docsie/Docsie%20Content/eBook%20-%20Digital%20Documentation%20Best%20Practices%20to%20Inform%20and%20Inspire.docx#_ftn2)
+
+- **Sécurité et gouvernance** -- Sauf s'ils sont sous clé, les documents papier sont vulnérables. N'importe qui peut les lire, les copier et les partager à sa guise. À l'inverse, la documentation numérique peut être protégée par des contrôles d'accès basés sur les rôles (RBAC) pour n'accorder l'accès qu'aux personnes autorisées.
+
+Même les gouvernements ne sont pas à l'abri des violations de données sur papier : le Département américain des Anciens Combattants attribue aux documents papier la responsabilité de 98 % des fuites de données[[3]](file:///C:/Users/Ciaran/Google%20Drive/Articles%20Work/All%20Articles/SoSEO/Docsie/Docsie%20Content/eBook%20-%20Digital%20Documentation%20Best%20Practices%20to%20Inform%20and%20Inspire.docx#_ftn3).
+
+- **Avantages environnementaux** -- Particuliers et entreprises cherchent à réduire leur empreinte environnementale. La documentation numérique est une solution. Selon Green America, la consommation de papier a augmenté de 400 % ces 40 dernières années, l'industrie représentant 4 % de la consommation énergétique mondiale[[4]](file:///C:/Users/Ciaran/Google%20Drive/Articles%20Work/All%20Articles/SoSEO/Docsie/Docsie%20Content/eBook%20-%20Digital%20Documentation%20Best%20Practices%20to%20Inform%20and%20Inspire.docx#_ftn4). En optant pour la documentation numérique, les entreprises peuvent réduire leur consommation de papier pour lutter contre la déforestation, préservant ainsi les arbres qui absorbent le carbone et maintiennent les habitats naturels.
+
+**Bonnes pratiques de documentation numérique avec Docsie**
+
+La documentation numérique peut transformer le partage de connaissances, la publication et le marketing dans toute l'entreprise. Pour exploiter ce potentiel, les entreprises devraient suivre ces bonnes pratiques :
+
+Aligner votre DMS avec les besoins de l'entreprise
+----------------------------------
+
+Un système de gestion documentaire (DMS) est la base qui aide les entreprises à stocker et gérer leur documentation. Une fois le contenu rédigé, il est chargé dans un DMS pour stockage et distribution. Un DMS centralise le stockage des documents, offrant une source unique de connaissances pour toute l'entreprise. Il fonctionne comme une bibliothèque numérique, classant les documents par département ou produit, avec une fonction de recherche pour simplifier le partage des connaissances. À partir de là, les équipes marketing et support peuvent partager la documentation, la publier sur des sites web et réseaux sociaux, ou en réponse aux demandes des clients.
+
+Docsie est un DMS qui simplifie la gestion documentaire pour votre équipe. Chaque entreprise a besoin d'un moyen de stocker et partager sa documentation, pour que les collaborateurs puissent apprendre leur rôle et que les clients puissent utiliser vos produits ou services. Documents d'intégration RH, guides d'utilisation des produits, modèles de communication commerciale - tous ces éléments peuvent être stockés et publiés avec la bonne solution DMS.
+
+Quelle documentation existe actuellement sur vos produits et services ? Vos équipes utilisent-elles des modèles pour communiquer avec les clients ? Pouvez-vous facilement stocker, partager en interne et publier en externe votre documentation ? Posez-vous ces questions lorsque vous envisagez une solution DMS comme Docsie, et assurez-vous que votre DMS répond aux besoins de l'entreprise.
+
+Se concentrer sur la compatibilité
+----------------------
+
+La documentation numérique peut améliorer l'accessibilité, mais uniquement avec des formats de fichiers hautement compatibles. C'est important pour les documents téléchargeables, car certains clients peuvent être incapables d'ouvrir un fichier. Cela s'applique également à la documentation interne, où un employé utilisant PDF et un autre DOCX peut créer une fragmentation des formats de fichiers - obligeant d'autres employés à changer de logiciel ou à convertir le fichier pour le rendre accessible.
+
+Les formats ouverts comme docx, xlsx et pptx pour Microsoft Office, ou le format de document ouvert (ODF) pour OpenOffice sont idéaux pour maximiser la compatibilité. Les documents PDF d'Adobe sont courants mais moins compatibles car ils nécessitent un lecteur PDF. Considérez qui accédera à ces documents et stockez-les dans un format adapté au plus grand nombre d'utilisateurs possible.
+
+Docsie est une excellente option pour une large compatibilité documentaire. Lorsqu'un texte est chargé dans l'éditeur Docsie Book, il est stocké au format JSON, un format de fichier open-source. Vous trouverez plus d'informations sur l'exportation de documents et la conversion facile aux formats DOC, PDF, Markdown (MD) et HTML [ici](https://portals.docsie.io/docsie/docsie-documentation/using-docsie/?doc=/docsie-editor/exporting-content/).
+
+Retour d'information exploitable
+-------------------
+
+Les retours des utilisateurs et des employés sur la documentation sont essentiels. Si la documentation manque d'informations, contient des informations incorrectes ou est simplement difficile à lire, les lecteurs auront du mal à en tirer de la valeur. De plus, les retours peuvent vous aider à améliorer la documentation existante pour apporter plus de valeur aux clients, favorisant ainsi le succès de l'entreprise grâce à un partage de connaissances de qualité.
+
+Docsie Vocally est un service complet de suivi et de réponse aux retours. Il permet aux lecteurs d'évaluer chaque document sur une échelle de un à cinq, avec des commentaires pour expliquer leur note. Les propriétaires et administrateurs Docsie peuvent lire ces retours, obtenant ainsi un aperçu du succès et des lacunes de votre documentation.
+
+Les bases de connaissances en libre-service sont conçues pour minimiser les besoins d'assistance, mais cela signifie aussi que les clients sont peu susceptibles de persister avec une mauvaise documentation - ils chercheront plutôt une alternative chez des concurrents offrant une meilleure documentation. Pour résoudre ce problème, Docsie Vocally enregistre les interactions des utilisateurs pendant leur lecture. Cela met en évidence où ils ont rencontré un problème dans un document et quel contenu pose problème. Les rédacteurs peuvent utiliser ces retours pour modifier la documentation et répondre aux commentaires des utilisateurs. Avec le temps, cela améliorera la qualité de la documentation, permettant aux clients de s'aider eux-mêmes.
+
+L'autonomisation des clients est un excellent moyen d'attirer de nouveaux clients, de réduire les coûts et de fidéliser la clientèle. Environ 67 % des clients préfèrent le libre-service à la communication téléphonique, selon Zendesk[[5]](file:///C:/Users/Ciaran/Google%20Drive/Articles%20Work/All%20Articles/SoSEO/Docsie/Docsie%20Content/eBook%20-%20Digital%20Documentation%20Best%20Practices%20to%20Inform%20and%20Inspire.docx#_ftn5). Forrester Research et Oracle ont également constaté que le libre-service peut réduire les coûts d'assistance de 11 $ par appel[[6]](file:///C:/Users/Ciaran/Google%20Drive/Articles%20Work/All%20Articles/SoSEO/Docsie/Docsie%20Content/eBook%20-%20Digital%20Documentation%20Best%20Practices%20to%20Inform%20and%20Inspire.docx#_ftn6). Enfin, une étude de Microsoft souligne que 90 % des clients s'attendent à une option de libre-service[[7]](file:///C:/Users/Ciaran/Google%20Drive/Articles%20Work/All%20Articles/SoSEO/Docsie/Docsie%20Content/eBook%20-%20Digital%20Documentation%20Best%20Practices%20to%20Inform%20and%20Inspire.docx#_ftn7).
+
+En résumé, les clients préfèrent et s'attendent à un libre-service de qualité, et fournir cette option peut réduire considérablement les coûts d'assistance. En créant une base de connaissances en libre-service avec Docsie et en améliorant la qualité de la documentation grâce aux retours via Docsie Vocally, vous pouvez répondre aux demandes évolutives des clients grâce à la documentation numérique. En savoir plus sur Docsie Vocally [ici](https://www.docsie.io/vocally/).
+
+**Versionnement des documents**
+
+Particulièrement dans les entreprises technologiques, les nouvelles versions de logiciels ou de services peuvent créer des problèmes avec la documentation. La nouvelle version peut inclure des flux de travail différents ou une terminologie différente qui pourrait dérouter les utilisateurs. Parallèlement, la nouvelle documentation peut ne pas s'appliquer aux versions plus anciennes de vos services, créant des lacunes de connaissances susceptibles de frustrer et d'éloigner les clients.
+
+C'est une bonne pratique importante en matière de documentation numérique. Les clients peuvent avoir besoin d'anciennes versions de votre logiciel pour la compatibilité avec leur matériel, ou simplement choisir de ne pas passer à une nouvelle version. Les entreprises doivent donc toujours répondre aux besoins de leur base d'utilisateurs, quelle que soit la version utilisée.
+
+Docsie résout ce problème avec le versionnement des documents. Lorsque vous mettez à jour un document dans Docsie, vous pouvez conserver les versions précédentes à des fins de redondance. Les clients utilisant la version 2 de votre service peuvent sélectionner la bonne documentation, tandis que ceux utilisant la version 1 ont toujours accès à l'ancienne documentation. C'est ce qu'on appelle la fragmentation : lorsque votre clientèle est répartie sur plusieurs versions du même logiciel. Docsie réduit l'impact de cette fragmentation, garantissant que les connaissances sont disponibles quelle que soit la version utilisée.
+
+Le versionnement des documents garantit que les bonnes informations sont disponibles au moment nécessaire. Il aide également à la traçabilité, surtout lorsque plusieurs rédacteurs travaillent sur le même contenu. Le versionnement réduit également la duplication, consolidant votre documentation pour faciliter l'accès.
+
+Votre entreprise met-elle régulièrement à jour sa documentation ? Vos clients ont-ils du mal à trouver les bonnes informations pour les versions actuelles et anciennes de vos logiciels et services ? Si oui, il est peut-être temps d'appliquer la bonne pratique du versionnement des documents grâce à un DMS comme Docsie. Vous trouverez plus d'informations sur le versionnement des documents Docsie [ici](https://portals.docsie.io/docsie/docsie-documentation/using-docsie/?doc=/docsie-editor/managing-versions/).
+
+Habitudes documentaires des équipes
+------------------------------
+
+Vos collaborateurs créent de la documentation, mais ils peuvent aussi créer des problèmes. Pendant la phase de brouillon, les rédacteurs peuvent utiliser différentes tailles ou types de police, ou des icônes et illustrations obsolètes. Ces différences sont faciles à manquer pour les employés qui travaillent quotidiennement avec le contenu, mais les clients sont plus susceptibles de les remarquer. Le résultat est une documentation incohérente, due à des approches divergentes dans la création et la publication de contenu.
+
+Docsie aide les entreprises à résoudre les incohérences de contenu avec le Docsie Documentation Hub. Vous pouvez définir un type et une taille de police par défaut, ajouter des logos ou des illustrations d'entreprise, et définir des paramètres de feuille de style CSS pour une utilisation sur un site web ou une base de connaissances. Ces choix se propageront de Docsie à toute page web avec du contenu Docsie intégré, utilisant les mêmes couleurs, polices et logos partout où votre contenu est publié.
+
+Cela simplifie les flux de travail de gestion et de publication de contenu. Plutôt que de modifier des pages individuelles, les entreprises peuvent définir un cadre de conception de contenu une fois dans Docsie et appliquer ces changements partout. C'est ce qu'on appelle la gestion centralisée ou l'orchestration. Le processus de modification de chaque document ou page individuellement peut sembler faisable pour les bibliothèques de contenu plus petites, mais ce processus ne s'adaptera pas efficacement à mesure que la bibliothèque s'élargit.
+
+En résumé, Docsie travaille à pérenniser vos flux de travail de gestion de contenu en minimisant les charges administratives de bas niveau. En commençant avec une perspective d'échelle, de grandes bibliothèques de contenu peuvent être gérées avec simplicité - en définissant les cadres de conception de contenu une fois et en les déployant partout avec Docsie. Vous pouvez en savoir plus sur les centres de documentation personnalisés Docsie avec Docsie Manager [ici](https://www.docsie.io/docsie_manager/).
+
+Stockage centralisé de la documentation
+---------------------------------
+
+Sur le thème de la centralisation, les emplacements de stockage des documents peuvent aider ou entraver les flux de travail de gestion et de publication. Vous pouvez stocker la documentation sur un intranet ou un site SharePoint, dans Dropbox ou Google Drive, et sur des partitions de stockage sur site ou cloud. Chaque option fonctionne isolément, mais peut causer le chaos lorsqu'elles sont utilisées simultanément.
+
+Un employé a besoin d'accéder à un document. Le document est stocké sur un site SharePoint. L'employé le télécharge et le sauvegarde sur sa partition de stockage personnelle. Un outil de synchronisation de fichiers d'entreprise le télécharge automatiquement dans le cloud. L'employé envoie le document via Slack à un collègue. Voilà quatre copies du même document en circulation sur votre réseau informatique, avec une décentralisation à travers quatre services ou outils différents.
+
+Docsie s'attaque à ce chaos décentralisé en centralisant les documents dans un seul emplacement de stockage. Lorsque vous téléchargez un document, Docsie le place sur une étagère. Nous appelons les documents des "livres", chaque étagère se remplissant de livres pour former une bibliothèque de contenu. Les employés peuvent se connecter à Docsie pour trouver toute votre documentation, avec un filtrage qui fournit la documentation pertinente par département ou ancienneté grâce aux contrôles d'accès basés sur les rôles (RBAC). À partir de là, les employés peuvent publier des documents directement sur votre site web, éditer le texte de la documentation, vérifier différentes versions et consulter les retours des clients ou des collègues.
+
+Maintenant, lorsqu'un employé a besoin d'accéder à un document, il lui suffit d'ouvrir Docsie. Il peut rechercher des documents, exporter dans des formats de fichiers courants et partager des liens directs vers des livres ou des étagères Docsie. Pour les utilisateurs externes, ils peuvent être invités par les propriétaires et les administrateurs pour un accès direct aux livres et étagères Docsie autorisés, sans compromettre la sécurité. C'est comme des dossiers et des fichiers sur un disque dur, mais avec un peu de magie Docsie ! Vous pouvez en savoir plus sur les étagères et les livres Docsie [ici](https://www.docsie.io/features/).
+
+Gouvernance des risques et conformité des documents
+---------------------------------------
+
+La plupart des documentations seront créées pour le domaine public. Néanmoins, certains documents peuvent être confidentiels. Cela présente la nécessité d'une gestion de la gouvernance, des risques et de la conformité (GRC). Les politiques GRC peuvent être utilisées pour régir l'accès aux documents confidentiels, contrôler les autorisations de documents pour les rédacteurs et les lecteurs, et empêcher la publication accidentelle de documentation en phase de brouillon.
+
+Docsie utilise des contrôles d'accès basés sur les rôles (RBAC) pour régir les autorisations sur la plateforme. C'est ainsi que Docsie aide les entreprises à gérer les flux de travail GRC, en définissant des rôles d'utilisateur et en attribuant des autorisations en fonction de l'ancienneté ou du département. Ces rôles comprennent Lecteur, Éditeur, Administrateur et Propriétaire. Les lecteurs ont un accès en lecture seule aux documents, les éditeurs ayant des autorisations de lecture et d'écriture. Les administrateurs peuvent attribuer des rôles pour gérer qui est autorisé à lire, écrire ou les deux par livre ou par étagère. Le propriétaire peut gérer chaque utilisateur et document dans une organisation Docsie, et est le seul rôle d'utilisateur qui peut supprimer une organisation entière. Dans cet exemple, l'organisation pourrait être Docsie, avec des étagères contenant des livres sur différentes fonctionnalités de Docsie.
+
+En conclusion, la GRC est importante pour gérer l'accès à la documentation. Avec trop peu d'accès, les employés ne pourront pas travailler sur la documentation. Avec trop d'accès, les employés peuvent accidentellement publier une documentation inachevée ou accéder à des documents confidentiels réservés aux dirigeants et aux managers. Docsie vous aide à trouver un équilibre entre accès et sécurité, rendant la plateforme adaptée au stockage de tout type de document.
+
+Ce document est sensible, comment puis-je empêcher l'accès non autorisé ? Comment puis-je donner à mon équipe des autorisations d'écriture, tout en ne donnant aux autres équipes qu'un accès en lecture seule ? Un rédacteur freelance a besoin d'autorisation pour modifier ce document, comment puis-je faire cela ? Si votre entreprise se pose ces questions, Docsie a les réponses ! Vous pouvez trouver plus d'informations sur la gestion des autorisations Docsie [ici](https://portals.docsie.io/docsie/docsie-documentation/using-docsie/?doc=/workspace-administration/managing-and-understanding-permissions/).
+
+Collaboration d'équipe
+------------------
+
+Le contenu est rarement créé par une seule personne. Lorsque plusieurs rédacteurs travaillent sur votre bibliothèque de documentation, la collaboration est essentielle.
+
+Quels processus vos employés suivent-ils lorsqu'ils travaillent sur la documentation ? Un exemple serait de rechercher sur un lecteur réseau des documents existants et de les télécharger sur un ordinateur. Ensuite, le rédacteur peut envoyer une version finale par email à un collègue pour relecture. La version approuvée peut ensuite être téléchargée dans un système de gestion de contenu (CMS) prêt pour la publication. Plus tard dans la journée, quelqu'un remarque un problème et renvoie une version annotée au rédacteur via Slack. Ce flux de travail peut fonctionner, mais il peut être simplifié.
+
+Docsie réduit le nombre d'outils dont vous avez besoin grâce à une fonctionnalité complète de collaboration d'équipe. Vous pouvez trouver des documents dans Docsie, écrire et éditer, partager des modifications avec les membres de l'équipe, discuter et annoter, et publier sur internet sans jamais quitter le tableau de bord Docsie. Cela élimine le besoin de télécharger, de téléverser, d'envoyer des emails et de gérer un CMS - vous permettant simplement de gérer vos documents avec Docsie ! Les membres de l'équipe peuvent être marqués en utilisant @mention, les conversations de chat sont isolées pour chaque livre Docsie, et les freelances externes peuvent être invités facilement pour une collaboration d'équipe complète à n'importe quel endroit.
+
+En minimisant le nombre d'outils requis, les employés peuvent se concentrer sur la création de contenu au lieu de passer d'un logiciel à l'autre. Cela accélère les flux de travail de création de contenu en minimisant les clics inutiles, les commentaires et suggestions des collègues étant facilement accessibles dans la barre d'outils de droite. Plus de partage de liens, plus de versions obsolètes de documents, plus d'emails ou de messages de chat perdus - tout ce qui concerne vos documents est centralisé dans Docsie.
+
+Appliquez les bonnes pratiques à vos documents avec Docsie
+=============================================
+
+Alors que nous passons du papier au numérique, une bonne gestion documentaire est vitale. En appliquant ces bonnes pratiques à la documentation numérique, les entreprises peuvent créer et partager des connaissances qui offrent une réelle valeur aux clients tout en rationalisant les flux de travail de contenu et en réduisant les coûts. La seule question est - comment appliquer ces bonnes pratiques ?
+
+C'est là qu'intervient Docsie. Docsie est fondé sur ces bonnes pratiques de documentation, les appliquant automatiquement pour rationaliser la création, la gestion et la publication de contenu. La plateforme est conçue pour fonctionner avec tous types de documentation, s'alignant étroitement sur les exigences typiques des entreprises en matière de DMS. Lors de l'importation et de l'exportation, la documentation Docsie utilise des formats de fichiers ouverts et compatibles pour augmenter l'accessibilité. Les entreprises peuvent lire et agir sur les retours des clients concernant la documentation à l'aide de Docsie Vocally, améliorant la qualité des connaissances et réduisant les erreurs de contenu. Le versionnement des documents vous permet de conserver les versions historiques pour la redondance d'information. Les cadres de conception de marque et de contenu peuvent être définis une fois et appliqués partout avec le centre de documentation personnalisé. Tout est stocké à un seul endroit - le portail Docsie - afin que les employés puissent rapidement trouver un document plutôt que de chercher sur leur ordinateur, leur lecteur cloud ou leur email. Les autorisations peuvent être définies pour gérer la GRC, empêchant l'accès non autorisé aux documents sensibles. Enfin, les collègues peuvent discuter, partager, lier, joindre et accorder l'accès aux contractants pour une collaboration d'équipe centralisée sur Docsie.
+
+Créez une documentation que vos clients adoreront, sans la complexité. Si votre entreprise recherche une solution DMS, n'hésitez pas à essayer Docsie ! Il vous suffit de [contacter](https://www.docsie.io/discovery_call/) notre équipe commerciale, qui se fera un plaisir de vous présenter une démonstration de 15 minutes de la plateforme Docsie.
+
+* * * * *
+
+[[1]](file:///C:/Users/Ciaran/Google%20Drive/Articles%20Work/All%20Articles/SoSEO/Docsie/Docsie%20Content/eBook%20-%20Digital%20Documentation%20Best%20Practices%20to%20Inform%20and%20Inspire.docx#_ftnref1) <https://www.softwareadvice.com/cms/industryview/go-paperless-with-document-management-software/>
+
+[[2]](file:///C:/Users/Ciaran/Google%20Drive/Articles%20Work/All%20Articles/SoSEO/Docsie/Docsie%20Content/eBook%20-%20Digital%20Documentation%20Best%20Practices%20to%20Inform%20and%20Inspire.docx#_ftnref2) <https://www.stopwaste.org/at-work/reduce-and-reuse/reduce-paper-use/the-impact-of-paper-waste#2>
+
+[[3]](file:///C:/Users/Ciaran/Google%20Drive/Articles%20Work/All%20Articles/SoSEO/Docsie/Docsie%20Content/eBook%20-%20Digital%20Documentation%20Best%20Practices%20to%20Inform%20and%20Inspire.docx#_ftnref3) <https://fcw.com/articles/2013/08/08/va-data-breaches.aspx>
+
+[[4]](file:///C:/Users/Ciaran/Google%20Drive/Articles%20Work/All%20Articles/SoSEO/Docsie/Docsie%20Content/eBook%20-%20Digital%20Documentation%20Best%20Practices%20to%20Inform%20and%20Inspire.docx#_ftnref4) <https://www.greenamerica.org/sites/default/files/inline-files/Paper%20Facts%202017.pdf>
+
+[[5]](file:///C:/Users/Ciaran/Google%20Drive/Articles%20Work/All%20Articles/SoSEO/Docsie/Docsie%20Content/eBook%20-%20Digital%20Documentation%20Best%20Practices%20to%20Inform%20and%20Inspire.docx#_ftnref5) <https://www.zendesk.com/blog/searching-for-self-service/>
+
+[[6]](file:///C:/Users/Ciaran/Google%20Drive/Articles%20Work/All%20Articles/SoSEO/Docsie/Docsie%20Content/eBook%20-%20Digital%20Documentation%20Best%20Practices%20to%20Inform%20and%20Inspire.docx#_ftnref6) <https://www.slideshare.net/UniWeb/the-total-economic-impact-of-click-to-call-and-click-to-chat>
+
+[[7]](file:///C:/Users/Ciaran/Google%20Drive/Articles%20Work/All%20Articles/SoSEO/Docsie/Docsie%20Content/eBook%20-%20Digital%20Documentation%20Best%20Practices%20to%20Inform%20and%20Inspire.docx#_ftnref7) <https://download.microsoft.com/documents/en-us/dynamics/Global_State_of_Multichannel_Customer_Service_Report.pdf.pdf>
