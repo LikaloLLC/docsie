@@ -117,31 +117,41 @@
         <p class="text-xl text-gray-600 mb-6">
           {% trans %}Add enterprise-grade capabilities to scale your documentation{% endtrans %}
         </p>
-        
-        <!-- Collapsible Toggle -->
-        <button id="toggle-addons" class="inline-flex items-center text-blue-600 hover:text-blue-700 font-medium bg-white px-6 py-3 rounded-lg border border-gray-200 shadow-sm hover:shadow-md transition-all">
-          <span id="addons-toggle-text">{% trans %}Contact Us for Enterprise Add-Ons{% endtrans %}</span>
-          <svg class="w-5 h-5 ml-2 transform transition-transform" id="addons-toggle-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-          </svg>
-        </button>
       </div>
 
-      <!-- Collapsible Add-ons Content -->
-      <div id="addons-content" class="hidden">
-        <div class="mt-8">
-          {% include 'new_home/enterprise_portal_v2/enterprise_portal_v2.html' %}
-          
-          <!-- Other Add-ons Coming Soon -->
-          <div class="mt-12 text-center">
-            <p class="text-gray-600">
-              {% trans %}Need more AI actions, storage, or translations?{% endtrans %} 
-              <a href="#" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/docsie-io/demo-call'});return false;" class="text-blue-600 hover:text-blue-700 font-medium">
-                {% trans %}Contact us for custom add-ons{% endtrans %}
-              </a>
-            </p>
-          </div>
+      <!-- Tab Navigation -->
+      <div class="flex justify-center mb-8">
+        <div class="inline-flex bg-white rounded-lg border border-gray-200 shadow-sm p-1">
+          <button id="tab-video" class="addon-tab active px-6 py-3 rounded-lg font-medium transition-all">
+            {% trans %}Video-to-Documentation{% endtrans %}
+          </button>
+          <button id="tab-portal" class="addon-tab px-6 py-3 rounded-lg font-medium transition-all">
+            {% trans %}Enterprise Portals{% endtrans %}
+          </button>
         </div>
+      </div>
+
+      <!-- Tab Content -->
+      <div class="tab-content-wrapper">
+        <!-- Video-to-Docs Tab -->
+        <div id="content-video" class="tab-content active">
+          {% include 'new_home/video_to_docs_addon_v2/video_to_docs_addon_v2.html' %}
+        </div>
+
+        <!-- Enterprise Portal Tab -->
+        <div id="content-portal" class="tab-content hidden">
+          {% include 'new_home/enterprise_portal_v2/enterprise_portal_v2.html' %}
+        </div>
+      </div>
+
+      <!-- Other Add-ons Link -->
+      <div class="mt-12 text-center">
+        <p class="text-gray-600">
+          {% trans %}Need more AI actions, storage, or translations?{% endtrans %}
+          <a href="/demo/" class="text-blue-600 hover:text-blue-700 font-medium">
+            {% trans %}Contact us for custom add-ons{% endtrans %}
+          </a>
+        </p>
       </div>
     </div>
   </section>
@@ -339,24 +349,26 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 
-  // Add-ons toggle functionality
-  const addonsToggle = document.getElementById('toggle-addons');
-  const addonsContent = document.getElementById('addons-content');
-  const addonsToggleText = document.getElementById('addons-toggle-text');
-  const addonsToggleIcon = document.getElementById('addons-toggle-icon');
+  // Add-ons tab functionality
+  const tabButtons = document.querySelectorAll('.addon-tab');
+  const tabContents = document.querySelectorAll('.tab-content');
 
-  addonsToggle.addEventListener('click', function() {
-    const isHidden = addonsContent.classList.contains('hidden');
-    
-    if (isHidden) {
-      addonsContent.classList.remove('hidden');
-      addonsToggleText.textContent = 'Hide Add-ons';
-      addonsToggleIcon.classList.add('rotate-180');
-    } else {
-      addonsContent.classList.add('hidden');
-      addonsToggleText.textContent = 'Contact Us for Enterprise Add-Ons';
-      addonsToggleIcon.classList.remove('rotate-180');
-    }
+  tabButtons.forEach(button => {
+    button.addEventListener('click', function() {
+      const tabId = this.id.replace('tab-', '');
+
+      // Remove active class from all tabs and contents
+      tabButtons.forEach(btn => btn.classList.remove('active', 'bg-blue-600', 'text-white'));
+      tabButtons.forEach(btn => btn.classList.add('text-gray-600', 'hover:text-gray-900'));
+      tabContents.forEach(content => content.classList.add('hidden'));
+      tabContents.forEach(content => content.classList.remove('active'));
+
+      // Add active class to clicked tab and corresponding content
+      this.classList.add('active', 'bg-blue-600', 'text-white');
+      this.classList.remove('text-gray-600', 'hover:text-gray-900');
+      document.getElementById(`content-${tabId}`).classList.remove('hidden');
+      document.getElementById(`content-${tabId}`).classList.add('active');
+    });
   });
 });
 </script>

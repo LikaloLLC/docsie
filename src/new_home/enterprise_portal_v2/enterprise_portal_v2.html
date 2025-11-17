@@ -1,93 +1,179 @@
 <!-- Enterprise Portal Add-on Component V2 -->
-<div class="enterprise-portal-v2 bg-white rounded-2xl shadow-lg overflow-hidden max-w-4xl mx-auto">
+<div class="enterprise-portal-v2 bg-white rounded-2xl shadow-lg overflow-hidden max-w-6xl mx-auto mb-8">
   <div class="portal-header bg-gradient-to-r from-indigo-600 to-purple-600 p-8 text-white">
-    <div class="flex items-center justify-between">
+    <div class="flex items-center justify-between flex-wrap gap-4">
       <div>
         <h3 class="text-2xl font-bold mb-2">{% trans %}Enterprise Portal Solution{% endtrans %}</h3>
         <p class="text-indigo-100">{% trans %}Scalable multi-tenant documentation access for your entire organization{% endtrans %}</p>
       </div>
       <div class="text-right">
         <div class="bg-white/20 backdrop-blur-sm rounded-lg px-4 py-2">
-          <p class="text-lg font-bold">{% trans %}Available Add-on{% endtrans %}</p>
-          <p class="text-sm text-indigo-100">{% trans %}Contact for pricing{% endtrans %}</p>
+          <p class="text-sm text-indigo-100 mb-1">{% trans %}Starting at{% endtrans %}</p>
+          <p class="text-2xl font-bold">$350<span class="text-lg font-normal">/month</span></p>
+          <p class="text-xs text-indigo-100">{% trans %}Base + User bands{% endtrans %}</p>
         </div>
       </div>
     </div>
   </div>
-  
+
   <div class="portal-content p-8">
-    <div class="grid md:grid-cols-2 gap-8 mb-8">
-      <!-- Features Column -->
-      <div class="features-section">
-        <h4 class="font-semibold text-gray-900 mb-4">{% trans %}What are Enterprise Portals?{% endtrans %}</h4>
-        <p class="text-gray-600 text-sm mb-4">
-          {% trans %}Enterprise Portals are secure, multi-tenant documentation platforms that allow you to create separate, branded documentation environments for different customer groups, partners, or business units. Manage everything centrally while providing customized experiences.{% endtrans %}
-        </p>
-        <ul class="portal-features space-y-2 text-sm text-gray-600">
-          <li class="flex items-start">
-            <svg class="w-5 h-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-            </svg>
-            {% trans %}Secure, dedicated environment for each client{% endtrans %}
-          </li>
-          <li class="flex items-start">
-            <svg class="w-5 h-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-            </svg>
-            {% trans %}Advanced user management and role-based permissions{% endtrans %}
-          </li>
-          <li class="flex items-start">
-            <svg class="w-5 h-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-            </svg>
-            {% trans %}Custom branding for each portal{% endtrans %}
-          </li>
-          <li class="flex items-start">
-            <svg class="w-5 h-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-            </svg>
-            {% trans %}High-performance document delivery{% endtrans %}
-          </li>
-        </ul>
+    <!-- What is it -->
+    <div class="mb-8">
+      <h4 class="font-semibold text-gray-900 mb-3 text-center">{% trans %}What are Enterprise Portals?{% endtrans %}</h4>
+      <p class="text-gray-600 text-center max-w-4xl mx-auto">
+        {% trans %}Enterprise Portals are secure, multi-tenant documentation platforms that allow you to create separate, branded documentation environments for different customer groups, partners, or business units. Manage everything centrally while providing customized experiences.{% endtrans %}
+      </p>
+    </div>
+
+    <!-- Pricing Structure -->
+    <div class="mb-8">
+      <h4 class="font-semibold text-gray-900 mb-4 text-center">{% trans %}Pricing Structure{% endtrans %}</h4>
+
+      <!-- Base Package -->
+      <div class="bg-indigo-50 border border-indigo-200 rounded-xl p-6 mb-6">
+        <div class="flex items-center justify-between flex-wrap gap-4">
+          <div>
+            <h5 class="font-bold text-gray-900 mb-2">{% trans %}Base Package{% endtrans %}</h5>
+            <ul class="text-sm text-gray-700 space-y-1">
+              <li>✓ {% trans %}Enterprise Portal functionality{% endtrans %}</li>
+              <li>✓ {% trans %}Unlimited tenants/portals{% endtrans %}</li>
+              <li>✓ {% trans %}Base infrastructure and management tools{% endtrans %}</li>
+            </ul>
+          </div>
+          <div class="text-right">
+            <p class="text-3xl font-bold text-indigo-600">$250<span class="text-lg font-normal text-gray-600">/month</span></p>
+            <p class="text-sm text-gray-600">{% trans %}Required base{% endtrans %}</p>
+          </div>
+        </div>
       </div>
-      
-      <!-- Key Benefits Column -->
-      <div class="pricing-section">
-        <h4 class="font-semibold text-gray-900 mb-4">{% trans %}Key Benefits{% endtrans %}</h4>
-        
-        <div class="space-y-4">
-          <div class="benefit-item">
-            <h5 class="font-medium text-gray-900 mb-1">{% trans %}Scale Effortlessly{% endtrans %}</h5>
-            <p class="text-sm text-gray-600">{% trans %}Support hundreds or thousands of users across multiple organizations without complexity{% endtrans %}</p>
+
+      <!-- User Band Pricing Table -->
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="border-b-2 border-gray-200">
+              <th class="text-left py-3 px-4 font-semibold text-gray-900">{% trans %}User Band{% endtrans %}</th>
+              <th class="text-center py-3 px-4 font-semibold text-gray-900">{% trans %}Monthly Cost{% endtrans %}</th>
+              <th class="text-center py-3 px-4 font-semibold text-gray-900">{% trans %}Annual Cost{% endtrans %}</th>
+              <th class="text-center py-3 px-4 font-semibold text-gray-900">{% trans %}Cost/User/Year{% endtrans %}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-b border-gray-100 hover:bg-gray-50">
+              <td class="py-3 px-4 text-gray-700">{% trans %}0-50 users{% endtrans %}</td>
+              <td class="text-center py-3 px-4 font-medium">$100</td>
+              <td class="text-center py-3 px-4">$1,200</td>
+              <td class="text-center py-3 px-4 text-gray-600">$24.00</td>
+            </tr>
+            <tr class="border-b border-gray-100 hover:bg-gray-50">
+              <td class="py-3 px-4 text-gray-700">{% trans %}51-200 users{% endtrans %}</td>
+              <td class="text-center py-3 px-4 font-medium">$200</td>
+              <td class="text-center py-3 px-4">$2,400</td>
+              <td class="text-center py-3 px-4 text-gray-600">$12.00</td>
+            </tr>
+            <tr class="border-b border-gray-100 hover:bg-gray-50 bg-indigo-50">
+              <td class="py-3 px-4 text-gray-700 font-semibold">{% trans %}201-500 users{% endtrans %}</td>
+              <td class="text-center py-3 px-4 font-bold text-indigo-600">$400</td>
+              <td class="text-center py-3 px-4 font-semibold">$4,800</td>
+              <td class="text-center py-3 px-4 text-gray-600 font-medium">$9.60</td>
+            </tr>
+            <tr class="border-b border-gray-100 hover:bg-gray-50">
+              <td class="py-3 px-4 text-gray-700">{% trans %}501-1,000 users{% endtrans %}</td>
+              <td class="text-center py-3 px-4 font-medium">$600</td>
+              <td class="text-center py-3 px-4">$7,200</td>
+              <td class="text-center py-3 px-4 text-gray-600">$7.20</td>
+            </tr>
+            <tr class="border-b border-gray-100 hover:bg-gray-50">
+              <td class="py-3 px-4 text-gray-700">{% trans %}1,001+ users{% endtrans %}</td>
+              <td class="text-center py-3 px-4 font-medium">{% trans %}Custom{% endtrans %}</td>
+              <td class="text-center py-3 px-4">{% trans %}Negotiated{% endtrans %}</td>
+              <td class="text-center py-3 px-4 text-gray-600">{% trans %}Varies{% endtrans %}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Pricing Examples -->
+      <div class="mt-6 bg-blue-50 border border-blue-200 rounded-xl p-6">
+        <h5 class="font-semibold text-gray-900 mb-3">{% trans %}Total Pricing Examples{% endtrans %}</h5>
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4 text-sm">
+          <div class="bg-white rounded-lg p-3">
+            <p class="font-semibold text-gray-900 mb-1">{% trans %}20 users{% endtrans %}</p>
+            <p class="text-2xl font-bold text-blue-600">$350<span class="text-sm font-normal text-gray-600">/mo</span></p>
+            <p class="text-xs text-gray-600">$3,570/year (15% discount)</p>
           </div>
-          
-          <div class="benefit-item">
-            <h5 class="font-medium text-gray-900 mb-1">{% trans %}Centralized Management{% endtrans %}</h5>
-            <p class="text-sm text-gray-600">{% trans %}Manage all portals from a single dashboard while maintaining separation{% endtrans %}</p>
+          <div class="bg-white rounded-lg p-3">
+            <p class="font-semibold text-gray-900 mb-1">{% trans %}150 users{% endtrans %}</p>
+            <p class="text-2xl font-bold text-blue-600">$450<span class="text-sm font-normal text-gray-600">/mo</span></p>
+            <p class="text-xs text-gray-600">$4,590/year (15% discount)</p>
           </div>
-          
-          <div class="benefit-item">
-            <h5 class="font-medium text-gray-900 mb-1">{% trans %}White-Label Ready{% endtrans %}</h5>
-            <p class="text-sm text-gray-600">{% trans %}Each portal can have its own branding, domain, and customization{% endtrans %}</p>
+          <div class="bg-white rounded-lg p-3 border-2 border-indigo-500">
+            <p class="font-semibold text-gray-900 mb-1">{% trans %}350 users{% endtrans %}</p>
+            <p class="text-2xl font-bold text-indigo-600">$650<span class="text-sm font-normal text-gray-600">/mo</span></p>
+            <p class="text-xs text-gray-600">$6,630/year (15% discount)</p>
+          </div>
+          <div class="bg-white rounded-lg p-3">
+            <p class="font-semibold text-gray-900 mb-1">{% trans %}800 users{% endtrans %}</p>
+            <p class="text-2xl font-bold text-blue-600">$850<span class="text-sm font-normal text-gray-600">/mo</span></p>
+            <p class="text-xs text-gray-600">$8,670/year (15% discount)</p>
           </div>
         </div>
-        
-        <div class="mt-6 p-4 bg-gray-50 rounded-lg">
-          <p class="text-sm text-gray-700">
-            <strong>{% trans %}Perfect for:{% endtrans %}</strong> {% trans %}SaaS companies, agencies, franchises, and enterprises managing documentation for multiple clients or business units.{% endtrans %}
-          </p>
-        </div>
+        <p class="text-xs text-gray-600 mt-3 text-center">
+          <strong>{% trans %}1,500+ users:{% endtrans %}</strong> $1,050-1,450/month {% trans %}(custom pricing with 20% discount){% endtrans %}
+        </p>
       </div>
     </div>
-    
+
+    <!-- Features Grid -->
+    <div class="grid md:grid-cols-3 gap-6 mb-8">
+      <div class="text-center">
+        <div class="w-12 h-12 bg-indigo-100 rounded-xl mx-auto mb-3 flex items-center justify-center">
+          <svg class="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+          </svg>
+        </div>
+        <h5 class="font-medium text-gray-900 mb-1">{% trans %}Secure & Isolated{% endtrans %}</h5>
+        <p class="text-sm text-gray-600">{% trans %}Dedicated environment for each client with role-based access{% endtrans %}</p>
+      </div>
+
+      <div class="text-center">
+        <div class="w-12 h-12 bg-purple-100 rounded-xl mx-auto mb-3 flex items-center justify-center">
+          <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"/>
+          </svg>
+        </div>
+        <h5 class="font-medium text-gray-900 mb-1">{% trans %}White-Label Ready{% endtrans %}</h5>
+        <p class="text-sm text-gray-600">{% trans %}Custom branding, domains, and styling for each portal{% endtrans %}</p>
+      </div>
+
+      <div class="text-center">
+        <div class="w-12 h-12 bg-blue-100 rounded-xl mx-auto mb-3 flex items-center justify-center">
+          <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+          </svg>
+        </div>
+        <h5 class="font-medium text-gray-900 mb-1">{% trans %}Centralized Management{% endtrans %}</h5>
+        <p class="text-sm text-gray-600">{% trans %}Manage all portals from a single dashboard{% endtrans %}</p>
+      </div>
+    </div>
+
+    <!-- Perfect For -->
+    <div class="bg-gray-50 rounded-xl p-6 mb-6">
+      <p class="text-sm text-gray-700 text-center">
+        <strong>{% trans %}Perfect for:{% endtrans %}</strong> {% trans %}SaaS companies, agencies, franchises, and enterprises managing documentation for multiple clients or business units.{% endtrans %}
+      </p>
+    </div>
+
+    <!-- CTA -->
     <div class="portal-cta text-center">
-      <button onclick="Calendly.initPopupWidget({url: 'https://calendly.com/docsie-io/demo-call'});return false;" 
-              class="inline-flex items-center px-8 py-3 bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-medium rounded-lg hover:from-indigo-700 hover:to-purple-700 transition-all duration-300">
-        {% trans %}Learn More About Enterprise Portals{% endtrans %}
+      <a href="/demo/"
+              class="inline-flex items-center px-8 py-3 bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-medium rounded-lg hover:from-indigo-700 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl">
+        {% trans %}Schedule Enterprise Portal Demo{% endtrans %}
         <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
         </svg>
-      </button>
+      </a>
+      <p class="text-sm text-gray-600 mt-3">{% trans %}See how Enterprise Portals can scale your documentation delivery{% endtrans %}</p>
     </div>
   </div>
 </div>

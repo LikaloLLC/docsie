@@ -395,26 +395,24 @@ def generate_comparison_table(config):
   <thead>
     <tr class="border-b border-gray-200">
       <th class="text-left py-4 px-4 font-medium text-gray-900">{% trans %}Features{% endtrans %}</th>
-      <th class="text-center py-4 px-4 font-medium text-gray-900">{% trans %}Standard{% endtrans %}</th>
       <th class="text-center py-4 px-4 font-medium text-gray-900">{% trans %}Premium{% endtrans %}</th>
       <th class="text-center py-4 px-4 font-medium text-gray-900">{% trans %}Enterprise{% endtrans %}</th>
     </tr>
   </thead>
   <tbody>""")
-    
+
     for category in config['comparison_features']:
         # Category header
         html_parts.append(f"""    <tr class="bg-gray-50">
-      <td colspan="4" class="py-3 px-4 font-semibold text-gray-900">{{% trans %}}{category['category']}{{% endtrans %}}</td>
+      <td colspan="3" class="py-3 px-4 font-semibold text-gray-900">{{% trans %}}{category['category']}{{% endtrans %}}</td>
     </tr>""")
         
         # Features in category
         for feature in category['features']:
             html_parts.append(f"""    <tr class="border-b border-gray-100">
       <td class="py-4 px-4 text-gray-700">{{% trans %}}{feature['name']}{{% endtrans %}}</td>
-      <td class="text-center py-4 px-4">{feature['standard']}</td>
-      <td class="text-center py-4 px-4">{feature['premium']}</td>
-      <td class="text-center py-4 px-4">{feature['enterprise']}</td>
+      <td class="text-center py-4 px-4">{feature.get('premium', '—')}</td>
+      <td class="text-center py-4 px-4">{feature.get('enterprise', '—')}</td>
     </tr>""")
     
     html_parts.append("""  </tbody>
