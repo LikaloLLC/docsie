@@ -1,0 +1,63 @@
+{% if section %}
+<!-- Trusted By Component with Customer Logos and G2 Badges -->
+<section class="trusted-by-v2 py-12 md:py-16 bg-white">
+  <div class="container mx-auto px-4 lg:px-8">
+
+    <!-- Section Header -->
+    <div class="text-center mb-12">
+      {% if section.title %}
+      <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
+        {{ section.title }}
+      </h2>
+      {% endif %}
+      {% if section.description %}
+      <p class="text-gray-600">
+        {{ section.description }}
+      </p>
+      {% endif %}
+    </div>
+
+    <!-- Customer Logos -->
+    {% if section.customer_logos %}
+    <div class="mb-16">
+      <div class="flex flex-wrap items-center justify-center gap-8 md:gap-12">
+        {% for logo in section.customer_logos %}
+        <div class="grayscale hover:grayscale-0 opacity-60 hover:opacity-100 transition-all duration-300 flex items-center justify-center" style="width: 180px; height: 60px;">
+          <img src="{{ logo.image }}"
+               alt="{{ logo.name }}"
+               class="max-h-full max-w-full object-contain"
+               loading="lazy">
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+    {% endif %}
+
+    <!-- G2 Badges -->
+    {% if section.g2_badges %}
+    <div>
+      {% if section.badges_title %}
+      <h3 class="text-center text-xl md:text-2xl font-semibold text-gray-900 mb-8">
+        {{ section.badges_title }}
+      </h3>
+      {% endif %}
+
+      <div class="flex flex-wrap items-center justify-center gap-6 md:gap-8">
+        {% for badge in section.g2_badges %}
+        <a href="{{ badge.url or 'https://www.g2.com/products/docsie/reviews' }}"
+           target="_blank"
+           rel="noopener"
+           class="hover:scale-105 transition-transform duration-200">
+          <img src="{{ badge.image }}"
+               alt="{{ badge.alt or 'G2 Badge' }}"
+               class="h-24 md:h-28 w-auto object-contain"
+               loading="lazy">
+        </a>
+        {% endfor %}
+      </div>
+    </div>
+    {% endif %}
+
+  </div>
+</section>
+{% endif %}
