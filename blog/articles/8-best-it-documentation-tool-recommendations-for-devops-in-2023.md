@@ -183,4 +183,4 @@ Are you prepared to change your documentation practices with these tool recommen
 
 ![](https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_b5IfKntSgH9TCqRyA/image12.png)
 
-![](https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_wSLCRmGgNvaDSXSPf/image13.png)
+![](https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_wSLCRmGgNvaDSXSPf/image13.png)

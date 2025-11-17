@@ -1,0 +1,262 @@
+![](https://images.unsplash.com/photo-1587614313085-5da51cebd8ac?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzMTM3MXwwfDF8c2VhcmNofDEzfHxjb2xsYWJvcmF0aW9ufGVufDB8fHx8MTYyNDk5MDI0OQ&ixlib=rb-1.2.1&q=80&w=1080)
+
+Collaboration is super important when completing product documentation with your team. Writing the right stuff in the right way with your production team is vital and having the right tools to collaborate is key!
+
+Although the term "collaboration" has become somewhat of a cliché in the business world, it is far from a cliche. Collaboration in the workplace leads to productive teams and this is especially the case for producing high-quality product documentation!
+
+Collaboration occurs when a group of people in a product documentation team, such as the product manager, product owner, technical writers, designers, developers, marketers, and other facets that create a well-rounded product documentation team joins forces to share their knowledge and skills in order to achieve a common goal which is to produce amazing and polished product documentation that their customers love to read.
+
+Let’s face it! Whether you need to create product documentation, user guides, user manuals, or show any knowledge portal on your page, collaboration is essential to make sure all the pieces are connected in the right way. And therefore the company’s product documentation outcome is heavily influenced by your ability to collaborate with others.
+
+Let's look at seven reasons why teamwork and collaboration are so critical in the development of product documentation.
+
+
+
+## Why collaboration is essential and beneficial in the creation of product documentation?
+
+![](https://images.unsplash.com/photo-1484069560501-87d72b0c3669?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzMTM3MXwwfDF8c2VhcmNofDF8fFdIWXxlbnwwfHx8fDE2MjYyOTExMjA&ixlib=rb-1.2.1&q=80&w=1080)
+
+### It creates new communication avenues.
+
+Working with new individuals’ different sectors of a product management department with other departments inside your company opens avenues that would otherwise be closed. Finding innovative ways to interact and exchange information is critical to a company's success in producing useful product documentation that your customers will understand and comprehend. Different sources of information and input can be brought together by collaborating with various facets of the company in order to help develop useful product documentation knowledge for your customers. This is why collaboration should be used to create ties across departments whenever feasible.
+
+According to Mark Sanborn, “In teamwork, silence isn’t golden, it’s deadly.” thus creating a more unified, open workplace for your different departments to communicate benefits everyone. Furthermore, it pulls everyone a little closer together and clarifies your organization's ultimate goal, and helps produce amazing product documentation.
+
+### Collaboration allows us to work more efficiently.
+
+Working on your own has many benefits but when it comes to product documentation projects, the lack of information from various departments can be quite detrimental. We can concentrate only on one job without worrying about how much time we'll waste if we get sidetracked or how to assemble a team in time to meet a tight deadline. If the work at hand necessitates independence, then go for it. However, when it comes to product documentation, two heads or even more are better than one, especially when different concepts from the different departments combine together to make polished product documentation.
+
+A Stanford [research paper](https://www.sciencedirect.com/science/article/abs/pii/S0022103114000420?via%3Dihub) discovered that even the perception of working in a collaborated setting can boost overall productivity and performance. [Forbes ](https://www.forbes.com/sites/adigaskell/2017/06/22/new-study-finds-that-collaboration-drives-workplace-performance/?sh=1f9c6da63d02)also noted that in this study: "Participants in the research who were primed to act collaboratively stuck at their task 64% longer than their solitary peers, whilst also reporting higher engagement levels, lower fatigue levels and a higher success rate."
+
+Collaboration, on the other hand, is just more efficient for creating product documentation. We must be ready to confess to ourselves that we will require assistance combining ideas and concepts to create polished product docs. It'll have to be a collaborative effort. This is when teamwork comes into play. It aids in the division of a large workload of many product documentation and/or user guides, the development of innovative solutions to create understandable and appealing product documentation that your customers will comprehend is the result of the big picture.
+
+An organization that prioritizes collaboration to create amazing product documentation that their customers love to read as one of their core values will inevitably mainstream this way of working, resulting in a more efficient (and appealing) product documentation workflow.
+
+### Collaborating for product documentation with a high percentage of retention
+
+Collaboration appeals to prospective and existing workers because it provides the groundwork for a more open, connected, and engaged workplace—perhaps even more so than businesses that are walled and isolated. Your employees will value an environment that prioritizes cooperation, and it will go a long way toward keeping them from searching for work elsewhere.
+
+Also, when it comes to producing quality product documentation, that looks good, is informative, and fits what the customer is trying to learn about companies’ products having the various facets of the company input their information to create this type of knowledge portal is very essential. Marketing can talk about what type of customers are being attracted to the company, what region of the world, and other data they acquired from their analytics and statistics. Product managers developing product documentation for their customers need the most collaborative avenues. They need to know information about the engineering fourth product, marketing and sales of the product, and feedback from customers. In order to create successful documentation, they need to collaborate with these teams and departments to know how the products work, what kind of customers match their product fit and use all this information’s to help guide their technical writing teams, designing teams, and tech teams to create, produce, manager and publish effective product documentation.
+
+People value fostering connections, especially in the process of producing product documentation that is appealing and comprehensive to their customers and clients. We all want to work with individuals we can trust, who understand and respect our viewpoints, and who collaborate effectively with others, particularly those with diverse backgrounds and areas of expertise. Simply, collaboration allows this to happen.
+
+### Collaboration improves your company's morale.
+
+People will naturally trust each other more as links are formed across teams and departments, which will progressively raise the mood of the business as a whole. After all, if there is a lack of trust, bad synergy, and poor morale in an organization, it will fail. Working with people outside of your team or department on a regular basis is one of the most effective methods to establish trust.
+
+This also works in reverse: the better your company's morale, the more likely your employees will feel at ease working with colleagues from different divisions. This is also appealing to high performers, who are increasingly seeking more open, participatory workplaces.
+
+Create useful methods to collaborate and your teams will not only be productive but they will also take pride and joy in working with your organization.
+
+### Collaboration assists us in problem-solving.
+
+When you're stumped, what do you do? Assume you've made significant progress on your product documentation project, but you've hit a wall that appears to defy all attempts to overcome it. You have run out of ideas, development has come to a standstill, and your deadline for the completion of your product documentation is approaching quickly. Do you surrender?
+
+No, of course not; you seek assistance or seek a different viewpoint. You might have a brainstorming/whiteboarding session with your team or solicit feedback from a coworker. To put it another way, you work with your product management team to address the challenge at hand. Product documentation projects that have been halted will begin to move ahead again when your team combines their knowledge, skills, and expertise, then hash out difficulties and discuss potential solutions.
+
+According to a [research study](https://www.adpri.org/wp-content/uploads/2020/07/14215554/R0101_0718_v2_GE_ResearchReport.pdf) by ADP, the most quality engagement occur in teams with many possibilities for collaboration and exposure to novel problems.
+
+On the other hand, collaboration does not have to be a last resort. Collaboration should be ingrained in the operations of your product management team. The more eyes that are on a project from the start, the easier it is to spot problems (and solve them effectively).
+
+### Collaboration allows individuals to learn from one another
+
+This is key! Especially for the creation and development of product documentation.
+
+One of the nicest aspects of working collaboratively with people who bring a variety of skill sets and backgrounds to the table is the opportunity to learn from one another's experiences and information they gathered from their various departments. Collaborating with team members or even different teams should be viewed as a learning opportunity to produce product documentation that your customers comprehend and enjoy reading, so make use of it.
+
+This entails soliciting views and ideas, exchanging information, learning how your partners approach their part of the project and getting a better understanding of how they work. Learning from colleagues is not only a benefit of cooperation; it's also the first step in creating a learning and development-focused workplace culture.
+
+Teams that cooperate not only learn from one another—their errors, achievements, failures, processes, and so on—but they also develop a better knowledge of the other team's point of view. You get to hear their side of the story: their problems, priorities, and even how they think. Which will be incredibly useful when you work together in the future.
+
+### Some Reflections:
+
+![](https://images.unsplash.com/photo-1595450547833-95af46d7c43a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzMTM3MXwwfDF8c2VhcmNofDQ5fHx0aG91Z2h0fGVufDB8fHx8MTYyNDk5MDE0Mg&ixlib=rb-1.2.1&q=80&w=1080)
+
+With many facets and teams needed to work together to create and develop beautiful and polished user manuals, product documentation, and knowledge portals of any kind its highly essential to work as a team.
+
+Many collaborative technologies, such as an intranet, do this. They're meant to essentially open up your company so that all departments can connect with one another and keep track of what other teams are working on via news updates, announcements, events, and discussion channels, to name a few. But what about specific tools that cater to creating product documentation?
+
+Having a cloud-based documentation creation platform that allows your team to collaborate effectively is very essential.  Using [Zoom ](https://zoom.us/)and other virtual video technologies are a great way to stay connected with remote teams and display changes or issues that arise when writing product documentation. 
+
+Also an interface like [Slack ](https://slack.com/intl/en-ca/)or [Matermost ](https://mattermost.com/trial/?utm_source=google&utm_medium=cpc&utm_campaign=Google_Brand_NA&utm_adgroup=matermost&utm_term=matermost&utm_content=442324885582&gclid=Cj0KCQjwub-HBhCyARIsAPctr7zmyrCswx9f8GB_gVCUMAHiXE7_ZzThC2JNAkxc6htV7h_4UBG0IlcaAq4WEALw_wcB)is a great way to connect in a chat setting, it also allows to drag and drop items into organized chats which is awesome for collaborating with different teams.
+
+That’s why [Docsie ](https://www.docsie.io/)has produced useful features to help you collaborate, and assign various tasks with your product documentation teams with these reasons in mind!
+
+## Foundational Concepts Of Successful Product Documentation Teams & Collaboration
+
+The world is revamping the way we work on product documentation. Especially in terms of how we collaborate.
+
+The majority of labor has grown increasingly team-based as organizations have gotten more global and complicated. Over the previous two decades, time spent by managers and workers in collaborative activities has increased by 50 percent or more, according to research published in[ Harvard Business Review](https://hbr.org/2016/01/collaborative-overload). This means that communication with various facets of the company happens on a consistent basis. 
+
+In addition, product documentation teams are larger, more varied, scattered and more specialized than ever before. While these product documentation teams might be quite efficient at solving the difficult challenges that many modern businesses confront, some of them still have issues implementing effective collaboration strategies.
+
+So, how can employees today communicate effectively while negotiating the prevalent work structures and dynamics that obstruct efficient workplace collaboration? Let's start by talking about what collaboration is and how it is effectively implemented to increase productivity in product documentation development teams.
+
+### What does effective teamwork in the development of product documentation entail?
+
+![](https://images.unsplash.com/photo-1558403194-611308249627?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzMTM3MXwwfDF8c2VhcmNofDl8fHRlYW1zfGVufDB8fHx8MTYyNjI5MTIwNw&ixlib=rb-1.2.1&q=80&w=1080)
+
+Collaboration is defined as when two or more individuals working together to develop or create anything. This can take place in person or electronically, due to the numerous communication technologies and cloud-based applications designed specifically for this purpose.
+
+While there are many various methods to develop and maintain a successful product documentation development team, the most successful ones usually have a few key characteristics. It's an environment where employees feel seen, heard, and free to express themselves and their ideas. Meetings and work sessions are handled efficiently by them. They've put in place standardized systems and collaborative procedures. Their teams are aware of the significance of effective communication with one another. Also, tech teams and technical writers, as well as product managers, have an effective place to see and track product documentation being written on products as well as user manuals for their products. 
+
+The ability to assign tasks and pin tasks and see what tasks need to be done in a managerial manner also adds a huge boost to the completion of product documentation deadlines and separating roles to help foster completion.
+
+Most significantly, these firms' management recognizes that effective workplace cooperation to develop effective, comprehensive, and polished product documentation benefits not just their staff, but also their customers who will better understand the use case of their products and how to use them.
+
+## Let’s explore the advantages of Collaboration.
+
+Ensure that your team is working together efficiently in the office may appear to be a no-brainer.
+
+Still, bringing individuals from various backgrounds and, depending on the size and structure of your organization, different time zones together to work toward a shared objective is no easy task. However, the benefits of good workplace communication and cooperation far exceed the disadvantages.
+
+### Teams add more strength to effectively creating product documentation.
+
+What do some of the world's finest products have in common? They make an effort to build an effective product documentation team to educate their customers about the effectiveness of their products.  Whether a companies product is a non-tangible SaaS software or a tangible product having their team working toward a common objective not only instills a strong sense of purpose in team members, but it also allows them to fill in each other's skill gaps and split up tasks to play to everyone's strengths. Why is this important for product documentation? Product documentation has many facets to it. It has technical aspects; it has linguistic aspects as well as design. By combining the technical team, with the design team and technical writers who are all managed by the product manager and product owner you have a force to reckon with, and they can create amazing product documentation.
+
+### Collaborated product documentation teams are more skillful and knowledgeable.
+
+Good collaboration teams have the chance to acquire new skills from one another, which helps them to advance in their entire personal and professional growth. The act of collaborating forces individuals to think more critically, explain themselves more clearly, and learn more about their abilities, all of which can aid in the development of self-awareness and a better knowledge of their strengths and shortcomings as well as increase their understanding of the products being sold.
+
+Product documentation team members that have a mix of different cultural views are more likely to achieve success. These include people who have lived in a variety of places and speak a variety of languages, as well as those who have strong roots in the region in which they are working and promoting their products.
+
+Translating product documentation into various languages and then having a team who understands these languages is an effective way to polish documentation based on these factors to better reach the heart of customers who live abroad.
+
+### More creativity is needed to produce quality product documentation.
+
+More and more businesses are forming teams that bring employees from all departments together to explore issues and come up with fresh ideas that will help create comprehensive and appealing product documentation that their customers love to read.
+
+Not only can efforts like these help organizations harness the talents of the various departments and views, but studies indicate that groups create quicker, see faults sooner, and come up with better solutions to issues than individuals working alone.
+
+### A more positive customer experience
+
+A well polished and versed documentation which can be viewed in different languages, and versions. Also, with all technical aspects of the documentation simply displayed in a methodical manner and presented appealingly to the customer will increase customers using products and understanding their use case. This can all be achieved with effective teams creating product documentation that jives with all aspects of their customers creating technically sound explanations, that are displayed well and expressed in different languages and to different cultures. This can only be accomplished by a strong team that works well together to communicate their ideas about the different facets of a product's production and customers' use cases.
+
+Happy customers who understand products usages, especially technical products, will give good reviews and essentially become loyal customers for the long hall and through word of mouth share their positive experience with others. This will essentially increase the revenue stream and foster a good reputation for the company.
+
+## 6 virtues for effective collaboration
+
+While the abilities listed above might help you collaborate effectively and create amazing product documentation, working well with others isn't only about what you do, but also the process in which you and your team implement them. The attitude with which you and your team approach collaboration may make all the difference in the world. Next time you find yourself in a situation where you need to collaborate with your team, keep these ideals in mind.
+
+### 1. First and foremost, efficacy
+
+Meetings are a very well pronounced necessity to collaboration, despite the fact that meetings are a necessary part of teamwork, they have received a poor name through time. As a matter of fact the Harvard Business Review stated in their research study that people send a ton of time in meetings, phone calls and responding to emails. The [research ](https://hbr.org/2016/01/collaborative-overload)states: “How much time do people spend in meetings, on the phone, and responding to e-mails? At many companies the proportion hovers around 80%, leaving employees little time for all the critical work they must complete on their own. “
+
+And who hasn't spent an excessive amount of time at a meeting that seemed pointless? Several actions may be taken to transform your team into a high-performing machine of productivity. Having meetings well scheduled throughout the day via priority is a very useful way to set up meetings and tackling issues as they arise.
+
+Also, a daily scrum helps to let everyone know what their tasks are and what issues they may be having as well as what they have accomplished the day before. The scrum is useful so that no one can step on each other’s toes for tasks that need to be completed as well as allow everyone to share their ideas about how to help manage certain situations.
+
+Another method is to ensure that each meeting or phone conference has an agenda and that specific goals are well defined.
+
+Finally, don't forget to assign action items to everyone participating in the product documentation project at the conclusion of every product documentation project that has been completed. This way the team may talk about strengths and weakens tat need to be worked on for the development of the next product documentation so that it runs more smoothly the next time around.
+
+### 2. Explicitness
+
+It is uncommon for all members of a team to be on the same page from the start. Individuals naturally have their own priorities and interests. That is why it is critical to establish everyone's objectives and agendas in advance in order to develop a common denominator that will propel the project ahead.
+
+### 3. Positive Attitude
+
+Simply because a collaborative effort failed in the past does not mean that it will fail again. Shake off any residual hang-ups and embrace each group work scenario as a new beginning, with an open and optimistic mentality. Positivity is contagious just as much as negativity. However, positivity inspires growth, inspiration, and fosters good work habits which will essentially increase overall company morale. Be positive and reward positivity!
+
+Of course, we all have our off days, members who have their off days should be given space so that they can contemplate and transform their off day into a good day for the next meeting day. This is not a loss, but a win! Because one off day is better than an off week. And if one-off day can be recovered so that the next day the employee will be on point then that will work in the long run, and the employee will appreciate working for the team a lot more.
+
+### 4. Fostering Trust
+
+Individuals must feel secure in giving and receiving real constructive criticism, feedback, be motivated by a shared purpose, and have the tools and chances to interact. This can only occur in a trusting atmosphere in which employees believe their colleagues and leaders are looking out for their best interests.
+
+### 5. Insight and emotional intelligence
+
+Each team member plays a critical role. Nonetheless, teamwork can break down when one or more team members believe they are being treated unfairly or that other team members are attempting to tear them down. The more you learn about your coworkers and have an understanding of how they operate and the problems they face, the more likely you are to collaborate successfully.
+
+### 6. Productivity
+
+The most successful organizations have systems and processes in place that allow workers to refer to the schedule and duties of a project in order to have a clear knowledge of how their contributions impact the group. This way, if deadlines are missed or someone is not carrying their weight, the situation can be immediately handled.
+
+Now that we know what a good collaborative team looks like and we know how it should be structured let us take a deep dive into creating certain processes that will help foster an amazing collaborative and effective product documentation team!
+
+## 5 Powerful Processes To Creating An Effective Collaboration For Product Documentation Creation Team
+
+![](https://images.unsplash.com/photo-1583506573326-f44ad9661e45?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzMTM3MXwwfDF8c2VhcmNofDZ8fGZpdmV8ZW58MHx8fHwxNjI2MjkxNjg5&ixlib=rb-1.2.1&q=80&w=1080)
+
+If you've ever worked on a product documentation project that didn't go as planned, you know that encouraging workplace cooperation is sometimes easier said than done. Perhaps your colleagues work remotely and are inaccessible. Or perhaps your organization is overly compartmentalized, and departments are unwilling to exchange knowledge.
+
+If your company is experiencing difficulties with collaboration, one of the finest things you can do is concentrate on strengthening your soft skills. Believe us when we say that learning these five collaboration skills will make teamwork much easier and more successful.
+
+### 1. Communicate intent
+
+Before you begin work or assignment, ensure that your goals are clear. Inform your teammates of your activities and establish reasonable expectations for when you will complete them—and be sure to adhere to them. These examples of good work ethic will show and pave the way to how work is done within your company. be a good example and communicate your accomplished work and requirements.
+
+Additionally, share any changes to the strategy you have established. If something unexpected occurs and you are unable to produce the expected outcomes, explain these adjustments to your product documentation development team.
+
+Again, this is where having an all-in-one communications tool comes in handy. Also, if your product documentation team can video call and instant message one another from the same app, there is a greater likelihood that they will communicate promptly when an issue arises:
+
+### 2. Establishing objectives
+
+When working in a team, it is critical that everyone understands the project's goal and vision, as well as how success will be measured. Setting up goals and objectives should be done for small aspects of projects as well as large ones so that all objects can be tracked with deadlines and optimized to increase productivity.
+
+Also, if someone is working hard and meets objectives on time or before the scheduled date make sure to reward them so that their hard work is appreciated.
+
+Transparency from all angles of creating and meeting deadlines and objectives, from the start fosters trust and helps guarantee that everyone is dedicated to succeeding and working toward a similar goal.
+
+### 3. Listening attentively
+
+When you work closely with people, you must pay close attention to each team member's ideas, criticism, and advice—and answer with consideration and respect. That is the concept behind listening actively and with intent.
+
+While you may have your own views about how you want the product documentation project to proceed or who should do what, you must nevertheless consider your colleagues' perspectives. While you may not always agree with the conclusion, you must ultimately choose the group's needs and obligations over your personal desires.
+
+### 4. Solving problems
+
+Occasionally, situations arise, and individuals make errors. It occurs. When difficulties emerge, try to carefully assess the situation as a group without criticizing any particular individual. Rather than that, spend your efforts collaborating to discover answers. This contributes to the development of trust between team members and ensures that everyone feels comfortable speaking and being honest with one another, even if they make a mistake.
+
+### 5. Effective time management
+
+Collaborating with others requires you to be accountable not only to yourself but also to the members of your product documentation team who rely on you. Here's when time-management abilities come in handy. Prioritizing your tasks and scheduling them appropriately is critical to meeting deadlines and completing the job that your team is relying on you to perform.
+
+## Docsie offers many amazing tools for collaboration!
+
+### To see a video of these instructions watch this video here:
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/0tMPoEYAF-s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+The first thing you will see when you login to Docsie is Discussions, Changes- made on documentation projects and Notifications – which refer to tasks that are completed or are about to be completed.
+
+As well as a toggle menu so you can choose which person these are related to in terms of the project:
+
+![](https://cdn.docsie.io/workspace_WxPJSQ5gsES8Bzjxy/doc_ydgtE07E6Rp4AMmKv/file_8Rm1zP7hPCncODmL0/boo_gz9U5B838VHzHh2VU/e26a487c-b374-c9fd-58c0-134f1b783e09Snag_e143752.png)
+
+This information is great to get you and your team started and on track for the day to meet deadlines and objects more diligently and effectively. As well as know who is doing what, and what has been done. This way no one will step on anyone’s toes and your documentation development team will maintain high productivity.
+
+Also, if you click the top corner tab and press the button which leads into your account:
+
+![](https://cdn.docsie.io/workspace_WxPJSQ5gsES8Bzjxy/doc_ydgtE07E6Rp4AMmKv/file_nAw2DIx3zHkNc3Hpe/boo_gz9U5B838VHzHh2VU/095d5659-a7ca-0d28-4380-6ac2e5e90da4Snag_e16469a.png)
+
+Within the user dashboard on the left-hand side:
+
+![](https://cdn.docsie.io/workspace_WxPJSQ5gsES8Bzjxy/doc_ydgtE07E6Rp4AMmKv/file_j23RtsE1DkVVFA7Ie/boo_gz9U5B838VHzHh2VU/91a8a57a-35c3-7468-3962-afcb4efe86c7Snag_e174b97.png)
+
+You will have access to the workspace users. This allows you to control who is working on what project with your product documentation and to what capacity you want them to be involved in the project:
+
+![](https://cdn.docsie.io/workspace_WxPJSQ5gsES8Bzjxy/doc_ydgtE07E6Rp4AMmKv/file_blLv6vXzGgxTjB7WA/boo_gz9U5B838VHzHh2VU/ccef36ff-fa3a-32ba-432e-8f9afe126012Snag_e199373.png)
+
+Also you can add new users to each product documentation you are working on and this is great to construct your team and help guide them to create amazing product documentation and user guides together within Docsie.
+
+Within each book, everything is time stamped. You can know who did what and when, and that way when you collaborate with your team there will be no questions of who did what! Its all visible in our article revision history feature which is the clock that appears next to the comment icon on the top right corner of your Book dashboard.
+
+
+
+![](https://cdn.docsie.io/workspace_WxPJSQ5gsES8Bzjxy/doc_ydgtE07E6Rp4AMmKv/file_b8rVX59kFM6QeZtfM/boo_gz9U5B838VHzHh2VU/df2e1cfb-d1ce-26ab-2a17-68aaf86aff52image.png)
+
+Once you click this button all the revisions will be presents and time stamped on the left corner of the browser:
+
+![](https://cdn.docsie.io/workspace_WxPJSQ5gsES8Bzjxy/doc_ydgtE07E6Rp4AMmKv/file_jjKiCbU3tw4xRMHst/boo_gz9U5B838VHzHh2VU/54d84dd7-7b45-9ae2-3c1e-8efa54d9a14bSnag_e1c2c00.png)
+
+Do you need to let your team know what is going on with projects, give comments about certain articles within your Docsie Books, or assign tasks?
+
+Docsie has a great solution that allows your team to create comments assign tasks, pinpoint tasks that need to be done, communicate with your team about certain tasks and aspects of the product documentation and this can all be done by clicking the comment icon on the top right corner of your Book dashboard next to publish.
+
+![](https://cdn.docsie.io/workspace_WxPJSQ5gsES8Bzjxy/doc_ydgtE07E6Rp4AMmKv/file_LrFRnH5PkGwQGD5TH/boo_gz9U5B838VHzHh2VU/5aa42685-fddb-24e7-5426-8b7a2ae67392Snag_e1ca121.png)
+
+Now you have all the tools you need to maintain high productivity with super-efficient collaborated teams to create amazing product documentation that your customers will love to read.
+
+If you have any questions about [Docsie ](https://www.docsie.io/)or want to share feedback about our platform please contact us at hello@docsie.io
+

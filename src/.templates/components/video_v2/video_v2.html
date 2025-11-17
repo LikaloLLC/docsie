@@ -1,0 +1,278 @@
+{% if section %}
+{# SEO: VideoObject Schema Markup #}
+{% if section.youtube_url %}
+  {% set video_id = section.youtube_url.split('watch?v=')[-1].split('&')[0] if 'watch?v=' in section.youtube_url else section.youtube_url.split('/')[-1] %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    "name": "{{ section.title or 'Product Demo Video' }}",
+    "description": "{{ section.description or section.title }}",
+    "thumbnailUrl": "https://img.youtube.com/vi/{{ video_id }}/maxresdefault.jpg",
+    "uploadDate": "{{ section.upload_date or '2024-01-01' }}",
+    "contentUrl": "https://www.youtube.com/watch?v={{ video_id }}",
+    "embedUrl": "https://www.youtube.com/embed/{{ video_id }}",
+    "duration": "{{ section.duration or 'PT5M' }}"
+  }
+  </script>
+{% endif %}
+
+<section class="video-section-v2">
+  <div class="video-container">
+    {% if section.badge %}
+    <div class="video-badge">
+      <span class="badge-icon">▶</span>
+      {{ section.badge }}
+    </div>
+    {% endif %}
+
+    {% if section.title %}
+    <h2 class="video-title">{{ section.title }}</h2>
+    {% endif %}
+
+    {% if section.description %}
+    <p class="video-description">{{ section.description }}</p>
+    {% endif %}
+
+    <div class="video-wrapper">
+      {% if section.youtube_url %}
+        {# Extract YouTube video ID from URL #}
+        {% set video_id = section.youtube_url.split('watch?v=')[-1].split('&')[0] if 'watch?v=' in section.youtube_url else section.youtube_url.split('/')[-1] %}
+        <iframe
+          class="video-iframe"
+          src="https://www.youtube.com/embed/{{ video_id }}"
+          title="{{ section.title or 'Product Demo Video' }}"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen>
+        </iframe>
+      {% elif section.video_url %}
+        <video
+          class="video-player"
+          controls
+          {% if section.autoplay %}autoplay{% endif %}
+          {% if section.loop %}loop{% endif %}
+          {% if section.muted %}muted{% endif %}
+          preload="metadata"
+          poster="{{ section.poster or '' }}">
+          <source src="{{ section.video_url }}" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      {% endif %}
+    </div>
+
+    {% if section.cta %}
+    <div class="video-cta">
+      <a href="{{ section.cta.url }}" class="video-cta-button">
+        {{ section.cta.text }}
+        <span class="cta-arrow">→</span>
+      </a>
+    </div>
+    {% endif %}
+
+    {% if section.note %}
+    <p class="video-note">{{ section.note }}</p>
+    {% endif %}
+  </div>
+</section>
+
+<style>
+.video-section-v2 {
+  padding: 4rem 0;
+  background: linear-gradient(135deg, #f8f9ff 0%, #fff 100%);
+}
+
+.video-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  text-align: center;
+}
+
+.video-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-radius: 2rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  animation: fadeInDown 0.6s ease-out;
+}
+
+.badge-icon {
+  font-size: 1rem;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+.video-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1a202c;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.video-description {
+  font-size: 1.125rem;
+  color: #4a5568;
+  max-width: 700px;
+  margin: 0 auto 3rem;
+  line-height: 1.6;
+  animation: fadeInUp 1s ease-out;
+}
+
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+  animation: fadeInScale 1.2s ease-out;
+}
+
+.video-wrapper::before {
+  content: '';
+  display: block;
+  padding-top: 56.25%; /* 16:9 Aspect Ratio */
+}
+
+.video-iframe,
+.video-player {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.video-player {
+  object-fit: cover;
+}
+
+.video-cta {
+  margin-top: 2.5rem;
+  animation: fadeInUp 1.4s ease-out;
+}
+
+.video-cta-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: white;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+}
+
+.video-cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4);
+}
+
+.cta-arrow {
+  transition: transform 0.3s ease;
+}
+
+.video-cta-button:hover .cta-arrow {
+  transform: translateX(4px);
+}
+
+.video-note {
+  margin-top: 1.5rem;
+  font-size: 0.875rem;
+  color: #718096;
+  animation: fadeIn 1.6s ease-out;
+}
+
+/* Animations */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .video-section-v2 {
+    padding: 3rem 0;
+  }
+
+  .video-container {
+    padding: 0 1rem;
+  }
+
+  .video-title {
+    font-size: 2rem;
+  }
+
+  .video-description {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .video-wrapper {
+    border-radius: 0.75rem;
+  }
+
+  .video-cta-button {
+    padding: 0.875rem 1.5rem;
+    font-size: 0.9375rem;
+  }
+}
+</style>
+{% endif %}

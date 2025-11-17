@@ -1,0 +1,197 @@
+{% extends "_base_v2.html" %}
+
+{% block title %}{{ page.title }}{% endblock %}
+{% block description %}{{ page.description }}{% endblock %}
+{% block shareimage %}{% if page.components.hero and page.components.hero.image %}https://www.docsie.io{{ page.components.hero.image }}{% else %}https://www.docsie.io/assets/share-image.jpeg{% endif %}{% endblock %}
+
+{% block additional_structured_data %}
+{# Product Schema for solution pages #}
+{% if page.category in ['ai', 'solutions'] and page.components.hero %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "{{ page.title }}",
+  "description": "{{ page.description }}",
+  "brand": {
+    "@type": "Brand",
+    "name": "Docsie"
+  },
+  "offers": {
+    "@type": "Offer",
+    "url": "https://www.docsie.io{{ page.url }}",
+    "priceCurrency": "USD",
+    "availability": "https://schema.org/InStock"
+  }
+}
+</script>
+{% endif %}
+
+{# FAQ Schema if FAQ component exists #}
+{% if page.components.faq_v2 and page.components.faq_v2.faq_categories %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {% for category in page.components.faq_v2.faq_categories %}
+      {% for item in category.questions %}
+    {
+      "@type": "Question",
+      "name": "{{ item.question | replace('"', '\\"') }}",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "{{ item.answer | replace('"', '\\"') | striptags }}"
+      }
+    }{% if not loop.last %},{% endif %}
+      {% endfor %}
+      {% if not loop.last %},{% endif %}
+    {% endfor %}
+  ]
+}
+</script>
+{% endif %}
+
+{# Breadcrumb Schema #}
+{% if page.breadcrumbs %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://www.docsie.io/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "{{ page.category | title }}",
+      "item": "https://www.docsie.io/{{ page.category }}/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "{{ page.title }}",
+      "item": "https://www.docsie.io{{ page.url }}"
+    }
+  ]
+}
+</script>
+{% endif %}
+{% endblock %}
+
+
+{% block styles %}
+<!-- Global styles -->
+<link rel="stylesheet" href="/new_home/globals.css" />
+<!-- Component specific styles -->
+<link rel="stylesheet" href="/styles/supplementary_page.css" />
+
+<!-- Dynamic component styles - only load CSS files that actually exist -->
+{% if page.components and available_css %}
+  {% for component_name, component_data in page.components.items() %}
+    {% if component_data %}
+      {# Check if component already has a version suffix (e.g., _v2, _v3) #}
+      {% set has_version_suffix = component_name.endswith('_v2') or component_name.endswith('_v3') or component_name.endswith('_v4') %}
+
+      {# Load base CSS if it exists #}
+      {% if component_name in available_css.base %}
+        <link rel="stylesheet" href="/styles/components/{{ component_name }}.css" />
+      {% endif %}
+
+      {# Only load v2 CSS for components without version suffix in their name #}
+      {% if not has_version_suffix and component_name in available_css.v2 %}
+        <link rel="stylesheet" href="/styles/components/{{ component_name }}_v2.css" />
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+{% endif %}
+{% endblock %}
+
+{% block content %}
+{#
+  V3 Template - Dynamic Component Rendering
+
+  This template iterates through components in the ORDER they appear in the YAML file.
+  Unlike v2 which has a fixed order, v3 respects the content creator's intended flow.
+
+  Special handling:
+  - 'simple_spline' renders outside main section (full screen)
+  - All other components render in <section> wrapper
+  - Each component uses render_component() for version resolution
+#}
+
+<!-- Simple Spline Section (Full Screen - if defined) -->
+{% if page.components.simple_spline %}
+  {{ render_component('simple_spline', page.components.simple_spline, page=page) }}
+{% endif %}
+
+<section class="section-padding supplementary-page">
+
+  {% if page.components %}
+    {% for component_name, component_data in page.components.items() %}
+      {% if component_data and component_name != 'simple_spline' %}
+
+        {# Determine if this component needs content-section wrapper #}
+        {% set needs_wrapper = component_name not in ['hero', 'simple_spline'] %}
+
+        {% if needs_wrapper %}
+    <div class="content-section">
+        {% endif %}
+
+        {# Render the component #}
+        {# The render_component function will automatically try versioned components based on ui_version #}
+        {{ render_component(component_name, component_data, page=page) }}
+
+        {% if needs_wrapper %}
+    </div>
+        {% endif %}
+
+      {% endif %}
+    {% endfor %}
+  {% endif %}
+
+  {# Default CTA if no cta_section defined #}
+  {% if not page.components.cta_section %}
+  <!-- Default CTA Section -->
+  <div class="content-section">
+    {% set default_cta = {
+      'title': 'Ready to Transform Your Documentation?',
+      'description': 'Start creating professional documentation that your users will love',
+      'cta': {'text': 'Book Demo', 'url': '/demo/'}
+    } %}
+    {{ render_component('cta_section', default_cta, page=page) }}
+  </div>
+  {% endif %}
+
+</section>
+
+{# JavaScript for interactive components #}
+<script>
+// Add any global JavaScript needed for components
+document.addEventListener('DOMContentLoaded', function() {
+  console.log('Supplementary page v3 loaded');
+
+  // Smooth scroll for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      const href = this.getAttribute('href');
+      if (href !== '#') {
+        e.preventDefault();
+        const target = document.querySelector(href);
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      }
+    });
+  });
+});
+</script>
+
+{% endblock %}

@@ -113,7 +113,7 @@ def load_all_supplementary_pages():
             
         for filename in files:
             # Skip special YAML files that aren't supplementary pages
-            if filename in ['reviews.yaml', 'supplementary_pages.yaml']:
+            if filename in ['reviews.yaml']:
                 continue
                 
             if filename.endswith('.yaml') and not is_hidden(filename):
@@ -157,8 +157,12 @@ def load_all_supplementary_pages():
 
 def generate_supplementary_pages(env, force_version=False, ui_version='v2'):
     """Generate supplementary pages from YAML data with component support"""
-    # Use V2 template for better header/footer
-    template = env.get_template('.templates/supplementary_page_v2.html')
+    # Choose template based on ui_version default
+    if ui_version == 'v3':
+        template = env.get_template('.templates/supplementary_page_v3.html')
+    else:
+        # Use V2 template for better header/footer
+        template = env.get_template('.templates/supplementary_page_v2.html')
     
     # Load all page data from YAML files
     pages_data = load_all_supplementary_pages()
@@ -335,61 +339,68 @@ def debug_render_component(env, name, config, **kwargs):
 
 def render_component_with_version(env, name, config, ui_version='v1', **kwargs):
     """
-    Generic component rendering with version support and fallbacks
-    
+    Generic component rendering with cascading version fallback support
+
     Args:
         env: Jinja2 environment
         name: Component name (e.g., 'hero', 'features')
         config: Component configuration
         ui_version: UI version (e.g., 'v1', 'v2', 'v3')
         **kwargs: Additional template variables
-    
+
     Returns:
         Rendered component HTML
+
+    Fallback chain:
+        v3 → v2 → v1 (original)
+        v2 → v1 (original)
     """
     try:
         print(f"\nRendering component: {name} (requested version: {ui_version})")
-        
+
         if not config:
             print(f"No config provided for {name}")
             return ''
-        
-        # Try to find the best version of the component
-        component_versions = []
-        
-        # Check for specific version first (e.g., hero_v2)
-        if ui_version != 'v1':
-            versioned_name = f"{name}_{ui_version}"
-            versioned_path = f'.templates/components/{versioned_name}/{versioned_name}.html'
-            try:
-                env.get_template(versioned_path)
-                component_versions.append((versioned_name, versioned_path))
-                print(f"Found versioned component: {versioned_name}")
-            except:
-                print(f"Version {ui_version} not found for {name}")
-        
-        # Always add v1 (original) as fallback
-        original_path = f'.templates/components/{name}/{name}.html'
-        try:
-            env.get_template(original_path)
-            component_versions.append((name, original_path))
-            print(f"Found original component: {name}")
-        except:
-            print(f"Original component not found: {name}")
-        
-        # Use the first available version
-        if component_versions:
-            selected_name, selected_path = component_versions[0]
-            print(f"Using component: {selected_name}")
-            
-            template = env.get_template(selected_path)
-            result = template.render(section=config, **kwargs)
-            print(f"Successfully rendered {selected_name}")
-            return result
+
+        # Build cascading fallback list based on requested version
+        version_fallbacks = []
+
+        if ui_version == 'v4':
+            version_fallbacks = ['v4', 'v3', 'v2', 'v1']
+        elif ui_version == 'v3':
+            version_fallbacks = ['v3', 'v2', 'v1']
+        elif ui_version == 'v2':
+            version_fallbacks = ['v2', 'v1']
         else:
-            print(f"No version of component {name} found")
-            return f"<!-- Component {name} not found -->"
-            
+            version_fallbacks = ['v1']
+
+        # Try each version in fallback order
+        for version in version_fallbacks:
+            if version == 'v1':
+                # v1 is the original component without version suffix
+                component_name = name
+                component_path = f'.templates/components/{name}/{name}.html'
+            else:
+                # Versioned components have suffix
+                component_name = f"{name}_{version}"
+                component_path = f'.templates/components/{component_name}/{component_name}.html'
+
+            try:
+                env.get_template(component_path)
+                print(f"✓ Found component: {component_name} (tried {version})")
+
+                template = env.get_template(component_path)
+                result = template.render(section=config, **kwargs)
+                print(f"Successfully rendered {component_name}")
+                return result
+            except:
+                print(f"✗ {component_name} not found, trying next fallback...")
+                continue
+
+        # No version found
+        print(f"❌ No version of component {name} found (tried: {', '.join(version_fallbacks)})")
+        return f"<!-- Component {name} not found (tried versions: {', '.join(version_fallbacks)}) -->"
+
     except Exception as e:
         print(f"Error rendering component {name}: {str(e)}")
         print(f"Config type: {type(config)}")
@@ -442,7 +453,7 @@ def main():
     args = parser.parse_args()
     
     # Determine the UI version
-    ui_version = 'v2'  # default changed to v2
+    ui_version = 'v3'  # default changed to v3 for dynamic ordering
     if args.version:
         ui_version = args.version if args.version.startswith('v') else f'v{args.version}'
     elif args.v4:

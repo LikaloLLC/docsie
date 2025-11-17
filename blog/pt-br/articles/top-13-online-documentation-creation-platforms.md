@@ -1,0 +1,421 @@
+Documentation is the cornerstone of any company. It helps teams of all sizes share information internally and externally. Companies have transitioned to online documentation tools for product  documentation, user guides, and user manuals so that new and repeat customers can access these documents online, from virtually anywhere. Many companies also use password protected documentation within their organization to help, train, inform and maintain projects, such as API documentation, within productive teams.
+
+We have explored the greatest features, price plans, and support policies for each documentation  platform that serves as the base for all knowledge base software. Please share your thoughts in the comments: ***what is most essential to you, and what platform are you planning to utilize?***
+
+## What Are The Top Online Documentation Creation Platforms?
+
+1. Docsie: Best for multi-language product documentation
+2. Archbee: Ideal for developer documentation
+3. Confluence: Great for internal project documentation
+4. Document360: Suited for SaaS knowledge bases
+5. GitBook: Perfect for open-source project documentation
+
+Key features to consider:
+- Collaboration capabilities
+- Version control
+- Search functionality
+- User roles and permissions
+- Multiple language support
+- Integration options
+
+These platforms help businesses create, manage, and publish internal and external documentation, improving information sharing and user support.
+
+![Online doucmentation creation platforms](https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_XW8BD8lZzemyhhyuM/top_13_online_documentation_creation_platforms_870a6026-ce38-5015-b683-85fe2763b769.png)
+
+## 1. Docsie
+
+![Docsie](https://lh7-us.googleusercontent.com/P3UoYa-haAtabCeh1YvZsABJWBfCRYjV8S9u_JJSV6BIMmwRNHogfyT2S7WLuIMDhetor4BMQXcogW-TlmweCYeCzHfknhUndSnN3GxMNyx7qBli9w7K-woq5DWKpPMyp2oOxspkmp-3CH7A01ADebo)
+
+### Customer Support:
+
+-   Email Support, [Knowledge Base](https://help.docsie.io/), Phone Support
+    
+
+### Pricing:
+
+-   Docsie has a free-forever plan called Startup, and 4 additional paid plans targeted to small, medium and large businesses consecutively. [See Pricing](https://www.docsie.io/pricing/)
+    
+
+### Training:
+
+-   [Onboarding Demo/Walkthrough, Conference Call](https://www.docsie.io/demo/), [Youtube Tutorials](https://www.youtube.com/channel/UCnQm591jTzvHwb003Y8e1XA)
+    
+
+**Summary**: The first alpha of Docsie was launched in May of 2018. Docsie is a smarter way to create stunning product  documentation. Docsie’s goal is to help  businesses write better product  documentation.
+
+Docsie is a robust and powerful platform which allows you to create, manage, design, and publish every aspect of product  documentation and knowledge base portals. It has collaboration capabilities which allow your users to work together, assign tasks, and comment on documentation as it’s written. User roles and permissions allow granular control over data  access. All changes in Docsie are time-stamped, so you will know what your users are doing and where they are making changes. Docsie also supports a (virtually) unlimited number of versions and translations using its AI powered ghost translator, offering a high level of accuracy with translated docs.
+
+Docsie offers universal search functionality across all documents and workspaces. The Docsie portal is available for native hosting as part of a Docsie plan, with self-hosting available using Docsie Script and the supplied Docsie Styling Guide. Docsie provides numerous plugins and add-ons that enable versatile and dynamic online documentation. Docsie can be used for internal documentation as well as external documentation. It allows for drag and drop capabilities as well as secure pages with **JSON web token** (JWT) verification. Docsie also has a feedback tool called Vocally which allows you to collect text feedback and record user-side interaction videos, helping you iterate and improve your documentation.
+
+**Best For**: Helps businesses create and maintain help  docs and user manuals in multiple languages.
+
+**Capterra Rating**: 4.7/ 5
+
+![Capterra Rating](https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_SndTzUknJcb7NMFsJ/capterra_rating_21b37c33-9a91-3202-8abe-bc1dc2073721.png)
+
+Please note that the platforms listed below are in alphabetical order and do not reflect a ranking.
+
+## 2. Archbee
+
+![Archbee](https://lh7-us.googleusercontent.com/8YEqVK6c8Tf2NbXcKZ6_LrvbtI33Hy_8tGKFW_HhNE2OQLvh2rCiip16MRpHFn_U-f_U3bnGuLDIigcK8yDxLfIuR2KuBl0XVxKMnE6H2GRZVylXVqbH-75mxTT7N9_IvLP2Q9WhbzEs9Tfnm9JF5vQ)
+
+### Customer Support:
+
+-   Online Chat, 99.9% SLA target (not guaranteed)
+    
+
+### Pricing:
+
+-   Free Starting tier offers unlimited docs in 2 collections, with 1GB storage and integration support. Growing and Scaling are paid tiers, with additional users, unlimited collections, and custom domains. No SLA guarantee for Starting tier. [See Pricing](https://www.archbee.io/pricing)
+    
+
+### Training:
+
+-   Product Tour, Sales Onboarding. [Documentation](https://docs.archbee.io/?_ga=2.226462553.29095388.1629139752-741285886.1628605638)
+    
+
+Summary: Archbee helps developers and businesses to create documentation for complex products and services. The process is simplified using a what-you-see-is-what-you-get (WYSIWYG) editor for drag-and-drop document construction. It also has global search with real-time indexing.
+
+Archbee supports lists, checklists, tables, callouts, minitasks, file uploads, pictures and video, map integration, multi-language code editing and diagrams. Other integrations include Mermaid.js, Swagger, GraphQL, change logs and HTML iFrame embedding.
+
+Business features include access controls, change management and version history, collaboration via commenting and real-time editing, and finally password-protection even with externally-facing docs.
+
+**Best For**: Product  docs on your domain, API references, developer guides, internal wikis, knowledge bases, diagrams.
+
+**Capterra Rating**: 4.7/ 5
+
+## 3. Confluence
+
+![Confluence](https://lh7-us.googleusercontent.com/hCbD1uYhmEGfjJSm7sga12Z-ys5MMxHsyMlnebp_kgZf3bczjozQLRj-OACK9f9b43bHKqXI2AzvFW0ZEj5FN1Tw_M4s869i4R1KDxQrcgSVtpt36PH_szw2gWMQdKWnyz7v3C_8iQbtLaIjQmsq11M)
+
+### Customer Support:
+
+-   Online Chat and Email, [Knowledge Base](https://confluence.atlassian.com/alldoc/atlassian-documentation-32243719.html), Community Forum
+    
+
+### Pricing:
+
+-   Confluence has a free tier alongside paid Standard, Premium and Enterprise tiers. [See Pricing](https://www.atlassian.com/software/confluence/pricing)
+    
+
+### Training:
+
+-   Training and Certification, Community Forum, [Documentation](https://confluence.atlassian.com/kb)
+    
+
+**Summary**: Confluence 1.0 was launched by Atlassian on March 25th 2004. Its goal was to create an enterprise knowledge management system that retains the power of wikis at its core - powerful simplicity.
+
+Confluence is open and collaborative, enabling seamless access to documents and file sharing between employees. This helps teams create, manage and collaborate on projects ranging from product launches to marketing campaigns. Dedicated workspaces allow for segmentation and categorization of information, with granular permissions and cross-team collaboration. Furthermore, Confluence integrates with the wider Atlassian product family, and applications on the Atlassian Marketplace.
+
+Global search with intuitive page hierarchies is one of Confluence’s features. It also has ober75 customizable templates for documentation planning and report generation. Confluence integrates with Jira for bug tracking and Agile development. This is achieved via connectors, which enable issue tracking and dynamic roadmap updates. Confluence users can control access to their own docs, with workspace admins controlling wider data  access. Finally, the personal feed delivers relevant updates to users on the main dashboard, keeping them informed on projects, tasks, recent files and recent contacts.
+
+**Best For:** Internal project  documentation
+
+**Capterra Rating**: 4.4/ 5
+
+## 4. Document360
+
+![Document360](https://lh7-us.googleusercontent.com/_Ezpk0b5hvT1QtbwqavoEEGDWtTKiDmlrzxnx-RihqXmURu09F3ucNtCRCn5ViwfCvvPYiEB8GZWi_wBheW-jF4VMkk91tMRYE9oyecTSdhGESZZItGsiyvoob3Ki5ezJtOWma9UDHLdhThniRETVYw)
+
+### Customer Support:
+
+-   Email Support
+    
+
+### Pricing:
+
+-   Forever free tier that includes 2 free users and a knowledge base. Pricing starts at $149 per project per month for Standard, Professional is $299, Business $399, and Enterprise for $599 with options for custom agreements. [See Pricing](https://document360.com/pricing/)
+    
+
+### Training:
+
+-   Book a Demonstration, [Documentation](https://docs.document360.com/docs)
+    
+
+Summary: Document360 was founded in 2017 after a 14 day Hackathon challenge, and is headquartered in London, United Kingdom. Document360 is a knowledge management system specifically for the Software-as-a-Service (SaaS) industry. Based in the cloud, Document360 provides a self-service knowledge base for customers and internal staff.
+
+It supports authoring and themes with built-in analytics and enterprise-grade backup, restore and version monitoring.
+
+Document360 allows for multiple knowledge bases to be managed from a single location. Analytics filters data and generates documentation  reports to help writers write better documentation. Data permissions prevent unauthorized data  access, with private documentation protected by passwords or access tokens. Finally, the search function indexes results across integrated applications, enabling search in Disqus, Intercom, Zendesk, and Google services to name a selection.
+
+**Best For:** Building a knowledge base for use in the Software-as-a-Service industry.
+
+**Capterra Rating**: No reviews
+
+## 5. Documize
+
+![Documize](https://lh7-us.googleusercontent.com/vCqnMRvEKz3ejTyBA0W9ZDw7KprOnDKNQUMJRbTr9YIe7EzVpc2UGwa1Kyhcv0WpEluXQvITnY9XCGkmhXhZSvhy-TAYOLtVUbjUH8xiZu7jWfjShhUhxHCZzxBV_1dSY0d7Y5DG15e5QWXZTrStm2A)
+
+### Customer Support:
+
+-   Email Support, [Knowledge Base](https://docs.documize.com/)
+    
+
+### Pricing:
+
+-   Documize supports up to 10 users on its free trial. Beyond this, a monthly subscription cost is applied as the user count increases. [See Pricing](https://www.documize.com/pricing/)
+    
+
+### Training:
+
+-   Feature Tour, Documentation HQ for onboarding.
+    
+
+Summary: Documize was founded in February 2014. It organizes existing Word documents stored by companies, and makes them searchable. This enables greater collaboration and information discovery using a pre-existing documentation library.
+
+With Documize, businesses can create a knowledge base using existing Word documents. The default template options allow for cut-and-paste snippets, helping to develop a broader knowledge library. Within documents, users can add rich text, code snippets, markdown, Jira or Trello boards and many others.
+
+Documize enables change management procedures such as with requesting, approving and publishing documents or content. It also has version history and version control. Documize takes feedback from users and writers, acquiring feedback that can then be used to iterate and improve on documentation. This feedback includes user messages, interaction recordings and time-on-page metrics.
+
+**Best For:** Importing Word docs and creating a searchable knowledge base
+
+**Capterra Rating:** 4.6/ 5
+
+## 6. Gitbook
+
+![Gitbook](https://lh7-us.googleusercontent.com/HiOs126BtOOAjtXRRKPR8aIQouPXXhN9WswN3niPixbP1-wLeFxSVujL_IpHP4raIe3qXbgR5J3_XetSNMPNTDdE2e39Npwf4HQd8hzYuqqt63SrRJe15nOS44J0G7hLKOEDZ4xEJkzDGG8Jbvxa6qg)
+
+### Customer Support:
+
+-   Email Support, GitHub presence.
+    
+
+### Pricing:
+
+-   Open-sourceprojects get free access to GitBook. Team plans start from $6.40 per user per month (5 users minimum), followed by Business at $12 per user per month( 20 users minimum) and Enterprise with custom pricing from $400.
+    
+
+### Training:
+
+-   Option to book a demonstration. Otherwise, training is provided through [documentation](https://docs.gitbook.com/).
+    
+
+**Summary:** GitBook was founded in 2014 and is headquartered in Lyon, France. GitBook started as an open-source solution for GitHub project  documentation.
+
+GitBook helps product  documentation  teams to organize, share and publish knowledge from a centralized documentation  platform. This includes internal and external documentation. GitBook supports all text formats, countless programming languages and video or image content. It helps writers to develop and publish documentation without advanced design or coding skills. Integration with GitHub allows for document synchronization; updating docs as code changes in the repository. This includes save/merge support for asynchronous updates, and real-time collaboration between users. GitHib is completely free for open-source  projects, non-profits and students.
+
+**Best for:** Creating an open source solution for developers to publish materials within a git repository.
+
+**Capterra rating:** 5/5
+
+## 7. Guru
+
+![Guru](https://lh7-us.googleusercontent.com/ObYXqicN9DRm31x3-7eNQNE9Dbzb5GmIzV7EeNw-w9HIKMgKa6zsqQOGpT3hGFqgU4ARxUlD2653XmH23yvgz6M3GVy6crogbrIi9meJD6U20xdUsTKDK0VSb9yfiiU6LRnbYf0NEdLNtY3G_yL1T6o)
+
+### Customer Support:
+
+-   [Help Center](https://help.getguru.com/en/), Email, Live Chat
+    
+
+### Pricing:
+
+-   Unlimited free “Light users” with read-only access or Starter, Builder and Expert paid plans. [See Pricing](https://www.getguru.com/pricing)
+    
+
+### Training:
+
+-   [Guru Academy](https://academy.getguru.com/) for video courses, [Community forum](https://community.getguru.com/) and FAQ area, Developer Network.
+    
+
+**Summary:** Guru was founded in 2013 and is headquartered in Philadelphia, PA. Guru is a knowledge management solution focused on collaboration. It is the world’s first “revenue empowerment” network that leverages artificial intelligence to improve sales, support and customer success team effectiveness.
+
+Guru allows for the creation of business wikis aligned with existing workflows. This ensures employees have access to all the relevant knowledge needed to fulfill their job role. Guru enables the creation, sharing and editing of documentation on the platform from external sources, integrating with existing workflows. This includes contextually-relevant, expert-verified information across Slack, Microsoft Teams, and email, alongside customer relationship management (CRM) tools. The Guru editor allows for importing, formatting, and editing of existing documentation, or the creation of documentation from scratch with export functionality.
+
+**Best For:** Creating business wikis for internal use
+
+**Capterra Rating**: 4.6/ 5
+
+## 8. Notion Team Wiki
+
+![Notion](https://lh7-us.googleusercontent.com/ktzovt8CyjcUoKn5o_SfXOZppckjbyKfy2OUOvqF4gZCrGofsDG45ghldmWL6ncW6JkObaHuUon2P0cSHUMkURAw8dijfvU8PFx2CWeZH2zIXGO2lcbdTsgrLuBxFLyzsKhBmm7Wd1vfyeMoSkJ0YBo)
+
+### Customer Support:
+
+-   Web-based support over email. Live chat available in the app.
+    
+
+### Pricing:
+
+-   Personal tier is free (with a 1000 block limit). Personal Pro and Teams are paid tiers targeted to solopreneurs and freelancers. Finally, Enterprise is for larger businesses and offers an SLA and a dedicated line manager. [See Pricing](https://www.notion.so/pricing)
+    
+
+### Training:
+
+-   Notion offers [self-service documentation](https://www.notion.so/guides) as an example to its users of the capabilities of the platform. Notion also provides templates and pre-configured pages to get up and running quickly. The platform does not provide direct training to customers.
+    
+
+**Summary:** Notion was founded in 2013 and is headquartered in San Francisco, California. Notion was created to help companies with notes, tasks, wikis, and databases. The software combines many common work applications into one, making it a one-stop shop for note taking, task management, and project management. The web app is accessible on most modern web browsers with dedicated application packages on Android and iOS.
+
+Notion Team Wiki is designed as a centralized storage location for team  documentation. This ranges from office work policy documents to company goals and objectives. Other items could include employee contact information, engineering practice docs, and a centralized knowledge portal for employees and customers. It allows users to drag and drop lists, images, embedded content and videos using a WYSIWYG editor. Notion also supports page nesting with layered access controls. Additionally, Notion’s Team Wiki allows you to share workspaces with documentation  teams, enabling collaboration with comments and direct user mentions. These workspaces can be shared internally, externally or both ways with broad potential depending on how permissions are configured.
+
+**Best For:** Creating internal product  documentation.
+
+**Capterra Rating:** 4.7/ 5
+
+## 9. Nuclino
+
+![Nuclino](https://lh7-us.googleusercontent.com/SRVmSoVfZIUNbp5E7p1ew9spDXI7jknHDVjf6a2NAV-UbWvvDmZEbjQ1I6Q6YyCoFa87Us-5jzjjBh0PiWA5maWjvhTcPE4LjCdd8pVLfAmZdLXodqDn5DYTGgR3UDvPpv8hFbtlu7EOqXbMj94CKsE)
+
+### Customer Support:
+
+-   Email, [Knowledge Base](https://help.nuclino.com/)
+    
+
+### Pricing:
+
+-   A basic FREE tier with 50 items and 2GB total storage. Paid tier allows for unlimited items and 10GB storage per user. [See Pricing](https://www.nuclino.com/pricing)
+    
+
+### Training:
+
+-   Learning Center available providing an overview of the platform in different business contexts (HR, products, projects)
+    
+
+**Summary:** Nuclino was founded in 2015, and is headquartered in Munich, Germany. Nuclino is a simple and responsive real-time  team wiki solution that enables greater productivity and collaboration. Teams can record, share and locate knowledge on the fly, with visibility into the real-time actions of team members as they edit and search.
+
+Nuclino supports images, text, video, task management, embedded web elements and code blocks. It also natively supports markdown. All technical writing is time stamped with version history, and user changes can be seen in real-time. Nuclino is designed to have multiple users working on one page seamlessly, making change tracking and feedback easier. The search function uses indexing and caching for instant search results, with contextual filters for advanced search. Nuclino also allows for the visual representation of items using boards and graphs.
+
+**Best For:** Creating a knowledge base to share information
+
+**Capterra Rating:** 4.6/ 5
+
+## 10. Readme
+
+![Readme](https://lh7-us.googleusercontent.com/PJDCTv6ZNCgBYWSrQPZaswgzNMeHG3GE7nSfNYCyJiiMu3HVpkvV8Vx0oVo78lHjEf16yojtgd6-I8IlFRPfmXDuF-QyWNlM7Fm_4GUdnPBsgBgSwlewcVuFDxvIotutfkkvv0NtV0I0N_Pjar5RJzs)
+
+### Customer Support:
+
+-   Email Support, Online Chat
+    
+
+### Pricing:
+
+-   Free tier supporting 3 API versions and 5 admin users on a single project. Paid tiers start at $99 per project per month. [See Pricing](https://readme.com/pricing)
+    
+
+### Training:
+
+-   [Knowledge Base](https://docs.readme.com/docs/introduction), Virtual Tour, Customer Support.
+    
+
+**Summary:** Readme was founded in 2014, and is headquartered in San Fransisco, California. Readme is a fully configurable collaborative documentation  platform. It specifically focuses on dynamic API and software documentation, especially for software developers. Users can interface with the API directly using the familiar Swagger design tool and OAS files. There is also a markdown editor and theme building support.
+
+It functions as a knowledge base for API and software  docs. Users can write in their favourite API development tools, and copy real-world code directly into their docs. Versioning and change logs are available on each document. Readme has support for images, video and embedded content, along with custom CSS frameworks.
+
+Finally, Readme has extensive collaboration functionality. Team members can suggest edits, make comments on docs, manage versions, create new versions and much more. This includes internal documentation, and user-facing documentation.
+
+**Best for:** Creating API or software documentation
+
+**Capterra rating:** No Reviews
+
+## 11. ReadtheDocs
+
+![Read the Docs](https://lh7-us.googleusercontent.com/rTC3DFAx_cO8WoAyFwUSVGM61arOaLcxHp7GTnndPkpAJLrJBm8Pltvd1w5ia7eLmpGsM7JHcL3hoxRAMxdrMAOQHs9YqurgvcmH1Xhwt1f6XHQAXmmypNVbqHR7r28dIB43VtP3vT-9K7PoizitWaA)
+
+### Customer Support:
+
+-   Open-Source Community, focus on community bug fixes and support. Community version has limited free support. Business version offers priority support.
+    
+
+### Pricing:
+
+-   ReadtheDocs has 3 tiers: Basic, Advanced and Pro. [See Pricing](https://readthedocs.com/pricing/)
+    
+
+### Training:
+
+-   [Knowledge Base](https://docs.readthedocs.io/en/stable/) and Community Educators. Stack Overflow and Github communities.
+    
+
+**Summary:** ReadtheDocs was founded on January 1st, of 2017 in Portland, Oregon.
+
+ReadtheDocs is an online platform offering documentation services to the open-source community and businesses. These services include open source development, maintenance, platform integration, document process review and consultation. Open source development involves integrating ReadtheDocs, sphinx, sphinx extensions, and python development. Platform integration is accomplished through automatic generation of API references and markdown text.
+
+ReadtheDocs offers assistance to more than 100,000+ open source  projects, enabling documentation hosting and sharing using a custom domain and style. They allow their users to automate the process of creating, versioning, and hosting software documentation. When you upload code to your preferred version control server, such as GitHub or GitLab, ReadtheDocs will automatically generate, update and synchronize your documentation. Aside from creating and hosting documents on the web, ReadtheDocs can also export PDFs, single-page HTML and ePub files for use with eReader devices. ReadtheDocs allows their users to create several documentation  versions - e.g. version 1, version 2 - simply by creating a distinct branch or tag in your version control system.
+
+**Best For:** Open source  projects looking to create and host documentation for free.
+
+**Capterra Rating:** 4.6/ 5
+
+## 12. Slab
+
+![Slab](https://lh7-us.googleusercontent.com/tqKlgt3FXzd72NkwPSNzNyr35ICZO1qh6ms0uog-HoZXFS85h4rq21OpsabNXLNd4WQxjjXI7gokNwc5485-UkGoFiW46UdGR6CQg6uYuuEGl6CqPH1xia4f_lrYdHG-83QuKsdhqDg7xefElxt7XMM)
+
+### Customer Support:
+
+-   Email Ticket
+    
+
+### Pricing:
+
+-   The Slab Free tier allows for 10 users and 90 days of version history, albeit with a 10MB file size limit and no guests allowed. Startup and Business remove these limits at $6.67 and $12.50 respectively per user per month. Business also benefits from an uptime SLA. [See Pricing](https://slab.com/pricing/)
+    
+
+### Training:
+
+-   [Help Center](https://help.slab.com/en/) and [Resource Library](https://help.slab.com/en/articles/4291565-attaching-files-in-posts)
+    
+
+**Summary**: Slab was founded in August 2016 in San Fransisco, California. Slab is for modern businesses who need modern knowledge bases. Businesses  use Slab to share learning materials and documentation, both internally and externally.
+
+Slab is a knowledge base  documentation  platform that integrates with numerous other tools. This includes spreadsheets, slides, flowcharts, and tasks or projects. Slab supports various editing functions as found in Microsoft Word and others, all provided through a web application. Slab will automatically organize and create contextual links between information, including comments and collaborative input from team members. The result is a universal search function that can see documentation, team comments and project tasks in one place, even across numerous integrated tools.
+
+**Best For:** Companies with existing integrations that want to centralize and streamline knowledge searching.
+
+**Capterra Rating:** No reviews
+
+## 13. Zendesk Guide
+
+![Zendesk Guide](https://lh7-us.googleusercontent.com/y46V8ulT_jxUrVnWshJUhHHnl3s7H3waavQ1PFjkbAF4TTfWo_9W9T385dhz8V3LhF1vvHdoikzr_u6veltogjN7PUoP8L0oOCm8IdcX87gRDOcgEf8OsV17tbDjjnxLpZD_4u75QG0uvArLlf75VjU)
+
+### Customer Support:
+
+-   Help Center, Email, Live Chat
+    
+
+### Pricing:
+
+-   Zendesk has three suites, Suite Team, Suite Growth, and Suite Professional. There is a free trial, but no free option. [See Pricing](https://www.zendesk.com/pricing/#everyone)
+    
+
+### Training:
+
+-   Zendesk provides targeted [training](https://training.zendesk.com/?_ga=2.238045382.77048913.1629135800-534540365.1628603068&_gac=1.216744676.1628603070.CjwKCAjwx8iIBhBwEiwA2quaq6e7Mxj9BGHv8qpCV3mxIJxQbgv_s4wCmrJqxRgxmduJn12BD2cwFBoCBXEQAvD_BwE) for the workforce, and offers certification for consultants and service providers.
+    
+
+**Summary**: Zendesk began operations in 2007 and is based in San Francisco, California. Zendesk supports more than 150,000 clients in more than 30 languages across hundreds of industries. Zendesk is a customer service platform that produces software that enables organizations and their customers to collaborate more effectively. It enables businesses to increase consumer interaction and gain a deeper understanding of their customers. Zendesk's products are simple to use and deploy. They enable companies to move rapidly, focus on innovation, and expand in accordance with their growth.
+
+Zendesk guides is designed to turn your Zendesk help chat information to user guides to help  users. It is designed on the premise of converting all the written information of a help guide into a knowledge portal for that purpose. It can be published to your help center, Web Widget, Mobile SDK., app or anyone you could plug this information into. Guide can also solve tickets by their Zenbot which allows questions to be presented to your customers. Zendesk Guides also allows you to localize your help knowledge into 40 different languages.
+
+Zendesk started operating in 2007 from San Fransisco, California.
+
+Zendesk is known as a customer success platform, supporting 150,000+ clients in 30 different languages across all industries. It enables customer support services via email ticketing systems, live chat and phone.
+
+Zendesk Guides is specifically targeted to documentation and is included with any Zendesk plan. It is a self-service knowledge base for companies that can store and serve hundreds of documents and user guides across the globe. In the Zendesk ecosystem, this includes auto-replies with knowledge base  articles for email support tickets and detailed reporting metrics.
+
+**Best For:** An all-in-one customer success solution with documentation hosting and contextual doc sharing in the customer support pipeline.
+
+**Capterra Rating:** 4.4/5
+
+## Conclusion
+
+Hope this blog has helped you explore the various documentation  platforms and their features, pricing plans and support policies. We hope that the information will help you select the right documentation  platform as per your business requirements. So, the next time you plan to subscribe to a new software documentation plan, do remember the above-mentioned factors that you need to take into consideration to make the final decision.
+
+## Frequently Asked Questions
+
+  
+**1. What is the importance of a documentation  platform for a company?**
+
+Documentation  platform helps businesses share information internally and externally and simplifies the documentation process. They facilitate effective communication among teams and external shareholders. Some of the common uses of documentation  platforms are in businesses that have to provide product  information, user guides and user manuals for software products and more for easy access
+
+**2. What features should I consider when choosing a documentation  platform?**
+
+There are several things you need to consider before selecting a documentation  platform. Collaboration capabilities, version control, search functionality, user roles and permissions are some of the most important specific needs you need to take into account before finalising a documentation  platform for the technical needs of your business. Other factors that you need to look out for are multiple language support, drag-and-drop capabilities and secure page options to get the best software documentation tools.
+
+**3. Are there any free to use  documentation  platforms?**  
+  
+Some documentation  platforms provide free access to small businesses. However, these plans have limited features and restrict the number of users that can access the platform. Therefore, free plans offered by documentation  platforms are limiting in nature.
+
+**4. How documentation  platforms are priced?**  
+  
+Documentation  platforms are usually priced in relation to the features they offer. The pricing could also depend on the total number of users that will be using the documentation  platform in your company.

@@ -1,212 +1,960 @@
 <!-- Base template of the article page. -->
 <!DOCTYPE html>
-<html lang="en">
+
+
+
+
+
+  
+  
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+      
+      
+    
+  
+
+
+
+
+
+
+
+
+<html lang="hu">
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
   
 
-    
-    <link rel="icon" type="image/png" sizes="32x32" href="/blog/https://d1iq6qzgppjlud.cloudfront.net/images/favicon/favicon-196x196.png">
+  
+    <link rel="icon" type="image/png" sizes="32x32" href="https://d1iq6qzgppjlud.cloudfront.net/images/favicon/favicon-196x196.png">
 
 
-  <!-- Primary Meta Tags -->
-  <title>Docsie.io Blog - Mik azok a webhooks, és hogyan használja ki őket a Docsie?</title>
+  <!-- Primary Meta Tags - MUST BE WITHIN FIRST 50 LINES -->
+  <title>What Are Webhooks, and How is Docsie Utilizing them to its Benefit?</title>
   <meta name="author" content="Tanya A Mishra"/>
-  <meta name="title" content="Mik azok a webhooks, és hogyan használja ki őket a Docsie?">
-  <meta name="description" content="Ebben a blogban arról beszélünk, hogy mik azok a Webhooks, és hogyan használja ki őket a Docsie?"/>
+  <meta name="title" content="What Are Webhooks, and How is Docsie Utilizing them to its Benefit?">
+  <meta name="description" content="In this blog we are talking about What are Webhooks, and how is Docsie utilising them to its benefit?"/>
   <meta name="keywords" content="Technical Writing"/>
+  
+  
+  
+  <link rel="canonical" href="https://www.docsie.io/blog/hu/articles/what-are-webhooks-and-how-is-docsie-utilizing-them-to-its-benefit/">
+  
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://www.docsie.io/blog/blog/hu/articles/what-are-webhooks-and-how-is-docsie-utilizing-them-to-its-benefit/">
-  <meta property="og:title" content="Mik azok a webhooks, és hogyan használja ki őket a Docsie?">
-  <meta property="og:description"
-        content="Ebben a blogban arról beszélünk, hogy mik azok a Webhooks, és hogyan használja ki őket a Docsie?">
+  <meta property="og:url" content="https://www.docsie.io/blog/hu/articles/what-are-webhooks-and-how-is-docsie-utilizing-them-to-its-benefit/">
+  <meta property="og:title" content="What Are Webhooks, and How is Docsie Utilizing them to its Benefit?">
+  <meta property="og:description" content="In this blog we are talking about What are Webhooks, and how is Docsie utilising them to its benefit?">
   <meta property="og:image" content="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_m04DV8imyNv6X2sU6/142c4f42-36fa-7e71-f791-a77ea80fbf1bwhat_are_webhooks__and_how_is_docsie_utilising_them_to_its_benefit.jpg">
+  <meta property="og:image:alt" content="What Are Webhooks, and How is Docsie Utilizing them to its Benefit?">
+  <meta property="article:published_time" content="2023-07-07T11:14:02+00:00">
+  <meta property="article:modified_time" content="2023-07-07T11:14:02+00:00">
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="https://www.docsie.io/blog/blog/hu/articles/what-are-webhooks-and-how-is-docsie-utilizing-them-to-its-benefit/">
-  <meta property="twitter:title" content="Mik azok a webhooks, és hogyan használja ki őket a Docsie?">
-  <meta property="twitter:description"
-        content="Ebben a blogban arról beszélünk, hogy mik azok a Webhooks, és hogyan használja ki őket a Docsie?">
+  <meta property="twitter:url" content="https://www.docsie.io/blog/hu/articles/what-are-webhooks-and-how-is-docsie-utilizing-them-to-its-benefit/">
+  <meta property="twitter:title" content="What Are Webhooks, and How is Docsie Utilizing them to its Benefit?">
+  <meta property="twitter:description" content="In this blog we are talking about What are Webhooks, and how is Docsie utilising them to its benefit?">
   <meta property="twitter:image" content="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_m04DV8imyNv6X2sU6/142c4f42-36fa-7e71-f791-a77ea80fbf1bwhat_are_webhooks__and_how_is_docsie_utilising_them_to_its_benefit.jpg">
 
-  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="/blog/templates/assets/css/typography.min.css"/>
-  <!--Replace with your tailwind.css once created-->
+  
+  
+  <link rel="alternate" hreflang="en" href="https://www.docsie.io/blog/articles/what-are-webhooks-and-how-is-docsie-utilizing-them-to-its-benefit/">
+  <link rel="alternate" hreflang="x-default" href="https://www.docsie.io/blog/articles/what-are-webhooks-and-how-is-docsie-utilizing-them-to-its-benefit/">
+  
+  
+  
+  
     
-    <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-TZRGMQ9');</script>
-<!-- End Google Tag Manager -->
+      
+        <link rel="alternate" hreflang="de" href="https://www.docsie.io/blog/de/articles/what-are-webhooks-and-how-is-docsie-utilizing-them-to-its-benefit/">
+      
+    
+      
+        <link rel="alternate" hreflang="es" href="https://www.docsie.io/blog/es/articles/what-are-webhooks-and-how-is-docsie-utilizing-them-to-its-benefit/">
+      
+    
+      
+        <link rel="alternate" hreflang="ru" href="https://www.docsie.io/blog/ru/articles/what-are-webhooks-and-how-is-docsie-utilizing-them-to-its-benefit/">
+      
+    
+      
+        <link rel="alternate" hreflang="ja" href="https://www.docsie.io/blog/ja/articles/what-are-webhooks-and-how-is-docsie-utilizing-them-to-its-benefit/">
+      
+    
+      
+        <link rel="alternate" hreflang="pt-pt" href="https://www.docsie.io/blog/pt-pt/articles/what-are-webhooks-and-how-is-docsie-utilizing-them-to-its-benefit/">
+      
+    
+      
+        <link rel="alternate" hreflang="sv" href="https://www.docsie.io/blog/sv/articles/what-are-webhooks-and-how-is-docsie-utilizing-them-to-its-benefit/">
+      
+    
+      
+        <link rel="alternate" hreflang="zh" href="https://www.docsie.io/blog/zh/articles/what-are-webhooks-and-how-is-docsie-utilizing-them-to-its-benefit/">
+      
+    
+      
+        <link rel="alternate" hreflang="pt-br" href="https://www.docsie.io/blog/pt-br/articles/what-are-webhooks-and-how-is-docsie-utilizing-them-to-its-benefit/">
+      
+    
+      
+        <link rel="alternate" hreflang="hu" href="https://www.docsie.io/blog/hu/articles/what-are-webhooks-and-how-is-docsie-utilizing-them-to-its-benefit/">
+      
+    
+      
+        <link rel="alternate" hreflang="ko" href="https://www.docsie.io/blog/ko/articles/what-are-webhooks-and-how-is-docsie-utilizing-them-to-its-benefit/">
+      
+    
+      
+        <link rel="alternate" hreflang="fr" href="https://www.docsie.io/blog/fr/articles/what-are-webhooks-and-how-is-docsie-utilizing-them-to-its-benefit/">
+      
+    
+      
+        <link rel="alternate" hreflang="it" href="https://www.docsie.io/blog/it/articles/what-are-webhooks-and-how-is-docsie-utilizing-them-to-its-benefit/">
+      
+    
+      
+        <link rel="alternate" hreflang="nl" href="https://www.docsie.io/blog/nl/articles/what-are-webhooks-and-how-is-docsie-utilizing-them-to-its-benefit/">
+      
+    
+      
+        <link rel="alternate" hreflang="da" href="https://www.docsie.io/blog/da/articles/what-are-webhooks-and-how-is-docsie-utilizing-them-to-its-benefit/">
+      
+    
+      
+    
+      
+        <link rel="alternate" hreflang="tr" href="https://www.docsie.io/blog/tr/articles/what-are-webhooks-and-how-is-docsie-utilizing-them-to-its-benefit/">
+      
+    
+      
+        <link rel="alternate" hreflang="pl" href="https://www.docsie.io/blog/pl/articles/what-are-webhooks-and-how-is-docsie-utilizing-them-to-its-benefit/">
+      
+    
   
 
+  <!-- Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://www.docsie.io/blog/#website",
+        "url": "https://www.docsie.io/blog/",
+        "name": "Docsie.io Blog"
+        
+        ,"potentialAction": {
+          "@type": "SearchAction",
+          "target": {
+             "@type": "EntryPoint",
+             "urlTemplate": "https://www.docsie.io/blog/?s={search_term_string}"
+          },
+          "query-input": "required name=search_term_string"
+        }
+      },
+      {
+        "@type": "BlogPosting",
+        "@id": "https://www.docsie.io/blog/hu/articles/what-are-webhooks-and-how-is-docsie-utilizing-them-to-its-benefit/#blogposting",
+        "isPartOf": { "@id": "https://www.docsie.io/blog/#website" },
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://www.docsie.io/blog/hu/articles/what-are-webhooks-and-how-is-docsie-utilizing-them-to-its-benefit/"
+        },
+        "headline": "What Are Webhooks, and How is Docsie Utilizing them to its Benefit?",
+        "description": "In this blog we are talking about What are Webhooks, and how is Docsie utilising them to its benefit?",
+        "image": "https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_m04DV8imyNv6X2sU6/142c4f42-36fa-7e71-f791-a77ea80fbf1bwhat_are_webhooks__and_how_is_docsie_utilising_them_to_its_benefit.jpg",
+        "author": {
+          "@type": "Person",
+          "name": "Tanya A Mishra"
+          ,"image": "https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_p1X4gXS3n0rCHYuaE/1f3f5f57-d8e2-7978-faef-0b9fe89f3e4btanya_pic.jpg"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Docsie.io Blog"
+          ,"logo": {
+            "@type": "ImageObject",
+            "url": "https://d1iq6qzgppjlud.cloudfront.net/images/favicon/apple-touch-icon-144x144.png"
+          }
+        },
+        "datePublished": "2023-07-07T11:14:02+00:00",
+        "dateModified": "2023-07-07T11:14:02+00:00",
+        "wordCount": 1976,
+        "articleSection": "Technical Writing"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://www.docsie.io"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Docsie.io Blog",
+            "item": "https://www.docsie.io/blog/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Technical Writing",
+            "item": "https://www.docsie.io/blog/technical-writing/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 4,
+            "name": "What Are Webhooks, and How is Docsie Utilizing them to its Benefit?",
+            "item": "https://www.docsie.io/blog/hu/articles/what-are-webhooks-and-how-is-docsie-utilizing-them-to-its-benefit/"
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "brand": "Docsie.io Blog",
+    "name": "What Are Webhooks, and How is Docsie Utilizing them to its Benefit?",
+    "description": "In this blog we are talking about What are Webhooks, and how is Docsie utilising them to its benefit?",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "worstRating": "1",
+      "bestRating": "5",
+      "ratingValue": "4.8",
+      "ratingCount": "117"
+    }
+  }
+  </script>
+
+  
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'docsie-primary': '#13AF4B',
+            'docsie-primary-dark': '#0d8638',
+          }
+        }
+      }
+    }
+  </script>
+  
+  <link href="/blog/templates/assets/css/design-system.css" rel="stylesheet">
+  <link rel="stylesheet" href="/blog/templates/assets/css/typography.min.css"/>
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-TZRGMQ9');</script>
+    <!-- End Google Tag Manager -->
+  
+
+  <style>
+    /* Modern Design System */
+    :root {
+      --gradient-primary: linear-gradient(to right, #7c3aed, #4f46e5);
+      --gradient-primary-hover: linear-gradient(to right, #6d28d9, #4338ca);
+    }
+    
+    /* Design system colors */
+    .bg-docsie-primary { background-color: var(--docsie-primary); }
+    .bg-docsie-primary-dark { background-color: var(--docsie-primary-dark); }
+    .text-docsie-primary { color: var(--docsie-primary); }
+    .hover\:text-docsie-primary:hover { color: var(--docsie-primary); }
+    .hover\:bg-docsie-primary-dark:hover { background-color: var(--docsie-primary-dark); }
+    
+    /* Gradient styles */
+    .bg-gradient-primary {
+      background: var(--gradient-primary);
+    }
+    
+    .bg-gradient-primary:hover {
+      background: var(--gradient-primary-hover);
+    }
+    
+    .text-gradient {
+      background: var(--gradient-primary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    /* Progress bar */
+    #progress {
+      background: linear-gradient(to right, var(--docsie-primary) var(--scroll), transparent 0);
+    }
+    
+    /* TOC styles */
+    .toc button {
+      display: block;
+      width: 100%;
+      text-align: left;
+      font-size: 0.875rem;
+      padding: 0.5rem 0.75rem;
+      border-radius: 0.375rem;
+      transition: all 0.2s;
+      color: #6b7280;
+      border-left: 2px solid transparent;
+    }
+    
+    .toc button:hover {
+      color: #111827;
+      background-color: #f3f4f6;
+    }
+    
+    .toc button.active-toc-link {
+      background-color: #dbeafe;
+      color: #2563eb;
+      border-left-color: #2563eb;
+    }
+    
+    .toc ul {
+      list-style-type: none;
+      padding-left: 0;
+      margin: 0;
+    }
+    
+    .toc li {
+      margin-bottom: 0.25rem;
+    }
+    
+    .toc a {
+      display: block;
+      text-decoration: none;
+      color: #6b7280;
+      font-size: 0.875rem;
+      transition: all 0.2s;
+      padding: 0.5rem 0.75rem;
+      border-radius: 0.375rem;
+      border-left: 2px solid transparent;
+    }
+    
+    .toc a:hover {
+      color: #111827;
+      background-color: #f3f4f6;
+    }
+    
+    .toc ul ul {
+      padding-left: 1rem;
+      margin-top: 0.25rem;
+    }
+    
+    .toc ul ul a {
+      font-size: 0.8125rem;
+      padding-left: 1.75rem;
+    }
+    
+    /* Active TOC link */
+    .toc .active-toc-link {
+      background-color: #dbeafe;
+      color: #2563eb !important;
+      border-left-color: #2563eb !important;
+      font-weight: 500;
+    }
+    
+    /* Permalink anchor */
+    .headerlink {
+      opacity: 0;
+      color: #9ca3af;
+      margin-left: 0.5rem;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    
+    .headerlink:before {
+      content: '#';
+    }
+    
+    h1:hover .headerlink,
+    h2:hover .headerlink,
+    h3:hover .headerlink,
+    h4:hover .headerlink,
+    h5:hover .headerlink,
+    h6:hover .headerlink {
+      opacity: 1;
+      color: #3b82f6;
+    }
+    
+    /* Modern heading styles */
+    article h2 {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #111827;
+      margin-bottom: 1rem;
+    }
+    
+    article h3 {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #111827;
+      margin-bottom: 0.75rem;
+    }
+    
+    /* Medium-style content */
+    article {
+      color: #292929;
+      line-height: 1.75;
+      font-family: Georgia, 'Times New Roman', serif;
+    }
+    
+    article p {
+      margin-bottom: 2rem;
+      font-size: 1.3125rem; /* 21px */
+      line-height: 2;
+      color: #292929;
+      letter-spacing: -0.003em;
+    }
+    
+    article h2 {
+      margin-top: 3.5rem;
+      margin-bottom: 1.75rem;
+      font-size: 2.25rem;
+      font-weight: 700;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      letter-spacing: -0.02em;
+    }
+    
+    article h3 {
+      margin-top: 2.5rem;
+      margin-bottom: 1.25rem;
+      font-size: 1.75rem;
+      font-weight: 600;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      letter-spacing: -0.015em;
+    }
+    
+    /* Blockquote styling */
+    article blockquote {
+      background-color: rgba(59, 130, 246, 0.05);
+      border-left: 4px solid #3b82f6;
+      padding: 1.5rem;
+      border-radius: 0 0.5rem 0.5rem 0;
+      margin: 2rem 0;
+    }
+    
+    article blockquote p {
+      margin-bottom: 0;
+      font-weight: 500;
+      color: #1f2937;
+    }
+    
+    /* Smooth scrolling */
+    html {
+      scroll-behavior: smooth;
+    }
+    
+    /* Mobile TOC transition */
+    #toc-content {
+      transition: all 0.3s ease;
+    }
+    
+    /* Social icons */
+    .social-icon {
+      @apply transition-all duration-200 transform hover:scale-110;
+    }
+    
+    .social-icon:hover {
+      color: var(--docsie-primary);
+    }
+    
+    /* CTA animations */
+    #cta-full {
+      transition: opacity 0.2s ease, transform 0.2s ease;
+    }
+    
+    #cta-minimized {
+      opacity: 0;
+      transition: opacity 0.2s ease;
+    }
+    
+    #cta-minimized button {
+      transition: all 0.2s ease;
+    }
+    
+    #cta-minimized button:hover {
+      transform: scale(1.05);
+    }
+    
+    /* Image Optimization Styles */
+    .blur-up {
+      filter: blur(5px);
+      transition: filter 0.3s;
+    }
+
+    .blur-up.loaded {
+      filter: blur(0);
+    }
+
+    picture img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+
+    /* Aspect ratio boxes to prevent CLS */
+    .aspect-ratio-box {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .aspect-ratio-box::before {
+      content: '';
+      display: block;
+      padding-bottom: var(--aspect-ratio);
+    }
+
+    .aspect-ratio-box img,
+    .aspect-ratio-box picture {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    /* Fix horizontal scrolling on mobile */
+    @media (max-width: 768px) {
+      /* Prevent horizontal overflow */
+      body {
+        overflow-x: hidden;
+      }
+      
+      /* Handle long words in translations */
+      .prose, .article-content, article {
+        word-break: break-word;
+        overflow-wrap: break-word;
+        hyphens: auto;
+      }
+      
+      /* Fix tables on mobile */
+      .prose table, .article-content table, article table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
+      
+      /* Fix code blocks */
+      .prose pre, .article-content pre, article pre,
+      .prose code, .article-content code, article code {
+        overflow-x: auto;
+        max-width: 100%;
+        word-break: break-all;
+      }
+      
+      /* Fix images */
+      .prose img, .article-content img, article img {
+        max-width: 100%;
+        height: auto;
+      }
+      
+      /* Fix long URLs and text */
+      a {
+        word-break: break-word;
+        overflow-wrap: break-word;
+      }
+    }
+  </style>
 </head>
 
+<body class="font-sans leading-normal tracking-normal" data-sharect-settings='{"backgroundColor": "#333333", "enabled": true, "facebook": true, "iconColor": "#FFFFFF", "selectableElements": ["body"], "twitter": true, "twitterUsername": "likalo_llc"}'>
 
-<body class="bg-gray-100 font-sans leading-normal tracking-normal">
-
-<nav id="header" class="fixed w-full z-10 top-0">
-
-  <div id="progress" class="h-1 z-20 top-0"
-       style="background:linear-gradient(to right, #4dc0b5 var(--scroll), transparent 0);"></div>
-
-  <div class="container max-w-6xl mx-auto flex flex-wrap items-center justify-between mt-0 py-3">
-
-    <div class="pl-4">
-      <a class="text-gray-900 text-base no-underline hover:no-underline font-extrabold text-xl" href="../../">
-          Docsie.io Blog
-      </a>
-    </div>
-
-    <div class="block lg:hidden pr-4">
-      <button id="nav-toggle"
-              class="flex items-center px-3 py-2 border rounded text-gray-500 border-gray-600 hover:text-gray-900 hover:border-green-500 appearance-none focus:outline-none">
-        <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-          <title>Menu</title>
-          <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/>
-        </svg>
-      </button>
-    </div>
-
-    <div class="w-full flex-grow lg:flex lg:items-center lg:w-auto hidden lg:block mt-2 lg:mt-0 bg-gray-100 z-20"
-         id="nav-content">
-      <ul class="list-reset lg:flex justify-end flex-1 items-center">
-        
-        <li>
-          <a class="inline-block text-gray-600 hover:text-gray-900 hover:underline py-2 px-4"
-             href="https://www.docsie.io">Docsie</a>
-        </li>
-        
-        <li>
-          <a class="inline-block text-gray-600 hover:text-gray-900 hover:underline py-2 px-4"
-             href="https://www.docsie.io/pricing/">Docsie Pricing</a>
-        </li>
-        
-        <li>
-          <a class="inline-block text-gray-600 hover:text-gray-900 hover:underline py-2 px-4"
-             href="https://www.docsie.io/try_docsie/">Try Docsie</a>
-        </li>
-        
-      </ul>
-    </div>
-    <div class="flex w-full justify-end content-center">
-        <a
-          class="inline-block text-gray-500 hover:text-green-500 hover:underline text-center h-10 p-2 md:h-auto md:p-4 avatar"
-          data-tippy-content="@twitter_handle" href="https://twitter.com/intent/tweet?url=#"
-          id="twitter">
-          <svg class="fill-current h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-            <path
-              d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"></path>
-          </svg>
-        </a>
-        <a
-          class="inline-block text-gray-500 hover:text-green-500 hover:underline text-center h-10 p-2 md:h-auto md:p-4 avatar"
-          data-tippy-content="#facebook_id" href="https://www.facebook.com/sharer/sharer.php?u=#}"
-          id="facebook">
-          <svg class="fill-current h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-            <path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"></path>
-          </svg>
-        </a>
+<!-- Modern Header -->
+<header id="header" class="border-b border-gray-200 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60 sticky top-0 z-50 transition-transform duration-300">
+  <div class="container mx-auto px-4 py-4 max-w-7xl">
+    <div class="flex items-center justify-between">
+      <div class="flex items-center space-x-8">
+        <!-- Logo and Blog Name -->
+        <div class="flex items-center">
+          <a href="https://www.docsie.io" class="flex items-center">
+            <img src="https://www.docsie.io/assets/docsie_logo_square_svg.svg" alt="Docsie Logo" class="h-8 w-auto mr-2" style="filter: brightness(0) saturate(100%) invert(42%) sepia(93%) saturate(1018%) hue-rotate(96deg) brightness(101%) contrast(91%);">
+            <span class="text-2xl font-bold text-gray-900">Docsie</span>
+          </a>
+          <span class="ml-2 text-gray-500">|</span>
+          <a href="/blog/" class="ml-2 text-xl font-semibold text-gray-700 hover:text-docsie-primary transition-colors">Blog</a>
+        </div>
+        <nav class="hidden md:flex items-center space-x-6">
+          <a href="https://www.docsie.io" class="text-gray-600 hover:text-gray-900 transition-colors">Home</a>
+          
+          <a href="/blog/" class="text-gray-600 hover:text-gray-900 transition-colors">Blog</a>
+          
+          
+          
+          <a href="/blog/technical-writing/" class="text-gray-600 hover:text-gray-900 transition-colors">Technical Writing</a>
+          
+          
+        </nav>
       </div>
+      <div class="flex items-center space-x-4">
+        
+        <a href="https://www.docsie.io" class="hidden md:inline-flex items-center px-4 py-2 text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors">
+          Docsie
+        </a>
+        
+        <a href="https://www.docsie.io/pricing/" class="hidden md:inline-flex items-center px-4 py-2 text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors">
+          Docsie Pricing
+        </a>
+        
+        <a href="https://www.docsie.io/try_docsie/" class="hidden md:inline-flex items-center px-4 py-2 text-sm font-medium bg-blue-600 text-white hover:bg-blue-700 rounded-lg transition-colors">
+          Try Docsie
+        </a>
+        
+        <button id="nav-toggle" class="md:hidden p-2 rounded-md text-gray-700 hover:text-gray-900">
+          <i data-lucide="menu" class="h-6 w-6" id="menu-icon"></i>
+          <i data-lucide="x" class="h-6 w-6 hidden" id="close-icon"></i>
+        </button>
+      </div>
+    </div>
+    
+    <!-- Mobile Navigation -->
+    <div id="nav-content" class="hidden md:hidden pt-4 pb-2 border-t border-gray-200 mt-4">
+      <div class="flex flex-col space-y-3">
+        <a href="https://www.docsie.io" class="text-gray-600 hover:text-gray-900 transition-colors">Home</a>
+        <a href="/blog/" class="text-gray-600 hover:text-gray-900 transition-colors">Blog</a>
+        
+        <a href="https://www.docsie.io" class="text-gray-600 hover:text-gray-900 transition-colors">
+          Docsie
+        </a>
+        
+        <a href="https://www.docsie.io/pricing/" class="text-gray-600 hover:text-gray-900 transition-colors">
+          Docsie Pricing
+        </a>
+        
+        <a href="https://www.docsie.io/try_docsie/" class="text-gray-600 hover:text-gray-900 transition-colors">
+          Try Docsie
+        </a>
+        
+      </div>
+    </div>
   </div>
-
-</nav>
+  <div id="progress" class="h-1 bg-gradient-to-r from-blue-500 to-purple-500 transition-all duration-300" style="width: 0%;"></div>
+</header>
 
 <!--Container-->
-<div class="container max-w-4xl mx-auto mt-32 px-8 md:px-0">
-  <div class="prose prose lg:prose-xl mx-auto mt-32">
-    <!--Title-->
-    <h1 id="blog-title">Mik azok a webhooks, és hogyan használja ki őket a Docsie?</h1>
-    <!--Author-->
-    <div class="flex items-center">
-      <img class="w-10 h-10 rounded-full mr-4" src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_p1X4gXS3n0rCHYuaE/1f3f5f57-d8e2-7978-faef-0b9fe89f3e4btanya_pic.jpg" alt="Avatar of Author">
-      <div class="flex-1 px-2">
-        <div class="font-bold leading-none mb-2">Tanya A Mishra</div>
-        <div class="text-xs md:text-base">on July 07, 2023 · <span id="reading-time"
-                class="block md:inline mt-2 md:mt-0"></span> · filed under <span
-          class="block md:inline mt-2 md:mt-0">
-						
-            <span class="rounded bg-green-500 text-white px-1 uppercase text-xs whitespace-nowrap md:text-sm">Technical Writing</span>
-						
-					</span>
-        </div>
+<div class="container mx-auto px-4 py-8 max-w-7xl">
+
+  <!-- Breadcrumb -->
+  <div class="border-b border-gray-200 bg-gray-50/50">
+    <div class="container mx-auto px-4 py-4 max-w-7xl">
+      <nav class="flex items-center space-x-2 text-sm text-gray-600 overflow-x-auto">
+        <a href="https://www.docsie.io" class="hover:text-gray-900 whitespace-nowrap">Home</a>
+        <i data-lucide="chevron-right" class="h-4 w-4 flex-shrink-0"></i>
+        
+        <a href="https://www.docsie.io/blog/" class="hover:text-gray-900 whitespace-nowrap">Docsie.io Blog</a>
+        
+        
+        <i data-lucide="chevron-right" class="h-4 w-4 flex-shrink-0"></i>
+        
+        <a href="/blog/technical-writing/" class="hover:text-gray-900 whitespace-nowrap">Technical Writing</a>
+        
+        
+        <i data-lucide="chevron-right" class="h-4 w-4 flex-shrink-0"></i>
+        <span class="text-gray-900 font-medium truncate">What Are Webhooks, and How is Docsie Utilizing them to its Benefit?</span>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Main Content Container (Medium-style) -->
+  <div class="max-w-3xl mx-auto px-4">
+    
+    <!-- TOC Sidebar (sticky, shows/hides based on scroll direction) -->
+    
+    <div id="toc-modal" class="hidden lg:block fixed left-8 top-24 z-30 transition-all duration-300 max-h-[calc(100vh-8rem)]">
+      <div class="bg-white rounded-lg shadow-lg border border-gray-200 p-6 max-w-xs overflow-y-auto max-h-[calc(100vh-10rem)]">
+        <h3 class="font-semibold text-gray-900 mb-4 text-sm">Ebben a cikkben</h3>
+        <nav class="toc space-y-2 text-sm">
+          <div class="toc">
+<ul></ul>
+</div>
+
+        </nav>
       </div>
     </div>
-    <!--/Author-->
+    
 
-    <!--Post Content-->
-    <!--Lead Para-->
-    <div id="content">
-      <p>A webfejlesztés mai dinamikus világában a webhookok néven ismert új játékváltoztató funkció megváltoztatja az alkalmazások interakcióját. Képzelje el, hogy az egyik alkalmazásban azonnal akciókat indíthat el, ha egy másikban bizonyos események történnek.</p>
-<p>Erre valók a webhooks! Ezek a digitális hírvivők valós idejű kommunikációt tesznek lehetővé a webes alkalmazások között, és páratlan sebességet biztosítanak.</p>
-<p>Ez a blogbejegyzés a webhooks alapvető szerepét vizsgálja a modern webfejlesztésben. Szándékunkban áll megvizsgálni fontosságukat és alkalmazásukat, különösen az új Docsie funkciókkal összefüggésben. Akár tapasztalt fejlesztő vagy, akár új a technológiai környezetben, ez az átfogó útmutató célja, hogy alaposan megértse a webhookokat és azt, hogy miként tudják felturbózni a webes alkalmazásokat.</p>
-<h3>A webhooks megértése</h3>
+    <!-- Floating CTA (appears after scrolling) -->
+    
+      
+      
+        
+      
+      
+      
+      
+        
+        
+      
+      
+      
+      <div id="floating-cta" class="hidden lg:block fixed bottom-8 right-8 z-40 transition-all duration-300 transform translate-y-32 opacity-0">
+        <!-- Full CTA Card -->
+        <div id="cta-full" class="relative p-4 bg-white rounded-lg shadow-lg border border-gray-200 max-w-xs">
+          <button id="cta-close" class="absolute top-2 right-2 text-gray-400 hover:text-gray-600 transition-colors">
+            <i data-lucide="x" class="h-4 w-4"></i>
+          </button>
+          <h4 class="font-semibold text-gray-900 text-base mb-2 pr-6">Ready to Transform Your Documentation?</h4>
+          <p class="text-xs text-gray-600 mb-3 leading-relaxed">Discover how Docsie's powerful platform can streamline your content workflow. Book a personalized demo today!</p>
+          <a href="https://www.docsie.io/demo/" target="_blank" rel="noopener noreferrer" 
+             class="inline-flex items-center bg-blue-600 hover:bg-blue-700 text-white text-xs font-medium py-2 px-4 rounded-md transition-all duration-150 hover:shadow-md w-full justify-center">
+            Book Your Free Demo
+            <i data-lucide="arrow-right" class="ml-1.5 h-3 w-3"></i>
+          </a>
+        </div>
+        
+        <!-- Minimized CTA Button -->
+        <div id="cta-minimized" class="hidden">
+          
+          
+          
+            
+            
+          
+          <button id="cta-expand" class="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium py-3 px-5 rounded-full shadow-lg transition-all duration-150 hover:shadow-xl">
+            <i data-lucide="calendar" class="h-4 w-4"></i>
+            <span>Book Demo</span>
+          </button>
+        </div>
+      </div>
+    
+
+    <!-- Main Article Content -->
+    <main>
+      <!-- Hero Image -->
+      
+      <div class="mb-8 -mx-4 sm:mx-0">
+        <img src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_m04DV8imyNv6X2sU6/142c4f42-36fa-7e71-f791-a77ea80fbf1bwhat_are_webhooks__and_how_is_docsie_utilising_them_to_its_benefit.jpg" 
+             alt="What Are Webhooks, and How is Docsie Utilizing them to its Benefit?" 
+             class="w-full h-auto rounded-lg shadow-lg object-cover"
+             style="max-height: 500px;">
+      </div>
+      
+      
+      <!-- Article Header -->
+      <header class="mb-12">
+        <!-- Category Badges -->
+        <div class="flex items-center space-x-2 mb-6">
+          
+            
+              <span class="inline-flex items-center px-3 py-1 rounded-md text-sm font-medium 
+                           bg-gray-100 text-gray-800">
+                Technical Writing
+              </span>
+            
+          
+        </div>
+        
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-8 leading-tight" id="blog-title">
+          What Are Webhooks, and How is Docsie Utilizing them to its Benefit?
+        </h1>
+        
+        <!-- Author and Meta Info -->
+        <div class="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6 mb-8">
+          <div class="flex items-center space-x-3">
+            
+              
+                <img class="w-10 h-10 rounded-full" src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_p1X4gXS3n0rCHYuaE/1f3f5f57-d8e2-7978-faef-0b9fe89f3e4btanya_pic.jpg" alt="Tanya A Mishra">
+              
+            
+            <div>
+              <p class="font-medium text-gray-900">Tanya A Mishra</p>
+            </div>
+          </div>
+          <div class="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 text-gray-500">
+            <div class="flex items-center space-x-1">
+              <i data-lucide="calendar" class="h-4 w-4 flex-shrink-0"></i>
+              <span class="text-sm whitespace-nowrap">
+                July 07, 2023
+              </span>
+            </div>
+            
+            <div class="flex items-center space-x-1">
+              <i data-lucide="clock" class="h-4 w-4 flex-shrink-0"></i>
+              <span class="text-sm whitespace-nowrap" id="reading-time"></span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Article Excerpt -->
+        
+        <p class="text-xl text-gray-600 leading-relaxed mb-8">
+          In this blog we are talking about What are Webhooks, and how is Docsie utilising them to its benefit?
+        </p>
+        
+      </header>
+      
+      <hr class="border-gray-200 mb-12">
+      
+      <!-- Social Share -->
+      
+      
+      
+        
+        
+      
+      <div class="flex items-center gap-4 mb-12">
+        <span class="text-sm text-gray-600">Share this article:</span>
+        <button data-share="twitter"
+           data-url="https://www.docsie.io/blog/hu/articles/what-are-webhooks-and-how-is-docsie-utilizing-them-to-its-benefit/"
+           data-title="What Are Webhooks, and How is Docsie Utilizing them to its Benefit?"
+           class="text-gray-400 hover:text-gray-900 transition cursor-pointer"
+           aria-label="Share on Twitter">
+          <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
+          </svg>
+        </button>
+        <button data-share="facebook"
+           data-url="https://www.docsie.io/blog/hu/articles/what-are-webhooks-and-how-is-docsie-utilizing-them-to-its-benefit/"
+           class="text-gray-400 hover:text-blue-600 transition cursor-pointer"
+           aria-label="Share on Facebook">
+          <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd" />
+          </svg>
+        </button>
+        <button data-share="linkedin"
+           data-url="https://www.docsie.io/blog/hu/articles/what-are-webhooks-and-how-is-docsie-utilizing-them-to-its-benefit/"
+           class="text-gray-400 hover:text-blue-700 transition cursor-pointer"
+           aria-label="Share on LinkedIn">
+          <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+          </svg>
+        </button>
+      </div>
+      
+      <!-- TL;DR Section -->
+      
+      
+      <!-- What You'll Learn Section -->
+      
+        
+      <!-- Article Content -->
+      <article class="prose prose-xl max-w-none prose-headings:scroll-mt-24 prose-p:text-gray-700 prose-headings:text-gray-900">
+
+        <div id="content">
+          <p>In today's dynamic world of web development, a new game-changing feature known as webhooks is changing how applications interact. Imagine triggering actions in one application immediately whenever specific events happen in another. </p>
+<p>That's what webhooks are for! These digital messengers enable real-time communication between web applications and deliver unparalleled speed. </p>
+<p>This blog post will explore webhooks' essential role in modern web development. We intend to investigate their importance and application, especially in the context of the new Docsie features. Whether you're an experienced developer or new to the tech landscape, this comprehensive guide aims to thoroughly understand webhooks and how they can supercharge your web applications.</p>
+<h3 id="understanding-webhooks">Understanding webhooks</h3>
 <ol>
-<li><strong>Definíció és alkalmazás </strong></li>
+<li><strong>Definition and Application </strong></li>
 </ol>
-<p>A webhooks viszonylag új fogalom a webfejlesztésben, amely hídként működik a webes alkalmazások között. A webhookok olyanok, mint egy digitális hírvivő, amely értesíti az egyik alkalmazást egy másik alkalmazás bizonyos eseményeiről. <strong>Az adatok aktív lekérdezése helyett a webhooks lehetővé teszi, hogy azonnal "tolja" az információkat az egyik alkalmazásból a másikba, amint egy alapértelmezett esemény bekövetkezik. </strong></p>
-<p>Képzelje el, hogy értesítést kap a telefonján, amikor egy barátja sms-t küld Önnek. Ez a webhooks ereje - azonnali és valós idejű kommunikáció az alkalmazások között.</p>
+<p>Webhooks are a relatively new concept in web development, acting as a bridge between web applications. A web browser is like a digital messenger that notifies one application of specific events in another. <strong>Instead of actively querying data, webhooks enable you to instantly "push" information from one application to another as soon as a default event occurs. </strong></p>
+<p>Imagine receiving a notification on your phone when a friend texts you. That's the power of webhooks - instantaneous and real-time communication between applications. </p>
 <ol>
-<li><strong>A valós idejű kommunikáció szerepe</strong></li>
+<li><strong>The role of real-time communication</strong></li>
 </ol>
-<p>A webhookok nélkülözhetetlenek az alkalmazások közötti zökkenőmentes, valós idejű szóbeli kommunikáció megszervezésében. Amikor a szállított szoftverben eseményt váltanak ki, amely egy vadonatúj fájl növesztéséből vagy egy szerkesztőségi cikk frissítéséből áll, az internetböngésző üzenetet küld a vonatkozó információkkal egy előre meghatározott URL-címre a segédprogramon belül, amelyre épülnek.</p>
-<p>Ez az azonnali rekordváltás lehetővé teszi az alkalmazások számára, hogy reagáljanak az eseményekre, így az építők automatizálhatják a műveleteket és valós idejű frissítéseket biztosíthatnak. Akár a személyzet tagjainak értesítésére a jelentésváltozásokról, akár külső rendszerekhez való csatlakozásra, a webhook gerincét kínálja az azonnali és aktív beszélgetésnek.</p>
-<p>Amikor a szolgáltató segédprogramon belül eseményt idéz elő, az eseménystatisztikákat tartalmazó webhook-kérést küld a célsegédprogram hívó oldalának URL-címére. A célalkalmazás ezután feldolgozza a hasznos adatot, és a kapott statisztikák alapján végrehajtja a leírt műveletet.</p>
-<p>Lényegében a webhookok olyan hatékony eszköz, amely lehetővé teszi az eseményvezérelt munkafolyamatokat, valós idejű kommunikációt és automatizálást biztosít, és a lehetőségek világát nyitja meg a modern internetes fejlesztésben.</p>
+<p>Webhooks are essential in organising seamless, real-time verbal exchange among applications. When an event is triggered in the supplied software, consisting of growing a brand new file or updating an editorial, the internet browser sends a message of relevant information to a predefined URL within the utility they're constructed on.</p>
+<p>This immediate record change allows applications to respond to events, allowing builders to automate actions and provide real-time updates. Whether for notifying crew members of report changes or connecting to external systems, the webhook offers the spine for instant and active conversation.</p>
+<p>When an event is induced within the supply utility, it sends a webhook request with event statistics to the calling page URL of the target utility. The target application then processes the payload and performs a described operation based on the received statistics.</p>
+<p>Essentially, webhooks are a powerful tool that allows event-driven workflows, provides actual-time communication and automation, and opens up a world of possibilities in modern internet development.</p>
 <ol>
-<li><strong>A webhook legfontosabb jellemzői </strong></li>
+<li><strong>Key features of Webhook </strong></li>
 </ol>
-<p>A webhookok számos kulcsfontosságú funkcióval rendelkeznek, amelyek zökkenőmentes kommunikációt biztosítanak a csomagok között. Nézzük meg az egyes elemeket, és értsük meg, mit jelentenek:</p>
-<p><strong>Payload: </strong>A hasznos teher a webhook szíve, és elküldi a megadott információt a forrásalkalmazásból a célprogramba. Általában valamilyen formában, JSON vagy XML formában tartalmaz információkat, valamint kontextuális tényeket a webhookot kiváltó eseményről.</p>
-<p><strong>Például</strong>, amikor egy új fájl jön létre a szolgáltatott szoftveren belül, a hasznos teher magában foglalhatja a fájl nevét, tartalmát, íróját és a létrehozás időbélyegét is.</p>
-<p><strong>Előfordulást kiváltó események: </strong>Az eseménykiváltók olyan különleges mozgások vagy tevékenységek a szállító alkalmazásban, amelyek webhookot váltanak ki. A webhookokat úgy tervezték, hogy előre meghatározott alkalmakra válaszoljanak, beleértve a dokumentumok fejlesztését, új bejegyzések törlését vagy a gép beállításait. Minden eseményindító a célhasznosító program egy adott mozgásának felel meg.</p>
-<p><strong>Hívási URL-ek:</strong> A hívási URL az a célszoftveren belüli végpont, amelyen a hasznos teher elküldésre kerül, amikor a webhookról van szó. Amint a hasznos teher a célszoftver felhasználásával érkezik, a célszoftver képes a rekordok technikájára és az alapvető mozgásokra.</p>
-<p>A visszahívási URL a kliens megbirkózási mechanizmusaként működik, biztosítva, hogy az üzenet elérje a tervezett nyaralóhelyet. Keressünk tanácsot a következő asztalon, hogy felvázoljuk az intervallumokat:</p>
+<p>Webhooks have several key features that offer seamless communication between packages. Let's delve into each item and understand what it means:</p>
+<p><strong>Payload: </strong>The payload is the heart of the webhook and sends the specified information from the source application to the target utility. It usually contains information in some form, along with JSON or XML, and contextual facts about the event that triggered the webhook. </p>
+<p><strong>For instance</strong>, when a new file is created within the supplied software, the payload can also encompass the file name, content, writer, and creation timestamp.</p>
+<p><strong>Event Triggers: </strong>Event triggers are particular moves or activities in the supply application that cause a webhook. Webhooks are designed to reply to predefined occasions, including developing documents, deleting new entries, or making adjustments to the machine. Each event trigger corresponds to a particular movement in the goal utility.</p>
+<p><strong>Callback URLs:</strong> The callback URL is the endpoint within the goal software wherein the payload is sent when the webhook is about. Once the payload is received utilising the target software, it can technique the records and take basic movements. </p>
+<p>The callback URL acts as the client's coping mechanism, ensuring the message reaches its intended vacation spot. Let us seek advice from the following desk to outline the intervals:</p>
 <table>
 <thead>
 <tr>
-<th>komponens</th>
-<th>leírás</th>
+<th>Component</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>Payload</td>
-<td>Adatokat szállít a forrásalkalmazásból a célalkalmazásba, amelyek eseményspecifikus információkat tartalmaznak.</td>
+<td>Carries data from the source application to the target application, containing event-specific information.</td>
 </tr>
 <tr>
 <td>Event Triggers</td>
-<td>Specifikus műveletek vagy események a forrásalkalmazáson belül, amelyek a webhookot kezdeményezik.</td>
+<td>Specific actions or occurrences within the source application that initiate the webhook.</td>
 </tr>
 <tr>
-<td>Callback URL-ek</td>
-<td>A célalkalmazás azon végpontja, ahová a hasznos teher kerül, lehetővé teszi az adatfeldolgozást és a művelet végrehajtását.</td>
+<td>Callback URLs</td>
+<td>The endpoint in the target application where the payload is sent allows data processing and action execution.</td>
 </tr>
 <tr>
-<td>Ezeknek a funkcióknak a megértése elengedhetetlen a webhookok konfigurálásához és a programok közötti egyértelmű beszélgetések megőrzéséhez.</td>
+<td>Understanding these features is essential to configure webhooks and preserve clear conversations between programmes.</td>
 <td></td>
 </tr>
 </tbody>
 </table>
 <ul>
-<li><strong>Webhooks és API-k </strong></li>
+<li><strong>Webhooks and APIs </strong></li>
 </ul>
-<p><strong>A különbség magyarázata </strong></p>
-<p>A webhooks és az API-k a modern hálózatfejlesztés alapvető eszközei, de eltérnek abban, hogy hogyan beszélnek és hogyan segítik elő az adatcserét.</p>
-<p><strong>A webhookokat kiszolgáló-kiszolgáló közötti szóbeli cserére tervezték, és megfelelnek az eseményvezérelt módszernek. </strong>Ezek az alkalmazások bármely más szoftvernek tényekkel szolgálhatnak, anélkül, hogy egy kiválasztott kérést figyelembe vennének. Amikor a forrásszoftverben eseményt idéznek elő, a webhook üzenetet küld a célalkalmazáson belüli alapértelmezett URL-címre, amely alkalomhoz kötött rekordokat küld. A webhookok különösen jól működnek valós időben, helyszíni frissítéseket biztosítanak, és automatizálják a mozgásokat az események bekövetkeztekor.</p>
-<p><strong>Az API-k (alkalmazásprogramozási interfészek) viszont a fogyasztó-kiszolgáló közötti szóbeli cserére szolgálnak. </strong>Az ügyfélalkalmazás által a kiszolgálónak küldött kifejezett kérésen keresztül valósulnak meg. Az ügyfél pontos rekordokat vagy műveleteket kér, a kiszolgáló pedig válaszol a kért dokumentumokra.</p>
+<p><strong>Explanation of the difference </strong></p>
+<p>Webhooks and APIs are essential tools in modern network improvement, but they vary in how they speak and facilitate data exchange.</p>
+<p><strong>Webhooks are designed for server-to-server verbal exchange and comply with an event-driven method. </strong>Those applications can push facts to any other software without considering a selected request. Whenever an event is precipitated in the source software, the webhook sends a message to the default URL inside the target application, which sends occasion-specific records. Webhooks work particularly well in real-time, providing on-the-spot updates and automating moves as events occur.</p>
+<p><strong>On the other hand, APIs (Application Programming Interfaces) are designed for consumer-server verbal exchange. </strong>They are carried out through an express request that a client application sends to the server. The customer requests precise records or actions, and the server responds to the requested documents.</p>
 <p><img alt="" src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_F7W3rTqgrYeAVpKRo/image2.jpg" /></p>
-<h3>Az eseményvezérelt feltételek értékének kiemelése</h3>
-<p>A webhookok előnyei az alkalomvezérelt környezetekben mutatkoznak meg a legjobban, ahol az eseményekre való azonnali reagálás elengedhetetlen. Az API-kkal ellentétben, amelyek az ügyfeleknek folyamatosan új tényeket kell keresniük, <strong>a webhookok kiküszöbölik a gyakori lekérdezések szükségességét.</strong> Ez a képesség csökkenti a felesleges szerverterhelést és az adatmegosztást, így a webhook tökéletes a valós idejű csomagokhoz, beleértve a chat-értesítéseket, az élő frissítéseket és az IoT (Internet of Things) integrációt.</p>
-<h3>Összehasonlító táblázat: Webhookok vs. API-k</h3>
-<p>Hogy vizuálisan is felhívjuk a figyelmet a webhooks és az API-k közötti különbségekre, nézzük meg az alábbi összehasonlító táblázatot:</p>
+<h3 id="highlighting-the-value-of-event-driven-conditions">Highlighting the value of event-driven conditions</h3>
+<p>The advantages of webhooks shine brightest in occasion-driven environments where the immediate reaction to events is essential. Unlike APIs, which require clients to search for new facts continuously, <strong>webhooks eliminate the need for frequent queries.</strong> This capability reduces useless server load and data sharing, making the webhook perfect for actual-time packages, inclusive of chat notifications, live updates, and IoT (Internet of Things) integration.</p>
+<h3 id="comparative-chart-webhooks-vs-apis">Comparative Chart: Webhooks vs APIs</h3>
+<p>To visually draw attention to the differences between webhooks and APIs, let's take a look at the following comparative chart:</p>
 <table>
 <thead>
 <tr>
@@ -217,237 +965,411 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </thead>
 <tbody>
 <tr>
-<td>Kommunikáció</td>
-<td>Kiszolgáló-kiszolgáló (Push-alapú)</td>
-<td>Kliens-kiszolgáló (Kérelem-alapú)</td>
+<td>Communication</td>
+<td>Server-to-server (Push-based)</td>
+<td>Client-server (Request-based)</td>
 </tr>
 <tr>
-<td>Adatcsere</td>
-<td>Eseményvezérelt, valós idejű frissítések</td>
-<td>Kifejezett ügyfélkérések</td>
+<td>Data Exchange</td>
+<td>Event-driven, real-time updates</td>
+<td>Explicit client requests</td>
 </tr>
 <tr>
 <td>Polling</td>
-<td>nem szükséges</td>
-<td>gyakori lekérdezés szükséges lehet</td>
+<td>Not required</td>
+<td>Frequent polling may be needed</td>
 </tr>
 <tr>
 <td>Efficiency</td>
-<td>Eseményekre való azonnali válaszadás</td>
-<td>A válaszidő a kéréstől függ</td>
+<td>Immediate response to events</td>
+<td>Response time depends on the request</td>
 </tr>
 <tr>
-<td>Feladható forgatókönyvek</td>
-<td>Valós idejű frissítések, chat-értesítések, IoT</td>
-<td>Adatlekérdezés, ügyfélinterakciók</td>
+<td>Suitable Scenarios</td>
+<td>Real-time updates, chat notifications, IoT</td>
+<td>Data retrieval, client interactions</td>
 </tr>
 <tr>
-<td><strong>Összefoglalva, a webhook kiválóan alkalmazható az eseményekkel kapcsolatos helyzetekben, azonnali beszélgetést nyújt, és kiküszöböli a folyamatos szavazást. </strong>Az API-k viszont kiválóan alkalmasak a patrónus-kiszolgáló közötti egyértelmű kommunikációra és a tények lekérdezésére. A webhookoknak és az API-knak sajátos erősségeik és gyengeségeik vannak; ezek különbségei lehetővé teszik az építők számára, hogy az igényeiknek legmegfelelőbb eszközt válasszák ki.</td>
+<td><strong>In summary, the webhook excels in event-related situations, presenting instantaneous conversation and eliminating the need for ongoing balloting. </strong>On the other hand, APIs are ideally suited for clear patron-server communication and fact retrieval. Webhooks and APIs have particular strengths and weaknesses; their differences allow builders to select the best tool for their needs.</td>
 <td></td>
 <td></td>
 </tr>
 </tbody>
 </table>
-<h3>Webhooks megvalósítása Docsie-val</h3>
-<p><strong>Webhooks a Docsie-ban nemrégiben</strong></p>
-<p>A Docsie bevezetett egy érdekes új szkriptet webhookokkal. Ez az integráció rengeteg lehetőséget kínál a termelékenység növelésére és a platform diverzifikálásának lehetővé tételére. A Docise jelentősen felgyorsítja a valós idejű szóbeli cserét a Webhooks segítségével, és lehetővé teszi a zökkenőmentes rekordok váltakozását az alkalmazások között.</p>
-<p><strong>Produktivitás és automatizálás</strong></p>
-<p>Az integrált webhookok lehetővé teszik a Docsie felhasználók számára, hogy soha nem látott módon racionalizálják a fájlok munkafolyamatát. A Docsie az alkalomhoz kötött kommunikáció energiáját felhasználva azonnal értesítheti a csapatokat és az érdekelt feleket a legújabb eseményekről, így biztosítva, hogy mindenki mindig ugyanazon az oldalon álljon. Valós időben az innováció gyerekjáték, a kohézió pedig új magasságokba jut.</p>
-<p>Emellett a Docsie-ban található webhooks lehetővé teszi a külső rendszerekkel való integrációt, ami a lehetőségek világát nyitja meg. Legyen szó dokumentáció fejlesztéséről, vállalásellenőrző eszközökről vagy a különböző platformokra történő tartalomkiadás automatizálásáról, a webhookok lehetővé teszik a könnyed, platformra történő integrációt, és csökkentik az útmutatói feladatokat.</p>
-<h3>A Docsie webhooks lehetséges felhasználási esetei</h3>
-<p><strong> Valós idejű frissítések:</strong> A webhookok segítségével a csapattagok azonnali értesítéseket kaphatnak olyan kommunikációs csatornákon, mint a Slack vagy a Microsoft Groups, amikor egy dokumentumot létrehoznak vagy frissítenek a Docsie-ban. Ezáltal mindenki naprakészen értesül a legújabb változásokról, és elősegíti a kollaboratív környezetet.</p>
-<p><strong>Külső rendszerintegráció:</strong> A webhook megkönnyíti a zökkenőmentes integrációt külső rendszerekkel, például projektmenedzsment eszközökkel, ügyfélkapcsolat-kezelő (CRM) rendszerekkel vagy marketingrendszerekkel, így minden alkalommal, amikor új tranzakció kerül a Docsie-ba, spontaneitásra ösztönözheti a projektmenedzsment-mechanizmust, ami szervezettebbé és produktívabbá teszi a csapatot.</p>
-<p><strong>Automatizált közzététel:</strong> A webhorgok segítségével automatizálható a dokumentumok közzététele különböző platformokon. Például az új termékirányelvek jóváhagyása a Docsie-ban kiválthatja a dokumentumok frissítését a vállalati weboldalon, biztosítva a konzisztenciát a különböző platformokon.</p>
-<h3>Webhooks létrehozása a Docsie-ban</h3>
-<p>A webhooks beállítása a Docsie platformon egyszerű folyamat. Az alábbiakban egy lépésről-lépésre haladó útmutató segít a kezdésben:</p>
-<p><strong>1. lépés: Navigáljon a Webhooks-hoz:</strong></p>
-<p>Konfiguráció Először jelentkezzen be a Docsie-fiókjába, és lépjen a Beállítások szakaszba. Ezután lépjen a Munkaterületre, és válassza a Webhooks menüpontot.</p>
-<p><strong>2. lépés: Adjon hozzá egy új Webhookot</strong>:</p>
-<p>A Webhooks konfigurációs menüben kattintson a "Add webhook+" gombra a konfigurációs folyamat elindításához.</p>
-<p><strong>3. lépés: Webhook-kontextus meghatározása:</strong></p>
-<p>Adja meg a célplatformot a konfigurációs menüben a támogatott lehetőségek közül: Slack, Mattermost, Microsoft Teams vagy Custom. Ezután válassza ki azokat az eseményindítókat, amelyeknek aktiválniuk kell a webhookot. Igényeitől függően több, a webhookkal összhangban lévő eseményt is kiválaszthat.</p>
-<p><strong>4. lépés:</strong> <strong>Adja meg a visszahívási URL-t:</strong></p>
-<p>Adja meg a célalkalmazás visszahívási URL-címét, amelyre a hasznos teher elküldésre kerülhet, amikor a netböngésző csatlakozik. Győződjön meg arról, hogy a célszoftver úgy van beállítva, hogy fogadja és feldolgozza a webhook-kéréseket.</p>
-<p><strong>5. lépés: Mentés és ellenőrzés: </strong></p>
-<p>Az információk kitöltése után tartsa meg a webhook-beállításokat. A konfigurációt ellenőrizheti a konfiguráció időnkénti kiváltásával és annak ellenőrzésével, hogy a célszoftver hatékonyan fogadja-e a hasznos terhelést.</p>
-<h3>Előfeltételek és követelmények</h3>
-<p>Mielőtt webhookokat helyezne el a Docsie-ban, győződjön meg arról, hogy a célszoftver támogatja a webhookokat, és képes kezelni a bejövő webhook-kéréseket. Továbbá győződjön meg arról, hogy rendelkezik a szükséges engedélyekkel és hozzáférési jogokkal a webhooks konfigurálásához a Docsie platformon.</p>
-<p><strong>Webhook beállítások nagyszerű gyakorlatok:</strong></p>
-<p>Ahhoz, hogy a legtöbbet hozza ki a webhookokból a Docsie-ban vagy egy másik alkalmazásban, nézze meg az alábbi nagyszerű gyakorlatokat:</p>
-<p><strong>1. Biztonság: </strong> Állítson be stabil kapcsolatokat HTTPS csomagokkal a webhook hasznos terhelések titkosítása és az érzékeny rekordok védelme érdekében.</p>
-<p><strong>2. Megbízhatóság: </strong>Hibaellenőrző mechanizmusok és újbóli próbálkozások bevezetése, hogy biztosítsa a webhook-kérések sikeres szállítását még gyors hiba esetén is.</p>
-<p><strong>3. Webhook-hitelesítés: </strong>A bejövő webhook-kérelmek megerősítéséhez használjon webhook-hitelesítési mechanizmusokat, például személyes tokeneket vagy HMAC aláírásokat.</p>
-<p><strong>4. Monitoring és naplózás:</strong> Figyelje a webhook-aktivitást, és naplózza a vonatkozó információkat a webhook-integráció elérésének és általános teljesítményének ellenőrzéséhez.</p>
-<p><strong>5. Kérések fojtása:</strong> A kérések fojtásával szabályozhatja a webhook-kérések küldését, hogy elkerülje a célközmű túlterhelését.</p>
-<p><strong>6. Tesztelés staging környezetben:</strong> Tesztelje alaposan a webhookot, vagy nézze meg a környezetet, mielőtt elküldi a termelésbe.</p>
-<p><strong>A webhookok előnyei a dokumentációs vállalaton belül</strong></p>
-<p>A webhookok bevezetése a dokumentációs vállalaton belül jelentős előnyökkel járhat, többek között a termelékenység javulásával, a termelékenység megsokszorozódásával és a kézi munka csökkentésével.</p>
+<h3 id="implementing-webhooks-with-docsie">Implementing Webhooks with Docsie</h3>
+<p><strong>Webhooks in Docsie Recently</strong></p>
+<p>Docsie introduced an interesting new script with webhooks. This integration provides a wealth of opportunities to increase productivity and enable diversification on the platform. Docise significantly speeds up the real-time verbal exchange through Webhooks and allows seamless records to alternate among applications.</p>
+<p><strong>Productivity and Automation</strong></p>
+<p>Integrated webhooks allow Docsie users to streamline their file workflow like never before. Docsie can immediately notify teams and stakeholders of recent events using the energy of occasion-driven communication, ensuring everyone is always on the same page. In real-time, innovation is a breeze, and cohesion reaches new heights.</p>
+<p>Additionally, webhooks in Docsie allow integration with external systems, opening up a world of opportunities. Whether developing documentation, undertaking control tools, or automating content publishing to different platforms, webhooks allow effortless go-platform integration and reduce guide duties.</p>
+<h3 id="potential-use-cases-for-webhooks-in-docsie">Potential use cases for Webhooks in Docsie</h3>
+<p><strong>Real-time updates:</strong> With webhooks, team members can receive instant notifications in communication channels like Slack or Microsoft Groups whenever a document is created or updated in Docsie. This keeps everyone updated on the latest changes and fosters a collaborative environment. </p>
+<p><strong>External System Integration:</strong> Webhook facilitates seamless integration with external systems, such as project management tools, customer relationship management (CRM) systems, or marketing systems, so that whenever a new transaction is added to Docsie, it can stimulate spontaneity in the project management mechanism, which will make the team more organised and productive. </p>
+<p><strong>Automated publishing:</strong> Webhooks can be used to automate the publishing of documents on various platforms. For example, approving new product guidelines in Docsie can trigger an update of papers on the company website, ensuring consistency across platforms. </p>
+<h3 id="establishing-webhooks-in-docsie">Establishing webhooks in Docsie</h3>
+<p>Setting up webhooks in the Docsie platform is a simple process. Here is a step-by-step guide to help you get started: </p>
+<p><strong>Step 1: Navigate to Webhooks:</strong> </p>
+<p>Configuration First, log in to your Docsie account and go to the Settings section. Then go to Workspace and select Webhooks. </p>
+<p><strong>Step 2: Add a New Webhook</strong>:</p>
+<p>In the Webhooks configuration menu, click the "Add webhook+" button to start the configuration process. </p>
+<p><strong>Step 3: Define the Webhook Context:</strong></p>
+<p>Specify the goal platform from supported options within the configuration menu: Slack, Mattermost, Microsoft Teams, or Custom. Next, pick out the event triggers that have to activate the webhook. You can select multiple events consistent with the webhook depending on your needs.</p>
+<p><strong>Step 4:</strong> <strong>Provide the Callback URL:</strong></p>
+<p>Enter the callback URL of the target application to which the payload might be sent when the net browser is hooked up. Ensure that the goal software is configured to receive and process webhook requests.</p>
+<p><strong>Step 5: Save and check: </strong> </p>
+<p>After filling in the information, keep the webhook settings. You can check the configuration by triggering it occasionally and verifying that the goal software receives the payload efficiently.</p>
+<h3 id="prerequisites-and-requirements">Prerequisites and Requirements</h3>
+<p>Before putting webhooks in Docsie, ensure your target software supports webhooks and can handle incoming webhook requests. Additionally, ensure you have the necessary permissions and access rights to configure webhooks on the Docsie platform.</p>
+<p><strong>Webhook sets up great practices:</strong></p>
+<p>To get the most out of webhooks in Docsie or another application, check out the following splendid practices below:</p>
+<p><strong>1. Safety: </strong>Set up stable connections with HTTPS packages to encrypt webhook payloads and protect sensitive records.</p>
+<p><strong>2. Reliability: </strong>Implement error-control mechanisms and retries to make certain the successful shipping of webhook requests even in the event of a quick failure.</p>
+<p><strong>3. Webhook authentication: </strong>To affirm incoming webhook requests, use webhook authentication mechanisms such as personal tokens or HMAC signatures.</p>
+<p><strong>4. <a href="https://middleware.io/blog/what-is-log-monitoring/" rel="nofollow noopener">Monitoring and Logging:</a></strong> Monitor webhook activity and log relevant information to screen the achievement and overall performance of the webhook integration.</p>
+<p><strong>5. Throttle Requests:</strong> Use request throttling to control the sending of webhook requests to avoid overloading the target utility.</p>
+<p><strong>6. Test in staging surroundings:</strong> Test the webhook thoroughly or look at the surroundings before sending it to production.</p>
+<p><strong>Benefits of Webhooks inside the documentation enterprise</strong></p>
+<p>Adopting the Web within the documentation enterprise may have significant advantages, including improved productivity, multiplied productiveness, and decreased manual effort. </p>
 <p><img alt="" src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_mkSOApRMBEIRTv4ft/image1.jpg" /></p>
-<p><a href="https://img.freepik.com/free-photo/e-mail-global-communications-connection-social-networking-concept_53876-123795.jpg?w=900&amp;t=st=1688548904~exp=1688549504~hmac=2be90ef94f789cbec18390b86b22cb43f33d76c0dd7764cecc2bc9b8c338c363">Source</a></p>
-<p>Néhány rekord és esetkutatás illusztrálja a web használatának előnyeit:</p>
-<p><strong>A Zapier által készített tanulmány szerint azok az ügynökségek, amelyek webhookokat integrálnak a munkafolyamatukba, 30%-os kedvezményt élveznek az útmutató információk bevitelében, növelik a termelékenységet és időt takarítanak meg.</strong></p>
-<p><strong>Egy szoftverprogram-fejlesztő vállalkozás esettanulmánya megerősítette, hogy a webhooks az előfizetési technikájukban 50%-kal csökkentette a tartalomanyag frissítésének késedelmét és javította a csapat kommunikációját.</strong></p>
-<p>Összefoglalva, a webhooks és a Docsie platform kombinálása a megsokszorozott termelékenység és automatizálás világát nyitja meg. Azáltal, hogy a webhooks valós idejű frissítéseket biztosít, megkönnyíti a külső struktúrákkal való integrációt, és zökkenőmentes szóbeli cserét biztosít a programok között, a felhasználók számára lehetővé teszi a rekord munkafolyamatok egyszerűsítését, valamint a jobb általános teljesítmény és hatékonyság elérését. Jobban tudsz mászni.</p>
-<h3>Példák a webhook integrációkra</h3>
-<p><strong>Webhook integráció népszerűsége </strong></p>
-<p>A Docsie-ban található webhookok zökkenőmentes kommunikációt tesznek lehetővé népszerű alkalmazásokkal és szolgáltatásokkal, javítva a rendszerek közötti együttműködést és adatcserét. A népszerű webhook integrációk közé tartoznak:</p>
-<p><strong>Slack:</strong> Valós idejű értesítéseket kap a Slackben, amikor új dokumentumot hoznak létre vagy frissítenek a Docsie-ban, így biztosítva, hogy a csapatok folyamatosan tájékozottak maradjanak és hatékonyan tudjanak együttműködni.</p>
-<p><strong>Microsoft Teams:</strong> Integrálódik a Microsoft Teams-szel, így azonnali frissítéseket biztosít a dokumentumváltozásokról, elősegítve a zökkenőmentes szervezeti kommunikációt.</p>
-<p><strong>Trello:</strong> Automatikusan együttműködik a Trello kártyákkal, amikor új tartalom vagy verzió kerül a Docsie-ba, így nagyobb projektkontrollt biztosít.</p>
-<p><strong>Használati esettanulmányok példái</strong></p>
-<p>Valós idejű együttműködés: A webhookok azonnali értesítéseket tesznek lehetővé az olyan kommunikációs platformokon, mint a Slack, így a csapatok valós időben értesülhetnek a dokumentumváltozásokról.</p>
-<p>Automatizált projektmenedzsment: A Trello integrálása más projektmenedzsment eszközökkel automatizálja a projektek létrehozását és feldolgozását a Docsie-ban létrehozott frissítések alapján.</p>
-<h3>Következtetés</h3>
-<p>Összefoglalva, a webhooks alapvető szerepet játszik a modern webfejlesztésben, lehetővé téve a valós idejű kommunikációt és az adatok egyszerű cseréjét az alkalmazások között. Az új Docsie funkcióval a webhooks javítja a termelékenységet és automatizálja a dokumentum-munkafolyamatokat.</p>
-<p>Valós idejű innováció és együttműködés.</p>
-<p>Automatizálás és feladatirányítás.</p>
-<p>Zökkenőmentes integráció hatalmas csomagokkal.</p>
-<p>A dokumentum-munkafolyamatok racionalizálása és a termelékenység növelése. Próbálja ki a <a href="https://help.docsie.io/view-and-manage-integrations/what-are-webhooks/">Docsie today </a>-ban található webhooks funkciót, és élvezze előfizetési technikája új, nagy összteljesítményű élményét.</p>
-    </div>
-  </div>
-  <!--/ Post Content-->
+<p><a href="https://img.freepik.com/free-photo/e-mail-global-communications-connection-social-networking-concept_53876-123795.jpg?w=900&amp;t=st=1688548904~exp=1688549504~hmac=2be90ef94f789cbec18390b86b22cb43f33d76c0dd7764cecc2bc9b8c338c363" rel="nofollow noopener">Source</a></p>
+<p>Some records and case research illustrate the benefits of using the Web:</p>
+<p><strong>According to a study by Zapier, agencies that integrate webhooks into their workflow revel in a 30% discount in guide information entry, increasing productivity and saving time.</strong></p>
+<p><strong>A software programme development enterprise case study confirmed that webhooks in their subscription technique reduced content material update delays by 50% and improved team communication.</strong></p>
+<p>In conclusion, combining webhooks with the Docsie platform opens up a world of multiplied productivity and automation. By imparting actual-time updates, facilitating integration with external structures, and providing seamless verbal exchange among programmes, webhooks empower users to simplify their record workflows and acquire better overall performance and efficiency. You can climb better.</p>
+<h3 id="examples-of-webhook-integrations">Examples of Webhook Integrations</h3>
+<p><strong>Webhook integration popularity </strong></p>
+<p>Webhooks in Docsie enable seamless communication with popular applications and services, enhancing collaboration and data exchange between systems. Popular webhook integrations include: </p>
+<p><strong>Slack:</strong> Get real-time notifications in Slack whenever a new document is created or updated in Docsie, ensuring teams stay informed and can collaborate effectively. </p>
+<p><strong>Microsoft Teams:</strong> Integrates with Microsoft Teams to provide immediate updates on document changes, facilitating smooth organisational communication. </p>
+<p><strong>Trello:</strong> Automatically work with Trello cards when new content or versions are added to Docsie, giving you greater project control. </p>
+<p><strong>Use case studies examples</strong></p>
+<p>Real-time collaboration: Webhooks enable instant notifications on communication platforms like Slack, keeping teams updated on document changes in real time. </p>
+<p>Automated Project Management: Integrating Trello with other project management tools automates project creation and processing based on updates created in Docsie. </p>
+<h3 id="conclusion">Conclusion</h3>
+<p>In conclusion, webhooks play an essential role in modern web development, allowing real-time communication and data to be easily exchanged between applications. With the new Docsie feature, webhooks improve productivity and automate document workflows.</p>
+<p>Real-time innovation and collaboration. </p>
+<p>Automation and task control.</p>
+<p>Seamless integration with massive packages. </p>
+<p>Streamline your document workflow and growth productiveness. Try the webhooks function in <a href="https://help.docsie.io/view-and-manage-integrations/what-are-webhooks/" rel="nofollow noopener">Docsie today </a>and revel in a new high-overall performance experience for your subscription technique.</p>
+        </div>
+      </article>
+      
+      <!-- How Docsie Helps Section -->
+      <!-- TODO: Make this section data-driven from BlogVi settings
+      <div class="my-16">
+        <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">
+          How can Docsie help you?
+        </h2>
+        <p class="text-gray-600 text-center mb-12">
+          Choose your use case and see how Docsie can transform your documentation process
+        </p>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+          <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-6 hover:shadow-lg transition-shadow duration-300">
+            <div class="flex items-start space-x-4">
+              <div class="p-3 rounded-lg bg-blue-100 text-blue-600">
+                <i data-lucide="search" class="h-6 w-6"></i>
+              </div>
+              <div class="flex-1">
+                <h3 class="text-xl font-semibold text-gray-900 mb-2">Knowledge Base</h3>
+                <p class="text-gray-600 mb-4">Minimize Support Tickets with Instant Access to Expert Help.</p>
+                <ul class="space-y-2">
+                  <li class="flex items-center text-sm text-gray-600">
+                    <div class="w-1.5 h-1.5 rounded-full bg-blue-600 mr-3"></div>
+                    Instant access to help documentation
+                  </li>
+                  <li class="flex items-center text-sm text-gray-600">
+                    <div class="w-1.5 h-1.5 rounded-full bg-blue-600 mr-3"></div>
+                    Reduce support ticket volume by 60%
+                  </li>
+                  <li class="flex items-center text-sm text-gray-600">
+                    <div class="w-1.5 h-1.5 rounded-full bg-blue-600 mr-3"></div>
+                    24/7 self-service support
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          
+          <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-6 hover:shadow-lg transition-shadow duration-300">
+            <div class="flex items-start space-x-4">
+              <div class="p-3 rounded-lg bg-green-100 text-green-600">
+                <i data-lucide="file-text" class="h-6 w-6"></i>
+              </div>
+              <div class="flex-1">
+                <h3 class="text-xl font-semibold text-gray-900 mb-2">Product Documentation</h3>
+                <p class="text-gray-600 mb-4">Empower Your Product Expertise with comprehensive tools.</p>
+                <ul class="space-y-2">
+                  <li class="flex items-center text-sm text-gray-600">
+                    <div class="w-1.5 h-1.5 rounded-full bg-green-600 mr-3"></div>
+                    Version control and collaboration
+                  </li>
+                  <li class="flex items-center text-sm text-gray-600">
+                    <div class="w-1.5 h-1.5 rounded-full bg-green-600 mr-3"></div>
+                    Multi-format publishing
+                  </li>
+                  <li class="flex items-center text-sm text-gray-600">
+                    <div class="w-1.5 h-1.5 rounded-full bg-green-600 mr-3"></div>
+                    Real-time updates
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          
+          <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-6 hover:shadow-lg transition-shadow duration-300">
+            <div class="flex items-start space-x-4">
+              <div class="p-3 rounded-lg bg-purple-100 text-purple-600">
+                <i data-lucide="shield" class="h-6 w-6"></i>
+              </div>
+              <div class="flex-1">
+                <h3 class="text-xl font-semibold text-gray-900 mb-2">SOPs & Compliance</h3>
+                <p class="text-gray-600 mb-4">Streamline procedures and maintain regulatory compliance.</p>
+                <ul class="space-y-2">
+                  <li class="flex items-center text-sm text-gray-600">
+                    <div class="w-1.5 h-1.5 rounded-full bg-purple-600 mr-3"></div>
+                    Automated compliance tracking
+                  </li>
+                  <li class="flex items-center text-sm text-gray-600">
+                    <div class="w-1.5 h-1.5 rounded-full bg-purple-600 mr-3"></div>
+                    Audit trail management
+                  </li>
+                  <li class="flex items-center text-sm text-gray-600">
+                    <div class="w-1.5 h-1.5 rounded-full bg-purple-600 mr-3"></div>
+                    Regulatory updates
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      -->
+      
+      <!-- Glossary Section -->
+      
 
-  <!--Divider-->
-  <hr class="border-b-1 border-gray-400 mt-12 mb-8 mx-4">
+      <!-- FAQ Section -->
+      
+      
+      <!-- Related Articles Section -->
+      
+      
+      <!-- Call to Action -->
+      
+      
+      
+        
+        
+      
+      
+      <section class="mt-16 p-8 bg-gradient-to-r from-blue-50 to-blue-100 rounded-xl border border-blue-200">
+        <div class="text-center">
+          <h3 class="text-2xl font-bold text-gray-900 mb-4">
+            Ready to Transform Your Documentation?
+          </h3>
+          <p class="text-gray-600 mb-8 max-w-2xl mx-auto">
+            Discover how Docsie's powerful platform can streamline your content workflow. Book a personalized demo today!
+          </p>
+          <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <a href="https://www.docsie.io/demo/" 
+               class="inline-flex items-center bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-medium transition">
+              <span>Book Your Free Demo</span>
+              <i data-lucide="arrow-right" class="ml-2 h-4 w-4"></i>
+            </a>
+            <div class="flex items-center space-x-2 text-gray-600">
+              <div class="flex items-center">
+                <i data-lucide="star" class="h-4 w-4 fill-yellow-400 text-yellow-400"></i>
+                <i data-lucide="star" class="h-4 w-4 fill-yellow-400 text-yellow-400"></i>
+                <i data-lucide="star" class="h-4 w-4 fill-yellow-400 text-yellow-400"></i>
+                <i data-lucide="star" class="h-4 w-4 fill-yellow-400 text-yellow-400"></i>
+                <i data-lucide="star" class="h-4 w-4 fill-yellow-400 text-yellow-400"></i>
+              </div>
+              <span class="text-sm">4.8 Stars (100+ Reviews)</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Author Section -->
+      <div class="mt-12 pt-8 border-t border-gray-200">
+        <div class="flex items-start gap-4">
+          
+            
+              <img class="w-16 h-16 rounded-full" src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_p1X4gXS3n0rCHYuaE/1f3f5f57-d8e2-7978-faef-0b9fe89f3e4btanya_pic.jpg" alt="Tanya A Mishra">
+            
+          
+          <div class="flex-1">
+            <h4 class="font-semibold text-gray-900">Tanya A Mishra</h4>
+            
+            <p class="text-sm text-gray-600 mt-1">A B2B writer and an editor, "All Ghillied Up" to take on distinct hurdles with over 5 years of experience in curating influential product writing.</p>
+            
+            <!-- Author Social Links -->
+            
+            <div class="mt-3 flex space-x-3">
+              
+              
+              <a href="https://www.linkedin.com/in/tanya-a-mishra/" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-blue-700 transition">
+                <span class="sr-only">LinkedIn</span>
+                <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                </svg>
+              </a>
+              
+              
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+  <!-- End Main Content Grid -->
 
   <!--Next & Prev Links-->
-  <div class="font-sans flex justify-between content-center px-4 mb-4">
-    <div class="text-left">
-      <span class="text-xs md:text-sm font-normal text-gray-600">&lt; Previous Post</span><br>
-      <p><a href="../customer-onboarding-documentation-with-live-examples-best-practices-in-2023" class="break-normal text-base md:text-sm text-green-500 font-bold no-underline hover:underline">Ügyfélbevezetési dokumentáció élő példákkal - Legjobb gyakorlatok 2023-ban</a></p>
-    </div>
-    <div class="text-right">
-      <span class="text-xs md:text-sm font-normal text-gray-600">Next Post &gt;</span><br>
-      <p><a href="../archbee-pricing-vs-slab-pricing-vs-docsie-pricing-a-comprehensive-comparison" class="break-normal text-base md:text-sm text-green-500 font-bold no-underline hover:underline">Archbee árképzés vs Slab árképzés vs Docsie árképzés: A Comprehensive Comparison: A Comprehensive Comparison</a></p>
+  <div class="mt-16 border-t border-gray-200 pt-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      
+      <div></div>
+      
+      
+      
     </div>
   </div>
 
-
-  <!--/Next & Prev Links-->
-
-  
-    <div class="commentbox"></div>
-
-    <script src="https://unpkg.com/commentbox.io/dist/commentBox.min.js"></script>
-    <script>commentBox("5725910686760960-proj")</script>
+  <!--Comments-->
   
 
   <!--Subscribe-->
   
-    <!-- Base template of the subscription form. -->
-
-<div class="container font-sans bg-white rounded mt-8 p-4 md:p-24 text-center mb-10">
-    <h2 class="font-bold break-normal text-2xl md:text-4xl">Subscribe to the newsletter</h2>
-    <h3 class="font-bold break-normal font-normal text-gray-600 text-base md:text-xl">Stay up to date with our latest news and products</h3>
-    <div class="w-full text-center pt-4">
-        <form action="#">
-            <div class="max-w-xl mx-auto p-1 pr-0 flex flex-wrap items-center">
-                <input type="email" placeholder="youremail@example.com"
-                       class="flex-1 appearance-none rounded shadow p-3 text-gray-600 mr-2 focus:outline-none">
-                <button type="submit"
-                        class="flex-1 mt-4 md:mt-0 block md:inline-block appearance-none bg-green-500 text-white text-base font-semibold tracking-wider uppercase py-4 rounded shadow hover:bg-green-400">
-                    Subscribe
-                </button>
-            </div>
-        </form>
-    </div>
-</div>
-  
-  <!-- /Subscribe-->
 </div>
 <!--/container-->
 
-<footer class="bg-gray-900">
-  <div class="container max-w-6xl mx-auto flex items-center px-2 py-8">
-
-    <div class="w-full mx-auto flex flex-wrap items-center">
-      <div class="flex w-full md:w-1/2 justify-center md:justify-start text-white font-extrabold flex-col">
-        <a class="text-gray-900 no-underline hover:text-gray-900 hover:no-underline" href="/blog/hu">
-          <span class="text-base text-gray-200">Docsie.io Blog</span>
-        </a>
-        <a class="text-gray-900 no-underline hover:text-gray-900 hover:no-underline"
-           href="https://github.com/LikaloLLC/BlogVi" target="_blank">
-          <span class="text-xs text-gray-200">Made with BlogVI</span>
-        </a>
-      </div>
-      <div class="flex w-full pt-2 content-center justify-between md:w-1/2 md:justify-end">
-        <ul class="list-reset flex justify-center flex-1 md:flex-none items-center">
-          
-            <li>
-              <a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-3"
-                 href="https://www.docsie.io">Docsie</a>
-            </li>
-          
-            <li>
-              <a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-3"
-                 href="https://www.docsie.io/pricing/">Docsie Pricing</a>
-            </li>
-          
-            <li>
-              <a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-3"
-                 href="https://www.docsie.io/try_docsie/">Try Docsie</a>
-            </li>
-          
-        </ul>
-      </div>
+<!-- BlogVi Footer V2 - Simplified version using production styles -->
+<footer class="bg-gray-900 text-white mt-16">
+    <div class="container mx-auto px-4 py-12">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <!-- Company Info -->
+            <div>
+                <h3 class="text-lg font-semibold mb-4">Docsie</h3>
+                <p class="text-gray-400 text-sm">
+                    The modern documentation platform that helps teams create, manage, and share knowledge.
+                </p>
+            </div>
+            
+            <!-- Quick Links -->
+            <div>
+                <h4 class="text-lg font-semibold mb-4">Product</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="https://www.docsie.io/features/" class="text-gray-400 hover:text-white transition-colors">Features</a></li>
+                    <li><a href="https://www.docsie.io/pricing/" class="text-gray-400 hover:text-white transition-colors">Pricing</a></li>
+                    <li><a href="https://www.docsie.io/documentation/" class="text-gray-400 hover:text-white transition-colors">Documentation</a></li>
+                    <li><a href="/blog/" class="text-gray-400 hover:text-white transition-colors">Blog</a></li>
+                    <li><a href="/blog/glossary/" class="text-gray-400 hover:text-white transition-colors">Glossary</a></li>
+                </ul>
+            </div>
+            
+            <!-- Resources -->
+            <div>
+                <h4 class="text-lg font-semibold mb-4">Resources</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="https://help.docsie.io" class="text-gray-400 hover:text-white transition-colors">Help Center</a></li>
+                    <li><a href="https://www.docsie.io/support/" class="text-gray-400 hover:text-white transition-colors">Support</a></li>
+                    <li><a href="https://www.docsie.io/about/" class="text-gray-400 hover:text-white transition-colors">About Us</a></li>
+                    <li><a href="https://www.docsie.io/careers/" class="text-gray-400 hover:text-white transition-colors">Careers</a></li>
+                </ul>
+            </div>
+            
+            <!-- Social Links -->
+            <div>
+                <h4 class="text-lg font-semibold mb-4">Connect</h4>
+                <div class="flex space-x-4">
+                    <a href="https://twitter.com/docsie_io" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/company/docsie" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://github.com/LikaloLLC" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="/blog/rss.xml" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fas fa-rss"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Bottom Bar -->
+        <div class="mt-8 pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center text-sm text-gray-400">
+            <p>&copy;  Docsie. All rights reserved.</p>
+            <div class="flex space-x-6 mt-4 md:mt-0">
+                <a href="https://www.docsie.io/privacy/" class="hover:text-white transition-colors">Privacy Policy</a>
+                <a href="https://www.docsie.io/terms/" class="hover:text-white transition-colors">Terms of Service</a>
+                <a href="https://www.docsie.io/cookies/" class="hover:text-white transition-colors">Cookie Policy</a>
+            </div>
+        </div>
     </div>
-
-
-  </div>
 </footer>
 
 <script>
+// Set current year for copyright
+document.addEventListener('DOMContentLoaded', function() {
+    const yearElements = document.querySelectorAll('[data-year]');
+    const currentYear = new Date().getFullYear();
+    yearElements.forEach(el => el.textContent = currentYear);
+});
+</script>
+
+<script>
+  // Initialize Lucide icons
+  if (typeof lucide !== 'undefined') {
+    lucide.createIcons();
+  }
+  
   /* Progress bar */
-  //Source: https://alligator.io/js/progress-bar-javascript-css-variables/
   var h = document.documentElement,
     b = document.body,
     st = 'scrollTop',
     sh = 'scrollHeight',
     progress = document.querySelector('#progress'),
     scroll;
-  var scrollpos = window.scrollY;
-  var header = document.getElementById("header");
-  var navcontent = document.getElementById("nav-content");
 
   document.addEventListener('scroll', function () {
-
     /*Refresh scroll % width*/
     scroll = (h[st] || b[st]) / ((h[sh] || b[sh]) - h.clientHeight) * 100;
-    progress.style.setProperty('--scroll', scroll + '%');
-
-    /*Apply classes for slide in bar*/
-    scrollpos = window.scrollY;
-
-    if (scrollpos > 10) {
-      header.classList.add("bg-white");
-      header.classList.add("shadow");
-      navcontent.classList.remove("bg-gray-100");
-      navcontent.classList.add("bg-white");
-    } else {
-      header.classList.remove("bg-white");
-      header.classList.remove("shadow");
-      navcontent.classList.remove("bg-white");
-      navcontent.classList.add("bg-gray-100");
-
-    }
-
+    progress.style.width = scroll + '%';
   });
 
-
-  //Javascript to toggle the menu
-  document.getElementById('nav-toggle').onclick = function () {
-    document.getElementById("nav-content").classList.toggle("hidden");
+  // Mobile menu toggle
+  const navToggle = document.getElementById('nav-toggle');
+  const navContent = document.getElementById('nav-content');
+  const menuIcon = document.getElementById('menu-icon');
+  const closeIcon = document.getElementById('close-icon');
+  
+  if (navToggle) {
+    navToggle.onclick = function () {
+      navContent.classList.toggle('hidden');
+      menuIcon.classList.toggle('hidden');
+      closeIcon.classList.toggle('hidden');
+    }
+  }
+  
+  // Mobile TOC toggle
+  const tocToggle = document.getElementById('toc-toggle');
+  const tocContent = document.getElementById('toc-content');
+  const tocChevron = document.getElementById('toc-chevron');
+  
+  if (tocToggle) {
+    tocToggle.onclick = function () {
+      tocContent.classList.toggle('hidden');
+      tocChevron.classList.toggle('rotate-90');
+    }
   }
 </script>
+
 <script>
-  /*
-    Twitter
-    https://twitter.com/share?url=[post-url]&text=[post-title]
-
-    Facebook
-    https://www.facebook.com/sharer.php?u=[post-url]
-
-  */
+  /*Twitter & Facebook sharing*/
   let twitterURI = document.getElementById('twitter');
   let facebookURI = document.getElementById('facebook');
 
@@ -461,9 +1383,21 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <!--Sharect-->
 
 <script src="https://unpkg.com/sharect@2.0.0/dist/sharect.js"></script>
-<script>window["sharectConfig"] = {"backgroundColor": "#333333", "enabled": true, "facebook": true, "iconColor": "#FFFFFF", "selectableElements": ["body"], "twitter": true, "twitterUsername": "likalo_llc"}</script>
+<script>
+  try {
+    const settingsData = document.body.getAttribute('data-sharect-settings');
+    if (settingsData) {
+      window["sharectConfig"] = JSON.parse(settingsData);
+    } else {
+      console.warn('Sharect settings data attribute not found.');
+      window["sharectConfig"] = {};
+    }
+  } catch (e) {
+    console.error('Error parsing Sharect settings:', e);
+    window["sharectConfig"] = {};
+  }
+</script>
 <script src="/blog/templates/assets/js/sharect.js"></script>
-
 
 
 <!--Reading time-->
@@ -474,19 +1408,248 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     text.push(elem.textContent)
   });
   const stats = readingTime(text.join(" "));
-
   document.getElementById('reading-time').innerHTML = stats.text;
 </script>
 
 
-  
-      <!-- Google Tag Manager (noscript) -->
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TZRGMQ9"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
 
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TZRGMQ9"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
+
+<script>
+  // Scrollspy functionality for TOC
+  window.addEventListener('DOMContentLoaded', () => {
+    const tocContainer = document.querySelector('.toc');
+    if (!tocContainer) return;
+
+    const tocLinks = Array.from(tocContainer.querySelectorAll('a'));
+    const content = document.querySelector('#content');
+    if (!content || tocLinks.length === 0) return;
+
+    // Get all headings from content
+    const headings = tocLinks.map(link => {
+      const href = link.getAttribute('href');
+      if (!href || !href.startsWith('#')) return null;
+      const targetId = href.substring(1);
+      if (!targetId) return null;
+      
+      // Look for any heading with this ID (h1, h2, h3, etc.)
+      return document.getElementById(targetId);
+    }).filter(h => h);
+
+    if (headings.length === 0) return;
+
+    const offset = 100; // Adjust for fixed header
+
+    function highlightTocLink() {
+      let activeIndex = -1;
+      const scrollY = window.scrollY + offset;
+
+      // Find the current section
+      for (let i = headings.length - 1; i >= 0; i--) {
+        if (headings[i].offsetTop <= scrollY) {
+          activeIndex = i;
+          break;
+        }
+      }
+
+      // Update active states
+      tocLinks.forEach((link, index) => {
+        if (index === activeIndex) {
+          link.classList.add('active-toc-link');
+        } else {
+          link.classList.remove('active-toc-link');
+        }
+      });
+    }
+
+    // Initial highlight check
+    highlightTocLink();
+
+    // Re-check on scroll with debounce
+    let scrollTimeout;
+    window.addEventListener('scroll', () => {
+      clearTimeout(scrollTimeout);
+      scrollTimeout = setTimeout(highlightTocLink, 10);
+    });
+  });
+
+  // Medium-style TOC and CTA behavior
+  const tocModal = document.getElementById('toc-modal');
+  const floatingCta = document.getElementById('floating-cta');
+  const header = document.getElementById('header');
+  const ctaFull = document.getElementById('cta-full');
+  const ctaMinimized = document.getElementById('cta-minimized');
+  const ctaClose = document.getElementById('cta-close');
+  const ctaExpand = document.getElementById('cta-expand');
   
+  let ctaShown = false;
+  let lastScrollTop = 0;
+
+  // CTA minimize/expand handlers
+  if (ctaClose && ctaFull && ctaMinimized) {
+    ctaClose.addEventListener('click', () => {
+      ctaFull.style.opacity = '0';
+      ctaFull.style.transform = 'scale(0.8)';
+      setTimeout(() => {
+        ctaFull.classList.add('hidden');
+        ctaMinimized.classList.remove('hidden');
+        setTimeout(() => {
+          ctaMinimized.style.opacity = '1';
+        }, 50);
+      }, 200);
+    });
+
+    ctaExpand.addEventListener('click', () => {
+      ctaMinimized.style.opacity = '0';
+      setTimeout(() => {
+        ctaMinimized.classList.add('hidden');
+        ctaFull.classList.remove('hidden');
+        setTimeout(() => {
+          ctaFull.style.opacity = '1';
+          ctaFull.style.transform = 'scale(1)';
+        }, 50);
+      }, 200);
+    });
+  }
+
+  window.addEventListener('scroll', () => {
+    const scrollY = window.scrollY;
+    const scrollPercentage = (scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+
+    // Hide/show header based on scroll direction
+    if (header) {
+      if (scrollY > lastScrollTop && scrollY > 100) {
+        // Scrolling down - hide header
+        header.style.transform = 'translateY(-100%)';
+      } else if (scrollY < lastScrollTop) {
+        // Scrolling up - show header
+        header.style.transform = 'translateY(0)';
+      }
+    }
+
+    // Smart TOC visibility - hide on scroll down, show on scroll up
+    if (tocModal) {
+      if (scrollY > 100) {
+        // User has scrolled past initial position
+        if (scrollY > lastScrollTop && scrollY > 200) {
+          // Scrolling down - hide TOC
+          tocModal.style.opacity = '0';
+          tocModal.style.transform = 'translateX(-20px)';
+        } else if (scrollY < lastScrollTop) {
+          // Scrolling up - show TOC
+          tocModal.style.opacity = '1';
+          tocModal.style.transform = 'translateX(0)';
+        }
+      } else {
+        // At the top of the page - always show TOC
+        tocModal.style.opacity = '1';
+        tocModal.style.transform = 'translateX(0)';
+      }
+    }
+    
+    // Update lastScrollTop AFTER all scroll-based logic
+    lastScrollTop = scrollY;
+
+    // Show floating CTA after 30% scroll
+    if (floatingCta && scrollPercentage > 30 && !ctaShown) {
+      ctaShown = true;
+      floatingCta.style.transform = 'translateY(0)';
+      floatingCta.style.opacity = '1';
+      // Initialize lucide icons for the CTA
+      if (typeof lucide !== 'undefined') {
+        setTimeout(() => lucide.createIcons(), 100);
+      }
+    }
+  });
+
+  // SEO-friendly social sharing implementation
+  document.addEventListener('DOMContentLoaded', function() {
+    const shareButtons = document.querySelectorAll('[data-share]');
+    
+    shareButtons.forEach(button => {
+      button.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        const platform = this.getAttribute('data-share');
+        const url = encodeURIComponent(this.getAttribute('data-url') || window.location.href);
+        const title = encodeURIComponent(this.getAttribute('data-title') || document.title);
+        
+        let shareUrl = '';
+        
+        switch(platform) {
+          case 'twitter':
+            // Twitter supports both URL and text
+            shareUrl = `https://twitter.com/intent/tweet?url=${url}&text=${title}`;
+            break;
+          case 'facebook':
+            // Facebook only uses URL, pulls data from Open Graph tags
+            shareUrl = `https://www.facebook.com/sharer.php?u=${url}`;
+            break;
+          case 'linkedin':
+            // LinkedIn only uses URL, pulls data from Open Graph tags
+            // Note: LinkedIn doesn't support pre-filling text in their share dialog
+            shareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${url}`;
+            break;
+        }
+        
+        if (shareUrl) {
+          window.open(shareUrl, '_blank', 'width=600,height=400,noopener,noreferrer');
+        }
+      });
+    });
+  });
+</script>
+
+<!-- Progressive Image Loading with LQIP -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const images = document.querySelectorAll('img[data-lqip]');
+    
+    images.forEach(img => {
+        // Set LQIP as initial source
+        const lqip = img.getAttribute('data-lqip');
+        if (lqip && !img.complete) {
+            img.classList.add('blur-up');
+            
+            // Create a new image to load the high quality version
+            const highQualityImg = new Image();
+            highQualityImg.src = img.src;
+            
+            highQualityImg.onload = function() {
+                img.src = highQualityImg.src;
+                img.classList.add('loaded');
+            };
+            
+            // Set LQIP
+            img.src = lqip;
+        }
+    });
+});
+
+// Enhanced lazy loading with native support fallback
+if ('loading' in HTMLImageElement.prototype) {
+    // Browser supports native lazy loading
+    console.log('Native lazy loading supported');
+} else {
+    // Fallback to Intersection Observer
+    const lazyImages = document.querySelectorAll('img[loading="lazy"]');
+    
+    const imageObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const img = entry.target;
+                img.src = img.dataset.src || img.src;
+                imageObserver.unobserve(img);
+            }
+        });
+    });
+    
+    lazyImages.forEach(img => imageObserver.observe(img));
+}
+</script>
 
 </body>
-
 </html>
