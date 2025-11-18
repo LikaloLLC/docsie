@@ -462,8 +462,9 @@
   <link rel="stylesheet" href="/styles/tailwind-compat.css">
   
   <!-- PRIORITY 3: Tailwind CSS - Critical for layout -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  
+  <!-- Primary: CDN (fastest), Fallback: Local (357KB) -->
+  <script src="https://cdn.tailwindcss.com" onerror="this.onerror=null; this.remove(); var s=document.createElement('script'); s.src='/assets/vendor/tailwindcss.js'; document.head.appendChild(s);"></script>
+
   <!-- PRIORITY 4: Additional Styles -->
   <link rel="stylesheet" href="/assets/css/animated-gradient-bg.css">
   
@@ -2008,10 +2009,12 @@ document.addEventListener('DOMContentLoaded', function() {
       </div>
 
       <!-- Collapsible Feature Comparison Table -->
-      <div id="features-comparison" class="hidden mt-12 overflow-x-auto">
-        <div class="bg-white rounded-2xl border border-gray-200 p-8">
-          <h3 class="text-2xl font-bold text-gray-900 mb-6">Detailed Feature Comparison</h3>
-          <table class="w-full">
+      <div id="features-comparison" class="hidden mt-12">
+        <div class="bg-white rounded-2xl border border-gray-200 p-4 md:p-8">
+          <h3 class="text-xl md:text-2xl font-bold text-gray-900 mb-6">Detailed Feature Comparison</h3>
+          <div class="overflow-x-auto -mx-4 px-4 md:mx-0 md:px-0">
+            <div class="min-w-[600px]">
+              <table class="w-full">
   <thead>
     <tr class="border-b border-gray-200">
       <th class="text-left py-4 px-4 font-medium text-gray-900">Features</th>
@@ -2137,6 +2140,8 @@ document.addEventListener('DOMContentLoaded', function() {
     </tr>
   </tbody>
 </table>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -2209,8 +2214,8 @@ document.addEventListener('DOMContentLoaded', function() {
     <!-- Pricing Tiers -->
     <div class="mb-8">
       <h4 class="font-semibold text-gray-900 mb-4 text-center">Volume Pricing Tiers</h4>
-      <div class="overflow-x-auto">
-        <table class="w-full text-sm">
+      <div class="overflow-x-auto -mx-4 px-4 md:mx-0 md:px-0">
+        <table class="w-full text-sm min-w-[600px]">
           <thead>
             <tr class="border-b-2 border-gray-200">
               <th class="text-left py-3 px-4 font-semibold text-gray-900">Volume</th>
@@ -2375,8 +2380,8 @@ document.addEventListener('DOMContentLoaded', function() {
     <div class="mb-8">
       <h4 class="font-semibold text-gray-900 mb-4 text-center">What 300 Hours of Video Costs</h4>
 
-      <div class="overflow-x-auto">
-        <table class="w-full text-sm">
+      <div class="overflow-x-auto -mx-4 px-4 md:mx-0 md:px-0">
+        <table class="w-full text-sm min-w-[650px]">
           <thead>
             <tr class="border-b-2 border-gray-200">
               <th class="text-left py-3 px-4 font-semibold text-gray-900">Method</th>
