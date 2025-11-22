@@ -1814,7 +1814,7 @@ document.addEventListener('DOMContentLoaded', function() {
   <!-- Trusted By Logos (separate section) -->
   <div class="hero-logos-section">
     <div class="container mx-auto px-4 lg:px-8">
-      <div class="hero-logo-row">
+      <div class="hero-logo-row" id="logo-carousel">
         <div class="hero-logo-item logo-canada">
           <span class="hero-logo-inner">
             <img src="/assets/logos/customers/processed/Canada.webp" alt="Canada" loading="lazy">
@@ -1848,8 +1848,47 @@ document.addEventListener('DOMContentLoaded', function() {
       </div>
     </div>
   </div>
-  
+
 </section>
+
+<script>
+// Mobile logo carousel
+(function() {
+  function setupCarousel() {
+    const logoRow = document.getElementById('logo-carousel');
+    if (!logoRow) return;
+
+    // Remove any existing clones
+    const originalCount = 6; // Number of original logos
+    while (logoRow.children.length > originalCount) {
+      logoRow.removeChild(logoRow.lastChild);
+    }
+
+    // Only clone on mobile
+    if (window.innerWidth <= 768) {
+      // Clone logos 3x for truly seamless infinite scroll
+      const logos = Array.from(logoRow.children);
+
+      // Create 2 more sets (total of 3 sets = 18 logos)
+      for (let i = 0; i < 2; i++) {
+        logos.forEach(logo => {
+          const clone = logo.cloneNode(true);
+          logoRow.appendChild(clone);
+        });
+      }
+    }
+  }
+
+  setupCarousel();
+
+  // Re-setup on resize
+  let resizeTimer;
+  window.addEventListener('resize', function() {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(setupCarousel, 250);
+  });
+})();
+</script>
 
   <!-- Solution Picker Section -->
   <!-- Modern Solution Picker Section v2 - Built with Tailwind CSS -->
