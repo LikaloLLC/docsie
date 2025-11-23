@@ -23,6 +23,9 @@ jobs:
 
       - name: Sync website files to S3
         run: |
+          # Note: Language folders are excluded because CloudFront Function handles 301 redirects
+          # to English versions. This is a one-time migration - we only sync English content now.
+          # Excluded languages: da, de, es, fr, hu, it, ja, ko, nl, pl, pt-br, pt-pt, ru, sv, tr, zh
           aws s3 sync . s3://ww7-docsie-io \
             --size-only \
             --delete \
@@ -35,22 +38,22 @@ jobs:
             --exclude ".env" \
             --exclude "*.pyc" \
             --exclude "__pycache__/*" \
-            --exclude "da/assets/*" \
-            --exclude "de/assets/*" \
-            --exclude "es/assets/*" \
-            --exclude "fr/assets/*" \
-            --exclude "hu/assets/*" \
-            --exclude "it/assets/*" \
-            --exclude "ja/assets/*" \
-            --exclude "ko/assets/*" \
-            --exclude "nl/assets/*" \
-            --exclude "pl/assets/*" \
-            --exclude "pt-br/assets/*" \
-            --exclude "pt-pt/assets/*" \
-            --exclude "ru/assets/*" \
-            --exclude "sv/assets/*" \
-            --exclude "tr/assets/*" \
-            --exclude "zh/assets/*" \
+            --exclude "da/*" \
+            --exclude "de/*" \
+            --exclude "es/*" \
+            --exclude "fr/*" \
+            --exclude "hu/*" \
+            --exclude "it/*" \
+            --exclude "ja/*" \
+            --exclude "ko/*" \
+            --exclude "nl/*" \
+            --exclude "pl/*" \
+            --exclude "pt-br/*" \
+            --exclude "pt-pt/*" \
+            --exclude "ru/*" \
+            --exclude "sv/*" \
+            --exclude "tr/*" \
+            --exclude "zh/*" \
             --cache-control "public, max-age=31536000"
 
       - name: Invalidate CloudFront cache
