@@ -24,6 +24,7 @@ jobs:
       - name: Sync website files to S3
         run: |
           aws s3 sync . s3://ww7-docsie-io \
+            --size-only \
             --delete \
             --exclude ".git/*" \
             --exclude ".github/*" \
