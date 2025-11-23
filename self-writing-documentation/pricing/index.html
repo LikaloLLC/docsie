@@ -1433,24 +1433,26 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </div>
 <script type="text/javascript">
   "use strict";
-  function Policy(policy) {
+  document.addEventListener('DOMContentLoaded', function() {
+    var policy = document.querySelector(".cookie-policy-alert");
+    if (!policy) return;
+
     var policyHide = 15000;
 
     function hidePolicy() {
       policy.style.display = "none";
       localStorage.setItem("docsie-cookie-policy", true);
     }
-    if (
-      !localStorage.getItem("docsie-cookie-policy")
-    ) {
-      policy
-        .querySelector(".cookie-policy-close")
-        .addEventListener("click", hidePolicy);
+
+    if (!localStorage.getItem("docsie-cookie-policy")) {
+      var closeButton = policy.querySelector(".cookie-policy-close");
+      if (closeButton) {
+        closeButton.addEventListener("click", hidePolicy);
+      }
       policy.style.display = "block";
       setTimeout(hidePolicy, policyHide);
     }
-  }
-  $await(".cookie-policy-alert", Policy);
+  });
 </script>
   <div class="lb-cookie-policy cookie-policy">
     <aside tabindex="0" role="alertdialog" class="lb-cookie-policy-alert cookie-policy-alert "
