@@ -1,0 +1,96 @@
+<!-- Solution Narrative (Ingest -> Manage -> Publish) -->
+
+{% set solution_blocks = [
+  {
+    'id': 'ingest',
+    'title': 'Ingest',
+    'body': 'Turn training content into complete documentation. Automatically.',
+    'details': [
+      'Generate a knowledge base structure from raw recordings',
+      'Extract steps, workflows, and screenshots',
+      'Produce SOPs, user guides, and reference docs',
+      'Consolidate scattered knowledge in one place',
+    ],
+    'media': {
+      'type': 'video',
+      'src': '/assets/videos/video-to-docs-demo.mp4',
+      'poster': '/assets/videos/video-to-docs-poster.webp'
+    },
+    'background': 'white',
+    'flip': False
+  },
+  {
+    'id': 'manage',
+    'title': 'Manage',
+    'body': 'Your centralized knowledge base — versioned, reusable, always current.',
+    'details': [
+      'Organize content into clear topics and articles',
+      'Version control across clients and products',
+      'Reuse 80–90% of content and localize automatically',
+      'Maintain structure and style consistency',
+    ],
+    'media': {
+      'type': 'video',
+      'src': '/assets/videos/project_management.mp4',
+      'poster': '/assets/videos/video-to-docs-poster.webp'
+    },
+    'background': 'warm',
+    'flip': True
+  },
+  {
+    'id': 'publish',
+    'title': 'Publish',
+    'body': 'Deliver secure, branded documentation portals — tailored to each client.',
+    'details': [
+      'Choose content, versions, and languages per client',
+      'Publish dedicated portals with custom branding',
+      'Connect SSO / SAML / Azure AD / Okta',
+      'Sync thousands of portals from one base',
+    ],
+    'media': {
+      'type': 'image',
+      'src': '/assets/new_home_2/sop.svg'
+    },
+    'background': 'white',
+    'flip': False
+  }
+] %}
+
+{% for block in solution_blocks %}
+<section class="section-shell {% if block.background == 'warm' %}bg-warm-strong{% else %}bg-white{% endif %}">
+  <div class="section-inner">
+    <div class="grid md:grid-cols-2 gap-lg-base md:items-center {% if block.flip %}md:flex-row-reverse{% endif %}">
+      <div class="space-y-6 {% if block.flip %}md:order-2{% endif %}">
+        <p class="eyebrow">{% trans %}How Docsie works{% endtrans %}</p>
+        <h3 class="heading-md text-headline-warm">{{ block.title }}</h3>
+        <p class="body-lg text-body-warm max-w-xl">{{ block.body }}</p>
+        <ul class="space-y-3 text-left">
+          {% for item in block.details %}
+          <li class="flex items-start gap-3">
+            <svg class="w-5 h-5 text-v2-orange mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span class="body-base text-body-warm">{{ item }}</span>
+          </li>
+          {% endfor %}
+        </ul>
+        <a href="/features/" class="inline-flex items-center gap-2 text-v2-orange font-semibold body-base">
+          {% trans %}Learn more{% endtrans %}
+          <span aria-hidden="true">→</span>
+        </a>
+      </div>
+
+      <div class="card-warm card-padded {% if block.flip %}md:order-1{% endif %}">
+        {% if block.media.type == 'video' %}
+        <video class="w-full rounded-md" controls preload="metadata" poster="{{ block.media.poster }}">
+          <source src="{{ block.media.src }}" type="video/mp4">
+          {% trans %}Your browser does not support the video tag.{% endtrans %}
+        </video>
+        {% else %}
+        <img src="{{ block.media.src }}" alt="{{ block.title }}" class="w-full h-auto" loading="lazy">
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+{% endfor %}

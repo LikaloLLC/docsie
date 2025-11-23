@@ -1,20 +1,24 @@
 {% if section %}
-<!-- Alternating Content Component -->
-<section class="alternating-content-v2 py-16 md:py-24 bg-gradient-to-b from-white to-gray-50">
-  <div class="container mx-auto px-4 lg:px-8">
+<!-- Alternating Content V2 - Polished Design System -->
+<section class="section-shell warm-gradient relative overflow-hidden">
+
+  <!-- Background Pattern -->
+  <div class="absolute inset-0 opacity-5">
+    <div class="absolute inset-0 banner-grid"></div>
+  </div>
+
+  <div class="section-inner relative z-10">
 
     <!-- Section Header -->
     <div class="text-center mb-16">
       {% if section.badge %}
-      <span class="inline-block px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-semibold mb-4">
-        {{ section.badge }}
-      </span>
+      <p class="eyebrow mb-4">{{ section.badge }}</p>
       {% endif %}
-      <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-gray-900">
+      <h2 class="heading-xl text-headline-warm mb-4">
         {{ section.title }}
       </h2>
       {% if section.description %}
-      <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+      <p class="body-lg text-body-warm max-w-3xl mx-auto">
         {{ section.description }}
       </p>
       {% endif %}
@@ -27,29 +31,31 @@
 
         <!-- Image -->
         <div class="{% if loop.index is even %}md:order-2{% else %}md:order-1{% endif %}">
-          <div class="relative rounded-2xl overflow-hidden shadow-2xl group">
-            <img src="{{ item.image }}"
-                 alt="{{ item.alt or item.title }}"
-                 class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+          <div class="bento-card group">
+            <div class="relative rounded-2xl overflow-hidden">
+              <img src="{{ item.image }}"
+                   alt="{{ item.alt or item.title }}"
+                   class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
 
-            <!-- Gradient Overlay -->
-            <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <!-- Gradient Overlay -->
+              <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            </div>
           </div>
         </div>
 
         <!-- Text Content -->
         <div class="{% if loop.index is even %}md:order-1{% else %}md:order-2{% endif %}">
           {% if item.badge %}
-          <span class="inline-block px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-semibold mb-4">
-            {{ item.badge }}
-          </span>
+          <div class="inline-flex items-center justify-center px-4 py-2 rounded-full bg-v2-orange/10 mb-4">
+            <span class="text-sm font-medium text-v2-orange">{{ item.badge }}</span>
+          </div>
           {% endif %}
 
-          <h3 class="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+          <h3 class="heading-lg text-headline-warm mb-4">
             {{ item.title }}
           </h3>
 
-          <p class="text-lg text-gray-600 leading-relaxed mb-6">
+          <p class="body-base text-body-warm leading-relaxed mb-6">
             {{ item.description }}
           </p>
 
@@ -58,10 +64,10 @@
           <ul class="space-y-3 mb-6">
             {% for feature in item.features %}
             <li class="flex items-start gap-3">
-              <svg class="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              <svg class="w-5 h-5 text-v2-orange flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
               </svg>
-              <span class="text-gray-700">{{ feature }}</span>
+              <span class="text-body-warm">{{ feature }}</span>
             </li>
             {% endfor %}
           </ul>
@@ -72,8 +78,8 @@
           <div class="flex flex-wrap gap-6 mb-6">
             {% for stat in item.stats %}
             <div>
-              <div class="text-3xl font-bold text-blue-600">{{ stat.value }}</div>
-              <div class="text-sm text-gray-600">{{ stat.label }}</div>
+              <div class="text-3xl font-bold text-v2-orange">{{ stat.value }}</div>
+              <div class="text-sm text-body-warm">{{ stat.label }}</div>
             </div>
             {% endfor %}
           </div>
@@ -82,7 +88,7 @@
           <!-- Optional CTA -->
           {% if item.cta %}
           <a href="{{ item.cta.url }}"
-             class="inline-flex items-center text-blue-600 hover:text-blue-700 font-semibold group">
+             class="inline-flex items-center text-v2-orange hover:text-v2-orange-light font-semibold group">
             {{ item.cta.text }}
             <svg class="ml-2 w-5 h-5 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
@@ -98,10 +104,9 @@
     <!-- Optional Bottom CTA -->
     {% if section.cta %}
     <div class="text-center mt-16">
-      <a href="{{ section.cta.url }}"
-         class="inline-flex items-center justify-center px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 transform hover:-translate-y-1">
+      <a href="{{ section.cta.url }}" class="btn-primary-warm">
         {{ section.cta.text }}
-        <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg class="ml-2 w-5 h-5 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
         </svg>
       </a>

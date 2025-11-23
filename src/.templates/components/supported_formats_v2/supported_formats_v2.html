@@ -1,0 +1,83 @@
+{% if section %}
+<!-- Supported Formats Component v2 - Using Design System Semantic Classes -->
+<section class="section-shell warm-gradient relative overflow-hidden">
+
+  <!-- Background Pattern -->
+  <div class="absolute inset-0 opacity-5">
+    <div class="absolute inset-0 banner-grid"></div>
+  </div>
+
+  <!-- Floating background elements -->
+  <div class="absolute -top-40 -left-40 w-96 h-96 rounded-full blur-3xl blob blob-orange"></div>
+  <div class="absolute -bottom-40 -right-40 w-96 h-96 rounded-full blur-3xl blob blob-brown"></div>
+
+  <div class="section-inner relative z-10">
+
+    <!-- Section Header -->
+    {% if section.title %}
+    <div class="text-center mb-12">
+      {% if section.badge %}
+      <div class="inline-flex items-center rounded-full hero-badge mb-4">
+        <svg class="w-5 h-5 mr-2 hero-badge-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 4v16M17 4v16M3 8h4m10 0h4M3 12h18M3 16h4m10 0h4M4 20h16a1 1 0 001-1V5a1 1 0 00-1-1H4a1 1 0 00-1 1v14a1 1 0 001 1z"></path>
+        </svg>
+        <span class="hero-badge-text">{{ section.badge }}</span>
+      </div>
+      {% endif %}
+
+      <h2 class="heading-xl text-headline-warm mb-4">
+        {{ section.title }}
+      </h2>
+
+      {% if section.description %}
+      <p class="body-lg text-body-warm max-w-3xl mx-auto">
+        {{ section.description }}
+      </p>
+      {% endif %}
+    </div>
+    {% endif %}
+
+    <!-- Platforms Grid -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
+      {% for platform in section.platforms %}
+      <div class="bento-card group">
+        <div class="bento-card-inner p-6 text-center">
+
+          <!-- Logo or Icon -->
+          <div class="w-16 h-16 flex items-center justify-center mx-auto mb-4">
+            {% if platform.logo %}
+              <!-- Brandfetch Logo -->
+              <img src="{{ platform.logo }}" alt="{{ platform.title }} logo" class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-300" />
+            {% elif platform.icon %}
+              <!-- Font Awesome Icon -->
+              <i class="{{ platform.icon }} text-4xl text-v2-orange group-hover:text-v2-orange-light transition-colors"></i>
+            {% else %}
+              <!-- Default Video Icon -->
+              <svg class="w-12 h-12 text-v2-orange group-hover:text-v2-orange-light transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+              </svg>
+            {% endif %}
+          </div>
+
+          <h3 class="heading-sm text-headline-warm mb-2">{{ platform.title }}</h3>
+          <p class="body-sm text-body-warm">
+            {{ platform.description }}
+          </p>
+
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+    <!-- Optional CTA Section -->
+    {% if section.cta %}
+    <div class="text-center">
+      <a href="{{ section.cta.url }}" class="hero-cta inline-flex items-center">
+        {{ section.cta.text }}
+      </a>
+    </div>
+    {% endif %}
+
+  </div>
+</section>
+{% endif %}

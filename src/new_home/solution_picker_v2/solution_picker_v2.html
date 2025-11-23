@@ -1,106 +1,108 @@
-<!-- Modern Solution Picker Section v2 - Built with Tailwind CSS -->
-<section class="solution-picker-v2 py-20 bg-gradient-to-b from-white to-gray-50">
+<!-- Modern Solution Picker Section v2 - Warm Design -->
+<section class="solution-picker-v2 py-20 bg-gradient-to-b from-[var(--v2-bg-cream)] to-[var(--v2-bg-peach)]">
   <div class="container mx-auto px-4 lg:px-8">
-    
+
     <!-- Section Header -->
     <div class="text-center mb-12 opacity-0 animate-fade-in">
-      <h2 class="text-4xl md:text-5xl font-bold bg-gradient-to-r from-gray-900 to-gray-600 bg-clip-text text-transparent mb-4">
-        {% trans %}How can Docsie help you?{% endtrans %}
+      <h2 class="text-4xl md:text-5xl font-bold mb-4" style="color: var(--v2-brown); ">
+        {% trans %}How Docsie Works{% endtrans %}
       </h2>
-      <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-        {% trans %}Choose your use case and see how Docsie can transform your documentation process{% endtrans %}
+      <p class="text-xl max-w-3xl mx-auto" style="color: var(--v2-brown-light); ">
+        {% trans %}Transform enterprise knowledge in three simple steps{% endtrans %}
       </p>
     </div>
     
-    <!-- Solution Tabs -->
+    <!-- Three Step Tabs -->
     <div class="flex flex-wrap justify-center gap-4 lg:gap-5 mb-12 opacity-0 animate-slide-up" style="animation-delay: 0.2s;">
-      <button class="solution-tab group px-6 py-3 rounded-full border-2 border-gray-300 bg-white hover:border-green-500 hover:bg-green-50 transition-all duration-300 flex items-center gap-2 active" data-solution="knowledge-base">
-        <i class="fas fa-book text-gray-600 group-hover:text-green-600"></i>
-        <span class="font-medium text-gray-700 group-hover:text-green-700">{% trans %}Knowledge Base{% endtrans %}</span>
+      <button class="solution-tab group px-8 py-4 rounded-full border-2 transition-all duration-300 flex items-center gap-3 active" data-solution="ingest" style="border-color: rgba(178, 73, 52, 0.3); background: var(--v2-bg-white);">
+        <i class="fas fa-cloud-upload-alt text-xl" style="color: var(--v2-brown);"></i>
+        <span class="font-semibold text-lg" style="color: var(--v2-brown); ">{% trans %}Ingest{% endtrans %}</span>
       </button>
-      
-      <button class="solution-tab group px-6 py-3 rounded-full border-2 border-gray-300 bg-white hover:border-green-500 hover:bg-green-50 transition-all duration-300 flex items-center gap-2" data-solution="product-docs">
-        <i class="fas fa-file-alt text-gray-600 group-hover:text-green-600"></i>
-        <span class="font-medium text-gray-700 group-hover:text-green-700">{% trans %}Product Documentation{% endtrans %}</span>
+
+      <button class="solution-tab group px-8 py-4 rounded-full border-2 transition-all duration-300 flex items-center gap-3" data-solution="manage" style="border-color: rgba(178, 73, 52, 0.3); background: var(--v2-bg-white);">
+        <i class="fas fa-edit text-xl" style="color: #7C5A49;"></i>
+        <span class="font-semibold text-lg" style="color: #7C5A49; ">{% trans %}Manage{% endtrans %}</span>
       </button>
-      
-      <button class="solution-tab group px-6 py-3 rounded-full border-2 border-gray-300 bg-white hover:border-green-500 hover:bg-green-50 transition-all duration-300 flex items-center gap-2" data-solution="sops">
-        <i class="fas fa-tasks text-gray-600 group-hover:text-green-600"></i>
-        <span class="font-medium text-gray-700 group-hover:text-green-700">{% trans %}SOPs{% endtrans %}</span>
-      </button>
-      
-      <button class="solution-tab group px-6 py-3 rounded-full border-2 border-gray-300 bg-white hover:border-green-500 hover:bg-green-50 transition-all duration-300 flex items-center gap-2" data-solution="manuals">
-        <i class="fas fa-book-reader text-gray-600 group-hover:text-green-600"></i>
-        <span class="font-medium text-gray-700 group-hover:text-green-700">{% trans %}User Manuals{% endtrans %}</span>
-      </button>
-      
-      <button class="solution-tab group px-6 py-3 rounded-full border-2 border-gray-300 bg-white hover:border-green-500 hover:bg-green-50 transition-all duration-300 flex items-center gap-2" data-solution="doc-chatbots">
-        <i class="fas fa-robot text-gray-600 group-hover:text-green-600"></i>
-        <span class="font-medium text-gray-700 group-hover:text-green-700">{% trans %}Doc Chatbots{% endtrans %}</span>
-      </button>
-      
-      <button class="solution-tab group px-6 py-3 rounded-full border-2 border-gray-300 bg-white hover:border-green-500 hover:bg-green-50 transition-all duration-300 flex items-center gap-2" data-solution="data-sheets">
-        <i class="fas fa-table text-gray-600 group-hover:text-green-600"></i>
-        <span class="font-medium text-gray-700 group-hover:text-green-700">{% trans %}Data Sheets{% endtrans %}</span>
+
+      <button class="solution-tab group px-8 py-4 rounded-full border-2 transition-all duration-300 flex items-center gap-3" data-solution="publish" style="border-color: rgba(178, 73, 52, 0.3); background: var(--v2-bg-white);">
+        <i class="fas fa-rocket text-xl" style="color: #7C5A49;"></i>
+        <span class="font-semibold text-lg" style="color: #7C5A49; ">{% trans %}Publish{% endtrans %}</span>
       </button>
     </div>
     
     <!-- Solution Content Cards -->
     <div class="solution-content-container">
       
-      <!-- Knowledge Base Card -->
-      <div class="solution-content active opacity-0 animate-fade-in" id="knowledge-base-content" style="animation-delay: 0.4s;">
+      <!-- Ingest Card -->
+      <div class="solution-content active opacity-0 animate-fade-in" id="ingest-content" style="animation-delay: 0.4s;">
         <div class="bg-white rounded-3xl shadow-xl overflow-hidden">
           <div class="grid md:grid-cols-2 gap-0">
             <!-- Image Side -->
             <div class="relative h-64 md:h-full bg-gray-50 flex items-center justify-center">
-              <img src="/assets/new_home_2/knowledge_base.svg" 
-                   alt="Knowledge Base Preview" 
-                   class="w-full h-full object-contain p-8">
+              <video autoplay loop muted playsinline class="w-full h-full object-cover">
+                <source src="/assets/videos/video-to-docs-demo.mp4" type="video/mp4">
+                <img src="/assets/new_home_2/knowledge_base.svg" alt="Migration Preview" class="w-full h-full object-contain p-8" loading="lazy">
+              </video>
               <div class="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent"></div>
             </div>
-            
+
             <!-- Content Side -->
             <div class="p-8 md:p-12">
               <div class="flex items-center gap-3 mb-6">
-                <div class="w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center text-white">
-                  <i class="fas fa-book text-xl"></i>
+                <div class="w-12 h-12 rounded-xl flex items-center justify-center text-white" style="background: linear-gradient(135deg, #FF6738 0%, var(--v2-orange-light) 100%);">
+                  <i class="fas fa-cloud-upload-alt text-xl"></i>
                 </div>
-                <h3 class="text-2xl font-bold text-gray-900">{% trans %}Knowledge Base{% endtrans %}</h3>
+                <h3 class="text-2xl font-bold" style="color: var(--v2-brown); ">{% trans %}Ingest{% endtrans %}</h3>
               </div>
-              
-              <p class="text-gray-600 mb-6 text-lg">
-                {% trans %}Minimize Support Tickets with Instant Access to Expert Help. Empower your users to find solutions fast with our always-available, detailed self-help guides.{% endtrans %}
+
+              <p class="mb-6 text-lg font-semibold" style="color: var(--v2-brown); line-height: 1.5;">
+                {% trans %}Turn training content into complete documentation. Automatically.{% endtrans %}
               </p>
-              
-              <ul class="space-y-3 mb-8">
+
+              <p class="mb-6 text-base" style="color: var(--v2-brown-light); line-height: 1.6;">
+                {% trans %}Your teams already produce training videos, demos, and onboarding sessions. Docsie converts this raw content into structured, high-quality documentation.{% endtrans %}
+              </p>
+
+              <h4 class="font-semibold mb-3" style="color: var(--v2-brown); ">{% trans %}What happens:{% endtrans %}</h4>
+
+              <ul class="space-y-3 mb-6">
                 <li class="flex items-start gap-3">
-                  <svg class="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg class="w-5 h-5 mt-0.5 flex-shrink-0" style="color: var(--v2-orange);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                   </svg>
-                  <span class="text-gray-700">{% trans %}Instant access to help documentation{% endtrans %}</span>
+                  <span style="color: #7C5A49;">{% trans %}Generate a full knowledge base structure automatically (topics, sections, articles){% endtrans %}</span>
                 </li>
                 <li class="flex items-start gap-3">
-                  <svg class="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg class="w-5 h-5 mt-0.5 flex-shrink-0" style="color: var(--v2-orange);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                   </svg>
-                  <span class="text-gray-700">{% trans %}Searchable knowledge repository{% endtrans %}</span>
+                  <span style="color: #7C5A49;">{% trans %}Extract steps, workflows, screenshots, and explanations{% endtrans %}</span>
                 </li>
                 <li class="flex items-start gap-3">
-                  <svg class="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg class="w-5 h-5 mt-0.5 flex-shrink-0" style="color: var(--v2-orange);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                   </svg>
-                  <span class="text-gray-700">{% trans %}Reduce support ticket volume by 60%{% endtrans %}</span>
+                  <span style="color: #7C5A49;">{% trans %}Produce SOPs, user guides, and reference documentation{% endtrans %}</span>
                 </li>
                 <li class="flex items-start gap-3">
-                  <svg class="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg class="w-5 h-5 mt-0.5 flex-shrink-0" style="color: var(--v2-orange);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                   </svg>
-                  <span class="text-gray-700">{% trans %}24/7 self-service support{% endtrans %}</span>
+                  <span style="color: #7C5A49;">{% trans %}Consolidate knowledge scattered across wikis, LMS, and shared drives{% endtrans %}</span>
                 </li>
               </ul>
-              
-              <a href="/solutions/knowledge-base/" class="inline-flex items-center px-6 py-3 bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+
+              <div class="bg-gradient-to-r from-orange-50 to-amber-50 rounded-xl p-4 mb-6" style="border-left: 4px solid #FF6738;">
+                <p class="text-sm" style="color: var(--v2-brown-light); line-height: 1.5;">
+                  {% trans %}Docsie uses multimodal AI + computer vision to understand your content and generate complete documentation — not transcripts, not notes.{% endtrans %}
+                </p>
+              </div>
+
+              <p class="text-sm font-semibold mb-8" style="color: var(--v2-orange); ">
+                {% trans %}Upload content → receive a structured knowledge base.{% endtrans %}
+              </p>
+
+              <a href="/features/" class="inline-flex items-center px-6 py-3 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1" style="background: linear-gradient(135deg, #FF6738 0%, var(--v2-orange-light) 100%); ">
                 Learn More
                 <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
@@ -111,8 +113,8 @@
         </div>
       </div>
       
-      <!-- Product Documentation Card -->
-      <div class="solution-content hidden" id="product-docs-content">
+      <!-- Manage Card -->
+      <div class="solution-content hidden" id="manage-content">
         <div class="bg-white rounded-3xl shadow-xl overflow-hidden">
           <div class="grid md:grid-cols-2 gap-0">
             <!-- Image Side -->
@@ -130,44 +132,72 @@
             <!-- Content Side -->
             <div class="p-8 md:p-12">
               <div class="flex items-center gap-3 mb-6">
-                <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center text-white">
-                  <i class="fas fa-file-alt text-xl"></i>
+                <div class="w-12 h-12 rounded-xl flex items-center justify-center text-white" style="background: linear-gradient(135deg, #FF6738 0%, var(--v2-orange-light) 100%);">
+                  <i class="fas fa-edit text-xl"></i>
                 </div>
-                <h3 class="text-2xl font-bold text-gray-900">Product Documentation</h3>
+                <h3 class="text-2xl font-bold" style="color: var(--v2-brown); ">{% trans %}Manage{% endtrans %}</h3>
               </div>
-              
-              <p class="text-gray-600 mb-6 text-lg">
-                Empower Your Product Expertise with Docsie. Elevate your company's ability to create and maintain comprehensive product documentation.
+
+              <p class="mb-6 text-lg font-semibold" style="color: var(--v2-brown); line-height: 1.5;">
+                {% trans %}Your centralized knowledge base — versioned, reusable, always current.{% endtrans %}
               </p>
-              
-              <ul class="space-y-3 mb-8">
+
+              <p class="mb-6 text-base" style="color: var(--v2-brown-light); line-height: 1.6;">
+                {% trans %}Once generated, your documentation becomes a living, maintainable system for your entire organization.{% endtrans %}
+              </p>
+
+              <h4 class="font-semibold mb-3" style="color: var(--v2-brown); ">{% trans %}What you can do:{% endtrans %}</h4>
+
+              <ul class="space-y-3 mb-6">
                 <li class="flex items-start gap-3">
-                  <svg class="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg class="w-5 h-5 mt-0.5 flex-shrink-0" style="color: var(--v2-orange);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                   </svg>
-                  <span class="text-gray-700">Comprehensive documentation tools</span>
+                  <span style="color: #7C5A49;">{% trans %}Organize content into clear knowledge base topics and articles{% endtrans %}</span>
                 </li>
                 <li class="flex items-start gap-3">
-                  <svg class="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg class="w-5 h-5 mt-0.5 flex-shrink-0" style="color: var(--v2-orange);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                   </svg>
-                  <span class="text-gray-700">Version control and tracking</span>
+                  <span style="color: #7C5A49;">{% trans %}Manage versions (v1 → v2 → client-specific variants){% endtrans %}</span>
                 </li>
                 <li class="flex items-start gap-3">
-                  <svg class="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg class="w-5 h-5 mt-0.5 flex-shrink-0" style="color: var(--v2-orange);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                   </svg>
-                  <span class="text-gray-700">Collaborative editing features</span>
+                  <span style="color: #7C5A49;">{% trans %}Reuse content across projects, clients, and products{% endtrans %}</span>
                 </li>
                 <li class="flex items-start gap-3">
-                  <svg class="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg class="w-5 h-5 mt-0.5 flex-shrink-0" style="color: var(--v2-orange);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                   </svg>
-                  <span class="text-gray-700">Multi-format export options</span>
+                  <span style="color: #7C5A49;">{% trans %}Translate automatically into core languages{% endtrans %}</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <svg class="w-5 h-5 mt-0.5 flex-shrink-0" style="color: var(--v2-orange);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  <span style="color: #7C5A49;">{% trans %}Maintain structure, formatting, and style consistency{% endtrans %}</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <svg class="w-5 h-5 mt-0.5 flex-shrink-0" style="color: var(--v2-orange);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  <span style="color: #7C5A49;">{% trans %}Collaborate with comments, presence indicators, and change history{% endtrans %}</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <svg class="w-5 h-5 mt-0.5 flex-shrink-0" style="color: var(--v2-orange);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  <span style="color: #7C5A49;">{% trans %}Control access with role-based permissions{% endtrans %}</span>
                 </li>
               </ul>
-              
-              <a href="/solutions/product-documentation/" class="inline-flex items-center px-6 py-3 bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+
+              <p class="text-sm font-semibold mb-8" style="color: var(--v2-orange); ">
+                {% trans %}Docsie gives you one source of truth — built automatically, maintained effortlessly.{% endtrans %}
+              </p>
+
+              <a href="/features/" class="inline-flex items-center px-6 py-3 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1" style="background: linear-gradient(135deg, #FF6738 0%, var(--v2-orange-light) 100%); ">
                 Learn More
                 <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
@@ -178,8 +208,8 @@
         </div>
       </div>
       
-      <!-- SOPs Card -->
-      <div class="solution-content hidden" id="sops-content">
+      <!-- Publish Card -->
+      <div class="solution-content hidden" id="publish-content">
         <div class="bg-white rounded-3xl shadow-xl overflow-hidden">
           <div class="grid md:grid-cols-2 gap-0">
             <!-- Image Side -->
@@ -194,44 +224,66 @@
             <!-- Content Side -->
             <div class="p-8 md:p-12">
               <div class="flex items-center gap-3 mb-6">
-                <div class="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center text-white">
-                  <i class="fas fa-tasks text-xl"></i>
+                <div class="w-12 h-12 rounded-xl flex items-center justify-center text-white" style="background: linear-gradient(135deg, #FF6738 0%, var(--v2-orange-light) 100%);">
+                  <i class="fas fa-rocket text-xl"></i>
                 </div>
-                <h3 class="text-2xl font-bold text-gray-900">Standard Operating Procedures</h3>
+                <h3 class="text-2xl font-bold" style="color: var(--v2-brown); ">{% trans %}Publish{% endtrans %}</h3>
               </div>
-              
-              <p class="text-gray-600 mb-6 text-lg">
-                Optimize Operations with Streamlined SOPs. Centralize and enhance standard operating procedures for key processes like onboarding and compliance.
+
+              <p class="mb-6 text-lg font-semibold" style="color: var(--v2-brown); line-height: 1.5;">
+                {% trans %}Deliver secure, branded documentation portals — each tailored to the client or project.{% endtrans %}
               </p>
-              
-              <ul class="space-y-3 mb-8">
+
+              <ul class="space-y-3 mb-6">
                 <li class="flex items-start gap-3">
-                  <svg class="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg class="w-5 h-5 mt-0.5 flex-shrink-0" style="color: var(--v2-orange);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                   </svg>
-                  <span class="text-gray-700">Standardized procedure templates</span>
+                  <span style="color: #7C5A49;">{% trans %}Choose which content, versions, and languages each client sees{% endtrans %}</span>
                 </li>
                 <li class="flex items-start gap-3">
-                  <svg class="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg class="w-5 h-5 mt-0.5 flex-shrink-0" style="color: var(--v2-orange);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                   </svg>
-                  <span class="text-gray-700">Process workflow automation</span>
+                  <span style="color: #7C5A49;">{% trans %}Publish dedicated portals with custom branding and domains{% endtrans %}</span>
                 </li>
                 <li class="flex items-start gap-3">
-                  <svg class="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg class="w-5 h-5 mt-0.5 flex-shrink-0" style="color: var(--v2-orange);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                   </svg>
-                  <span class="text-gray-700">Compliance tracking</span>
+                  <span style="color: #7C5A49;">{% trans %}Connect each portal to the client's SSO / SAML / Azure AD / Google / Okta{% endtrans %}</span>
                 </li>
                 <li class="flex items-start gap-3">
-                  <svg class="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg class="w-5 h-5 mt-0.5 flex-shrink-0" style="color: var(--v2-orange);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                   </svg>
-                  <span class="text-gray-700">Interactive checklists</span>
+                  <span style="color: #7C5A49;">{% trans %}Use JWT/OTP for embedded or internal delivery{% endtrans %}</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <svg class="w-5 h-5 mt-0.5 flex-shrink-0" style="color: var(--v2-orange);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  <span style="color: #7C5A49;">{% trans %}Apply granular access rules and permissions{% endtrans %}</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <svg class="w-5 h-5 mt-0.5 flex-shrink-0" style="color: var(--v2-orange);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  <span style="color: #7C5A49;">{% trans %}Manage thousands of portals from one dashboard{% endtrans %}</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <svg class="w-5 h-5 mt-0.5 flex-shrink-0" style="color: var(--v2-orange);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  <span style="color: #7C5A49;">{% trans %}Keep all portals synced automatically with one central knowledge base{% endtrans %}</span>
                 </li>
               </ul>
-              
-              <a href="/solutions/sops/" class="inline-flex items-center px-6 py-3 bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+
+              <p class="text-sm font-semibold mb-8" style="color: var(--v2-orange); ">
+                {% trans %}Create once. Deliver everywhere — securely, at scale.{% endtrans %}
+              </p>
+
+              <a href="/features/" class="inline-flex items-center px-6 py-3 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1" style="background: linear-gradient(135deg, #FF6738 0%, var(--v2-orange-light) 100%); ">
                 Learn More
                 <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
@@ -241,199 +293,7 @@
           </div>
         </div>
       </div>
-      
-      <!-- User Manuals Card -->
-      <div class="solution-content hidden" id="manuals-content">
-        <div class="bg-white rounded-3xl shadow-xl overflow-hidden">
-          <div class="grid md:grid-cols-2 gap-0">
-            <!-- Image Side -->
-            <div class="relative h-64 md:h-full">
-              <img data-src="/assets/new_home_2/user_manual.svg"
-                   alt="User Manuals Preview" 
-                   class="lazy w-full h-full object-cover"
-                   loading="lazy">
-              <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
-            </div>
-            
-            <!-- Content Side -->
-            <div class="p-8 md:p-12">
-              <div class="flex items-center gap-3 mb-6">
-                <div class="w-12 h-12 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-xl flex items-center justify-center text-white">
-                  <i class="fas fa-book-reader text-xl"></i>
-                </div>
-                <h3 class="text-2xl font-bold text-gray-900">User Manuals</h3>
-              </div>
-              
-              <p class="text-gray-600 mb-6 text-lg">
-                Transform User Manuals: From Static PDFs to Dynamic Solutions. Upgrade from outdated PDFs to a dynamic, searchable, multilingual platform.
-              </p>
-              
-              <ul class="space-y-3 mb-8">
-                <li class="flex items-start gap-3">
-                  <svg class="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                  </svg>
-                  <span class="text-gray-700">Interactive digital manuals</span>
-                </li>
-                <li class="flex items-start gap-3">
-                  <svg class="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                  </svg>
-                  <span class="text-gray-700">Multi-language support</span>
-                </li>
-                <li class="flex items-start gap-3">
-                  <svg class="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                  </svg>
-                  <span class="text-gray-700">Real-time updates</span>
-                </li>
-                <li class="flex items-start gap-3">
-                  <svg class="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                  </svg>
-                  <span class="text-gray-700">Advanced search capabilities</span>
-                </li>
-              </ul>
-              
-              <a href="/solutions/user-manuals/" class="inline-flex items-center px-6 py-3 bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-                Learn More
-                <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-                </svg>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-      <!-- Documentation Chatbots Card -->
-      <div class="solution-content hidden" id="doc-chatbots-content">
-        <div class="bg-white rounded-3xl shadow-xl overflow-hidden">
-          <div class="grid md:grid-cols-2 gap-0">
-            <!-- Image Side -->
-            <div class="relative h-64 md:h-full">
-         <img data-src="/assets/new_home_2/chat_bot.svg"
-                   alt="Documentation Chatbots Preview" 
-                   class="lazy w-full h-full object-cover"
-                   loading="lazy">
-              <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
-            </div>
-            
-            <!-- Content Side -->
-            <div class="p-8 md:p-12">
-              <div class="flex items-center gap-3 mb-6">
-                <div class="w-12 h-12 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-xl flex items-center justify-center text-white">
-                  <i class="fas fa-robot text-xl"></i>
-                </div>
-                <h3 class="text-2xl font-bold text-gray-900">Documentation Chatbots</h3>
-              </div>
-              
-              <p class="text-gray-600 mb-6 text-lg">
-                Enhance User Support with AI-Powered Documentation Chatbots. Provide instant, intelligent responses to user queries using your documentation as the knowledge base.
-              </p>
-              
-              <ul class="space-y-3 mb-8">
-                <li class="flex items-start gap-3">
-                  <svg class="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                  </svg>
-                  <span class="text-gray-700">AI-powered documentation assistance</span>
-                </li>
-                <li class="flex items-start gap-3">
-                  <svg class="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                  </svg>
-                  <span class="text-gray-700">24/7 automated support</span>
-                </li>
-                <li class="flex items-start gap-3">
-                  <svg class="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                  </svg>
-                  <span class="text-gray-700">Natural language understanding</span>
-                </li>
-                <li class="flex items-start gap-3">
-                  <svg class="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                  </svg>
-                  <span class="text-gray-700">Context-aware responses</span>
-                </li>
-              </ul>
-              
-              <a href="/solutions/doc-chatbots/" class="inline-flex items-center px-6 py-3 bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-                Learn More
-                <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-                </svg>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-      <!-- Data Sheets Card -->
-      <div class="solution-content hidden" id="data-sheets-content">
-        <div class="bg-white rounded-3xl shadow-xl overflow-hidden">
-          <div class="grid md:grid-cols-2 gap-0">
-            <!-- Image Side -->
-            <div class="relative h-64 md:h-full">
-              <img data-src="https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_cfE80mxN306daNlQf/datasheet_4k_0ef23d46-7d01-73be-aed8-43fc1d45a861.jpg" 
-                   alt="Data Sheets Preview" 
-                   class="lazy w-full h-full object-cover"
-                   loading="lazy">
-              <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
-            </div>
-            
-            <!-- Content Side -->
-            <div class="p-8 md:p-12">
-              <div class="flex items-center gap-3 mb-6">
-                <div class="w-12 h-12 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center text-white">
-                  <i class="fas fa-table text-xl"></i>
-                </div>
-                <h3 class="text-2xl font-bold text-gray-900">Data Sheets</h3>
-              </div>
-              
-              <p class="text-gray-600 mb-6 text-lg">
-                Create and Manage Professional Data Sheets with Ease. Transform technical specifications and product details into clear, accessible documentation.
-              </p>
-              
-              <ul class="space-y-3 mb-8">
-                <li class="flex items-start gap-3">
-                  <svg class="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                  </svg>
-                  <span class="text-gray-700">Technical specification templates</span>
-                </li>
-                <li class="flex items-start gap-3">
-                  <svg class="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                  </svg>
-                  <span class="text-gray-700">Automated formatting</span>
-                </li>
-                <li class="flex items-start gap-3">
-                  <svg class="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                  </svg>
-                  <span class="text-gray-700">Version control</span>
-                </li>
-                <li class="flex items-start gap-3">
-                  <svg class="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                  </svg>
-                  <span class="text-gray-700">Export to multiple formats</span>
-                </li>
-              </ul>
-              
-              <a href="/solutions/data-sheets/" class="inline-flex items-center px-6 py-3 bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-                Learn More
-                <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-                </svg>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-      
+
     </div>
   </div>
 </section>
@@ -441,16 +301,28 @@
 <style>
 /* Active state for tabs */
 .solution-tab.active {
-  background-color: rgb(34 197 94 / 0.1);
-  border-color: rgb(34 197 94);
+  background-color: var(--v2-overlay-orange-light) !important;
+  border-color: var(--v2-orange); !important;
 }
 
 .solution-tab.active i {
-  color: rgb(34 197 94);
+  color: var(--v2-orange); !important;
 }
 
 .solution-tab.active span {
-  color: rgb(21 128 61);
+  color: var(--v2-brown); !important;
+}
+
+.solution-tab:hover {
+  background-color: rgba(255, 103, 56, 0.05) !important;
+  border-color: var(--v2-orange); !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 103, 56, 0.15);
+}
+
+.solution-tab:hover i,
+.solution-tab:hover span {
+  color: var(--v2-orange); !important;
 }
 
 /* Animation classes */

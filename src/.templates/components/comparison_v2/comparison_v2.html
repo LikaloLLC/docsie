@@ -1,84 +1,74 @@
-<!-- Tailwind v2 Comparison Component -->
-<section class="comparison-v2 py-16" style="background: transparent;">
-  <div class="container mx-auto px-4 lg:px-8">
-    
+{% if section %}
+<!-- Comparison V2 - Polished Design System -->
+<section class="section-shell warm-gradient relative overflow-hidden">
+
+  <!-- Background Pattern -->
+  <div class="absolute inset-0 opacity-5">
+    <div class="absolute inset-0 banner-grid"></div>
+  </div>
+
+  <div class="section-inner relative z-10">
+
     <!-- Section Header -->
     <div class="text-center mb-12">
-      <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4" style="color: #111827;">
+      <h2 class="heading-xl text-headline-warm mb-4">
         {{ section.title }}
       </h2>
-      <p class="text-xl text-gray-600 max-w-3xl mx-auto" style="color: #4b5563;">
+      {% if section.description %}
+      <p class="body-lg text-body-warm max-w-3xl mx-auto">
         {{ section.description }}
       </p>
+      {% endif %}
     </div>
-    
-    <!-- Comparison Grid -->
-    <div class="max-w-6xl mx-auto">
-      {% for comparison in section.comparisons_list %}
-      <div class="comparison-item grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
-        
-        <!-- Traditional Column -->
-        <div class="traditional-column rounded-lg p-8 relative" style="background-color: rgba(249, 250, 251, 0.95);">
-          <div class="absolute top-4 right-4">
-            <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-red-100 text-red-800">
-              Traditional
-            </span>
-          </div>
-          
-          <h3 class="text-2xl font-bold text-gray-900 mb-6" style="color: #111827;">
+
+    <!-- Comparison Cards -->
+    {% for comparison in section.comparisons_list %}
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+
+      <!-- Traditional/Problem -->
+      <div class="bento-card">
+        <div class="bento-card-inner p-8">
+          <h3 class="heading-md text-headline-warm mb-6">
             {{ comparison.traditional.title }}
           </h3>
-          
           <ul class="space-y-4">
             {% for point in comparison.traditional.points %}
-            <li class="flex items-start">
-              <div class="flex-shrink-0 w-6 h-6 bg-red-100 rounded-full flex items-center justify-center mt-0.5">
-                <svg class="w-4 h-4 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                </svg>
-              </div>
-              <span class="ml-3 text-gray-700" style="color: #374151;">{{ point }}</span>
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-red-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+              </svg>
+              <span class="body-base text-body-warm">{{ point }}</span>
             </li>
             {% endfor %}
           </ul>
         </div>
-        
-        <!-- Modern Column -->
-        <div class="modern-column rounded-lg p-8 relative border-2 border-blue-200" style="background: linear-gradient(to bottom right, rgba(239, 246, 255, 0.95), rgba(238, 242, 255, 0.95));">
-          <div class="absolute top-4 right-4">
-            <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-800">
-              Modern
-            </span>
+      </div>
+
+      <!-- Modern/Solution -->
+      <div class="bento-card group">
+        <div class="bento-card-inner p-8 relative">
+          <div class="absolute top-4 right-4 bg-v2-orange text-white text-xs font-semibold px-3 py-1 rounded-full">
+            Recommended
           </div>
-          
-          <h3 class="text-2xl font-bold text-gray-900 mb-6" style="color: #111827;">
+          <h3 class="heading-md text-headline-warm mb-6">
             {{ comparison.modern.title }}
           </h3>
-          
           <ul class="space-y-4">
             {% for point in comparison.modern.points %}
-            <li class="flex items-start">
-              <div class="flex-shrink-0 w-6 h-6 bg-green-100 rounded-full flex items-center justify-center mt-0.5">
-                <svg class="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                </svg>
-              </div>
-              <span class="ml-3 text-gray-700 font-medium" style="color: #374151;">{{ point }}</span>
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-v2-orange flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+              </svg>
+              <span class="body-base text-body-warm">{{ point }}</span>
             </li>
             {% endfor %}
           </ul>
-          
-          <!-- Highlight Badge -->
-          <div class="absolute -top-3 left-1/2 transform -translate-x-1/2">
-            <span class="inline-flex items-center px-4 py-2 rounded-full text-sm font-bold bg-gradient-to-r from-blue-600 to-indigo-600 text-white shadow-lg">
-              ✨ Recommended
-            </span>
-          </div>
         </div>
-        
       </div>
-      {% endfor %}
+
     </div>
-    
+    {% endfor %}
+
   </div>
 </section>
+{% endif %}

@@ -1,67 +1,72 @@
-<!-- Tailwind v2 Gallery Component -->
-<section class="gallery-v2 py-16" style="background: transparent;">
-  <div class="container mx-auto px-4 lg:px-8">
-    
+{% if section %}
+<!-- Gallery V2 - Polished Design System -->
+<section class="section-shell bg-warm">
+  <div class="section-inner">
+
     <!-- Section Header -->
     <div class="text-center mb-12">
-      <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4" style="color: #111827;">
+      <h2 class="heading-xl text-headline-warm mb-4">
         {{ section.title }}
       </h2>
-      <p class="text-xl text-gray-600 max-w-3xl mx-auto" style="color: #4b5563;">
+      <p class="body-lg text-body-warm max-w-3xl mx-auto">
         {{ section.description }}
       </p>
     </div>
-    
+
     <!-- Gallery Grid -->
     <div class="gallery-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       {% for image in section.gallery_images %}
-      <div class="gallery-item group relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300" style="background-color: rgba(255, 255, 255, 0.95);">
+      <div class="gallery-item group relative">
         {% if image.link %}
-        <a href="{{ image.link }}" class="block">
+        <a href="{{ image.link }}">
         {% endif %}
-        
-        <!-- Image Container -->
-        <div class="relative overflow-hidden">
-          <div class="w-full h-64 gallery-image-container">
-            {{ image.image | optimized_image | safe }}
-          </div>
-          
-          <!-- Overlay -->
-          <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-          
-          <!-- View Button or Link Icon -->
-          <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-            {% if image.link %}
-            <div class="bg-white/90 text-gray-900 rounded-full p-3 shadow-lg transform scale-90 group-hover:scale-100 transition-all duration-300">
-              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
-              </svg>
+
+        <div class="bento-card group-hover">
+          <div class="bento-card-inner overflow-hidden">
+            <!-- Image Container -->
+            <div class="relative overflow-hidden">
+              <div class="w-full h-64 gallery-image-container">
+                {{ image.image | optimized_image | safe }}
+              </div>
+
+              <!-- Overlay -->
+              <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+
+              <!-- View Button or Link Icon -->
+              <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                {% if image.link %}
+                <div class="bg-white/90 text-gray-900 rounded-full p-3 shadow-lg transform scale-90 group-hover:scale-100 transition-all duration-300">
+                  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                  </svg>
+                </div>
+                {% else %}
+                <button class="gallery-lightbox-btn bg-white/90 hover:bg-white text-gray-900 rounded-full p-3 shadow-lg transform scale-90 group-hover:scale-100 transition-all duration-300" data-image="{{ image.image }}" data-alt="{{ image.alt }}">
+                  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+                  </svg>
+                </button>
+                {% endif %}
+              </div>
             </div>
-            {% else %}
-            <button class="gallery-lightbox-btn bg-white/90 hover:bg-white text-gray-900 rounded-full p-3 shadow-lg transform scale-90 group-hover:scale-100 transition-all duration-300" data-image="{{ image.image }}" data-alt="{{ image.alt }}">
-              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
-              </svg>
-            </button>
+
+            <!-- Caption -->
+            {% if image.caption %}
+            <div class="p-6">
+              <p class="body-base text-body-warm font-medium">{{ image.caption }}</p>
+            </div>
             {% endif %}
           </div>
         </div>
-        
-        <!-- Caption -->
-        {% if image.caption %}
-        <div class="p-6">
-          <p class="text-gray-700 font-medium" style="color: #374151;">{{ image.caption }}</p>
-        </div>
-        {% endif %}
-        
+
         {% if image.link %}
         </a>
         {% endif %}
       </div>
       {% endfor %}
     </div>
-    
+
   </div>
 </section>
 
@@ -74,17 +79,17 @@
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
       </svg>
     </button>
-    
+
     <!-- Image -->
     <img id="lightbox-image" src="" alt="" class="max-w-full max-h-full rounded-lg shadow-2xl" />
-    
+
     <!-- Navigation -->
     <button id="lightbox-prev" class="absolute left-4 top-1/2 -translate-y-1/2 text-white hover:text-gray-300 bg-black/50 rounded-full p-2">
       <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
       </svg>
     </button>
-    
+
     <button id="lightbox-next" class="absolute right-4 top-1/2 -translate-y-1/2 text-white hover:text-gray-300 bg-black/50 rounded-full p-2">
       <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
@@ -101,58 +106,58 @@ document.addEventListener('DOMContentLoaded', function() {
   const lightboxClose = document.getElementById('lightbox-close');
   const lightboxPrev = document.getElementById('lightbox-prev');
   const lightboxNext = document.getElementById('lightbox-next');
-  
+
   let currentImageIndex = 0;
   let images = [];
-  
+
   // Collect all images (only those without links)
   galleryBtns.forEach((btn, index) => {
     images.push({
       src: btn.dataset.image,
       alt: btn.dataset.alt
     });
-    
+
     btn.addEventListener('click', function(e) {
       e.preventDefault();
       currentImageIndex = index;
       showLightbox();
     });
   });
-  
+
   function showLightbox() {
     lightboxImage.src = images[currentImageIndex].src;
     lightboxImage.alt = images[currentImageIndex].alt;
     lightbox.classList.remove('hidden');
     document.body.style.overflow = 'hidden';
   }
-  
+
   function hideLightbox() {
     lightbox.classList.add('hidden');
     document.body.style.overflow = 'auto';
   }
-  
+
   function showPrevImage() {
     currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
     showLightbox();
   }
-  
+
   function showNextImage() {
     currentImageIndex = (currentImageIndex + 1) % images.length;
     showLightbox();
   }
-  
+
   // Event listeners
   lightboxClose.addEventListener('click', hideLightbox);
   lightboxPrev.addEventListener('click', showPrevImage);
   lightboxNext.addEventListener('click', showNextImage);
-  
+
   // Close on background click
   lightbox.addEventListener('click', function(e) {
     if (e.target === lightbox) {
       hideLightbox();
     }
   });
-  
+
   // Keyboard navigation
   document.addEventListener('keydown', function(e) {
     if (!lightbox.classList.contains('hidden')) {
@@ -163,3 +168,4 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 </script>
+{% endif %}

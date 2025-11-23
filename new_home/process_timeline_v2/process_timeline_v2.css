@@ -1,0 +1,90 @@
+/*
+ * Process Timeline V2 - Convert, Manage, Publish
+ * Warm YC-style design system with Tailwind 4
+ */
+
+/* Step Navigation Buttons - Minimal custom CSS, rest handled by Tailwind */
+.step-nav-btn {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.step-nav-btn.active {
+  box-shadow: 0 10px 25px oklch(0.7 0.2 30 / 0.25);
+}
+
+/* Content Step Containers - Animation states */
+.step-content {
+  display: none;
+  opacity: 0;
+}
+
+.step-content.active {
+  display: block;
+  animation: fadeInSlideUp 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* Feature Items - Staggered animation */
+.feature-item {
+  animation: slideInFromLeft 0.4s cubic-bezier(0.4, 0, 0.2, 1) backwards;
+}
+
+.feature-item:nth-child(1) { animation-delay: 0.1s; }
+.feature-item:nth-child(2) { animation-delay: 0.15s; }
+.feature-item:nth-child(3) { animation-delay: 0.2s; }
+.feature-item:nth-child(4) { animation-delay: 0.25s; }
+.feature-item:nth-child(5) { animation-delay: 0.3s; }
+.feature-item:nth-child(6) { animation-delay: 0.35s; }
+.feature-item:nth-child(7) { animation-delay: 0.4s; }
+.feature-item:nth-child(8) { animation-delay: 0.45s; }
+
+/* Progress Bar */
+.progress-fill {
+  transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.progress-step-number {
+  transition: color 0.3s ease;
+}
+
+/* Animations */
+@keyframes fadeInSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes slideInFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Responsive - Mobile optimizations */
+@media (max-width: 768px) {
+  .step-nav-btn .step-label {
+    display: none;
+  }
+
+  .feature-item {
+    animation-delay: 0s !important;
+  }
+}

@@ -1,286 +1,295 @@
-<!-- Feature Grid Component v2 -->
-<section class="feature-grid-v2 py-20 bg-white">
-  <div class="container mx-auto px-4 lg:px-8">
-    
+{% if section %}
+<!-- Feature Grid V2 - Polished Design System -->
+<section class="section-shell bg-white">
+  <div class="section-inner">
+
     <!-- Section Header -->
     <div class="text-center mb-16">
-      <h2 class="text-3xl md:text-5xl font-bold bg-gradient-to-r from-gray-900 to-gray-600 bg-clip-text text-transparent mb-6">
+      <h2 class="heading-xl text-headline-warm mb-6">
         {{ section.title }}
       </h2>
-      <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+      <p class="body-lg text-body-warm max-w-3xl mx-auto">
         {{ section.description }}
       </p>
     </div>
-    
+
     <!-- Features Grid -->
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
-      
+
       <!-- Knowledge Base Feature -->
-      <div class="feature-card group cursor-pointer" data-animate-delay="0">
-        <div class="feature-inner bg-gradient-to-br from-blue-50 to-indigo-100 hover:from-blue-100 hover:to-indigo-200 rounded-2xl p-8 h-full border border-blue-200/50 hover:border-blue-300 transition-all duration-300 relative overflow-hidden">
-          <!-- Background Pattern -->
-          <div class="absolute inset-0 opacity-5">
-            <svg class="w-full h-full" viewBox="0 0 100 100" fill="none">
-              <pattern id="kb-pattern" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
-                <circle cx="10" cy="10" r="1" fill="currentColor"/>
-              </pattern>
-              <rect width="100" height="100" fill="url(#kb-pattern)"/>
-            </svg>
-          </div>
-          
-          <!-- Icon -->
-          <div class="feature-icon mb-6 relative z-10">
-            <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl flex items-center justify-center group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 shadow-lg">
-              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C20.168 18.477 18.582 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+      <div class="feature-card opacity-0 translate-y-8 transition-all duration-700 ease-out" data-animate-delay="0">
+        <div class="bento-card group cursor-pointer h-full">
+          <div class="bento-card-inner p-8 relative overflow-hidden">
+            <!-- Background Pattern -->
+            <div class="absolute inset-0 opacity-5">
+              <svg class="w-full h-full" viewBox="0 0 100 100" fill="none">
+                <pattern id="kb-pattern" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+                  <circle cx="10" cy="10" r="1" fill="currentColor"/>
+                </pattern>
+                <rect width="100" height="100" fill="url(#kb-pattern)"/>
               </svg>
             </div>
-          </div>
-          
-          <!-- Content -->
-          <div class="relative z-10">
-            <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-700 transition-colors duration-300">
-              Knowledge Base
-            </h3>
-            <p class="text-gray-600 mb-6 leading-relaxed">
-              Minimize Support Tickets with Instant Access to Expert Help
-            </p>
-            
-            <!-- Features List -->
-            <ul class="space-y-2 mb-6">
-              <li class="flex items-center text-sm text-gray-700">
-                <svg class="w-4 h-4 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+
+            <!-- Icon -->
+            <div class="feature-icon mb-6 relative z-10">
+              <div class="w-16 h-16 bg-gradient-to-br from-v2-orange to-v2-orange-light rounded-xl flex items-center justify-center group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 shadow-lg">
+                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C20.168 18.477 18.582 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
                 </svg>
-                Instant access to help documentation
-              </li>
-              <li class="flex items-center text-sm text-gray-700">
-                <svg class="w-4 h-4 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </div>
+            </div>
+
+            <!-- Content -->
+            <div class="relative z-10">
+              <h3 class="heading-md text-headline-warm mb-3 group-hover:text-v2-orange transition-colors duration-300">
+                Knowledge Base
+              </h3>
+              <p class="body-base text-body-warm mb-6">
+                Minimize Support Tickets with Instant Access to Expert Help
+              </p>
+
+              <!-- Features List -->
+              <ul class="space-y-2 mb-6">
+                <li class="flex items-center text-sm text-body-warm">
+                  <svg class="w-4 h-4 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  Instant access to help documentation
+                </li>
+                <li class="flex items-center text-sm text-body-warm">
+                  <svg class="w-4 h-4 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  Searchable knowledge repository
+                </li>
+                <li class="flex items-center text-sm text-body-warm">
+                  <svg class="w-4 h-4 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  24/7 self-service support
+                </li>
+              </ul>
+
+              <!-- CTA Link -->
+              <a href="/solutions/knowledge-base/" class="inline-flex items-center text-v2-orange hover:text-v2-orange-dark font-medium transition-colors duration-200 group/link">
+                Learn More
+                <svg class="ml-1 w-4 h-4 group-hover/link:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
                 </svg>
-                Searchable knowledge repository
-              </li>
-              <li class="flex items-center text-sm text-gray-700">
-                <svg class="w-4 h-4 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                </svg>
-                24/7 self-service support
-              </li>
-            </ul>
-            
-            <!-- CTA Link -->
-            <a href="/solutions/knowledge-base/" class="inline-flex items-center text-blue-600 hover:text-blue-700 font-medium transition-colors duration-200 group/link">
-              Learn More
-              <svg class="ml-1 w-4 h-4 group-hover/link:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-              </svg>
-            </a>
+              </a>
+            </div>
           </div>
         </div>
       </div>
-      
+
       <!-- Product Documentation Feature -->
-      <div class="feature-card group cursor-pointer" data-animate-delay="150">
-        <div class="feature-inner bg-gradient-to-br from-purple-50 to-pink-100 hover:from-purple-100 hover:to-pink-200 rounded-2xl p-8 h-full border border-purple-200/50 hover:border-purple-300 transition-all duration-300 relative overflow-hidden">
-          <!-- Background Pattern -->
-          <div class="absolute inset-0 opacity-5">
-            <svg class="w-full h-full" viewBox="0 0 100 100" fill="none">
-              <pattern id="doc-pattern" x="0" y="0" width="25" height="25" patternUnits="userSpaceOnUse">
-                <rect x="5" y="5" width="15" height="2" fill="currentColor"/>
-                <rect x="5" y="10" width="10" height="2" fill="currentColor"/>
-                <rect x="5" y="15" width="12" height="2" fill="currentColor"/>
-              </pattern>
-              <rect width="100" height="100" fill="url(#doc-pattern)"/>
-            </svg>
-          </div>
-          
-          <!-- Icon -->
-          <div class="feature-icon mb-6 relative z-10">
-            <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-600 rounded-xl flex items-center justify-center group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 shadow-lg">
-              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+      <div class="feature-card opacity-0 translate-y-8 transition-all duration-700 ease-out" data-animate-delay="150">
+        <div class="bento-card group cursor-pointer h-full">
+          <div class="bento-card-inner p-8 relative overflow-hidden">
+            <!-- Background Pattern -->
+            <div class="absolute inset-0 opacity-5">
+              <svg class="w-full h-full" viewBox="0 0 100 100" fill="none">
+                <pattern id="doc-pattern" x="0" y="0" width="25" height="25" patternUnits="userSpaceOnUse">
+                  <rect x="5" y="5" width="15" height="2" fill="currentColor"/>
+                  <rect x="5" y="10" width="10" height="2" fill="currentColor"/>
+                  <rect x="5" y="15" width="12" height="2" fill="currentColor"/>
+                </pattern>
+                <rect width="100" height="100" fill="url(#doc-pattern)"/>
               </svg>
             </div>
-          </div>
-          
-          <!-- Content -->
-          <div class="relative z-10">
-            <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-purple-700 transition-colors duration-300">
-              Product Documentation
-            </h3>
-            <p class="text-gray-600 mb-6 leading-relaxed">
-              Create comprehensive product guides and user manuals
-            </p>
-            
-            <!-- Features List -->
-            <ul class="space-y-2 mb-6">
-              <li class="flex items-center text-sm text-gray-700">
-                <svg class="w-4 h-4 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+
+            <!-- Icon -->
+            <div class="feature-icon mb-6 relative z-10">
+              <div class="w-16 h-16 bg-gradient-to-br from-v2-orange to-v2-orange-light rounded-xl flex items-center justify-center group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 shadow-lg">
+                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
                 </svg>
-                Interactive documentation
-              </li>
-              <li class="flex items-center text-sm text-gray-700">
-                <svg class="w-4 h-4 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </div>
+            </div>
+
+            <!-- Content -->
+            <div class="relative z-10">
+              <h3 class="heading-md text-headline-warm mb-3 group-hover:text-v2-orange transition-colors duration-300">
+                Product Documentation
+              </h3>
+              <p class="body-base text-body-warm mb-6">
+                Create comprehensive product guides and user manuals
+              </p>
+
+              <!-- Features List -->
+              <ul class="space-y-2 mb-6">
+                <li class="flex items-center text-sm text-body-warm">
+                  <svg class="w-4 h-4 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  Interactive documentation
+                </li>
+                <li class="flex items-center text-sm text-body-warm">
+                  <svg class="w-4 h-4 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  Version control
+                </li>
+                <li class="flex items-center text-sm text-body-warm">
+                  <svg class="w-4 h-4 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  Real-time collaboration
+                </li>
+              </ul>
+
+              <!-- CTA Link -->
+              <a href="/solutions/product-documentation/" class="inline-flex items-center text-v2-orange hover:text-v2-orange-dark font-medium transition-colors duration-200 group/link">
+                Learn More
+                <svg class="ml-1 w-4 h-4 group-hover/link:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
                 </svg>
-                Version control
-              </li>
-              <li class="flex items-center text-sm text-gray-700">
-                <svg class="w-4 h-4 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                </svg>
-                Real-time collaboration
-              </li>
-            </ul>
-            
-            <!-- CTA Link -->
-            <a href="/solutions/product-documentation/" class="inline-flex items-center text-purple-600 hover:text-purple-700 font-medium transition-colors duration-200 group/link">
-              Learn More
-              <svg class="ml-1 w-4 h-4 group-hover/link:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-              </svg>
-            </a>
+              </a>
+            </div>
           </div>
         </div>
       </div>
-      
+
       <!-- SOPs Feature -->
-      <div class="feature-card group cursor-pointer" data-animate-delay="300">
-        <div class="feature-inner bg-gradient-to-br from-green-50 to-emerald-100 hover:from-green-100 hover:to-emerald-200 rounded-2xl p-8 h-full border border-green-200/50 hover:border-green-300 transition-all duration-300 relative overflow-hidden">
-          <!-- Background Pattern -->
-          <div class="absolute inset-0 opacity-5">
-            <svg class="w-full h-full" viewBox="0 0 100 100" fill="none">
-              <pattern id="sop-pattern" x="0" y="0" width="30" height="30" patternUnits="userSpaceOnUse">
-                <circle cx="15" cy="8" r="2" fill="currentColor"/>
-                <rect x="10" y="12" width="10" height="1" fill="currentColor"/>
-                <rect x="8" y="16" width="14" height="1" fill="currentColor"/>
-                <rect x="12" y="20" width="6" height="1" fill="currentColor"/>
-              </pattern>
-              <rect width="100" height="100" fill="url(#sop-pattern)"/>
-            </svg>
-          </div>
-          
-          <!-- Icon -->
-          <div class="feature-icon mb-6 relative z-10">
-            <div class="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-600 rounded-xl flex items-center justify-center group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 shadow-lg">
-              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+      <div class="feature-card opacity-0 translate-y-8 transition-all duration-700 ease-out" data-animate-delay="300">
+        <div class="bento-card group cursor-pointer h-full">
+          <div class="bento-card-inner p-8 relative overflow-hidden">
+            <!-- Background Pattern -->
+            <div class="absolute inset-0 opacity-5">
+              <svg class="w-full h-full" viewBox="0 0 100 100" fill="none">
+                <pattern id="sop-pattern" x="0" y="0" width="30" height="30" patternUnits="userSpaceOnUse">
+                  <circle cx="15" cy="8" r="2" fill="currentColor"/>
+                  <rect x="10" y="12" width="10" height="1" fill="currentColor"/>
+                  <rect x="8" y="16" width="14" height="1" fill="currentColor"/>
+                  <rect x="12" y="20" width="6" height="1" fill="currentColor"/>
+                </pattern>
+                <rect width="100" height="100" fill="url(#sop-pattern)"/>
               </svg>
             </div>
-          </div>
-          
-          <!-- Content -->
-          <div class="relative z-10">
-            <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-green-700 transition-colors duration-300">
-              SOPs
-            </h3>
-            <p class="text-gray-600 mb-6 leading-relaxed">
-              Standardize operations with detailed procedures
-            </p>
-            
-            <!-- Features List -->
-            <ul class="space-y-2 mb-6">
-              <li class="flex items-center text-sm text-gray-700">
-                <svg class="w-4 h-4 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+
+            <!-- Icon -->
+            <div class="feature-icon mb-6 relative z-10">
+              <div class="w-16 h-16 bg-gradient-to-br from-v2-orange to-v2-orange-light rounded-xl flex items-center justify-center group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 shadow-lg">
+                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
                 </svg>
-                Process standardization
-              </li>
-              <li class="flex items-center text-sm text-gray-700">
-                <svg class="w-4 h-4 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </div>
+            </div>
+
+            <!-- Content -->
+            <div class="relative z-10">
+              <h3 class="heading-md text-headline-warm mb-3 group-hover:text-v2-orange transition-colors duration-300">
+                SOPs
+              </h3>
+              <p class="body-base text-body-warm mb-6">
+                Standardize operations with detailed procedures
+              </p>
+
+              <!-- Features List -->
+              <ul class="space-y-2 mb-6">
+                <li class="flex items-center text-sm text-body-warm">
+                  <svg class="w-4 h-4 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  Process standardization
+                </li>
+                <li class="flex items-center text-sm text-body-warm">
+                  <svg class="w-4 h-4 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  Workflow automation
+                </li>
+                <li class="flex items-center text-sm text-body-warm">
+                  <svg class="w-4 h-4 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  Compliance tracking
+                </li>
+              </ul>
+
+              <!-- CTA Link -->
+              <a href="/solutions/sops/" class="inline-flex items-center text-v2-orange hover:text-v2-orange-dark font-medium transition-colors duration-200 group/link">
+                Learn More
+                <svg class="ml-1 w-4 h-4 group-hover/link:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
                 </svg>
-                Workflow automation
-              </li>
-              <li class="flex items-center text-sm text-gray-700">
-                <svg class="w-4 h-4 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                </svg>
-                Compliance tracking
-              </li>
-            </ul>
-            
-            <!-- CTA Link -->
-            <a href="/solutions/sops/" class="inline-flex items-center text-green-600 hover:text-green-700 font-medium transition-colors duration-200 group/link">
-              Learn More
-              <svg class="ml-1 w-4 h-4 group-hover/link:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-              </svg>
-            </a>
+              </a>
+            </div>
           </div>
         </div>
       </div>
-      
+
       <!-- AI Chatbot Feature -->
-      <div class="feature-card group cursor-pointer" data-animate-delay="450">
-        <div class="feature-inner bg-gradient-to-br from-cyan-50 to-blue-100 hover:from-cyan-100 hover:to-blue-200 rounded-2xl p-8 h-full border border-cyan-200/50 hover:border-cyan-300 transition-all duration-300 relative overflow-hidden">
-          <!-- Background Pattern -->
-          <div class="absolute inset-0 opacity-5">
-            <svg class="w-full h-full" viewBox="0 0 100 100" fill="none">
-              <pattern id="ai-pattern" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
-                <circle cx="5" cy="5" r="1" fill="currentColor"/>
-                <circle cx="15" cy="5" r="1" fill="currentColor"/>
-                <path d="M3 15 Q10 10 17 15" stroke="currentColor" stroke-width="0.5" fill="none"/>
-              </pattern>
-              <rect width="100" height="100" fill="url(#ai-pattern)"/>
-            </svg>
-          </div>
-          
-          <!-- Icon -->
-          <div class="feature-icon mb-6 relative z-10">
-            <div class="w-16 h-16 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-xl flex items-center justify-center group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 shadow-lg">
-              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
+      <div class="feature-card opacity-0 translate-y-8 transition-all duration-700 ease-out" data-animate-delay="450">
+        <div class="bento-card group cursor-pointer h-full">
+          <div class="bento-card-inner p-8 relative overflow-hidden">
+            <!-- Background Pattern -->
+            <div class="absolute inset-0 opacity-5">
+              <svg class="w-full h-full" viewBox="0 0 100 100" fill="none">
+                <pattern id="ai-pattern" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+                  <circle cx="5" cy="5" r="1" fill="currentColor"/>
+                  <circle cx="15" cy="5" r="1" fill="currentColor"/>
+                  <path d="M3 15 Q10 10 17 15" stroke="currentColor" stroke-width="0.5" fill="none"/>
+                </pattern>
+                <rect width="100" height="100" fill="url(#ai-pattern)"/>
               </svg>
             </div>
-          </div>
-          
-          <!-- Content -->
-          <div class="relative z-10">
-            <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-cyan-700 transition-colors duration-300">
-              AI Chatbot
-            </h3>
-            <p class="text-gray-600 mb-6 leading-relaxed">
-              Transform your knowledge base into a responsive chatbot
-            </p>
-            
-            <!-- Features List -->
-            <ul class="space-y-2 mb-6">
-              <li class="flex items-center text-sm text-gray-700">
-                <svg class="w-4 h-4 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+
+            <!-- Icon -->
+            <div class="feature-icon mb-6 relative z-10">
+              <div class="w-16 h-16 bg-gradient-to-br from-v2-orange to-v2-orange-light rounded-xl flex items-center justify-center group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 shadow-lg">
+                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
                 </svg>
-                Real-time user assistance
-              </li>
-              <li class="flex items-center text-sm text-gray-700">
-                <svg class="w-4 h-4 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </div>
+            </div>
+
+            <!-- Content -->
+            <div class="relative z-10">
+              <h3 class="heading-md text-headline-warm mb-3 group-hover:text-v2-orange transition-colors duration-300">
+                AI Chatbot
+              </h3>
+              <p class="body-base text-body-warm mb-6">
+                Transform your knowledge base into a responsive chatbot
+              </p>
+
+              <!-- Features List -->
+              <ul class="space-y-2 mb-6">
+                <li class="flex items-center text-sm text-body-warm">
+                  <svg class="w-4 h-4 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  Real-time user assistance
+                </li>
+                <li class="flex items-center text-sm text-body-warm">
+                  <svg class="w-4 h-4 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  Natural language processing
+                </li>
+                <li class="flex items-center text-sm text-body-warm">
+                  <svg class="w-4 h-4 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  24/7 automated support
+                </li>
+              </ul>
+
+              <!-- CTA Link -->
+              <a href="/solutions/ai-chatbot/" class="inline-flex items-center text-v2-orange hover:text-v2-orange-dark font-medium transition-colors duration-200 group/link">
+                Learn More
+                <svg class="ml-1 w-4 h-4 group-hover/link:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
                 </svg>
-                Natural language processing
-              </li>
-              <li class="flex items-center text-sm text-gray-700">
-                <svg class="w-4 h-4 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                </svg>
-                24/7 automated support
-              </li>
-            </ul>
-            
-            <!-- CTA Link -->
-            <a href="/solutions/ai-chatbot/" class="inline-flex items-center text-cyan-600 hover:text-cyan-700 font-medium transition-colors duration-200 group/link">
-              Learn More
-              <svg class="ml-1 w-4 h-4 group-hover/link:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-              </svg>
-            </a>
+              </a>
+            </div>
           </div>
         </div>
       </div>
-      
+
     </div>
-    
+
   </div>
 </section>
 
@@ -291,30 +300,31 @@ document.addEventListener('DOMContentLoaded', function() {
     threshold: 0.2,
     rootMargin: '0px 0px -50px 0px'
   };
-  
+
   const observer = new IntersectionObserver(function(entries) {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         const featureCards = entry.target.querySelectorAll('.feature-card');
-        
+
         featureCards.forEach((card, index) => {
           const delay = parseInt(card.dataset.animateDelay) || 0;
-          
+
           setTimeout(() => {
             card.style.opacity = '1';
             card.style.transform = 'translateY(0)';
           }, delay);
         });
-        
+
         observer.unobserve(entry.target);
       }
     });
   }, observerOptions);
-  
+
   // Observe the feature grid section
-  const featureSection = document.querySelector('.feature-grid-v2');
+  const featureSection = document.querySelector('.section-shell');
   if (featureSection) {
     observer.observe(featureSection);
   }
 });
 </script>
+{% endif %}

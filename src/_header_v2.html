@@ -1,440 +1,414 @@
-<!-- Header V2 - Modern Navigation with Unified Design System -->
+<!-- Header V2 Navigation - Premium Design with Visual Hierarchy -->
 {% import '_language_helpers.html' as lang %}
-<nav class="header-v2-nav flex items-center justify-between w-full" role="navigation" aria-label="Main navigation">
-  
-  <!-- Mobile Navigation Toggle -->
-  <button class="md:hidden p-2 text-gray-600 hover:text-docsie-primary transition-colors duration-300" 
-          onclick="toggleMobileMenu()" aria-label="Toggle navigation">
-    <svg id="mobile-menu-icon" class="w-6 h-6 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-    </svg>
-    <svg id="mobile-menu-close" class="w-6 h-6 hidden transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-    </svg>
-  </button>
 
-  <!-- Main Navigation Links (Desktop) -->
-  <div class="hidden md:flex items-center space-x-8">
-    
+<!-- Mobile Navigation Toggle -->
+<button class="lg:hidden p-2 text-gray-700 hover:text-orange-600 transition-colors duration-300"
+        onclick="toggleMobileMenu()" aria-label="Toggle navigation">
+  <svg id="mobile-menu-icon" class="w-6 h-6 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+  </svg>
+  <svg id="mobile-menu-close" class="w-6 h-6 hidden transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+  </svg>
+</button>
+
+<!-- Main Navigation Links (Desktop) -->
+<nav class="hidden lg:flex items-center flex-1 space-x-1 ml-8" style="font-size: 14px;">
+
     <!-- Solutions Dropdown -->
     <div class="relative group">
-      <button class="flex items-center text-gray-700 hover:text-docsie-primary font-medium transition-colors duration-300 group">
+      <button class="flex items-center px-3 py-2 text-gray-700 hover:text-orange-600 font-medium rounded-lg hover:bg-orange-50 transition-colors">
         {% trans %}Solutions{% endtrans %}
-        <svg class="ml-1 w-4 h-4 group-hover:rotate-180 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
         </svg>
       </button>
-      
-      <!-- Solutions Mega Menu -->
-      <div class="absolute top-full left-0 w-screen max-w-4xl bg-white border border-gray-200 rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 z-50">
-        <div class="p-6">
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            
-            <!-- Documentation Solutions -->
-            <div>
-              <h3 class="text-sm font-semibold text-docsie-primary uppercase tracking-wide mb-4">
-                {% trans %}Documentation{% endtrans %}
-              </h3>
-              <ul class="space-y-3">
-                <li>
-                  <a href="{{ lang.abs_lang_url('solutions/technical-documentation/') }}" class="block p-2 rounded-md hover:bg-gray-50 transition-colors duration-200">
-                    <div class="text-sm font-medium text-gray-900">{% trans %}Technical Docs{% endtrans %}</div>
-                    <div class="text-xs text-gray-600">{% trans %}Developer & API documentation{% endtrans %}</div>
-                  </a>
-                </li>
-                <li>
-                  <a href="{{ lang.abs_lang_url('solutions/api-documentation/') }}" class="block p-2 rounded-md hover:bg-gray-50 transition-colors duration-200">
-                    <div class="text-sm font-medium text-gray-900">{% trans %}API Documentation{% endtrans %}</div>
-                    <div class="text-xs text-gray-600">{% trans %}Interactive API references{% endtrans %}</div>
-                  </a>
-                </li>
-                <li>
-                  <a href="{{ lang.abs_lang_url('solutions/product-documentation/') }}" class="block p-2 rounded-md hover:bg-gray-50 transition-colors duration-200">
-                    <div class="text-sm font-medium text-gray-900">{% trans %}Product Docs{% endtrans %}</div>
-                    <div class="text-xs text-gray-600">{% trans %}User guides & manuals{% endtrans %}</div>
-                  </a>
-                </li>
-                <li>
-                  <a href="{{ lang.abs_lang_url('solutions/user-manuals/') }}" class="block p-2 rounded-md hover:bg-gray-50 transition-colors duration-200">
-                    <div class="text-sm font-medium text-gray-900">{% trans %}User Manuals{% endtrans %}</div>
-                    <div class="text-xs text-gray-600">{% trans %}Step-by-step guides{% endtrans %}</div>
-                  </a>
-                </li>
-              </ul>
-            </div>
-            
-            <!-- AI Solutions -->
-            <div>
-              <h3 class="text-sm font-semibold text-docsie-primary uppercase tracking-wide mb-4">
-                {% trans %}AI Solutions{% endtrans %}
-              </h3>
-              <ul class="space-y-3">
-                <li>
-                  <a href="{{ lang.abs_lang_url('solutions/ai/') }}" class="block p-2 rounded-md hover:bg-docsie-light transition-colors duration-200 border border-docsie-primary/20">
-                    <div class="text-sm font-medium text-docsie-primary">{% trans %}View All AI Solutions{% endtrans %}</div>
-                    <div class="text-xs text-gray-600">{% trans %}Explore our AI-powered tools{% endtrans %}</div>
-                  </a>
-                </li>
-                <li>
-                  <a href="{{ lang.abs_lang_url('solutions/ai-chatbot/') }}" class="block p-2 rounded-md hover:bg-gray-50 transition-colors duration-200">
-                    <div class="text-sm font-medium text-gray-900">{% trans %}AI Chatbot{% endtrans %}</div>
-                    <div class="text-xs text-gray-600">{% trans %}Smart documentation assistant{% endtrans %}</div>
-                  </a>
-                </li>
-                <li>
-                  <a href="{{ lang.abs_lang_url('solutions/knowledge-base/') }}" class="block p-2 rounded-md hover:bg-gray-50 transition-colors duration-200">
-                    <div class="text-sm font-medium text-gray-900">{% trans %}Knowledge Base{% endtrans %}</div>
-                    <div class="text-xs text-gray-600">{% trans %}Self-service help center{% endtrans %}</div>
-                  </a>
-                </li>
-                <li>
-                  <a href="{{ lang.abs_lang_url('solutions/ai-technical-writer/') }}" class="block p-2 rounded-md hover:bg-gray-50 transition-colors duration-200">
-                    <div class="text-sm font-medium text-gray-900">{% trans %}AI Writer{% endtrans %}</div>
-                    <div class="text-xs text-gray-600">{% trans %}AI-powered content generation{% endtrans %}</div>
-                  </a>
-                </li>
-                <li>
-                  <a href="{{ lang.abs_lang_url('solutions/documentation-from-video/') }}" class="block p-2 rounded-md hover:bg-gray-50 transition-colors duration-200">
-                    <div class="text-sm font-medium text-gray-900">{% trans %}Video to Docs{% endtrans %}</div>
-                    <div class="text-xs text-gray-600">{% trans %}Transform videos into docs{% endtrans %}</div>
-                  </a>
-                </li>
-              </ul>
-            </div>
-            
-            <!-- Enterprise Solutions -->
-            <div>
-              <h3 class="text-sm font-semibold text-docsie-primary uppercase tracking-wide mb-4">
-                {% trans %}Enterprise{% endtrans %}
-              </h3>
-              <ul class="space-y-3">
-                <li>
-                  <a href="{{ lang.abs_lang_url('solutions/sops/') }}" class="block p-2 rounded-md hover:bg-gray-50 transition-colors duration-200">
-                    <div class="text-sm font-medium text-gray-900">{% trans %}SOPs{% endtrans %}</div>
-                    <div class="text-xs text-gray-600">{% trans %}Standard operating procedures{% endtrans %}</div>
-                  </a>
-                </li>
-                <li>
-                  <a href="{{ lang.abs_lang_url('solutions/quality-management/') }}" class="block p-2 rounded-md hover:bg-gray-50 transition-colors duration-200">
-                    <div class="text-sm font-medium text-gray-900">{% trans %}Quality Management{% endtrans %}</div>
-                    <div class="text-xs text-gray-600">{% trans %}QMS documentation{% endtrans %}</div>
-                  </a>
-                </li>
-                <li>
-                  <a href="{{ lang.abs_lang_url('solutions/training-documentation/') }}" class="block p-2 rounded-md hover:bg-gray-50 transition-colors duration-200">
-                    <div class="text-sm font-medium text-gray-900">{% trans %}Training Docs{% endtrans %}</div>
-                    <div class="text-xs text-gray-600">{% trans %}Employee training materials{% endtrans %}</div>
-                  </a>
-                </li>
-                <li>
-                  <a href="{{ lang.abs_lang_url('solutions/industries/compliance/') }}" class="block p-2 rounded-md hover:bg-gray-50 transition-colors duration-200">
-                    <div class="text-sm font-medium text-gray-900">{% trans %}Compliance{% endtrans %}</div>
-                    <div class="text-xs text-gray-600">{% trans %}Regulatory documentation{% endtrans %}</div>
-                  </a>
-                </li>
-              </ul>
-            </div>
-            
-          </div>
-          
-          <!-- Industries Section -->
-          <div class="mt-6 pt-6 border-t border-gray-200">
-            <div class="mb-4">
-              <h3 class="text-sm font-semibold text-docsie-primary uppercase tracking-wide mb-3">
-                {% trans %}Industry Solutions{% endtrans %}
-              </h3>
-              <a href="{{ lang.abs_lang_url('solutions/industries/') }}" class="inline-flex items-center text-sm font-medium text-docsie-primary hover:text-docsie-dark transition-colors duration-200">
-                {% trans %}Explore Industry-Specific Solutions{% endtrans %}
-                <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+
+      <!-- Solutions Mega Menu - Premium Design -->
+      <div class="absolute top-full left-0 mt-2 w-[800px] bg-gradient-to-b from-white to-[#FFFCF9] border border-orange-100 rounded-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 z-50"
+           style="box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.08), 0 4px 12px rgba(0, 0, 0, 0.04);">
+
+        <!-- Featured Strip - Video to Docs -->
+        <div class="px-6 pt-6 pb-4 border-b border-orange-100">
+          <a href="{{ lang.abs_lang_url('solutions/documentation-from-video/') }}"
+             class="flex items-center justify-between p-3 rounded-xl bg-gradient-to-r from-orange-50 to-amber-50 border border-orange-200 hover:border-orange-300 transition-all group/featured">
+            <div class="flex items-center">
+              <div class="w-8 h-8 rounded-lg bg-white flex items-center justify-center mr-3 shadow-sm">
+                <svg class="w-4 h-4 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
                 </svg>
-              </a>
-            </div>
-          </div>
-          
-          <!-- CTA Section -->
-          <div class="mt-6 pt-6 border-t border-gray-200">
-            <div class="flex items-center justify-between">
-              <div>
-                <p class="text-sm font-medium text-gray-900">{% trans %}Ready to get started?{% endtrans %}</p>
-                <p class="text-xs text-gray-600">{% trans %}Explore our documentation solutions above{% endtrans %}</p>
               </div>
-              {% with button_text=_('Book a Demo'), button_class='docsie-btn-primary text-sm px-4 py-2', show_icon=false %}
-              {% include '_cal_onclick.html' %}
-              {% endwith %}
+              <div>
+                <div class="text-sm font-semibold text-gray-900" style="letter-spacing: -0.01em;">{% trans %}Turn training videos into client-ready docs with Docsie{% endtrans %}</div>
+              </div>
             </div>
+            <svg class="w-4 h-4 text-orange-500 transition-transform group-hover/featured:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"></path>
+            </svg>
+          </a>
+        </div>
+
+        <div class="px-6 py-5">
+          <div class="grid grid-cols-3 gap-8">
+
+            <!-- Documentation Solutions Column -->
+            <div class="border-r border-orange-100 pr-6">
+              <h3 class="text-xs font-semibold mb-4 uppercase tracking-wider" style="color: #7C5A49; letter-spacing: 0.06em;">{% trans %}DOCUMENTATION{% endtrans %}</h3>
+              <div class="space-y-1">
+                <a href="{{ lang.abs_lang_url('solutions/technical-documentation/') }}" class="menu-item flex items-start p-2 rounded-lg transition-all group/item">
+                  <div class="icon-pill w-7 h-7 rounded-lg bg-orange-50 flex items-center justify-center mr-2.5 flex-shrink-0 transition-colors">
+                    <svg class="w-3.5 h-3.5 text-orange-500 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                    </svg>
+                  </div>
+                  <div>
+                    <div class="text-sm font-semibold text-gray-900 mb-0.5" style="line-height: 1.4; letter-spacing: -0.01em;">{% trans %}Technical Docs{% endtrans %}</div>
+                    <div class="text-xs" style="color: #8A766F; line-height: 1.5;">{% trans %}Developer & API documentation{% endtrans %}</div>
+                  </div>
+                </a>
+                <a href="{{ lang.abs_lang_url('solutions/api-documentation/') }}" class="menu-item flex items-start p-2 rounded-lg transition-all group/item">
+                  <div class="icon-pill w-7 h-7 rounded-lg bg-orange-50 flex items-center justify-center mr-2.5 flex-shrink-0 transition-colors">
+                    <svg class="w-3.5 h-3.5 text-orange-500 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+                    </svg>
+                  </div>
+                  <div>
+                    <div class="text-sm font-semibold text-gray-900 mb-0.5" style="line-height: 1.4; letter-spacing: -0.01em;">{% trans %}API Documentation{% endtrans %}</div>
+                    <div class="text-xs" style="color: #8A766F; line-height: 1.5;">{% trans %}Interactive API references{% endtrans %}</div>
+                  </div>
+                </a>
+                <a href="{{ lang.abs_lang_url('solutions/product-documentation/') }}" class="menu-item flex items-start p-2 rounded-lg transition-all group/item">
+                  <div class="icon-pill w-7 h-7 rounded-lg bg-orange-50 flex items-center justify-center mr-2.5 flex-shrink-0 transition-colors">
+                    <svg class="w-3.5 h-3.5 text-orange-500 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                    </svg>
+                  </div>
+                  <div>
+                    <div class="text-sm font-semibold text-gray-900 mb-0.5" style="line-height: 1.4; letter-spacing: -0.01em;">{% trans %}Product Docs{% endtrans %}</div>
+                    <div class="text-xs" style="color: #8A766F; line-height: 1.5;">{% trans %}User guides & manuals{% endtrans %}</div>
+                  </div>
+                </a>
+                <a href="{{ lang.abs_lang_url('solutions/user-manuals/') }}" class="menu-item flex items-start p-2 rounded-lg transition-all group/item">
+                  <div class="icon-pill w-7 h-7 rounded-lg bg-orange-50 flex items-center justify-center mr-2.5 flex-shrink-0 transition-colors">
+                    <svg class="w-3.5 h-3.5 text-orange-500 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                    </svg>
+                  </div>
+                  <div>
+                    <div class="text-sm font-semibold text-gray-900 mb-0.5" style="line-height: 1.4; letter-spacing: -0.01em;">{% trans %}User Manuals{% endtrans %}</div>
+                    <div class="text-xs" style="color: #8A766F; line-height: 1.5;">{% trans %}Step-by-step guides{% endtrans %}</div>
+                  </div>
+                </a>
+              </div>
+            </div>
+
+            <!-- AI Solutions Column -->
+            <div class="border-r border-orange-100 pr-6">
+              <h3 class="text-xs font-semibold mb-4 uppercase tracking-wider" style="color: #7C5A49; letter-spacing: 0.06em;">{% trans %}AI SOLUTIONS{% endtrans %}</h3>
+              <div class="space-y-1">
+                <a href="{{ lang.abs_lang_url('solutions/ai-chatbot/') }}" class="menu-item flex items-start p-2 rounded-lg transition-all group/item">
+                  <div class="icon-pill w-7 h-7 rounded-lg bg-orange-50 flex items-center justify-center mr-2.5 flex-shrink-0 transition-colors">
+                    <svg class="w-3.5 h-3.5 text-orange-500 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                    </svg>
+                  </div>
+                  <div>
+                    <div class="text-sm font-semibold text-gray-900 mb-0.5" style="line-height: 1.4; letter-spacing: -0.01em;">{% trans %}AI Chatbot{% endtrans %}</div>
+                    <div class="text-xs" style="color: #8A766F; line-height: 1.5;">{% trans %}Smart documentation assistant{% endtrans %}</div>
+                  </div>
+                </a>
+                <a href="{{ lang.abs_lang_url('solutions/knowledge-base/') }}" class="menu-item flex items-start p-2 rounded-lg transition-all group/item">
+                  <div class="icon-pill w-7 h-7 rounded-lg bg-orange-50 flex items-center justify-center mr-2.5 flex-shrink-0 transition-colors">
+                    <svg class="w-3.5 h-3.5 text-orange-500 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                    </svg>
+                  </div>
+                  <div>
+                    <div class="text-sm font-semibold text-gray-900 mb-0.5" style="line-height: 1.4; letter-spacing: -0.01em;">{% trans %}Knowledge Base{% endtrans %}</div>
+                    <div class="text-xs" style="color: #8A766F; line-height: 1.5;">{% trans %}Self-service help center{% endtrans %}</div>
+                  </div>
+                </a>
+                <a href="{{ lang.abs_lang_url('solutions/ai-technical-writer/') }}" class="menu-item flex items-start p-2 rounded-lg transition-all group/item">
+                  <div class="icon-pill w-7 h-7 rounded-lg bg-orange-50 flex items-center justify-center mr-2.5 flex-shrink-0 transition-colors">
+                    <svg class="w-3.5 h-3.5 text-orange-500 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path>
+                    </svg>
+                  </div>
+                  <div>
+                    <div class="text-sm font-semibold text-gray-900 mb-0.5" style="line-height: 1.4; letter-spacing: -0.01em;">{% trans %}AI Writer{% endtrans %}</div>
+                    <div class="text-xs" style="color: #8A766F; line-height: 1.5;">{% trans %}AI-powered content generation{% endtrans %}</div>
+                  </div>
+                </a>
+                <a href="{{ lang.abs_lang_url('solutions/content-management/') }}" class="menu-item flex items-start p-2 rounded-lg transition-all group/item">
+                  <div class="icon-pill w-7 h-7 rounded-lg bg-orange-50 flex items-center justify-center mr-2.5 flex-shrink-0 transition-colors">
+                    <svg class="w-3.5 h-3.5 text-orange-500 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
+                    </svg>
+                  </div>
+                  <div>
+                    <div class="text-sm font-semibold text-gray-900 mb-0.5" style="line-height: 1.4; letter-spacing: -0.01em;">{% trans %}Content Management{% endtrans %}</div>
+                    <div class="text-xs" style="color: #8A766F; line-height: 1.5;">{% trans %}Organize & version content{% endtrans %}</div>
+                  </div>
+                </a>
+              </div>
+
+              <!-- View all AI solutions link -->
+              <div class="mt-4 pt-3 border-t border-orange-100">
+                <a href="{{ lang.abs_lang_url('solutions/ai/') }}" class="text-xs font-medium text-orange-600 hover:text-orange-700 inline-flex items-center">
+                  {% trans %}View all AI solutions{% endtrans %}
+                  <svg class="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <!-- Enterprise Column -->
+            <div>
+              <h3 class="text-xs font-semibold mb-4 uppercase tracking-wider" style="color: #7C5A49; letter-spacing: 0.06em;">{% trans %}ENTERPRISE{% endtrans %}</h3>
+              <div class="space-y-1">
+                <a href="{{ lang.abs_lang_url('solutions/sops/') }}" class="menu-item flex items-start p-2 rounded-lg transition-all group/item">
+                  <div class="icon-pill w-7 h-7 rounded-lg bg-orange-50 flex items-center justify-center mr-2.5 flex-shrink-0 transition-colors">
+                    <svg class="w-3.5 h-3.5 text-orange-500 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                    </svg>
+                  </div>
+                  <div>
+                    <div class="text-sm font-semibold text-gray-900 mb-0.5" style="line-height: 1.4; letter-spacing: -0.01em;">{% trans %}SOPs{% endtrans %}</div>
+                    <div class="text-xs" style="color: #8A766F; line-height: 1.5;">{% trans %}Standard operating procedures{% endtrans %}</div>
+                  </div>
+                </a>
+                <a href="{{ lang.abs_lang_url('solutions/quality-management/') }}" class="menu-item flex items-start p-2 rounded-lg transition-all group/item">
+                  <div class="icon-pill w-7 h-7 rounded-lg bg-orange-50 flex items-center justify-center mr-2.5 flex-shrink-0 transition-colors">
+                    <svg class="w-3.5 h-3.5 text-orange-500 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    </svg>
+                  </div>
+                  <div>
+                    <div class="text-sm font-semibold text-gray-900 mb-0.5" style="line-height: 1.4; letter-spacing: -0.01em;">{% trans %}Quality Management{% endtrans %}</div>
+                    <div class="text-xs" style="color: #8A766F; line-height: 1.5;">{% trans %}QMS documentation{% endtrans %}</div>
+                  </div>
+                </a>
+                <a href="{{ lang.abs_lang_url('solutions/training-documentation/') }}" class="menu-item flex items-start p-2 rounded-lg transition-all group/item">
+                  <div class="icon-pill w-7 h-7 rounded-lg bg-orange-50 flex items-center justify-center mr-2.5 flex-shrink-0 transition-colors">
+                    <svg class="w-3.5 h-3.5 text-orange-500 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                    </svg>
+                  </div>
+                  <div>
+                    <div class="text-sm font-semibold text-gray-900 mb-0.5" style="line-height: 1.4; letter-spacing: -0.01em;">{% trans %}Training Docs{% endtrans %}</div>
+                    <div class="text-xs" style="color: #8A766F; line-height: 1.5;">{% trans %}Employee training materials{% endtrans %}</div>
+                  </div>
+                </a>
+                <a href="{{ lang.abs_lang_url('solutions/industries/compliance/') }}" class="menu-item flex items-start p-2 rounded-lg transition-all group/item">
+                  <div class="icon-pill w-7 h-7 rounded-lg bg-orange-50 flex items-center justify-center mr-2.5 flex-shrink-0 transition-colors">
+                    <svg class="w-3.5 h-3.5 text-orange-500 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                    </svg>
+                  </div>
+                  <div>
+                    <div class="text-sm font-semibold text-gray-900 mb-0.5" style="line-height: 1.4; letter-spacing: -0.01em;">{% trans %}Compliance{% endtrans %}</div>
+                    <div class="text-xs" style="color: #8A766F; line-height: 1.5;">{% trans %}Regulatory documentation{% endtrans %}</div>
+                  </div>
+                </a>
+              </div>
+
+              <!-- Industry Solutions Section -->
+              <div class="mt-4 pt-3 border-t border-orange-100">
+                <div class="text-xs font-semibold mb-2 uppercase tracking-wider" style="color: #7C5A49; letter-spacing: 0.06em;">{% trans %}INDUSTRY SOLUTIONS{% endtrans %}</div>
+                <a href="{{ lang.abs_lang_url('solutions/industries/') }}" class="text-xs font-medium text-orange-600 hover:text-orange-700 inline-flex items-center">
+                  {% trans %}Explore Industry-Specific Solutions{% endtrans %}
+                  <svg class="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- CTA Panel - Integrated Design -->
+          <div class="mt-6 pt-5 border-t border-orange-100 flex items-center justify-between bg-gradient-to-r from-orange-50/30 to-transparent p-4 rounded-xl">
+            <div>
+              <p class="text-sm font-semibold text-gray-900 mb-0.5" style="letter-spacing: -0.01em;">{% trans %}Not sure where to start?{% endtrans %}</p>
+              <p class="text-xs" style="color: #8A766F;">{% trans %}Get a guided walkthrough of Docsie's documentation solutions{% endtrans %}</p>
+            </div>
+            {% with button_text=_('Book a Demo'), button_class='inline-flex items-center justify-center px-4 py-2 bg-orange-500 text-white text-sm font-semibold rounded-lg hover:bg-orange-600 hover:shadow-md transition-all', show_icon=false %}
+            {% include '_cal_onclick.html' %}
+            {% endwith %}
           </div>
         </div>
       </div>
     </div>
-    
+
     <!-- Pricing Link -->
-    <a href="{{ lang.abs_lang_url('pricing/') }}" class="text-gray-700 hover:text-docsie-primary font-medium transition-colors duration-300">
+    <a href="{{ lang.abs_lang_url('pricing/') }}" class="px-3 py-2 text-gray-700 hover:text-orange-600 font-medium rounded-lg hover:bg-orange-50 transition-colors">
       {% trans %}Pricing{% endtrans %}
     </a>
-    
+
     <!-- Resources Dropdown -->
     <div class="relative group">
-      <button class="flex items-center text-gray-700 hover:text-docsie-primary font-medium transition-colors duration-300 group">
+      <button class="flex items-center px-3 py-2 text-gray-700 hover:text-orange-600 font-medium rounded-lg hover:bg-orange-50 transition-colors">
         {% trans %}Resources{% endtrans %}
-        <svg class="ml-1 w-4 h-4 group-hover:rotate-180 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
         </svg>
       </button>
-      
+
       <!-- Resources Dropdown Menu -->
-      <div class="absolute top-full left-0 w-64 bg-white border border-gray-200 rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 z-50">
+      <div class="absolute top-full left-0 mt-2 w-72 bg-gradient-to-b from-white to-[#FFFCF9] border border-orange-100 rounded-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 z-50"
+           style="box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.08), 0 4px 12px rgba(0, 0, 0, 0.04);">
         <div class="p-4">
-          <ul class="space-y-2">
-            <li>
-              <a href="{{ lang.abs_lang_url('blog/') }}" class="block p-2 rounded-md hover:bg-gray-50 transition-colors duration-200">
-                <div class="text-sm font-medium text-gray-900">{% trans %}Blog{% endtrans %}</div>
-                <div class="text-xs text-gray-600">{% trans %}Latest insights & updates{% endtrans %}</div>
-              </a>
-            </li>
-            <li>
-              <a href="https://help.docsie.io/" class="block p-2 rounded-md hover:bg-gray-50 transition-colors duration-200">
-                <div class="text-sm font-medium text-gray-900">{% trans %}Documentation{% endtrans %}</div>
-                <div class="text-xs text-gray-600">{% trans %}How to use Docsie{% endtrans %}</div>
-              </a>
-            </li>
-            <li>
-              <a href="https://app.docsie.io/schema/redoc/" class="block p-2 rounded-md hover:bg-gray-50 transition-colors duration-200">
-                <div class="text-sm font-medium text-gray-900">{% trans %}API Docs{% endtrans %}</div>
-                <div class="text-xs text-gray-600">{% trans %}Developer reference{% endtrans %}</div>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    
-  </div>
-
-  <!-- Right Side Navigation -->
-  <div class="flex items-center space-x-4">
-    
-    <!-- G2 Rating Badge -->
-    <div class="hidden lg:block">
-      <div class="g2-rating-badge compact">
-        {% include '_g2_rating_badge.html' %}
-      </div>
-    </div>
-    
-    <!-- Book Demo Button -->
-    {% with button_text=_('Book Demo'), button_class='hidden md:inline-flex items-center px-5 py-2.5 rounded-full font-semibold shadow-md bg-[#FF6738] text-white border-2 border-[#FF6738] hover:bg-[#FEA85E] hover:border-[#FEA85E] transition-all duration-200' %}
-    {% include '_cal_onclick.html' %}
-    {% endwith %}
-    
-    <!-- Sign In Link -->
-    <a href="https://app.docsie.io/login" 
-       class="inline-flex items-center px-5 py-2.5 rounded-full font-semibold border-2 border-[#FF6738] text-[#B24934] bg-white hover:bg-[#FF6738] hover:text-white transition-all duration-200 shadow-md hover:shadow-lg">
-      {% trans %}Sign In{% endtrans %}
-    </a>
-    
-  </div>
-  
-</nav>
-
-<!-- Mobile Menu Overlay -->
-<div id="mobile-menu-overlay" class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden md:hidden transition-opacity duration-300"></div>
-
-<!-- Mobile Menu (Slide-in from right) -->
-<div id="mobile-menu" class="fixed top-0 right-0 h-full w-80 max-w-[80vw] bg-white shadow-xl transform translate-x-full transition-transform duration-300 ease-in-out z-50 md:hidden" style="transform: translateX(100%); display: none;">
-  <div class="flex flex-col h-full">
-    
-    <!-- Mobile Menu Header -->
-    <div class="flex items-center justify-between p-4 border-b border-gray-200">
-      <h2 class="text-lg font-semibold text-gray-900">{% trans %}Menu{% endtrans %}</h2>
-      <button onclick="toggleMobileMenu()" class="p-2 text-gray-600 hover:text-docsie-primary transition-colors">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-        </svg>
-      </button>
-    </div>
-    
-    <!-- Mobile Menu Content -->
-    <div class="flex-1 overflow-y-auto p-4 space-y-2">
-      
-      <!-- Solutions Section -->
-      <div class="mobile-menu-item">
-        <button onclick="toggleMobileDropdown('mobile-solutions')" 
-                class="flex items-center justify-between w-full text-left text-gray-900 font-medium py-3 hover:text-docsie-primary transition-colors">
-          {% trans %}Solutions{% endtrans %}
-          <svg class="w-4 h-4 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-          </svg>
-        </button>
-        <div id="mobile-solutions" class="hidden overflow-hidden transition-all duration-300 ease-in-out">
-          <div class="space-y-1 ml-4 mt-2">
-            <div class="mb-3">
-              <div class="text-xs font-semibold text-docsie-primary uppercase tracking-wide mb-2">{% trans %}Documentation{% endtrans %}</div>
-              <a href="{{ lang.abs_lang_url('solutions/technical-documentation/') }}" class="block text-gray-600 hover:text-docsie-primary py-2 text-sm">{% trans %}Technical Docs{% endtrans %}</a>
-              <a href="{{ lang.abs_lang_url('solutions/api-documentation/') }}" class="block text-gray-600 hover:text-docsie-primary py-2 text-sm">{% trans %}API Documentation{% endtrans %}</a>
-              <a href="{{ lang.abs_lang_url('solutions/product-documentation/') }}" class="block text-gray-600 hover:text-docsie-primary py-2 text-sm">{% trans %}Product Docs{% endtrans %}</a>
-              <a href="{{ lang.abs_lang_url('solutions/user-manuals/') }}" class="block text-gray-600 hover:text-docsie-primary py-2 text-sm">{% trans %}User Manuals{% endtrans %}</a>
-            </div>
-            <div class="mb-3">
-              <div class="text-xs font-semibold text-docsie-primary uppercase tracking-wide mb-2">{% trans %}AI Solutions{% endtrans %}</div>
-              <a href="{{ lang.abs_lang_url('solutions/ai/') }}" class="flex items-center text-docsie-primary hover:text-docsie-dark py-2 text-sm">
-                <svg class="w-3 h-3 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+          <div class="space-y-1">
+            <a href="{{ lang.abs_lang_url('blog/') }}" class="menu-item flex items-start p-2 rounded-lg transition-all group/item">
+              <div class="icon-pill w-7 h-7 rounded-lg bg-orange-50 flex items-center justify-center mr-2.5 flex-shrink-0 transition-colors">
+                <svg class="w-3.5 h-3.5 text-orange-500 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
                 </svg>
-                {% trans %}View All AI Solutions{% endtrans %}
-              </a>
-              <a href="{{ lang.abs_lang_url('solutions/ai-chatbot/') }}" class="block text-gray-600 hover:text-docsie-primary py-2 text-sm">{% trans %}AI Chatbot{% endtrans %}</a>
-              <a href="{{ lang.abs_lang_url('solutions/knowledge-base/') }}" class="block text-gray-600 hover:text-docsie-primary py-2 text-sm">{% trans %}Knowledge Base{% endtrans %}</a>
-              <a href="{{ lang.abs_lang_url('solutions/ai-technical-writer/') }}" class="block text-gray-600 hover:text-docsie-primary py-2 text-sm">{% trans %}AI Writer{% endtrans %}</a>
-              <a href="{{ lang.abs_lang_url('solutions/documentation-from-video/') }}" class="block text-gray-600 hover:text-docsie-primary py-2 text-sm">{% trans %}Video to Docs{% endtrans %}</a>
-            </div>
-            <div class="mb-3">
-              <div class="text-xs font-semibold text-docsie-primary uppercase tracking-wide mb-2">{% trans %}Industries{% endtrans %}</div>
-              <a href="{{ lang.abs_lang_url('solutions/industries/') }}" class="flex items-center text-docsie-primary hover:text-docsie-dark py-2 text-sm">
-                <svg class="w-3 h-3 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              </div>
+              <div>
+                <div class="text-sm font-semibold text-gray-900 mb-0.5" style="line-height: 1.4; letter-spacing: -0.01em;">{% trans %}Blog{% endtrans %}</div>
+                <div class="text-xs" style="color: #8A766F; line-height: 1.5;">{% trans %}Latest insights & updates{% endtrans %}</div>
+              </div>
+            </a>
+            <a href="https://help.docsie.io/" class="menu-item flex items-start p-2 rounded-lg transition-all group/item">
+              <div class="icon-pill w-7 h-7 rounded-lg bg-orange-50 flex items-center justify-center mr-2.5 flex-shrink-0 transition-colors">
+                <svg class="w-3.5 h-3.5 text-orange-500 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
                 </svg>
-                {% trans %}View Industry Solutions{% endtrans %}
-              </a>
-            </div>
-            <div class="mb-3">
-              <div class="text-xs font-semibold text-docsie-primary uppercase tracking-wide mb-2">{% trans %}Enterprise{% endtrans %}</div>
-              <a href="{{ lang.abs_lang_url('solutions/sops/') }}" class="block text-gray-600 hover:text-docsie-primary py-2 text-sm">{% trans %}SOPs{% endtrans %}</a>
-              <a href="{{ lang.abs_lang_url('solutions/quality-management/') }}" class="block text-gray-600 hover:text-docsie-primary py-2 text-sm">{% trans %}Quality Management{% endtrans %}</a>
-              <a href="{{ lang.abs_lang_url('solutions/training-documentation/') }}" class="block text-gray-600 hover:text-docsie-primary py-2 text-sm">{% trans %}Training Docs{% endtrans %}</a>
-              <a href="{{ lang.abs_lang_url('solutions/industries/compliance/') }}" class="block text-gray-600 hover:text-docsie-primary py-2 text-sm">{% trans %}Compliance{% endtrans %}</a>
-            </div>
+              </div>
+              <div>
+                <div class="text-sm font-semibold text-gray-900 mb-0.5" style="line-height: 1.4; letter-spacing: -0.01em;">{% trans %}Documentation{% endtrans %}</div>
+                <div class="text-xs" style="color: #8A766F; line-height: 1.5;">{% trans %}How to use Docsie{% endtrans %}</div>
+              </div>
+            </a>
+            <a href="https://app.docsie.io/schema/redoc/" class="menu-item flex items-start p-2 rounded-lg transition-all group/item">
+              <div class="icon-pill w-7 h-7 rounded-lg bg-orange-50 flex items-center justify-center mr-2.5 flex-shrink-0 transition-colors">
+                <svg class="w-3.5 h-3.5 text-orange-500 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+                </svg>
+              </div>
+              <div>
+                <div class="text-sm font-semibold text-gray-900 mb-0.5" style="line-height: 1.4; letter-spacing: -0.01em;">{% trans %}API Docs{% endtrans %}</div>
+                <div class="text-xs" style="color: #8A766F; line-height: 1.5;">{% trans %}Developer reference{% endtrans %}</div>
+              </div>
+            </a>
           </div>
         </div>
       </div>
+    </div>
+
+  </nav>
+
+<!-- Right Side Navigation -->
+<div class="hidden lg:flex items-center space-x-3">
+
+  <!-- G2 Rating Badge -->
+  <div class="flex items-center space-x-1 px-3 py-1.5 bg-white rounded-lg shadow-sm border border-orange-200">
+    <svg class="w-4 h-4 text-amber-500" fill="currentColor" viewBox="0 0 24 24">
+      <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+    </svg>
+    <span class="text-sm font-semibold text-gray-900">4.8</span>
+    <span class="text-xs text-gray-600">on G2</span>
+  </div>
+
+  <!-- Book Demo Button -->
+  {% with button_text=_('Book Demo'), button_class='inline-flex items-center justify-center px-4 py-2 bg-orange-500 text-white text-sm font-semibold rounded-lg shadow-md hover:shadow-lg hover:bg-orange-600 transition-all', show_icon=false %}
+  {% include '_cal_onclick.html' %}
+  {% endwith %}
+
+  <!-- Sign In Link -->
+  <a href="https://app.docsie.io/login"
+     class="inline-flex items-center justify-center px-4 py-2 text-gray-700 text-sm font-medium rounded-lg border border-orange-200 hover:bg-orange-50 transition-colors">
+    {% trans %}Sign In{% endtrans %}
+  </a>
+
+</div>
+
+<!-- Mobile Menu - Optimized for Mobile Viewports -->
+<div id="mobile-menu" class="lg:hidden hidden absolute top-full left-0 right-0 bg-white border-b border-orange-200 shadow-lg" style="z-index: 9998;">
+  <div class="max-w-7xl mx-auto px-4 py-4">
+    <div class="flex flex-col space-y-2">
+      <!-- Solutions -->
+      <a href="{{ lang.abs_lang_url('solutions/') }}" class="px-4 py-3 text-base text-gray-700 hover:text-orange-600 font-medium rounded-lg hover:bg-orange-50 transition-colors">
+        {% trans %}Solutions{% endtrans %}
+      </a>
 
       <!-- Pricing -->
-      <div class="mobile-menu-item">
-        <a href="{{ lang.abs_lang_url('pricing/') }}" class="block text-gray-900 hover:text-docsie-primary font-medium py-3 transition-colors">{% trans %}Pricing{% endtrans %}</a>
-      </div>
+      <a href="{{ lang.abs_lang_url('pricing/') }}" class="px-4 py-3 text-base text-gray-700 hover:text-orange-600 font-medium rounded-lg hover:bg-orange-50 transition-colors">
+        {% trans %}Pricing{% endtrans %}
+      </a>
 
-      <!-- Resources Section -->
-      <div class="mobile-menu-item">
-        <button onclick="toggleMobileDropdown('mobile-resources')" 
-                class="flex items-center justify-between w-full text-left text-gray-900 font-medium py-3 hover:text-docsie-primary transition-colors">
-          {% trans %}Resources{% endtrans %}
-          <svg class="w-4 h-4 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-          </svg>
-        </button>
-        <div id="mobile-resources" class="hidden overflow-hidden transition-all duration-300 ease-in-out">
-          <div class="space-y-1 ml-4 mt-2">
-            <a href="{{ lang.abs_lang_url('blog/') }}" class="block text-gray-600 hover:text-docsie-primary py-2 text-sm">{% trans %}Blog{% endtrans %}</a>
-            <a href="https://help.docsie.io/" class="block text-gray-600 hover:text-docsie-primary py-2 text-sm">{% trans %}Documentation{% endtrans %}</a>
-            <a href="https://app.docsie.io/schema/redoc/" class="block text-gray-600 hover:text-docsie-primary py-2 text-sm">{% trans %}API Docs{% endtrans %}</a>
-          </div>
-        </div>
-      </div>
+      <!-- Resources -->
+      <a href="{{ lang.abs_lang_url('blog/') }}" class="px-4 py-3 text-base text-gray-700 hover:text-orange-600 font-medium rounded-lg hover:bg-orange-50 transition-colors">
+        {% trans %}Resources{% endtrans %}
+      </a>
 
-    </div>
+      <!-- Divider -->
+      <div class="border-t border-orange-100 my-2"></div>
 
-    <!-- Mobile Menu Footer - CTA Buttons -->
-    <div class="p-4 border-t border-gray-200 space-y-3">
-      {% with button_text=_('Book Demo'), button_class='w-full py-3 px-4 rounded-full font-semibold bg-[#FF6738] text-white border-2 border-[#FF6738] hover:bg-[#FEA85E] hover:border-[#FEA85E] transition-all duration-200 flex items-center justify-center shadow-md' %}
-      {% include '_cal_onclick.html' %}
-      {% endwith %}
-      <a href="https://app.docsie.io/login" 
-         class="block w-full py-3 px-4 rounded-full font-semibold text-center border-2 border-[#FF6738] text-[#B24934] bg-white hover:bg-[#FF6738] hover:text-white transition-all duration-200 flex items-center justify-center shadow-md hover:shadow-lg">
-        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013 3v1"></path>
+      <!-- G2 Badge -->
+      <div class="flex items-center justify-center space-x-1 px-4 py-2">
+        <svg class="w-4 h-4 text-amber-500" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
         </svg>
+        <span class="text-sm font-semibold text-gray-900">4.8</span>
+        <span class="text-xs text-gray-600">on G2</span>
+      </div>
+
+      <!-- Book Demo Button -->
+      <div class="px-4">
+        {% with button_text=_('Book Demo'), button_class='w-full py-3 bg-orange-500 text-white text-base font-semibold rounded-lg text-center hover:bg-orange-600 transition-all shadow-md', show_icon=false %}
+        {% include '_cal_onclick.html' %}
+        {% endwith %}
+      </div>
+
+      <!-- Sign In -->
+      <a href="https://app.docsie.io/login" class="mx-4 py-3 text-base text-gray-700 font-medium rounded-lg border border-orange-200 hover:bg-orange-50 transition-colors text-center">
         {% trans %}Sign In{% endtrans %}
       </a>
     </div>
-    
   </div>
 </div>
 
+<style>
+/* Premium menu item hover states */
+.menu-item:hover {
+  background-color: #FFF5EC;
+  transform: translateY(-1px);
+}
+
+.menu-item:active {
+  transform: translateY(0);
+}
+
+.menu-item:hover .icon-pill {
+  background-color: #FED7AA;
+}
+
+.menu-item:hover svg {
+  transform: translateX(2px);
+}
+
+.menu-item {
+  transition: all 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.icon-pill svg {
+  transition: transform 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+</style>
+
 <script>
+// Simple mobile menu toggle
 function toggleMobileMenu() {
   const menu = document.getElementById('mobile-menu');
-  const overlay = document.getElementById('mobile-menu-overlay');
   const menuIcon = document.getElementById('mobile-menu-icon');
   const closeIcon = document.getElementById('mobile-menu-close');
-  const body = document.body;
-  
-  // Toggle menu visibility
-  if (menu.classList.contains('translate-x-full')) {
-    // Open menu
-    menu.style.display = 'block'; // Show the menu first
-    setTimeout(() => {
-      menu.style.transform = 'translateX(0)';
-      menu.classList.remove('translate-x-full');
-      menu.classList.add('translate-x-0');
-    }, 10);
-    overlay.classList.remove('hidden');
-    overlay.classList.add('opacity-50');
-    menuIcon.classList.add('hidden');
-    closeIcon.classList.remove('hidden');
-    body.style.overflow = 'hidden';
-  } else {
-    // Close menu
-    menu.style.transform = 'translateX(100%)';
-    menu.classList.remove('translate-x-0');
-    menu.classList.add('translate-x-full');
-    setTimeout(() => {
-      menu.style.display = 'none'; // Hide after animation
-    }, 300);
-    overlay.classList.remove('opacity-50');
-    overlay.classList.add('hidden');
-    menuIcon.classList.remove('hidden');
-    closeIcon.classList.add('hidden');
-    body.style.overflow = '';
-  }
+
+  menu.classList.toggle('hidden');
+  menuIcon.classList.toggle('hidden');
+  closeIcon.classList.toggle('hidden');
 }
-
-function toggleMobileDropdown(id) {
-  const dropdown = document.getElementById(id);
-  const button = dropdown.previousElementSibling;
-  const icon = button.querySelector('svg');
-  
-  dropdown.classList.toggle('hidden');
-  icon.classList.toggle('rotate-180');
-}
-
-// Close mobile menu when clicking overlay
-document.addEventListener('click', function(event) {
-  const overlay = document.getElementById('mobile-menu-overlay');
-  const menu = document.getElementById('mobile-menu');
-  
-  if (event.target === overlay) {
-    toggleMobileMenu();
-  }
-});
-
-// Close mobile menu when clicking menu links
-document.addEventListener('click', function(event) {
-  const menu = document.getElementById('mobile-menu');
-  const link = event.target.closest('a');
-  
-  if (link && menu.contains(link) && !link.closest('[onclick*="toggleMobileDropdown"]')) {
-    // Small delay to allow navigation
-    setTimeout(() => {
-      toggleMobileMenu();
-    }, 100);
-  }
-});
-
-// Handle escape key to close mobile menu
-document.addEventListener('keydown', function(event) {
-  if (event.key === 'Escape') {
-    const menu = document.getElementById('mobile-menu');
-    if (!menu.classList.contains('translate-x-full')) {
-      toggleMobileMenu();
-    }
-  }
-});
-
-// Initialize mobile menu on load
-document.addEventListener('DOMContentLoaded', function() {
-  const menu = document.getElementById('mobile-menu');
-  if (menu) {
-    menu.style.display = 'none';
-    menu.style.transform = 'translateX(100%)';
-  }
-});
 </script>

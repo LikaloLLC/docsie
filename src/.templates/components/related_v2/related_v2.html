@@ -1,61 +1,65 @@
-<!-- Tailwind v2 Related Components -->
-<section class="related-v2 py-16 bg-white">
-  <div class="container mx-auto px-4 lg:px-8">
-    
+{% if section %}
+<!-- Related Solutions V2 - Polished Design System -->
+<section class="section-shell bg-white">
+  <div class="section-inner">
+
     <!-- Section Header -->
     <div class="text-center mb-12">
-      <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+      <h2 class="heading-xl text-headline-warm mb-4">
         {{ section.title }}
       </h2>
     </div>
-    
+
     <!-- Related Solutions Grid -->
-    <div class="related-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       {% for solution in section.solutions %}
-      <a href="{{ solution.url }}" class="related-card group block bg-white border border-gray-200 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden">
-        
-        <!-- Image Container -->
-        {% if solution.image %}
-        <div class="relative overflow-hidden">
-          <img 
-            src="{{ solution.image }}" 
-            alt="{{ solution.title }}"
-            class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
-          />
-          
-          <!-- Overlay -->
-          <div class="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-          
-          <!-- Arrow Icon -->
-          <div class="absolute top-4 right-4 bg-white/90 rounded-full p-2 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-x-2 group-hover:translate-x-0">
-            <svg class="w-4 h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-            </svg>
+      <a href="{{ solution.url }}" class="bento-card group block">
+        <div class="bento-card-inner overflow-hidden">
+
+          <!-- Image Container -->
+          {% if solution.image %}
+          <div class="relative overflow-hidden">
+            <img
+              src="{{ solution.image }}"
+              alt="{{ solution.title }}"
+              class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+            />
+
+            <!-- Overlay -->
+            <div class="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+
+            <!-- Arrow Icon -->
+            <div class="absolute top-4 right-4 bg-white/90 rounded-full p-2 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-x-2 group-hover:translate-x-0">
+              <svg class="w-4 h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+              </svg>
+            </div>
           </div>
-        </div>
-        {% endif %}
-        
-        <!-- Content -->
-        <div class="p-6">
-          <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors duration-300">
-            {{ solution.title }}
-          </h3>
-          <p class="text-gray-600 leading-relaxed mb-4">
-            {{ solution.description }}
-          </p>
-          
-          <!-- Read More Link -->
-          <div class="flex items-center text-blue-600 font-medium group-hover:text-blue-700 transition-colors duration-300">
-            <span>Learn More</span>
-            <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-            </svg>
+          {% endif %}
+
+          <!-- Content -->
+          <div class="p-6">
+            <h3 class="heading-md text-headline-warm mb-3 group-hover:text-v2-orange transition-colors duration-300">
+              {{ solution.title }}
+            </h3>
+            <p class="body-base text-body-warm leading-relaxed mb-4">
+              {{ solution.description }}
+            </p>
+
+            <!-- Read More Link -->
+            <div class="flex items-center text-v2-orange font-medium group-hover:text-v2-orange-light transition-colors duration-300">
+              <span>Learn More</span>
+              <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              </svg>
+            </div>
           </div>
+
         </div>
-        
       </a>
       {% endfor %}
     </div>
-    
+
   </div>
 </section>
+{% endif %}

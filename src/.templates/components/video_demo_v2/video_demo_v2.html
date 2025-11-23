@@ -1,22 +1,20 @@
 {% if section %}
-<!-- Self-Hosted Video Demo Component -->
-<section class="video-demo-v2 py-16 md:py-24 bg-gradient-to-b from-gray-50 to-white">
-  <div class="container mx-auto px-4 lg:px-8">
+<!-- Video Demo V2 - Polished Design System -->
+<section class="section-shell bg-warm">
+  <div class="section-inner">
 
     <!-- Section Header -->
     <div class="text-center mb-12">
       {% if section.badge %}
-      <span class="inline-block px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-semibold mb-4">
-        {{ section.badge }}
-      </span>
+      <p class="eyebrow mb-4">{{ section.badge }}</p>
       {% endif %}
 
-      <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-gray-900">
+      <h2 class="heading-xl text-headline-warm mb-4">
         {{ section.title }}
       </h2>
 
       {% if section.description %}
-      <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+      <p class="body-lg text-body-warm max-w-3xl mx-auto">
         {{ section.description }}
       </p>
       {% endif %}
@@ -24,21 +22,23 @@
 
     <!-- Video Container -->
     <div class="max-w-5xl mx-auto">
-      <div class="relative rounded-2xl overflow-hidden shadow-2xl bg-gray-900">
-        <video
-          class="w-full h-auto"
-          {% if section.controls %}controls{% endif %}
-          {% if section.autoplay %}autoplay muted loop{% endif %}
-          {% if section.poster %}poster="{{ section.poster }}"{% endif %}
-          playsinline>
-          <source src="{{ section.video_url }}" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
+      <div class="bento-card group">
+        <div class="relative rounded-2xl overflow-hidden">
+          <video
+            class="w-full h-auto transition-transform duration-300 group-hover:scale-101"
+            {% if section.controls %}controls{% endif %}
+            {% if section.autoplay %}autoplay muted loop{% endif %}
+            {% if section.poster %}poster="{{ section.poster }}"{% endif %}
+            playsinline>
+            <source src="{{ section.video_url }}" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
       </div>
 
       <!-- Optional Note -->
       {% if section.note %}
-      <p class="text-center text-sm text-gray-500 mt-6">
+      <p class="text-center text-sm text-body-warm mt-6">
         {{ section.note }}
       </p>
       {% endif %}
@@ -46,10 +46,9 @@
       <!-- Optional CTA -->
       {% if section.cta %}
       <div class="text-center mt-8">
-        <a href="{{ section.cta.url }}"
-           class="inline-flex items-center justify-center px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 transform hover:-translate-y-1">
+        <a href="{{ section.cta.url }}" class="btn-primary-warm">
           {{ section.cta.text }}
-          <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg class="ml-2 w-5 h-5 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
           </svg>
         </a>
@@ -59,14 +58,4 @@
 
   </div>
 </section>
-
-<style>
-.video-demo-v2 video {
-  transition: transform 0.3s ease;
-}
-
-.video-demo-v2 video:hover {
-  transform: scale(1.01);
-}
-</style>
 {% endif %}

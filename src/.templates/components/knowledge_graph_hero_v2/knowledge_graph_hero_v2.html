@@ -1,31 +1,32 @@
-<!-- Knowledge Graph Hero Component v2 -->
-<section class="knowledge-graph-hero min-h-screen relative overflow-hidden bg-gradient-to-br from-slate-50 via-white to-blue-50">
-  
+{% if section %}
+<!-- Knowledge Graph Hero V2 - Polished Design System -->
+<section class="knowledge-graph-hero min-h-screen relative overflow-hidden warm-gradient">
+
   <!-- Animated Knowledge Graph Background -->
-  <div class="absolute inset-0 pointer-events-none">
-    <svg class="knowledge-graph-svg w-full h-full opacity-30" viewBox="0 0 1200 800" fill="none">
+  <div class="absolute inset-0 pointer-events-none opacity-20">
+    <svg class="knowledge-graph-svg w-full h-full" viewBox="0 0 1200 800" fill="none">
       <!-- Background Grid -->
       <defs>
         <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
           <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgb(148 163 184)" stroke-width="0.5" opacity="0.3"/>
         </pattern>
-        
-        <!-- Gradient Definitions -->
+
+        <!-- Gradient Definitions (Orange theme) -->
         <linearGradient id="nodeGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1" />
-          <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:1" />
+          <stop offset="0%" style="stop-color:#ea580c;stop-opacity:1" />
+          <stop offset="100%" style="stop-color:#f97316;stop-opacity:1" />
         </linearGradient>
-        
+
         <linearGradient id="connectionGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-          <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:0.6" />
-          <stop offset="50%" style="stop-color:#8b5cf6;stop-opacity:0.4" />
-          <stop offset="100%" style="stop-color:#06b6d4;stop-opacity:0.6" />
+          <stop offset="0%" style="stop-color:#ea580c;stop-opacity:0.6" />
+          <stop offset="50%" style="stop-color:#f97316;stop-opacity:0.4" />
+          <stop offset="100%" style="stop-color:#fb923c;stop-opacity:0.6" />
         </linearGradient>
       </defs>
-      
+
       <!-- Grid Background -->
       <rect width="100%" height="100%" fill="url(#grid)" />
-      
+
       <!-- Knowledge Graph Nodes -->
       <g class="knowledge-nodes">
         <!-- Central Hub Node -->
@@ -39,141 +40,123 @@
             <animate attributeName="r" values="12;25;12" dur="3s" begin="0.5s" repeatCount="indefinite"/>
           </circle>
         </g>
-        
+
         <!-- Documentation Nodes -->
         <g class="node-group doc-node" data-delay="0.3">
           <circle cx="450" cy="300" r="8" fill="url(#nodeGradient)" opacity="0">
             <animate attributeName="opacity" values="0;1" dur="1s" begin="0.3s" fill="freeze"/>
           </circle>
         </g>
-        
+
         <g class="node-group doc-node" data-delay="0.6">
           <circle cx="750" cy="300" r="8" fill="url(#nodeGradient)" opacity="0">
             <animate attributeName="opacity" values="0;1" dur="1s" begin="0.6s" fill="freeze"/>
           </circle>
         </g>
-        
-        <!-- AI Nodes -->
+
+        <!-- Additional nodes with orange theme colors -->
         <g class="node-group ai-node" data-delay="0.9">
-          <circle cx="350" cy="450" r="6" fill="#06b6d4" opacity="0">
+          <circle cx="350" cy="450" r="6" fill="#fb923c" opacity="0">
             <animate attributeName="opacity" values="0;1" dur="1s" begin="0.9s" fill="freeze"/>
           </circle>
         </g>
-        
+
         <g class="node-group ai-node" data-delay="1.2">
-          <circle cx="850" cy="450" r="6" fill="#06b6d4" opacity="0">
+          <circle cx="850" cy="450" r="6" fill="#fb923c" opacity="0">
             <animate attributeName="opacity" values="0;1" dur="1s" begin="1.2s" fill="freeze"/>
           </circle>
         </g>
-        
-        <!-- Knowledge Base Nodes -->
+
         <g class="node-group kb-node" data-delay="1.5">
-          <circle cx="500" cy="550" r="7" fill="#8b5cf6" opacity="0">
+          <circle cx="500" cy="550" r="7" fill="#f97316" opacity="0">
             <animate attributeName="opacity" values="0;1" dur="1s" begin="1.5s" fill="freeze"/>
           </circle>
         </g>
-        
+
         <g class="node-group kb-node" data-delay="1.8">
-          <circle cx="700" cy="550" r="7" fill="#8b5cf6" opacity="0">
+          <circle cx="700" cy="550" r="7" fill="#f97316" opacity="0">
             <animate attributeName="opacity" values="0;1" dur="1s" begin="1.8s" fill="freeze"/>
           </circle>
         </g>
-        
-        <!-- Secondary Ring Nodes -->
+
         <g class="node-group secondary-node" data-delay="2.1">
-          <circle cx="300" cy="350" r="5" fill="#10b981" opacity="0">
+          <circle cx="300" cy="350" r="5" fill="#fdba74" opacity="0">
             <animate attributeName="opacity" values="0;1" dur="1s" begin="2.1s" fill="freeze"/>
           </circle>
         </g>
-        
+
         <g class="node-group secondary-node" data-delay="2.4">
-          <circle cx="900" cy="350" r="5" fill="#10b981" opacity="0">
+          <circle cx="900" cy="350" r="5" fill="#fdba74" opacity="0">
             <animate attributeName="opacity" values="0;1" dur="1s" begin="2.4s" fill="freeze"/>
           </circle>
         </g>
-        
+
         <g class="node-group secondary-node" data-delay="2.7">
-          <circle cx="400" cy="200" r="5" fill="#f59e0b" opacity="0">
+          <circle cx="400" cy="200" r="5" fill="#fed7aa" opacity="0">
             <animate attributeName="opacity" values="0;1" dur="1s" begin="2.7s" fill="freeze"/>
           </circle>
         </g>
-        
+
         <g class="node-group secondary-node" data-delay="3.0">
-          <circle cx="800" cy="200" r="5" fill="#f59e0b" opacity="0">
+          <circle cx="800" cy="200" r="5" fill="#fed7aa" opacity="0">
             <animate attributeName="opacity" values="0;1" dur="1s" begin="3.0s" fill="freeze"/>
           </circle>
         </g>
       </g>
-      
-      <!-- Knowledge Graph Connections -->
+
+      <!-- Knowledge Graph Connections (preserving all connection animations) -->
       <g class="knowledge-connections">
-        <!-- Central Hub Connections -->
         <line x1="600" y1="400" x2="450" y2="300" stroke="url(#connectionGradient)" stroke-width="2" opacity="0">
           <animate attributeName="opacity" values="0;0.6" dur="1s" begin="1s" fill="freeze"/>
         </line>
-        
         <line x1="600" y1="400" x2="750" y2="300" stroke="url(#connectionGradient)" stroke-width="2" opacity="0">
           <animate attributeName="opacity" values="0;0.6" dur="1s" begin="1.3s" fill="freeze"/>
         </line>
-        
         <line x1="600" y1="400" x2="350" y2="450" stroke="url(#connectionGradient)" stroke-width="2" opacity="0">
           <animate attributeName="opacity" values="0;0.6" dur="1s" begin="1.6s" fill="freeze"/>
         </line>
-        
         <line x1="600" y1="400" x2="850" y2="450" stroke="url(#connectionGradient)" stroke-width="2" opacity="0">
           <animate attributeName="opacity" values="0;0.6" dur="1s" begin="1.9s" fill="freeze"/>
         </line>
-        
         <line x1="600" y1="400" x2="500" y2="550" stroke="url(#connectionGradient)" stroke-width="2" opacity="0">
           <animate attributeName="opacity" values="0;0.6" dur="1s" begin="2.2s" fill="freeze"/>
         </line>
-        
         <line x1="600" y1="400" x2="700" y2="550" stroke="url(#connectionGradient)" stroke-width="2" opacity="0">
           <animate attributeName="opacity" values="0;0.6" dur="1s" begin="2.5s" fill="freeze"/>
         </line>
-        
-        <!-- Secondary Connections -->
         <line x1="450" y1="300" x2="300" y2="350" stroke="url(#connectionGradient)" stroke-width="1.5" opacity="0">
           <animate attributeName="opacity" values="0;0.4" dur="1s" begin="2.8s" fill="freeze"/>
         </line>
-        
         <line x1="750" y1="300" x2="900" y2="350" stroke="url(#connectionGradient)" stroke-width="1.5" opacity="0">
           <animate attributeName="opacity" values="0;0.4" dur="1s" begin="3.1s" fill="freeze"/>
         </line>
-        
         <line x1="450" y1="300" x2="400" y2="200" stroke="url(#connectionGradient)" stroke-width="1.5" opacity="0">
           <animate attributeName="opacity" values="0;0.4" dur="1s" begin="3.4s" fill="freeze"/>
         </line>
-        
         <line x1="750" y1="300" x2="800" y2="200" stroke="url(#connectionGradient)" stroke-width="1.5" opacity="0">
           <animate attributeName="opacity" values="0;0.4" dur="1s" begin="3.7s" fill="freeze"/>
         </line>
-        
-        <!-- Knowledge Flow Connections -->
         <line x1="350" y1="450" x2="500" y2="550" stroke="url(#connectionGradient)" stroke-width="1.5" opacity="0">
           <animate attributeName="opacity" values="0;0.4" dur="1s" begin="4s" fill="freeze"/>
         </line>
-        
         <line x1="850" y1="450" x2="700" y2="550" stroke="url(#connectionGradient)" stroke-width="1.5" opacity="0">
           <animate attributeName="opacity" values="0;0.4" dur="1s" begin="4.3s" fill="freeze"/>
         </line>
       </g>
-      
+
       <!-- Data Flow Animation -->
       <g class="data-flow">
-        <circle r="3" fill="#3b82f6" opacity="0.8">
+        <circle r="3" fill="#ea580c" opacity="0.8">
           <animateMotion dur="6s" repeatCount="indefinite" begin="5s">
             <path d="M 600,400 Q 525,350 450,300 Q 375,275 300,350 Q 350,425 450,300"/>
           </animateMotion>
         </circle>
-        
-        <circle r="3" fill="#8b5cf6" opacity="0.8">
+        <circle r="3" fill="#f97316" opacity="0.8">
           <animateMotion dur="8s" repeatCount="indefinite" begin="6s">
             <path d="M 600,400 Q 675,350 750,300 Q 825,275 900,350 Q 850,425 750,300"/>
           </animateMotion>
         </circle>
-        
-        <circle r="2" fill="#06b6d4" opacity="0.8">
+        <circle r="2" fill="#fb923c" opacity="0.8">
           <animateMotion dur="7s" repeatCount="indefinite" begin="5.5s">
             <path d="M 600,400 Q 550,475 500,550 Q 650,575 700,550 Q 650,475 600,400"/>
           </animateMotion>
@@ -181,72 +164,62 @@
       </g>
     </svg>
   </div>
-  
+
   <!-- Hero Content -->
   <div class="relative z-10 min-h-screen flex items-center">
-    <div class="container mx-auto px-4 lg:px-8">
+    <div class="section-inner">
       <div class="max-w-4xl mx-auto text-center">
-        
+
         <!-- AI Badge -->
-        <div class="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-blue-50 to-purple-50 border border-blue-200/50 mb-8 opacity-0 animate-fade-in" style="animation-delay: 0.5s;">
-          <svg class="w-5 h-5 text-blue-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <div class="hero-badge mb-8 opacity-0 animate-fade-in" style="animation-delay: 0.5s;">
+          <svg class="w-5 h-5 text-v2-orange mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
           </svg>
-          <span class="text-blue-700 font-semibold text-sm">AI-Powered</span>
+          <span class="hero-badge-text">AI-Powered</span>
         </div>
-        
+
         <!-- Main Title -->
-        <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold mb-8 leading-tight opacity-0 animate-slide-up" style="animation-delay: 0.8s;">
-          <span class="bg-gradient-to-r from-gray-900 via-blue-900 to-purple-900 bg-clip-text text-transparent">
-            Enterprise Knowledge Base Software
-          </span>
+        <h1 class="hero-title mb-8 opacity-0 animate-slide-up" style="animation-delay: 0.8s;">
+          {{ section.title or "Enterprise Knowledge Base Software" }}
         </h1>
-        
+
         <!-- Subtitle -->
-        <p class="text-xl md:text-2xl text-gray-600 mb-12 max-w-3xl mx-auto leading-relaxed opacity-0 animate-slide-up" style="animation-delay: 1.1s;">
-          Your Central Hub for SOPs, Help Docs, and Knowledge Sharing. 
-          AI-powered platform for effortless documentation—keeping your team, customers and partners aligned and informed.
+        <p class="body-lg text-body-warm mb-12 max-w-3xl mx-auto leading-relaxed opacity-0 animate-slide-up" style="animation-delay: 1.1s;">
+          {{ section.description or "Your Central Hub for SOPs, Help Docs, and Knowledge Sharing. AI-powered platform for effortless documentation—keeping your team, customers and partners aligned and informed." }}
         </p>
-        
+
         <!-- CTA Buttons -->
         <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12 opacity-0 animate-slide-up" style="animation-delay: 1.4s;">
-          <button class="group inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1" 
-                  onclick="Calendly.initPopupWidget({url: 'https://calendly.com/docsie-io/demo-call'})">
-            Book Demo
-            <svg class="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <button class="btn-primary-warm"
+                  data-cal-link="docsie/product-discovery"
+                  data-cal-namespace="product-discovery"
+                  data-cal-config='{"layout":"month_view"}'>
+            {{ section.cta.text or "Book Demo" }}
+            <svg class="ml-2 w-5 h-5 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
             </svg>
           </button>
         </div>
-        
+
         <!-- G2 Reviews -->
         <div class="inline-flex items-center gap-4 px-6 py-3 bg-white/80 backdrop-blur-sm rounded-xl border border-gray-200/50 shadow-sm opacity-0 animate-slide-up" style="animation-delay: 1.7s;">
           <div class="flex items-center gap-2">
             <img src="/assets/new_home/g2-logo.svg" alt="G2 Logo" class="h-6" />
             <div class="flex">
+              {% for i in range(5) %}
               <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20">
                 <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
               </svg>
-              <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20">
-                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
-              </svg>
-              <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20">
-                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
-              </svg>
-              <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20">
-                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
-              </svg>
-              <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20">
-                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
-              </svg>
+              {% endfor %}
             </div>
           </div>
           <div class="w-px h-6 bg-gray-300"></div>
-          <span class="text-gray-700 font-medium">4.8 Stars (100+ Reviews)</span>
+          <span class="text-body-warm font-medium">4.8 Stars (100+ Reviews)</span>
         </div>
-        
+
       </div>
     </div>
   </div>
-  
+
 </section>
+{% endif %}

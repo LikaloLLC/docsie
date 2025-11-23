@@ -1,18 +1,14 @@
-/* Import design tokens if not already loaded */
-@import url('/styles/design-tokens.css');
+/* Related Auto Component - Using Design System */
 
 /* 🔁 Existing section layout */
 .related-content {
   margin: 5rem auto;
-  max-width: 1200px;
-  padding: 0 1rem;
+  max-width: 1280px;
+  padding: 0 2rem;
 }
 
 .related-content h2 {
-  font-size: 2.25rem;
-  margin-bottom: 2.5rem;
-  color: #1a1a1a;
-  font-weight: 600;
+  margin-bottom: 3rem;
   text-align: center;
 }
 
@@ -23,15 +19,23 @@
   margin: 0 auto;
 }
 
+/* Limit to 3 columns max on large screens */
+@media screen and (min-width: 1024px) {
+  .related-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+  }
+}
+
 .related-card {
   display: block;
   text-decoration: none;
-  background-color: var(--bg-primary);
-  border-radius: 16px;
+  background: white;
+  border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 20px rgba(178, 73, 52, 0.08);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid rgba(178, 73, 52, 0.1);
   height: 100%;
   position: relative;
 }
@@ -45,25 +49,38 @@
 .card-image-wrapper img {
   display: block;
   width: 100%;
-  height: 220px;
+  height: 280px;
   object-fit: cover;
-  transition: transform 0.5s ease;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* ✨ Overlay styling for related-content inside image */
 .card-image-wrapper .related-content {
-  padding: 1rem 1.5rem;
-  /* position: absolute; */
-  top: 0;
+  padding: 2rem 1.75rem;
+  position: absolute;
+  bottom: 0;
   left: 0;
-  height: 100%;
+  right: 0;
   width: 100%;
   box-sizing: border-box;
+  background: linear-gradient(to top,
+    rgba(178, 73, 52, 0.95) 0%,
+    rgba(178, 73, 52, 0.85) 40%,
+    rgba(178, 73, 52, 0.4) 70%,
+    transparent 100%
+  );
+  color: white;
+  margin: 0;
 }
 
-.related-card:hover img,
-.card-image-wrapper:hover img {
-  transform: scale(1.03);
+.related-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 40px rgba(178, 73, 52, 0.15);
+  border-color: rgba(178, 73, 52, 0.2);
+}
+
+.related-card:hover img {
+  transform: scale(1.05);
 }
 
 /* 🔁 Non-overlay content padding */
@@ -77,21 +94,29 @@
 
 /* Text content */
 .related-card h3 {
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: #1a1a1a;
   margin: 0 0 0.75rem 0;
 }
 
 .card-image-wrapper .related-content h3,
 .card-image-wrapper .related-content p {
   margin: 0;
+  color: white !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.card-image-wrapper .related-content h3 {
+  margin-bottom: 0.75rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.card-image-wrapper .related-content p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  opacity: 0.98;
 }
 
 .related-card p {
-  font-size: 1rem;
-  color: #4a5568;
-  line-height: 1.6;
   margin: 0;
   flex-grow: 1;
 }
@@ -104,10 +129,6 @@
 
   .related-content {
     margin: 3rem auto;
-  }
-
-  .related-content h2 {
-    font-size: 1.875rem;
   }
 }
 

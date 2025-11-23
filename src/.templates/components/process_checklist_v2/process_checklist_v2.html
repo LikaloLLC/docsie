@@ -1,20 +1,18 @@
 {% if section %}
-<!-- Process Checklist Component -->
-<section class="process-checklist-v2 py-16 md:py-24 bg-gradient-to-b from-gray-50 to-white">
-  <div class="container mx-auto px-4 lg:px-8">
+<!-- Process Checklist V2 - Polished Design System -->
+<section class="section-shell bg-warm">
+  <div class="section-inner">
 
     <!-- Section Header -->
     <div class="text-center mb-16">
       {% if section.badge %}
-      <span class="inline-block px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-semibold mb-4">
-        {{ section.badge }}
-      </span>
+      <p class="eyebrow mb-4">{{ section.badge }}</p>
       {% endif %}
-      <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-gray-900">
+      <h2 class="heading-xl text-headline-warm mb-4">
         {{ section.title or "How It Works" }}
       </h2>
       {% if section.description %}
-      <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+      <p class="body-lg text-body-warm max-w-3xl mx-auto">
         {{ section.description }}
       </p>
       {% endif %}
@@ -26,50 +24,52 @@
       <div class="checklist-item opacity-0 translate-y-8 transition-all duration-700 ease-out"
            data-step="{{ loop.index0 }}">
 
-        <div class="flex gap-6 items-start p-6 md:p-8 bg-white rounded-2xl shadow-sm hover:shadow-lg transition-shadow duration-300 border-2 border-transparent">
+        <div class="bento-card group">
+          <div class="bento-card-inner flex gap-6 items-start p-6 md:p-8 border-2 border-transparent">
 
-          <!-- Animated Check Circle -->
-          <div class="flex-shrink-0">
-            <div class="check-circle relative w-16 h-16 md:w-20 md:h-20">
-              <!-- Background Circle -->
-              <div class="absolute inset-0 rounded-full border-4 border-gray-200 bg-white"></div>
+            <!-- Animated Check Circle -->
+            <div class="flex-shrink-0">
+              <div class="check-circle relative w-16 h-16 md:w-20 md:h-20">
+                <!-- Background Circle -->
+                <div class="absolute inset-0 rounded-full border-4 border-gray-200 bg-white"></div>
 
-              <!-- Progress Ring (animated) -->
-              <svg class="progress-ring absolute inset-0 w-full h-full -rotate-90" viewBox="0 0 80 80">
-                <circle class="progress-ring-circle"
-                        cx="40" cy="40" r="36"
-                        fill="none"
-                        stroke="#3B82F6"
-                        stroke-width="4"
-                        stroke-dasharray="226.195"
-                        stroke-dashoffset="226.195"
-                        stroke-linecap="round"/>
-              </svg>
-
-              <!-- Check Icon (appears when complete) -->
-              <div class="check-icon absolute inset-0 flex items-center justify-center opacity-0 scale-50 transition-all duration-300">
-                <svg class="w-8 h-8 md:w-10 md:h-10 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+                <!-- Progress Ring (animated) -->
+                <svg class="progress-ring absolute inset-0 w-full h-full -rotate-90" viewBox="0 0 80 80">
+                  <circle class="progress-ring-circle"
+                          cx="40" cy="40" r="36"
+                          fill="none"
+                          stroke="var(--v2-orange)"
+                          stroke-width="4"
+                          stroke-dasharray="226.195"
+                          stroke-dashoffset="226.195"
+                          stroke-linecap="round"/>
                 </svg>
-              </div>
 
-              <!-- Step Number (hides when complete) -->
-              <div class="step-number absolute inset-0 flex items-center justify-center text-2xl md:text-3xl font-bold text-gray-400 transition-opacity duration-300">
-                {{ loop.index }}
+                <!-- Check Icon (appears when complete) -->
+                <div class="check-icon absolute inset-0 flex items-center justify-center opacity-0 scale-50 transition-all duration-300">
+                  <svg class="w-8 h-8 md:w-10 md:h-10 text-v2-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+                  </svg>
+                </div>
+
+                <!-- Step Number (hides when complete) -->
+                <div class="step-number absolute inset-0 flex items-center justify-center text-2xl md:text-3xl font-bold text-gray-400 transition-opacity duration-300">
+                  {{ loop.index }}
+                </div>
               </div>
             </div>
-          </div>
 
-          <!-- Content -->
-          <div class="flex-1 pt-2">
-            <h3 class="text-xl md:text-2xl font-bold text-gray-900 mb-3">
-              {{ step.title }}
-            </h3>
-            <p class="text-base md:text-lg text-gray-600 leading-relaxed">
-              {{ step.description }}
-            </p>
-          </div>
+            <!-- Content -->
+            <div class="flex-1 pt-2">
+              <h3 class="heading-lg text-headline-warm mb-3">
+                {{ step.title }}
+              </h3>
+              <p class="body-base text-body-warm leading-relaxed">
+                {{ step.description }}
+              </p>
+            </div>
 
+          </div>
         </div>
       </div>
       {% endfor %}
@@ -78,10 +78,9 @@
     <!-- Optional CTA -->
     {% if section.cta %}
     <div class="text-center mt-16">
-      <a href="{{ section.cta.url }}"
-         class="inline-flex items-center justify-center px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 transform hover:-translate-y-1">
+      <a href="{{ section.cta.url }}" class="btn-primary-warm">
         {{ section.cta.text }}
-        <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg class="ml-2 w-5 h-5 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
         </svg>
       </a>
@@ -128,11 +127,11 @@ document.addEventListener('DOMContentLoaded', function() {
             checkIcon.style.opacity = '1';
             checkIcon.style.transform = 'scale(1)';
 
-            // Change border color
-            parentCard.style.borderColor = '#10B981'; // green-500
+            // Change border color to orange
+            parentCard.style.borderColor = 'var(--v2-orange)';
 
-            // Make background slightly green
-            parentCard.style.backgroundColor = '#F0FDF4'; // green-50
+            // Make background slightly orange
+            parentCard.style.backgroundColor = 'rgba(234, 88, 12, 0.05)';
           }, 1800);
 
         }, delay);

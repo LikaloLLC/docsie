@@ -1,177 +1,81 @@
 {% if section %}
-<!-- Cal.com widget initialization -->
-<!-- Note: Cal.com script should be included in the base template -->
+<!-- CTA Section V2 - Polished Design System -->
+<section class="section-shell bg-white">
+  <div class="section-inner max-w-3xl text-center space-y-6">
 
-<!-- Modern CTA Section v2 - Transparent background -->
-<section class="cta-section-v2 relative w-full py-16 md:py-24 lg:py-32 overflow-hidden">
-  
-  <!-- Content positioned above global animated background -->
-  
-  <div class="container mx-auto max-w-4xl px-4 md:px-6 relative z-10">
-    <div class="flex flex-col items-center justify-center space-y-8 text-center">
-      
-      <!-- Badge/Label -->
-      {% if section.badge %}
-      <div class="inline-flex items-center rounded-full bg-gradient-to-r from-green-50 to-blue-50 border border-green-200/50 px-4 py-2 text-sm font-semibold text-green-700 opacity-0 animate-fade-in" style="animation-delay: 0.2s;">
-        <svg class="mr-2 h-4 w-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
-        </svg>
-        {{ section.badge }}
-      </div>
-      {% endif %}
-      
-      <!-- Main Title -->
-      <h2 class="text-3xl font-bold tracking-tighter sm:text-4xl md:text-6xl opacity-0 animate-slide-up" style="animation-delay: 0.4s;">
-        <span class="bg-gradient-to-r from-gray-900 via-blue-900 to-purple-900 bg-clip-text text-transparent">
-          {{ section.title }}
-        </span>
-      </h2>
-      
-      <!-- Description -->
-      {% if section.description %}
-      <p class="mx-auto max-w-[700px] text-xl md:text-2xl text-gray-600 leading-relaxed opacity-0 animate-slide-up" style="animation-delay: 0.6s;">
-        {{ section.description }}
-      </p>
-      {% endif %}
-      
-      <!-- CTA Buttons -->
-      <div class="flex flex-col gap-4 min-[400px]:flex-row opacity-0 animate-slide-up" style="animation-delay: 0.8s;">
-        {% if section.primary_button %}
-        <a href="{{ section.primary_button.url }}" 
-           class="group inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 px-8 py-4 text-lg font-semibold text-white shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-500 focus-visible:ring-offset-2">
-          {{ section.primary_button.text }}
-          <svg class="ml-2 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-          </svg>
-        </a>
-        {% elif section.cta %}
-        <!-- Fallback to legacy cta format with Calendly popup -->
-        <button data-cal-link="{{ 'docsie/product-discovery' if not page or not page.calendly_url else page.calendly_url.split('/')[-1] }}" data-cal-namespace="product-discovery" data-cal-config='{"layout":"month_view"}' 
-                class="group inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 px-8 py-4 text-lg font-semibold text-white shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2">
-          {{ section.cta.text or 'Book Demo' }}
-          <svg class="ml-2 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
-          </svg>
-        </button>
-        {% elif section.buttons %}
-        <!-- Handle buttons array for AI pilot page -->
-        {% for button in section.buttons %}
-          {% if loop.index == 1 %}
-          <button data-cal-link="{{ 'docsie/product-discovery' if not page or not page.calendly_url else page.calendly_url.split('/')[-1] }}" data-cal-namespace="product-discovery" data-cal-config='{"layout":"month_view"}' 
-                  class="group inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 px-8 py-4 text-lg font-semibold text-white shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-500 focus-visible:ring-offset-2">
-            {{ button.text }}
-            <svg class="ml-2 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-            </svg>
-          </button>
-          {% else %}
-          <a href="{{ button.url }}" 
-             class="group inline-flex items-center justify-center rounded-xl border border-gray-200 bg-white/80 backdrop-blur-sm px-8 py-4 text-lg font-semibold text-gray-700 shadow-lg transition-all duration-300 hover:bg-white hover:border-gray-300 hover:shadow-xl hover:-translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-500 focus-visible:ring-offset-2">
-            {{ button.text }}
-            {% if button.icon %}
-            <i class="{{ button.icon }} ml-2"></i>
-            {% endif %}
-          </a>
-          {% endif %}
-        {% endfor %}
-        {% endif %}
-        
-        {% if section.secondary_button %}
-        <a href="{{ section.secondary_button.url if section.secondary_button.url else 'https://app.docsie.io/onboarding/' }}" target="_blank"
-           class="group inline-flex items-center justify-center rounded-xl border border-gray-200 bg-white/80 backdrop-blur-sm px-8 py-4 text-lg font-semibold text-gray-700 shadow-lg transition-all duration-300 hover:bg-white hover:border-gray-300 hover:shadow-xl hover:-translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-500 focus-visible:ring-offset-2">
-          {{ section.secondary_button.text }}
-          <svg class="ml-2 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-          </svg>
-        </a>
-        {% endif %}
-      </div>
-      
-      <!-- Additional Info -->
-      {% if section.note %}
-      <p class="text-sm text-gray-500 mt-6 opacity-0 animate-fade-in" style="animation-delay: 1.0s;">
-        {{ section.note }}
-      </p>
-      {% endif %}
-      
-      <!-- Trust indicators -->
-      {% if section.trust_indicators %}
-      <div class="flex flex-col sm:flex-row items-center justify-center gap-6 mt-8 opacity-0 animate-fade-in" style="animation-delay: 1.2s;">
-        {% for indicator in section.trust_indicators %}
-        <div class="flex items-center gap-2 text-gray-600">
-          {% if indicator.icon %}
-          <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-          </svg>
-          {% endif %}
-          <span class="text-sm font-medium">{{ indicator.text }}</span>
-        </div>
-        {% endfor %}
-      </div>
-      {% endif %}
-      
+    {% if section.badge %}
+    <div class="inline-flex items-center rounded-full hero-badge mb-4">
+      <span class="hero-badge-text">{{ section.badge }}</span>
     </div>
+    {% endif %}
+
+    <h2 class="heading-lg text-headline-warm">
+      {{ section.title }}
+    </h2>
+
+    {% if section.description %}
+    <p class="body-lg text-body-warm">
+      {{ section.description }}
+    </p>
+    {% endif %}
+
+    <div class="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
+      {% if section.primary_button %}
+      <a href="{{ section.primary_button.url }}" class="btn-primary-warm">
+        {{ section.primary_button.text }}
+      </a>
+      {% elif section.cta %}
+      <button class="btn-primary-warm"
+              data-cal-link="docsie/product-discovery"
+              data-cal-namespace="product-discovery"
+              data-cal-config='{"layout":"month_view"}'>
+        {{ section.cta.text or 'Book Demo' }}
+      </button>
+      {% elif section.buttons %}
+      {% for button in section.buttons %}
+        {% if loop.index == 1 %}
+        <button class="btn-primary-warm"
+                data-cal-link="docsie/product-discovery"
+                data-cal-namespace="product-discovery"
+                data-cal-config='{"layout":"month_view"}'>
+          {{ button.text }}
+        </button>
+        {% else %}
+        <a href="{{ button.url }}" class="btn-outline-warm">
+          {{ button.text }}
+        </a>
+        {% endif %}
+      {% endfor %}
+      {% endif %}
+
+      {% if section.secondary_button %}
+      <a href="{{ section.secondary_button.url or 'https://app.docsie.io/onboarding/' }}" class="btn-outline-warm">
+        {{ section.secondary_button.text }}
+      </a>
+      {% endif %}
+    </div>
+
+    {% if section.note %}
+    <p class="text-sm text-body-warm pt-2">
+      {{ section.note }}
+    </p>
+    {% endif %}
+
+    {% if section.trust_indicators %}
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-6 pt-6">
+      {% for indicator in section.trust_indicators %}
+      <div class="flex items-center gap-2 text-body-warm">
+        {% if indicator.icon %}
+        <svg class="w-5 h-5 text-v2-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+        </svg>
+        {% endif %}
+        <span class="text-sm font-medium">{{ indicator.text }}</span>
+      </div>
+      {% endfor %}
+    </div>
+    {% endif %}
+
   </div>
-  
 </section>
-
-<style>
-/* Animation Keyframes */
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-@keyframes slideUp {
-  from { opacity: 0; transform: translateY(40px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-20px); }
-}
-
-@keyframes floatDelayed {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-15px); }
-}
-
-/* Animation Classes */
-.animate-fade-in {
-  animation: fadeIn 1s ease-out forwards;
-}
-
-.animate-slide-up {
-  animation: slideUp 1s ease-out forwards;
-}
-
-.animate-float {
-  animation: float 6s ease-in-out infinite;
-}
-
-.animate-float-delayed {
-  animation: floatDelayed 8s ease-in-out infinite;
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .cta-section-v2 h2 {
-    font-size: 2.5rem;
-  }
-  
-  .cta-section-v2 p {
-    font-size: 1.125rem;
-  }
-  
-  .cta-section-v2 .flex-col {
-    width: 100%;
-  }
-  
-  .cta-section-v2 a {
-    width: 100%;
-    max-width: 280px;
-  }
-}
-</style>
-{% endif %} 
+{% endif %}

@@ -1,6 +1,6 @@
 {% if section %}
 <div class="related-content">
-  <h2>{{ section.title or "Related Solutions" }}</h2>
+  <h2 class="heading-lg text-headline-warm">{{ section.title or "Related Solutions" }}</h2>
   <div class="related-grid">
     {% for solution in section.solutions %}
     {% if solution.url %}
@@ -13,8 +13,8 @@
           {{ solution.image | optimized_image | safe }}
           {% endif %}
           <div class="related-content">
-            <h3>{{ solution.title or (page_data.components.hero.title if page_data else 'Solution') }}</h3>
-            <p>{{ solution.description or (page_data.components.hero.description if page_data else page_data.description if page_data else 'Learn more about this solution') }}</p>
+            <h3 class="heading-md text-headline-warm">{{ solution.title or (page_data.components.hero.title if page_data else 'Solution') }}</h3>
+            <p class="body-base text-body-warm">{{ solution.description or (page_data.components.hero.description if page_data else page_data.description if page_data else 'Learn more about this solution') }}</p>
           </div>
         </div>
       </a>

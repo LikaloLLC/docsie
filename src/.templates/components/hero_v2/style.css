@@ -1,7 +1,4 @@
-/* Hero v2 Component - Using Design Tokens */
-
-/* Import design tokens if not already loaded */
-@import url('/styles/design-tokens.css');
+/* Hero v2 Component - Using Design System */
 
 /* Hero section base styles */
 .hero-v2 {
@@ -17,42 +14,40 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(135deg, 
-    rgba(37, 99, 235, 0.05) 0%,  /* Using blue from token values */
-    rgba(147, 51, 234, 0.05) 100%
-  );
+  background: var(--gradient-v2-warm-hero);
+  opacity: 0.3;
   pointer-events: none;
 }
 
-/* Button hover effects using design tokens */
+/* Button hover effects using design system */
 .hero-v2 a[class*="bg-blue-600"]:hover,
 .hero-v2 .btn-primary:hover {
   transform: translateY(-1px);
-  box-shadow: 0 10px 25px rgba(37, 99, 235, 0.2);
-  transition: all var(--transition-slow);
+  box-shadow: var(--ds-shadow-cta-hover);
+  transition: all var(--transition-base);
 }
 
 .hero-v2 a[class*="bg-white"]:hover,
 .hero-v2 .btn-secondary:hover {
   transform: translateY(-1px);
   box-shadow: var(--shadow-lg);
-  transition: all var(--transition-slow);
+  transition: all var(--transition-base);
 }
 
 /* Image enhancements */
 .hero-v2 img {
-  transition: transform var(--transition-slow);
+  transition: transform var(--transition-base);
 }
 
 .hero-v2 img:hover {
   transform: scale(1.02);
 }
 
-/* Typography enhancements using design tokens */
+/* Typography enhancements using design system */
 .hero-v2 h1 {
-  background: linear-gradient(135deg, 
-    var(--text-primary) 0%, 
-    var(--text-secondary) 100%
+  background: linear-gradient(135deg,
+    var(--ds-text-heading) 0%,
+    var(--ds-orange) 100%
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -73,11 +68,11 @@
   }
 }
 
-/* Responsive adjustments using design tokens */
+/* Responsive adjustments using design system */
 @media (max-width: 768px) {
   .hero-v2 h1 {
-    font-size: var(--text-4xl);
-    line-height: var(--leading-tight);
+    font-size: var(--font-size-4xl);
+    line-height: var(--line-height-tight);
   }
 }
 
@@ -102,6 +97,3 @@
     transform: translateY(0);
   }
 }
-
-/* Dark mode automatically handled by design tokens */
-/* No need for separate dark mode rules - the tokens adapt automatically */
