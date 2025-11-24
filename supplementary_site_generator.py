@@ -223,7 +223,7 @@ def generate_supplementary_pages(env, force_version=False, ui_version='v2'):
                 'styles_path': '/styles',
                 'available_css': get_available_css_files(),
                 'get_page_by_url': get_page_by_url,
-                'landing_url': page_url.lstrip('/'),  # Remove leading slash for canonical URL
+                'landing_url': page_url,  # Keep leading slash for proper canonical URL
                 'lang': 'en'  # English language code
             }
             

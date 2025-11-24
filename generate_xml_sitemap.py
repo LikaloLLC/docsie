@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Generate XML sitemap with hreflang annotations for multilingual SEO
+Generate XML sitemap for English-only content (post-November 2025 multilingual deprecation)
 """
 import os
 import sys
@@ -9,98 +9,33 @@ from pathlib import Path
 from urllib.parse import urljoin
 from datetime import datetime
 import subprocess
-import yaml
-
-def load_language_config():
-    """Load language configuration from translation_config.yaml"""
-    config_file = Path('translation_config.yaml')
-    with open(config_file, 'r', encoding='utf-8') as f:
-        config = yaml.safe_load(f)
-        
-    languages = []
-    for code, info in config.get('languages', {}).items():
-        if info.get('enabled', False):
-            # Handle special case for Japanese (ja -> jp directory)
-            if code == 'ja':
-                languages.append('jp')
-            else:
-                languages.append(code)
-    
-    print(f"✅ Loaded {len(languages)} enabled languages from config")
-    return languages
 
 def get_tracked_files():
     """Get list of files tracked by git"""
     try:
-        result = subprocess.run(['git', 'ls-files'], 
-                              capture_output=True, 
-                              text=True, 
+        result = subprocess.run(['git', 'ls-files'],
+                              capture_output=True,
+                              text=True,
                               check=True)
         return set(result.stdout.strip().split('\n'))
     except subprocess.CalledProcessError:
         print("⚠️  Could not get git tracked files, including all files")
         return None
 
-# Load language codes dynamically
-LANGUAGE_CODES = load_language_config()
-
-# Map directory to language code
-DIR_TO_LANG = {
-    'jp': 'ja',  # Japanese uses jp directory but ja language code
-}
-
-def get_language_from_path(path):
-    """Extract language code from path"""
-    parts = Path(path).parts
-    if parts and parts[0] in LANGUAGE_CODES:
-        # Map directory to language code if needed
-        return DIR_TO_LANG.get(parts[0], parts[0])
-    return 'en'  # Default to English
-
-def get_base_path(path):
-    """Get base path without language prefix"""
-    parts = list(Path(path).parts)
-    if parts and parts[0] in LANGUAGE_CODES:
-        return '/'.join(parts[1:])
-    return path
-
-def write_xml_sitemap(url_groups, site_url):
-    """Write XML sitemap with proper formatting"""
+def write_xml_sitemap(urls, site_url):
+    """Write XML sitemap with proper formatting (English-only)"""
     xml_lines = ['<?xml version="1.0" encoding="UTF-8"?>']
-    xml_lines.append('<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">')
-    
-    # Add URLs with hreflang annotations
-    for base_path, lang_urls in sorted(url_groups.items()):
-        # Determine priority based on path depth and importance
-        if not base_path:
-            priority = "1.0"  # Homepage
-        elif base_path == 'pricing' or base_path.startswith('pricing/'):
-            priority = "0.9"  # Pricing page - HIGH PRIORITY
-        elif base_path == 'blog' or base_path.startswith('blog/'):
-            priority = "0.8"  # Blog - HIGH PRIORITY
-        elif base_path.count('/') == 0:
-            priority = "0.7"  # Other top-level pages
-        else:
-            priority = "0.6"  # Deeper pages
-            
-        # Add entry for each language version
-        for lang, url in lang_urls.items():
-            xml_lines.append('  <url>')
-            xml_lines.append(f'    <loc>{url}</loc>')
-            xml_lines.append(f'    <lastmod>{datetime.now().strftime("%Y-%m-%d")}</lastmod>')
-            xml_lines.append('    <changefreq>weekly</changefreq>')
-            xml_lines.append(f'    <priority>{priority}</priority>')
-            
-            # Add hreflang links for all language versions
-            for alt_lang, alt_url in lang_urls.items():
-                xml_lines.append(f'    <xhtml:link rel="alternate" hreflang="{alt_lang}" href="{alt_url}"/>')
-            
-            # Add x-default for English
-            if 'en' in lang_urls:
-                xml_lines.append(f'    <xhtml:link rel="alternate" hreflang="x-default" href="{lang_urls["en"]}"/>')
-                
-            xml_lines.append('  </url>')
-    
+    xml_lines.append('<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">')
+
+    # Add URLs
+    for url_data in sorted(urls, key=lambda x: x['url']):
+        xml_lines.append('  <url>')
+        xml_lines.append(f'    <loc>{url_data["url"]}</loc>')
+        xml_lines.append(f'    <lastmod>{datetime.now().strftime("%Y-%m-%d")}</lastmod>')
+        xml_lines.append('    <changefreq>weekly</changefreq>')
+        xml_lines.append(f'    <priority>{url_data["priority"]}</priority>')
+        xml_lines.append('  </url>')
+
     xml_lines.append('</urlset>')
     return '\n'.join(xml_lines)
 

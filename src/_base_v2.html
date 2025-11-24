@@ -20,38 +20,42 @@
   {# JSON-LD Structured Data for better SEO #}
   {% include '_structured_data.html' %}
   
-  {# Enhanced meta tags for better SEO #}
+  {# Enhanced meta tags for better SEO (includes OG locale, robots, etc) #}
   {% include '_enhanced_meta.html' %}
-  <!-- Schema.org markup for Google+ -->
+
+  {# Social sharing meta tags - consolidated in one place #}
+  <!-- Schema.org markup -->
   <meta itemprop="name" content="{{ self.title() }} | Docsie">
   <meta itemprop="description" content="{{ self.description() }}">
   <meta itemprop="image" content="{% block shareimage %}{% endblock shareimage %}">
+
   <!-- Twitter Card data -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@docsie_io">
   <meta name="twitter:title" content="{{ self.title() }} | Docsie">
   <meta name="twitter:description" content="{{ self.description() }}">
-  <!-- Twitter summary card with large image must be at least 280x150px -->
   <meta name="twitter:image" content="{{ self.shareimage() }}">
+
   <!-- Open Graph data -->
   <meta property="og:title" content="{{ self.title() }} | Docsie" />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://www.docsie.io/{{page_url}}" />
+  <meta property="og:url" content="https://www.docsie.io{{ landing_url }}" />
   <meta property="og:image" content="{{ self.shareimage() }}" />
   <meta property="og:description" content="{{ self.description() }}" />
-  <meta property="og:site_name" content="docsie.io" />
+  <meta property="og:site_name" content="Docsie" />
+
+  {# Technical meta tags #}
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="content-language" content="en" />
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="author" content="Docsie.io">
-  <meta name="theme-color" content="#fff" />
-  <meta name="msapplication-TileColor" content="#fff" />
-  <meta name="msapplication-TileImage"
-    content="https://d1iq6qzgppjlud.cloudfront.net/images/favicon/mstile-144x144.png" />
-  <meta name="msapplication-square310x310logo"
-    content="https://d1iq6qzgppjlud.cloudfront.net/images/favicon/mstile-310x310.png" />
-  {% block header %}
-  {% endblock header %}
+  <meta name="theme-color" content="#FF6738" />
+  <meta name="msapplication-TileColor" content="#FF6738" />
+  <meta name="msapplication-TileImage" content="https://d1iq6qzgppjlud.cloudfront.net/images/favicon/mstile-144x144.png" />
+  <meta name="msapplication-square310x310logo" content="https://d1iq6qzgppjlud.cloudfront.net/images/favicon/mstile-310x310.png" />
+
+  {# Pages can add additional meta tags here if needed #}
+  {% block header %}{% endblock header %}
   <link rel=" apple-touch-icon-precomposed" sizes="57x57"
     href="https://d1iq6qzgppjlud.cloudfront.net/images/favicon/apple-touch-icon-57x57.png" />
   <link rel="apple-touch-icon-precomposed" sizes="114x114"
