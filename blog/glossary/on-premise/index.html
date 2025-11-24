@@ -11,9 +11,9 @@
 
   <!-- Primary Meta Tags -->
   
-  <title>On Premise Solutions for Documentation Teams: Implementation Guide & Best Practices | Docsie.io Blog</title>
-  <meta name="title" content="On Premise Solutions for Documentation Teams: Implementation Guide & Best Practices">
-  <meta name="description" content="Discover how on premise documentation platforms enhance security and control for technical teams. Learn implementation strategies, tools, and workflows to op...">
+  <title>On Premise in Technical Documentation: Implementation Guide & Best Practices (2025) | Docsie.io Blog</title>
+  <meta name="title" content="On Premise in Technical Documentation: Implementation Guide & Best Practices (2025)">
+  <meta name="description" content="Learn how On Premise deployment impacts documentation strategy for technical writers. Discover implementation workflows, security considerations, and best practices. Start optimizing today!">
   
   <meta name="keywords" content="On-premise, documentation, technical writing, Docsie.io Blog">
   <link rel="canonical" href="https://www.docsie.io/blog/glossary/on-premise/">
@@ -29,8 +29,8 @@
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://www.docsie.io/blog/glossary/on-premise/">
   
-  <meta property="og:title" content="On Premise Solutions for Documentation Teams: Implementation Guide & Best Practices">
-  <meta property="og:description" content="Discover how on premise documentation platforms enhance security and control for technical teams. Learn implementation strategies, tools, and workflows to op...">
+  <meta property="og:title" content="On Premise in Technical Documentation: Implementation Guide & Best Practices (2025)">
+  <meta property="og:description" content="Learn how On Premise deployment impacts documentation strategy for technical writers. Discover implementation workflows, security considerations, and best practices. Start optimizing today!">
   
   <meta property="og:image" content="https://d1iq6qzgppjlud.cloudfront.net/images/favicon/apple-touch-icon-144x144.png">
 
@@ -38,8 +38,8 @@
   <meta property="twitter:card" content="summary_large_image">
   <meta property="twitter:url" content="https://www.docsie.io/blog/glossary/on-premise/">
   
-  <meta property="twitter:title" content="On Premise Solutions for Documentation Teams: Implementation Guide & Best Practices">
-  <meta property="twitter:description" content="Discover how on premise documentation platforms enhance security and control for technical teams. Learn implementation strategies, tools, and workflows to op...">
+  <meta property="twitter:title" content="On Premise in Technical Documentation: Implementation Guide & Best Practices (2025)">
+  <meta property="twitter:description" content="Learn how On Premise deployment impacts documentation strategy for technical writers. Discover implementation workflows, security considerations, and best practices. Start optimizing today!">
   
   <meta property="twitter:image" content="https://d1iq6qzgppjlud.cloudfront.net/images/favicon/apple-touch-icon-144x144.png">
 
@@ -325,7 +325,7 @@
     "@type": ["Article", "DefinedTerm"],
     "name": "On-premise",
     "headline": "On-premise: The Complete Guide for Documentation Teams",
-    "description": "On-premise refers to software and infrastructure that is installed and operated on computers within an organization's physical location, rather than being hosted in the cloud. For documentation teams, this means hosting documentation platforms, content management systems, and related tools on their own servers and hardware. This approach provides organizations with direct control over their documentation infrastructure, data security, and system customization.",
+    "description": "On-premise software refers to applications and systems that are installed, hosted, and operated on computing infrastructure physically located at an organization's facility rather than in cloud environments. Documentation teams working with on-premise solutions manage content on local servers, enabling complete control over security, customization, and compliance while requiring dedicated IT resources for maintenance.",
     "termCode": "on-premise",
     "inDefinedTermSet": {
         "@type": "DefinedTermSet",
@@ -457,11 +457,6 @@
         </a>
         
           
-          <a href="/blog//" class="category-pill flex-shrink-0 category-pill-inactive">
-            
-          </a>
-        
-          
           <a href="/blog/saas/" class="category-pill flex-shrink-0 category-pill-inactive">
             SaaS
           </a>
@@ -489,6 +484,11 @@
           
           <a href="/blog/documentation-portals/" class="category-pill flex-shrink-0 category-pill-inactive">
             Documentation Portals
+          </a>
+        
+          
+          <a href="/blog/product-management/" class="category-pill flex-shrink-0 category-pill-inactive">
+            Product Management
           </a>
         
       </nav>
@@ -555,7 +555,7 @@ window['searchConfig'] = {"keys": [{"name": "title", "weight": 8}, {"name": "sum
     <!-- Quick Definition Card -->
     <div class="definition-card">
         <h2 class="text-2xl font-semibold">Quick Definition</h2>
-        <p class="text-lg leading-relaxed">On-premise refers to software and infrastructure that is installed and operated on computers within an organization's physical location, rather than being hosted in the cloud. For documentation teams, this means hosting documentation platforms, content management systems, and related tools on their own servers and hardware. This approach provides organizations with direct control over their documentation infrastructure, data security, and system customization.</p>
+        <p class="text-lg leading-relaxed">On-premise software refers to applications and systems that are installed, hosted, and operated on computing infrastructure physically located at an organization's facility rather than in cloud environments. Documentation teams working with on-premise solutions manage content on local servers, enabling complete control over security, customization, and compliance while requiring dedicated IT resources for maintenance.</p>
     </div>
     
     <!-- Visual Diagram -->
@@ -563,30 +563,32 @@ window['searchConfig'] = {"keys": [{"name": "title", "weight": 8}, {"name": "sum
         <h2 class="text-3xl font-bold mb-4">How On-premise Works</h2>
         <div class="mermaid-container">
             <div class="mermaid">
-                graph TD
-    A[Documentation Team] --> B[On-Premise Server]
-    B --> C[Documentation Platform]
-    B --> D[Content Repository]
-    B --> E[User Management]
+                flowchart TB
+    subgraph "Organization Premises"
+    A["Content Creation"] --> B["Local Documentation Server"]
+    B --> C["Version Control System"]
+    B --> D["Content Management System"]
+    C --> E["Automated Publishing"]
+    D --> E
+    E --> F["Internal Documentation Portal"]
+    E --> G["Restricted External Portal"]
+    end
     
-    C --> F[Wiki System]
-    C --> G[API Documentation]
-    C --> H[Knowledge Base]
+    subgraph "External Users"
+    H["Authenticated Users"] --> G
+    end
     
-    D --> I[Version Control]
-    D --> J[Asset Storage]
-    D --> K[Backup Systems]
+    subgraph "Internal Users"
+    I["Employees"] --> F
+    end
     
-    E --> L[Access Controls]
-    E --> M[Authentication]
+    classDef premises fill:#e1f5fe,stroke:#01579b
+    classDef external fill:#fff8e1,stroke:#ff6f00
+    classDef internal fill:#e8f5e9,stroke:#2e7d32
     
-    B --> N[Local Network]
-    N --> O[Internal Users]
-    N --> P[Development Teams]
-    
-    B --> Q[Security Layer]
-    Q --> R[Firewall]
-    Q --> S[Encryption]
+    class A,B,C,D,E,F,G premises
+    class H external
+    class I internal
             </div>
         </div>
     </section>
@@ -595,7 +597,36 @@ window['searchConfig'] = {"keys": [{"name": "title", "weight": 8}, {"name": "sum
     <section class="mb-8">
         <h2 class="text-3xl font-bold mb-4">Understanding On-premise</h2>
         <div class="prose max-w-none">
-            <p>On-premise deployment represents a traditional approach to software infrastructure where organizations install and maintain documentation systems within their own physical facilities. This model contrasts with cloud-based solutions by keeping all data, applications, and processing power under direct organizational control.</p><h3>Key Features</h3><ul><li>Complete data ownership and control over documentation repositories</li><li>Direct management of server hardware, software updates, and security protocols</li><li>Customizable infrastructure tailored to specific documentation workflows</li><li>Local network access enabling faster internal content retrieval</li><li>Integration capabilities with existing on-premise enterprise systems</li></ul><h3>Benefits for Documentation Teams</h3><ul><li>Enhanced security for sensitive technical documentation and proprietary information</li><li>Compliance with strict industry regulations requiring data to remain within organizational boundaries</li><li>Reduced long-term costs for large-scale documentation operations</li><li>Improved performance for teams accessing documentation over local networks</li><li>Greater customization flexibility for specialized documentation workflows</li></ul><h3>Common Misconceptions</h3><ul><li>On-premise solutions are always more secure than cloud alternatives</li><li>Initial setup costs are the only financial consideration</li><li>On-premise systems cannot integrate with cloud-based tools</li><li>Remote collaboration is impossible with on-premise documentation platforms</li></ul>
+            <p>On-premise (sometimes written as on-premises or on-prem) refers to software, hardware, and data storage solutions that are installed and maintained on computers and servers physically located at an organization's site. Unlike cloud-based solutions, on-premise deployments require organizations to purchase licenses, provide their own hardware infrastructure, and manage the entire system lifecycle internally. This approach has been the traditional model for enterprise software deployment before cloud computing became widespread.</p>
+
+<h3>Key Features</h3>
+<ul>
+<li><strong>Local infrastructure:</strong> All hardware, software, and data reside within the organization's physical location</li>
+<li><strong>Complete control:</strong> Organizations maintain full control over their systems, including hardware specifications, software configurations, and security protocols</li>
+<li><strong>One-time licensing:</strong> Typically involves upfront perpetual license purchases rather than subscription models</li>
+<li><strong>Customization flexibility:</strong> Allows for extensive customization to meet specific organizational requirements</li>
+<li><strong>Data isolation:</strong> Information remains within the organization's network boundaries</li>
+<li><strong>Independent operation:</strong> Systems can function without internet connectivity</li>
+</ul>
+
+<h3>Benefits for Documentation Teams</h3>
+<ul>
+<li><strong>Enhanced security:</strong> Sensitive documentation remains behind corporate firewalls with customized security measures</li>
+<li><strong>Compliance adherence:</strong> Easier to maintain regulatory compliance for industries with strict data governance requirements</li>
+<li><strong>Performance consistency:</strong> Documentation tools perform consistently without dependency on internet connectivity or cloud service availability</li>
+<li><strong>Long-term cost predictability:</strong> After initial investment, ongoing costs become more predictable without subscription escalations</li>
+<li><strong>Integration control:</strong> Direct integration with other on-premise systems without API limitations or cross-cloud complications</li>
+<li><strong>Versioning autonomy:</strong> Documentation teams control when to upgrade systems, avoiding forced updates that might disrupt workflows</li>
+</ul>
+
+<h3>Common Misconceptions</h3>
+<ul>
+<li><strong>Always more expensive:</strong> While initial costs are higher, long-term TCO can be lower for stable, long-running documentation systems</li>
+<li><strong>Outdated technology:</strong> Modern on-premise solutions can offer comparable features to cloud alternatives while maintaining local control</li>
+<li><strong>Limited collaboration:</strong> Today's on-premise documentation systems can support robust collaboration through VPN access and internal networks</li>
+<li><strong>Poor scalability:</strong> Well-designed on-premise documentation systems can scale effectively with proper infrastructure planning</li>
+<li><strong>Maintenance burden:</strong> While maintenance responsibility exists, modern on-premise systems have improved significantly in ease of administration</li>
+</ul>
         </div>
     </section>
     
@@ -604,110 +635,90 @@ window['searchConfig'] = {"keys": [{"name": "title", "weight": 8}, {"name": "sum
         <h2 class="text-3xl font-bold mb-6">Real-World Documentation Use Cases</h2>
         
         <div class="use-case">
-            <h3>Regulated Industry Documentation Compliance</h3>
+            <h3>Regulated Industry Documentation Management</h3>
             <div class="use-case-grid">
                 <div class="use-case-item">
                     <h4 data-type="problem">Problem</h4>
-                    <p>Healthcare and financial organizations need to maintain strict control over sensitive documentation while meeting regulatory compliance requirements that prohibit cloud storage of certain data types.</p>
+                    <p>Healthcare documentation teams need to maintain strict compliance with HIPAA and other regulations while ensuring no PHI is exposed to third-party cloud environments.</p>
                 </div>
                 <div class="use-case-item">
                     <h4 data-type="solution">Solution</h4>
-                    <p>Deploy an on-premise documentation platform that keeps all content within organizational boundaries while maintaining audit trails and access controls required for compliance.</p>
+                    <p>Implement an on-premise documentation platform that keeps all patient-related content within the organization's secured infrastructure.</p>
                 </div>
             </div>
             <div class="use-case-item mt-4">
                 <h4 data-type="implementation">Implementation</h4>
-                <p>1. Assess regulatory requirements and data classification needs
-2. Select compliant on-premise documentation software
-3. Configure secure server infrastructure with proper encryption
-4. Implement role-based access controls and audit logging
-5. Establish backup and disaster recovery procedures
-6. Train teams on compliance-focused documentation workflows</p>
+                <p>1. Set up dedicated documentation servers within the organization's data center. 2. Configure role-based access controls aligned with compliance requirements. 3. Implement encryption for all stored documentation. 4. Create automated compliance checking workflows for document review. 5. Establish regular security audits and access logging.</p>
             </div>
             <div class="use-case-item mt-2">
                 <h4 data-type="outcome">Expected Outcome</h4>
-                <p>Full regulatory compliance with complete data sovereignty, reduced legal risk, and maintained productivity for documentation teams working with sensitive information.</p>
+                <p>Complete control over sensitive documentation with audit trails for compliance verification, elimination of third-party data exposure risks, and ability to demonstrate regulatory compliance during audits.</p>
             </div>
         </div>
         
         <div class="use-case">
-            <h3>Enterprise API Documentation for Internal Development</h3>
+            <h3>Offline-First Technical Documentation</h3>
             <div class="use-case-grid">
                 <div class="use-case-item">
                     <h4 data-type="problem">Problem</h4>
-                    <p>Large enterprises with complex internal APIs need comprehensive documentation that integrates with existing development infrastructure while maintaining security for proprietary systems and code.</p>
+                    <p>Field technicians need access to comprehensive equipment documentation in environments with limited or no internet connectivity.</p>
                 </div>
                 <div class="use-case-item">
                     <h4 data-type="solution">Solution</h4>
-                    <p>Implement an on-premise API documentation platform that connects directly to internal repositories, CI/CD pipelines, and development tools without exposing sensitive information externally.</p>
+                    <p>Deploy an on-premise documentation system with synchronized offline capabilities for field devices.</p>
                 </div>
             </div>
             <div class="use-case-item mt-4">
                 <h4 data-type="implementation">Implementation</h4>
-                <p>1. Install documentation platform on internal servers
-2. Configure integration with existing Git repositories and development tools
-3. Set up automated documentation generation from code comments
-4. Create internal developer portals with sandbox environments
-5. Implement search and discovery features for internal APIs
-6. Establish documentation maintenance workflows</p>
+                <p>1. Install core documentation repository on company servers. 2. Develop synchronization protocols for field devices to download documentation packages. 3. Create a local documentation application for tablets/laptops. 4. Implement version control to ensure technicians have the latest documentation during sync. 5. Design a simple update mechanism for when connectivity is available.</p>
             </div>
             <div class="use-case-item mt-2">
                 <h4 data-type="outcome">Expected Outcome</h4>
-                <p>Streamlined internal API adoption, improved developer productivity, enhanced code reuse, and maintained security for proprietary development processes.</p>
+                <p>Technicians have reliable access to critical documentation regardless of internet availability, reducing equipment downtime and improving first-time fix rates.</p>
             </div>
         </div>
         
         <div class="use-case">
-            <h3>Manufacturing Process Documentation with Legacy System Integration</h3>
+            <h3>High-Security Product Documentation</h3>
             <div class="use-case-grid">
                 <div class="use-case-item">
                     <h4 data-type="problem">Problem</h4>
-                    <p>Manufacturing companies need to document complex processes and procedures while integrating with legacy systems that cannot connect to cloud services due to security policies or technical limitations.</p>
+                    <p>Defense contractors need to document classified product specifications without risking exposure through cloud systems.</p>
                 </div>
                 <div class="use-case-item">
                     <h4 data-type="solution">Solution</h4>
-                    <p>Deploy on-premise documentation systems that can interface with existing manufacturing execution systems, quality management databases, and legacy documentation repositories.</p>
+                    <p>Establish an air-gapped on-premise documentation environment for classified content creation and management.</p>
                 </div>
             </div>
             <div class="use-case-item mt-4">
                 <h4 data-type="implementation">Implementation</h4>
-                <p>1. Evaluate existing legacy systems and integration requirements
-2. Install on-premise documentation platform with API capabilities
-3. Develop custom connectors for legacy system data import
-4. Migrate existing process documentation and SOPs
-5. Create automated workflows for updating documentation from system data
-6. Train manufacturing teams on new documentation processes</p>
+                <p>1. Create physically isolated documentation network infrastructure. 2. Install standalone documentation management systems on secured servers. 3. Implement multi-factor authentication for all documentation access. 4. Establish secure review and approval workflows within the isolated environment. 5. Create protocols for controlled documentation distribution to authorized personnel only.</p>
             </div>
             <div class="use-case-item mt-2">
                 <h4 data-type="outcome">Expected Outcome</h4>
-                <p>Unified documentation ecosystem that leverages existing investments, improved process consistency, reduced documentation maintenance overhead, and maintained operational continuity.</p>
+                <p>Completely secured documentation environment that meets the highest security clearance requirements while maintaining efficient documentation workflows for classified product information.</p>
             </div>
         </div>
         
         <div class="use-case">
-            <h3>Multi-Site Corporate Knowledge Management</h3>
+            <h3>Enterprise-Wide Knowledge Base with Legacy System Integration</h3>
             <div class="use-case-grid">
                 <div class="use-case-item">
                     <h4 data-type="problem">Problem</h4>
-                    <p>Global corporations with multiple physical locations need centralized knowledge management that provides consistent access across sites while maintaining control over intellectual property and reducing dependency on internet connectivity.</p>
+                    <p>Large organizations struggle to integrate documentation from legacy systems into modern knowledge bases without disrupting existing workflows.</p>
                 </div>
                 <div class="use-case-item">
                     <h4 data-type="solution">Solution</h4>
-                    <p>Establish on-premise knowledge management infrastructure with site-to-site replication, ensuring consistent access to corporate knowledge while maintaining data control and reducing bandwidth dependencies.</p>
+                    <p>Deploy an on-premise knowledge management platform that can directly integrate with legacy systems while providing modern documentation capabilities.</p>
                 </div>
             </div>
             <div class="use-case-item mt-4">
                 <h4 data-type="implementation">Implementation</h4>
-                <p>1. Design multi-site architecture with primary and secondary servers
-2. Install on-premise knowledge management platforms at key locations
-3. Configure site-to-site replication and synchronization
-4. Implement global search and content discovery features
-5. Establish governance policies for content creation and maintenance
-6. Create disaster recovery procedures across multiple sites</p>
+                <p>1. Install knowledge management platform on internal servers. 2. Develop custom connectors to legacy systems using internal APIs. 3. Create automated content migration pipelines. 4. Implement unified search across both new and legacy documentation. 5. Establish governance processes for maintaining documentation consistency across systems.</p>
             </div>
             <div class="use-case-item mt-2">
                 <h4 data-type="outcome">Expected Outcome</h4>
-                <p>Reliable knowledge access across global locations, reduced internet dependency, improved collaboration between sites, and maintained intellectual property security.</p>
+                <p>Unified documentation ecosystem that preserves investments in legacy content while providing modern features, improving knowledge discovery without forcing disruptive migration projects.</p>
             </div>
         </div>
         
@@ -718,66 +729,66 @@ window['searchConfig'] = {"keys": [{"name": "title", "weight": 8}, {"name": "sum
         <h2 class="text-3xl font-bold mb-6">Best Practices</h2>
         
         <div class="best-practice">
-            <h3><span>✓</span> Implement Comprehensive Backup and Disaster Recovery</h3>
-            <p>On-premise documentation systems require robust backup strategies to prevent data loss and ensure business continuity. This includes both automated backups and tested recovery procedures.</p>
+            <h3><span>✓</span> Plan for Appropriate Infrastructure</h3>
+            <p>Ensure your on-premise documentation system has sufficient hardware resources to handle peak loads, storage requirements, and performance needs.</p>
             <div class="do-dont-grid">
                 <div class="do-box">
-                    <strong>✓ Do:</strong> Create automated daily backups with multiple retention periods, test recovery procedures quarterly, maintain off-site backup copies, and document recovery processes clearly for IT teams.
+                    <strong>✓ Do:</strong> Conduct proper capacity planning, implement redundancy for critical documentation systems, and establish hardware refresh cycles aligned with documentation growth projections.
                 </div>
                 <div class="dont-box">
-                    <strong>✗ Don't:</strong> Rely solely on local backups, skip regular testing of recovery procedures, or assume RAID configurations provide adequate protection against all failure scenarios.
+                    <strong>✗ Don't:</strong> Don't undersize servers to save costs, avoid single points of failure in your infrastructure, and don't neglect to plan for backup power and cooling requirements.
                 </div>
             </div>
         </div>
         
         <div class="best-practice">
-            <h3><span>✓</span> Plan for Scalability and Performance Monitoring</h3>
-            <p>Documentation platforms must grow with organizational needs while maintaining optimal performance. This requires proactive capacity planning and continuous monitoring.</p>
+            <h3><span>✓</span> Implement Robust Backup Procedures</h3>
+            <p>Protect documentation assets through comprehensive backup strategies that safeguard against data loss scenarios.</p>
             <div class="do-dont-grid">
                 <div class="do-box">
-                    <strong>✓ Do:</strong> Monitor server performance metrics regularly, plan hardware upgrades based on usage trends, implement load balancing for high-traffic scenarios, and establish performance benchmarks.
+                    <strong>✓ Do:</strong> Create automated backup schedules with both onsite and offsite copies, test restoration procedures regularly, and maintain multiple backup generations.
                 </div>
                 <div class="dont-box">
-                    <strong>✗ Don't:</strong> Wait for performance issues to emerge before planning upgrades, ignore capacity planning during initial deployment, or overlook network bandwidth requirements for document-heavy workflows.
+                    <strong>✗ Don't:</strong> Don't rely solely on RAID as a backup solution, avoid storing backups only in one physical location, and don't neglect to verify backup integrity.
                 </div>
             </div>
         </div>
         
         <div class="best-practice">
-            <h3><span>✓</span> Establish Strong Security and Access Controls</h3>
-            <p>On-premise systems require comprehensive security measures including network security, user authentication, and data encryption to protect documentation assets.</p>
+            <h3><span>✓</span> Establish Clear Update Protocols</h3>
+            <p>Create structured processes for updating your on-premise documentation systems to balance stability with security and feature improvements.</p>
             <div class="do-dont-grid">
                 <div class="do-box">
-                    <strong>✓ Do:</strong> Implement multi-factor authentication, use role-based access controls, encrypt data both at rest and in transit, regularly update security patches, and conduct security audits.
+                    <strong>✓ Do:</strong> Maintain a test environment for validating updates before production deployment, schedule regular maintenance windows, and document all system changes thoroughly.
                 </div>
                 <div class="dont-box">
-                    <strong>✗ Don't:</strong> Rely on network security alone, use default passwords or weak authentication methods, skip regular security updates, or grant excessive permissions to users.
+                    <strong>✗ Don't:</strong> Don't skip testing updates in a staging environment, avoid implementing major changes without rollback plans, and don't neglect security patches even if feature updates are deferred.
                 </div>
             </div>
         </div>
         
         <div class="best-practice">
-            <h3><span>✓</span> Maintain Proper Documentation of System Configuration</h3>
-            <p>On-premise systems require detailed documentation of configurations, customizations, and procedures to ensure maintainability and knowledge transfer.</p>
+            <h3><span>✓</span> Design for Remote Accessibility</h3>
+            <p>Enable documentation team members to work effectively regardless of their physical location while maintaining security.</p>
             <div class="do-dont-grid">
                 <div class="do-box">
-                    <strong>✓ Do:</strong> Document all system configurations, maintain change logs, create runbooks for common administrative tasks, and ensure multiple team members understand critical procedures.
+                    <strong>✓ Do:</strong> Implement secure VPN access, create role-based permissions that work consistently for remote and local users, and optimize document retrieval for varying connection speeds.
                 </div>
                 <div class="dont-box">
-                    <strong>✗ Don't:</strong> Rely on single points of knowledge, skip documentation of custom configurations, or fail to update documentation when making system changes.
+                    <strong>✗ Don't:</strong> Don't expose documentation systems directly to the internet without proper security, avoid complex authentication that hinders legitimate access, and don't neglect performance testing for remote scenarios.
                 </div>
             </div>
         </div>
         
         <div class="best-practice">
-            <h3><span>✓</span> Plan for Integration and Interoperability</h3>
-            <p>On-premise documentation platforms should integrate seamlessly with existing enterprise systems and workflows to maximize value and user adoption.</p>
+            <h3><span>✓</span> Integrate with Existing Enterprise Systems</h3>
+            <p>Maximize the value of on-premise documentation by connecting it with other internal systems and workflows.</p>
             <div class="do-dont-grid">
                 <div class="do-box">
-                    <strong>✓ Do:</strong> Identify integration requirements early, use standard APIs and protocols, test integrations thoroughly, and plan for future connectivity needs including potential hybrid deployments.
+                    <strong>✓ Do:</strong> Develop integration points with identity management, create automated publishing workflows to internal portals, and establish connections to relevant enterprise data sources.
                 </div>
                 <div class="dont-box">
-                    <strong>✗ Don't:</strong> Deploy systems in isolation, ignore existing workflow requirements, use proprietary integration methods that limit future flexibility, or underestimate integration complexity.
+                    <strong>✗ Don't:</strong> Don't create documentation silos disconnected from business processes, avoid duplicate authentication systems, and don't implement point-to-point integrations that become difficult to maintain.
                 </div>
             </div>
         </div>
@@ -788,7 +799,17 @@ window['searchConfig'] = {"keys": [{"name": "title", "weight": 8}, {"name": "sum
     <section class="docsie-section">
         <h2 class="text-3xl font-bold mb-4">How Docsie Helps with On-premise</h2>
         <div class="prose max-w-none">
-            <p>Modern documentation platforms like Docsie provide flexible deployment options that support on-premise requirements while delivering cloud-native capabilities and user experiences.</p><ul><li><strong>Hybrid deployment flexibility:</strong> Combine on-premise security with cloud convenience through hybrid architectures that keep sensitive data local while leveraging cloud features for collaboration</li><li><strong>Enterprise-grade security:</strong> Advanced security features including SSO integration, granular access controls, and audit logging that meet on-premise security requirements</li><li><strong>Seamless migration paths:</strong> Tools and services that facilitate migration from legacy on-premise systems to modern documentation platforms without data loss or workflow disruption</li><li><strong>Integration capabilities:</strong> Robust APIs and connectors that integrate with existing on-premise enterprise systems, development tools, and business applications</li><li><strong>Scalable architecture:</strong> Cloud-native design principles that can be deployed on-premise while maintaining scalability and performance characteristics</li><li><strong>Reduced maintenance overhead:</strong> Simplified administration and automated updates that reduce the traditional maintenance burden of on-premise deployments</li></ul>
+            <p>Modern documentation platforms provide flexible deployment options that accommodate on-premise requirements while delivering advanced capabilities. These platforms bridge the gap between traditional on-premise control and modern documentation experiences.</p>
+
+<ul>
+<li><strong>Deployment flexibility:</strong> Support for fully on-premise installations that maintain all content within organizational boundaries while providing modern interfaces</li>
+<li><strong>Enterprise integration:</strong> Seamless connections with existing on-premise systems including authentication directories, content repositories, and internal workflows</li>
+<li><strong>Security compliance:</strong> Advanced permission models and audit capabilities that satisfy stringent security policies common in on-premise environments</li>
+<li><strong>Scalable architecture:</strong> Ability to scale horizontally across existing infrastructure to accommodate growing documentation needs</li>
+<li><strong>Offline capabilities:</strong> Support for creating, editing, and accessing documentation even when network connectivity is limited</li>
+<li><strong>Migration pathways:</strong> Tools for transitioning legacy documentation into structured, manageable formats while maintaining on-premise control</li>
+<li><strong>Hybrid options:</strong> Capabilities for organizations transitioning between on-premise and cloud models with synchronized content across environments</li>
+</ul>
         </div>
         
         <!-- Phase 2: This will be populated by Docsie RAG -->
@@ -815,9 +836,9 @@ window['searchConfig'] = {"keys": [{"name": "title", "weight": 8}, {"name": "sum
         <h2 class="text-2xl font-bold mb-4">Related Documentation Terms</h2>
         <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3">
             
-            <a href="/blog/glossary/version-control/" 
+            <a href="/blog/glossary/msp/" 
                class="bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded-lg text-center transition-colors duration-200 group">
-                <span class="block font-medium text-gray-900 group-hover:text-blue-600">Version Control</span>
+                <span class="block font-medium text-gray-900 group-hover:text-blue-600">MSP</span>
                 <span class="text-xs text-gray-500">1 shared articles</span>
             </a>
             
@@ -827,21 +848,21 @@ window['searchConfig'] = {"keys": [{"name": "title", "weight": 8}, {"name": "sum
                 <span class="text-xs text-gray-500">1 shared articles</span>
             </a>
             
-            <a href="/blog/glossary/api/" 
+            <a href="/blog/glossary/cloud-based/" 
                class="bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded-lg text-center transition-colors duration-200 group">
-                <span class="block font-medium text-gray-900 group-hover:text-blue-600">API</span>
+                <span class="block font-medium text-gray-900 group-hover:text-blue-600">Cloud-based</span>
                 <span class="text-xs text-gray-500">1 shared articles</span>
             </a>
             
-            <a href="/blog/glossary/markdown/" 
+            <a href="/blog/glossary/documentation-platform/" 
                class="bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded-lg text-center transition-colors duration-200 group">
-                <span class="block font-medium text-gray-900 group-hover:text-blue-600">Markdown</span>
+                <span class="block font-medium text-gray-900 group-hover:text-blue-600">Documentation Platform</span>
                 <span class="text-xs text-gray-500">1 shared articles</span>
             </a>
             
-            <a href="/blog/glossary/product-tours/" 
+            <a href="/blog/glossary/it-documentation/" 
                class="bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded-lg text-center transition-colors duration-200 group">
-                <span class="block font-medium text-gray-900 group-hover:text-blue-600">Product Tours</span>
+                <span class="block font-medium text-gray-900 group-hover:text-blue-600">IT Documentation</span>
                 <span class="text-xs text-gray-500">1 shared articles</span>
             </a>
             

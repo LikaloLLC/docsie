@@ -13,20 +13,16 @@ if __name__ == '__main__':
                                  for dir_, _, files in os.walk(cwd)] for val in sublist]
 
     # Skip internal directories and build artifacts
-    skip_flows = ['src', '.blog', '.git', '.idea', '__pycache__', 'venv', '.venv', 
-                  'node_modules', 'staticjinja', 'blogvi', 'utils', 'locale', 
-                  '.yaml_batch_status', '.yaml_translation_cache', 'backups']
-    
-    # Get all language directories that exist in root
-    language_dirs = []
-    for item in os.listdir(cwd):
-        if os.path.isdir(item) and len(item) == 2 and item not in skip_flows:
-            language_dirs.append(item)
-    # Add special cases
-    if os.path.isdir('jp'):
-        language_dirs.append('jp')
-    
-    # Generate sitemap for English pages (root level)
+    skip_flows = ['src', '.blog', '.git', '.idea', '__pycache__', 'venv', '.venv',
+                  'node_modules', 'staticjinja', 'blogvi', 'utils', 'locale',
+                  '.yaml_batch_status', '.yaml_translation_cache', 'backups', '.external']
+
+    # Language directories to EXCLUDE (we only want English content)
+    # These have 301 redirects but should NOT be in sitemap
+    language_dirs = ['ar', 'da', 'de', 'es', 'fr', 'he', 'it', 'ja', 'jp', 'ko', 'nl', 'no', 'pt', 'ru', 'sv', 'zh',
+                     'ja_JP', 'zh_CN', 'ko_KR', 'hu', 'pl', 'tr']  # Locale formats and blog languages
+
+    # Generate sitemap for English pages only (root level)
     site_map = []
     for flow in flows:
         if 'index.html' in flow:
@@ -39,20 +35,6 @@ if __name__ == '__main__':
                 if not url.endswith('/'):
                     url += '/'
                 site_map.append(url)
-    
-    # Generate sitemap for each language
-    for lang_dir in language_dirs:
-        lang_path = Path(lang_dir)
-        if lang_path.exists():
-            # Walk through language-specific directory
-            for root, dirs, files in os.walk(lang_path):
-                if 'index.html' in files:
-                    rel_path = os.path.relpath(root, cwd)
-                    url = urljoin(site_path, rel_path).replace('index.html', '')
-                    # Ensure URL ends with / for directories
-                    if not url.endswith('/'):
-                        url += '/'
-                    site_map.append(url)
 
     # Remove duplicates while preserving order
     site_map_dict = OrderedDict.fromkeys(site_map)

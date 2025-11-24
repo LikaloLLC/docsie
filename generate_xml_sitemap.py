@@ -43,23 +43,29 @@ if __name__ == '__main__':
     if len(sys.argv) < 2:
         print("Usage: python generate_xml_sitemap.py <site_url>")
         sys.exit(1)
-        
+
     site_url = sys.argv[1].rstrip('/')
     cwd = os.getcwd()
-    
+
     # Get git tracked files
     tracked_files = get_tracked_files()
-    
+
     # Skip internal directories and build artifacts
-    skip_flows = ['src', '.blog', '.git', '.idea', '__pycache__', 'venv', '.venv', 
-                  'node_modules', 'staticjinja', 'blogvi', 'utils', 'locale', 
-                  '.yaml_batch_status', '.yaml_translation_cache', 'backups',
+    skip_flows = ['src', '.blog', '.git', '.idea', '__pycache__', 'venv', '.venv',
+                  'node_modules', 'staticjinja', 'blogvi', 'utils', 'locale',
+                  '.yaml_batch_status', '.yaml_translation_cache', 'backups', '.external',
                   'scss', 'assets', 'content', 'eml', 'ui', 'static', 'scripts',
-                  'styles', 'modern-home']  # Removed pricing_v2 from skip list
-    
+                  'styles', 'modern-home']
+
+    # Skip language directories (post-November 2025 English-only migration)
+    # All non-English content is 301 redirected at CloudFront level
+    language_dirs = ['da', 'de', 'es', 'fr', 'hu', 'it', 'ja', 'jp', 'ko', 'nl',
+                     'pl', 'pt', 'pt-br', 'pt-pt', 'ru', 'sv', 'tr', 'zh', 'he',
+                     'no', 'ar']
+
     # Skip untranslated/old pages
     skip_pages = ['validation_page', '2020_websummit', 'collision_2020', 'collision_2021',
-                  'codepen', 'carbon', 'affiliate-program', 'docsie_manager', 
+                  'codepen', 'carbon', 'affiliate-program', 'docsie_manager',
                   'docsie_publishing', 'docsie_product', 'docsie_vocally',
                   'docsie-free-consultation', 'discovery_call', 'feedback_preview_demo',
                   'gather_feedback', 'incident', 'manager', 'markdown_editor', 'pilot',
@@ -67,64 +73,81 @@ if __name__ == '__main__':
                   'see-it-in-action', 'software_documentation', 'collaboration_software',
                   'careers', 'cookies', 'investors', 'resources', 'terms', 'support',
                   'privacy', 'about', 'features', 'documentation', 'try_docsie']
-    
-    # Collect all URLs grouped by base path
-    url_groups = {}
+
+    # Collect all URLs (English-only)
+    urls = []
     excluded_count = 0
-    
+
     # Walk through all directories
     for root, dirs, files in os.walk(cwd):
-        # Skip hidden directories and specified directories
-        dirs[:] = [d for d in dirs if not d.startswith('.') and d not in skip_flows]
-        
+        # Skip hidden directories, specified directories, and language directories
+        dirs[:] = [d for d in dirs if not d.startswith('.') and d not in skip_flows and d not in language_dirs]
+
         if 'index.html' in files:
             rel_path = os.path.relpath(root, cwd)
-            
+
             # Skip root-level index.html
             if rel_path == '.':
                 rel_path = ''
-                
-            # Check if this path contains any skip_pages
+
+            # Skip if path starts with language directory
             path_parts = rel_path.split(os.sep) if rel_path else []
+            if path_parts and path_parts[0] in language_dirs:
+                excluded_count += 1
+                continue
+
+            # Check if this path contains any skip_pages
             if any(skip_page in path_parts for skip_page in skip_pages):
                 excluded_count += 1
                 continue
-                
+
             # Check if index.html is tracked by git
             index_path = os.path.join(rel_path, 'index.html') if rel_path else 'index.html'
             if tracked_files and index_path not in tracked_files:
                 excluded_count += 1
                 continue
-                
-            # Get base path and language
-            base_path = get_base_path(rel_path)
-            lang = get_language_from_path(rel_path)
-            
+
+            # Skip blog glossary pages (not priority for sitemap)
+            # Glossary pages will still be indexed by Google through internal links
+            if 'blog/glossary' in rel_path or (len(path_parts) >= 2 and path_parts[0] == 'blog' and path_parts[1] == 'glossary'):
+                excluded_count += 1
+                continue
+
             # Create URL
             if rel_path:
                 url = f"{site_url}/{rel_path}/"
             else:
                 url = f"{site_url}/"
-            
-            # Group by base path
-            if base_path not in url_groups:
-                url_groups[base_path] = {}
-            url_groups[base_path][lang] = url
-    
+
+            # Determine priority based on path depth and importance
+            if not rel_path:
+                priority = "1.0"  # Homepage
+            elif rel_path == 'pricing' or rel_path.startswith('pricing/'):
+                priority = "0.9"  # Pricing page - HIGH PRIORITY
+            elif rel_path == 'blog' or rel_path.startswith('blog/'):
+                priority = "0.8"  # Blog - HIGH PRIORITY
+            elif rel_path.count('/') == 0:
+                priority = "0.7"  # Other top-level pages
+            else:
+                priority = "0.6"  # Deeper pages
+
+            urls.append({
+                'url': url,
+                'priority': priority
+            })
+
     # Write XML sitemap
-    xml_content = write_xml_sitemap(url_groups, site_url)
-    
+    xml_content = write_xml_sitemap(urls, site_url)
+
     with open('sitemap.xml', 'w', encoding='utf-8') as f:
         f.write(xml_content)
-    
+
     # Also keep the text version for compatibility
     os.makedirs('sitemap', exist_ok=True)
     with open('sitemap/sitemap.txt', 'w') as f:
-        for base_path, lang_urls in sorted(url_groups.items()):
-            for lang, url in sorted(lang_urls.items()):
-                f.write(f"{url}\n")
-    
-    print(f"✅ Generated XML sitemap with {len(url_groups)} unique pages")
-    print(f"✅ Total URLs (all languages): {sum(len(urls) for urls in url_groups.values())}")
+        for url_data in sorted(urls, key=lambda x: x['url']):
+            f.write(f"{url_data['url']}\n")
+
+    print(f"✅ Generated English-only XML sitemap with {len(urls)} pages")
     if excluded_count > 0:
-        print(f"ℹ️  Excluded {excluded_count} untracked files from sitemap")
+        print(f"ℹ️  Excluded {excluded_count} files (untracked, language directories, or skip pages)")
