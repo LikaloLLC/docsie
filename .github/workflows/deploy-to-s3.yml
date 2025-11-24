@@ -23,10 +23,10 @@ jobs:
 
       - name: Sync website files to S3
         run: |
-          # Note: Language folders are excluded because CloudFront Function handles 301 redirects
+          # Note: Language folders are excluded because Lambda@Edge handles 301 redirects
           # to English versions. This is a one-time migration - we only sync English content now.
           # Excluded languages: da, de, es, fr, hu, it, ja, ko, nl, pl, pt-br, pt-pt, ru, sv, tr, zh
-          aws s3 sync . s3://ww7-docsie-io \
+          aws s3 sync . s3://www-docsie-io \
             --size-only \
             --delete \
             --exclude ".git/*" \
@@ -59,11 +59,11 @@ jobs:
       - name: Invalidate CloudFront cache
         run: |
           aws cloudfront create-invalidation \
-            --distribution-id E3IQ2X1LN0DB5H \
+            --distribution-id E11O0CNQO6HZL \
             --paths "/*"
 
       - name: Deployment summary
         run: |
-          echo "✅ Website deployed to S3: s3://ww7-docsie-io"
+          echo "✅ Website deployed to S3: s3://www-docsie-io"
           echo "✅ CloudFront cache invalidated"
-          echo "🌐 Site will be live at: https://ww7.docsie.io"
+          echo "🌐 Site is live at: https://www.docsie.io"
