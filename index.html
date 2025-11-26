@@ -2668,35 +2668,51 @@ function toggleMobileMenu() {
 
 
   <!-- Industries V2 Section -->
-  <!-- Industries V2 Component - Enterprise Implementation Partners -->
+  <!-- Industries V2 Component - Enterprise Implementation Partners & Video-to-Docs Solutions -->
 <section class="section-shell warm-gradient relative overflow-hidden">
-  
+
   <!-- Background decorative elements -->
   <div class="absolute inset-0 overflow-hidden pointer-events-none">
     <div class="absolute top-20 right-20 w-96 h-96 rounded-full blur-3xl blob blob-orange opacity-20"></div>
     <div class="absolute bottom-20 left-20 w-96 h-96 rounded-full blur-3xl blob blob-brown opacity-20"></div>
   </div>
-  
+
   <div class="section-inner relative z-10" style="max-width: 1400px;">
-    
+
     <!-- Header -->
     <div class="text-center mb-16">
       <div class="inline-flex items-center justify-center px-4 py-2 rounded-full bg-white border-2 border-orange-200 mb-6">
         <span class="text-sm font-medium" style="color: var(--v2-orange);">Enterprise Implementation Partners</span>
       </div>
-      
+
       <h2 class="heading-2xl text-headline-warm mb-6">
         Built for teams implementing enterprise systems
       </h2>
-      
+
       <p class="body-lg text-body-warm max-w-4xl mx-auto mb-8">
         Consultancies, system integrators, and implementation partners trust us to convert training content into structured, client-ready documentation—across every major platform.
       </p>
-      
+
+      <!-- Search bar -->
+      <div class="max-w-2xl mx-auto mb-8">
+        <div class="relative">
+          <input
+            type="text"
+            id="solution-search"
+            placeholder="Search for your use case (e.g., 'SAP training', 'webinar recording', 'compliance')..."
+            class="w-full px-6 py-4 pr-12 rounded-full border-2 border-orange-200 focus:border-orange-400 focus:outline-none text-lg"
+          />
+          <svg class="absolute right-4 top-1/2 transform -translate-y-1/2 w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+          </svg>
+        </div>
+        <p class="text-sm text-body-warm mt-2" id="search-results-count"></p>
+      </div>
+
       <!-- Category filters -->
       <div class="flex flex-wrap justify-center gap-3 mt-8" id="category-filters">
         <button class="category-filter active" data-category="all">
-          All Platforms
+          All Solutions
         </button>
         <button class="category-filter" data-category="erp">
           ERP & Business Systems
@@ -2713,14 +2729,29 @@ function toggleMobileMenu() {
         <button class="category-filter" data-category="industry">
           Industry-Specific Systems
         </button>
+        <button class="category-filter" data-category="collaboration-video">
+          Collaboration Platforms
+        </button>
+        <button class="category-filter" data-category="training">
+          Training & Learning
+        </button>
+        <button class="category-filter" data-category="sales-marketing">
+          Sales & Marketing
+        </button>
+        <button class="category-filter" data-category="operations">
+          Operations & Support
+        </button>
+        <button class="category-filter" data-category="technical">
+          Technical & Engineering
+        </button>
       </div>
     </div>
-    
+
     <!-- Platform grid -->
     <div class="platforms-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-12">
-      
+
       <!-- SAP -->
-      <a href="/solutions/sap-training-video-to-guides/" class="platform-card bento-card group" data-category="erp">
+      <a href="/solutions/sap-training-video-to-guides/" class="platform-card bento-card group" data-category="erp" data-search-terms="sap erp business systems enterprise implementation training">
         <div class="bento-card-inner p-6">
           <div class="platform-icon-wrapper mb-4">
             <img src="https://cdn.brandfetch.io/sap.com?c=1idrAUnmGm5IrQ6DYwS" alt="SAP logo" class="w-full h-full object-contain p-2" />
@@ -2736,7 +2767,7 @@ function toggleMobileMenu() {
       </a>
 
       <!-- Oracle -->
-      <a href="/solutions/oracle-training-video-to-guides/" class="platform-card bento-card group" data-category="erp">
+      <a href="/solutions/oracle-training-video-to-guides/" class="platform-card bento-card group" data-category="erp" data-search-terms="oracle erp cloud business systems database">
         <div class="bento-card-inner p-6">
           <div class="platform-icon-wrapper mb-4">
             <img src="https://cdn.brandfetch.io/oracle.com?c=1idrAUnmGm5IrQ6DYwS" alt="Oracle logo" class="w-full h-full object-contain p-2" />
@@ -2752,7 +2783,7 @@ function toggleMobileMenu() {
       </a>
 
       <!-- Workday -->
-      <a href="/solutions/workday-training-video-to-guides/" class="platform-card bento-card group" data-category="erp">
+      <a href="/solutions/workday-training-video-to-guides/" class="platform-card bento-card group" data-category="erp" data-search-terms="workday hr hcm finance erp cloud">
         <div class="bento-card-inner p-6">
           <div class="platform-icon-wrapper mb-4">
             <img src="https://cdn.brandfetch.io/workday.com?c=1idrAUnmGm5IrQ6DYwS" alt="Workday logo" class="w-full h-full object-contain p-2" />
@@ -2768,7 +2799,7 @@ function toggleMobileMenu() {
       </a>
 
       <!-- Microsoft Dynamics 365 -->
-      <a href="/solutions/dynamics365-training-video-to-guides/" class="platform-card bento-card group" data-category="erp">
+      <a href="/solutions/dynamics365-training-video-to-guides/" class="platform-card bento-card group" data-category="erp" data-search-terms="dynamics 365 microsoft erp crm business central">
         <div class="bento-card-inner p-6">
           <div class="platform-icon-wrapper mb-4">
             <img src="https://cdn.brandfetch.io/dynamics.microsoft.com?c=1idrAUnmGm5IrQ6DYwS" alt="Microsoft Dynamics 365 logo" class="w-full h-full object-contain p-2" />
@@ -2784,7 +2815,7 @@ function toggleMobileMenu() {
       </a>
 
       <!-- Salesforce -->
-      <a href="/solutions/salesforce-training-video-to-guides/" class="platform-card bento-card group" data-category="crm">
+      <a href="/solutions/salesforce-training-video-to-guides/" class="platform-card bento-card group" data-category="crm" data-search-terms="salesforce crm sales cloud service cloud">
         <div class="bento-card-inner p-6">
           <div class="platform-icon-wrapper mb-4">
             <img src="https://cdn.brandfetch.io/salesforce.com?c=1idrAUnmGm5IrQ6DYwS" alt="Salesforce logo" class="w-full h-full object-contain p-2" />
@@ -2800,7 +2831,7 @@ function toggleMobileMenu() {
       </a>
 
       <!-- ServiceNow -->
-      <a href="/solutions/servicenow-training-video-to-guides/" class="platform-card bento-card group" data-category="itsm">
+      <a href="/solutions/servicenow-training-video-to-guides/" class="platform-card bento-card group" data-category="itsm" data-search-terms="servicenow itsm itom itam service management">
         <div class="bento-card-inner p-6">
           <div class="platform-icon-wrapper mb-4">
             <img src="https://cdn.brandfetch.io/servicenow.com?c=1idrAUnmGm5IrQ6DYwS" alt="ServiceNow logo" class="w-full h-full object-contain p-2" />
@@ -2816,7 +2847,7 @@ function toggleMobileMenu() {
       </a>
 
       <!-- Microsoft 365 -->
-      <a href="/solutions/microsoft365-training-video-to-guides/" class="platform-card bento-card group" data-category="collaboration">
+      <a href="/solutions/microsoft365-training-video-to-guides/" class="platform-card bento-card group" data-category="collaboration" data-search-terms="microsoft 365 office teams sharepoint collaboration">
         <div class="bento-card-inner p-6">
           <div class="platform-icon-wrapper mb-4">
             <img src="https://cdn.brandfetch.io/microsoft.com?c=1idrAUnmGm5IrQ6DYwS" alt="Microsoft 365 logo" class="w-full h-full object-contain p-2" />
@@ -2831,8 +2862,24 @@ function toggleMobileMenu() {
         </div>
       </a>
 
+      <!-- SharePoint -->
+      <a href="/solutions/sharepoint-training-video-to-guides/" class="platform-card bento-card group" data-category="collaboration" data-search-terms="sharepoint microsoft document library permissions workflows governance intranet">
+        <div class="bento-card-inner p-6">
+          <div class="platform-icon-wrapper mb-4">
+            <img src="https://cdn.brandfetch.io/sharepoint.microsoft.com?c=1idrAUnmGm5IrQ6DYwS" alt="SharePoint logo" class="w-full h-full object-contain p-2" />
+          </div>
+          <h3 class="text-xl font-semibold mb-2 text-headline-warm">SharePoint</h3>
+          <div class="platform-badge mb-3">
+            <span class="text-xs">Enterprise Collaboration</span>
+          </div>
+          <p class="platform-use-case body-sm text-body-warm">
+            Transform SharePoint training into searchable admin and user documentation
+          </p>
+        </div>
+      </a>
+
       <!-- HubSpot -->
-      <a href="/solutions/hubspot-training-video-to-guides/" class="platform-card bento-card group" data-category="crm">
+      <a href="/solutions/hubspot-training-video-to-guides/" class="platform-card bento-card group" data-category="crm" data-search-terms="hubspot crm marketing automation sales">
         <div class="bento-card-inner p-6">
           <div class="platform-icon-wrapper mb-4">
             <img src="https://cdn.brandfetch.io/hubspot.com?c=1idrAUnmGm5IrQ6DYwS" alt="HubSpot logo" class="w-full h-full object-contain p-2" />
@@ -2848,7 +2895,7 @@ function toggleMobileMenu() {
       </a>
 
       <!-- Epic -->
-      <a href="/solutions/epic-training-video-to-guides/" class="platform-card bento-card group" data-category="industry">
+      <a href="/solutions/epic-training-video-to-guides/" class="platform-card bento-card group" data-category="industry" data-search-terms="epic healthcare ehr emr medical hospital">
         <div class="bento-card-inner p-6">
           <div class="platform-icon-wrapper mb-4">
             <img src="https://cdn.brandfetch.io/epic.com?c=1idrAUnmGm5IrQ6DYwS" alt="Epic logo" class="w-full h-full object-contain p-2" />
@@ -2864,7 +2911,7 @@ function toggleMobileMenu() {
       </a>
 
       <!-- Jira -->
-      <a href="/solutions/jira-training-video-to-guides/" class="platform-card bento-card group" data-category="itsm">
+      <a href="/solutions/jira-training-video-to-guides/" class="platform-card bento-card group" data-category="itsm" data-search-terms="jira atlassian project management agile scrum">
         <div class="bento-card-inner p-6">
           <div class="platform-icon-wrapper mb-4">
             <img src="https://cdn.brandfetch.io/atlassian.com?c=1idrAUnmGm5IrQ6DYwS" alt="Jira logo" class="w-full h-full object-contain p-2" />
@@ -2880,7 +2927,7 @@ function toggleMobileMenu() {
       </a>
 
       <!-- NetSuite -->
-      <a href="/solutions/netsuite-training-video-to-guides/" class="platform-card bento-card group" data-category="erp">
+      <a href="/solutions/netsuite-training-video-to-guides/" class="platform-card bento-card group" data-category="erp" data-search-terms="netsuite oracle erp cloud accounting">
         <div class="bento-card-inner p-6">
           <div class="platform-icon-wrapper mb-4">
             <img src="https://cdn.brandfetch.io/netsuite.com?c=1idrAUnmGm5IrQ6DYwS" alt="NetSuite logo" class="w-full h-full object-contain p-2" />
@@ -2896,7 +2943,7 @@ function toggleMobileMenu() {
       </a>
 
       <!-- Confluence -->
-      <a href="/solutions/confluence-training-video-to-guides/" class="platform-card bento-card group" data-category="collaboration">
+      <a href="/solutions/confluence-training-video-to-guides/" class="platform-card bento-card group" data-category="collaboration" data-search-terms="confluence atlassian wiki documentation knowledge base">
         <div class="bento-card-inner p-6">
           <div class="platform-icon-wrapper mb-4">
             <img src="https://cdn.brandfetch.io/atlassian.com?c=1idrAUnmGm5IrQ6DYwS" alt="Confluence logo" class="w-full h-full object-contain p-2" />
@@ -2910,18 +2957,707 @@ function toggleMobileMenu() {
           </p>
         </div>
       </a>
-      
+
+      <!-- Microsoft Teams Recordings -->
+      <a href="/solutions/microsoft-teams-recordings-to-sops/" class="platform-card bento-card group" data-category="collaboration-video" data-search-terms="microsoft teams recordings meetings video sop documentation">
+        <div class="bento-card-inner p-6">
+          <div class="platform-icon-wrapper mb-4">
+            <img src="https://cdn.brandfetch.io/teams.microsoft.com?c=1idrAUnmGm5IrQ6DYwS" alt="Microsoft Teams logo" class="w-full h-full object-contain p-2" />
+          </div>
+          <h3 class="text-xl font-semibold mb-2 text-headline-warm">Teams Recordings to SOPs</h3>
+          <div class="platform-badge mb-3">
+            <span class="text-xs">Collaboration Platforms</span>
+          </div>
+          <p class="platform-use-case body-sm text-body-warm">
+            Convert Microsoft Teams recordings to SOPs and process documentation
+          </p>
+        </div>
+      </a>
+
+      <!-- Zoom Recordings -->
+      <a href="/solutions/zoom-recordings-to-training-documentation/" class="platform-card bento-card group" data-category="collaboration-video" data-search-terms="zoom recordings meetings video training documentation">
+        <div class="bento-card-inner p-6">
+          <div class="platform-icon-wrapper mb-4">
+            <img src="https://cdn.brandfetch.io/zoom.us?c=1idrAUnmGm5IrQ6DYwS" alt="Zoom logo" class="w-full h-full object-contain p-2" />
+          </div>
+          <h3 class="text-xl font-semibold mb-2 text-headline-warm">Zoom to Training Docs</h3>
+          <div class="platform-badge mb-3">
+            <span class="text-xs">Collaboration Platforms</span>
+          </div>
+          <p class="platform-use-case body-sm text-body-warm">
+            Transform Zoom recordings into structured training documentation
+          </p>
+        </div>
+      </a>
+
+      <!-- Google Meet -->
+      <a href="/solutions/google-meet-recordings-to-documentation/" class="platform-card bento-card group" data-category="collaboration-video" data-search-terms="google meet recordings video documentation drive">
+        <div class="bento-card-inner p-6">
+          <div class="platform-icon-wrapper mb-4">
+            <img src="https://cdn.brandfetch.io/meet.google.com?c=1idrAUnmGm5IrQ6DYwS" alt="Google Meet logo" class="w-full h-full object-contain p-2" />
+          </div>
+          <h3 class="text-xl font-semibold mb-2 text-headline-warm">Meet to Documentation</h3>
+          <div class="platform-badge mb-3">
+            <span class="text-xs">Collaboration Platforms</span>
+          </div>
+          <p class="platform-use-case body-sm text-body-warm">
+            Convert Google Meet recordings to searchable documentation
+          </p>
+        </div>
+      </a>
+
+      <!-- Training Videos (Generic) -->
+      <a href="/solutions/training-videos-to-documentation/" class="platform-card bento-card group" data-category="training" data-search-terms="training video documentation employee learning guide">
+        <div class="bento-card-inner p-6">
+          <div class="platform-icon-wrapper mb-4">
+            <svg class="w-full h-full p-2" fill="currentColor" viewBox="0 0 24 24" style="color: var(--v2-orange);">
+              <path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-2 text-headline-warm">Training to Documentation</h3>
+          <div class="platform-badge mb-3">
+            <span class="text-xs">Training & Learning</span>
+          </div>
+          <p class="platform-use-case body-sm text-body-warm">
+            Transform training videos to searchable documentation
+          </p>
+        </div>
+      </a>
+
+      <!-- Training Course Videos -->
+      <a href="/solutions/training-course-videos-to-course-content/" class="platform-card bento-card group" data-category="training" data-search-terms="training course video lms learning materials curriculum elearning instructor">
+        <div class="bento-card-inner p-6">
+          <div class="platform-icon-wrapper mb-4">
+            <svg class="w-full h-full p-2" fill="currentColor" viewBox="0 0 24 24" style="color: var(--v2-orange);">
+              <path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zm0 13.27L4.24 12 12 7.73 19.76 12 12 16.27z"/>
+              <path d="M18.25 22L16 19.75 17.41 18.34 18.25 19.19 20.84 16.6 22.25 18L18.25 22z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-2 text-headline-warm">Course Videos to LMS Content</h3>
+          <div class="platform-badge mb-3">
+            <span class="text-xs">Training & Learning</span>
+          </div>
+          <p class="platform-use-case body-sm text-body-warm">
+            Convert training courses to structured LMS-ready learning materials
+          </p>
+        </div>
+      </a>
+
+      <!-- Compliance Training Videos -->
+      <a href="/solutions/compliance-training-videos-to-audit-documentation/" class="platform-card bento-card group" data-category="training" data-search-terms="compliance training audit soc2 iso hipaa gdpr regulatory policy security awareness">
+        <div class="bento-card-inner p-6">
+          <div class="platform-icon-wrapper mb-4">
+            <svg class="w-full h-full p-2" fill="currentColor" viewBox="0 0 24 24" style="color: var(--v2-teal);">
+              <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-2 text-headline-warm">Compliance Training to Audit Docs</h3>
+          <div class="platform-badge mb-3">
+            <span class="text-xs">Compliance & Regulatory</span>
+          </div>
+          <p class="platform-use-case body-sm text-body-warm">
+            Convert compliance training to audit-ready documentation for SOC 2, ISO, HIPAA
+          </p>
+        </div>
+      </a>
+
+      <!-- Employee Onboarding Videos -->
+      <a href="/solutions/employee-onboarding-videos-to-guides/" class="platform-card bento-card group" data-category="training" data-search-terms="employee onboarding new hire orientation hr people ops benefits policy handbook">
+        <div class="bento-card-inner p-6">
+          <div class="platform-icon-wrapper mb-4">
+            <svg class="w-full h-full p-2" fill="currentColor" viewBox="0 0 24 24" style="color: var(--v2-purple);">
+              <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-2 text-headline-warm">Employee Onboarding to Guides</h3>
+          <div class="platform-badge mb-3">
+            <span class="text-xs">HR & People Ops</span>
+          </div>
+          <p class="platform-use-case body-sm text-body-warm">
+            Transform onboarding videos into self-service employee guides and handbooks
+          </p>
+        </div>
+      </a>
+
+      <!-- Compliance Training -->
+      <a href="/solutions/compliance-training-videos-to-audit-evidence/" class="platform-card bento-card group" data-category="training" data-search-terms="compliance training video audit fda iso evidence documentation">
+        <div class="bento-card-inner p-6">
+          <div class="platform-icon-wrapper mb-4">
+            <svg class="w-full h-full p-2" fill="currentColor" viewBox="0 0 24 24" style="color: var(--v2-orange);">
+              <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-2 text-headline-warm">Compliance to Audit Evidence</h3>
+          <div class="platform-badge mb-3">
+            <span class="text-xs">Training & Learning</span>
+          </div>
+          <p class="platform-use-case body-sm text-body-warm">
+            Transform compliance training videos to FDA/ISO audit documentation
+          </p>
+        </div>
+      </a>
+
+      <!-- Onboarding Videos -->
+      <a href="/solutions/onboarding-videos-to-employee-handbooks/" class="platform-card bento-card group" data-category="training" data-search-terms="onboarding video employee handbook hr training">
+        <div class="bento-card-inner p-6">
+          <div class="platform-icon-wrapper mb-4">
+            <svg class="w-full h-full p-2" fill="currentColor" viewBox="0 0 24 24" style="color: var(--v2-orange);">
+              <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-2 text-headline-warm">Onboarding to Handbooks</h3>
+          <div class="platform-badge mb-3">
+            <span class="text-xs">Training & Learning</span>
+          </div>
+          <p class="platform-use-case body-sm text-body-warm">
+            Transform onboarding videos to employee handbooks
+          </p>
+        </div>
+      </a>
+
+      <!-- Webinar Recordings -->
+      <a href="/solutions/webinar-recordings-to-knowledge-base/" class="platform-card bento-card group" data-category="sales-marketing" data-search-terms="webinar recording video knowledge base article content">
+        <div class="bento-card-inner p-6">
+          <div class="platform-icon-wrapper mb-4">
+            <svg class="w-full h-full p-2" fill="currentColor" viewBox="0 0 24 24" style="color: var(--v2-orange);">
+              <path d="M21 3H3c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H3V5h18v14zM8 15c0-1.66 1.34-3 3-3 .35 0 .69.07 1 .18V6h5v2h-3v7.03c-.02 1.64-1.35 2.97-3 2.97-1.66 0-3-1.34-3-3z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-2 text-headline-warm">Webinars to KB Articles</h3>
+          <div class="platform-badge mb-3">
+            <span class="text-xs">Sales & Marketing</span>
+          </div>
+          <p class="platform-use-case body-sm text-body-warm">
+            Convert webinar recordings to knowledge base articles
+          </p>
+        </div>
+      </a>
+
+      <!-- Product Demo -->
+      <a href="/solutions/product-demo-videos-to-sales-documentation/" class="platform-card bento-card group" data-category="sales-marketing" data-search-terms="product demo video sales documentation collateral battlecard">
+        <div class="bento-card-inner p-6">
+          <div class="platform-icon-wrapper mb-4">
+            <svg class="w-full h-full p-2" fill="currentColor" viewBox="0 0 24 24" style="color: var(--v2-orange);">
+              <path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-2 text-headline-warm">Demo to Sales Docs</h3>
+          <div class="platform-badge mb-3">
+            <span class="text-xs">Sales & Marketing</span>
+          </div>
+          <p class="platform-use-case body-sm text-body-warm">
+            Convert product demos to sales collateral and battlecards
+          </p>
+        </div>
+      </a>
+
+      <!-- Sales Call Recordings -->
+      <a href="/solutions/sales-call-recordings-to-documentation/" class="platform-card bento-card group" data-category="sales-marketing" data-search-terms="sales call recording video deal notes crm gong chorus">
+        <div class="bento-card-inner p-6">
+          <div class="platform-icon-wrapper mb-4">
+            <svg class="w-full h-full p-2" fill="currentColor" viewBox="0 0 24 24" style="color: var(--v2-orange);">
+              <path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-7 9h-2V5h2v6zm0 4h-2v-2h2v2z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-2 text-headline-warm">Sales Calls to Docs</h3>
+          <div class="platform-badge mb-3">
+            <span class="text-xs">Sales & Marketing</span>
+          </div>
+          <p class="platform-use-case body-sm text-body-warm">
+            Transform sales call recordings to deal notes and CRM docs
+          </p>
+        </div>
+      </a>
+
+      <!-- Conference Presentations -->
+      <a href="/solutions/conference-presentations-to-documentation/" class="platform-card bento-card group" data-category="sales-marketing" data-search-terms="conference presentation video keynote event documentation">
+        <div class="bento-card-inner p-6">
+          <div class="platform-icon-wrapper mb-4">
+            <svg class="w-full h-full p-2" fill="currentColor" viewBox="0 0 24 24" style="color: var(--v2-orange);">
+              <path d="M20 8h-2.81c-.45-.78-1.07-1.45-1.82-1.96L17 4.41 15.59 3l-2.17 2.17C12.96 5.06 12.49 5 12 5c-.49 0-.96.06-1.41.17L8.41 3 7 4.41l1.62 1.63C7.88 6.55 7.26 7.22 6.81 8H4v2h2.09c-.05.33-.09.66-.09 1v1H4v2h2v1c0 .34.04.67.09 1H4v2h2.81c1.04 1.79 2.97 3 5.19 3s4.15-1.21 5.19-3H20v-2h-2.09c.05-.33.09-.66.09-1v-1h2v-2h-2v-1c0-.34-.04-.67-.09-1H20V8zm-6 8h-4v-2h4v2zm0-4h-4v-2h4v2z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-2 text-headline-warm">Conference to Docs</h3>
+          <div class="platform-badge mb-3">
+            <span class="text-xs">Sales & Marketing</span>
+          </div>
+          <p class="platform-use-case body-sm text-body-warm">
+            Convert conference presentations to educational content
+          </p>
+        </div>
+      </a>
+
+      <!-- Internal Process Videos -->
+      <a href="/solutions/internal-process-videos-to-sops/" class="platform-card bento-card group" data-category="operations" data-search-terms="internal process video sop operations workflow procedure">
+        <div class="bento-card-inner p-6">
+          <div class="platform-icon-wrapper mb-4">
+            <svg class="w-full h-full p-2" fill="currentColor" viewBox="0 0 24 24" style="color: var(--v2-orange);">
+              <path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-2 text-headline-warm">Process Videos to SOPs</h3>
+          <div class="platform-badge mb-3">
+            <span class="text-xs">Operations & Support</span>
+          </div>
+          <p class="platform-use-case body-sm text-body-warm">
+            Transform internal process videos to standard operating procedures
+          </p>
+        </div>
+      </a>
+
+      <!-- Screen Recordings -->
+      <a href="/solutions/screen-recordings-to-how-to-guides/" class="platform-card bento-card group" data-category="operations" data-search-terms="screen recording video how-to guide tutorial loom">
+        <div class="bento-card-inner p-6">
+          <div class="platform-icon-wrapper mb-4">
+            <svg class="w-full h-full p-2" fill="currentColor" viewBox="0 0 24 24" style="color: var(--v2-orange);">
+              <path d="M21 3H3c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H3V5h18v14zM10 12l6 3.75L10 19.5z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-2 text-headline-warm">Screen Recordings to Guides</h3>
+          <div class="platform-badge mb-3">
+            <span class="text-xs">Operations & Support</span>
+          </div>
+          <p class="platform-use-case body-sm text-body-warm">
+            Convert screen recordings to step-by-step how-to guides
+          </p>
+        </div>
+      </a>
+
+      <!-- Support Screencasts -->
+      <a href="/solutions/support-screencasts-to-troubleshooting-guides/" class="platform-card bento-card group" data-category="operations" data-search-terms="support screencast video troubleshooting guide help article loom">
+        <div class="bento-card-inner p-6">
+          <div class="platform-icon-wrapper mb-4">
+            <svg class="w-full h-full p-2" fill="currentColor" viewBox="0 0 24 24" style="color: var(--v2-orange);">
+              <path d="M11 18h2v-2h-2v2zm1-16C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-14c-2.21 0-4 1.79-4 4h2c0-1.1.9-2 2-2s2 .9 2 2c0 2-3 1.75-3 5h2c0-2.25 3-2.5 3-5 0-2.21-1.79-4-4-4z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-2 text-headline-warm">Screencasts to Guides</h3>
+          <div class="platform-badge mb-3">
+            <span class="text-xs">Operations & Support</span>
+          </div>
+          <p class="platform-use-case body-sm text-body-warm">
+            Convert support screencasts to troubleshooting guides
+          </p>
+        </div>
+      </a>
+
+      <!-- Videos to SOPs -->
+      <a href="/solutions/videos-to-standard-operating-procedures/" class="platform-card bento-card group" data-category="operations" data-search-terms="sop standard operating procedure video process workflow quality iso">
+        <div class="bento-card-inner p-6">
+          <div class="platform-icon-wrapper mb-4">
+            <svg class="w-full h-full p-2" fill="currentColor" viewBox="0 0 24 24" style="color: var(--v2-orange);">
+              <path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-2 text-headline-warm">Videos to SOPs</h3>
+          <div class="platform-badge mb-3">
+            <span class="text-xs">Operations & Support</span>
+          </div>
+          <p class="platform-use-case body-sm text-body-warm">
+            Convert process videos to standard operating procedures
+          </p>
+        </div>
+      </a>
+
+      <!-- Videos to Knowledge Base -->
+      <a href="/solutions/videos-to-knowledge-base-articles/" class="platform-card bento-card group" data-category="operations" data-search-terms="knowledge base kb article video documentation help center">
+        <div class="bento-card-inner p-6">
+          <div class="platform-icon-wrapper mb-4">
+            <svg class="w-full h-full p-2" fill="currentColor" viewBox="0 0 24 24" style="color: var(--v2-orange);">
+              <path d="M21 5c-1.11-.35-2.33-.5-3.5-.5-1.95 0-4.05.4-5.5 1.5-1.45-1.1-3.55-1.5-5.5-1.5S2.45 4.9 1 6v14.65c0 .25.25.5.5.5.1 0 .15-.05.25-.05C3.1 20.45 5.05 20 6.5 20c1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.3 4.75 1.05.1.05.15.05.25.05.25 0 .5-.25.5-.5V6c-.6-.45-1.25-.75-2-1zm0 13.5c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5V8c1.35-.85 3.8-1.5 5.5-1.5 1.2 0 2.4.15 3.5.5v11.5z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-2 text-headline-warm">Videos to KB Articles</h3>
+          <div class="platform-badge mb-3">
+            <span class="text-xs">Operations & Support</span>
+          </div>
+          <p class="platform-use-case body-sm text-body-warm">
+            Transform videos into searchable knowledge base articles
+          </p>
+        </div>
+      </a>
+
+      <!-- Videos to User Manuals -->
+      <a href="/solutions/videos-to-user-manuals/" class="platform-card bento-card group" data-category="operations" data-search-terms="user manual product documentation guide video tutorial">
+        <div class="bento-card-inner p-6">
+          <div class="platform-icon-wrapper mb-4">
+            <svg class="w-full h-full p-2" fill="currentColor" viewBox="0 0 24 24" style="color: var(--v2-orange);">
+              <path d="M19 2H5c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM9 4h2v5l-1-.75L9 9V4zm8 16H7v-2h10v2zm0-4H7v-2h10v2zm0-4H7V8h10v4z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-2 text-headline-warm">Videos to User Manuals</h3>
+          <div class="platform-badge mb-3">
+            <span class="text-xs">Operations & Support</span>
+          </div>
+          <p class="platform-use-case body-sm text-body-warm">
+            Convert product videos to comprehensive user manuals
+          </p>
+        </div>
+      </a>
+
+      <!-- Videos to Employee Handbooks -->
+      <a href="/solutions/videos-to-employee-handbooks/" class="platform-card bento-card group" data-category="training" data-search-terms="employee handbook hr onboarding policy video documentation">
+        <div class="bento-card-inner p-6">
+          <div class="platform-icon-wrapper mb-4">
+            <svg class="w-full h-full p-2" fill="currentColor" viewBox="0 0 24 24" style="color: var(--v2-orange);">
+              <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-2 text-headline-warm">Videos to Handbooks</h3>
+          <div class="platform-badge mb-3">
+            <span class="text-xs">Training & Learning</span>
+          </div>
+          <p class="platform-use-case body-sm text-body-warm">
+            Transform HR videos into searchable employee handbooks
+          </p>
+        </div>
+      </a>
+
+      <!-- Videos to Troubleshooting Guides -->
+      <a href="/solutions/videos-to-troubleshooting-guides/" class="platform-card bento-card group" data-category="operations" data-search-terms="troubleshooting guide support video bug fix error resolution">
+        <div class="bento-card-inner p-6">
+          <div class="platform-icon-wrapper mb-4">
+            <svg class="w-full h-full p-2" fill="currentColor" viewBox="0 0 24 24" style="color: var(--v2-orange);">
+              <path d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-2 text-headline-warm">Videos to Troubleshooting</h3>
+          <div class="platform-badge mb-3">
+            <span class="text-xs">Operations & Support</span>
+          </div>
+          <p class="platform-use-case body-sm text-body-warm">
+            Convert bug fix videos to searchable troubleshooting guides
+          </p>
+        </div>
+      </a>
+
+      <!-- Videos to Client Deliverables -->
+      <a href="/solutions/videos-to-client-deliverables/" class="platform-card bento-card group" data-category="sales-marketing" data-search-terms="client deliverable consultant agency implementation documentation video">
+        <div class="bento-card-inner p-6">
+          <div class="platform-icon-wrapper mb-4">
+            <svg class="w-full h-full p-2" fill="currentColor" viewBox="0 0 24 24" style="color: var(--v2-orange);">
+              <path d="M20 6h-8l-2-2H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm0 12H4V8h16v10z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-2 text-headline-warm">Videos to Client Docs</h3>
+          <div class="platform-badge mb-3">
+            <span class="text-xs">Sales & Marketing</span>
+          </div>
+          <p class="platform-use-case body-sm text-body-warm">
+            Transform project videos into professional client deliverables
+          </p>
+        </div>
+      </a>
+
+      <!-- Manufacturing Training -->
+      <a href="/solutions/manufacturing-training-videos-to-sops/" class="platform-card bento-card group" data-category="technical" data-search-terms="manufacturing training video sop work instructions quality iso">
+        <div class="bento-card-inner p-6">
+          <div class="platform-icon-wrapper mb-4">
+            <svg class="w-full h-full p-2" fill="currentColor" viewBox="0 0 24 24" style="color: var(--v2-orange);">
+              <path d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-2 text-headline-warm">Manufacturing to SOPs</h3>
+          <div class="platform-badge mb-3">
+            <span class="text-xs">Technical & Engineering</span>
+          </div>
+          <p class="platform-use-case body-sm text-body-warm">
+            Convert shop floor training to ISO-compliant SOPs
+          </p>
+        </div>
+      </a>
+
+      <!-- Pharmaceutical/Pharma Training -->
+      <a href="/solutions/pharmaceutical-training-to-compliance-docs/" class="platform-card bento-card group" data-category="industry" data-search-terms="pharmaceutical pharma biotech training fda gmp 21 cfr compliance audit">
+        <div class="bento-card-inner p-6">
+          <div class="platform-icon-wrapper mb-4">
+            <svg class="w-full h-full p-2" fill="currentColor" viewBox="0 0 24 24" style="color: var(--v2-orange);">
+              <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-2 text-headline-warm">Pharmaceutical Compliance</h3>
+          <div class="platform-badge mb-3">
+            <span class="text-xs">Industry-Specific Systems</span>
+          </div>
+          <p class="platform-use-case body-sm text-body-warm">
+            Convert GMP training to FDA-compliant documentation
+          </p>
+        </div>
+      </a>
+
+      <!-- Financial Services -->
+      <a href="/solutions/financial-services-training-to-regulatory-docs/" class="platform-card bento-card group" data-category="industry" data-search-terms="financial services banking finance sec finra aml kyc compliance">
+        <div class="bento-card-inner p-6">
+          <div class="platform-icon-wrapper mb-4">
+            <svg class="w-full h-full p-2" fill="currentColor" viewBox="0 0 24 24" style="color: var(--v2-orange);">
+              <path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.10h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-2 text-headline-warm">Financial Services</h3>
+          <div class="platform-badge mb-3">
+            <span class="text-xs">Industry-Specific Systems</span>
+          </div>
+          <p class="platform-use-case body-sm text-body-warm">
+            Convert compliance training to SEC/FINRA documentation
+          </p>
+        </div>
+      </a>
+
+      <!-- Healthcare -->
+      <a href="/solutions/healthcare-training-to-hipaa-compliance-docs/" class="platform-card bento-card group" data-category="industry" data-search-terms="healthcare hospital medical hipaa cms joint commission compliance">
+        <div class="bento-card-inner p-6">
+          <div class="platform-icon-wrapper mb-4">
+            <svg class="w-full h-full p-2" fill="currentColor" viewBox="0 0 24 24" style="color: var(--v2-orange);">
+              <path d="M19 3H5c-1.1 0-1.99.9-1.99 2L3 19c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-1 11h-4v4h-4v-4H6v-4h4V6h4v4h4v4z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-2 text-headline-warm">Healthcare HIPAA</h3>
+          <div class="platform-badge mb-3">
+            <span class="text-xs">Industry-Specific Systems</span>
+          </div>
+          <p class="platform-use-case body-sm text-body-warm">
+            Convert healthcare training to HIPAA-compliant docs
+          </p>
+        </div>
+      </a>
+
+      <!-- Legal Firms -->
+      <a href="/solutions/legal-firm-training-to-knowledge-management/" class="platform-card bento-card group" data-category="industry" data-search-terms="legal law firm attorney knowledge management case precedent compliance">
+        <div class="bento-card-inner p-6">
+          <div class="platform-icon-wrapper mb-4">
+            <svg class="w-full h-full p-2" fill="currentColor" viewBox="0 0 24 24" style="color: var(--v2-orange);">
+              <path d="M9 3L5 6.99h3V14h2V6.99h3L9 3zm7 14.01V10h-2v7.01h-3L15 21l4-3.99h-3z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-2 text-headline-warm">Legal Knowledge Mgmt</h3>
+          <div class="platform-badge mb-3">
+            <span class="text-xs">Industry-Specific Systems</span>
+          </div>
+          <p class="platform-use-case body-sm text-body-warm">
+            Convert legal training to searchable knowledge base
+          </p>
+        </div>
+      </a>
+
+      <!-- Insurance -->
+      <a href="/solutions/insurance-training-to-compliance-docs/" class="platform-card bento-card group" data-category="industry" data-search-terms="insurance underwriting claims compliance e&o continuing education">
+        <div class="bento-card-inner p-6">
+          <div class="platform-icon-wrapper mb-4">
+            <svg class="w-full h-full p-2" fill="currentColor" viewBox="0 0 24 24" style="color: var(--v2-orange);">
+              <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-2 text-headline-warm">Insurance Compliance</h3>
+          <div class="platform-badge mb-3">
+            <span class="text-xs">Industry-Specific Systems</span>
+          </div>
+          <p class="platform-use-case body-sm text-body-warm">
+            Convert insurance training to compliance documentation
+          </p>
+        </div>
+      </a>
+
+      <!-- Construction Safety -->
+      <a href="/solutions/construction-safety-videos-to-safety-sops/" class="platform-card bento-card group" data-category="industry" data-search-terms="construction safety osha toolbox talk jsa jha job hazard analysis">
+        <div class="bento-card-inner p-6">
+          <div class="platform-icon-wrapper mb-4">
+            <svg class="w-full h-full p-2" fill="currentColor" viewBox="0 0 24 24" style="color: var(--v2-orange);">
+              <path d="M12 7.77L18.39 18H5.61L12 7.77M12 4L2 20h20L12 4z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-2 text-headline-warm">Construction Safety</h3>
+          <div class="platform-badge mb-3">
+            <span class="text-xs">Industry-Specific Systems</span>
+          </div>
+          <p class="platform-use-case body-sm text-body-warm">
+            Convert toolbox talks to OSHA-compliant safety SOPs
+          </p>
+        </div>
+      </a>
+
+      <!-- Automotive -->
+      <a href="/solutions/automotive-training-to-quality-docs/" class="platform-card bento-card group" data-category="industry" data-search-terms="automotive auto car iatf 16949 ppap quality supplier">
+        <div class="bento-card-inner p-6">
+          <div class="platform-icon-wrapper mb-4">
+            <svg class="w-full h-full p-2" fill="currentColor" viewBox="0 0 24 24" style="color: var(--v2-orange);">
+              <path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-2 text-headline-warm">Automotive Quality</h3>
+          <div class="platform-badge mb-3">
+            <span class="text-xs">Industry-Specific Systems</span>
+          </div>
+          <p class="platform-use-case body-sm text-body-warm">
+            Convert training to IATF 16949/PPAP documentation
+          </p>
+        </div>
+      </a>
+
+      <!-- Aerospace -->
+      <a href="/solutions/aerospace-training-to-technical-specs/" class="platform-card bento-card group" data-category="industry" data-search-terms="aerospace aviation faa as9100 nadcap airworthiness">
+        <div class="bento-card-inner p-6">
+          <div class="platform-icon-wrapper mb-4">
+            <svg class="w-full h-full p-2" fill="currentColor" viewBox="0 0 24 24" style="color: var(--v2-orange);">
+              <path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-2 text-headline-warm">Aerospace AS9100</h3>
+          <div class="platform-badge mb-3">
+            <span class="text-xs">Industry-Specific Systems</span>
+          </div>
+          <p class="platform-use-case body-sm text-body-warm">
+            Convert aerospace training to AS9100/FAA documentation
+          </p>
+        </div>
+      </a>
+
+      <!-- Engineering Walkthroughs -->
+      <a href="/solutions/engineering-walkthrough-videos-to-technical-specs/" class="platform-card bento-card group" data-category="technical" data-search-terms="engineering walkthrough video technical specs architecture design">
+        <div class="bento-card-inner p-6">
+          <div class="platform-icon-wrapper mb-4">
+            <svg class="w-full h-full p-2" fill="currentColor" viewBox="0 0 24 24" style="color: var(--v2-orange);">
+              <path d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-2 text-headline-warm">Engineering to Tech Specs</h3>
+          <div class="platform-badge mb-3">
+            <span class="text-xs">Technical & Engineering</span>
+          </div>
+          <p class="platform-use-case body-sm text-body-warm">
+            Transform engineering walkthroughs to technical specifications
+          </p>
+        </div>
+      </a>
+
+      <!-- Loom Recordings -->
+      <a href="/solutions/loom-recordings-to-process-documentation/" class="platform-card bento-card group" data-category="collaboration-video" data-search-terms="loom recording video async process documentation sop screencast">
+        <div class="bento-card-inner p-6">
+          <div class="platform-icon-wrapper mb-4">
+            <img src="https://cdn.brandfetch.io/loom.com?c=1idrAUnmGm5IrQ6DYwS" alt="Loom logo" class="w-full h-full object-contain p-2" />
+          </div>
+          <h3 class="text-xl font-semibold mb-2 text-headline-warm">Loom to Process Docs</h3>
+          <div class="platform-badge mb-3">
+            <span class="text-xs">Collaboration Platforms</span>
+          </div>
+          <p class="platform-use-case body-sm text-body-warm">
+            Convert Loom async recordings to searchable process documentation
+          </p>
+        </div>
+      </a>
+
+      <!-- Podcast Episodes -->
+      <a href="/solutions/podcast-episodes-to-show-notes/" class="platform-card bento-card group" data-category="sales-marketing" data-search-terms="podcast episode show notes audio content transcription documentation">
+        <div class="bento-card-inner p-6">
+          <div class="platform-icon-wrapper mb-4">
+            <svg class="w-full h-full p-2" fill="currentColor" viewBox="0 0 24 24" style="color: var(--v2-orange);">
+              <path d="M12 14c1.66 0 3-1.34 3-3V5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3z"/>
+              <path d="M17 11c0 2.76-2.24 5-5 5s-5-2.24-5-5H5c0 3.53 2.61 6.43 6 6.92V21h2v-3.08c3.39-.49 6-3.39 6-6.92h-2z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-2 text-headline-warm">Podcast to Show Notes</h3>
+          <div class="platform-badge mb-3">
+            <span class="text-xs">Sales & Marketing</span>
+          </div>
+          <p class="platform-use-case body-sm text-body-warm">
+            Transform podcast episodes into comprehensive show notes and documentation
+          </p>
+        </div>
+      </a>
+
+      <!-- Live Stream Archives -->
+      <a href="/solutions/live-stream-archives-to-documentation/" class="platform-card bento-card group" data-category="sales-marketing" data-search-terms="live stream archive twitch youtube video event documentation">
+        <div class="bento-card-inner p-6">
+          <div class="platform-icon-wrapper mb-4">
+            <svg class="w-full h-full p-2" fill="currentColor" viewBox="0 0 24 24" style="color: var(--v2-orange);">
+              <path d="M9 2L7.17 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2h-3.17L15 2H9zm3 15c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-2 text-headline-warm">Live Stream to Docs</h3>
+          <div class="platform-badge mb-3">
+            <span class="text-xs">Sales & Marketing</span>
+          </div>
+          <p class="platform-use-case body-sm text-body-warm">
+            Convert live stream archives and event recordings to documentation
+          </p>
+        </div>
+      </a>
+
+      <!-- Workshop Recordings -->
+      <a href="/solutions/workshop-recordings-to-training-materials/" class="platform-card bento-card group" data-category="training" data-search-terms="workshop recording training materials session video learning guide">
+        <div class="bento-card-inner p-6">
+          <div class="platform-icon-wrapper mb-4">
+            <svg class="w-full h-full p-2" fill="currentColor" viewBox="0 0 24 24" style="color: var(--v2-orange);">
+              <path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zm0 13.27L4.24 12 12 7.73 19.76 12 12 16.27z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-2 text-headline-warm">Workshop to Training Materials</h3>
+          <div class="platform-badge mb-3">
+            <span class="text-xs">Training & Learning</span>
+          </div>
+          <p class="platform-use-case body-sm text-body-warm">
+            Transform workshop recordings into structured training materials
+          </p>
+        </div>
+      </a>
+
+      <!-- YouTube Training Libraries -->
+      <a href="/solutions/youtube-training-libraries-to-knowledge-base/" class="platform-card bento-card group" data-category="training" data-search-terms="youtube training library video knowledge base playlist tutorial">
+        <div class="bento-card-inner p-6">
+          <div class="platform-icon-wrapper mb-4">
+            <img src="https://cdn.brandfetch.io/youtube.com?c=1idrAUnmGm5IrQ6DYwS" alt="YouTube logo" class="w-full h-full object-contain p-2" />
+          </div>
+          <h3 class="text-xl font-semibold mb-2 text-headline-warm">YouTube to Knowledge Base</h3>
+          <div class="platform-badge mb-3">
+            <span class="text-xs">Training & Learning</span>
+          </div>
+          <p class="platform-use-case body-sm text-body-warm">
+            Convert YouTube training libraries to searchable knowledge base
+          </p>
+        </div>
+      </a>
+
+      <!-- Vimeo Training Libraries -->
+      <a href="/solutions/vimeo-training-libraries-to-documentation/" class="platform-card bento-card group" data-category="training" data-search-terms="vimeo training library video documentation course tutorial">
+        <div class="bento-card-inner p-6">
+          <div class="platform-icon-wrapper mb-4">
+            <img src="https://cdn.brandfetch.io/vimeo.com?c=1idrAUnmGm5IrQ6DYwS" alt="Vimeo logo" class="w-full h-full object-contain p-2" />
+          </div>
+          <h3 class="text-xl font-semibold mb-2 text-headline-warm">Vimeo to Documentation</h3>
+          <div class="platform-badge mb-3">
+            <span class="text-xs">Training & Learning</span>
+          </div>
+          <p class="platform-use-case body-sm text-body-warm">
+            Transform Vimeo training libraries into comprehensive documentation
+          </p>
+        </div>
+      </a>
+
     </div>
-    
+
+    <!-- Pagination controls -->
+    <div class="flex justify-center items-center gap-4 mb-12" id="pagination-controls" style="display: none;">
+      <button id="prev-page" class="px-4 py-2 rounded-full border-2 border-orange-200 hover:border-orange-400 transition-colors" disabled>
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+        </svg>
+      </button>
+      <span id="page-info" class="text-body-warm font-medium"></span>
+      <button id="next-page" class="px-4 py-2 rounded-full border-2 border-orange-200 hover:border-orange-400 transition-colors">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+        </svg>
+      </button>
+    </div>
+
     <!-- Bottom CTA -->
     <div class="text-center">
       <div class="bento-card bento-card-hero max-w-2xl mx-auto">
         <div class="p-8">
           <h3 class="heading-lg text-headline-warm mb-4">
-            Don't see your platform?
+            Don't see your use case?
           </h3>
           <p class="body-base text-body-warm mb-6">
-            We support 25+ enterprise systems. Contact us to learn how we can help with your specific implementation.
+            We support 40+ enterprise systems and video-to-docs solutions. Contact us to learn how we can help with your specific use case.
           </p>
           <div class="flex flex-wrap justify-center gap-4">
             <button class="inline-flex items-center px-8 py-3 text-white font-semibold rounded-full transition-all duration-300 transform hover:scale-105"
@@ -2934,15 +3670,11 @@ function toggleMobileMenu() {
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
               </svg>
             </button>
-            <button class="inline-flex items-center px-8 py-3 font-semibold rounded-full border-2 transition-all duration-300 hover:bg-v2-orange/5"
-                    style="border-color: var(--v2-orange); color: var(--v2-orange);">
-              View All Platforms
-            </button>
           </div>
         </div>
       </div>
     </div>
-    
+
     <!-- Trademark Disclaimer -->
     <div class="text-center mt-16">
       <p class="text-sm text-body-warm opacity-70">
@@ -2950,7 +3682,7 @@ function toggleMobileMenu() {
         Use of them does not imply any affiliation with or endorsement by them.
       </p>
     </div>
-    
+
   </div>
 </section>
 
@@ -3084,37 +3816,161 @@ function toggleMobileMenu() {
     transform: translateY(0);
   }
 }
+
+/* Pagination button disabled state */
+#prev-page:disabled,
+#next-page:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
 </style>
 
+<!-- Load Fuse.js for fuzzy search -->
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
+
 <script>
-// Category filtering functionality
+// Solutions data and filtering functionality
 document.addEventListener('DOMContentLoaded', function() {
   const filterButtons = document.querySelectorAll('.category-filter');
   const platformCards = document.querySelectorAll('.platform-card');
-  
+  const searchInput = document.getElementById('solution-search');
+  const searchResultsCount = document.getElementById('search-results-count');
+  const paginationControls = document.getElementById('pagination-controls');
+  const prevButton = document.getElementById('prev-page');
+  const nextButton = document.getElementById('next-page');
+  const pageInfo = document.getElementById('page-info');
+
+  let currentPage = 1;
+  const itemsPerPage = 12;
+  let filteredCards = Array.from(platformCards);
+  let fuse = null;
+
+  // Prepare data for Fuse.js search
+  const searchData = Array.from(platformCards).map((card, index) => ({
+    id: index,
+    title: card.querySelector('h3').textContent,
+    description: card.querySelector('.platform-use-case').textContent,
+    searchTerms: card.dataset.searchTerms || '',
+    element: card
+  }));
+
+  // Initialize Fuse.js
+  fuse = new Fuse(searchData, {
+    keys: ['title', 'description', 'searchTerms'],
+    threshold: 0.3,
+    includeScore: true
+  });
+
+  // Category filtering
   filterButtons.forEach(button => {
     button.addEventListener('click', function() {
-      // Remove active class from all buttons
       filterButtons.forEach(btn => btn.classList.remove('active'));
-      // Add active class to clicked button
       this.classList.add('active');
-      
+
+      searchInput.value = ''; // Clear search when filtering
       const selectedCategory = this.dataset.category;
-      
-      // Show/hide cards based on category
-      platformCards.forEach(card => {
-        if (selectedCategory === 'all' || card.dataset.category === selectedCategory) {
-          card.style.display = 'block';
-          // Restart animation
-          card.style.animation = 'none';
-          card.offsetHeight; // Trigger reflow
-          card.style.animation = null;
-        } else {
-          card.style.display = 'none';
-        }
+
+      filteredCards = Array.from(platformCards).filter(card => {
+        return selectedCategory === 'all' || card.dataset.category === selectedCategory;
       });
+
+      currentPage = 1;
+      updateDisplay();
     });
   });
+
+  // Search functionality with debouncing
+  let searchTimeout;
+  searchInput.addEventListener('input', function() {
+    clearTimeout(searchTimeout);
+    searchTimeout = setTimeout(() => {
+      const query = this.value.trim();
+
+      if (query.length === 0) {
+        // Reset to current filter
+        const activeFilter = document.querySelector('.category-filter.active');
+        const selectedCategory = activeFilter.dataset.category;
+        filteredCards = Array.from(platformCards).filter(card => {
+          return selectedCategory === 'all' || card.dataset.category === selectedCategory;
+        });
+      } else {
+        // Perform fuzzy search
+        const results = fuse.search(query);
+        const resultIds = new Set(results.map(r => r.item.id));
+        filteredCards = Array.from(platformCards).filter((card, index) => resultIds.has(index));
+      }
+
+      currentPage = 1;
+      updateDisplay();
+    }, 300);
+  });
+
+  // Pagination controls
+  prevButton.addEventListener('click', () => {
+    if (currentPage > 1) {
+      currentPage--;
+      updateDisplay();
+      scrollToTop();
+    }
+  });
+
+  nextButton.addEventListener('click', () => {
+    const totalPages = Math.ceil(filteredCards.length / itemsPerPage);
+    if (currentPage < totalPages) {
+      currentPage++;
+      updateDisplay();
+      scrollToTop();
+    }
+  });
+
+  function updateDisplay() {
+    const totalPages = Math.ceil(filteredCards.length / itemsPerPage);
+    const startIndex = (currentPage - 1) * itemsPerPage;
+    const endIndex = startIndex + itemsPerPage;
+
+    // Hide all cards first
+    platformCards.forEach(card => {
+      card.style.display = 'none';
+      card.style.animation = 'none';
+    });
+
+    // Show filtered and paginated cards
+    filteredCards.forEach((card, index) => {
+      if (index >= startIndex && index < endIndex) {
+        card.style.display = 'block';
+        card.offsetHeight; // Trigger reflow
+        card.style.animation = null;
+      }
+    });
+
+    // Update pagination controls
+    if (totalPages > 1) {
+      paginationControls.style.display = 'flex';
+      pageInfo.textContent = `Page ${currentPage} of ${totalPages}`;
+      prevButton.disabled = currentPage === 1;
+      nextButton.disabled = currentPage === totalPages;
+    } else {
+      paginationControls.style.display = 'none';
+    }
+
+    // Update search results count
+    const query = searchInput.value.trim();
+    if (query.length > 0) {
+      searchResultsCount.textContent = `Found ${filteredCards.length} solution${filteredCards.length !== 1 ? 's' : ''} matching "${query}"`;
+    } else {
+      searchResultsCount.textContent = '';
+    }
+  }
+
+  function scrollToTop() {
+    document.querySelector('.platforms-grid').scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
+    });
+  }
+
+  // Initial display
+  updateDisplay();
 });
 </script>
 
@@ -3574,9 +4430,96 @@ document.addEventListener('DOMContentLoaded', function() {
       </div>
 
       <!-- Links Columns -->
-      <div class="lg:col-span-8 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-8">
+      <div class="lg:col-span-8 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
 
-        <!-- Documentation Column -->
+        <!-- ERP & Platforms Column -->
+        <div>
+          <h3 class="text-sm font-bold text-gray-900 mb-4">ERP & Platforms</h3>
+          <ul class="space-y-2.5">
+            <li><a href="/solutions/sap-training-video-to-guides/" class="text-sm text-gray-600 hover:text-orange-600 transition-colors inline-block">SAP</a></li>
+            <li><a href="/solutions/oracle-training-video-to-guides/" class="text-sm text-gray-600 hover:text-orange-600 transition-colors inline-block">Oracle</a></li>
+            <li><a href="/solutions/workday-training-video-to-guides/" class="text-sm text-gray-600 hover:text-orange-600 transition-colors inline-block">Workday</a></li>
+            <li><a href="/solutions/salesforce-training-video-to-guides/" class="text-sm text-gray-600 hover:text-orange-600 transition-colors inline-block">Salesforce</a></li>
+            <li><a href="/solutions/dynamics365-training-video-to-guides/" class="text-sm text-gray-600 hover:text-orange-600 transition-colors inline-block">Dynamics 365</a></li>
+            <li><a href="/solutions/servicenow-training-video-to-guides/" class="text-sm text-gray-600 hover:text-orange-600 transition-colors inline-block">ServiceNow</a></li>
+            <li><a href="/solutions/microsoft365-training-video-to-guides/" class="text-sm text-gray-600 hover:text-orange-600 transition-colors inline-block">Microsoft 365</a></li>
+            <li><a href="/solutions/sharepoint-training-video-to-guides/" class="text-sm text-gray-600 hover:text-orange-600 transition-colors inline-block">SharePoint</a></li>
+            <li><a href="/solutions/hubspot-training-video-to-guides/" class="text-sm text-gray-600 hover:text-orange-600 transition-colors inline-block">HubSpot</a></li>
+            <li><a href="/solutions/epic-training-video-to-guides/" class="text-sm text-gray-600 hover:text-orange-600 transition-colors inline-block">Epic</a></li>
+            <li><a href="/solutions/jira-training-video-to-guides/" class="text-sm text-gray-600 hover:text-orange-600 transition-colors inline-block">Jira</a></li>
+            <li><a href="/solutions/netsuite-training-video-to-guides/" class="text-sm text-gray-600 hover:text-orange-600 transition-colors inline-block">NetSuite</a></li>
+            <li><a href="/solutions/confluence-training-video-to-guides/" class="text-sm text-gray-600 hover:text-orange-600 transition-colors inline-block">Confluence</a></li>
+          </ul>
+        </div>
+
+        <!-- Industry Solutions Column -->
+        <div>
+          <h3 class="text-sm font-bold text-gray-900 mb-4">Industry Solutions</h3>
+          <ul class="space-y-2.5">
+            <li><a href="/solutions/pharmaceutical-training-to-compliance-docs/" class="text-sm text-gray-600 hover:text-orange-600 transition-colors inline-block">Pharmaceutical</a></li>
+            <li><a href="/solutions/financial-services-training-to-regulatory-docs/" class="text-sm text-gray-600 hover:text-orange-600 transition-colors inline-block">Financial Services</a></li>
+            <li><a href="/solutions/healthcare-training-to-hipaa-compliance-docs/" class="text-sm text-gray-600 hover:text-orange-600 transition-colors inline-block">Healthcare</a></li>
+            <li><a href="/solutions/legal-firm-training-to-knowledge-management/" class="text-sm text-gray-600 hover:text-orange-600 transition-colors inline-block">Legal Firms</a></li>
+            <li><a href="/solutions/insurance-training-to-compliance-docs/" class="text-sm text-gray-600 hover:text-orange-600 transition-colors inline-block">Insurance</a></li>
+            <li><a href="/solutions/construction-safety-videos-to-safety-sops/" class="text-sm text-gray-600 hover:text-orange-600 transition-colors inline-block">Construction</a></li>
+            <li><a href="/solutions/automotive-training-to-quality-docs/" class="text-sm text-gray-600 hover:text-orange-600 transition-colors inline-block">Automotive</a></li>
+            <li><a href="/solutions/aerospace-training-to-technical-specs/" class="text-sm text-gray-600 hover:text-orange-600 transition-colors inline-block">Aerospace</a></li>
+          </ul>
+          <h3 class="text-sm font-bold text-gray-900 mb-4 mt-6">Industries</h3>
+          <ul class="space-y-2.5">
+            <li><a href="/solutions/industries/saas/" class="text-sm text-gray-600 hover:text-orange-600 transition-colors inline-block">SaaS</a></li>
+            <li><a href="/solutions/industries/manufacturing/" class="text-sm text-gray-600 hover:text-orange-600 transition-colors inline-block">Manufacturing</a></li>
+            <li><a href="/solutions/industries/energy/" class="text-sm text-gray-600 hover:text-orange-600 transition-colors inline-block">Energy</a></li>
+            <li><a href="/solutions/industries/government/" class="text-sm text-gray-600 hover:text-orange-600 transition-colors inline-block">Government</a></li>
+          </ul>
+        </div>
+
+        <!-- Video Platforms Column -->
+        <div>
+          <h3 class="text-sm font-bold text-gray-900 mb-4">Video Platforms</h3>
+          <ul class="space-y-2.5">
+            <li><a href="/solutions/microsoft-teams-recordings-to-sops/" class="text-sm text-gray-600 hover:text-orange-600 transition-colors inline-block">Teams Recordings</a></li>
+            <li><a href="/solutions/zoom-recordings-to-training-documentation/" class="text-sm text-gray-600 hover:text-orange-600 transition-colors inline-block">Zoom Recordings</a></li>
+            <li><a href="/solutions/google-meet-recordings-to-documentation/" class="text-sm text-gray-600 hover:text-orange-600 transition-colors inline-block">Google Meet</a></li>
+            <li><a href="/solutions/loom-recordings-to-process-documentation/" class="text-sm text-gray-600 hover:text-orange-600 transition-colors inline-block">Loom Recordings</a></li>
+            <li><a href="/solutions/webinar-recordings-to-knowledge-base/" class="text-sm text-gray-600 hover:text-orange-600 transition-colors inline-block">Webinar Recordings</a></li>
+            <li><a href="/solutions/conference-presentations-to-documentation/" class="text-sm text-gray-600 hover:text-orange-600 transition-colors inline-block">Conference Presentations</a></li>
+            <li><a href="/solutions/workshop-recordings-to-training-materials/" class="text-sm text-gray-600 hover:text-orange-600 transition-colors inline-block">Workshop Recordings</a></li>
+            <li><a href="/solutions/podcast-episodes-to-show-notes/" class="text-sm text-gray-600 hover:text-orange-600 transition-colors inline-block">Podcast Episodes</a></li>
+            <li><a href="/solutions/live-stream-archives-to-documentation/" class="text-sm text-gray-600 hover:text-orange-600 transition-colors inline-block">Live Streams</a></li>
+            <li><a href="/solutions/youtube-training-libraries-to-knowledge-base/" class="text-sm text-gray-600 hover:text-orange-600 transition-colors inline-block">YouTube Libraries</a></li>
+            <li><a href="/solutions/vimeo-training-libraries-to-documentation/" class="text-sm text-gray-600 hover:text-orange-600 transition-colors inline-block">Vimeo Libraries</a></li>
+            <li><a href="/solutions/screen-recordings-to-how-to-guides/" class="text-sm text-gray-600 hover:text-orange-600 transition-colors inline-block">Screen Recordings</a></li>
+            <li><a href="/solutions/support-screencasts-to-troubleshooting-guides/" class="text-sm text-gray-600 hover:text-orange-600 transition-colors inline-block">Support Screencasts</a></li>
+          </ul>
+        </div>
+
+        <!-- Use Cases & Formats Column -->
+        <div>
+          <h3 class="text-sm font-bold text-gray-900 mb-4">Output Formats</h3>
+          <ul class="space-y-2.5">
+            <li><a href="/solutions/videos-to-standard-operating-procedures/" class="text-sm text-gray-600 hover:text-orange-600 transition-colors inline-block">SOPs</a></li>
+            <li><a href="/solutions/videos-to-knowledge-base-articles/" class="text-sm text-gray-600 hover:text-orange-600 transition-colors inline-block">KB Articles</a></li>
+            <li><a href="/solutions/videos-to-user-manuals/" class="text-sm text-gray-600 hover:text-orange-600 transition-colors inline-block">User Manuals</a></li>
+            <li><a href="/solutions/videos-to-employee-handbooks/" class="text-sm text-gray-600 hover:text-orange-600 transition-colors inline-block">Employee Handbooks</a></li>
+            <li><a href="/solutions/videos-to-troubleshooting-guides/" class="text-sm text-gray-600 hover:text-orange-600 transition-colors inline-block">Troubleshooting Guides</a></li>
+            <li><a href="/solutions/videos-to-client-deliverables/" class="text-sm text-gray-600 hover:text-orange-600 transition-colors inline-block">Client Deliverables</a></li>
+          </ul>
+          <h3 class="text-sm font-bold text-gray-900 mb-4 mt-6">Use Cases</h3>
+          <ul class="space-y-2.5">
+            <li><a href="/solutions/training-videos-to-documentation/" class="text-sm text-gray-600 hover:text-orange-600 transition-colors inline-block">Training Videos</a></li>
+            <li><a href="/solutions/training-course-videos-to-course-content/" class="text-sm text-gray-600 hover:text-orange-600 transition-colors inline-block">Training Courses</a></li>
+            <li><a href="/solutions/employee-onboarding-videos-to-guides/" class="text-sm text-gray-600 hover:text-orange-600 transition-colors inline-block">Employee Onboarding</a></li>
+            <li><a href="/solutions/compliance-training-videos-to-audit-documentation/" class="text-sm text-gray-600 hover:text-orange-600 transition-colors inline-block">Compliance & Audit</a></li>
+            <li><a href="/solutions/internal-process-videos-to-sops/" class="text-sm text-gray-600 hover:text-orange-600 transition-colors inline-block">Internal Processes</a></li>
+            <li><a href="/solutions/product-demo-videos-to-sales-documentation/" class="text-sm text-gray-600 hover:text-orange-600 transition-colors inline-block">Product Demos</a></li>
+            <li><a href="/solutions/sales-call-recordings-to-documentation/" class="text-sm text-gray-600 hover:text-orange-600 transition-colors inline-block">Sales Calls</a></li>
+            <li><a href="/solutions/engineering-walkthrough-videos-to-technical-specs/" class="text-sm text-gray-600 hover:text-orange-600 transition-colors inline-block">Engineering Walkthroughs</a></li>
+            <li><a href="/solutions/manufacturing-training-videos-to-sops/" class="text-sm text-gray-600 hover:text-orange-600 transition-colors inline-block">Manufacturing Training</a></li>
+          </ul>
+        </div>
+
+        <!-- Documentation & Company Column -->
         <div>
           <h3 class="text-sm font-bold text-gray-900 mb-4">Documentation</h3>
           <ul class="space-y-2.5">
@@ -3587,11 +4530,7 @@ document.addEventListener('DOMContentLoaded', function() {
             <li><a href="/solutions/training-documentation/" class="text-sm text-gray-600 hover:text-orange-600 transition-colors inline-block">Training Documentation</a></li>
             <li><a href="/solutions/standard-operating-procedures/" class="text-sm text-gray-600 hover:text-orange-600 transition-colors inline-block">SOPs</a></li>
           </ul>
-        </div>
-
-        <!-- AI & Advanced Column -->
-        <div>
-          <h3 class="text-sm font-bold text-gray-900 mb-4">AI & Advanced</h3>
+          <h3 class="text-sm font-bold text-gray-900 mb-4 mt-6">AI & Advanced</h3>
           <ul class="space-y-2.5">
             <li><a href="/solutions/knowledge-base/" class="text-sm text-gray-600 hover:text-orange-600 transition-colors inline-block">Knowledge Base</a></li>
             <li><a href="/solutions/ai-chatbot/" class="text-sm text-gray-600 hover:text-orange-600 transition-colors inline-block">AI Chatbot</a></li>
@@ -3599,42 +4538,21 @@ document.addEventListener('DOMContentLoaded', function() {
             <li><a href="/solutions/doc-chatbots/" class="text-sm text-gray-600 hover:text-orange-600 transition-colors inline-block">Documentation Chatbots</a></li>
             <li><a href="/solutions/content-management/" class="text-sm text-gray-600 hover:text-orange-600 transition-colors inline-block">Content Management</a></li>
           </ul>
-        </div>
-
-        <!-- Industries Column -->
-        <div>
-          <h3 class="text-sm font-bold text-gray-900 mb-4">Industries</h3>
-          <ul class="space-y-2.5">
-            <li><a href="/solutions/industries/saas/" class="text-sm text-gray-600 hover:text-orange-600 transition-colors inline-block">SaaS</a></li>
-            <li><a href="/solutions/industries/manufacturing/" class="text-sm text-gray-600 hover:text-orange-600 transition-colors inline-block">Manufacturing</a></li>
-            <li><a href="/solutions/industries/energy/" class="text-sm text-gray-600 hover:text-orange-600 transition-colors inline-block">Energy</a></li>
-            <li><a href="/solutions/industries/government/" class="text-sm text-gray-600 hover:text-orange-600 transition-colors inline-block">Government</a></li>
-          </ul>
-        </div>
-
-        <!-- Company Column -->
-        <div>
-          <h3 class="text-sm font-bold text-gray-900 mb-4">Company</h3>
+          <h3 class="text-sm font-bold text-gray-900 mb-4 mt-6">Company</h3>
           <ul class="space-y-2.5">
             <li><a href="/about/" class="text-sm text-gray-600 hover:text-orange-600 transition-colors inline-block">About</a></li>
             <li><a href="/pricing/" class="text-sm text-gray-600 hover:text-orange-600 transition-colors inline-block">Pricing</a></li>
             <li><a href="/support/" class="text-sm text-gray-600 hover:text-orange-600 transition-colors inline-block">Support</a></li>
             <li><a href="/press/" class="text-sm text-gray-600 hover:text-orange-600 transition-colors inline-block">Press</a></li>
           </ul>
-        </div>
-
-        <!-- Resources Column -->
-        <div>
-          <h3 class="text-sm font-bold text-gray-900 mb-4">Resources</h3>
+          <h3 class="text-sm font-bold text-gray-900 mb-4 mt-6">Resources</h3>
           <ul class="space-y-2.5">
             <li><a href="/blog/" class="text-sm text-gray-600 hover:text-orange-600 transition-colors inline-block">Blog</a></li>
-            <li class="text-xs text-gray-600">Latest insights & updates</li>
-            <li><a href="https://help.docsie.io/" class="text-sm text-gray-600 hover:text-orange-600 transition-colors inline-block">Documentation</a></li>
-            <li class="text-xs text-gray-600">How to use Docsie</li>
+            <li><a href="https://help.docsie.io/" class="text-sm text-gray-600 hover:text-orange-600 transition-colors inline-block">Help Center</a></li>
             <li><a href="https://app.docsie.io/schema/redoc/" class="text-sm text-gray-600 hover:text-orange-600 transition-colors inline-block">API Docs</a></li>
-            <li class="text-xs text-gray-600">Developer reference</li>
           </ul>
         </div>
+
       </div>
     </div>
 

@@ -276,8 +276,8 @@ class ImageGenerator:
         
         # Determine visual style based on image type and purpose
         if 'hero' in image_path or 'banner' in image_path:
-            # Hero images: Modern startup-style illustrations with your design system
-            base_style = "Flat vector isometric illustration. Clean, modern SaaS design with soft gradients. Color palette: soft blue (#CFE8FF), lavender (#E3D9FF), deep indigo (#2E2E8F), white background. Rounded UI elements, subtle shadows, floating icons in isometric perspective. Visual balance, minimalist layout, startup aesthetic"
+            # Hero images: Modern startup-style illustrations with v2 warm orange design system
+            base_style = "Flat vector isometric illustration. Clean, modern SaaS design with warm soft gradients. Color palette: warm orange (#FF6738), soft peach (#FEA85E), rich brown (#3C2218), cream white background. Rounded UI elements, subtle warm shadows, floating icons in isometric perspective. Visual balance, minimalist layout, modern startup aesthetic with warm inviting tones"
         elif 'case' in image_path:
             # Case study images: Realistic photography
             base_style = "Professional photograph, high-resolution, clean modern aesthetic, natural lighting, realistic human subjects, contemporary office environment"
