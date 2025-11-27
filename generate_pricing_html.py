@@ -390,11 +390,11 @@ def generate_plan_card(plan_id, plan_data, all_plans):
 def generate_comparison_table(config):
     """Generate the feature comparison table"""
     html_parts = []
-    
+
     html_parts.append("""<table class="w-full">
   <thead>
     <tr class="border-b border-gray-200">
-      <th class="text-left py-4 px-4 font-medium text-gray-900">{% trans %}Features{% endtrans %}</th>
+      <th class="text-left py-4 px-4 font-medium text-gray-900">{% trans %}Feature{% endtrans %}</th>
       <th class="text-center py-4 px-4 font-medium text-gray-900">{% trans %}Premium{% endtrans %}</th>
       <th class="text-center py-4 px-4 font-medium text-gray-900">{% trans %}Enterprise{% endtrans %}</th>
     </tr>
