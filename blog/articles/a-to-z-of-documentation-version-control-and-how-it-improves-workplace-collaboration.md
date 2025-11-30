@@ -14,7 +14,7 @@ Version control gives you complete authority over a document. If a common docume
 
 Version control in documentation helps you avoid confusion and saves time by giving you access to the latest version of the document. It improves team collaboration by improving the scope of communication among team members. As you have transparency on the doc version, you can easily track the changes made by each team member. This feature is especially beneficial for product managers, writers, and engineers working on the same product updates. Moreover, the collaboration tools give you an upper hand in identifying and resolving conflicts quickly. 
 
-Documentation tools like [Docsie come with team collaboration](https://site.docsie.io/documentation-collaboration-software) and project management functionality. You can manage your documents on the go with these kinds of collaboration tools. The centralized platform helps you create embeddable software documents that adapt according to the preferences, languages, and locations of your customers. 
+Documentation tools like [Docsie come with team collaboration](https://www.docsie.io/) and project management functionality. You can manage your documents on the go with these kinds of collaboration tools. The centralized platform helps you create embeddable software documents that adapt according to the preferences, languages, and locations of your customers. 
 
 |CTA: Adopt documentation best practices with Docsie!|
 |-|
@@ -56,7 +56,7 @@ Document sharing and history tracking help you send reliable information across 
 
 ## How Does Docie Help in Improving Collaboration with Documentation Management?
 
-[Docsie ](https://site.docsie.io/documentation-collaboration-software)[documentation management](https://site.docsie.io/documentation-collaboration-software) helps you manage multiple documents with ease through its advanced features. The built-in notes, memos, reminders, chats, and task features improve team collaboration. Moreover, this document-sharing software also comes with project management functionality. With documentation collaboration for internal and external teams and the option of importing & exporting documents, you can manage, edit, and store documents on the fly. 
+[Docsie ](https://www.docsie.io/)[documentation management](https://www.docsie.io/) helps you manage multiple documents with ease through its advanced features. The built-in notes, memos, reminders, chats, and task features improve team collaboration. Moreover, this document-sharing software also comes with project management functionality. With documentation collaboration for internal and external teams and the option of importing & exporting documents, you can manage, edit, and store documents on the fly. 
 
 |CTA: Connect with our team for a demo!|
 |-|

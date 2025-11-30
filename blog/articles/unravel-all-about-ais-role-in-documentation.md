@@ -87,7 +87,7 @@ However, the industries using AI document organizers are aware of these challeng
 
 Are you struggling with documentation? Do you need a platform that can ease your documentation process? Welcome [Docsie](https://www.docsie.io/collaboration_software/) into your professional life and experience the difference! Leveraging the power of AI documentation, the platform is the one-stop shop that fulfills all your documentation needs. 
 
-Whether it is a user manual or a standard operating procedure that you need help with[Docsie](https://site.docsie.io/enterprise-documentation) helps you to create, share, edit, and manage your product documentation, increasing your credibility and your reach in the market. 
+Whether it is a user manual or a standard operating procedure that you need help with[Docsie](https://www.docsie.io/) helps you to create, share, edit, and manage your product documentation, increasing your credibility and your reach in the market. 
 
 Loaded with valuable features such as enterprise-grade documentation, custom knowledge portals, etc., the platform is your ultimate destination for having a happy digital documentation experience. 
 
@@ -105,4 +105,4 @@ Loaded with valuable features such as enterprise-grade documentation, custom kno
 
 Artificial intelligence can be our best friend only if we know how to use it, keeping our imagination and uniqueness alive. As per a study conducted by eMarketer in May 2023, [58%](https://www.insiderintelligence.com/content/power-of-generative-ai-buyers-journey) of the respondents (marketers) using generative AI for content creation witnessed enhanced performance as the top benefit. 
 
-With rapid advancements in technology and processes, artificial intelligence documentation will become more powerful in creating, editing, managing, and sharing your documents. So, if you want to charm your audience through your perfectly styled and formatted content, sign up for [Docsie](https://site.docsie.io/documentation-collaboration-software) today and make your business future-ready!
+With rapid advancements in technology and processes, artificial intelligence documentation will become more powerful in creating, editing, managing, and sharing your documents. So, if you want to charm your audience through your perfectly styled and formatted content, sign up for [Docsie](https://www.docsie.io/) today and make your business future-ready!

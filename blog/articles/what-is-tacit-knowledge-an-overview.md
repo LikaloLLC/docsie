@@ -178,4 +178,4 @@ So, if you are struggling with proper **documentation** and want a reliable plat
 
 **Documenting knowledge** plays a significant role in developing and sharing **tacit knowledge.** When you value the importance of tacit knowledge, you provide insights to individuals to excel in their roles and contributions. Now that you know about the top examples of **tacit knowledge**, you can share your journey of documenting and sharing this mode of knowledge. 
 
-Do you wish to embrace the **benefits of tacit knowledge** and witness your company reaching greater heights? Use the power of [Docsie](https://site.docsie.io/documentation-collaboration-software) **documentation** and write your firm's future using the platform's powerful and exciting features!
+Do you wish to embrace the **benefits of tacit knowledge** and witness your company reaching greater heights? Use the power of [Docsie](https://www.docsie.io/) **documentation** and write your firm's future using the platform's powerful and exciting features!

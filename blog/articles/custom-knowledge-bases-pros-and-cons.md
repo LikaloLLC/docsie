@@ -118,7 +118,7 @@ Okay, now that we've looked at the pros and cons of custom knowledge bases, it's
 
 ## Ready -to- use Knowledge Bases 
 
-Like pre-cooked dishes, ready -to- use knowledge bases, or ready-to-use software  save time and effort. You won't have to spend any time or energy assembling your own because they include everything you need to get going right out of the box. People who need to implement a knowledge [management solution ](https://site.docsie.io/centralized-team-collaboration-and-project-management)rapidly will find them ideal. Explore their advantages and disadvantages now:
+Like pre-cooked dishes, ready -to- use knowledge bases, or ready-to-use software  save time and effort. You won't have to spend any time or energy assembling your own because they include everything you need to get going right out of the box. People who need to implement a knowledge [management solution ](https://www.docsie.io/)rapidly will find them ideal. Explore their advantages and disadvantages now:
 
 ![Ready to Use Knowledge Bases](https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_RDMFoV0RIp2mfhK9J/image3.jpg)
 
@@ -189,7 +189,7 @@ There's no one-size-fits-all solution, but with Docsie, you have a partner that 
 
 Ultimately, there are many advantages to using custom knowledge bases, but doing so requires rigorous research. Your company's specific requirements and objectives should inform your decision to tailor your service. Remember that Docsie, your one-stop shop, is always ready to help you out. 
 
-Docsie is an all-in-one solution for [document management](https://site.docsie.io/enterprise-documentation), editing, sharing, and collaboration. You may save time and effort by taking use of the document templates, version history, and task management that Docsie provides. You may stop your search now since Docsie is the most effective and user-friendly solution for all your document requirements.
+Docsie is an all-in-one solution for [document management](https://www.docsie.io/), editing, sharing, and collaboration. You may save time and effort by taking use of the document templates, version history, and task management that Docsie provides. You may stop your search now since Docsie is the most effective and user-friendly solution for all your document requirements.
 
 Are you excited to use Docsie to build custom knowledge bases?[ Join now ](https://www.docsie.io/)to begin expert knowledge management!
 

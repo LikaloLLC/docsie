@@ -94,7 +94,7 @@ For advanced users looking for more powerful features, commercial software like 
 
 Docsie, a popular document management service, makes it possible to create and store searchable PDFs. Docsie makes PDFs that are searchable upon uploading of documents. This means you won't need to go through the hassle of manually digitizing or installing other software. This way, your team members can get instant access and search; this is reported to boost the productivity of the team.
 
-Docsie's simple search feature makes it possible to locate any information inside your PDFs in just seconds, which ultimately improves your team's[ ](https://site.docsie.io/centralized-team-collaboration-and-project-management)[collaboration](https://site.docsie.io/centralized-team-collaboration-and-project-management) and increases knowledge sharing among your organization.
+Docsie's simple search feature makes it possible to locate any information inside your PDFs in just seconds, which ultimately improves your team's[ ](https://www.docsie.io/)[collaboration](https://www.docsie.io/) and increases knowledge sharing among your organization.
 
 Here are some additional tips for maximizing the searchability of your PDFs: Here are some additional tips for maximizing the searchability of your PDFs:
 
@@ -106,7 +106,7 @@ Here are some additional tips for maximizing the searchability of your PDFs: Her
 
 ## Conclusion
 
-Utilizing these techniques will serve to take your PDFs from being just static documents to becoming dynamic information sources. The users and teams are exposed to a variety of advantages with searchable PDFs. The searchable PDFs act as a great tool helping to contribute to productivity, make information available, and facilitate[ ](https://site.docsie.io/documentation-collaboration-software)[collaboration](https://site.docsie.io/documentation-collaboration-software).
+Utilizing these techniques will serve to take your PDFs from being just static documents to becoming dynamic information sources. The users and teams are exposed to a variety of advantages with searchable PDFs. The searchable PDFs act as a great tool helping to contribute to productivity, make information available, and facilitate[ ](https://www.docsie.io/)[collaboration](https://www.docsie.io/).
 
 Among all the ways mentioned, Docsie, is undoubtedly, a quick and convenient method of not only creating but also managing searchable PDFs. Its automated searchability functionality bypasses the requirement for further software or laborious work on your part, thereby saving you time and effort. With Docsie, your PDFs are now easily searchable and available; this consequently leads to the team's ability to use information to the best of their advantage, and ultimately, to their success.
 

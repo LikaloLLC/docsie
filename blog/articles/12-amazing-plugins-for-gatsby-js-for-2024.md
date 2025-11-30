@@ -28,7 +28,7 @@ In this article we will discuss some of the popular plugins and try to provide s
 
 10. [Gatsby-plugin-google-analytics: ](https://www.gatsbyjs.com/plugins/gatsby-plugin-google-analytics/) Unlocking insights into website performance using Google Analytics, gatsby-plugin-google-analytics becomes an indispensable asset.
 
-11. [Gatsby-theme-docz: ](https://www.docz.site/docs/gatsby-theme) Simplifying the creation of comprehensive documentation for Gatsby sites, gatsby-theme-docz facilitates user onboarding.
+11. [Gatsby-theme-docz: ](https://www.docsie.io/) Simplifying the creation of comprehensive documentation for Gatsby sites, gatsby-theme-docz facilitates user onboarding.
 
 12. [Docsie-gatsby-plugin: ](https://www.docsie.io/blog/gatsby_js_as_a_blog/?version=0.0.1&language=EN&article=gatsbyjs-general-components-and-enhancementss_xgxf) Streamlining the process of crafting website documentation, docsie-gatsby-plugin effortlessly imports data from Docsie workspaces.
 

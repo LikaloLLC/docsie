@@ -8,7 +8,7 @@ Docsie security is hard to fight against but with the constant emergence of comp
 
 ## General and Testing Requirements
 
-[Docsie](https://site.docsie.io/documentation-collaboration-software) values security and considers it a result of a successful collaboration between the company and the expert community of security researchers. Through the Docsie bug bounty program, we aim to make our technological products more secure by diminishing all vulnerability types. As a staunch supporter of ethical hacking, we encourage all participants to adhere to the following requirements so that we can consider their vulnerability remediation for the security researchers reward. 
+[Docsie](https://www.docsie.io/) values security and considers it a result of a successful collaboration between the company and the expert community of security researchers. Through the Docsie bug bounty program, we aim to make our technological products more secure by diminishing all vulnerability types. As a staunch supporter of ethical hacking, we encourage all participants to adhere to the following requirements so that we can consider their vulnerability remediation for the security researchers reward. 
 
 |STEPS|REQUIREMENTS|
 |-|-|

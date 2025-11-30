@@ -28,7 +28,7 @@ A well-implemented knowledgebase management system (KBMS) eliminates this knowle
 
 ## Docsie: Your Knowledge Management Powerhouse
 
-With Docsie, a knowledgebase management system designed for manufacturers, it is possible to improve the organization of operations and the full power of[ ](https://site.docsie.io/internal-knowledge-base)[knowledge management](https://site.docsie.io/internal-knowledge-base).
+With Docsie, a knowledgebase management system designed for manufacturers, it is possible to improve the organization of operations and the full power of[ ](https://www.docsie.io/)[knowledge management](https://www.docsie.io/).
 
 As Philippe, CEO of Docsie, rightly states:
 
@@ -42,11 +42,11 @@ Docsie is the platform that serves as a repository for all manufacturing-related
 
 **2. Easy content creation and editing:**
 
-Docsie's user interface that is accessible to anyone with the right permissions for writing,[ ](https://site.docsie.io/online-markdown-editor)[editing](https://site.docsie.io/online-markdown-editor), and updating knowledge base articles helps to keep the information accurate and up to date. This provides the special experts and the front-line workers with the opportunity to contribute their knowledge and expertise directly.
+Docsie's user interface that is accessible to anyone with the right permissions for writing,[ ](https://www.docsie.io/)[editing](https://www.docsie.io/), and updating knowledge base articles helps to keep the information accurate and up to date. This provides the special experts and the front-line workers with the opportunity to contribute their knowledge and expertise directly.
 
 **3. Multilingual support:**
 
-Docsie is meant to address the global audience through[ ](https://site.docsie.io/documentation-with-multiple-versions-and-languages)[multilingual support](https://site.docsie.io/documentation-with-multiple-versions-and-languages) and clear communication, which bridge the language gap and knowledge transfer across different teams, especially in today's globalized manufacturing sphere.
+Docsie is meant to address the global audience through[ ](https://www.docsie.io/)[multilingual support](https://www.docsie.io/) and clear communication, which bridge the language gap and knowledge transfer across different teams, especially in today's globalized manufacturing sphere.
 
 **4. Offline access:**
 

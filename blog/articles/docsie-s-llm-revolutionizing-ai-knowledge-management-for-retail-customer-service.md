@@ -48,7 +48,7 @@ Docsie's LLM, powered by cutting-edge AI, offers a paradigm shift in retail cust
 
 ### Role-Based Customer Service 
 
-Docsie's LLM presents a novel method of customer support by including role-specific [knowledge bases](https://site.docsie.io/internal-knowledge-base). By doing so, we can guarantee that our customer support personnel have ready access to data that is directly pertinent to their roles, allowing them to give precise and pertinent replies every time.
+Docsie's LLM presents a novel method of customer support by including role-specific [knowledge bases](https://www.docsie.io/). By doing so, we can guarantee that our customer support personnel have ready access to data that is directly pertinent to their roles, allowing them to give precise and pertinent replies every time.
 
 For instance, a knowledge base centred on product details, inventory status, and associated information may be accessed by a customer service representative handling product enquiries, improving the efficiency of the support process.
 
@@ -60,7 +60,7 @@ Consider a scenario in which a consumer inquires about the availability of an it
 
 ### Global Language Assistance
 
-Due to the international scope of the retail industry, Docsie has included [multilingual capabilities in its LLM.](https://site.docsie.io/documentation-with-multiple-versions-and-languages) This function is especially useful for businesses operating in different markets, as it allows them to give customer care in multiple languages.
+Due to the international scope of the retail industry, Docsie has included [multilingual capabilities in its LLM.](https://www.docsie.io/) This function is especially useful for businesses operating in different markets, as it allows them to give customer care in multiple languages.
 
 Using Docsie's LLM, a retail company with a worldwide presence may easily provide help in many languages, improving their ability to communicate with clients in all of their markets.
 

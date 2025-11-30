@@ -34,7 +34,7 @@ These are open APIs, so any developer is free to use them. There are no authoris
 
 ## What are API Documentation Tools?
 
-Do you wish your API document was simple, easy to read and filled with more interactive elements? Drop all your worries and choose a documentation tool like [Docsie](https://site.docsie.io/) that can make your document more consistent and more presentable. 
+Do you wish your API document was simple, easy to read and filled with more interactive elements? Drop all your worries and choose a documentation tool like [Docsie](https://www.docsie.io/) that can make your document more consistent and more presentable. 
 
 These tools help API providers and offer them the experience of working with an **interactive API documentation** interface. The most notable features of such tools include automatic document generation from API specifications, automatic documentation updating, different documentation versions, personalisation options, etc. 
 
@@ -116,9 +116,9 @@ It serves as a centralised documentation resource for your team members and end 
 
 When you share your documents with your customers, they can access the help pages and support tutorials to understand the technical aspects and use cases of your product or service. 
 
-**Are you using Swagger?** [Docsie](https://site.docsie.io/api-documentation-tool) lets you work on Swagger API files too! All you need to do is import a Swagger definition file. And then, Docsie will give you an API documentation draft that you can develop further. 
+**Are you using Swagger?** [Docsie](https://www.docsie.io/) lets you work on Swagger API files too! All you need to do is import a Swagger definition file. And then, Docsie will give you an API documentation draft that you can develop further. 
 
-With user-friendly features like **[Markdown Extended Syntax](https://site.docsie.io/online-markdown-editor)** and **built-in chats** - using Docsie is a cakewalk as it keeps you connected with your team members and promotes collaboration by assigning API tasks and jobs. 
+With user-friendly features like **[Markdown Extended Syntax](https://www.docsie.io/)** and **built-in chats** - using Docsie is a cakewalk as it keeps you connected with your team members and promotes collaboration by assigning API tasks and jobs. 
 
 ![Markdown Extended Syntax](https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_IJrGkvt4r6BjkyYCD/image1.png)
 

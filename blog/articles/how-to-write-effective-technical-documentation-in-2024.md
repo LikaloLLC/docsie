@@ -107,7 +107,7 @@ Docsie is one of the best enterprise knowledge base platforms that enables you t
 
 ### #1. Unified Documentation Experience
 
-Docsie serves as a one-stop shop for all your [enterprise documentation](https://site.docsie.io/enterprise-documentation) needs. Whether you need to create documentation for various products, versions, languages, or audiences, Docsie has you covered. By consolidating all your documents in a centralized location, Docsie streamlines your workflows, reducing the reliance on multiple tools and platforms. Docsie also integrates with your existing tools and systems, such as **GitHub, Slack, Zendesk**, and more, enhancing your productivity and performance.
+Docsie serves as a one-stop shop for all your [enterprise documentation](https://www.docsie.io/) needs. Whether you need to create documentation for various products, versions, languages, or audiences, Docsie has you covered. By consolidating all your documents in a centralized location, Docsie streamlines your workflows, reducing the reliance on multiple tools and platforms. Docsie also integrates with your existing tools and systems, such as **GitHub, Slack, Zendesk**, and more, enhancing your productivity and performance.
 
 ### #2. Customized Documentation Hubs
 

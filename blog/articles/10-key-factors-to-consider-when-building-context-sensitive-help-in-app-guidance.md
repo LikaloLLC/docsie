@@ -38,7 +38,7 @@ Context sensitive help [refers](https://www.tandfonline.com/doi/abs/10.1080/0958
 
 ![https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_2V0l6wSbWJS42mQom/60d856f7-7dcc-d8c0-129b-c6573fc8c5c2image.png](https://s3.amazonaws.com/content-harmony-user-uploads/froala-uploads-1692820574714-1692820574714.png "https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_2V0l6wSbWJS42mQom/60d856f7-7dcc-d8c0-129b-c6573fc8c5c2image.png")
 
-[Context sensitive help](https://site.docsie.io/in-app-help-and-support) is highly dynamic and adaptable. Advanced implementations may even leverage AI and machine learning to analyze user behaviors and customize the help content shown. The help experience continuously evolves based on real user data.
+[Context sensitive help](https://www.docsie.io/solutions/context-sensitive-help-in-app-guidance/) is highly dynamic and adaptable. Advanced implementations may even leverage AI and machine learning to analyze user behaviors and customize the help content shown. The help experience continuously evolves based on real user data.
 
 The main [goal](https://www.id.iit.edu/wp-content/uploads/2015/03/Context-sensitive-interactive-systems-design-sato_hcii2003.pdf) of context sensitive help is to provide users or a team with quick, easy access to the most relevant help topics and complete information about them as and when required. This prevents frustration and confusion by anticipating the user's needs. It enables users to remain focused on their workflows instead of having to leave the app to search for documentation.
 
@@ -342,7 +342,7 @@ With strategic guidance deployed at the right moments, apps both prompt user que
 
 * When designed and timed well, it delivers a smoother, more satisfying user experience.
 
-If you are looking for a comprehensive in-app help solution try Docsie.io and our context aware in-app help by [signing up](https://www.docsie.io/) for a free trial.
+If you are looking for a comprehensive in-app help solution, try [Docsie's context-sensitive help and in-app guidance platform](https://www.docsie.io/solutions/context-sensitive-help-in-app-guidance/) for a free trial.
 
 ## Frequently Asked Question
 

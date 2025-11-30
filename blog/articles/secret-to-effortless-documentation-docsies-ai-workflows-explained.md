@@ -81,7 +81,7 @@ Through Docsie, you will be able to unlock the full potential of AI workflows, c
 
 *I**mage: **A Docsie-branded roadmap illustrated. The road becomes a road towards a futuristic city which is the symbol of AI-powered documentation in the future. The icons of future features (e.g., custom content, predictive maintenance) can be placed on the road using a signboard.*
 
-The future of AI[ ](https://site.docsie.io/api-documentation-tool)[documentation workflows](https://site.docsie.io/api-documentation-tool) is undoubtedly loaded with opportunities that are poised to revolutionize the way we create and consume documentation.  
+The future of AI[ ](https://www.docsie.io/)[documentation workflows](https://www.docsie.io/) is undoubtedly loaded with opportunities that are poised to revolutionize the way we create and consume documentation.  
 
 **1. The Rise of the Documentation Robot**
 

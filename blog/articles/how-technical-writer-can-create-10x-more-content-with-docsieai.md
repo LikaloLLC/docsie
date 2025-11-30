@@ -66,7 +66,7 @@ Some of the most important tools for writing productivity with DocsieAI are list
 
 ### 1. Web Knowledge Bases
 
-[DocsieAI](https://site.docsie.io/quick-deploy-managed-knowledge-portals) offers robust web knowledge bases, providing a centralized hub for organizing and accessing documentation. It not only helps the writers to structure and categorize content, but it also makes it easily searchable and navigable for users.
+[DocsieAI](https://www.docsie.io/) offers robust web knowledge bases, providing a centralized hub for organizing and accessing documentation. It not only helps the writers to structure and categorize content, but it also makes it easily searchable and navigable for users.
 
 ![](https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_Vl9fDsHjHck9cJKt2/image6.png)
 
@@ -78,7 +78,7 @@ Writers can seamlessly track the evolution of documentation from creation to pub
 
 ### 3. In-App Help Interfaces
 
-DocsieAI enables the integration of [in-app help interfaces](https://site.docsie.io/in-app-help-and-support) directly within software applications, offering users contextual assistance right where they need it most. This intuitive feature enhances user experience and reduces support inquiries, leading to greater user satisfaction and retention.
+DocsieAI enables the integration of [in-app help interfaces](https://www.docsie.io/) directly within software applications, offering users contextual assistance right where they need it most. This intuitive feature enhances user experience and reduces support inquiries, leading to greater user satisfaction and retention.
 
 ![](https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_iwC78KZGfPKGR1NlO/image1.png)
 
@@ -88,13 +88,13 @@ DocsieAI facilitates the management of support tickets, allowing writers to addr
 
 ### 5. Multilingual Support
 
-With support [for multiple versions and languages](https://site.docsie.io/documentation-with-multiple-versions-and-languages), DocsieAI accommodates diverse user populations across different regions and languages. Writers can effortlessly create and manage documentation in multiple languages with [Ghost AI Language translation,](https://site.docsie.io/ghost-ai-language-translation) ensuring that content remains accessible and relevant to global audiences. 
+With support [for multiple versions and languages](https://www.docsie.io/), DocsieAI accommodates diverse user populations across different regions and languages. Writers can effortlessly create and manage documentation in multiple languages with [Ghost AI Language translation,](https://www.docsie.io/) ensuring that content remains accessible and relevant to global audiences. 
 
 ![](https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_yIHlnFMiRGN7R2fV6/image7.png)
 
 ### 6. AI Chatbot
 
-As the perfect virtual assistant, [DocsieAI's AI-powered chatbot](https://site.docsie.io/docsie-chat-llm-generative-ai), provides users instant access to information and assistance. The chatbot utilizes natural language processing capabilities to understand user queries and deliver accurate, relevant responses in real time.
+As the perfect virtual assistant, [DocsieAI's AI-powered chatbot](https://www.docsie.io/), provides users instant access to information and assistance. The chatbot utilizes natural language processing capabilities to understand user queries and deliver accurate, relevant responses in real time.
 
 ![](https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_9b8wLAJd8eEkyWJC6/image3.png)
 
@@ -120,7 +120,7 @@ With natural language processing into the picture, the documentation is accurate
 
 ### Valuable insights
 
-DocsieAI provides [analytics and insights](https://site.docsie.io/feedback-and-web-analytics) into document usage, engagement, and performance, empowering writers to make data-driven decisions and optimize content accordingly.
+DocsieAI provides [analytics and insights](https://www.docsie.io/) into document usage, engagement, and performance, empowering writers to make data-driven decisions and optimize content accordingly.
 
 ![](https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_qOuzv0kZqILJG2dvh/image5.png)
 
@@ -130,7 +130,7 @@ By automating repetitive tasks and offering intuitive tools, DocsieAI increases 
 
 ## Step-by-Step Guide to Leveraging DocsieAI for 10x more content
 
-**Step1** - [Integrate DocsieAI into existing documentation workflow](https://site.docsie.io/integrations-and-content-embedding).
+**Step1** - [Integrate DocsieAI into existing documentation workflow](https://www.docsie.io/).
 
 This integration enables you to access DocsieAI's AI-powered content generation and natural language processing capabilities directly within the Docsie environment.
 
@@ -160,6 +160,6 @@ Leveraging DocsieAI's capabilities to analyze and adapt to user feedback, trends
 
 ## The need of the hour - Increased writing productivity and content quality
 
-Knowledge and its transfer have always been a constant in this technical world. [Docsie ](https://site.docsie.io/)has the solutions to the woes of technical writers of creating quality content with good quantity. With DocsieAI's scalability, flexibility, and advanced capabilities, writers can meet the growing demand for content while maintaining high standards of quality and accuracy. By embracing DocsieAI, technical writers can unlock their full potential and create 10x more content, driving innovation and success in their respective fields.
+Knowledge and its transfer have always been a constant in this technical world. [Docsie ](https://www.docsie.io/)has the solutions to the woes of technical writers of creating quality content with good quantity. With DocsieAI's scalability, flexibility, and advanced capabilities, writers can meet the growing demand for content while maintaining high standards of quality and accuracy. By embracing DocsieAI, technical writers can unlock their full potential and create 10x more content, driving innovation and success in their respective fields.
 
 *Ready to transform your technical writing experience? Take the first step and harness the power of DocsieAI today!*

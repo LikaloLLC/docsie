@@ -80,7 +80,7 @@ Docsie offers an enterprise documentation facility to help your team collaborate
 
 ### Enterprise-ready documentation
 
-When you don't have to move from one platform to another, you can focus more on completing the task without hiccups. The[ centralized platform](https://site.docsie.io/enterprise-documentation) eases documentation workflows for the team and helps them improve their efficiency. You can import your existing documents & knowledge bases, align knowledge management, and design a custom portal without much effort. Docsie's exceptional customer service team ensures that you understand our basic and advanced features completely before proceeding further. 
+When you don't have to move from one platform to another, you can focus more on completing the task without hiccups. The[ centralized platform](https://www.docsie.io/) eases documentation workflows for the team and helps them improve their efficiency. You can import your existing documents & knowledge bases, align knowledge management, and design a custom portal without much effort. Docsie's exceptional customer service team ensures that you understand our basic and advanced features completely before proceeding further. 
 
 |CTA: Upgrade your document customization with Docsie|
 |-|### Seamless collaboration with a global workforce
