@@ -52,7 +52,7 @@ ERP (Enterprise Resource Planning) knowledge management system can provide you w
 
 ![](https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_PrQtCfwgYTP3usd7q/image3.png)
 
-Docsie is a cloud-based platform that allows you to perform your[ ](https://site.docsie.io/enterprise-documentation)[ERP knowledge management system](https://site.docsie.io/enterprise-documentation) in one place by creating, managing, and publishing it. Docsie can help you with ERP knowledge management system in the following ways: Docsie can help you with ERP knowledge management system in the following ways:
+Docsie is a cloud-based platform that allows you to perform your [ERP knowledge management system](https://www.docsie.io/) in one place by creating, managing, and publishing it. Docsie can help you with ERP knowledge management system in the following ways:
 
 ### 1. Multilingual, multiformat and multiversion support
 

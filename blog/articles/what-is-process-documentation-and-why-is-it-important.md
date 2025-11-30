@@ -406,7 +406,7 @@ Docsie simplifies your documentation workflow and saves you precious time and ef
 
 **Context-Aware Knowledge Portals:**
 
-Docsie can help you create context-aware knowledge portals that adapt to your customers' needs. Whether it's creating content based on customer roles or dynamic attributes, we ensure that your documentation is always spot on. Give [Docsie](https://site.docsie.io/) a try, today!
+Docsie can help you create context-aware knowledge portals that adapt to your customers' needs. Whether it's creating content based on customer roles or dynamic attributes, we ensure that your documentation is always spot on. Give [Docsie](https://www.docsie.io/) a try, today!
 
 ## Key Take Aways
 

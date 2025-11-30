@@ -12,7 +12,7 @@ Leveraging purpose-built software takes SOP benefits to the next level. With **c
 
 The following article explores leading practices to **create, manage, and maximize enterprise SOP programs.**
 
-By hosting SOPs on [Docsie](https://site.docsie.io/host-share-standard-operating-procedures-with-team), you can share your entire [knowledge portal](https://site.docsie.io/custom-knowledge-portal) through quick deployment, self-hosting, embedding within shared documents, hosting on a private cloud, etc.  
+By hosting SOPs on [Docsie](https://www.docsie.io/), you can share your entire knowledge portal through quick deployment, self-hosting, embedding within shared documents, hosting on a private cloud, etc.  
 
 **But what exactly is an SOP? How does it work? **
 
@@ -86,7 +86,7 @@ SOP Formats define how you would like to structure and organize information thro
 |Best used for:To provide a short summary with step-by-step instructions along with mentioning the name of the person responsible for each aspect of the job.|Best used for:Writing the purpose, an overview, and detailed instructions on how each step of the task should be completed, along with the names of responsible stakeholders.|Best used for:Depicting an easy-to-follow diagram representing the various processes and how different decisions can lead to different outcomes.|Best used for:SOPs that contain repetitive tasks that require more manual labor and less creativity.|Best used for:Training or onboarding purposes where employees can get an idea regarding how to perform a particular task.|Best used for:Tasks involving multiple concepts or that require a large number of people bringing their varied skills to complete the project.|
  
 
-If you are unsure about which platform to choose for authoring your company SOPs, try[ ](https://www.docsie.io/content/Product_Overview_1.pdf)[Docsie](https://www.docsie.io/content/Product_Overview_1.pdf) for a seamless, hassle-free and enjoyable experience. Enhance your company's potential and unleash your employees' productivity by creating SOPs following some simple steps on [Docsie](https://www.docsie.io/pricing/). Whether you need to create a proposal for a new business plan or craft a document on task allocation, choose [Docsie](https://site.docsie.io/enterprise-documentation) as your trusted partner and craft SOPs with perfection!
+If you are unsure about which platform to choose for authoring your company SOPs, try [Docsie](https://www.docsie.io/) for a seamless, hassle-free and enjoyable experience. Enhance your company's potential and unleash your employees' productivity by creating SOPs following some simple steps on [Docsie](https://www.docsie.io/pricing/). Whether you need to create a proposal for a new business plan or craft a document on task allocation, choose [Docsie](https://www.docsie.io/) as your trusted partner and craft SOPs with perfection!
 
 ## Standard Operating Procedure: [SOP Title]
 
@@ -330,7 +330,7 @@ If SOP is something new for your company, it can suffer from the non-involvement
 
 ### 3. Proper training:
 
-Sufficient training and proper maintenance are required to make your SOPs live longer. Therefore, all your team members should be able to use resources that might help them complete the tasks mentioned in the SOP. When you use [Docsie](https://site.docsie.io/centralized-team-collaboration-and-project-management), you can have complete peace of mind since it is designed for beginners who can easily follow instructions and complete the task as laid down in the SOP. 
+Sufficient training and proper maintenance are required to make your SOPs live longer. Therefore, all your team members should be able to use resources that might help them complete the tasks mentioned in the SOP. When you use [Docsie](https://www.docsie.io/), you can have complete peace of mind since it is designed for beginners who can easily follow instructions and complete the task as laid down in the SOP. 
 
 ## How can I ensure employees follow SOPs correctly?
 
@@ -426,7 +426,7 @@ Powerful text formatting in terms of adding headings, subheadings, bullets, numb
 
 Content embedding through hyperlinks, images and video embedding, clickable links, iFrame content embedding, etc. 
 
-[Version control](https://site.docsie.io/documentation-with-multiple-versions-and-languages) and easy update and change management (maintaining multiple versions, removing outdated documents, improving content quality by being compliant and adhering to regulations).
+[Version control](https://www.docsie.io/) and easy update and change management (maintaining multiple versions, removing outdated documents, improving content quality by being compliant and adhering to regulations).
 
 Maintains high security of the documents by providing role-based access controls and two-factor user authentication. 
 
@@ -440,7 +440,7 @@ A usual SOP, irrespective of its format, should contain the title, the SOP numbe
 
 By following SOPs, companies can standardise products and yield high-quality results. Following SOPs enables organisations to stay on track, move towards a common goal and not deviate from the path of completing the assignment. 
 
-With [Docsie](https://site.docsie.io/), craft easy-to-maintain documentation and share it with your team members with the click of a button. Collaborate, brainstorm and manage multiple workspaces on the same platform. 
+With [Docsie](https://www.docsie.io/), craft easy-to-maintain documentation and share it with your team members with the click of a button. Collaborate, brainstorm and manage multiple workspaces on the same platform. 
 
 ![](https://cdn.docsie.io/workspace_PfNzfGj3YfKKtTO4T/doc_QiqgSuNoJpspcExF3/file_KZE6OleGnD8FfiUSF/image1.png)
 
