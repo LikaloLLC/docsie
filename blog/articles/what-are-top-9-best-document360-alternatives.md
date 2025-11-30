@@ -1,4 +1,4 @@
-[Document360](https://document360.com/)is an outstanding solution in the field of document creation and collaboration. Document360 is popular with users because of its free trial, customizability, team collaboration, and communication capabilities.
+[Document360](https://www.docsie.io/) is an outstanding solution in the field of document creation and collaboration. Document360 is popular with users because of its free trial, customizability, team collaboration, and communication capabilities.
 
 Document360 is a knowledge management system. It is a platform for developing knowledge bases that enables you to design, collaborate on, and publish self-service knowledge base portals for internal users and clients.
 
