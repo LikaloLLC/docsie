@@ -60,7 +60,7 @@ Docsie supports knowledge management systems in multiple languages, formats, and
 
 ### 2. Real-time Collaboration and Communication
 
-Docsie fosters real-time collaboration and communication between teams and stakeholders, thus resulting in alignment and feedback. It provides users the ability to invite and assign roles and permissions, such as authors, editors, reviewers, and approvers, to manage the access to ERP knowledge. Docsie has chat and comment functionalities, which allow dialogue and tracking of changes and revisions in the[ ](https://site.docsie.io/quick-deploy-managed-knowledge-portals)[knowledge management](https://site.docsie.io/quick-deploy-managed-knowledge-portals) system.
+Docsie fosters real-time collaboration and communication between teams and stakeholders, thus resulting in alignment and feedback. It provides users the ability to invite and assign roles and permissions, such as authors, editors, reviewers, and approvers, to manage the access to ERP knowledge. Docsie has chat and comment functionalities, which allow dialogue and tracking of changes and revisions in the knowledge management system. For SAP consultants managing complex implementations, [converting SAP training sessions into client-ready documentation](https://www.docsie.io/solutions/sap-training-video-to-guides/) streamlines knowledge transfer while ensuring consistent documentation across all stakeholders.
 
 ### 3. Analytics and Reporting
 

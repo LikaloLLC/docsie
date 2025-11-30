@@ -40,7 +40,7 @@ Ensuring the safety of children is the top priority for any daycare center. Your
 
 ### 6. Professional Development
 
-Investing in your staff's professional development benefits both the employees and your daycare. Outline training requirements, such as CPR and first aid certifications, which are often mandatory for daycare workers. Additionally, provide information about workshops, conferences, and other opportunities for skill development and career growth. By encouraging continuous learning, you help staff feel valued and equipped to provide high-quality care.
+Investing in your staff's professional development benefits both the employees and your daycare. Outline training requirements, such as CPR and first aid certifications, which are often mandatory for daycare workers. Additionally, provide information about workshops, conferences, and other opportunities for skill development and career growth. By encouraging continuous learning, you help staff feel valued and equipped to provide high-quality care. HR teams can streamline onboarding by [converting training session recordings into standardized guides](https://www.docsie.io/solutions/workday-training-video-to-guides/), ensuring consistent delivery of policies and procedures across all new hires.
 
 ### 7. Disciplinary Actions
 
@@ -58,7 +58,7 @@ Every daycare is unique, and your employee handbook should reflect your center's
 
 ### 2. Prioritizing Clarity and Accessibility
 
-A handbook is only effective if staff can easily understand and reference it. Use plain language to ensure that policies are clear and straightforward. Avoid jargon or overly complex terms that might confuse readers. Additionally, consider incorporating multimedia formats, such as videos or infographics, to make the content more engaging and accessible. For example, a short video explaining emergency procedures can be more effective than a lengthy written description.
+A handbook is only effective if staff can easily understand and reference it. Use plain language to ensure that policies are clear and straightforward. Avoid jargon or overly complex terms that might confuse readers. Additionally, consider incorporating multimedia formats, such as videos or infographics, to make the content more engaging and accessible. For example, a short video explaining emergency procedures can be more effective than a lengthy written description. Teams can [convert training videos into written handbook sections](https://www.docsie.io/solutions/documentation-from-video/), automatically transforming video demonstrations into searchable text while preserving the visual elements that aid comprehension.
 
 ### 3. Regular Updates and Stakeholder Involvement
 

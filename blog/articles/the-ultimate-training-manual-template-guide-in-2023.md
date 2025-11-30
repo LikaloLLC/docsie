@@ -22,6 +22,8 @@ It can be difficult to share and educate others. Especially if you don't have a 
 - Reduced training costs
 - Better employee engagement and retention
 
+For HR teams managing Workday implementations, [converting onboarding sessions into comprehensive training guides](https://www.docsie.io/solutions/workday-training-video-to-guides/) streamlines new hire training while ensuring consistent delivery of HR policies and system procedures across the organization.
+
 A comprehensive training manual template serves as a valuable resource for both trainers and trainees, ensuring effective knowledge transfer and skill development.
 
 A comprehensive training manual template serves as a valuable resource for both trainers and trainees, ensuring effective knowledge transfer and skill development.
@@ -97,7 +99,7 @@ Snag-it allows you to easily take a photo of your page's content and annotate it
 
 ## Camtasia
 
-Camtasia will help you easily record how-to videos to improve the training experience and improve the effectiveness of your training manuals.
+Camtasia will help you easily record how-to videos to improve the training experience and improve the effectiveness of your training manuals. Once recorded, teams can [automatically convert training videos into searchable documentation](https://www.docsie.io/solutions/documentation-from-video/), eliminating the need for manual transcription while ensuring consistent formatting across all training materials.
 
 
 

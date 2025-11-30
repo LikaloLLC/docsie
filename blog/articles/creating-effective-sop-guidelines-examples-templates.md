@@ -156,7 +156,7 @@ Standard operating procedures (SOPs) are invaluable for businesses looking to im
 
 3. **Preserve institutional knowledge** - When an employee leaves a company, SOPs retain the methods, techniques, and knowledge the employee applied. With staff turnover, SOPs prevent disruptions in continuing business operations seamlessly.
 
-4. **Ensure compliance** - SOPs help organizations meet legal regulations and industry standards through documented best practices. With SOPs, businesses can demonstrate compliance during audits or inspections.
+4. **Ensure compliance** - SOPs help organizations meet legal regulations and industry standards through documented best practices. With SOPs, businesses can demonstrate compliance during audits or inspections. For SAP consultants and implementers managing complex enterprise rollouts, [converting SAP transaction walkthroughs into client-ready documentation](https://www.docsie.io/solutions/sap-training-video-to-guides/) ensures consistent compliance documentation across implementations.
 
 5. **Enable delegation** - Managers can confidently delegate tasks knowing employees can follow SOPs to maintain consistency. Well-documented SOPs empower employees to work more autonomously.
 
@@ -276,7 +276,7 @@ Standard operating procedures are invaluable for organizations, but only if empl
 
 8. **Gamification** - Applying game elements like points, badges and leader-boards makes completing SOPs more motivational and interactive for employees.
 
-9. **Videos** - Embed videos directly into SOPs when useful for demonstrating processes visually. Videos improve comprehension.
+9. **Videos** - Embed videos directly into SOPs when useful for demonstrating processes visually. Videos improve comprehension. For organizations looking to streamline documentation creation, [converting training videos into searchable, step-by-step documentation](https://www.docsie.io/solutions/documentation-from-video/) can save significant time while ensuring accuracy and consistency across your SOP library.
 
 10. **Notifications analytics** - View metrics on notification deliverability and open rates. Use insights to refine timing and increase notifications' impact.
 

@@ -45,9 +45,9 @@ With Docsie, manufacturers who want to revamp their knowledgebase management str
 
 ### 2. Enhancing Collaboration
 
-The collaborative attitude has become the key to success in the production environment which has become globally interconnected. Through Docsie[ ](https://site.docsie.io/documentation-collaboration-software)[collaboration](https://site.docsie.io/documentation-collaboration-software) is enhanced via a set of user-friendly tools that support instant editing, commenting, and feedback on knowledge resources. Through creating an environment that is focused on articulate and clear communication and information sharing,
+The collaborative attitude has become the key to success in the production environment which has become globally interconnected. Through Docsie collaboration is enhanced via a set of user-friendly tools that support instant editing, commenting, and feedback on knowledge resources. Through creating an environment that is focused on articulate and clear communication and information sharing,
 
-Docsie provides tools for better collaboration among teams, enabling them to work together and utilize their team's knowledge to achieve innovation and growth.
+Docsie provides tools for better collaboration among teams, enabling them to work together and utilize their team's knowledge to achieve innovation and growth. Manufacturing teams can [convert training videos into Confluence knowledge base articles](https://www.docsie.io/solutions/confluence-training-video-to-guides/), capturing floor procedures and equipment training in a centralized, searchable format that preserves institutional knowledge.
 
 ### 3. Ensuring Data Security
 

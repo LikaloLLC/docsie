@@ -177,6 +177,8 @@ Allow  teams  to be flexible. Allow each  team  to create a subject or folder in
 
 ### Import and supplement  content
 
+For teams managing knowledge in Confluence, [converting training videos into structured wiki articles](https://www.docsie.io/solutions/confluence-training-video-to-guides/) enables rapid content creation while maintaining consistency across your internal documentation platform.
+
 After you've established your architecture, you may begin adding material to your  internal  wiki. If you already have documentation (for  example, on DocX, Markdown PDF and/or JSON files), you should import it into your new  wiki  before it goes live. We make it simple to import material from a number of  tools, as well as markdown files into Docsie.
 
 Additionally, you should include any significant new material into your  wiki  prior to its formal debut. Several items that  teams  commonly add when launching their  corporate  wiki  are their  employee  handbook and a tutorial on how to navigate their new  wiki  or  knowledge base.

@@ -94,7 +94,7 @@ Using tech-related images that are visually attractive yet informative will not 
 
 The attention span of present-day readers seems to be short. Hence, a technical guide with images will make your content easier to navigate, and flowy and help you break lengthy blocks of text.
 
-Likewise, don’t go overboard with too many images as it may overshadow your actual technical information. Try to strike a good balance between text and visual representation.
+Likewise, don't go overboard with too many images as it may overshadow your actual technical information. Try to strike a good balance between text and visual representation. For teams creating visual technical guides, [converting screen recording videos into documented procedures](https://www.docsie.io/solutions/documentation-from-video/) can automatically generate both text instructions and visual screenshots from a single walkthrough.
 
 ### 5. Examples are imperative
 

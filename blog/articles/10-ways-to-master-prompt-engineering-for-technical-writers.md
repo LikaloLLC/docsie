@@ -65,7 +65,7 @@ When you are working as a technical writer for a company or an agency, knowing a
 
 ### 5. Illustrate with examples
 
-References and analogies work best where definitions fail. So, cite examples and use similies and analogies in your articles to make it easier for the broader audience (without technical knowledge) to understand. When you are exploring technical writing with Docsie, write in the everyday language and convey your message with simplicity and authenticity.
+References and analogies work best where definitions fail. So, cite examples and use similies and analogies in your articles to make it easier for the broader audience (without technical knowledge) to understand. When you are exploring technical writing with Docsie, write in the everyday language and convey your message with simplicity and authenticity. Technical writers can also leverage AI to [transform demonstration videos into comprehensive written examples](https://www.docsie.io/solutions/documentation-from-video/), automatically extracting visual walkthroughs into step-by-step text documentation with contextual screenshots.
 
 ### 6. A unique writing style
 

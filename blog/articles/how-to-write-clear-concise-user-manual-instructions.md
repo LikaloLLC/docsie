@@ -47,7 +47,7 @@ Break complex problems into digestible chunks. Include relevant and appropriate 
 
 ### 7. Put appropriate visuals
 
-Add photos and videos to attract users to go through your instructions. Convey more through pictures and complement them with carefully placed paragraphs of text. 
+Add photos and videos to attract users to go through your instructions. Convey more through pictures and complement them with carefully placed paragraphs of text. For teams looking to streamline manual creation, [converting product demo videos into structured user manuals](https://www.docsie.io/solutions/documentation-from-video/) can dramatically reduce documentation time while maintaining accuracy and visual clarity. 
 
 ### 8. Have a logical flow
 

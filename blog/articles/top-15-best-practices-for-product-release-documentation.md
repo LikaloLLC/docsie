@@ -68,7 +68,7 @@ For example, simple notations may suffice to explain a function, perhaps with a 
 
 Each person has a [different style of learning](https://www.ukessays.com/essays/social-work/people-learn-in-different-ways.php). Some prefer in-depth descriptions, while others may prefer graphics and visual representations. However, some users learn more through hands-on involvement rather than focused reading.
 
-Ensure to encompass all learning styles when creating effective and informative product documentation. For example, inserting graphics like screenshots, graphs, structured text, or video links helps ensure all learning styles understand the product documentation.
+Ensure to encompass all learning styles when creating effective and informative product documentation. For example, inserting graphics like screenshots, graphs, structured text, or video links helps ensure all learning styles understand the product documentation. Teams can streamline this multi-format approach by [converting release demo videos into written documentation](https://www.docsie.io/solutions/documentation-from-video/), automatically providing both visual and text-based learning resources from a single source.
 
 ### 8. Personalize and structure onboarding content
 

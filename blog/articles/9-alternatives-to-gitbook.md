@@ -327,6 +327,8 @@ The cloud-based platform enables users to upload material in any format includin
 
 ### What can you do with KnowledgeOwl?
 
+Teams using Confluence as their knowledge base can [convert training videos into Confluence articles](https://www.docsie.io/solutions/confluence-training-video-to-guides/), automatically pushing video-based documentation directly into their existing wiki structure for seamless knowledge management.
+
 * Customers may use KnowledgeOwl to store and distribute information in the form of online manuals, handbooks, portals, user guides, and software documentation.
 
 * When someone contributes new information to the knowledge base, webhooks and Slack webhooks are utilized to automatically alert you.

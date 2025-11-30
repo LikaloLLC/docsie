@@ -84,7 +84,7 @@ Creating comprehensive, useful process documentation requires strategic planning
 
 * **Review often** - Set reminders to review documentation periodically for accuracy. Processes change over time.
 
-* **Store centrally** - Keep documents in a central repository that employees can access anytime. Share across departments.
+* **Store centrally** - Keep documents in a central repository that employees can access anytime. Share across departments. Teams using Confluence can [convert training videos directly into knowledge base articles](https://www.docsie.io/solutions/confluence-training-video-to-guides/), automatically populating their central repository with structured, searchable process documentation.
 
 * **Automate updates** - When possible, integrate process documentation with systems that can auto-update any changes or new versions.
 
@@ -132,7 +132,7 @@ To begin with, you need to define the purpose as well as the readers of the docu
 
 **Step 2: Choose Format**
 
-You will then need to choose the right format of documentation for your readers and purpose. It can be either in a written format if the documentation's purpose is to provide detailed technical information. On the other hand, you could go with a video tutorial that can help viewers learn certain processes with ease.
+You will then need to choose the right format of documentation for your readers and purpose. It can be either in a written format if the documentation's purpose is to provide detailed technical information. On the other hand, you could go with a video tutorial that can help viewers learn certain processes with ease. Organizations can streamline this process by [converting recorded training videos into structured documentation](https://www.docsie.io/solutions/documentation-from-video/), automatically transforming visual walkthroughs into searchable, text-based guides.
 
 **Step 3: Gather Information**
 
@@ -208,7 +208,7 @@ Determining the right time to document a business process is crucial. Trying to 
 
 * **Document when problems arise** - Issues or bottlenecks often indicate lack of clear documentation. Use these opportunities to illuminate processes.
 
-* **Document for new hires** - Onboarding new employees for existing processes is a key driver for documentation. This promotes knowledge transfer.
+* **Document for new hires** - Onboarding new employees for existing processes is a key driver for documentation. This promotes knowledge transfer. HR teams managing Workday implementations can [convert onboarding sessions into standardized guides](https://www.docsie.io/solutions/workday-training-video-to-guides/), ensuring consistent delivery of HR processes, benefits enrollment, and system training across all new hires.
 
 * **Document changes and updates** - When processes change due to technology, systems or policy updates, renew documentation right away to stay current. Don't let documentation languish out of date.
 
@@ -326,7 +326,7 @@ Process documentation that isn't regularly reviewed and updated loses its value 
 
 * **Build in reminders tied to system updates** - When major enterprise systems are updated, prompt process owners to validate documentation.
 
-* **Review after major projects or milestones** - Following an ERP implementation or headquarters move, processes likely changed.
+* **Review after major projects or milestones** - Following an ERP implementation or headquarters move, processes likely changed. For SAP implementations specifically, [converting transaction walkthroughs into standardized documentation](https://www.docsie.io/solutions/sap-training-video-to-guides/) during the rollout ensures processes are captured accurately while fresh, preventing knowledge loss as consultants transition off the project.
 
 * **Assign documentation maintenance in role responsibilities** - Making individuals accountable for review encourages compliance.
 

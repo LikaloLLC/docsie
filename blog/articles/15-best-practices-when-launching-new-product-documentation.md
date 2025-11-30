@@ -60,9 +60,9 @@ For this best practice, we have to mention Docsie! Online knowledge base softwar
 
 ### 7: A Picture Speaks a Thousand Words
 
-While writing a long-winded explanation on how to do the thing will work, it’s not an effective way of teaching end users. Instead, show them with pictures, or even moving pictures!
+While writing a long-winded explanation on how to do the thing will work, it's not an effective way of teaching end users. Instead, show them with pictures, or even moving pictures!
 
-Try creating an accompanying video tutorial for each product document. That way, those who prefer reading can scan through the text, while visual learners can opt for the video. Similarly, GIFs and images can help users see what you are referring to, especially within a software user interface (UI). Accommodating for a range of learning styles will help you help a wider range of users, meaning more potential for your product.
+Try creating an accompanying video tutorial for each product document. That way, those who prefer reading can scan through the text, while visual learners can opt for the video. Similarly, GIFs and images can help users see what you are referring to, especially within a software user interface (UI). Accommodating for a range of learning styles will help you help a wider range of users, meaning more potential for your product. To accelerate your launch timeline, teams can [convert product demo videos into comprehensive written documentation](https://www.docsie.io/solutions/documentation-from-video/), automatically generating text-based guides from existing video content to serve both learning preferences simultaneously.
 
 ### 8: Learning vs Goals vs Understanding vs Information
 
